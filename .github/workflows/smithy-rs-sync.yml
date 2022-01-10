@@ -1,6 +1,5 @@
 on:
   workflow_dispatch:
-  pull_request:
   schedule:
     # Run at the top of the hour, every hour
     - cron:  '0 * * * *'
@@ -11,7 +10,7 @@ env:
   rust_version: 1.54.0
   rust_toolchain_components: clippy,rustfmt
   java_version: 11
-  sync_to_branch: bot-next
+  sync_to_branch: next
   sync_from_branch: main
 
 jobs:
