@@ -7,15 +7,15 @@ edition = "2018"
 description = "Example usage of the SecretManager service"
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.4.0"
+version = "0.4.1"
 
 [dependencies.aws-sdk-secretsmanager]
 path = "../../sdk/secretsmanager"
-version = "0.4.0"
+version = "0.4.1"
 
 [dependencies.aws-types]
 path = "../../sdk/aws-types"
-version = "0.4.0"
+version = "0.4.1"
 
 [dependencies.tokio]
 version = "1"

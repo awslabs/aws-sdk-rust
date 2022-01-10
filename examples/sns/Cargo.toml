@@ -6,16 +6,16 @@ authors = ["Russell Cohen <rcoh@amazon.com>", "Doug Schwartz <dougsch@amazon.com
 edition = "2018"
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.4.0"
+version = "0.4.1"
 
 [dependencies.aws-sdk-sns]
 package = "aws-sdk-sns"
 path = "../../sdk/sns"
-version = "0.4.0"
+version = "0.4.1"
 
 [dependencies.aws-types]
 path = "../../sdk/aws-types"
-version = "0.4.0"
+version = "0.4.1"
 
 [dependencies.tokio]
 version = "1"
