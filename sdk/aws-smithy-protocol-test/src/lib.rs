@@ -119,6 +119,23 @@ fn extract_params(uri: &Uri) -> HashSet<&str> {
     uri.query().unwrap_or_default().split('&').collect()
 }
 
+#[track_caller]
+pub fn assert_uris_match(left: &Uri, right: &Uri) {
+    if left == right {
+        return;
+    }
+    assert_eq!(left.authority(), right.authority());
+    assert_eq!(left.scheme(), right.scheme());
+    assert_eq!(left.path(), right.path());
+    assert_eq!(
+        extract_params(left),
+        extract_params(right),
+        "Query parameters did not match. left: {}, right: {}",
+        left,
+        right
+    );
+}
+
 pub fn validate_query_string<B>(
     request: &Request<B>,
     expected_params: &[&str],

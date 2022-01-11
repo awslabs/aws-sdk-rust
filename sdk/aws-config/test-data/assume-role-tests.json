@@ -519,5 +519,47 @@
         }
       ]
     }
+  },
+  {
+    "docs": "SSO profile selected",
+    "input": {
+      "selected_profile": "A",
+      "profile": {
+        "A": {
+          "sso_account_id": "0123",
+          "sso_region": "us-east-7",
+          "sso_role_name": "testrole",
+          "sso_start_url": "https://foo.bar"
+        }
+      }
+    },
+    "output": {
+      "ProfileChain": [
+        {
+          "Sso": {
+            "sso_account_id": "0123",
+            "sso_region": "us-east-7",
+            "sso_role_name": "testrole",
+            "sso_start_url": "https://foo.bar"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "docs": "invalid SSO configuration",
+    "input": {
+      "selected_profile": "A",
+      "profile": {
+        "A": {
+          "sso_region": "us-east-7",
+          "sso_role_name": "testrole",
+          "sso_start_url": "https://foo.bar"
+        }
+      }
+    },
+    "output": {
+      "Error": "`sso_account_id` was missing"
+    }
   }
 ]

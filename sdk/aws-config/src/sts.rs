@@ -12,7 +12,7 @@ pub use assume_role::{AssumeRoleProvider, AssumeRoleProviderBuilder};
 use aws_sdk_sts::middleware::DefaultMiddleware;
 
 impl crate::provider_config::ProviderConfig {
-    pub(crate) fn sdk_client(
+    pub(crate) fn sts_client(
         &self,
     ) -> aws_smithy_client::Client<aws_smithy_client::erase::DynConnector, DefaultMiddleware> {
         use crate::connector::expect_connector;

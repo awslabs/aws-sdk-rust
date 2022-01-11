@@ -73,16 +73,15 @@ pub enum BaseProvider<'a> {
         role_arn: &'a str,
         web_identity_token_file: &'a str,
         session_name: Option<&'a str>,
-    }, // TODO(https://github.com/awslabs/aws-sdk-rust/issues/4): add SSO support
-       /*
-       /// An SSO Provider
-       Sso {
-           sso_account_id: &'a str,
-           sso_region: &'a str,
-           sso_role_name: &'a str,
-           sso_start_url: &'a str,
-       },
-        */
+    },
+
+    /// An SSO Provider
+    Sso {
+        sso_account_id: &'a str,
+        sso_region: &'a str,
+        sso_role_name: &'a str,
+        sso_start_url: &'a str,
+    },
 }
 
 /// A profile that specifies a role to assume
@@ -194,6 +193,13 @@ mod role {
     pub const SOURCE_PROFILE: &str = "source_profile";
 }
 
+mod sso {
+    pub const ACCOUNT_ID: &str = "sso_account_id";
+    pub const REGION: &str = "sso_region";
+    pub const ROLE_NAME: &str = "sso_role_name";
+    pub const START_URL: &str = "sso_start_url";
+}
+
 mod web_identity_token {
     pub const TOKEN_FILE: &str = "web_identity_token_file";
 }
@@ -210,6 +216,7 @@ fn base_provider(profile: &Profile) -> Result<BaseProvider, ProfileFileError> {
     match profile.get(role::CREDENTIAL_SOURCE) {
         Some(source) => Ok(BaseProvider::NamedSource(source)),
         None => web_identity_token_from_profile(profile)
+            .or_else(|| sso_from_profile(profile))
             .unwrap_or_else(|| Ok(BaseProvider::AccessKey(static_creds_from_profile(profile)?))),
     }
 }
@@ -259,6 +266,41 @@ fn role_arn_from_profile(profile: &Profile) -> Option<RoleArn> {
         external_id,
         session_name,
     })
+}
+
+fn sso_from_profile(profile: &Profile) -> Option<Result<BaseProvider, ProfileFileError>> {
+    /*
+    Sample:
+    [profile sample-profile]
+    sso_account_id = 012345678901
+    sso_region = us-east-1
+    sso_role_name = SampleRole
+    sso_start_url = https://d-abc123.awsapps.com/start-beta
+    */
+    let account_id = profile.get(sso::ACCOUNT_ID);
+    let region = profile.get(sso::REGION);
+    let role_name = profile.get(sso::ROLE_NAME);
+    let start_url = profile.get(sso::START_URL);
+    if [account_id, region, role_name, start_url]
+        .iter()
+        .all(|field| field.is_none())
+    {
+        return None;
+    }
+    let missing_field = |s| move || ProfileFileError::missing_field(profile, s);
+    let parse_profile = || {
+        let sso_account_id = account_id.ok_or_else(missing_field(sso::ACCOUNT_ID))?;
+        let sso_region = region.ok_or_else(missing_field(sso::REGION))?;
+        let sso_role_name = role_name.ok_or_else(missing_field(sso::ROLE_NAME))?;
+        let sso_start_url = start_url.ok_or_else(missing_field(sso::START_URL))?;
+        Ok(BaseProvider::Sso {
+            sso_account_id,
+            sso_region,
+            sso_role_name,
+            sso_start_url,
+        })
+    };
+    Some(parse_profile())
 }
 
 fn web_identity_token_from_profile(
@@ -394,6 +436,17 @@ mod tests {
                 web_identity_token_file: web_identity_token_file.into(),
                 role_session_name: session_name.map(|sess| sess.to_string()),
             }),
+            BaseProvider::Sso {
+                sso_account_id,
+                sso_region,
+                sso_role_name,
+                sso_start_url,
+            } => output.push(Provider::Sso {
+                sso_account_id: sso_account_id.into(),
+                sso_region: sso_region.into(),
+                sso_role_name: sso_role_name.into(),
+                sso_start_url: sso_start_url.into(),
+            }),
         };
         for role in profile_chain.chain {
             output.push(Provider::AssumeRole {
@@ -428,6 +481,12 @@ mod tests {
             role_arn: String,
             web_identity_token_file: String,
             role_session_name: Option<String>,
+        },
+        Sso {
+            sso_account_id: String,
+            sso_region: String,
+            sso_role_name: String,
+            sso_start_url: String,
         },
     }
 }
