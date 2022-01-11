@@ -13,12 +13,13 @@ use super::repr::{self, BaseProvider};
 
 use crate::profile::credentials::ProfileFileError;
 use crate::provider_config::ProviderConfig;
+use crate::sso::{SsoConfig, SsoCredentialsProvider};
 use crate::sts;
 use crate::web_identity_token::{StaticConfiguration, WebIdentityTokenCredentialsProvider};
 use aws_sdk_sts::middleware::DefaultMiddleware;
 use aws_smithy_client::erase::DynConnector;
 use aws_types::credentials::{self, CredentialsError, ProvideCredentials};
-use aws_types::os_shim_internal::Fs;
+
 use std::fmt::Debug;
 
 #[derive(Debug)]
@@ -30,7 +31,7 @@ pub struct AssumeRoleProvider {
 
 #[derive(Debug)]
 pub struct ClientConfiguration {
-    pub(crate) core_client: aws_smithy_client::Client<DynConnector, DefaultMiddleware>,
+    pub(crate) sts_client: aws_smithy_client::Client<DynConnector, DefaultMiddleware>,
     pub(crate) region: Option<Region>,
 }
 
@@ -59,7 +60,7 @@ impl AssumeRoleProvider {
             .await
             .expect("valid operation");
         let assume_role_creds = client_config
-            .core_client
+            .sts_client
             .call(operation)
             .await
             .map_err(CredentialsError::provider_error)?
@@ -86,9 +87,7 @@ impl ProviderChain {
 
 impl ProviderChain {
     pub fn from_repr(
-        fs: Fs,
-        connector: &DynConnector,
-        region: Option<Region>,
+        provider_config: &ProviderConfig,
         repr: repr::ProfileChain,
         factory: &named::NamedProviderFactory,
     ) -> Result<Self, ProfileFileError> {
@@ -106,10 +105,6 @@ impl ProviderChain {
                 web_identity_token_file,
                 session_name,
             } => {
-                let conf = ProviderConfig::empty()
-                    .with_http_connector(connector.clone())
-                    .with_fs(fs)
-                    .with_region(region);
                 let provider = WebIdentityTokenCredentialsProvider::builder()
                     .static_configuration(StaticConfiguration {
                         web_identity_token_file: web_identity_token_file.into(),
@@ -118,9 +113,23 @@ impl ProviderChain {
                             || sts::util::default_session_name("web-identity-token-profile"),
                         ),
                     })
-                    .configure(&conf)
+                    .configure(provider_config)
                     .build();
                 Arc::new(provider)
+            }
+            BaseProvider::Sso {
+                sso_account_id,
+                sso_region,
+                sso_role_name,
+                sso_start_url,
+            } => {
+                let sso_config = SsoConfig {
+                    account_id: sso_account_id.to_string(),
+                    role_name: sso_role_name.to_string(),
+                    start_url: sso_start_url.to_string(),
+                    region: Region::new(sso_region.to_string()),
+                };
+                Arc::new(SsoCredentialsProvider::new(provider_config, sso_config))
             }
         };
         tracing::info!(base = ?repr.base(), "first credentials will be loaded from {:?}", repr.base());
@@ -179,8 +188,9 @@ mod test {
     use crate::profile::credentials::exec::named::NamedProviderFactory;
     use crate::profile::credentials::exec::ProviderChain;
     use crate::profile::credentials::repr::{BaseProvider, ProfileChain};
+    use crate::provider_config::ProviderConfig;
     use crate::test_case::no_traffic_connector;
-    use aws_sdk_sts::Region;
+
     use aws_types::Credentials;
     use std::collections::HashMap;
     use std::sync::Arc;
@@ -203,9 +213,7 @@ mod test {
     fn error_on_unknown_provider() {
         let factory = NamedProviderFactory::new(HashMap::new());
         let chain = ProviderChain::from_repr(
-            Default::default(),
-            &no_traffic_connector(),
-            Some(Region::new("us-east-1")),
+            &ProviderConfig::empty().with_http_connector(no_traffic_connector()),
             ProfileChain {
                 base: BaseProvider::NamedSource("floozle"),
                 chain: vec![],

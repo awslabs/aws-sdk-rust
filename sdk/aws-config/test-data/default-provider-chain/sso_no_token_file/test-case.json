@@ -1,0 +1,7 @@
+{
+  "name": "sso-role",
+  "docs": "load creds from SSO role",
+  "result": {
+    "ErrorContains": "failed to read `/home/.aws/sso/cache/dace00cba5f8355ec9d274ceb2bcebdfbeed0e12.json`: No such file or directory (os error 2)"
+  }
+}

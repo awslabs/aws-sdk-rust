@@ -29,17 +29,14 @@ use std::fmt::{Display, Formatter};
 use std::sync::Arc;
 
 use aws_types::credentials::{self, future, CredentialsError, ProvideCredentials};
-use aws_types::os_shim_internal::{Env, Fs};
-use aws_types::region::Region;
+
 use tracing::Instrument;
 
-use crate::connector::expect_connector;
-use crate::meta::region::ProvideRegion;
 use crate::profile::credentials::exec::named::NamedProviderFactory;
 use crate::profile::credentials::exec::{ClientConfiguration, ProviderChain};
 use crate::profile::parser::ProfileParseError;
+use crate::profile::Profile;
 use crate::provider_config::ProviderConfig;
-use aws_smithy_client::erase::DynConnector;
 
 mod exec;
 mod repr;
@@ -125,6 +122,18 @@ impl ProvideCredentials for ProfileFileCredentialsProvider {
 ///
 /// Other more complex configurations are possible, consult `test-data/assume-role-tests.json`.
 ///
+/// ### Loading Credentials from SSO
+/// ```ini
+/// [default]
+/// sso_start_url = https://example.com/start
+/// sso_region = us-east-2
+/// sso_account_id = 123456789011
+/// sso_role_name = readOnly
+/// region = us-west-2
+/// ```
+///
+/// SSO can also be used as a source profile for assume role chains.
+///
 /// ## Location of Profile Files
 /// * The location of the config file will be loaded from the `AWS_CONFIG_FILE` environment variable
 /// with a fallback to `~/.aws/config`
@@ -146,10 +155,7 @@ impl ProvideCredentials for ProfileFileCredentialsProvider {
 pub struct ProfileFileCredentialsProvider {
     factory: NamedProviderFactory,
     client_config: ClientConfiguration,
-    fs: Fs,
-    env: Env,
-    region: Option<Region>,
-    connector: DynConnector,
+    provider_config: ProviderConfig,
     profile_override: Option<String>,
 }
 
@@ -160,16 +166,8 @@ impl ProfileFileCredentialsProvider {
     }
 
     async fn load_credentials(&self) -> credentials::Result {
-        // 1. grab a read lock, use it to see if the base profile has already been loaded
-        // 2. If it's loaded, great, lets use it.
-        //    If not, upgrade to a write lock and use that to load the profile file.
-        // 3. Finally, downgrade to ensure no one swapped in the intervening time, then use try_load()
-        //    to pull the new state.
         let profile = build_provider_chain(
-            &self.fs,
-            &self.env,
-            &self.region,
-            &self.connector,
+            &self.provider_config,
             &self.factory,
             self.profile_override.as_deref(),
         )
@@ -277,6 +275,15 @@ pub enum ProfileFileError {
         /// The name of the provider
         name: String,
     },
+}
+
+impl ProfileFileError {
+    fn missing_field(profile: &Profile, field: &'static str) -> Self {
+        ProfileFileError::MissingProfile {
+            profile: profile.name().to_string(),
+            message: format!("`{}` was missing", field).into(),
+        }
+    }
 }
 
 impl Display for ProfileFileError {
@@ -428,39 +435,34 @@ impl Builder {
                 )
             });
         let factory = exec::named::NamedProviderFactory::new(named_providers);
-        let connector = expect_connector(conf.default_connector());
-        let core_client = conf.sdk_client();
+        let core_client = conf.sts_client();
 
         ProfileFileCredentialsProvider {
             factory,
             client_config: ClientConfiguration {
-                core_client,
+                sts_client: core_client,
                 region: conf.region(),
             },
-            fs: conf.fs(),
-            env: conf.env(),
-            region: conf.region(),
-            connector,
+            provider_config: conf,
             profile_override: self.profile_override,
         }
     }
 }
 
 async fn build_provider_chain(
-    fs: &Fs,
-    env: &Env,
-    region: &dyn ProvideRegion,
-    connector: &DynConnector,
+    provider_config: &ProviderConfig,
     factory: &NamedProviderFactory,
     profile_override: Option<&str>,
 ) -> Result<ProviderChain, ProfileFileError> {
-    let profile_set = super::parser::load(fs, env).await.map_err(|err| {
-        tracing::warn!(err = %err, "failed to parse profile");
-        ProfileFileError::CouldNotParseProfile(err)
-    })?;
+    let profile_set = super::parser::load(&provider_config.fs(), &provider_config.env())
+        .await
+        .map_err(|err| {
+            tracing::warn!(err = %err, "failed to parse profile");
+            ProfileFileError::CouldNotParseProfile(err)
+        })?;
     let repr = repr::resolve_chain(&profile_set, profile_override)?;
     tracing::info!(chain = ?repr, "constructed abstract provider from config file");
-    exec::ProviderChain::from_repr(fs.clone(), connector, region.region().await, repr, factory)
+    exec::ProviderChain::from_repr(provider_config, repr, factory)
 }
 
 #[cfg(test)]

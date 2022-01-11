@@ -20,11 +20,19 @@ rt-tokio = ["aws-smithy-async/rt-tokio"]
 default = ["rustls", "rt-tokio"]
 
 [dependencies]
+ring = "0.16"
+hex = "0.4.3"
+zeroize = "1"
 bytes = "1.1.0"
 http = "0.2.4"
 
 [dependencies.aws-sdk-sts]
 path = "../sts"
+default-features = false
+version = "0.4.1"
+
+[dependencies.aws-sdk-sso]
+path = "../sso"
 default-features = false
 version = "0.4.1"
 
