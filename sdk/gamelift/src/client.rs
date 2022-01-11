@@ -83,741 +83,1316 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AcceptMatch` operation.
+    /// Constructs a fluent builder for the [`AcceptMatch`](crate::client::fluent_builders::AcceptMatch) operation.
     ///
-    /// See [`AcceptMatch`](crate::client::fluent_builders::AcceptMatch) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AcceptMatchInput`](crate::input::AcceptMatchInput) with field(s):
+    ///   - [`ticket_id(Option<String>)`](crate::input::AcceptMatchInput::ticket_id): <p>A unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>; otherwise this request will fail.</p>
+    ///   - [`player_ids(Option<Vec<String>>)`](crate::input::AcceptMatchInput::player_ids): <p>A unique identifier for a player delivering the response. This parameter can include one or multiple player IDs.</p>
+    ///   - [`acceptance_type(Option<AcceptanceType>)`](crate::input::AcceptMatchInput::acceptance_type): <p>Player response to the proposed match.</p>
+    /// - On success, responds with [`AcceptMatchOutput`](crate::output::AcceptMatchOutput)
+
+    /// - On failure, responds with [`SdkError<AcceptMatchError>`](crate::error::AcceptMatchError)
     pub fn accept_match(&self) -> fluent_builders::AcceptMatch<C, M, R> {
         fluent_builders::AcceptMatch::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ClaimGameServer` operation.
+    /// Constructs a fluent builder for the [`ClaimGameServer`](crate::client::fluent_builders::ClaimGameServer) operation.
     ///
-    /// See [`ClaimGameServer`](crate::client::fluent_builders::ClaimGameServer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ClaimGameServerInput`](crate::input::ClaimGameServerInput) with field(s):
+    ///   - [`game_server_group_name(Option<String>)`](crate::input::ClaimGameServerInput::game_server_group_name): <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value. If you are not specifying a game server to claim, this value identifies where you want GameLift FleetIQ to look for an available game server to claim. </p>
+    ///   - [`game_server_id(Option<String>)`](crate::input::ClaimGameServerInput::game_server_id): <p>A custom string that uniquely identifies the game server to claim. If this parameter is left empty, GameLift FleetIQ searches for an available game server in the specified game server group.</p>
+    ///   - [`game_server_data(Option<String>)`](crate::input::ClaimGameServerInput::game_server_data): <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers using <code>ListGameServers</code> or <code>ClaimGameServer</code>. </p>
+    /// - On success, responds with [`ClaimGameServerOutput`](crate::output::ClaimGameServerOutput) with field(s):
+    ///   - [`game_server(Option<GameServer>)`](crate::output::ClaimGameServerOutput::game_server): <p>Object that describes the newly claimed game server.</p>
+    /// - On failure, responds with [`SdkError<ClaimGameServerError>`](crate::error::ClaimGameServerError)
     pub fn claim_game_server(&self) -> fluent_builders::ClaimGameServer<C, M, R> {
         fluent_builders::ClaimGameServer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateAlias` operation.
+    /// Constructs a fluent builder for the [`CreateAlias`](crate::client::fluent_builders::CreateAlias) operation.
     ///
-    /// See [`CreateAlias`](crate::client::fluent_builders::CreateAlias) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateAliasInput`](crate::input::CreateAliasInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateAliasInput::name): <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateAliasInput::description): <p>A human-readable description of the alias.</p>
+    ///   - [`routing_strategy(Option<RoutingStrategy>)`](crate::input::CreateAliasInput::routing_strategy): <p>The routing configuration, including routing type and fleet target, for the alias. </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateAliasInput::tags): <p>A list of labels to assign to the new alias resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
+    /// - On success, responds with [`CreateAliasOutput`](crate::output::CreateAliasOutput) with field(s):
+    ///   - [`alias(Option<Alias>)`](crate::output::CreateAliasOutput::alias): <p>The newly created alias resource.</p>
+    /// - On failure, responds with [`SdkError<CreateAliasError>`](crate::error::CreateAliasError)
     pub fn create_alias(&self) -> fluent_builders::CreateAlias<C, M, R> {
         fluent_builders::CreateAlias::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateBuild` operation.
+    /// Constructs a fluent builder for the [`CreateBuild`](crate::client::fluent_builders::CreateBuild) operation.
     ///
-    /// See [`CreateBuild`](crate::client::fluent_builders::CreateBuild) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateBuildInput`](crate::input::CreateBuildInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateBuildInput::name): <p>A descriptive label that is associated with a build. Build names do not need to be unique. You can use <code>UpdateBuild</code> to change this value later. </p>
+    ///   - [`version(Option<String>)`](crate::input::CreateBuildInput::version): <p>Version information that is associated with a build or script. Version strings do not need to be unique. You can use <code>UpdateBuild</code> to change this value later. </p>
+    ///   - [`storage_location(Option<S3Location>)`](crate::input::CreateBuildInput::storage_location): <p>Information indicating where your game build files are stored. Use this parameter only when creating a build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and key. The location must also specify a role ARN that you set up to allow Amazon GameLift to access your Amazon S3 bucket. The S3 bucket and your new build must be in the same Region.</p>
+    ///   - [`operating_system(Option<OperatingSystem>)`](crate::input::CreateBuildInput::operating_system): <p>The operating system that the game server binaries are built to run on. This value determines the type of fleet resources that you can use for this build. If your game build contains multiple executables, they all must run on the same operating system. If an operating system is not specified when creating a build, Amazon GameLift uses the default value (WINDOWS_2012). This value cannot be changed later.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateBuildInput::tags): <p>A list of labels to assign to the new build resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
+    /// - On success, responds with [`CreateBuildOutput`](crate::output::CreateBuildOutput) with field(s):
+    ///   - [`build_value(Option<Build>)`](crate::output::CreateBuildOutput::build_value): <p>The newly created build resource, including a unique build IDs and status. </p>
+    ///   - [`upload_credentials(Option<AwsCredentials>)`](crate::output::CreateBuildOutput::upload_credentials): <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited life span. To refresh these credentials, call <code>RequestUploadCredentials</code>. </p>
+    ///   - [`storage_location(Option<S3Location>)`](crate::output::CreateBuildOutput::storage_location): <p>Amazon S3 location for your game build file, including bucket name and key.</p>
+    /// - On failure, responds with [`SdkError<CreateBuildError>`](crate::error::CreateBuildError)
     pub fn create_build(&self) -> fluent_builders::CreateBuild<C, M, R> {
         fluent_builders::CreateBuild::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateFleet` operation.
+    /// Constructs a fluent builder for the [`CreateFleet`](crate::client::fluent_builders::CreateFleet) operation.
     ///
-    /// See [`CreateFleet`](crate::client::fluent_builders::CreateFleet) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateFleetInput`](crate::input::CreateFleetInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateFleetInput::name): <p>A descriptive label that is associated with a fleet. Fleet names do not need to be unique.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateFleetInput::description): <p>A human-readable description of the fleet.</p>
+    ///   - [`build_id(Option<String>)`](crate::input::CreateFleetInput::build_id): <p>The unique identifier for a custom game server build to be deployed on fleet instances. You can use either the build ID or ARN. The build must be uploaded to GameLift and in <code>READY</code> status. This fleet property cannot be changed later.</p>
+    ///   - [`script_id(Option<String>)`](crate::input::CreateFleetInput::script_id): <p>The unique identifier for a Realtime configuration script to be deployed on fleet instances. You can use either the script ID or ARN. Scripts must be uploaded to GameLift prior to creating the fleet. This fleet property cannot be changed later.</p>
+    ///   - [`server_launch_path(Option<String>)`](crate::input::CreateFleetInput::server_launch_path): <p> <b>This parameter is no longer used.</b> Specify a server launch path using the <code>RuntimeConfiguration</code> parameter. Requests that use this parameter instead continue to be valid.</p>
+    ///   - [`server_launch_parameters(Option<String>)`](crate::input::CreateFleetInput::server_launch_parameters): <p> <b>This parameter is no longer used.</b> Specify server launch parameters using the <code>RuntimeConfiguration</code> parameter. Requests that use this parameter instead continue to be valid.</p>
+    ///   - [`log_paths(Option<Vec<String>>)`](crate::input::CreateFleetInput::log_paths): <p> <b>This parameter is no longer used.</b> To specify where GameLift should store log files once a server process shuts down, use the GameLift server API <code>ProcessReady()</code> and specify one or more directory paths in <code>logParameters</code>. See more information in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server API Reference</a>. </p>
+    ///   - [`ec2_instance_type(Option<Ec2InstanceType>)`](crate::input::CreateFleetInput::ec2_instance_type): <p>The GameLift-supported EC2 instance type to use for all fleet instances. Instance type determines the computing resources that will be used to host your game servers, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions of EC2 instance types.</p>
+    ///   - [`ec2_inbound_permissions(Option<Vec<IpPermission>>)`](crate::input::CreateFleetInput::ec2_inbound_permissions): <p>The allowed IP address ranges and port settings that allow inbound traffic to access game sessions on this fleet. If the fleet is hosting a custom game build, this property must be set before players can connect to game sessions. For Realtime Servers fleets, GameLift automatically sets TCP and UDP ranges. </p>
+    ///   - [`new_game_session_protection_policy(Option<ProtectionPolicy>)`](crate::input::CreateFleetInput::new_game_session_protection_policy): <p>The status of termination protection for active game sessions on the fleet. By default, this property is set to <code>NoProtection</code>. You can also set game session protection for an individual game session by calling <code>UpdateGameSession</code>.</p>  <ul>   <li> <p> <b>NoProtection</b> - Game sessions can be terminated during active gameplay as a result of a scale-down event. </p> </li>   <li> <p> <b>FullProtection</b> - Game sessions in <code>ACTIVE</code> status cannot be terminated during a scale-down event.</p> </li>  </ul>
+    ///   - [`runtime_configuration(Option<RuntimeConfiguration>)`](crate::input::CreateFleetInput::runtime_configuration): <p>Instructions for how to launch and maintain server processes on instances in the fleet. The runtime configuration defines one or more server process configurations, each identifying a build executable or Realtime script file and the number of processes of that type to run concurrently. </p> <note>   <p>The <code>RuntimeConfiguration</code> parameter is required unless the fleet is being configured using the older parameters <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code>, which are still supported for backward compatibility.</p>  </note>
+    ///   - [`resource_creation_limit_policy(Option<ResourceCreationLimitPolicy>)`](crate::input::CreateFleetInput::resource_creation_limit_policy): <p>A policy that limits the number of game sessions that an individual player can create on instances in this fleet within a specified span of time.</p>
+    ///   - [`metric_groups(Option<Vec<String>>)`](crate::input::CreateFleetInput::metric_groups): <p>The name of an AWS CloudWatch metric group to add this fleet to. A metric group is used to aggregate the metrics for multiple fleets. You can specify an existing metric group name or set a new name to create a new metric group. A fleet can be included in only one metric group at a time. </p>
+    ///   - [`peer_vpc_aws_account_id(Option<String>)`](crate::input::CreateFleetInput::peer_vpc_aws_account_id): <p>Used when peering your GameLift fleet with a VPC, the unique identifier for the AWS account that owns the VPC. You can find your account ID in the AWS Management Console under account settings. </p>
+    ///   - [`peer_vpc_id(Option<String>)`](crate::input::CreateFleetInput::peer_vpc_id): <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>. </p>
+    ///   - [`fleet_type(Option<FleetType>)`](crate::input::CreateFleetInput::fleet_type): <p>Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to <code>ON_DEMAND</code>. Learn more about when to use <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"> On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.</p>
+    ///   - [`instance_role_arn(Option<String>)`](crate::input::CreateFleetInput::instance_role_arn): <p>A unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set, any application that runs on an instance in this fleet can assume the role, including install scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more about using on-box credentials for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access external resources from a game server</a>. This property cannot be changed after the fleet is created.</p>
+    ///   - [`certificate_configuration(Option<CertificateConfiguration>)`](crate::input::CreateFleetInput::certificate_configuration): <p>Prompts GameLift to generate a TLS/SSL certificate for the fleet. TLS certificates are used for encrypting traffic between game clients and the game servers that are running on GameLift. By default, the <code>CertificateConfiguration</code> is set to <code>DISABLED</code>. Learn more at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-howitworks.html#gamelift-howitworks-security">Securing Client/Server Communication</a>. This property cannot be changed after the fleet is created. </p>  <p>Note: This feature requires the AWS Certificate Manager (ACM) service, which is not available in all AWS regions. When working in a region that does not support this feature, a fleet creation request with certificate generation fails with a 4xx error.</p>
+    ///   - [`locations(Option<Vec<LocationConfiguration>>)`](crate::input::CreateFleetInput::locations): <p>A set of remote locations to deploy additional instances to and manage as part of the fleet. This parameter can only be used when creating fleets in AWS Regions that support multiple locations. You can add any GameLift-supported AWS Region as a remote location, in the form of an AWS Region code such as <code>us-west-2</code>. To create a fleet with instances in the home Region only, omit this parameter. </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateFleetInput::tags): <p>A list of labels to assign to the new fleet resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the fleet is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the <i>AWS General Reference</i> for actual tagging limits.</p>
+    /// - On success, responds with [`CreateFleetOutput`](crate::output::CreateFleetOutput) with field(s):
+    ///   - [`fleet_attributes(Option<FleetAttributes>)`](crate::output::CreateFleetOutput::fleet_attributes): <p>The properties for the new fleet, including the current status. All fleets are placed in <code>NEW</code> status on creation. </p>
+    ///   - [`location_states(Option<Vec<LocationState>>)`](crate::output::CreateFleetOutput::location_states): <p>The fleet's locations and life-cycle status of each location. For new fleets, the status of all locations is set to <code>NEW</code>. During fleet creation, GameLift updates each location status as instances are deployed there and prepared for game hosting. This list includes an entry for the fleet's home Region. For fleets with no remote locations, only one entry, representing the home Region, is returned.</p>
+    /// - On failure, responds with [`SdkError<CreateFleetError>`](crate::error::CreateFleetError)
     pub fn create_fleet(&self) -> fluent_builders::CreateFleet<C, M, R> {
         fluent_builders::CreateFleet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateFleetLocations` operation.
+    /// Constructs a fluent builder for the [`CreateFleetLocations`](crate::client::fluent_builders::CreateFleetLocations) operation.
     ///
-    /// See [`CreateFleetLocations`](crate::client::fluent_builders::CreateFleetLocations) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateFleetLocationsInput`](crate::input::CreateFleetLocationsInput) with field(s):
+    ///   - [`fleet_id(Option<String>)`](crate::input::CreateFleetLocationsInput::fleet_id): <p>A unique identifier for the fleet to add locations to. You can use either the fleet ID or ARN value.</p>
+    ///   - [`locations(Option<Vec<LocationConfiguration>>)`](crate::input::CreateFleetLocationsInput::locations): <p>A list of locations to deploy additional instances to and manage as part of the fleet. You can add any GameLift-supported AWS Region as a remote location, in the form of an AWS Region code such as <code>us-west-2</code>. </p>
+    /// - On success, responds with [`CreateFleetLocationsOutput`](crate::output::CreateFleetLocationsOutput) with field(s):
+    ///   - [`fleet_id(Option<String>)`](crate::output::CreateFleetLocationsOutput::fleet_id): <p>A unique identifier for the fleet that was updated with new locations.</p>
+    ///   - [`fleet_arn(Option<String>)`](crate::output::CreateFleetLocationsOutput::fleet_arn): <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:   <region>    ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912   </region></code>. </p>
+    ///   - [`location_states(Option<Vec<LocationState>>)`](crate::output::CreateFleetLocationsOutput::location_states): <p>The remote locations that are being added to the fleet, and the life-cycle status of each location. For new locations, the status is set to <code>NEW</code>. During location creation, GameLift updates each location's status as instances are deployed there and prepared for game hosting. This list does not include the fleet home Region or any remote locations that were already added to the fleet.</p>
+    /// - On failure, responds with [`SdkError<CreateFleetLocationsError>`](crate::error::CreateFleetLocationsError)
     pub fn create_fleet_locations(&self) -> fluent_builders::CreateFleetLocations<C, M, R> {
         fluent_builders::CreateFleetLocations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateGameServerGroup` operation.
+    /// Constructs a fluent builder for the [`CreateGameServerGroup`](crate::client::fluent_builders::CreateGameServerGroup) operation.
     ///
-    /// See [`CreateGameServerGroup`](crate::client::fluent_builders::CreateGameServerGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateGameServerGroupInput`](crate::input::CreateGameServerGroupInput) with field(s):
+    ///   - [`game_server_group_name(Option<String>)`](crate::input::CreateGameServerGroupInput::game_server_group_name): <p>An identifier for the new game server group. This value is used to generate unique ARN identifiers for the EC2 Auto Scaling group and the GameLift FleetIQ game server group. The name must be unique per Region per AWS account.</p>
+    ///   - [`role_arn(Option<String>)`](crate::input::CreateGameServerGroupInput::role_arn): <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
+    ///   - [`min_size(Option<i32>)`](crate::input::CreateGameServerGroupInput::min_size): <p>The minimum number of instances allowed in the EC2 Auto Scaling group. During automatic scaling events, GameLift FleetIQ and EC2 do not scale down the group below this minimum. In production, this value should be set to at least 1. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p>
+    ///   - [`max_size(Option<i32>)`](crate::input::CreateGameServerGroupInput::max_size): <p>The maximum number of instances allowed in the EC2 Auto Scaling group. During automatic scaling events, GameLift FleetIQ and EC2 do not scale up the group above this maximum. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p>
+    ///   - [`launch_template(Option<LaunchTemplateSpecification>)`](crate::input::CreateGameServerGroupInput::launch_template): <p>The EC2 launch template that contains configuration settings and game server code to be deployed to all instances in the game server group. You can specify the template using either the template name or ID. For help with creating a launch template, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p> <note>   <p>If you specify network interfaces in your launch template, you must explicitly set the property <code>AssociatePublicIpAddress</code> to "true". If no network interface is specified in the launch template, GameLift FleetIQ uses your account's default VPC.</p>  </note>
+    ///   - [`instance_definitions(Option<Vec<InstanceDefinition>>)`](crate::input::CreateGameServerGroupInput::instance_definitions): <p>The EC2 instance types and sizes to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by GameLift FleetIQ. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
+    ///   - [`auto_scaling_policy(Option<GameServerGroupAutoScalingPolicy>)`](crate::input::CreateGameServerGroupInput::auto_scaling_policy): <p>Configuration settings to define a scaling policy for the Auto Scaling group that is optimized for game hosting. The scaling policy uses the metric <code>"PercentUtilizedGameServers"</code> to maintain a buffer of idle game servers that can immediately accommodate new games and players. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.</p>
+    ///   - [`balancing_strategy(Option<BalancingStrategy>)`](crate::input::CreateGameServerGroupInput::balancing_strategy): <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>  <ul>   <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated (after current gameplay ends) and are not replaced.</p> </li>   <li> <p> <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and are replaced with new On-Demand Instances.</p> </li>   <li> <p> <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p> </li>  </ul>
+    ///   - [`game_server_protection_policy(Option<GameServerProtectionPolicy>)`](crate::input::CreateGameServerGroupInput::game_server_protection_policy): <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by AWS regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
+    ///   - [`vpc_subnets(Option<Vec<String>>)`](crate::input::CreateGameServerGroupInput::vpc_subnets): <p>A list of virtual private cloud (VPC) subnets to use with instances in the game server group. By default, all GameLift FleetIQ-supported Availability Zones are used. You can use this parameter to specify VPCs that you've set up. This property cannot be updated after the game server group is created, and the corresponding Auto Scaling group will always use the property value that is set with this request, even if the Auto Scaling group is updated directly.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateGameServerGroupInput::tags): <p>A list of labels to assign to the new game server group resource. Tags are developer-defined key-value pairs. Tagging AWS resources is useful for resource management, access management, and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags, respectively. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
+    /// - On success, responds with [`CreateGameServerGroupOutput`](crate::output::CreateGameServerGroupOutput) with field(s):
+    ///   - [`game_server_group(Option<GameServerGroup>)`](crate::output::CreateGameServerGroupOutput::game_server_group): <p>The newly created game server group object, including the new ARN value for the GameLift FleetIQ game server group and the object's status. The EC2 Auto Scaling group ARN is initially null, since the group has not yet been created. This value is added once the game server group status reaches <code>ACTIVE</code>. </p>
+    /// - On failure, responds with [`SdkError<CreateGameServerGroupError>`](crate::error::CreateGameServerGroupError)
     pub fn create_game_server_group(&self) -> fluent_builders::CreateGameServerGroup<C, M, R> {
         fluent_builders::CreateGameServerGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateGameSession` operation.
+    /// Constructs a fluent builder for the [`CreateGameSession`](crate::client::fluent_builders::CreateGameSession) operation.
     ///
-    /// See [`CreateGameSession`](crate::client::fluent_builders::CreateGameSession) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateGameSessionInput`](crate::input::CreateGameSessionInput) with field(s):
+    ///   - [`fleet_id(Option<String>)`](crate::input::CreateGameSessionInput::fleet_id): <p>A unique identifier for the fleet to create a game session in. You can use either the fleet ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
+    ///   - [`alias_id(Option<String>)`](crate::input::CreateGameSessionInput::alias_id): <p>A unique identifier for the alias associated with the fleet to create a game session in. You can use either the alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
+    ///   - [`maximum_player_session_count(Option<i32>)`](crate::input::CreateGameSessionInput::maximum_player_session_count): <p>The maximum number of players that can be connected simultaneously to the game session.</p>
+    ///   - [`name(Option<String>)`](crate::input::CreateGameSessionInput::name): <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
+    ///   - [`game_properties(Option<Vec<GameProperty>>)`](crate::input::CreateGameSessionInput::game_properties): <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session.</p>
+    ///   - [`creator_id(Option<String>)`](crate::input::CreateGameSessionInput::creator_id): <p>A unique identifier for a player or entity creating the game session. This parameter is required when requesting a new game session on a fleet with a resource creation limit policy. This type of policy limits the number of concurrent active game sessions that one player can create within a certain time span. GameLift uses the CreatorId to evaluate the new request against the policy.</p>
+    ///   - [`game_session_id(Option<String>)`](crate::input::CreateGameSessionInput::game_session_id): <p> <i>This parameter is no longer preferred. Please use <code>IdempotencyToken</code> instead.</i> Custom string that uniquely identifies a request for a new game session. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID.</p>
+    ///   - [`idempotency_token(Option<String>)`](crate::input::CreateGameSessionInput::idempotency_token): <p>Custom string that uniquely identifies the new game session request. This is useful for ensuring that game session requests with the same idempotency token are processed only once. Subsequent requests with the same string return the original <code>GameSession</code> object, with an updated status. Maximum token length is 48 characters. If provided, this string is included in the new game session's ID. A game session ARN has the following format: <code>arn:aws:gamelift:   <region>    ::gamesession/    <fleet id>     /     <custom id string or idempotency token></custom>    </fleet>   </region></code>. Idempotency tokens remain in use for 30 days after a game session has ended; game session objects are retained for this time period and then deleted.</p>
+    ///   - [`game_session_data(Option<String>)`](crate::input::CreateGameSessionInput::game_session_data): <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session.</p>
+    ///   - [`location(Option<String>)`](crate::input::CreateGameSessionInput::location): <p>A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is placed in the fleet's home Region. Specify a remote location with an AWS Region code such as <code>us-west-2</code>. </p>
+    /// - On success, responds with [`CreateGameSessionOutput`](crate::output::CreateGameSessionOutput) with field(s):
+    ///   - [`game_session(Option<GameSession>)`](crate::output::CreateGameSessionOutput::game_session): <p>Object that describes the newly created game session record.</p>
+    /// - On failure, responds with [`SdkError<CreateGameSessionError>`](crate::error::CreateGameSessionError)
     pub fn create_game_session(&self) -> fluent_builders::CreateGameSession<C, M, R> {
         fluent_builders::CreateGameSession::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateGameSessionQueue` operation.
+    /// Constructs a fluent builder for the [`CreateGameSessionQueue`](crate::client::fluent_builders::CreateGameSessionQueue) operation.
     ///
-    /// See [`CreateGameSessionQueue`](crate::client::fluent_builders::CreateGameSessionQueue) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateGameSessionQueueInput`](crate::input::CreateGameSessionQueueInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateGameSessionQueueInput::name): <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region.</p>
+    ///   - [`timeout_in_seconds(Option<i32>)`](crate::input::CreateGameSessionQueueInput::timeout_in_seconds): <p>The maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.</p>
+    ///   - [`player_latency_policies(Option<Vec<PlayerLatencyPolicy>>)`](crate::input::CreateGameSessionQueueInput::player_latency_policies): <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most players in a game session. These policies ensure that no individual player can be placed into a game with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest value.</p>
+    ///   - [`destinations(Option<Vec<GameSessionQueueDestination>>)`](crate::input::CreateGameSessionQueueInput::destinations): <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference.</p>
+    ///   - [`filter_configuration(Option<FilterConfiguration>)`](crate::input::CreateGameSessionQueueInput::filter_configuration): <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. </p>
+    ///   - [`priority_configuration(Option<PriorityConfiguration>)`](crate::input::CreateGameSessionQueueInput::priority_configuration): <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. </p>
+    ///   - [`custom_event_data(Option<String>)`](crate::input::CreateGameSessionQueueInput::custom_event_data): <p> Information to be added to all events that are related to this game session queue. </p>
+    ///   - [`notification_target(Option<String>)`](crate::input::CreateGameSessionQueueInput::notification_target): <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up notifications for game session placement</a>.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateGameSessionQueueInput::tags): <p>A list of labels to assign to the new game session queue resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
+    /// - On success, responds with [`CreateGameSessionQueueOutput`](crate::output::CreateGameSessionQueueOutput) with field(s):
+    ///   - [`game_session_queue(Option<GameSessionQueue>)`](crate::output::CreateGameSessionQueueOutput::game_session_queue): <p>An object that describes the newly created game session queue.</p>
+    /// - On failure, responds with [`SdkError<CreateGameSessionQueueError>`](crate::error::CreateGameSessionQueueError)
     pub fn create_game_session_queue(&self) -> fluent_builders::CreateGameSessionQueue<C, M, R> {
         fluent_builders::CreateGameSessionQueue::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateMatchmakingConfiguration` operation.
+    /// Constructs a fluent builder for the [`CreateMatchmakingConfiguration`](crate::client::fluent_builders::CreateMatchmakingConfiguration) operation.
     ///
-    /// See [`CreateMatchmakingConfiguration`](crate::client::fluent_builders::CreateMatchmakingConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateMatchmakingConfigurationInput`](crate::input::CreateMatchmakingConfigurationInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateMatchmakingConfigurationInput::name): <p>A unique identifier for the matchmaking configuration. This name is used to identify the configuration associated with a matchmaking request or ticket.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateMatchmakingConfigurationInput::description): <p>A human-readable description of the matchmaking configuration. </p>
+    ///   - [`game_session_queue_arns(Option<Vec<String>>)`](crate::input::CreateMatchmakingConfigurationInput::game_session_queue_arns): <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:   <region>    ::gamesessionqueue/    <queue name></queue>   </region></code>. Queues can be located in any Region. Queues are used to start new GameLift-hosted game sessions for matches that are created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter. </p>
+    ///   - [`request_timeout_seconds(Option<i32>)`](crate::input::CreateMatchmakingConfigurationInput::request_timeout_seconds): <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process before timing out. Requests that fail due to timing out can be resubmitted as needed.</p>
+    ///   - [`acceptance_timeout_seconds(Option<i32>)`](crate::input::CreateMatchmakingConfigurationInput::acceptance_timeout_seconds): <p>The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required. </p>
+    ///   - [`acceptance_required(Option<bool>)`](crate::input::CreateMatchmakingConfigurationInput::acceptance_required): <p>A flag that determines whether a match that was created with this configuration must be accepted by the matched players. To require acceptance, set to <code>TRUE</code>. With this option enabled, matchmaking tickets use the status <code>REQUIRES_ACCEPTANCE</code> to indicate when a completed potential match is waiting for player acceptance. </p>
+    ///   - [`rule_set_name(Option<String>)`](crate::input::CreateMatchmakingConfigurationInput::rule_set_name): <p>A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set name or ARN value. A matchmaking configuration can only use rule sets that are defined in the same Region.</p>
+    ///   - [`notification_target(Option<String>)`](crate::input::CreateMatchmakingConfigurationInput::notification_target): <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html"> Setting up notifications for matchmaking</a> for more information.</p>
+    ///   - [`additional_player_count(Option<i32>)`](crate::input::CreateMatchmakingConfigurationInput::additional_player_count): <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies a match for a single 12-person team, and the additional player count is set to 2, only 10 players are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+    ///   - [`custom_event_data(Option<String>)`](crate::input::CreateMatchmakingConfigurationInput::custom_event_data): <p>Information to be added to all events related to this matchmaking configuration. </p>
+    ///   - [`game_properties(Option<Vec<GameProperty>>)`](crate::input::CreateMatchmakingConfigurationInput::game_properties): <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+    ///   - [`game_session_data(Option<String>)`](crate::input::CreateMatchmakingConfigurationInput::game_session_data): <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+    ///   - [`backfill_mode(Option<BackfillMode>)`](crate::input::CreateMatchmakingConfigurationInput::backfill_mode): <p>The method used to backfill game sessions that are created with this matchmaking configuration. Specify <code>MANUAL</code> when your game manages backfill requests manually or does not use the match backfill feature. Specify <code>AUTOMATIC</code> to have GameLift create a <code>StartMatchBackfill</code> request whenever a game session has one or more open slots. Learn more about manual and automatic backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html"> Backfill Existing Games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+    ///   - [`flex_match_mode(Option<FlexMatchMode>)`](crate::input::CreateMatchmakingConfigurationInput::flex_match_mode): <p>Indicates whether this matchmaking configuration is being used with GameLift hosting or as a standalone matchmaking solution. </p>  <ul>   <li> <p> <b>STANDALONE</b> - FlexMatch forms matches and returns match information, including players and team assignments, in a <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded"> MatchmakingSucceeded</a> event.</p> </li>   <li> <p> <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified GameLift queue to start a game session for the match. </p> </li>  </ul>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateMatchmakingConfigurationInput::tags): <p>A list of labels to assign to the new matchmaking configuration resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
+    /// - On success, responds with [`CreateMatchmakingConfigurationOutput`](crate::output::CreateMatchmakingConfigurationOutput) with field(s):
+    ///   - [`configuration(Option<MatchmakingConfiguration>)`](crate::output::CreateMatchmakingConfigurationOutput::configuration): <p>Object that describes the newly created matchmaking configuration.</p>
+    /// - On failure, responds with [`SdkError<CreateMatchmakingConfigurationError>`](crate::error::CreateMatchmakingConfigurationError)
     pub fn create_matchmaking_configuration(
         &self,
     ) -> fluent_builders::CreateMatchmakingConfiguration<C, M, R> {
         fluent_builders::CreateMatchmakingConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateMatchmakingRuleSet` operation.
+    /// Constructs a fluent builder for the [`CreateMatchmakingRuleSet`](crate::client::fluent_builders::CreateMatchmakingRuleSet) operation.
     ///
-    /// See [`CreateMatchmakingRuleSet`](crate::client::fluent_builders::CreateMatchmakingRuleSet) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateMatchmakingRuleSetInput`](crate::input::CreateMatchmakingRuleSetInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateMatchmakingRuleSetInput::name): <p>A unique identifier for the matchmaking rule set. A matchmaking configuration identifies the rule set it uses by this name value. Note that the rule set name is different from the optional <code>name</code> field in the rule set body.</p>
+    ///   - [`rule_set_body(Option<String>)`](crate::input::CreateMatchmakingRuleSetInput::rule_set_body): <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements support a description field.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateMatchmakingRuleSetInput::tags): <p>A list of labels to assign to the new matchmaking rule set resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
+    /// - On success, responds with [`CreateMatchmakingRuleSetOutput`](crate::output::CreateMatchmakingRuleSetOutput) with field(s):
+    ///   - [`rule_set(Option<MatchmakingRuleSet>)`](crate::output::CreateMatchmakingRuleSetOutput::rule_set): <p>The newly created matchmaking rule set.</p>
+    /// - On failure, responds with [`SdkError<CreateMatchmakingRuleSetError>`](crate::error::CreateMatchmakingRuleSetError)
     pub fn create_matchmaking_rule_set(
         &self,
     ) -> fluent_builders::CreateMatchmakingRuleSet<C, M, R> {
         fluent_builders::CreateMatchmakingRuleSet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreatePlayerSession` operation.
+    /// Constructs a fluent builder for the [`CreatePlayerSession`](crate::client::fluent_builders::CreatePlayerSession) operation.
     ///
-    /// See [`CreatePlayerSession`](crate::client::fluent_builders::CreatePlayerSession) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreatePlayerSessionInput`](crate::input::CreatePlayerSessionInput) with field(s):
+    ///   - [`game_session_id(Option<String>)`](crate::input::CreatePlayerSessionInput::game_session_id): <p>A unique identifier for the game session to add a player to.</p>
+    ///   - [`player_id(Option<String>)`](crate::input::CreatePlayerSessionInput::player_id): <p>A unique identifier for a player. Player IDs are developer-defined.</p>
+    ///   - [`player_data(Option<String>)`](crate::input::CreatePlayerSessionInput::player_data): <p>Developer-defined information related to a player. GameLift does not use this data, so it can be formatted as needed for use in the game.</p>
+    /// - On success, responds with [`CreatePlayerSessionOutput`](crate::output::CreatePlayerSessionOutput) with field(s):
+    ///   - [`player_session(Option<PlayerSession>)`](crate::output::CreatePlayerSessionOutput::player_session): <p>Object that describes the newly created player session record.</p>
+    /// - On failure, responds with [`SdkError<CreatePlayerSessionError>`](crate::error::CreatePlayerSessionError)
     pub fn create_player_session(&self) -> fluent_builders::CreatePlayerSession<C, M, R> {
         fluent_builders::CreatePlayerSession::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreatePlayerSessions` operation.
+    /// Constructs a fluent builder for the [`CreatePlayerSessions`](crate::client::fluent_builders::CreatePlayerSessions) operation.
     ///
-    /// See [`CreatePlayerSessions`](crate::client::fluent_builders::CreatePlayerSessions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreatePlayerSessionsInput`](crate::input::CreatePlayerSessionsInput) with field(s):
+    ///   - [`game_session_id(Option<String>)`](crate::input::CreatePlayerSessionsInput::game_session_id): <p>A unique identifier for the game session to add players to.</p>
+    ///   - [`player_ids(Option<Vec<String>>)`](crate::input::CreatePlayerSessionsInput::player_ids): <p>List of unique identifiers for the players to be added.</p>
+    ///   - [`player_data_map(Option<HashMap<String, String>>)`](crate::input::CreatePlayerSessionsInput::player_data_map): <p>Map of string pairs, each specifying a player ID and a set of developer-defined information related to the player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game. Any player data strings for player IDs that are not included in the <code>PlayerIds</code> parameter are ignored. </p>
+    /// - On success, responds with [`CreatePlayerSessionsOutput`](crate::output::CreatePlayerSessionsOutput) with field(s):
+    ///   - [`player_sessions(Option<Vec<PlayerSession>>)`](crate::output::CreatePlayerSessionsOutput::player_sessions): <p>A collection of player session objects created for the added players.</p>
+    /// - On failure, responds with [`SdkError<CreatePlayerSessionsError>`](crate::error::CreatePlayerSessionsError)
     pub fn create_player_sessions(&self) -> fluent_builders::CreatePlayerSessions<C, M, R> {
         fluent_builders::CreatePlayerSessions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateScript` operation.
+    /// Constructs a fluent builder for the [`CreateScript`](crate::client::fluent_builders::CreateScript) operation.
     ///
-    /// See [`CreateScript`](crate::client::fluent_builders::CreateScript) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateScriptInput`](crate::input::CreateScriptInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateScriptInput::name): <p>A descriptive label that is associated with a script. Script names do not need to be unique. You can use <code>UpdateScript</code> to change this value later. </p>
+    ///   - [`version(Option<String>)`](crate::input::CreateScriptInput::version): <p>Version information that is associated with a build or script. Version strings do not need to be unique. You can use <code>UpdateScript</code> to change this value later. </p>
+    ///   - [`storage_location(Option<S3Location>)`](crate::input::CreateScriptInput::storage_location): <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
+    ///   - [`zip_file(Option<Blob>)`](crate::input::CreateScriptInput::zip_file): <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>  <p>When using the AWS CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateScriptInput::tags): <p>A list of labels to assign to the new script resource. Tags are developer-defined key-value pairs. Tagging AWS resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.</p>
+    /// - On success, responds with [`CreateScriptOutput`](crate::output::CreateScriptOutput) with field(s):
+    ///   - [`script(Option<Script>)`](crate::output::CreateScriptOutput::script): <p>The newly created script record with a unique script ID and ARN. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift service.</p>
+    /// - On failure, responds with [`SdkError<CreateScriptError>`](crate::error::CreateScriptError)
     pub fn create_script(&self) -> fluent_builders::CreateScript<C, M, R> {
         fluent_builders::CreateScript::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateVpcPeeringAuthorization` operation.
+    /// Constructs a fluent builder for the [`CreateVpcPeeringAuthorization`](crate::client::fluent_builders::CreateVpcPeeringAuthorization) operation.
     ///
-    /// See [`CreateVpcPeeringAuthorization`](crate::client::fluent_builders::CreateVpcPeeringAuthorization) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateVpcPeeringAuthorizationInput`](crate::input::CreateVpcPeeringAuthorizationInput) with field(s):
+    ///   - [`game_lift_aws_account_id(Option<String>)`](crate::input::CreateVpcPeeringAuthorizationInput::game_lift_aws_account_id): <p>A unique identifier for the AWS account that you use to manage your GameLift fleet. You can find your Account ID in the AWS Management Console under account settings.</p>
+    ///   - [`peer_vpc_id(Option<String>)`](crate::input::CreateVpcPeeringAuthorizationInput::peer_vpc_id): <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+    /// - On success, responds with [`CreateVpcPeeringAuthorizationOutput`](crate::output::CreateVpcPeeringAuthorizationOutput) with field(s):
+    ///   - [`vpc_peering_authorization(Option<VpcPeeringAuthorization>)`](crate::output::CreateVpcPeeringAuthorizationOutput::vpc_peering_authorization): <p>Details on the requested VPC peering authorization, including expiration.</p>
+    /// - On failure, responds with [`SdkError<CreateVpcPeeringAuthorizationError>`](crate::error::CreateVpcPeeringAuthorizationError)
     pub fn create_vpc_peering_authorization(
         &self,
     ) -> fluent_builders::CreateVpcPeeringAuthorization<C, M, R> {
         fluent_builders::CreateVpcPeeringAuthorization::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateVpcPeeringConnection` operation.
+    /// Constructs a fluent builder for the [`CreateVpcPeeringConnection`](crate::client::fluent_builders::CreateVpcPeeringConnection) operation.
     ///
-    /// See [`CreateVpcPeeringConnection`](crate::client::fluent_builders::CreateVpcPeeringConnection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateVpcPeeringConnectionInput`](crate::input::CreateVpcPeeringConnectionInput) with field(s):
+    ///   - [`fleet_id(Option<String>)`](crate::input::CreateVpcPeeringConnectionInput::fleet_id): <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value. This tells Amazon GameLift which GameLift VPC to peer with. </p>
+    ///   - [`peer_vpc_aws_account_id(Option<String>)`](crate::input::CreateVpcPeeringConnectionInput::peer_vpc_aws_account_id): <p>A unique identifier for the AWS account with the VPC that you want to peer your Amazon GameLift fleet with. You can find your Account ID in the AWS Management Console under account settings.</p>
+    ///   - [`peer_vpc_id(Option<String>)`](crate::input::CreateVpcPeeringConnectionInput::peer_vpc_id): <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+    /// - On success, responds with [`CreateVpcPeeringConnectionOutput`](crate::output::CreateVpcPeeringConnectionOutput)
+
+    /// - On failure, responds with [`SdkError<CreateVpcPeeringConnectionError>`](crate::error::CreateVpcPeeringConnectionError)
     pub fn create_vpc_peering_connection(
         &self,
     ) -> fluent_builders::CreateVpcPeeringConnection<C, M, R> {
         fluent_builders::CreateVpcPeeringConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAlias` operation.
+    /// Constructs a fluent builder for the [`DeleteAlias`](crate::client::fluent_builders::DeleteAlias) operation.
     ///
-    /// See [`DeleteAlias`](crate::client::fluent_builders::DeleteAlias) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteAliasInput`](crate::input::DeleteAliasInput) with field(s):
+    ///   - [`alias_id(Option<String>)`](crate::input::DeleteAliasInput::alias_id): <p>A unique identifier of the alias that you want to delete. You can use either the alias ID or ARN value.</p>
+    /// - On success, responds with [`DeleteAliasOutput`](crate::output::DeleteAliasOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAliasError>`](crate::error::DeleteAliasError)
     pub fn delete_alias(&self) -> fluent_builders::DeleteAlias<C, M, R> {
         fluent_builders::DeleteAlias::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteBuild` operation.
+    /// Constructs a fluent builder for the [`DeleteBuild`](crate::client::fluent_builders::DeleteBuild) operation.
     ///
-    /// See [`DeleteBuild`](crate::client::fluent_builders::DeleteBuild) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteBuildInput`](crate::input::DeleteBuildInput) with field(s):
+    ///   - [`build_id(Option<String>)`](crate::input::DeleteBuildInput::build_id): <p>A unique identifier for the build to delete. You can use either the build ID or ARN value. </p>
+    /// - On success, responds with [`DeleteBuildOutput`](crate::output::DeleteBuildOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteBuildError>`](crate::error::DeleteBuildError)
     pub fn delete_build(&self) -> fluent_builders::DeleteBuild<C, M, R> {
         fluent_builders::DeleteBuild::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteFleet` operation.
+    /// Constructs a fluent builder for the [`DeleteFleet`](crate::client::fluent_builders::DeleteFleet) operation.
     ///
-    /// See [`DeleteFleet`](crate::client::fluent_builders::DeleteFleet) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteFleetInput`](crate::input::DeleteFleetInput) with field(s):
+    ///   - [`fleet_id(Option<String>)`](crate::input::DeleteFleetInput::fleet_id): <p>A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.</p>
+    /// - On success, responds with [`DeleteFleetOutput`](crate::output::DeleteFleetOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteFleetError>`](crate::error::DeleteFleetError)
     pub fn delete_fleet(&self) -> fluent_builders::DeleteFleet<C, M, R> {
         fluent_builders::DeleteFleet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteFleetLocations` operation.
+    /// Constructs a fluent builder for the [`DeleteFleetLocations`](crate::client::fluent_builders::DeleteFleetLocations) operation.
     ///
-    /// See [`DeleteFleetLocations`](crate::client::fluent_builders::DeleteFleetLocations) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteFleetLocationsInput`](crate::input::DeleteFleetLocationsInput) with field(s):
+    ///   - [`fleet_id(Option<String>)`](crate::input::DeleteFleetLocationsInput::fleet_id): <p>A unique identifier for the fleet to delete locations for. You can use either the fleet ID or ARN value.</p>
+    ///   - [`locations(Option<Vec<String>>)`](crate::input::DeleteFleetLocationsInput::locations): <p>The list of fleet locations to delete. Specify locations in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+    /// - On success, responds with [`DeleteFleetLocationsOutput`](crate::output::DeleteFleetLocationsOutput) with field(s):
+    ///   - [`fleet_id(Option<String>)`](crate::output::DeleteFleetLocationsOutput::fleet_id): <p>A unique identifier for the fleet that location attributes are being deleted for.</p>
+    ///   - [`fleet_arn(Option<String>)`](crate::output::DeleteFleetLocationsOutput::fleet_arn): <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:   <region>    ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912   </region></code>.</p>
+    ///   - [`location_states(Option<Vec<LocationState>>)`](crate::output::DeleteFleetLocationsOutput::location_states): <p>The remote locations that are being deleted, with each location status set to <code>DELETING</code>.</p>
+    /// - On failure, responds with [`SdkError<DeleteFleetLocationsError>`](crate::error::DeleteFleetLocationsError)
     pub fn delete_fleet_locations(&self) -> fluent_builders::DeleteFleetLocations<C, M, R> {
         fluent_builders::DeleteFleetLocations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteGameServerGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteGameServerGroup`](crate::client::fluent_builders::DeleteGameServerGroup) operation.
     ///
-    /// See [`DeleteGameServerGroup`](crate::client::fluent_builders::DeleteGameServerGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteGameServerGroupInput`](crate::input::DeleteGameServerGroupInput) with field(s):
+    ///   - [`game_server_group_name(Option<String>)`](crate::input::DeleteGameServerGroupInput::game_server_group_name): <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
+    ///   - [`delete_option(Option<GameServerGroupDeleteOption>)`](crate::input::DeleteGameServerGroupInput::delete_option): <p>The type of delete to perform. Options include the following:</p>  <ul>   <li> <p> <code>SAFE_DELETE</code> – (default) Terminates the game server group and EC2 Auto Scaling group only when it has no game servers that are in <code>UTILIZED</code> status.</p> </li>   <li> <p> <code>FORCE_DELETE</code> – Terminates the game server group, including all active game servers regardless of their utilization status, and the EC2 Auto Scaling group. </p> </li>   <li> <p> <code>RETAIN</code> – Does a safe delete of the game server group but retains the EC2 Auto Scaling group as is.</p> </li>  </ul>
+    /// - On success, responds with [`DeleteGameServerGroupOutput`](crate::output::DeleteGameServerGroupOutput) with field(s):
+    ///   - [`game_server_group(Option<GameServerGroup>)`](crate::output::DeleteGameServerGroupOutput::game_server_group): <p>An object that describes the deleted game server group resource, with status updated to <code>DELETE_SCHEDULED</code>. </p>
+    /// - On failure, responds with [`SdkError<DeleteGameServerGroupError>`](crate::error::DeleteGameServerGroupError)
     pub fn delete_game_server_group(&self) -> fluent_builders::DeleteGameServerGroup<C, M, R> {
         fluent_builders::DeleteGameServerGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteGameSessionQueue` operation.
+    /// Constructs a fluent builder for the [`DeleteGameSessionQueue`](crate::client::fluent_builders::DeleteGameSessionQueue) operation.
     ///
-    /// See [`DeleteGameSessionQueue`](crate::client::fluent_builders::DeleteGameSessionQueue) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteGameSessionQueueInput`](crate::input::DeleteGameSessionQueueInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteGameSessionQueueInput::name): <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region. You can use either the queue ID or ARN value. </p>
+    /// - On success, responds with [`DeleteGameSessionQueueOutput`](crate::output::DeleteGameSessionQueueOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteGameSessionQueueError>`](crate::error::DeleteGameSessionQueueError)
     pub fn delete_game_session_queue(&self) -> fluent_builders::DeleteGameSessionQueue<C, M, R> {
         fluent_builders::DeleteGameSessionQueue::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteMatchmakingConfiguration` operation.
+    /// Constructs a fluent builder for the [`DeleteMatchmakingConfiguration`](crate::client::fluent_builders::DeleteMatchmakingConfiguration) operation.
     ///
-    /// See [`DeleteMatchmakingConfiguration`](crate::client::fluent_builders::DeleteMatchmakingConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteMatchmakingConfigurationInput`](crate::input::DeleteMatchmakingConfigurationInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteMatchmakingConfigurationInput::name): <p>A unique identifier for the matchmaking configuration. You can use either the configuration name or ARN value.</p>
+    /// - On success, responds with [`DeleteMatchmakingConfigurationOutput`](crate::output::DeleteMatchmakingConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteMatchmakingConfigurationError>`](crate::error::DeleteMatchmakingConfigurationError)
     pub fn delete_matchmaking_configuration(
         &self,
     ) -> fluent_builders::DeleteMatchmakingConfiguration<C, M, R> {
         fluent_builders::DeleteMatchmakingConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteMatchmakingRuleSet` operation.
+    /// Constructs a fluent builder for the [`DeleteMatchmakingRuleSet`](crate::client::fluent_builders::DeleteMatchmakingRuleSet) operation.
     ///
-    /// See [`DeleteMatchmakingRuleSet`](crate::client::fluent_builders::DeleteMatchmakingRuleSet) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteMatchmakingRuleSetInput`](crate::input::DeleteMatchmakingRuleSetInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteMatchmakingRuleSetInput::name): <p>A unique identifier for the matchmaking rule set to be deleted. (Note: The rule set name is different from the optional "name" field in the rule set body.) You can use either the rule set name or ARN value.</p>
+    /// - On success, responds with [`DeleteMatchmakingRuleSetOutput`](crate::output::DeleteMatchmakingRuleSetOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteMatchmakingRuleSetError>`](crate::error::DeleteMatchmakingRuleSetError)
     pub fn delete_matchmaking_rule_set(
         &self,
     ) -> fluent_builders::DeleteMatchmakingRuleSet<C, M, R> {
         fluent_builders::DeleteMatchmakingRuleSet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteScalingPolicy` operation.
+    /// Constructs a fluent builder for the [`DeleteScalingPolicy`](crate::client::fluent_builders::DeleteScalingPolicy) operation.
     ///
-    /// See [`DeleteScalingPolicy`](crate::client::fluent_builders::DeleteScalingPolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteScalingPolicyInput`](crate::input::DeleteScalingPolicyInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteScalingPolicyInput::name): <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.</p>
+    ///   - [`fleet_id(Option<String>)`](crate::input::DeleteScalingPolicyInput::fleet_id): <p>A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.</p>
+    /// - On success, responds with [`DeleteScalingPolicyOutput`](crate::output::DeleteScalingPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteScalingPolicyError>`](crate::error::DeleteScalingPolicyError)
     pub fn delete_scaling_policy(&self) -> fluent_builders::DeleteScalingPolicy<C, M, R> {
         fluent_builders::DeleteScalingPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteScript` operation.
+    /// Constructs a fluent builder for the [`DeleteScript`](crate::client::fluent_builders::DeleteScript) operation.
     ///
-    /// See [`DeleteScript`](crate::client::fluent_builders::DeleteScript) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteScriptInput`](crate::input::DeleteScriptInput) with field(s):
+    ///   - [`script_id(Option<String>)`](crate::input::DeleteScriptInput::script_id): <p>A unique identifier for the Realtime script to delete. You can use either the script ID or ARN value.</p>
+    /// - On success, responds with [`DeleteScriptOutput`](crate::output::DeleteScriptOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteScriptError>`](crate::error::DeleteScriptError)
     pub fn delete_script(&self) -> fluent_builders::DeleteScript<C, M, R> {
         fluent_builders::DeleteScript::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteVpcPeeringAuthorization` operation.
+    /// Constructs a fluent builder for the [`DeleteVpcPeeringAuthorization`](crate::client::fluent_builders::DeleteVpcPeeringAuthorization) operation.
     ///
-    /// See [`DeleteVpcPeeringAuthorization`](crate::client::fluent_builders::DeleteVpcPeeringAuthorization) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteVpcPeeringAuthorizationInput`](crate::input::DeleteVpcPeeringAuthorizationInput) with field(s):
+    ///   - [`game_lift_aws_account_id(Option<String>)`](crate::input::DeleteVpcPeeringAuthorizationInput::game_lift_aws_account_id): <p>A unique identifier for the AWS account that you use to manage your GameLift fleet. You can find your Account ID in the AWS Management Console under account settings.</p>
+    ///   - [`peer_vpc_id(Option<String>)`](crate::input::DeleteVpcPeeringAuthorizationInput::peer_vpc_id): <p>A unique identifier for a VPC with resources to be accessed by your GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with GameLift Fleets</a>.</p>
+    /// - On success, responds with [`DeleteVpcPeeringAuthorizationOutput`](crate::output::DeleteVpcPeeringAuthorizationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteVpcPeeringAuthorizationError>`](crate::error::DeleteVpcPeeringAuthorizationError)
     pub fn delete_vpc_peering_authorization(
         &self,
     ) -> fluent_builders::DeleteVpcPeeringAuthorization<C, M, R> {
         fluent_builders::DeleteVpcPeeringAuthorization::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteVpcPeeringConnection` operation.
+    /// Constructs a fluent builder for the [`DeleteVpcPeeringConnection`](crate::client::fluent_builders::DeleteVpcPeeringConnection) operation.
     ///
-    /// See [`DeleteVpcPeeringConnection`](crate::client::fluent_builders::DeleteVpcPeeringConnection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteVpcPeeringConnectionInput`](crate::input::DeleteVpcPeeringConnectionInput) with field(s):
+    ///   - [`fleet_id(Option<String>)`](crate::input::DeleteVpcPeeringConnectionInput::fleet_id): <p>A unique identifier for the fleet. This fleet specified must match the fleet referenced in the VPC peering connection record. You can use either the fleet ID or ARN value.</p>
+    ///   - [`vpc_peering_connection_id(Option<String>)`](crate::input::DeleteVpcPeeringConnectionInput::vpc_peering_connection_id): <p>A unique identifier for a VPC peering connection. This value is included in the <code>VpcPeeringConnection</code> object, which can be retrieved by calling <code>DescribeVpcPeeringConnections</code>.</p>
+    /// - On success, responds with [`DeleteVpcPeeringConnectionOutput`](crate::output::DeleteVpcPeeringConnectionOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteVpcPeeringConnectionError>`](crate::error::DeleteVpcPeeringConnectionError)
     pub fn delete_vpc_peering_connection(
         &self,
     ) -> fluent_builders::DeleteVpcPeeringConnection<C, M, R> {
         fluent_builders::DeleteVpcPeeringConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeregisterGameServer` operation.
+    /// Constructs a fluent builder for the [`DeregisterGameServer`](crate::client::fluent_builders::DeregisterGameServer) operation.
     ///
-    /// See [`DeregisterGameServer`](crate::client::fluent_builders::DeregisterGameServer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeregisterGameServerInput`](crate::input::DeregisterGameServerInput) with field(s):
+    ///   - [`game_server_group_name(Option<String>)`](crate::input::DeregisterGameServerInput::game_server_group_name): <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
+    ///   - [`game_server_id(Option<String>)`](crate::input::DeregisterGameServerInput::game_server_id): <p>A custom string that uniquely identifies the game server to deregister.</p>
+    /// - On success, responds with [`DeregisterGameServerOutput`](crate::output::DeregisterGameServerOutput)
+
+    /// - On failure, responds with [`SdkError<DeregisterGameServerError>`](crate::error::DeregisterGameServerError)
     pub fn deregister_game_server(&self) -> fluent_builders::DeregisterGameServer<C, M, R> {
         fluent_builders::DeregisterGameServer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAlias` operation.
+    /// Constructs a fluent builder for the [`DescribeAlias`](crate::client::fluent_builders::DescribeAlias) operation.
     ///
-    /// See [`DescribeAlias`](crate::client::fluent_builders::DescribeAlias) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeAliasInput`](crate::input::DescribeAliasInput) with field(s):
+    ///   - [`alias_id(Option<String>)`](crate::input::DescribeAliasInput::alias_id): <p>The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or ARN value. </p>
+    /// - On success, responds with [`DescribeAliasOutput`](crate::output::DescribeAliasOutput) with field(s):
+    ///   - [`alias(Option<Alias>)`](crate::output::DescribeAliasOutput::alias): <p>The requested alias resource.</p>
+    /// - On failure, responds with [`SdkError<DescribeAliasError>`](crate::error::DescribeAliasError)
     pub fn describe_alias(&self) -> fluent_builders::DescribeAlias<C, M, R> {
         fluent_builders::DescribeAlias::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeBuild` operation.
+    /// Constructs a fluent builder for the [`DescribeBuild`](crate::client::fluent_builders::DescribeBuild) operation.
     ///
-    /// See [`DescribeBuild`](crate::client::fluent_builders::DescribeBuild) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeBuildInput`](crate::input::DescribeBuildInput) with field(s):
+    ///   - [`build_id(Option<String>)`](crate::input::DescribeBuildInput::build_id): <p>A unique identifier for the build to retrieve properties for. You can use either the build ID or ARN value. </p>
+    /// - On success, responds with [`DescribeBuildOutput`](crate::output::DescribeBuildOutput) with field(s):
+    ///   - [`build_value(Option<Build>)`](crate::output::DescribeBuildOutput::build_value): <p>Set of properties describing the requested build.</p>
+    /// - On failure, responds with [`SdkError<DescribeBuildError>`](crate::error::DescribeBuildError)
     pub fn describe_build(&self) -> fluent_builders::DescribeBuild<C, M, R> {
         fluent_builders::DescribeBuild::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEC2InstanceLimits` operation.
+    /// Constructs a fluent builder for the [`DescribeEC2InstanceLimits`](crate::client::fluent_builders::DescribeEC2InstanceLimits) operation.
     ///
-    /// See [`DescribeEC2InstanceLimits`](crate::client::fluent_builders::DescribeEC2InstanceLimits) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeEc2InstanceLimitsInput`](crate::input::DescribeEc2InstanceLimitsInput) with field(s):
+    ///   - [`ec2_instance_type(Option<Ec2InstanceType>)`](crate::input::DescribeEc2InstanceLimitsInput::ec2_instance_type): <p>Name of an EC2 instance type that is supported in GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Do not specify a value for this parameter to retrieve limits for all instance types.</p>
+    ///   - [`location(Option<String>)`](crate::input::DescribeEc2InstanceLimitsInput::location): <p>The name of a remote location to request instance limits for, in the form of an AWS Region code such as <code>us-west-2</code>.</p>
+    /// - On success, responds with [`DescribeEc2InstanceLimitsOutput`](crate::output::DescribeEc2InstanceLimitsOutput) with field(s):
+    ///   - [`ec2_instance_limits(Option<Vec<Ec2InstanceLimit>>)`](crate::output::DescribeEc2InstanceLimitsOutput::ec2_instance_limits): <p>The maximum number of instances for the specified instance type.</p>
+    /// - On failure, responds with [`SdkError<DescribeEC2InstanceLimitsError>`](crate::error::DescribeEC2InstanceLimitsError)
     pub fn describe_ec2_instance_limits(
         &self,
     ) -> fluent_builders::DescribeEC2InstanceLimits<C, M, R> {
         fluent_builders::DescribeEC2InstanceLimits::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeFleetAttributes` operation.
-    ///
-    /// See [`DescribeFleetAttributes`](crate::client::fluent_builders::DescribeFleetAttributes) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeFleetAttributes`](crate::client::fluent_builders::DescribeFleetAttributes) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeFleetAttributes::into_paginator).
+    ///
+    /// - Takes [`DescribeFleetAttributesInput`](crate::input::DescribeFleetAttributesInput) with field(s):
+    ///   - [`fleet_ids(Option<Vec<String>>)`](crate::input::DescribeFleetAttributesInput::fleet_ids): <p>A list of unique fleet identifiers to retrieve attributes for. You can use either the fleet ID or ARN value. To retrieve attributes for all current fleets, do not include this parameter. </p>
+    ///   - [`limit(Option<i32>)`](crate::input::DescribeFleetAttributesInput::limit): <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeFleetAttributesInput::next_token): <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
+    /// - On success, responds with [`DescribeFleetAttributesOutput`](crate::output::DescribeFleetAttributesOutput) with field(s):
+    ///   - [`fleet_attributes(Option<Vec<FleetAttributes>>)`](crate::output::DescribeFleetAttributesOutput::fleet_attributes): <p>A collection of objects containing attribute metadata for each requested fleet ID. Attribute objects are returned only for fleets that currently exist.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeFleetAttributesOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    /// - On failure, responds with [`SdkError<DescribeFleetAttributesError>`](crate::error::DescribeFleetAttributesError)
     pub fn describe_fleet_attributes(&self) -> fluent_builders::DescribeFleetAttributes<C, M, R> {
         fluent_builders::DescribeFleetAttributes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeFleetCapacity` operation.
-    ///
-    /// See [`DescribeFleetCapacity`](crate::client::fluent_builders::DescribeFleetCapacity) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeFleetCapacity`](crate::client::fluent_builders::DescribeFleetCapacity) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeFleetCapacity::into_paginator).
+    ///
+    /// - Takes [`DescribeFleetCapacityInput`](crate::input::DescribeFleetCapacityInput) with field(s):
+    ///   - [`fleet_ids(Option<Vec<String>>)`](crate::input::DescribeFleetCapacityInput::fleet_ids): <p>A unique identifier for the fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN value. Leave this parameter empty to retrieve capacity information for all fleets.</p>
+    ///   - [`limit(Option<i32>)`](crate::input::DescribeFleetCapacityInput::limit): <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeFleetCapacityInput::next_token): <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
+    /// - On success, responds with [`DescribeFleetCapacityOutput`](crate::output::DescribeFleetCapacityOutput) with field(s):
+    ///   - [`fleet_capacity(Option<Vec<FleetCapacity>>)`](crate::output::DescribeFleetCapacityOutput::fleet_capacity): <p>A collection of objects that contains capacity information for each requested fleet ID. Capacity objects are returned only for fleets that currently exist.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeFleetCapacityOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    /// - On failure, responds with [`SdkError<DescribeFleetCapacityError>`](crate::error::DescribeFleetCapacityError)
     pub fn describe_fleet_capacity(&self) -> fluent_builders::DescribeFleetCapacity<C, M, R> {
         fluent_builders::DescribeFleetCapacity::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeFleetEvents` operation.
-    ///
-    /// See [`DescribeFleetEvents`](crate::client::fluent_builders::DescribeFleetEvents) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeFleetEvents`](crate::client::fluent_builders::DescribeFleetEvents) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeFleetEvents::into_paginator).
+    ///
+    /// - Takes [`DescribeFleetEventsInput`](crate::input::DescribeFleetEventsInput) with field(s):
+    ///   - [`fleet_id(Option<String>)`](crate::input::DescribeFleetEventsInput::fleet_id): <p>A unique identifier for the fleet to get event logs for. You can use either the fleet ID or ARN value.</p>
+    ///   - [`start_time(Option<DateTime>)`](crate::input::DescribeFleetEventsInput::start_time): <p>The earliest date to retrieve event logs for. If no start time is specified, this call returns entries starting from when the fleet was created to the specified end time. Format is a number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+    ///   - [`end_time(Option<DateTime>)`](crate::input::DescribeFleetEventsInput::end_time): <p>The most recent date to retrieve event logs for. If no end time is specified, this call returns entries from the specified start time up to the present. Format is a number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
+    ///   - [`limit(Option<i32>)`](crate::input::DescribeFleetEventsInput::limit): <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeFleetEventsInput::next_token): <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
+    /// - On success, responds with [`DescribeFleetEventsOutput`](crate::output::DescribeFleetEventsOutput) with field(s):
+    ///   - [`events(Option<Vec<Event>>)`](crate::output::DescribeFleetEventsOutput::events): <p>A collection of objects containing event log entries for the specified fleet.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeFleetEventsOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    /// - On failure, responds with [`SdkError<DescribeFleetEventsError>`](crate::error::DescribeFleetEventsError)
     pub fn describe_fleet_events(&self) -> fluent_builders::DescribeFleetEvents<C, M, R> {
         fluent_builders::DescribeFleetEvents::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeFleetLocationAttributes` operation.
-    ///
-    /// See [`DescribeFleetLocationAttributes`](crate::client::fluent_builders::DescribeFleetLocationAttributes) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeFleetLocationAttributes`](crate::client::fluent_builders::DescribeFleetLocationAttributes) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeFleetLocationAttributes::into_paginator).
+    ///
+    /// - Takes [`DescribeFleetLocationAttributesInput`](crate::input::DescribeFleetLocationAttributesInput) with field(s):
+    ///   - [`fleet_id(Option<String>)`](crate::input::DescribeFleetLocationAttributesInput::fleet_id): <p>A unique identifier for the fleet to retrieve remote locations for. You can use either the fleet ID or ARN value.</p>
+    ///   - [`locations(Option<Vec<String>>)`](crate::input::DescribeFleetLocationAttributesInput::locations): <p>A list of fleet locations to retrieve information for. Specify locations in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+    ///   - [`limit(Option<i32>)`](crate::input::DescribeFleetLocationAttributesInput::limit): <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This limit is not currently enforced. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeFleetLocationAttributesInput::next_token): <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
+    /// - On success, responds with [`DescribeFleetLocationAttributesOutput`](crate::output::DescribeFleetLocationAttributesOutput) with field(s):
+    ///   - [`fleet_id(Option<String>)`](crate::output::DescribeFleetLocationAttributesOutput::fleet_id): <p>A unique identifier for the fleet that location attributes were requested for.</p>
+    ///   - [`fleet_arn(Option<String>)`](crate::output::DescribeFleetLocationAttributesOutput::fleet_arn): <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:   <region>    ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912   </region></code>. </p>
+    ///   - [`location_attributes(Option<Vec<LocationAttributes>>)`](crate::output::DescribeFleetLocationAttributesOutput::location_attributes): <p> Location-specific information on the requested fleet's remote locations. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeFleetLocationAttributesOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    /// - On failure, responds with [`SdkError<DescribeFleetLocationAttributesError>`](crate::error::DescribeFleetLocationAttributesError)
     pub fn describe_fleet_location_attributes(
         &self,
     ) -> fluent_builders::DescribeFleetLocationAttributes<C, M, R> {
         fluent_builders::DescribeFleetLocationAttributes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeFleetLocationCapacity` operation.
+    /// Constructs a fluent builder for the [`DescribeFleetLocationCapacity`](crate::client::fluent_builders::DescribeFleetLocationCapacity) operation.
     ///
-    /// See [`DescribeFleetLocationCapacity`](crate::client::fluent_builders::DescribeFleetLocationCapacity) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeFleetLocationCapacityInput`](crate::input::DescribeFleetLocationCapacityInput) with field(s):
+    ///   - [`fleet_id(Option<String>)`](crate::input::DescribeFleetLocationCapacityInput::fleet_id): <p>A unique identifier for the fleet to request location capacity for. You can use either the fleet ID or ARN value.</p>
+    ///   - [`location(Option<String>)`](crate::input::DescribeFleetLocationCapacityInput::location): <p>The fleet location to retrieve capacity information for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+    /// - On success, responds with [`DescribeFleetLocationCapacityOutput`](crate::output::DescribeFleetLocationCapacityOutput) with field(s):
+    ///   - [`fleet_capacity(Option<FleetCapacity>)`](crate::output::DescribeFleetLocationCapacityOutput::fleet_capacity): <p>Resource capacity information for the requested fleet location. Capacity objects are returned only for fleets and locations that currently exist.</p>
+    /// - On failure, responds with [`SdkError<DescribeFleetLocationCapacityError>`](crate::error::DescribeFleetLocationCapacityError)
     pub fn describe_fleet_location_capacity(
         &self,
     ) -> fluent_builders::DescribeFleetLocationCapacity<C, M, R> {
         fluent_builders::DescribeFleetLocationCapacity::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeFleetLocationUtilization` operation.
+    /// Constructs a fluent builder for the [`DescribeFleetLocationUtilization`](crate::client::fluent_builders::DescribeFleetLocationUtilization) operation.
     ///
-    /// See [`DescribeFleetLocationUtilization`](crate::client::fluent_builders::DescribeFleetLocationUtilization) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeFleetLocationUtilizationInput`](crate::input::DescribeFleetLocationUtilizationInput) with field(s):
+    ///   - [`fleet_id(Option<String>)`](crate::input::DescribeFleetLocationUtilizationInput::fleet_id): <p>A unique identifier for the fleet to request location utilization for. You can use either the fleet ID or ARN value.</p>
+    ///   - [`location(Option<String>)`](crate::input::DescribeFleetLocationUtilizationInput::location): <p>The fleet location to retrieve utilization information for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+    /// - On success, responds with [`DescribeFleetLocationUtilizationOutput`](crate::output::DescribeFleetLocationUtilizationOutput) with field(s):
+    ///   - [`fleet_utilization(Option<FleetUtilization>)`](crate::output::DescribeFleetLocationUtilizationOutput::fleet_utilization): <p>Utilization information for the requested fleet location. Utilization objects are returned only for fleets and locations that currently exist.</p>
+    /// - On failure, responds with [`SdkError<DescribeFleetLocationUtilizationError>`](crate::error::DescribeFleetLocationUtilizationError)
     pub fn describe_fleet_location_utilization(
         &self,
     ) -> fluent_builders::DescribeFleetLocationUtilization<C, M, R> {
         fluent_builders::DescribeFleetLocationUtilization::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeFleetPortSettings` operation.
+    /// Constructs a fluent builder for the [`DescribeFleetPortSettings`](crate::client::fluent_builders::DescribeFleetPortSettings) operation.
     ///
-    /// See [`DescribeFleetPortSettings`](crate::client::fluent_builders::DescribeFleetPortSettings) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeFleetPortSettingsInput`](crate::input::DescribeFleetPortSettingsInput) with field(s):
+    ///   - [`fleet_id(Option<String>)`](crate::input::DescribeFleetPortSettingsInput::fleet_id): <p>A unique identifier for the fleet to retrieve port settings for. You can use either the fleet ID or ARN value.</p>
+    ///   - [`location(Option<String>)`](crate::input::DescribeFleetPortSettingsInput::location): <p>A remote location to check for status of port setting updates. Use the AWS Region code format, such as <code>us-west-2</code>.</p>
+    /// - On success, responds with [`DescribeFleetPortSettingsOutput`](crate::output::DescribeFleetPortSettingsOutput) with field(s):
+    ///   - [`fleet_id(Option<String>)`](crate::output::DescribeFleetPortSettingsOutput::fleet_id): <p>A unique identifier for the fleet that was requested. </p>
+    ///   - [`fleet_arn(Option<String>)`](crate::output::DescribeFleetPortSettingsOutput::fleet_arn): <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:   <region>    ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912   </region></code>.</p>
+    ///   - [`inbound_permissions(Option<Vec<IpPermission>>)`](crate::output::DescribeFleetPortSettingsOutput::inbound_permissions): <p>The port settings for the requested fleet ID.</p>
+    ///   - [`update_status(Option<LocationUpdateStatus>)`](crate::output::DescribeFleetPortSettingsOutput::update_status): <p>The current status of updates to the fleet's port settings in the requested fleet location. A status of <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed for the location.</p>
+    ///   - [`location(Option<String>)`](crate::output::DescribeFleetPortSettingsOutput::location): <p>The requested fleet location, expressed as an AWS Region code, such as <code>us-west-2</code>. </p>
+    /// - On failure, responds with [`SdkError<DescribeFleetPortSettingsError>`](crate::error::DescribeFleetPortSettingsError)
     pub fn describe_fleet_port_settings(
         &self,
     ) -> fluent_builders::DescribeFleetPortSettings<C, M, R> {
         fluent_builders::DescribeFleetPortSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeFleetUtilization` operation.
-    ///
-    /// See [`DescribeFleetUtilization`](crate::client::fluent_builders::DescribeFleetUtilization) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeFleetUtilization`](crate::client::fluent_builders::DescribeFleetUtilization) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeFleetUtilization::into_paginator).
+    ///
+    /// - Takes [`DescribeFleetUtilizationInput`](crate::input::DescribeFleetUtilizationInput) with field(s):
+    ///   - [`fleet_ids(Option<Vec<String>>)`](crate::input::DescribeFleetUtilizationInput::fleet_ids): <p>A unique identifier for the fleet(s) to retrieve utilization data for. You can use either the fleet ID or ARN value. To retrieve attributes for all current fleets, do not include this parameter. </p>
+    ///   - [`limit(Option<i32>)`](crate::input::DescribeFleetUtilizationInput::limit): <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeFleetUtilizationInput::next_token): <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. This parameter is ignored when the request specifies one or a list of fleet IDs.</p>
+    /// - On success, responds with [`DescribeFleetUtilizationOutput`](crate::output::DescribeFleetUtilizationOutput) with field(s):
+    ///   - [`fleet_utilization(Option<Vec<FleetUtilization>>)`](crate::output::DescribeFleetUtilizationOutput::fleet_utilization): <p>A collection of objects containing utilization information for each requested fleet ID. Utilization objects are returned only for fleets that currently exist.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeFleetUtilizationOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    /// - On failure, responds with [`SdkError<DescribeFleetUtilizationError>`](crate::error::DescribeFleetUtilizationError)
     pub fn describe_fleet_utilization(&self) -> fluent_builders::DescribeFleetUtilization<C, M, R> {
         fluent_builders::DescribeFleetUtilization::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeGameServer` operation.
+    /// Constructs a fluent builder for the [`DescribeGameServer`](crate::client::fluent_builders::DescribeGameServer) operation.
     ///
-    /// See [`DescribeGameServer`](crate::client::fluent_builders::DescribeGameServer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeGameServerInput`](crate::input::DescribeGameServerInput) with field(s):
+    ///   - [`game_server_group_name(Option<String>)`](crate::input::DescribeGameServerInput::game_server_group_name): <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
+    ///   - [`game_server_id(Option<String>)`](crate::input::DescribeGameServerInput::game_server_id): <p>A custom string that uniquely identifies the game server information to be retrieved.</p>
+    /// - On success, responds with [`DescribeGameServerOutput`](crate::output::DescribeGameServerOutput) with field(s):
+    ///   - [`game_server(Option<GameServer>)`](crate::output::DescribeGameServerOutput::game_server): <p>Object that describes the requested game server.</p>
+    /// - On failure, responds with [`SdkError<DescribeGameServerError>`](crate::error::DescribeGameServerError)
     pub fn describe_game_server(&self) -> fluent_builders::DescribeGameServer<C, M, R> {
         fluent_builders::DescribeGameServer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeGameServerGroup` operation.
+    /// Constructs a fluent builder for the [`DescribeGameServerGroup`](crate::client::fluent_builders::DescribeGameServerGroup) operation.
     ///
-    /// See [`DescribeGameServerGroup`](crate::client::fluent_builders::DescribeGameServerGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeGameServerGroupInput`](crate::input::DescribeGameServerGroupInput) with field(s):
+    ///   - [`game_server_group_name(Option<String>)`](crate::input::DescribeGameServerGroupInput::game_server_group_name): <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
+    /// - On success, responds with [`DescribeGameServerGroupOutput`](crate::output::DescribeGameServerGroupOutput) with field(s):
+    ///   - [`game_server_group(Option<GameServerGroup>)`](crate::output::DescribeGameServerGroupOutput::game_server_group): <p>An object with the property settings for the requested game server group resource. </p>
+    /// - On failure, responds with [`SdkError<DescribeGameServerGroupError>`](crate::error::DescribeGameServerGroupError)
     pub fn describe_game_server_group(&self) -> fluent_builders::DescribeGameServerGroup<C, M, R> {
         fluent_builders::DescribeGameServerGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeGameServerInstances` operation.
-    ///
-    /// See [`DescribeGameServerInstances`](crate::client::fluent_builders::DescribeGameServerInstances) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeGameServerInstances`](crate::client::fluent_builders::DescribeGameServerInstances) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeGameServerInstances::into_paginator).
+    ///
+    /// - Takes [`DescribeGameServerInstancesInput`](crate::input::DescribeGameServerInstancesInput) with field(s):
+    ///   - [`game_server_group_name(Option<String>)`](crate::input::DescribeGameServerInstancesInput::game_server_group_name): <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
+    ///   - [`instance_ids(Option<Vec<String>>)`](crate::input::DescribeGameServerInstancesInput::instance_ids): <p>The EC2 instance IDs that you want to retrieve status on. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>. To retrieve all instances in the game server group, leave this parameter empty. </p>
+    ///   - [`limit(Option<i32>)`](crate::input::DescribeGameServerInstancesInput::limit): <p> The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeGameServerInstancesInput::next_token): <p> A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
+    /// - On success, responds with [`DescribeGameServerInstancesOutput`](crate::output::DescribeGameServerInstancesOutput) with field(s):
+    ///   - [`game_server_instances(Option<Vec<GameServerInstance>>)`](crate::output::DescribeGameServerInstancesOutput::game_server_instances): <p> The collection of requested game server instances. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeGameServerInstancesOutput::next_token): <p> A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list. </p>
+    /// - On failure, responds with [`SdkError<DescribeGameServerInstancesError>`](crate::error::DescribeGameServerInstancesError)
     pub fn describe_game_server_instances(
         &self,
     ) -> fluent_builders::DescribeGameServerInstances<C, M, R> {
         fluent_builders::DescribeGameServerInstances::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeGameSessionDetails` operation.
-    ///
-    /// See [`DescribeGameSessionDetails`](crate::client::fluent_builders::DescribeGameSessionDetails) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeGameSessionDetails`](crate::client::fluent_builders::DescribeGameSessionDetails) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeGameSessionDetails::into_paginator).
+    ///
+    /// - Takes [`DescribeGameSessionDetailsInput`](crate::input::DescribeGameSessionDetailsInput) with field(s):
+    ///   - [`fleet_id(Option<String>)`](crate::input::DescribeGameSessionDetailsInput::fleet_id): <p>A unique identifier for the fleet to retrieve all game sessions active on the fleet. You can use either the fleet ID or ARN value.</p>
+    ///   - [`game_session_id(Option<String>)`](crate::input::DescribeGameSessionDetailsInput::game_session_id): <p>A unique identifier for the game session to retrieve. </p>
+    ///   - [`alias_id(Option<String>)`](crate::input::DescribeGameSessionDetailsInput::alias_id): <p>A unique identifier for the alias associated with the fleet to retrieve all game sessions for. You can use either the alias ID or ARN value.</p>
+    ///   - [`location(Option<String>)`](crate::input::DescribeGameSessionDetailsInput::location): <p>A fleet location to get game sessions for. You can specify a fleet's home Region or a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
+    ///   - [`status_filter(Option<String>)`](crate::input::DescribeGameSessionDetailsInput::status_filter): <p>Game session status to filter results on. Possible game session statuses include <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code> and <code>TERMINATING</code> (the last two are transitory). </p>
+    ///   - [`limit(Option<i32>)`](crate::input::DescribeGameSessionDetailsInput::limit): <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeGameSessionDetailsInput::next_token): <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
+    /// - On success, responds with [`DescribeGameSessionDetailsOutput`](crate::output::DescribeGameSessionDetailsOutput) with field(s):
+    ///   - [`game_session_details(Option<Vec<GameSessionDetail>>)`](crate::output::DescribeGameSessionDetailsOutput::game_session_details): <p>A collection of properties for each game session that matches the request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeGameSessionDetailsOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    /// - On failure, responds with [`SdkError<DescribeGameSessionDetailsError>`](crate::error::DescribeGameSessionDetailsError)
     pub fn describe_game_session_details(
         &self,
     ) -> fluent_builders::DescribeGameSessionDetails<C, M, R> {
         fluent_builders::DescribeGameSessionDetails::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeGameSessionPlacement` operation.
+    /// Constructs a fluent builder for the [`DescribeGameSessionPlacement`](crate::client::fluent_builders::DescribeGameSessionPlacement) operation.
     ///
-    /// See [`DescribeGameSessionPlacement`](crate::client::fluent_builders::DescribeGameSessionPlacement) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeGameSessionPlacementInput`](crate::input::DescribeGameSessionPlacementInput) with field(s):
+    ///   - [`placement_id(Option<String>)`](crate::input::DescribeGameSessionPlacementInput::placement_id): <p>A unique identifier for a game session placement to retrieve.</p>
+    /// - On success, responds with [`DescribeGameSessionPlacementOutput`](crate::output::DescribeGameSessionPlacementOutput) with field(s):
+    ///   - [`game_session_placement(Option<GameSessionPlacement>)`](crate::output::DescribeGameSessionPlacementOutput::game_session_placement): <p>Object that describes the requested game session placement.</p>
+    /// - On failure, responds with [`SdkError<DescribeGameSessionPlacementError>`](crate::error::DescribeGameSessionPlacementError)
     pub fn describe_game_session_placement(
         &self,
     ) -> fluent_builders::DescribeGameSessionPlacement<C, M, R> {
         fluent_builders::DescribeGameSessionPlacement::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeGameSessionQueues` operation.
-    ///
-    /// See [`DescribeGameSessionQueues`](crate::client::fluent_builders::DescribeGameSessionQueues) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeGameSessionQueues`](crate::client::fluent_builders::DescribeGameSessionQueues) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeGameSessionQueues::into_paginator).
+    ///
+    /// - Takes [`DescribeGameSessionQueuesInput`](crate::input::DescribeGameSessionQueuesInput) with field(s):
+    ///   - [`names(Option<Vec<String>>)`](crate::input::DescribeGameSessionQueuesInput::names): <p>A list of queue names to retrieve information for. You can use either the queue ID or ARN value. To request settings for all queues, leave this parameter empty. </p>
+    ///   - [`limit(Option<i32>)`](crate::input::DescribeGameSessionQueuesInput::limit): <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. You can request up to 50 results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeGameSessionQueuesInput::next_token): <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
+    /// - On success, responds with [`DescribeGameSessionQueuesOutput`](crate::output::DescribeGameSessionQueuesOutput) with field(s):
+    ///   - [`game_session_queues(Option<Vec<GameSessionQueue>>)`](crate::output::DescribeGameSessionQueuesOutput::game_session_queues): <p>A collection of objects that describe the requested game session queues.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeGameSessionQueuesOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    /// - On failure, responds with [`SdkError<DescribeGameSessionQueuesError>`](crate::error::DescribeGameSessionQueuesError)
     pub fn describe_game_session_queues(
         &self,
     ) -> fluent_builders::DescribeGameSessionQueues<C, M, R> {
         fluent_builders::DescribeGameSessionQueues::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeGameSessions` operation.
-    ///
-    /// See [`DescribeGameSessions`](crate::client::fluent_builders::DescribeGameSessions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeGameSessions`](crate::client::fluent_builders::DescribeGameSessions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeGameSessions::into_paginator).
+    ///
+    /// - Takes [`DescribeGameSessionsInput`](crate::input::DescribeGameSessionsInput) with field(s):
+    ///   - [`fleet_id(Option<String>)`](crate::input::DescribeGameSessionsInput::fleet_id): <p>A unique identifier for the fleet to retrieve game sessions for. You can use either the fleet ID or ARN value. </p>
+    ///   - [`game_session_id(Option<String>)`](crate::input::DescribeGameSessionsInput::game_session_id): <p>A unique identifier for the game session to retrieve. </p>
+    ///   - [`alias_id(Option<String>)`](crate::input::DescribeGameSessionsInput::alias_id): <p>A unique identifier for the alias associated with the fleet to retrieve game sessions for. You can use either the alias ID or ARN value.</p>
+    ///   - [`location(Option<String>)`](crate::input::DescribeGameSessionsInput::location): <p>A fleet location to get game session details for. You can specify a fleet's home Region or a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>
+    ///   - [`status_filter(Option<String>)`](crate::input::DescribeGameSessionsInput::status_filter): <p>Game session status to filter results on. You can filter on the following states: <code>ACTIVE</code>, <code>TERMINATED</code>, <code>ACTIVATING</code>, and <code>TERMINATING</code>. The last two are transitory and used for only very brief periods of time. </p>
+    ///   - [`limit(Option<i32>)`](crate::input::DescribeGameSessionsInput::limit): <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeGameSessionsInput::next_token): <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
+    /// - On success, responds with [`DescribeGameSessionsOutput`](crate::output::DescribeGameSessionsOutput) with field(s):
+    ///   - [`game_sessions(Option<Vec<GameSession>>)`](crate::output::DescribeGameSessionsOutput::game_sessions): <p>A collection of properties for each game session that matches the request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeGameSessionsOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    /// - On failure, responds with [`SdkError<DescribeGameSessionsError>`](crate::error::DescribeGameSessionsError)
     pub fn describe_game_sessions(&self) -> fluent_builders::DescribeGameSessions<C, M, R> {
         fluent_builders::DescribeGameSessions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeInstances` operation.
-    ///
-    /// See [`DescribeInstances`](crate::client::fluent_builders::DescribeInstances) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeInstances`](crate::client::fluent_builders::DescribeInstances) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeInstances::into_paginator).
+    ///
+    /// - Takes [`DescribeInstancesInput`](crate::input::DescribeInstancesInput) with field(s):
+    ///   - [`fleet_id(Option<String>)`](crate::input::DescribeInstancesInput::fleet_id): <p>A unique identifier for the fleet to retrieve instance information for. You can use either the fleet ID or ARN value.</p>
+    ///   - [`instance_id(Option<String>)`](crate::input::DescribeInstancesInput::instance_id): <p>A unique identifier for an instance to retrieve. Specify an instance ID or leave blank to retrieve all instances in the fleet.</p>
+    ///   - [`limit(Option<i32>)`](crate::input::DescribeInstancesInput::limit): <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeInstancesInput::next_token): <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
+    ///   - [`location(Option<String>)`](crate::input::DescribeInstancesInput::location): <p>The name of a location to retrieve instance information for, in the form of an AWS Region code such as <code>us-west-2</code>. </p>
+    /// - On success, responds with [`DescribeInstancesOutput`](crate::output::DescribeInstancesOutput) with field(s):
+    ///   - [`instances(Option<Vec<Instance>>)`](crate::output::DescribeInstancesOutput::instances): <p>A collection of objects containing properties for each instance returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeInstancesOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    /// - On failure, responds with [`SdkError<DescribeInstancesError>`](crate::error::DescribeInstancesError)
     pub fn describe_instances(&self) -> fluent_builders::DescribeInstances<C, M, R> {
         fluent_builders::DescribeInstances::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeMatchmaking` operation.
+    /// Constructs a fluent builder for the [`DescribeMatchmaking`](crate::client::fluent_builders::DescribeMatchmaking) operation.
     ///
-    /// See [`DescribeMatchmaking`](crate::client::fluent_builders::DescribeMatchmaking) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeMatchmakingInput`](crate::input::DescribeMatchmakingInput) with field(s):
+    ///   - [`ticket_ids(Option<Vec<String>>)`](crate::input::DescribeMatchmakingInput::ticket_ids): <p>A unique identifier for a matchmaking ticket. You can include up to 10 ID values. </p>
+    /// - On success, responds with [`DescribeMatchmakingOutput`](crate::output::DescribeMatchmakingOutput) with field(s):
+    ///   - [`ticket_list(Option<Vec<MatchmakingTicket>>)`](crate::output::DescribeMatchmakingOutput::ticket_list): <p>A collection of existing matchmaking ticket objects matching the request.</p>
+    /// - On failure, responds with [`SdkError<DescribeMatchmakingError>`](crate::error::DescribeMatchmakingError)
     pub fn describe_matchmaking(&self) -> fluent_builders::DescribeMatchmaking<C, M, R> {
         fluent_builders::DescribeMatchmaking::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeMatchmakingConfigurations` operation.
-    ///
-    /// See [`DescribeMatchmakingConfigurations`](crate::client::fluent_builders::DescribeMatchmakingConfigurations) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeMatchmakingConfigurations`](crate::client::fluent_builders::DescribeMatchmakingConfigurations) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeMatchmakingConfigurations::into_paginator).
+    ///
+    /// - Takes [`DescribeMatchmakingConfigurationsInput`](crate::input::DescribeMatchmakingConfigurationsInput) with field(s):
+    ///   - [`names(Option<Vec<String>>)`](crate::input::DescribeMatchmakingConfigurationsInput::names): <p>A unique identifier for the matchmaking configuration(s) to retrieve. You can use either the configuration name or ARN value. To request all existing configurations, leave this parameter empty.</p>
+    ///   - [`rule_set_name(Option<String>)`](crate::input::DescribeMatchmakingConfigurationsInput::rule_set_name): <p>A unique identifier for the matchmaking rule set. You can use either the rule set name or ARN value. Use this parameter to retrieve all matchmaking configurations that use this rule set.</p>
+    ///   - [`limit(Option<i32>)`](crate::input::DescribeMatchmakingConfigurationsInput::limit): <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. This parameter is limited to 10.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeMatchmakingConfigurationsInput::next_token): <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
+    /// - On success, responds with [`DescribeMatchmakingConfigurationsOutput`](crate::output::DescribeMatchmakingConfigurationsOutput) with field(s):
+    ///   - [`configurations(Option<Vec<MatchmakingConfiguration>>)`](crate::output::DescribeMatchmakingConfigurationsOutput::configurations): <p>A collection of requested matchmaking configurations.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeMatchmakingConfigurationsOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    /// - On failure, responds with [`SdkError<DescribeMatchmakingConfigurationsError>`](crate::error::DescribeMatchmakingConfigurationsError)
     pub fn describe_matchmaking_configurations(
         &self,
     ) -> fluent_builders::DescribeMatchmakingConfigurations<C, M, R> {
         fluent_builders::DescribeMatchmakingConfigurations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeMatchmakingRuleSets` operation.
-    ///
-    /// See [`DescribeMatchmakingRuleSets`](crate::client::fluent_builders::DescribeMatchmakingRuleSets) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeMatchmakingRuleSets`](crate::client::fluent_builders::DescribeMatchmakingRuleSets) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeMatchmakingRuleSets::into_paginator).
+    ///
+    /// - Takes [`DescribeMatchmakingRuleSetsInput`](crate::input::DescribeMatchmakingRuleSetsInput) with field(s):
+    ///   - [`names(Option<Vec<String>>)`](crate::input::DescribeMatchmakingRuleSetsInput::names): <p>A list of one or more matchmaking rule set names to retrieve details for. (Note: The rule set name is different from the optional "name" field in the rule set body.) You can use either the rule set name or ARN value. </p>
+    ///   - [`limit(Option<i32>)`](crate::input::DescribeMatchmakingRuleSetsInput::limit): <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeMatchmakingRuleSetsInput::next_token): <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
+    /// - On success, responds with [`DescribeMatchmakingRuleSetsOutput`](crate::output::DescribeMatchmakingRuleSetsOutput) with field(s):
+    ///   - [`rule_sets(Option<Vec<MatchmakingRuleSet>>)`](crate::output::DescribeMatchmakingRuleSetsOutput::rule_sets): <p>A collection of requested matchmaking rule set objects. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeMatchmakingRuleSetsOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    /// - On failure, responds with [`SdkError<DescribeMatchmakingRuleSetsError>`](crate::error::DescribeMatchmakingRuleSetsError)
     pub fn describe_matchmaking_rule_sets(
         &self,
     ) -> fluent_builders::DescribeMatchmakingRuleSets<C, M, R> {
         fluent_builders::DescribeMatchmakingRuleSets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribePlayerSessions` operation.
-    ///
-    /// See [`DescribePlayerSessions`](crate::client::fluent_builders::DescribePlayerSessions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribePlayerSessions`](crate::client::fluent_builders::DescribePlayerSessions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribePlayerSessions::into_paginator).
+    ///
+    /// - Takes [`DescribePlayerSessionsInput`](crate::input::DescribePlayerSessionsInput) with field(s):
+    ///   - [`game_session_id(Option<String>)`](crate::input::DescribePlayerSessionsInput::game_session_id): <p>A unique identifier for the game session to retrieve player sessions for.</p>
+    ///   - [`player_id(Option<String>)`](crate::input::DescribePlayerSessionsInput::player_id): <p>A unique identifier for a player to retrieve player sessions for.</p>
+    ///   - [`player_session_id(Option<String>)`](crate::input::DescribePlayerSessionsInput::player_session_id): <p>A unique identifier for a player session to retrieve.</p>
+    ///   - [`player_session_status_filter(Option<String>)`](crate::input::DescribePlayerSessionsInput::player_session_status_filter): <p>Player session status to filter results on.</p>  <p>Possible player session statuses include the following:</p>  <ul>   <li> <p> <b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated. </p> </li>   <li> <p> <b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p> </li>   <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li>   <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li>  </ul>
+    ///   - [`limit(Option<i32>)`](crate::input::DescribePlayerSessionsInput::limit): <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. If a player session ID is specified, this parameter is ignored.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribePlayerSessionsInput::next_token): <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. If a player session ID is specified, this parameter is ignored.</p>
+    /// - On success, responds with [`DescribePlayerSessionsOutput`](crate::output::DescribePlayerSessionsOutput) with field(s):
+    ///   - [`player_sessions(Option<Vec<PlayerSession>>)`](crate::output::DescribePlayerSessionsOutput::player_sessions): <p>A collection of objects containing properties for each player session that matches the request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribePlayerSessionsOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    /// - On failure, responds with [`SdkError<DescribePlayerSessionsError>`](crate::error::DescribePlayerSessionsError)
     pub fn describe_player_sessions(&self) -> fluent_builders::DescribePlayerSessions<C, M, R> {
         fluent_builders::DescribePlayerSessions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeRuntimeConfiguration` operation.
+    /// Constructs a fluent builder for the [`DescribeRuntimeConfiguration`](crate::client::fluent_builders::DescribeRuntimeConfiguration) operation.
     ///
-    /// See [`DescribeRuntimeConfiguration`](crate::client::fluent_builders::DescribeRuntimeConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeRuntimeConfigurationInput`](crate::input::DescribeRuntimeConfigurationInput) with field(s):
+    ///   - [`fleet_id(Option<String>)`](crate::input::DescribeRuntimeConfigurationInput::fleet_id): <p>A unique identifier for the fleet to get the runtime configuration for. You can use either the fleet ID or ARN value.</p>
+    /// - On success, responds with [`DescribeRuntimeConfigurationOutput`](crate::output::DescribeRuntimeConfigurationOutput) with field(s):
+    ///   - [`runtime_configuration(Option<RuntimeConfiguration>)`](crate::output::DescribeRuntimeConfigurationOutput::runtime_configuration): <p>Instructions that describe how server processes should be launched and maintained on each instance in the fleet.</p>
+    /// - On failure, responds with [`SdkError<DescribeRuntimeConfigurationError>`](crate::error::DescribeRuntimeConfigurationError)
     pub fn describe_runtime_configuration(
         &self,
     ) -> fluent_builders::DescribeRuntimeConfiguration<C, M, R> {
         fluent_builders::DescribeRuntimeConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeScalingPolicies` operation.
-    ///
-    /// See [`DescribeScalingPolicies`](crate::client::fluent_builders::DescribeScalingPolicies) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeScalingPolicies`](crate::client::fluent_builders::DescribeScalingPolicies) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeScalingPolicies::into_paginator).
+    ///
+    /// - Takes [`DescribeScalingPoliciesInput`](crate::input::DescribeScalingPoliciesInput) with field(s):
+    ///   - [`fleet_id(Option<String>)`](crate::input::DescribeScalingPoliciesInput::fleet_id): <p>A unique identifier for the fleet to retrieve scaling policies for. You can use either the fleet ID or ARN value.</p>
+    ///   - [`status_filter(Option<ScalingStatusType>)`](crate::input::DescribeScalingPoliciesInput::status_filter): <p>Scaling policy status to filter results on. A scaling policy is only in force when in an <code>ACTIVE</code> status.</p>  <ul>   <li> <p> <b>ACTIVE</b> -- The scaling policy is currently in force.</p> </li>   <li> <p> <b>UPDATEREQUESTED</b> -- A request to update the scaling policy has been received.</p> </li>   <li> <p> <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li>   <li> <p> <b>DELETEREQUESTED</b> -- A request to delete the scaling policy has been received.</p> </li>   <li> <p> <b>DELETING</b> -- The scaling policy is being deleted.</p> </li>   <li> <p> <b>DELETED</b> -- The scaling policy has been deleted.</p> </li>   <li> <p> <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p> </li>  </ul>
+    ///   - [`limit(Option<i32>)`](crate::input::DescribeScalingPoliciesInput::limit): <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeScalingPoliciesInput::next_token): <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
+    ///   - [`location(Option<String>)`](crate::input::DescribeScalingPoliciesInput::location): <p> CONTENT TODO </p>
+    /// - On success, responds with [`DescribeScalingPoliciesOutput`](crate::output::DescribeScalingPoliciesOutput) with field(s):
+    ///   - [`scaling_policies(Option<Vec<ScalingPolicy>>)`](crate::output::DescribeScalingPoliciesOutput::scaling_policies): <p>A collection of objects containing the scaling policies matching the request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeScalingPoliciesOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    /// - On failure, responds with [`SdkError<DescribeScalingPoliciesError>`](crate::error::DescribeScalingPoliciesError)
     pub fn describe_scaling_policies(&self) -> fluent_builders::DescribeScalingPolicies<C, M, R> {
         fluent_builders::DescribeScalingPolicies::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeScript` operation.
+    /// Constructs a fluent builder for the [`DescribeScript`](crate::client::fluent_builders::DescribeScript) operation.
     ///
-    /// See [`DescribeScript`](crate::client::fluent_builders::DescribeScript) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeScriptInput`](crate::input::DescribeScriptInput) with field(s):
+    ///   - [`script_id(Option<String>)`](crate::input::DescribeScriptInput::script_id): <p>A unique identifier for the Realtime script to retrieve properties for. You can use either the script ID or ARN value.</p>
+    /// - On success, responds with [`DescribeScriptOutput`](crate::output::DescribeScriptOutput) with field(s):
+    ///   - [`script(Option<Script>)`](crate::output::DescribeScriptOutput::script): <p>A set of properties describing the requested script.</p>
+    /// - On failure, responds with [`SdkError<DescribeScriptError>`](crate::error::DescribeScriptError)
     pub fn describe_script(&self) -> fluent_builders::DescribeScript<C, M, R> {
         fluent_builders::DescribeScript::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeVpcPeeringAuthorizations` operation.
+    /// Constructs a fluent builder for the [`DescribeVpcPeeringAuthorizations`](crate::client::fluent_builders::DescribeVpcPeeringAuthorizations) operation.
     ///
-    /// See [`DescribeVpcPeeringAuthorizations`](crate::client::fluent_builders::DescribeVpcPeeringAuthorizations) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeVpcPeeringAuthorizationsInput`](crate::input::DescribeVpcPeeringAuthorizationsInput)
+
+    /// - On success, responds with [`DescribeVpcPeeringAuthorizationsOutput`](crate::output::DescribeVpcPeeringAuthorizationsOutput) with field(s):
+    ///   - [`vpc_peering_authorizations(Option<Vec<VpcPeeringAuthorization>>)`](crate::output::DescribeVpcPeeringAuthorizationsOutput::vpc_peering_authorizations): <p>A collection of objects that describe all valid VPC peering operations for the current AWS account.</p>
+    /// - On failure, responds with [`SdkError<DescribeVpcPeeringAuthorizationsError>`](crate::error::DescribeVpcPeeringAuthorizationsError)
     pub fn describe_vpc_peering_authorizations(
         &self,
     ) -> fluent_builders::DescribeVpcPeeringAuthorizations<C, M, R> {
         fluent_builders::DescribeVpcPeeringAuthorizations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeVpcPeeringConnections` operation.
+    /// Constructs a fluent builder for the [`DescribeVpcPeeringConnections`](crate::client::fluent_builders::DescribeVpcPeeringConnections) operation.
     ///
-    /// See [`DescribeVpcPeeringConnections`](crate::client::fluent_builders::DescribeVpcPeeringConnections) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeVpcPeeringConnectionsInput`](crate::input::DescribeVpcPeeringConnectionsInput) with field(s):
+    ///   - [`fleet_id(Option<String>)`](crate::input::DescribeVpcPeeringConnectionsInput::fleet_id): <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value.</p>
+    /// - On success, responds with [`DescribeVpcPeeringConnectionsOutput`](crate::output::DescribeVpcPeeringConnectionsOutput) with field(s):
+    ///   - [`vpc_peering_connections(Option<Vec<VpcPeeringConnection>>)`](crate::output::DescribeVpcPeeringConnectionsOutput::vpc_peering_connections): <p>A collection of VPC peering connection records that match the request.</p>
+    /// - On failure, responds with [`SdkError<DescribeVpcPeeringConnectionsError>`](crate::error::DescribeVpcPeeringConnectionsError)
     pub fn describe_vpc_peering_connections(
         &self,
     ) -> fluent_builders::DescribeVpcPeeringConnections<C, M, R> {
         fluent_builders::DescribeVpcPeeringConnections::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetGameSessionLogUrl` operation.
+    /// Constructs a fluent builder for the [`GetGameSessionLogUrl`](crate::client::fluent_builders::GetGameSessionLogUrl) operation.
     ///
-    /// See [`GetGameSessionLogUrl`](crate::client::fluent_builders::GetGameSessionLogUrl) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetGameSessionLogUrlInput`](crate::input::GetGameSessionLogUrlInput) with field(s):
+    ///   - [`game_session_id(Option<String>)`](crate::input::GetGameSessionLogUrlInput::game_session_id): <p>A unique identifier for the game session to get logs for. </p>
+    /// - On success, responds with [`GetGameSessionLogUrlOutput`](crate::output::GetGameSessionLogUrlOutput) with field(s):
+    ///   - [`pre_signed_url(Option<String>)`](crate::output::GetGameSessionLogUrlOutput::pre_signed_url): <p>Location of the requested game session logs, available for download. This URL is valid for 15 minutes, after which S3 will reject any download request using this URL. You can request a new URL any time within the 14-day period that the logs are retained.</p>
+    /// - On failure, responds with [`SdkError<GetGameSessionLogUrlError>`](crate::error::GetGameSessionLogUrlError)
     pub fn get_game_session_log_url(&self) -> fluent_builders::GetGameSessionLogUrl<C, M, R> {
         fluent_builders::GetGameSessionLogUrl::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetInstanceAccess` operation.
+    /// Constructs a fluent builder for the [`GetInstanceAccess`](crate::client::fluent_builders::GetInstanceAccess) operation.
     ///
-    /// See [`GetInstanceAccess`](crate::client::fluent_builders::GetInstanceAccess) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetInstanceAccessInput`](crate::input::GetInstanceAccessInput) with field(s):
+    ///   - [`fleet_id(Option<String>)`](crate::input::GetInstanceAccessInput::fleet_id): <p>A unique identifier for the fleet that contains the instance you want access to. You can use either the fleet ID or ARN value. The fleet can be in any of the following statuses: <code>ACTIVATING</code>, <code>ACTIVE</code>, or <code>ERROR</code>. Fleets with an <code>ERROR</code> status may be accessible for a short time before they are deleted.</p>
+    ///   - [`instance_id(Option<String>)`](crate::input::GetInstanceAccessInput::instance_id): <p>A unique identifier for the instance you want to get access to. You can access an instance in any status.</p>
+    /// - On success, responds with [`GetInstanceAccessOutput`](crate::output::GetInstanceAccessOutput) with field(s):
+    ///   - [`instance_access(Option<InstanceAccess>)`](crate::output::GetInstanceAccessOutput::instance_access): <p>The connection information for a fleet instance, including IP address and access credentials.</p>
+    /// - On failure, responds with [`SdkError<GetInstanceAccessError>`](crate::error::GetInstanceAccessError)
     pub fn get_instance_access(&self) -> fluent_builders::GetInstanceAccess<C, M, R> {
         fluent_builders::GetInstanceAccess::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAliases` operation.
-    ///
-    /// See [`ListAliases`](crate::client::fluent_builders::ListAliases) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListAliases`](crate::client::fluent_builders::ListAliases) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAliases::into_paginator).
+    ///
+    /// - Takes [`ListAliasesInput`](crate::input::ListAliasesInput) with field(s):
+    ///   - [`routing_strategy_type(Option<RoutingStrategyType>)`](crate::input::ListAliasesInput::routing_strategy_type): <p>The routing type to filter results on. Use this parameter to retrieve only aliases with a certain routing type. To retrieve all aliases, leave this parameter empty.</p>  <p>Possible routing types include the following:</p>  <ul>   <li> <p> <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.</p> </li>   <li> <p> <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the <code>RoutingStrategy</code> message embedded.</p> </li>  </ul>
+    ///   - [`name(Option<String>)`](crate::input::ListAliasesInput::name): <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
+    ///   - [`limit(Option<i32>)`](crate::input::ListAliasesInput::limit): <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListAliasesInput::next_token): <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
+    /// - On success, responds with [`ListAliasesOutput`](crate::output::ListAliasesOutput) with field(s):
+    ///   - [`aliases(Option<Vec<Alias>>)`](crate::output::ListAliasesOutput::aliases): <p>A collection of alias resources that match the request parameters.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAliasesOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    /// - On failure, responds with [`SdkError<ListAliasesError>`](crate::error::ListAliasesError)
     pub fn list_aliases(&self) -> fluent_builders::ListAliases<C, M, R> {
         fluent_builders::ListAliases::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListBuilds` operation.
-    ///
-    /// See [`ListBuilds`](crate::client::fluent_builders::ListBuilds) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListBuilds`](crate::client::fluent_builders::ListBuilds) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBuilds::into_paginator).
+    ///
+    /// - Takes [`ListBuildsInput`](crate::input::ListBuildsInput) with field(s):
+    ///   - [`status(Option<BuildStatus>)`](crate::input::ListBuildsInput::status): <p>Build status to filter results by. To retrieve all builds, leave this parameter empty.</p>  <p>Possible build statuses include the following:</p>  <ul>   <li> <p> <b>INITIALIZED</b> -- A new build has been defined, but no files have been uploaded. You cannot create fleets for builds that are in this status. When a build is successfully created, the build status is set to this value. </p> </li>   <li> <p> <b>READY</b> -- The game build has been successfully uploaded. You can now create new fleets for this build.</p> </li>   <li> <p> <b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build. </p> </li>  </ul>
+    ///   - [`limit(Option<i32>)`](crate::input::ListBuildsInput::limit): <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListBuildsInput::next_token): <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
+    /// - On success, responds with [`ListBuildsOutput`](crate::output::ListBuildsOutput) with field(s):
+    ///   - [`builds(Option<Vec<Build>>)`](crate::output::ListBuildsOutput::builds): <p>A collection of build resources that match the request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListBuildsOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    /// - On failure, responds with [`SdkError<ListBuildsError>`](crate::error::ListBuildsError)
     pub fn list_builds(&self) -> fluent_builders::ListBuilds<C, M, R> {
         fluent_builders::ListBuilds::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListFleets` operation.
-    ///
-    /// See [`ListFleets`](crate::client::fluent_builders::ListFleets) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListFleets`](crate::client::fluent_builders::ListFleets) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFleets::into_paginator).
+    ///
+    /// - Takes [`ListFleetsInput`](crate::input::ListFleetsInput) with field(s):
+    ///   - [`build_id(Option<String>)`](crate::input::ListFleetsInput::build_id): <p>A unique identifier for the build to request fleets for. Use this parameter to return only fleets using a specified build. Use either the build ID or ARN value.</p>
+    ///   - [`script_id(Option<String>)`](crate::input::ListFleetsInput::script_id): <p>A unique identifier for the Realtime script to request fleets for. Use this parameter to return only fleets using a specified script. Use either the script ID or ARN value.</p>
+    ///   - [`limit(Option<i32>)`](crate::input::ListFleetsInput::limit): <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListFleetsInput::next_token): <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
+    /// - On success, responds with [`ListFleetsOutput`](crate::output::ListFleetsOutput) with field(s):
+    ///   - [`fleet_ids(Option<Vec<String>>)`](crate::output::ListFleetsOutput::fleet_ids): <p>A set of fleet IDs that match the list request. You can retrieve additional information about all returned fleets by passing this result set to a <code>DescribeFleetAttributes</code>, <code>DescribeFleetCapacity</code>, or <code>DescribeFleetUtilization</code> call.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListFleetsOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    /// - On failure, responds with [`SdkError<ListFleetsError>`](crate::error::ListFleetsError)
     pub fn list_fleets(&self) -> fluent_builders::ListFleets<C, M, R> {
         fluent_builders::ListFleets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListGameServerGroups` operation.
-    ///
-    /// See [`ListGameServerGroups`](crate::client::fluent_builders::ListGameServerGroups) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListGameServerGroups`](crate::client::fluent_builders::ListGameServerGroups) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListGameServerGroups::into_paginator).
+    ///
+    /// - Takes [`ListGameServerGroupsInput`](crate::input::ListGameServerGroupsInput) with field(s):
+    ///   - [`limit(Option<i32>)`](crate::input::ListGameServerGroupsInput::limit): <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListGameServerGroupsInput::next_token): <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
+    /// - On success, responds with [`ListGameServerGroupsOutput`](crate::output::ListGameServerGroupsOutput) with field(s):
+    ///   - [`game_server_groups(Option<Vec<GameServerGroup>>)`](crate::output::ListGameServerGroupsOutput::game_server_groups): <p>A collection of game server group objects that match the request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListGameServerGroupsOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    /// - On failure, responds with [`SdkError<ListGameServerGroupsError>`](crate::error::ListGameServerGroupsError)
     pub fn list_game_server_groups(&self) -> fluent_builders::ListGameServerGroups<C, M, R> {
         fluent_builders::ListGameServerGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListGameServers` operation.
-    ///
-    /// See [`ListGameServers`](crate::client::fluent_builders::ListGameServers) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListGameServers`](crate::client::fluent_builders::ListGameServers) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListGameServers::into_paginator).
+    ///
+    /// - Takes [`ListGameServersInput`](crate::input::ListGameServersInput) with field(s):
+    ///   - [`game_server_group_name(Option<String>)`](crate::input::ListGameServersInput::game_server_group_name): <p>An identifier for the game server group to retrieve a list of game servers from. Use either the <code>GameServerGroup</code> name or ARN value.</p>
+    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListGameServersInput::sort_order): <p>Indicates how to sort the returned data based on game server registration timestamp. Use <code>ASCENDING</code> to retrieve oldest game servers first, or use <code>DESCENDING</code> to retrieve newest game servers first. If this parameter is left empty, game servers are returned in no particular order.</p>
+    ///   - [`limit(Option<i32>)`](crate::input::ListGameServersInput::limit): <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListGameServersInput::next_token): <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
+    /// - On success, responds with [`ListGameServersOutput`](crate::output::ListGameServersOutput) with field(s):
+    ///   - [`game_servers(Option<Vec<GameServer>>)`](crate::output::ListGameServersOutput::game_servers): <p>A collection of game server objects that match the request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListGameServersOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    /// - On failure, responds with [`SdkError<ListGameServersError>`](crate::error::ListGameServersError)
     pub fn list_game_servers(&self) -> fluent_builders::ListGameServers<C, M, R> {
         fluent_builders::ListGameServers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListScripts` operation.
-    ///
-    /// See [`ListScripts`](crate::client::fluent_builders::ListScripts) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListScripts`](crate::client::fluent_builders::ListScripts) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListScripts::into_paginator).
+    ///
+    /// - Takes [`ListScriptsInput`](crate::input::ListScriptsInput) with field(s):
+    ///   - [`limit(Option<i32>)`](crate::input::ListScriptsInput::limit): <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListScriptsInput::next_token): <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
+    /// - On success, responds with [`ListScriptsOutput`](crate::output::ListScriptsOutput) with field(s):
+    ///   - [`scripts(Option<Vec<Script>>)`](crate::output::ListScriptsOutput::scripts): <p>A set of properties describing the requested script.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListScriptsOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    /// - On failure, responds with [`SdkError<ListScriptsError>`](crate::error::ListScriptsError)
     pub fn list_scripts(&self) -> fluent_builders::ListScripts<C, M, R> {
         fluent_builders::ListScripts::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and uniquely identifies the GameLift resource that you want to retrieve tags for. GameLift resource ARNs are included in the data object for the resource, which can be retrieved by calling a List or Describe operation for the resource type. </p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p> The collection of tags that have been assigned to the specified resource. </p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutScalingPolicy` operation.
+    /// Constructs a fluent builder for the [`PutScalingPolicy`](crate::client::fluent_builders::PutScalingPolicy) operation.
     ///
-    /// See [`PutScalingPolicy`](crate::client::fluent_builders::PutScalingPolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutScalingPolicyInput`](crate::input::PutScalingPolicyInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::PutScalingPolicyInput::name): <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique. A fleet can have only one scaling policy with the same name.</p>
+    ///   - [`fleet_id(Option<String>)`](crate::input::PutScalingPolicyInput::fleet_id): <p>A unique identifier for the fleet to apply this policy to. You can use either the fleet ID or ARN value. The fleet cannot be in any of the following statuses: ERROR or DELETING.</p>
+    ///   - [`scaling_adjustment(i32)`](crate::input::PutScalingPolicyInput::scaling_adjustment): <p>Amount of adjustment to make, based on the scaling adjustment type.</p>
+    ///   - [`scaling_adjustment_type(Option<ScalingAdjustmentType>)`](crate::input::PutScalingPolicyInput::scaling_adjustment_type): <p>The type of adjustment to make to a fleet's instance count (see <code>FleetCapacity</code>):</p>  <ul>   <li> <p> <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the current instance count. Positive values scale up while negative values scale down.</p> </li>   <li> <p> <b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.</p> </li>   <li> <p> <b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment, read as a percentage. Positive values scale up while negative values scale down; for example, a value of "-10" scales the fleet down by 10%.</p> </li>  </ul>
+    ///   - [`threshold(f64)`](crate::input::PutScalingPolicyInput::threshold): <p>Metric value used to trigger a scaling event.</p>
+    ///   - [`comparison_operator(Option<ComparisonOperatorType>)`](crate::input::PutScalingPolicyInput::comparison_operator): <p>Comparison operator to use when measuring the metric against the threshold value.</p>
+    ///   - [`evaluation_periods(Option<i32>)`](crate::input::PutScalingPolicyInput::evaluation_periods): <p>Length of time (in minutes) the metric must be at or beyond the threshold before a scaling event is triggered.</p>
+    ///   - [`metric_name(Option<MetricName>)`](crate::input::PutScalingPolicyInput::metric_name): <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed descriptions of fleet metrics, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon GameLift with Amazon CloudWatch</a>. </p>  <ul>   <li> <p> <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.</p> </li>   <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are currently running.</p> </li>   <li> <p> <b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.</p> </li>   <li> <p> <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given current capacity.</p> </li>   <li> <p> <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes game sessions that are not currently accepting players. Reserved player slots are not included.</p> </li>   <li> <p> <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or are reserved for a player. </p> </li>   <li> <p> <b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions. </p> </li>   <li> <p> <b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a fleet could host simultaneously, given current capacity. Use this metric for a target-based scaling policy.</p> </li>   <li> <p> <b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero game sessions.</p> </li>   <li> <p> <b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p> </li>   <li> <p> <b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current fleet is the top-priority destination. </p> </li>  </ul>
+    ///   - [`policy_type(Option<PolicyType>)`](crate::input::PutScalingPolicyInput::policy_type): <p>The type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>, <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.</p>
+    ///   - [`target_configuration(Option<TargetConfiguration>)`](crate::input::PutScalingPolicyInput::target_configuration): <p>An object that contains settings for a target-based scaling policy.</p>
+    /// - On success, responds with [`PutScalingPolicyOutput`](crate::output::PutScalingPolicyOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::PutScalingPolicyOutput::name): <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.</p>
+    /// - On failure, responds with [`SdkError<PutScalingPolicyError>`](crate::error::PutScalingPolicyError)
     pub fn put_scaling_policy(&self) -> fluent_builders::PutScalingPolicy<C, M, R> {
         fluent_builders::PutScalingPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RegisterGameServer` operation.
+    /// Constructs a fluent builder for the [`RegisterGameServer`](crate::client::fluent_builders::RegisterGameServer) operation.
     ///
-    /// See [`RegisterGameServer`](crate::client::fluent_builders::RegisterGameServer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RegisterGameServerInput`](crate::input::RegisterGameServerInput) with field(s):
+    ///   - [`game_server_group_name(Option<String>)`](crate::input::RegisterGameServerInput::game_server_group_name): <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
+    ///   - [`game_server_id(Option<String>)`](crate::input::RegisterGameServerInput::game_server_id): <p>A custom string that uniquely identifies the game server to register. Game server IDs are developer-defined and must be unique across all game server groups in your AWS account.</p>
+    ///   - [`instance_id(Option<String>)`](crate::input::RegisterGameServerInput::instance_id): <p>The unique identifier for the instance where the game server is running. This ID is available in the instance metadata. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>.</p>
+    ///   - [`connection_info(Option<String>)`](crate::input::RegisterGameServerInput::connection_info): <p>Information that is needed to make inbound client connections to the game server. This might include the IP address and port, DNS name, and other information.</p>
+    ///   - [`game_server_data(Option<String>)`](crate::input::RegisterGameServerInput::game_server_data): <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers using <code>ListGameServers</code> or <code>ClaimGameServer</code>. </p>
+    /// - On success, responds with [`RegisterGameServerOutput`](crate::output::RegisterGameServerOutput) with field(s):
+    ///   - [`game_server(Option<GameServer>)`](crate::output::RegisterGameServerOutput::game_server): <p>Object that describes the newly registered game server.</p>
+    /// - On failure, responds with [`SdkError<RegisterGameServerError>`](crate::error::RegisterGameServerError)
     pub fn register_game_server(&self) -> fluent_builders::RegisterGameServer<C, M, R> {
         fluent_builders::RegisterGameServer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RequestUploadCredentials` operation.
+    /// Constructs a fluent builder for the [`RequestUploadCredentials`](crate::client::fluent_builders::RequestUploadCredentials) operation.
     ///
-    /// See [`RequestUploadCredentials`](crate::client::fluent_builders::RequestUploadCredentials) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RequestUploadCredentialsInput`](crate::input::RequestUploadCredentialsInput) with field(s):
+    ///   - [`build_id(Option<String>)`](crate::input::RequestUploadCredentialsInput::build_id): <p>A unique identifier for the build to get credentials for. You can use either the build ID or ARN value. </p>
+    /// - On success, responds with [`RequestUploadCredentialsOutput`](crate::output::RequestUploadCredentialsOutput) with field(s):
+    ///   - [`upload_credentials(Option<AwsCredentials>)`](crate::output::RequestUploadCredentialsOutput::upload_credentials): <p>AWS credentials required when uploading a game build to the storage location. These credentials have a limited lifespan and are valid only for the build they were issued for.</p>
+    ///   - [`storage_location(Option<S3Location>)`](crate::output::RequestUploadCredentialsOutput::storage_location): <p>Amazon S3 path and key, identifying where the game build files are stored.</p>
+    /// - On failure, responds with [`SdkError<RequestUploadCredentialsError>`](crate::error::RequestUploadCredentialsError)
     pub fn request_upload_credentials(&self) -> fluent_builders::RequestUploadCredentials<C, M, R> {
         fluent_builders::RequestUploadCredentials::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ResolveAlias` operation.
+    /// Constructs a fluent builder for the [`ResolveAlias`](crate::client::fluent_builders::ResolveAlias) operation.
     ///
-    /// See [`ResolveAlias`](crate::client::fluent_builders::ResolveAlias) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ResolveAliasInput`](crate::input::ResolveAliasInput) with field(s):
+    ///   - [`alias_id(Option<String>)`](crate::input::ResolveAliasInput::alias_id): <p>The unique identifier of the alias that you want to retrieve a fleet ID for. You can use either the alias ID or ARN value.</p>
+    /// - On success, responds with [`ResolveAliasOutput`](crate::output::ResolveAliasOutput) with field(s):
+    ///   - [`fleet_id(Option<String>)`](crate::output::ResolveAliasOutput::fleet_id): <p>The fleet identifier that the alias is pointing to.</p>
+    ///   - [`fleet_arn(Option<String>)`](crate::output::ResolveAliasOutput::fleet_arn): <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet resource that this alias points to. </p>
+    /// - On failure, responds with [`SdkError<ResolveAliasError>`](crate::error::ResolveAliasError)
     pub fn resolve_alias(&self) -> fluent_builders::ResolveAlias<C, M, R> {
         fluent_builders::ResolveAlias::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ResumeGameServerGroup` operation.
+    /// Constructs a fluent builder for the [`ResumeGameServerGroup`](crate::client::fluent_builders::ResumeGameServerGroup) operation.
     ///
-    /// See [`ResumeGameServerGroup`](crate::client::fluent_builders::ResumeGameServerGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ResumeGameServerGroupInput`](crate::input::ResumeGameServerGroupInput) with field(s):
+    ///   - [`game_server_group_name(Option<String>)`](crate::input::ResumeGameServerGroupInput::game_server_group_name): <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
+    ///   - [`resume_actions(Option<Vec<GameServerGroupAction>>)`](crate::input::ResumeGameServerGroupInput::resume_actions): <p>The activity to resume for this game server group.</p>
+    /// - On success, responds with [`ResumeGameServerGroupOutput`](crate::output::ResumeGameServerGroupOutput) with field(s):
+    ///   - [`game_server_group(Option<GameServerGroup>)`](crate::output::ResumeGameServerGroupOutput::game_server_group): <p>An object that describes the game server group resource, with the <code>SuspendedActions</code> property updated to reflect the resumed activity.</p>
+    /// - On failure, responds with [`SdkError<ResumeGameServerGroupError>`](crate::error::ResumeGameServerGroupError)
     pub fn resume_game_server_group(&self) -> fluent_builders::ResumeGameServerGroup<C, M, R> {
         fluent_builders::ResumeGameServerGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SearchGameSessions` operation.
-    ///
-    /// See [`SearchGameSessions`](crate::client::fluent_builders::SearchGameSessions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`SearchGameSessions`](crate::client::fluent_builders::SearchGameSessions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchGameSessions::into_paginator).
+    ///
+    /// - Takes [`SearchGameSessionsInput`](crate::input::SearchGameSessionsInput) with field(s):
+    ///   - [`fleet_id(Option<String>)`](crate::input::SearchGameSessionsInput::fleet_id): <p>A unique identifier for the fleet to search for active game sessions. You can use either the fleet ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
+    ///   - [`alias_id(Option<String>)`](crate::input::SearchGameSessionsInput::alias_id): <p>A unique identifier for the alias associated with the fleet to search for active game sessions. You can use either the alias ID or ARN value. Each request must reference either a fleet ID or alias ID, but not both.</p>
+    ///   - [`location(Option<String>)`](crate::input::SearchGameSessionsInput::location): <p>A fleet location to search for game sessions. You can specify a fleet's home Region or a remote location. Use the AWS Region code format, such as <code>us-west-2</code>. </p>  <p> </p>
+    ///   - [`filter_expression(Option<String>)`](crate::input::SearchGameSessionsInput::filter_expression): <p>String containing the search criteria for the session search. If no filter expression is included, the request returns results for all game sessions in the fleet that are in <code>ACTIVE</code> status.</p>  <p>A filter expression can contain one or multiple conditions. Each condition consists of the following:</p>  <ul>   <li> <p> <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>, <code>gameSessionId</code>, <code>gameSessionProperties</code>, <code>maximumSessions</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.</p> </li>   <li> <p> <b>Comparator</b> -- Valid comparators are: <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>. </p> </li>   <li> <p> <b>Value</b> -- Value to be searched for. Values may be numbers, boolean values (true/false) or strings depending on the operand. String values are case sensitive and must be enclosed in single quotes. Special characters must be escaped. Boolean and string values can only be used with the comparators <code>=</code> and <code>&lt;&gt;</code>. For example, the following filter expression searches on <code>gameSessionName</code>: "<code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game 1'"</code>. </p> </li>  </ul>  <p>To chain multiple conditions in a single expression, use the logical keywords <code>AND</code>, <code>OR</code>, and <code>NOT</code> and parentheses as needed. For example: <code>x AND y AND NOT z</code>, <code>NOT (x OR y)</code>.</p>  <p>Session search evaluates conditions from left to right using the following precedence rules:</p>  <ol>   <li> <p> <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code> </p> </li>   <li> <p>Parentheses</p> </li>   <li> <p>NOT</p> </li>   <li> <p>AND</p> </li>   <li> <p>OR</p> </li>  </ol>  <p>For example, this filter expression retrieves game sessions hosting at least ten players that have an open player slot: <code>"maximumSessions&gt;=10 AND hasAvailablePlayerSessions=true"</code>. </p>
+    ///   - [`sort_expression(Option<String>)`](crate::input::SearchGameSessionsInput::sort_expression): <p>Instructions on how to sort the search results. If no sort expression is included, the request returns results in random order. A sort expression consists of the following elements:</p>  <ul>   <li> <p> <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>, <code>gameSessionId</code>, <code>gameSessionProperties</code>, <code>maximumSessions</code>, <code>creationTimeMillis</code>, <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.</p> </li>   <li> <p> <b>Order</b> -- Valid sort orders are <code>ASC</code> (ascending) and <code>DESC</code> (descending).</p> </li>  </ul>  <p>For example, this sort expression returns the oldest active sessions first: <code>"SortExpression": "creationTimeMillis ASC"</code>. Results with a null value for the sort operand are returned at the end of the list.</p>
+    ///   - [`limit(Option<i32>)`](crate::input::SearchGameSessionsInput::limit): <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. The maximum number of results returned is 20, even if this value is not set or is set higher than 20. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::SearchGameSessionsInput::next_token): <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
+    /// - On success, responds with [`SearchGameSessionsOutput`](crate::output::SearchGameSessionsOutput) with field(s):
+    ///   - [`game_sessions(Option<Vec<GameSession>>)`](crate::output::SearchGameSessionsOutput::game_sessions): <p>A collection of objects containing game session properties for each session that matches the request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::SearchGameSessionsOutput::next_token): <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
+    /// - On failure, responds with [`SdkError<SearchGameSessionsError>`](crate::error::SearchGameSessionsError)
     pub fn search_game_sessions(&self) -> fluent_builders::SearchGameSessions<C, M, R> {
         fluent_builders::SearchGameSessions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartFleetActions` operation.
+    /// Constructs a fluent builder for the [`StartFleetActions`](crate::client::fluent_builders::StartFleetActions) operation.
     ///
-    /// See [`StartFleetActions`](crate::client::fluent_builders::StartFleetActions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartFleetActionsInput`](crate::input::StartFleetActionsInput) with field(s):
+    ///   - [`fleet_id(Option<String>)`](crate::input::StartFleetActionsInput::fleet_id): <p>A unique identifier for the fleet to restart actions on. You can use either the fleet ID or ARN value.</p>
+    ///   - [`actions(Option<Vec<FleetAction>>)`](crate::input::StartFleetActionsInput::actions): <p>List of actions to restart on the fleet.</p>
+    ///   - [`location(Option<String>)`](crate::input::StartFleetActionsInput::location): <p>The fleet location to restart fleet actions for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+    /// - On success, responds with [`StartFleetActionsOutput`](crate::output::StartFleetActionsOutput) with field(s):
+    ///   - [`fleet_id(Option<String>)`](crate::output::StartFleetActionsOutput::fleet_id): <p>A unique identifier for the fleet to restart actions on.</p>
+    ///   - [`fleet_arn(Option<String>)`](crate::output::StartFleetActionsOutput::fleet_arn): <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:   <region>    ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912   </region></code>.</p>
+    /// - On failure, responds with [`SdkError<StartFleetActionsError>`](crate::error::StartFleetActionsError)
     pub fn start_fleet_actions(&self) -> fluent_builders::StartFleetActions<C, M, R> {
         fluent_builders::StartFleetActions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartGameSessionPlacement` operation.
+    /// Constructs a fluent builder for the [`StartGameSessionPlacement`](crate::client::fluent_builders::StartGameSessionPlacement) operation.
     ///
-    /// See [`StartGameSessionPlacement`](crate::client::fluent_builders::StartGameSessionPlacement) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartGameSessionPlacementInput`](crate::input::StartGameSessionPlacementInput) with field(s):
+    ///   - [`placement_id(Option<String>)`](crate::input::StartGameSessionPlacementInput::placement_id): <p>A unique identifier to assign to the new game session placement. This value is developer-defined. The value must be unique across all Regions and cannot be reused unless you are resubmitting a canceled or timed-out placement request.</p>
+    ///   - [`game_session_queue_name(Option<String>)`](crate::input::StartGameSessionPlacementInput::game_session_queue_name): <p>Name of the queue to use to place the new game session. You can use either the queue name or ARN value. </p>
+    ///   - [`game_properties(Option<Vec<GameProperty>>)`](crate::input::StartGameSessionPlacementInput::game_properties): <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+    ///   - [`maximum_player_session_count(Option<i32>)`](crate::input::StartGameSessionPlacementInput::maximum_player_session_count): <p>The maximum number of players that can be connected simultaneously to the game session.</p>
+    ///   - [`game_session_name(Option<String>)`](crate::input::StartGameSessionPlacementInput::game_session_name): <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
+    ///   - [`player_latencies(Option<Vec<PlayerLatency>>)`](crate::input::StartGameSessionPlacementInput::player_latencies): <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to AWS Regions. This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players. </p>
+    ///   - [`desired_player_sessions(Option<Vec<DesiredPlayerSession>>)`](crate::input::StartGameSessionPlacementInput::desired_player_sessions): <p>Set of information on each player to create a player session for.</p>
+    ///   - [`game_session_data(Option<String>)`](crate::input::StartGameSessionPlacementInput::game_session_data): <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
+    /// - On success, responds with [`StartGameSessionPlacementOutput`](crate::output::StartGameSessionPlacementOutput) with field(s):
+    ///   - [`game_session_placement(Option<GameSessionPlacement>)`](crate::output::StartGameSessionPlacementOutput::game_session_placement): <p>Object that describes the newly created game session placement. This object includes all the information provided in the request, as well as start/end time stamps and placement status. </p>
+    /// - On failure, responds with [`SdkError<StartGameSessionPlacementError>`](crate::error::StartGameSessionPlacementError)
     pub fn start_game_session_placement(
         &self,
     ) -> fluent_builders::StartGameSessionPlacement<C, M, R> {
         fluent_builders::StartGameSessionPlacement::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartMatchBackfill` operation.
+    /// Constructs a fluent builder for the [`StartMatchBackfill`](crate::client::fluent_builders::StartMatchBackfill) operation.
     ///
-    /// See [`StartMatchBackfill`](crate::client::fluent_builders::StartMatchBackfill) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartMatchBackfillInput`](crate::input::StartMatchBackfillInput) with field(s):
+    ///   - [`ticket_id(Option<String>)`](crate::input::StartMatchBackfillInput::ticket_id): <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the match backfill ticket status and retrieve match results.</p>
+    ///   - [`configuration_name(Option<String>)`](crate::input::StartMatchBackfillInput::configuration_name): <p>Name of the matchmaker to use for this request. You can use either the configuration name or ARN value. The ARN of the matchmaker that was used with the original game session is listed in the <code>GameSession</code> object, <code>MatchmakerData</code> property.</p>
+    ///   - [`game_session_arn(Option<String>)`](crate::input::StartMatchBackfillInput::game_session_arn): <p>A unique identifier for the game session. Use the game session ID. When using FlexMatch as a standalone matchmaking solution, this parameter is not needed. </p>
+    ///   - [`players(Option<Vec<Player>>)`](crate::input::StartMatchBackfillInput::players): <p>Match information on all players that are currently assigned to the game session. This information is used by the matchmaker to find new players and add them to the existing game.</p>  <ul>   <li> <p>PlayerID, PlayerAttributes, Team -- This information is maintained in the <code>GameSession</code> object, <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The matchmaker data is in JSON syntax, formatted as a string. For more details, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data"> Match Data</a>. </p> </li>   <li> <p>LatencyInMs -- If the matchmaker uses player latency, include a latency value, in milliseconds, for the Region that the game session is currently in. Do not include latency values for any other Region.</p> </li>  </ul>
+    /// - On success, responds with [`StartMatchBackfillOutput`](crate::output::StartMatchBackfillOutput) with field(s):
+    ///   - [`matchmaking_ticket(Option<MatchmakingTicket>)`](crate::output::StartMatchBackfillOutput::matchmaking_ticket): <p>Ticket representing the backfill matchmaking request. This object includes the information in the request, ticket status, and match results as generated during the matchmaking process.</p>
+    /// - On failure, responds with [`SdkError<StartMatchBackfillError>`](crate::error::StartMatchBackfillError)
     pub fn start_match_backfill(&self) -> fluent_builders::StartMatchBackfill<C, M, R> {
         fluent_builders::StartMatchBackfill::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartMatchmaking` operation.
+    /// Constructs a fluent builder for the [`StartMatchmaking`](crate::client::fluent_builders::StartMatchmaking) operation.
     ///
-    /// See [`StartMatchmaking`](crate::client::fluent_builders::StartMatchmaking) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartMatchmakingInput`](crate::input::StartMatchmakingInput) with field(s):
+    ///   - [`ticket_id(Option<String>)`](crate::input::StartMatchmakingInput::ticket_id): <p>A unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.</p>
+    ///   - [`configuration_name(Option<String>)`](crate::input::StartMatchmakingInput::configuration_name): <p>Name of the matchmaking configuration to use for this request. Matchmaking configurations must exist in the same Region as this request. You can use either the configuration name or ARN value.</p>
+    ///   - [`players(Option<Vec<Player>>)`](crate::input::StartMatchmakingInput::players): <p>Information on each player to be matched. This information must include a player ID, and may contain player attributes and latency data to be used in the matchmaking process. After a successful match, <code>Player</code> objects contain the name of the team the player is assigned to.</p>
+    /// - On success, responds with [`StartMatchmakingOutput`](crate::output::StartMatchmakingOutput) with field(s):
+    ///   - [`matchmaking_ticket(Option<MatchmakingTicket>)`](crate::output::StartMatchmakingOutput::matchmaking_ticket): <p>Ticket representing the matchmaking request. This object include the information included in the request, ticket status, and match results as generated during the matchmaking process.</p>
+    /// - On failure, responds with [`SdkError<StartMatchmakingError>`](crate::error::StartMatchmakingError)
     pub fn start_matchmaking(&self) -> fluent_builders::StartMatchmaking<C, M, R> {
         fluent_builders::StartMatchmaking::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopFleetActions` operation.
+    /// Constructs a fluent builder for the [`StopFleetActions`](crate::client::fluent_builders::StopFleetActions) operation.
     ///
-    /// See [`StopFleetActions`](crate::client::fluent_builders::StopFleetActions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StopFleetActionsInput`](crate::input::StopFleetActionsInput) with field(s):
+    ///   - [`fleet_id(Option<String>)`](crate::input::StopFleetActionsInput::fleet_id): <p>A unique identifier for the fleet to stop actions on. You can use either the fleet ID or ARN value.</p>
+    ///   - [`actions(Option<Vec<FleetAction>>)`](crate::input::StopFleetActionsInput::actions): <p>List of actions to suspend on the fleet. </p>
+    ///   - [`location(Option<String>)`](crate::input::StopFleetActionsInput::location): <p>The fleet location to stop fleet actions for. Specify a location in the form of an AWS Region code, such as <code>us-west-2</code>.</p>
+    /// - On success, responds with [`StopFleetActionsOutput`](crate::output::StopFleetActionsOutput) with field(s):
+    ///   - [`fleet_id(Option<String>)`](crate::output::StopFleetActionsOutput::fleet_id): <p>A unique identifier for the fleet to stop actions on.</p>
+    ///   - [`fleet_arn(Option<String>)`](crate::output::StopFleetActionsOutput::fleet_arn): <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:   <region>    ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912   </region></code>.</p>
+    /// - On failure, responds with [`SdkError<StopFleetActionsError>`](crate::error::StopFleetActionsError)
     pub fn stop_fleet_actions(&self) -> fluent_builders::StopFleetActions<C, M, R> {
         fluent_builders::StopFleetActions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopGameSessionPlacement` operation.
+    /// Constructs a fluent builder for the [`StopGameSessionPlacement`](crate::client::fluent_builders::StopGameSessionPlacement) operation.
     ///
-    /// See [`StopGameSessionPlacement`](crate::client::fluent_builders::StopGameSessionPlacement) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StopGameSessionPlacementInput`](crate::input::StopGameSessionPlacementInput) with field(s):
+    ///   - [`placement_id(Option<String>)`](crate::input::StopGameSessionPlacementInput::placement_id): <p>A unique identifier for a game session placement to cancel.</p>
+    /// - On success, responds with [`StopGameSessionPlacementOutput`](crate::output::StopGameSessionPlacementOutput) with field(s):
+    ///   - [`game_session_placement(Option<GameSessionPlacement>)`](crate::output::StopGameSessionPlacementOutput::game_session_placement): <p>Object that describes the canceled game session placement, with <code>CANCELLED</code> status and an end time stamp. </p>
+    /// - On failure, responds with [`SdkError<StopGameSessionPlacementError>`](crate::error::StopGameSessionPlacementError)
     pub fn stop_game_session_placement(
         &self,
     ) -> fluent_builders::StopGameSessionPlacement<C, M, R> {
         fluent_builders::StopGameSessionPlacement::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopMatchmaking` operation.
+    /// Constructs a fluent builder for the [`StopMatchmaking`](crate::client::fluent_builders::StopMatchmaking) operation.
     ///
-    /// See [`StopMatchmaking`](crate::client::fluent_builders::StopMatchmaking) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StopMatchmakingInput`](crate::input::StopMatchmakingInput) with field(s):
+    ///   - [`ticket_id(Option<String>)`](crate::input::StopMatchmakingInput::ticket_id): <p>A unique identifier for a matchmaking ticket.</p>
+    /// - On success, responds with [`StopMatchmakingOutput`](crate::output::StopMatchmakingOutput)
+
+    /// - On failure, responds with [`SdkError<StopMatchmakingError>`](crate::error::StopMatchmakingError)
     pub fn stop_matchmaking(&self) -> fluent_builders::StopMatchmaking<C, M, R> {
         fluent_builders::StopMatchmaking::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SuspendGameServerGroup` operation.
+    /// Constructs a fluent builder for the [`SuspendGameServerGroup`](crate::client::fluent_builders::SuspendGameServerGroup) operation.
     ///
-    /// See [`SuspendGameServerGroup`](crate::client::fluent_builders::SuspendGameServerGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`SuspendGameServerGroupInput`](crate::input::SuspendGameServerGroupInput) with field(s):
+    ///   - [`game_server_group_name(Option<String>)`](crate::input::SuspendGameServerGroupInput::game_server_group_name): <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
+    ///   - [`suspend_actions(Option<Vec<GameServerGroupAction>>)`](crate::input::SuspendGameServerGroupInput::suspend_actions): <p>The activity to suspend for this game server group.</p>
+    /// - On success, responds with [`SuspendGameServerGroupOutput`](crate::output::SuspendGameServerGroupOutput) with field(s):
+    ///   - [`game_server_group(Option<GameServerGroup>)`](crate::output::SuspendGameServerGroupOutput::game_server_group): <p>An object that describes the game server group resource, with the <code>SuspendedActions</code> property updated to reflect the suspended activity.</p>
+    /// - On failure, responds with [`SdkError<SuspendGameServerGroupError>`](crate::error::SuspendGameServerGroupError)
     pub fn suspend_game_server_group(&self) -> fluent_builders::SuspendGameServerGroup<C, M, R> {
         fluent_builders::SuspendGameServerGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and uniquely identifies the GameLift resource that you want to assign tags to. GameLift resource ARNs are included in the data object for the resource, which can be retrieved by calling a List or Describe operation for the resource type. </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>A list of one or more tags to assign to the specified GameLift resource. Tags are developer-defined and structured as key-value pairs. The maximum tag limit may be lower than stated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> for actual tagging limits.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and uniquely identifies the GameLift resource that you want to remove tags from. GameLift resource ARNs are included in the data object for the resource, which can be retrieved by calling a List or Describe operation for the resource type. </p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>A list of one or more tag keys to remove from the specified GameLift resource. An AWS resource can have only one tag with a specific tag key, so specifying the tag key identifies which tag to remove. </p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateAlias` operation.
+    /// Constructs a fluent builder for the [`UpdateAlias`](crate::client::fluent_builders::UpdateAlias) operation.
     ///
-    /// See [`UpdateAlias`](crate::client::fluent_builders::UpdateAlias) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateAliasInput`](crate::input::UpdateAliasInput) with field(s):
+    ///   - [`alias_id(Option<String>)`](crate::input::UpdateAliasInput::alias_id): <p>A unique identifier for the alias that you want to update. You can use either the alias ID or ARN value.</p>
+    ///   - [`name(Option<String>)`](crate::input::UpdateAliasInput::name): <p>A descriptive label that is associated with an alias. Alias names do not need to be unique.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateAliasInput::description): <p>A human-readable description of the alias.</p>
+    ///   - [`routing_strategy(Option<RoutingStrategy>)`](crate::input::UpdateAliasInput::routing_strategy): <p>The routing configuration, including routing type and fleet target, for the alias.</p>
+    /// - On success, responds with [`UpdateAliasOutput`](crate::output::UpdateAliasOutput) with field(s):
+    ///   - [`alias(Option<Alias>)`](crate::output::UpdateAliasOutput::alias): <p>The updated alias resource.</p>
+    /// - On failure, responds with [`SdkError<UpdateAliasError>`](crate::error::UpdateAliasError)
     pub fn update_alias(&self) -> fluent_builders::UpdateAlias<C, M, R> {
         fluent_builders::UpdateAlias::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateBuild` operation.
+    /// Constructs a fluent builder for the [`UpdateBuild`](crate::client::fluent_builders::UpdateBuild) operation.
     ///
-    /// See [`UpdateBuild`](crate::client::fluent_builders::UpdateBuild) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateBuildInput`](crate::input::UpdateBuildInput) with field(s):
+    ///   - [`build_id(Option<String>)`](crate::input::UpdateBuildInput::build_id): <p>A unique identifier for the build to update. You can use either the build ID or ARN value. </p>
+    ///   - [`name(Option<String>)`](crate::input::UpdateBuildInput::name): <p>A descriptive label that is associated with a build. Build names do not need to be unique. </p>
+    ///   - [`version(Option<String>)`](crate::input::UpdateBuildInput::version): <p>Version information that is associated with a build or script. Version strings do not need to be unique.</p>
+    /// - On success, responds with [`UpdateBuildOutput`](crate::output::UpdateBuildOutput) with field(s):
+    ///   - [`build_value(Option<Build>)`](crate::output::UpdateBuildOutput::build_value): <p>The updated build resource.</p>
+    /// - On failure, responds with [`SdkError<UpdateBuildError>`](crate::error::UpdateBuildError)
     pub fn update_build(&self) -> fluent_builders::UpdateBuild<C, M, R> {
         fluent_builders::UpdateBuild::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateFleetAttributes` operation.
+    /// Constructs a fluent builder for the [`UpdateFleetAttributes`](crate::client::fluent_builders::UpdateFleetAttributes) operation.
     ///
-    /// See [`UpdateFleetAttributes`](crate::client::fluent_builders::UpdateFleetAttributes) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateFleetAttributesInput`](crate::input::UpdateFleetAttributesInput) with field(s):
+    ///   - [`fleet_id(Option<String>)`](crate::input::UpdateFleetAttributesInput::fleet_id): <p>A unique identifier for the fleet to update attribute metadata for. You can use either the fleet ID or ARN value.</p>
+    ///   - [`name(Option<String>)`](crate::input::UpdateFleetAttributesInput::name): <p>A descriptive label that is associated with a fleet. Fleet names do not need to be unique.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateFleetAttributesInput::description): <p>A human-readable description of a fleet.</p>
+    ///   - [`new_game_session_protection_policy(Option<ProtectionPolicy>)`](crate::input::UpdateFleetAttributesInput::new_game_session_protection_policy): <p>The game session protection policy to apply to all new instances created in this fleet. Instances that already exist are not affected. You can set protection for individual instances using <code>UpdateGameSession</code>.</p>  <ul>   <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>   <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>  </ul>
+    ///   - [`resource_creation_limit_policy(Option<ResourceCreationLimitPolicy>)`](crate::input::UpdateFleetAttributesInput::resource_creation_limit_policy): <p>Policy settings that limit the number of game sessions an individual player can create over a span of time. </p>
+    ///   - [`metric_groups(Option<Vec<String>>)`](crate::input::UpdateFleetAttributesInput::metric_groups): <p>The name of a metric group to add this fleet to. Use a metric group in Amazon CloudWatch to aggregate the metrics from multiple fleets. Provide an existing metric group name, or create a new metric group by providing a new name. A fleet can only be in one metric group at a time.</p>
+    /// - On success, responds with [`UpdateFleetAttributesOutput`](crate::output::UpdateFleetAttributesOutput) with field(s):
+    ///   - [`fleet_id(Option<String>)`](crate::output::UpdateFleetAttributesOutput::fleet_id): <p>A unique identifier for the fleet that was updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateFleetAttributesError>`](crate::error::UpdateFleetAttributesError)
     pub fn update_fleet_attributes(&self) -> fluent_builders::UpdateFleetAttributes<C, M, R> {
         fluent_builders::UpdateFleetAttributes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateFleetCapacity` operation.
+    /// Constructs a fluent builder for the [`UpdateFleetCapacity`](crate::client::fluent_builders::UpdateFleetCapacity) operation.
     ///
-    /// See [`UpdateFleetCapacity`](crate::client::fluent_builders::UpdateFleetCapacity) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateFleetCapacityInput`](crate::input::UpdateFleetCapacityInput) with field(s):
+    ///   - [`fleet_id(Option<String>)`](crate::input::UpdateFleetCapacityInput::fleet_id): <p>A unique identifier for the fleet to update capacity settings for. You can use either the fleet ID or ARN value.</p>
+    ///   - [`desired_instances(Option<i32>)`](crate::input::UpdateFleetCapacityInput::desired_instances): <p>The number of EC2 instances you want to maintain in the specified fleet location. This value must fall between the minimum and maximum size limits.</p>
+    ///   - [`min_size(Option<i32>)`](crate::input::UpdateFleetCapacityInput::min_size): <p>The minimum number of instances that are allowed in the specified fleet location. If this parameter is not set, the default is 0.</p>
+    ///   - [`max_size(Option<i32>)`](crate::input::UpdateFleetCapacityInput::max_size): <p>The maximum number of instances that are allowed in the specified fleet location. If this parameter is not set, the default is 1.</p>
+    ///   - [`location(Option<String>)`](crate::input::UpdateFleetCapacityInput::location): <p>The name of a remote location to update fleet capacity settings for, in the form of an AWS Region code such as <code>us-west-2</code>.</p>
+    /// - On success, responds with [`UpdateFleetCapacityOutput`](crate::output::UpdateFleetCapacityOutput) with field(s):
+    ///   - [`fleet_id(Option<String>)`](crate::output::UpdateFleetCapacityOutput::fleet_id): <p>A unique identifier for the fleet that was updated.</p>
+    ///   - [`fleet_arn(Option<String>)`](crate::output::UpdateFleetCapacityOutput::fleet_arn): <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:   <region>    ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912   </region></code>. </p>
+    ///   - [`location(Option<String>)`](crate::output::UpdateFleetCapacityOutput::location): <p>The remote location being updated, expressed as an AWS Region code, such as <code>us-west-2</code>.</p>
+    /// - On failure, responds with [`SdkError<UpdateFleetCapacityError>`](crate::error::UpdateFleetCapacityError)
     pub fn update_fleet_capacity(&self) -> fluent_builders::UpdateFleetCapacity<C, M, R> {
         fluent_builders::UpdateFleetCapacity::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateFleetPortSettings` operation.
+    /// Constructs a fluent builder for the [`UpdateFleetPortSettings`](crate::client::fluent_builders::UpdateFleetPortSettings) operation.
     ///
-    /// See [`UpdateFleetPortSettings`](crate::client::fluent_builders::UpdateFleetPortSettings) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateFleetPortSettingsInput`](crate::input::UpdateFleetPortSettingsInput) with field(s):
+    ///   - [`fleet_id(Option<String>)`](crate::input::UpdateFleetPortSettingsInput::fleet_id): <p>A unique identifier for the fleet to update port settings for. You can use either the fleet ID or ARN value.</p>
+    ///   - [`inbound_permission_authorizations(Option<Vec<IpPermission>>)`](crate::input::UpdateFleetPortSettingsInput::inbound_permission_authorizations): <p>A collection of port settings to be added to the fleet resource.</p>
+    ///   - [`inbound_permission_revocations(Option<Vec<IpPermission>>)`](crate::input::UpdateFleetPortSettingsInput::inbound_permission_revocations): <p>A collection of port settings to be removed from the fleet resource.</p>
+    /// - On success, responds with [`UpdateFleetPortSettingsOutput`](crate::output::UpdateFleetPortSettingsOutput) with field(s):
+    ///   - [`fleet_id(Option<String>)`](crate::output::UpdateFleetPortSettingsOutput::fleet_id): <p>A unique identifier for the fleet that was updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateFleetPortSettingsError>`](crate::error::UpdateFleetPortSettingsError)
     pub fn update_fleet_port_settings(&self) -> fluent_builders::UpdateFleetPortSettings<C, M, R> {
         fluent_builders::UpdateFleetPortSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateGameServer` operation.
+    /// Constructs a fluent builder for the [`UpdateGameServer`](crate::client::fluent_builders::UpdateGameServer) operation.
     ///
-    /// See [`UpdateGameServer`](crate::client::fluent_builders::UpdateGameServer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateGameServerInput`](crate::input::UpdateGameServerInput) with field(s):
+    ///   - [`game_server_group_name(Option<String>)`](crate::input::UpdateGameServerInput::game_server_group_name): <p>A unique identifier for the game server group where the game server is running. Use either the <code>GameServerGroup</code> name or ARN value.</p>
+    ///   - [`game_server_id(Option<String>)`](crate::input::UpdateGameServerInput::game_server_id): <p>A custom string that uniquely identifies the game server to update.</p>
+    ///   - [`game_server_data(Option<String>)`](crate::input::UpdateGameServerInput::game_server_data): <p>A set of custom game server properties, formatted as a single string value. This data is passed to a game client or service when it requests information on game servers using <code>ListGameServers</code> or <code>ClaimGameServer</code>. </p>
+    ///   - [`utilization_status(Option<GameServerUtilizationStatus>)`](crate::input::UpdateGameServerInput::utilization_status): <p>Indicates whether the game server is available or is currently hosting gameplay.</p>
+    ///   - [`health_check(Option<GameServerHealthCheck>)`](crate::input::UpdateGameServerInput::health_check): <p>Indicates health status of the game server. A request that includes this parameter updates the game server's <i>LastHealthCheckTime</i> timestamp. </p>
+    /// - On success, responds with [`UpdateGameServerOutput`](crate::output::UpdateGameServerOutput) with field(s):
+    ///   - [`game_server(Option<GameServer>)`](crate::output::UpdateGameServerOutput::game_server): <p>Object that describes the newly updated game server.</p>
+    /// - On failure, responds with [`SdkError<UpdateGameServerError>`](crate::error::UpdateGameServerError)
     pub fn update_game_server(&self) -> fluent_builders::UpdateGameServer<C, M, R> {
         fluent_builders::UpdateGameServer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateGameServerGroup` operation.
+    /// Constructs a fluent builder for the [`UpdateGameServerGroup`](crate::client::fluent_builders::UpdateGameServerGroup) operation.
     ///
-    /// See [`UpdateGameServerGroup`](crate::client::fluent_builders::UpdateGameServerGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateGameServerGroupInput`](crate::input::UpdateGameServerGroupInput) with field(s):
+    ///   - [`game_server_group_name(Option<String>)`](crate::input::UpdateGameServerGroupInput::game_server_group_name): <p>A unique identifier for the game server group. Use either the <code>GameServerGroup</code> name or ARN value.</p>
+    ///   - [`role_arn(Option<String>)`](crate::input::UpdateGameServerGroupInput::role_arn): <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.</p>
+    ///   - [`instance_definitions(Option<Vec<InstanceDefinition>>)`](crate::input::UpdateGameServerGroupInput::instance_definitions): <p>An updated list of EC2 instance types to use in the Auto Scaling group. The instance definitions must specify at least two different instance types that are supported by GameLift FleetIQ. This updated list replaces the entire current list of instance definitions for the game server group. For more information on instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more information about capacity weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.</p>
+    ///   - [`game_server_protection_policy(Option<GameServerProtectionPolicy>)`](crate::input::UpdateGameServerGroupInput::game_server_protection_policy): <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by AWS regardless of protection status. This property is set to <code>NO_PROTECTION</code> by default.</p>
+    ///   - [`balancing_strategy(Option<BalancingStrategy>)`](crate::input::UpdateGameServerGroupInput::balancing_strategy): <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server group. Method options include the following:</p>  <ul>   <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated (after current gameplay ends) and are not replaced.</p> </li>   <li> <p> <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and are replaced with new On-Demand Instances.</p> </li>   <li> <p> <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p> </li>  </ul>
+    /// - On success, responds with [`UpdateGameServerGroupOutput`](crate::output::UpdateGameServerGroupOutput) with field(s):
+    ///   - [`game_server_group(Option<GameServerGroup>)`](crate::output::UpdateGameServerGroupOutput::game_server_group): <p>An object that describes the game server group resource with updated properties. </p>
+    /// - On failure, responds with [`SdkError<UpdateGameServerGroupError>`](crate::error::UpdateGameServerGroupError)
     pub fn update_game_server_group(&self) -> fluent_builders::UpdateGameServerGroup<C, M, R> {
         fluent_builders::UpdateGameServerGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateGameSession` operation.
+    /// Constructs a fluent builder for the [`UpdateGameSession`](crate::client::fluent_builders::UpdateGameSession) operation.
     ///
-    /// See [`UpdateGameSession`](crate::client::fluent_builders::UpdateGameSession) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateGameSessionInput`](crate::input::UpdateGameSessionInput) with field(s):
+    ///   - [`game_session_id(Option<String>)`](crate::input::UpdateGameSessionInput::game_session_id): <p>A unique identifier for the game session to update. </p>
+    ///   - [`maximum_player_session_count(Option<i32>)`](crate::input::UpdateGameSessionInput::maximum_player_session_count): <p>The maximum number of players that can be connected simultaneously to the game session.</p>
+    ///   - [`name(Option<String>)`](crate::input::UpdateGameSessionInput::name): <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
+    ///   - [`player_session_creation_policy(Option<PlayerSessionCreationPolicy>)`](crate::input::UpdateGameSessionInput::player_session_creation_policy): <p>A policy that determines whether the game session is accepting new players.</p>
+    ///   - [`protection_policy(Option<ProtectionPolicy>)`](crate::input::UpdateGameSessionInput::protection_policy): <p>Game session protection policy to apply to this game session only.</p>  <ul>   <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>   <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>  </ul>
+    /// - On success, responds with [`UpdateGameSessionOutput`](crate::output::UpdateGameSessionOutput) with field(s):
+    ///   - [`game_session(Option<GameSession>)`](crate::output::UpdateGameSessionOutput::game_session): <p>The updated game session properties.</p>
+    /// - On failure, responds with [`SdkError<UpdateGameSessionError>`](crate::error::UpdateGameSessionError)
     pub fn update_game_session(&self) -> fluent_builders::UpdateGameSession<C, M, R> {
         fluent_builders::UpdateGameSession::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateGameSessionQueue` operation.
+    /// Constructs a fluent builder for the [`UpdateGameSessionQueue`](crate::client::fluent_builders::UpdateGameSessionQueue) operation.
     ///
-    /// See [`UpdateGameSessionQueue`](crate::client::fluent_builders::UpdateGameSessionQueue) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateGameSessionQueueInput`](crate::input::UpdateGameSessionQueueInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::UpdateGameSessionQueueInput::name): <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region. You can use either the queue ID or ARN value. </p>
+    ///   - [`timeout_in_seconds(Option<i32>)`](crate::input::UpdateGameSessionQueueInput::timeout_in_seconds): <p>The maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.</p>
+    ///   - [`player_latency_policies(Option<Vec<PlayerLatencyPolicy>>)`](crate::input::UpdateGameSessionQueueInput::player_latency_policies): <p>A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most players in a game session. These policies ensure that no individual player can be placed into a game with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest value. When updating policies, provide a complete collection of policies.</p>
+    ///   - [`destinations(Option<Vec<GameSessionQueueDestination>>)`](crate::input::UpdateGameSessionQueueInput::destinations): <p>A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement preference. When updating this list, provide a complete list of destinations.</p>
+    ///   - [`filter_configuration(Option<FilterConfiguration>)`](crate::input::UpdateGameSessionQueueInput::filter_configuration): <p>A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in any queue location. To remove an existing filter configuration, pass in an empty set.</p>
+    ///   - [`priority_configuration(Option<PriorityConfiguration>)`](crate::input::UpdateGameSessionQueueInput::priority_configuration): <p>Custom settings to use when prioritizing destinations and locations for game session placements. This configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named will be automatically applied at the end of the prioritization process. To remove an existing priority configuration, pass in an empty set.</p>
+    ///   - [`custom_event_data(Option<String>)`](crate::input::UpdateGameSessionQueueInput::custom_event_data): <p> Information to be added to all events that are related to this game session queue. </p>
+    ///   - [`notification_target(Option<String>)`](crate::input::UpdateGameSessionQueueInput::notification_target): <p>An SNS topic ARN that is set up to receive game session placement notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up notifications for game session placement</a>.</p>
+    /// - On success, responds with [`UpdateGameSessionQueueOutput`](crate::output::UpdateGameSessionQueueOutput) with field(s):
+    ///   - [`game_session_queue(Option<GameSessionQueue>)`](crate::output::UpdateGameSessionQueueOutput::game_session_queue): <p>An object that describes the newly updated game session queue.</p>
+    /// - On failure, responds with [`SdkError<UpdateGameSessionQueueError>`](crate::error::UpdateGameSessionQueueError)
     pub fn update_game_session_queue(&self) -> fluent_builders::UpdateGameSessionQueue<C, M, R> {
         fluent_builders::UpdateGameSessionQueue::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateMatchmakingConfiguration` operation.
+    /// Constructs a fluent builder for the [`UpdateMatchmakingConfiguration`](crate::client::fluent_builders::UpdateMatchmakingConfiguration) operation.
     ///
-    /// See [`UpdateMatchmakingConfiguration`](crate::client::fluent_builders::UpdateMatchmakingConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateMatchmakingConfigurationInput`](crate::input::UpdateMatchmakingConfigurationInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::UpdateMatchmakingConfigurationInput::name): <p>A unique identifier for the matchmaking configuration to update. You can use either the configuration name or ARN value. </p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateMatchmakingConfigurationInput::description): <p>A descriptive label that is associated with matchmaking configuration.</p>
+    ///   - [`game_session_queue_arns(Option<Vec<String>>)`](crate::input::UpdateMatchmakingConfigurationInput::game_session_queue_arns): <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:   <region>    ::gamesessionqueue/    <queue name></queue>   </region></code>. Queues can be located in any Region. Queues are used to start new GameLift-hosted game sessions for matches that are created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter.</p>
+    ///   - [`request_timeout_seconds(Option<i32>)`](crate::input::UpdateMatchmakingConfigurationInput::request_timeout_seconds): <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process before timing out. Requests that fail due to timing out can be resubmitted as needed.</p>
+    ///   - [`acceptance_timeout_seconds(Option<i32>)`](crate::input::UpdateMatchmakingConfigurationInput::acceptance_timeout_seconds): <p>The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required.</p>
+    ///   - [`acceptance_required(Option<bool>)`](crate::input::UpdateMatchmakingConfigurationInput::acceptance_required): <p>A flag that indicates whether a match that was created with this configuration must be accepted by the matched players. To require acceptance, set to TRUE. With this option enabled, matchmaking tickets use the status <code>REQUIRES_ACCEPTANCE</code> to indicate when a completed potential match is waiting for player acceptance. </p>
+    ///   - [`rule_set_name(Option<String>)`](crate::input::UpdateMatchmakingConfigurationInput::rule_set_name): <p>A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set name or ARN value. A matchmaking configuration can only use rule sets that are defined in the same Region.</p>
+    ///   - [`notification_target(Option<String>)`](crate::input::UpdateMatchmakingConfigurationInput::notification_target): <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html"> Setting up notifications for matchmaking</a> for more information.</p>
+    ///   - [`additional_player_count(Option<i32>)`](crate::input::UpdateMatchmakingConfigurationInput::additional_player_count): <p>The number of player slots in a match to keep open for future players. For example, if the configuration's rule set specifies a match for a single 12-person team, and the additional player count is set to 2, only 10 players are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+    ///   - [`custom_event_data(Option<String>)`](crate::input::UpdateMatchmakingConfigurationInput::custom_event_data): <p>Information to add to all events related to the matchmaking configuration. </p>
+    ///   - [`game_properties(Option<Vec<GameProperty>>)`](crate::input::UpdateMatchmakingConfigurationInput::game_properties): <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+    ///   - [`game_session_data(Option<String>)`](crate::input::UpdateMatchmakingConfigurationInput::game_session_data): <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+    ///   - [`backfill_mode(Option<BackfillMode>)`](crate::input::UpdateMatchmakingConfigurationInput::backfill_mode): <p>The method that is used to backfill game sessions created with this matchmaking configuration. Specify MANUAL when your game manages backfill requests manually or does not use the match backfill feature. Specify AUTOMATIC to have GameLift create a <code>StartMatchBackfill</code> request whenever a game session has one or more open slots. Learn more about manual and automatic backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill Existing Games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
+    ///   - [`flex_match_mode(Option<FlexMatchMode>)`](crate::input::UpdateMatchmakingConfigurationInput::flex_match_mode): <p>Indicates whether this matchmaking configuration is being used with GameLift hosting or as a standalone matchmaking solution. </p>  <ul>   <li> <p> <b>STANDALONE</b> - FlexMatch forms matches and returns match information, including players and team assignments, in a <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded"> MatchmakingSucceeded</a> event.</p> </li>   <li> <p> <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified GameLift queue to start a game session for the match. </p> </li>  </ul>
+    /// - On success, responds with [`UpdateMatchmakingConfigurationOutput`](crate::output::UpdateMatchmakingConfigurationOutput) with field(s):
+    ///   - [`configuration(Option<MatchmakingConfiguration>)`](crate::output::UpdateMatchmakingConfigurationOutput::configuration): <p>The updated matchmaking configuration.</p>
+    /// - On failure, responds with [`SdkError<UpdateMatchmakingConfigurationError>`](crate::error::UpdateMatchmakingConfigurationError)
     pub fn update_matchmaking_configuration(
         &self,
     ) -> fluent_builders::UpdateMatchmakingConfiguration<C, M, R> {
         fluent_builders::UpdateMatchmakingConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateRuntimeConfiguration` operation.
+    /// Constructs a fluent builder for the [`UpdateRuntimeConfiguration`](crate::client::fluent_builders::UpdateRuntimeConfiguration) operation.
     ///
-    /// See [`UpdateRuntimeConfiguration`](crate::client::fluent_builders::UpdateRuntimeConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateRuntimeConfigurationInput`](crate::input::UpdateRuntimeConfigurationInput) with field(s):
+    ///   - [`fleet_id(Option<String>)`](crate::input::UpdateRuntimeConfigurationInput::fleet_id): <p>A unique identifier for the fleet to update runtime configuration for. You can use either the fleet ID or ARN value.</p>
+    ///   - [`runtime_configuration(Option<RuntimeConfiguration>)`](crate::input::UpdateRuntimeConfigurationInput::runtime_configuration): <p>Instructions for launching server processes on each instance in the fleet. Server processes run either a custom game build executable or a Realtime Servers script. The runtime configuration lists the types of server processes to run on an instance, how to launch them, and the number of processes to run concurrently.</p>
+    /// - On success, responds with [`UpdateRuntimeConfigurationOutput`](crate::output::UpdateRuntimeConfigurationOutput) with field(s):
+    ///   - [`runtime_configuration(Option<RuntimeConfiguration>)`](crate::output::UpdateRuntimeConfigurationOutput::runtime_configuration): <p>The runtime configuration currently in use by all instances in the fleet. If the update was successful, all property changes are shown. </p>
+    /// - On failure, responds with [`SdkError<UpdateRuntimeConfigurationError>`](crate::error::UpdateRuntimeConfigurationError)
     pub fn update_runtime_configuration(
         &self,
     ) -> fluent_builders::UpdateRuntimeConfiguration<C, M, R> {
         fluent_builders::UpdateRuntimeConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateScript` operation.
+    /// Constructs a fluent builder for the [`UpdateScript`](crate::client::fluent_builders::UpdateScript) operation.
     ///
-    /// See [`UpdateScript`](crate::client::fluent_builders::UpdateScript) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateScriptInput`](crate::input::UpdateScriptInput) with field(s):
+    ///   - [`script_id(Option<String>)`](crate::input::UpdateScriptInput::script_id): <p>A unique identifier for the Realtime script to update. You can use either the script ID or ARN value.</p>
+    ///   - [`name(Option<String>)`](crate::input::UpdateScriptInput::name): <p>A descriptive label that is associated with a script. Script names do not need to be unique.</p>
+    ///   - [`version(Option<String>)`](crate::input::UpdateScriptInput::version): <p>Version information that is associated with a build or script. Version strings do not need to be unique.</p>
+    ///   - [`storage_location(Option<S3Location>)`](crate::input::UpdateScriptInput::storage_location): <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version. </p>
+    ///   - [`zip_file(Option<Blob>)`](crate::input::UpdateScriptInput::zip_file): <p>A data object containing your Realtime scripts and dependencies as a zip file. The zip file can have one or multiple files. Maximum size of a zip file is 5 MB.</p>  <p>When using the AWS CLI tool to create a script, this parameter is set to the zip file name. It must be prepended with the string "fileb://" to indicate that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.</p>
+    /// - On success, responds with [`UpdateScriptOutput`](crate::output::UpdateScriptOutput) with field(s):
+    ///   - [`script(Option<Script>)`](crate::output::UpdateScriptOutput::script): <p>The newly created script record with a unique script ID. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift service.</p>
+    /// - On failure, responds with [`SdkError<UpdateScriptError>`](crate::error::UpdateScriptError)
     pub fn update_script(&self) -> fluent_builders::UpdateScript<C, M, R> {
         fluent_builders::UpdateScript::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ValidateMatchmakingRuleSet` operation.
+    /// Constructs a fluent builder for the [`ValidateMatchmakingRuleSet`](crate::client::fluent_builders::ValidateMatchmakingRuleSet) operation.
     ///
-    /// See [`ValidateMatchmakingRuleSet`](crate::client::fluent_builders::ValidateMatchmakingRuleSet) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ValidateMatchmakingRuleSetInput`](crate::input::ValidateMatchmakingRuleSetInput) with field(s):
+    ///   - [`rule_set_body(Option<String>)`](crate::input::ValidateMatchmakingRuleSetInput::rule_set_body): <p>A collection of matchmaking rules to validate, formatted as a JSON string.</p>
+    /// - On success, responds with [`ValidateMatchmakingRuleSetOutput`](crate::output::ValidateMatchmakingRuleSetOutput) with field(s):
+    ///   - [`valid(Option<bool>)`](crate::output::ValidateMatchmakingRuleSetOutput::valid): <p>A response indicating whether the rule set is valid.</p>
+    /// - On failure, responds with [`SdkError<ValidateMatchmakingRuleSetError>`](crate::error::ValidateMatchmakingRuleSetError)
     pub fn validate_matchmaking_rule_set(
         &self,
     ) -> fluent_builders::ValidateMatchmakingRuleSet<C, M, R> {

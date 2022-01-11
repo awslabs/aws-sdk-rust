@@ -83,498 +83,813 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AssociateAssessmentReportEvidenceFolder` operation.
+    /// Constructs a fluent builder for the [`AssociateAssessmentReportEvidenceFolder`](crate::client::fluent_builders::AssociateAssessmentReportEvidenceFolder) operation.
     ///
-    /// See [`AssociateAssessmentReportEvidenceFolder`](crate::client::fluent_builders::AssociateAssessmentReportEvidenceFolder) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateAssessmentReportEvidenceFolderInput`](crate::input::AssociateAssessmentReportEvidenceFolderInput) with field(s):
+    ///   - [`assessment_id(Option<String>)`](crate::input::AssociateAssessmentReportEvidenceFolderInput::assessment_id): <p> The identifier for the assessment. </p>
+    ///   - [`evidence_folder_id(Option<String>)`](crate::input::AssociateAssessmentReportEvidenceFolderInput::evidence_folder_id): <p> The identifier for the folder that the evidence is stored in. </p>
+    /// - On success, responds with [`AssociateAssessmentReportEvidenceFolderOutput`](crate::output::AssociateAssessmentReportEvidenceFolderOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateAssessmentReportEvidenceFolderError>`](crate::error::AssociateAssessmentReportEvidenceFolderError)
     pub fn associate_assessment_report_evidence_folder(
         &self,
     ) -> fluent_builders::AssociateAssessmentReportEvidenceFolder<C, M, R> {
         fluent_builders::AssociateAssessmentReportEvidenceFolder::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchAssociateAssessmentReportEvidence` operation.
+    /// Constructs a fluent builder for the [`BatchAssociateAssessmentReportEvidence`](crate::client::fluent_builders::BatchAssociateAssessmentReportEvidence) operation.
     ///
-    /// See [`BatchAssociateAssessmentReportEvidence`](crate::client::fluent_builders::BatchAssociateAssessmentReportEvidence) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchAssociateAssessmentReportEvidenceInput`](crate::input::BatchAssociateAssessmentReportEvidenceInput) with field(s):
+    ///   - [`assessment_id(Option<String>)`](crate::input::BatchAssociateAssessmentReportEvidenceInput::assessment_id): <p> The identifier for the assessment. </p>
+    ///   - [`evidence_folder_id(Option<String>)`](crate::input::BatchAssociateAssessmentReportEvidenceInput::evidence_folder_id): <p> The identifier for the folder that the evidence is stored in. </p>
+    ///   - [`evidence_ids(Option<Vec<String>>)`](crate::input::BatchAssociateAssessmentReportEvidenceInput::evidence_ids): <p> The list of evidence identifiers. </p>
+    /// - On success, responds with [`BatchAssociateAssessmentReportEvidenceOutput`](crate::output::BatchAssociateAssessmentReportEvidenceOutput) with field(s):
+    ///   - [`evidence_ids(Option<Vec<String>>)`](crate::output::BatchAssociateAssessmentReportEvidenceOutput::evidence_ids): <p> The list of evidence identifiers. </p>
+    ///   - [`errors(Option<Vec<AssessmentReportEvidenceError>>)`](crate::output::BatchAssociateAssessmentReportEvidenceOutput::errors): <p> A list of errors that the <code>BatchAssociateAssessmentReportEvidence</code> API returned. </p>
+    /// - On failure, responds with [`SdkError<BatchAssociateAssessmentReportEvidenceError>`](crate::error::BatchAssociateAssessmentReportEvidenceError)
     pub fn batch_associate_assessment_report_evidence(
         &self,
     ) -> fluent_builders::BatchAssociateAssessmentReportEvidence<C, M, R> {
         fluent_builders::BatchAssociateAssessmentReportEvidence::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchCreateDelegationByAssessment` operation.
+    /// Constructs a fluent builder for the [`BatchCreateDelegationByAssessment`](crate::client::fluent_builders::BatchCreateDelegationByAssessment) operation.
     ///
-    /// See [`BatchCreateDelegationByAssessment`](crate::client::fluent_builders::BatchCreateDelegationByAssessment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchCreateDelegationByAssessmentInput`](crate::input::BatchCreateDelegationByAssessmentInput) with field(s):
+    ///   - [`create_delegation_requests(Option<Vec<CreateDelegationRequest>>)`](crate::input::BatchCreateDelegationByAssessmentInput::create_delegation_requests): <p> The API request to batch create delegations in Audit Manager. </p>
+    ///   - [`assessment_id(Option<String>)`](crate::input::BatchCreateDelegationByAssessmentInput::assessment_id): <p> The identifier for the assessment. </p>
+    /// - On success, responds with [`BatchCreateDelegationByAssessmentOutput`](crate::output::BatchCreateDelegationByAssessmentOutput) with field(s):
+    ///   - [`delegations(Option<Vec<Delegation>>)`](crate::output::BatchCreateDelegationByAssessmentOutput::delegations): <p> The delegations that are associated with the assessment. </p>
+    ///   - [`errors(Option<Vec<BatchCreateDelegationByAssessmentError>>)`](crate::output::BatchCreateDelegationByAssessmentOutput::errors): <p> A list of errors that the <code>BatchCreateDelegationByAssessment</code> API returned. </p>
+    /// - On failure, responds with [`SdkError<BatchCreateDelegationByAssessmentError>`](crate::error::BatchCreateDelegationByAssessmentError)
     pub fn batch_create_delegation_by_assessment(
         &self,
     ) -> fluent_builders::BatchCreateDelegationByAssessment<C, M, R> {
         fluent_builders::BatchCreateDelegationByAssessment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchDeleteDelegationByAssessment` operation.
+    /// Constructs a fluent builder for the [`BatchDeleteDelegationByAssessment`](crate::client::fluent_builders::BatchDeleteDelegationByAssessment) operation.
     ///
-    /// See [`BatchDeleteDelegationByAssessment`](crate::client::fluent_builders::BatchDeleteDelegationByAssessment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchDeleteDelegationByAssessmentInput`](crate::input::BatchDeleteDelegationByAssessmentInput) with field(s):
+    ///   - [`delegation_ids(Option<Vec<String>>)`](crate::input::BatchDeleteDelegationByAssessmentInput::delegation_ids): <p> The identifiers for the delegations. </p>
+    ///   - [`assessment_id(Option<String>)`](crate::input::BatchDeleteDelegationByAssessmentInput::assessment_id): <p> The identifier for the assessment. </p>
+    /// - On success, responds with [`BatchDeleteDelegationByAssessmentOutput`](crate::output::BatchDeleteDelegationByAssessmentOutput) with field(s):
+    ///   - [`errors(Option<Vec<BatchDeleteDelegationByAssessmentError>>)`](crate::output::BatchDeleteDelegationByAssessmentOutput::errors): <p> A list of errors that the <code>BatchDeleteDelegationByAssessment</code> API returned. </p>
+    /// - On failure, responds with [`SdkError<BatchDeleteDelegationByAssessmentError>`](crate::error::BatchDeleteDelegationByAssessmentError)
     pub fn batch_delete_delegation_by_assessment(
         &self,
     ) -> fluent_builders::BatchDeleteDelegationByAssessment<C, M, R> {
         fluent_builders::BatchDeleteDelegationByAssessment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchDisassociateAssessmentReportEvidence` operation.
+    /// Constructs a fluent builder for the [`BatchDisassociateAssessmentReportEvidence`](crate::client::fluent_builders::BatchDisassociateAssessmentReportEvidence) operation.
     ///
-    /// See [`BatchDisassociateAssessmentReportEvidence`](crate::client::fluent_builders::BatchDisassociateAssessmentReportEvidence) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchDisassociateAssessmentReportEvidenceInput`](crate::input::BatchDisassociateAssessmentReportEvidenceInput) with field(s):
+    ///   - [`assessment_id(Option<String>)`](crate::input::BatchDisassociateAssessmentReportEvidenceInput::assessment_id): <p> The identifier for the assessment. </p>
+    ///   - [`evidence_folder_id(Option<String>)`](crate::input::BatchDisassociateAssessmentReportEvidenceInput::evidence_folder_id): <p> The identifier for the folder that the evidence is stored in. </p>
+    ///   - [`evidence_ids(Option<Vec<String>>)`](crate::input::BatchDisassociateAssessmentReportEvidenceInput::evidence_ids): <p> The list of evidence identifiers. </p>
+    /// - On success, responds with [`BatchDisassociateAssessmentReportEvidenceOutput`](crate::output::BatchDisassociateAssessmentReportEvidenceOutput) with field(s):
+    ///   - [`evidence_ids(Option<Vec<String>>)`](crate::output::BatchDisassociateAssessmentReportEvidenceOutput::evidence_ids): <p> The identifier for the evidence. </p>
+    ///   - [`errors(Option<Vec<AssessmentReportEvidenceError>>)`](crate::output::BatchDisassociateAssessmentReportEvidenceOutput::errors): <p> A list of errors that the <code>BatchDisassociateAssessmentReportEvidence</code> API returned. </p>
+    /// - On failure, responds with [`SdkError<BatchDisassociateAssessmentReportEvidenceError>`](crate::error::BatchDisassociateAssessmentReportEvidenceError)
     pub fn batch_disassociate_assessment_report_evidence(
         &self,
     ) -> fluent_builders::BatchDisassociateAssessmentReportEvidence<C, M, R> {
         fluent_builders::BatchDisassociateAssessmentReportEvidence::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchImportEvidenceToAssessmentControl` operation.
+    /// Constructs a fluent builder for the [`BatchImportEvidenceToAssessmentControl`](crate::client::fluent_builders::BatchImportEvidenceToAssessmentControl) operation.
     ///
-    /// See [`BatchImportEvidenceToAssessmentControl`](crate::client::fluent_builders::BatchImportEvidenceToAssessmentControl) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchImportEvidenceToAssessmentControlInput`](crate::input::BatchImportEvidenceToAssessmentControlInput) with field(s):
+    ///   - [`assessment_id(Option<String>)`](crate::input::BatchImportEvidenceToAssessmentControlInput::assessment_id): <p> The identifier for the assessment. </p>
+    ///   - [`control_set_id(Option<String>)`](crate::input::BatchImportEvidenceToAssessmentControlInput::control_set_id): <p> The identifier for the control set. </p>
+    ///   - [`control_id(Option<String>)`](crate::input::BatchImportEvidenceToAssessmentControlInput::control_id): <p> The identifier for the control. </p>
+    ///   - [`manual_evidence(Option<Vec<ManualEvidence>>)`](crate::input::BatchImportEvidenceToAssessmentControlInput::manual_evidence): <p> The list of manual evidence objects. </p>
+    /// - On success, responds with [`BatchImportEvidenceToAssessmentControlOutput`](crate::output::BatchImportEvidenceToAssessmentControlOutput) with field(s):
+    ///   - [`errors(Option<Vec<BatchImportEvidenceToAssessmentControlError>>)`](crate::output::BatchImportEvidenceToAssessmentControlOutput::errors): <p> A list of errors that the <code>BatchImportEvidenceToAssessmentControl</code> API returned. </p>
+    /// - On failure, responds with [`SdkError<BatchImportEvidenceToAssessmentControlError>`](crate::error::BatchImportEvidenceToAssessmentControlError)
     pub fn batch_import_evidence_to_assessment_control(
         &self,
     ) -> fluent_builders::BatchImportEvidenceToAssessmentControl<C, M, R> {
         fluent_builders::BatchImportEvidenceToAssessmentControl::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateAssessment` operation.
+    /// Constructs a fluent builder for the [`CreateAssessment`](crate::client::fluent_builders::CreateAssessment) operation.
     ///
-    /// See [`CreateAssessment`](crate::client::fluent_builders::CreateAssessment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateAssessmentInput`](crate::input::CreateAssessmentInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateAssessmentInput::name): <p> The name of the assessment to be created. </p>
+    ///   - [`description(Option<String>)`](crate::input::CreateAssessmentInput::description): <p> The optional description of the assessment to be created. </p>
+    ///   - [`assessment_reports_destination(Option<AssessmentReportsDestination>)`](crate::input::CreateAssessmentInput::assessment_reports_destination): <p> The assessment report storage destination for the assessment that's being created. </p>
+    ///   - [`scope(Option<Scope>)`](crate::input::CreateAssessmentInput::scope): <p> The wrapper that contains the Amazon Web Services accounts and services that are in scope for the assessment. </p>
+    ///   - [`roles(Option<Vec<Role>>)`](crate::input::CreateAssessmentInput::roles): <p> The list of roles for the assessment. </p>
+    ///   - [`framework_id(Option<String>)`](crate::input::CreateAssessmentInput::framework_id): <p> The identifier for the framework that the assessment will be created from. </p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateAssessmentInput::tags): <p> The tags that are associated with the assessment. </p>
+    /// - On success, responds with [`CreateAssessmentOutput`](crate::output::CreateAssessmentOutput) with field(s):
+    ///   - [`assessment(Option<Assessment>)`](crate::output::CreateAssessmentOutput::assessment): <p> An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework. </p>
+    /// - On failure, responds with [`SdkError<CreateAssessmentError>`](crate::error::CreateAssessmentError)
     pub fn create_assessment(&self) -> fluent_builders::CreateAssessment<C, M, R> {
         fluent_builders::CreateAssessment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateAssessmentFramework` operation.
+    /// Constructs a fluent builder for the [`CreateAssessmentFramework`](crate::client::fluent_builders::CreateAssessmentFramework) operation.
     ///
-    /// See [`CreateAssessmentFramework`](crate::client::fluent_builders::CreateAssessmentFramework) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateAssessmentFrameworkInput`](crate::input::CreateAssessmentFrameworkInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateAssessmentFrameworkInput::name): <p> The name of the new custom framework. </p>
+    ///   - [`description(Option<String>)`](crate::input::CreateAssessmentFrameworkInput::description): <p> An optional description for the new custom framework. </p>
+    ///   - [`compliance_type(Option<String>)`](crate::input::CreateAssessmentFrameworkInput::compliance_type): <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
+    ///   - [`control_sets(Option<Vec<CreateAssessmentFrameworkControlSet>>)`](crate::input::CreateAssessmentFrameworkInput::control_sets): <p> The control sets that are associated with the framework. </p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateAssessmentFrameworkInput::tags): <p> The tags that are associated with the framework. </p>
+    /// - On success, responds with [`CreateAssessmentFrameworkOutput`](crate::output::CreateAssessmentFrameworkOutput) with field(s):
+    ///   - [`framework(Option<Framework>)`](crate::output::CreateAssessmentFrameworkOutput::framework): <p> The name of the new framework that the <code>CreateAssessmentFramework</code> API returned. </p>
+    /// - On failure, responds with [`SdkError<CreateAssessmentFrameworkError>`](crate::error::CreateAssessmentFrameworkError)
     pub fn create_assessment_framework(
         &self,
     ) -> fluent_builders::CreateAssessmentFramework<C, M, R> {
         fluent_builders::CreateAssessmentFramework::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateAssessmentReport` operation.
+    /// Constructs a fluent builder for the [`CreateAssessmentReport`](crate::client::fluent_builders::CreateAssessmentReport) operation.
     ///
-    /// See [`CreateAssessmentReport`](crate::client::fluent_builders::CreateAssessmentReport) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateAssessmentReportInput`](crate::input::CreateAssessmentReportInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateAssessmentReportInput::name): <p> The name of the new assessment report. </p>
+    ///   - [`description(Option<String>)`](crate::input::CreateAssessmentReportInput::description): <p> The description of the assessment report. </p>
+    ///   - [`assessment_id(Option<String>)`](crate::input::CreateAssessmentReportInput::assessment_id): <p> The identifier for the assessment. </p>
+    /// - On success, responds with [`CreateAssessmentReportOutput`](crate::output::CreateAssessmentReportOutput) with field(s):
+    ///   - [`assessment_report(Option<AssessmentReport>)`](crate::output::CreateAssessmentReportOutput::assessment_report): <p> The new assessment report that the <code>CreateAssessmentReport</code> API returned. </p>
+    /// - On failure, responds with [`SdkError<CreateAssessmentReportError>`](crate::error::CreateAssessmentReportError)
     pub fn create_assessment_report(&self) -> fluent_builders::CreateAssessmentReport<C, M, R> {
         fluent_builders::CreateAssessmentReport::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateControl` operation.
+    /// Constructs a fluent builder for the [`CreateControl`](crate::client::fluent_builders::CreateControl) operation.
     ///
-    /// See [`CreateControl`](crate::client::fluent_builders::CreateControl) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateControlInput`](crate::input::CreateControlInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateControlInput::name): <p> The name of the control. </p>
+    ///   - [`description(Option<String>)`](crate::input::CreateControlInput::description): <p> The description of the control. </p>
+    ///   - [`testing_information(Option<String>)`](crate::input::CreateControlInput::testing_information): <p> The steps to follow to determine if the control is satisfied. </p>
+    ///   - [`action_plan_title(Option<String>)`](crate::input::CreateControlInput::action_plan_title): <p> The title of the action plan for remediating the control. </p>
+    ///   - [`action_plan_instructions(Option<String>)`](crate::input::CreateControlInput::action_plan_instructions): <p> The recommended actions to carry out if the control isn't fulfilled. </p>
+    ///   - [`control_mapping_sources(Option<Vec<CreateControlMappingSource>>)`](crate::input::CreateControlInput::control_mapping_sources): <p> The data mapping sources for the control. </p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateControlInput::tags): <p> The tags that are associated with the control. </p>
+    /// - On success, responds with [`CreateControlOutput`](crate::output::CreateControlOutput) with field(s):
+    ///   - [`control(Option<Control>)`](crate::output::CreateControlOutput::control): <p> The new control that the <code>CreateControl</code> API returned. </p>
+    /// - On failure, responds with [`SdkError<CreateControlError>`](crate::error::CreateControlError)
     pub fn create_control(&self) -> fluent_builders::CreateControl<C, M, R> {
         fluent_builders::CreateControl::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAssessment` operation.
+    /// Constructs a fluent builder for the [`DeleteAssessment`](crate::client::fluent_builders::DeleteAssessment) operation.
     ///
-    /// See [`DeleteAssessment`](crate::client::fluent_builders::DeleteAssessment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteAssessmentInput`](crate::input::DeleteAssessmentInput) with field(s):
+    ///   - [`assessment_id(Option<String>)`](crate::input::DeleteAssessmentInput::assessment_id): <p> The identifier for the assessment. </p>
+    /// - On success, responds with [`DeleteAssessmentOutput`](crate::output::DeleteAssessmentOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAssessmentError>`](crate::error::DeleteAssessmentError)
     pub fn delete_assessment(&self) -> fluent_builders::DeleteAssessment<C, M, R> {
         fluent_builders::DeleteAssessment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAssessmentFramework` operation.
+    /// Constructs a fluent builder for the [`DeleteAssessmentFramework`](crate::client::fluent_builders::DeleteAssessmentFramework) operation.
     ///
-    /// See [`DeleteAssessmentFramework`](crate::client::fluent_builders::DeleteAssessmentFramework) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteAssessmentFrameworkInput`](crate::input::DeleteAssessmentFrameworkInput) with field(s):
+    ///   - [`framework_id(Option<String>)`](crate::input::DeleteAssessmentFrameworkInput::framework_id): <p> The identifier for the custom framework. </p>
+    /// - On success, responds with [`DeleteAssessmentFrameworkOutput`](crate::output::DeleteAssessmentFrameworkOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAssessmentFrameworkError>`](crate::error::DeleteAssessmentFrameworkError)
     pub fn delete_assessment_framework(
         &self,
     ) -> fluent_builders::DeleteAssessmentFramework<C, M, R> {
         fluent_builders::DeleteAssessmentFramework::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAssessmentFrameworkShare` operation.
+    /// Constructs a fluent builder for the [`DeleteAssessmentFrameworkShare`](crate::client::fluent_builders::DeleteAssessmentFrameworkShare) operation.
     ///
-    /// See [`DeleteAssessmentFrameworkShare`](crate::client::fluent_builders::DeleteAssessmentFrameworkShare) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteAssessmentFrameworkShareInput`](crate::input::DeleteAssessmentFrameworkShareInput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::input::DeleteAssessmentFrameworkShareInput::request_id): <p>The unique identifier for the share request to be deleted.</p>
+    ///   - [`request_type(Option<ShareRequestType>)`](crate::input::DeleteAssessmentFrameworkShareInput::request_type): <p>Specifies whether the share request is a sent request or a received request.</p>
+    /// - On success, responds with [`DeleteAssessmentFrameworkShareOutput`](crate::output::DeleteAssessmentFrameworkShareOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAssessmentFrameworkShareError>`](crate::error::DeleteAssessmentFrameworkShareError)
     pub fn delete_assessment_framework_share(
         &self,
     ) -> fluent_builders::DeleteAssessmentFrameworkShare<C, M, R> {
         fluent_builders::DeleteAssessmentFrameworkShare::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAssessmentReport` operation.
+    /// Constructs a fluent builder for the [`DeleteAssessmentReport`](crate::client::fluent_builders::DeleteAssessmentReport) operation.
     ///
-    /// See [`DeleteAssessmentReport`](crate::client::fluent_builders::DeleteAssessmentReport) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteAssessmentReportInput`](crate::input::DeleteAssessmentReportInput) with field(s):
+    ///   - [`assessment_id(Option<String>)`](crate::input::DeleteAssessmentReportInput::assessment_id): <p> The unique identifier for the assessment. </p>
+    ///   - [`assessment_report_id(Option<String>)`](crate::input::DeleteAssessmentReportInput::assessment_report_id): <p> The unique identifier for the assessment report. </p>
+    /// - On success, responds with [`DeleteAssessmentReportOutput`](crate::output::DeleteAssessmentReportOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAssessmentReportError>`](crate::error::DeleteAssessmentReportError)
     pub fn delete_assessment_report(&self) -> fluent_builders::DeleteAssessmentReport<C, M, R> {
         fluent_builders::DeleteAssessmentReport::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteControl` operation.
+    /// Constructs a fluent builder for the [`DeleteControl`](crate::client::fluent_builders::DeleteControl) operation.
     ///
-    /// See [`DeleteControl`](crate::client::fluent_builders::DeleteControl) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteControlInput`](crate::input::DeleteControlInput) with field(s):
+    ///   - [`control_id(Option<String>)`](crate::input::DeleteControlInput::control_id): <p> The unique identifier for the control. </p>
+    /// - On success, responds with [`DeleteControlOutput`](crate::output::DeleteControlOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteControlError>`](crate::error::DeleteControlError)
     pub fn delete_control(&self) -> fluent_builders::DeleteControl<C, M, R> {
         fluent_builders::DeleteControl::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeregisterAccount` operation.
+    /// Constructs a fluent builder for the [`DeregisterAccount`](crate::client::fluent_builders::DeregisterAccount) operation.
     ///
-    /// See [`DeregisterAccount`](crate::client::fluent_builders::DeregisterAccount) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeregisterAccountInput`](crate::input::DeregisterAccountInput)
+
+    /// - On success, responds with [`DeregisterAccountOutput`](crate::output::DeregisterAccountOutput) with field(s):
+    ///   - [`status(Option<AccountStatus>)`](crate::output::DeregisterAccountOutput::status): <p> The registration status of the account. </p>
+    /// - On failure, responds with [`SdkError<DeregisterAccountError>`](crate::error::DeregisterAccountError)
     pub fn deregister_account(&self) -> fluent_builders::DeregisterAccount<C, M, R> {
         fluent_builders::DeregisterAccount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeregisterOrganizationAdminAccount` operation.
+    /// Constructs a fluent builder for the [`DeregisterOrganizationAdminAccount`](crate::client::fluent_builders::DeregisterOrganizationAdminAccount) operation.
     ///
-    /// See [`DeregisterOrganizationAdminAccount`](crate::client::fluent_builders::DeregisterOrganizationAdminAccount) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeregisterOrganizationAdminAccountInput`](crate::input::DeregisterOrganizationAdminAccountInput) with field(s):
+    ///   - [`admin_account_id(Option<String>)`](crate::input::DeregisterOrganizationAdminAccountInput::admin_account_id): <p> The identifier for the administrator account. </p>
+    /// - On success, responds with [`DeregisterOrganizationAdminAccountOutput`](crate::output::DeregisterOrganizationAdminAccountOutput)
+
+    /// - On failure, responds with [`SdkError<DeregisterOrganizationAdminAccountError>`](crate::error::DeregisterOrganizationAdminAccountError)
     pub fn deregister_organization_admin_account(
         &self,
     ) -> fluent_builders::DeregisterOrganizationAdminAccount<C, M, R> {
         fluent_builders::DeregisterOrganizationAdminAccount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateAssessmentReportEvidenceFolder` operation.
+    /// Constructs a fluent builder for the [`DisassociateAssessmentReportEvidenceFolder`](crate::client::fluent_builders::DisassociateAssessmentReportEvidenceFolder) operation.
     ///
-    /// See [`DisassociateAssessmentReportEvidenceFolder`](crate::client::fluent_builders::DisassociateAssessmentReportEvidenceFolder) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateAssessmentReportEvidenceFolderInput`](crate::input::DisassociateAssessmentReportEvidenceFolderInput) with field(s):
+    ///   - [`assessment_id(Option<String>)`](crate::input::DisassociateAssessmentReportEvidenceFolderInput::assessment_id): <p> The unique identifier for the assessment. </p>
+    ///   - [`evidence_folder_id(Option<String>)`](crate::input::DisassociateAssessmentReportEvidenceFolderInput::evidence_folder_id): <p> The unique identifier for the folder that the evidence is stored in. </p>
+    /// - On success, responds with [`DisassociateAssessmentReportEvidenceFolderOutput`](crate::output::DisassociateAssessmentReportEvidenceFolderOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateAssessmentReportEvidenceFolderError>`](crate::error::DisassociateAssessmentReportEvidenceFolderError)
     pub fn disassociate_assessment_report_evidence_folder(
         &self,
     ) -> fluent_builders::DisassociateAssessmentReportEvidenceFolder<C, M, R> {
         fluent_builders::DisassociateAssessmentReportEvidenceFolder::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAccountStatus` operation.
+    /// Constructs a fluent builder for the [`GetAccountStatus`](crate::client::fluent_builders::GetAccountStatus) operation.
     ///
-    /// See [`GetAccountStatus`](crate::client::fluent_builders::GetAccountStatus) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetAccountStatusInput`](crate::input::GetAccountStatusInput)
+
+    /// - On success, responds with [`GetAccountStatusOutput`](crate::output::GetAccountStatusOutput) with field(s):
+    ///   - [`status(Option<AccountStatus>)`](crate::output::GetAccountStatusOutput::status): <p> The status of the Amazon Web Services account. </p>
+    /// - On failure, responds with [`SdkError<GetAccountStatusError>`](crate::error::GetAccountStatusError)
     pub fn get_account_status(&self) -> fluent_builders::GetAccountStatus<C, M, R> {
         fluent_builders::GetAccountStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAssessment` operation.
+    /// Constructs a fluent builder for the [`GetAssessment`](crate::client::fluent_builders::GetAssessment) operation.
     ///
-    /// See [`GetAssessment`](crate::client::fluent_builders::GetAssessment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetAssessmentInput`](crate::input::GetAssessmentInput) with field(s):
+    ///   - [`assessment_id(Option<String>)`](crate::input::GetAssessmentInput::assessment_id): <p>The unique identifier for the assessment. </p>
+    /// - On success, responds with [`GetAssessmentOutput`](crate::output::GetAssessmentOutput) with field(s):
+    ///   - [`assessment(Option<Assessment>)`](crate::output::GetAssessmentOutput::assessment): <p> An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework. </p>
+    ///   - [`user_role(Option<Role>)`](crate::output::GetAssessmentOutput::user_role): <p> The wrapper that contains the Audit Manager role information of the current user. This includes the role type and IAM Amazon Resource Name (ARN). </p>
+    /// - On failure, responds with [`SdkError<GetAssessmentError>`](crate::error::GetAssessmentError)
     pub fn get_assessment(&self) -> fluent_builders::GetAssessment<C, M, R> {
         fluent_builders::GetAssessment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAssessmentFramework` operation.
+    /// Constructs a fluent builder for the [`GetAssessmentFramework`](crate::client::fluent_builders::GetAssessmentFramework) operation.
     ///
-    /// See [`GetAssessmentFramework`](crate::client::fluent_builders::GetAssessmentFramework) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetAssessmentFrameworkInput`](crate::input::GetAssessmentFrameworkInput) with field(s):
+    ///   - [`framework_id(Option<String>)`](crate::input::GetAssessmentFrameworkInput::framework_id): <p> The identifier for the framework. </p>
+    /// - On success, responds with [`GetAssessmentFrameworkOutput`](crate::output::GetAssessmentFrameworkOutput) with field(s):
+    ///   - [`framework(Option<Framework>)`](crate::output::GetAssessmentFrameworkOutput::framework): <p> The framework that the <code>GetAssessmentFramework</code> API returned. </p>
+    /// - On failure, responds with [`SdkError<GetAssessmentFrameworkError>`](crate::error::GetAssessmentFrameworkError)
     pub fn get_assessment_framework(&self) -> fluent_builders::GetAssessmentFramework<C, M, R> {
         fluent_builders::GetAssessmentFramework::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAssessmentReportUrl` operation.
+    /// Constructs a fluent builder for the [`GetAssessmentReportUrl`](crate::client::fluent_builders::GetAssessmentReportUrl) operation.
     ///
-    /// See [`GetAssessmentReportUrl`](crate::client::fluent_builders::GetAssessmentReportUrl) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetAssessmentReportUrlInput`](crate::input::GetAssessmentReportUrlInput) with field(s):
+    ///   - [`assessment_report_id(Option<String>)`](crate::input::GetAssessmentReportUrlInput::assessment_report_id): <p> The unique identifier for the assessment report. </p>
+    ///   - [`assessment_id(Option<String>)`](crate::input::GetAssessmentReportUrlInput::assessment_id): <p> The unique identifier for the assessment. </p>
+    /// - On success, responds with [`GetAssessmentReportUrlOutput`](crate::output::GetAssessmentReportUrlOutput) with field(s):
+    ///   - [`pre_signed_url(Option<Url>)`](crate::output::GetAssessmentReportUrlOutput::pre_signed_url): <p> Short for uniform resource locator. A URL is used as a unique identifier to locate a resource on the internet. </p>
+    /// - On failure, responds with [`SdkError<GetAssessmentReportUrlError>`](crate::error::GetAssessmentReportUrlError)
     pub fn get_assessment_report_url(&self) -> fluent_builders::GetAssessmentReportUrl<C, M, R> {
         fluent_builders::GetAssessmentReportUrl::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetChangeLogs` operation.
-    ///
-    /// See [`GetChangeLogs`](crate::client::fluent_builders::GetChangeLogs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetChangeLogs`](crate::client::fluent_builders::GetChangeLogs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetChangeLogs::into_paginator).
+    ///
+    /// - Takes [`GetChangeLogsInput`](crate::input::GetChangeLogsInput) with field(s):
+    ///   - [`assessment_id(Option<String>)`](crate::input::GetChangeLogsInput::assessment_id): <p>The unique identifier for the assessment. </p>
+    ///   - [`control_set_id(Option<String>)`](crate::input::GetChangeLogsInput::control_set_id): <p> The unique identifier for the control set. </p>
+    ///   - [`control_id(Option<String>)`](crate::input::GetChangeLogsInput::control_id): <p> The unique identifier for the control. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetChangeLogsInput::next_token): <p> The pagination token that's used to fetch the next set of results. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetChangeLogsInput::max_results): <p>Represents the maximum number of results on a page or for an API request call. </p>
+    /// - On success, responds with [`GetChangeLogsOutput`](crate::output::GetChangeLogsOutput) with field(s):
+    ///   - [`change_logs(Option<Vec<ChangeLog>>)`](crate::output::GetChangeLogsOutput::change_logs): <p>The list of user activity for the control. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetChangeLogsOutput::next_token): <p>The pagination token that's used to fetch the next set of results. </p>
+    /// - On failure, responds with [`SdkError<GetChangeLogsError>`](crate::error::GetChangeLogsError)
     pub fn get_change_logs(&self) -> fluent_builders::GetChangeLogs<C, M, R> {
         fluent_builders::GetChangeLogs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetControl` operation.
+    /// Constructs a fluent builder for the [`GetControl`](crate::client::fluent_builders::GetControl) operation.
     ///
-    /// See [`GetControl`](crate::client::fluent_builders::GetControl) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetControlInput`](crate::input::GetControlInput) with field(s):
+    ///   - [`control_id(Option<String>)`](crate::input::GetControlInput::control_id): <p> The identifier for the control. </p>
+    /// - On success, responds with [`GetControlOutput`](crate::output::GetControlOutput) with field(s):
+    ///   - [`control(Option<Control>)`](crate::output::GetControlOutput::control): <p> The name of the control that the <code>GetControl</code> API returned. </p>
+    /// - On failure, responds with [`SdkError<GetControlError>`](crate::error::GetControlError)
     pub fn get_control(&self) -> fluent_builders::GetControl<C, M, R> {
         fluent_builders::GetControl::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDelegations` operation.
-    ///
-    /// See [`GetDelegations`](crate::client::fluent_builders::GetDelegations) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetDelegations`](crate::client::fluent_builders::GetDelegations) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetDelegations::into_paginator).
+    ///
+    /// - Takes [`GetDelegationsInput`](crate::input::GetDelegationsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::GetDelegationsInput::next_token): <p> The pagination token that's used to fetch the next set of results. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetDelegationsInput::max_results): <p> Represents the maximum number of results on a page or for an API request call. </p>
+    /// - On success, responds with [`GetDelegationsOutput`](crate::output::GetDelegationsOutput) with field(s):
+    ///   - [`delegations(Option<Vec<DelegationMetadata>>)`](crate::output::GetDelegationsOutput::delegations): <p> The list of delegations that the <code>GetDelegations</code> API returned. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetDelegationsOutput::next_token): <p> The pagination token that's used to fetch the next set of results. </p>
+    /// - On failure, responds with [`SdkError<GetDelegationsError>`](crate::error::GetDelegationsError)
     pub fn get_delegations(&self) -> fluent_builders::GetDelegations<C, M, R> {
         fluent_builders::GetDelegations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetEvidence` operation.
+    /// Constructs a fluent builder for the [`GetEvidence`](crate::client::fluent_builders::GetEvidence) operation.
     ///
-    /// See [`GetEvidence`](crate::client::fluent_builders::GetEvidence) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetEvidenceInput`](crate::input::GetEvidenceInput) with field(s):
+    ///   - [`assessment_id(Option<String>)`](crate::input::GetEvidenceInput::assessment_id): <p> The unique identifier for the assessment. </p>
+    ///   - [`control_set_id(Option<String>)`](crate::input::GetEvidenceInput::control_set_id): <p> The unique identifier for the control set. </p>
+    ///   - [`evidence_folder_id(Option<String>)`](crate::input::GetEvidenceInput::evidence_folder_id): <p> The unique identifier for the folder that the evidence is stored in. </p>
+    ///   - [`evidence_id(Option<String>)`](crate::input::GetEvidenceInput::evidence_id): <p> The unique identifier for the evidence. </p>
+    /// - On success, responds with [`GetEvidenceOutput`](crate::output::GetEvidenceOutput) with field(s):
+    ///   - [`evidence(Option<Evidence>)`](crate::output::GetEvidenceOutput::evidence): <p> The evidence that the <code>GetEvidenceResponse</code> API returned. </p>
+    /// - On failure, responds with [`SdkError<GetEvidenceError>`](crate::error::GetEvidenceError)
     pub fn get_evidence(&self) -> fluent_builders::GetEvidence<C, M, R> {
         fluent_builders::GetEvidence::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetEvidenceByEvidenceFolder` operation.
-    ///
-    /// See [`GetEvidenceByEvidenceFolder`](crate::client::fluent_builders::GetEvidenceByEvidenceFolder) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetEvidenceByEvidenceFolder`](crate::client::fluent_builders::GetEvidenceByEvidenceFolder) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetEvidenceByEvidenceFolder::into_paginator).
+    ///
+    /// - Takes [`GetEvidenceByEvidenceFolderInput`](crate::input::GetEvidenceByEvidenceFolderInput) with field(s):
+    ///   - [`assessment_id(Option<String>)`](crate::input::GetEvidenceByEvidenceFolderInput::assessment_id): <p> The identifier for the assessment. </p>
+    ///   - [`control_set_id(Option<String>)`](crate::input::GetEvidenceByEvidenceFolderInput::control_set_id): <p> The identifier for the control set. </p>
+    ///   - [`evidence_folder_id(Option<String>)`](crate::input::GetEvidenceByEvidenceFolderInput::evidence_folder_id): <p> The unique identifier for the folder that the evidence is stored in. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetEvidenceByEvidenceFolderInput::next_token): <p> The pagination token that's used to fetch the next set of results. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetEvidenceByEvidenceFolderInput::max_results): <p> Represents the maximum number of results on a page or for an API request call. </p>
+    /// - On success, responds with [`GetEvidenceByEvidenceFolderOutput`](crate::output::GetEvidenceByEvidenceFolderOutput) with field(s):
+    ///   - [`evidence(Option<Vec<Evidence>>)`](crate::output::GetEvidenceByEvidenceFolderOutput::evidence): <p> The list of evidence that the <code>GetEvidenceByEvidenceFolder</code> API returned. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetEvidenceByEvidenceFolderOutput::next_token): <p> The pagination token that's used to fetch the next set of results. </p>
+    /// - On failure, responds with [`SdkError<GetEvidenceByEvidenceFolderError>`](crate::error::GetEvidenceByEvidenceFolderError)
     pub fn get_evidence_by_evidence_folder(
         &self,
     ) -> fluent_builders::GetEvidenceByEvidenceFolder<C, M, R> {
         fluent_builders::GetEvidenceByEvidenceFolder::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetEvidenceFolder` operation.
+    /// Constructs a fluent builder for the [`GetEvidenceFolder`](crate::client::fluent_builders::GetEvidenceFolder) operation.
     ///
-    /// See [`GetEvidenceFolder`](crate::client::fluent_builders::GetEvidenceFolder) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetEvidenceFolderInput`](crate::input::GetEvidenceFolderInput) with field(s):
+    ///   - [`assessment_id(Option<String>)`](crate::input::GetEvidenceFolderInput::assessment_id): <p> The unique identifier for the assessment. </p>
+    ///   - [`control_set_id(Option<String>)`](crate::input::GetEvidenceFolderInput::control_set_id): <p> The unique identifier for the control set. </p>
+    ///   - [`evidence_folder_id(Option<String>)`](crate::input::GetEvidenceFolderInput::evidence_folder_id): <p> The unique identifier for the folder that the evidence is stored in. </p>
+    /// - On success, responds with [`GetEvidenceFolderOutput`](crate::output::GetEvidenceFolderOutput) with field(s):
+    ///   - [`evidence_folder(Option<AssessmentEvidenceFolder>)`](crate::output::GetEvidenceFolderOutput::evidence_folder): <p> The folder that the evidence is stored in. </p>
+    /// - On failure, responds with [`SdkError<GetEvidenceFolderError>`](crate::error::GetEvidenceFolderError)
     pub fn get_evidence_folder(&self) -> fluent_builders::GetEvidenceFolder<C, M, R> {
         fluent_builders::GetEvidenceFolder::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetEvidenceFoldersByAssessment` operation.
-    ///
-    /// See [`GetEvidenceFoldersByAssessment`](crate::client::fluent_builders::GetEvidenceFoldersByAssessment) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetEvidenceFoldersByAssessment`](crate::client::fluent_builders::GetEvidenceFoldersByAssessment) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetEvidenceFoldersByAssessment::into_paginator).
+    ///
+    /// - Takes [`GetEvidenceFoldersByAssessmentInput`](crate::input::GetEvidenceFoldersByAssessmentInput) with field(s):
+    ///   - [`assessment_id(Option<String>)`](crate::input::GetEvidenceFoldersByAssessmentInput::assessment_id): <p> The unique identifier for the assessment. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetEvidenceFoldersByAssessmentInput::next_token): <p> The pagination token that's used to fetch the next set of results. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetEvidenceFoldersByAssessmentInput::max_results): <p> Represents the maximum number of results on a page or for an API request call. </p>
+    /// - On success, responds with [`GetEvidenceFoldersByAssessmentOutput`](crate::output::GetEvidenceFoldersByAssessmentOutput) with field(s):
+    ///   - [`evidence_folders(Option<Vec<AssessmentEvidenceFolder>>)`](crate::output::GetEvidenceFoldersByAssessmentOutput::evidence_folders): <p> The list of evidence folders that the <code>GetEvidenceFoldersByAssessment</code> API returned. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetEvidenceFoldersByAssessmentOutput::next_token): <p> The pagination token that's used to fetch the next set of results. </p>
+    /// - On failure, responds with [`SdkError<GetEvidenceFoldersByAssessmentError>`](crate::error::GetEvidenceFoldersByAssessmentError)
     pub fn get_evidence_folders_by_assessment(
         &self,
     ) -> fluent_builders::GetEvidenceFoldersByAssessment<C, M, R> {
         fluent_builders::GetEvidenceFoldersByAssessment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetEvidenceFoldersByAssessmentControl` operation.
-    ///
-    /// See [`GetEvidenceFoldersByAssessmentControl`](crate::client::fluent_builders::GetEvidenceFoldersByAssessmentControl) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetEvidenceFoldersByAssessmentControl`](crate::client::fluent_builders::GetEvidenceFoldersByAssessmentControl) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetEvidenceFoldersByAssessmentControl::into_paginator).
+    ///
+    /// - Takes [`GetEvidenceFoldersByAssessmentControlInput`](crate::input::GetEvidenceFoldersByAssessmentControlInput) with field(s):
+    ///   - [`assessment_id(Option<String>)`](crate::input::GetEvidenceFoldersByAssessmentControlInput::assessment_id): <p> The identifier for the assessment. </p>
+    ///   - [`control_set_id(Option<String>)`](crate::input::GetEvidenceFoldersByAssessmentControlInput::control_set_id): <p> The identifier for the control set. </p>
+    ///   - [`control_id(Option<String>)`](crate::input::GetEvidenceFoldersByAssessmentControlInput::control_id): <p> The identifier for the control. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetEvidenceFoldersByAssessmentControlInput::next_token): <p> The pagination token that's used to fetch the next set of results. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetEvidenceFoldersByAssessmentControlInput::max_results): <p> Represents the maximum number of results on a page or for an API request call. </p>
+    /// - On success, responds with [`GetEvidenceFoldersByAssessmentControlOutput`](crate::output::GetEvidenceFoldersByAssessmentControlOutput) with field(s):
+    ///   - [`evidence_folders(Option<Vec<AssessmentEvidenceFolder>>)`](crate::output::GetEvidenceFoldersByAssessmentControlOutput::evidence_folders): <p> The list of evidence folders that the <code>GetEvidenceFoldersByAssessmentControl</code> API returned. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetEvidenceFoldersByAssessmentControlOutput::next_token): <p> The pagination token that's used to fetch the next set of results. </p>
+    /// - On failure, responds with [`SdkError<GetEvidenceFoldersByAssessmentControlError>`](crate::error::GetEvidenceFoldersByAssessmentControlError)
     pub fn get_evidence_folders_by_assessment_control(
         &self,
     ) -> fluent_builders::GetEvidenceFoldersByAssessmentControl<C, M, R> {
         fluent_builders::GetEvidenceFoldersByAssessmentControl::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetInsights` operation.
+    /// Constructs a fluent builder for the [`GetInsights`](crate::client::fluent_builders::GetInsights) operation.
     ///
-    /// See [`GetInsights`](crate::client::fluent_builders::GetInsights) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetInsightsInput`](crate::input::GetInsightsInput)
+
+    /// - On success, responds with [`GetInsightsOutput`](crate::output::GetInsightsOutput) with field(s):
+    ///   - [`insights(Option<Insights>)`](crate::output::GetInsightsOutput::insights): <p>The analytics data that the <code>GetInsights</code> API returned. </p>
+    /// - On failure, responds with [`SdkError<GetInsightsError>`](crate::error::GetInsightsError)
     pub fn get_insights(&self) -> fluent_builders::GetInsights<C, M, R> {
         fluent_builders::GetInsights::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetInsightsByAssessment` operation.
+    /// Constructs a fluent builder for the [`GetInsightsByAssessment`](crate::client::fluent_builders::GetInsightsByAssessment) operation.
     ///
-    /// See [`GetInsightsByAssessment`](crate::client::fluent_builders::GetInsightsByAssessment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetInsightsByAssessmentInput`](crate::input::GetInsightsByAssessmentInput) with field(s):
+    ///   - [`assessment_id(Option<String>)`](crate::input::GetInsightsByAssessmentInput::assessment_id): <p>The unique identifier for the assessment. </p>
+    /// - On success, responds with [`GetInsightsByAssessmentOutput`](crate::output::GetInsightsByAssessmentOutput) with field(s):
+    ///   - [`insights(Option<InsightsByAssessment>)`](crate::output::GetInsightsByAssessmentOutput::insights): <p> The assessment analytics data that the <code>GetInsightsByAssessment</code> API returned. </p>
+    /// - On failure, responds with [`SdkError<GetInsightsByAssessmentError>`](crate::error::GetInsightsByAssessmentError)
     pub fn get_insights_by_assessment(&self) -> fluent_builders::GetInsightsByAssessment<C, M, R> {
         fluent_builders::GetInsightsByAssessment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetOrganizationAdminAccount` operation.
+    /// Constructs a fluent builder for the [`GetOrganizationAdminAccount`](crate::client::fluent_builders::GetOrganizationAdminAccount) operation.
     ///
-    /// See [`GetOrganizationAdminAccount`](crate::client::fluent_builders::GetOrganizationAdminAccount) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetOrganizationAdminAccountInput`](crate::input::GetOrganizationAdminAccountInput)
+
+    /// - On success, responds with [`GetOrganizationAdminAccountOutput`](crate::output::GetOrganizationAdminAccountOutput) with field(s):
+    ///   - [`admin_account_id(Option<String>)`](crate::output::GetOrganizationAdminAccountOutput::admin_account_id): <p> The identifier for the administrator account. </p>
+    ///   - [`organization_id(Option<String>)`](crate::output::GetOrganizationAdminAccountOutput::organization_id): <p> The identifier for the organization. </p>
+    /// - On failure, responds with [`SdkError<GetOrganizationAdminAccountError>`](crate::error::GetOrganizationAdminAccountError)
     pub fn get_organization_admin_account(
         &self,
     ) -> fluent_builders::GetOrganizationAdminAccount<C, M, R> {
         fluent_builders::GetOrganizationAdminAccount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetServicesInScope` operation.
+    /// Constructs a fluent builder for the [`GetServicesInScope`](crate::client::fluent_builders::GetServicesInScope) operation.
     ///
-    /// See [`GetServicesInScope`](crate::client::fluent_builders::GetServicesInScope) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetServicesInScopeInput`](crate::input::GetServicesInScopeInput)
+
+    /// - On success, responds with [`GetServicesInScopeOutput`](crate::output::GetServicesInScopeOutput) with field(s):
+    ///   - [`service_metadata(Option<Vec<ServiceMetadata>>)`](crate::output::GetServicesInScopeOutput::service_metadata): <p> The metadata that's associated with the Amazon Web Service. </p>
+    /// - On failure, responds with [`SdkError<GetServicesInScopeError>`](crate::error::GetServicesInScopeError)
     pub fn get_services_in_scope(&self) -> fluent_builders::GetServicesInScope<C, M, R> {
         fluent_builders::GetServicesInScope::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSettings` operation.
+    /// Constructs a fluent builder for the [`GetSettings`](crate::client::fluent_builders::GetSettings) operation.
     ///
-    /// See [`GetSettings`](crate::client::fluent_builders::GetSettings) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetSettingsInput`](crate::input::GetSettingsInput) with field(s):
+    ///   - [`attribute(Option<SettingAttribute>)`](crate::input::GetSettingsInput::attribute): <p> The list of <code>SettingAttribute</code> enum values. </p>
+    /// - On success, responds with [`GetSettingsOutput`](crate::output::GetSettingsOutput) with field(s):
+    ///   - [`settings(Option<Settings>)`](crate::output::GetSettingsOutput::settings): <p> The settings object that holds all supported Audit Manager settings. </p>
+    /// - On failure, responds with [`SdkError<GetSettingsError>`](crate::error::GetSettingsError)
     pub fn get_settings(&self) -> fluent_builders::GetSettings<C, M, R> {
         fluent_builders::GetSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAssessmentControlInsightsByControlDomain` operation.
-    ///
-    /// See [`ListAssessmentControlInsightsByControlDomain`](crate::client::fluent_builders::ListAssessmentControlInsightsByControlDomain) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListAssessmentControlInsightsByControlDomain`](crate::client::fluent_builders::ListAssessmentControlInsightsByControlDomain) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssessmentControlInsightsByControlDomain::into_paginator).
+    ///
+    /// - Takes [`ListAssessmentControlInsightsByControlDomainInput`](crate::input::ListAssessmentControlInsightsByControlDomainInput) with field(s):
+    ///   - [`control_domain_id(Option<String>)`](crate::input::ListAssessmentControlInsightsByControlDomainInput::control_domain_id): <p>The unique identifier for the control domain. </p>
+    ///   - [`assessment_id(Option<String>)`](crate::input::ListAssessmentControlInsightsByControlDomainInput::assessment_id): <p>The unique identifier for the active assessment. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListAssessmentControlInsightsByControlDomainInput::next_token): <p>The pagination token that's used to fetch the next set of results. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListAssessmentControlInsightsByControlDomainInput::max_results): <p>Represents the maximum number of results on a page or for an API request call. </p>
+    /// - On success, responds with [`ListAssessmentControlInsightsByControlDomainOutput`](crate::output::ListAssessmentControlInsightsByControlDomainOutput) with field(s):
+    ///   - [`control_insights_by_assessment(Option<Vec<ControlInsightsMetadataByAssessmentItem>>)`](crate::output::ListAssessmentControlInsightsByControlDomainOutput::control_insights_by_assessment): <p>The assessment control analytics data that the <code>ListAssessmentControlInsightsByControlDomain</code> API returned. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAssessmentControlInsightsByControlDomainOutput::next_token): <p>The pagination token that's used to fetch the next set of results. </p>
+    /// - On failure, responds with [`SdkError<ListAssessmentControlInsightsByControlDomainError>`](crate::error::ListAssessmentControlInsightsByControlDomainError)
     pub fn list_assessment_control_insights_by_control_domain(
         &self,
     ) -> fluent_builders::ListAssessmentControlInsightsByControlDomain<C, M, R> {
         fluent_builders::ListAssessmentControlInsightsByControlDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAssessmentFrameworks` operation.
-    ///
-    /// See [`ListAssessmentFrameworks`](crate::client::fluent_builders::ListAssessmentFrameworks) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListAssessmentFrameworks`](crate::client::fluent_builders::ListAssessmentFrameworks) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssessmentFrameworks::into_paginator).
+    ///
+    /// - Takes [`ListAssessmentFrameworksInput`](crate::input::ListAssessmentFrameworksInput) with field(s):
+    ///   - [`framework_type(Option<FrameworkType>)`](crate::input::ListAssessmentFrameworksInput::framework_type): <p> The type of framework, such as a standard framework or a custom framework. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListAssessmentFrameworksInput::next_token): <p> The pagination token that's used to fetch the next set of results. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListAssessmentFrameworksInput::max_results): <p> Represents the maximum number of results on a page or for an API request call. </p>
+    /// - On success, responds with [`ListAssessmentFrameworksOutput`](crate::output::ListAssessmentFrameworksOutput) with field(s):
+    ///   - [`framework_metadata_list(Option<Vec<AssessmentFrameworkMetadata>>)`](crate::output::ListAssessmentFrameworksOutput::framework_metadata_list): <p> The list of metadata objects for the framework. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAssessmentFrameworksOutput::next_token): <p> The pagination token that's used to fetch the next set of results. </p>
+    /// - On failure, responds with [`SdkError<ListAssessmentFrameworksError>`](crate::error::ListAssessmentFrameworksError)
     pub fn list_assessment_frameworks(&self) -> fluent_builders::ListAssessmentFrameworks<C, M, R> {
         fluent_builders::ListAssessmentFrameworks::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAssessmentFrameworkShareRequests` operation.
-    ///
-    /// See [`ListAssessmentFrameworkShareRequests`](crate::client::fluent_builders::ListAssessmentFrameworkShareRequests) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListAssessmentFrameworkShareRequests`](crate::client::fluent_builders::ListAssessmentFrameworkShareRequests) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssessmentFrameworkShareRequests::into_paginator).
+    ///
+    /// - Takes [`ListAssessmentFrameworkShareRequestsInput`](crate::input::ListAssessmentFrameworkShareRequestsInput) with field(s):
+    ///   - [`request_type(Option<ShareRequestType>)`](crate::input::ListAssessmentFrameworkShareRequestsInput::request_type): <p> Specifies whether the share request is a sent request or a received request.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListAssessmentFrameworkShareRequestsInput::next_token): <p> The pagination token that's used to fetch the next set of results. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListAssessmentFrameworkShareRequestsInput::max_results): <p> Represents the maximum number of results on a page or for an API request call. </p>
+    /// - On success, responds with [`ListAssessmentFrameworkShareRequestsOutput`](crate::output::ListAssessmentFrameworkShareRequestsOutput) with field(s):
+    ///   - [`assessment_framework_share_requests(Option<Vec<AssessmentFrameworkShareRequest>>)`](crate::output::ListAssessmentFrameworkShareRequestsOutput::assessment_framework_share_requests): <p> The list of share requests that the <code>ListAssessmentFrameworkShareRequests</code> API returned. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAssessmentFrameworkShareRequestsOutput::next_token): <p> The pagination token that's used to fetch the next set of results. </p>
+    /// - On failure, responds with [`SdkError<ListAssessmentFrameworkShareRequestsError>`](crate::error::ListAssessmentFrameworkShareRequestsError)
     pub fn list_assessment_framework_share_requests(
         &self,
     ) -> fluent_builders::ListAssessmentFrameworkShareRequests<C, M, R> {
         fluent_builders::ListAssessmentFrameworkShareRequests::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAssessmentReports` operation.
-    ///
-    /// See [`ListAssessmentReports`](crate::client::fluent_builders::ListAssessmentReports) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListAssessmentReports`](crate::client::fluent_builders::ListAssessmentReports) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssessmentReports::into_paginator).
+    ///
+    /// - Takes [`ListAssessmentReportsInput`](crate::input::ListAssessmentReportsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListAssessmentReportsInput::next_token): <p> The pagination token that's used to fetch the next set of results. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListAssessmentReportsInput::max_results): <p> Represents the maximum number of results on a page or for an API request call. </p>
+    /// - On success, responds with [`ListAssessmentReportsOutput`](crate::output::ListAssessmentReportsOutput) with field(s):
+    ///   - [`assessment_reports(Option<Vec<AssessmentReportMetadata>>)`](crate::output::ListAssessmentReportsOutput::assessment_reports): <p> The list of assessment reports that the <code>ListAssessmentReports</code> API returned. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAssessmentReportsOutput::next_token): <p> The pagination token that's used to fetch the next set of results. </p>
+    /// - On failure, responds with [`SdkError<ListAssessmentReportsError>`](crate::error::ListAssessmentReportsError)
     pub fn list_assessment_reports(&self) -> fluent_builders::ListAssessmentReports<C, M, R> {
         fluent_builders::ListAssessmentReports::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAssessments` operation.
-    ///
-    /// See [`ListAssessments`](crate::client::fluent_builders::ListAssessments) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListAssessments`](crate::client::fluent_builders::ListAssessments) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssessments::into_paginator).
+    ///
+    /// - Takes [`ListAssessmentsInput`](crate::input::ListAssessmentsInput) with field(s):
+    ///   - [`status(Option<AssessmentStatus>)`](crate::input::ListAssessmentsInput::status): <p> The current status of the assessment.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListAssessmentsInput::next_token): <p> The pagination token that's used to fetch the next set of results. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListAssessmentsInput::max_results): <p> Represents the maximum number of results on a page or for an API request call. </p>
+    /// - On success, responds with [`ListAssessmentsOutput`](crate::output::ListAssessmentsOutput) with field(s):
+    ///   - [`assessment_metadata(Option<Vec<AssessmentMetadataItem>>)`](crate::output::ListAssessmentsOutput::assessment_metadata): <p> The metadata that's associated with the assessment. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAssessmentsOutput::next_token): <p> The pagination token that's used to fetch the next set of results. </p>
+    /// - On failure, responds with [`SdkError<ListAssessmentsError>`](crate::error::ListAssessmentsError)
     pub fn list_assessments(&self) -> fluent_builders::ListAssessments<C, M, R> {
         fluent_builders::ListAssessments::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListControlDomainInsights` operation.
-    ///
-    /// See [`ListControlDomainInsights`](crate::client::fluent_builders::ListControlDomainInsights) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListControlDomainInsights`](crate::client::fluent_builders::ListControlDomainInsights) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListControlDomainInsights::into_paginator).
+    ///
+    /// - Takes [`ListControlDomainInsightsInput`](crate::input::ListControlDomainInsightsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListControlDomainInsightsInput::next_token): <p>The pagination token that's used to fetch the next set of results. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListControlDomainInsightsInput::max_results): <p>Represents the maximum number of results on a page or for an API request call. </p>
+    /// - On success, responds with [`ListControlDomainInsightsOutput`](crate::output::ListControlDomainInsightsOutput) with field(s):
+    ///   - [`control_domain_insights(Option<Vec<ControlDomainInsights>>)`](crate::output::ListControlDomainInsightsOutput::control_domain_insights): <p>The control domain analytics data that the <code>ListControlDomainInsights</code> API returned. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListControlDomainInsightsOutput::next_token): <p>The pagination token that's used to fetch the next set of results. </p>
+    /// - On failure, responds with [`SdkError<ListControlDomainInsightsError>`](crate::error::ListControlDomainInsightsError)
     pub fn list_control_domain_insights(
         &self,
     ) -> fluent_builders::ListControlDomainInsights<C, M, R> {
         fluent_builders::ListControlDomainInsights::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListControlDomainInsightsByAssessment` operation.
-    ///
-    /// See [`ListControlDomainInsightsByAssessment`](crate::client::fluent_builders::ListControlDomainInsightsByAssessment) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListControlDomainInsightsByAssessment`](crate::client::fluent_builders::ListControlDomainInsightsByAssessment) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListControlDomainInsightsByAssessment::into_paginator).
+    ///
+    /// - Takes [`ListControlDomainInsightsByAssessmentInput`](crate::input::ListControlDomainInsightsByAssessmentInput) with field(s):
+    ///   - [`assessment_id(Option<String>)`](crate::input::ListControlDomainInsightsByAssessmentInput::assessment_id): <p>The unique identifier for the active assessment. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListControlDomainInsightsByAssessmentInput::next_token): <p>The pagination token that's used to fetch the next set of results. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListControlDomainInsightsByAssessmentInput::max_results): <p>Represents the maximum number of results on a page or for an API request call. </p>
+    /// - On success, responds with [`ListControlDomainInsightsByAssessmentOutput`](crate::output::ListControlDomainInsightsByAssessmentOutput) with field(s):
+    ///   - [`control_domain_insights(Option<Vec<ControlDomainInsights>>)`](crate::output::ListControlDomainInsightsByAssessmentOutput::control_domain_insights): <p>The control domain analytics data that the <code>ListControlDomainInsightsByAssessment</code> API returned. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListControlDomainInsightsByAssessmentOutput::next_token): <p>The pagination token that's used to fetch the next set of results. </p>
+    /// - On failure, responds with [`SdkError<ListControlDomainInsightsByAssessmentError>`](crate::error::ListControlDomainInsightsByAssessmentError)
     pub fn list_control_domain_insights_by_assessment(
         &self,
     ) -> fluent_builders::ListControlDomainInsightsByAssessment<C, M, R> {
         fluent_builders::ListControlDomainInsightsByAssessment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListControlInsightsByControlDomain` operation.
-    ///
-    /// See [`ListControlInsightsByControlDomain`](crate::client::fluent_builders::ListControlInsightsByControlDomain) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListControlInsightsByControlDomain`](crate::client::fluent_builders::ListControlInsightsByControlDomain) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListControlInsightsByControlDomain::into_paginator).
+    ///
+    /// - Takes [`ListControlInsightsByControlDomainInput`](crate::input::ListControlInsightsByControlDomainInput) with field(s):
+    ///   - [`control_domain_id(Option<String>)`](crate::input::ListControlInsightsByControlDomainInput::control_domain_id): <p>The unique identifier for the control domain. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListControlInsightsByControlDomainInput::next_token): <p>The pagination token that's used to fetch the next set of results. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListControlInsightsByControlDomainInput::max_results): <p>Represents the maximum number of results on a page or for an API request call. </p>
+    /// - On success, responds with [`ListControlInsightsByControlDomainOutput`](crate::output::ListControlInsightsByControlDomainOutput) with field(s):
+    ///   - [`control_insights_metadata(Option<Vec<ControlInsightsMetadataItem>>)`](crate::output::ListControlInsightsByControlDomainOutput::control_insights_metadata): <p>The control analytics data that the <code>ListControlInsightsByControlDomain</code> API returned. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListControlInsightsByControlDomainOutput::next_token): <p>The pagination token that's used to fetch the next set of results. </p>
+    /// - On failure, responds with [`SdkError<ListControlInsightsByControlDomainError>`](crate::error::ListControlInsightsByControlDomainError)
     pub fn list_control_insights_by_control_domain(
         &self,
     ) -> fluent_builders::ListControlInsightsByControlDomain<C, M, R> {
         fluent_builders::ListControlInsightsByControlDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListControls` operation.
-    ///
-    /// See [`ListControls`](crate::client::fluent_builders::ListControls) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListControls`](crate::client::fluent_builders::ListControls) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListControls::into_paginator).
+    ///
+    /// - Takes [`ListControlsInput`](crate::input::ListControlsInput) with field(s):
+    ///   - [`control_type(Option<ControlType>)`](crate::input::ListControlsInput::control_type): <p> The type of control, such as a standard control or a custom control. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListControlsInput::next_token): <p> The pagination token that's used to fetch the next set of results. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListControlsInput::max_results): <p> Represents the maximum number of results on a page or for an API request call. </p>
+    /// - On success, responds with [`ListControlsOutput`](crate::output::ListControlsOutput) with field(s):
+    ///   - [`control_metadata_list(Option<Vec<ControlMetadata>>)`](crate::output::ListControlsOutput::control_metadata_list): <p> The list of control metadata objects that the <code>ListControls</code> API returned. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListControlsOutput::next_token): <p> The pagination token that's used to fetch the next set of results. </p>
+    /// - On failure, responds with [`SdkError<ListControlsError>`](crate::error::ListControlsError)
     pub fn list_controls(&self) -> fluent_builders::ListControls<C, M, R> {
         fluent_builders::ListControls::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListKeywordsForDataSource` operation.
-    ///
-    /// See [`ListKeywordsForDataSource`](crate::client::fluent_builders::ListKeywordsForDataSource) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListKeywordsForDataSource`](crate::client::fluent_builders::ListKeywordsForDataSource) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListKeywordsForDataSource::into_paginator).
+    ///
+    /// - Takes [`ListKeywordsForDataSourceInput`](crate::input::ListKeywordsForDataSourceInput) with field(s):
+    ///   - [`source(Option<SourceType>)`](crate::input::ListKeywordsForDataSourceInput::source): <p> The control mapping data source that the keywords apply to. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListKeywordsForDataSourceInput::next_token): <p> The pagination token that's used to fetch the next set of results. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListKeywordsForDataSourceInput::max_results): <p> Represents the maximum number of results on a page or for an API request call. </p>
+    /// - On success, responds with [`ListKeywordsForDataSourceOutput`](crate::output::ListKeywordsForDataSourceOutput) with field(s):
+    ///   - [`keywords(Option<Vec<String>>)`](crate::output::ListKeywordsForDataSourceOutput::keywords): <p> The list of keywords for the event mapping source. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListKeywordsForDataSourceOutput::next_token): <p> The pagination token that's used to fetch the next set of results. </p>
+    /// - On failure, responds with [`SdkError<ListKeywordsForDataSourceError>`](crate::error::ListKeywordsForDataSourceError)
     pub fn list_keywords_for_data_source(
         &self,
     ) -> fluent_builders::ListKeywordsForDataSource<C, M, R> {
         fluent_builders::ListKeywordsForDataSource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListNotifications` operation.
-    ///
-    /// See [`ListNotifications`](crate::client::fluent_builders::ListNotifications) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListNotifications`](crate::client::fluent_builders::ListNotifications) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListNotifications::into_paginator).
+    ///
+    /// - Takes [`ListNotificationsInput`](crate::input::ListNotificationsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListNotificationsInput::next_token): <p> The pagination token that's used to fetch the next set of results. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListNotificationsInput::max_results): <p> Represents the maximum number of results on a page or for an API request call. </p>
+    /// - On success, responds with [`ListNotificationsOutput`](crate::output::ListNotificationsOutput) with field(s):
+    ///   - [`notifications(Option<Vec<Notification>>)`](crate::output::ListNotificationsOutput::notifications): <p> The returned list of notifications. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListNotificationsOutput::next_token): <p> The pagination token that's used to fetch the next set of results. </p>
+    /// - On failure, responds with [`SdkError<ListNotificationsError>`](crate::error::ListNotificationsError)
     pub fn list_notifications(&self) -> fluent_builders::ListNotifications<C, M, R> {
         fluent_builders::ListNotifications::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p> The Amazon Resource Name (ARN) of the resource. </p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p> The list of tags that the <code>ListTagsForResource</code> API returned. </p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RegisterAccount` operation.
+    /// Constructs a fluent builder for the [`RegisterAccount`](crate::client::fluent_builders::RegisterAccount) operation.
     ///
-    /// See [`RegisterAccount`](crate::client::fluent_builders::RegisterAccount) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RegisterAccountInput`](crate::input::RegisterAccountInput) with field(s):
+    ///   - [`kms_key(Option<String>)`](crate::input::RegisterAccountInput::kms_key): <p> The KMS key details. </p>
+    ///   - [`delegated_admin_account(Option<String>)`](crate::input::RegisterAccountInput::delegated_admin_account): <p> The delegated administrator account for Audit Manager. </p>
+    /// - On success, responds with [`RegisterAccountOutput`](crate::output::RegisterAccountOutput) with field(s):
+    ///   - [`status(Option<AccountStatus>)`](crate::output::RegisterAccountOutput::status): <p> The status of the account registration request. </p>
+    /// - On failure, responds with [`SdkError<RegisterAccountError>`](crate::error::RegisterAccountError)
     pub fn register_account(&self) -> fluent_builders::RegisterAccount<C, M, R> {
         fluent_builders::RegisterAccount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RegisterOrganizationAdminAccount` operation.
+    /// Constructs a fluent builder for the [`RegisterOrganizationAdminAccount`](crate::client::fluent_builders::RegisterOrganizationAdminAccount) operation.
     ///
-    /// See [`RegisterOrganizationAdminAccount`](crate::client::fluent_builders::RegisterOrganizationAdminAccount) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RegisterOrganizationAdminAccountInput`](crate::input::RegisterOrganizationAdminAccountInput) with field(s):
+    ///   - [`admin_account_id(Option<String>)`](crate::input::RegisterOrganizationAdminAccountInput::admin_account_id): <p> The identifier for the delegated administrator account. </p>
+    /// - On success, responds with [`RegisterOrganizationAdminAccountOutput`](crate::output::RegisterOrganizationAdminAccountOutput) with field(s):
+    ///   - [`admin_account_id(Option<String>)`](crate::output::RegisterOrganizationAdminAccountOutput::admin_account_id): <p> The identifier for the delegated administrator account. </p>
+    ///   - [`organization_id(Option<String>)`](crate::output::RegisterOrganizationAdminAccountOutput::organization_id): <p> The identifier for the organization. </p>
+    /// - On failure, responds with [`SdkError<RegisterOrganizationAdminAccountError>`](crate::error::RegisterOrganizationAdminAccountError)
     pub fn register_organization_admin_account(
         &self,
     ) -> fluent_builders::RegisterOrganizationAdminAccount<C, M, R> {
         fluent_builders::RegisterOrganizationAdminAccount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartAssessmentFrameworkShare` operation.
+    /// Constructs a fluent builder for the [`StartAssessmentFrameworkShare`](crate::client::fluent_builders::StartAssessmentFrameworkShare) operation.
     ///
-    /// See [`StartAssessmentFrameworkShare`](crate::client::fluent_builders::StartAssessmentFrameworkShare) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartAssessmentFrameworkShareInput`](crate::input::StartAssessmentFrameworkShareInput) with field(s):
+    ///   - [`framework_id(Option<String>)`](crate::input::StartAssessmentFrameworkShareInput::framework_id): <p> The unique identifier for the custom framework to be shared. </p>
+    ///   - [`destination_account(Option<String>)`](crate::input::StartAssessmentFrameworkShareInput::destination_account): <p> The Amazon Web Services account of the recipient. </p>
+    ///   - [`destination_region(Option<String>)`](crate::input::StartAssessmentFrameworkShareInput::destination_region): <p> The Amazon Web Services Region of the recipient. </p>
+    ///   - [`comment(Option<String>)`](crate::input::StartAssessmentFrameworkShareInput::comment): <p> An optional comment from the sender about the share request. </p>
+    /// - On success, responds with [`StartAssessmentFrameworkShareOutput`](crate::output::StartAssessmentFrameworkShareOutput) with field(s):
+    ///   - [`assessment_framework_share_request(Option<AssessmentFrameworkShareRequest>)`](crate::output::StartAssessmentFrameworkShareOutput::assessment_framework_share_request): <p> The share request that's created by the <code>StartAssessmentFrameworkShare</code> API. </p>
+    /// - On failure, responds with [`SdkError<StartAssessmentFrameworkShareError>`](crate::error::StartAssessmentFrameworkShareError)
     pub fn start_assessment_framework_share(
         &self,
     ) -> fluent_builders::StartAssessmentFrameworkShare<C, M, R> {
         fluent_builders::StartAssessmentFrameworkShare::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p> The Amazon Resource Name (ARN) of the resource. </p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p> The tags that are associated with the resource. </p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p> The Amazon Resource Name (ARN) of the specified resource. </p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p> The name or key of the tag. </p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateAssessment` operation.
+    /// Constructs a fluent builder for the [`UpdateAssessment`](crate::client::fluent_builders::UpdateAssessment) operation.
     ///
-    /// See [`UpdateAssessment`](crate::client::fluent_builders::UpdateAssessment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateAssessmentInput`](crate::input::UpdateAssessmentInput) with field(s):
+    ///   - [`assessment_id(Option<String>)`](crate::input::UpdateAssessmentInput::assessment_id): <p> The unique identifier for the assessment. </p>
+    ///   - [`assessment_name(Option<String>)`](crate::input::UpdateAssessmentInput::assessment_name): <p> The name of the assessment to be updated. </p>
+    ///   - [`assessment_description(Option<String>)`](crate::input::UpdateAssessmentInput::assessment_description): <p> The description of the assessment. </p>
+    ///   - [`scope(Option<Scope>)`](crate::input::UpdateAssessmentInput::scope): <p> The scope of the assessment. </p>
+    ///   - [`assessment_reports_destination(Option<AssessmentReportsDestination>)`](crate::input::UpdateAssessmentInput::assessment_reports_destination): <p> The assessment report storage destination for the assessment that's being updated. </p>
+    ///   - [`roles(Option<Vec<Role>>)`](crate::input::UpdateAssessmentInput::roles): <p> The list of roles for the assessment. </p>
+    /// - On success, responds with [`UpdateAssessmentOutput`](crate::output::UpdateAssessmentOutput) with field(s):
+    ///   - [`assessment(Option<Assessment>)`](crate::output::UpdateAssessmentOutput::assessment): <p> The response object for the <code>UpdateAssessmentRequest</code> API. This is the name of the updated assessment.</p>
+    /// - On failure, responds with [`SdkError<UpdateAssessmentError>`](crate::error::UpdateAssessmentError)
     pub fn update_assessment(&self) -> fluent_builders::UpdateAssessment<C, M, R> {
         fluent_builders::UpdateAssessment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateAssessmentControl` operation.
+    /// Constructs a fluent builder for the [`UpdateAssessmentControl`](crate::client::fluent_builders::UpdateAssessmentControl) operation.
     ///
-    /// See [`UpdateAssessmentControl`](crate::client::fluent_builders::UpdateAssessmentControl) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateAssessmentControlInput`](crate::input::UpdateAssessmentControlInput) with field(s):
+    ///   - [`assessment_id(Option<String>)`](crate::input::UpdateAssessmentControlInput::assessment_id): <p> The unique identifier for the assessment. </p>
+    ///   - [`control_set_id(Option<String>)`](crate::input::UpdateAssessmentControlInput::control_set_id): <p> The unique identifier for the control set. </p>
+    ///   - [`control_id(Option<String>)`](crate::input::UpdateAssessmentControlInput::control_id): <p> The unique identifier for the control. </p>
+    ///   - [`control_status(Option<ControlStatus>)`](crate::input::UpdateAssessmentControlInput::control_status): <p> The status of the control. </p>
+    ///   - [`comment_body(Option<String>)`](crate::input::UpdateAssessmentControlInput::comment_body): <p> The comment body text for the control. </p>
+    /// - On success, responds with [`UpdateAssessmentControlOutput`](crate::output::UpdateAssessmentControlOutput) with field(s):
+    ///   - [`control(Option<AssessmentControl>)`](crate::output::UpdateAssessmentControlOutput::control): <p> The name of the updated control set that the <code>UpdateAssessmentControl</code> API returned. </p>
+    /// - On failure, responds with [`SdkError<UpdateAssessmentControlError>`](crate::error::UpdateAssessmentControlError)
     pub fn update_assessment_control(&self) -> fluent_builders::UpdateAssessmentControl<C, M, R> {
         fluent_builders::UpdateAssessmentControl::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateAssessmentControlSetStatus` operation.
+    /// Constructs a fluent builder for the [`UpdateAssessmentControlSetStatus`](crate::client::fluent_builders::UpdateAssessmentControlSetStatus) operation.
     ///
-    /// See [`UpdateAssessmentControlSetStatus`](crate::client::fluent_builders::UpdateAssessmentControlSetStatus) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateAssessmentControlSetStatusInput`](crate::input::UpdateAssessmentControlSetStatusInput) with field(s):
+    ///   - [`assessment_id(Option<String>)`](crate::input::UpdateAssessmentControlSetStatusInput::assessment_id): <p> The unique identifier for the assessment. </p>
+    ///   - [`control_set_id(Option<String>)`](crate::input::UpdateAssessmentControlSetStatusInput::control_set_id): <p> The unique identifier for the control set. </p>
+    ///   - [`status(Option<ControlSetStatus>)`](crate::input::UpdateAssessmentControlSetStatusInput::status): <p> The status of the control set that's being updated. </p>
+    ///   - [`comment(Option<String>)`](crate::input::UpdateAssessmentControlSetStatusInput::comment): <p> The comment that's related to the status update. </p>
+    /// - On success, responds with [`UpdateAssessmentControlSetStatusOutput`](crate::output::UpdateAssessmentControlSetStatusOutput) with field(s):
+    ///   - [`control_set(Option<AssessmentControlSet>)`](crate::output::UpdateAssessmentControlSetStatusOutput::control_set): <p> The name of the updated control set that the <code>UpdateAssessmentControlSetStatus</code> API returned. </p>
+    /// - On failure, responds with [`SdkError<UpdateAssessmentControlSetStatusError>`](crate::error::UpdateAssessmentControlSetStatusError)
     pub fn update_assessment_control_set_status(
         &self,
     ) -> fluent_builders::UpdateAssessmentControlSetStatus<C, M, R> {
         fluent_builders::UpdateAssessmentControlSetStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateAssessmentFramework` operation.
+    /// Constructs a fluent builder for the [`UpdateAssessmentFramework`](crate::client::fluent_builders::UpdateAssessmentFramework) operation.
     ///
-    /// See [`UpdateAssessmentFramework`](crate::client::fluent_builders::UpdateAssessmentFramework) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateAssessmentFrameworkInput`](crate::input::UpdateAssessmentFrameworkInput) with field(s):
+    ///   - [`framework_id(Option<String>)`](crate::input::UpdateAssessmentFrameworkInput::framework_id): <p> The unique identifier for the framework. </p>
+    ///   - [`name(Option<String>)`](crate::input::UpdateAssessmentFrameworkInput::name): <p> The name of the framework to be updated. </p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateAssessmentFrameworkInput::description): <p> The description of the updated framework. </p>
+    ///   - [`compliance_type(Option<String>)`](crate::input::UpdateAssessmentFrameworkInput::compliance_type): <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
+    ///   - [`control_sets(Option<Vec<UpdateAssessmentFrameworkControlSet>>)`](crate::input::UpdateAssessmentFrameworkInput::control_sets): <p> The control sets that are associated with the framework. </p>
+    /// - On success, responds with [`UpdateAssessmentFrameworkOutput`](crate::output::UpdateAssessmentFrameworkOutput) with field(s):
+    ///   - [`framework(Option<Framework>)`](crate::output::UpdateAssessmentFrameworkOutput::framework): <p> The name of the framework. </p>
+    /// - On failure, responds with [`SdkError<UpdateAssessmentFrameworkError>`](crate::error::UpdateAssessmentFrameworkError)
     pub fn update_assessment_framework(
         &self,
     ) -> fluent_builders::UpdateAssessmentFramework<C, M, R> {
         fluent_builders::UpdateAssessmentFramework::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateAssessmentFrameworkShare` operation.
+    /// Constructs a fluent builder for the [`UpdateAssessmentFrameworkShare`](crate::client::fluent_builders::UpdateAssessmentFrameworkShare) operation.
     ///
-    /// See [`UpdateAssessmentFrameworkShare`](crate::client::fluent_builders::UpdateAssessmentFrameworkShare) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateAssessmentFrameworkShareInput`](crate::input::UpdateAssessmentFrameworkShareInput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::input::UpdateAssessmentFrameworkShareInput::request_id): <p> The unique identifier for the share request. </p>
+    ///   - [`request_type(Option<ShareRequestType>)`](crate::input::UpdateAssessmentFrameworkShareInput::request_type): <p>Specifies whether the share request is a sent request or a received request.</p>
+    ///   - [`action(Option<ShareRequestAction>)`](crate::input::UpdateAssessmentFrameworkShareInput::action): <p>Specifies the update action for the share request.</p>
+    /// - On success, responds with [`UpdateAssessmentFrameworkShareOutput`](crate::output::UpdateAssessmentFrameworkShareOutput) with field(s):
+    ///   - [`assessment_framework_share_request(Option<AssessmentFrameworkShareRequest>)`](crate::output::UpdateAssessmentFrameworkShareOutput::assessment_framework_share_request): <p> The updated share request that's returned by the <code>UpdateAssessmentFrameworkShare</code> operation. </p>
+    /// - On failure, responds with [`SdkError<UpdateAssessmentFrameworkShareError>`](crate::error::UpdateAssessmentFrameworkShareError)
     pub fn update_assessment_framework_share(
         &self,
     ) -> fluent_builders::UpdateAssessmentFrameworkShare<C, M, R> {
         fluent_builders::UpdateAssessmentFrameworkShare::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateAssessmentStatus` operation.
+    /// Constructs a fluent builder for the [`UpdateAssessmentStatus`](crate::client::fluent_builders::UpdateAssessmentStatus) operation.
     ///
-    /// See [`UpdateAssessmentStatus`](crate::client::fluent_builders::UpdateAssessmentStatus) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateAssessmentStatusInput`](crate::input::UpdateAssessmentStatusInput) with field(s):
+    ///   - [`assessment_id(Option<String>)`](crate::input::UpdateAssessmentStatusInput::assessment_id): <p> The unique identifier for the assessment. </p>
+    ///   - [`status(Option<AssessmentStatus>)`](crate::input::UpdateAssessmentStatusInput::status): <p> The current status of the assessment. </p>
+    /// - On success, responds with [`UpdateAssessmentStatusOutput`](crate::output::UpdateAssessmentStatusOutput) with field(s):
+    ///   - [`assessment(Option<Assessment>)`](crate::output::UpdateAssessmentStatusOutput::assessment): <p> The name of the updated assessment that the <code>UpdateAssessmentStatus</code> API returned. </p>
+    /// - On failure, responds with [`SdkError<UpdateAssessmentStatusError>`](crate::error::UpdateAssessmentStatusError)
     pub fn update_assessment_status(&self) -> fluent_builders::UpdateAssessmentStatus<C, M, R> {
         fluent_builders::UpdateAssessmentStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateControl` operation.
+    /// Constructs a fluent builder for the [`UpdateControl`](crate::client::fluent_builders::UpdateControl) operation.
     ///
-    /// See [`UpdateControl`](crate::client::fluent_builders::UpdateControl) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateControlInput`](crate::input::UpdateControlInput) with field(s):
+    ///   - [`control_id(Option<String>)`](crate::input::UpdateControlInput::control_id): <p> The identifier for the control. </p>
+    ///   - [`name(Option<String>)`](crate::input::UpdateControlInput::name): <p> The name of the updated control. </p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateControlInput::description): <p> The optional description of the control. </p>
+    ///   - [`testing_information(Option<String>)`](crate::input::UpdateControlInput::testing_information): <p> The steps that you should follow to determine if the control is met. </p>
+    ///   - [`action_plan_title(Option<String>)`](crate::input::UpdateControlInput::action_plan_title): <p> The title of the action plan for remediating the control. </p>
+    ///   - [`action_plan_instructions(Option<String>)`](crate::input::UpdateControlInput::action_plan_instructions): <p> The recommended actions to carry out if the control isn't fulfilled. </p>
+    ///   - [`control_mapping_sources(Option<Vec<ControlMappingSource>>)`](crate::input::UpdateControlInput::control_mapping_sources): <p> The data mapping sources for the control. </p>
+    /// - On success, responds with [`UpdateControlOutput`](crate::output::UpdateControlOutput) with field(s):
+    ///   - [`control(Option<Control>)`](crate::output::UpdateControlOutput::control): <p> The name of the updated control set that the <code>UpdateControl</code> API returned. </p>
+    /// - On failure, responds with [`SdkError<UpdateControlError>`](crate::error::UpdateControlError)
     pub fn update_control(&self) -> fluent_builders::UpdateControl<C, M, R> {
         fluent_builders::UpdateControl::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateSettings` operation.
+    /// Constructs a fluent builder for the [`UpdateSettings`](crate::client::fluent_builders::UpdateSettings) operation.
     ///
-    /// See [`UpdateSettings`](crate::client::fluent_builders::UpdateSettings) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateSettingsInput`](crate::input::UpdateSettingsInput) with field(s):
+    ///   - [`sns_topic(Option<String>)`](crate::input::UpdateSettingsInput::sns_topic): <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends notifications to. </p>
+    ///   - [`default_assessment_reports_destination(Option<AssessmentReportsDestination>)`](crate::input::UpdateSettingsInput::default_assessment_reports_destination): <p> The default storage destination for assessment reports. </p>
+    ///   - [`default_process_owners(Option<Vec<Role>>)`](crate::input::UpdateSettingsInput::default_process_owners): <p> A list of the default audit owners. </p>
+    ///   - [`kms_key(Option<String>)`](crate::input::UpdateSettingsInput::kms_key): <p> The KMS key details. </p>
+    /// - On success, responds with [`UpdateSettingsOutput`](crate::output::UpdateSettingsOutput) with field(s):
+    ///   - [`settings(Option<Settings>)`](crate::output::UpdateSettingsOutput::settings): <p> The current list of settings. </p>
+    /// - On failure, responds with [`SdkError<UpdateSettingsError>`](crate::error::UpdateSettingsError)
     pub fn update_settings(&self) -> fluent_builders::UpdateSettings<C, M, R> {
         fluent_builders::UpdateSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ValidateAssessmentReportIntegrity` operation.
+    /// Constructs a fluent builder for the [`ValidateAssessmentReportIntegrity`](crate::client::fluent_builders::ValidateAssessmentReportIntegrity) operation.
     ///
-    /// See [`ValidateAssessmentReportIntegrity`](crate::client::fluent_builders::ValidateAssessmentReportIntegrity) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ValidateAssessmentReportIntegrityInput`](crate::input::ValidateAssessmentReportIntegrityInput) with field(s):
+    ///   - [`s3_relative_path(Option<String>)`](crate::input::ValidateAssessmentReportIntegrityInput::s3_relative_path): <p> The relative path of the Amazon S3 bucket that the assessment report is stored in. </p>
+    /// - On success, responds with [`ValidateAssessmentReportIntegrityOutput`](crate::output::ValidateAssessmentReportIntegrityOutput) with field(s):
+    ///   - [`signature_valid(Option<bool>)`](crate::output::ValidateAssessmentReportIntegrityOutput::signature_valid): <p> Specifies whether the signature key is valid. </p>
+    ///   - [`signature_algorithm(Option<String>)`](crate::output::ValidateAssessmentReportIntegrityOutput::signature_algorithm): <p> The signature algorithm that's used to code sign the assessment report file. </p>
+    ///   - [`signature_date_time(Option<String>)`](crate::output::ValidateAssessmentReportIntegrityOutput::signature_date_time): <p> The date and time signature that specifies when the assessment report was created. </p>
+    ///   - [`signature_key_id(Option<String>)`](crate::output::ValidateAssessmentReportIntegrityOutput::signature_key_id): <p> The unique identifier for the validation signature key. </p>
+    ///   - [`validation_errors(Option<Vec<String>>)`](crate::output::ValidateAssessmentReportIntegrityOutput::validation_errors): <p> Represents any errors that occurred when validating the assessment report. </p>
+    /// - On failure, responds with [`SdkError<ValidateAssessmentReportIntegrityError>`](crate::error::ValidateAssessmentReportIntegrityError)
     pub fn validate_assessment_report_integrity(
         &self,
     ) -> fluent_builders::ValidateAssessmentReportIntegrity<C, M, R> {

@@ -83,271 +83,545 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AssociateExternalConnection` operation.
+    /// Constructs a fluent builder for the [`AssociateExternalConnection`](crate::client::fluent_builders::AssociateExternalConnection) operation.
     ///
-    /// See [`AssociateExternalConnection`](crate::client::fluent_builders::AssociateExternalConnection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateExternalConnectionInput`](crate::input::AssociateExternalConnectionInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::AssociateExternalConnectionInput::domain): <p>The name of the domain that contains the repository.</p>
+    ///   - [`domain_owner(Option<String>)`](crate::input::AssociateExternalConnectionInput::domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`repository(Option<String>)`](crate::input::AssociateExternalConnectionInput::repository): <p> The name of the repository to which the external connection is added. </p>
+    ///   - [`external_connection(Option<String>)`](crate::input::AssociateExternalConnectionInput::external_connection): <p> The name of the external connection to add to the repository. The following values are supported: </p>  <ul>   <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li>   <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li>   <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li>   <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li>   <li> <p> <code>public:maven-gradleplugins</code> - for the Gradle plugins repository. </p> </li>   <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li>  </ul>
+    /// - On success, responds with [`AssociateExternalConnectionOutput`](crate::output::AssociateExternalConnectionOutput) with field(s):
+    ///   - [`repository(Option<RepositoryDescription>)`](crate::output::AssociateExternalConnectionOutput::repository): <p> Information about the connected repository after processing the request. </p>
+    /// - On failure, responds with [`SdkError<AssociateExternalConnectionError>`](crate::error::AssociateExternalConnectionError)
     pub fn associate_external_connection(
         &self,
     ) -> fluent_builders::AssociateExternalConnection<C, M, R> {
         fluent_builders::AssociateExternalConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CopyPackageVersions` operation.
+    /// Constructs a fluent builder for the [`CopyPackageVersions`](crate::client::fluent_builders::CopyPackageVersions) operation.
     ///
-    /// See [`CopyPackageVersions`](crate::client::fluent_builders::CopyPackageVersions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CopyPackageVersionsInput`](crate::input::CopyPackageVersionsInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::CopyPackageVersionsInput::domain): <p> The name of the domain that contains the source and destination repositories. </p>
+    ///   - [`domain_owner(Option<String>)`](crate::input::CopyPackageVersionsInput::domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`source_repository(Option<String>)`](crate::input::CopyPackageVersionsInput::source_repository): <p> The name of the repository that contains the package versions to copy. </p>
+    ///   - [`destination_repository(Option<String>)`](crate::input::CopyPackageVersionsInput::destination_repository): <p> The name of the repository into which package versions are copied. </p>
+    ///   - [`format(Option<PackageFormat>)`](crate::input::CopyPackageVersionsInput::format): <p> The format of the package that is copied. The valid package types are: </p>  <ul>   <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>   <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>   <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>  </ul>
+    ///   - [`namespace(Option<String>)`](crate::input::CopyPackageVersionsInput::namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
+    ///   - [`package(Option<String>)`](crate::input::CopyPackageVersionsInput::package): <p> The name of the package that is copied. </p>
+    ///   - [`versions(Option<Vec<String>>)`](crate::input::CopyPackageVersionsInput::versions): <p> The versions of the package to copy. </p> <note>   <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>  </note>
+    ///   - [`version_revisions(Option<HashMap<String, String>>)`](crate::input::CopyPackageVersionsInput::version_revisions): <p> A list of key-value pairs. The keys are package versions and the values are package version revisions. A <code>CopyPackageVersion</code> operation succeeds if the specified versions in the source repository match the specified package version revision. </p> <note>   <p> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot specify both. </p>  </note>
+    ///   - [`allow_overwrite(Option<bool>)`](crate::input::CopyPackageVersionsInput::allow_overwrite): <p> Set to true to overwrite a package version that already exists in the destination repository. If set to false and the package version already exists in the destination repository, the package version is returned in the <code>failedVersions</code> field of the response with an <code>ALREADY_EXISTS</code> error code. </p>
+    ///   - [`include_from_upstream(Option<bool>)`](crate::input::CopyPackageVersionsInput::include_from_upstream): <p> Set to true to copy packages from repositories that are upstream from the source repository to the destination repository. The default setting is false. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
+    /// - On success, responds with [`CopyPackageVersionsOutput`](crate::output::CopyPackageVersionsOutput) with field(s):
+    ///   - [`successful_versions(Option<HashMap<String, SuccessfulPackageVersionInfo>>)`](crate::output::CopyPackageVersionsOutput::successful_versions): <p> A list of the package versions that were successfully copied to your repository. </p>
+    ///   - [`failed_versions(Option<HashMap<String, PackageVersionError>>)`](crate::output::CopyPackageVersionsOutput::failed_versions): <p> A map of package versions that failed to copy and their error codes. The possible error codes are in the <code>PackageVersionError</code> data type. They are: </p>  <ul>   <li> <p> <code>ALREADY_EXISTS</code> </p> </li>   <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>   <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>   <li> <p> <code>NOT_ALLOWED</code> </p> </li>   <li> <p> <code>NOT_FOUND</code> </p> </li>   <li> <p> <code>SKIPPED</code> </p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<CopyPackageVersionsError>`](crate::error::CopyPackageVersionsError)
     pub fn copy_package_versions(&self) -> fluent_builders::CopyPackageVersions<C, M, R> {
         fluent_builders::CopyPackageVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDomain` operation.
+    /// Constructs a fluent builder for the [`CreateDomain`](crate::client::fluent_builders::CreateDomain) operation.
     ///
-    /// See [`CreateDomain`](crate::client::fluent_builders::CreateDomain) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateDomainInput`](crate::input::CreateDomainInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::CreateDomainInput::domain): <p> The name of the domain to create. All domain names in an AWS Region that are in the same AWS account must be unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive information in a domain name because it is publicly discoverable. </p>
+    ///   - [`encryption_key(Option<String>)`](crate::input::CreateDomainInput::encryption_key): <p> The encryption key for the domain. This is used to encrypt content stored in a domain. An encryption key can be a key ID, a key Amazon Resource Name (ARN), a key alias, or a key alias ARN. To specify an <code>encryptionKey</code>, your IAM role must have <code>kms:DescribeKey</code> and <code>kms:CreateGrant</code> permissions on the encryption key that is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax">DescribeKey</a> in the <i>AWS Key Management Service API Reference</i> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">AWS KMS API Permissions Reference</a> in the <i>AWS Key Management Service Developer Guide</i>. </p> <important>   <p> CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>. </p>  </important>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateDomainInput::tags): <p>One or more tag key-value pairs for the domain.</p>
+    /// - On success, responds with [`CreateDomainOutput`](crate::output::CreateDomainOutput) with field(s):
+    ///   - [`domain(Option<DomainDescription>)`](crate::output::CreateDomainOutput::domain): <p> Contains information about the created domain after processing the request. </p>
+    /// - On failure, responds with [`SdkError<CreateDomainError>`](crate::error::CreateDomainError)
     pub fn create_domain(&self) -> fluent_builders::CreateDomain<C, M, R> {
         fluent_builders::CreateDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateRepository` operation.
+    /// Constructs a fluent builder for the [`CreateRepository`](crate::client::fluent_builders::CreateRepository) operation.
     ///
-    /// See [`CreateRepository`](crate::client::fluent_builders::CreateRepository) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateRepositoryInput`](crate::input::CreateRepositoryInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::CreateRepositoryInput::domain): <p> The name of the domain that contains the created repository. </p>
+    ///   - [`domain_owner(Option<String>)`](crate::input::CreateRepositoryInput::domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`repository(Option<String>)`](crate::input::CreateRepositoryInput::repository): <p> The name of the repository to create. </p>
+    ///   - [`description(Option<String>)`](crate::input::CreateRepositoryInput::description): <p> A description of the created repository. </p>
+    ///   - [`upstreams(Option<Vec<UpstreamRepository>>)`](crate::input::CreateRepositoryInput::upstreams): <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when AWS CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateRepositoryInput::tags): <p>One or more tag key-value pairs for the repository.</p>
+    /// - On success, responds with [`CreateRepositoryOutput`](crate::output::CreateRepositoryOutput) with field(s):
+    ///   - [`repository(Option<RepositoryDescription>)`](crate::output::CreateRepositoryOutput::repository): <p> Information about the created repository after processing the request. </p>
+    /// - On failure, responds with [`SdkError<CreateRepositoryError>`](crate::error::CreateRepositoryError)
     pub fn create_repository(&self) -> fluent_builders::CreateRepository<C, M, R> {
         fluent_builders::CreateRepository::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDomain` operation.
+    /// Constructs a fluent builder for the [`DeleteDomain`](crate::client::fluent_builders::DeleteDomain) operation.
     ///
-    /// See [`DeleteDomain`](crate::client::fluent_builders::DeleteDomain) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteDomainInput`](crate::input::DeleteDomainInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::DeleteDomainInput::domain): <p> The name of the domain to delete. </p>
+    ///   - [`domain_owner(Option<String>)`](crate::input::DeleteDomainInput::domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// - On success, responds with [`DeleteDomainOutput`](crate::output::DeleteDomainOutput) with field(s):
+    ///   - [`domain(Option<DomainDescription>)`](crate::output::DeleteDomainOutput::domain): <p> Contains information about the deleted domain after processing the request. </p>
+    /// - On failure, responds with [`SdkError<DeleteDomainError>`](crate::error::DeleteDomainError)
     pub fn delete_domain(&self) -> fluent_builders::DeleteDomain<C, M, R> {
         fluent_builders::DeleteDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDomainPermissionsPolicy` operation.
+    /// Constructs a fluent builder for the [`DeleteDomainPermissionsPolicy`](crate::client::fluent_builders::DeleteDomainPermissionsPolicy) operation.
     ///
-    /// See [`DeleteDomainPermissionsPolicy`](crate::client::fluent_builders::DeleteDomainPermissionsPolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteDomainPermissionsPolicyInput`](crate::input::DeleteDomainPermissionsPolicyInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::DeleteDomainPermissionsPolicyInput::domain): <p> The name of the domain associated with the resource policy to be deleted. </p>
+    ///   - [`domain_owner(Option<String>)`](crate::input::DeleteDomainPermissionsPolicyInput::domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`policy_revision(Option<String>)`](crate::input::DeleteDomainPermissionsPolicyInput::policy_revision): <p> The current revision of the resource policy to be deleted. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy. </p>
+    /// - On success, responds with [`DeleteDomainPermissionsPolicyOutput`](crate::output::DeleteDomainPermissionsPolicyOutput) with field(s):
+    ///   - [`policy(Option<ResourcePolicy>)`](crate::output::DeleteDomainPermissionsPolicyOutput::policy): <p> Information about the deleted resource policy after processing the request. </p>
+    /// - On failure, responds with [`SdkError<DeleteDomainPermissionsPolicyError>`](crate::error::DeleteDomainPermissionsPolicyError)
     pub fn delete_domain_permissions_policy(
         &self,
     ) -> fluent_builders::DeleteDomainPermissionsPolicy<C, M, R> {
         fluent_builders::DeleteDomainPermissionsPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeletePackageVersions` operation.
+    /// Constructs a fluent builder for the [`DeletePackageVersions`](crate::client::fluent_builders::DeletePackageVersions) operation.
     ///
-    /// See [`DeletePackageVersions`](crate::client::fluent_builders::DeletePackageVersions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeletePackageVersionsInput`](crate::input::DeletePackageVersionsInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::DeletePackageVersionsInput::domain): <p> The name of the domain that contains the package to delete. </p>
+    ///   - [`domain_owner(Option<String>)`](crate::input::DeletePackageVersionsInput::domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`repository(Option<String>)`](crate::input::DeletePackageVersionsInput::repository): <p> The name of the repository that contains the package versions to delete. </p>
+    ///   - [`format(Option<PackageFormat>)`](crate::input::DeletePackageVersionsInput::format): <p> The format of the package versions to delete. The valid values are: </p>  <ul>   <li> <p> <code>npm</code> </p> </li>   <li> <p> <code>pypi</code> </p> </li>   <li> <p> <code>maven</code> </p> </li>  </ul>
+    ///   - [`namespace(Option<String>)`](crate::input::DeletePackageVersionsInput::namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
+    ///   - [`package(Option<String>)`](crate::input::DeletePackageVersionsInput::package): <p> The name of the package with the versions to delete. </p>
+    ///   - [`versions(Option<Vec<String>>)`](crate::input::DeletePackageVersionsInput::versions): <p> An array of strings that specify the versions of the package to delete. </p>
+    ///   - [`expected_status(Option<PackageVersionStatus>)`](crate::input::DeletePackageVersionsInput::expected_status): <p> The expected status of the package version to delete. Valid values are: </p>  <ul>   <li> <p> <code>Published</code> </p> </li>   <li> <p> <code>Unfinished</code> </p> </li>   <li> <p> <code>Unlisted</code> </p> </li>   <li> <p> <code>Archived</code> </p> </li>   <li> <p> <code>Disposed</code> </p> </li>  </ul>
+    /// - On success, responds with [`DeletePackageVersionsOutput`](crate::output::DeletePackageVersionsOutput) with field(s):
+    ///   - [`successful_versions(Option<HashMap<String, SuccessfulPackageVersionInfo>>)`](crate::output::DeletePackageVersionsOutput::successful_versions): <p> A list of the package versions that were successfully deleted. </p>
+    ///   - [`failed_versions(Option<HashMap<String, PackageVersionError>>)`](crate::output::DeletePackageVersionsOutput::failed_versions): <p> A <code>PackageVersionError</code> object that contains a map of errors codes for the deleted package that failed. The possible error codes are: </p>  <ul>   <li> <p> <code>ALREADY_EXISTS</code> </p> </li>   <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>   <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>   <li> <p> <code>NOT_ALLOWED</code> </p> </li>   <li> <p> <code>NOT_FOUND</code> </p> </li>   <li> <p> <code>SKIPPED</code> </p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<DeletePackageVersionsError>`](crate::error::DeletePackageVersionsError)
     pub fn delete_package_versions(&self) -> fluent_builders::DeletePackageVersions<C, M, R> {
         fluent_builders::DeletePackageVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteRepository` operation.
+    /// Constructs a fluent builder for the [`DeleteRepository`](crate::client::fluent_builders::DeleteRepository) operation.
     ///
-    /// See [`DeleteRepository`](crate::client::fluent_builders::DeleteRepository) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteRepositoryInput`](crate::input::DeleteRepositoryInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::DeleteRepositoryInput::domain): <p> The name of the domain that contains the repository to delete. </p>
+    ///   - [`domain_owner(Option<String>)`](crate::input::DeleteRepositoryInput::domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`repository(Option<String>)`](crate::input::DeleteRepositoryInput::repository): <p> The name of the repository to delete. </p>
+    /// - On success, responds with [`DeleteRepositoryOutput`](crate::output::DeleteRepositoryOutput) with field(s):
+    ///   - [`repository(Option<RepositoryDescription>)`](crate::output::DeleteRepositoryOutput::repository): <p> Information about the deleted repository after processing the request. </p>
+    /// - On failure, responds with [`SdkError<DeleteRepositoryError>`](crate::error::DeleteRepositoryError)
     pub fn delete_repository(&self) -> fluent_builders::DeleteRepository<C, M, R> {
         fluent_builders::DeleteRepository::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteRepositoryPermissionsPolicy` operation.
+    /// Constructs a fluent builder for the [`DeleteRepositoryPermissionsPolicy`](crate::client::fluent_builders::DeleteRepositoryPermissionsPolicy) operation.
     ///
-    /// See [`DeleteRepositoryPermissionsPolicy`](crate::client::fluent_builders::DeleteRepositoryPermissionsPolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteRepositoryPermissionsPolicyInput`](crate::input::DeleteRepositoryPermissionsPolicyInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::DeleteRepositoryPermissionsPolicyInput::domain): <p> The name of the domain that contains the repository associated with the resource policy to be deleted. </p>
+    ///   - [`domain_owner(Option<String>)`](crate::input::DeleteRepositoryPermissionsPolicyInput::domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`repository(Option<String>)`](crate::input::DeleteRepositoryPermissionsPolicyInput::repository): <p> The name of the repository that is associated with the resource policy to be deleted </p>
+    ///   - [`policy_revision(Option<String>)`](crate::input::DeleteRepositoryPermissionsPolicyInput::policy_revision): <p> The revision of the repository's resource policy to be deleted. This revision is used for optimistic locking, which prevents others from accidentally overwriting your changes to the repository's resource policy. </p>
+    /// - On success, responds with [`DeleteRepositoryPermissionsPolicyOutput`](crate::output::DeleteRepositoryPermissionsPolicyOutput) with field(s):
+    ///   - [`policy(Option<ResourcePolicy>)`](crate::output::DeleteRepositoryPermissionsPolicyOutput::policy): <p> Information about the deleted policy after processing the request. </p>
+    /// - On failure, responds with [`SdkError<DeleteRepositoryPermissionsPolicyError>`](crate::error::DeleteRepositoryPermissionsPolicyError)
     pub fn delete_repository_permissions_policy(
         &self,
     ) -> fluent_builders::DeleteRepositoryPermissionsPolicy<C, M, R> {
         fluent_builders::DeleteRepositoryPermissionsPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDomain` operation.
+    /// Constructs a fluent builder for the [`DescribeDomain`](crate::client::fluent_builders::DescribeDomain) operation.
     ///
-    /// See [`DescribeDomain`](crate::client::fluent_builders::DescribeDomain) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeDomainInput`](crate::input::DescribeDomainInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::DescribeDomainInput::domain): <p> A string that specifies the name of the requested domain. </p>
+    ///   - [`domain_owner(Option<String>)`](crate::input::DescribeDomainInput::domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// - On success, responds with [`DescribeDomainOutput`](crate::output::DescribeDomainOutput) with field(s):
+    ///   - [`domain(Option<DomainDescription>)`](crate::output::DescribeDomainOutput::domain): <p> Information about a domain. A domain is a container for repositories. When you create a domain, it is empty until you add one or more repositories. </p>
+    /// - On failure, responds with [`SdkError<DescribeDomainError>`](crate::error::DescribeDomainError)
     pub fn describe_domain(&self) -> fluent_builders::DescribeDomain<C, M, R> {
         fluent_builders::DescribeDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribePackageVersion` operation.
+    /// Constructs a fluent builder for the [`DescribePackageVersion`](crate::client::fluent_builders::DescribePackageVersion) operation.
     ///
-    /// See [`DescribePackageVersion`](crate::client::fluent_builders::DescribePackageVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribePackageVersionInput`](crate::input::DescribePackageVersionInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::DescribePackageVersionInput::domain): <p> The name of the domain that contains the repository that contains the package version. </p>
+    ///   - [`domain_owner(Option<String>)`](crate::input::DescribePackageVersionInput::domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`repository(Option<String>)`](crate::input::DescribePackageVersionInput::repository): <p> The name of the repository that contains the package version. </p>
+    ///   - [`format(Option<PackageFormat>)`](crate::input::DescribePackageVersionInput::format): <p> A format that specifies the type of the requested package version. The valid values are: </p>  <ul>   <li> <p> <code>npm</code> </p> </li>   <li> <p> <code>pypi</code> </p> </li>   <li> <p> <code>maven</code> </p> </li>  </ul>
+    ///   - [`namespace(Option<String>)`](crate::input::DescribePackageVersionInput::namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
+    ///   - [`package(Option<String>)`](crate::input::DescribePackageVersionInput::package): <p> The name of the requested package version. </p>
+    ///   - [`package_version(Option<String>)`](crate::input::DescribePackageVersionInput::package_version): <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
+    /// - On success, responds with [`DescribePackageVersionOutput`](crate::output::DescribePackageVersionOutput) with field(s):
+    ///   - [`package_version(Option<PackageVersionDescription>)`](crate::output::DescribePackageVersionOutput::package_version): <p> A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a> object that contains information about the requested package version. </p>
+    /// - On failure, responds with [`SdkError<DescribePackageVersionError>`](crate::error::DescribePackageVersionError)
     pub fn describe_package_version(&self) -> fluent_builders::DescribePackageVersion<C, M, R> {
         fluent_builders::DescribePackageVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeRepository` operation.
+    /// Constructs a fluent builder for the [`DescribeRepository`](crate::client::fluent_builders::DescribeRepository) operation.
     ///
-    /// See [`DescribeRepository`](crate::client::fluent_builders::DescribeRepository) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeRepositoryInput`](crate::input::DescribeRepositoryInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::DescribeRepositoryInput::domain): <p> The name of the domain that contains the repository to describe. </p>
+    ///   - [`domain_owner(Option<String>)`](crate::input::DescribeRepositoryInput::domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`repository(Option<String>)`](crate::input::DescribeRepositoryInput::repository): <p> A string that specifies the name of the requested repository. </p>
+    /// - On success, responds with [`DescribeRepositoryOutput`](crate::output::DescribeRepositoryOutput) with field(s):
+    ///   - [`repository(Option<RepositoryDescription>)`](crate::output::DescribeRepositoryOutput::repository): <p> A <code>RepositoryDescription</code> object that contains the requested repository information. </p>
+    /// - On failure, responds with [`SdkError<DescribeRepositoryError>`](crate::error::DescribeRepositoryError)
     pub fn describe_repository(&self) -> fluent_builders::DescribeRepository<C, M, R> {
         fluent_builders::DescribeRepository::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateExternalConnection` operation.
+    /// Constructs a fluent builder for the [`DisassociateExternalConnection`](crate::client::fluent_builders::DisassociateExternalConnection) operation.
     ///
-    /// See [`DisassociateExternalConnection`](crate::client::fluent_builders::DisassociateExternalConnection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateExternalConnectionInput`](crate::input::DisassociateExternalConnectionInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::DisassociateExternalConnectionInput::domain): <p>The name of the domain that contains the repository from which to remove the external repository. </p>
+    ///   - [`domain_owner(Option<String>)`](crate::input::DisassociateExternalConnectionInput::domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`repository(Option<String>)`](crate::input::DisassociateExternalConnectionInput::repository): <p>The name of the repository from which the external connection will be removed. </p>
+    ///   - [`external_connection(Option<String>)`](crate::input::DisassociateExternalConnectionInput::external_connection): <p>The name of the external connection to be removed from the repository. </p>
+    /// - On success, responds with [`DisassociateExternalConnectionOutput`](crate::output::DisassociateExternalConnectionOutput) with field(s):
+    ///   - [`repository(Option<RepositoryDescription>)`](crate::output::DisassociateExternalConnectionOutput::repository): <p> The repository associated with the removed external connection. </p>
+    /// - On failure, responds with [`SdkError<DisassociateExternalConnectionError>`](crate::error::DisassociateExternalConnectionError)
     pub fn disassociate_external_connection(
         &self,
     ) -> fluent_builders::DisassociateExternalConnection<C, M, R> {
         fluent_builders::DisassociateExternalConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisposePackageVersions` operation.
+    /// Constructs a fluent builder for the [`DisposePackageVersions`](crate::client::fluent_builders::DisposePackageVersions) operation.
     ///
-    /// See [`DisposePackageVersions`](crate::client::fluent_builders::DisposePackageVersions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisposePackageVersionsInput`](crate::input::DisposePackageVersionsInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::DisposePackageVersionsInput::domain): <p> The name of the domain that contains the repository you want to dispose. </p>
+    ///   - [`domain_owner(Option<String>)`](crate::input::DisposePackageVersionsInput::domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`repository(Option<String>)`](crate::input::DisposePackageVersionsInput::repository): <p> The name of the repository that contains the package versions you want to dispose. </p>
+    ///   - [`format(Option<PackageFormat>)`](crate::input::DisposePackageVersionsInput::format): <p> A format that specifies the type of package versions you want to dispose. The valid values are: </p>  <ul>   <li> <p> <code>npm</code> </p> </li>   <li> <p> <code>pypi</code> </p> </li>   <li> <p> <code>maven</code> </p> </li>  </ul>
+    ///   - [`namespace(Option<String>)`](crate::input::DisposePackageVersionsInput::namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
+    ///   - [`package(Option<String>)`](crate::input::DisposePackageVersionsInput::package): <p> The name of the package with the versions you want to dispose. </p>
+    ///   - [`versions(Option<Vec<String>>)`](crate::input::DisposePackageVersionsInput::versions): <p> The versions of the package you want to dispose. </p>
+    ///   - [`version_revisions(Option<HashMap<String, String>>)`](crate::input::DisposePackageVersionsInput::version_revisions): <p> The revisions of the package versions you want to dispose. </p>
+    ///   - [`expected_status(Option<PackageVersionStatus>)`](crate::input::DisposePackageVersionsInput::expected_status): <p> The expected status of the package version to dispose. Valid values are: </p>  <ul>   <li> <p> <code>Published</code> </p> </li>   <li> <p> <code>Unfinished</code> </p> </li>   <li> <p> <code>Unlisted</code> </p> </li>   <li> <p> <code>Archived</code> </p> </li>   <li> <p> <code>Disposed</code> </p> </li>  </ul>
+    /// - On success, responds with [`DisposePackageVersionsOutput`](crate::output::DisposePackageVersionsOutput) with field(s):
+    ///   - [`successful_versions(Option<HashMap<String, SuccessfulPackageVersionInfo>>)`](crate::output::DisposePackageVersionsOutput::successful_versions): <p> A list of the package versions that were successfully disposed. </p>
+    ///   - [`failed_versions(Option<HashMap<String, PackageVersionError>>)`](crate::output::DisposePackageVersionsOutput::failed_versions): <p> A <code>PackageVersionError</code> object that contains a map of errors codes for the disposed package versions that failed. The possible error codes are: </p>  <ul>   <li> <p> <code>ALREADY_EXISTS</code> </p> </li>   <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>   <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>   <li> <p> <code>NOT_ALLOWED</code> </p> </li>   <li> <p> <code>NOT_FOUND</code> </p> </li>   <li> <p> <code>SKIPPED</code> </p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<DisposePackageVersionsError>`](crate::error::DisposePackageVersionsError)
     pub fn dispose_package_versions(&self) -> fluent_builders::DisposePackageVersions<C, M, R> {
         fluent_builders::DisposePackageVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAuthorizationToken` operation.
+    /// Constructs a fluent builder for the [`GetAuthorizationToken`](crate::client::fluent_builders::GetAuthorizationToken) operation.
     ///
-    /// See [`GetAuthorizationToken`](crate::client::fluent_builders::GetAuthorizationToken) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetAuthorizationTokenInput`](crate::input::GetAuthorizationTokenInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::GetAuthorizationTokenInput::domain): <p> The name of the domain that is in scope for the generated authorization token. </p>
+    ///   - [`domain_owner(Option<String>)`](crate::input::GetAuthorizationTokenInput::domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`duration_seconds(Option<i64>)`](crate::input::GetAuthorizationTokenInput::duration_seconds): <p>The time, in seconds, that the generated authorization token is valid. Valid values are <code>0</code> and any number between <code>900</code> (15 minutes) and <code>43200</code> (12 hours). A value of <code>0</code> will set the expiration of the authorization token to the same expiration of the user's role's temporary credentials.</p>
+    /// - On success, responds with [`GetAuthorizationTokenOutput`](crate::output::GetAuthorizationTokenOutput) with field(s):
+    ///   - [`authorization_token(Option<String>)`](crate::output::GetAuthorizationTokenOutput::authorization_token): <p> The returned authentication token. </p>
+    ///   - [`expiration(Option<DateTime>)`](crate::output::GetAuthorizationTokenOutput::expiration): <p> A timestamp that specifies the date and time the authorization token expires. </p>
+    /// - On failure, responds with [`SdkError<GetAuthorizationTokenError>`](crate::error::GetAuthorizationTokenError)
     pub fn get_authorization_token(&self) -> fluent_builders::GetAuthorizationToken<C, M, R> {
         fluent_builders::GetAuthorizationToken::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDomainPermissionsPolicy` operation.
+    /// Constructs a fluent builder for the [`GetDomainPermissionsPolicy`](crate::client::fluent_builders::GetDomainPermissionsPolicy) operation.
     ///
-    /// See [`GetDomainPermissionsPolicy`](crate::client::fluent_builders::GetDomainPermissionsPolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetDomainPermissionsPolicyInput`](crate::input::GetDomainPermissionsPolicyInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::GetDomainPermissionsPolicyInput::domain): <p> The name of the domain to which the resource policy is attached. </p>
+    ///   - [`domain_owner(Option<String>)`](crate::input::GetDomainPermissionsPolicyInput::domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    /// - On success, responds with [`GetDomainPermissionsPolicyOutput`](crate::output::GetDomainPermissionsPolicyOutput) with field(s):
+    ///   - [`policy(Option<ResourcePolicy>)`](crate::output::GetDomainPermissionsPolicyOutput::policy): <p> The returned resource policy. </p>
+    /// - On failure, responds with [`SdkError<GetDomainPermissionsPolicyError>`](crate::error::GetDomainPermissionsPolicyError)
     pub fn get_domain_permissions_policy(
         &self,
     ) -> fluent_builders::GetDomainPermissionsPolicy<C, M, R> {
         fluent_builders::GetDomainPermissionsPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetPackageVersionAsset` operation.
+    /// Constructs a fluent builder for the [`GetPackageVersionAsset`](crate::client::fluent_builders::GetPackageVersionAsset) operation.
     ///
-    /// See [`GetPackageVersionAsset`](crate::client::fluent_builders::GetPackageVersionAsset) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetPackageVersionAssetInput`](crate::input::GetPackageVersionAssetInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::GetPackageVersionAssetInput::domain): <p> The name of the domain that contains the repository that contains the package version with the requested asset. </p>
+    ///   - [`domain_owner(Option<String>)`](crate::input::GetPackageVersionAssetInput::domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`repository(Option<String>)`](crate::input::GetPackageVersionAssetInput::repository): <p> The repository that contains the package version with the requested asset. </p>
+    ///   - [`format(Option<PackageFormat>)`](crate::input::GetPackageVersionAssetInput::format): <p> A format that specifies the type of the package version with the requested asset file. The valid values are: </p>  <ul>   <li> <p> <code>npm</code> </p> </li>   <li> <p> <code>pypi</code> </p> </li>   <li> <p> <code>maven</code> </p> </li>  </ul>
+    ///   - [`namespace(Option<String>)`](crate::input::GetPackageVersionAssetInput::namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
+    ///   - [`package(Option<String>)`](crate::input::GetPackageVersionAssetInput::package): <p> The name of the package that contains the requested asset. </p>
+    ///   - [`package_version(Option<String>)`](crate::input::GetPackageVersionAssetInput::package_version): <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
+    ///   - [`asset(Option<String>)`](crate::input::GetPackageVersionAssetInput::asset): <p> The name of the requested asset. </p>
+    ///   - [`package_version_revision(Option<String>)`](crate::input::GetPackageVersionAssetInput::package_version_revision): <p> The name of the package version revision that contains the requested asset. </p>
+    /// - On success, responds with [`GetPackageVersionAssetOutput`](crate::output::GetPackageVersionAssetOutput) with field(s):
+    ///   - [`asset(byte_stream::ByteStream)`](crate::output::GetPackageVersionAssetOutput::asset): <p> The binary file, or asset, that is downloaded.</p>
+    ///   - [`asset_name(Option<String>)`](crate::output::GetPackageVersionAssetOutput::asset_name): <p> The name of the asset that is downloaded. </p>
+    ///   - [`package_version(Option<String>)`](crate::output::GetPackageVersionAssetOutput::package_version): <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
+    ///   - [`package_version_revision(Option<String>)`](crate::output::GetPackageVersionAssetOutput::package_version_revision): <p> The name of the package version revision that contains the downloaded asset. </p>
+    /// - On failure, responds with [`SdkError<GetPackageVersionAssetError>`](crate::error::GetPackageVersionAssetError)
     pub fn get_package_version_asset(&self) -> fluent_builders::GetPackageVersionAsset<C, M, R> {
         fluent_builders::GetPackageVersionAsset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetPackageVersionReadme` operation.
+    /// Constructs a fluent builder for the [`GetPackageVersionReadme`](crate::client::fluent_builders::GetPackageVersionReadme) operation.
     ///
-    /// See [`GetPackageVersionReadme`](crate::client::fluent_builders::GetPackageVersionReadme) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetPackageVersionReadmeInput`](crate::input::GetPackageVersionReadmeInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::GetPackageVersionReadmeInput::domain): <p> The name of the domain that contains the repository that contains the package version with the requested readme file. </p>
+    ///   - [`domain_owner(Option<String>)`](crate::input::GetPackageVersionReadmeInput::domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`repository(Option<String>)`](crate::input::GetPackageVersionReadmeInput::repository): <p> The repository that contains the package with the requested readme file. </p>
+    ///   - [`format(Option<PackageFormat>)`](crate::input::GetPackageVersionReadmeInput::format): <p> A format that specifies the type of the package version with the requested readme file. The valid values are: </p>  <ul>   <li> <p> <code>npm</code> </p> </li>   <li> <p> <code>pypi</code> </p> </li>   <li> <p> <code>maven</code> </p> </li>  </ul>
+    ///   - [`namespace(Option<String>)`](crate::input::GetPackageVersionReadmeInput::namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
+    ///   - [`package(Option<String>)`](crate::input::GetPackageVersionReadmeInput::package): <p> The name of the package version that contains the requested readme file. </p>
+    ///   - [`package_version(Option<String>)`](crate::input::GetPackageVersionReadmeInput::package_version): <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
+    /// - On success, responds with [`GetPackageVersionReadmeOutput`](crate::output::GetPackageVersionReadmeOutput) with field(s):
+    ///   - [`format(Option<PackageFormat>)`](crate::output::GetPackageVersionReadmeOutput::format): <p> The format of the package with the requested readme file. Valid format types are: </p>  <ul>   <li> <p> <code>npm</code> </p> </li>   <li> <p> <code>pypi</code> </p> </li>   <li> <p> <code>maven</code> </p> </li>  </ul>
+    ///   - [`namespace(Option<String>)`](crate::output::GetPackageVersionReadmeOutput::namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
+    ///   - [`package(Option<String>)`](crate::output::GetPackageVersionReadmeOutput::package): <p> The name of the package that contains the returned readme file. </p>
+    ///   - [`version(Option<String>)`](crate::output::GetPackageVersionReadmeOutput::version): <p> The version of the package with the requested readme file. </p>
+    ///   - [`version_revision(Option<String>)`](crate::output::GetPackageVersionReadmeOutput::version_revision): <p> The current revision associated with the package version. </p>
+    ///   - [`readme(Option<String>)`](crate::output::GetPackageVersionReadmeOutput::readme): <p> The text of the returned readme file. </p>
+    /// - On failure, responds with [`SdkError<GetPackageVersionReadmeError>`](crate::error::GetPackageVersionReadmeError)
     pub fn get_package_version_readme(&self) -> fluent_builders::GetPackageVersionReadme<C, M, R> {
         fluent_builders::GetPackageVersionReadme::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRepositoryEndpoint` operation.
+    /// Constructs a fluent builder for the [`GetRepositoryEndpoint`](crate::client::fluent_builders::GetRepositoryEndpoint) operation.
     ///
-    /// See [`GetRepositoryEndpoint`](crate::client::fluent_builders::GetRepositoryEndpoint) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetRepositoryEndpointInput`](crate::input::GetRepositoryEndpointInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::GetRepositoryEndpointInput::domain): <p> The name of the domain that contains the repository. </p>
+    ///   - [`domain_owner(Option<String>)`](crate::input::GetRepositoryEndpointInput::domain_owner): <p> The 12-digit account number of the AWS account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
+    ///   - [`repository(Option<String>)`](crate::input::GetRepositoryEndpointInput::repository): <p> The name of the repository. </p>
+    ///   - [`format(Option<PackageFormat>)`](crate::input::GetRepositoryEndpointInput::format): <p> Returns which endpoint of a repository to return. A repository has one endpoint for each package format: </p>  <ul>   <li> <p> <code>npm</code> </p> </li>   <li> <p> <code>pypi</code> </p> </li>   <li> <p> <code>maven</code> </p> </li>  </ul>
+    /// - On success, responds with [`GetRepositoryEndpointOutput`](crate::output::GetRepositoryEndpointOutput) with field(s):
+    ///   - [`repository_endpoint(Option<String>)`](crate::output::GetRepositoryEndpointOutput::repository_endpoint): <p> A string that specifies the URL of the returned endpoint. </p>
+    /// - On failure, responds with [`SdkError<GetRepositoryEndpointError>`](crate::error::GetRepositoryEndpointError)
     pub fn get_repository_endpoint(&self) -> fluent_builders::GetRepositoryEndpoint<C, M, R> {
         fluent_builders::GetRepositoryEndpoint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRepositoryPermissionsPolicy` operation.
+    /// Constructs a fluent builder for the [`GetRepositoryPermissionsPolicy`](crate::client::fluent_builders::GetRepositoryPermissionsPolicy) operation.
     ///
-    /// See [`GetRepositoryPermissionsPolicy`](crate::client::fluent_builders::GetRepositoryPermissionsPolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetRepositoryPermissionsPolicyInput`](crate::input::GetRepositoryPermissionsPolicyInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::GetRepositoryPermissionsPolicyInput::domain): <p> The name of the domain containing the repository whose associated resource policy is to be retrieved. </p>
+    ///   - [`domain_owner(Option<String>)`](crate::input::GetRepositoryPermissionsPolicyInput::domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`repository(Option<String>)`](crate::input::GetRepositoryPermissionsPolicyInput::repository): <p> The name of the repository whose associated resource policy is to be retrieved. </p>
+    /// - On success, responds with [`GetRepositoryPermissionsPolicyOutput`](crate::output::GetRepositoryPermissionsPolicyOutput) with field(s):
+    ///   - [`policy(Option<ResourcePolicy>)`](crate::output::GetRepositoryPermissionsPolicyOutput::policy): <p> The returned resource policy. </p>
+    /// - On failure, responds with [`SdkError<GetRepositoryPermissionsPolicyError>`](crate::error::GetRepositoryPermissionsPolicyError)
     pub fn get_repository_permissions_policy(
         &self,
     ) -> fluent_builders::GetRepositoryPermissionsPolicy<C, M, R> {
         fluent_builders::GetRepositoryPermissionsPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDomains` operation.
-    ///
-    /// See [`ListDomains`](crate::client::fluent_builders::ListDomains) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListDomains`](crate::client::fluent_builders::ListDomains) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDomains::into_paginator).
+    ///
+    /// - Takes [`ListDomainsInput`](crate::input::ListDomainsInput) with field(s):
+    ///   - [`max_results(Option<i32>)`](crate::input::ListDomainsInput::max_results): <p> The maximum number of results to return per page. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListDomainsInput::next_token): <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+    /// - On success, responds with [`ListDomainsOutput`](crate::output::ListDomainsOutput) with field(s):
+    ///   - [`domains(Option<Vec<DomainSummary>>)`](crate::output::ListDomainsOutput::domains): <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a> objects. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDomainsOutput::next_token): <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+    /// - On failure, responds with [`SdkError<ListDomainsError>`](crate::error::ListDomainsError)
     pub fn list_domains(&self) -> fluent_builders::ListDomains<C, M, R> {
         fluent_builders::ListDomains::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPackages` operation.
-    ///
-    /// See [`ListPackages`](crate::client::fluent_builders::ListPackages) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListPackages`](crate::client::fluent_builders::ListPackages) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPackages::into_paginator).
+    ///
+    /// - Takes [`ListPackagesInput`](crate::input::ListPackagesInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::ListPackagesInput::domain): <p> The name of the domain that contains the repository that contains the requested list of packages. </p>
+    ///   - [`domain_owner(Option<String>)`](crate::input::ListPackagesInput::domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`repository(Option<String>)`](crate::input::ListPackagesInput::repository): <p> The name of the repository from which packages are to be listed. </p>
+    ///   - [`format(Option<PackageFormat>)`](crate::input::ListPackagesInput::format): <p> The format of the packages. The valid package types are: </p>  <ul>   <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>   <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>   <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>  </ul>
+    ///   - [`namespace(Option<String>)`](crate::input::ListPackagesInput::namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
+    ///   - [`package_prefix(Option<String>)`](crate::input::ListPackagesInput::package_prefix): <p> A prefix used to filter returned packages. Only packages with names that start with <code>packagePrefix</code> are returned. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListPackagesInput::max_results): <p> The maximum number of results to return per page. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListPackagesInput::next_token): <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+    /// - On success, responds with [`ListPackagesOutput`](crate::output::ListPackagesOutput) with field(s):
+    ///   - [`packages(Option<Vec<PackageSummary>>)`](crate::output::ListPackagesOutput::packages): <p> The list of returned <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a> objects. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPackagesOutput::next_token): <p> If there are additional results, this is the token for the next set of results. </p>
+    /// - On failure, responds with [`SdkError<ListPackagesError>`](crate::error::ListPackagesError)
     pub fn list_packages(&self) -> fluent_builders::ListPackages<C, M, R> {
         fluent_builders::ListPackages::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPackageVersionAssets` operation.
-    ///
-    /// See [`ListPackageVersionAssets`](crate::client::fluent_builders::ListPackageVersionAssets) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListPackageVersionAssets`](crate::client::fluent_builders::ListPackageVersionAssets) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPackageVersionAssets::into_paginator).
+    ///
+    /// - Takes [`ListPackageVersionAssetsInput`](crate::input::ListPackageVersionAssetsInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::ListPackageVersionAssetsInput::domain): <p> The name of the domain that contains the repository associated with the package version assets. </p>
+    ///   - [`domain_owner(Option<String>)`](crate::input::ListPackageVersionAssetsInput::domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`repository(Option<String>)`](crate::input::ListPackageVersionAssetsInput::repository): <p> The name of the repository that contains the package that contains the returned package version assets. </p>
+    ///   - [`format(Option<PackageFormat>)`](crate::input::ListPackageVersionAssetsInput::format): <p> The format of the package that contains the returned package version assets. The valid package types are: </p>  <ul>   <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>   <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>   <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>  </ul>
+    ///   - [`namespace(Option<String>)`](crate::input::ListPackageVersionAssetsInput::namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
+    ///   - [`package(Option<String>)`](crate::input::ListPackageVersionAssetsInput::package): <p> The name of the package that contains the returned package version assets. </p>
+    ///   - [`package_version(Option<String>)`](crate::input::ListPackageVersionAssetsInput::package_version): <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListPackageVersionAssetsInput::max_results): <p> The maximum number of results to return per page. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListPackageVersionAssetsInput::next_token): <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+    /// - On success, responds with [`ListPackageVersionAssetsOutput`](crate::output::ListPackageVersionAssetsOutput) with field(s):
+    ///   - [`format(Option<PackageFormat>)`](crate::output::ListPackageVersionAssetsOutput::format): <p> The format of the package that contains the returned package version assets. </p>
+    ///   - [`namespace(Option<String>)`](crate::output::ListPackageVersionAssetsOutput::namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
+    ///   - [`package(Option<String>)`](crate::output::ListPackageVersionAssetsOutput::package): <p> The name of the package that contains the returned package version assets. </p>
+    ///   - [`version(Option<String>)`](crate::output::ListPackageVersionAssetsOutput::version): <p> The version of the package associated with the returned assets. </p>
+    ///   - [`version_revision(Option<String>)`](crate::output::ListPackageVersionAssetsOutput::version_revision): <p> The current revision associated with the package version. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPackageVersionAssetsOutput::next_token): <p> If there are additional results, this is the token for the next set of results. </p>
+    ///   - [`assets(Option<Vec<AssetSummary>>)`](crate::output::ListPackageVersionAssetsOutput::assets): <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> objects. </p>
+    /// - On failure, responds with [`SdkError<ListPackageVersionAssetsError>`](crate::error::ListPackageVersionAssetsError)
     pub fn list_package_version_assets(
         &self,
     ) -> fluent_builders::ListPackageVersionAssets<C, M, R> {
         fluent_builders::ListPackageVersionAssets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPackageVersionDependencies` operation.
+    /// Constructs a fluent builder for the [`ListPackageVersionDependencies`](crate::client::fluent_builders::ListPackageVersionDependencies) operation.
     ///
-    /// See [`ListPackageVersionDependencies`](crate::client::fluent_builders::ListPackageVersionDependencies) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListPackageVersionDependenciesInput`](crate::input::ListPackageVersionDependenciesInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::ListPackageVersionDependenciesInput::domain): <p> The name of the domain that contains the repository that contains the requested package version dependencies. </p>
+    ///   - [`domain_owner(Option<String>)`](crate::input::ListPackageVersionDependenciesInput::domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`repository(Option<String>)`](crate::input::ListPackageVersionDependenciesInput::repository): <p> The name of the repository that contains the requested package version. </p>
+    ///   - [`format(Option<PackageFormat>)`](crate::input::ListPackageVersionDependenciesInput::format): <p> The format of the package with the requested dependencies. The valid package types are: </p>  <ul>   <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>   <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>   <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>  </ul>
+    ///   - [`namespace(Option<String>)`](crate::input::ListPackageVersionDependenciesInput::namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
+    ///   - [`package(Option<String>)`](crate::input::ListPackageVersionDependenciesInput::package): <p> The name of the package versions' package. </p>
+    ///   - [`package_version(Option<String>)`](crate::input::ListPackageVersionDependenciesInput::package_version): <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListPackageVersionDependenciesInput::next_token): <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+    /// - On success, responds with [`ListPackageVersionDependenciesOutput`](crate::output::ListPackageVersionDependenciesOutput) with field(s):
+    ///   - [`format(Option<PackageFormat>)`](crate::output::ListPackageVersionDependenciesOutput::format): <p> A format that specifies the type of the package that contains the returned dependencies. The valid values are: </p>  <ul>   <li> <p> <code>npm</code> </p> </li>   <li> <p> <code>pypi</code> </p> </li>   <li> <p> <code>maven</code> </p> </li>  </ul>
+    ///   - [`namespace(Option<String>)`](crate::output::ListPackageVersionDependenciesOutput::namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
+    ///   - [`package(Option<String>)`](crate::output::ListPackageVersionDependenciesOutput::package): <p> The name of the package that contains the returned package versions dependencies. </p>
+    ///   - [`version(Option<String>)`](crate::output::ListPackageVersionDependenciesOutput::version): <p> The version of the package that is specified in the request. </p>
+    ///   - [`version_revision(Option<String>)`](crate::output::ListPackageVersionDependenciesOutput::version_revision): <p> The current revision associated with the package version. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPackageVersionDependenciesOutput::next_token): <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+    ///   - [`dependencies(Option<Vec<PackageDependency>>)`](crate::output::ListPackageVersionDependenciesOutput::dependencies): <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a> objects. </p>
+    /// - On failure, responds with [`SdkError<ListPackageVersionDependenciesError>`](crate::error::ListPackageVersionDependenciesError)
     pub fn list_package_version_dependencies(
         &self,
     ) -> fluent_builders::ListPackageVersionDependencies<C, M, R> {
         fluent_builders::ListPackageVersionDependencies::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPackageVersions` operation.
-    ///
-    /// See [`ListPackageVersions`](crate::client::fluent_builders::ListPackageVersions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListPackageVersions`](crate::client::fluent_builders::ListPackageVersions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPackageVersions::into_paginator).
+    ///
+    /// - Takes [`ListPackageVersionsInput`](crate::input::ListPackageVersionsInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::ListPackageVersionsInput::domain): <p> The name of the domain that contains the repository that contains the returned package versions. </p>
+    ///   - [`domain_owner(Option<String>)`](crate::input::ListPackageVersionsInput::domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`repository(Option<String>)`](crate::input::ListPackageVersionsInput::repository): <p> The name of the repository that contains the package. </p>
+    ///   - [`format(Option<PackageFormat>)`](crate::input::ListPackageVersionsInput::format): <p> The format of the returned packages. The valid package types are: </p>  <ul>   <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>   <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>   <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>  </ul>
+    ///   - [`namespace(Option<String>)`](crate::input::ListPackageVersionsInput::namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
+    ///   - [`package(Option<String>)`](crate::input::ListPackageVersionsInput::package): <p> The name of the package for which you want to return a list of package versions. </p>
+    ///   - [`status(Option<PackageVersionStatus>)`](crate::input::ListPackageVersionsInput::status): <p> A string that specifies the status of the package versions to include in the returned list. It can be one of the following: </p>  <ul>   <li> <p> <code>Published</code> </p> </li>   <li> <p> <code>Unfinished</code> </p> </li>   <li> <p> <code>Unlisted</code> </p> </li>   <li> <p> <code>Archived</code> </p> </li>   <li> <p> <code>Disposed</code> </p> </li>  </ul>
+    ///   - [`sort_by(Option<PackageVersionSortType>)`](crate::input::ListPackageVersionsInput::sort_by): <p> How to sort the returned list of package versions. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListPackageVersionsInput::max_results): <p> The maximum number of results to return per page. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListPackageVersionsInput::next_token): <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+    /// - On success, responds with [`ListPackageVersionsOutput`](crate::output::ListPackageVersionsOutput) with field(s):
+    ///   - [`default_display_version(Option<String>)`](crate::output::ListPackageVersionsOutput::default_display_version): <p> The default package version to display. This depends on the package format: </p>  <ul>   <li> <p> For Maven and PyPI packages, it's the most recently published package version. </p> </li>   <li> <p> For npm packages, it's the version referenced by the <code>latest</code> tag. If the <code>latest</code> tag is not set, it's the most recently published package version. </p> </li>  </ul>
+    ///   - [`format(Option<PackageFormat>)`](crate::output::ListPackageVersionsOutput::format): <p> A format of the package. Valid package format values are: </p>  <ul>   <li> <p> <code>npm</code> </p> </li>   <li> <p> <code>pypi</code> </p> </li>   <li> <p> <code>maven</code> </p> </li>  </ul>
+    ///   - [`namespace(Option<String>)`](crate::output::ListPackageVersionsOutput::namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
+    ///   - [`package(Option<String>)`](crate::output::ListPackageVersionsOutput::package): <p> The name of the package. </p>
+    ///   - [`versions(Option<Vec<PackageVersionSummary>>)`](crate::output::ListPackageVersionsOutput::versions): <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a> objects. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPackageVersionsOutput::next_token): <p> If there are additional results, this is the token for the next set of results. </p>
+    /// - On failure, responds with [`SdkError<ListPackageVersionsError>`](crate::error::ListPackageVersionsError)
     pub fn list_package_versions(&self) -> fluent_builders::ListPackageVersions<C, M, R> {
         fluent_builders::ListPackageVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRepositories` operation.
-    ///
-    /// See [`ListRepositories`](crate::client::fluent_builders::ListRepositories) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListRepositories`](crate::client::fluent_builders::ListRepositories) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRepositories::into_paginator).
+    ///
+    /// - Takes [`ListRepositoriesInput`](crate::input::ListRepositoriesInput) with field(s):
+    ///   - [`repository_prefix(Option<String>)`](crate::input::ListRepositoriesInput::repository_prefix): <p> A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListRepositoriesInput::max_results): <p> The maximum number of results to return per page. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListRepositoriesInput::next_token): <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+    /// - On success, responds with [`ListRepositoriesOutput`](crate::output::ListRepositoriesOutput) with field(s):
+    ///   - [`repositories(Option<Vec<RepositorySummary>>)`](crate::output::ListRepositoriesOutput::repositories): <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a> objects. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListRepositoriesOutput::next_token): <p> If there are additional results, this is the token for the next set of results. </p>
+    /// - On failure, responds with [`SdkError<ListRepositoriesError>`](crate::error::ListRepositoriesError)
     pub fn list_repositories(&self) -> fluent_builders::ListRepositories<C, M, R> {
         fluent_builders::ListRepositories::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRepositoriesInDomain` operation.
-    ///
-    /// See [`ListRepositoriesInDomain`](crate::client::fluent_builders::ListRepositoriesInDomain) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListRepositoriesInDomain`](crate::client::fluent_builders::ListRepositoriesInDomain) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRepositoriesInDomain::into_paginator).
+    ///
+    /// - Takes [`ListRepositoriesInDomainInput`](crate::input::ListRepositoriesInDomainInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::ListRepositoriesInDomainInput::domain): <p> The name of the domain that contains the returned list of repositories. </p>
+    ///   - [`domain_owner(Option<String>)`](crate::input::ListRepositoriesInDomainInput::domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`administrator_account(Option<String>)`](crate::input::ListRepositoriesInDomainInput::administrator_account): <p> Filter the list of repositories to only include those that are managed by the AWS account ID. </p>
+    ///   - [`repository_prefix(Option<String>)`](crate::input::ListRepositoriesInDomainInput::repository_prefix): <p> A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListRepositoriesInDomainInput::max_results): <p> The maximum number of results to return per page. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListRepositoriesInDomainInput::next_token): <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
+    /// - On success, responds with [`ListRepositoriesInDomainOutput`](crate::output::ListRepositoriesInDomainOutput) with field(s):
+    ///   - [`repositories(Option<Vec<RepositorySummary>>)`](crate::output::ListRepositoriesInDomainOutput::repositories): <p> The returned list of repositories. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListRepositoriesInDomainOutput::next_token): <p> If there are additional results, this is the token for the next set of results. </p>
+    /// - On failure, responds with [`SdkError<ListRepositoriesInDomainError>`](crate::error::ListRepositoriesInDomainError)
     pub fn list_repositories_in_domain(
         &self,
     ) -> fluent_builders::ListRepositoriesInDomain<C, M, R> {
         fluent_builders::ListRepositoriesInDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource to get tags for.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A list of tag key and value pairs associated with the specified resource.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutDomainPermissionsPolicy` operation.
+    /// Constructs a fluent builder for the [`PutDomainPermissionsPolicy`](crate::client::fluent_builders::PutDomainPermissionsPolicy) operation.
     ///
-    /// See [`PutDomainPermissionsPolicy`](crate::client::fluent_builders::PutDomainPermissionsPolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutDomainPermissionsPolicyInput`](crate::input::PutDomainPermissionsPolicyInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::PutDomainPermissionsPolicyInput::domain): <p> The name of the domain on which to set the resource policy. </p>
+    ///   - [`domain_owner(Option<String>)`](crate::input::PutDomainPermissionsPolicyInput::domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`policy_revision(Option<String>)`](crate::input::PutDomainPermissionsPolicyInput::policy_revision): <p> The current revision of the resource policy to be set. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy. </p>
+    ///   - [`policy_document(Option<String>)`](crate::input::PutDomainPermissionsPolicyInput::policy_document): <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided domain. </p>
+    /// - On success, responds with [`PutDomainPermissionsPolicyOutput`](crate::output::PutDomainPermissionsPolicyOutput) with field(s):
+    ///   - [`policy(Option<ResourcePolicy>)`](crate::output::PutDomainPermissionsPolicyOutput::policy): <p> The resource policy that was set after processing the request. </p>
+    /// - On failure, responds with [`SdkError<PutDomainPermissionsPolicyError>`](crate::error::PutDomainPermissionsPolicyError)
     pub fn put_domain_permissions_policy(
         &self,
     ) -> fluent_builders::PutDomainPermissionsPolicy<C, M, R> {
         fluent_builders::PutDomainPermissionsPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutRepositoryPermissionsPolicy` operation.
+    /// Constructs a fluent builder for the [`PutRepositoryPermissionsPolicy`](crate::client::fluent_builders::PutRepositoryPermissionsPolicy) operation.
     ///
-    /// See [`PutRepositoryPermissionsPolicy`](crate::client::fluent_builders::PutRepositoryPermissionsPolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutRepositoryPermissionsPolicyInput`](crate::input::PutRepositoryPermissionsPolicyInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::PutRepositoryPermissionsPolicyInput::domain): <p> The name of the domain containing the repository to set the resource policy on. </p>
+    ///   - [`domain_owner(Option<String>)`](crate::input::PutRepositoryPermissionsPolicyInput::domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`repository(Option<String>)`](crate::input::PutRepositoryPermissionsPolicyInput::repository): <p> The name of the repository to set the resource policy on. </p>
+    ///   - [`policy_revision(Option<String>)`](crate::input::PutRepositoryPermissionsPolicyInput::policy_revision): <p> Sets the revision of the resource policy that specifies permissions to access the repository. This revision is used for optimistic locking, which prevents others from overwriting your changes to the repository's resource policy. </p>
+    ///   - [`policy_document(Option<String>)`](crate::input::PutRepositoryPermissionsPolicyInput::policy_document): <p> A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided repository. </p>
+    /// - On success, responds with [`PutRepositoryPermissionsPolicyOutput`](crate::output::PutRepositoryPermissionsPolicyOutput) with field(s):
+    ///   - [`policy(Option<ResourcePolicy>)`](crate::output::PutRepositoryPermissionsPolicyOutput::policy): <p> The resource policy that was set after processing the request. </p>
+    /// - On failure, responds with [`SdkError<PutRepositoryPermissionsPolicyError>`](crate::error::PutRepositoryPermissionsPolicyError)
     pub fn put_repository_permissions_policy(
         &self,
     ) -> fluent_builders::PutRepositoryPermissionsPolicy<C, M, R> {
         fluent_builders::PutRepositoryPermissionsPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to add or update tags for.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>The tags you want to modify or add to the resource.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to remove tags from.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The tag key for each tag that you want to remove from the resource.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdatePackageVersionsStatus` operation.
+    /// Constructs a fluent builder for the [`UpdatePackageVersionsStatus`](crate::client::fluent_builders::UpdatePackageVersionsStatus) operation.
     ///
-    /// See [`UpdatePackageVersionsStatus`](crate::client::fluent_builders::UpdatePackageVersionsStatus) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdatePackageVersionsStatusInput`](crate::input::UpdatePackageVersionsStatusInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::UpdatePackageVersionsStatusInput::domain): <p> The name of the domain that contains the repository that contains the package versions with a status to be updated. </p>
+    ///   - [`domain_owner(Option<String>)`](crate::input::UpdatePackageVersionsStatusInput::domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`repository(Option<String>)`](crate::input::UpdatePackageVersionsStatusInput::repository): <p> The repository that contains the package versions with the status you want to update. </p>
+    ///   - [`format(Option<PackageFormat>)`](crate::input::UpdatePackageVersionsStatusInput::format): <p> A format that specifies the type of the package with the statuses to update. The valid values are: </p>  <ul>   <li> <p> <code>npm</code> </p> </li>   <li> <p> <code>pypi</code> </p> </li>   <li> <p> <code>maven</code> </p> </li>  </ul>
+    ///   - [`namespace(Option<String>)`](crate::input::UpdatePackageVersionsStatusInput::namespace): <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>  <ul>   <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>   <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>   <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>  </ul>
+    ///   - [`package(Option<String>)`](crate::input::UpdatePackageVersionsStatusInput::package): <p> The name of the package with the version statuses to update. </p>
+    ///   - [`versions(Option<Vec<String>>)`](crate::input::UpdatePackageVersionsStatusInput::versions): <p> An array of strings that specify the versions of the package with the statuses to update. </p>
+    ///   - [`version_revisions(Option<HashMap<String, String>>)`](crate::input::UpdatePackageVersionsStatusInput::version_revisions): <p> A map of package versions and package version revisions. The map <code>key</code> is the package version (for example, <code>3.5.2</code>), and the map <code>value</code> is the package version revision. </p>
+    ///   - [`expected_status(Option<PackageVersionStatus>)`](crate::input::UpdatePackageVersionsStatusInput::expected_status): <p> The package version’s expected status before it is updated. If <code>expectedStatus</code> is provided, the package version's status is updated only if its status at the time <code>UpdatePackageVersionsStatus</code> is called matches <code>expectedStatus</code>. </p>
+    ///   - [`target_status(Option<PackageVersionStatus>)`](crate::input::UpdatePackageVersionsStatusInput::target_status): <p> The status you want to change the package version status to. </p>
+    /// - On success, responds with [`UpdatePackageVersionsStatusOutput`](crate::output::UpdatePackageVersionsStatusOutput) with field(s):
+    ///   - [`successful_versions(Option<HashMap<String, SuccessfulPackageVersionInfo>>)`](crate::output::UpdatePackageVersionsStatusOutput::successful_versions): <p> A list of <code>PackageVersionError</code> objects, one for each package version with a status that failed to update. </p>
+    ///   - [`failed_versions(Option<HashMap<String, PackageVersionError>>)`](crate::output::UpdatePackageVersionsStatusOutput::failed_versions): <p> A list of <code>SuccessfulPackageVersionInfo</code> objects, one for each package version with a status that successfully updated. </p>
+    /// - On failure, responds with [`SdkError<UpdatePackageVersionsStatusError>`](crate::error::UpdatePackageVersionsStatusError)
     pub fn update_package_versions_status(
         &self,
     ) -> fluent_builders::UpdatePackageVersionsStatus<C, M, R> {
         fluent_builders::UpdatePackageVersionsStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateRepository` operation.
+    /// Constructs a fluent builder for the [`UpdateRepository`](crate::client::fluent_builders::UpdateRepository) operation.
     ///
-    /// See [`UpdateRepository`](crate::client::fluent_builders::UpdateRepository) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateRepositoryInput`](crate::input::UpdateRepositoryInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::UpdateRepositoryInput::domain): <p> The name of the domain associated with the repository to update. </p>
+    ///   - [`domain_owner(Option<String>)`](crate::input::UpdateRepositoryInput::domain_owner): <p> The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces. </p>
+    ///   - [`repository(Option<String>)`](crate::input::UpdateRepositoryInput::repository): <p> The name of the repository to update. </p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateRepositoryInput::description): <p> An updated repository description. </p>
+    ///   - [`upstreams(Option<Vec<UpstreamRepository>>)`](crate::input::UpdateRepositoryInput::upstreams): <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when AWS CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
+    /// - On success, responds with [`UpdateRepositoryOutput`](crate::output::UpdateRepositoryOutput) with field(s):
+    ///   - [`repository(Option<RepositoryDescription>)`](crate::output::UpdateRepositoryOutput::repository): <p> The updated repository. </p>
+    /// - On failure, responds with [`SdkError<UpdateRepositoryError>`](crate::error::UpdateRepositoryError)
     pub fn update_repository(&self) -> fluent_builders::UpdateRepository<C, M, R> {
         fluent_builders::UpdateRepository::new(self.handle.clone())
     }

@@ -83,113 +83,185 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `DescribeAffectedAccountsForOrganization` operation.
-    ///
-    /// See [`DescribeAffectedAccountsForOrganization`](crate::client::fluent_builders::DescribeAffectedAccountsForOrganization) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeAffectedAccountsForOrganization`](crate::client::fluent_builders::DescribeAffectedAccountsForOrganization) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeAffectedAccountsForOrganization::into_paginator).
+    ///
+    /// - Takes [`DescribeAffectedAccountsForOrganizationInput`](crate::input::DescribeAffectedAccountsForOrganizationInput) with field(s):
+    ///   - [`event_arn(Option<String>)`](crate::input::DescribeAffectedAccountsForOrganizationInput::event_arn): <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>  <p>For example, an event ARN might look like the following:</p>  <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeAffectedAccountsForOrganizationInput::next_token): <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeAffectedAccountsForOrganizationInput::max_results): <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
+    /// - On success, responds with [`DescribeAffectedAccountsForOrganizationOutput`](crate::output::DescribeAffectedAccountsForOrganizationOutput) with field(s):
+    ///   - [`affected_accounts(Option<Vec<String>>)`](crate::output::DescribeAffectedAccountsForOrganizationOutput::affected_accounts): <p>A JSON set of elements of the affected accounts.</p>
+    ///   - [`event_scope_code(Option<EventScopeCode>)`](crate::output::DescribeAffectedAccountsForOrganizationOutput::event_scope_code): <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p>  <ul>   <li> <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is always empty.</p> </li>   <li> <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts in your organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you have Amazon Web Services accounts that use that service, those account IDs appear in the response.</p> </li>   <li> <p>If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified in the request is invalid or doesn't exist.</p> </li>  </ul>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeAffectedAccountsForOrganizationOutput::next_token): <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+    /// - On failure, responds with [`SdkError<DescribeAffectedAccountsForOrganizationError>`](crate::error::DescribeAffectedAccountsForOrganizationError)
     pub fn describe_affected_accounts_for_organization(
         &self,
     ) -> fluent_builders::DescribeAffectedAccountsForOrganization<C, M, R> {
         fluent_builders::DescribeAffectedAccountsForOrganization::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAffectedEntities` operation.
-    ///
-    /// See [`DescribeAffectedEntities`](crate::client::fluent_builders::DescribeAffectedEntities) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeAffectedEntities`](crate::client::fluent_builders::DescribeAffectedEntities) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeAffectedEntities::into_paginator).
+    ///
+    /// - Takes [`DescribeAffectedEntitiesInput`](crate::input::DescribeAffectedEntitiesInput) with field(s):
+    ///   - [`filter(Option<EntityFilter>)`](crate::input::DescribeAffectedEntitiesInput::filter): <p>Values to narrow the results returned. At least one event ARN is required.</p>
+    ///   - [`locale(Option<String>)`](crate::input::DescribeAffectedEntitiesInput::locale): <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeAffectedEntitiesInput::next_token): <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeAffectedEntitiesInput::max_results): <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
+    /// - On success, responds with [`DescribeAffectedEntitiesOutput`](crate::output::DescribeAffectedEntitiesOutput) with field(s):
+    ///   - [`entities(Option<Vec<AffectedEntity>>)`](crate::output::DescribeAffectedEntitiesOutput::entities): <p>The entities that match the filter criteria.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeAffectedEntitiesOutput::next_token): <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+    /// - On failure, responds with [`SdkError<DescribeAffectedEntitiesError>`](crate::error::DescribeAffectedEntitiesError)
     pub fn describe_affected_entities(&self) -> fluent_builders::DescribeAffectedEntities<C, M, R> {
         fluent_builders::DescribeAffectedEntities::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAffectedEntitiesForOrganization` operation.
-    ///
-    /// See [`DescribeAffectedEntitiesForOrganization`](crate::client::fluent_builders::DescribeAffectedEntitiesForOrganization) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeAffectedEntitiesForOrganization`](crate::client::fluent_builders::DescribeAffectedEntitiesForOrganization) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeAffectedEntitiesForOrganization::into_paginator).
+    ///
+    /// - Takes [`DescribeAffectedEntitiesForOrganizationInput`](crate::input::DescribeAffectedEntitiesForOrganizationInput) with field(s):
+    ///   - [`organization_entity_filters(Option<Vec<EventAccountFilter>>)`](crate::input::DescribeAffectedEntitiesForOrganizationInput::organization_entity_filters): <p>A JSON set of elements including the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
+    ///   - [`locale(Option<String>)`](crate::input::DescribeAffectedEntitiesForOrganizationInput::locale): <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeAffectedEntitiesForOrganizationInput::next_token): <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeAffectedEntitiesForOrganizationInput::max_results): <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
+    /// - On success, responds with [`DescribeAffectedEntitiesForOrganizationOutput`](crate::output::DescribeAffectedEntitiesForOrganizationOutput) with field(s):
+    ///   - [`entities(Option<Vec<AffectedEntity>>)`](crate::output::DescribeAffectedEntitiesForOrganizationOutput::entities): <p>A JSON set of elements including the <code>awsAccountId</code> and its <code>entityArn</code>, <code>entityValue</code> and its <code>entityArn</code>, <code>lastUpdatedTime</code>, and <code>statusCode</code>.</p>
+    ///   - [`failed_set(Option<Vec<OrganizationAffectedEntitiesErrorItem>>)`](crate::output::DescribeAffectedEntitiesForOrganizationOutput::failed_set): <p>A JSON set of elements of the failed response, including the <code>awsAccountId</code>, <code>errorMessage</code>, <code>errorName</code>, and <code>eventArn</code>.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeAffectedEntitiesForOrganizationOutput::next_token): <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+    /// - On failure, responds with [`SdkError<DescribeAffectedEntitiesForOrganizationError>`](crate::error::DescribeAffectedEntitiesForOrganizationError)
     pub fn describe_affected_entities_for_organization(
         &self,
     ) -> fluent_builders::DescribeAffectedEntitiesForOrganization<C, M, R> {
         fluent_builders::DescribeAffectedEntitiesForOrganization::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEntityAggregates` operation.
+    /// Constructs a fluent builder for the [`DescribeEntityAggregates`](crate::client::fluent_builders::DescribeEntityAggregates) operation.
     ///
-    /// See [`DescribeEntityAggregates`](crate::client::fluent_builders::DescribeEntityAggregates) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeEntityAggregatesInput`](crate::input::DescribeEntityAggregatesInput) with field(s):
+    ///   - [`event_arns(Option<Vec<String>>)`](crate::input::DescribeEntityAggregatesInput::event_arns): <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
+    /// - On success, responds with [`DescribeEntityAggregatesOutput`](crate::output::DescribeEntityAggregatesOutput) with field(s):
+    ///   - [`entity_aggregates(Option<Vec<EntityAggregate>>)`](crate::output::DescribeEntityAggregatesOutput::entity_aggregates): <p>The number of entities that are affected by each of the specified events.</p>
+    /// - On failure, responds with [`SdkError<DescribeEntityAggregatesError>`](crate::error::DescribeEntityAggregatesError)
     pub fn describe_entity_aggregates(&self) -> fluent_builders::DescribeEntityAggregates<C, M, R> {
         fluent_builders::DescribeEntityAggregates::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEventAggregates` operation.
-    ///
-    /// See [`DescribeEventAggregates`](crate::client::fluent_builders::DescribeEventAggregates) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeEventAggregates`](crate::client::fluent_builders::DescribeEventAggregates) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeEventAggregates::into_paginator).
+    ///
+    /// - Takes [`DescribeEventAggregatesInput`](crate::input::DescribeEventAggregatesInput) with field(s):
+    ///   - [`filter(Option<EventFilter>)`](crate::input::DescribeEventAggregatesInput::filter): <p>Values to narrow the results returned.</p>
+    ///   - [`aggregate_field(Option<EventAggregateField>)`](crate::input::DescribeEventAggregatesInput::aggregate_field): <p>The only currently supported value is <code>eventTypeCategory</code>.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeEventAggregatesInput::max_results): <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeEventAggregatesInput::next_token): <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+    /// - On success, responds with [`DescribeEventAggregatesOutput`](crate::output::DescribeEventAggregatesOutput) with field(s):
+    ///   - [`event_aggregates(Option<Vec<EventAggregate>>)`](crate::output::DescribeEventAggregatesOutput::event_aggregates): <p>The number of events in each category that meet the optional filter criteria.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeEventAggregatesOutput::next_token): <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+    /// - On failure, responds with [`SdkError<DescribeEventAggregatesError>`](crate::error::DescribeEventAggregatesError)
     pub fn describe_event_aggregates(&self) -> fluent_builders::DescribeEventAggregates<C, M, R> {
         fluent_builders::DescribeEventAggregates::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEventDetails` operation.
+    /// Constructs a fluent builder for the [`DescribeEventDetails`](crate::client::fluent_builders::DescribeEventDetails) operation.
     ///
-    /// See [`DescribeEventDetails`](crate::client::fluent_builders::DescribeEventDetails) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeEventDetailsInput`](crate::input::DescribeEventDetailsInput) with field(s):
+    ///   - [`event_arns(Option<Vec<String>>)`](crate::input::DescribeEventDetailsInput::event_arns): <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code> </p>
+    ///   - [`locale(Option<String>)`](crate::input::DescribeEventDetailsInput::locale): <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
+    /// - On success, responds with [`DescribeEventDetailsOutput`](crate::output::DescribeEventDetailsOutput) with field(s):
+    ///   - [`successful_set(Option<Vec<EventDetails>>)`](crate::output::DescribeEventDetailsOutput::successful_set): <p>Information about the events that could be retrieved.</p>
+    ///   - [`failed_set(Option<Vec<EventDetailsErrorItem>>)`](crate::output::DescribeEventDetailsOutput::failed_set): <p>Error messages for any events that could not be retrieved.</p>
+    /// - On failure, responds with [`SdkError<DescribeEventDetailsError>`](crate::error::DescribeEventDetailsError)
     pub fn describe_event_details(&self) -> fluent_builders::DescribeEventDetails<C, M, R> {
         fluent_builders::DescribeEventDetails::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEventDetailsForOrganization` operation.
+    /// Constructs a fluent builder for the [`DescribeEventDetailsForOrganization`](crate::client::fluent_builders::DescribeEventDetailsForOrganization) operation.
     ///
-    /// See [`DescribeEventDetailsForOrganization`](crate::client::fluent_builders::DescribeEventDetailsForOrganization) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeEventDetailsForOrganizationInput`](crate::input::DescribeEventDetailsForOrganizationInput) with field(s):
+    ///   - [`organization_event_detail_filters(Option<Vec<EventAccountFilter>>)`](crate::input::DescribeEventDetailsForOrganizationInput::organization_event_detail_filters): <p>A set of JSON elements that includes the <code>awsAccountId</code> and the <code>eventArn</code>.</p>
+    ///   - [`locale(Option<String>)`](crate::input::DescribeEventDetailsForOrganizationInput::locale): <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
+    /// - On success, responds with [`DescribeEventDetailsForOrganizationOutput`](crate::output::DescribeEventDetailsForOrganizationOutput) with field(s):
+    ///   - [`successful_set(Option<Vec<OrganizationEventDetails>>)`](crate::output::DescribeEventDetailsForOrganizationOutput::successful_set): <p>Information about the events that could be retrieved.</p>
+    ///   - [`failed_set(Option<Vec<OrganizationEventDetailsErrorItem>>)`](crate::output::DescribeEventDetailsForOrganizationOutput::failed_set): <p>Error messages for any events that could not be retrieved.</p>
+    /// - On failure, responds with [`SdkError<DescribeEventDetailsForOrganizationError>`](crate::error::DescribeEventDetailsForOrganizationError)
     pub fn describe_event_details_for_organization(
         &self,
     ) -> fluent_builders::DescribeEventDetailsForOrganization<C, M, R> {
         fluent_builders::DescribeEventDetailsForOrganization::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEvents` operation.
-    ///
-    /// See [`DescribeEvents`](crate::client::fluent_builders::DescribeEvents) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeEvents`](crate::client::fluent_builders::DescribeEvents) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeEvents::into_paginator).
+    ///
+    /// - Takes [`DescribeEventsInput`](crate::input::DescribeEventsInput) with field(s):
+    ///   - [`filter(Option<EventFilter>)`](crate::input::DescribeEventsInput::filter): <p>Values to narrow the results returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeEventsInput::next_token): <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeEventsInput::max_results): <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
+    ///   - [`locale(Option<String>)`](crate::input::DescribeEventsInput::locale): <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
+    /// - On success, responds with [`DescribeEventsOutput`](crate::output::DescribeEventsOutput) with field(s):
+    ///   - [`events(Option<Vec<Event>>)`](crate::output::DescribeEventsOutput::events): <p>The events that match the specified filter criteria.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeEventsOutput::next_token): <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+    /// - On failure, responds with [`SdkError<DescribeEventsError>`](crate::error::DescribeEventsError)
     pub fn describe_events(&self) -> fluent_builders::DescribeEvents<C, M, R> {
         fluent_builders::DescribeEvents::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEventsForOrganization` operation.
-    ///
-    /// See [`DescribeEventsForOrganization`](crate::client::fluent_builders::DescribeEventsForOrganization) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeEventsForOrganization`](crate::client::fluent_builders::DescribeEventsForOrganization) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeEventsForOrganization::into_paginator).
+    ///
+    /// - Takes [`DescribeEventsForOrganizationInput`](crate::input::DescribeEventsForOrganizationInput) with field(s):
+    ///   - [`filter(Option<OrganizationEventFilter>)`](crate::input::DescribeEventsForOrganizationInput::filter): <p>Values to narrow the results returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeEventsForOrganizationInput::next_token): <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeEventsForOrganizationInput::max_results): <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
+    ///   - [`locale(Option<String>)`](crate::input::DescribeEventsForOrganizationInput::locale): <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
+    /// - On success, responds with [`DescribeEventsForOrganizationOutput`](crate::output::DescribeEventsForOrganizationOutput) with field(s):
+    ///   - [`events(Option<Vec<OrganizationEvent>>)`](crate::output::DescribeEventsForOrganizationOutput::events): <p>The events that match the specified filter criteria.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeEventsForOrganizationOutput::next_token): <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+    /// - On failure, responds with [`SdkError<DescribeEventsForOrganizationError>`](crate::error::DescribeEventsForOrganizationError)
     pub fn describe_events_for_organization(
         &self,
     ) -> fluent_builders::DescribeEventsForOrganization<C, M, R> {
         fluent_builders::DescribeEventsForOrganization::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEventTypes` operation.
-    ///
-    /// See [`DescribeEventTypes`](crate::client::fluent_builders::DescribeEventTypes) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeEventTypes`](crate::client::fluent_builders::DescribeEventTypes) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeEventTypes::into_paginator).
+    ///
+    /// - Takes [`DescribeEventTypesInput`](crate::input::DescribeEventTypesInput) with field(s):
+    ///   - [`filter(Option<EventTypeFilter>)`](crate::input::DescribeEventTypesInput::filter): <p>Values to narrow the results returned.</p>
+    ///   - [`locale(Option<String>)`](crate::input::DescribeEventTypesInput::locale): <p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeEventTypesInput::next_token): <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeEventTypesInput::max_results): <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
+    /// - On success, responds with [`DescribeEventTypesOutput`](crate::output::DescribeEventTypesOutput) with field(s):
+    ///   - [`event_types(Option<Vec<EventType>>)`](crate::output::DescribeEventTypesOutput::event_types): <p>A list of event types that match the filter criteria. Event types have a category (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeEventTypesOutput::next_token): <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
+    /// - On failure, responds with [`SdkError<DescribeEventTypesError>`](crate::error::DescribeEventTypesError)
     pub fn describe_event_types(&self) -> fluent_builders::DescribeEventTypes<C, M, R> {
         fluent_builders::DescribeEventTypes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeHealthServiceStatusForOrganization` operation.
+    /// Constructs a fluent builder for the [`DescribeHealthServiceStatusForOrganization`](crate::client::fluent_builders::DescribeHealthServiceStatusForOrganization) operation.
     ///
-    /// See [`DescribeHealthServiceStatusForOrganization`](crate::client::fluent_builders::DescribeHealthServiceStatusForOrganization) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeHealthServiceStatusForOrganizationInput`](crate::input::DescribeHealthServiceStatusForOrganizationInput)
+
+    /// - On success, responds with [`DescribeHealthServiceStatusForOrganizationOutput`](crate::output::DescribeHealthServiceStatusForOrganizationOutput) with field(s):
+    ///   - [`health_service_access_status_for_organization(Option<String>)`](crate::output::DescribeHealthServiceStatusForOrganizationOutput::health_service_access_status_for_organization): <p>Information about the status of enabling or disabling the Health organizational view feature in your organization.</p>  <p>Valid values are <code>ENABLED | DISABLED | PENDING</code>. </p>
+    /// - On failure, responds with [`SdkError<DescribeHealthServiceStatusForOrganizationError>`](crate::error::DescribeHealthServiceStatusForOrganizationError)
     pub fn describe_health_service_status_for_organization(
         &self,
     ) -> fluent_builders::DescribeHealthServiceStatusForOrganization<C, M, R> {
         fluent_builders::DescribeHealthServiceStatusForOrganization::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisableHealthServiceAccessForOrganization` operation.
+    /// Constructs a fluent builder for the [`DisableHealthServiceAccessForOrganization`](crate::client::fluent_builders::DisableHealthServiceAccessForOrganization) operation.
     ///
-    /// See [`DisableHealthServiceAccessForOrganization`](crate::client::fluent_builders::DisableHealthServiceAccessForOrganization) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisableHealthServiceAccessForOrganizationInput`](crate::input::DisableHealthServiceAccessForOrganizationInput)
+
+    /// - On success, responds with [`DisableHealthServiceAccessForOrganizationOutput`](crate::output::DisableHealthServiceAccessForOrganizationOutput)
+
+    /// - On failure, responds with [`SdkError<DisableHealthServiceAccessForOrganizationError>`](crate::error::DisableHealthServiceAccessForOrganizationError)
     pub fn disable_health_service_access_for_organization(
         &self,
     ) -> fluent_builders::DisableHealthServiceAccessForOrganization<C, M, R> {
         fluent_builders::DisableHealthServiceAccessForOrganization::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `EnableHealthServiceAccessForOrganization` operation.
+    /// Constructs a fluent builder for the [`EnableHealthServiceAccessForOrganization`](crate::client::fluent_builders::EnableHealthServiceAccessForOrganization) operation.
     ///
-    /// See [`EnableHealthServiceAccessForOrganization`](crate::client::fluent_builders::EnableHealthServiceAccessForOrganization) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`EnableHealthServiceAccessForOrganizationInput`](crate::input::EnableHealthServiceAccessForOrganizationInput)
+
+    /// - On success, responds with [`EnableHealthServiceAccessForOrganizationOutput`](crate::output::EnableHealthServiceAccessForOrganizationOutput)
+
+    /// - On failure, responds with [`SdkError<EnableHealthServiceAccessForOrganizationError>`](crate::error::EnableHealthServiceAccessForOrganizationError)
     pub fn enable_health_service_access_for_organization(
         &self,
     ) -> fluent_builders::EnableHealthServiceAccessForOrganization<C, M, R> {

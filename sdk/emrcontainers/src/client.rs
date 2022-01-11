@@ -83,111 +83,211 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CancelJobRun` operation.
+    /// Constructs a fluent builder for the [`CancelJobRun`](crate::client::fluent_builders::CancelJobRun) operation.
     ///
-    /// See [`CancelJobRun`](crate::client::fluent_builders::CancelJobRun) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CancelJobRunInput`](crate::input::CancelJobRunInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::CancelJobRunInput::id): <p>The ID of the job run to cancel.</p>
+    ///   - [`virtual_cluster_id(Option<String>)`](crate::input::CancelJobRunInput::virtual_cluster_id): <p>The ID of the virtual cluster for which the job run will be canceled.</p>
+    /// - On success, responds with [`CancelJobRunOutput`](crate::output::CancelJobRunOutput) with field(s):
+    ///   - [`id(Option<String>)`](crate::output::CancelJobRunOutput::id): <p>The output contains the ID of the cancelled job run.</p>
+    ///   - [`virtual_cluster_id(Option<String>)`](crate::output::CancelJobRunOutput::virtual_cluster_id): <p>The output contains the virtual cluster ID for which the job run is cancelled.</p>
+    /// - On failure, responds with [`SdkError<CancelJobRunError>`](crate::error::CancelJobRunError)
     pub fn cancel_job_run(&self) -> fluent_builders::CancelJobRun<C, M, R> {
         fluent_builders::CancelJobRun::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateManagedEndpoint` operation.
+    /// Constructs a fluent builder for the [`CreateManagedEndpoint`](crate::client::fluent_builders::CreateManagedEndpoint) operation.
     ///
-    /// See [`CreateManagedEndpoint`](crate::client::fluent_builders::CreateManagedEndpoint) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateManagedEndpointInput`](crate::input::CreateManagedEndpointInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateManagedEndpointInput::name): <p>The name of the managed endpoint.</p>
+    ///   - [`virtual_cluster_id(Option<String>)`](crate::input::CreateManagedEndpointInput::virtual_cluster_id): <p>The ID of the virtual cluster for which a managed endpoint is created.</p>
+    ///   - [`r#type(Option<String>)`](crate::input::CreateManagedEndpointInput::r#type): <p>The type of the managed endpoint.</p>
+    ///   - [`release_label(Option<String>)`](crate::input::CreateManagedEndpointInput::release_label): <p>The Amazon EMR release version.</p>
+    ///   - [`execution_role_arn(Option<String>)`](crate::input::CreateManagedEndpointInput::execution_role_arn): <p>The ARN of the execution role.</p>
+    ///   - [`certificate_arn(Option<String>)`](crate::input::CreateManagedEndpointInput::certificate_arn): <p>The certificate ARN provided by users for the managed endpoint. This fiedd is under deprecation and will be removed in future releases.</p>
+    ///   - [`configuration_overrides(Option<ConfigurationOverrides>)`](crate::input::CreateManagedEndpointInput::configuration_overrides): <p>The configuration settings that will be used to override existing configurations.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateManagedEndpointInput::client_token): <p>The client idempotency token for this create call.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateManagedEndpointInput::tags): <p>The tags of the managed endpoint. </p>
+    /// - On success, responds with [`CreateManagedEndpointOutput`](crate::output::CreateManagedEndpointOutput) with field(s):
+    ///   - [`id(Option<String>)`](crate::output::CreateManagedEndpointOutput::id): <p>The output contains the ID of the managed endpoint.</p>
+    ///   - [`name(Option<String>)`](crate::output::CreateManagedEndpointOutput::name): <p>The output contains the name of the managed endpoint.</p>
+    ///   - [`arn(Option<String>)`](crate::output::CreateManagedEndpointOutput::arn): <p>The output contains the ARN of the managed endpoint.</p>
+    ///   - [`virtual_cluster_id(Option<String>)`](crate::output::CreateManagedEndpointOutput::virtual_cluster_id): <p>The output contains the ID of the virtual cluster.</p>
+    /// - On failure, responds with [`SdkError<CreateManagedEndpointError>`](crate::error::CreateManagedEndpointError)
     pub fn create_managed_endpoint(&self) -> fluent_builders::CreateManagedEndpoint<C, M, R> {
         fluent_builders::CreateManagedEndpoint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateVirtualCluster` operation.
+    /// Constructs a fluent builder for the [`CreateVirtualCluster`](crate::client::fluent_builders::CreateVirtualCluster) operation.
     ///
-    /// See [`CreateVirtualCluster`](crate::client::fluent_builders::CreateVirtualCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateVirtualClusterInput`](crate::input::CreateVirtualClusterInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateVirtualClusterInput::name): <p>The specified name of the virtual cluster.</p>
+    ///   - [`container_provider(Option<ContainerProvider>)`](crate::input::CreateVirtualClusterInput::container_provider): <p>The container provider of the virtual cluster.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateVirtualClusterInput::client_token): <p>The client token of the virtual cluster.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateVirtualClusterInput::tags): <p>The tags assigned to the virtual cluster.</p>
+    /// - On success, responds with [`CreateVirtualClusterOutput`](crate::output::CreateVirtualClusterOutput) with field(s):
+    ///   - [`id(Option<String>)`](crate::output::CreateVirtualClusterOutput::id): <p>This output contains the virtual cluster ID.</p>
+    ///   - [`name(Option<String>)`](crate::output::CreateVirtualClusterOutput::name): <p>This output contains the name of the virtual cluster.</p>
+    ///   - [`arn(Option<String>)`](crate::output::CreateVirtualClusterOutput::arn): <p>This output contains the ARN of virtual cluster.</p>
+    /// - On failure, responds with [`SdkError<CreateVirtualClusterError>`](crate::error::CreateVirtualClusterError)
     pub fn create_virtual_cluster(&self) -> fluent_builders::CreateVirtualCluster<C, M, R> {
         fluent_builders::CreateVirtualCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteManagedEndpoint` operation.
+    /// Constructs a fluent builder for the [`DeleteManagedEndpoint`](crate::client::fluent_builders::DeleteManagedEndpoint) operation.
     ///
-    /// See [`DeleteManagedEndpoint`](crate::client::fluent_builders::DeleteManagedEndpoint) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteManagedEndpointInput`](crate::input::DeleteManagedEndpointInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::DeleteManagedEndpointInput::id): <p>The ID of the managed endpoint.</p>
+    ///   - [`virtual_cluster_id(Option<String>)`](crate::input::DeleteManagedEndpointInput::virtual_cluster_id): <p>The ID of the endpoint's virtual cluster.</p>
+    /// - On success, responds with [`DeleteManagedEndpointOutput`](crate::output::DeleteManagedEndpointOutput) with field(s):
+    ///   - [`id(Option<String>)`](crate::output::DeleteManagedEndpointOutput::id): <p>The output displays the ID of the managed endpoint.</p>
+    ///   - [`virtual_cluster_id(Option<String>)`](crate::output::DeleteManagedEndpointOutput::virtual_cluster_id): <p>The output displays the ID of the endpoint's virtual cluster.</p>
+    /// - On failure, responds with [`SdkError<DeleteManagedEndpointError>`](crate::error::DeleteManagedEndpointError)
     pub fn delete_managed_endpoint(&self) -> fluent_builders::DeleteManagedEndpoint<C, M, R> {
         fluent_builders::DeleteManagedEndpoint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteVirtualCluster` operation.
+    /// Constructs a fluent builder for the [`DeleteVirtualCluster`](crate::client::fluent_builders::DeleteVirtualCluster) operation.
     ///
-    /// See [`DeleteVirtualCluster`](crate::client::fluent_builders::DeleteVirtualCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteVirtualClusterInput`](crate::input::DeleteVirtualClusterInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::DeleteVirtualClusterInput::id): <p>The ID of the virtual cluster that will be deleted.</p>
+    /// - On success, responds with [`DeleteVirtualClusterOutput`](crate::output::DeleteVirtualClusterOutput) with field(s):
+    ///   - [`id(Option<String>)`](crate::output::DeleteVirtualClusterOutput::id): <p>This output contains the ID of the virtual cluster that will be deleted. </p>
+    /// - On failure, responds with [`SdkError<DeleteVirtualClusterError>`](crate::error::DeleteVirtualClusterError)
     pub fn delete_virtual_cluster(&self) -> fluent_builders::DeleteVirtualCluster<C, M, R> {
         fluent_builders::DeleteVirtualCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeJobRun` operation.
+    /// Constructs a fluent builder for the [`DescribeJobRun`](crate::client::fluent_builders::DescribeJobRun) operation.
     ///
-    /// See [`DescribeJobRun`](crate::client::fluent_builders::DescribeJobRun) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeJobRunInput`](crate::input::DescribeJobRunInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::DescribeJobRunInput::id): <p>The ID of the job run request. </p>
+    ///   - [`virtual_cluster_id(Option<String>)`](crate::input::DescribeJobRunInput::virtual_cluster_id): <p>The ID of the virtual cluster for which the job run is submitted.</p>
+    /// - On success, responds with [`DescribeJobRunOutput`](crate::output::DescribeJobRunOutput) with field(s):
+    ///   - [`job_run(Option<JobRun>)`](crate::output::DescribeJobRunOutput::job_run): <p>The output displays information about a job run.</p>
+    /// - On failure, responds with [`SdkError<DescribeJobRunError>`](crate::error::DescribeJobRunError)
     pub fn describe_job_run(&self) -> fluent_builders::DescribeJobRun<C, M, R> {
         fluent_builders::DescribeJobRun::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeManagedEndpoint` operation.
+    /// Constructs a fluent builder for the [`DescribeManagedEndpoint`](crate::client::fluent_builders::DescribeManagedEndpoint) operation.
     ///
-    /// See [`DescribeManagedEndpoint`](crate::client::fluent_builders::DescribeManagedEndpoint) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeManagedEndpointInput`](crate::input::DescribeManagedEndpointInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::DescribeManagedEndpointInput::id): <p>This output displays ID of the managed endpoint.</p>
+    ///   - [`virtual_cluster_id(Option<String>)`](crate::input::DescribeManagedEndpointInput::virtual_cluster_id): <p>The ID of the endpoint's virtual cluster.</p>
+    /// - On success, responds with [`DescribeManagedEndpointOutput`](crate::output::DescribeManagedEndpointOutput) with field(s):
+    ///   - [`endpoint(Option<Endpoint>)`](crate::output::DescribeManagedEndpointOutput::endpoint): <p>This output displays information about a managed endpoint.</p>
+    /// - On failure, responds with [`SdkError<DescribeManagedEndpointError>`](crate::error::DescribeManagedEndpointError)
     pub fn describe_managed_endpoint(&self) -> fluent_builders::DescribeManagedEndpoint<C, M, R> {
         fluent_builders::DescribeManagedEndpoint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeVirtualCluster` operation.
+    /// Constructs a fluent builder for the [`DescribeVirtualCluster`](crate::client::fluent_builders::DescribeVirtualCluster) operation.
     ///
-    /// See [`DescribeVirtualCluster`](crate::client::fluent_builders::DescribeVirtualCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeVirtualClusterInput`](crate::input::DescribeVirtualClusterInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::DescribeVirtualClusterInput::id): <p>The ID of the virtual cluster that will be described.</p>
+    /// - On success, responds with [`DescribeVirtualClusterOutput`](crate::output::DescribeVirtualClusterOutput) with field(s):
+    ///   - [`virtual_cluster(Option<VirtualCluster>)`](crate::output::DescribeVirtualClusterOutput::virtual_cluster): <p>This output displays information about the specified virtual cluster.</p>
+    /// - On failure, responds with [`SdkError<DescribeVirtualClusterError>`](crate::error::DescribeVirtualClusterError)
     pub fn describe_virtual_cluster(&self) -> fluent_builders::DescribeVirtualCluster<C, M, R> {
         fluent_builders::DescribeVirtualCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListJobRuns` operation.
-    ///
-    /// See [`ListJobRuns`](crate::client::fluent_builders::ListJobRuns) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListJobRuns`](crate::client::fluent_builders::ListJobRuns) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListJobRuns::into_paginator).
+    ///
+    /// - Takes [`ListJobRunsInput`](crate::input::ListJobRunsInput) with field(s):
+    ///   - [`virtual_cluster_id(Option<String>)`](crate::input::ListJobRunsInput::virtual_cluster_id): <p>The ID of the virtual cluster for which to list the job run. </p>
+    ///   - [`created_before(Option<DateTime>)`](crate::input::ListJobRunsInput::created_before): <p>The date and time before which the job runs were submitted.</p>
+    ///   - [`created_after(Option<DateTime>)`](crate::input::ListJobRunsInput::created_after): <p>The date and time after which the job runs were submitted.</p>
+    ///   - [`name(Option<String>)`](crate::input::ListJobRunsInput::name): <p>The name of the job run.</p>
+    ///   - [`states(Option<Vec<JobRunState>>)`](crate::input::ListJobRunsInput::states): <p>The states of the job run.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListJobRunsInput::max_results): <p>The maximum number of job runs that can be listed.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListJobRunsInput::next_token): <p>The token for the next set of job runs to return.</p>
+    /// - On success, responds with [`ListJobRunsOutput`](crate::output::ListJobRunsOutput) with field(s):
+    ///   - [`job_runs(Option<Vec<JobRun>>)`](crate::output::ListJobRunsOutput::job_runs): <p>This output lists information about the specified job runs.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListJobRunsOutput::next_token): <p>This output displays the token for the next set of job runs.</p>
+    /// - On failure, responds with [`SdkError<ListJobRunsError>`](crate::error::ListJobRunsError)
     pub fn list_job_runs(&self) -> fluent_builders::ListJobRuns<C, M, R> {
         fluent_builders::ListJobRuns::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListManagedEndpoints` operation.
-    ///
-    /// See [`ListManagedEndpoints`](crate::client::fluent_builders::ListManagedEndpoints) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListManagedEndpoints`](crate::client::fluent_builders::ListManagedEndpoints) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListManagedEndpoints::into_paginator).
+    ///
+    /// - Takes [`ListManagedEndpointsInput`](crate::input::ListManagedEndpointsInput) with field(s):
+    ///   - [`virtual_cluster_id(Option<String>)`](crate::input::ListManagedEndpointsInput::virtual_cluster_id): <p>The ID of the virtual cluster.</p>
+    ///   - [`created_before(Option<DateTime>)`](crate::input::ListManagedEndpointsInput::created_before): <p>The date and time before which the endpoints are created.</p>
+    ///   - [`created_after(Option<DateTime>)`](crate::input::ListManagedEndpointsInput::created_after): <p> The date and time after which the endpoints are created.</p>
+    ///   - [`types(Option<Vec<String>>)`](crate::input::ListManagedEndpointsInput::types): <p>The types of the managed endpoints.</p>
+    ///   - [`states(Option<Vec<EndpointState>>)`](crate::input::ListManagedEndpointsInput::states): <p>The states of the managed endpoints.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListManagedEndpointsInput::max_results): <p>The maximum number of managed endpoints that can be listed.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListManagedEndpointsInput::next_token): <p> The token for the next set of managed endpoints to return. </p>
+    /// - On success, responds with [`ListManagedEndpointsOutput`](crate::output::ListManagedEndpointsOutput) with field(s):
+    ///   - [`endpoints(Option<Vec<Endpoint>>)`](crate::output::ListManagedEndpointsOutput::endpoints): <p>The managed endpoints to be listed.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListManagedEndpointsOutput::next_token): <p> The token for the next set of endpoints to return. </p>
+    /// - On failure, responds with [`SdkError<ListManagedEndpointsError>`](crate::error::ListManagedEndpointsError)
     pub fn list_managed_endpoints(&self) -> fluent_builders::ListManagedEndpoints<C, M, R> {
         fluent_builders::ListManagedEndpoints::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The ARN of tagged resources.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags assigned to resources.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListVirtualClusters` operation.
-    ///
-    /// See [`ListVirtualClusters`](crate::client::fluent_builders::ListVirtualClusters) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListVirtualClusters`](crate::client::fluent_builders::ListVirtualClusters) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListVirtualClusters::into_paginator).
+    ///
+    /// - Takes [`ListVirtualClustersInput`](crate::input::ListVirtualClustersInput) with field(s):
+    ///   - [`container_provider_id(Option<String>)`](crate::input::ListVirtualClustersInput::container_provider_id): <p>The container provider ID of the virtual cluster.</p>
+    ///   - [`container_provider_type(Option<ContainerProviderType>)`](crate::input::ListVirtualClustersInput::container_provider_type): <p>The container provider type of the virtual cluster. EKS is the only supported type as of now.</p>
+    ///   - [`created_after(Option<DateTime>)`](crate::input::ListVirtualClustersInput::created_after): <p>The date and time after which the virtual clusters are created.</p>
+    ///   - [`created_before(Option<DateTime>)`](crate::input::ListVirtualClustersInput::created_before): <p>The date and time before which the virtual clusters are created.</p>
+    ///   - [`states(Option<Vec<VirtualClusterState>>)`](crate::input::ListVirtualClustersInput::states): <p>The states of the requested virtual clusters.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListVirtualClustersInput::max_results): <p>The maximum number of virtual clusters that can be listed.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListVirtualClustersInput::next_token): <p>The token for the next set of virtual clusters to return. </p>
+    /// - On success, responds with [`ListVirtualClustersOutput`](crate::output::ListVirtualClustersOutput) with field(s):
+    ///   - [`virtual_clusters(Option<Vec<VirtualCluster>>)`](crate::output::ListVirtualClustersOutput::virtual_clusters): <p>This output lists the specified virtual clusters.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListVirtualClustersOutput::next_token): <p>This output displays the token for the next set of virtual clusters.</p>
+    /// - On failure, responds with [`SdkError<ListVirtualClustersError>`](crate::error::ListVirtualClustersError)
     pub fn list_virtual_clusters(&self) -> fluent_builders::ListVirtualClusters<C, M, R> {
         fluent_builders::ListVirtualClusters::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartJobRun` operation.
+    /// Constructs a fluent builder for the [`StartJobRun`](crate::client::fluent_builders::StartJobRun) operation.
     ///
-    /// See [`StartJobRun`](crate::client::fluent_builders::StartJobRun) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartJobRunInput`](crate::input::StartJobRunInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::StartJobRunInput::name): <p>The name of the job run.</p>
+    ///   - [`virtual_cluster_id(Option<String>)`](crate::input::StartJobRunInput::virtual_cluster_id): <p>The virtual cluster ID for which the job run request is submitted.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::StartJobRunInput::client_token): <p>The client idempotency token of the job run request. </p>
+    ///   - [`execution_role_arn(Option<String>)`](crate::input::StartJobRunInput::execution_role_arn): <p>The execution role ARN for the job run.</p>
+    ///   - [`release_label(Option<String>)`](crate::input::StartJobRunInput::release_label): <p>The Amazon EMR release version to use for the job run.</p>
+    ///   - [`job_driver(Option<JobDriver>)`](crate::input::StartJobRunInput::job_driver): <p>The job driver for the job run.</p>
+    ///   - [`configuration_overrides(Option<ConfigurationOverrides>)`](crate::input::StartJobRunInput::configuration_overrides): <p>The configuration overrides for the job run.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::StartJobRunInput::tags): <p>The tags assigned to job runs.</p>
+    /// - On success, responds with [`StartJobRunOutput`](crate::output::StartJobRunOutput) with field(s):
+    ///   - [`id(Option<String>)`](crate::output::StartJobRunOutput::id): <p>This output displays the started job run ID.</p>
+    ///   - [`name(Option<String>)`](crate::output::StartJobRunOutput::name): <p>This output displays the name of the started job run.</p>
+    ///   - [`arn(Option<String>)`](crate::output::StartJobRunOutput::arn): <p>This output lists the ARN of job run.</p>
+    ///   - [`virtual_cluster_id(Option<String>)`](crate::output::StartJobRunOutput::virtual_cluster_id): <p>This output displays the virtual cluster ID for which the job run was submitted.</p>
+    /// - On failure, responds with [`SdkError<StartJobRunError>`](crate::error::StartJobRunError)
     pub fn start_job_run(&self) -> fluent_builders::StartJobRun<C, M, R> {
         fluent_builders::StartJobRun::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The ARN of resources.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>The tags assigned to resources.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The ARN of resources.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The tag keys of the resources.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }

@@ -83,492 +83,889 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `BatchCreateVariable` operation.
+    /// Constructs a fluent builder for the [`BatchCreateVariable`](crate::client::fluent_builders::BatchCreateVariable) operation.
     ///
-    /// See [`BatchCreateVariable`](crate::client::fluent_builders::BatchCreateVariable) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchCreateVariableInput`](crate::input::BatchCreateVariableInput) with field(s):
+    ///   - [`variable_entries(Option<Vec<VariableEntry>>)`](crate::input::BatchCreateVariableInput::variable_entries): <p>The list of variables for the batch create variable request.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::BatchCreateVariableInput::tags): <p>A collection of key and value pairs.</p>
+    /// - On success, responds with [`BatchCreateVariableOutput`](crate::output::BatchCreateVariableOutput) with field(s):
+    ///   - [`errors(Option<Vec<BatchCreateVariableError>>)`](crate::output::BatchCreateVariableOutput::errors): <p>Provides the errors for the <code>BatchCreateVariable</code> request.</p>
+    /// - On failure, responds with [`SdkError<BatchCreateVariableError>`](crate::error::BatchCreateVariableError)
     pub fn batch_create_variable(&self) -> fluent_builders::BatchCreateVariable<C, M, R> {
         fluent_builders::BatchCreateVariable::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchGetVariable` operation.
+    /// Constructs a fluent builder for the [`BatchGetVariable`](crate::client::fluent_builders::BatchGetVariable) operation.
     ///
-    /// See [`BatchGetVariable`](crate::client::fluent_builders::BatchGetVariable) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchGetVariableInput`](crate::input::BatchGetVariableInput) with field(s):
+    ///   - [`names(Option<Vec<String>>)`](crate::input::BatchGetVariableInput::names): <p>The list of variable names to get.</p>
+    /// - On success, responds with [`BatchGetVariableOutput`](crate::output::BatchGetVariableOutput) with field(s):
+    ///   - [`variables(Option<Vec<Variable>>)`](crate::output::BatchGetVariableOutput::variables): <p>The returned variables.</p>
+    ///   - [`errors(Option<Vec<BatchGetVariableError>>)`](crate::output::BatchGetVariableOutput::errors): <p>The errors from the request.</p>
+    /// - On failure, responds with [`SdkError<BatchGetVariableError>`](crate::error::BatchGetVariableError)
     pub fn batch_get_variable(&self) -> fluent_builders::BatchGetVariable<C, M, R> {
         fluent_builders::BatchGetVariable::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CancelBatchImportJob` operation.
+    /// Constructs a fluent builder for the [`CancelBatchImportJob`](crate::client::fluent_builders::CancelBatchImportJob) operation.
     ///
-    /// See [`CancelBatchImportJob`](crate::client::fluent_builders::CancelBatchImportJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CancelBatchImportJobInput`](crate::input::CancelBatchImportJobInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::CancelBatchImportJobInput::job_id): <p> The ID of an in-progress batch import job to cancel. </p>  <p>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>, <code>CANCELED</code>, or <code>COMPLETED</code> state.</p>
+    /// - On success, responds with [`CancelBatchImportJobOutput`](crate::output::CancelBatchImportJobOutput)
+
+    /// - On failure, responds with [`SdkError<CancelBatchImportJobError>`](crate::error::CancelBatchImportJobError)
     pub fn cancel_batch_import_job(&self) -> fluent_builders::CancelBatchImportJob<C, M, R> {
         fluent_builders::CancelBatchImportJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CancelBatchPredictionJob` operation.
+    /// Constructs a fluent builder for the [`CancelBatchPredictionJob`](crate::client::fluent_builders::CancelBatchPredictionJob) operation.
     ///
-    /// See [`CancelBatchPredictionJob`](crate::client::fluent_builders::CancelBatchPredictionJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CancelBatchPredictionJobInput`](crate::input::CancelBatchPredictionJobInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::CancelBatchPredictionJobInput::job_id): <p>The ID of the batch prediction job to cancel.</p>
+    /// - On success, responds with [`CancelBatchPredictionJobOutput`](crate::output::CancelBatchPredictionJobOutput)
+
+    /// - On failure, responds with [`SdkError<CancelBatchPredictionJobError>`](crate::error::CancelBatchPredictionJobError)
     pub fn cancel_batch_prediction_job(
         &self,
     ) -> fluent_builders::CancelBatchPredictionJob<C, M, R> {
         fluent_builders::CancelBatchPredictionJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateBatchImportJob` operation.
+    /// Constructs a fluent builder for the [`CreateBatchImportJob`](crate::client::fluent_builders::CreateBatchImportJob) operation.
     ///
-    /// See [`CreateBatchImportJob`](crate::client::fluent_builders::CreateBatchImportJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateBatchImportJobInput`](crate::input::CreateBatchImportJobInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::CreateBatchImportJobInput::job_id): <p>The ID of the batch import job. The ID cannot be of a past job, unless the job exists in <code>CREATE_FAILED</code> state.</p>
+    ///   - [`input_path(Option<String>)`](crate::input::CreateBatchImportJobInput::input_path): <p>The URI that points to the Amazon S3 location of your data file.</p>
+    ///   - [`output_path(Option<String>)`](crate::input::CreateBatchImportJobInput::output_path): <p>The URI that points to the Amazon S3 location for storing your results. </p>
+    ///   - [`event_type_name(Option<String>)`](crate::input::CreateBatchImportJobInput::event_type_name): <p>The name of the event type.</p>
+    ///   - [`iam_role_arn(Option<String>)`](crate::input::CreateBatchImportJobInput::iam_role_arn): <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file. The IAM role must have read and write permissions to both input and output S3 buckets.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateBatchImportJobInput::tags): <p>A collection of key-value pairs associated with this request. </p>
+    /// - On success, responds with [`CreateBatchImportJobOutput`](crate::output::CreateBatchImportJobOutput)
+
+    /// - On failure, responds with [`SdkError<CreateBatchImportJobError>`](crate::error::CreateBatchImportJobError)
     pub fn create_batch_import_job(&self) -> fluent_builders::CreateBatchImportJob<C, M, R> {
         fluent_builders::CreateBatchImportJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateBatchPredictionJob` operation.
+    /// Constructs a fluent builder for the [`CreateBatchPredictionJob`](crate::client::fluent_builders::CreateBatchPredictionJob) operation.
     ///
-    /// See [`CreateBatchPredictionJob`](crate::client::fluent_builders::CreateBatchPredictionJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateBatchPredictionJobInput`](crate::input::CreateBatchPredictionJobInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::CreateBatchPredictionJobInput::job_id): <p>The ID of the batch prediction job.</p>
+    ///   - [`input_path(Option<String>)`](crate::input::CreateBatchPredictionJobInput::input_path): <p>The Amazon S3 location of your training file.</p>
+    ///   - [`output_path(Option<String>)`](crate::input::CreateBatchPredictionJobInput::output_path): <p>The Amazon S3 location of your output file.</p>
+    ///   - [`event_type_name(Option<String>)`](crate::input::CreateBatchPredictionJobInput::event_type_name): <p>The name of the event type.</p>
+    ///   - [`detector_name(Option<String>)`](crate::input::CreateBatchPredictionJobInput::detector_name): <p>The name of the detector.</p>
+    ///   - [`detector_version(Option<String>)`](crate::input::CreateBatchPredictionJobInput::detector_version): <p>The detector version.</p>
+    ///   - [`iam_role_arn(Option<String>)`](crate::input::CreateBatchPredictionJobInput::iam_role_arn): <p>The ARN of the IAM role to use for this job request.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateBatchPredictionJobInput::tags): <p>A collection of key and value pairs.</p>
+    /// - On success, responds with [`CreateBatchPredictionJobOutput`](crate::output::CreateBatchPredictionJobOutput)
+
+    /// - On failure, responds with [`SdkError<CreateBatchPredictionJobError>`](crate::error::CreateBatchPredictionJobError)
     pub fn create_batch_prediction_job(
         &self,
     ) -> fluent_builders::CreateBatchPredictionJob<C, M, R> {
         fluent_builders::CreateBatchPredictionJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDetectorVersion` operation.
+    /// Constructs a fluent builder for the [`CreateDetectorVersion`](crate::client::fluent_builders::CreateDetectorVersion) operation.
     ///
-    /// See [`CreateDetectorVersion`](crate::client::fluent_builders::CreateDetectorVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateDetectorVersionInput`](crate::input::CreateDetectorVersionInput) with field(s):
+    ///   - [`detector_id(Option<String>)`](crate::input::CreateDetectorVersionInput::detector_id): <p>The ID of the detector under which you want to create a new version.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateDetectorVersionInput::description): <p>The description of the detector version.</p>
+    ///   - [`external_model_endpoints(Option<Vec<String>>)`](crate::input::CreateDetectorVersionInput::external_model_endpoints): <p>The Amazon Sagemaker model endpoints to include in the detector version.</p>
+    ///   - [`rules(Option<Vec<Rule>>)`](crate::input::CreateDetectorVersionInput::rules): <p>The rules to include in the detector version.</p>
+    ///   - [`model_versions(Option<Vec<ModelVersion>>)`](crate::input::CreateDetectorVersionInput::model_versions): <p>The model versions to include in the detector version.</p>
+    ///   - [`rule_execution_mode(Option<RuleExecutionMode>)`](crate::input::CreateDetectorVersionInput::rule_execution_mode): <p>The rule execution mode for the rules included in the detector version.</p>  <p>You can define and edit the rule mode at the detector version level, when it is in draft status.</p>  <p>If you specify <code>FIRST_MATCHED</code>, Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>  <p>If you specifiy <code>ALL_MATCHED</code>, Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. </p>  <p>The default behavior is <code>FIRST_MATCHED</code>.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateDetectorVersionInput::tags): <p>A collection of key and value pairs.</p>
+    /// - On success, responds with [`CreateDetectorVersionOutput`](crate::output::CreateDetectorVersionOutput) with field(s):
+    ///   - [`detector_id(Option<String>)`](crate::output::CreateDetectorVersionOutput::detector_id): <p>The ID for the created version's parent detector.</p>
+    ///   - [`detector_version_id(Option<String>)`](crate::output::CreateDetectorVersionOutput::detector_version_id): <p>The ID for the created detector. </p>
+    ///   - [`status(Option<DetectorVersionStatus>)`](crate::output::CreateDetectorVersionOutput::status): <p>The status of the detector version.</p>
+    /// - On failure, responds with [`SdkError<CreateDetectorVersionError>`](crate::error::CreateDetectorVersionError)
     pub fn create_detector_version(&self) -> fluent_builders::CreateDetectorVersion<C, M, R> {
         fluent_builders::CreateDetectorVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateModel` operation.
+    /// Constructs a fluent builder for the [`CreateModel`](crate::client::fluent_builders::CreateModel) operation.
     ///
-    /// See [`CreateModel`](crate::client::fluent_builders::CreateModel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateModelInput`](crate::input::CreateModelInput) with field(s):
+    ///   - [`model_id(Option<String>)`](crate::input::CreateModelInput::model_id): <p>The model ID.</p>
+    ///   - [`model_type(Option<ModelTypeEnum>)`](crate::input::CreateModelInput::model_type): <p>The model type. </p>
+    ///   - [`description(Option<String>)`](crate::input::CreateModelInput::description): <p>The model description. </p>
+    ///   - [`event_type_name(Option<String>)`](crate::input::CreateModelInput::event_type_name): <p>The name of the event type.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateModelInput::tags): <p>A collection of key and value pairs.</p>
+    /// - On success, responds with [`CreateModelOutput`](crate::output::CreateModelOutput)
+
+    /// - On failure, responds with [`SdkError<CreateModelError>`](crate::error::CreateModelError)
     pub fn create_model(&self) -> fluent_builders::CreateModel<C, M, R> {
         fluent_builders::CreateModel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateModelVersion` operation.
+    /// Constructs a fluent builder for the [`CreateModelVersion`](crate::client::fluent_builders::CreateModelVersion) operation.
     ///
-    /// See [`CreateModelVersion`](crate::client::fluent_builders::CreateModelVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateModelVersionInput`](crate::input::CreateModelVersionInput) with field(s):
+    ///   - [`model_id(Option<String>)`](crate::input::CreateModelVersionInput::model_id): <p>The model ID. </p>
+    ///   - [`model_type(Option<ModelTypeEnum>)`](crate::input::CreateModelVersionInput::model_type): <p>The model type.</p>
+    ///   - [`training_data_source(Option<TrainingDataSourceEnum>)`](crate::input::CreateModelVersionInput::training_data_source): <p>The training data source location in Amazon S3. </p>
+    ///   - [`training_data_schema(Option<TrainingDataSchema>)`](crate::input::CreateModelVersionInput::training_data_schema): <p>The training data schema.</p>
+    ///   - [`external_events_detail(Option<ExternalEventsDetail>)`](crate::input::CreateModelVersionInput::external_events_detail): <p>Details of the external events data used for model version training. Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
+    ///   - [`ingested_events_detail(Option<IngestedEventsDetail>)`](crate::input::CreateModelVersionInput::ingested_events_detail): <p>Details of the ingested events data used for model version training. Required if <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateModelVersionInput::tags): <p>A collection of key and value pairs.</p>
+    /// - On success, responds with [`CreateModelVersionOutput`](crate::output::CreateModelVersionOutput) with field(s):
+    ///   - [`model_id(Option<String>)`](crate::output::CreateModelVersionOutput::model_id): <p>The model ID.</p>
+    ///   - [`model_type(Option<ModelTypeEnum>)`](crate::output::CreateModelVersionOutput::model_type): <p>The model type.</p>
+    ///   - [`model_version_number(Option<String>)`](crate::output::CreateModelVersionOutput::model_version_number): <p>The model version number of the model version created.</p>
+    ///   - [`status(Option<String>)`](crate::output::CreateModelVersionOutput::status): <p>The model version status. </p>
+    /// - On failure, responds with [`SdkError<CreateModelVersionError>`](crate::error::CreateModelVersionError)
     pub fn create_model_version(&self) -> fluent_builders::CreateModelVersion<C, M, R> {
         fluent_builders::CreateModelVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateRule` operation.
+    /// Constructs a fluent builder for the [`CreateRule`](crate::client::fluent_builders::CreateRule) operation.
     ///
-    /// See [`CreateRule`](crate::client::fluent_builders::CreateRule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateRuleInput`](crate::input::CreateRuleInput) with field(s):
+    ///   - [`rule_id(Option<String>)`](crate::input::CreateRuleInput::rule_id): <p>The rule ID.</p>
+    ///   - [`detector_id(Option<String>)`](crate::input::CreateRuleInput::detector_id): <p>The detector ID for the rule's parent detector.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateRuleInput::description): <p>The rule description.</p>
+    ///   - [`expression(Option<String>)`](crate::input::CreateRuleInput::expression): <p>The rule expression.</p>
+    ///   - [`language(Option<Language>)`](crate::input::CreateRuleInput::language): <p>The language of the rule.</p>
+    ///   - [`outcomes(Option<Vec<String>>)`](crate::input::CreateRuleInput::outcomes): <p>The outcome or outcomes returned when the rule expression matches.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateRuleInput::tags): <p>A collection of key and value pairs.</p>
+    /// - On success, responds with [`CreateRuleOutput`](crate::output::CreateRuleOutput) with field(s):
+    ///   - [`rule(Option<Rule>)`](crate::output::CreateRuleOutput::rule): <p>The created rule.</p>
+    /// - On failure, responds with [`SdkError<CreateRuleError>`](crate::error::CreateRuleError)
     pub fn create_rule(&self) -> fluent_builders::CreateRule<C, M, R> {
         fluent_builders::CreateRule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateVariable` operation.
+    /// Constructs a fluent builder for the [`CreateVariable`](crate::client::fluent_builders::CreateVariable) operation.
     ///
-    /// See [`CreateVariable`](crate::client::fluent_builders::CreateVariable) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateVariableInput`](crate::input::CreateVariableInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateVariableInput::name): <p>The name of the variable.</p>
+    ///   - [`data_type(Option<DataType>)`](crate::input::CreateVariableInput::data_type): <p>The data type.</p>
+    ///   - [`data_source(Option<DataSource>)`](crate::input::CreateVariableInput::data_source): <p>The source of the data.</p>
+    ///   - [`default_value(Option<String>)`](crate::input::CreateVariableInput::default_value): <p>The default value for the variable when no value is received.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateVariableInput::description): <p>The description.</p>
+    ///   - [`variable_type(Option<String>)`](crate::input::CreateVariableInput::variable_type): <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>. </p>  <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT</code> </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateVariableInput::tags): <p>A collection of key and value pairs.</p>
+    /// - On success, responds with [`CreateVariableOutput`](crate::output::CreateVariableOutput)
+
+    /// - On failure, responds with [`SdkError<CreateVariableError>`](crate::error::CreateVariableError)
     pub fn create_variable(&self) -> fluent_builders::CreateVariable<C, M, R> {
         fluent_builders::CreateVariable::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteBatchImportJob` operation.
+    /// Constructs a fluent builder for the [`DeleteBatchImportJob`](crate::client::fluent_builders::DeleteBatchImportJob) operation.
     ///
-    /// See [`DeleteBatchImportJob`](crate::client::fluent_builders::DeleteBatchImportJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteBatchImportJobInput`](crate::input::DeleteBatchImportJobInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::DeleteBatchImportJobInput::job_id): <p>The ID of the batch import job to delete. </p>
+    /// - On success, responds with [`DeleteBatchImportJobOutput`](crate::output::DeleteBatchImportJobOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteBatchImportJobError>`](crate::error::DeleteBatchImportJobError)
     pub fn delete_batch_import_job(&self) -> fluent_builders::DeleteBatchImportJob<C, M, R> {
         fluent_builders::DeleteBatchImportJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteBatchPredictionJob` operation.
+    /// Constructs a fluent builder for the [`DeleteBatchPredictionJob`](crate::client::fluent_builders::DeleteBatchPredictionJob) operation.
     ///
-    /// See [`DeleteBatchPredictionJob`](crate::client::fluent_builders::DeleteBatchPredictionJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteBatchPredictionJobInput`](crate::input::DeleteBatchPredictionJobInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::DeleteBatchPredictionJobInput::job_id): <p>The ID of the batch prediction job to delete.</p>
+    /// - On success, responds with [`DeleteBatchPredictionJobOutput`](crate::output::DeleteBatchPredictionJobOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteBatchPredictionJobError>`](crate::error::DeleteBatchPredictionJobError)
     pub fn delete_batch_prediction_job(
         &self,
     ) -> fluent_builders::DeleteBatchPredictionJob<C, M, R> {
         fluent_builders::DeleteBatchPredictionJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDetector` operation.
+    /// Constructs a fluent builder for the [`DeleteDetector`](crate::client::fluent_builders::DeleteDetector) operation.
     ///
-    /// See [`DeleteDetector`](crate::client::fluent_builders::DeleteDetector) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteDetectorInput`](crate::input::DeleteDetectorInput) with field(s):
+    ///   - [`detector_id(Option<String>)`](crate::input::DeleteDetectorInput::detector_id): <p>The ID of the detector to delete.</p>
+    /// - On success, responds with [`DeleteDetectorOutput`](crate::output::DeleteDetectorOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteDetectorError>`](crate::error::DeleteDetectorError)
     pub fn delete_detector(&self) -> fluent_builders::DeleteDetector<C, M, R> {
         fluent_builders::DeleteDetector::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDetectorVersion` operation.
+    /// Constructs a fluent builder for the [`DeleteDetectorVersion`](crate::client::fluent_builders::DeleteDetectorVersion) operation.
     ///
-    /// See [`DeleteDetectorVersion`](crate::client::fluent_builders::DeleteDetectorVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteDetectorVersionInput`](crate::input::DeleteDetectorVersionInput) with field(s):
+    ///   - [`detector_id(Option<String>)`](crate::input::DeleteDetectorVersionInput::detector_id): <p>The ID of the parent detector for the detector version to delete.</p>
+    ///   - [`detector_version_id(Option<String>)`](crate::input::DeleteDetectorVersionInput::detector_version_id): <p>The ID of the detector version to delete.</p>
+    /// - On success, responds with [`DeleteDetectorVersionOutput`](crate::output::DeleteDetectorVersionOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteDetectorVersionError>`](crate::error::DeleteDetectorVersionError)
     pub fn delete_detector_version(&self) -> fluent_builders::DeleteDetectorVersion<C, M, R> {
         fluent_builders::DeleteDetectorVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteEntityType` operation.
+    /// Constructs a fluent builder for the [`DeleteEntityType`](crate::client::fluent_builders::DeleteEntityType) operation.
     ///
-    /// See [`DeleteEntityType`](crate::client::fluent_builders::DeleteEntityType) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteEntityTypeInput`](crate::input::DeleteEntityTypeInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteEntityTypeInput::name): <p>The name of the entity type to delete.</p>
+    /// - On success, responds with [`DeleteEntityTypeOutput`](crate::output::DeleteEntityTypeOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteEntityTypeError>`](crate::error::DeleteEntityTypeError)
     pub fn delete_entity_type(&self) -> fluent_builders::DeleteEntityType<C, M, R> {
         fluent_builders::DeleteEntityType::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteEvent` operation.
+    /// Constructs a fluent builder for the [`DeleteEvent`](crate::client::fluent_builders::DeleteEvent) operation.
     ///
-    /// See [`DeleteEvent`](crate::client::fluent_builders::DeleteEvent) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteEventInput`](crate::input::DeleteEventInput) with field(s):
+    ///   - [`event_id(Option<String>)`](crate::input::DeleteEventInput::event_id): <p>The ID of the event to delete.</p>
+    ///   - [`event_type_name(Option<String>)`](crate::input::DeleteEventInput::event_type_name): <p>The name of the event type.</p>
+    ///   - [`delete_audit_history(Option<bool>)`](crate::input::DeleteEventInput::delete_audit_history): <p>Specifies whether or not to delete any predictions associated with the event.</p>
+    /// - On success, responds with [`DeleteEventOutput`](crate::output::DeleteEventOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteEventError>`](crate::error::DeleteEventError)
     pub fn delete_event(&self) -> fluent_builders::DeleteEvent<C, M, R> {
         fluent_builders::DeleteEvent::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteEventsByEventType` operation.
+    /// Constructs a fluent builder for the [`DeleteEventsByEventType`](crate::client::fluent_builders::DeleteEventsByEventType) operation.
     ///
-    /// See [`DeleteEventsByEventType`](crate::client::fluent_builders::DeleteEventsByEventType) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteEventsByEventTypeInput`](crate::input::DeleteEventsByEventTypeInput) with field(s):
+    ///   - [`event_type_name(Option<String>)`](crate::input::DeleteEventsByEventTypeInput::event_type_name): <p>The name of the event type.</p>
+    /// - On success, responds with [`DeleteEventsByEventTypeOutput`](crate::output::DeleteEventsByEventTypeOutput) with field(s):
+    ///   - [`event_type_name(Option<String>)`](crate::output::DeleteEventsByEventTypeOutput::event_type_name): <p>Name of event type for which to delete the events.</p>
+    ///   - [`events_deletion_status(Option<String>)`](crate::output::DeleteEventsByEventTypeOutput::events_deletion_status): <p>The status of the delete request.</p>
+    /// - On failure, responds with [`SdkError<DeleteEventsByEventTypeError>`](crate::error::DeleteEventsByEventTypeError)
     pub fn delete_events_by_event_type(&self) -> fluent_builders::DeleteEventsByEventType<C, M, R> {
         fluent_builders::DeleteEventsByEventType::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteEventType` operation.
+    /// Constructs a fluent builder for the [`DeleteEventType`](crate::client::fluent_builders::DeleteEventType) operation.
     ///
-    /// See [`DeleteEventType`](crate::client::fluent_builders::DeleteEventType) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteEventTypeInput`](crate::input::DeleteEventTypeInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteEventTypeInput::name): <p>The name of the event type to delete.</p>
+    /// - On success, responds with [`DeleteEventTypeOutput`](crate::output::DeleteEventTypeOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteEventTypeError>`](crate::error::DeleteEventTypeError)
     pub fn delete_event_type(&self) -> fluent_builders::DeleteEventType<C, M, R> {
         fluent_builders::DeleteEventType::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteExternalModel` operation.
+    /// Constructs a fluent builder for the [`DeleteExternalModel`](crate::client::fluent_builders::DeleteExternalModel) operation.
     ///
-    /// See [`DeleteExternalModel`](crate::client::fluent_builders::DeleteExternalModel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteExternalModelInput`](crate::input::DeleteExternalModelInput) with field(s):
+    ///   - [`model_endpoint(Option<String>)`](crate::input::DeleteExternalModelInput::model_endpoint): <p>The endpoint of the Amazon Sagemaker model to delete.</p>
+    /// - On success, responds with [`DeleteExternalModelOutput`](crate::output::DeleteExternalModelOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteExternalModelError>`](crate::error::DeleteExternalModelError)
     pub fn delete_external_model(&self) -> fluent_builders::DeleteExternalModel<C, M, R> {
         fluent_builders::DeleteExternalModel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteLabel` operation.
+    /// Constructs a fluent builder for the [`DeleteLabel`](crate::client::fluent_builders::DeleteLabel) operation.
     ///
-    /// See [`DeleteLabel`](crate::client::fluent_builders::DeleteLabel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteLabelInput`](crate::input::DeleteLabelInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteLabelInput::name): <p>The name of the label to delete.</p>
+    /// - On success, responds with [`DeleteLabelOutput`](crate::output::DeleteLabelOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteLabelError>`](crate::error::DeleteLabelError)
     pub fn delete_label(&self) -> fluent_builders::DeleteLabel<C, M, R> {
         fluent_builders::DeleteLabel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteModel` operation.
+    /// Constructs a fluent builder for the [`DeleteModel`](crate::client::fluent_builders::DeleteModel) operation.
     ///
-    /// See [`DeleteModel`](crate::client::fluent_builders::DeleteModel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteModelInput`](crate::input::DeleteModelInput) with field(s):
+    ///   - [`model_id(Option<String>)`](crate::input::DeleteModelInput::model_id): <p>The model ID of the model to delete.</p>
+    ///   - [`model_type(Option<ModelTypeEnum>)`](crate::input::DeleteModelInput::model_type): <p>The model type of the model to delete.</p>
+    /// - On success, responds with [`DeleteModelOutput`](crate::output::DeleteModelOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteModelError>`](crate::error::DeleteModelError)
     pub fn delete_model(&self) -> fluent_builders::DeleteModel<C, M, R> {
         fluent_builders::DeleteModel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteModelVersion` operation.
+    /// Constructs a fluent builder for the [`DeleteModelVersion`](crate::client::fluent_builders::DeleteModelVersion) operation.
     ///
-    /// See [`DeleteModelVersion`](crate::client::fluent_builders::DeleteModelVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteModelVersionInput`](crate::input::DeleteModelVersionInput) with field(s):
+    ///   - [`model_id(Option<String>)`](crate::input::DeleteModelVersionInput::model_id): <p>The model ID of the model version to delete.</p>
+    ///   - [`model_type(Option<ModelTypeEnum>)`](crate::input::DeleteModelVersionInput::model_type): <p>The model type of the model version to delete.</p>
+    ///   - [`model_version_number(Option<String>)`](crate::input::DeleteModelVersionInput::model_version_number): <p>The model version number of the model version to delete.</p>
+    /// - On success, responds with [`DeleteModelVersionOutput`](crate::output::DeleteModelVersionOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteModelVersionError>`](crate::error::DeleteModelVersionError)
     pub fn delete_model_version(&self) -> fluent_builders::DeleteModelVersion<C, M, R> {
         fluent_builders::DeleteModelVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteOutcome` operation.
+    /// Constructs a fluent builder for the [`DeleteOutcome`](crate::client::fluent_builders::DeleteOutcome) operation.
     ///
-    /// See [`DeleteOutcome`](crate::client::fluent_builders::DeleteOutcome) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteOutcomeInput`](crate::input::DeleteOutcomeInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteOutcomeInput::name): <p>The name of the outcome to delete.</p>
+    /// - On success, responds with [`DeleteOutcomeOutput`](crate::output::DeleteOutcomeOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteOutcomeError>`](crate::error::DeleteOutcomeError)
     pub fn delete_outcome(&self) -> fluent_builders::DeleteOutcome<C, M, R> {
         fluent_builders::DeleteOutcome::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteRule` operation.
+    /// Constructs a fluent builder for the [`DeleteRule`](crate::client::fluent_builders::DeleteRule) operation.
     ///
-    /// See [`DeleteRule`](crate::client::fluent_builders::DeleteRule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteRuleInput`](crate::input::DeleteRuleInput) with field(s):
+    ///   - [`rule(Option<Rule>)`](crate::input::DeleteRuleInput::rule): <p>A rule.</p>
+    /// - On success, responds with [`DeleteRuleOutput`](crate::output::DeleteRuleOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteRuleError>`](crate::error::DeleteRuleError)
     pub fn delete_rule(&self) -> fluent_builders::DeleteRule<C, M, R> {
         fluent_builders::DeleteRule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteVariable` operation.
+    /// Constructs a fluent builder for the [`DeleteVariable`](crate::client::fluent_builders::DeleteVariable) operation.
     ///
-    /// See [`DeleteVariable`](crate::client::fluent_builders::DeleteVariable) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteVariableInput`](crate::input::DeleteVariableInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteVariableInput::name): <p>The name of the variable to delete.</p>
+    /// - On success, responds with [`DeleteVariableOutput`](crate::output::DeleteVariableOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteVariableError>`](crate::error::DeleteVariableError)
     pub fn delete_variable(&self) -> fluent_builders::DeleteVariable<C, M, R> {
         fluent_builders::DeleteVariable::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDetector` operation.
+    /// Constructs a fluent builder for the [`DescribeDetector`](crate::client::fluent_builders::DescribeDetector) operation.
     ///
-    /// See [`DescribeDetector`](crate::client::fluent_builders::DescribeDetector) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeDetectorInput`](crate::input::DescribeDetectorInput) with field(s):
+    ///   - [`detector_id(Option<String>)`](crate::input::DescribeDetectorInput::detector_id): <p>The detector ID.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeDetectorInput::next_token): <p>The next token from the previous response.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeDetectorInput::max_results): <p>The maximum number of results to return for the request.</p>
+    /// - On success, responds with [`DescribeDetectorOutput`](crate::output::DescribeDetectorOutput) with field(s):
+    ///   - [`detector_id(Option<String>)`](crate::output::DescribeDetectorOutput::detector_id): <p>The detector ID.</p>
+    ///   - [`detector_version_summaries(Option<Vec<DetectorVersionSummary>>)`](crate::output::DescribeDetectorOutput::detector_version_summaries): <p>The status and description for each detector version.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeDetectorOutput::next_token): <p>The next token to be used for subsequent requests.</p>
+    ///   - [`arn(Option<String>)`](crate::output::DescribeDetectorOutput::arn): <p>The detector ARN.</p>
+    /// - On failure, responds with [`SdkError<DescribeDetectorError>`](crate::error::DescribeDetectorError)
     pub fn describe_detector(&self) -> fluent_builders::DescribeDetector<C, M, R> {
         fluent_builders::DescribeDetector::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeModelVersions` operation.
-    ///
-    /// See [`DescribeModelVersions`](crate::client::fluent_builders::DescribeModelVersions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeModelVersions`](crate::client::fluent_builders::DescribeModelVersions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeModelVersions::into_paginator).
+    ///
+    /// - Takes [`DescribeModelVersionsInput`](crate::input::DescribeModelVersionsInput) with field(s):
+    ///   - [`model_id(Option<String>)`](crate::input::DescribeModelVersionsInput::model_id): <p>The model ID.</p>
+    ///   - [`model_version_number(Option<String>)`](crate::input::DescribeModelVersionsInput::model_version_number): <p>The model version number.</p>
+    ///   - [`model_type(Option<ModelTypeEnum>)`](crate::input::DescribeModelVersionsInput::model_type): <p>The model type.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeModelVersionsInput::next_token): <p>The next token from the previous results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeModelVersionsInput::max_results): <p>The maximum number of results to return.</p>
+    /// - On success, responds with [`DescribeModelVersionsOutput`](crate::output::DescribeModelVersionsOutput) with field(s):
+    ///   - [`model_version_details(Option<Vec<ModelVersionDetail>>)`](crate::output::DescribeModelVersionsOutput::model_version_details): <p>The model version details.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeModelVersionsOutput::next_token): <p>The next token.</p>
+    /// - On failure, responds with [`SdkError<DescribeModelVersionsError>`](crate::error::DescribeModelVersionsError)
     pub fn describe_model_versions(&self) -> fluent_builders::DescribeModelVersions<C, M, R> {
         fluent_builders::DescribeModelVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBatchImportJobs` operation.
-    ///
-    /// See [`GetBatchImportJobs`](crate::client::fluent_builders::GetBatchImportJobs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetBatchImportJobs`](crate::client::fluent_builders::GetBatchImportJobs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetBatchImportJobs::into_paginator).
+    ///
+    /// - Takes [`GetBatchImportJobsInput`](crate::input::GetBatchImportJobsInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::GetBatchImportJobsInput::job_id): <p>The ID of the batch import job to get.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetBatchImportJobsInput::max_results): <p>The maximum number of objects to return for request.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetBatchImportJobsInput::next_token): <p>The next token from the previous request.</p>
+    /// - On success, responds with [`GetBatchImportJobsOutput`](crate::output::GetBatchImportJobsOutput) with field(s):
+    ///   - [`batch_imports(Option<Vec<BatchImport>>)`](crate::output::GetBatchImportJobsOutput::batch_imports): <p>An array containing the details of each batch import job.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetBatchImportJobsOutput::next_token): <p>The next token for the subsequent resquest.</p>
+    /// - On failure, responds with [`SdkError<GetBatchImportJobsError>`](crate::error::GetBatchImportJobsError)
     pub fn get_batch_import_jobs(&self) -> fluent_builders::GetBatchImportJobs<C, M, R> {
         fluent_builders::GetBatchImportJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBatchPredictionJobs` operation.
-    ///
-    /// See [`GetBatchPredictionJobs`](crate::client::fluent_builders::GetBatchPredictionJobs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetBatchPredictionJobs`](crate::client::fluent_builders::GetBatchPredictionJobs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetBatchPredictionJobs::into_paginator).
+    ///
+    /// - Takes [`GetBatchPredictionJobsInput`](crate::input::GetBatchPredictionJobsInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::GetBatchPredictionJobsInput::job_id): <p>The batch prediction job for which to get the details.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetBatchPredictionJobsInput::max_results): <p>The maximum number of objects to return for the request.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetBatchPredictionJobsInput::next_token): <p>The next token from the previous request.</p>
+    /// - On success, responds with [`GetBatchPredictionJobsOutput`](crate::output::GetBatchPredictionJobsOutput) with field(s):
+    ///   - [`batch_predictions(Option<Vec<BatchPrediction>>)`](crate::output::GetBatchPredictionJobsOutput::batch_predictions): <p>An array containing the details of each batch prediction job.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetBatchPredictionJobsOutput::next_token): <p>The next token for the subsequent request.</p>
+    /// - On failure, responds with [`SdkError<GetBatchPredictionJobsError>`](crate::error::GetBatchPredictionJobsError)
     pub fn get_batch_prediction_jobs(&self) -> fluent_builders::GetBatchPredictionJobs<C, M, R> {
         fluent_builders::GetBatchPredictionJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDeleteEventsByEventTypeStatus` operation.
+    /// Constructs a fluent builder for the [`GetDeleteEventsByEventTypeStatus`](crate::client::fluent_builders::GetDeleteEventsByEventTypeStatus) operation.
     ///
-    /// See [`GetDeleteEventsByEventTypeStatus`](crate::client::fluent_builders::GetDeleteEventsByEventTypeStatus) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetDeleteEventsByEventTypeStatusInput`](crate::input::GetDeleteEventsByEventTypeStatusInput) with field(s):
+    ///   - [`event_type_name(Option<String>)`](crate::input::GetDeleteEventsByEventTypeStatusInput::event_type_name): <p>Name of event type for which to get the deletion status.</p>
+    /// - On success, responds with [`GetDeleteEventsByEventTypeStatusOutput`](crate::output::GetDeleteEventsByEventTypeStatusOutput) with field(s):
+    ///   - [`event_type_name(Option<String>)`](crate::output::GetDeleteEventsByEventTypeStatusOutput::event_type_name): <p>The event type name.</p>
+    ///   - [`events_deletion_status(Option<AsyncJobStatus>)`](crate::output::GetDeleteEventsByEventTypeStatusOutput::events_deletion_status): <p>The deletion status.</p>
+    /// - On failure, responds with [`SdkError<GetDeleteEventsByEventTypeStatusError>`](crate::error::GetDeleteEventsByEventTypeStatusError)
     pub fn get_delete_events_by_event_type_status(
         &self,
     ) -> fluent_builders::GetDeleteEventsByEventTypeStatus<C, M, R> {
         fluent_builders::GetDeleteEventsByEventTypeStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDetectors` operation.
-    ///
-    /// See [`GetDetectors`](crate::client::fluent_builders::GetDetectors) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetDetectors`](crate::client::fluent_builders::GetDetectors) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetDetectors::into_paginator).
+    ///
+    /// - Takes [`GetDetectorsInput`](crate::input::GetDetectorsInput) with field(s):
+    ///   - [`detector_id(Option<String>)`](crate::input::GetDetectorsInput::detector_id): <p>The detector ID.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetDetectorsInput::next_token): <p>The next token for the subsequent request.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetDetectorsInput::max_results): <p>The maximum number of objects to return for the request.</p>
+    /// - On success, responds with [`GetDetectorsOutput`](crate::output::GetDetectorsOutput) with field(s):
+    ///   - [`detectors(Option<Vec<Detector>>)`](crate::output::GetDetectorsOutput::detectors): <p>The detectors.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetDetectorsOutput::next_token): <p>The next page token.</p>
+    /// - On failure, responds with [`SdkError<GetDetectorsError>`](crate::error::GetDetectorsError)
     pub fn get_detectors(&self) -> fluent_builders::GetDetectors<C, M, R> {
         fluent_builders::GetDetectors::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDetectorVersion` operation.
+    /// Constructs a fluent builder for the [`GetDetectorVersion`](crate::client::fluent_builders::GetDetectorVersion) operation.
     ///
-    /// See [`GetDetectorVersion`](crate::client::fluent_builders::GetDetectorVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetDetectorVersionInput`](crate::input::GetDetectorVersionInput) with field(s):
+    ///   - [`detector_id(Option<String>)`](crate::input::GetDetectorVersionInput::detector_id): <p>The detector ID.</p>
+    ///   - [`detector_version_id(Option<String>)`](crate::input::GetDetectorVersionInput::detector_version_id): <p>The detector version ID.</p>
+    /// - On success, responds with [`GetDetectorVersionOutput`](crate::output::GetDetectorVersionOutput) with field(s):
+    ///   - [`detector_id(Option<String>)`](crate::output::GetDetectorVersionOutput::detector_id): <p>The detector ID.</p>
+    ///   - [`detector_version_id(Option<String>)`](crate::output::GetDetectorVersionOutput::detector_version_id): <p>The detector version ID.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetDetectorVersionOutput::description): <p>The detector version description.</p>
+    ///   - [`external_model_endpoints(Option<Vec<String>>)`](crate::output::GetDetectorVersionOutput::external_model_endpoints): <p>The Amazon SageMaker model endpoints included in the detector version.</p>
+    ///   - [`model_versions(Option<Vec<ModelVersion>>)`](crate::output::GetDetectorVersionOutput::model_versions): <p>The model versions included in the detector version. </p>
+    ///   - [`rules(Option<Vec<Rule>>)`](crate::output::GetDetectorVersionOutput::rules): <p>The rules included in the detector version.</p>
+    ///   - [`status(Option<DetectorVersionStatus>)`](crate::output::GetDetectorVersionOutput::status): <p>The status of the detector version.</p>
+    ///   - [`last_updated_time(Option<String>)`](crate::output::GetDetectorVersionOutput::last_updated_time): <p>The timestamp when the detector version was last updated. </p>
+    ///   - [`created_time(Option<String>)`](crate::output::GetDetectorVersionOutput::created_time): <p>The timestamp when the detector version was created. </p>
+    ///   - [`rule_execution_mode(Option<RuleExecutionMode>)`](crate::output::GetDetectorVersionOutput::rule_execution_mode): <p>The execution mode of the rule in the dectector</p>  <p> <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>  <p> <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
+    ///   - [`arn(Option<String>)`](crate::output::GetDetectorVersionOutput::arn): <p>The detector version ARN.</p>
+    /// - On failure, responds with [`SdkError<GetDetectorVersionError>`](crate::error::GetDetectorVersionError)
     pub fn get_detector_version(&self) -> fluent_builders::GetDetectorVersion<C, M, R> {
         fluent_builders::GetDetectorVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetEntityTypes` operation.
-    ///
-    /// See [`GetEntityTypes`](crate::client::fluent_builders::GetEntityTypes) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetEntityTypes`](crate::client::fluent_builders::GetEntityTypes) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetEntityTypes::into_paginator).
+    ///
+    /// - Takes [`GetEntityTypesInput`](crate::input::GetEntityTypesInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::GetEntityTypesInput::name): <p>The name.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetEntityTypesInput::next_token): <p>The next token for the subsequent request.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetEntityTypesInput::max_results): <p>The maximum number of objects to return for the request.</p>
+    /// - On success, responds with [`GetEntityTypesOutput`](crate::output::GetEntityTypesOutput) with field(s):
+    ///   - [`entity_types(Option<Vec<EntityType>>)`](crate::output::GetEntityTypesOutput::entity_types): <p>An array of entity types.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetEntityTypesOutput::next_token): <p>The next page token.</p>
+    /// - On failure, responds with [`SdkError<GetEntityTypesError>`](crate::error::GetEntityTypesError)
     pub fn get_entity_types(&self) -> fluent_builders::GetEntityTypes<C, M, R> {
         fluent_builders::GetEntityTypes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetEvent` operation.
+    /// Constructs a fluent builder for the [`GetEvent`](crate::client::fluent_builders::GetEvent) operation.
     ///
-    /// See [`GetEvent`](crate::client::fluent_builders::GetEvent) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetEventInput`](crate::input::GetEventInput) with field(s):
+    ///   - [`event_id(Option<String>)`](crate::input::GetEventInput::event_id): <p>The ID of the event to retrieve.</p>
+    ///   - [`event_type_name(Option<String>)`](crate::input::GetEventInput::event_type_name): <p>The event type of the event to retrieve.</p>
+    /// - On success, responds with [`GetEventOutput`](crate::output::GetEventOutput) with field(s):
+    ///   - [`event(Option<Event>)`](crate::output::GetEventOutput::event): <p>The details of the event.</p>
+    /// - On failure, responds with [`SdkError<GetEventError>`](crate::error::GetEventError)
     pub fn get_event(&self) -> fluent_builders::GetEvent<C, M, R> {
         fluent_builders::GetEvent::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetEventPrediction` operation.
+    /// Constructs a fluent builder for the [`GetEventPrediction`](crate::client::fluent_builders::GetEventPrediction) operation.
     ///
-    /// See [`GetEventPrediction`](crate::client::fluent_builders::GetEventPrediction) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetEventPredictionInput`](crate::input::GetEventPredictionInput) with field(s):
+    ///   - [`detector_id(Option<String>)`](crate::input::GetEventPredictionInput::detector_id): <p>The detector ID.</p>
+    ///   - [`detector_version_id(Option<String>)`](crate::input::GetEventPredictionInput::detector_version_id): <p>The detector version ID.</p>
+    ///   - [`event_id(Option<String>)`](crate::input::GetEventPredictionInput::event_id): <p>The unique ID used to identify the event.</p>
+    ///   - [`event_type_name(Option<String>)`](crate::input::GetEventPredictionInput::event_type_name): <p>The event type associated with the detector specified for the prediction.</p>
+    ///   - [`entities(Option<Vec<Entity>>)`](crate::input::GetEventPredictionInput::entities): <p>The entity type (associated with the detector's event type) and specific entity ID representing who performed the event. If an entity id is not available, use "UNKNOWN."</p>
+    ///   - [`event_timestamp(Option<String>)`](crate::input::GetEventPredictionInput::event_timestamp): <p>Timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+    ///   - [`event_variables(Option<HashMap<String, String>>)`](crate::input::GetEventPredictionInput::event_variables): <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p> <important>   <p>You must provide at least one eventVariable</p>  </important>  <p>To ensure most accurate fraud prediction and to simplify your data preparation, Amazon Fraud Detector will replace all missing variables or values as follows:</p>  <p> <b>For Amazon Fraud Detector trained models:</b> </p>  <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map) with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>  <p> <b>For imported SageMaker models:</b> </p>  <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules will use the default value that is provided for the variable. </p>
+    ///   - [`external_model_endpoint_data_blobs(Option<HashMap<String, ModelEndpointDataBlob>>)`](crate::input::GetEventPredictionInput::external_model_endpoint_data_blobs): <p>The Amazon SageMaker model endpoint input data blobs.</p>
+    /// - On success, responds with [`GetEventPredictionOutput`](crate::output::GetEventPredictionOutput) with field(s):
+    ///   - [`model_scores(Option<Vec<ModelScores>>)`](crate::output::GetEventPredictionOutput::model_scores): <p>The model scores. Amazon Fraud Detector generates model scores between 0 and 1000, where 0 is low fraud risk and 1000 is high fraud risk. Model scores are directly related to the false positive rate (FPR). For example, a score of 600 corresponds to an estimated 10% false positive rate whereas a score of 900 corresponds to an estimated 2% false positive rate.</p>
+    ///   - [`rule_results(Option<Vec<RuleResult>>)`](crate::output::GetEventPredictionOutput::rule_results): <p>The results from the rules.</p>
+    ///   - [`external_model_outputs(Option<Vec<ExternalModelOutputs>>)`](crate::output::GetEventPredictionOutput::external_model_outputs): <p>The model scores for Amazon SageMaker models.</p>
+    /// - On failure, responds with [`SdkError<GetEventPredictionError>`](crate::error::GetEventPredictionError)
     pub fn get_event_prediction(&self) -> fluent_builders::GetEventPrediction<C, M, R> {
         fluent_builders::GetEventPrediction::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetEventTypes` operation.
-    ///
-    /// See [`GetEventTypes`](crate::client::fluent_builders::GetEventTypes) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetEventTypes`](crate::client::fluent_builders::GetEventTypes) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetEventTypes::into_paginator).
+    ///
+    /// - Takes [`GetEventTypesInput`](crate::input::GetEventTypesInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::GetEventTypesInput::name): <p>The name.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetEventTypesInput::next_token): <p>The next token for the subsequent request.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetEventTypesInput::max_results): <p>The maximum number of objects to return for the request.</p>
+    /// - On success, responds with [`GetEventTypesOutput`](crate::output::GetEventTypesOutput) with field(s):
+    ///   - [`event_types(Option<Vec<EventType>>)`](crate::output::GetEventTypesOutput::event_types): <p>An array of event types.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetEventTypesOutput::next_token): <p>The next page token.</p>
+    /// - On failure, responds with [`SdkError<GetEventTypesError>`](crate::error::GetEventTypesError)
     pub fn get_event_types(&self) -> fluent_builders::GetEventTypes<C, M, R> {
         fluent_builders::GetEventTypes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetExternalModels` operation.
-    ///
-    /// See [`GetExternalModels`](crate::client::fluent_builders::GetExternalModels) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetExternalModels`](crate::client::fluent_builders::GetExternalModels) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetExternalModels::into_paginator).
+    ///
+    /// - Takes [`GetExternalModelsInput`](crate::input::GetExternalModelsInput) with field(s):
+    ///   - [`model_endpoint(Option<String>)`](crate::input::GetExternalModelsInput::model_endpoint): <p>The Amazon SageMaker model endpoint.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetExternalModelsInput::next_token): <p>The next page token for the request.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetExternalModelsInput::max_results): <p>The maximum number of objects to return for the request.</p>
+    /// - On success, responds with [`GetExternalModelsOutput`](crate::output::GetExternalModelsOutput) with field(s):
+    ///   - [`external_models(Option<Vec<ExternalModel>>)`](crate::output::GetExternalModelsOutput::external_models): <p>Gets the Amazon SageMaker models.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetExternalModelsOutput::next_token): <p>The next page token to be used in subsequent requests.</p>
+    /// - On failure, responds with [`SdkError<GetExternalModelsError>`](crate::error::GetExternalModelsError)
     pub fn get_external_models(&self) -> fluent_builders::GetExternalModels<C, M, R> {
         fluent_builders::GetExternalModels::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetKMSEncryptionKey` operation.
+    /// Constructs a fluent builder for the [`GetKMSEncryptionKey`](crate::client::fluent_builders::GetKMSEncryptionKey) operation.
     ///
-    /// See [`GetKMSEncryptionKey`](crate::client::fluent_builders::GetKMSEncryptionKey) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetKmsEncryptionKeyInput`](crate::input::GetKmsEncryptionKeyInput)
+
+    /// - On success, responds with [`GetKmsEncryptionKeyOutput`](crate::output::GetKmsEncryptionKeyOutput) with field(s):
+    ///   - [`kms_key(Option<KmsKey>)`](crate::output::GetKmsEncryptionKeyOutput::kms_key): <p>The KMS encryption key.</p>
+    /// - On failure, responds with [`SdkError<GetKMSEncryptionKeyError>`](crate::error::GetKMSEncryptionKeyError)
     pub fn get_kms_encryption_key(&self) -> fluent_builders::GetKMSEncryptionKey<C, M, R> {
         fluent_builders::GetKMSEncryptionKey::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetLabels` operation.
-    ///
-    /// See [`GetLabels`](crate::client::fluent_builders::GetLabels) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetLabels`](crate::client::fluent_builders::GetLabels) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetLabels::into_paginator).
+    ///
+    /// - Takes [`GetLabelsInput`](crate::input::GetLabelsInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::GetLabelsInput::name): <p>The name of the label or labels to get.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetLabelsInput::next_token): <p>The next token for the subsequent request.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetLabelsInput::max_results): <p>The maximum number of objects to return for the request.</p>
+    /// - On success, responds with [`GetLabelsOutput`](crate::output::GetLabelsOutput) with field(s):
+    ///   - [`labels(Option<Vec<Label>>)`](crate::output::GetLabelsOutput::labels): <p>An array of labels.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetLabelsOutput::next_token): <p>The next page token.</p>
+    /// - On failure, responds with [`SdkError<GetLabelsError>`](crate::error::GetLabelsError)
     pub fn get_labels(&self) -> fluent_builders::GetLabels<C, M, R> {
         fluent_builders::GetLabels::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetModels` operation.
-    ///
-    /// See [`GetModels`](crate::client::fluent_builders::GetModels) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetModels`](crate::client::fluent_builders::GetModels) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetModels::into_paginator).
+    ///
+    /// - Takes [`GetModelsInput`](crate::input::GetModelsInput) with field(s):
+    ///   - [`model_id(Option<String>)`](crate::input::GetModelsInput::model_id): <p>The model ID.</p>
+    ///   - [`model_type(Option<ModelTypeEnum>)`](crate::input::GetModelsInput::model_type): <p>The model type.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetModelsInput::next_token): <p>The next token for the subsequent request.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetModelsInput::max_results): <p>The maximum number of objects to return for the request. </p>
+    /// - On success, responds with [`GetModelsOutput`](crate::output::GetModelsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::GetModelsOutput::next_token): <p>The next page token to be used in subsequent requests.</p>
+    ///   - [`models(Option<Vec<Model>>)`](crate::output::GetModelsOutput::models): <p>The array of models.</p>
+    /// - On failure, responds with [`SdkError<GetModelsError>`](crate::error::GetModelsError)
     pub fn get_models(&self) -> fluent_builders::GetModels<C, M, R> {
         fluent_builders::GetModels::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetModelVersion` operation.
+    /// Constructs a fluent builder for the [`GetModelVersion`](crate::client::fluent_builders::GetModelVersion) operation.
     ///
-    /// See [`GetModelVersion`](crate::client::fluent_builders::GetModelVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetModelVersionInput`](crate::input::GetModelVersionInput) with field(s):
+    ///   - [`model_id(Option<String>)`](crate::input::GetModelVersionInput::model_id): <p>The model ID.</p>
+    ///   - [`model_type(Option<ModelTypeEnum>)`](crate::input::GetModelVersionInput::model_type): <p>The model type.</p>
+    ///   - [`model_version_number(Option<String>)`](crate::input::GetModelVersionInput::model_version_number): <p>The model version number.</p>
+    /// - On success, responds with [`GetModelVersionOutput`](crate::output::GetModelVersionOutput) with field(s):
+    ///   - [`model_id(Option<String>)`](crate::output::GetModelVersionOutput::model_id): <p>The model ID.</p>
+    ///   - [`model_type(Option<ModelTypeEnum>)`](crate::output::GetModelVersionOutput::model_type): <p>The model type.</p>
+    ///   - [`model_version_number(Option<String>)`](crate::output::GetModelVersionOutput::model_version_number): <p>The model version number.</p>
+    ///   - [`training_data_source(Option<TrainingDataSourceEnum>)`](crate::output::GetModelVersionOutput::training_data_source): <p>The training data source.</p>
+    ///   - [`training_data_schema(Option<TrainingDataSchema>)`](crate::output::GetModelVersionOutput::training_data_schema): <p>The training data schema.</p>
+    ///   - [`external_events_detail(Option<ExternalEventsDetail>)`](crate::output::GetModelVersionOutput::external_events_detail): <p>The details of the external events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code> </p>
+    ///   - [`ingested_events_detail(Option<IngestedEventsDetail>)`](crate::output::GetModelVersionOutput::ingested_events_detail): <p>The details of the ingested events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
+    ///   - [`status(Option<String>)`](crate::output::GetModelVersionOutput::status): <p>The model version status.</p>  <p>Possible values are:</p>  <ul>   <li> <p> <code>TRAINING_IN_PROGRESS</code> </p> </li>   <li> <p> <code>TRAINING_COMPLETE</code> </p> </li>   <li> <p> <code>ACTIVATE_REQUESTED</code> </p> </li>   <li> <p> <code>ACTIVATE_IN_PROGRESS</code> </p> </li>   <li> <p> <code>ACTIVE</code> </p> </li>   <li> <p> <code>INACTIVATE_REQUESTED</code> </p> </li>   <li> <p> <code>INACTIVATE_IN_PROGRESS</code> </p> </li>   <li> <p> <code>INACTIVE</code> </p> </li>   <li> <p> <code>ERROR</code> </p> </li>  </ul>
+    ///   - [`arn(Option<String>)`](crate::output::GetModelVersionOutput::arn): <p>The model version ARN.</p>
+    /// - On failure, responds with [`SdkError<GetModelVersionError>`](crate::error::GetModelVersionError)
     pub fn get_model_version(&self) -> fluent_builders::GetModelVersion<C, M, R> {
         fluent_builders::GetModelVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetOutcomes` operation.
-    ///
-    /// See [`GetOutcomes`](crate::client::fluent_builders::GetOutcomes) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetOutcomes`](crate::client::fluent_builders::GetOutcomes) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetOutcomes::into_paginator).
+    ///
+    /// - Takes [`GetOutcomesInput`](crate::input::GetOutcomesInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::GetOutcomesInput::name): <p>The name of the outcome or outcomes to get.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetOutcomesInput::next_token): <p>The next page token for the request. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetOutcomesInput::max_results): <p>The maximum number of objects to return for the request. </p>
+    /// - On success, responds with [`GetOutcomesOutput`](crate::output::GetOutcomesOutput) with field(s):
+    ///   - [`outcomes(Option<Vec<Outcome>>)`](crate::output::GetOutcomesOutput::outcomes): <p>The outcomes. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetOutcomesOutput::next_token): <p>The next page token for subsequent requests.</p>
+    /// - On failure, responds with [`SdkError<GetOutcomesError>`](crate::error::GetOutcomesError)
     pub fn get_outcomes(&self) -> fluent_builders::GetOutcomes<C, M, R> {
         fluent_builders::GetOutcomes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRules` operation.
-    ///
-    /// See [`GetRules`](crate::client::fluent_builders::GetRules) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetRules`](crate::client::fluent_builders::GetRules) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetRules::into_paginator).
+    ///
+    /// - Takes [`GetRulesInput`](crate::input::GetRulesInput) with field(s):
+    ///   - [`rule_id(Option<String>)`](crate::input::GetRulesInput::rule_id): <p>The rule ID.</p>
+    ///   - [`detector_id(Option<String>)`](crate::input::GetRulesInput::detector_id): <p>The detector ID.</p>
+    ///   - [`rule_version(Option<String>)`](crate::input::GetRulesInput::rule_version): <p>The rule version.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetRulesInput::next_token): <p>The next page token.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetRulesInput::max_results): <p>The maximum number of rules to return for the request.</p>
+    /// - On success, responds with [`GetRulesOutput`](crate::output::GetRulesOutput) with field(s):
+    ///   - [`rule_details(Option<Vec<RuleDetail>>)`](crate::output::GetRulesOutput::rule_details): <p>The details of the requested rule.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetRulesOutput::next_token): <p>The next page token to be used in subsequent requests.</p>
+    /// - On failure, responds with [`SdkError<GetRulesError>`](crate::error::GetRulesError)
     pub fn get_rules(&self) -> fluent_builders::GetRules<C, M, R> {
         fluent_builders::GetRules::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetVariables` operation.
-    ///
-    /// See [`GetVariables`](crate::client::fluent_builders::GetVariables) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetVariables`](crate::client::fluent_builders::GetVariables) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetVariables::into_paginator).
+    ///
+    /// - Takes [`GetVariablesInput`](crate::input::GetVariablesInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::GetVariablesInput::name): <p>The name of the variable. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetVariablesInput::next_token): <p>The next page token of the get variable request. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetVariablesInput::max_results): <p>The max size per page determined for the get variable request. </p>
+    /// - On success, responds with [`GetVariablesOutput`](crate::output::GetVariablesOutput) with field(s):
+    ///   - [`variables(Option<Vec<Variable>>)`](crate::output::GetVariablesOutput::variables): <p>The names of the variables returned. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetVariablesOutput::next_token): <p>The next page token to be used in subsequent requests. </p>
+    /// - On failure, responds with [`SdkError<GetVariablesError>`](crate::error::GetVariablesError)
     pub fn get_variables(&self) -> fluent_builders::GetVariables<C, M, R> {
         fluent_builders::GetVariables::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
-    ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
+    ///
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The ARN that specifies the resource whose tags you want to list.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListTagsForResourceInput::next_token): <p>The next token from the previous results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListTagsForResourceInput::max_results): <p>The maximum number of objects to return for the request. </p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A collection of key and value pairs.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTagsForResourceOutput::next_token): <p>The next token for subsequent requests. </p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutDetector` operation.
+    /// Constructs a fluent builder for the [`PutDetector`](crate::client::fluent_builders::PutDetector) operation.
     ///
-    /// See [`PutDetector`](crate::client::fluent_builders::PutDetector) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutDetectorInput`](crate::input::PutDetectorInput) with field(s):
+    ///   - [`detector_id(Option<String>)`](crate::input::PutDetectorInput::detector_id): <p>The detector ID. </p>
+    ///   - [`description(Option<String>)`](crate::input::PutDetectorInput::description): <p>The description of the detector.</p>
+    ///   - [`event_type_name(Option<String>)`](crate::input::PutDetectorInput::event_type_name): <p>The name of the event type.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::PutDetectorInput::tags): <p>A collection of key and value pairs.</p>
+    /// - On success, responds with [`PutDetectorOutput`](crate::output::PutDetectorOutput)
+
+    /// - On failure, responds with [`SdkError<PutDetectorError>`](crate::error::PutDetectorError)
     pub fn put_detector(&self) -> fluent_builders::PutDetector<C, M, R> {
         fluent_builders::PutDetector::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutEntityType` operation.
+    /// Constructs a fluent builder for the [`PutEntityType`](crate::client::fluent_builders::PutEntityType) operation.
     ///
-    /// See [`PutEntityType`](crate::client::fluent_builders::PutEntityType) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutEntityTypeInput`](crate::input::PutEntityTypeInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::PutEntityTypeInput::name): <p>The name of the entity type.</p>
+    ///   - [`description(Option<String>)`](crate::input::PutEntityTypeInput::description): <p>The description.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::PutEntityTypeInput::tags): <p>A collection of key and value pairs.</p>
+    /// - On success, responds with [`PutEntityTypeOutput`](crate::output::PutEntityTypeOutput)
+
+    /// - On failure, responds with [`SdkError<PutEntityTypeError>`](crate::error::PutEntityTypeError)
     pub fn put_entity_type(&self) -> fluent_builders::PutEntityType<C, M, R> {
         fluent_builders::PutEntityType::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutEventType` operation.
+    /// Constructs a fluent builder for the [`PutEventType`](crate::client::fluent_builders::PutEventType) operation.
     ///
-    /// See [`PutEventType`](crate::client::fluent_builders::PutEventType) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutEventTypeInput`](crate::input::PutEventTypeInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::PutEventTypeInput::name): <p>The name.</p>
+    ///   - [`description(Option<String>)`](crate::input::PutEventTypeInput::description): <p>The description of the event type.</p>
+    ///   - [`event_variables(Option<Vec<String>>)`](crate::input::PutEventTypeInput::event_variables): <p>The event type variables.</p>
+    ///   - [`labels(Option<Vec<String>>)`](crate::input::PutEventTypeInput::labels): <p>The event type labels.</p>
+    ///   - [`entity_types(Option<Vec<String>>)`](crate::input::PutEventTypeInput::entity_types): <p>The entity type for the event type. Example entity types: customer, merchant, account.</p>
+    ///   - [`event_ingestion(Option<EventIngestion>)`](crate::input::PutEventTypeInput::event_ingestion): <p>Specifies if ingenstion is enabled or disabled.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::PutEventTypeInput::tags): <p>A collection of key and value pairs.</p>
+    /// - On success, responds with [`PutEventTypeOutput`](crate::output::PutEventTypeOutput)
+
+    /// - On failure, responds with [`SdkError<PutEventTypeError>`](crate::error::PutEventTypeError)
     pub fn put_event_type(&self) -> fluent_builders::PutEventType<C, M, R> {
         fluent_builders::PutEventType::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutExternalModel` operation.
+    /// Constructs a fluent builder for the [`PutExternalModel`](crate::client::fluent_builders::PutExternalModel) operation.
     ///
-    /// See [`PutExternalModel`](crate::client::fluent_builders::PutExternalModel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutExternalModelInput`](crate::input::PutExternalModelInput) with field(s):
+    ///   - [`model_endpoint(Option<String>)`](crate::input::PutExternalModelInput::model_endpoint): <p>The model endpoints name.</p>
+    ///   - [`model_source(Option<ModelSource>)`](crate::input::PutExternalModelInput::model_source): <p>The source of the model.</p>
+    ///   - [`invoke_model_endpoint_role_arn(Option<String>)`](crate::input::PutExternalModelInput::invoke_model_endpoint_role_arn): <p>The IAM role used to invoke the model endpoint.</p>
+    ///   - [`input_configuration(Option<ModelInputConfiguration>)`](crate::input::PutExternalModelInput::input_configuration): <p>The model endpoint input configuration.</p>
+    ///   - [`output_configuration(Option<ModelOutputConfiguration>)`](crate::input::PutExternalModelInput::output_configuration): <p>The model endpoint output configuration.</p>
+    ///   - [`model_endpoint_status(Option<ModelEndpointStatus>)`](crate::input::PutExternalModelInput::model_endpoint_status): <p>The model endpoint’s status in Amazon Fraud Detector.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::PutExternalModelInput::tags): <p>A collection of key and value pairs.</p>
+    /// - On success, responds with [`PutExternalModelOutput`](crate::output::PutExternalModelOutput)
+
+    /// - On failure, responds with [`SdkError<PutExternalModelError>`](crate::error::PutExternalModelError)
     pub fn put_external_model(&self) -> fluent_builders::PutExternalModel<C, M, R> {
         fluent_builders::PutExternalModel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutKMSEncryptionKey` operation.
+    /// Constructs a fluent builder for the [`PutKMSEncryptionKey`](crate::client::fluent_builders::PutKMSEncryptionKey) operation.
     ///
-    /// See [`PutKMSEncryptionKey`](crate::client::fluent_builders::PutKMSEncryptionKey) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutKmsEncryptionKeyInput`](crate::input::PutKmsEncryptionKeyInput) with field(s):
+    ///   - [`kms_encryption_key_arn(Option<String>)`](crate::input::PutKmsEncryptionKeyInput::kms_encryption_key_arn): <p>The KMS encryption key ARN.</p>
+    /// - On success, responds with [`PutKmsEncryptionKeyOutput`](crate::output::PutKmsEncryptionKeyOutput)
+
+    /// - On failure, responds with [`SdkError<PutKMSEncryptionKeyError>`](crate::error::PutKMSEncryptionKeyError)
     pub fn put_kms_encryption_key(&self) -> fluent_builders::PutKMSEncryptionKey<C, M, R> {
         fluent_builders::PutKMSEncryptionKey::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutLabel` operation.
+    /// Constructs a fluent builder for the [`PutLabel`](crate::client::fluent_builders::PutLabel) operation.
     ///
-    /// See [`PutLabel`](crate::client::fluent_builders::PutLabel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutLabelInput`](crate::input::PutLabelInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::PutLabelInput::name): <p>The label name.</p>
+    ///   - [`description(Option<String>)`](crate::input::PutLabelInput::description): <p>The label description.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::PutLabelInput::tags): <p></p>
+    /// - On success, responds with [`PutLabelOutput`](crate::output::PutLabelOutput)
+
+    /// - On failure, responds with [`SdkError<PutLabelError>`](crate::error::PutLabelError)
     pub fn put_label(&self) -> fluent_builders::PutLabel<C, M, R> {
         fluent_builders::PutLabel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutOutcome` operation.
+    /// Constructs a fluent builder for the [`PutOutcome`](crate::client::fluent_builders::PutOutcome) operation.
     ///
-    /// See [`PutOutcome`](crate::client::fluent_builders::PutOutcome) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutOutcomeInput`](crate::input::PutOutcomeInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::PutOutcomeInput::name): <p>The name of the outcome.</p>
+    ///   - [`description(Option<String>)`](crate::input::PutOutcomeInput::description): <p>The outcome description.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::PutOutcomeInput::tags): <p>A collection of key and value pairs.</p>
+    /// - On success, responds with [`PutOutcomeOutput`](crate::output::PutOutcomeOutput)
+
+    /// - On failure, responds with [`SdkError<PutOutcomeError>`](crate::error::PutOutcomeError)
     pub fn put_outcome(&self) -> fluent_builders::PutOutcome<C, M, R> {
         fluent_builders::PutOutcome::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SendEvent` operation.
+    /// Constructs a fluent builder for the [`SendEvent`](crate::client::fluent_builders::SendEvent) operation.
     ///
-    /// See [`SendEvent`](crate::client::fluent_builders::SendEvent) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`SendEventInput`](crate::input::SendEventInput) with field(s):
+    ///   - [`event_id(Option<String>)`](crate::input::SendEventInput::event_id): <p>The event ID to upload.</p>
+    ///   - [`event_type_name(Option<String>)`](crate::input::SendEventInput::event_type_name): <p>The event type name of the event.</p>
+    ///   - [`event_timestamp(Option<String>)`](crate::input::SendEventInput::event_timestamp): <p>The timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.</p>
+    ///   - [`event_variables(Option<HashMap<String, String>>)`](crate::input::SendEventInput::event_variables): <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p>
+    ///   - [`assigned_label(Option<String>)`](crate::input::SendEventInput::assigned_label): <p>The label to associate with the event. Required if specifying <code>labelTimestamp</code>.</p>
+    ///   - [`label_timestamp(Option<String>)`](crate::input::SendEventInput::label_timestamp): <p>The timestamp associated with the label. Required if specifying <code>assignedLabel</code>.</p>
+    ///   - [`entities(Option<Vec<Entity>>)`](crate::input::SendEventInput::entities): <p>An array of entities.</p>
+    /// - On success, responds with [`SendEventOutput`](crate::output::SendEventOutput)
+
+    /// - On failure, responds with [`SdkError<SendEventError>`](crate::error::SendEventError)
     pub fn send_event(&self) -> fluent_builders::SendEvent<C, M, R> {
         fluent_builders::SendEvent::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The resource ARN.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>The tags to assign to the resource.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The ARN of the resource from which to remove the tag.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The resource ARN.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDetectorVersion` operation.
+    /// Constructs a fluent builder for the [`UpdateDetectorVersion`](crate::client::fluent_builders::UpdateDetectorVersion) operation.
     ///
-    /// See [`UpdateDetectorVersion`](crate::client::fluent_builders::UpdateDetectorVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateDetectorVersionInput`](crate::input::UpdateDetectorVersionInput) with field(s):
+    ///   - [`detector_id(Option<String>)`](crate::input::UpdateDetectorVersionInput::detector_id): <p>The parent detector ID for the detector version you want to update.</p>
+    ///   - [`detector_version_id(Option<String>)`](crate::input::UpdateDetectorVersionInput::detector_version_id): <p>The detector version ID. </p>
+    ///   - [`external_model_endpoints(Option<Vec<String>>)`](crate::input::UpdateDetectorVersionInput::external_model_endpoints): <p>The Amazon SageMaker model endpoints to include in the detector version.</p>
+    ///   - [`rules(Option<Vec<Rule>>)`](crate::input::UpdateDetectorVersionInput::rules): <p>The rules to include in the detector version.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateDetectorVersionInput::description): <p>The detector version description. </p>
+    ///   - [`model_versions(Option<Vec<ModelVersion>>)`](crate::input::UpdateDetectorVersionInput::model_versions): <p>The model versions to include in the detector version.</p>
+    ///   - [`rule_execution_mode(Option<RuleExecutionMode>)`](crate::input::UpdateDetectorVersionInput::rule_execution_mode): <p>The rule execution mode to add to the detector.</p>  <p>If you specify <code>FIRST_MATCHED</code>, Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>  <p>If you specifiy <code>ALL_MATCHED</code>, Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>  <p>The default behavior is <code>FIRST_MATCHED</code>.</p>
+    /// - On success, responds with [`UpdateDetectorVersionOutput`](crate::output::UpdateDetectorVersionOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateDetectorVersionError>`](crate::error::UpdateDetectorVersionError)
     pub fn update_detector_version(&self) -> fluent_builders::UpdateDetectorVersion<C, M, R> {
         fluent_builders::UpdateDetectorVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDetectorVersionMetadata` operation.
+    /// Constructs a fluent builder for the [`UpdateDetectorVersionMetadata`](crate::client::fluent_builders::UpdateDetectorVersionMetadata) operation.
     ///
-    /// See [`UpdateDetectorVersionMetadata`](crate::client::fluent_builders::UpdateDetectorVersionMetadata) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateDetectorVersionMetadataInput`](crate::input::UpdateDetectorVersionMetadataInput) with field(s):
+    ///   - [`detector_id(Option<String>)`](crate::input::UpdateDetectorVersionMetadataInput::detector_id): <p>The detector ID.</p>
+    ///   - [`detector_version_id(Option<String>)`](crate::input::UpdateDetectorVersionMetadataInput::detector_version_id): <p>The detector version ID. </p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateDetectorVersionMetadataInput::description): <p>The description.</p>
+    /// - On success, responds with [`UpdateDetectorVersionMetadataOutput`](crate::output::UpdateDetectorVersionMetadataOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateDetectorVersionMetadataError>`](crate::error::UpdateDetectorVersionMetadataError)
     pub fn update_detector_version_metadata(
         &self,
     ) -> fluent_builders::UpdateDetectorVersionMetadata<C, M, R> {
         fluent_builders::UpdateDetectorVersionMetadata::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDetectorVersionStatus` operation.
+    /// Constructs a fluent builder for the [`UpdateDetectorVersionStatus`](crate::client::fluent_builders::UpdateDetectorVersionStatus) operation.
     ///
-    /// See [`UpdateDetectorVersionStatus`](crate::client::fluent_builders::UpdateDetectorVersionStatus) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateDetectorVersionStatusInput`](crate::input::UpdateDetectorVersionStatusInput) with field(s):
+    ///   - [`detector_id(Option<String>)`](crate::input::UpdateDetectorVersionStatusInput::detector_id): <p>The detector ID. </p>
+    ///   - [`detector_version_id(Option<String>)`](crate::input::UpdateDetectorVersionStatusInput::detector_version_id): <p>The detector version ID. </p>
+    ///   - [`status(Option<DetectorVersionStatus>)`](crate::input::UpdateDetectorVersionStatusInput::status): <p>The new status.</p>
+    /// - On success, responds with [`UpdateDetectorVersionStatusOutput`](crate::output::UpdateDetectorVersionStatusOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateDetectorVersionStatusError>`](crate::error::UpdateDetectorVersionStatusError)
     pub fn update_detector_version_status(
         &self,
     ) -> fluent_builders::UpdateDetectorVersionStatus<C, M, R> {
         fluent_builders::UpdateDetectorVersionStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateEventLabel` operation.
+    /// Constructs a fluent builder for the [`UpdateEventLabel`](crate::client::fluent_builders::UpdateEventLabel) operation.
     ///
-    /// See [`UpdateEventLabel`](crate::client::fluent_builders::UpdateEventLabel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateEventLabelInput`](crate::input::UpdateEventLabelInput) with field(s):
+    ///   - [`event_id(Option<String>)`](crate::input::UpdateEventLabelInput::event_id): <p>The ID of the event associated with the label to update.</p>
+    ///   - [`event_type_name(Option<String>)`](crate::input::UpdateEventLabelInput::event_type_name): <p>The event type of the event associated with the label to update.</p>
+    ///   - [`assigned_label(Option<String>)`](crate::input::UpdateEventLabelInput::assigned_label): <p>The new label to assign to the event.</p>
+    ///   - [`label_timestamp(Option<String>)`](crate::input::UpdateEventLabelInput::label_timestamp): <p>The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC. </p>
+    /// - On success, responds with [`UpdateEventLabelOutput`](crate::output::UpdateEventLabelOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateEventLabelError>`](crate::error::UpdateEventLabelError)
     pub fn update_event_label(&self) -> fluent_builders::UpdateEventLabel<C, M, R> {
         fluent_builders::UpdateEventLabel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateModel` operation.
+    /// Constructs a fluent builder for the [`UpdateModel`](crate::client::fluent_builders::UpdateModel) operation.
     ///
-    /// See [`UpdateModel`](crate::client::fluent_builders::UpdateModel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateModelInput`](crate::input::UpdateModelInput) with field(s):
+    ///   - [`model_id(Option<String>)`](crate::input::UpdateModelInput::model_id): <p>The model ID.</p>
+    ///   - [`model_type(Option<ModelTypeEnum>)`](crate::input::UpdateModelInput::model_type): <p>The model type.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateModelInput::description): <p>The new model description.</p>
+    /// - On success, responds with [`UpdateModelOutput`](crate::output::UpdateModelOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateModelError>`](crate::error::UpdateModelError)
     pub fn update_model(&self) -> fluent_builders::UpdateModel<C, M, R> {
         fluent_builders::UpdateModel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateModelVersion` operation.
+    /// Constructs a fluent builder for the [`UpdateModelVersion`](crate::client::fluent_builders::UpdateModelVersion) operation.
     ///
-    /// See [`UpdateModelVersion`](crate::client::fluent_builders::UpdateModelVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateModelVersionInput`](crate::input::UpdateModelVersionInput) with field(s):
+    ///   - [`model_id(Option<String>)`](crate::input::UpdateModelVersionInput::model_id): <p>The model ID.</p>
+    ///   - [`model_type(Option<ModelTypeEnum>)`](crate::input::UpdateModelVersionInput::model_type): <p>The model type.</p>
+    ///   - [`major_version_number(Option<String>)`](crate::input::UpdateModelVersionInput::major_version_number): <p>The major version number.</p>
+    ///   - [`external_events_detail(Option<ExternalEventsDetail>)`](crate::input::UpdateModelVersionInput::external_events_detail): <p>The details of the external events data used for training the model version. Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
+    ///   - [`ingested_events_detail(Option<IngestedEventsDetail>)`](crate::input::UpdateModelVersionInput::ingested_events_detail): <p>The details of the ingested event used for training the model version. Required if your <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::UpdateModelVersionInput::tags): <p>A collection of key and value pairs.</p>
+    /// - On success, responds with [`UpdateModelVersionOutput`](crate::output::UpdateModelVersionOutput) with field(s):
+    ///   - [`model_id(Option<String>)`](crate::output::UpdateModelVersionOutput::model_id): <p>The model ID.</p>
+    ///   - [`model_type(Option<ModelTypeEnum>)`](crate::output::UpdateModelVersionOutput::model_type): <p>The model type.</p>
+    ///   - [`model_version_number(Option<String>)`](crate::output::UpdateModelVersionOutput::model_version_number): <p>The model version number of the model version updated.</p>
+    ///   - [`status(Option<String>)`](crate::output::UpdateModelVersionOutput::status): <p>The status of the updated model version.</p>
+    /// - On failure, responds with [`SdkError<UpdateModelVersionError>`](crate::error::UpdateModelVersionError)
     pub fn update_model_version(&self) -> fluent_builders::UpdateModelVersion<C, M, R> {
         fluent_builders::UpdateModelVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateModelVersionStatus` operation.
+    /// Constructs a fluent builder for the [`UpdateModelVersionStatus`](crate::client::fluent_builders::UpdateModelVersionStatus) operation.
     ///
-    /// See [`UpdateModelVersionStatus`](crate::client::fluent_builders::UpdateModelVersionStatus) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateModelVersionStatusInput`](crate::input::UpdateModelVersionStatusInput) with field(s):
+    ///   - [`model_id(Option<String>)`](crate::input::UpdateModelVersionStatusInput::model_id): <p>The model ID of the model version to update.</p>
+    ///   - [`model_type(Option<ModelTypeEnum>)`](crate::input::UpdateModelVersionStatusInput::model_type): <p>The model type.</p>
+    ///   - [`model_version_number(Option<String>)`](crate::input::UpdateModelVersionStatusInput::model_version_number): <p>The model version number.</p>
+    ///   - [`status(Option<ModelVersionStatus>)`](crate::input::UpdateModelVersionStatusInput::status): <p>The model version status.</p>
+    /// - On success, responds with [`UpdateModelVersionStatusOutput`](crate::output::UpdateModelVersionStatusOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateModelVersionStatusError>`](crate::error::UpdateModelVersionStatusError)
     pub fn update_model_version_status(
         &self,
     ) -> fluent_builders::UpdateModelVersionStatus<C, M, R> {
         fluent_builders::UpdateModelVersionStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateRuleMetadata` operation.
+    /// Constructs a fluent builder for the [`UpdateRuleMetadata`](crate::client::fluent_builders::UpdateRuleMetadata) operation.
     ///
-    /// See [`UpdateRuleMetadata`](crate::client::fluent_builders::UpdateRuleMetadata) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateRuleMetadataInput`](crate::input::UpdateRuleMetadataInput) with field(s):
+    ///   - [`rule(Option<Rule>)`](crate::input::UpdateRuleMetadataInput::rule): <p>The rule to update.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateRuleMetadataInput::description): <p>The rule description.</p>
+    /// - On success, responds with [`UpdateRuleMetadataOutput`](crate::output::UpdateRuleMetadataOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateRuleMetadataError>`](crate::error::UpdateRuleMetadataError)
     pub fn update_rule_metadata(&self) -> fluent_builders::UpdateRuleMetadata<C, M, R> {
         fluent_builders::UpdateRuleMetadata::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateRuleVersion` operation.
+    /// Constructs a fluent builder for the [`UpdateRuleVersion`](crate::client::fluent_builders::UpdateRuleVersion) operation.
     ///
-    /// See [`UpdateRuleVersion`](crate::client::fluent_builders::UpdateRuleVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateRuleVersionInput`](crate::input::UpdateRuleVersionInput) with field(s):
+    ///   - [`rule(Option<Rule>)`](crate::input::UpdateRuleVersionInput::rule): <p>The rule to update.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateRuleVersionInput::description): <p>The description.</p>
+    ///   - [`expression(Option<String>)`](crate::input::UpdateRuleVersionInput::expression): <p>The rule expression.</p>
+    ///   - [`language(Option<Language>)`](crate::input::UpdateRuleVersionInput::language): <p>The language.</p>
+    ///   - [`outcomes(Option<Vec<String>>)`](crate::input::UpdateRuleVersionInput::outcomes): <p>The outcomes.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::UpdateRuleVersionInput::tags): <p>The tags to assign to the rule version.</p>
+    /// - On success, responds with [`UpdateRuleVersionOutput`](crate::output::UpdateRuleVersionOutput) with field(s):
+    ///   - [`rule(Option<Rule>)`](crate::output::UpdateRuleVersionOutput::rule): <p>The new rule version that was created.</p>
+    /// - On failure, responds with [`SdkError<UpdateRuleVersionError>`](crate::error::UpdateRuleVersionError)
     pub fn update_rule_version(&self) -> fluent_builders::UpdateRuleVersion<C, M, R> {
         fluent_builders::UpdateRuleVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateVariable` operation.
+    /// Constructs a fluent builder for the [`UpdateVariable`](crate::client::fluent_builders::UpdateVariable) operation.
     ///
-    /// See [`UpdateVariable`](crate::client::fluent_builders::UpdateVariable) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateVariableInput`](crate::input::UpdateVariableInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::UpdateVariableInput::name): <p>The name of the variable.</p>
+    ///   - [`default_value(Option<String>)`](crate::input::UpdateVariableInput::default_value): <p>The new default value of the variable.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateVariableInput::description): <p>The new description.</p>
+    ///   - [`variable_type(Option<String>)`](crate::input::UpdateVariableInput::variable_type): <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.</p>
+    /// - On success, responds with [`UpdateVariableOutput`](crate::output::UpdateVariableOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateVariableError>`](crate::error::UpdateVariableError)
     pub fn update_variable(&self) -> fluent_builders::UpdateVariable<C, M, R> {
         fluent_builders::UpdateVariable::new(self.handle.clone())
     }

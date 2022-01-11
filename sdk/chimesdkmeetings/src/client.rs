@@ -83,85 +83,140 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `BatchCreateAttendee` operation.
+    /// Constructs a fluent builder for the [`BatchCreateAttendee`](crate::client::fluent_builders::BatchCreateAttendee) operation.
     ///
-    /// See [`BatchCreateAttendee`](crate::client::fluent_builders::BatchCreateAttendee) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchCreateAttendeeInput`](crate::input::BatchCreateAttendeeInput) with field(s):
+    ///   - [`meeting_id(Option<String>)`](crate::input::BatchCreateAttendeeInput::meeting_id): <p>The Amazon Chime SDK ID of the meeting to which you're adding attendees.</p>
+    ///   - [`attendees(Option<Vec<CreateAttendeeRequestItem>>)`](crate::input::BatchCreateAttendeeInput::attendees): <p>The attendee information, including attendees' IDs and join tokens.</p>
+    /// - On success, responds with [`BatchCreateAttendeeOutput`](crate::output::BatchCreateAttendeeOutput) with field(s):
+    ///   - [`attendees(Option<Vec<Attendee>>)`](crate::output::BatchCreateAttendeeOutput::attendees): <p>The attendee information, including attendees' IDs and join tokens.</p>
+    ///   - [`errors(Option<Vec<CreateAttendeeError>>)`](crate::output::BatchCreateAttendeeOutput::errors): <p>If the action fails for one or more of the attendees in the request, a list of the attendees is returned, along with error codes and error messages.</p>
+    /// - On failure, responds with [`SdkError<BatchCreateAttendeeError>`](crate::error::BatchCreateAttendeeError)
     pub fn batch_create_attendee(&self) -> fluent_builders::BatchCreateAttendee<C, M, R> {
         fluent_builders::BatchCreateAttendee::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateAttendee` operation.
+    /// Constructs a fluent builder for the [`CreateAttendee`](crate::client::fluent_builders::CreateAttendee) operation.
     ///
-    /// See [`CreateAttendee`](crate::client::fluent_builders::CreateAttendee) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateAttendeeInput`](crate::input::CreateAttendeeInput) with field(s):
+    ///   - [`meeting_id(Option<String>)`](crate::input::CreateAttendeeInput::meeting_id): <p>The unique ID of the meeting.</p>
+    ///   - [`external_user_id(Option<String>)`](crate::input::CreateAttendeeInput::external_user_id): <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
+    /// - On success, responds with [`CreateAttendeeOutput`](crate::output::CreateAttendeeOutput) with field(s):
+    ///   - [`attendee(Option<Attendee>)`](crate::output::CreateAttendeeOutput::attendee): <p>The attendee information, including attendee ID and join token.</p>
+    /// - On failure, responds with [`SdkError<CreateAttendeeError>`](crate::error::CreateAttendeeError)
     pub fn create_attendee(&self) -> fluent_builders::CreateAttendee<C, M, R> {
         fluent_builders::CreateAttendee::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateMeeting` operation.
+    /// Constructs a fluent builder for the [`CreateMeeting`](crate::client::fluent_builders::CreateMeeting) operation.
     ///
-    /// See [`CreateMeeting`](crate::client::fluent_builders::CreateMeeting) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateMeetingInput`](crate::input::CreateMeetingInput) with field(s):
+    ///   - [`client_request_token(Option<String>)`](crate::input::CreateMeetingInput::client_request_token): <p>The unique identifier for the client request. Use a different token for different meetings.</p>
+    ///   - [`media_region(Option<String>)`](crate::input::CreateMeetingInput::media_region): <p>The Region in which to create the meeting.</p>  <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
+    ///   - [`meeting_host_id(Option<String>)`](crate::input::CreateMeetingInput::meeting_host_id): <p>Reserved.</p>
+    ///   - [`external_meeting_id(Option<String>)`](crate::input::CreateMeetingInput::external_meeting_id): <p>The external meeting ID.</p>
+    ///   - [`notifications_configuration(Option<NotificationsConfiguration>)`](crate::input::CreateMeetingInput::notifications_configuration): <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
+    ///   - [`meeting_features(Option<MeetingFeaturesConfiguration>)`](crate::input::CreateMeetingInput::meeting_features): <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
+    /// - On success, responds with [`CreateMeetingOutput`](crate::output::CreateMeetingOutput) with field(s):
+    ///   - [`meeting(Option<Meeting>)`](crate::output::CreateMeetingOutput::meeting): <p>The meeting information, including the meeting ID and <code>MediaPlacement</code>.</p>
+    /// - On failure, responds with [`SdkError<CreateMeetingError>`](crate::error::CreateMeetingError)
     pub fn create_meeting(&self) -> fluent_builders::CreateMeeting<C, M, R> {
         fluent_builders::CreateMeeting::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateMeetingWithAttendees` operation.
+    /// Constructs a fluent builder for the [`CreateMeetingWithAttendees`](crate::client::fluent_builders::CreateMeetingWithAttendees) operation.
     ///
-    /// See [`CreateMeetingWithAttendees`](crate::client::fluent_builders::CreateMeetingWithAttendees) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateMeetingWithAttendeesInput`](crate::input::CreateMeetingWithAttendeesInput) with field(s):
+    ///   - [`client_request_token(Option<String>)`](crate::input::CreateMeetingWithAttendeesInput::client_request_token): <p>The unique identifier for the client request. Use a different token for different meetings.</p>
+    ///   - [`media_region(Option<String>)`](crate::input::CreateMeetingWithAttendeesInput::media_region): <p>The Region in which to create the meeting.</p>
+    ///   - [`meeting_host_id(Option<String>)`](crate::input::CreateMeetingWithAttendeesInput::meeting_host_id): <p>Reserved.</p>
+    ///   - [`external_meeting_id(Option<String>)`](crate::input::CreateMeetingWithAttendeesInput::external_meeting_id): <p>The external meeting ID.</p>
+    ///   - [`meeting_features(Option<MeetingFeaturesConfiguration>)`](crate::input::CreateMeetingWithAttendeesInput::meeting_features): <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
+    ///   - [`notifications_configuration(Option<NotificationsConfiguration>)`](crate::input::CreateMeetingWithAttendeesInput::notifications_configuration): <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
+    ///   - [`attendees(Option<Vec<CreateAttendeeRequestItem>>)`](crate::input::CreateMeetingWithAttendeesInput::attendees): <p>The attendee information, including attendees' IDs and join tokens.</p>
+    /// - On success, responds with [`CreateMeetingWithAttendeesOutput`](crate::output::CreateMeetingWithAttendeesOutput) with field(s):
+    ///   - [`meeting(Option<Meeting>)`](crate::output::CreateMeetingWithAttendeesOutput::meeting): <p>The meeting information, including the meeting ID and <code>MediaPlacement</code>.</p>
+    ///   - [`attendees(Option<Vec<Attendee>>)`](crate::output::CreateMeetingWithAttendeesOutput::attendees): <p>The attendee information, including attendees' IDs and join tokens.</p>
+    ///   - [`errors(Option<Vec<CreateAttendeeError>>)`](crate::output::CreateMeetingWithAttendeesOutput::errors): <p>If the action fails for one or more of the attendees in the request, a list of the attendees is returned, along with error codes and error messages.</p>
+    /// - On failure, responds with [`SdkError<CreateMeetingWithAttendeesError>`](crate::error::CreateMeetingWithAttendeesError)
     pub fn create_meeting_with_attendees(
         &self,
     ) -> fluent_builders::CreateMeetingWithAttendees<C, M, R> {
         fluent_builders::CreateMeetingWithAttendees::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAttendee` operation.
+    /// Constructs a fluent builder for the [`DeleteAttendee`](crate::client::fluent_builders::DeleteAttendee) operation.
     ///
-    /// See [`DeleteAttendee`](crate::client::fluent_builders::DeleteAttendee) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteAttendeeInput`](crate::input::DeleteAttendeeInput) with field(s):
+    ///   - [`meeting_id(Option<String>)`](crate::input::DeleteAttendeeInput::meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
+    ///   - [`attendee_id(Option<String>)`](crate::input::DeleteAttendeeInput::attendee_id): <p>The Amazon Chime SDK attendee ID.</p>
+    /// - On success, responds with [`DeleteAttendeeOutput`](crate::output::DeleteAttendeeOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAttendeeError>`](crate::error::DeleteAttendeeError)
     pub fn delete_attendee(&self) -> fluent_builders::DeleteAttendee<C, M, R> {
         fluent_builders::DeleteAttendee::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteMeeting` operation.
+    /// Constructs a fluent builder for the [`DeleteMeeting`](crate::client::fluent_builders::DeleteMeeting) operation.
     ///
-    /// See [`DeleteMeeting`](crate::client::fluent_builders::DeleteMeeting) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteMeetingInput`](crate::input::DeleteMeetingInput) with field(s):
+    ///   - [`meeting_id(Option<String>)`](crate::input::DeleteMeetingInput::meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
+    /// - On success, responds with [`DeleteMeetingOutput`](crate::output::DeleteMeetingOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteMeetingError>`](crate::error::DeleteMeetingError)
     pub fn delete_meeting(&self) -> fluent_builders::DeleteMeeting<C, M, R> {
         fluent_builders::DeleteMeeting::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAttendee` operation.
+    /// Constructs a fluent builder for the [`GetAttendee`](crate::client::fluent_builders::GetAttendee) operation.
     ///
-    /// See [`GetAttendee`](crate::client::fluent_builders::GetAttendee) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetAttendeeInput`](crate::input::GetAttendeeInput) with field(s):
+    ///   - [`meeting_id(Option<String>)`](crate::input::GetAttendeeInput::meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
+    ///   - [`attendee_id(Option<String>)`](crate::input::GetAttendeeInput::attendee_id): <p>The Amazon Chime SDK attendee ID.</p>
+    /// - On success, responds with [`GetAttendeeOutput`](crate::output::GetAttendeeOutput) with field(s):
+    ///   - [`attendee(Option<Attendee>)`](crate::output::GetAttendeeOutput::attendee): <p>The Amazon Chime SDK attendee information.</p>
+    /// - On failure, responds with [`SdkError<GetAttendeeError>`](crate::error::GetAttendeeError)
     pub fn get_attendee(&self) -> fluent_builders::GetAttendee<C, M, R> {
         fluent_builders::GetAttendee::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMeeting` operation.
+    /// Constructs a fluent builder for the [`GetMeeting`](crate::client::fluent_builders::GetMeeting) operation.
     ///
-    /// See [`GetMeeting`](crate::client::fluent_builders::GetMeeting) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetMeetingInput`](crate::input::GetMeetingInput) with field(s):
+    ///   - [`meeting_id(Option<String>)`](crate::input::GetMeetingInput::meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
+    /// - On success, responds with [`GetMeetingOutput`](crate::output::GetMeetingOutput) with field(s):
+    ///   - [`meeting(Option<Meeting>)`](crate::output::GetMeetingOutput::meeting): <p>The Amazon Chime SDK meeting information.</p>
+    /// - On failure, responds with [`SdkError<GetMeetingError>`](crate::error::GetMeetingError)
     pub fn get_meeting(&self) -> fluent_builders::GetMeeting<C, M, R> {
         fluent_builders::GetMeeting::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAttendees` operation.
-    ///
-    /// See [`ListAttendees`](crate::client::fluent_builders::ListAttendees) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListAttendees`](crate::client::fluent_builders::ListAttendees) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAttendees::into_paginator).
+    ///
+    /// - Takes [`ListAttendeesInput`](crate::input::ListAttendeesInput) with field(s):
+    ///   - [`meeting_id(Option<String>)`](crate::input::ListAttendeesInput::meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListAttendeesInput::next_token): <p>The token to use to retrieve the next page of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListAttendeesInput::max_results): <p>The maximum number of results to return in a single call.</p>
+    /// - On success, responds with [`ListAttendeesOutput`](crate::output::ListAttendeesOutput) with field(s):
+    ///   - [`attendees(Option<Vec<Attendee>>)`](crate::output::ListAttendeesOutput::attendees): <p>The Amazon Chime SDK attendee information.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAttendeesOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ListAttendeesError>`](crate::error::ListAttendeesError)
     pub fn list_attendees(&self) -> fluent_builders::ListAttendees<C, M, R> {
         fluent_builders::ListAttendees::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartMeetingTranscription` operation.
+    /// Constructs a fluent builder for the [`StartMeetingTranscription`](crate::client::fluent_builders::StartMeetingTranscription) operation.
     ///
-    /// See [`StartMeetingTranscription`](crate::client::fluent_builders::StartMeetingTranscription) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartMeetingTranscriptionInput`](crate::input::StartMeetingTranscriptionInput) with field(s):
+    ///   - [`meeting_id(Option<String>)`](crate::input::StartMeetingTranscriptionInput::meeting_id): <p>The unique ID of the meeting being transcribed.</p>
+    ///   - [`transcription_configuration(Option<TranscriptionConfiguration>)`](crate::input::StartMeetingTranscriptionInput::transcription_configuration): <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
+    /// - On success, responds with [`StartMeetingTranscriptionOutput`](crate::output::StartMeetingTranscriptionOutput)
+
+    /// - On failure, responds with [`SdkError<StartMeetingTranscriptionError>`](crate::error::StartMeetingTranscriptionError)
     pub fn start_meeting_transcription(
         &self,
     ) -> fluent_builders::StartMeetingTranscription<C, M, R> {
         fluent_builders::StartMeetingTranscription::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopMeetingTranscription` operation.
+    /// Constructs a fluent builder for the [`StopMeetingTranscription`](crate::client::fluent_builders::StopMeetingTranscription) operation.
     ///
-    /// See [`StopMeetingTranscription`](crate::client::fluent_builders::StopMeetingTranscription) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StopMeetingTranscriptionInput`](crate::input::StopMeetingTranscriptionInput) with field(s):
+    ///   - [`meeting_id(Option<String>)`](crate::input::StopMeetingTranscriptionInput::meeting_id): <p>The unique ID of the meeting for which you stop transcription.</p>
+    /// - On success, responds with [`StopMeetingTranscriptionOutput`](crate::output::StopMeetingTranscriptionOutput)
+
+    /// - On failure, responds with [`SdkError<StopMeetingTranscriptionError>`](crate::error::StopMeetingTranscriptionError)
     pub fn stop_meeting_transcription(&self) -> fluent_builders::StopMeetingTranscription<C, M, R> {
         fluent_builders::StopMeetingTranscription::new(self.handle.clone())
     }

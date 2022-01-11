@@ -83,370 +83,742 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AbortEnvironmentUpdate` operation.
+    /// Constructs a fluent builder for the [`AbortEnvironmentUpdate`](crate::client::fluent_builders::AbortEnvironmentUpdate) operation.
     ///
-    /// See [`AbortEnvironmentUpdate`](crate::client::fluent_builders::AbortEnvironmentUpdate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AbortEnvironmentUpdateInput`](crate::input::AbortEnvironmentUpdateInput) with field(s):
+    ///   - [`environment_id(Option<String>)`](crate::input::AbortEnvironmentUpdateInput::environment_id): <p>This specifies the ID of the environment with the in-progress update that you want to cancel.</p>
+    ///   - [`environment_name(Option<String>)`](crate::input::AbortEnvironmentUpdateInput::environment_name): <p>This specifies the name of the environment with the in-progress update that you want to cancel.</p>
+    /// - On success, responds with [`AbortEnvironmentUpdateOutput`](crate::output::AbortEnvironmentUpdateOutput)
+
+    /// - On failure, responds with [`SdkError<AbortEnvironmentUpdateError>`](crate::error::AbortEnvironmentUpdateError)
     pub fn abort_environment_update(&self) -> fluent_builders::AbortEnvironmentUpdate<C, M, R> {
         fluent_builders::AbortEnvironmentUpdate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ApplyEnvironmentManagedAction` operation.
+    /// Constructs a fluent builder for the [`ApplyEnvironmentManagedAction`](crate::client::fluent_builders::ApplyEnvironmentManagedAction) operation.
     ///
-    /// See [`ApplyEnvironmentManagedAction`](crate::client::fluent_builders::ApplyEnvironmentManagedAction) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ApplyEnvironmentManagedActionInput`](crate::input::ApplyEnvironmentManagedActionInput) with field(s):
+    ///   - [`environment_name(Option<String>)`](crate::input::ApplyEnvironmentManagedActionInput::environment_name): <p>The name of the target environment.</p>
+    ///   - [`environment_id(Option<String>)`](crate::input::ApplyEnvironmentManagedActionInput::environment_id): <p>The environment ID of the target environment.</p>
+    ///   - [`action_id(Option<String>)`](crate::input::ApplyEnvironmentManagedActionInput::action_id): <p>The action ID of the scheduled managed action to execute.</p>
+    /// - On success, responds with [`ApplyEnvironmentManagedActionOutput`](crate::output::ApplyEnvironmentManagedActionOutput) with field(s):
+    ///   - [`action_id(Option<String>)`](crate::output::ApplyEnvironmentManagedActionOutput::action_id): <p>The action ID of the managed action.</p>
+    ///   - [`action_description(Option<String>)`](crate::output::ApplyEnvironmentManagedActionOutput::action_description): <p>A description of the managed action.</p>
+    ///   - [`action_type(Option<ActionType>)`](crate::output::ApplyEnvironmentManagedActionOutput::action_type): <p>The type of managed action.</p>
+    ///   - [`status(Option<String>)`](crate::output::ApplyEnvironmentManagedActionOutput::status): <p>The status of the managed action.</p>
+    /// - On failure, responds with [`SdkError<ApplyEnvironmentManagedActionError>`](crate::error::ApplyEnvironmentManagedActionError)
     pub fn apply_environment_managed_action(
         &self,
     ) -> fluent_builders::ApplyEnvironmentManagedAction<C, M, R> {
         fluent_builders::ApplyEnvironmentManagedAction::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateEnvironmentOperationsRole` operation.
+    /// Constructs a fluent builder for the [`AssociateEnvironmentOperationsRole`](crate::client::fluent_builders::AssociateEnvironmentOperationsRole) operation.
     ///
-    /// See [`AssociateEnvironmentOperationsRole`](crate::client::fluent_builders::AssociateEnvironmentOperationsRole) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateEnvironmentOperationsRoleInput`](crate::input::AssociateEnvironmentOperationsRoleInput) with field(s):
+    ///   - [`environment_name(Option<String>)`](crate::input::AssociateEnvironmentOperationsRoleInput::environment_name): <p>The name of the environment to which to set the operations role.</p>
+    ///   - [`operations_role(Option<String>)`](crate::input::AssociateEnvironmentOperationsRoleInput::operations_role): <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role.</p>
+    /// - On success, responds with [`AssociateEnvironmentOperationsRoleOutput`](crate::output::AssociateEnvironmentOperationsRoleOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateEnvironmentOperationsRoleError>`](crate::error::AssociateEnvironmentOperationsRoleError)
     pub fn associate_environment_operations_role(
         &self,
     ) -> fluent_builders::AssociateEnvironmentOperationsRole<C, M, R> {
         fluent_builders::AssociateEnvironmentOperationsRole::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CheckDNSAvailability` operation.
+    /// Constructs a fluent builder for the [`CheckDNSAvailability`](crate::client::fluent_builders::CheckDNSAvailability) operation.
     ///
-    /// See [`CheckDNSAvailability`](crate::client::fluent_builders::CheckDNSAvailability) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CheckDnsAvailabilityInput`](crate::input::CheckDnsAvailabilityInput) with field(s):
+    ///   - [`cname_prefix(Option<String>)`](crate::input::CheckDnsAvailabilityInput::cname_prefix): <p>The prefix used when this CNAME is reserved.</p>
+    /// - On success, responds with [`CheckDnsAvailabilityOutput`](crate::output::CheckDnsAvailabilityOutput) with field(s):
+    ///   - [`available(Option<bool>)`](crate::output::CheckDnsAvailabilityOutput::available): <p>Indicates if the specified CNAME is available:</p>  <ul>   <li> <p> <code>true</code> : The CNAME is available.</p> </li>   <li> <p> <code>false</code> : The CNAME is not available.</p> </li>  </ul>
+    ///   - [`fully_qualified_cname(Option<String>)`](crate::output::CheckDnsAvailabilityOutput::fully_qualified_cname): <p>The fully qualified CNAME to reserve when <code>CreateEnvironment</code> is called with the provided prefix.</p>
+    /// - On failure, responds with [`SdkError<CheckDNSAvailabilityError>`](crate::error::CheckDNSAvailabilityError)
     pub fn check_dns_availability(&self) -> fluent_builders::CheckDNSAvailability<C, M, R> {
         fluent_builders::CheckDNSAvailability::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ComposeEnvironments` operation.
+    /// Constructs a fluent builder for the [`ComposeEnvironments`](crate::client::fluent_builders::ComposeEnvironments) operation.
     ///
-    /// See [`ComposeEnvironments`](crate::client::fluent_builders::ComposeEnvironments) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ComposeEnvironmentsInput`](crate::input::ComposeEnvironmentsInput) with field(s):
+    ///   - [`application_name(Option<String>)`](crate::input::ComposeEnvironmentsInput::application_name): <p>The name of the application to which the specified source bundles belong.</p>
+    ///   - [`group_name(Option<String>)`](crate::input::ComposeEnvironmentsInput::group_name): <p>The name of the group to which the target environments belong. Specify a group name only if the environment name defined in each target environment's manifest ends with a + (plus) character. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.</p>
+    ///   - [`version_labels(Option<Vec<String>>)`](crate::input::ComposeEnvironmentsInput::version_labels): <p>A list of version labels, specifying one or more application source bundles that belong to the target application. Each source bundle must include an environment manifest that specifies the name of the environment and the name of the solution stack to use, and optionally can specify environment links to create.</p>
+    /// - On success, responds with [`ComposeEnvironmentsOutput`](crate::output::ComposeEnvironmentsOutput) with field(s):
+    ///   - [`environments(Option<Vec<EnvironmentDescription>>)`](crate::output::ComposeEnvironmentsOutput::environments): <p> Returns an <code>EnvironmentDescription</code> list. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ComposeEnvironmentsOutput::next_token): <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
+    /// - On failure, responds with [`SdkError<ComposeEnvironmentsError>`](crate::error::ComposeEnvironmentsError)
     pub fn compose_environments(&self) -> fluent_builders::ComposeEnvironments<C, M, R> {
         fluent_builders::ComposeEnvironments::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateApplication` operation.
+    /// Constructs a fluent builder for the [`CreateApplication`](crate::client::fluent_builders::CreateApplication) operation.
     ///
-    /// See [`CreateApplication`](crate::client::fluent_builders::CreateApplication) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateApplicationInput`](crate::input::CreateApplicationInput) with field(s):
+    ///   - [`application_name(Option<String>)`](crate::input::CreateApplicationInput::application_name): <p>The name of the application. Must be unique within your account.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateApplicationInput::description): <p>Your description of the application.</p>
+    ///   - [`resource_lifecycle_config(Option<ApplicationResourceLifecycleConfig>)`](crate::input::CreateApplicationInput::resource_lifecycle_config): <p>Specifies an application resource lifecycle configuration to prevent your application from accumulating too many versions.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateApplicationInput::tags): <p>Specifies the tags applied to the application.</p>  <p>Elastic Beanstalk applies these tags only to the application. Environments that you create in the application don't inherit the tags.</p>
+    /// - On success, responds with [`CreateApplicationOutput`](crate::output::CreateApplicationOutput) with field(s):
+    ///   - [`application(Option<ApplicationDescription>)`](crate::output::CreateApplicationOutput::application): <p> The <code>ApplicationDescription</code> of the application. </p>
+    /// - On failure, responds with [`SdkError<CreateApplicationError>`](crate::error::CreateApplicationError)
     pub fn create_application(&self) -> fluent_builders::CreateApplication<C, M, R> {
         fluent_builders::CreateApplication::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateApplicationVersion` operation.
+    /// Constructs a fluent builder for the [`CreateApplicationVersion`](crate::client::fluent_builders::CreateApplicationVersion) operation.
     ///
-    /// See [`CreateApplicationVersion`](crate::client::fluent_builders::CreateApplicationVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateApplicationVersionInput`](crate::input::CreateApplicationVersionInput) with field(s):
+    ///   - [`application_name(Option<String>)`](crate::input::CreateApplicationVersionInput::application_name): <p> The name of the application. If no application is found with this name, and <code>AutoCreateApplication</code> is <code>false</code>, returns an <code>InvalidParameterValue</code> error. </p>
+    ///   - [`version_label(Option<String>)`](crate::input::CreateApplicationVersionInput::version_label): <p>A label identifying this version.</p>  <p>Constraint: Must be unique per application. If an application version already exists with this label for the specified application, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
+    ///   - [`description(Option<String>)`](crate::input::CreateApplicationVersionInput::description): <p>A description of this application version.</p>
+    ///   - [`source_build_information(Option<SourceBuildInformation>)`](crate::input::CreateApplicationVersionInput::source_build_information): <p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p>
+    ///   - [`source_bundle(Option<S3Location>)`](crate::input::CreateApplicationVersionInput::source_bundle): <p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <note>   <p>The Amazon S3 bucket must be in the same region as the environment.</p>  </note>  <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>
+    ///   - [`build_configuration(Option<BuildConfiguration>)`](crate::input::CreateApplicationVersionInput::build_configuration): <p>Settings for an AWS CodeBuild build.</p>
+    ///   - [`auto_create_application(Option<bool>)`](crate::input::CreateApplicationVersionInput::auto_create_application): <p>Set to <code>true</code> to create an application with the specified name if it doesn't already exist.</p>
+    ///   - [`process(Option<bool>)`](crate::input::CreateApplicationVersionInput::process): <p>Pre-processes and validates the environment manifest (<code>env.yaml</code>) and configuration files (<code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating configuration files can identify issues prior to deploying the application version to an environment.</p>  <p>You must turn processing on for application versions that you create using AWS CodeBuild or AWS CodeCommit. For application versions built from a source bundle in Amazon S3, processing is optional.</p> <note>   <p>The <code>Process</code> option validates Elastic Beanstalk configuration files. It doesn't validate your application's configuration files, like proxy server or Docker configuration.</p>  </note>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateApplicationVersionInput::tags): <p>Specifies the tags applied to the application version.</p>  <p>Elastic Beanstalk applies these tags only to the application version. Environments that use the application version don't inherit the tags.</p>
+    /// - On success, responds with [`CreateApplicationVersionOutput`](crate::output::CreateApplicationVersionOutput) with field(s):
+    ///   - [`application_version(Option<ApplicationVersionDescription>)`](crate::output::CreateApplicationVersionOutput::application_version): <p> The <code>ApplicationVersionDescription</code> of the application version. </p>
+    /// - On failure, responds with [`SdkError<CreateApplicationVersionError>`](crate::error::CreateApplicationVersionError)
     pub fn create_application_version(&self) -> fluent_builders::CreateApplicationVersion<C, M, R> {
         fluent_builders::CreateApplicationVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateConfigurationTemplate` operation.
+    /// Constructs a fluent builder for the [`CreateConfigurationTemplate`](crate::client::fluent_builders::CreateConfigurationTemplate) operation.
     ///
-    /// See [`CreateConfigurationTemplate`](crate::client::fluent_builders::CreateConfigurationTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateConfigurationTemplateInput`](crate::input::CreateConfigurationTemplateInput) with field(s):
+    ///   - [`application_name(Option<String>)`](crate::input::CreateConfigurationTemplateInput::application_name): <p>The name of the Elastic Beanstalk application to associate with this configuration template.</p>
+    ///   - [`template_name(Option<String>)`](crate::input::CreateConfigurationTemplateInput::template_name): <p>The name of the configuration template.</p>  <p>Constraint: This name must be unique per application.</p>
+    ///   - [`solution_stack_name(Option<String>)`](crate::input::CreateConfigurationTemplateInput::solution_stack_name): <p>The name of an Elastic Beanstalk solution stack (platform version) that this configuration uses. For example, <code>64bit Amazon Linux 2013.09 running Tomcat 7 Java 7</code>. A solution stack specifies the operating system, runtime, and application server for a configuration template. It also determines the set of configuration options as well as the possible and default values. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Supported Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>  <p>You must specify <code>SolutionStackName</code> if you don't specify <code>PlatformArn</code>, <code>EnvironmentId</code>, or <code>SourceConfiguration</code>.</p>  <p>Use the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListAvailableSolutionStacks.html"> <code>ListAvailableSolutionStacks</code> </a> API to obtain a list of available solution stacks.</p>
+    ///   - [`platform_arn(Option<String>)`](crate::input::CreateConfigurationTemplateInput::platform_arn): <p>The Amazon Resource Name (ARN) of the custom platform. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html"> Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note>   <p>If you specify <code>PlatformArn</code>, then don't specify <code>SolutionStackName</code>.</p>  </note>
+    ///   - [`source_configuration(Option<SourceConfiguration>)`](crate::input::CreateConfigurationTemplateInput::source_configuration): <p>An Elastic Beanstalk configuration template to base this one on. If specified, Elastic Beanstalk uses the configuration values from the specified configuration template to create a new configuration.</p>  <p>Values specified in <code>OptionSettings</code> override any values obtained from the <code>SourceConfiguration</code>.</p>  <p>You must specify <code>SourceConfiguration</code> if you don't specify <code>PlatformArn</code>, <code>EnvironmentId</code>, or <code>SolutionStackName</code>.</p>  <p>Constraint: If both solution stack name and source configuration are specified, the solution stack of the source configuration template must match the specified solution stack name.</p>
+    ///   - [`environment_id(Option<String>)`](crate::input::CreateConfigurationTemplateInput::environment_id): <p>The ID of an environment whose settings you want to use to create the configuration template. You must specify <code>EnvironmentId</code> if you don't specify <code>PlatformArn</code>, <code>SolutionStackName</code>, or <code>SourceConfiguration</code>.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateConfigurationTemplateInput::description): <p>An optional description for this configuration.</p>
+    ///   - [`option_settings(Option<Vec<ConfigurationOptionSetting>>)`](crate::input::CreateConfigurationTemplateInput::option_settings): <p>Option values for the Elastic Beanstalk configuration, such as the instance type. If specified, these values override the values obtained from the solution stack or the source configuration template. For a complete list of Elastic Beanstalk configuration options, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateConfigurationTemplateInput::tags): <p>Specifies the tags applied to the configuration template.</p>
+    /// - On success, responds with [`CreateConfigurationTemplateOutput`](crate::output::CreateConfigurationTemplateOutput) with field(s):
+    ///   - [`solution_stack_name(Option<String>)`](crate::output::CreateConfigurationTemplateOutput::solution_stack_name): <p>The name of the solution stack this configuration set uses.</p>
+    ///   - [`platform_arn(Option<String>)`](crate::output::CreateConfigurationTemplateOutput::platform_arn): <p>The ARN of the platform version.</p>
+    ///   - [`application_name(Option<String>)`](crate::output::CreateConfigurationTemplateOutput::application_name): <p>The name of the application associated with this configuration set.</p>
+    ///   - [`template_name(Option<String>)`](crate::output::CreateConfigurationTemplateOutput::template_name): <p> If not <code>null</code>, the name of the configuration template for this configuration set. </p>
+    ///   - [`description(Option<String>)`](crate::output::CreateConfigurationTemplateOutput::description): <p>Describes this configuration set.</p>
+    ///   - [`environment_name(Option<String>)`](crate::output::CreateConfigurationTemplateOutput::environment_name): <p> If not <code>null</code>, the name of the environment for this configuration set. </p>
+    ///   - [`deployment_status(Option<ConfigurationDeploymentStatus>)`](crate::output::CreateConfigurationTemplateOutput::deployment_status): <p> If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set: </p>  <ul>   <li> <p> <code>null</code>: This configuration is not associated with a running environment.</p> </li>   <li> <p> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying.</p> </li>   <li> <p> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p> </li>   <li> <p> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</p> </li>  </ul>
+    ///   - [`date_created(Option<DateTime>)`](crate::output::CreateConfigurationTemplateOutput::date_created): <p>The date (in UTC time) when this configuration set was created.</p>
+    ///   - [`date_updated(Option<DateTime>)`](crate::output::CreateConfigurationTemplateOutput::date_updated): <p>The date (in UTC time) when this configuration set was last modified.</p>
+    ///   - [`option_settings(Option<Vec<ConfigurationOptionSetting>>)`](crate::output::CreateConfigurationTemplateOutput::option_settings): <p>A list of the configuration options and their values in this configuration set.</p>
+    /// - On failure, responds with [`SdkError<CreateConfigurationTemplateError>`](crate::error::CreateConfigurationTemplateError)
     pub fn create_configuration_template(
         &self,
     ) -> fluent_builders::CreateConfigurationTemplate<C, M, R> {
         fluent_builders::CreateConfigurationTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateEnvironment` operation.
+    /// Constructs a fluent builder for the [`CreateEnvironment`](crate::client::fluent_builders::CreateEnvironment) operation.
     ///
-    /// See [`CreateEnvironment`](crate::client::fluent_builders::CreateEnvironment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateEnvironmentInput`](crate::input::CreateEnvironmentInput) with field(s):
+    ///   - [`application_name(Option<String>)`](crate::input::CreateEnvironmentInput::application_name): <p>The name of the application that is associated with this environment.</p>
+    ///   - [`environment_name(Option<String>)`](crate::input::CreateEnvironmentInput::environment_name): <p>A unique name for the environment.</p>  <p>Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and hyphens. It can't start or end with a hyphen. This name must be unique within a region in your account. If the specified name already exists in the region, Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>  <p>If you don't specify the <code>CNAMEPrefix</code> parameter, the environment name becomes part of the CNAME, and therefore part of the visible URL for your application.</p>
+    ///   - [`group_name(Option<String>)`](crate::input::CreateEnvironmentInput::group_name): <p>The name of the group to which the target environment belongs. Specify a group name only if the environment's name is specified in an environment manifest and not with the environment name parameter. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateEnvironmentInput::description): <p>Your description for this environment.</p>
+    ///   - [`cname_prefix(Option<String>)`](crate::input::CreateEnvironmentInput::cname_prefix): <p>If specified, the environment attempts to use this value as the prefix for the CNAME in your Elastic Beanstalk environment URL. If not specified, the CNAME is generated automatically by appending a random alphanumeric string to the environment name.</p>
+    ///   - [`tier(Option<EnvironmentTier>)`](crate::input::CreateEnvironmentInput::tier): <p>Specifies the tier to use in creating this environment. The environment tier that you choose determines whether Elastic Beanstalk provisions resources to support a web application that handles HTTP(S) requests or a web application that handles background-processing tasks.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateEnvironmentInput::tags): <p>Specifies the tags applied to resources in the environment.</p>
+    ///   - [`version_label(Option<String>)`](crate::input::CreateEnvironmentInput::version_label): <p>The name of the application version to deploy.</p>  <p>Default: If not specified, Elastic Beanstalk attempts to deploy the sample application.</p>
+    ///   - [`template_name(Option<String>)`](crate::input::CreateEnvironmentInput::template_name): <p>The name of the Elastic Beanstalk configuration template to use with the environment.</p> <note>   <p>If you specify <code>TemplateName</code>, then don't specify <code>SolutionStackName</code>.</p>  </note>
+    ///   - [`solution_stack_name(Option<String>)`](crate::input::CreateEnvironmentInput::solution_stack_name): <p>The name of an Elastic Beanstalk solution stack (platform version) to use with the environment. If specified, Elastic Beanstalk sets the configuration values to the default values associated with the specified solution stack. For a list of current solution stacks, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic Beanstalk Supported Platforms</a> in the <i>AWS Elastic Beanstalk Platforms</i> guide.</p> <note>   <p>If you specify <code>SolutionStackName</code>, don't specify <code>PlatformArn</code> or <code>TemplateName</code>.</p>  </note>
+    ///   - [`platform_arn(Option<String>)`](crate::input::CreateEnvironmentInput::platform_arn): <p>The Amazon Resource Name (ARN) of the custom platform to use with the environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note>   <p>If you specify <code>PlatformArn</code>, don't specify <code>SolutionStackName</code>.</p>  </note>
+    ///   - [`option_settings(Option<Vec<ConfigurationOptionSetting>>)`](crate::input::CreateEnvironmentInput::option_settings): <p>If specified, AWS Elastic Beanstalk sets the specified configuration options to the requested value in the configuration set for the new environment. These override the values obtained from the solution stack or the configuration template.</p>
+    ///   - [`options_to_remove(Option<Vec<OptionSpecification>>)`](crate::input::CreateEnvironmentInput::options_to_remove): <p>A list of custom user-defined configuration options to remove from the configuration set for this new environment.</p>
+    ///   - [`operations_role(Option<String>)`](crate::input::CreateEnvironmentInput::operations_role): <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role. If specified, Elastic Beanstalk uses the operations role for permissions to downstream services during this call and during subsequent calls acting on this environment. To specify an operations role, you must have the <code>iam:PassRole</code> permission for the role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+    /// - On success, responds with [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput) with field(s):
+    ///   - [`environment_name(Option<String>)`](crate::output::CreateEnvironmentOutput::environment_name): <p>The name of this environment.</p>
+    ///   - [`environment_id(Option<String>)`](crate::output::CreateEnvironmentOutput::environment_id): <p>The ID of this environment.</p>
+    ///   - [`application_name(Option<String>)`](crate::output::CreateEnvironmentOutput::application_name): <p>The name of the application associated with this environment.</p>
+    ///   - [`version_label(Option<String>)`](crate::output::CreateEnvironmentOutput::version_label): <p>The application version deployed in this environment.</p>
+    ///   - [`solution_stack_name(Option<String>)`](crate::output::CreateEnvironmentOutput::solution_stack_name): <p> The name of the <code>SolutionStack</code> deployed with this environment. </p>
+    ///   - [`platform_arn(Option<String>)`](crate::output::CreateEnvironmentOutput::platform_arn): <p>The ARN of the platform version.</p>
+    ///   - [`template_name(Option<String>)`](crate::output::CreateEnvironmentOutput::template_name): <p>The name of the configuration template used to originally launch this environment.</p>
+    ///   - [`description(Option<String>)`](crate::output::CreateEnvironmentOutput::description): <p>Describes this environment.</p>
+    ///   - [`endpoint_url(Option<String>)`](crate::output::CreateEnvironmentOutput::endpoint_url): <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For single-instance environments, the IP address of the instance.</p>
+    ///   - [`cname(Option<String>)`](crate::output::CreateEnvironmentOutput::cname): <p>The URL to the CNAME for this environment.</p>
+    ///   - [`date_created(Option<DateTime>)`](crate::output::CreateEnvironmentOutput::date_created): <p>The creation date for this environment.</p>
+    ///   - [`date_updated(Option<DateTime>)`](crate::output::CreateEnvironmentOutput::date_updated): <p>The last modified date for this environment.</p>
+    ///   - [`status(Option<EnvironmentStatus>)`](crate::output::CreateEnvironmentOutput::status): <p>The current operational status of the environment:</p>  <ul>   <li> <p> <code>Launching</code>: Environment is in the process of initial deployment.</p> </li>   <li> <p> <code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p> </li>   <li> <p> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</p> </li>   <li> <p> <code>Terminating</code>: Environment is in the shut-down process.</p> </li>   <li> <p> <code>Terminated</code>: Environment is not running.</p> </li>  </ul>
+    ///   - [`abortable_operation_in_progress(Option<bool>)`](crate::output::CreateEnvironmentOutput::abortable_operation_in_progress): <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p>  <p> <code>true:</code> There is an update in progress. </p>  <p> <code>false:</code> There are no updates currently in progress. </p>
+    ///   - [`health(Option<EnvironmentHealth>)`](crate::output::CreateEnvironmentOutput::health): <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>  <ul>   <li> <p> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p> </li>   <li> <p> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p> </li>   <li> <p> <code>Green</code>: Indicates the environment is healthy and fully functional.</p> </li>   <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li>  </ul>  <p> Default: <code>Grey</code> </p>
+    ///   - [`health_status(Option<EnvironmentHealthStatus>)`](crate::output::CreateEnvironmentOutput::health_status): <p>Returns the health status of the application running in your environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
+    ///   - [`resources(Option<EnvironmentResourcesDescription>)`](crate::output::CreateEnvironmentOutput::resources): <p>The description of the AWS resources used by this environment.</p>
+    ///   - [`tier(Option<EnvironmentTier>)`](crate::output::CreateEnvironmentOutput::tier): <p>Describes the current tier of this environment.</p>
+    ///   - [`environment_links(Option<Vec<EnvironmentLink>>)`](crate::output::CreateEnvironmentOutput::environment_links): <p>A list of links to other environments in the same group.</p>
+    ///   - [`environment_arn(Option<String>)`](crate::output::CreateEnvironmentOutput::environment_arn): <p>The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.</p>
+    ///   - [`operations_role(Option<String>)`](crate::output::CreateEnvironmentOutput::operations_role): <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+    /// - On failure, responds with [`SdkError<CreateEnvironmentError>`](crate::error::CreateEnvironmentError)
     pub fn create_environment(&self) -> fluent_builders::CreateEnvironment<C, M, R> {
         fluent_builders::CreateEnvironment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreatePlatformVersion` operation.
+    /// Constructs a fluent builder for the [`CreatePlatformVersion`](crate::client::fluent_builders::CreatePlatformVersion) operation.
     ///
-    /// See [`CreatePlatformVersion`](crate::client::fluent_builders::CreatePlatformVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreatePlatformVersionInput`](crate::input::CreatePlatformVersionInput) with field(s):
+    ///   - [`platform_name(Option<String>)`](crate::input::CreatePlatformVersionInput::platform_name): <p>The name of your custom platform.</p>
+    ///   - [`platform_version(Option<String>)`](crate::input::CreatePlatformVersionInput::platform_version): <p>The number, such as 1.0.2, for the new platform version.</p>
+    ///   - [`platform_definition_bundle(Option<S3Location>)`](crate::input::CreatePlatformVersionInput::platform_definition_bundle): <p>The location of the platform definition archive in Amazon S3.</p>
+    ///   - [`environment_name(Option<String>)`](crate::input::CreatePlatformVersionInput::environment_name): <p>The name of the builder environment.</p>
+    ///   - [`option_settings(Option<Vec<ConfigurationOptionSetting>>)`](crate::input::CreatePlatformVersionInput::option_settings): <p>The configuration option settings to apply to the builder environment.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreatePlatformVersionInput::tags): <p>Specifies the tags applied to the new platform version.</p>  <p>Elastic Beanstalk applies these tags only to the platform version. Environments that you create using the platform version don't inherit the tags.</p>
+    /// - On success, responds with [`CreatePlatformVersionOutput`](crate::output::CreatePlatformVersionOutput) with field(s):
+    ///   - [`platform_summary(Option<PlatformSummary>)`](crate::output::CreatePlatformVersionOutput::platform_summary): <p>Detailed information about the new version of the custom platform.</p>
+    ///   - [`builder_value(Option<Builder>)`](crate::output::CreatePlatformVersionOutput::builder_value): <p>The builder used to create the custom platform.</p>
+    /// - On failure, responds with [`SdkError<CreatePlatformVersionError>`](crate::error::CreatePlatformVersionError)
     pub fn create_platform_version(&self) -> fluent_builders::CreatePlatformVersion<C, M, R> {
         fluent_builders::CreatePlatformVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateStorageLocation` operation.
+    /// Constructs a fluent builder for the [`CreateStorageLocation`](crate::client::fluent_builders::CreateStorageLocation) operation.
     ///
-    /// See [`CreateStorageLocation`](crate::client::fluent_builders::CreateStorageLocation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateStorageLocationInput`](crate::input::CreateStorageLocationInput)
+
+    /// - On success, responds with [`CreateStorageLocationOutput`](crate::output::CreateStorageLocationOutput) with field(s):
+    ///   - [`s3_bucket(Option<String>)`](crate::output::CreateStorageLocationOutput::s3_bucket): <p>The name of the Amazon S3 bucket created.</p>
+    /// - On failure, responds with [`SdkError<CreateStorageLocationError>`](crate::error::CreateStorageLocationError)
     pub fn create_storage_location(&self) -> fluent_builders::CreateStorageLocation<C, M, R> {
         fluent_builders::CreateStorageLocation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteApplication` operation.
+    /// Constructs a fluent builder for the [`DeleteApplication`](crate::client::fluent_builders::DeleteApplication) operation.
     ///
-    /// See [`DeleteApplication`](crate::client::fluent_builders::DeleteApplication) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteApplicationInput`](crate::input::DeleteApplicationInput) with field(s):
+    ///   - [`application_name(Option<String>)`](crate::input::DeleteApplicationInput::application_name): <p>The name of the application to delete.</p>
+    ///   - [`terminate_env_by_force(Option<bool>)`](crate::input::DeleteApplicationInput::terminate_env_by_force): <p>When set to true, running environments will be terminated before deleting the application.</p>
+    /// - On success, responds with [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteApplicationError>`](crate::error::DeleteApplicationError)
     pub fn delete_application(&self) -> fluent_builders::DeleteApplication<C, M, R> {
         fluent_builders::DeleteApplication::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteApplicationVersion` operation.
+    /// Constructs a fluent builder for the [`DeleteApplicationVersion`](crate::client::fluent_builders::DeleteApplicationVersion) operation.
     ///
-    /// See [`DeleteApplicationVersion`](crate::client::fluent_builders::DeleteApplicationVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteApplicationVersionInput`](crate::input::DeleteApplicationVersionInput) with field(s):
+    ///   - [`application_name(Option<String>)`](crate::input::DeleteApplicationVersionInput::application_name): <p>The name of the application to which the version belongs.</p>
+    ///   - [`version_label(Option<String>)`](crate::input::DeleteApplicationVersionInput::version_label): <p>The label of the version to delete.</p>
+    ///   - [`delete_source_bundle(Option<bool>)`](crate::input::DeleteApplicationVersionInput::delete_source_bundle): <p>Set to <code>true</code> to delete the source bundle from your storage bucket. Otherwise, the application version is deleted only from Elastic Beanstalk and the source bundle remains in Amazon S3.</p>
+    /// - On success, responds with [`DeleteApplicationVersionOutput`](crate::output::DeleteApplicationVersionOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteApplicationVersionError>`](crate::error::DeleteApplicationVersionError)
     pub fn delete_application_version(&self) -> fluent_builders::DeleteApplicationVersion<C, M, R> {
         fluent_builders::DeleteApplicationVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteConfigurationTemplate` operation.
+    /// Constructs a fluent builder for the [`DeleteConfigurationTemplate`](crate::client::fluent_builders::DeleteConfigurationTemplate) operation.
     ///
-    /// See [`DeleteConfigurationTemplate`](crate::client::fluent_builders::DeleteConfigurationTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteConfigurationTemplateInput`](crate::input::DeleteConfigurationTemplateInput) with field(s):
+    ///   - [`application_name(Option<String>)`](crate::input::DeleteConfigurationTemplateInput::application_name): <p>The name of the application to delete the configuration template from.</p>
+    ///   - [`template_name(Option<String>)`](crate::input::DeleteConfigurationTemplateInput::template_name): <p>The name of the configuration template to delete.</p>
+    /// - On success, responds with [`DeleteConfigurationTemplateOutput`](crate::output::DeleteConfigurationTemplateOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteConfigurationTemplateError>`](crate::error::DeleteConfigurationTemplateError)
     pub fn delete_configuration_template(
         &self,
     ) -> fluent_builders::DeleteConfigurationTemplate<C, M, R> {
         fluent_builders::DeleteConfigurationTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteEnvironmentConfiguration` operation.
+    /// Constructs a fluent builder for the [`DeleteEnvironmentConfiguration`](crate::client::fluent_builders::DeleteEnvironmentConfiguration) operation.
     ///
-    /// See [`DeleteEnvironmentConfiguration`](crate::client::fluent_builders::DeleteEnvironmentConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteEnvironmentConfigurationInput`](crate::input::DeleteEnvironmentConfigurationInput) with field(s):
+    ///   - [`application_name(Option<String>)`](crate::input::DeleteEnvironmentConfigurationInput::application_name): <p>The name of the application the environment is associated with.</p>
+    ///   - [`environment_name(Option<String>)`](crate::input::DeleteEnvironmentConfigurationInput::environment_name): <p>The name of the environment to delete the draft configuration from.</p>
+    /// - On success, responds with [`DeleteEnvironmentConfigurationOutput`](crate::output::DeleteEnvironmentConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteEnvironmentConfigurationError>`](crate::error::DeleteEnvironmentConfigurationError)
     pub fn delete_environment_configuration(
         &self,
     ) -> fluent_builders::DeleteEnvironmentConfiguration<C, M, R> {
         fluent_builders::DeleteEnvironmentConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeletePlatformVersion` operation.
+    /// Constructs a fluent builder for the [`DeletePlatformVersion`](crate::client::fluent_builders::DeletePlatformVersion) operation.
     ///
-    /// See [`DeletePlatformVersion`](crate::client::fluent_builders::DeletePlatformVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeletePlatformVersionInput`](crate::input::DeletePlatformVersionInput) with field(s):
+    ///   - [`platform_arn(Option<String>)`](crate::input::DeletePlatformVersionInput::platform_arn): <p>The ARN of the version of the custom platform.</p>
+    /// - On success, responds with [`DeletePlatformVersionOutput`](crate::output::DeletePlatformVersionOutput) with field(s):
+    ///   - [`platform_summary(Option<PlatformSummary>)`](crate::output::DeletePlatformVersionOutput::platform_summary): <p>Detailed information about the version of the custom platform.</p>
+    /// - On failure, responds with [`SdkError<DeletePlatformVersionError>`](crate::error::DeletePlatformVersionError)
     pub fn delete_platform_version(&self) -> fluent_builders::DeletePlatformVersion<C, M, R> {
         fluent_builders::DeletePlatformVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAccountAttributes` operation.
+    /// Constructs a fluent builder for the [`DescribeAccountAttributes`](crate::client::fluent_builders::DescribeAccountAttributes) operation.
     ///
-    /// See [`DescribeAccountAttributes`](crate::client::fluent_builders::DescribeAccountAttributes) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeAccountAttributesInput`](crate::input::DescribeAccountAttributesInput)
+
+    /// - On success, responds with [`DescribeAccountAttributesOutput`](crate::output::DescribeAccountAttributesOutput) with field(s):
+    ///   - [`resource_quotas(Option<ResourceQuotas>)`](crate::output::DescribeAccountAttributesOutput::resource_quotas): <p>The Elastic Beanstalk resource quotas associated with the calling AWS account.</p>
+    /// - On failure, responds with [`SdkError<DescribeAccountAttributesError>`](crate::error::DescribeAccountAttributesError)
     pub fn describe_account_attributes(
         &self,
     ) -> fluent_builders::DescribeAccountAttributes<C, M, R> {
         fluent_builders::DescribeAccountAttributes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeApplications` operation.
+    /// Constructs a fluent builder for the [`DescribeApplications`](crate::client::fluent_builders::DescribeApplications) operation.
     ///
-    /// See [`DescribeApplications`](crate::client::fluent_builders::DescribeApplications) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeApplicationsInput`](crate::input::DescribeApplicationsInput) with field(s):
+    ///   - [`application_names(Option<Vec<String>>)`](crate::input::DescribeApplicationsInput::application_names): <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include those with the specified names.</p>
+    /// - On success, responds with [`DescribeApplicationsOutput`](crate::output::DescribeApplicationsOutput) with field(s):
+    ///   - [`applications(Option<Vec<ApplicationDescription>>)`](crate::output::DescribeApplicationsOutput::applications): <p>This parameter contains a list of <code>ApplicationDescription</code>.</p>
+    /// - On failure, responds with [`SdkError<DescribeApplicationsError>`](crate::error::DescribeApplicationsError)
     pub fn describe_applications(&self) -> fluent_builders::DescribeApplications<C, M, R> {
         fluent_builders::DescribeApplications::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeApplicationVersions` operation.
+    /// Constructs a fluent builder for the [`DescribeApplicationVersions`](crate::client::fluent_builders::DescribeApplicationVersions) operation.
     ///
-    /// See [`DescribeApplicationVersions`](crate::client::fluent_builders::DescribeApplicationVersions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeApplicationVersionsInput`](crate::input::DescribeApplicationVersionsInput) with field(s):
+    ///   - [`application_name(Option<String>)`](crate::input::DescribeApplicationVersionsInput::application_name): <p>Specify an application name to show only application versions for that application.</p>
+    ///   - [`version_labels(Option<Vec<String>>)`](crate::input::DescribeApplicationVersionsInput::version_labels): <p>Specify a version label to show a specific application version.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeApplicationVersionsInput::max_records): <p>For a paginated request. Specify a maximum number of application versions to include in each response.</p>  <p>If no <code>MaxRecords</code> is specified, all available application versions are retrieved in a single response.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeApplicationVersionsInput::next_token): <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p>  <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
+    /// - On success, responds with [`DescribeApplicationVersionsOutput`](crate::output::DescribeApplicationVersionsOutput) with field(s):
+    ///   - [`application_versions(Option<Vec<ApplicationVersionDescription>>)`](crate::output::DescribeApplicationVersionsOutput::application_versions): <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of creation.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeApplicationVersionsOutput::next_token): <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
+    /// - On failure, responds with [`SdkError<DescribeApplicationVersionsError>`](crate::error::DescribeApplicationVersionsError)
     pub fn describe_application_versions(
         &self,
     ) -> fluent_builders::DescribeApplicationVersions<C, M, R> {
         fluent_builders::DescribeApplicationVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeConfigurationOptions` operation.
+    /// Constructs a fluent builder for the [`DescribeConfigurationOptions`](crate::client::fluent_builders::DescribeConfigurationOptions) operation.
     ///
-    /// See [`DescribeConfigurationOptions`](crate::client::fluent_builders::DescribeConfigurationOptions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeConfigurationOptionsInput`](crate::input::DescribeConfigurationOptionsInput) with field(s):
+    ///   - [`application_name(Option<String>)`](crate::input::DescribeConfigurationOptionsInput::application_name): <p>The name of the application associated with the configuration template or environment. Only needed if you want to describe the configuration options associated with either the configuration template or environment.</p>
+    ///   - [`template_name(Option<String>)`](crate::input::DescribeConfigurationOptionsInput::template_name): <p>The name of the configuration template whose configuration options you want to describe.</p>
+    ///   - [`environment_name(Option<String>)`](crate::input::DescribeConfigurationOptionsInput::environment_name): <p>The name of the environment whose configuration options you want to describe.</p>
+    ///   - [`solution_stack_name(Option<String>)`](crate::input::DescribeConfigurationOptionsInput::solution_stack_name): <p>The name of the solution stack whose configuration options you want to describe.</p>
+    ///   - [`platform_arn(Option<String>)`](crate::input::DescribeConfigurationOptionsInput::platform_arn): <p>The ARN of the custom platform.</p>
+    ///   - [`options(Option<Vec<OptionSpecification>>)`](crate::input::DescribeConfigurationOptionsInput::options): <p>If specified, restricts the descriptions to only the specified options.</p>
+    /// - On success, responds with [`DescribeConfigurationOptionsOutput`](crate::output::DescribeConfigurationOptionsOutput) with field(s):
+    ///   - [`solution_stack_name(Option<String>)`](crate::output::DescribeConfigurationOptionsOutput::solution_stack_name): <p>The name of the solution stack these configuration options belong to.</p>
+    ///   - [`platform_arn(Option<String>)`](crate::output::DescribeConfigurationOptionsOutput::platform_arn): <p>The ARN of the platform version.</p>
+    ///   - [`options(Option<Vec<ConfigurationOptionDescription>>)`](crate::output::DescribeConfigurationOptionsOutput::options): <p> A list of <code>ConfigurationOptionDescription</code>. </p>
+    /// - On failure, responds with [`SdkError<DescribeConfigurationOptionsError>`](crate::error::DescribeConfigurationOptionsError)
     pub fn describe_configuration_options(
         &self,
     ) -> fluent_builders::DescribeConfigurationOptions<C, M, R> {
         fluent_builders::DescribeConfigurationOptions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeConfigurationSettings` operation.
+    /// Constructs a fluent builder for the [`DescribeConfigurationSettings`](crate::client::fluent_builders::DescribeConfigurationSettings) operation.
     ///
-    /// See [`DescribeConfigurationSettings`](crate::client::fluent_builders::DescribeConfigurationSettings) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeConfigurationSettingsInput`](crate::input::DescribeConfigurationSettingsInput) with field(s):
+    ///   - [`application_name(Option<String>)`](crate::input::DescribeConfigurationSettingsInput::application_name): <p>The application for the environment or configuration template.</p>
+    ///   - [`template_name(Option<String>)`](crate::input::DescribeConfigurationSettingsInput::template_name): <p>The name of the configuration template to describe.</p>  <p> Conditional: You must specify either this parameter or an EnvironmentName, but not both. If you specify both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do not specify either, AWS Elastic Beanstalk returns a <code>MissingRequiredParameter</code> error. </p>
+    ///   - [`environment_name(Option<String>)`](crate::input::DescribeConfigurationSettingsInput::environment_name): <p>The name of the environment to describe.</p>  <p> Condition: You must specify either this or a TemplateName, but not both. If you specify both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    /// - On success, responds with [`DescribeConfigurationSettingsOutput`](crate::output::DescribeConfigurationSettingsOutput) with field(s):
+    ///   - [`configuration_settings(Option<Vec<ConfigurationSettingsDescription>>)`](crate::output::DescribeConfigurationSettingsOutput::configuration_settings): <p> A list of <code>ConfigurationSettingsDescription</code>. </p>
+    /// - On failure, responds with [`SdkError<DescribeConfigurationSettingsError>`](crate::error::DescribeConfigurationSettingsError)
     pub fn describe_configuration_settings(
         &self,
     ) -> fluent_builders::DescribeConfigurationSettings<C, M, R> {
         fluent_builders::DescribeConfigurationSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEnvironmentHealth` operation.
+    /// Constructs a fluent builder for the [`DescribeEnvironmentHealth`](crate::client::fluent_builders::DescribeEnvironmentHealth) operation.
     ///
-    /// See [`DescribeEnvironmentHealth`](crate::client::fluent_builders::DescribeEnvironmentHealth) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeEnvironmentHealthInput`](crate::input::DescribeEnvironmentHealthInput) with field(s):
+    ///   - [`environment_name(Option<String>)`](crate::input::DescribeEnvironmentHealthInput::environment_name): <p>Specify the environment by name.</p>  <p>You must specify either this or an EnvironmentName, or both.</p>
+    ///   - [`environment_id(Option<String>)`](crate::input::DescribeEnvironmentHealthInput::environment_id): <p>Specify the environment by ID.</p>  <p>You must specify either this or an EnvironmentName, or both.</p>
+    ///   - [`attribute_names(Option<Vec<EnvironmentHealthAttribute>>)`](crate::input::DescribeEnvironmentHealthInput::attribute_names): <p>Specify the response elements to return. To retrieve all attributes, set to <code>All</code>. If no attribute names are specified, returns the name of the environment.</p>
+    /// - On success, responds with [`DescribeEnvironmentHealthOutput`](crate::output::DescribeEnvironmentHealthOutput) with field(s):
+    ///   - [`environment_name(Option<String>)`](crate::output::DescribeEnvironmentHealthOutput::environment_name): <p>The environment's name.</p>
+    ///   - [`health_status(Option<String>)`](crate::output::DescribeEnvironmentHealthOutput::health_status): <p>The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health status</a> of the environment. For example, <code>Ok</code>.</p>
+    ///   - [`status(Option<EnvironmentHealth>)`](crate::output::DescribeEnvironmentHealthOutput::status): <p>The environment's operational status. <code>Ready</code>, <code>Launching</code>, <code>Updating</code>, <code>Terminating</code>, or <code>Terminated</code>.</p>
+    ///   - [`color(Option<String>)`](crate::output::DescribeEnvironmentHealthOutput::color): <p>The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health color</a> of the environment.</p>
+    ///   - [`causes(Option<Vec<String>>)`](crate::output::DescribeEnvironmentHealthOutput::causes): <p>Descriptions of the data that contributed to the environment's current health status.</p>
+    ///   - [`application_metrics(Option<ApplicationMetrics>)`](crate::output::DescribeEnvironmentHealthOutput::application_metrics): <p>Application request metrics for the environment.</p>
+    ///   - [`instances_health(Option<InstanceHealthSummary>)`](crate::output::DescribeEnvironmentHealthOutput::instances_health): <p>Summary health information for the instances in the environment.</p>
+    ///   - [`refreshed_at(Option<DateTime>)`](crate::output::DescribeEnvironmentHealthOutput::refreshed_at): <p>The date and time that the health information was retrieved.</p>
+    /// - On failure, responds with [`SdkError<DescribeEnvironmentHealthError>`](crate::error::DescribeEnvironmentHealthError)
     pub fn describe_environment_health(
         &self,
     ) -> fluent_builders::DescribeEnvironmentHealth<C, M, R> {
         fluent_builders::DescribeEnvironmentHealth::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEnvironmentManagedActionHistory` operation.
-    ///
-    /// See [`DescribeEnvironmentManagedActionHistory`](crate::client::fluent_builders::DescribeEnvironmentManagedActionHistory) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeEnvironmentManagedActionHistory`](crate::client::fluent_builders::DescribeEnvironmentManagedActionHistory) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeEnvironmentManagedActionHistory::into_paginator).
+    ///
+    /// - Takes [`DescribeEnvironmentManagedActionHistoryInput`](crate::input::DescribeEnvironmentManagedActionHistoryInput) with field(s):
+    ///   - [`environment_id(Option<String>)`](crate::input::DescribeEnvironmentManagedActionHistoryInput::environment_id): <p>The environment ID of the target environment.</p>
+    ///   - [`environment_name(Option<String>)`](crate::input::DescribeEnvironmentManagedActionHistoryInput::environment_name): <p>The name of the target environment.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeEnvironmentManagedActionHistoryInput::next_token): <p>The pagination token returned by a previous request.</p>
+    ///   - [`max_items(Option<i32>)`](crate::input::DescribeEnvironmentManagedActionHistoryInput::max_items): <p>The maximum number of items to return for a single request.</p>
+    /// - On success, responds with [`DescribeEnvironmentManagedActionHistoryOutput`](crate::output::DescribeEnvironmentManagedActionHistoryOutput) with field(s):
+    ///   - [`managed_action_history_items(Option<Vec<ManagedActionHistoryItem>>)`](crate::output::DescribeEnvironmentManagedActionHistoryOutput::managed_action_history_items): <p>A list of completed and failed managed actions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeEnvironmentManagedActionHistoryOutput::next_token): <p>A pagination token that you pass to <code>DescribeEnvironmentManagedActionHistory</code> to get the next page of results.</p>
+    /// - On failure, responds with [`SdkError<DescribeEnvironmentManagedActionHistoryError>`](crate::error::DescribeEnvironmentManagedActionHistoryError)
     pub fn describe_environment_managed_action_history(
         &self,
     ) -> fluent_builders::DescribeEnvironmentManagedActionHistory<C, M, R> {
         fluent_builders::DescribeEnvironmentManagedActionHistory::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEnvironmentManagedActions` operation.
+    /// Constructs a fluent builder for the [`DescribeEnvironmentManagedActions`](crate::client::fluent_builders::DescribeEnvironmentManagedActions) operation.
     ///
-    /// See [`DescribeEnvironmentManagedActions`](crate::client::fluent_builders::DescribeEnvironmentManagedActions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeEnvironmentManagedActionsInput`](crate::input::DescribeEnvironmentManagedActionsInput) with field(s):
+    ///   - [`environment_name(Option<String>)`](crate::input::DescribeEnvironmentManagedActionsInput::environment_name): <p>The name of the target environment.</p>
+    ///   - [`environment_id(Option<String>)`](crate::input::DescribeEnvironmentManagedActionsInput::environment_id): <p>The environment ID of the target environment.</p>
+    ///   - [`status(Option<ActionStatus>)`](crate::input::DescribeEnvironmentManagedActionsInput::status): <p>To show only actions with a particular status, specify a status.</p>
+    /// - On success, responds with [`DescribeEnvironmentManagedActionsOutput`](crate::output::DescribeEnvironmentManagedActionsOutput) with field(s):
+    ///   - [`managed_actions(Option<Vec<ManagedAction>>)`](crate::output::DescribeEnvironmentManagedActionsOutput::managed_actions): <p>A list of upcoming and in-progress managed actions.</p>
+    /// - On failure, responds with [`SdkError<DescribeEnvironmentManagedActionsError>`](crate::error::DescribeEnvironmentManagedActionsError)
     pub fn describe_environment_managed_actions(
         &self,
     ) -> fluent_builders::DescribeEnvironmentManagedActions<C, M, R> {
         fluent_builders::DescribeEnvironmentManagedActions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEnvironmentResources` operation.
+    /// Constructs a fluent builder for the [`DescribeEnvironmentResources`](crate::client::fluent_builders::DescribeEnvironmentResources) operation.
     ///
-    /// See [`DescribeEnvironmentResources`](crate::client::fluent_builders::DescribeEnvironmentResources) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeEnvironmentResourcesInput`](crate::input::DescribeEnvironmentResourcesInput) with field(s):
+    ///   - [`environment_id(Option<String>)`](crate::input::DescribeEnvironmentResourcesInput::environment_id): <p>The ID of the environment to retrieve AWS resource usage data.</p>  <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    ///   - [`environment_name(Option<String>)`](crate::input::DescribeEnvironmentResourcesInput::environment_name): <p>The name of the environment to retrieve AWS resource usage data.</p>  <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    /// - On success, responds with [`DescribeEnvironmentResourcesOutput`](crate::output::DescribeEnvironmentResourcesOutput) with field(s):
+    ///   - [`environment_resources(Option<EnvironmentResourceDescription>)`](crate::output::DescribeEnvironmentResourcesOutput::environment_resources): <p> A list of <code>EnvironmentResourceDescription</code>. </p>
+    /// - On failure, responds with [`SdkError<DescribeEnvironmentResourcesError>`](crate::error::DescribeEnvironmentResourcesError)
     pub fn describe_environment_resources(
         &self,
     ) -> fluent_builders::DescribeEnvironmentResources<C, M, R> {
         fluent_builders::DescribeEnvironmentResources::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEnvironments` operation.
+    /// Constructs a fluent builder for the [`DescribeEnvironments`](crate::client::fluent_builders::DescribeEnvironments) operation.
     ///
-    /// See [`DescribeEnvironments`](crate::client::fluent_builders::DescribeEnvironments) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeEnvironmentsInput`](crate::input::DescribeEnvironmentsInput) with field(s):
+    ///   - [`application_name(Option<String>)`](crate::input::DescribeEnvironmentsInput::application_name): <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application.</p>
+    ///   - [`version_label(Option<String>)`](crate::input::DescribeEnvironmentsInput::version_label): <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application version.</p>
+    ///   - [`environment_ids(Option<Vec<String>>)`](crate::input::DescribeEnvironmentsInput::environment_ids): <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified IDs.</p>
+    ///   - [`environment_names(Option<Vec<String>>)`](crate::input::DescribeEnvironmentsInput::environment_names): <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified names.</p>
+    ///   - [`include_deleted(Option<bool>)`](crate::input::DescribeEnvironmentsInput::include_deleted): <p>Indicates whether to include deleted environments:</p>  <p> <code>true</code>: Environments that have been deleted after <code>IncludedDeletedBackTo</code> are displayed.</p>  <p> <code>false</code>: Do not include deleted environments.</p>
+    ///   - [`included_deleted_back_to(Option<DateTime>)`](crate::input::DescribeEnvironmentsInput::included_deleted_back_to): <p> If specified when <code>IncludeDeleted</code> is set to <code>true</code>, then environments deleted after this date are displayed. </p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeEnvironmentsInput::max_records): <p>For a paginated request. Specify a maximum number of environments to include in each response.</p>  <p>If no <code>MaxRecords</code> is specified, all available environments are retrieved in a single response.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeEnvironmentsInput::next_token): <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p>  <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
+    /// - On success, responds with [`DescribeEnvironmentsOutput`](crate::output::DescribeEnvironmentsOutput) with field(s):
+    ///   - [`environments(Option<Vec<EnvironmentDescription>>)`](crate::output::DescribeEnvironmentsOutput::environments): <p> Returns an <code>EnvironmentDescription</code> list. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeEnvironmentsOutput::next_token): <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
+    /// - On failure, responds with [`SdkError<DescribeEnvironmentsError>`](crate::error::DescribeEnvironmentsError)
     pub fn describe_environments(&self) -> fluent_builders::DescribeEnvironments<C, M, R> {
         fluent_builders::DescribeEnvironments::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEvents` operation.
-    ///
-    /// See [`DescribeEvents`](crate::client::fluent_builders::DescribeEvents) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeEvents`](crate::client::fluent_builders::DescribeEvents) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeEvents::into_paginator).
+    ///
+    /// - Takes [`DescribeEventsInput`](crate::input::DescribeEventsInput) with field(s):
+    ///   - [`application_name(Option<String>)`](crate::input::DescribeEventsInput::application_name): <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those associated with this application.</p>
+    ///   - [`version_label(Option<String>)`](crate::input::DescribeEventsInput::version_label): <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this application version.</p>
+    ///   - [`template_name(Option<String>)`](crate::input::DescribeEventsInput::template_name): <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that are associated with this environment configuration.</p>
+    ///   - [`environment_id(Option<String>)`](crate::input::DescribeEventsInput::environment_id): <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this environment.</p>
+    ///   - [`environment_name(Option<String>)`](crate::input::DescribeEventsInput::environment_name): <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this environment.</p>
+    ///   - [`platform_arn(Option<String>)`](crate::input::DescribeEventsInput::platform_arn): <p>The ARN of a custom platform version. If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this custom platform version.</p>
+    ///   - [`request_id(Option<String>)`](crate::input::DescribeEventsInput::request_id): <p>If specified, AWS Elastic Beanstalk restricts the described events to include only those associated with this request ID.</p>
+    ///   - [`severity(Option<EventSeverity>)`](crate::input::DescribeEventsInput::severity): <p>If specified, limits the events returned from this call to include only those with the specified severity or higher.</p>
+    ///   - [`start_time(Option<DateTime>)`](crate::input::DescribeEventsInput::start_time): <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that occur on or after this time.</p>
+    ///   - [`end_time(Option<DateTime>)`](crate::input::DescribeEventsInput::end_time): <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that occur up to, but not including, the <code>EndTime</code>. </p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeEventsInput::max_records): <p>Specifies the maximum number of events that can be returned, beginning with the most recent event.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeEventsInput::next_token): <p>Pagination token. If specified, the events return the next batch of results.</p>
+    /// - On success, responds with [`DescribeEventsOutput`](crate::output::DescribeEventsOutput) with field(s):
+    ///   - [`events(Option<Vec<EventDescription>>)`](crate::output::DescribeEventsOutput::events): <p> A list of <code>EventDescription</code>. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeEventsOutput::next_token): <p> If returned, this indicates that there are more results to obtain. Use this token in the next <code>DescribeEvents</code> call to get the next batch of events. </p>
+    /// - On failure, responds with [`SdkError<DescribeEventsError>`](crate::error::DescribeEventsError)
     pub fn describe_events(&self) -> fluent_builders::DescribeEvents<C, M, R> {
         fluent_builders::DescribeEvents::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeInstancesHealth` operation.
+    /// Constructs a fluent builder for the [`DescribeInstancesHealth`](crate::client::fluent_builders::DescribeInstancesHealth) operation.
     ///
-    /// See [`DescribeInstancesHealth`](crate::client::fluent_builders::DescribeInstancesHealth) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeInstancesHealthInput`](crate::input::DescribeInstancesHealthInput) with field(s):
+    ///   - [`environment_name(Option<String>)`](crate::input::DescribeInstancesHealthInput::environment_name): <p>Specify the AWS Elastic Beanstalk environment by name.</p>
+    ///   - [`environment_id(Option<String>)`](crate::input::DescribeInstancesHealthInput::environment_id): <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
+    ///   - [`attribute_names(Option<Vec<InstancesHealthAttribute>>)`](crate::input::DescribeInstancesHealthInput::attribute_names): <p>Specifies the response elements you wish to receive. To retrieve all attributes, set to <code>All</code>. If no attribute names are specified, returns a list of instances.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeInstancesHealthInput::next_token): <p>Specify the pagination token returned by a previous call.</p>
+    /// - On success, responds with [`DescribeInstancesHealthOutput`](crate::output::DescribeInstancesHealthOutput) with field(s):
+    ///   - [`instance_health_list(Option<Vec<SingleInstanceHealth>>)`](crate::output::DescribeInstancesHealthOutput::instance_health_list): <p>Detailed health information about each instance.</p>  <p>The output differs slightly between Linux and Windows environments. There is a difference in the members that are supported under the <code>   <cpuutilization></cpuutilization></code> type.</p>
+    ///   - [`refreshed_at(Option<DateTime>)`](crate::output::DescribeInstancesHealthOutput::refreshed_at): <p>The date and time that the health information was retrieved.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeInstancesHealthOutput::next_token): <p>Pagination token for the next page of results, if available.</p>
+    /// - On failure, responds with [`SdkError<DescribeInstancesHealthError>`](crate::error::DescribeInstancesHealthError)
     pub fn describe_instances_health(&self) -> fluent_builders::DescribeInstancesHealth<C, M, R> {
         fluent_builders::DescribeInstancesHealth::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribePlatformVersion` operation.
+    /// Constructs a fluent builder for the [`DescribePlatformVersion`](crate::client::fluent_builders::DescribePlatformVersion) operation.
     ///
-    /// See [`DescribePlatformVersion`](crate::client::fluent_builders::DescribePlatformVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribePlatformVersionInput`](crate::input::DescribePlatformVersionInput) with field(s):
+    ///   - [`platform_arn(Option<String>)`](crate::input::DescribePlatformVersionInput::platform_arn): <p>The ARN of the platform version.</p>
+    /// - On success, responds with [`DescribePlatformVersionOutput`](crate::output::DescribePlatformVersionOutput) with field(s):
+    ///   - [`platform_description(Option<PlatformDescription>)`](crate::output::DescribePlatformVersionOutput::platform_description): <p>Detailed information about the platform version.</p>
+    /// - On failure, responds with [`SdkError<DescribePlatformVersionError>`](crate::error::DescribePlatformVersionError)
     pub fn describe_platform_version(&self) -> fluent_builders::DescribePlatformVersion<C, M, R> {
         fluent_builders::DescribePlatformVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateEnvironmentOperationsRole` operation.
+    /// Constructs a fluent builder for the [`DisassociateEnvironmentOperationsRole`](crate::client::fluent_builders::DisassociateEnvironmentOperationsRole) operation.
     ///
-    /// See [`DisassociateEnvironmentOperationsRole`](crate::client::fluent_builders::DisassociateEnvironmentOperationsRole) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateEnvironmentOperationsRoleInput`](crate::input::DisassociateEnvironmentOperationsRoleInput) with field(s):
+    ///   - [`environment_name(Option<String>)`](crate::input::DisassociateEnvironmentOperationsRoleInput::environment_name): <p>The name of the environment from which to disassociate the operations role.</p>
+    /// - On success, responds with [`DisassociateEnvironmentOperationsRoleOutput`](crate::output::DisassociateEnvironmentOperationsRoleOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateEnvironmentOperationsRoleError>`](crate::error::DisassociateEnvironmentOperationsRoleError)
     pub fn disassociate_environment_operations_role(
         &self,
     ) -> fluent_builders::DisassociateEnvironmentOperationsRole<C, M, R> {
         fluent_builders::DisassociateEnvironmentOperationsRole::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAvailableSolutionStacks` operation.
+    /// Constructs a fluent builder for the [`ListAvailableSolutionStacks`](crate::client::fluent_builders::ListAvailableSolutionStacks) operation.
     ///
-    /// See [`ListAvailableSolutionStacks`](crate::client::fluent_builders::ListAvailableSolutionStacks) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListAvailableSolutionStacksInput`](crate::input::ListAvailableSolutionStacksInput)
+
+    /// - On success, responds with [`ListAvailableSolutionStacksOutput`](crate::output::ListAvailableSolutionStacksOutput) with field(s):
+    ///   - [`solution_stacks(Option<Vec<String>>)`](crate::output::ListAvailableSolutionStacksOutput::solution_stacks): <p>A list of available solution stacks.</p>
+    ///   - [`solution_stack_details(Option<Vec<SolutionStackDescription>>)`](crate::output::ListAvailableSolutionStacksOutput::solution_stack_details): <p> A list of available solution stacks and their <code>SolutionStackDescription</code>. </p>
+    /// - On failure, responds with [`SdkError<ListAvailableSolutionStacksError>`](crate::error::ListAvailableSolutionStacksError)
     pub fn list_available_solution_stacks(
         &self,
     ) -> fluent_builders::ListAvailableSolutionStacks<C, M, R> {
         fluent_builders::ListAvailableSolutionStacks::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPlatformBranches` operation.
-    ///
-    /// See [`ListPlatformBranches`](crate::client::fluent_builders::ListPlatformBranches) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListPlatformBranches`](crate::client::fluent_builders::ListPlatformBranches) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPlatformBranches::into_paginator).
+    ///
+    /// - Takes [`ListPlatformBranchesInput`](crate::input::ListPlatformBranchesInput) with field(s):
+    ///   - [`filters(Option<Vec<SearchFilter>>)`](crate::input::ListPlatformBranchesInput::filters): <p>Criteria for restricting the resulting list of platform branches. The filter is evaluated as a logical conjunction (AND) of the separate <code>SearchFilter</code> terms.</p>  <p>The following list shows valid attribute values for each of the <code>SearchFilter</code> terms. Most operators take a single value. The <code>in</code> and <code>not_in</code> operators can take multiple values.</p>  <ul>   <li> <p> <code>Attribute = BranchName</code>:</p>    <ul>     <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code> | <code>ends_with</code> | <code>contains</code> | <code>in</code> | <code>not_in</code> </p> </li>    </ul> </li>   <li> <p> <code>Attribute = LifecycleState</code>:</p>    <ul>     <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>in</code> | <code>not_in</code> </p> </li>     <li> <p> <code>Values</code>: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p> </li>    </ul> </li>   <li> <p> <code>Attribute = PlatformName</code>:</p>    <ul>     <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code> | <code>ends_with</code> | <code>contains</code> | <code>in</code> | <code>not_in</code> </p> </li>    </ul> </li>   <li> <p> <code>Attribute = TierType</code>:</p>    <ul>     <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> </p> </li>     <li> <p> <code>Values</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p> </li>    </ul> </li>  </ul>  <p>Array size: limited to 10 <code>SearchFilter</code> objects.</p>  <p>Within each <code>SearchFilter</code> item, the <code>Values</code> array is limited to 10 items.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::ListPlatformBranchesInput::max_records): <p>The maximum number of platform branch values returned in one call.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListPlatformBranchesInput::next_token): <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p>  <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
+    /// - On success, responds with [`ListPlatformBranchesOutput`](crate::output::ListPlatformBranchesOutput) with field(s):
+    ///   - [`platform_branch_summary_list(Option<Vec<PlatformBranchSummary>>)`](crate::output::ListPlatformBranchesOutput::platform_branch_summary_list): <p>Summary information about the platform branches.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPlatformBranchesOutput::next_token): <p>In a paginated request, if this value isn't <code>null</code>, it's the token that you can pass in a subsequent request to get the next response page.</p>
+    /// - On failure, responds with [`SdkError<ListPlatformBranchesError>`](crate::error::ListPlatformBranchesError)
     pub fn list_platform_branches(&self) -> fluent_builders::ListPlatformBranches<C, M, R> {
         fluent_builders::ListPlatformBranches::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPlatformVersions` operation.
-    ///
-    /// See [`ListPlatformVersions`](crate::client::fluent_builders::ListPlatformVersions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListPlatformVersions`](crate::client::fluent_builders::ListPlatformVersions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPlatformVersions::into_paginator).
+    ///
+    /// - Takes [`ListPlatformVersionsInput`](crate::input::ListPlatformVersionsInput) with field(s):
+    ///   - [`filters(Option<Vec<PlatformFilter>>)`](crate::input::ListPlatformVersionsInput::filters): <p>Criteria for restricting the resulting list of platform versions. The filter is interpreted as a logical conjunction (AND) of the separate <code>PlatformFilter</code> terms.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::ListPlatformVersionsInput::max_records): <p>The maximum number of platform version values returned in one call.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListPlatformVersionsInput::next_token): <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p>  <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
+    /// - On success, responds with [`ListPlatformVersionsOutput`](crate::output::ListPlatformVersionsOutput) with field(s):
+    ///   - [`platform_summary_list(Option<Vec<PlatformSummary>>)`](crate::output::ListPlatformVersionsOutput::platform_summary_list): <p>Summary information about the platform versions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPlatformVersionsOutput::next_token): <p>In a paginated request, if this value isn't <code>null</code>, it's the token that you can pass in a subsequent request to get the next response page.</p>
+    /// - On failure, responds with [`SdkError<ListPlatformVersionsError>`](crate::error::ListPlatformVersionsError)
     pub fn list_platform_versions(&self) -> fluent_builders::ListPlatformVersions<C, M, R> {
         fluent_builders::ListPlatformVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resouce for which a tag list is requested.</p>  <p>Must be the ARN of an Elastic Beanstalk resource.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::output::ListTagsForResourceOutput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource for which a tag list was requested.</p>
+    ///   - [`resource_tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::resource_tags): <p>A list of tag key-value pairs.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RebuildEnvironment` operation.
+    /// Constructs a fluent builder for the [`RebuildEnvironment`](crate::client::fluent_builders::RebuildEnvironment) operation.
     ///
-    /// See [`RebuildEnvironment`](crate::client::fluent_builders::RebuildEnvironment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RebuildEnvironmentInput`](crate::input::RebuildEnvironmentInput) with field(s):
+    ///   - [`environment_id(Option<String>)`](crate::input::RebuildEnvironmentInput::environment_id): <p>The ID of the environment to rebuild.</p>  <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    ///   - [`environment_name(Option<String>)`](crate::input::RebuildEnvironmentInput::environment_name): <p>The name of the environment to rebuild.</p>  <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    /// - On success, responds with [`RebuildEnvironmentOutput`](crate::output::RebuildEnvironmentOutput)
+
+    /// - On failure, responds with [`SdkError<RebuildEnvironmentError>`](crate::error::RebuildEnvironmentError)
     pub fn rebuild_environment(&self) -> fluent_builders::RebuildEnvironment<C, M, R> {
         fluent_builders::RebuildEnvironment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RequestEnvironmentInfo` operation.
+    /// Constructs a fluent builder for the [`RequestEnvironmentInfo`](crate::client::fluent_builders::RequestEnvironmentInfo) operation.
     ///
-    /// See [`RequestEnvironmentInfo`](crate::client::fluent_builders::RequestEnvironmentInfo) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RequestEnvironmentInfoInput`](crate::input::RequestEnvironmentInfoInput) with field(s):
+    ///   - [`environment_id(Option<String>)`](crate::input::RequestEnvironmentInfoInput::environment_id): <p>The ID of the environment of the requested data.</p>  <p>If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code> error. </p>  <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    ///   - [`environment_name(Option<String>)`](crate::input::RequestEnvironmentInfoInput::environment_name): <p>The name of the environment of the requested data.</p>  <p>If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code> error. </p>  <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    ///   - [`info_type(Option<EnvironmentInfoType>)`](crate::input::RequestEnvironmentInfoInput::info_type): <p>The type of information to request.</p>
+    /// - On success, responds with [`RequestEnvironmentInfoOutput`](crate::output::RequestEnvironmentInfoOutput)
+
+    /// - On failure, responds with [`SdkError<RequestEnvironmentInfoError>`](crate::error::RequestEnvironmentInfoError)
     pub fn request_environment_info(&self) -> fluent_builders::RequestEnvironmentInfo<C, M, R> {
         fluent_builders::RequestEnvironmentInfo::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RestartAppServer` operation.
+    /// Constructs a fluent builder for the [`RestartAppServer`](crate::client::fluent_builders::RestartAppServer) operation.
     ///
-    /// See [`RestartAppServer`](crate::client::fluent_builders::RestartAppServer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RestartAppServerInput`](crate::input::RestartAppServerInput) with field(s):
+    ///   - [`environment_id(Option<String>)`](crate::input::RestartAppServerInput::environment_id): <p>The ID of the environment to restart the server for.</p>  <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    ///   - [`environment_name(Option<String>)`](crate::input::RestartAppServerInput::environment_name): <p>The name of the environment to restart the server for.</p>  <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    /// - On success, responds with [`RestartAppServerOutput`](crate::output::RestartAppServerOutput)
+
+    /// - On failure, responds with [`SdkError<RestartAppServerError>`](crate::error::RestartAppServerError)
     pub fn restart_app_server(&self) -> fluent_builders::RestartAppServer<C, M, R> {
         fluent_builders::RestartAppServer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RetrieveEnvironmentInfo` operation.
+    /// Constructs a fluent builder for the [`RetrieveEnvironmentInfo`](crate::client::fluent_builders::RetrieveEnvironmentInfo) operation.
     ///
-    /// See [`RetrieveEnvironmentInfo`](crate::client::fluent_builders::RetrieveEnvironmentInfo) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RetrieveEnvironmentInfoInput`](crate::input::RetrieveEnvironmentInfoInput) with field(s):
+    ///   - [`environment_id(Option<String>)`](crate::input::RetrieveEnvironmentInfoInput::environment_id): <p>The ID of the data's environment.</p>  <p>If no such environment is found, returns an <code>InvalidParameterValue</code> error.</p>  <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
+    ///   - [`environment_name(Option<String>)`](crate::input::RetrieveEnvironmentInfoInput::environment_name): <p>The name of the data's environment.</p>  <p> If no such environment is found, returns an <code>InvalidParameterValue</code> error. </p>  <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    ///   - [`info_type(Option<EnvironmentInfoType>)`](crate::input::RetrieveEnvironmentInfoInput::info_type): <p>The type of information to retrieve.</p>
+    /// - On success, responds with [`RetrieveEnvironmentInfoOutput`](crate::output::RetrieveEnvironmentInfoOutput) with field(s):
+    ///   - [`environment_info(Option<Vec<EnvironmentInfoDescription>>)`](crate::output::RetrieveEnvironmentInfoOutput::environment_info): <p> The <code>EnvironmentInfoDescription</code> of the environment. </p>
+    /// - On failure, responds with [`SdkError<RetrieveEnvironmentInfoError>`](crate::error::RetrieveEnvironmentInfoError)
     pub fn retrieve_environment_info(&self) -> fluent_builders::RetrieveEnvironmentInfo<C, M, R> {
         fluent_builders::RetrieveEnvironmentInfo::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SwapEnvironmentCNAMEs` operation.
+    /// Constructs a fluent builder for the [`SwapEnvironmentCNAMEs`](crate::client::fluent_builders::SwapEnvironmentCNAMEs) operation.
     ///
-    /// See [`SwapEnvironmentCNAMEs`](crate::client::fluent_builders::SwapEnvironmentCNAMEs) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`SwapEnvironmentCnamEsInput`](crate::input::SwapEnvironmentCnamEsInput) with field(s):
+    ///   - [`source_environment_id(Option<String>)`](crate::input::SwapEnvironmentCnamEsInput::source_environment_id): <p>The ID of the source environment.</p>  <p> Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentId</code>, you must specify the <code>DestinationEnvironmentId</code>. </p>
+    ///   - [`source_environment_name(Option<String>)`](crate::input::SwapEnvironmentCnamEsInput::source_environment_name): <p>The name of the source environment.</p>  <p> Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentName</code>, you must specify the <code>DestinationEnvironmentName</code>. </p>
+    ///   - [`destination_environment_id(Option<String>)`](crate::input::SwapEnvironmentCnamEsInput::destination_environment_id): <p>The ID of the destination environment.</p>  <p> Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentId</code> with the <code>DestinationEnvironmentId</code>. </p>
+    ///   - [`destination_environment_name(Option<String>)`](crate::input::SwapEnvironmentCnamEsInput::destination_environment_name): <p>The name of the destination environment.</p>  <p> Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>. </p>
+    /// - On success, responds with [`SwapEnvironmentCnamEsOutput`](crate::output::SwapEnvironmentCnamEsOutput)
+
+    /// - On failure, responds with [`SdkError<SwapEnvironmentCNAMEsError>`](crate::error::SwapEnvironmentCNAMEsError)
     pub fn swap_environment_cnam_es(&self) -> fluent_builders::SwapEnvironmentCNAMEs<C, M, R> {
         fluent_builders::SwapEnvironmentCNAMEs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TerminateEnvironment` operation.
+    /// Constructs a fluent builder for the [`TerminateEnvironment`](crate::client::fluent_builders::TerminateEnvironment) operation.
     ///
-    /// See [`TerminateEnvironment`](crate::client::fluent_builders::TerminateEnvironment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TerminateEnvironmentInput`](crate::input::TerminateEnvironmentInput) with field(s):
+    ///   - [`environment_id(Option<String>)`](crate::input::TerminateEnvironmentInput::environment_id): <p>The ID of the environment to terminate.</p>  <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    ///   - [`environment_name(Option<String>)`](crate::input::TerminateEnvironmentInput::environment_name): <p>The name of the environment to terminate.</p>  <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    ///   - [`terminate_resources(Option<bool>)`](crate::input::TerminateEnvironmentInput::terminate_resources): <p>Indicates whether the associated AWS resources should shut down when the environment is terminated:</p>  <ul>   <li> <p> <code>true</code>: The specified environment as well as the associated AWS resources, such as Auto Scaling group and LoadBalancer, are terminated.</p> </li>   <li> <p> <code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the AWS resources continue to operate.</p> </li>  </ul>  <p> For more information, see the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic Beanstalk User Guide. </a> </p>  <p> Default: <code>true</code> </p>  <p> Valid Values: <code>true</code> | <code>false</code> </p>
+    ///   - [`force_terminate(Option<bool>)`](crate::input::TerminateEnvironmentInput::force_terminate): <p>Terminates the target environment even if another environment in the same group is dependent on it.</p>
+    /// - On success, responds with [`TerminateEnvironmentOutput`](crate::output::TerminateEnvironmentOutput) with field(s):
+    ///   - [`environment_name(Option<String>)`](crate::output::TerminateEnvironmentOutput::environment_name): <p>The name of this environment.</p>
+    ///   - [`environment_id(Option<String>)`](crate::output::TerminateEnvironmentOutput::environment_id): <p>The ID of this environment.</p>
+    ///   - [`application_name(Option<String>)`](crate::output::TerminateEnvironmentOutput::application_name): <p>The name of the application associated with this environment.</p>
+    ///   - [`version_label(Option<String>)`](crate::output::TerminateEnvironmentOutput::version_label): <p>The application version deployed in this environment.</p>
+    ///   - [`solution_stack_name(Option<String>)`](crate::output::TerminateEnvironmentOutput::solution_stack_name): <p> The name of the <code>SolutionStack</code> deployed with this environment. </p>
+    ///   - [`platform_arn(Option<String>)`](crate::output::TerminateEnvironmentOutput::platform_arn): <p>The ARN of the platform version.</p>
+    ///   - [`template_name(Option<String>)`](crate::output::TerminateEnvironmentOutput::template_name): <p>The name of the configuration template used to originally launch this environment.</p>
+    ///   - [`description(Option<String>)`](crate::output::TerminateEnvironmentOutput::description): <p>Describes this environment.</p>
+    ///   - [`endpoint_url(Option<String>)`](crate::output::TerminateEnvironmentOutput::endpoint_url): <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For single-instance environments, the IP address of the instance.</p>
+    ///   - [`cname(Option<String>)`](crate::output::TerminateEnvironmentOutput::cname): <p>The URL to the CNAME for this environment.</p>
+    ///   - [`date_created(Option<DateTime>)`](crate::output::TerminateEnvironmentOutput::date_created): <p>The creation date for this environment.</p>
+    ///   - [`date_updated(Option<DateTime>)`](crate::output::TerminateEnvironmentOutput::date_updated): <p>The last modified date for this environment.</p>
+    ///   - [`status(Option<EnvironmentStatus>)`](crate::output::TerminateEnvironmentOutput::status): <p>The current operational status of the environment:</p>  <ul>   <li> <p> <code>Launching</code>: Environment is in the process of initial deployment.</p> </li>   <li> <p> <code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p> </li>   <li> <p> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</p> </li>   <li> <p> <code>Terminating</code>: Environment is in the shut-down process.</p> </li>   <li> <p> <code>Terminated</code>: Environment is not running.</p> </li>  </ul>
+    ///   - [`abortable_operation_in_progress(Option<bool>)`](crate::output::TerminateEnvironmentOutput::abortable_operation_in_progress): <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p>  <p> <code>true:</code> There is an update in progress. </p>  <p> <code>false:</code> There are no updates currently in progress. </p>
+    ///   - [`health(Option<EnvironmentHealth>)`](crate::output::TerminateEnvironmentOutput::health): <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>  <ul>   <li> <p> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p> </li>   <li> <p> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p> </li>   <li> <p> <code>Green</code>: Indicates the environment is healthy and fully functional.</p> </li>   <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li>  </ul>  <p> Default: <code>Grey</code> </p>
+    ///   - [`health_status(Option<EnvironmentHealthStatus>)`](crate::output::TerminateEnvironmentOutput::health_status): <p>Returns the health status of the application running in your environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
+    ///   - [`resources(Option<EnvironmentResourcesDescription>)`](crate::output::TerminateEnvironmentOutput::resources): <p>The description of the AWS resources used by this environment.</p>
+    ///   - [`tier(Option<EnvironmentTier>)`](crate::output::TerminateEnvironmentOutput::tier): <p>Describes the current tier of this environment.</p>
+    ///   - [`environment_links(Option<Vec<EnvironmentLink>>)`](crate::output::TerminateEnvironmentOutput::environment_links): <p>A list of links to other environments in the same group.</p>
+    ///   - [`environment_arn(Option<String>)`](crate::output::TerminateEnvironmentOutput::environment_arn): <p>The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.</p>
+    ///   - [`operations_role(Option<String>)`](crate::output::TerminateEnvironmentOutput::operations_role): <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+    /// - On failure, responds with [`SdkError<TerminateEnvironmentError>`](crate::error::TerminateEnvironmentError)
     pub fn terminate_environment(&self) -> fluent_builders::TerminateEnvironment<C, M, R> {
         fluent_builders::TerminateEnvironment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateApplication` operation.
+    /// Constructs a fluent builder for the [`UpdateApplication`](crate::client::fluent_builders::UpdateApplication) operation.
     ///
-    /// See [`UpdateApplication`](crate::client::fluent_builders::UpdateApplication) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateApplicationInput`](crate::input::UpdateApplicationInput) with field(s):
+    ///   - [`application_name(Option<String>)`](crate::input::UpdateApplicationInput::application_name): <p>The name of the application to update. If no such application is found, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateApplicationInput::description): <p>A new description for the application.</p>  <p>Default: If not specified, AWS Elastic Beanstalk does not update the description.</p>
+    /// - On success, responds with [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput) with field(s):
+    ///   - [`application(Option<ApplicationDescription>)`](crate::output::UpdateApplicationOutput::application): <p> The <code>ApplicationDescription</code> of the application. </p>
+    /// - On failure, responds with [`SdkError<UpdateApplicationError>`](crate::error::UpdateApplicationError)
     pub fn update_application(&self) -> fluent_builders::UpdateApplication<C, M, R> {
         fluent_builders::UpdateApplication::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateApplicationResourceLifecycle` operation.
+    /// Constructs a fluent builder for the [`UpdateApplicationResourceLifecycle`](crate::client::fluent_builders::UpdateApplicationResourceLifecycle) operation.
     ///
-    /// See [`UpdateApplicationResourceLifecycle`](crate::client::fluent_builders::UpdateApplicationResourceLifecycle) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateApplicationResourceLifecycleInput`](crate::input::UpdateApplicationResourceLifecycleInput) with field(s):
+    ///   - [`application_name(Option<String>)`](crate::input::UpdateApplicationResourceLifecycleInput::application_name): <p>The name of the application.</p>
+    ///   - [`resource_lifecycle_config(Option<ApplicationResourceLifecycleConfig>)`](crate::input::UpdateApplicationResourceLifecycleInput::resource_lifecycle_config): <p>The lifecycle configuration.</p>
+    /// - On success, responds with [`UpdateApplicationResourceLifecycleOutput`](crate::output::UpdateApplicationResourceLifecycleOutput) with field(s):
+    ///   - [`application_name(Option<String>)`](crate::output::UpdateApplicationResourceLifecycleOutput::application_name): <p>The name of the application.</p>
+    ///   - [`resource_lifecycle_config(Option<ApplicationResourceLifecycleConfig>)`](crate::output::UpdateApplicationResourceLifecycleOutput::resource_lifecycle_config): <p>The lifecycle configuration.</p>
+    /// - On failure, responds with [`SdkError<UpdateApplicationResourceLifecycleError>`](crate::error::UpdateApplicationResourceLifecycleError)
     pub fn update_application_resource_lifecycle(
         &self,
     ) -> fluent_builders::UpdateApplicationResourceLifecycle<C, M, R> {
         fluent_builders::UpdateApplicationResourceLifecycle::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateApplicationVersion` operation.
+    /// Constructs a fluent builder for the [`UpdateApplicationVersion`](crate::client::fluent_builders::UpdateApplicationVersion) operation.
     ///
-    /// See [`UpdateApplicationVersion`](crate::client::fluent_builders::UpdateApplicationVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateApplicationVersionInput`](crate::input::UpdateApplicationVersionInput) with field(s):
+    ///   - [`application_name(Option<String>)`](crate::input::UpdateApplicationVersionInput::application_name): <p>The name of the application associated with this version.</p>  <p> If no application is found with this name, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error.</p>
+    ///   - [`version_label(Option<String>)`](crate::input::UpdateApplicationVersionInput::version_label): <p>The name of the version to update.</p>  <p>If no application version is found with this label, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateApplicationVersionInput::description): <p>A new description for this version.</p>
+    /// - On success, responds with [`UpdateApplicationVersionOutput`](crate::output::UpdateApplicationVersionOutput) with field(s):
+    ///   - [`application_version(Option<ApplicationVersionDescription>)`](crate::output::UpdateApplicationVersionOutput::application_version): <p> The <code>ApplicationVersionDescription</code> of the application version. </p>
+    /// - On failure, responds with [`SdkError<UpdateApplicationVersionError>`](crate::error::UpdateApplicationVersionError)
     pub fn update_application_version(&self) -> fluent_builders::UpdateApplicationVersion<C, M, R> {
         fluent_builders::UpdateApplicationVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateConfigurationTemplate` operation.
+    /// Constructs a fluent builder for the [`UpdateConfigurationTemplate`](crate::client::fluent_builders::UpdateConfigurationTemplate) operation.
     ///
-    /// See [`UpdateConfigurationTemplate`](crate::client::fluent_builders::UpdateConfigurationTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateConfigurationTemplateInput`](crate::input::UpdateConfigurationTemplateInput) with field(s):
+    ///   - [`application_name(Option<String>)`](crate::input::UpdateConfigurationTemplateInput::application_name): <p>The name of the application associated with the configuration template to update.</p>  <p> If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
+    ///   - [`template_name(Option<String>)`](crate::input::UpdateConfigurationTemplateInput::template_name): <p>The name of the configuration template to update.</p>  <p> If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateConfigurationTemplateInput::description): <p>A new description for the configuration.</p>
+    ///   - [`option_settings(Option<Vec<ConfigurationOptionSetting>>)`](crate::input::UpdateConfigurationTemplateInput::option_settings): <p>A list of configuration option settings to update with the new specified option value.</p>
+    ///   - [`options_to_remove(Option<Vec<OptionSpecification>>)`](crate::input::UpdateConfigurationTemplateInput::options_to_remove): <p>A list of configuration options to remove from the configuration set.</p>  <p> Constraint: You can remove only <code>UserDefined</code> configuration options. </p>
+    /// - On success, responds with [`UpdateConfigurationTemplateOutput`](crate::output::UpdateConfigurationTemplateOutput) with field(s):
+    ///   - [`solution_stack_name(Option<String>)`](crate::output::UpdateConfigurationTemplateOutput::solution_stack_name): <p>The name of the solution stack this configuration set uses.</p>
+    ///   - [`platform_arn(Option<String>)`](crate::output::UpdateConfigurationTemplateOutput::platform_arn): <p>The ARN of the platform version.</p>
+    ///   - [`application_name(Option<String>)`](crate::output::UpdateConfigurationTemplateOutput::application_name): <p>The name of the application associated with this configuration set.</p>
+    ///   - [`template_name(Option<String>)`](crate::output::UpdateConfigurationTemplateOutput::template_name): <p> If not <code>null</code>, the name of the configuration template for this configuration set. </p>
+    ///   - [`description(Option<String>)`](crate::output::UpdateConfigurationTemplateOutput::description): <p>Describes this configuration set.</p>
+    ///   - [`environment_name(Option<String>)`](crate::output::UpdateConfigurationTemplateOutput::environment_name): <p> If not <code>null</code>, the name of the environment for this configuration set. </p>
+    ///   - [`deployment_status(Option<ConfigurationDeploymentStatus>)`](crate::output::UpdateConfigurationTemplateOutput::deployment_status): <p> If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set: </p>  <ul>   <li> <p> <code>null</code>: This configuration is not associated with a running environment.</p> </li>   <li> <p> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying.</p> </li>   <li> <p> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p> </li>   <li> <p> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</p> </li>  </ul>
+    ///   - [`date_created(Option<DateTime>)`](crate::output::UpdateConfigurationTemplateOutput::date_created): <p>The date (in UTC time) when this configuration set was created.</p>
+    ///   - [`date_updated(Option<DateTime>)`](crate::output::UpdateConfigurationTemplateOutput::date_updated): <p>The date (in UTC time) when this configuration set was last modified.</p>
+    ///   - [`option_settings(Option<Vec<ConfigurationOptionSetting>>)`](crate::output::UpdateConfigurationTemplateOutput::option_settings): <p>A list of the configuration options and their values in this configuration set.</p>
+    /// - On failure, responds with [`SdkError<UpdateConfigurationTemplateError>`](crate::error::UpdateConfigurationTemplateError)
     pub fn update_configuration_template(
         &self,
     ) -> fluent_builders::UpdateConfigurationTemplate<C, M, R> {
         fluent_builders::UpdateConfigurationTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateEnvironment` operation.
+    /// Constructs a fluent builder for the [`UpdateEnvironment`](crate::client::fluent_builders::UpdateEnvironment) operation.
     ///
-    /// See [`UpdateEnvironment`](crate::client::fluent_builders::UpdateEnvironment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateEnvironmentInput`](crate::input::UpdateEnvironmentInput) with field(s):
+    ///   - [`application_name(Option<String>)`](crate::input::UpdateEnvironmentInput::application_name): <p>The name of the application with which the environment is associated.</p>
+    ///   - [`environment_id(Option<String>)`](crate::input::UpdateEnvironmentInput::environment_id): <p>The ID of the environment to update.</p>  <p>If no environment with this ID exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.</p>  <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    ///   - [`environment_name(Option<String>)`](crate::input::UpdateEnvironmentInput::environment_name): <p>The name of the environment to update. If no environment with this name exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>  <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+    ///   - [`group_name(Option<String>)`](crate::input::UpdateEnvironmentInput::group_name): <p>The name of the group to which the target environment belongs. Specify a group name only if the environment's name is specified in an environment manifest and not with the environment name or environment ID parameters. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateEnvironmentInput::description): <p>If this parameter is specified, AWS Elastic Beanstalk updates the description of this environment.</p>
+    ///   - [`tier(Option<EnvironmentTier>)`](crate::input::UpdateEnvironmentInput::tier): <p>This specifies the tier to use to update the environment.</p>  <p>Condition: At this time, if you change the tier version, name, or type, AWS Elastic Beanstalk returns <code>InvalidParameterValue</code> error. </p>
+    ///   - [`version_label(Option<String>)`](crate::input::UpdateEnvironmentInput::version_label): <p>If this parameter is specified, AWS Elastic Beanstalk deploys the named application version to the environment. If no such application version is found, returns an <code>InvalidParameterValue</code> error. </p>
+    ///   - [`template_name(Option<String>)`](crate::input::UpdateEnvironmentInput::template_name): <p>If this parameter is specified, AWS Elastic Beanstalk deploys this configuration template to the environment. If no such configuration template is found, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
+    ///   - [`solution_stack_name(Option<String>)`](crate::input::UpdateEnvironmentInput::solution_stack_name): <p>This specifies the platform version that the environment will run after the environment is updated.</p>
+    ///   - [`platform_arn(Option<String>)`](crate::input::UpdateEnvironmentInput::platform_arn): <p>The ARN of the platform, if used.</p>
+    ///   - [`option_settings(Option<Vec<ConfigurationOptionSetting>>)`](crate::input::UpdateEnvironmentInput::option_settings): <p>If specified, AWS Elastic Beanstalk updates the configuration set associated with the running environment and sets the specified configuration options to the requested value.</p>
+    ///   - [`options_to_remove(Option<Vec<OptionSpecification>>)`](crate::input::UpdateEnvironmentInput::options_to_remove): <p>A list of custom user-defined configuration options to remove from the configuration set for this environment.</p>
+    /// - On success, responds with [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput) with field(s):
+    ///   - [`environment_name(Option<String>)`](crate::output::UpdateEnvironmentOutput::environment_name): <p>The name of this environment.</p>
+    ///   - [`environment_id(Option<String>)`](crate::output::UpdateEnvironmentOutput::environment_id): <p>The ID of this environment.</p>
+    ///   - [`application_name(Option<String>)`](crate::output::UpdateEnvironmentOutput::application_name): <p>The name of the application associated with this environment.</p>
+    ///   - [`version_label(Option<String>)`](crate::output::UpdateEnvironmentOutput::version_label): <p>The application version deployed in this environment.</p>
+    ///   - [`solution_stack_name(Option<String>)`](crate::output::UpdateEnvironmentOutput::solution_stack_name): <p> The name of the <code>SolutionStack</code> deployed with this environment. </p>
+    ///   - [`platform_arn(Option<String>)`](crate::output::UpdateEnvironmentOutput::platform_arn): <p>The ARN of the platform version.</p>
+    ///   - [`template_name(Option<String>)`](crate::output::UpdateEnvironmentOutput::template_name): <p>The name of the configuration template used to originally launch this environment.</p>
+    ///   - [`description(Option<String>)`](crate::output::UpdateEnvironmentOutput::description): <p>Describes this environment.</p>
+    ///   - [`endpoint_url(Option<String>)`](crate::output::UpdateEnvironmentOutput::endpoint_url): <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For single-instance environments, the IP address of the instance.</p>
+    ///   - [`cname(Option<String>)`](crate::output::UpdateEnvironmentOutput::cname): <p>The URL to the CNAME for this environment.</p>
+    ///   - [`date_created(Option<DateTime>)`](crate::output::UpdateEnvironmentOutput::date_created): <p>The creation date for this environment.</p>
+    ///   - [`date_updated(Option<DateTime>)`](crate::output::UpdateEnvironmentOutput::date_updated): <p>The last modified date for this environment.</p>
+    ///   - [`status(Option<EnvironmentStatus>)`](crate::output::UpdateEnvironmentOutput::status): <p>The current operational status of the environment:</p>  <ul>   <li> <p> <code>Launching</code>: Environment is in the process of initial deployment.</p> </li>   <li> <p> <code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p> </li>   <li> <p> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</p> </li>   <li> <p> <code>Terminating</code>: Environment is in the shut-down process.</p> </li>   <li> <p> <code>Terminated</code>: Environment is not running.</p> </li>  </ul>
+    ///   - [`abortable_operation_in_progress(Option<bool>)`](crate::output::UpdateEnvironmentOutput::abortable_operation_in_progress): <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p>  <p> <code>true:</code> There is an update in progress. </p>  <p> <code>false:</code> There are no updates currently in progress. </p>
+    ///   - [`health(Option<EnvironmentHealth>)`](crate::output::UpdateEnvironmentOutput::health): <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>  <ul>   <li> <p> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p> </li>   <li> <p> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p> </li>   <li> <p> <code>Green</code>: Indicates the environment is healthy and fully functional.</p> </li>   <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li>  </ul>  <p> Default: <code>Grey</code> </p>
+    ///   - [`health_status(Option<EnvironmentHealthStatus>)`](crate::output::UpdateEnvironmentOutput::health_status): <p>Returns the health status of the application running in your environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
+    ///   - [`resources(Option<EnvironmentResourcesDescription>)`](crate::output::UpdateEnvironmentOutput::resources): <p>The description of the AWS resources used by this environment.</p>
+    ///   - [`tier(Option<EnvironmentTier>)`](crate::output::UpdateEnvironmentOutput::tier): <p>Describes the current tier of this environment.</p>
+    ///   - [`environment_links(Option<Vec<EnvironmentLink>>)`](crate::output::UpdateEnvironmentOutput::environment_links): <p>A list of links to other environments in the same group.</p>
+    ///   - [`environment_arn(Option<String>)`](crate::output::UpdateEnvironmentOutput::environment_arn): <p>The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.</p>
+    ///   - [`operations_role(Option<String>)`](crate::output::UpdateEnvironmentOutput::operations_role): <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+    /// - On failure, responds with [`SdkError<UpdateEnvironmentError>`](crate::error::UpdateEnvironmentError)
     pub fn update_environment(&self) -> fluent_builders::UpdateEnvironment<C, M, R> {
         fluent_builders::UpdateEnvironment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateTagsForResource` operation.
+    /// Constructs a fluent builder for the [`UpdateTagsForResource`](crate::client::fluent_builders::UpdateTagsForResource) operation.
     ///
-    /// See [`UpdateTagsForResource`](crate::client::fluent_builders::UpdateTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateTagsForResourceInput`](crate::input::UpdateTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UpdateTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resouce to be updated.</p>  <p>Must be the ARN of an Elastic Beanstalk resource.</p>
+    ///   - [`tags_to_add(Option<Vec<Tag>>)`](crate::input::UpdateTagsForResourceInput::tags_to_add): <p>A list of tags to add or update. If a key of an existing tag is added, the tag's value is updated.</p>  <p>Specify at least one of these parameters: <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
+    ///   - [`tags_to_remove(Option<Vec<String>>)`](crate::input::UpdateTagsForResourceInput::tags_to_remove): <p>A list of tag keys to remove. If a tag key doesn't exist, it is silently ignored.</p>  <p>Specify at least one of these parameters: <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>
+    /// - On success, responds with [`UpdateTagsForResourceOutput`](crate::output::UpdateTagsForResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateTagsForResourceError>`](crate::error::UpdateTagsForResourceError)
     pub fn update_tags_for_resource(&self) -> fluent_builders::UpdateTagsForResource<C, M, R> {
         fluent_builders::UpdateTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ValidateConfigurationSettings` operation.
+    /// Constructs a fluent builder for the [`ValidateConfigurationSettings`](crate::client::fluent_builders::ValidateConfigurationSettings) operation.
     ///
-    /// See [`ValidateConfigurationSettings`](crate::client::fluent_builders::ValidateConfigurationSettings) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ValidateConfigurationSettingsInput`](crate::input::ValidateConfigurationSettingsInput) with field(s):
+    ///   - [`application_name(Option<String>)`](crate::input::ValidateConfigurationSettingsInput::application_name): <p>The name of the application that the configuration template or environment belongs to.</p>
+    ///   - [`template_name(Option<String>)`](crate::input::ValidateConfigurationSettingsInput::template_name): <p>The name of the configuration template to validate the settings against.</p>  <p>Condition: You cannot specify both this and an environment name.</p>
+    ///   - [`environment_name(Option<String>)`](crate::input::ValidateConfigurationSettingsInput::environment_name): <p>The name of the environment to validate the settings against.</p>  <p>Condition: You cannot specify both this and a configuration template name.</p>
+    ///   - [`option_settings(Option<Vec<ConfigurationOptionSetting>>)`](crate::input::ValidateConfigurationSettingsInput::option_settings): <p>A list of the options and desired values to evaluate.</p>
+    /// - On success, responds with [`ValidateConfigurationSettingsOutput`](crate::output::ValidateConfigurationSettingsOutput) with field(s):
+    ///   - [`messages(Option<Vec<ValidationMessage>>)`](crate::output::ValidateConfigurationSettingsOutput::messages): <p> A list of <code>ValidationMessage</code>. </p>
+    /// - On failure, responds with [`SdkError<ValidateConfigurationSettingsError>`](crate::error::ValidateConfigurationSettingsError)
     pub fn validate_configuration_settings(
         &self,
     ) -> fluent_builders::ValidateConfigurationSettings<C, M, R> {

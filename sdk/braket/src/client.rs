@@ -83,97 +83,203 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CancelJob` operation.
+    /// Constructs a fluent builder for the [`CancelJob`](crate::client::fluent_builders::CancelJob) operation.
     ///
-    /// See [`CancelJob`](crate::client::fluent_builders::CancelJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CancelJobInput`](crate::input::CancelJobInput) with field(s):
+    ///   - [`job_arn(Option<String>)`](crate::input::CancelJobInput::job_arn): <p>The ARN of the Amazon Braket job to cancel.</p>
+    /// - On success, responds with [`CancelJobOutput`](crate::output::CancelJobOutput) with field(s):
+    ///   - [`job_arn(Option<String>)`](crate::output::CancelJobOutput::job_arn): <p>The ARN of the Amazon Braket job.</p>
+    ///   - [`cancellation_status(Option<CancellationStatus>)`](crate::output::CancelJobOutput::cancellation_status): <p>The status of the job cancellation request.</p>
+    /// - On failure, responds with [`SdkError<CancelJobError>`](crate::error::CancelJobError)
     pub fn cancel_job(&self) -> fluent_builders::CancelJob<C, M, R> {
         fluent_builders::CancelJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CancelQuantumTask` operation.
+    /// Constructs a fluent builder for the [`CancelQuantumTask`](crate::client::fluent_builders::CancelQuantumTask) operation.
     ///
-    /// See [`CancelQuantumTask`](crate::client::fluent_builders::CancelQuantumTask) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CancelQuantumTaskInput`](crate::input::CancelQuantumTaskInput) with field(s):
+    ///   - [`quantum_task_arn(Option<String>)`](crate::input::CancelQuantumTaskInput::quantum_task_arn): <p>The ARN of the task to cancel.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CancelQuantumTaskInput::client_token): <p>The client token associated with the request.</p>
+    /// - On success, responds with [`CancelQuantumTaskOutput`](crate::output::CancelQuantumTaskOutput) with field(s):
+    ///   - [`quantum_task_arn(Option<String>)`](crate::output::CancelQuantumTaskOutput::quantum_task_arn): <p>The ARN of the task.</p>
+    ///   - [`cancellation_status(Option<CancellationStatus>)`](crate::output::CancelQuantumTaskOutput::cancellation_status): <p>The status of the cancellation request.</p>
+    /// - On failure, responds with [`SdkError<CancelQuantumTaskError>`](crate::error::CancelQuantumTaskError)
     pub fn cancel_quantum_task(&self) -> fluent_builders::CancelQuantumTask<C, M, R> {
         fluent_builders::CancelQuantumTask::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateJob` operation.
+    /// Constructs a fluent builder for the [`CreateJob`](crate::client::fluent_builders::CreateJob) operation.
     ///
-    /// See [`CreateJob`](crate::client::fluent_builders::CreateJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateJobInput`](crate::input::CreateJobInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::CreateJobInput::client_token): <p>A unique token that guarantees that the call to this API is idempotent.</p>
+    ///   - [`algorithm_specification(Option<AlgorithmSpecification>)`](crate::input::CreateJobInput::algorithm_specification): <p>Definition of the Amazon Braket job to be created. Specifies the container image the job uses and information about the Python scripts used for entry and training.</p>
+    ///   - [`input_data_config(Option<Vec<InputFileConfig>>)`](crate::input::CreateJobInput::input_data_config): <p>A list of parameters that specify the name and type of input data and where it is located.</p>
+    ///   - [`output_data_config(Option<JobOutputDataConfig>)`](crate::input::CreateJobInput::output_data_config): <p>The path to the S3 location where you want to store job artifacts and the encryption key used to store them.</p>
+    ///   - [`checkpoint_config(Option<JobCheckpointConfig>)`](crate::input::CreateJobInput::checkpoint_config): <p>Information about the output locations for job checkpoint data.</p>
+    ///   - [`job_name(Option<String>)`](crate::input::CreateJobInput::job_name): <p>The name of the Amazon Braket job.</p>
+    ///   - [`role_arn(Option<String>)`](crate::input::CreateJobInput::role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the users' s3 buckets.</p>
+    ///   - [`stopping_condition(Option<JobStoppingCondition>)`](crate::input::CreateJobInput::stopping_condition): <p> The user-defined criteria that specifies when a job stops running.</p>
+    ///   - [`instance_config(Option<InstanceConfig>)`](crate::input::CreateJobInput::instance_config): <p>Configuration of the resource instances to use while running the hybrid job on Amazon Braket.</p>
+    ///   - [`hyper_parameters(Option<HashMap<String, String>>)`](crate::input::CreateJobInput::hyper_parameters): <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the training job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
+    ///   - [`device_config(Option<DeviceConfig>)`](crate::input::CreateJobInput::device_config): <p>The quantum processing unit (QPU) or simulator used to create an Amazon Braket job.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateJobInput::tags): <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
+    /// - On success, responds with [`CreateJobOutput`](crate::output::CreateJobOutput) with field(s):
+    ///   - [`job_arn(Option<String>)`](crate::output::CreateJobOutput::job_arn): <p>The ARN of the Amazon Braket job created.</p>
+    /// - On failure, responds with [`SdkError<CreateJobError>`](crate::error::CreateJobError)
     pub fn create_job(&self) -> fluent_builders::CreateJob<C, M, R> {
         fluent_builders::CreateJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateQuantumTask` operation.
+    /// Constructs a fluent builder for the [`CreateQuantumTask`](crate::client::fluent_builders::CreateQuantumTask) operation.
     ///
-    /// See [`CreateQuantumTask`](crate::client::fluent_builders::CreateQuantumTask) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateQuantumTaskInput`](crate::input::CreateQuantumTaskInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::CreateQuantumTaskInput::client_token): <p>The client token associated with the request.</p>
+    ///   - [`device_arn(Option<String>)`](crate::input::CreateQuantumTaskInput::device_arn): <p>The ARN of the device to run the task on.</p>
+    ///   - [`device_parameters(Option<String>)`](crate::input::CreateQuantumTaskInput::device_parameters): <p>The parameters for the device to run the task on.</p>
+    ///   - [`shots(Option<i64>)`](crate::input::CreateQuantumTaskInput::shots): <p>The number of shots to use for the task.</p>
+    ///   - [`output_s3_bucket(Option<String>)`](crate::input::CreateQuantumTaskInput::output_s3_bucket): <p>The S3 bucket to store task result files in.</p>
+    ///   - [`output_s3_key_prefix(Option<String>)`](crate::input::CreateQuantumTaskInput::output_s3_key_prefix): <p>The key prefix for the location in the S3 bucket to store task results in.</p>
+    ///   - [`action(Option<String>)`](crate::input::CreateQuantumTaskInput::action): <p>The action associated with the task.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateQuantumTaskInput::tags): <p>Tags to be added to the quantum task you're creating.</p>
+    ///   - [`job_token(Option<String>)`](crate::input::CreateQuantumTaskInput::job_token): <p>The token for an Amazon Braket job that associates it with the quantum task.</p>
+    /// - On success, responds with [`CreateQuantumTaskOutput`](crate::output::CreateQuantumTaskOutput) with field(s):
+    ///   - [`quantum_task_arn(Option<String>)`](crate::output::CreateQuantumTaskOutput::quantum_task_arn): <p>The ARN of the task created by the request.</p>
+    /// - On failure, responds with [`SdkError<CreateQuantumTaskError>`](crate::error::CreateQuantumTaskError)
     pub fn create_quantum_task(&self) -> fluent_builders::CreateQuantumTask<C, M, R> {
         fluent_builders::CreateQuantumTask::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDevice` operation.
+    /// Constructs a fluent builder for the [`GetDevice`](crate::client::fluent_builders::GetDevice) operation.
     ///
-    /// See [`GetDevice`](crate::client::fluent_builders::GetDevice) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetDeviceInput`](crate::input::GetDeviceInput) with field(s):
+    ///   - [`device_arn(Option<String>)`](crate::input::GetDeviceInput::device_arn): <p>The ARN of the device to retrieve.</p>
+    /// - On success, responds with [`GetDeviceOutput`](crate::output::GetDeviceOutput) with field(s):
+    ///   - [`device_arn(Option<String>)`](crate::output::GetDeviceOutput::device_arn): <p>The ARN of the device.</p>
+    ///   - [`device_name(Option<String>)`](crate::output::GetDeviceOutput::device_name): <p>The name of the device.</p>
+    ///   - [`provider_name(Option<String>)`](crate::output::GetDeviceOutput::provider_name): <p>The name of the partner company for the device.</p>
+    ///   - [`device_type(Option<DeviceType>)`](crate::output::GetDeviceOutput::device_type): <p>The type of the device.</p>
+    ///   - [`device_status(Option<DeviceStatus>)`](crate::output::GetDeviceOutput::device_status): <p>The status of the device.</p>
+    ///   - [`device_capabilities(Option<String>)`](crate::output::GetDeviceOutput::device_capabilities): <p>Details about the capabilities of the device.</p>
+    /// - On failure, responds with [`SdkError<GetDeviceError>`](crate::error::GetDeviceError)
     pub fn get_device(&self) -> fluent_builders::GetDevice<C, M, R> {
         fluent_builders::GetDevice::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetJob` operation.
+    /// Constructs a fluent builder for the [`GetJob`](crate::client::fluent_builders::GetJob) operation.
     ///
-    /// See [`GetJob`](crate::client::fluent_builders::GetJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetJobInput`](crate::input::GetJobInput) with field(s):
+    ///   - [`job_arn(Option<String>)`](crate::input::GetJobInput::job_arn): <p>The ARN of the job to retrieve.</p>
+    /// - On success, responds with [`GetJobOutput`](crate::output::GetJobOutput) with field(s):
+    ///   - [`status(Option<JobPrimaryStatus>)`](crate::output::GetJobOutput::status): <p>The status of the Amazon Braket job.</p>
+    ///   - [`job_arn(Option<String>)`](crate::output::GetJobOutput::job_arn): <p>The ARN of the Amazon Braket job.</p>
+    ///   - [`role_arn(Option<String>)`](crate::output::GetJobOutput::role_arn): <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the s3 buckets of a user.</p>
+    ///   - [`failure_reason(Option<String>)`](crate::output::GetJobOutput::failure_reason): <p>A description of the reason why an Amazon Braket job failed, if it failed.</p>
+    ///   - [`job_name(Option<String>)`](crate::output::GetJobOutput::job_name): <p>The name of the Amazon Braket job.</p>
+    ///   - [`hyper_parameters(Option<HashMap<String, String>>)`](crate::output::GetJobOutput::hyper_parameters): <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the traiing job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
+    ///   - [`input_data_config(Option<Vec<InputFileConfig>>)`](crate::output::GetJobOutput::input_data_config): <p>A list of parameters that specify the name and type of input data and where it is located.</p>
+    ///   - [`output_data_config(Option<JobOutputDataConfig>)`](crate::output::GetJobOutput::output_data_config): <p>The path to the S3 location where job artifacts are stored and the encryption key used to store them there.</p>
+    ///   - [`stopping_condition(Option<JobStoppingCondition>)`](crate::output::GetJobOutput::stopping_condition): <p>The user-defined criteria that specifies when to stop a job running.</p>
+    ///   - [`checkpoint_config(Option<JobCheckpointConfig>)`](crate::output::GetJobOutput::checkpoint_config): <p>Information about the output locations for job checkpoint data.</p>
+    ///   - [`algorithm_specification(Option<AlgorithmSpecification>)`](crate::output::GetJobOutput::algorithm_specification): <p>Definition of the Amazon Braket job created. Specifies the container image the job uses, information about the Python scripts used for entry and training, and the user-defined metrics used to evaluation the job.</p>
+    ///   - [`instance_config(Option<InstanceConfig>)`](crate::output::GetJobOutput::instance_config): <p>The resource instances to use while running the hybrid job on Amazon Braket.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::GetJobOutput::created_at): <p>The date and time that the Amazon Braket job was created.</p>
+    ///   - [`started_at(Option<DateTime>)`](crate::output::GetJobOutput::started_at): <p>The date and time that the Amazon Braket job was started.</p>
+    ///   - [`ended_at(Option<DateTime>)`](crate::output::GetJobOutput::ended_at): <p>The date and time that the Amazon Braket job ended.</p>
+    ///   - [`billable_duration(Option<i32>)`](crate::output::GetJobOutput::billable_duration): <p>The billable time the Amazon Braket job used to complete.</p>
+    ///   - [`device_config(Option<DeviceConfig>)`](crate::output::GetJobOutput::device_config): <p>The quantum processing unit (QPU) or simulator used to run the Amazon Braket job.</p>
+    ///   - [`events(Option<Vec<JobEventDetails>>)`](crate::output::GetJobOutput::events): <p>Details about the type and time events occurred related to the Amazon Braket job.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetJobOutput::tags): <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
+    /// - On failure, responds with [`SdkError<GetJobError>`](crate::error::GetJobError)
     pub fn get_job(&self) -> fluent_builders::GetJob<C, M, R> {
         fluent_builders::GetJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetQuantumTask` operation.
+    /// Constructs a fluent builder for the [`GetQuantumTask`](crate::client::fluent_builders::GetQuantumTask) operation.
     ///
-    /// See [`GetQuantumTask`](crate::client::fluent_builders::GetQuantumTask) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetQuantumTaskInput`](crate::input::GetQuantumTaskInput) with field(s):
+    ///   - [`quantum_task_arn(Option<String>)`](crate::input::GetQuantumTaskInput::quantum_task_arn): <p>the ARN of the task to retrieve.</p>
+    /// - On success, responds with [`GetQuantumTaskOutput`](crate::output::GetQuantumTaskOutput) with field(s):
+    ///   - [`quantum_task_arn(Option<String>)`](crate::output::GetQuantumTaskOutput::quantum_task_arn): <p>The ARN of the task.</p>
+    ///   - [`status(Option<QuantumTaskStatus>)`](crate::output::GetQuantumTaskOutput::status): <p>The status of the task.</p>
+    ///   - [`failure_reason(Option<String>)`](crate::output::GetQuantumTaskOutput::failure_reason): <p>The reason that a task failed.</p>
+    ///   - [`device_arn(Option<String>)`](crate::output::GetQuantumTaskOutput::device_arn): <p>The ARN of the device the task was run on.</p>
+    ///   - [`device_parameters(Option<String>)`](crate::output::GetQuantumTaskOutput::device_parameters): <p>The parameters for the device on which the task ran.</p>
+    ///   - [`shots(Option<i64>)`](crate::output::GetQuantumTaskOutput::shots): <p>The number of shots used in the task.</p>
+    ///   - [`output_s3_bucket(Option<String>)`](crate::output::GetQuantumTaskOutput::output_s3_bucket): <p>The S3 bucket where task results are stored.</p>
+    ///   - [`output_s3_directory(Option<String>)`](crate::output::GetQuantumTaskOutput::output_s3_directory): <p>The folder in the S3 bucket where task results are stored.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::GetQuantumTaskOutput::created_at): <p>The time at which the task was created.</p>
+    ///   - [`ended_at(Option<DateTime>)`](crate::output::GetQuantumTaskOutput::ended_at): <p>The time at which the task ended.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetQuantumTaskOutput::tags): <p>The tags that belong to this task.</p>
+    ///   - [`job_arn(Option<String>)`](crate::output::GetQuantumTaskOutput::job_arn): <p>The ARN of the Amazon Braket job associated with the quantum task.</p>
+    /// - On failure, responds with [`SdkError<GetQuantumTaskError>`](crate::error::GetQuantumTaskError)
     pub fn get_quantum_task(&self) -> fluent_builders::GetQuantumTask<C, M, R> {
         fluent_builders::GetQuantumTask::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>Specify the <code>resourceArn</code> for the resource whose tags to display.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>Displays the key, value pairs of tags associated with this resource.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SearchDevices` operation.
-    ///
-    /// See [`SearchDevices`](crate::client::fluent_builders::SearchDevices) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`SearchDevices`](crate::client::fluent_builders::SearchDevices) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchDevices::into_paginator).
+    ///
+    /// - Takes [`SearchDevicesInput`](crate::input::SearchDevicesInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::SearchDevicesInput::next_token): <p>A token used for pagination of results returned in the response. Use the token returned from the previous request continue results where the previous request ended.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::SearchDevicesInput::max_results): <p>The maximum number of results to return in the response.</p>
+    ///   - [`filters(Option<Vec<SearchDevicesFilter>>)`](crate::input::SearchDevicesInput::filters): <p>The filter values to use to search for a device.</p>
+    /// - On success, responds with [`SearchDevicesOutput`](crate::output::SearchDevicesOutput) with field(s):
+    ///   - [`devices(Option<Vec<DeviceSummary>>)`](crate::output::SearchDevicesOutput::devices): <p>An array of <code>DeviceSummary</code> objects for devices that match the specified filter values.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::SearchDevicesOutput::next_token): <p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
+    /// - On failure, responds with [`SdkError<SearchDevicesError>`](crate::error::SearchDevicesError)
     pub fn search_devices(&self) -> fluent_builders::SearchDevices<C, M, R> {
         fluent_builders::SearchDevices::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SearchJobs` operation.
-    ///
-    /// See [`SearchJobs`](crate::client::fluent_builders::SearchJobs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`SearchJobs`](crate::client::fluent_builders::SearchJobs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchJobs::into_paginator).
+    ///
+    /// - Takes [`SearchJobsInput`](crate::input::SearchJobsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::SearchJobsInput::next_token): <p>A token used for pagination of results returned in the response. Use the token returned from the previous request to continue results where the previous request ended.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::SearchJobsInput::max_results): <p>The maximum number of results to return in the response.</p>
+    ///   - [`filters(Option<Vec<SearchJobsFilter>>)`](crate::input::SearchJobsInput::filters): <p>The filter values to use when searching for a job.</p>
+    /// - On success, responds with [`SearchJobsOutput`](crate::output::SearchJobsOutput) with field(s):
+    ///   - [`jobs(Option<Vec<JobSummary>>)`](crate::output::SearchJobsOutput::jobs): <p>An array of <code>JobSummary</code> objects for devices that match the specified filter values.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::SearchJobsOutput::next_token): <p>A token used for pagination of results, or <code>null</code> if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
+    /// - On failure, responds with [`SdkError<SearchJobsError>`](crate::error::SearchJobsError)
     pub fn search_jobs(&self) -> fluent_builders::SearchJobs<C, M, R> {
         fluent_builders::SearchJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SearchQuantumTasks` operation.
-    ///
-    /// See [`SearchQuantumTasks`](crate::client::fluent_builders::SearchQuantumTasks) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`SearchQuantumTasks`](crate::client::fluent_builders::SearchQuantumTasks) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchQuantumTasks::into_paginator).
+    ///
+    /// - Takes [`SearchQuantumTasksInput`](crate::input::SearchQuantumTasksInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::SearchQuantumTasksInput::next_token): <p>A token used for pagination of results returned in the response. Use the token returned from the previous request continue results where the previous request ended.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::SearchQuantumTasksInput::max_results): <p>Maximum number of results to return in the response.</p>
+    ///   - [`filters(Option<Vec<SearchQuantumTasksFilter>>)`](crate::input::SearchQuantumTasksInput::filters): <p>Array of <code>SearchQuantumTasksFilter</code> objects.</p>
+    /// - On success, responds with [`SearchQuantumTasksOutput`](crate::output::SearchQuantumTasksOutput) with field(s):
+    ///   - [`quantum_tasks(Option<Vec<QuantumTaskSummary>>)`](crate::output::SearchQuantumTasksOutput::quantum_tasks): <p>An array of <code>QuantumTaskSummary</code> objects for tasks that match the specified filters.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::SearchQuantumTasksOutput::next_token): <p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
+    /// - On failure, responds with [`SdkError<SearchQuantumTasksError>`](crate::error::SearchQuantumTasksError)
     pub fn search_quantum_tasks(&self) -> fluent_builders::SearchQuantumTasks<C, M, R> {
         fluent_builders::SearchQuantumTasks::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>Specify the <code>resourceArn</code> of the resource to which a tag will be added.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>Specify the tags to add to the resource.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>Specify the <code>resourceArn</code> for the resource from which to remove the tags.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>Specify the keys for the tags to remove from the resource.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }

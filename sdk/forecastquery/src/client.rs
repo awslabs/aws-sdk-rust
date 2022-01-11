@@ -83,10 +83,17 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `QueryForecast` operation.
+    /// Constructs a fluent builder for the [`QueryForecast`](crate::client::fluent_builders::QueryForecast) operation.
     ///
-    /// See [`QueryForecast`](crate::client::fluent_builders::QueryForecast) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`QueryForecastInput`](crate::input::QueryForecastInput) with field(s):
+    ///   - [`forecast_arn(Option<String>)`](crate::input::QueryForecastInput::forecast_arn): <p>The Amazon Resource Name (ARN) of the forecast to query.</p>
+    ///   - [`start_date(Option<String>)`](crate::input::QueryForecastInput::start_date): <p>The start date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T08:00:00.</p>
+    ///   - [`end_date(Option<String>)`](crate::input::QueryForecastInput::end_date): <p>The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00. </p>
+    ///   - [`filters(Option<HashMap<String, String>>)`](crate::input::QueryForecastInput::filters): <p>The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for <code>client_21</code> in the electricity usage dataset, specify the following:</p>  <p> <code>{"item_id" : "client_21"}</code> </p>  <p>To get the full forecast, use the <a href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html">CreateForecastExportJob</a> operation.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::QueryForecastInput::next_token): <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    /// - On success, responds with [`QueryForecastOutput`](crate::output::QueryForecastOutput) with field(s):
+    ///   - [`forecast(Option<Forecast>)`](crate::output::QueryForecastOutput::forecast): <p>The forecast.</p>
+    /// - On failure, responds with [`SdkError<QueryForecastError>`](crate::error::QueryForecastError)
     pub fn query_forecast(&self) -> fluent_builders::QueryForecast<C, M, R> {
         fluent_builders::QueryForecast::new(self.handle.clone())
     }

@@ -83,262 +83,515 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateApp` operation.
+    /// Constructs a fluent builder for the [`CreateApp`](crate::client::fluent_builders::CreateApp) operation.
     ///
-    /// See [`CreateApp`](crate::client::fluent_builders::CreateApp) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateAppInput`](crate::input::CreateAppInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateAppInput::name): <p> The name for an Amplify app. </p>
+    ///   - [`description(Option<String>)`](crate::input::CreateAppInput::description): <p> The description for an Amplify app. </p>
+    ///   - [`repository(Option<String>)`](crate::input::CreateAppInput::repository): <p> The repository for an Amplify app. </p>
+    ///   - [`platform(Option<Platform>)`](crate::input::CreateAppInput::platform): <p> The platform or framework for an Amplify app. </p>
+    ///   - [`iam_service_role_arn(Option<String>)`](crate::input::CreateAppInput::iam_service_role_arn): <p> The AWS Identity and Access Management (IAM) service role for an Amplify app. </p>
+    ///   - [`oauth_token(Option<String>)`](crate::input::CreateAppInput::oauth_token): <p> The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key. The OAuth token is not stored. </p>
+    ///   - [`access_token(Option<String>)`](crate::input::CreateAppInput::access_token): <p> The personal access token for a third-party source control system for an Amplify app. The personal access token is used to create a webhook and a read-only deploy key. The token is not stored. </p>
+    ///   - [`environment_variables(Option<HashMap<String, String>>)`](crate::input::CreateAppInput::environment_variables): <p> The environment variables map for an Amplify app. </p>
+    ///   - [`enable_branch_auto_build(Option<bool>)`](crate::input::CreateAppInput::enable_branch_auto_build): <p> Enables the auto building of branches for an Amplify app. </p>
+    ///   - [`enable_branch_auto_deletion(Option<bool>)`](crate::input::CreateAppInput::enable_branch_auto_deletion): <p> Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository. </p>
+    ///   - [`enable_basic_auth(Option<bool>)`](crate::input::CreateAppInput::enable_basic_auth): <p> Enables basic authorization for an Amplify app. This will apply to all branches that are part of this app. </p>
+    ///   - [`basic_auth_credentials(Option<String>)`](crate::input::CreateAppInput::basic_auth_credentials): <p> The credentials for basic authorization for an Amplify app. </p>
+    ///   - [`custom_rules(Option<Vec<CustomRule>>)`](crate::input::CreateAppInput::custom_rules): <p> The custom rewrite and redirect rules for an Amplify app. </p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateAppInput::tags): <p> The tag for an Amplify app. </p>
+    ///   - [`build_spec(Option<String>)`](crate::input::CreateAppInput::build_spec): <p> The build specification (build spec) for an Amplify app. </p>
+    ///   - [`custom_headers(Option<String>)`](crate::input::CreateAppInput::custom_headers): <p>The custom HTTP headers for an Amplify app.</p>
+    ///   - [`enable_auto_branch_creation(Option<bool>)`](crate::input::CreateAppInput::enable_auto_branch_creation): <p> Enables automated branch creation for an Amplify app. </p>
+    ///   - [`auto_branch_creation_patterns(Option<Vec<String>>)`](crate::input::CreateAppInput::auto_branch_creation_patterns): <p> The automated branch creation glob patterns for an Amplify app. </p>
+    ///   - [`auto_branch_creation_config(Option<AutoBranchCreationConfig>)`](crate::input::CreateAppInput::auto_branch_creation_config): <p> The automated branch creation configuration for an Amplify app. </p>
+    /// - On success, responds with [`CreateAppOutput`](crate::output::CreateAppOutput) with field(s):
+    ///   - [`app(Option<App>)`](crate::output::CreateAppOutput::app): <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
+    /// - On failure, responds with [`SdkError<CreateAppError>`](crate::error::CreateAppError)
     pub fn create_app(&self) -> fluent_builders::CreateApp<C, M, R> {
         fluent_builders::CreateApp::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateBackendEnvironment` operation.
+    /// Constructs a fluent builder for the [`CreateBackendEnvironment`](crate::client::fluent_builders::CreateBackendEnvironment) operation.
     ///
-    /// See [`CreateBackendEnvironment`](crate::client::fluent_builders::CreateBackendEnvironment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateBackendEnvironmentInput`](crate::input::CreateBackendEnvironmentInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::CreateBackendEnvironmentInput::app_id): <p> The unique ID for an Amplify app. </p>
+    ///   - [`environment_name(Option<String>)`](crate::input::CreateBackendEnvironmentInput::environment_name): <p> The name for the backend environment. </p>
+    ///   - [`stack_name(Option<String>)`](crate::input::CreateBackendEnvironmentInput::stack_name): <p> The AWS CloudFormation stack name of a backend environment. </p>
+    ///   - [`deployment_artifacts(Option<String>)`](crate::input::CreateBackendEnvironmentInput::deployment_artifacts): <p> The name of deployment artifacts. </p>
+    /// - On success, responds with [`CreateBackendEnvironmentOutput`](crate::output::CreateBackendEnvironmentOutput) with field(s):
+    ///   - [`backend_environment(Option<BackendEnvironment>)`](crate::output::CreateBackendEnvironmentOutput::backend_environment): <p> Describes the backend environment for an Amplify app. </p>
+    /// - On failure, responds with [`SdkError<CreateBackendEnvironmentError>`](crate::error::CreateBackendEnvironmentError)
     pub fn create_backend_environment(&self) -> fluent_builders::CreateBackendEnvironment<C, M, R> {
         fluent_builders::CreateBackendEnvironment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateBranch` operation.
+    /// Constructs a fluent builder for the [`CreateBranch`](crate::client::fluent_builders::CreateBranch) operation.
     ///
-    /// See [`CreateBranch`](crate::client::fluent_builders::CreateBranch) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateBranchInput`](crate::input::CreateBranchInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::CreateBranchInput::app_id): <p> The unique ID for an Amplify app. </p>
+    ///   - [`branch_name(Option<String>)`](crate::input::CreateBranchInput::branch_name): <p> The name for the branch. </p>
+    ///   - [`description(Option<String>)`](crate::input::CreateBranchInput::description): <p> The description for the branch. </p>
+    ///   - [`stage(Option<Stage>)`](crate::input::CreateBranchInput::stage): <p> Describes the current stage for the branch. </p>
+    ///   - [`framework(Option<String>)`](crate::input::CreateBranchInput::framework): <p> The framework for the branch. </p>
+    ///   - [`enable_notification(Option<bool>)`](crate::input::CreateBranchInput::enable_notification): <p> Enables notifications for the branch. </p>
+    ///   - [`enable_auto_build(Option<bool>)`](crate::input::CreateBranchInput::enable_auto_build): <p> Enables auto building for the branch. </p>
+    ///   - [`environment_variables(Option<HashMap<String, String>>)`](crate::input::CreateBranchInput::environment_variables): <p> The environment variables for the branch. </p>
+    ///   - [`basic_auth_credentials(Option<String>)`](crate::input::CreateBranchInput::basic_auth_credentials): <p> The basic authorization credentials for the branch. </p>
+    ///   - [`enable_basic_auth(Option<bool>)`](crate::input::CreateBranchInput::enable_basic_auth): <p> Enables basic authorization for the branch. </p>
+    ///   - [`enable_performance_mode(Option<bool>)`](crate::input::CreateBranchInput::enable_performance_mode): <p>Enables performance mode for the branch.</p>  <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateBranchInput::tags): <p> The tag for the branch. </p>
+    ///   - [`build_spec(Option<String>)`](crate::input::CreateBranchInput::build_spec): <p> The build specification (build spec) for the branch. </p>
+    ///   - [`ttl(Option<String>)`](crate::input::CreateBranchInput::ttl): <p> The content Time To Live (TTL) for the website in seconds. </p>
+    ///   - [`display_name(Option<String>)`](crate::input::CreateBranchInput::display_name): <p> The display name for a branch. This is used as the default domain prefix. </p>
+    ///   - [`enable_pull_request_preview(Option<bool>)`](crate::input::CreateBranchInput::enable_pull_request_preview): <p> Enables pull request previews for this branch. </p>
+    ///   - [`pull_request_environment_name(Option<String>)`](crate::input::CreateBranchInput::pull_request_environment_name): <p> The Amplify environment name for the pull request. </p>
+    ///   - [`backend_environment_arn(Option<String>)`](crate::input::CreateBranchInput::backend_environment_arn): <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
+    /// - On success, responds with [`CreateBranchOutput`](crate::output::CreateBranchOutput) with field(s):
+    ///   - [`branch(Option<Branch>)`](crate::output::CreateBranchOutput::branch): <p> Describes the branch for an Amplify app, which maps to a third-party repository branch. </p>
+    /// - On failure, responds with [`SdkError<CreateBranchError>`](crate::error::CreateBranchError)
     pub fn create_branch(&self) -> fluent_builders::CreateBranch<C, M, R> {
         fluent_builders::CreateBranch::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDeployment` operation.
+    /// Constructs a fluent builder for the [`CreateDeployment`](crate::client::fluent_builders::CreateDeployment) operation.
     ///
-    /// See [`CreateDeployment`](crate::client::fluent_builders::CreateDeployment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateDeploymentInput`](crate::input::CreateDeploymentInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::CreateDeploymentInput::app_id): <p> The unique ID for an Amplify app. </p>
+    ///   - [`branch_name(Option<String>)`](crate::input::CreateDeploymentInput::branch_name): <p> The name for the branch, for the job. </p>
+    ///   - [`file_map(Option<HashMap<String, String>>)`](crate::input::CreateDeploymentInput::file_map): <p> An optional file map that contains the file name as the key and the file content md5 hash as the value. If this argument is provided, the service will generate a unique upload URL per file. Otherwise, the service will only generate a single upload URL for the zipped files. </p>
+    /// - On success, responds with [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::CreateDeploymentOutput::job_id): <p> The job ID for this deployment. will supply to start deployment api. </p>
+    ///   - [`file_upload_urls(Option<HashMap<String, String>>)`](crate::output::CreateDeploymentOutput::file_upload_urls): <p> When the <code>fileMap</code> argument is provided in the request, <code>fileUploadUrls</code> will contain a map of file names to upload URLs. </p>
+    ///   - [`zip_upload_url(Option<String>)`](crate::output::CreateDeploymentOutput::zip_upload_url): <p> When the <code>fileMap</code> argument is not provided in the request, this <code>zipUploadUrl</code> is returned. </p>
+    /// - On failure, responds with [`SdkError<CreateDeploymentError>`](crate::error::CreateDeploymentError)
     pub fn create_deployment(&self) -> fluent_builders::CreateDeployment<C, M, R> {
         fluent_builders::CreateDeployment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDomainAssociation` operation.
+    /// Constructs a fluent builder for the [`CreateDomainAssociation`](crate::client::fluent_builders::CreateDomainAssociation) operation.
     ///
-    /// See [`CreateDomainAssociation`](crate::client::fluent_builders::CreateDomainAssociation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateDomainAssociationInput`](crate::input::CreateDomainAssociationInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::CreateDomainAssociationInput::app_id): <p> The unique ID for an Amplify app. </p>
+    ///   - [`domain_name(Option<String>)`](crate::input::CreateDomainAssociationInput::domain_name): <p> The domain name for the domain association. </p>
+    ///   - [`enable_auto_sub_domain(Option<bool>)`](crate::input::CreateDomainAssociationInput::enable_auto_sub_domain): <p> Enables the automated creation of subdomains for branches. </p>
+    ///   - [`sub_domain_settings(Option<Vec<SubDomainSetting>>)`](crate::input::CreateDomainAssociationInput::sub_domain_settings): <p> The setting for the subdomain. </p>
+    ///   - [`auto_sub_domain_creation_patterns(Option<Vec<String>>)`](crate::input::CreateDomainAssociationInput::auto_sub_domain_creation_patterns): <p> Sets the branch patterns for automatic subdomain creation. </p>
+    ///   - [`auto_sub_domain_iam_role(Option<String>)`](crate::input::CreateDomainAssociationInput::auto_sub_domain_iam_role): <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
+    /// - On success, responds with [`CreateDomainAssociationOutput`](crate::output::CreateDomainAssociationOutput) with field(s):
+    ///   - [`domain_association(Option<DomainAssociation>)`](crate::output::CreateDomainAssociationOutput::domain_association): <p> Describes the structure of a domain association, which associates a custom domain with an Amplify app. </p>
+    /// - On failure, responds with [`SdkError<CreateDomainAssociationError>`](crate::error::CreateDomainAssociationError)
     pub fn create_domain_association(&self) -> fluent_builders::CreateDomainAssociation<C, M, R> {
         fluent_builders::CreateDomainAssociation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateWebhook` operation.
+    /// Constructs a fluent builder for the [`CreateWebhook`](crate::client::fluent_builders::CreateWebhook) operation.
     ///
-    /// See [`CreateWebhook`](crate::client::fluent_builders::CreateWebhook) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateWebhookInput`](crate::input::CreateWebhookInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::CreateWebhookInput::app_id): <p> The unique ID for an Amplify app. </p>
+    ///   - [`branch_name(Option<String>)`](crate::input::CreateWebhookInput::branch_name): <p> The name for a branch that is part of an Amplify app. </p>
+    ///   - [`description(Option<String>)`](crate::input::CreateWebhookInput::description): <p> The description for a webhook. </p>
+    /// - On success, responds with [`CreateWebhookOutput`](crate::output::CreateWebhookOutput) with field(s):
+    ///   - [`webhook(Option<Webhook>)`](crate::output::CreateWebhookOutput::webhook): <p> Describes a webhook that connects repository events to an Amplify app. </p>
+    /// - On failure, responds with [`SdkError<CreateWebhookError>`](crate::error::CreateWebhookError)
     pub fn create_webhook(&self) -> fluent_builders::CreateWebhook<C, M, R> {
         fluent_builders::CreateWebhook::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteApp` operation.
+    /// Constructs a fluent builder for the [`DeleteApp`](crate::client::fluent_builders::DeleteApp) operation.
     ///
-    /// See [`DeleteApp`](crate::client::fluent_builders::DeleteApp) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteAppInput`](crate::input::DeleteAppInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::DeleteAppInput::app_id): <p> The unique ID for an Amplify app. </p>
+    /// - On success, responds with [`DeleteAppOutput`](crate::output::DeleteAppOutput) with field(s):
+    ///   - [`app(Option<App>)`](crate::output::DeleteAppOutput::app): <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
+    /// - On failure, responds with [`SdkError<DeleteAppError>`](crate::error::DeleteAppError)
     pub fn delete_app(&self) -> fluent_builders::DeleteApp<C, M, R> {
         fluent_builders::DeleteApp::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteBackendEnvironment` operation.
+    /// Constructs a fluent builder for the [`DeleteBackendEnvironment`](crate::client::fluent_builders::DeleteBackendEnvironment) operation.
     ///
-    /// See [`DeleteBackendEnvironment`](crate::client::fluent_builders::DeleteBackendEnvironment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteBackendEnvironmentInput`](crate::input::DeleteBackendEnvironmentInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::DeleteBackendEnvironmentInput::app_id): <p> The unique ID of an Amplify app. </p>
+    ///   - [`environment_name(Option<String>)`](crate::input::DeleteBackendEnvironmentInput::environment_name): <p> The name of a backend environment of an Amplify app. </p>
+    /// - On success, responds with [`DeleteBackendEnvironmentOutput`](crate::output::DeleteBackendEnvironmentOutput) with field(s):
+    ///   - [`backend_environment(Option<BackendEnvironment>)`](crate::output::DeleteBackendEnvironmentOutput::backend_environment): <p> Describes the backend environment for an Amplify app. </p>
+    /// - On failure, responds with [`SdkError<DeleteBackendEnvironmentError>`](crate::error::DeleteBackendEnvironmentError)
     pub fn delete_backend_environment(&self) -> fluent_builders::DeleteBackendEnvironment<C, M, R> {
         fluent_builders::DeleteBackendEnvironment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteBranch` operation.
+    /// Constructs a fluent builder for the [`DeleteBranch`](crate::client::fluent_builders::DeleteBranch) operation.
     ///
-    /// See [`DeleteBranch`](crate::client::fluent_builders::DeleteBranch) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteBranchInput`](crate::input::DeleteBranchInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::DeleteBranchInput::app_id): <p> The unique ID for an Amplify app. </p>
+    ///   - [`branch_name(Option<String>)`](crate::input::DeleteBranchInput::branch_name): <p> The name for the branch. </p>
+    /// - On success, responds with [`DeleteBranchOutput`](crate::output::DeleteBranchOutput) with field(s):
+    ///   - [`branch(Option<Branch>)`](crate::output::DeleteBranchOutput::branch): <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
+    /// - On failure, responds with [`SdkError<DeleteBranchError>`](crate::error::DeleteBranchError)
     pub fn delete_branch(&self) -> fluent_builders::DeleteBranch<C, M, R> {
         fluent_builders::DeleteBranch::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDomainAssociation` operation.
+    /// Constructs a fluent builder for the [`DeleteDomainAssociation`](crate::client::fluent_builders::DeleteDomainAssociation) operation.
     ///
-    /// See [`DeleteDomainAssociation`](crate::client::fluent_builders::DeleteDomainAssociation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteDomainAssociationInput`](crate::input::DeleteDomainAssociationInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::DeleteDomainAssociationInput::app_id): <p> The unique id for an Amplify app. </p>
+    ///   - [`domain_name(Option<String>)`](crate::input::DeleteDomainAssociationInput::domain_name): <p> The name of the domain. </p>
+    /// - On success, responds with [`DeleteDomainAssociationOutput`](crate::output::DeleteDomainAssociationOutput) with field(s):
+    ///   - [`domain_association(Option<DomainAssociation>)`](crate::output::DeleteDomainAssociationOutput::domain_association): <p> Describes a domain association that associates a custom domain with an Amplify app. </p>
+    /// - On failure, responds with [`SdkError<DeleteDomainAssociationError>`](crate::error::DeleteDomainAssociationError)
     pub fn delete_domain_association(&self) -> fluent_builders::DeleteDomainAssociation<C, M, R> {
         fluent_builders::DeleteDomainAssociation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteJob` operation.
+    /// Constructs a fluent builder for the [`DeleteJob`](crate::client::fluent_builders::DeleteJob) operation.
     ///
-    /// See [`DeleteJob`](crate::client::fluent_builders::DeleteJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteJobInput`](crate::input::DeleteJobInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::DeleteJobInput::app_id): <p> The unique ID for an Amplify app. </p>
+    ///   - [`branch_name(Option<String>)`](crate::input::DeleteJobInput::branch_name): <p> The name for the branch, for the job. </p>
+    ///   - [`job_id(Option<String>)`](crate::input::DeleteJobInput::job_id): <p> The unique ID for the job. </p>
+    /// - On success, responds with [`DeleteJobOutput`](crate::output::DeleteJobOutput) with field(s):
+    ///   - [`job_summary(Option<JobSummary>)`](crate::output::DeleteJobOutput::job_summary): <p> Describes the summary for an execution job for an Amplify app. </p>
+    /// - On failure, responds with [`SdkError<DeleteJobError>`](crate::error::DeleteJobError)
     pub fn delete_job(&self) -> fluent_builders::DeleteJob<C, M, R> {
         fluent_builders::DeleteJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteWebhook` operation.
+    /// Constructs a fluent builder for the [`DeleteWebhook`](crate::client::fluent_builders::DeleteWebhook) operation.
     ///
-    /// See [`DeleteWebhook`](crate::client::fluent_builders::DeleteWebhook) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteWebhookInput`](crate::input::DeleteWebhookInput) with field(s):
+    ///   - [`webhook_id(Option<String>)`](crate::input::DeleteWebhookInput::webhook_id): <p> The unique ID for a webhook. </p>
+    /// - On success, responds with [`DeleteWebhookOutput`](crate::output::DeleteWebhookOutput) with field(s):
+    ///   - [`webhook(Option<Webhook>)`](crate::output::DeleteWebhookOutput::webhook): <p> Describes a webhook that connects repository events to an Amplify app. </p>
+    /// - On failure, responds with [`SdkError<DeleteWebhookError>`](crate::error::DeleteWebhookError)
     pub fn delete_webhook(&self) -> fluent_builders::DeleteWebhook<C, M, R> {
         fluent_builders::DeleteWebhook::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GenerateAccessLogs` operation.
+    /// Constructs a fluent builder for the [`GenerateAccessLogs`](crate::client::fluent_builders::GenerateAccessLogs) operation.
     ///
-    /// See [`GenerateAccessLogs`](crate::client::fluent_builders::GenerateAccessLogs) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GenerateAccessLogsInput`](crate::input::GenerateAccessLogsInput) with field(s):
+    ///   - [`start_time(Option<DateTime>)`](crate::input::GenerateAccessLogsInput::start_time): <p> The time at which the logs should start. The time range specified is inclusive of the start time. </p>
+    ///   - [`end_time(Option<DateTime>)`](crate::input::GenerateAccessLogsInput::end_time): <p> The time at which the logs should end. The time range specified is inclusive of the end time. </p>
+    ///   - [`domain_name(Option<String>)`](crate::input::GenerateAccessLogsInput::domain_name): <p> The name of the domain. </p>
+    ///   - [`app_id(Option<String>)`](crate::input::GenerateAccessLogsInput::app_id): <p> The unique ID for an Amplify app. </p>
+    /// - On success, responds with [`GenerateAccessLogsOutput`](crate::output::GenerateAccessLogsOutput) with field(s):
+    ///   - [`log_url(Option<String>)`](crate::output::GenerateAccessLogsOutput::log_url): <p> The pre-signed URL for the requested access logs. </p>
+    /// - On failure, responds with [`SdkError<GenerateAccessLogsError>`](crate::error::GenerateAccessLogsError)
     pub fn generate_access_logs(&self) -> fluent_builders::GenerateAccessLogs<C, M, R> {
         fluent_builders::GenerateAccessLogs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetApp` operation.
+    /// Constructs a fluent builder for the [`GetApp`](crate::client::fluent_builders::GetApp) operation.
     ///
-    /// See [`GetApp`](crate::client::fluent_builders::GetApp) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetAppInput`](crate::input::GetAppInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::GetAppInput::app_id): <p> The unique ID for an Amplify app. </p>
+    /// - On success, responds with [`GetAppOutput`](crate::output::GetAppOutput) with field(s):
+    ///   - [`app(Option<App>)`](crate::output::GetAppOutput::app): <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
+    /// - On failure, responds with [`SdkError<GetAppError>`](crate::error::GetAppError)
     pub fn get_app(&self) -> fluent_builders::GetApp<C, M, R> {
         fluent_builders::GetApp::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetArtifactUrl` operation.
+    /// Constructs a fluent builder for the [`GetArtifactUrl`](crate::client::fluent_builders::GetArtifactUrl) operation.
     ///
-    /// See [`GetArtifactUrl`](crate::client::fluent_builders::GetArtifactUrl) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetArtifactUrlInput`](crate::input::GetArtifactUrlInput) with field(s):
+    ///   - [`artifact_id(Option<String>)`](crate::input::GetArtifactUrlInput::artifact_id): <p> The unique ID for an artifact. </p>
+    /// - On success, responds with [`GetArtifactUrlOutput`](crate::output::GetArtifactUrlOutput) with field(s):
+    ///   - [`artifact_id(Option<String>)`](crate::output::GetArtifactUrlOutput::artifact_id): <p> The unique ID for an artifact. </p>
+    ///   - [`artifact_url(Option<String>)`](crate::output::GetArtifactUrlOutput::artifact_url): <p> The presigned URL for the artifact. </p>
+    /// - On failure, responds with [`SdkError<GetArtifactUrlError>`](crate::error::GetArtifactUrlError)
     pub fn get_artifact_url(&self) -> fluent_builders::GetArtifactUrl<C, M, R> {
         fluent_builders::GetArtifactUrl::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBackendEnvironment` operation.
+    /// Constructs a fluent builder for the [`GetBackendEnvironment`](crate::client::fluent_builders::GetBackendEnvironment) operation.
     ///
-    /// See [`GetBackendEnvironment`](crate::client::fluent_builders::GetBackendEnvironment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetBackendEnvironmentInput`](crate::input::GetBackendEnvironmentInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::GetBackendEnvironmentInput::app_id): <p> The unique id for an Amplify app. </p>
+    ///   - [`environment_name(Option<String>)`](crate::input::GetBackendEnvironmentInput::environment_name): <p> The name for the backend environment. </p>
+    /// - On success, responds with [`GetBackendEnvironmentOutput`](crate::output::GetBackendEnvironmentOutput) with field(s):
+    ///   - [`backend_environment(Option<BackendEnvironment>)`](crate::output::GetBackendEnvironmentOutput::backend_environment): <p> Describes the backend environment for an Amplify app. </p>
+    /// - On failure, responds with [`SdkError<GetBackendEnvironmentError>`](crate::error::GetBackendEnvironmentError)
     pub fn get_backend_environment(&self) -> fluent_builders::GetBackendEnvironment<C, M, R> {
         fluent_builders::GetBackendEnvironment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBranch` operation.
+    /// Constructs a fluent builder for the [`GetBranch`](crate::client::fluent_builders::GetBranch) operation.
     ///
-    /// See [`GetBranch`](crate::client::fluent_builders::GetBranch) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetBranchInput`](crate::input::GetBranchInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::GetBranchInput::app_id): <p> The unique ID for an Amplify app. </p>
+    ///   - [`branch_name(Option<String>)`](crate::input::GetBranchInput::branch_name): <p> The name for the branch. </p>
+    /// - On success, responds with [`GetBranchOutput`](crate::output::GetBranchOutput) with field(s):
+    ///   - [`branch(Option<Branch>)`](crate::output::GetBranchOutput::branch): <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
+    /// - On failure, responds with [`SdkError<GetBranchError>`](crate::error::GetBranchError)
     pub fn get_branch(&self) -> fluent_builders::GetBranch<C, M, R> {
         fluent_builders::GetBranch::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDomainAssociation` operation.
+    /// Constructs a fluent builder for the [`GetDomainAssociation`](crate::client::fluent_builders::GetDomainAssociation) operation.
     ///
-    /// See [`GetDomainAssociation`](crate::client::fluent_builders::GetDomainAssociation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetDomainAssociationInput`](crate::input::GetDomainAssociationInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::GetDomainAssociationInput::app_id): <p> The unique id for an Amplify app. </p>
+    ///   - [`domain_name(Option<String>)`](crate::input::GetDomainAssociationInput::domain_name): <p> The name of the domain. </p>
+    /// - On success, responds with [`GetDomainAssociationOutput`](crate::output::GetDomainAssociationOutput) with field(s):
+    ///   - [`domain_association(Option<DomainAssociation>)`](crate::output::GetDomainAssociationOutput::domain_association): <p> Describes the structure of a domain association, which associates a custom domain with an Amplify app. </p>
+    /// - On failure, responds with [`SdkError<GetDomainAssociationError>`](crate::error::GetDomainAssociationError)
     pub fn get_domain_association(&self) -> fluent_builders::GetDomainAssociation<C, M, R> {
         fluent_builders::GetDomainAssociation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetJob` operation.
+    /// Constructs a fluent builder for the [`GetJob`](crate::client::fluent_builders::GetJob) operation.
     ///
-    /// See [`GetJob`](crate::client::fluent_builders::GetJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetJobInput`](crate::input::GetJobInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::GetJobInput::app_id): <p> The unique ID for an Amplify app. </p>
+    ///   - [`branch_name(Option<String>)`](crate::input::GetJobInput::branch_name): <p> The branch name for the job. </p>
+    ///   - [`job_id(Option<String>)`](crate::input::GetJobInput::job_id): <p> The unique ID for the job. </p>
+    /// - On success, responds with [`GetJobOutput`](crate::output::GetJobOutput) with field(s):
+    ///   - [`job(Option<Job>)`](crate::output::GetJobOutput::job): <p> Describes an execution job for an Amplify app. </p>
+    /// - On failure, responds with [`SdkError<GetJobError>`](crate::error::GetJobError)
     pub fn get_job(&self) -> fluent_builders::GetJob<C, M, R> {
         fluent_builders::GetJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetWebhook` operation.
+    /// Constructs a fluent builder for the [`GetWebhook`](crate::client::fluent_builders::GetWebhook) operation.
     ///
-    /// See [`GetWebhook`](crate::client::fluent_builders::GetWebhook) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetWebhookInput`](crate::input::GetWebhookInput) with field(s):
+    ///   - [`webhook_id(Option<String>)`](crate::input::GetWebhookInput::webhook_id): <p> The unique ID for a webhook. </p>
+    /// - On success, responds with [`GetWebhookOutput`](crate::output::GetWebhookOutput) with field(s):
+    ///   - [`webhook(Option<Webhook>)`](crate::output::GetWebhookOutput::webhook): <p> Describes the structure of a webhook. </p>
+    /// - On failure, responds with [`SdkError<GetWebhookError>`](crate::error::GetWebhookError)
     pub fn get_webhook(&self) -> fluent_builders::GetWebhook<C, M, R> {
         fluent_builders::GetWebhook::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListApps` operation.
+    /// Constructs a fluent builder for the [`ListApps`](crate::client::fluent_builders::ListApps) operation.
     ///
-    /// See [`ListApps`](crate::client::fluent_builders::ListApps) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListAppsInput`](crate::input::ListAppsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListAppsInput::next_token): <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
+    ///   - [`max_results(i32)`](crate::input::ListAppsInput::max_results): <p> The maximum number of records to list in a single response. </p>
+    /// - On success, responds with [`ListAppsOutput`](crate::output::ListAppsOutput) with field(s):
+    ///   - [`apps(Option<Vec<App>>)`](crate::output::ListAppsOutput::apps): <p> A list of Amplify apps. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAppsOutput::next_token): <p> A pagination token. Set to null to start listing apps from start. If non-null, the pagination token is returned in a result. Pass its value in here to list more projects. </p>
+    /// - On failure, responds with [`SdkError<ListAppsError>`](crate::error::ListAppsError)
     pub fn list_apps(&self) -> fluent_builders::ListApps<C, M, R> {
         fluent_builders::ListApps::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListArtifacts` operation.
+    /// Constructs a fluent builder for the [`ListArtifacts`](crate::client::fluent_builders::ListArtifacts) operation.
     ///
-    /// See [`ListArtifacts`](crate::client::fluent_builders::ListArtifacts) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListArtifactsInput`](crate::input::ListArtifactsInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::ListArtifactsInput::app_id): <p> The unique ID for an Amplify app. </p>
+    ///   - [`branch_name(Option<String>)`](crate::input::ListArtifactsInput::branch_name): <p> The name of a branch that is part of an Amplify app. </p>
+    ///   - [`job_id(Option<String>)`](crate::input::ListArtifactsInput::job_id): <p> The unique ID for a job. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListArtifactsInput::next_token): <p> A pagination token. Set to null to start listing artifacts from start. If a non-null pagination token is returned in a result, pass its value in here to list more artifacts. </p>
+    ///   - [`max_results(i32)`](crate::input::ListArtifactsInput::max_results): <p> The maximum number of records to list in a single response. </p>
+    /// - On success, responds with [`ListArtifactsOutput`](crate::output::ListArtifactsOutput) with field(s):
+    ///   - [`artifacts(Option<Vec<Artifact>>)`](crate::output::ListArtifactsOutput::artifacts): <p> A list of artifacts. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListArtifactsOutput::next_token): <p> A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries. </p>
+    /// - On failure, responds with [`SdkError<ListArtifactsError>`](crate::error::ListArtifactsError)
     pub fn list_artifacts(&self) -> fluent_builders::ListArtifacts<C, M, R> {
         fluent_builders::ListArtifacts::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListBackendEnvironments` operation.
+    /// Constructs a fluent builder for the [`ListBackendEnvironments`](crate::client::fluent_builders::ListBackendEnvironments) operation.
     ///
-    /// See [`ListBackendEnvironments`](crate::client::fluent_builders::ListBackendEnvironments) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListBackendEnvironmentsInput`](crate::input::ListBackendEnvironmentsInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::ListBackendEnvironmentsInput::app_id): <p> The unique ID for an Amplify app. </p>
+    ///   - [`environment_name(Option<String>)`](crate::input::ListBackendEnvironmentsInput::environment_name): <p> The name of the backend environment </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListBackendEnvironmentsInput::next_token): <p> A pagination token. Set to null to start listing backend environments from the start. If a non-null pagination token is returned in a result, pass its value in here to list more backend environments. </p>
+    ///   - [`max_results(i32)`](crate::input::ListBackendEnvironmentsInput::max_results): <p> The maximum number of records to list in a single response. </p>
+    /// - On success, responds with [`ListBackendEnvironmentsOutput`](crate::output::ListBackendEnvironmentsOutput) with field(s):
+    ///   - [`backend_environments(Option<Vec<BackendEnvironment>>)`](crate::output::ListBackendEnvironmentsOutput::backend_environments): <p> The list of backend environments for an Amplify app. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListBackendEnvironmentsOutput::next_token): <p> A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries. </p>
+    /// - On failure, responds with [`SdkError<ListBackendEnvironmentsError>`](crate::error::ListBackendEnvironmentsError)
     pub fn list_backend_environments(&self) -> fluent_builders::ListBackendEnvironments<C, M, R> {
         fluent_builders::ListBackendEnvironments::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListBranches` operation.
+    /// Constructs a fluent builder for the [`ListBranches`](crate::client::fluent_builders::ListBranches) operation.
     ///
-    /// See [`ListBranches`](crate::client::fluent_builders::ListBranches) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListBranchesInput`](crate::input::ListBranchesInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::ListBranchesInput::app_id): <p> The unique ID for an Amplify app. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListBranchesInput::next_token): <p> A pagination token. Set to null to start listing branches from the start. If a non-null pagination token is returned in a result, pass its value in here to list more branches. </p>
+    ///   - [`max_results(i32)`](crate::input::ListBranchesInput::max_results): <p> The maximum number of records to list in a single response. </p>
+    /// - On success, responds with [`ListBranchesOutput`](crate::output::ListBranchesOutput) with field(s):
+    ///   - [`branches(Option<Vec<Branch>>)`](crate::output::ListBranchesOutput::branches): <p> A list of branches for an Amplify app. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListBranchesOutput::next_token): <p> A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries. </p>
+    /// - On failure, responds with [`SdkError<ListBranchesError>`](crate::error::ListBranchesError)
     pub fn list_branches(&self) -> fluent_builders::ListBranches<C, M, R> {
         fluent_builders::ListBranches::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDomainAssociations` operation.
+    /// Constructs a fluent builder for the [`ListDomainAssociations`](crate::client::fluent_builders::ListDomainAssociations) operation.
     ///
-    /// See [`ListDomainAssociations`](crate::client::fluent_builders::ListDomainAssociations) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListDomainAssociationsInput`](crate::input::ListDomainAssociationsInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::ListDomainAssociationsInput::app_id): <p> The unique ID for an Amplify app. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListDomainAssociationsInput::next_token): <p> A pagination token. Set to null to start listing apps from the start. If non-null, a pagination token is returned in a result. Pass its value in here to list more projects. </p>
+    ///   - [`max_results(i32)`](crate::input::ListDomainAssociationsInput::max_results): <p> The maximum number of records to list in a single response. </p>
+    /// - On success, responds with [`ListDomainAssociationsOutput`](crate::output::ListDomainAssociationsOutput) with field(s):
+    ///   - [`domain_associations(Option<Vec<DomainAssociation>>)`](crate::output::ListDomainAssociationsOutput::domain_associations): <p> A list of domain associations. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDomainAssociationsOutput::next_token): <p> A pagination token. If non-null, a pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
+    /// - On failure, responds with [`SdkError<ListDomainAssociationsError>`](crate::error::ListDomainAssociationsError)
     pub fn list_domain_associations(&self) -> fluent_builders::ListDomainAssociations<C, M, R> {
         fluent_builders::ListDomainAssociations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListJobs` operation.
+    /// Constructs a fluent builder for the [`ListJobs`](crate::client::fluent_builders::ListJobs) operation.
     ///
-    /// See [`ListJobs`](crate::client::fluent_builders::ListJobs) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListJobsInput`](crate::input::ListJobsInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::ListJobsInput::app_id): <p> The unique ID for an Amplify app. </p>
+    ///   - [`branch_name(Option<String>)`](crate::input::ListJobsInput::branch_name): <p> The name for a branch. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListJobsInput::next_token): <p> A pagination token. Set to null to start listing steps from the start. If a non-null pagination token is returned in a result, pass its value in here to list more steps. </p>
+    ///   - [`max_results(i32)`](crate::input::ListJobsInput::max_results): <p> The maximum number of records to list in a single response. </p>
+    /// - On success, responds with [`ListJobsOutput`](crate::output::ListJobsOutput) with field(s):
+    ///   - [`job_summaries(Option<Vec<JobSummary>>)`](crate::output::ListJobsOutput::job_summaries): <p> The result structure for the list job result request. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListJobsOutput::next_token): <p> A pagination token. If non-null the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
+    /// - On failure, responds with [`SdkError<ListJobsError>`](crate::error::ListJobsError)
     pub fn list_jobs(&self) -> fluent_builders::ListJobs<C, M, R> {
         fluent_builders::ListJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p> The Amazon Resource Name (ARN) to use to list tags. </p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p> A list of tags for the specified The Amazon Resource Name (ARN). </p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListWebhooks` operation.
+    /// Constructs a fluent builder for the [`ListWebhooks`](crate::client::fluent_builders::ListWebhooks) operation.
     ///
-    /// See [`ListWebhooks`](crate::client::fluent_builders::ListWebhooks) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListWebhooksInput`](crate::input::ListWebhooksInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::ListWebhooksInput::app_id): <p> The unique ID for an Amplify app. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListWebhooksInput::next_token): <p> A pagination token. Set to null to start listing webhooks from the start. If non-null,the pagination token is returned in a result. Pass its value in here to list more webhooks. </p>
+    ///   - [`max_results(i32)`](crate::input::ListWebhooksInput::max_results): <p> The maximum number of records to list in a single response. </p>
+    /// - On success, responds with [`ListWebhooksOutput`](crate::output::ListWebhooksOutput) with field(s):
+    ///   - [`webhooks(Option<Vec<Webhook>>)`](crate::output::ListWebhooksOutput::webhooks): <p> A list of webhooks. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListWebhooksOutput::next_token): <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
+    /// - On failure, responds with [`SdkError<ListWebhooksError>`](crate::error::ListWebhooksError)
     pub fn list_webhooks(&self) -> fluent_builders::ListWebhooks<C, M, R> {
         fluent_builders::ListWebhooks::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartDeployment` operation.
+    /// Constructs a fluent builder for the [`StartDeployment`](crate::client::fluent_builders::StartDeployment) operation.
     ///
-    /// See [`StartDeployment`](crate::client::fluent_builders::StartDeployment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartDeploymentInput`](crate::input::StartDeploymentInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::StartDeploymentInput::app_id): <p> The unique ID for an Amplify app. </p>
+    ///   - [`branch_name(Option<String>)`](crate::input::StartDeploymentInput::branch_name): <p> The name for the branch, for the job. </p>
+    ///   - [`job_id(Option<String>)`](crate::input::StartDeploymentInput::job_id): <p> The job ID for this deployment, generated by the create deployment request. </p>
+    ///   - [`source_url(Option<String>)`](crate::input::StartDeploymentInput::source_url): <p> The source URL for this deployment, used when calling start deployment without create deployment. The source URL can be any HTTP GET URL that is publicly accessible and downloads a single .zip file. </p>
+    /// - On success, responds with [`StartDeploymentOutput`](crate::output::StartDeploymentOutput) with field(s):
+    ///   - [`job_summary(Option<JobSummary>)`](crate::output::StartDeploymentOutput::job_summary): <p> The summary for the job. </p>
+    /// - On failure, responds with [`SdkError<StartDeploymentError>`](crate::error::StartDeploymentError)
     pub fn start_deployment(&self) -> fluent_builders::StartDeployment<C, M, R> {
         fluent_builders::StartDeployment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartJob` operation.
+    /// Constructs a fluent builder for the [`StartJob`](crate::client::fluent_builders::StartJob) operation.
     ///
-    /// See [`StartJob`](crate::client::fluent_builders::StartJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartJobInput`](crate::input::StartJobInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::StartJobInput::app_id): <p> The unique ID for an Amplify app. </p>
+    ///   - [`branch_name(Option<String>)`](crate::input::StartJobInput::branch_name): <p> The branch name for the job. </p>
+    ///   - [`job_id(Option<String>)`](crate::input::StartJobInput::job_id): <p> The unique ID for an existing job. This is required if the value of <code>jobType</code> is <code>RETRY</code>. </p>
+    ///   - [`job_type(Option<JobType>)`](crate::input::StartJobInput::job_type): <p> Describes the type for the job. The job type <code>RELEASE</code> starts a new job with the latest change from the specified branch. This value is available only for apps that are connected to a repository. The job type <code>RETRY</code> retries an existing job. If the job type value is <code>RETRY</code>, the <code>jobId</code> is also required. </p>
+    ///   - [`job_reason(Option<String>)`](crate::input::StartJobInput::job_reason): <p> A descriptive reason for starting this job. </p>
+    ///   - [`commit_id(Option<String>)`](crate::input::StartJobInput::commit_id): <p> The commit ID from a third-party repository provider for the job. </p>
+    ///   - [`commit_message(Option<String>)`](crate::input::StartJobInput::commit_message): <p> The commit message from a third-party repository provider for the job. </p>
+    ///   - [`commit_time(Option<DateTime>)`](crate::input::StartJobInput::commit_time): <p> The commit date and time for the job. </p>
+    /// - On success, responds with [`StartJobOutput`](crate::output::StartJobOutput) with field(s):
+    ///   - [`job_summary(Option<JobSummary>)`](crate::output::StartJobOutput::job_summary): <p> The summary for the job. </p>
+    /// - On failure, responds with [`SdkError<StartJobError>`](crate::error::StartJobError)
     pub fn start_job(&self) -> fluent_builders::StartJob<C, M, R> {
         fluent_builders::StartJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopJob` operation.
+    /// Constructs a fluent builder for the [`StopJob`](crate::client::fluent_builders::StopJob) operation.
     ///
-    /// See [`StopJob`](crate::client::fluent_builders::StopJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StopJobInput`](crate::input::StopJobInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::StopJobInput::app_id): <p> The unique ID for an Amplify app. </p>
+    ///   - [`branch_name(Option<String>)`](crate::input::StopJobInput::branch_name): <p> The name for the branch, for the job. </p>
+    ///   - [`job_id(Option<String>)`](crate::input::StopJobInput::job_id): <p> The unique id for the job. </p>
+    /// - On success, responds with [`StopJobOutput`](crate::output::StopJobOutput) with field(s):
+    ///   - [`job_summary(Option<JobSummary>)`](crate::output::StopJobOutput::job_summary): <p> The summary for the job. </p>
+    /// - On failure, responds with [`SdkError<StopJobError>`](crate::error::StopJobError)
     pub fn stop_job(&self) -> fluent_builders::StopJob<C, M, R> {
         fluent_builders::StopJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p> The Amazon Resource Name (ARN) to use to tag a resource. </p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p> The tags used to tag the resource. </p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p> The Amazon Resource Name (ARN) to use to untag a resource. </p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p> The tag keys to use to untag a resource. </p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateApp` operation.
+    /// Constructs a fluent builder for the [`UpdateApp`](crate::client::fluent_builders::UpdateApp) operation.
     ///
-    /// See [`UpdateApp`](crate::client::fluent_builders::UpdateApp) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateAppInput`](crate::input::UpdateAppInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::UpdateAppInput::app_id): <p> The unique ID for an Amplify app. </p>
+    ///   - [`name(Option<String>)`](crate::input::UpdateAppInput::name): <p> The name for an Amplify app. </p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateAppInput::description): <p> The description for an Amplify app. </p>
+    ///   - [`platform(Option<Platform>)`](crate::input::UpdateAppInput::platform): <p> The platform for an Amplify app. </p>
+    ///   - [`iam_service_role_arn(Option<String>)`](crate::input::UpdateAppInput::iam_service_role_arn): <p> The AWS Identity and Access Management (IAM) service role for an Amplify app. </p>
+    ///   - [`environment_variables(Option<HashMap<String, String>>)`](crate::input::UpdateAppInput::environment_variables): <p> The environment variables for an Amplify app. </p>
+    ///   - [`enable_branch_auto_build(Option<bool>)`](crate::input::UpdateAppInput::enable_branch_auto_build): <p> Enables branch auto-building for an Amplify app. </p>
+    ///   - [`enable_branch_auto_deletion(Option<bool>)`](crate::input::UpdateAppInput::enable_branch_auto_deletion): <p> Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository. </p>
+    ///   - [`enable_basic_auth(Option<bool>)`](crate::input::UpdateAppInput::enable_basic_auth): <p> Enables basic authorization for an Amplify app. </p>
+    ///   - [`basic_auth_credentials(Option<String>)`](crate::input::UpdateAppInput::basic_auth_credentials): <p> The basic authorization credentials for an Amplify app. </p>
+    ///   - [`custom_rules(Option<Vec<CustomRule>>)`](crate::input::UpdateAppInput::custom_rules): <p> The custom redirect and rewrite rules for an Amplify app. </p>
+    ///   - [`build_spec(Option<String>)`](crate::input::UpdateAppInput::build_spec): <p> The build specification (build spec) for an Amplify app. </p>
+    ///   - [`custom_headers(Option<String>)`](crate::input::UpdateAppInput::custom_headers): <p>The custom HTTP headers for an Amplify app.</p>
+    ///   - [`enable_auto_branch_creation(Option<bool>)`](crate::input::UpdateAppInput::enable_auto_branch_creation): <p> Enables automated branch creation for an Amplify app. </p>
+    ///   - [`auto_branch_creation_patterns(Option<Vec<String>>)`](crate::input::UpdateAppInput::auto_branch_creation_patterns): <p> Describes the automated branch creation glob patterns for an Amplify app. </p>
+    ///   - [`auto_branch_creation_config(Option<AutoBranchCreationConfig>)`](crate::input::UpdateAppInput::auto_branch_creation_config): <p> The automated branch creation configuration for an Amplify app. </p>
+    ///   - [`repository(Option<String>)`](crate::input::UpdateAppInput::repository): <p> The name of the repository for an Amplify app </p>
+    ///   - [`oauth_token(Option<String>)`](crate::input::UpdateAppInput::oauth_token): <p> The OAuth token for a third-party source control system for an Amplify app. The token is used to create a webhook and a read-only deploy key. The OAuth token is not stored. </p>
+    ///   - [`access_token(Option<String>)`](crate::input::UpdateAppInput::access_token): <p> The personal access token for a third-party source control system for an Amplify app. The token is used to create webhook and a read-only deploy key. The token is not stored. </p>
+    /// - On success, responds with [`UpdateAppOutput`](crate::output::UpdateAppOutput) with field(s):
+    ///   - [`app(Option<App>)`](crate::output::UpdateAppOutput::app): <p> Represents the updated Amplify app. </p>
+    /// - On failure, responds with [`SdkError<UpdateAppError>`](crate::error::UpdateAppError)
     pub fn update_app(&self) -> fluent_builders::UpdateApp<C, M, R> {
         fluent_builders::UpdateApp::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateBranch` operation.
+    /// Constructs a fluent builder for the [`UpdateBranch`](crate::client::fluent_builders::UpdateBranch) operation.
     ///
-    /// See [`UpdateBranch`](crate::client::fluent_builders::UpdateBranch) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateBranchInput`](crate::input::UpdateBranchInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::UpdateBranchInput::app_id): <p> The unique ID for an Amplify app. </p>
+    ///   - [`branch_name(Option<String>)`](crate::input::UpdateBranchInput::branch_name): <p> The name for the branch. </p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateBranchInput::description): <p> The description for the branch. </p>
+    ///   - [`framework(Option<String>)`](crate::input::UpdateBranchInput::framework): <p> The framework for the branch. </p>
+    ///   - [`stage(Option<Stage>)`](crate::input::UpdateBranchInput::stage): <p> Describes the current stage for the branch. </p>
+    ///   - [`enable_notification(Option<bool>)`](crate::input::UpdateBranchInput::enable_notification): <p> Enables notifications for the branch. </p>
+    ///   - [`enable_auto_build(Option<bool>)`](crate::input::UpdateBranchInput::enable_auto_build): <p> Enables auto building for the branch. </p>
+    ///   - [`environment_variables(Option<HashMap<String, String>>)`](crate::input::UpdateBranchInput::environment_variables): <p> The environment variables for the branch. </p>
+    ///   - [`basic_auth_credentials(Option<String>)`](crate::input::UpdateBranchInput::basic_auth_credentials): <p> The basic authorization credentials for the branch. </p>
+    ///   - [`enable_basic_auth(Option<bool>)`](crate::input::UpdateBranchInput::enable_basic_auth): <p> Enables basic authorization for the branch. </p>
+    ///   - [`enable_performance_mode(Option<bool>)`](crate::input::UpdateBranchInput::enable_performance_mode): <p>Enables performance mode for the branch.</p>  <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
+    ///   - [`build_spec(Option<String>)`](crate::input::UpdateBranchInput::build_spec): <p> The build specification (build spec) for the branch. </p>
+    ///   - [`ttl(Option<String>)`](crate::input::UpdateBranchInput::ttl): <p> The content Time to Live (TTL) for the website in seconds. </p>
+    ///   - [`display_name(Option<String>)`](crate::input::UpdateBranchInput::display_name): <p> The display name for a branch. This is used as the default domain prefix. </p>
+    ///   - [`enable_pull_request_preview(Option<bool>)`](crate::input::UpdateBranchInput::enable_pull_request_preview): <p> Enables pull request previews for this branch. </p>
+    ///   - [`pull_request_environment_name(Option<String>)`](crate::input::UpdateBranchInput::pull_request_environment_name): <p> The Amplify environment name for the pull request. </p>
+    ///   - [`backend_environment_arn(Option<String>)`](crate::input::UpdateBranchInput::backend_environment_arn): <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
+    /// - On success, responds with [`UpdateBranchOutput`](crate::output::UpdateBranchOutput) with field(s):
+    ///   - [`branch(Option<Branch>)`](crate::output::UpdateBranchOutput::branch): <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
+    /// - On failure, responds with [`SdkError<UpdateBranchError>`](crate::error::UpdateBranchError)
     pub fn update_branch(&self) -> fluent_builders::UpdateBranch<C, M, R> {
         fluent_builders::UpdateBranch::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDomainAssociation` operation.
+    /// Constructs a fluent builder for the [`UpdateDomainAssociation`](crate::client::fluent_builders::UpdateDomainAssociation) operation.
     ///
-    /// See [`UpdateDomainAssociation`](crate::client::fluent_builders::UpdateDomainAssociation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateDomainAssociationInput`](crate::input::UpdateDomainAssociationInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::UpdateDomainAssociationInput::app_id): <p> The unique ID for an Amplify app. </p>
+    ///   - [`domain_name(Option<String>)`](crate::input::UpdateDomainAssociationInput::domain_name): <p> The name of the domain. </p>
+    ///   - [`enable_auto_sub_domain(Option<bool>)`](crate::input::UpdateDomainAssociationInput::enable_auto_sub_domain): <p> Enables the automated creation of subdomains for branches. </p>
+    ///   - [`sub_domain_settings(Option<Vec<SubDomainSetting>>)`](crate::input::UpdateDomainAssociationInput::sub_domain_settings): <p> Describes the settings for the subdomain. </p>
+    ///   - [`auto_sub_domain_creation_patterns(Option<Vec<String>>)`](crate::input::UpdateDomainAssociationInput::auto_sub_domain_creation_patterns): <p> Sets the branch patterns for automatic subdomain creation. </p>
+    ///   - [`auto_sub_domain_iam_role(Option<String>)`](crate::input::UpdateDomainAssociationInput::auto_sub_domain_iam_role): <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
+    /// - On success, responds with [`UpdateDomainAssociationOutput`](crate::output::UpdateDomainAssociationOutput) with field(s):
+    ///   - [`domain_association(Option<DomainAssociation>)`](crate::output::UpdateDomainAssociationOutput::domain_association): <p> Describes a domain association, which associates a custom domain with an Amplify app. </p>
+    /// - On failure, responds with [`SdkError<UpdateDomainAssociationError>`](crate::error::UpdateDomainAssociationError)
     pub fn update_domain_association(&self) -> fluent_builders::UpdateDomainAssociation<C, M, R> {
         fluent_builders::UpdateDomainAssociation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateWebhook` operation.
+    /// Constructs a fluent builder for the [`UpdateWebhook`](crate::client::fluent_builders::UpdateWebhook) operation.
     ///
-    /// See [`UpdateWebhook`](crate::client::fluent_builders::UpdateWebhook) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateWebhookInput`](crate::input::UpdateWebhookInput) with field(s):
+    ///   - [`webhook_id(Option<String>)`](crate::input::UpdateWebhookInput::webhook_id): <p> The unique ID for a webhook. </p>
+    ///   - [`branch_name(Option<String>)`](crate::input::UpdateWebhookInput::branch_name): <p> The name for a branch that is part of an Amplify app. </p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateWebhookInput::description): <p> The description for a webhook. </p>
+    /// - On success, responds with [`UpdateWebhookOutput`](crate::output::UpdateWebhookOutput) with field(s):
+    ///   - [`webhook(Option<Webhook>)`](crate::output::UpdateWebhookOutput::webhook): <p> Describes a webhook that connects repository events to an Amplify app. </p>
+    /// - On failure, responds with [`SdkError<UpdateWebhookError>`](crate::error::UpdateWebhookError)
     pub fn update_webhook(&self) -> fluent_builders::UpdateWebhook<C, M, R> {
         fluent_builders::UpdateWebhook::new(self.handle.clone())
     }

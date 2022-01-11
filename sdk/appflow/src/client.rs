@@ -83,137 +83,247 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateConnectorProfile` operation.
+    /// Constructs a fluent builder for the [`CreateConnectorProfile`](crate::client::fluent_builders::CreateConnectorProfile) operation.
     ///
-    /// See [`CreateConnectorProfile`](crate::client::fluent_builders::CreateConnectorProfile) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateConnectorProfileInput`](crate::input::CreateConnectorProfileInput) with field(s):
+    ///   - [`connector_profile_name(Option<String>)`](crate::input::CreateConnectorProfileInput::connector_profile_name): <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
+    ///   - [`kms_arn(Option<String>)`](crate::input::CreateConnectorProfileInput::kms_arn): <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
+    ///   - [`connector_type(Option<ConnectorType>)`](crate::input::CreateConnectorProfileInput::connector_type): <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
+    ///   - [`connection_mode(Option<ConnectionMode>)`](crate::input::CreateConnectorProfileInput::connection_mode): <p> Indicates the connection mode and specifies whether it is public or private. Private flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the public internet. </p>
+    ///   - [`connector_profile_config(Option<ConnectorProfileConfig>)`](crate::input::CreateConnectorProfileInput::connector_profile_config): <p> Defines the connector-specific configuration and credentials. </p>
+    /// - On success, responds with [`CreateConnectorProfileOutput`](crate::output::CreateConnectorProfileOutput) with field(s):
+    ///   - [`connector_profile_arn(Option<String>)`](crate::output::CreateConnectorProfileOutput::connector_profile_arn): <p> The Amazon Resource Name (ARN) of the connector profile. </p>
+    /// - On failure, responds with [`SdkError<CreateConnectorProfileError>`](crate::error::CreateConnectorProfileError)
     pub fn create_connector_profile(&self) -> fluent_builders::CreateConnectorProfile<C, M, R> {
         fluent_builders::CreateConnectorProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateFlow` operation.
+    /// Constructs a fluent builder for the [`CreateFlow`](crate::client::fluent_builders::CreateFlow) operation.
     ///
-    /// See [`CreateFlow`](crate::client::fluent_builders::CreateFlow) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateFlowInput`](crate::input::CreateFlowInput) with field(s):
+    ///   - [`flow_name(Option<String>)`](crate::input::CreateFlowInput::flow_name): <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
+    ///   - [`description(Option<String>)`](crate::input::CreateFlowInput::description): <p> A description of the flow you want to create. </p>
+    ///   - [`kms_arn(Option<String>)`](crate::input::CreateFlowInput::kms_arn): <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
+    ///   - [`trigger_config(Option<TriggerConfig>)`](crate::input::CreateFlowInput::trigger_config): <p> The trigger settings that determine how and when the flow runs. </p>
+    ///   - [`source_flow_config(Option<SourceFlowConfig>)`](crate::input::CreateFlowInput::source_flow_config): <p> The configuration that controls how Amazon AppFlow retrieves data from the source connector. </p>
+    ///   - [`destination_flow_config_list(Option<Vec<DestinationFlowConfig>>)`](crate::input::CreateFlowInput::destination_flow_config_list): <p> The configuration that controls how Amazon AppFlow places data in the destination connector. </p>
+    ///   - [`tasks(Option<Vec<Task>>)`](crate::input::CreateFlowInput::tasks): <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateFlowInput::tags): <p> The tags used to organize, track, or control access for your flow. </p>
+    /// - On success, responds with [`CreateFlowOutput`](crate::output::CreateFlowOutput) with field(s):
+    ///   - [`flow_arn(Option<String>)`](crate::output::CreateFlowOutput::flow_arn): <p> The flow's Amazon Resource Name (ARN). </p>
+    ///   - [`flow_status(Option<FlowStatus>)`](crate::output::CreateFlowOutput::flow_status): <p> Indicates the current status of the flow. </p>
+    /// - On failure, responds with [`SdkError<CreateFlowError>`](crate::error::CreateFlowError)
     pub fn create_flow(&self) -> fluent_builders::CreateFlow<C, M, R> {
         fluent_builders::CreateFlow::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteConnectorProfile` operation.
+    /// Constructs a fluent builder for the [`DeleteConnectorProfile`](crate::client::fluent_builders::DeleteConnectorProfile) operation.
     ///
-    /// See [`DeleteConnectorProfile`](crate::client::fluent_builders::DeleteConnectorProfile) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteConnectorProfileInput`](crate::input::DeleteConnectorProfileInput) with field(s):
+    ///   - [`connector_profile_name(Option<String>)`](crate::input::DeleteConnectorProfileInput::connector_profile_name): <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your account. </p>
+    ///   - [`force_delete(bool)`](crate::input::DeleteConnectorProfileInput::force_delete): <p> Indicates whether Amazon AppFlow should delete the profile, even if it is currently in use in one or more flows. </p>
+    /// - On success, responds with [`DeleteConnectorProfileOutput`](crate::output::DeleteConnectorProfileOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteConnectorProfileError>`](crate::error::DeleteConnectorProfileError)
     pub fn delete_connector_profile(&self) -> fluent_builders::DeleteConnectorProfile<C, M, R> {
         fluent_builders::DeleteConnectorProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteFlow` operation.
+    /// Constructs a fluent builder for the [`DeleteFlow`](crate::client::fluent_builders::DeleteFlow) operation.
     ///
-    /// See [`DeleteFlow`](crate::client::fluent_builders::DeleteFlow) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteFlowInput`](crate::input::DeleteFlowInput) with field(s):
+    ///   - [`flow_name(Option<String>)`](crate::input::DeleteFlowInput::flow_name): <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
+    ///   - [`force_delete(bool)`](crate::input::DeleteFlowInput::force_delete): <p> Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use. </p>
+    /// - On success, responds with [`DeleteFlowOutput`](crate::output::DeleteFlowOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteFlowError>`](crate::error::DeleteFlowError)
     pub fn delete_flow(&self) -> fluent_builders::DeleteFlow<C, M, R> {
         fluent_builders::DeleteFlow::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeConnectorEntity` operation.
+    /// Constructs a fluent builder for the [`DescribeConnectorEntity`](crate::client::fluent_builders::DescribeConnectorEntity) operation.
     ///
-    /// See [`DescribeConnectorEntity`](crate::client::fluent_builders::DescribeConnectorEntity) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeConnectorEntityInput`](crate::input::DescribeConnectorEntityInput) with field(s):
+    ///   - [`connector_entity_name(Option<String>)`](crate::input::DescribeConnectorEntityInput::connector_entity_name): <p> The entity name for that connector. </p>
+    ///   - [`connector_type(Option<ConnectorType>)`](crate::input::DescribeConnectorEntityInput::connector_type): <p> The type of connector application, such as Salesforce, Amplitude, and so on. </p>
+    ///   - [`connector_profile_name(Option<String>)`](crate::input::DescribeConnectorEntityInput::connector_profile_name): <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+    /// - On success, responds with [`DescribeConnectorEntityOutput`](crate::output::DescribeConnectorEntityOutput) with field(s):
+    ///   - [`connector_entity_fields(Option<Vec<ConnectorEntityField>>)`](crate::output::DescribeConnectorEntityOutput::connector_entity_fields): <p> Describes the fields for that connector entity. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on. </p>
+    /// - On failure, responds with [`SdkError<DescribeConnectorEntityError>`](crate::error::DescribeConnectorEntityError)
     pub fn describe_connector_entity(&self) -> fluent_builders::DescribeConnectorEntity<C, M, R> {
         fluent_builders::DescribeConnectorEntity::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeConnectorProfiles` operation.
-    ///
-    /// See [`DescribeConnectorProfiles`](crate::client::fluent_builders::DescribeConnectorProfiles) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeConnectorProfiles`](crate::client::fluent_builders::DescribeConnectorProfiles) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeConnectorProfiles::into_paginator).
+    ///
+    /// - Takes [`DescribeConnectorProfilesInput`](crate::input::DescribeConnectorProfilesInput) with field(s):
+    ///   - [`connector_profile_names(Option<Vec<String>>)`](crate::input::DescribeConnectorProfilesInput::connector_profile_names): <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+    ///   - [`connector_type(Option<ConnectorType>)`](crate::input::DescribeConnectorProfilesInput::connector_type): <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeConnectorProfilesInput::max_results): <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeConnectorProfilesInput::next_token): <p> The pagination token for the next page of data. </p>
+    /// - On success, responds with [`DescribeConnectorProfilesOutput`](crate::output::DescribeConnectorProfilesOutput) with field(s):
+    ///   - [`connector_profile_details(Option<Vec<ConnectorProfile>>)`](crate::output::DescribeConnectorProfilesOutput::connector_profile_details): <p> Returns information about the connector profiles associated with the flow. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeConnectorProfilesOutput::next_token): <p> The pagination token for the next page of data. If <code>nextToken=null</code>, this means that all records have been fetched. </p>
+    /// - On failure, responds with [`SdkError<DescribeConnectorProfilesError>`](crate::error::DescribeConnectorProfilesError)
     pub fn describe_connector_profiles(
         &self,
     ) -> fluent_builders::DescribeConnectorProfiles<C, M, R> {
         fluent_builders::DescribeConnectorProfiles::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeConnectors` operation.
-    ///
-    /// See [`DescribeConnectors`](crate::client::fluent_builders::DescribeConnectors) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeConnectors`](crate::client::fluent_builders::DescribeConnectors) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeConnectors::into_paginator).
+    ///
+    /// - Takes [`DescribeConnectorsInput`](crate::input::DescribeConnectorsInput) with field(s):
+    ///   - [`connector_types(Option<Vec<ConnectorType>>)`](crate::input::DescribeConnectorsInput::connector_types): <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeConnectorsInput::next_token): <p> The pagination token for the next page of data. </p>
+    /// - On success, responds with [`DescribeConnectorsOutput`](crate::output::DescribeConnectorsOutput) with field(s):
+    ///   - [`connector_configurations(Option<HashMap<ConnectorType, ConnectorConfiguration>>)`](crate::output::DescribeConnectorsOutput::connector_configurations): <p> The configuration that is applied to the connectors used in the flow. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeConnectorsOutput::next_token): <p> The pagination token for the next page of data. </p>
+    /// - On failure, responds with [`SdkError<DescribeConnectorsError>`](crate::error::DescribeConnectorsError)
     pub fn describe_connectors(&self) -> fluent_builders::DescribeConnectors<C, M, R> {
         fluent_builders::DescribeConnectors::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeFlow` operation.
+    /// Constructs a fluent builder for the [`DescribeFlow`](crate::client::fluent_builders::DescribeFlow) operation.
     ///
-    /// See [`DescribeFlow`](crate::client::fluent_builders::DescribeFlow) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeFlowInput`](crate::input::DescribeFlowInput) with field(s):
+    ///   - [`flow_name(Option<String>)`](crate::input::DescribeFlowInput::flow_name): <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
+    /// - On success, responds with [`DescribeFlowOutput`](crate::output::DescribeFlowOutput) with field(s):
+    ///   - [`flow_arn(Option<String>)`](crate::output::DescribeFlowOutput::flow_arn): <p> The flow's Amazon Resource Name (ARN). </p>
+    ///   - [`description(Option<String>)`](crate::output::DescribeFlowOutput::description): <p> A description of the flow. </p>
+    ///   - [`flow_name(Option<String>)`](crate::output::DescribeFlowOutput::flow_name): <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
+    ///   - [`kms_arn(Option<String>)`](crate::output::DescribeFlowOutput::kms_arn): <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
+    ///   - [`flow_status(Option<FlowStatus>)`](crate::output::DescribeFlowOutput::flow_status): <p> Indicates the current status of the flow. </p>
+    ///   - [`flow_status_message(Option<String>)`](crate::output::DescribeFlowOutput::flow_status_message): <p> Contains an error message if the flow status is in a suspended or error state. This applies only to scheduled or event-triggered flows. </p>
+    ///   - [`source_flow_config(Option<SourceFlowConfig>)`](crate::output::DescribeFlowOutput::source_flow_config): <p> The configuration that controls how Amazon AppFlow retrieves data from the source connector. </p>
+    ///   - [`destination_flow_config_list(Option<Vec<DestinationFlowConfig>>)`](crate::output::DescribeFlowOutput::destination_flow_config_list): <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
+    ///   - [`last_run_execution_details(Option<ExecutionDetails>)`](crate::output::DescribeFlowOutput::last_run_execution_details): <p> Describes the details of the most recent flow run. </p>
+    ///   - [`trigger_config(Option<TriggerConfig>)`](crate::output::DescribeFlowOutput::trigger_config): <p> The trigger settings that determine how and when the flow runs. </p>
+    ///   - [`tasks(Option<Vec<Task>>)`](crate::output::DescribeFlowOutput::tasks): <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeFlowOutput::created_at): <p> Specifies when the flow was created. </p>
+    ///   - [`last_updated_at(Option<DateTime>)`](crate::output::DescribeFlowOutput::last_updated_at): <p> Specifies when the flow was last updated. </p>
+    ///   - [`created_by(Option<String>)`](crate::output::DescribeFlowOutput::created_by): <p> The ARN of the user who created the flow. </p>
+    ///   - [`last_updated_by(Option<String>)`](crate::output::DescribeFlowOutput::last_updated_by): <p> Specifies the user name of the account that performed the most recent update. </p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeFlowOutput::tags): <p> The tags used to organize, track, or control access for your flow. </p>
+    /// - On failure, responds with [`SdkError<DescribeFlowError>`](crate::error::DescribeFlowError)
     pub fn describe_flow(&self) -> fluent_builders::DescribeFlow<C, M, R> {
         fluent_builders::DescribeFlow::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeFlowExecutionRecords` operation.
-    ///
-    /// See [`DescribeFlowExecutionRecords`](crate::client::fluent_builders::DescribeFlowExecutionRecords) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeFlowExecutionRecords`](crate::client::fluent_builders::DescribeFlowExecutionRecords) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeFlowExecutionRecords::into_paginator).
+    ///
+    /// - Takes [`DescribeFlowExecutionRecordsInput`](crate::input::DescribeFlowExecutionRecordsInput) with field(s):
+    ///   - [`flow_name(Option<String>)`](crate::input::DescribeFlowExecutionRecordsInput::flow_name): <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeFlowExecutionRecordsInput::max_results): <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeFlowExecutionRecordsInput::next_token): <p> The pagination token for the next page of data. </p>
+    /// - On success, responds with [`DescribeFlowExecutionRecordsOutput`](crate::output::DescribeFlowExecutionRecordsOutput) with field(s):
+    ///   - [`flow_executions(Option<Vec<ExecutionRecord>>)`](crate::output::DescribeFlowExecutionRecordsOutput::flow_executions): <p> Returns a list of all instances when this flow was run. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeFlowExecutionRecordsOutput::next_token): <p> The pagination token for the next page of data. </p>
+    /// - On failure, responds with [`SdkError<DescribeFlowExecutionRecordsError>`](crate::error::DescribeFlowExecutionRecordsError)
     pub fn describe_flow_execution_records(
         &self,
     ) -> fluent_builders::DescribeFlowExecutionRecords<C, M, R> {
         fluent_builders::DescribeFlowExecutionRecords::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListConnectorEntities` operation.
+    /// Constructs a fluent builder for the [`ListConnectorEntities`](crate::client::fluent_builders::ListConnectorEntities) operation.
     ///
-    /// See [`ListConnectorEntities`](crate::client::fluent_builders::ListConnectorEntities) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListConnectorEntitiesInput`](crate::input::ListConnectorEntitiesInput) with field(s):
+    ///   - [`connector_profile_name(Option<String>)`](crate::input::ListConnectorEntitiesInput::connector_profile_name): <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream connector. </p>
+    ///   - [`connector_type(Option<ConnectorType>)`](crate::input::ListConnectorEntitiesInput::connector_type): <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
+    ///   - [`entities_path(Option<String>)`](crate::input::ListConnectorEntitiesInput::entities_path): <p> This optional parameter is specific to connector implementation. Some connectors support multiple levels or categories of entities. You can find out the list of roots for such providers by sending a request without the <code>entitiesPath</code> parameter. If the connector supports entities at different roots, this initial request returns the list of roots. Otherwise, this request returns all entities supported by the provider. </p>
+    /// - On success, responds with [`ListConnectorEntitiesOutput`](crate::output::ListConnectorEntitiesOutput) with field(s):
+    ///   - [`connector_entity_map(Option<HashMap<String, Vec<ConnectorEntity>>>)`](crate::output::ListConnectorEntitiesOutput::connector_entity_map): <p> The response of <code>ListConnectorEntities</code> lists entities grouped by category. This map's key represents the group name, and its value contains the list of entities belonging to that group. </p>
+    /// - On failure, responds with [`SdkError<ListConnectorEntitiesError>`](crate::error::ListConnectorEntitiesError)
     pub fn list_connector_entities(&self) -> fluent_builders::ListConnectorEntities<C, M, R> {
         fluent_builders::ListConnectorEntities::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListFlows` operation.
-    ///
-    /// See [`ListFlows`](crate::client::fluent_builders::ListFlows) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListFlows`](crate::client::fluent_builders::ListFlows) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFlows::into_paginator).
+    ///
+    /// - Takes [`ListFlowsInput`](crate::input::ListFlowsInput) with field(s):
+    ///   - [`max_results(Option<i32>)`](crate::input::ListFlowsInput::max_results): <p> Specifies the maximum number of items that should be returned in the result set. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListFlowsInput::next_token): <p> The pagination token for next page of data. </p>
+    /// - On success, responds with [`ListFlowsOutput`](crate::output::ListFlowsOutput) with field(s):
+    ///   - [`flows(Option<Vec<FlowDefinition>>)`](crate::output::ListFlowsOutput::flows): <p> The list of flows associated with your account. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListFlowsOutput::next_token): <p> The pagination token for next page of data. </p>
+    /// - On failure, responds with [`SdkError<ListFlowsError>`](crate::error::ListFlowsError)
     pub fn list_flows(&self) -> fluent_builders::ListFlows<C, M, R> {
         fluent_builders::ListFlows::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p> The Amazon Resource Name (ARN) of the specified flow. </p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p> The tags used to organize, track, or control access for your flow. </p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartFlow` operation.
+    /// Constructs a fluent builder for the [`StartFlow`](crate::client::fluent_builders::StartFlow) operation.
     ///
-    /// See [`StartFlow`](crate::client::fluent_builders::StartFlow) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartFlowInput`](crate::input::StartFlowInput) with field(s):
+    ///   - [`flow_name(Option<String>)`](crate::input::StartFlowInput::flow_name): <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
+    /// - On success, responds with [`StartFlowOutput`](crate::output::StartFlowOutput) with field(s):
+    ///   - [`flow_arn(Option<String>)`](crate::output::StartFlowOutput::flow_arn): <p> The flow's Amazon Resource Name (ARN). </p>
+    ///   - [`flow_status(Option<FlowStatus>)`](crate::output::StartFlowOutput::flow_status): <p> Indicates the current status of the flow. </p>
+    ///   - [`execution_id(Option<String>)`](crate::output::StartFlowOutput::execution_id): <p> Returns the internal execution ID of an on-demand flow when the flow is started. For scheduled or event-triggered flows, this value is null. </p>
+    /// - On failure, responds with [`SdkError<StartFlowError>`](crate::error::StartFlowError)
     pub fn start_flow(&self) -> fluent_builders::StartFlow<C, M, R> {
         fluent_builders::StartFlow::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopFlow` operation.
+    /// Constructs a fluent builder for the [`StopFlow`](crate::client::fluent_builders::StopFlow) operation.
     ///
-    /// See [`StopFlow`](crate::client::fluent_builders::StopFlow) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StopFlowInput`](crate::input::StopFlowInput) with field(s):
+    ///   - [`flow_name(Option<String>)`](crate::input::StopFlowInput::flow_name): <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
+    /// - On success, responds with [`StopFlowOutput`](crate::output::StopFlowOutput) with field(s):
+    ///   - [`flow_arn(Option<String>)`](crate::output::StopFlowOutput::flow_arn): <p> The flow's Amazon Resource Name (ARN). </p>
+    ///   - [`flow_status(Option<FlowStatus>)`](crate::output::StopFlowOutput::flow_status): <p> Indicates the current status of the flow. </p>
+    /// - On failure, responds with [`SdkError<StopFlowError>`](crate::error::StopFlowError)
     pub fn stop_flow(&self) -> fluent_builders::StopFlow<C, M, R> {
         fluent_builders::StopFlow::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p> The Amazon Resource Name (ARN) of the flow that you want to tag. </p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p> The tags used to organize, track, or control access for your flow. </p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p> The Amazon Resource Name (ARN) of the flow that you want to untag. </p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p> The tag keys associated with the tag that you want to remove from your flow. </p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateConnectorProfile` operation.
+    /// Constructs a fluent builder for the [`UpdateConnectorProfile`](crate::client::fluent_builders::UpdateConnectorProfile) operation.
     ///
-    /// See [`UpdateConnectorProfile`](crate::client::fluent_builders::UpdateConnectorProfile) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateConnectorProfileInput`](crate::input::UpdateConnectorProfileInput) with field(s):
+    ///   - [`connector_profile_name(Option<String>)`](crate::input::UpdateConnectorProfileInput::connector_profile_name): <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+    ///   - [`connection_mode(Option<ConnectionMode>)`](crate::input::UpdateConnectorProfileInput::connection_mode): <p> Indicates the connection mode and if it is public or private. </p>
+    ///   - [`connector_profile_config(Option<ConnectorProfileConfig>)`](crate::input::UpdateConnectorProfileInput::connector_profile_config): <p> Defines the connector-specific profile configuration and credentials. </p>
+    /// - On success, responds with [`UpdateConnectorProfileOutput`](crate::output::UpdateConnectorProfileOutput) with field(s):
+    ///   - [`connector_profile_arn(Option<String>)`](crate::output::UpdateConnectorProfileOutput::connector_profile_arn): <p> The Amazon Resource Name (ARN) of the connector profile. </p>
+    /// - On failure, responds with [`SdkError<UpdateConnectorProfileError>`](crate::error::UpdateConnectorProfileError)
     pub fn update_connector_profile(&self) -> fluent_builders::UpdateConnectorProfile<C, M, R> {
         fluent_builders::UpdateConnectorProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateFlow` operation.
+    /// Constructs a fluent builder for the [`UpdateFlow`](crate::client::fluent_builders::UpdateFlow) operation.
     ///
-    /// See [`UpdateFlow`](crate::client::fluent_builders::UpdateFlow) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateFlowInput`](crate::input::UpdateFlowInput) with field(s):
+    ///   - [`flow_name(Option<String>)`](crate::input::UpdateFlowInput::flow_name): <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateFlowInput::description): <p> A description of the flow. </p>
+    ///   - [`trigger_config(Option<TriggerConfig>)`](crate::input::UpdateFlowInput::trigger_config): <p> The trigger settings that determine how and when the flow runs. </p>
+    ///   - [`source_flow_config(Option<SourceFlowConfig>)`](crate::input::UpdateFlowInput::source_flow_config): <p> Contains information about the configuration of the source connector used in the flow. </p>
+    ///   - [`destination_flow_config_list(Option<Vec<DestinationFlowConfig>>)`](crate::input::UpdateFlowInput::destination_flow_config_list): <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
+    ///   - [`tasks(Option<Vec<Task>>)`](crate::input::UpdateFlowInput::tasks): <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
+    /// - On success, responds with [`UpdateFlowOutput`](crate::output::UpdateFlowOutput) with field(s):
+    ///   - [`flow_status(Option<FlowStatus>)`](crate::output::UpdateFlowOutput::flow_status): <p>Indicates the current status of the flow. </p>
+    /// - On failure, responds with [`SdkError<UpdateFlowError>`](crate::error::UpdateFlowError)
     pub fn update_flow(&self) -> fluent_builders::UpdateFlow<C, M, R> {
         fluent_builders::UpdateFlow::new(self.handle.clone())
     }

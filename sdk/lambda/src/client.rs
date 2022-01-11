@@ -83,457 +83,1133 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AddLayerVersionPermission` operation.
+    /// Constructs a fluent builder for the [`AddLayerVersionPermission`](crate::client::fluent_builders::AddLayerVersionPermission) operation.
     ///
-    /// See [`AddLayerVersionPermission`](crate::client::fluent_builders::AddLayerVersionPermission) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AddLayerVersionPermissionInput`](crate::input::AddLayerVersionPermissionInput) with field(s):
+    ///   - [`layer_name(Option<String>)`](crate::input::AddLayerVersionPermissionInput::layer_name): <p>The name or Amazon Resource Name (ARN) of the layer.</p>
+    ///   - [`version_number(i64)`](crate::input::AddLayerVersionPermissionInput::version_number): <p>The version number.</p>
+    ///   - [`statement_id(Option<String>)`](crate::input::AddLayerVersionPermissionInput::statement_id): <p>An identifier that distinguishes the policy from others on the same layer version.</p>
+    ///   - [`action(Option<String>)`](crate::input::AddLayerVersionPermissionInput::action): <p>The API action that grants access to the layer. For example, <code>lambda:GetLayerVersion</code>.</p>
+    ///   - [`principal(Option<String>)`](crate::input::AddLayerVersionPermissionInput::principal): <p>An account ID, or <code>*</code> to grant layer usage permission to all accounts in an organization, or all Amazon Web Services accounts (if <code>organizationId</code> is not specified). For the last case, make sure that you really do want all Amazon Web Services accounts to have usage permission to this layer. </p>
+    ///   - [`organization_id(Option<String>)`](crate::input::AddLayerVersionPermissionInput::organization_id): <p>With the principal set to <code>*</code>, grant permission to all accounts in the specified organization.</p>
+    ///   - [`revision_id(Option<String>)`](crate::input::AddLayerVersionPermissionInput::revision_id): <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
+    /// - On success, responds with [`AddLayerVersionPermissionOutput`](crate::output::AddLayerVersionPermissionOutput) with field(s):
+    ///   - [`statement(Option<String>)`](crate::output::AddLayerVersionPermissionOutput::statement): <p>The permission statement.</p>
+    ///   - [`revision_id(Option<String>)`](crate::output::AddLayerVersionPermissionOutput::revision_id): <p>A unique identifier for the current revision of the policy.</p>
+    /// - On failure, responds with [`SdkError<AddLayerVersionPermissionError>`](crate::error::AddLayerVersionPermissionError)
     pub fn add_layer_version_permission(
         &self,
     ) -> fluent_builders::AddLayerVersionPermission<C, M, R> {
         fluent_builders::AddLayerVersionPermission::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AddPermission` operation.
+    /// Constructs a fluent builder for the [`AddPermission`](crate::client::fluent_builders::AddPermission) operation.
     ///
-    /// See [`AddPermission`](crate::client::fluent_builders::AddPermission) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AddPermissionInput`](crate::input::AddPermissionInput) with field(s):
+    ///   - [`function_name(Option<String>)`](crate::input::AddPermissionInput::function_name): <p>The name of the Lambda function, version, or alias.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>  </ul>  <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    ///   - [`statement_id(Option<String>)`](crate::input::AddPermissionInput::statement_id): <p>A statement identifier that differentiates the statement from others in the same policy.</p>
+    ///   - [`action(Option<String>)`](crate::input::AddPermissionInput::action): <p>The action that the principal can use on the function. For example, <code>lambda:InvokeFunction</code> or <code>lambda:GetFunction</code>.</p>
+    ///   - [`principal(Option<String>)`](crate::input::AddPermissionInput::principal): <p>The Amazon Web Services service or account that invokes the function. If you specify a service, use <code>SourceArn</code> or <code>SourceAccount</code> to limit who can invoke the function through that service.</p>
+    ///   - [`source_arn(Option<String>)`](crate::input::AddPermissionInput::source_arn): <p>For Amazon Web Services services, the ARN of the Amazon Web Services resource that invokes the function. For example, an Amazon S3 bucket or Amazon SNS topic.</p>  <p>Note that Lambda configures the comparison using the <code>StringLike</code> operator.</p>
+    ///   - [`source_account(Option<String>)`](crate::input::AddPermissionInput::source_account): <p>For Amazon S3, the ID of the account that owns the resource. Use this together with <code>SourceArn</code> to ensure that the resource is owned by the specified account. It is possible for an Amazon S3 bucket to be deleted by its owner and recreated by another account.</p>
+    ///   - [`event_source_token(Option<String>)`](crate::input::AddPermissionInput::event_source_token): <p>For Alexa Smart Home functions, a token that must be supplied by the invoker.</p>
+    ///   - [`qualifier(Option<String>)`](crate::input::AddPermissionInput::qualifier): <p>Specify a version or alias to add permissions to a published version of the function.</p>
+    ///   - [`revision_id(Option<String>)`](crate::input::AddPermissionInput::revision_id): <p>Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
+    /// - On success, responds with [`AddPermissionOutput`](crate::output::AddPermissionOutput) with field(s):
+    ///   - [`statement(Option<String>)`](crate::output::AddPermissionOutput::statement): <p>The permission statement that's added to the function policy.</p>
+    /// - On failure, responds with [`SdkError<AddPermissionError>`](crate::error::AddPermissionError)
     pub fn add_permission(&self) -> fluent_builders::AddPermission<C, M, R> {
         fluent_builders::AddPermission::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateAlias` operation.
+    /// Constructs a fluent builder for the [`CreateAlias`](crate::client::fluent_builders::CreateAlias) operation.
     ///
-    /// See [`CreateAlias`](crate::client::fluent_builders::CreateAlias) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateAliasInput`](crate::input::CreateAliasInput) with field(s):
+    ///   - [`function_name(Option<String>)`](crate::input::CreateAliasInput::function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    ///   - [`name(Option<String>)`](crate::input::CreateAliasInput::name): <p>The name of the alias.</p>
+    ///   - [`function_version(Option<String>)`](crate::input::CreateAliasInput::function_version): <p>The function version that the alias invokes.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateAliasInput::description): <p>A description of the alias.</p>
+    ///   - [`routing_config(Option<AliasRoutingConfiguration>)`](crate::input::CreateAliasInput::routing_config): <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">routing configuration</a> of the alias.</p>
+    /// - On success, responds with [`CreateAliasOutput`](crate::output::CreateAliasOutput) with field(s):
+    ///   - [`alias_arn(Option<String>)`](crate::output::CreateAliasOutput::alias_arn): <p>The Amazon Resource Name (ARN) of the alias.</p>
+    ///   - [`name(Option<String>)`](crate::output::CreateAliasOutput::name): <p>The name of the alias.</p>
+    ///   - [`function_version(Option<String>)`](crate::output::CreateAliasOutput::function_version): <p>The function version that the alias invokes.</p>
+    ///   - [`description(Option<String>)`](crate::output::CreateAliasOutput::description): <p>A description of the alias.</p>
+    ///   - [`routing_config(Option<AliasRoutingConfiguration>)`](crate::output::CreateAliasOutput::routing_config): <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
+    ///   - [`revision_id(Option<String>)`](crate::output::CreateAliasOutput::revision_id): <p>A unique identifier that changes when you update the alias.</p>
+    /// - On failure, responds with [`SdkError<CreateAliasError>`](crate::error::CreateAliasError)
     pub fn create_alias(&self) -> fluent_builders::CreateAlias<C, M, R> {
         fluent_builders::CreateAlias::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateCodeSigningConfig` operation.
+    /// Constructs a fluent builder for the [`CreateCodeSigningConfig`](crate::client::fluent_builders::CreateCodeSigningConfig) operation.
     ///
-    /// See [`CreateCodeSigningConfig`](crate::client::fluent_builders::CreateCodeSigningConfig) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateCodeSigningConfigInput`](crate::input::CreateCodeSigningConfigInput) with field(s):
+    ///   - [`description(Option<String>)`](crate::input::CreateCodeSigningConfigInput::description): <p>Descriptive name for this code signing configuration.</p>
+    ///   - [`allowed_publishers(Option<AllowedPublishers>)`](crate::input::CreateCodeSigningConfigInput::allowed_publishers): <p>Signing profiles for this code signing configuration.</p>
+    ///   - [`code_signing_policies(Option<CodeSigningPolicies>)`](crate::input::CreateCodeSigningConfigInput::code_signing_policies): <p>The code signing policies define the actions to take if the validation checks fail. </p>
+    /// - On success, responds with [`CreateCodeSigningConfigOutput`](crate::output::CreateCodeSigningConfigOutput) with field(s):
+    ///   - [`code_signing_config(Option<CodeSigningConfig>)`](crate::output::CreateCodeSigningConfigOutput::code_signing_config): <p>The code signing configuration.</p>
+    /// - On failure, responds with [`SdkError<CreateCodeSigningConfigError>`](crate::error::CreateCodeSigningConfigError)
     pub fn create_code_signing_config(&self) -> fluent_builders::CreateCodeSigningConfig<C, M, R> {
         fluent_builders::CreateCodeSigningConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateEventSourceMapping` operation.
+    /// Constructs a fluent builder for the [`CreateEventSourceMapping`](crate::client::fluent_builders::CreateEventSourceMapping) operation.
     ///
-    /// See [`CreateEventSourceMapping`](crate::client::fluent_builders::CreateEventSourceMapping) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateEventSourceMappingInput`](crate::input::CreateEventSourceMappingInput) with field(s):
+    ///   - [`event_source_arn(Option<String>)`](crate::input::CreateEventSourceMappingInput::event_source_arn): <p>The Amazon Resource Name (ARN) of the event source.</p>  <ul>   <li> <p> <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p> </li>   <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>   <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>   <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p> </li>  </ul>
+    ///   - [`function_name(Option<String>)`](crate::input::CreateEventSourceMappingInput::function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>   <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
+    ///   - [`enabled(Option<bool>)`](crate::input::CreateEventSourceMappingInput::enabled): <p>When true, the event source mapping is active. When false, Lambda pauses polling and invocation.</p>  <p>Default: True</p>
+    ///   - [`batch_size(Option<i32>)`](crate::input::CreateEventSourceMappingInput::batch_size): <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>  <ul>   <li> <p> <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li>   <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li>   <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>   <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>   <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>   <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p> </li>  </ul>
+    ///   - [`filter_criteria(Option<FilterCriteria>)`](crate::input::CreateEventSourceMappingInput::filter_criteria): <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    ///   - [`maximum_batching_window_in_seconds(Option<i32>)`](crate::input::CreateEventSourceMappingInput::maximum_batching_window_in_seconds): <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>  <p>Default: 0</p>  <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
+    ///   - [`parallelization_factor(Option<i32>)`](crate::input::CreateEventSourceMappingInput::parallelization_factor): <p>(Streams only) The number of batches to process from each shard concurrently.</p>
+    ///   - [`starting_position(Option<EventSourcePosition>)`](crate::input::CreateEventSourceMappingInput::starting_position): <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
+    ///   - [`starting_position_timestamp(Option<DateTime>)`](crate::input::CreateEventSourceMappingInput::starting_position_timestamp): <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
+    ///   - [`destination_config(Option<DestinationConfig>)`](crate::input::CreateEventSourceMappingInput::destination_config): <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
+    ///   - [`maximum_record_age_in_seconds(Option<i32>)`](crate::input::CreateEventSourceMappingInput::maximum_record_age_in_seconds): <p>(Streams only) Discard records older than the specified age. The default value is infinite (-1).</p>
+    ///   - [`bisect_batch_on_function_error(Option<bool>)`](crate::input::CreateEventSourceMappingInput::bisect_batch_on_function_error): <p>(Streams only) If the function returns an error, split the batch in two and retry.</p>
+    ///   - [`maximum_retry_attempts(Option<i32>)`](crate::input::CreateEventSourceMappingInput::maximum_retry_attempts): <p>(Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records will be retried until the record expires.</p>
+    ///   - [`tumbling_window_in_seconds(Option<i32>)`](crate::input::CreateEventSourceMappingInput::tumbling_window_in_seconds): <p>(Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>
+    ///   - [`topics(Option<Vec<String>>)`](crate::input::CreateEventSourceMappingInput::topics): <p>The name of the Kafka topic.</p>
+    ///   - [`queues(Option<Vec<String>>)`](crate::input::CreateEventSourceMappingInput::queues): <p> (MQ) The name of the Amazon MQ broker destination queue to consume. </p>
+    ///   - [`source_access_configurations(Option<Vec<SourceAccessConfiguration>>)`](crate::input::CreateEventSourceMappingInput::source_access_configurations): <p>An array of authentication protocols or VPC components required to secure your event source.</p>
+    ///   - [`self_managed_event_source(Option<SelfManagedEventSource>)`](crate::input::CreateEventSourceMappingInput::self_managed_event_source): <p>The Self-Managed Apache Kafka cluster to send records.</p>
+    ///   - [`function_response_types(Option<Vec<FunctionResponseType>>)`](crate::input::CreateEventSourceMappingInput::function_response_types): <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
+    /// - On success, responds with [`CreateEventSourceMappingOutput`](crate::output::CreateEventSourceMappingOutput) with field(s):
+    ///   - [`uuid(Option<String>)`](crate::output::CreateEventSourceMappingOutput::uuid): <p>The identifier of the event source mapping.</p>
+    ///   - [`starting_position(Option<EventSourcePosition>)`](crate::output::CreateEventSourceMappingOutput::starting_position): <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
+    ///   - [`starting_position_timestamp(Option<DateTime>)`](crate::output::CreateEventSourceMappingOutput::starting_position_timestamp): <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
+    ///   - [`batch_size(Option<i32>)`](crate::output::CreateEventSourceMappingOutput::batch_size): <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>  <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>  <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
+    ///   - [`maximum_batching_window_in_seconds(Option<i32>)`](crate::output::CreateEventSourceMappingOutput::maximum_batching_window_in_seconds): <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>  <p>Default: 0</p>  <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
+    ///   - [`parallelization_factor(Option<i32>)`](crate::output::CreateEventSourceMappingOutput::parallelization_factor): <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
+    ///   - [`event_source_arn(Option<String>)`](crate::output::CreateEventSourceMappingOutput::event_source_arn): <p>The Amazon Resource Name (ARN) of the event source.</p>
+    ///   - [`filter_criteria(Option<FilterCriteria>)`](crate::output::CreateEventSourceMappingOutput::filter_criteria): <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    ///   - [`function_arn(Option<String>)`](crate::output::CreateEventSourceMappingOutput::function_arn): <p>The ARN of the Lambda function.</p>
+    ///   - [`last_modified(Option<DateTime>)`](crate::output::CreateEventSourceMappingOutput::last_modified): <p>The date that the event source mapping was last updated or that its state changed.</p>
+    ///   - [`last_processing_result(Option<String>)`](crate::output::CreateEventSourceMappingOutput::last_processing_result): <p>The result of the last Lambda invocation of your function.</p>
+    ///   - [`state(Option<String>)`](crate::output::CreateEventSourceMappingOutput::state): <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
+    ///   - [`state_transition_reason(Option<String>)`](crate::output::CreateEventSourceMappingOutput::state_transition_reason): <p>Indicates whether a user or Lambda made the last change to the event source mapping.</p>
+    ///   - [`destination_config(Option<DestinationConfig>)`](crate::output::CreateEventSourceMappingOutput::destination_config): <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
+    ///   - [`topics(Option<Vec<String>>)`](crate::output::CreateEventSourceMappingOutput::topics): <p>The name of the Kafka topic.</p>
+    ///   - [`queues(Option<Vec<String>>)`](crate::output::CreateEventSourceMappingOutput::queues): <p> (Amazon MQ) The name of the Amazon MQ broker destination queue to consume.</p>
+    ///   - [`source_access_configurations(Option<Vec<SourceAccessConfiguration>>)`](crate::output::CreateEventSourceMappingOutput::source_access_configurations): <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
+    ///   - [`self_managed_event_source(Option<SelfManagedEventSource>)`](crate::output::CreateEventSourceMappingOutput::self_managed_event_source): <p>The self-managed Apache Kafka cluster for your event source.</p>
+    ///   - [`maximum_record_age_in_seconds(Option<i32>)`](crate::output::CreateEventSourceMappingOutput::maximum_record_age_in_seconds): <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
+    ///   - [`bisect_batch_on_function_error(Option<bool>)`](crate::output::CreateEventSourceMappingOutput::bisect_batch_on_function_error): <p>(Streams only) If the function returns an error, split the batch in two and retry. The default value is false.</p>
+    ///   - [`maximum_retry_attempts(Option<i32>)`](crate::output::CreateEventSourceMappingOutput::maximum_retry_attempts): <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
+    ///   - [`tumbling_window_in_seconds(Option<i32>)`](crate::output::CreateEventSourceMappingOutput::tumbling_window_in_seconds): <p>(Streams only) The duration in seconds of a processing window. The range is 1–900 seconds.</p>
+    ///   - [`function_response_types(Option<Vec<FunctionResponseType>>)`](crate::output::CreateEventSourceMappingOutput::function_response_types): <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+    /// - On failure, responds with [`SdkError<CreateEventSourceMappingError>`](crate::error::CreateEventSourceMappingError)
     pub fn create_event_source_mapping(
         &self,
     ) -> fluent_builders::CreateEventSourceMapping<C, M, R> {
         fluent_builders::CreateEventSourceMapping::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateFunction` operation.
+    /// Constructs a fluent builder for the [`CreateFunction`](crate::client::fluent_builders::CreateFunction) operation.
     ///
-    /// See [`CreateFunction`](crate::client::fluent_builders::CreateFunction) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateFunctionInput`](crate::input::CreateFunctionInput) with field(s):
+    ///   - [`function_name(Option<String>)`](crate::input::CreateFunctionInput::function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    ///   - [`runtime(Option<Runtime>)`](crate::input::CreateFunctionInput::runtime): <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive. </p>
+    ///   - [`role(Option<String>)`](crate::input::CreateFunctionInput::role): <p>The Amazon Resource Name (ARN) of the function's execution role.</p>
+    ///   - [`handler(Option<String>)`](crate::input::CreateFunctionInput::handler): <p>The name of the method within your code that Lambda calls to execute your function. Handler is required if the deployment package is a .zip file archive. The format includes the file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.</p>
+    ///   - [`code(Option<FunctionCode>)`](crate::input::CreateFunctionInput::code): <p>The code for the function.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateFunctionInput::description): <p>A description of the function.</p>
+    ///   - [`timeout(Option<i32>)`](crate::input::CreateFunctionInput::timeout): <p>The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3 seconds. The maximum allowed value is 900 seconds. For additional information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.</p>
+    ///   - [`memory_size(Option<i32>)`](crate::input::CreateFunctionInput::memory_size): <p>The amount of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory available to the function</a> at runtime. Increasing the function memory also increases its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.</p>
+    ///   - [`publish(bool)`](crate::input::CreateFunctionInput::publish): <p>Set to true to publish the first version of the function during creation.</p>
+    ///   - [`vpc_config(Option<VpcConfig>)`](crate::input::CreateFunctionInput::vpc_config): <p>For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets in the VPC. When you connect a function to a VPC, it can only access resources and the internet through that VPC. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.</p>
+    ///   - [`package_type(Option<PackageType>)`](crate::input::CreateFunctionInput::package_type): <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for ZIP archive.</p>
+    ///   - [`dead_letter_config(Option<DeadLetterConfig>)`](crate::input::CreateFunctionInput::dead_letter_config): <p>A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.</p>
+    ///   - [`environment(Option<Environment>)`](crate::input::CreateFunctionInput::environment): <p>Environment variables that are accessible from function code during execution.</p>
+    ///   - [`kms_key_arn(Option<String>)`](crate::input::CreateFunctionInput::kms_key_arn): <p>The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's environment variables. If it's not provided, Lambda uses a default service key.</p>
+    ///   - [`tracing_config(Option<TracingConfig>)`](crate::input::CreateFunctionInput::tracing_config): <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateFunctionInput::tags): <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to apply to the function.</p>
+    ///   - [`layers(Option<Vec<String>>)`](crate::input::CreateFunctionInput::layers): <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a> to add to the function's execution environment. Specify each layer by its ARN, including the version.</p>
+    ///   - [`file_system_configs(Option<Vec<FileSystemConfig>>)`](crate::input::CreateFunctionInput::file_system_configs): <p>Connection settings for an Amazon EFS file system.</p>
+    ///   - [`image_config(Option<ImageConfig>)`](crate::input::CreateFunctionInput::image_config): <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings">configuration values</a> that override the values in the container image Dockerfile.</p>
+    ///   - [`code_signing_config_arn(Option<String>)`](crate::input::CreateFunctionInput::code_signing_config_arn): <p>To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing configuration includes a set of signing profiles, which define the trusted publishers for this function.</p>
+    ///   - [`architectures(Option<Vec<Architecture>>)`](crate::input::CreateFunctionInput::architectures): <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
+    /// - On success, responds with [`CreateFunctionOutput`](crate::output::CreateFunctionOutput) with field(s):
+    ///   - [`function_name(Option<String>)`](crate::output::CreateFunctionOutput::function_name): <p>The name of the function.</p>
+    ///   - [`function_arn(Option<String>)`](crate::output::CreateFunctionOutput::function_arn): <p>The function's Amazon Resource Name (ARN).</p>
+    ///   - [`runtime(Option<Runtime>)`](crate::output::CreateFunctionOutput::runtime): <p>The runtime environment for the Lambda function.</p>
+    ///   - [`role(Option<String>)`](crate::output::CreateFunctionOutput::role): <p>The function's execution role.</p>
+    ///   - [`handler(Option<String>)`](crate::output::CreateFunctionOutput::handler): <p>The function that Lambda calls to begin executing your function.</p>
+    ///   - [`code_size(i64)`](crate::output::CreateFunctionOutput::code_size): <p>The size of the function's deployment package, in bytes.</p>
+    ///   - [`description(Option<String>)`](crate::output::CreateFunctionOutput::description): <p>The function's description.</p>
+    ///   - [`timeout(Option<i32>)`](crate::output::CreateFunctionOutput::timeout): <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
+    ///   - [`memory_size(Option<i32>)`](crate::output::CreateFunctionOutput::memory_size): <p>The amount of memory available to the function at runtime. </p>
+    ///   - [`last_modified(Option<String>)`](crate::output::CreateFunctionOutput::last_modified): <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    ///   - [`code_sha256(Option<String>)`](crate::output::CreateFunctionOutput::code_sha256): <p>The SHA256 hash of the function's deployment package.</p>
+    ///   - [`version(Option<String>)`](crate::output::CreateFunctionOutput::version): <p>The version of the Lambda function.</p>
+    ///   - [`vpc_config(Option<VpcConfigResponse>)`](crate::output::CreateFunctionOutput::vpc_config): <p>The function's networking configuration.</p>
+    ///   - [`dead_letter_config(Option<DeadLetterConfig>)`](crate::output::CreateFunctionOutput::dead_letter_config): <p>The function's dead letter queue.</p>
+    ///   - [`environment(Option<EnvironmentResponse>)`](crate::output::CreateFunctionOutput::environment): <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.</p>
+    ///   - [`kms_key_arn(Option<String>)`](crate::output::CreateFunctionOutput::kms_key_arn): <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed key.</p>
+    ///   - [`tracing_config(Option<TracingConfigResponse>)`](crate::output::CreateFunctionOutput::tracing_config): <p>The function's X-Ray tracing configuration.</p>
+    ///   - [`master_arn(Option<String>)`](crate::output::CreateFunctionOutput::master_arn): <p>For Lambda@Edge functions, the ARN of the main function.</p>
+    ///   - [`revision_id(Option<String>)`](crate::output::CreateFunctionOutput::revision_id): <p>The latest updated revision of the function or alias.</p>
+    ///   - [`layers(Option<Vec<Layer>>)`](crate::output::CreateFunctionOutput::layers): <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.</p>
+    ///   - [`state(Option<State>)`](crate::output::CreateFunctionOutput::state): <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
+    ///   - [`state_reason(Option<String>)`](crate::output::CreateFunctionOutput::state_reason): <p>The reason for the function's current state.</p>
+    ///   - [`state_reason_code(Option<StateReasonCode>)`](crate::output::CreateFunctionOutput::state_reason_code): <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
+    ///   - [`last_update_status(Option<LastUpdateStatus>)`](crate::output::CreateFunctionOutput::last_update_status): <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
+    ///   - [`last_update_status_reason(Option<String>)`](crate::output::CreateFunctionOutput::last_update_status_reason): <p>The reason for the last update that was performed on the function.</p>
+    ///   - [`last_update_status_reason_code(Option<LastUpdateStatusReasonCode>)`](crate::output::CreateFunctionOutput::last_update_status_reason_code): <p>The reason code for the last update that was performed on the function.</p>
+    ///   - [`file_system_configs(Option<Vec<FileSystemConfig>>)`](crate::output::CreateFunctionOutput::file_system_configs): <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
+    ///   - [`package_type(Option<PackageType>)`](crate::output::CreateFunctionOutput::package_type): <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
+    ///   - [`image_config_response(Option<ImageConfigResponse>)`](crate::output::CreateFunctionOutput::image_config_response): <p>The function's image configuration values.</p>
+    ///   - [`signing_profile_version_arn(Option<String>)`](crate::output::CreateFunctionOutput::signing_profile_version_arn): <p>The ARN of the signing profile version.</p>
+    ///   - [`signing_job_arn(Option<String>)`](crate::output::CreateFunctionOutput::signing_job_arn): <p>The ARN of the signing job.</p>
+    ///   - [`architectures(Option<Vec<Architecture>>)`](crate::output::CreateFunctionOutput::architectures): <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
+    /// - On failure, responds with [`SdkError<CreateFunctionError>`](crate::error::CreateFunctionError)
     pub fn create_function(&self) -> fluent_builders::CreateFunction<C, M, R> {
         fluent_builders::CreateFunction::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAlias` operation.
+    /// Constructs a fluent builder for the [`DeleteAlias`](crate::client::fluent_builders::DeleteAlias) operation.
     ///
-    /// See [`DeleteAlias`](crate::client::fluent_builders::DeleteAlias) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteAliasInput`](crate::input::DeleteAliasInput) with field(s):
+    ///   - [`function_name(Option<String>)`](crate::input::DeleteAliasInput::function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    ///   - [`name(Option<String>)`](crate::input::DeleteAliasInput::name): <p>The name of the alias.</p>
+    /// - On success, responds with [`DeleteAliasOutput`](crate::output::DeleteAliasOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAliasError>`](crate::error::DeleteAliasError)
     pub fn delete_alias(&self) -> fluent_builders::DeleteAlias<C, M, R> {
         fluent_builders::DeleteAlias::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteCodeSigningConfig` operation.
+    /// Constructs a fluent builder for the [`DeleteCodeSigningConfig`](crate::client::fluent_builders::DeleteCodeSigningConfig) operation.
     ///
-    /// See [`DeleteCodeSigningConfig`](crate::client::fluent_builders::DeleteCodeSigningConfig) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteCodeSigningConfigInput`](crate::input::DeleteCodeSigningConfigInput) with field(s):
+    ///   - [`code_signing_config_arn(Option<String>)`](crate::input::DeleteCodeSigningConfigInput::code_signing_config_arn): <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
+    /// - On success, responds with [`DeleteCodeSigningConfigOutput`](crate::output::DeleteCodeSigningConfigOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteCodeSigningConfigError>`](crate::error::DeleteCodeSigningConfigError)
     pub fn delete_code_signing_config(&self) -> fluent_builders::DeleteCodeSigningConfig<C, M, R> {
         fluent_builders::DeleteCodeSigningConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteEventSourceMapping` operation.
+    /// Constructs a fluent builder for the [`DeleteEventSourceMapping`](crate::client::fluent_builders::DeleteEventSourceMapping) operation.
     ///
-    /// See [`DeleteEventSourceMapping`](crate::client::fluent_builders::DeleteEventSourceMapping) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteEventSourceMappingInput`](crate::input::DeleteEventSourceMappingInput) with field(s):
+    ///   - [`uuid(Option<String>)`](crate::input::DeleteEventSourceMappingInput::uuid): <p>The identifier of the event source mapping.</p>
+    /// - On success, responds with [`DeleteEventSourceMappingOutput`](crate::output::DeleteEventSourceMappingOutput) with field(s):
+    ///   - [`uuid(Option<String>)`](crate::output::DeleteEventSourceMappingOutput::uuid): <p>The identifier of the event source mapping.</p>
+    ///   - [`starting_position(Option<EventSourcePosition>)`](crate::output::DeleteEventSourceMappingOutput::starting_position): <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
+    ///   - [`starting_position_timestamp(Option<DateTime>)`](crate::output::DeleteEventSourceMappingOutput::starting_position_timestamp): <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
+    ///   - [`batch_size(Option<i32>)`](crate::output::DeleteEventSourceMappingOutput::batch_size): <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>  <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>  <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
+    ///   - [`maximum_batching_window_in_seconds(Option<i32>)`](crate::output::DeleteEventSourceMappingOutput::maximum_batching_window_in_seconds): <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>  <p>Default: 0</p>  <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
+    ///   - [`parallelization_factor(Option<i32>)`](crate::output::DeleteEventSourceMappingOutput::parallelization_factor): <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
+    ///   - [`event_source_arn(Option<String>)`](crate::output::DeleteEventSourceMappingOutput::event_source_arn): <p>The Amazon Resource Name (ARN) of the event source.</p>
+    ///   - [`filter_criteria(Option<FilterCriteria>)`](crate::output::DeleteEventSourceMappingOutput::filter_criteria): <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    ///   - [`function_arn(Option<String>)`](crate::output::DeleteEventSourceMappingOutput::function_arn): <p>The ARN of the Lambda function.</p>
+    ///   - [`last_modified(Option<DateTime>)`](crate::output::DeleteEventSourceMappingOutput::last_modified): <p>The date that the event source mapping was last updated or that its state changed.</p>
+    ///   - [`last_processing_result(Option<String>)`](crate::output::DeleteEventSourceMappingOutput::last_processing_result): <p>The result of the last Lambda invocation of your function.</p>
+    ///   - [`state(Option<String>)`](crate::output::DeleteEventSourceMappingOutput::state): <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
+    ///   - [`state_transition_reason(Option<String>)`](crate::output::DeleteEventSourceMappingOutput::state_transition_reason): <p>Indicates whether a user or Lambda made the last change to the event source mapping.</p>
+    ///   - [`destination_config(Option<DestinationConfig>)`](crate::output::DeleteEventSourceMappingOutput::destination_config): <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
+    ///   - [`topics(Option<Vec<String>>)`](crate::output::DeleteEventSourceMappingOutput::topics): <p>The name of the Kafka topic.</p>
+    ///   - [`queues(Option<Vec<String>>)`](crate::output::DeleteEventSourceMappingOutput::queues): <p> (Amazon MQ) The name of the Amazon MQ broker destination queue to consume.</p>
+    ///   - [`source_access_configurations(Option<Vec<SourceAccessConfiguration>>)`](crate::output::DeleteEventSourceMappingOutput::source_access_configurations): <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
+    ///   - [`self_managed_event_source(Option<SelfManagedEventSource>)`](crate::output::DeleteEventSourceMappingOutput::self_managed_event_source): <p>The self-managed Apache Kafka cluster for your event source.</p>
+    ///   - [`maximum_record_age_in_seconds(Option<i32>)`](crate::output::DeleteEventSourceMappingOutput::maximum_record_age_in_seconds): <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
+    ///   - [`bisect_batch_on_function_error(Option<bool>)`](crate::output::DeleteEventSourceMappingOutput::bisect_batch_on_function_error): <p>(Streams only) If the function returns an error, split the batch in two and retry. The default value is false.</p>
+    ///   - [`maximum_retry_attempts(Option<i32>)`](crate::output::DeleteEventSourceMappingOutput::maximum_retry_attempts): <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
+    ///   - [`tumbling_window_in_seconds(Option<i32>)`](crate::output::DeleteEventSourceMappingOutput::tumbling_window_in_seconds): <p>(Streams only) The duration in seconds of a processing window. The range is 1–900 seconds.</p>
+    ///   - [`function_response_types(Option<Vec<FunctionResponseType>>)`](crate::output::DeleteEventSourceMappingOutput::function_response_types): <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+    /// - On failure, responds with [`SdkError<DeleteEventSourceMappingError>`](crate::error::DeleteEventSourceMappingError)
     pub fn delete_event_source_mapping(
         &self,
     ) -> fluent_builders::DeleteEventSourceMapping<C, M, R> {
         fluent_builders::DeleteEventSourceMapping::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteFunction` operation.
+    /// Constructs a fluent builder for the [`DeleteFunction`](crate::client::fluent_builders::DeleteFunction) operation.
     ///
-    /// See [`DeleteFunction`](crate::client::fluent_builders::DeleteFunction) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteFunctionInput`](crate::input::DeleteFunctionInput) with field(s):
+    ///   - [`function_name(Option<String>)`](crate::input::DeleteFunctionInput::function_name): <p>The name of the Lambda function or version.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:1</code> (with version).</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>  </ul>  <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    ///   - [`qualifier(Option<String>)`](crate::input::DeleteFunctionInput::qualifier): <p>Specify a version to delete. You can't delete a version that's referenced by an alias.</p>
+    /// - On success, responds with [`DeleteFunctionOutput`](crate::output::DeleteFunctionOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteFunctionError>`](crate::error::DeleteFunctionError)
     pub fn delete_function(&self) -> fluent_builders::DeleteFunction<C, M, R> {
         fluent_builders::DeleteFunction::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteFunctionCodeSigningConfig` operation.
+    /// Constructs a fluent builder for the [`DeleteFunctionCodeSigningConfig`](crate::client::fluent_builders::DeleteFunctionCodeSigningConfig) operation.
     ///
-    /// See [`DeleteFunctionCodeSigningConfig`](crate::client::fluent_builders::DeleteFunctionCodeSigningConfig) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteFunctionCodeSigningConfigInput`](crate::input::DeleteFunctionCodeSigningConfigInput) with field(s):
+    ///   - [`function_name(Option<String>)`](crate::input::DeleteFunctionCodeSigningConfigInput::function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// - On success, responds with [`DeleteFunctionCodeSigningConfigOutput`](crate::output::DeleteFunctionCodeSigningConfigOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteFunctionCodeSigningConfigError>`](crate::error::DeleteFunctionCodeSigningConfigError)
     pub fn delete_function_code_signing_config(
         &self,
     ) -> fluent_builders::DeleteFunctionCodeSigningConfig<C, M, R> {
         fluent_builders::DeleteFunctionCodeSigningConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteFunctionConcurrency` operation.
+    /// Constructs a fluent builder for the [`DeleteFunctionConcurrency`](crate::client::fluent_builders::DeleteFunctionConcurrency) operation.
     ///
-    /// See [`DeleteFunctionConcurrency`](crate::client::fluent_builders::DeleteFunctionConcurrency) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteFunctionConcurrencyInput`](crate::input::DeleteFunctionConcurrencyInput) with field(s):
+    ///   - [`function_name(Option<String>)`](crate::input::DeleteFunctionConcurrencyInput::function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// - On success, responds with [`DeleteFunctionConcurrencyOutput`](crate::output::DeleteFunctionConcurrencyOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteFunctionConcurrencyError>`](crate::error::DeleteFunctionConcurrencyError)
     pub fn delete_function_concurrency(
         &self,
     ) -> fluent_builders::DeleteFunctionConcurrency<C, M, R> {
         fluent_builders::DeleteFunctionConcurrency::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteFunctionEventInvokeConfig` operation.
+    /// Constructs a fluent builder for the [`DeleteFunctionEventInvokeConfig`](crate::client::fluent_builders::DeleteFunctionEventInvokeConfig) operation.
     ///
-    /// See [`DeleteFunctionEventInvokeConfig`](crate::client::fluent_builders::DeleteFunctionEventInvokeConfig) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteFunctionEventInvokeConfigInput`](crate::input::DeleteFunctionEventInvokeConfigInput) with field(s):
+    ///   - [`function_name(Option<String>)`](crate::input::DeleteFunctionEventInvokeConfigInput::function_name): <p>The name of the Lambda function, version, or alias.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>  </ul>  <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    ///   - [`qualifier(Option<String>)`](crate::input::DeleteFunctionEventInvokeConfigInput::qualifier): <p>A version number or alias name.</p>
+    /// - On success, responds with [`DeleteFunctionEventInvokeConfigOutput`](crate::output::DeleteFunctionEventInvokeConfigOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteFunctionEventInvokeConfigError>`](crate::error::DeleteFunctionEventInvokeConfigError)
     pub fn delete_function_event_invoke_config(
         &self,
     ) -> fluent_builders::DeleteFunctionEventInvokeConfig<C, M, R> {
         fluent_builders::DeleteFunctionEventInvokeConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteLayerVersion` operation.
+    /// Constructs a fluent builder for the [`DeleteLayerVersion`](crate::client::fluent_builders::DeleteLayerVersion) operation.
     ///
-    /// See [`DeleteLayerVersion`](crate::client::fluent_builders::DeleteLayerVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteLayerVersionInput`](crate::input::DeleteLayerVersionInput) with field(s):
+    ///   - [`layer_name(Option<String>)`](crate::input::DeleteLayerVersionInput::layer_name): <p>The name or Amazon Resource Name (ARN) of the layer.</p>
+    ///   - [`version_number(i64)`](crate::input::DeleteLayerVersionInput::version_number): <p>The version number.</p>
+    /// - On success, responds with [`DeleteLayerVersionOutput`](crate::output::DeleteLayerVersionOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteLayerVersionError>`](crate::error::DeleteLayerVersionError)
     pub fn delete_layer_version(&self) -> fluent_builders::DeleteLayerVersion<C, M, R> {
         fluent_builders::DeleteLayerVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteProvisionedConcurrencyConfig` operation.
+    /// Constructs a fluent builder for the [`DeleteProvisionedConcurrencyConfig`](crate::client::fluent_builders::DeleteProvisionedConcurrencyConfig) operation.
     ///
-    /// See [`DeleteProvisionedConcurrencyConfig`](crate::client::fluent_builders::DeleteProvisionedConcurrencyConfig) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteProvisionedConcurrencyConfigInput`](crate::input::DeleteProvisionedConcurrencyConfigInput) with field(s):
+    ///   - [`function_name(Option<String>)`](crate::input::DeleteProvisionedConcurrencyConfigInput::function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    ///   - [`qualifier(Option<String>)`](crate::input::DeleteProvisionedConcurrencyConfigInput::qualifier): <p>The version number or alias name.</p>
+    /// - On success, responds with [`DeleteProvisionedConcurrencyConfigOutput`](crate::output::DeleteProvisionedConcurrencyConfigOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteProvisionedConcurrencyConfigError>`](crate::error::DeleteProvisionedConcurrencyConfigError)
     pub fn delete_provisioned_concurrency_config(
         &self,
     ) -> fluent_builders::DeleteProvisionedConcurrencyConfig<C, M, R> {
         fluent_builders::DeleteProvisionedConcurrencyConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAccountSettings` operation.
+    /// Constructs a fluent builder for the [`GetAccountSettings`](crate::client::fluent_builders::GetAccountSettings) operation.
     ///
-    /// See [`GetAccountSettings`](crate::client::fluent_builders::GetAccountSettings) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetAccountSettingsInput`](crate::input::GetAccountSettingsInput)
+
+    /// - On success, responds with [`GetAccountSettingsOutput`](crate::output::GetAccountSettingsOutput) with field(s):
+    ///   - [`account_limit(Option<AccountLimit>)`](crate::output::GetAccountSettingsOutput::account_limit): <p>Limits that are related to concurrency and code storage.</p>
+    ///   - [`account_usage(Option<AccountUsage>)`](crate::output::GetAccountSettingsOutput::account_usage): <p>The number of functions and amount of storage in use.</p>
+    /// - On failure, responds with [`SdkError<GetAccountSettingsError>`](crate::error::GetAccountSettingsError)
     pub fn get_account_settings(&self) -> fluent_builders::GetAccountSettings<C, M, R> {
         fluent_builders::GetAccountSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAlias` operation.
+    /// Constructs a fluent builder for the [`GetAlias`](crate::client::fluent_builders::GetAlias) operation.
     ///
-    /// See [`GetAlias`](crate::client::fluent_builders::GetAlias) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetAliasInput`](crate::input::GetAliasInput) with field(s):
+    ///   - [`function_name(Option<String>)`](crate::input::GetAliasInput::function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    ///   - [`name(Option<String>)`](crate::input::GetAliasInput::name): <p>The name of the alias.</p>
+    /// - On success, responds with [`GetAliasOutput`](crate::output::GetAliasOutput) with field(s):
+    ///   - [`alias_arn(Option<String>)`](crate::output::GetAliasOutput::alias_arn): <p>The Amazon Resource Name (ARN) of the alias.</p>
+    ///   - [`name(Option<String>)`](crate::output::GetAliasOutput::name): <p>The name of the alias.</p>
+    ///   - [`function_version(Option<String>)`](crate::output::GetAliasOutput::function_version): <p>The function version that the alias invokes.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetAliasOutput::description): <p>A description of the alias.</p>
+    ///   - [`routing_config(Option<AliasRoutingConfiguration>)`](crate::output::GetAliasOutput::routing_config): <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
+    ///   - [`revision_id(Option<String>)`](crate::output::GetAliasOutput::revision_id): <p>A unique identifier that changes when you update the alias.</p>
+    /// - On failure, responds with [`SdkError<GetAliasError>`](crate::error::GetAliasError)
     pub fn get_alias(&self) -> fluent_builders::GetAlias<C, M, R> {
         fluent_builders::GetAlias::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCodeSigningConfig` operation.
+    /// Constructs a fluent builder for the [`GetCodeSigningConfig`](crate::client::fluent_builders::GetCodeSigningConfig) operation.
     ///
-    /// See [`GetCodeSigningConfig`](crate::client::fluent_builders::GetCodeSigningConfig) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetCodeSigningConfigInput`](crate::input::GetCodeSigningConfigInput) with field(s):
+    ///   - [`code_signing_config_arn(Option<String>)`](crate::input::GetCodeSigningConfigInput::code_signing_config_arn): <p>The The Amazon Resource Name (ARN) of the code signing configuration. </p>
+    /// - On success, responds with [`GetCodeSigningConfigOutput`](crate::output::GetCodeSigningConfigOutput) with field(s):
+    ///   - [`code_signing_config(Option<CodeSigningConfig>)`](crate::output::GetCodeSigningConfigOutput::code_signing_config): <p>The code signing configuration</p>
+    /// - On failure, responds with [`SdkError<GetCodeSigningConfigError>`](crate::error::GetCodeSigningConfigError)
     pub fn get_code_signing_config(&self) -> fluent_builders::GetCodeSigningConfig<C, M, R> {
         fluent_builders::GetCodeSigningConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetEventSourceMapping` operation.
+    /// Constructs a fluent builder for the [`GetEventSourceMapping`](crate::client::fluent_builders::GetEventSourceMapping) operation.
     ///
-    /// See [`GetEventSourceMapping`](crate::client::fluent_builders::GetEventSourceMapping) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetEventSourceMappingInput`](crate::input::GetEventSourceMappingInput) with field(s):
+    ///   - [`uuid(Option<String>)`](crate::input::GetEventSourceMappingInput::uuid): <p>The identifier of the event source mapping.</p>
+    /// - On success, responds with [`GetEventSourceMappingOutput`](crate::output::GetEventSourceMappingOutput) with field(s):
+    ///   - [`uuid(Option<String>)`](crate::output::GetEventSourceMappingOutput::uuid): <p>The identifier of the event source mapping.</p>
+    ///   - [`starting_position(Option<EventSourcePosition>)`](crate::output::GetEventSourceMappingOutput::starting_position): <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
+    ///   - [`starting_position_timestamp(Option<DateTime>)`](crate::output::GetEventSourceMappingOutput::starting_position_timestamp): <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
+    ///   - [`batch_size(Option<i32>)`](crate::output::GetEventSourceMappingOutput::batch_size): <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>  <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>  <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
+    ///   - [`maximum_batching_window_in_seconds(Option<i32>)`](crate::output::GetEventSourceMappingOutput::maximum_batching_window_in_seconds): <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>  <p>Default: 0</p>  <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
+    ///   - [`parallelization_factor(Option<i32>)`](crate::output::GetEventSourceMappingOutput::parallelization_factor): <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
+    ///   - [`event_source_arn(Option<String>)`](crate::output::GetEventSourceMappingOutput::event_source_arn): <p>The Amazon Resource Name (ARN) of the event source.</p>
+    ///   - [`filter_criteria(Option<FilterCriteria>)`](crate::output::GetEventSourceMappingOutput::filter_criteria): <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    ///   - [`function_arn(Option<String>)`](crate::output::GetEventSourceMappingOutput::function_arn): <p>The ARN of the Lambda function.</p>
+    ///   - [`last_modified(Option<DateTime>)`](crate::output::GetEventSourceMappingOutput::last_modified): <p>The date that the event source mapping was last updated or that its state changed.</p>
+    ///   - [`last_processing_result(Option<String>)`](crate::output::GetEventSourceMappingOutput::last_processing_result): <p>The result of the last Lambda invocation of your function.</p>
+    ///   - [`state(Option<String>)`](crate::output::GetEventSourceMappingOutput::state): <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
+    ///   - [`state_transition_reason(Option<String>)`](crate::output::GetEventSourceMappingOutput::state_transition_reason): <p>Indicates whether a user or Lambda made the last change to the event source mapping.</p>
+    ///   - [`destination_config(Option<DestinationConfig>)`](crate::output::GetEventSourceMappingOutput::destination_config): <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
+    ///   - [`topics(Option<Vec<String>>)`](crate::output::GetEventSourceMappingOutput::topics): <p>The name of the Kafka topic.</p>
+    ///   - [`queues(Option<Vec<String>>)`](crate::output::GetEventSourceMappingOutput::queues): <p> (Amazon MQ) The name of the Amazon MQ broker destination queue to consume.</p>
+    ///   - [`source_access_configurations(Option<Vec<SourceAccessConfiguration>>)`](crate::output::GetEventSourceMappingOutput::source_access_configurations): <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
+    ///   - [`self_managed_event_source(Option<SelfManagedEventSource>)`](crate::output::GetEventSourceMappingOutput::self_managed_event_source): <p>The self-managed Apache Kafka cluster for your event source.</p>
+    ///   - [`maximum_record_age_in_seconds(Option<i32>)`](crate::output::GetEventSourceMappingOutput::maximum_record_age_in_seconds): <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
+    ///   - [`bisect_batch_on_function_error(Option<bool>)`](crate::output::GetEventSourceMappingOutput::bisect_batch_on_function_error): <p>(Streams only) If the function returns an error, split the batch in two and retry. The default value is false.</p>
+    ///   - [`maximum_retry_attempts(Option<i32>)`](crate::output::GetEventSourceMappingOutput::maximum_retry_attempts): <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
+    ///   - [`tumbling_window_in_seconds(Option<i32>)`](crate::output::GetEventSourceMappingOutput::tumbling_window_in_seconds): <p>(Streams only) The duration in seconds of a processing window. The range is 1–900 seconds.</p>
+    ///   - [`function_response_types(Option<Vec<FunctionResponseType>>)`](crate::output::GetEventSourceMappingOutput::function_response_types): <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+    /// - On failure, responds with [`SdkError<GetEventSourceMappingError>`](crate::error::GetEventSourceMappingError)
     pub fn get_event_source_mapping(&self) -> fluent_builders::GetEventSourceMapping<C, M, R> {
         fluent_builders::GetEventSourceMapping::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetFunction` operation.
+    /// Constructs a fluent builder for the [`GetFunction`](crate::client::fluent_builders::GetFunction) operation.
     ///
-    /// See [`GetFunction`](crate::client::fluent_builders::GetFunction) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetFunctionInput`](crate::input::GetFunctionInput) with field(s):
+    ///   - [`function_name(Option<String>)`](crate::input::GetFunctionInput::function_name): <p>The name of the Lambda function, version, or alias.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>  </ul>  <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    ///   - [`qualifier(Option<String>)`](crate::input::GetFunctionInput::qualifier): <p>Specify a version or alias to get details about a published version of the function.</p>
+    /// - On success, responds with [`GetFunctionOutput`](crate::output::GetFunctionOutput) with field(s):
+    ///   - [`configuration(Option<FunctionConfiguration>)`](crate::output::GetFunctionOutput::configuration): <p>The configuration of the function or version.</p>
+    ///   - [`code(Option<FunctionCodeLocation>)`](crate::output::GetFunctionOutput::code): <p>The deployment package of the function or version.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetFunctionOutput::tags): <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
+    ///   - [`concurrency(Option<Concurrency>)`](crate::output::GetFunctionOutput::concurrency): <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved concurrency</a>.</p>
+    /// - On failure, responds with [`SdkError<GetFunctionError>`](crate::error::GetFunctionError)
     pub fn get_function(&self) -> fluent_builders::GetFunction<C, M, R> {
         fluent_builders::GetFunction::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetFunctionCodeSigningConfig` operation.
+    /// Constructs a fluent builder for the [`GetFunctionCodeSigningConfig`](crate::client::fluent_builders::GetFunctionCodeSigningConfig) operation.
     ///
-    /// See [`GetFunctionCodeSigningConfig`](crate::client::fluent_builders::GetFunctionCodeSigningConfig) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetFunctionCodeSigningConfigInput`](crate::input::GetFunctionCodeSigningConfigInput) with field(s):
+    ///   - [`function_name(Option<String>)`](crate::input::GetFunctionCodeSigningConfigInput::function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// - On success, responds with [`GetFunctionCodeSigningConfigOutput`](crate::output::GetFunctionCodeSigningConfigOutput) with field(s):
+    ///   - [`code_signing_config_arn(Option<String>)`](crate::output::GetFunctionCodeSigningConfigOutput::code_signing_config_arn): <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
+    ///   - [`function_name(Option<String>)`](crate::output::GetFunctionCodeSigningConfigOutput::function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// - On failure, responds with [`SdkError<GetFunctionCodeSigningConfigError>`](crate::error::GetFunctionCodeSigningConfigError)
     pub fn get_function_code_signing_config(
         &self,
     ) -> fluent_builders::GetFunctionCodeSigningConfig<C, M, R> {
         fluent_builders::GetFunctionCodeSigningConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetFunctionConcurrency` operation.
+    /// Constructs a fluent builder for the [`GetFunctionConcurrency`](crate::client::fluent_builders::GetFunctionConcurrency) operation.
     ///
-    /// See [`GetFunctionConcurrency`](crate::client::fluent_builders::GetFunctionConcurrency) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetFunctionConcurrencyInput`](crate::input::GetFunctionConcurrencyInput) with field(s):
+    ///   - [`function_name(Option<String>)`](crate::input::GetFunctionConcurrencyInput::function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// - On success, responds with [`GetFunctionConcurrencyOutput`](crate::output::GetFunctionConcurrencyOutput) with field(s):
+    ///   - [`reserved_concurrent_executions(Option<i32>)`](crate::output::GetFunctionConcurrencyOutput::reserved_concurrent_executions): <p>The number of simultaneous executions that are reserved for the function.</p>
+    /// - On failure, responds with [`SdkError<GetFunctionConcurrencyError>`](crate::error::GetFunctionConcurrencyError)
     pub fn get_function_concurrency(&self) -> fluent_builders::GetFunctionConcurrency<C, M, R> {
         fluent_builders::GetFunctionConcurrency::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetFunctionConfiguration` operation.
+    /// Constructs a fluent builder for the [`GetFunctionConfiguration`](crate::client::fluent_builders::GetFunctionConfiguration) operation.
     ///
-    /// See [`GetFunctionConfiguration`](crate::client::fluent_builders::GetFunctionConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetFunctionConfigurationInput`](crate::input::GetFunctionConfigurationInput) with field(s):
+    ///   - [`function_name(Option<String>)`](crate::input::GetFunctionConfigurationInput::function_name): <p>The name of the Lambda function, version, or alias.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>  </ul>  <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    ///   - [`qualifier(Option<String>)`](crate::input::GetFunctionConfigurationInput::qualifier): <p>Specify a version or alias to get details about a published version of the function.</p>
+    /// - On success, responds with [`GetFunctionConfigurationOutput`](crate::output::GetFunctionConfigurationOutput) with field(s):
+    ///   - [`function_name(Option<String>)`](crate::output::GetFunctionConfigurationOutput::function_name): <p>The name of the function.</p>
+    ///   - [`function_arn(Option<String>)`](crate::output::GetFunctionConfigurationOutput::function_arn): <p>The function's Amazon Resource Name (ARN).</p>
+    ///   - [`runtime(Option<Runtime>)`](crate::output::GetFunctionConfigurationOutput::runtime): <p>The runtime environment for the Lambda function.</p>
+    ///   - [`role(Option<String>)`](crate::output::GetFunctionConfigurationOutput::role): <p>The function's execution role.</p>
+    ///   - [`handler(Option<String>)`](crate::output::GetFunctionConfigurationOutput::handler): <p>The function that Lambda calls to begin executing your function.</p>
+    ///   - [`code_size(i64)`](crate::output::GetFunctionConfigurationOutput::code_size): <p>The size of the function's deployment package, in bytes.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetFunctionConfigurationOutput::description): <p>The function's description.</p>
+    ///   - [`timeout(Option<i32>)`](crate::output::GetFunctionConfigurationOutput::timeout): <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
+    ///   - [`memory_size(Option<i32>)`](crate::output::GetFunctionConfigurationOutput::memory_size): <p>The amount of memory available to the function at runtime. </p>
+    ///   - [`last_modified(Option<String>)`](crate::output::GetFunctionConfigurationOutput::last_modified): <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    ///   - [`code_sha256(Option<String>)`](crate::output::GetFunctionConfigurationOutput::code_sha256): <p>The SHA256 hash of the function's deployment package.</p>
+    ///   - [`version(Option<String>)`](crate::output::GetFunctionConfigurationOutput::version): <p>The version of the Lambda function.</p>
+    ///   - [`vpc_config(Option<VpcConfigResponse>)`](crate::output::GetFunctionConfigurationOutput::vpc_config): <p>The function's networking configuration.</p>
+    ///   - [`dead_letter_config(Option<DeadLetterConfig>)`](crate::output::GetFunctionConfigurationOutput::dead_letter_config): <p>The function's dead letter queue.</p>
+    ///   - [`environment(Option<EnvironmentResponse>)`](crate::output::GetFunctionConfigurationOutput::environment): <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.</p>
+    ///   - [`kms_key_arn(Option<String>)`](crate::output::GetFunctionConfigurationOutput::kms_key_arn): <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed key.</p>
+    ///   - [`tracing_config(Option<TracingConfigResponse>)`](crate::output::GetFunctionConfigurationOutput::tracing_config): <p>The function's X-Ray tracing configuration.</p>
+    ///   - [`master_arn(Option<String>)`](crate::output::GetFunctionConfigurationOutput::master_arn): <p>For Lambda@Edge functions, the ARN of the main function.</p>
+    ///   - [`revision_id(Option<String>)`](crate::output::GetFunctionConfigurationOutput::revision_id): <p>The latest updated revision of the function or alias.</p>
+    ///   - [`layers(Option<Vec<Layer>>)`](crate::output::GetFunctionConfigurationOutput::layers): <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.</p>
+    ///   - [`state(Option<State>)`](crate::output::GetFunctionConfigurationOutput::state): <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
+    ///   - [`state_reason(Option<String>)`](crate::output::GetFunctionConfigurationOutput::state_reason): <p>The reason for the function's current state.</p>
+    ///   - [`state_reason_code(Option<StateReasonCode>)`](crate::output::GetFunctionConfigurationOutput::state_reason_code): <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
+    ///   - [`last_update_status(Option<LastUpdateStatus>)`](crate::output::GetFunctionConfigurationOutput::last_update_status): <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
+    ///   - [`last_update_status_reason(Option<String>)`](crate::output::GetFunctionConfigurationOutput::last_update_status_reason): <p>The reason for the last update that was performed on the function.</p>
+    ///   - [`last_update_status_reason_code(Option<LastUpdateStatusReasonCode>)`](crate::output::GetFunctionConfigurationOutput::last_update_status_reason_code): <p>The reason code for the last update that was performed on the function.</p>
+    ///   - [`file_system_configs(Option<Vec<FileSystemConfig>>)`](crate::output::GetFunctionConfigurationOutput::file_system_configs): <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
+    ///   - [`package_type(Option<PackageType>)`](crate::output::GetFunctionConfigurationOutput::package_type): <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
+    ///   - [`image_config_response(Option<ImageConfigResponse>)`](crate::output::GetFunctionConfigurationOutput::image_config_response): <p>The function's image configuration values.</p>
+    ///   - [`signing_profile_version_arn(Option<String>)`](crate::output::GetFunctionConfigurationOutput::signing_profile_version_arn): <p>The ARN of the signing profile version.</p>
+    ///   - [`signing_job_arn(Option<String>)`](crate::output::GetFunctionConfigurationOutput::signing_job_arn): <p>The ARN of the signing job.</p>
+    ///   - [`architectures(Option<Vec<Architecture>>)`](crate::output::GetFunctionConfigurationOutput::architectures): <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
+    /// - On failure, responds with [`SdkError<GetFunctionConfigurationError>`](crate::error::GetFunctionConfigurationError)
     pub fn get_function_configuration(&self) -> fluent_builders::GetFunctionConfiguration<C, M, R> {
         fluent_builders::GetFunctionConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetFunctionEventInvokeConfig` operation.
+    /// Constructs a fluent builder for the [`GetFunctionEventInvokeConfig`](crate::client::fluent_builders::GetFunctionEventInvokeConfig) operation.
     ///
-    /// See [`GetFunctionEventInvokeConfig`](crate::client::fluent_builders::GetFunctionEventInvokeConfig) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetFunctionEventInvokeConfigInput`](crate::input::GetFunctionEventInvokeConfigInput) with field(s):
+    ///   - [`function_name(Option<String>)`](crate::input::GetFunctionEventInvokeConfigInput::function_name): <p>The name of the Lambda function, version, or alias.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>  </ul>  <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    ///   - [`qualifier(Option<String>)`](crate::input::GetFunctionEventInvokeConfigInput::qualifier): <p>A version number or alias name.</p>
+    /// - On success, responds with [`GetFunctionEventInvokeConfigOutput`](crate::output::GetFunctionEventInvokeConfigOutput) with field(s):
+    ///   - [`last_modified(Option<DateTime>)`](crate::output::GetFunctionEventInvokeConfigOutput::last_modified): <p>The date and time that the configuration was last updated.</p>
+    ///   - [`function_arn(Option<String>)`](crate::output::GetFunctionEventInvokeConfigOutput::function_arn): <p>The Amazon Resource Name (ARN) of the function.</p>
+    ///   - [`maximum_retry_attempts(Option<i32>)`](crate::output::GetFunctionEventInvokeConfigOutput::maximum_retry_attempts): <p>The maximum number of times to retry when the function returns an error.</p>
+    ///   - [`maximum_event_age_in_seconds(Option<i32>)`](crate::output::GetFunctionEventInvokeConfigOutput::maximum_event_age_in_seconds): <p>The maximum age of a request that Lambda sends to a function for processing.</p>
+    ///   - [`destination_config(Option<DestinationConfig>)`](crate::output::GetFunctionEventInvokeConfigOutput::destination_config): <p>A destination for events after they have been sent to a function for processing.</p>  <p class="title"> <b>Destinations</b> </p>  <ul>   <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>   <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>   <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>   <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<GetFunctionEventInvokeConfigError>`](crate::error::GetFunctionEventInvokeConfigError)
     pub fn get_function_event_invoke_config(
         &self,
     ) -> fluent_builders::GetFunctionEventInvokeConfig<C, M, R> {
         fluent_builders::GetFunctionEventInvokeConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetLayerVersion` operation.
+    /// Constructs a fluent builder for the [`GetLayerVersion`](crate::client::fluent_builders::GetLayerVersion) operation.
     ///
-    /// See [`GetLayerVersion`](crate::client::fluent_builders::GetLayerVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetLayerVersionInput`](crate::input::GetLayerVersionInput) with field(s):
+    ///   - [`layer_name(Option<String>)`](crate::input::GetLayerVersionInput::layer_name): <p>The name or Amazon Resource Name (ARN) of the layer.</p>
+    ///   - [`version_number(i64)`](crate::input::GetLayerVersionInput::version_number): <p>The version number.</p>
+    /// - On success, responds with [`GetLayerVersionOutput`](crate::output::GetLayerVersionOutput) with field(s):
+    ///   - [`content(Option<LayerVersionContentOutput>)`](crate::output::GetLayerVersionOutput::content): <p>Details about the layer version.</p>
+    ///   - [`layer_arn(Option<String>)`](crate::output::GetLayerVersionOutput::layer_arn): <p>The ARN of the layer.</p>
+    ///   - [`layer_version_arn(Option<String>)`](crate::output::GetLayerVersionOutput::layer_version_arn): <p>The ARN of the layer version.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetLayerVersionOutput::description): <p>The description of the version.</p>
+    ///   - [`created_date(Option<String>)`](crate::output::GetLayerVersionOutput::created_date): <p>The date that the layer version was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    ///   - [`version(i64)`](crate::output::GetLayerVersionOutput::version): <p>The version number.</p>
+    ///   - [`compatible_runtimes(Option<Vec<Runtime>>)`](crate::output::GetLayerVersionOutput::compatible_runtimes): <p>The layer's compatible runtimes.</p>
+    ///   - [`license_info(Option<String>)`](crate::output::GetLayerVersionOutput::license_info): <p>The layer's software license.</p>
+    ///   - [`compatible_architectures(Option<Vec<Architecture>>)`](crate::output::GetLayerVersionOutput::compatible_architectures): <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+    /// - On failure, responds with [`SdkError<GetLayerVersionError>`](crate::error::GetLayerVersionError)
     pub fn get_layer_version(&self) -> fluent_builders::GetLayerVersion<C, M, R> {
         fluent_builders::GetLayerVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetLayerVersionByArn` operation.
+    /// Constructs a fluent builder for the [`GetLayerVersionByArn`](crate::client::fluent_builders::GetLayerVersionByArn) operation.
     ///
-    /// See [`GetLayerVersionByArn`](crate::client::fluent_builders::GetLayerVersionByArn) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetLayerVersionByArnInput`](crate::input::GetLayerVersionByArnInput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::input::GetLayerVersionByArnInput::arn): <p>The ARN of the layer version.</p>
+    /// - On success, responds with [`GetLayerVersionByArnOutput`](crate::output::GetLayerVersionByArnOutput) with field(s):
+    ///   - [`content(Option<LayerVersionContentOutput>)`](crate::output::GetLayerVersionByArnOutput::content): <p>Details about the layer version.</p>
+    ///   - [`layer_arn(Option<String>)`](crate::output::GetLayerVersionByArnOutput::layer_arn): <p>The ARN of the layer.</p>
+    ///   - [`layer_version_arn(Option<String>)`](crate::output::GetLayerVersionByArnOutput::layer_version_arn): <p>The ARN of the layer version.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetLayerVersionByArnOutput::description): <p>The description of the version.</p>
+    ///   - [`created_date(Option<String>)`](crate::output::GetLayerVersionByArnOutput::created_date): <p>The date that the layer version was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    ///   - [`version(i64)`](crate::output::GetLayerVersionByArnOutput::version): <p>The version number.</p>
+    ///   - [`compatible_runtimes(Option<Vec<Runtime>>)`](crate::output::GetLayerVersionByArnOutput::compatible_runtimes): <p>The layer's compatible runtimes.</p>
+    ///   - [`license_info(Option<String>)`](crate::output::GetLayerVersionByArnOutput::license_info): <p>The layer's software license.</p>
+    ///   - [`compatible_architectures(Option<Vec<Architecture>>)`](crate::output::GetLayerVersionByArnOutput::compatible_architectures): <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+    /// - On failure, responds with [`SdkError<GetLayerVersionByArnError>`](crate::error::GetLayerVersionByArnError)
     pub fn get_layer_version_by_arn(&self) -> fluent_builders::GetLayerVersionByArn<C, M, R> {
         fluent_builders::GetLayerVersionByArn::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetLayerVersionPolicy` operation.
+    /// Constructs a fluent builder for the [`GetLayerVersionPolicy`](crate::client::fluent_builders::GetLayerVersionPolicy) operation.
     ///
-    /// See [`GetLayerVersionPolicy`](crate::client::fluent_builders::GetLayerVersionPolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetLayerVersionPolicyInput`](crate::input::GetLayerVersionPolicyInput) with field(s):
+    ///   - [`layer_name(Option<String>)`](crate::input::GetLayerVersionPolicyInput::layer_name): <p>The name or Amazon Resource Name (ARN) of the layer.</p>
+    ///   - [`version_number(i64)`](crate::input::GetLayerVersionPolicyInput::version_number): <p>The version number.</p>
+    /// - On success, responds with [`GetLayerVersionPolicyOutput`](crate::output::GetLayerVersionPolicyOutput) with field(s):
+    ///   - [`policy(Option<String>)`](crate::output::GetLayerVersionPolicyOutput::policy): <p>The policy document.</p>
+    ///   - [`revision_id(Option<String>)`](crate::output::GetLayerVersionPolicyOutput::revision_id): <p>A unique identifier for the current revision of the policy.</p>
+    /// - On failure, responds with [`SdkError<GetLayerVersionPolicyError>`](crate::error::GetLayerVersionPolicyError)
     pub fn get_layer_version_policy(&self) -> fluent_builders::GetLayerVersionPolicy<C, M, R> {
         fluent_builders::GetLayerVersionPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetPolicy` operation.
+    /// Constructs a fluent builder for the [`GetPolicy`](crate::client::fluent_builders::GetPolicy) operation.
     ///
-    /// See [`GetPolicy`](crate::client::fluent_builders::GetPolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetPolicyInput`](crate::input::GetPolicyInput) with field(s):
+    ///   - [`function_name(Option<String>)`](crate::input::GetPolicyInput::function_name): <p>The name of the Lambda function, version, or alias.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>  </ul>  <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    ///   - [`qualifier(Option<String>)`](crate::input::GetPolicyInput::qualifier): <p>Specify a version or alias to get the policy for that resource.</p>
+    /// - On success, responds with [`GetPolicyOutput`](crate::output::GetPolicyOutput) with field(s):
+    ///   - [`policy(Option<String>)`](crate::output::GetPolicyOutput::policy): <p>The resource-based policy.</p>
+    ///   - [`revision_id(Option<String>)`](crate::output::GetPolicyOutput::revision_id): <p>A unique identifier for the current revision of the policy.</p>
+    /// - On failure, responds with [`SdkError<GetPolicyError>`](crate::error::GetPolicyError)
     pub fn get_policy(&self) -> fluent_builders::GetPolicy<C, M, R> {
         fluent_builders::GetPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetProvisionedConcurrencyConfig` operation.
+    /// Constructs a fluent builder for the [`GetProvisionedConcurrencyConfig`](crate::client::fluent_builders::GetProvisionedConcurrencyConfig) operation.
     ///
-    /// See [`GetProvisionedConcurrencyConfig`](crate::client::fluent_builders::GetProvisionedConcurrencyConfig) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetProvisionedConcurrencyConfigInput`](crate::input::GetProvisionedConcurrencyConfigInput) with field(s):
+    ///   - [`function_name(Option<String>)`](crate::input::GetProvisionedConcurrencyConfigInput::function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    ///   - [`qualifier(Option<String>)`](crate::input::GetProvisionedConcurrencyConfigInput::qualifier): <p>The version number or alias name.</p>
+    /// - On success, responds with [`GetProvisionedConcurrencyConfigOutput`](crate::output::GetProvisionedConcurrencyConfigOutput) with field(s):
+    ///   - [`requested_provisioned_concurrent_executions(Option<i32>)`](crate::output::GetProvisionedConcurrencyConfigOutput::requested_provisioned_concurrent_executions): <p>The amount of provisioned concurrency requested.</p>
+    ///   - [`available_provisioned_concurrent_executions(Option<i32>)`](crate::output::GetProvisionedConcurrencyConfigOutput::available_provisioned_concurrent_executions): <p>The amount of provisioned concurrency available.</p>
+    ///   - [`allocated_provisioned_concurrent_executions(Option<i32>)`](crate::output::GetProvisionedConcurrencyConfigOutput::allocated_provisioned_concurrent_executions): <p>The amount of provisioned concurrency allocated.</p>
+    ///   - [`status(Option<ProvisionedConcurrencyStatusEnum>)`](crate::output::GetProvisionedConcurrencyConfigOutput::status): <p>The status of the allocation process.</p>
+    ///   - [`status_reason(Option<String>)`](crate::output::GetProvisionedConcurrencyConfigOutput::status_reason): <p>For failed allocations, the reason that provisioned concurrency could not be allocated.</p>
+    ///   - [`last_modified(Option<String>)`](crate::output::GetProvisionedConcurrencyConfigOutput::last_modified): <p>The date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>.</p>
+    /// - On failure, responds with [`SdkError<GetProvisionedConcurrencyConfigError>`](crate::error::GetProvisionedConcurrencyConfigError)
     pub fn get_provisioned_concurrency_config(
         &self,
     ) -> fluent_builders::GetProvisionedConcurrencyConfig<C, M, R> {
         fluent_builders::GetProvisionedConcurrencyConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `Invoke` operation.
+    /// Constructs a fluent builder for the [`Invoke`](crate::client::fluent_builders::Invoke) operation.
     ///
-    /// See [`Invoke`](crate::client::fluent_builders::Invoke) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`InvokeInput`](crate::input::InvokeInput) with field(s):
+    ///   - [`function_name(Option<String>)`](crate::input::InvokeInput::function_name): <p>The name of the Lambda function, version, or alias.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>  </ul>  <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    ///   - [`invocation_type(Option<InvocationType>)`](crate::input::InvokeInput::invocation_type): <p>Choose from the following options.</p>  <ul>   <li> <p> <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p> </li>   <li> <p> <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if it's configured). The API response only includes a status code.</p> </li>   <li> <p> <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li>  </ul>
+    ///   - [`log_type(Option<LogType>)`](crate::input::InvokeInput::log_type): <p>Set to <code>Tail</code> to include the execution log in the response. Applies to synchronously invoked functions only.</p>
+    ///   - [`client_context(Option<String>)`](crate::input::InvokeInput::client_context): <p>Up to 3583 bytes of base64-encoded data about the invoking client to pass to the function in the context object.</p>
+    ///   - [`payload(Option<Blob>)`](crate::input::InvokeInput::payload): <p>The JSON that you want to provide to your Lambda function as input.</p>  <p>You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>. You can also specify a file path. For example, <code>--payload file://payload.json</code>. </p>
+    ///   - [`qualifier(Option<String>)`](crate::input::InvokeInput::qualifier): <p>Specify a version or alias to invoke a published version of the function.</p>
+    /// - On success, responds with [`InvokeOutput`](crate::output::InvokeOutput) with field(s):
+    ///   - [`status_code(i32)`](crate::output::InvokeOutput::status_code): <p>The HTTP status code is in the 200 range for a successful request. For the <code>RequestResponse</code> invocation type, this status code is 200. For the <code>Event</code> invocation type, this status code is 202. For the <code>DryRun</code> invocation type, the status code is 204.</p>
+    ///   - [`function_error(Option<String>)`](crate::output::InvokeOutput::function_error): <p>If present, indicates that an error occurred during function execution. Details about the error are included in the response payload.</p>
+    ///   - [`log_result(Option<String>)`](crate::output::InvokeOutput::log_result): <p>The last 4 KB of the execution log, which is base64 encoded.</p>
+    ///   - [`payload(Option<Blob>)`](crate::output::InvokeOutput::payload): <p>The response from the function, or an error object.</p>
+    ///   - [`executed_version(Option<String>)`](crate::output::InvokeOutput::executed_version): <p>The version of the function that executed. When you invoke a function with an alias, this indicates which version the alias resolved to.</p>
+    /// - On failure, responds with [`SdkError<InvokeError>`](crate::error::InvokeError)
     pub fn invoke(&self) -> fluent_builders::Invoke<C, M, R> {
         fluent_builders::Invoke::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `InvokeAsync` operation.
+    /// Constructs a fluent builder for the [`InvokeAsync`](crate::client::fluent_builders::InvokeAsync) operation.
     ///
-    /// See [`InvokeAsync`](crate::client::fluent_builders::InvokeAsync) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`InvokeAsyncInput`](crate::input::InvokeAsyncInput) with field(s):
+    ///   - [`function_name(Option<String>)`](crate::input::InvokeAsyncInput::function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    ///   - [`invoke_args(byte_stream::ByteStream)`](crate::input::InvokeAsyncInput::invoke_args): <p>The JSON that you want to provide to your Lambda function as input.</p>
+    /// - On success, responds with [`InvokeAsyncOutput`](crate::output::InvokeAsyncOutput) with field(s):
+    ///   - [`status(i32)`](crate::output::InvokeAsyncOutput::status): <p>The status code.</p>
+    /// - On failure, responds with [`SdkError<InvokeAsyncError>`](crate::error::InvokeAsyncError)
     pub fn invoke_async(&self) -> fluent_builders::InvokeAsync<C, M, R> {
         fluent_builders::InvokeAsync::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAliases` operation.
-    ///
-    /// See [`ListAliases`](crate::client::fluent_builders::ListAliases) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListAliases`](crate::client::fluent_builders::ListAliases) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAliases::into_paginator).
+    ///
+    /// - Takes [`ListAliasesInput`](crate::input::ListAliasesInput) with field(s):
+    ///   - [`function_name(Option<String>)`](crate::input::ListAliasesInput::function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    ///   - [`function_version(Option<String>)`](crate::input::ListAliasesInput::function_version): <p>Specify a function version to only list aliases that invoke that version.</p>
+    ///   - [`marker(Option<String>)`](crate::input::ListAliasesInput::marker): <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    ///   - [`max_items(Option<i32>)`](crate::input::ListAliasesInput::max_items): <p>Limit the number of aliases returned.</p>
+    /// - On success, responds with [`ListAliasesOutput`](crate::output::ListAliasesOutput) with field(s):
+    ///   - [`next_marker(Option<String>)`](crate::output::ListAliasesOutput::next_marker): <p>The pagination token that's included if more results are available.</p>
+    ///   - [`aliases(Option<Vec<AliasConfiguration>>)`](crate::output::ListAliasesOutput::aliases): <p>A list of aliases.</p>
+    /// - On failure, responds with [`SdkError<ListAliasesError>`](crate::error::ListAliasesError)
     pub fn list_aliases(&self) -> fluent_builders::ListAliases<C, M, R> {
         fluent_builders::ListAliases::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListCodeSigningConfigs` operation.
-    ///
-    /// See [`ListCodeSigningConfigs`](crate::client::fluent_builders::ListCodeSigningConfigs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListCodeSigningConfigs`](crate::client::fluent_builders::ListCodeSigningConfigs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCodeSigningConfigs::into_paginator).
+    ///
+    /// - Takes [`ListCodeSigningConfigsInput`](crate::input::ListCodeSigningConfigsInput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::input::ListCodeSigningConfigsInput::marker): <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    ///   - [`max_items(Option<i32>)`](crate::input::ListCodeSigningConfigsInput::max_items): <p>Maximum number of items to return.</p>
+    /// - On success, responds with [`ListCodeSigningConfigsOutput`](crate::output::ListCodeSigningConfigsOutput) with field(s):
+    ///   - [`next_marker(Option<String>)`](crate::output::ListCodeSigningConfigsOutput::next_marker): <p>The pagination token that's included if more results are available.</p>
+    ///   - [`code_signing_configs(Option<Vec<CodeSigningConfig>>)`](crate::output::ListCodeSigningConfigsOutput::code_signing_configs): <p>The code signing configurations</p>
+    /// - On failure, responds with [`SdkError<ListCodeSigningConfigsError>`](crate::error::ListCodeSigningConfigsError)
     pub fn list_code_signing_configs(&self) -> fluent_builders::ListCodeSigningConfigs<C, M, R> {
         fluent_builders::ListCodeSigningConfigs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListEventSourceMappings` operation.
-    ///
-    /// See [`ListEventSourceMappings`](crate::client::fluent_builders::ListEventSourceMappings) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListEventSourceMappings`](crate::client::fluent_builders::ListEventSourceMappings) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEventSourceMappings::into_paginator).
+    ///
+    /// - Takes [`ListEventSourceMappingsInput`](crate::input::ListEventSourceMappingsInput) with field(s):
+    ///   - [`event_source_arn(Option<String>)`](crate::input::ListEventSourceMappingsInput::event_source_arn): <p>The Amazon Resource Name (ARN) of the event source.</p>  <ul>   <li> <p> <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p> </li>   <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>   <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>   <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p> </li>  </ul>
+    ///   - [`function_name(Option<String>)`](crate::input::ListEventSourceMappingsInput::function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>   <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
+    ///   - [`marker(Option<String>)`](crate::input::ListEventSourceMappingsInput::marker): <p>A pagination token returned by a previous call.</p>
+    ///   - [`max_items(Option<i32>)`](crate::input::ListEventSourceMappingsInput::max_items): <p>The maximum number of event source mappings to return. Note that ListEventSourceMappings returns a maximum of 100 items in each response, even if you set the number higher.</p>
+    /// - On success, responds with [`ListEventSourceMappingsOutput`](crate::output::ListEventSourceMappingsOutput) with field(s):
+    ///   - [`next_marker(Option<String>)`](crate::output::ListEventSourceMappingsOutput::next_marker): <p>A pagination token that's returned when the response doesn't contain all event source mappings.</p>
+    ///   - [`event_source_mappings(Option<Vec<EventSourceMappingConfiguration>>)`](crate::output::ListEventSourceMappingsOutput::event_source_mappings): <p>A list of event source mappings.</p>
+    /// - On failure, responds with [`SdkError<ListEventSourceMappingsError>`](crate::error::ListEventSourceMappingsError)
     pub fn list_event_source_mappings(&self) -> fluent_builders::ListEventSourceMappings<C, M, R> {
         fluent_builders::ListEventSourceMappings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListFunctionEventInvokeConfigs` operation.
-    ///
-    /// See [`ListFunctionEventInvokeConfigs`](crate::client::fluent_builders::ListFunctionEventInvokeConfigs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListFunctionEventInvokeConfigs`](crate::client::fluent_builders::ListFunctionEventInvokeConfigs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFunctionEventInvokeConfigs::into_paginator).
+    ///
+    /// - Takes [`ListFunctionEventInvokeConfigsInput`](crate::input::ListFunctionEventInvokeConfigsInput) with field(s):
+    ///   - [`function_name(Option<String>)`](crate::input::ListFunctionEventInvokeConfigsInput::function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    ///   - [`marker(Option<String>)`](crate::input::ListFunctionEventInvokeConfigsInput::marker): <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    ///   - [`max_items(Option<i32>)`](crate::input::ListFunctionEventInvokeConfigsInput::max_items): <p>The maximum number of configurations to return.</p>
+    /// - On success, responds with [`ListFunctionEventInvokeConfigsOutput`](crate::output::ListFunctionEventInvokeConfigsOutput) with field(s):
+    ///   - [`function_event_invoke_configs(Option<Vec<FunctionEventInvokeConfig>>)`](crate::output::ListFunctionEventInvokeConfigsOutput::function_event_invoke_configs): <p>A list of configurations.</p>
+    ///   - [`next_marker(Option<String>)`](crate::output::ListFunctionEventInvokeConfigsOutput::next_marker): <p>The pagination token that's included if more results are available.</p>
+    /// - On failure, responds with [`SdkError<ListFunctionEventInvokeConfigsError>`](crate::error::ListFunctionEventInvokeConfigsError)
     pub fn list_function_event_invoke_configs(
         &self,
     ) -> fluent_builders::ListFunctionEventInvokeConfigs<C, M, R> {
         fluent_builders::ListFunctionEventInvokeConfigs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListFunctions` operation.
-    ///
-    /// See [`ListFunctions`](crate::client::fluent_builders::ListFunctions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListFunctions`](crate::client::fluent_builders::ListFunctions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFunctions::into_paginator).
+    ///
+    /// - Takes [`ListFunctionsInput`](crate::input::ListFunctionsInput) with field(s):
+    ///   - [`master_region(Option<String>)`](crate::input::ListFunctionsInput::master_region): <p>For Lambda@Edge functions, the Amazon Web Services Region of the master function. For example, <code>us-east-1</code> filters the list of functions to only include Lambda@Edge functions replicated from a master function in US East (N. Virginia). If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.</p>
+    ///   - [`function_version(Option<FunctionVersion>)`](crate::input::ListFunctionsInput::function_version): <p>Set to <code>ALL</code> to include entries for all published versions of each function.</p>
+    ///   - [`marker(Option<String>)`](crate::input::ListFunctionsInput::marker): <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    ///   - [`max_items(Option<i32>)`](crate::input::ListFunctionsInput::max_items): <p>The maximum number of functions to return in the response. Note that <code>ListFunctions</code> returns a maximum of 50 items in each response, even if you set the number higher.</p>
+    /// - On success, responds with [`ListFunctionsOutput`](crate::output::ListFunctionsOutput) with field(s):
+    ///   - [`next_marker(Option<String>)`](crate::output::ListFunctionsOutput::next_marker): <p>The pagination token that's included if more results are available.</p>
+    ///   - [`functions(Option<Vec<FunctionConfiguration>>)`](crate::output::ListFunctionsOutput::functions): <p>A list of Lambda functions.</p>
+    /// - On failure, responds with [`SdkError<ListFunctionsError>`](crate::error::ListFunctionsError)
     pub fn list_functions(&self) -> fluent_builders::ListFunctions<C, M, R> {
         fluent_builders::ListFunctions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListFunctionsByCodeSigningConfig` operation.
-    ///
-    /// See [`ListFunctionsByCodeSigningConfig`](crate::client::fluent_builders::ListFunctionsByCodeSigningConfig) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListFunctionsByCodeSigningConfig`](crate::client::fluent_builders::ListFunctionsByCodeSigningConfig) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFunctionsByCodeSigningConfig::into_paginator).
+    ///
+    /// - Takes [`ListFunctionsByCodeSigningConfigInput`](crate::input::ListFunctionsByCodeSigningConfigInput) with field(s):
+    ///   - [`code_signing_config_arn(Option<String>)`](crate::input::ListFunctionsByCodeSigningConfigInput::code_signing_config_arn): <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
+    ///   - [`marker(Option<String>)`](crate::input::ListFunctionsByCodeSigningConfigInput::marker): <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    ///   - [`max_items(Option<i32>)`](crate::input::ListFunctionsByCodeSigningConfigInput::max_items): <p>Maximum number of items to return.</p>
+    /// - On success, responds with [`ListFunctionsByCodeSigningConfigOutput`](crate::output::ListFunctionsByCodeSigningConfigOutput) with field(s):
+    ///   - [`next_marker(Option<String>)`](crate::output::ListFunctionsByCodeSigningConfigOutput::next_marker): <p>The pagination token that's included if more results are available.</p>
+    ///   - [`function_arns(Option<Vec<String>>)`](crate::output::ListFunctionsByCodeSigningConfigOutput::function_arns): <p>The function ARNs. </p>
+    /// - On failure, responds with [`SdkError<ListFunctionsByCodeSigningConfigError>`](crate::error::ListFunctionsByCodeSigningConfigError)
     pub fn list_functions_by_code_signing_config(
         &self,
     ) -> fluent_builders::ListFunctionsByCodeSigningConfig<C, M, R> {
         fluent_builders::ListFunctionsByCodeSigningConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListLayers` operation.
-    ///
-    /// See [`ListLayers`](crate::client::fluent_builders::ListLayers) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListLayers`](crate::client::fluent_builders::ListLayers) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListLayers::into_paginator).
+    ///
+    /// - Takes [`ListLayersInput`](crate::input::ListLayersInput) with field(s):
+    ///   - [`compatible_runtime(Option<Runtime>)`](crate::input::ListLayersInput::compatible_runtime): <p>A runtime identifier. For example, <code>go1.x</code>.</p>
+    ///   - [`marker(Option<String>)`](crate::input::ListLayersInput::marker): <p>A pagination token returned by a previous call.</p>
+    ///   - [`max_items(Option<i32>)`](crate::input::ListLayersInput::max_items): <p>The maximum number of layers to return.</p>
+    ///   - [`compatible_architecture(Option<Architecture>)`](crate::input::ListLayersInput::compatible_architecture): <p>The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
+    /// - On success, responds with [`ListLayersOutput`](crate::output::ListLayersOutput) with field(s):
+    ///   - [`next_marker(Option<String>)`](crate::output::ListLayersOutput::next_marker): <p>A pagination token returned when the response doesn't contain all layers.</p>
+    ///   - [`layers(Option<Vec<LayersListItem>>)`](crate::output::ListLayersOutput::layers): <p>A list of function layers.</p>
+    /// - On failure, responds with [`SdkError<ListLayersError>`](crate::error::ListLayersError)
     pub fn list_layers(&self) -> fluent_builders::ListLayers<C, M, R> {
         fluent_builders::ListLayers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListLayerVersions` operation.
-    ///
-    /// See [`ListLayerVersions`](crate::client::fluent_builders::ListLayerVersions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListLayerVersions`](crate::client::fluent_builders::ListLayerVersions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListLayerVersions::into_paginator).
+    ///
+    /// - Takes [`ListLayerVersionsInput`](crate::input::ListLayerVersionsInput) with field(s):
+    ///   - [`compatible_runtime(Option<Runtime>)`](crate::input::ListLayerVersionsInput::compatible_runtime): <p>A runtime identifier. For example, <code>go1.x</code>.</p>
+    ///   - [`layer_name(Option<String>)`](crate::input::ListLayerVersionsInput::layer_name): <p>The name or Amazon Resource Name (ARN) of the layer.</p>
+    ///   - [`marker(Option<String>)`](crate::input::ListLayerVersionsInput::marker): <p>A pagination token returned by a previous call.</p>
+    ///   - [`max_items(Option<i32>)`](crate::input::ListLayerVersionsInput::max_items): <p>The maximum number of versions to return.</p>
+    ///   - [`compatible_architecture(Option<Architecture>)`](crate::input::ListLayerVersionsInput::compatible_architecture): <p>The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
+    /// - On success, responds with [`ListLayerVersionsOutput`](crate::output::ListLayerVersionsOutput) with field(s):
+    ///   - [`next_marker(Option<String>)`](crate::output::ListLayerVersionsOutput::next_marker): <p>A pagination token returned when the response doesn't contain all versions.</p>
+    ///   - [`layer_versions(Option<Vec<LayerVersionsListItem>>)`](crate::output::ListLayerVersionsOutput::layer_versions): <p>A list of versions.</p>
+    /// - On failure, responds with [`SdkError<ListLayerVersionsError>`](crate::error::ListLayerVersionsError)
     pub fn list_layer_versions(&self) -> fluent_builders::ListLayerVersions<C, M, R> {
         fluent_builders::ListLayerVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListProvisionedConcurrencyConfigs` operation.
-    ///
-    /// See [`ListProvisionedConcurrencyConfigs`](crate::client::fluent_builders::ListProvisionedConcurrencyConfigs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListProvisionedConcurrencyConfigs`](crate::client::fluent_builders::ListProvisionedConcurrencyConfigs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProvisionedConcurrencyConfigs::into_paginator).
+    ///
+    /// - Takes [`ListProvisionedConcurrencyConfigsInput`](crate::input::ListProvisionedConcurrencyConfigsInput) with field(s):
+    ///   - [`function_name(Option<String>)`](crate::input::ListProvisionedConcurrencyConfigsInput::function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    ///   - [`marker(Option<String>)`](crate::input::ListProvisionedConcurrencyConfigsInput::marker): <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    ///   - [`max_items(Option<i32>)`](crate::input::ListProvisionedConcurrencyConfigsInput::max_items): <p>Specify a number to limit the number of configurations returned.</p>
+    /// - On success, responds with [`ListProvisionedConcurrencyConfigsOutput`](crate::output::ListProvisionedConcurrencyConfigsOutput) with field(s):
+    ///   - [`provisioned_concurrency_configs(Option<Vec<ProvisionedConcurrencyConfigListItem>>)`](crate::output::ListProvisionedConcurrencyConfigsOutput::provisioned_concurrency_configs): <p>A list of provisioned concurrency configurations.</p>
+    ///   - [`next_marker(Option<String>)`](crate::output::ListProvisionedConcurrencyConfigsOutput::next_marker): <p>The pagination token that's included if more results are available.</p>
+    /// - On failure, responds with [`SdkError<ListProvisionedConcurrencyConfigsError>`](crate::error::ListProvisionedConcurrencyConfigsError)
     pub fn list_provisioned_concurrency_configs(
         &self,
     ) -> fluent_builders::ListProvisionedConcurrencyConfigs<C, M, R> {
         fluent_builders::ListProvisionedConcurrencyConfigs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTags` operation.
+    /// Constructs a fluent builder for the [`ListTags`](crate::client::fluent_builders::ListTags) operation.
     ///
-    /// See [`ListTags`](crate::client::fluent_builders::ListTags) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsInput`](crate::input::ListTagsInput) with field(s):
+    ///   - [`resource(Option<String>)`](crate::input::ListTagsInput::resource): <p>The function's Amazon Resource Name (ARN). Note: Lambda does not support adding tags to aliases or versions.</p>
+    /// - On success, responds with [`ListTagsOutput`](crate::output::ListTagsOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsOutput::tags): <p>The function's tags.</p>
+    /// - On failure, responds with [`SdkError<ListTagsError>`](crate::error::ListTagsError)
     pub fn list_tags(&self) -> fluent_builders::ListTags<C, M, R> {
         fluent_builders::ListTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListVersionsByFunction` operation.
-    ///
-    /// See [`ListVersionsByFunction`](crate::client::fluent_builders::ListVersionsByFunction) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListVersionsByFunction`](crate::client::fluent_builders::ListVersionsByFunction) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListVersionsByFunction::into_paginator).
+    ///
+    /// - Takes [`ListVersionsByFunctionInput`](crate::input::ListVersionsByFunctionInput) with field(s):
+    ///   - [`function_name(Option<String>)`](crate::input::ListVersionsByFunctionInput::function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    ///   - [`marker(Option<String>)`](crate::input::ListVersionsByFunctionInput::marker): <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
+    ///   - [`max_items(Option<i32>)`](crate::input::ListVersionsByFunctionInput::max_items): <p>The maximum number of versions to return. Note that <code>ListVersionsByFunction</code> returns a maximum of 50 items in each response, even if you set the number higher.</p>
+    /// - On success, responds with [`ListVersionsByFunctionOutput`](crate::output::ListVersionsByFunctionOutput) with field(s):
+    ///   - [`next_marker(Option<String>)`](crate::output::ListVersionsByFunctionOutput::next_marker): <p>The pagination token that's included if more results are available.</p>
+    ///   - [`versions(Option<Vec<FunctionConfiguration>>)`](crate::output::ListVersionsByFunctionOutput::versions): <p>A list of Lambda function versions.</p>
+    /// - On failure, responds with [`SdkError<ListVersionsByFunctionError>`](crate::error::ListVersionsByFunctionError)
     pub fn list_versions_by_function(&self) -> fluent_builders::ListVersionsByFunction<C, M, R> {
         fluent_builders::ListVersionsByFunction::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PublishLayerVersion` operation.
+    /// Constructs a fluent builder for the [`PublishLayerVersion`](crate::client::fluent_builders::PublishLayerVersion) operation.
     ///
-    /// See [`PublishLayerVersion`](crate::client::fluent_builders::PublishLayerVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PublishLayerVersionInput`](crate::input::PublishLayerVersionInput) with field(s):
+    ///   - [`layer_name(Option<String>)`](crate::input::PublishLayerVersionInput::layer_name): <p>The name or Amazon Resource Name (ARN) of the layer.</p>
+    ///   - [`description(Option<String>)`](crate::input::PublishLayerVersionInput::description): <p>The description of the version.</p>
+    ///   - [`content(Option<LayerVersionContentInput>)`](crate::input::PublishLayerVersionInput::content): <p>The function layer archive.</p>
+    ///   - [`compatible_runtimes(Option<Vec<Runtime>>)`](crate::input::PublishLayerVersionInput::compatible_runtimes): <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function runtimes</a>. Used for filtering with <code>ListLayers</code> and <code>ListLayerVersions</code>.</p>
+    ///   - [`license_info(Option<String>)`](crate::input::PublishLayerVersionInput::license_info): <p>The layer's software license. It can be any of the following:</p>  <ul>   <li> <p>An <a href="https://spdx.org/licenses/">SPDX license identifier</a>. For example, <code>MIT</code>.</p> </li>   <li> <p>The URL of a license hosted on the internet. For example, <code>https://opensource.org/licenses/MIT</code>.</p> </li>   <li> <p>The full text of the license.</p> </li>  </ul>
+    ///   - [`compatible_architectures(Option<Vec<Architecture>>)`](crate::input::PublishLayerVersionInput::compatible_architectures): <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+    /// - On success, responds with [`PublishLayerVersionOutput`](crate::output::PublishLayerVersionOutput) with field(s):
+    ///   - [`content(Option<LayerVersionContentOutput>)`](crate::output::PublishLayerVersionOutput::content): <p>Details about the layer version.</p>
+    ///   - [`layer_arn(Option<String>)`](crate::output::PublishLayerVersionOutput::layer_arn): <p>The ARN of the layer.</p>
+    ///   - [`layer_version_arn(Option<String>)`](crate::output::PublishLayerVersionOutput::layer_version_arn): <p>The ARN of the layer version.</p>
+    ///   - [`description(Option<String>)`](crate::output::PublishLayerVersionOutput::description): <p>The description of the version.</p>
+    ///   - [`created_date(Option<String>)`](crate::output::PublishLayerVersionOutput::created_date): <p>The date that the layer version was created, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    ///   - [`version(i64)`](crate::output::PublishLayerVersionOutput::version): <p>The version number.</p>
+    ///   - [`compatible_runtimes(Option<Vec<Runtime>>)`](crate::output::PublishLayerVersionOutput::compatible_runtimes): <p>The layer's compatible runtimes.</p>
+    ///   - [`license_info(Option<String>)`](crate::output::PublishLayerVersionOutput::license_info): <p>The layer's software license.</p>
+    ///   - [`compatible_architectures(Option<Vec<Architecture>>)`](crate::output::PublishLayerVersionOutput::compatible_architectures): <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+    /// - On failure, responds with [`SdkError<PublishLayerVersionError>`](crate::error::PublishLayerVersionError)
     pub fn publish_layer_version(&self) -> fluent_builders::PublishLayerVersion<C, M, R> {
         fluent_builders::PublishLayerVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PublishVersion` operation.
+    /// Constructs a fluent builder for the [`PublishVersion`](crate::client::fluent_builders::PublishVersion) operation.
     ///
-    /// See [`PublishVersion`](crate::client::fluent_builders::PublishVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PublishVersionInput`](crate::input::PublishVersionInput) with field(s):
+    ///   - [`function_name(Option<String>)`](crate::input::PublishVersionInput::function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    ///   - [`code_sha256(Option<String>)`](crate::input::PublishVersionInput::code_sha256): <p>Only publish a version if the hash value matches the value that's specified. Use this option to avoid publishing a version if the function code has changed since you last updated it. You can get the hash for the version that you uploaded from the output of <code>UpdateFunctionCode</code>.</p>
+    ///   - [`description(Option<String>)`](crate::input::PublishVersionInput::description): <p>A description for the version to override the description in the function configuration.</p>
+    ///   - [`revision_id(Option<String>)`](crate::input::PublishVersionInput::revision_id): <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid publishing a version if the function configuration has changed since you last updated it.</p>
+    /// - On success, responds with [`PublishVersionOutput`](crate::output::PublishVersionOutput) with field(s):
+    ///   - [`function_name(Option<String>)`](crate::output::PublishVersionOutput::function_name): <p>The name of the function.</p>
+    ///   - [`function_arn(Option<String>)`](crate::output::PublishVersionOutput::function_arn): <p>The function's Amazon Resource Name (ARN).</p>
+    ///   - [`runtime(Option<Runtime>)`](crate::output::PublishVersionOutput::runtime): <p>The runtime environment for the Lambda function.</p>
+    ///   - [`role(Option<String>)`](crate::output::PublishVersionOutput::role): <p>The function's execution role.</p>
+    ///   - [`handler(Option<String>)`](crate::output::PublishVersionOutput::handler): <p>The function that Lambda calls to begin executing your function.</p>
+    ///   - [`code_size(i64)`](crate::output::PublishVersionOutput::code_size): <p>The size of the function's deployment package, in bytes.</p>
+    ///   - [`description(Option<String>)`](crate::output::PublishVersionOutput::description): <p>The function's description.</p>
+    ///   - [`timeout(Option<i32>)`](crate::output::PublishVersionOutput::timeout): <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
+    ///   - [`memory_size(Option<i32>)`](crate::output::PublishVersionOutput::memory_size): <p>The amount of memory available to the function at runtime. </p>
+    ///   - [`last_modified(Option<String>)`](crate::output::PublishVersionOutput::last_modified): <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    ///   - [`code_sha256(Option<String>)`](crate::output::PublishVersionOutput::code_sha256): <p>The SHA256 hash of the function's deployment package.</p>
+    ///   - [`version(Option<String>)`](crate::output::PublishVersionOutput::version): <p>The version of the Lambda function.</p>
+    ///   - [`vpc_config(Option<VpcConfigResponse>)`](crate::output::PublishVersionOutput::vpc_config): <p>The function's networking configuration.</p>
+    ///   - [`dead_letter_config(Option<DeadLetterConfig>)`](crate::output::PublishVersionOutput::dead_letter_config): <p>The function's dead letter queue.</p>
+    ///   - [`environment(Option<EnvironmentResponse>)`](crate::output::PublishVersionOutput::environment): <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.</p>
+    ///   - [`kms_key_arn(Option<String>)`](crate::output::PublishVersionOutput::kms_key_arn): <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed key.</p>
+    ///   - [`tracing_config(Option<TracingConfigResponse>)`](crate::output::PublishVersionOutput::tracing_config): <p>The function's X-Ray tracing configuration.</p>
+    ///   - [`master_arn(Option<String>)`](crate::output::PublishVersionOutput::master_arn): <p>For Lambda@Edge functions, the ARN of the main function.</p>
+    ///   - [`revision_id(Option<String>)`](crate::output::PublishVersionOutput::revision_id): <p>The latest updated revision of the function or alias.</p>
+    ///   - [`layers(Option<Vec<Layer>>)`](crate::output::PublishVersionOutput::layers): <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.</p>
+    ///   - [`state(Option<State>)`](crate::output::PublishVersionOutput::state): <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
+    ///   - [`state_reason(Option<String>)`](crate::output::PublishVersionOutput::state_reason): <p>The reason for the function's current state.</p>
+    ///   - [`state_reason_code(Option<StateReasonCode>)`](crate::output::PublishVersionOutput::state_reason_code): <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
+    ///   - [`last_update_status(Option<LastUpdateStatus>)`](crate::output::PublishVersionOutput::last_update_status): <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
+    ///   - [`last_update_status_reason(Option<String>)`](crate::output::PublishVersionOutput::last_update_status_reason): <p>The reason for the last update that was performed on the function.</p>
+    ///   - [`last_update_status_reason_code(Option<LastUpdateStatusReasonCode>)`](crate::output::PublishVersionOutput::last_update_status_reason_code): <p>The reason code for the last update that was performed on the function.</p>
+    ///   - [`file_system_configs(Option<Vec<FileSystemConfig>>)`](crate::output::PublishVersionOutput::file_system_configs): <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
+    ///   - [`package_type(Option<PackageType>)`](crate::output::PublishVersionOutput::package_type): <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
+    ///   - [`image_config_response(Option<ImageConfigResponse>)`](crate::output::PublishVersionOutput::image_config_response): <p>The function's image configuration values.</p>
+    ///   - [`signing_profile_version_arn(Option<String>)`](crate::output::PublishVersionOutput::signing_profile_version_arn): <p>The ARN of the signing profile version.</p>
+    ///   - [`signing_job_arn(Option<String>)`](crate::output::PublishVersionOutput::signing_job_arn): <p>The ARN of the signing job.</p>
+    ///   - [`architectures(Option<Vec<Architecture>>)`](crate::output::PublishVersionOutput::architectures): <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
+    /// - On failure, responds with [`SdkError<PublishVersionError>`](crate::error::PublishVersionError)
     pub fn publish_version(&self) -> fluent_builders::PublishVersion<C, M, R> {
         fluent_builders::PublishVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutFunctionCodeSigningConfig` operation.
+    /// Constructs a fluent builder for the [`PutFunctionCodeSigningConfig`](crate::client::fluent_builders::PutFunctionCodeSigningConfig) operation.
     ///
-    /// See [`PutFunctionCodeSigningConfig`](crate::client::fluent_builders::PutFunctionCodeSigningConfig) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutFunctionCodeSigningConfigInput`](crate::input::PutFunctionCodeSigningConfigInput) with field(s):
+    ///   - [`code_signing_config_arn(Option<String>)`](crate::input::PutFunctionCodeSigningConfigInput::code_signing_config_arn): <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
+    ///   - [`function_name(Option<String>)`](crate::input::PutFunctionCodeSigningConfigInput::function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// - On success, responds with [`PutFunctionCodeSigningConfigOutput`](crate::output::PutFunctionCodeSigningConfigOutput) with field(s):
+    ///   - [`code_signing_config_arn(Option<String>)`](crate::output::PutFunctionCodeSigningConfigOutput::code_signing_config_arn): <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
+    ///   - [`function_name(Option<String>)`](crate::output::PutFunctionCodeSigningConfigOutput::function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// - On failure, responds with [`SdkError<PutFunctionCodeSigningConfigError>`](crate::error::PutFunctionCodeSigningConfigError)
     pub fn put_function_code_signing_config(
         &self,
     ) -> fluent_builders::PutFunctionCodeSigningConfig<C, M, R> {
         fluent_builders::PutFunctionCodeSigningConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutFunctionConcurrency` operation.
+    /// Constructs a fluent builder for the [`PutFunctionConcurrency`](crate::client::fluent_builders::PutFunctionConcurrency) operation.
     ///
-    /// See [`PutFunctionConcurrency`](crate::client::fluent_builders::PutFunctionConcurrency) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutFunctionConcurrencyInput`](crate::input::PutFunctionConcurrencyInput) with field(s):
+    ///   - [`function_name(Option<String>)`](crate::input::PutFunctionConcurrencyInput::function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    ///   - [`reserved_concurrent_executions(Option<i32>)`](crate::input::PutFunctionConcurrencyInput::reserved_concurrent_executions): <p>The number of simultaneous executions to reserve for the function.</p>
+    /// - On success, responds with [`PutFunctionConcurrencyOutput`](crate::output::PutFunctionConcurrencyOutput) with field(s):
+    ///   - [`reserved_concurrent_executions(Option<i32>)`](crate::output::PutFunctionConcurrencyOutput::reserved_concurrent_executions): <p>The number of concurrent executions that are reserved for this function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Managing Concurrency</a>.</p>
+    /// - On failure, responds with [`SdkError<PutFunctionConcurrencyError>`](crate::error::PutFunctionConcurrencyError)
     pub fn put_function_concurrency(&self) -> fluent_builders::PutFunctionConcurrency<C, M, R> {
         fluent_builders::PutFunctionConcurrency::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutFunctionEventInvokeConfig` operation.
+    /// Constructs a fluent builder for the [`PutFunctionEventInvokeConfig`](crate::client::fluent_builders::PutFunctionEventInvokeConfig) operation.
     ///
-    /// See [`PutFunctionEventInvokeConfig`](crate::client::fluent_builders::PutFunctionEventInvokeConfig) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutFunctionEventInvokeConfigInput`](crate::input::PutFunctionEventInvokeConfigInput) with field(s):
+    ///   - [`function_name(Option<String>)`](crate::input::PutFunctionEventInvokeConfigInput::function_name): <p>The name of the Lambda function, version, or alias.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>  </ul>  <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    ///   - [`qualifier(Option<String>)`](crate::input::PutFunctionEventInvokeConfigInput::qualifier): <p>A version number or alias name.</p>
+    ///   - [`maximum_retry_attempts(Option<i32>)`](crate::input::PutFunctionEventInvokeConfigInput::maximum_retry_attempts): <p>The maximum number of times to retry when the function returns an error.</p>
+    ///   - [`maximum_event_age_in_seconds(Option<i32>)`](crate::input::PutFunctionEventInvokeConfigInput::maximum_event_age_in_seconds): <p>The maximum age of a request that Lambda sends to a function for processing.</p>
+    ///   - [`destination_config(Option<DestinationConfig>)`](crate::input::PutFunctionEventInvokeConfigInput::destination_config): <p>A destination for events after they have been sent to a function for processing.</p>  <p class="title"> <b>Destinations</b> </p>  <ul>   <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>   <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>   <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>   <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>  </ul>
+    /// - On success, responds with [`PutFunctionEventInvokeConfigOutput`](crate::output::PutFunctionEventInvokeConfigOutput) with field(s):
+    ///   - [`last_modified(Option<DateTime>)`](crate::output::PutFunctionEventInvokeConfigOutput::last_modified): <p>The date and time that the configuration was last updated.</p>
+    ///   - [`function_arn(Option<String>)`](crate::output::PutFunctionEventInvokeConfigOutput::function_arn): <p>The Amazon Resource Name (ARN) of the function.</p>
+    ///   - [`maximum_retry_attempts(Option<i32>)`](crate::output::PutFunctionEventInvokeConfigOutput::maximum_retry_attempts): <p>The maximum number of times to retry when the function returns an error.</p>
+    ///   - [`maximum_event_age_in_seconds(Option<i32>)`](crate::output::PutFunctionEventInvokeConfigOutput::maximum_event_age_in_seconds): <p>The maximum age of a request that Lambda sends to a function for processing.</p>
+    ///   - [`destination_config(Option<DestinationConfig>)`](crate::output::PutFunctionEventInvokeConfigOutput::destination_config): <p>A destination for events after they have been sent to a function for processing.</p>  <p class="title"> <b>Destinations</b> </p>  <ul>   <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>   <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>   <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>   <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<PutFunctionEventInvokeConfigError>`](crate::error::PutFunctionEventInvokeConfigError)
     pub fn put_function_event_invoke_config(
         &self,
     ) -> fluent_builders::PutFunctionEventInvokeConfig<C, M, R> {
         fluent_builders::PutFunctionEventInvokeConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutProvisionedConcurrencyConfig` operation.
+    /// Constructs a fluent builder for the [`PutProvisionedConcurrencyConfig`](crate::client::fluent_builders::PutProvisionedConcurrencyConfig) operation.
     ///
-    /// See [`PutProvisionedConcurrencyConfig`](crate::client::fluent_builders::PutProvisionedConcurrencyConfig) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutProvisionedConcurrencyConfigInput`](crate::input::PutProvisionedConcurrencyConfigInput) with field(s):
+    ///   - [`function_name(Option<String>)`](crate::input::PutProvisionedConcurrencyConfigInput::function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    ///   - [`qualifier(Option<String>)`](crate::input::PutProvisionedConcurrencyConfigInput::qualifier): <p>The version number or alias name.</p>
+    ///   - [`provisioned_concurrent_executions(Option<i32>)`](crate::input::PutProvisionedConcurrencyConfigInput::provisioned_concurrent_executions): <p>The amount of provisioned concurrency to allocate for the version or alias.</p>
+    /// - On success, responds with [`PutProvisionedConcurrencyConfigOutput`](crate::output::PutProvisionedConcurrencyConfigOutput) with field(s):
+    ///   - [`requested_provisioned_concurrent_executions(Option<i32>)`](crate::output::PutProvisionedConcurrencyConfigOutput::requested_provisioned_concurrent_executions): <p>The amount of provisioned concurrency requested.</p>
+    ///   - [`available_provisioned_concurrent_executions(Option<i32>)`](crate::output::PutProvisionedConcurrencyConfigOutput::available_provisioned_concurrent_executions): <p>The amount of provisioned concurrency available.</p>
+    ///   - [`allocated_provisioned_concurrent_executions(Option<i32>)`](crate::output::PutProvisionedConcurrencyConfigOutput::allocated_provisioned_concurrent_executions): <p>The amount of provisioned concurrency allocated.</p>
+    ///   - [`status(Option<ProvisionedConcurrencyStatusEnum>)`](crate::output::PutProvisionedConcurrencyConfigOutput::status): <p>The status of the allocation process.</p>
+    ///   - [`status_reason(Option<String>)`](crate::output::PutProvisionedConcurrencyConfigOutput::status_reason): <p>For failed allocations, the reason that provisioned concurrency could not be allocated.</p>
+    ///   - [`last_modified(Option<String>)`](crate::output::PutProvisionedConcurrencyConfigOutput::last_modified): <p>The date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>.</p>
+    /// - On failure, responds with [`SdkError<PutProvisionedConcurrencyConfigError>`](crate::error::PutProvisionedConcurrencyConfigError)
     pub fn put_provisioned_concurrency_config(
         &self,
     ) -> fluent_builders::PutProvisionedConcurrencyConfig<C, M, R> {
         fluent_builders::PutProvisionedConcurrencyConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RemoveLayerVersionPermission` operation.
+    /// Constructs a fluent builder for the [`RemoveLayerVersionPermission`](crate::client::fluent_builders::RemoveLayerVersionPermission) operation.
     ///
-    /// See [`RemoveLayerVersionPermission`](crate::client::fluent_builders::RemoveLayerVersionPermission) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RemoveLayerVersionPermissionInput`](crate::input::RemoveLayerVersionPermissionInput) with field(s):
+    ///   - [`layer_name(Option<String>)`](crate::input::RemoveLayerVersionPermissionInput::layer_name): <p>The name or Amazon Resource Name (ARN) of the layer.</p>
+    ///   - [`version_number(i64)`](crate::input::RemoveLayerVersionPermissionInput::version_number): <p>The version number.</p>
+    ///   - [`statement_id(Option<String>)`](crate::input::RemoveLayerVersionPermissionInput::statement_id): <p>The identifier that was specified when the statement was added.</p>
+    ///   - [`revision_id(Option<String>)`](crate::input::RemoveLayerVersionPermissionInput::revision_id): <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
+    /// - On success, responds with [`RemoveLayerVersionPermissionOutput`](crate::output::RemoveLayerVersionPermissionOutput)
+
+    /// - On failure, responds with [`SdkError<RemoveLayerVersionPermissionError>`](crate::error::RemoveLayerVersionPermissionError)
     pub fn remove_layer_version_permission(
         &self,
     ) -> fluent_builders::RemoveLayerVersionPermission<C, M, R> {
         fluent_builders::RemoveLayerVersionPermission::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RemovePermission` operation.
+    /// Constructs a fluent builder for the [`RemovePermission`](crate::client::fluent_builders::RemovePermission) operation.
     ///
-    /// See [`RemovePermission`](crate::client::fluent_builders::RemovePermission) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RemovePermissionInput`](crate::input::RemovePermissionInput) with field(s):
+    ///   - [`function_name(Option<String>)`](crate::input::RemovePermissionInput::function_name): <p>The name of the Lambda function, version, or alias.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>  </ul>  <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    ///   - [`statement_id(Option<String>)`](crate::input::RemovePermissionInput::statement_id): <p>Statement ID of the permission to remove.</p>
+    ///   - [`qualifier(Option<String>)`](crate::input::RemovePermissionInput::qualifier): <p>Specify a version or alias to remove permissions from a published version of the function.</p>
+    ///   - [`revision_id(Option<String>)`](crate::input::RemovePermissionInput::revision_id): <p>Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
+    /// - On success, responds with [`RemovePermissionOutput`](crate::output::RemovePermissionOutput)
+
+    /// - On failure, responds with [`SdkError<RemovePermissionError>`](crate::error::RemovePermissionError)
     pub fn remove_permission(&self) -> fluent_builders::RemovePermission<C, M, R> {
         fluent_builders::RemovePermission::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource(Option<String>)`](crate::input::TagResourceInput::resource): <p>The function's Amazon Resource Name (ARN).</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>A list of tags to apply to the function.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource(Option<String>)`](crate::input::UntagResourceInput::resource): <p>The function's Amazon Resource Name (ARN).</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>A list of tag keys to remove from the function.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateAlias` operation.
+    /// Constructs a fluent builder for the [`UpdateAlias`](crate::client::fluent_builders::UpdateAlias) operation.
     ///
-    /// See [`UpdateAlias`](crate::client::fluent_builders::UpdateAlias) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateAliasInput`](crate::input::UpdateAliasInput) with field(s):
+    ///   - [`function_name(Option<String>)`](crate::input::UpdateAliasInput::function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    ///   - [`name(Option<String>)`](crate::input::UpdateAliasInput::name): <p>The name of the alias.</p>
+    ///   - [`function_version(Option<String>)`](crate::input::UpdateAliasInput::function_version): <p>The function version that the alias invokes.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateAliasInput::description): <p>A description of the alias.</p>
+    ///   - [`routing_config(Option<AliasRoutingConfiguration>)`](crate::input::UpdateAliasInput::routing_config): <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">routing configuration</a> of the alias.</p>
+    ///   - [`revision_id(Option<String>)`](crate::input::UpdateAliasInput::revision_id): <p>Only update the alias if the revision ID matches the ID that's specified. Use this option to avoid modifying an alias that has changed since you last read it.</p>
+    /// - On success, responds with [`UpdateAliasOutput`](crate::output::UpdateAliasOutput) with field(s):
+    ///   - [`alias_arn(Option<String>)`](crate::output::UpdateAliasOutput::alias_arn): <p>The Amazon Resource Name (ARN) of the alias.</p>
+    ///   - [`name(Option<String>)`](crate::output::UpdateAliasOutput::name): <p>The name of the alias.</p>
+    ///   - [`function_version(Option<String>)`](crate::output::UpdateAliasOutput::function_version): <p>The function version that the alias invokes.</p>
+    ///   - [`description(Option<String>)`](crate::output::UpdateAliasOutput::description): <p>A description of the alias.</p>
+    ///   - [`routing_config(Option<AliasRoutingConfiguration>)`](crate::output::UpdateAliasOutput::routing_config): <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing configuration</a> of the alias.</p>
+    ///   - [`revision_id(Option<String>)`](crate::output::UpdateAliasOutput::revision_id): <p>A unique identifier that changes when you update the alias.</p>
+    /// - On failure, responds with [`SdkError<UpdateAliasError>`](crate::error::UpdateAliasError)
     pub fn update_alias(&self) -> fluent_builders::UpdateAlias<C, M, R> {
         fluent_builders::UpdateAlias::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateCodeSigningConfig` operation.
+    /// Constructs a fluent builder for the [`UpdateCodeSigningConfig`](crate::client::fluent_builders::UpdateCodeSigningConfig) operation.
     ///
-    /// See [`UpdateCodeSigningConfig`](crate::client::fluent_builders::UpdateCodeSigningConfig) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateCodeSigningConfigInput`](crate::input::UpdateCodeSigningConfigInput) with field(s):
+    ///   - [`code_signing_config_arn(Option<String>)`](crate::input::UpdateCodeSigningConfigInput::code_signing_config_arn): <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateCodeSigningConfigInput::description): <p>Descriptive name for this code signing configuration.</p>
+    ///   - [`allowed_publishers(Option<AllowedPublishers>)`](crate::input::UpdateCodeSigningConfigInput::allowed_publishers): <p>Signing profiles for this code signing configuration.</p>
+    ///   - [`code_signing_policies(Option<CodeSigningPolicies>)`](crate::input::UpdateCodeSigningConfigInput::code_signing_policies): <p>The code signing policy.</p>
+    /// - On success, responds with [`UpdateCodeSigningConfigOutput`](crate::output::UpdateCodeSigningConfigOutput) with field(s):
+    ///   - [`code_signing_config(Option<CodeSigningConfig>)`](crate::output::UpdateCodeSigningConfigOutput::code_signing_config): <p>The code signing configuration</p>
+    /// - On failure, responds with [`SdkError<UpdateCodeSigningConfigError>`](crate::error::UpdateCodeSigningConfigError)
     pub fn update_code_signing_config(&self) -> fluent_builders::UpdateCodeSigningConfig<C, M, R> {
         fluent_builders::UpdateCodeSigningConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateEventSourceMapping` operation.
+    /// Constructs a fluent builder for the [`UpdateEventSourceMapping`](crate::client::fluent_builders::UpdateEventSourceMapping) operation.
     ///
-    /// See [`UpdateEventSourceMapping`](crate::client::fluent_builders::UpdateEventSourceMapping) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateEventSourceMappingInput`](crate::input::UpdateEventSourceMappingInput) with field(s):
+    ///   - [`uuid(Option<String>)`](crate::input::UpdateEventSourceMappingInput::uuid): <p>The identifier of the event source mapping.</p>
+    ///   - [`function_name(Option<String>)`](crate::input::UpdateEventSourceMappingInput::function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>   <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
+    ///   - [`enabled(Option<bool>)`](crate::input::UpdateEventSourceMappingInput::enabled): <p>When true, the event source mapping is active. When false, Lambda pauses polling and invocation.</p>  <p>Default: True</p>
+    ///   - [`batch_size(Option<i32>)`](crate::input::UpdateEventSourceMappingInput::batch_size): <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>  <ul>   <li> <p> <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li>   <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li>   <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>   <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>   <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>   <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p> </li>  </ul>
+    ///   - [`filter_criteria(Option<FilterCriteria>)`](crate::input::UpdateEventSourceMappingInput::filter_criteria): <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    ///   - [`maximum_batching_window_in_seconds(Option<i32>)`](crate::input::UpdateEventSourceMappingInput::maximum_batching_window_in_seconds): <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>  <p>Default: 0</p>  <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
+    ///   - [`destination_config(Option<DestinationConfig>)`](crate::input::UpdateEventSourceMappingInput::destination_config): <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
+    ///   - [`maximum_record_age_in_seconds(Option<i32>)`](crate::input::UpdateEventSourceMappingInput::maximum_record_age_in_seconds): <p>(Streams only) Discard records older than the specified age. The default value is infinite (-1).</p>
+    ///   - [`bisect_batch_on_function_error(Option<bool>)`](crate::input::UpdateEventSourceMappingInput::bisect_batch_on_function_error): <p>(Streams only) If the function returns an error, split the batch in two and retry.</p>
+    ///   - [`maximum_retry_attempts(Option<i32>)`](crate::input::UpdateEventSourceMappingInput::maximum_retry_attempts): <p>(Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records will be retried until the record expires.</p>
+    ///   - [`parallelization_factor(Option<i32>)`](crate::input::UpdateEventSourceMappingInput::parallelization_factor): <p>(Streams only) The number of batches to process from each shard concurrently.</p>
+    ///   - [`source_access_configurations(Option<Vec<SourceAccessConfiguration>>)`](crate::input::UpdateEventSourceMappingInput::source_access_configurations): <p>An array of authentication protocols or VPC components required to secure your event source.</p>
+    ///   - [`tumbling_window_in_seconds(Option<i32>)`](crate::input::UpdateEventSourceMappingInput::tumbling_window_in_seconds): <p>(Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>
+    ///   - [`function_response_types(Option<Vec<FunctionResponseType>>)`](crate::input::UpdateEventSourceMappingInput::function_response_types): <p>(Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
+    /// - On success, responds with [`UpdateEventSourceMappingOutput`](crate::output::UpdateEventSourceMappingOutput) with field(s):
+    ///   - [`uuid(Option<String>)`](crate::output::UpdateEventSourceMappingOutput::uuid): <p>The identifier of the event source mapping.</p>
+    ///   - [`starting_position(Option<EventSourcePosition>)`](crate::output::UpdateEventSourceMappingOutput::starting_position): <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
+    ///   - [`starting_position_timestamp(Option<DateTime>)`](crate::output::UpdateEventSourceMappingOutput::starting_position_timestamp): <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
+    ///   - [`batch_size(Option<i32>)`](crate::output::UpdateEventSourceMappingOutput::batch_size): <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>  <p>Default value: Varies by service. For Amazon SQS, the default is 10. For all other services, the default is 100.</p>  <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
+    ///   - [`maximum_batching_window_in_seconds(Option<i32>)`](crate::output::UpdateEventSourceMappingOutput::maximum_batching_window_in_seconds): <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>  <p>Default: 0</p>  <p>Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
+    ///   - [`parallelization_factor(Option<i32>)`](crate::output::UpdateEventSourceMappingOutput::parallelization_factor): <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
+    ///   - [`event_source_arn(Option<String>)`](crate::output::UpdateEventSourceMappingOutput::event_source_arn): <p>The Amazon Resource Name (ARN) of the event source.</p>
+    ///   - [`filter_criteria(Option<FilterCriteria>)`](crate::output::UpdateEventSourceMappingOutput::filter_criteria): <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    ///   - [`function_arn(Option<String>)`](crate::output::UpdateEventSourceMappingOutput::function_arn): <p>The ARN of the Lambda function.</p>
+    ///   - [`last_modified(Option<DateTime>)`](crate::output::UpdateEventSourceMappingOutput::last_modified): <p>The date that the event source mapping was last updated or that its state changed.</p>
+    ///   - [`last_processing_result(Option<String>)`](crate::output::UpdateEventSourceMappingOutput::last_processing_result): <p>The result of the last Lambda invocation of your function.</p>
+    ///   - [`state(Option<String>)`](crate::output::UpdateEventSourceMappingOutput::state): <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>, <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>, <code>Updating</code>, or <code>Deleting</code>.</p>
+    ///   - [`state_transition_reason(Option<String>)`](crate::output::UpdateEventSourceMappingOutput::state_transition_reason): <p>Indicates whether a user or Lambda made the last change to the event source mapping.</p>
+    ///   - [`destination_config(Option<DestinationConfig>)`](crate::output::UpdateEventSourceMappingOutput::destination_config): <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
+    ///   - [`topics(Option<Vec<String>>)`](crate::output::UpdateEventSourceMappingOutput::topics): <p>The name of the Kafka topic.</p>
+    ///   - [`queues(Option<Vec<String>>)`](crate::output::UpdateEventSourceMappingOutput::queues): <p> (Amazon MQ) The name of the Amazon MQ broker destination queue to consume.</p>
+    ///   - [`source_access_configurations(Option<Vec<SourceAccessConfiguration>>)`](crate::output::UpdateEventSourceMappingOutput::source_access_configurations): <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
+    ///   - [`self_managed_event_source(Option<SelfManagedEventSource>)`](crate::output::UpdateEventSourceMappingOutput::self_managed_event_source): <p>The self-managed Apache Kafka cluster for your event source.</p>
+    ///   - [`maximum_record_age_in_seconds(Option<i32>)`](crate::output::UpdateEventSourceMappingOutput::maximum_record_age_in_seconds): <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records. </p>
+    ///   - [`bisect_batch_on_function_error(Option<bool>)`](crate::output::UpdateEventSourceMappingOutput::bisect_batch_on_function_error): <p>(Streams only) If the function returns an error, split the batch in two and retry. The default value is false.</p>
+    ///   - [`maximum_retry_attempts(Option<i32>)`](crate::output::UpdateEventSourceMappingOutput::maximum_retry_attempts): <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
+    ///   - [`tumbling_window_in_seconds(Option<i32>)`](crate::output::UpdateEventSourceMappingOutput::tumbling_window_in_seconds): <p>(Streams only) The duration in seconds of a processing window. The range is 1–900 seconds.</p>
+    ///   - [`function_response_types(Option<Vec<FunctionResponseType>>)`](crate::output::UpdateEventSourceMappingOutput::function_response_types): <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
+    /// - On failure, responds with [`SdkError<UpdateEventSourceMappingError>`](crate::error::UpdateEventSourceMappingError)
     pub fn update_event_source_mapping(
         &self,
     ) -> fluent_builders::UpdateEventSourceMapping<C, M, R> {
         fluent_builders::UpdateEventSourceMapping::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateFunctionCode` operation.
+    /// Constructs a fluent builder for the [`UpdateFunctionCode`](crate::client::fluent_builders::UpdateFunctionCode) operation.
     ///
-    /// See [`UpdateFunctionCode`](crate::client::fluent_builders::UpdateFunctionCode) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateFunctionCodeInput`](crate::input::UpdateFunctionCodeInput) with field(s):
+    ///   - [`function_name(Option<String>)`](crate::input::UpdateFunctionCodeInput::function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    ///   - [`zip_file(Option<Blob>)`](crate::input::UpdateFunctionCodeInput::zip_file): <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
+    ///   - [`s3_bucket(Option<String>)`](crate::input::UpdateFunctionCodeInput::s3_bucket): <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account.</p>
+    ///   - [`s3_key(Option<String>)`](crate::input::UpdateFunctionCodeInput::s3_key): <p>The Amazon S3 key of the deployment package.</p>
+    ///   - [`s3_object_version(Option<String>)`](crate::input::UpdateFunctionCodeInput::s3_object_version): <p>For versioned objects, the version of the deployment package object to use.</p>
+    ///   - [`image_uri(Option<String>)`](crate::input::UpdateFunctionCodeInput::image_uri): <p>URI of a container image in the Amazon ECR registry.</p>
+    ///   - [`publish(bool)`](crate::input::UpdateFunctionCodeInput::publish): <p>Set to true to publish a new version of the function after updating the code. This has the same effect as calling <code>PublishVersion</code> separately.</p>
+    ///   - [`dry_run(bool)`](crate::input::UpdateFunctionCodeInput::dry_run): <p>Set to true to validate the request parameters and access permissions without modifying the function code.</p>
+    ///   - [`revision_id(Option<String>)`](crate::input::UpdateFunctionCodeInput::revision_id): <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a function that has changed since you last read it.</p>
+    ///   - [`architectures(Option<Vec<Architecture>>)`](crate::input::UpdateFunctionCodeInput::architectures): <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
+    /// - On success, responds with [`UpdateFunctionCodeOutput`](crate::output::UpdateFunctionCodeOutput) with field(s):
+    ///   - [`function_name(Option<String>)`](crate::output::UpdateFunctionCodeOutput::function_name): <p>The name of the function.</p>
+    ///   - [`function_arn(Option<String>)`](crate::output::UpdateFunctionCodeOutput::function_arn): <p>The function's Amazon Resource Name (ARN).</p>
+    ///   - [`runtime(Option<Runtime>)`](crate::output::UpdateFunctionCodeOutput::runtime): <p>The runtime environment for the Lambda function.</p>
+    ///   - [`role(Option<String>)`](crate::output::UpdateFunctionCodeOutput::role): <p>The function's execution role.</p>
+    ///   - [`handler(Option<String>)`](crate::output::UpdateFunctionCodeOutput::handler): <p>The function that Lambda calls to begin executing your function.</p>
+    ///   - [`code_size(i64)`](crate::output::UpdateFunctionCodeOutput::code_size): <p>The size of the function's deployment package, in bytes.</p>
+    ///   - [`description(Option<String>)`](crate::output::UpdateFunctionCodeOutput::description): <p>The function's description.</p>
+    ///   - [`timeout(Option<i32>)`](crate::output::UpdateFunctionCodeOutput::timeout): <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
+    ///   - [`memory_size(Option<i32>)`](crate::output::UpdateFunctionCodeOutput::memory_size): <p>The amount of memory available to the function at runtime. </p>
+    ///   - [`last_modified(Option<String>)`](crate::output::UpdateFunctionCodeOutput::last_modified): <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    ///   - [`code_sha256(Option<String>)`](crate::output::UpdateFunctionCodeOutput::code_sha256): <p>The SHA256 hash of the function's deployment package.</p>
+    ///   - [`version(Option<String>)`](crate::output::UpdateFunctionCodeOutput::version): <p>The version of the Lambda function.</p>
+    ///   - [`vpc_config(Option<VpcConfigResponse>)`](crate::output::UpdateFunctionCodeOutput::vpc_config): <p>The function's networking configuration.</p>
+    ///   - [`dead_letter_config(Option<DeadLetterConfig>)`](crate::output::UpdateFunctionCodeOutput::dead_letter_config): <p>The function's dead letter queue.</p>
+    ///   - [`environment(Option<EnvironmentResponse>)`](crate::output::UpdateFunctionCodeOutput::environment): <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.</p>
+    ///   - [`kms_key_arn(Option<String>)`](crate::output::UpdateFunctionCodeOutput::kms_key_arn): <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed key.</p>
+    ///   - [`tracing_config(Option<TracingConfigResponse>)`](crate::output::UpdateFunctionCodeOutput::tracing_config): <p>The function's X-Ray tracing configuration.</p>
+    ///   - [`master_arn(Option<String>)`](crate::output::UpdateFunctionCodeOutput::master_arn): <p>For Lambda@Edge functions, the ARN of the main function.</p>
+    ///   - [`revision_id(Option<String>)`](crate::output::UpdateFunctionCodeOutput::revision_id): <p>The latest updated revision of the function or alias.</p>
+    ///   - [`layers(Option<Vec<Layer>>)`](crate::output::UpdateFunctionCodeOutput::layers): <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.</p>
+    ///   - [`state(Option<State>)`](crate::output::UpdateFunctionCodeOutput::state): <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
+    ///   - [`state_reason(Option<String>)`](crate::output::UpdateFunctionCodeOutput::state_reason): <p>The reason for the function's current state.</p>
+    ///   - [`state_reason_code(Option<StateReasonCode>)`](crate::output::UpdateFunctionCodeOutput::state_reason_code): <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
+    ///   - [`last_update_status(Option<LastUpdateStatus>)`](crate::output::UpdateFunctionCodeOutput::last_update_status): <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
+    ///   - [`last_update_status_reason(Option<String>)`](crate::output::UpdateFunctionCodeOutput::last_update_status_reason): <p>The reason for the last update that was performed on the function.</p>
+    ///   - [`last_update_status_reason_code(Option<LastUpdateStatusReasonCode>)`](crate::output::UpdateFunctionCodeOutput::last_update_status_reason_code): <p>The reason code for the last update that was performed on the function.</p>
+    ///   - [`file_system_configs(Option<Vec<FileSystemConfig>>)`](crate::output::UpdateFunctionCodeOutput::file_system_configs): <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
+    ///   - [`package_type(Option<PackageType>)`](crate::output::UpdateFunctionCodeOutput::package_type): <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
+    ///   - [`image_config_response(Option<ImageConfigResponse>)`](crate::output::UpdateFunctionCodeOutput::image_config_response): <p>The function's image configuration values.</p>
+    ///   - [`signing_profile_version_arn(Option<String>)`](crate::output::UpdateFunctionCodeOutput::signing_profile_version_arn): <p>The ARN of the signing profile version.</p>
+    ///   - [`signing_job_arn(Option<String>)`](crate::output::UpdateFunctionCodeOutput::signing_job_arn): <p>The ARN of the signing job.</p>
+    ///   - [`architectures(Option<Vec<Architecture>>)`](crate::output::UpdateFunctionCodeOutput::architectures): <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
+    /// - On failure, responds with [`SdkError<UpdateFunctionCodeError>`](crate::error::UpdateFunctionCodeError)
     pub fn update_function_code(&self) -> fluent_builders::UpdateFunctionCode<C, M, R> {
         fluent_builders::UpdateFunctionCode::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateFunctionConfiguration` operation.
+    /// Constructs a fluent builder for the [`UpdateFunctionConfiguration`](crate::client::fluent_builders::UpdateFunctionConfiguration) operation.
     ///
-    /// See [`UpdateFunctionConfiguration`](crate::client::fluent_builders::UpdateFunctionConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateFunctionConfigurationInput`](crate::input::UpdateFunctionConfigurationInput) with field(s):
+    ///   - [`function_name(Option<String>)`](crate::input::UpdateFunctionConfigurationInput::function_name): <p>The name of the Lambda function.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>  </ul>  <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    ///   - [`role(Option<String>)`](crate::input::UpdateFunctionConfigurationInput::role): <p>The Amazon Resource Name (ARN) of the function's execution role.</p>
+    ///   - [`handler(Option<String>)`](crate::input::UpdateFunctionConfigurationInput::handler): <p>The name of the method within your code that Lambda calls to execute your function. Handler is required if the deployment package is a .zip file archive. The format includes the file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateFunctionConfigurationInput::description): <p>A description of the function.</p>
+    ///   - [`timeout(Option<i32>)`](crate::input::UpdateFunctionConfigurationInput::timeout): <p>The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3 seconds. The maximum allowed value is 900 seconds. For additional information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.</p>
+    ///   - [`memory_size(Option<i32>)`](crate::input::UpdateFunctionConfigurationInput::memory_size): <p>The amount of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory available to the function</a> at runtime. Increasing the function memory also increases its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.</p>
+    ///   - [`vpc_config(Option<VpcConfig>)`](crate::input::UpdateFunctionConfigurationInput::vpc_config): <p>For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets in the VPC. When you connect a function to a VPC, it can only access resources and the internet through that VPC. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.</p>
+    ///   - [`environment(Option<Environment>)`](crate::input::UpdateFunctionConfigurationInput::environment): <p>Environment variables that are accessible from function code during execution.</p>
+    ///   - [`runtime(Option<Runtime>)`](crate::input::UpdateFunctionConfigurationInput::runtime): <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive. </p>
+    ///   - [`dead_letter_config(Option<DeadLetterConfig>)`](crate::input::UpdateFunctionConfigurationInput::dead_letter_config): <p>A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.</p>
+    ///   - [`kms_key_arn(Option<String>)`](crate::input::UpdateFunctionConfigurationInput::kms_key_arn): <p>The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's environment variables. If it's not provided, Lambda uses a default service key.</p>
+    ///   - [`tracing_config(Option<TracingConfig>)`](crate::input::UpdateFunctionConfigurationInput::tracing_config): <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.</p>
+    ///   - [`revision_id(Option<String>)`](crate::input::UpdateFunctionConfigurationInput::revision_id): <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a function that has changed since you last read it.</p>
+    ///   - [`layers(Option<Vec<String>>)`](crate::input::UpdateFunctionConfigurationInput::layers): <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a> to add to the function's execution environment. Specify each layer by its ARN, including the version.</p>
+    ///   - [`file_system_configs(Option<Vec<FileSystemConfig>>)`](crate::input::UpdateFunctionConfigurationInput::file_system_configs): <p>Connection settings for an Amazon EFS file system.</p>
+    ///   - [`image_config(Option<ImageConfig>)`](crate::input::UpdateFunctionConfigurationInput::image_config): <p> <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a> that override the values in the container image Docker file.</p>
+    /// - On success, responds with [`UpdateFunctionConfigurationOutput`](crate::output::UpdateFunctionConfigurationOutput) with field(s):
+    ///   - [`function_name(Option<String>)`](crate::output::UpdateFunctionConfigurationOutput::function_name): <p>The name of the function.</p>
+    ///   - [`function_arn(Option<String>)`](crate::output::UpdateFunctionConfigurationOutput::function_arn): <p>The function's Amazon Resource Name (ARN).</p>
+    ///   - [`runtime(Option<Runtime>)`](crate::output::UpdateFunctionConfigurationOutput::runtime): <p>The runtime environment for the Lambda function.</p>
+    ///   - [`role(Option<String>)`](crate::output::UpdateFunctionConfigurationOutput::role): <p>The function's execution role.</p>
+    ///   - [`handler(Option<String>)`](crate::output::UpdateFunctionConfigurationOutput::handler): <p>The function that Lambda calls to begin executing your function.</p>
+    ///   - [`code_size(i64)`](crate::output::UpdateFunctionConfigurationOutput::code_size): <p>The size of the function's deployment package, in bytes.</p>
+    ///   - [`description(Option<String>)`](crate::output::UpdateFunctionConfigurationOutput::description): <p>The function's description.</p>
+    ///   - [`timeout(Option<i32>)`](crate::output::UpdateFunctionConfigurationOutput::timeout): <p>The amount of time in seconds that Lambda allows a function to run before stopping it.</p>
+    ///   - [`memory_size(Option<i32>)`](crate::output::UpdateFunctionConfigurationOutput::memory_size): <p>The amount of memory available to the function at runtime. </p>
+    ///   - [`last_modified(Option<String>)`](crate::output::UpdateFunctionConfigurationOutput::last_modified): <p>The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
+    ///   - [`code_sha256(Option<String>)`](crate::output::UpdateFunctionConfigurationOutput::code_sha256): <p>The SHA256 hash of the function's deployment package.</p>
+    ///   - [`version(Option<String>)`](crate::output::UpdateFunctionConfigurationOutput::version): <p>The version of the Lambda function.</p>
+    ///   - [`vpc_config(Option<VpcConfigResponse>)`](crate::output::UpdateFunctionConfigurationOutput::vpc_config): <p>The function's networking configuration.</p>
+    ///   - [`dead_letter_config(Option<DeadLetterConfig>)`](crate::output::UpdateFunctionConfigurationOutput::dead_letter_config): <p>The function's dead letter queue.</p>
+    ///   - [`environment(Option<EnvironmentResponse>)`](crate::output::UpdateFunctionConfigurationOutput::environment): <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.</p>
+    ///   - [`kms_key_arn(Option<String>)`](crate::output::UpdateFunctionConfigurationOutput::kms_key_arn): <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed key.</p>
+    ///   - [`tracing_config(Option<TracingConfigResponse>)`](crate::output::UpdateFunctionConfigurationOutput::tracing_config): <p>The function's X-Ray tracing configuration.</p>
+    ///   - [`master_arn(Option<String>)`](crate::output::UpdateFunctionConfigurationOutput::master_arn): <p>For Lambda@Edge functions, the ARN of the main function.</p>
+    ///   - [`revision_id(Option<String>)`](crate::output::UpdateFunctionConfigurationOutput::revision_id): <p>The latest updated revision of the function or alias.</p>
+    ///   - [`layers(Option<Vec<Layer>>)`](crate::output::UpdateFunctionConfigurationOutput::layers): <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.</p>
+    ///   - [`state(Option<State>)`](crate::output::UpdateFunctionConfigurationOutput::state): <p>The current state of the function. When the state is <code>Inactive</code>, you can reactivate the function by invoking it.</p>
+    ///   - [`state_reason(Option<String>)`](crate::output::UpdateFunctionConfigurationOutput::state_reason): <p>The reason for the function's current state.</p>
+    ///   - [`state_reason_code(Option<StateReasonCode>)`](crate::output::UpdateFunctionConfigurationOutput::state_reason_code): <p>The reason code for the function's current state. When the code is <code>Creating</code>, you can't invoke or modify the function.</p>
+    ///   - [`last_update_status(Option<LastUpdateStatus>)`](crate::output::UpdateFunctionConfigurationOutput::last_update_status): <p>The status of the last update that was performed on the function. This is first set to <code>Successful</code> after function creation completes.</p>
+    ///   - [`last_update_status_reason(Option<String>)`](crate::output::UpdateFunctionConfigurationOutput::last_update_status_reason): <p>The reason for the last update that was performed on the function.</p>
+    ///   - [`last_update_status_reason_code(Option<LastUpdateStatusReasonCode>)`](crate::output::UpdateFunctionConfigurationOutput::last_update_status_reason_code): <p>The reason code for the last update that was performed on the function.</p>
+    ///   - [`file_system_configs(Option<Vec<FileSystemConfig>>)`](crate::output::UpdateFunctionConfigurationOutput::file_system_configs): <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
+    ///   - [`package_type(Option<PackageType>)`](crate::output::UpdateFunctionConfigurationOutput::package_type): <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
+    ///   - [`image_config_response(Option<ImageConfigResponse>)`](crate::output::UpdateFunctionConfigurationOutput::image_config_response): <p>The function's image configuration values.</p>
+    ///   - [`signing_profile_version_arn(Option<String>)`](crate::output::UpdateFunctionConfigurationOutput::signing_profile_version_arn): <p>The ARN of the signing profile version.</p>
+    ///   - [`signing_job_arn(Option<String>)`](crate::output::UpdateFunctionConfigurationOutput::signing_job_arn): <p>The ARN of the signing job.</p>
+    ///   - [`architectures(Option<Vec<Architecture>>)`](crate::output::UpdateFunctionConfigurationOutput::architectures): <p>The instruction set architecture that the function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.</p>
+    /// - On failure, responds with [`SdkError<UpdateFunctionConfigurationError>`](crate::error::UpdateFunctionConfigurationError)
     pub fn update_function_configuration(
         &self,
     ) -> fluent_builders::UpdateFunctionConfiguration<C, M, R> {
         fluent_builders::UpdateFunctionConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateFunctionEventInvokeConfig` operation.
+    /// Constructs a fluent builder for the [`UpdateFunctionEventInvokeConfig`](crate::client::fluent_builders::UpdateFunctionEventInvokeConfig) operation.
     ///
-    /// See [`UpdateFunctionEventInvokeConfig`](crate::client::fluent_builders::UpdateFunctionEventInvokeConfig) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateFunctionEventInvokeConfigInput`](crate::input::UpdateFunctionEventInvokeConfigInput) with field(s):
+    ///   - [`function_name(Option<String>)`](crate::input::UpdateFunctionEventInvokeConfigInput::function_name): <p>The name of the Lambda function, version, or alias.</p>  <p class="title"> <b>Name formats</b> </p>  <ul>   <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>   <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>   <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>  </ul>  <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+    ///   - [`qualifier(Option<String>)`](crate::input::UpdateFunctionEventInvokeConfigInput::qualifier): <p>A version number or alias name.</p>
+    ///   - [`maximum_retry_attempts(Option<i32>)`](crate::input::UpdateFunctionEventInvokeConfigInput::maximum_retry_attempts): <p>The maximum number of times to retry when the function returns an error.</p>
+    ///   - [`maximum_event_age_in_seconds(Option<i32>)`](crate::input::UpdateFunctionEventInvokeConfigInput::maximum_event_age_in_seconds): <p>The maximum age of a request that Lambda sends to a function for processing.</p>
+    ///   - [`destination_config(Option<DestinationConfig>)`](crate::input::UpdateFunctionEventInvokeConfigInput::destination_config): <p>A destination for events after they have been sent to a function for processing.</p>  <p class="title"> <b>Destinations</b> </p>  <ul>   <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>   <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>   <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>   <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>  </ul>
+    /// - On success, responds with [`UpdateFunctionEventInvokeConfigOutput`](crate::output::UpdateFunctionEventInvokeConfigOutput) with field(s):
+    ///   - [`last_modified(Option<DateTime>)`](crate::output::UpdateFunctionEventInvokeConfigOutput::last_modified): <p>The date and time that the configuration was last updated.</p>
+    ///   - [`function_arn(Option<String>)`](crate::output::UpdateFunctionEventInvokeConfigOutput::function_arn): <p>The Amazon Resource Name (ARN) of the function.</p>
+    ///   - [`maximum_retry_attempts(Option<i32>)`](crate::output::UpdateFunctionEventInvokeConfigOutput::maximum_retry_attempts): <p>The maximum number of times to retry when the function returns an error.</p>
+    ///   - [`maximum_event_age_in_seconds(Option<i32>)`](crate::output::UpdateFunctionEventInvokeConfigOutput::maximum_event_age_in_seconds): <p>The maximum age of a request that Lambda sends to a function for processing.</p>
+    ///   - [`destination_config(Option<DestinationConfig>)`](crate::output::UpdateFunctionEventInvokeConfigOutput::destination_config): <p>A destination for events after they have been sent to a function for processing.</p>  <p class="title"> <b>Destinations</b> </p>  <ul>   <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>   <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>   <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>   <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<UpdateFunctionEventInvokeConfigError>`](crate::error::UpdateFunctionEventInvokeConfigError)
     pub fn update_function_event_invoke_config(
         &self,
     ) -> fluent_builders::UpdateFunctionEventInvokeConfig<C, M, R> {

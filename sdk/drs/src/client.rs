@@ -83,236 +83,490 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateReplicationConfigurationTemplate` operation.
+    /// Constructs a fluent builder for the [`CreateReplicationConfigurationTemplate`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate) operation.
     ///
-    /// See [`CreateReplicationConfigurationTemplate`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateReplicationConfigurationTemplateInput`](crate::input::CreateReplicationConfigurationTemplateInput) with field(s):
+    ///   - [`staging_area_subnet_id(Option<String>)`](crate::input::CreateReplicationConfigurationTemplateInput::staging_area_subnet_id): <p>The subnet to be used by the replication staging area.</p>
+    ///   - [`associate_default_security_group(Option<bool>)`](crate::input::CreateReplicationConfigurationTemplateInput::associate_default_security_group): <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration Template.</p>
+    ///   - [`replication_servers_security_groups_i_ds(Option<Vec<String>>)`](crate::input::CreateReplicationConfigurationTemplateInput::replication_servers_security_groups_i_ds): <p>The security group IDs that will be used by the replication server.</p>
+    ///   - [`replication_server_instance_type(Option<String>)`](crate::input::CreateReplicationConfigurationTemplateInput::replication_server_instance_type): <p>The instance type to be used for the replication server.</p>
+    ///   - [`use_dedicated_replication_server(Option<bool>)`](crate::input::CreateReplicationConfigurationTemplateInput::use_dedicated_replication_server): <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
+    ///   - [`default_large_staging_disk_type(Option<ReplicationConfigurationDefaultLargeStagingDiskType>)`](crate::input::CreateReplicationConfigurationTemplateInput::default_large_staging_disk_type): <p>The Staging Disk EBS volume type to be used during replication.</p>
+    ///   - [`ebs_encryption(Option<ReplicationConfigurationEbsEncryption>)`](crate::input::CreateReplicationConfigurationTemplateInput::ebs_encryption): <p>The type of EBS encryption to be used during replication.</p>
+    ///   - [`ebs_encryption_key_arn(Option<String>)`](crate::input::CreateReplicationConfigurationTemplateInput::ebs_encryption_key_arn): <p>The ARN of the EBS encryption key to be used during replication.</p>
+    ///   - [`bandwidth_throttling(i64)`](crate::input::CreateReplicationConfigurationTemplateInput::bandwidth_throttling): <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
+    ///   - [`data_plane_routing(Option<ReplicationConfigurationDataPlaneRouting>)`](crate::input::CreateReplicationConfigurationTemplateInput::data_plane_routing): <p>The data plane routing mechanism that will be used for replication.</p>
+    ///   - [`create_public_ip(Option<bool>)`](crate::input::CreateReplicationConfigurationTemplateInput::create_public_ip): <p>Whether to create a Public IP for the Recovery Instance by default.</p>
+    ///   - [`staging_area_tags(Option<HashMap<String, String>>)`](crate::input::CreateReplicationConfigurationTemplateInput::staging_area_tags): <p>A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.</p>
+    ///   - [`pit_policy(Option<Vec<PitPolicyRule>>)`](crate::input::CreateReplicationConfigurationTemplateInput::pit_policy): <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateReplicationConfigurationTemplateInput::tags): <p>A set of tags to be associated with the Replication Configuration Template resource.</p>
+    /// - On success, responds with [`CreateReplicationConfigurationTemplateOutput`](crate::output::CreateReplicationConfigurationTemplateOutput) with field(s):
+    ///   - [`replication_configuration_template_id(Option<String>)`](crate::output::CreateReplicationConfigurationTemplateOutput::replication_configuration_template_id): <p>The Replication Configuration Template ID.</p>
+    ///   - [`arn(Option<String>)`](crate::output::CreateReplicationConfigurationTemplateOutput::arn): <p>The Replication Configuration Template ARN.</p>
+    ///   - [`staging_area_subnet_id(Option<String>)`](crate::output::CreateReplicationConfigurationTemplateOutput::staging_area_subnet_id): <p>The subnet to be used by the replication staging area.</p>
+    ///   - [`associate_default_security_group(Option<bool>)`](crate::output::CreateReplicationConfigurationTemplateOutput::associate_default_security_group): <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration Template.</p>
+    ///   - [`replication_servers_security_groups_i_ds(Option<Vec<String>>)`](crate::output::CreateReplicationConfigurationTemplateOutput::replication_servers_security_groups_i_ds): <p>The security group IDs that will be used by the replication server.</p>
+    ///   - [`replication_server_instance_type(Option<String>)`](crate::output::CreateReplicationConfigurationTemplateOutput::replication_server_instance_type): <p>The instance type to be used for the replication server.</p>
+    ///   - [`use_dedicated_replication_server(Option<bool>)`](crate::output::CreateReplicationConfigurationTemplateOutput::use_dedicated_replication_server): <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
+    ///   - [`default_large_staging_disk_type(Option<ReplicationConfigurationDefaultLargeStagingDiskType>)`](crate::output::CreateReplicationConfigurationTemplateOutput::default_large_staging_disk_type): <p>The Staging Disk EBS volume type to be used during replication.</p>
+    ///   - [`ebs_encryption(Option<ReplicationConfigurationEbsEncryption>)`](crate::output::CreateReplicationConfigurationTemplateOutput::ebs_encryption): <p>The type of EBS encryption to be used during replication.</p>
+    ///   - [`ebs_encryption_key_arn(Option<String>)`](crate::output::CreateReplicationConfigurationTemplateOutput::ebs_encryption_key_arn): <p>The ARN of the EBS encryption key to be used during replication.</p>
+    ///   - [`bandwidth_throttling(i64)`](crate::output::CreateReplicationConfigurationTemplateOutput::bandwidth_throttling): <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
+    ///   - [`data_plane_routing(Option<ReplicationConfigurationDataPlaneRouting>)`](crate::output::CreateReplicationConfigurationTemplateOutput::data_plane_routing): <p>The data plane routing mechanism that will be used for replication.</p>
+    ///   - [`create_public_ip(Option<bool>)`](crate::output::CreateReplicationConfigurationTemplateOutput::create_public_ip): <p>Whether to create a Public IP for the Recovery Instance by default.</p>
+    ///   - [`staging_area_tags(Option<HashMap<String, String>>)`](crate::output::CreateReplicationConfigurationTemplateOutput::staging_area_tags): <p>A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateReplicationConfigurationTemplateOutput::tags): <p>A set of tags to be associated with the Replication Configuration Template resource.</p>
+    ///   - [`pit_policy(Option<Vec<PitPolicyRule>>)`](crate::output::CreateReplicationConfigurationTemplateOutput::pit_policy): <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
+    /// - On failure, responds with [`SdkError<CreateReplicationConfigurationTemplateError>`](crate::error::CreateReplicationConfigurationTemplateError)
     pub fn create_replication_configuration_template(
         &self,
     ) -> fluent_builders::CreateReplicationConfigurationTemplate<C, M, R> {
         fluent_builders::CreateReplicationConfigurationTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteJob` operation.
+    /// Constructs a fluent builder for the [`DeleteJob`](crate::client::fluent_builders::DeleteJob) operation.
     ///
-    /// See [`DeleteJob`](crate::client::fluent_builders::DeleteJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteJobInput`](crate::input::DeleteJobInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::DeleteJobInput::job_id): <p>The ID of the Job to be deleted.</p>
+    /// - On success, responds with [`DeleteJobOutput`](crate::output::DeleteJobOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteJobError>`](crate::error::DeleteJobError)
     pub fn delete_job(&self) -> fluent_builders::DeleteJob<C, M, R> {
         fluent_builders::DeleteJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteRecoveryInstance` operation.
+    /// Constructs a fluent builder for the [`DeleteRecoveryInstance`](crate::client::fluent_builders::DeleteRecoveryInstance) operation.
     ///
-    /// See [`DeleteRecoveryInstance`](crate::client::fluent_builders::DeleteRecoveryInstance) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteRecoveryInstanceInput`](crate::input::DeleteRecoveryInstanceInput) with field(s):
+    ///   - [`recovery_instance_id(Option<String>)`](crate::input::DeleteRecoveryInstanceInput::recovery_instance_id): <p>RThe ID of the Recovery Instance to be deleted.</p>
+    /// - On success, responds with [`DeleteRecoveryInstanceOutput`](crate::output::DeleteRecoveryInstanceOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteRecoveryInstanceError>`](crate::error::DeleteRecoveryInstanceError)
     pub fn delete_recovery_instance(&self) -> fluent_builders::DeleteRecoveryInstance<C, M, R> {
         fluent_builders::DeleteRecoveryInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteReplicationConfigurationTemplate` operation.
+    /// Constructs a fluent builder for the [`DeleteReplicationConfigurationTemplate`](crate::client::fluent_builders::DeleteReplicationConfigurationTemplate) operation.
     ///
-    /// See [`DeleteReplicationConfigurationTemplate`](crate::client::fluent_builders::DeleteReplicationConfigurationTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteReplicationConfigurationTemplateInput`](crate::input::DeleteReplicationConfigurationTemplateInput) with field(s):
+    ///   - [`replication_configuration_template_id(Option<String>)`](crate::input::DeleteReplicationConfigurationTemplateInput::replication_configuration_template_id): <p>The ID of the Replication Configuration Template to be deleted.</p>
+    /// - On success, responds with [`DeleteReplicationConfigurationTemplateOutput`](crate::output::DeleteReplicationConfigurationTemplateOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteReplicationConfigurationTemplateError>`](crate::error::DeleteReplicationConfigurationTemplateError)
     pub fn delete_replication_configuration_template(
         &self,
     ) -> fluent_builders::DeleteReplicationConfigurationTemplate<C, M, R> {
         fluent_builders::DeleteReplicationConfigurationTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteSourceServer` operation.
+    /// Constructs a fluent builder for the [`DeleteSourceServer`](crate::client::fluent_builders::DeleteSourceServer) operation.
     ///
-    /// See [`DeleteSourceServer`](crate::client::fluent_builders::DeleteSourceServer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteSourceServerInput`](crate::input::DeleteSourceServerInput) with field(s):
+    ///   - [`source_server_id(Option<String>)`](crate::input::DeleteSourceServerInput::source_server_id): <p>The ID of the Source Server to be deleted.</p>
+    /// - On success, responds with [`DeleteSourceServerOutput`](crate::output::DeleteSourceServerOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteSourceServerError>`](crate::error::DeleteSourceServerError)
     pub fn delete_source_server(&self) -> fluent_builders::DeleteSourceServer<C, M, R> {
         fluent_builders::DeleteSourceServer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeJobLogItems` operation.
-    ///
-    /// See [`DescribeJobLogItems`](crate::client::fluent_builders::DescribeJobLogItems) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeJobLogItems`](crate::client::fluent_builders::DescribeJobLogItems) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeJobLogItems::into_paginator).
+    ///
+    /// - Takes [`DescribeJobLogItemsInput`](crate::input::DescribeJobLogItemsInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::DescribeJobLogItemsInput::job_id): <p>The ID of the Job for which Job log items will be retrieved.</p>
+    ///   - [`max_results(i32)`](crate::input::DescribeJobLogItemsInput::max_results): <p>Maximum number of Job log items to retrieve.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeJobLogItemsInput::next_token): <p>The token of the next Job log items to retrieve.</p>
+    /// - On success, responds with [`DescribeJobLogItemsOutput`](crate::output::DescribeJobLogItemsOutput) with field(s):
+    ///   - [`items(Option<Vec<JobLog>>)`](crate::output::DescribeJobLogItemsOutput::items): <p>An array of Job log items.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeJobLogItemsOutput::next_token): <p>The token of the next Job log items to retrieve.</p>
+    /// - On failure, responds with [`SdkError<DescribeJobLogItemsError>`](crate::error::DescribeJobLogItemsError)
     pub fn describe_job_log_items(&self) -> fluent_builders::DescribeJobLogItems<C, M, R> {
         fluent_builders::DescribeJobLogItems::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeJobs` operation.
-    ///
-    /// See [`DescribeJobs`](crate::client::fluent_builders::DescribeJobs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeJobs`](crate::client::fluent_builders::DescribeJobs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeJobs::into_paginator).
+    ///
+    /// - Takes [`DescribeJobsInput`](crate::input::DescribeJobsInput) with field(s):
+    ///   - [`filters(Option<DescribeJobsRequestFilters>)`](crate::input::DescribeJobsInput::filters): <p>A set of filters by which to return Jobs.</p>
+    ///   - [`max_results(i32)`](crate::input::DescribeJobsInput::max_results): <p>Maximum number of Jobs to retrieve.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeJobsInput::next_token): <p>The token of the next Job to retrieve.</p>
+    /// - On success, responds with [`DescribeJobsOutput`](crate::output::DescribeJobsOutput) with field(s):
+    ///   - [`items(Option<Vec<Job>>)`](crate::output::DescribeJobsOutput::items): <p>An array of Jobs.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeJobsOutput::next_token): <p>The token of the next Job to retrieve.</p>
+    /// - On failure, responds with [`SdkError<DescribeJobsError>`](crate::error::DescribeJobsError)
     pub fn describe_jobs(&self) -> fluent_builders::DescribeJobs<C, M, R> {
         fluent_builders::DescribeJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeRecoveryInstances` operation.
-    ///
-    /// See [`DescribeRecoveryInstances`](crate::client::fluent_builders::DescribeRecoveryInstances) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeRecoveryInstances`](crate::client::fluent_builders::DescribeRecoveryInstances) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeRecoveryInstances::into_paginator).
+    ///
+    /// - Takes [`DescribeRecoveryInstancesInput`](crate::input::DescribeRecoveryInstancesInput) with field(s):
+    ///   - [`filters(Option<DescribeRecoveryInstancesRequestFilters>)`](crate::input::DescribeRecoveryInstancesInput::filters): <p>A set of filters by which to return Recovery Instances.</p>
+    ///   - [`max_results(i32)`](crate::input::DescribeRecoveryInstancesInput::max_results): <p>Maximum number of Recovery Instances to retrieve.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeRecoveryInstancesInput::next_token): <p>The token of the next Recovery Instance to retrieve.</p>
+    /// - On success, responds with [`DescribeRecoveryInstancesOutput`](crate::output::DescribeRecoveryInstancesOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeRecoveryInstancesOutput::next_token): <p>The token of the next Recovery Instance to retrieve.</p>
+    ///   - [`items(Option<Vec<RecoveryInstance>>)`](crate::output::DescribeRecoveryInstancesOutput::items): <p>An array of Recovery Instances.</p>
+    /// - On failure, responds with [`SdkError<DescribeRecoveryInstancesError>`](crate::error::DescribeRecoveryInstancesError)
     pub fn describe_recovery_instances(
         &self,
     ) -> fluent_builders::DescribeRecoveryInstances<C, M, R> {
         fluent_builders::DescribeRecoveryInstances::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeRecoverySnapshots` operation.
-    ///
-    /// See [`DescribeRecoverySnapshots`](crate::client::fluent_builders::DescribeRecoverySnapshots) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeRecoverySnapshots`](crate::client::fluent_builders::DescribeRecoverySnapshots) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeRecoverySnapshots::into_paginator).
+    ///
+    /// - Takes [`DescribeRecoverySnapshotsInput`](crate::input::DescribeRecoverySnapshotsInput) with field(s):
+    ///   - [`source_server_id(Option<String>)`](crate::input::DescribeRecoverySnapshotsInput::source_server_id): <p>Filter Recovery Snapshots by Source Server ID.</p>
+    ///   - [`filters(Option<DescribeRecoverySnapshotsRequestFilters>)`](crate::input::DescribeRecoverySnapshotsInput::filters): <p>A set of filters by which to return Recovery Snapshots.</p>
+    ///   - [`order(Option<RecoverySnapshotsOrder>)`](crate::input::DescribeRecoverySnapshotsInput::order): <p>The sorted ordering by which to return Recovery Snapshots.</p>
+    ///   - [`max_results(i32)`](crate::input::DescribeRecoverySnapshotsInput::max_results): <p>Maximum number of Recovery Snapshots to retrieve.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeRecoverySnapshotsInput::next_token): <p>The token of the next Recovery Snapshot to retrieve.</p>
+    /// - On success, responds with [`DescribeRecoverySnapshotsOutput`](crate::output::DescribeRecoverySnapshotsOutput) with field(s):
+    ///   - [`items(Option<Vec<RecoverySnapshot>>)`](crate::output::DescribeRecoverySnapshotsOutput::items): <p>An array of Recovery Snapshots.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeRecoverySnapshotsOutput::next_token): <p>The token of the next Recovery Snapshot to retrieve.</p>
+    /// - On failure, responds with [`SdkError<DescribeRecoverySnapshotsError>`](crate::error::DescribeRecoverySnapshotsError)
     pub fn describe_recovery_snapshots(
         &self,
     ) -> fluent_builders::DescribeRecoverySnapshots<C, M, R> {
         fluent_builders::DescribeRecoverySnapshots::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeReplicationConfigurationTemplates` operation.
-    ///
-    /// See [`DescribeReplicationConfigurationTemplates`](crate::client::fluent_builders::DescribeReplicationConfigurationTemplates) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeReplicationConfigurationTemplates`](crate::client::fluent_builders::DescribeReplicationConfigurationTemplates) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeReplicationConfigurationTemplates::into_paginator).
+    ///
+    /// - Takes [`DescribeReplicationConfigurationTemplatesInput`](crate::input::DescribeReplicationConfigurationTemplatesInput) with field(s):
+    ///   - [`replication_configuration_template_i_ds(Option<Vec<String>>)`](crate::input::DescribeReplicationConfigurationTemplatesInput::replication_configuration_template_i_ds): <p>The IDs of the Replication Configuration Templates to retrieve. An empty list means all Replication Configuration Templates.</p>
+    ///   - [`max_results(i32)`](crate::input::DescribeReplicationConfigurationTemplatesInput::max_results): <p>Maximum number of Replication Configuration Templates to retrieve.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeReplicationConfigurationTemplatesInput::next_token): <p>The token of the next Replication Configuration Template to retrieve.</p>
+    /// - On success, responds with [`DescribeReplicationConfigurationTemplatesOutput`](crate::output::DescribeReplicationConfigurationTemplatesOutput) with field(s):
+    ///   - [`items(Option<Vec<ReplicationConfigurationTemplate>>)`](crate::output::DescribeReplicationConfigurationTemplatesOutput::items): <p>An array of Replication Configuration Templates.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeReplicationConfigurationTemplatesOutput::next_token): <p>The token of the next Replication Configuration Template to retrieve.</p>
+    /// - On failure, responds with [`SdkError<DescribeReplicationConfigurationTemplatesError>`](crate::error::DescribeReplicationConfigurationTemplatesError)
     pub fn describe_replication_configuration_templates(
         &self,
     ) -> fluent_builders::DescribeReplicationConfigurationTemplates<C, M, R> {
         fluent_builders::DescribeReplicationConfigurationTemplates::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeSourceServers` operation.
-    ///
-    /// See [`DescribeSourceServers`](crate::client::fluent_builders::DescribeSourceServers) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeSourceServers`](crate::client::fluent_builders::DescribeSourceServers) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeSourceServers::into_paginator).
+    ///
+    /// - Takes [`DescribeSourceServersInput`](crate::input::DescribeSourceServersInput) with field(s):
+    ///   - [`filters(Option<DescribeSourceServersRequestFilters>)`](crate::input::DescribeSourceServersInput::filters): <p>A set of filters by which to return Source Servers.</p>
+    ///   - [`max_results(i32)`](crate::input::DescribeSourceServersInput::max_results): <p>Maximum number of Source Servers to retrieve.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeSourceServersInput::next_token): <p>The token of the next Source Server to retrieve.</p>
+    /// - On success, responds with [`DescribeSourceServersOutput`](crate::output::DescribeSourceServersOutput) with field(s):
+    ///   - [`items(Option<Vec<SourceServer>>)`](crate::output::DescribeSourceServersOutput::items): <p>An array of Source Servers.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeSourceServersOutput::next_token): <p>The token of the next Source Server to retrieve.</p>
+    /// - On failure, responds with [`SdkError<DescribeSourceServersError>`](crate::error::DescribeSourceServersError)
     pub fn describe_source_servers(&self) -> fluent_builders::DescribeSourceServers<C, M, R> {
         fluent_builders::DescribeSourceServers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisconnectRecoveryInstance` operation.
+    /// Constructs a fluent builder for the [`DisconnectRecoveryInstance`](crate::client::fluent_builders::DisconnectRecoveryInstance) operation.
     ///
-    /// See [`DisconnectRecoveryInstance`](crate::client::fluent_builders::DisconnectRecoveryInstance) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisconnectRecoveryInstanceInput`](crate::input::DisconnectRecoveryInstanceInput) with field(s):
+    ///   - [`recovery_instance_id(Option<String>)`](crate::input::DisconnectRecoveryInstanceInput::recovery_instance_id): <p>The ID of the Recovery Instance to disconnect.</p>
+    /// - On success, responds with [`DisconnectRecoveryInstanceOutput`](crate::output::DisconnectRecoveryInstanceOutput)
+
+    /// - On failure, responds with [`SdkError<DisconnectRecoveryInstanceError>`](crate::error::DisconnectRecoveryInstanceError)
     pub fn disconnect_recovery_instance(
         &self,
     ) -> fluent_builders::DisconnectRecoveryInstance<C, M, R> {
         fluent_builders::DisconnectRecoveryInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisconnectSourceServer` operation.
+    /// Constructs a fluent builder for the [`DisconnectSourceServer`](crate::client::fluent_builders::DisconnectSourceServer) operation.
     ///
-    /// See [`DisconnectSourceServer`](crate::client::fluent_builders::DisconnectSourceServer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisconnectSourceServerInput`](crate::input::DisconnectSourceServerInput) with field(s):
+    ///   - [`source_server_id(Option<String>)`](crate::input::DisconnectSourceServerInput::source_server_id): <p>The ID of the Source Server to disconnect.</p>
+    /// - On success, responds with [`DisconnectSourceServerOutput`](crate::output::DisconnectSourceServerOutput) with field(s):
+    ///   - [`source_server_id(Option<String>)`](crate::output::DisconnectSourceServerOutput::source_server_id): <p>The ID of the Source Server.</p>
+    ///   - [`arn(Option<String>)`](crate::output::DisconnectSourceServerOutput::arn): <p>The ARN of the Source Server.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DisconnectSourceServerOutput::tags): <p>The tags associated with the Source Server.</p>
+    ///   - [`recovery_instance_id(Option<String>)`](crate::output::DisconnectSourceServerOutput::recovery_instance_id): <p>The ID of the Recovery Instance associated with this Source Server.</p>
+    ///   - [`last_launch_result(Option<LastLaunchResult>)`](crate::output::DisconnectSourceServerOutput::last_launch_result): <p>The status of the last recovery launch of this Source Server.</p>
+    ///   - [`data_replication_info(Option<DataReplicationInfo>)`](crate::output::DisconnectSourceServerOutput::data_replication_info): <p>The Data Replication Info of the Source Server.</p>
+    ///   - [`life_cycle(Option<LifeCycle>)`](crate::output::DisconnectSourceServerOutput::life_cycle): <p>The lifecycle information of this Source Server.</p>
+    ///   - [`source_properties(Option<SourceProperties>)`](crate::output::DisconnectSourceServerOutput::source_properties): <p>The source properties of the Source Server.</p>
+    /// - On failure, responds with [`SdkError<DisconnectSourceServerError>`](crate::error::DisconnectSourceServerError)
     pub fn disconnect_source_server(&self) -> fluent_builders::DisconnectSourceServer<C, M, R> {
         fluent_builders::DisconnectSourceServer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetFailbackReplicationConfiguration` operation.
+    /// Constructs a fluent builder for the [`GetFailbackReplicationConfiguration`](crate::client::fluent_builders::GetFailbackReplicationConfiguration) operation.
     ///
-    /// See [`GetFailbackReplicationConfiguration`](crate::client::fluent_builders::GetFailbackReplicationConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetFailbackReplicationConfigurationInput`](crate::input::GetFailbackReplicationConfigurationInput) with field(s):
+    ///   - [`recovery_instance_id(Option<String>)`](crate::input::GetFailbackReplicationConfigurationInput::recovery_instance_id): <p>The ID of the Recovery Instance whose failback replication configuration should be returned.</p>
+    /// - On success, responds with [`GetFailbackReplicationConfigurationOutput`](crate::output::GetFailbackReplicationConfigurationOutput) with field(s):
+    ///   - [`recovery_instance_id(Option<String>)`](crate::output::GetFailbackReplicationConfigurationOutput::recovery_instance_id): <p>The ID of the Recovery Instance.</p>
+    ///   - [`name(Option<String>)`](crate::output::GetFailbackReplicationConfigurationOutput::name): <p>The name of the Failback Replication Configuration.</p>
+    ///   - [`bandwidth_throttling(i64)`](crate::output::GetFailbackReplicationConfigurationOutput::bandwidth_throttling): <p>Configure bandwidth throttling for the outbound data transfer rate of the Recovery Instance in Mbps.</p>
+    ///   - [`use_private_ip(Option<bool>)`](crate::output::GetFailbackReplicationConfigurationOutput::use_private_ip): <p>Whether to use Private IP for the failback replication of the Recovery Instance.</p>
+    /// - On failure, responds with [`SdkError<GetFailbackReplicationConfigurationError>`](crate::error::GetFailbackReplicationConfigurationError)
     pub fn get_failback_replication_configuration(
         &self,
     ) -> fluent_builders::GetFailbackReplicationConfiguration<C, M, R> {
         fluent_builders::GetFailbackReplicationConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetLaunchConfiguration` operation.
+    /// Constructs a fluent builder for the [`GetLaunchConfiguration`](crate::client::fluent_builders::GetLaunchConfiguration) operation.
     ///
-    /// See [`GetLaunchConfiguration`](crate::client::fluent_builders::GetLaunchConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetLaunchConfigurationInput`](crate::input::GetLaunchConfigurationInput) with field(s):
+    ///   - [`source_server_id(Option<String>)`](crate::input::GetLaunchConfigurationInput::source_server_id): <p>The ID of the Source Server that we want to retrieve a Launch Configuration for.</p>
+    /// - On success, responds with [`GetLaunchConfigurationOutput`](crate::output::GetLaunchConfigurationOutput) with field(s):
+    ///   - [`source_server_id(Option<String>)`](crate::output::GetLaunchConfigurationOutput::source_server_id): <p>The ID of the Source Server for this launch configuration.</p>
+    ///   - [`name(Option<String>)`](crate::output::GetLaunchConfigurationOutput::name): <p>The name of the launch configuration.</p>
+    ///   - [`ec2_launch_template_id(Option<String>)`](crate::output::GetLaunchConfigurationOutput::ec2_launch_template_id): <p>The EC2 launch template ID of this launch configuration.</p>
+    ///   - [`launch_disposition(Option<LaunchDisposition>)`](crate::output::GetLaunchConfigurationOutput::launch_disposition): <p>The state of the Recovery Instance in EC2 after the recovery operation.</p>
+    ///   - [`target_instance_type_right_sizing_method(Option<TargetInstanceTypeRightSizingMethod>)`](crate::output::GetLaunchConfigurationOutput::target_instance_type_right_sizing_method): <p>Whether Elastic Disaster Recovery should try to automatically choose the instance type that best matches the OS, CPU, and RAM of your Source Server.</p>
+    ///   - [`copy_private_ip(Option<bool>)`](crate::output::GetLaunchConfigurationOutput::copy_private_ip): <p>Whether we should copy the Private IP of the Source Server to the Recovery Instance.</p>
+    ///   - [`copy_tags(Option<bool>)`](crate::output::GetLaunchConfigurationOutput::copy_tags): <p>Whether we want to copy the tags of the Source Server to the EC2 machine of the Recovery Instance.</p>
+    ///   - [`licensing(Option<Licensing>)`](crate::output::GetLaunchConfigurationOutput::licensing): <p>The licensing configuration to be used for this launch configuration.</p>
+    /// - On failure, responds with [`SdkError<GetLaunchConfigurationError>`](crate::error::GetLaunchConfigurationError)
     pub fn get_launch_configuration(&self) -> fluent_builders::GetLaunchConfiguration<C, M, R> {
         fluent_builders::GetLaunchConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetReplicationConfiguration` operation.
+    /// Constructs a fluent builder for the [`GetReplicationConfiguration`](crate::client::fluent_builders::GetReplicationConfiguration) operation.
     ///
-    /// See [`GetReplicationConfiguration`](crate::client::fluent_builders::GetReplicationConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetReplicationConfigurationInput`](crate::input::GetReplicationConfigurationInput) with field(s):
+    ///   - [`source_server_id(Option<String>)`](crate::input::GetReplicationConfigurationInput::source_server_id): <p>The ID of the Source Serve for this Replication Configuration.r</p>
+    /// - On success, responds with [`GetReplicationConfigurationOutput`](crate::output::GetReplicationConfigurationOutput) with field(s):
+    ///   - [`source_server_id(Option<String>)`](crate::output::GetReplicationConfigurationOutput::source_server_id): <p>The ID of the Source Server for this Replication Configuration.</p>
+    ///   - [`name(Option<String>)`](crate::output::GetReplicationConfigurationOutput::name): <p>The name of the Replication Configuration.</p>
+    ///   - [`staging_area_subnet_id(Option<String>)`](crate::output::GetReplicationConfigurationOutput::staging_area_subnet_id): <p>The subnet to be used by the replication staging area.</p>
+    ///   - [`associate_default_security_group(Option<bool>)`](crate::output::GetReplicationConfigurationOutput::associate_default_security_group): <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration.</p>
+    ///   - [`replication_servers_security_groups_i_ds(Option<Vec<String>>)`](crate::output::GetReplicationConfigurationOutput::replication_servers_security_groups_i_ds): <p>The security group IDs that will be used by the replication server.</p>
+    ///   - [`replication_server_instance_type(Option<String>)`](crate::output::GetReplicationConfigurationOutput::replication_server_instance_type): <p>The instance type to be used for the replication server.</p>
+    ///   - [`use_dedicated_replication_server(Option<bool>)`](crate::output::GetReplicationConfigurationOutput::use_dedicated_replication_server): <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
+    ///   - [`default_large_staging_disk_type(Option<ReplicationConfigurationDefaultLargeStagingDiskType>)`](crate::output::GetReplicationConfigurationOutput::default_large_staging_disk_type): <p>The Staging Disk EBS volume type to be used during replication.</p>
+    ///   - [`replicated_disks(Option<Vec<ReplicationConfigurationReplicatedDisk>>)`](crate::output::GetReplicationConfigurationOutput::replicated_disks): <p>The configuration of the disks of the Source Server to be replicated.</p>
+    ///   - [`ebs_encryption(Option<ReplicationConfigurationEbsEncryption>)`](crate::output::GetReplicationConfigurationOutput::ebs_encryption): <p>The type of EBS encryption to be used during replication.</p>
+    ///   - [`ebs_encryption_key_arn(Option<String>)`](crate::output::GetReplicationConfigurationOutput::ebs_encryption_key_arn): <p>The ARN of the EBS encryption key to be used during replication.</p>
+    ///   - [`bandwidth_throttling(i64)`](crate::output::GetReplicationConfigurationOutput::bandwidth_throttling): <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
+    ///   - [`data_plane_routing(Option<ReplicationConfigurationDataPlaneRouting>)`](crate::output::GetReplicationConfigurationOutput::data_plane_routing): <p>The data plane routing mechanism that will be used for replication.</p>
+    ///   - [`create_public_ip(Option<bool>)`](crate::output::GetReplicationConfigurationOutput::create_public_ip): <p>Whether to create a Public IP for the Recovery Instance by default.</p>
+    ///   - [`staging_area_tags(Option<HashMap<String, String>>)`](crate::output::GetReplicationConfigurationOutput::staging_area_tags): <p>A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.</p>
+    ///   - [`pit_policy(Option<Vec<PitPolicyRule>>)`](crate::output::GetReplicationConfigurationOutput::pit_policy): <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
+    /// - On failure, responds with [`SdkError<GetReplicationConfigurationError>`](crate::error::GetReplicationConfigurationError)
     pub fn get_replication_configuration(
         &self,
     ) -> fluent_builders::GetReplicationConfiguration<C, M, R> {
         fluent_builders::GetReplicationConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `InitializeService` operation.
+    /// Constructs a fluent builder for the [`InitializeService`](crate::client::fluent_builders::InitializeService) operation.
     ///
-    /// See [`InitializeService`](crate::client::fluent_builders::InitializeService) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`InitializeServiceInput`](crate::input::InitializeServiceInput)
+
+    /// - On success, responds with [`InitializeServiceOutput`](crate::output::InitializeServiceOutput)
+
+    /// - On failure, responds with [`SdkError<InitializeServiceError>`](crate::error::InitializeServiceError)
     pub fn initialize_service(&self) -> fluent_builders::InitializeService<C, M, R> {
         fluent_builders::InitializeService::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The ARN of the resource whose tags should be returned.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags of the requested resource.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RetryDataReplication` operation.
+    /// Constructs a fluent builder for the [`RetryDataReplication`](crate::client::fluent_builders::RetryDataReplication) operation.
     ///
-    /// See [`RetryDataReplication`](crate::client::fluent_builders::RetryDataReplication) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RetryDataReplicationInput`](crate::input::RetryDataReplicationInput) with field(s):
+    ///   - [`source_server_id(Option<String>)`](crate::input::RetryDataReplicationInput::source_server_id): <p>The ID of the Source Server whose data replication should be retried.</p>
+    /// - On success, responds with [`RetryDataReplicationOutput`](crate::output::RetryDataReplicationOutput) with field(s):
+    ///   - [`source_server_id(Option<String>)`](crate::output::RetryDataReplicationOutput::source_server_id): <p>The ID of the Source Server.</p>
+    ///   - [`arn(Option<String>)`](crate::output::RetryDataReplicationOutput::arn): <p>The ARN of the Source Server.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::RetryDataReplicationOutput::tags): <p>The tags associated with the Source Server.</p>
+    ///   - [`recovery_instance_id(Option<String>)`](crate::output::RetryDataReplicationOutput::recovery_instance_id): <p>The ID of the Recovery Instance associated with this Source Server.</p>
+    ///   - [`last_launch_result(Option<LastLaunchResult>)`](crate::output::RetryDataReplicationOutput::last_launch_result): <p>The status of the last recovery launch of this Source Server.</p>
+    ///   - [`data_replication_info(Option<DataReplicationInfo>)`](crate::output::RetryDataReplicationOutput::data_replication_info): <p>The Data Replication Info of the Source Server.</p>
+    ///   - [`life_cycle(Option<LifeCycle>)`](crate::output::RetryDataReplicationOutput::life_cycle): <p>The lifecycle information of this Source Server.</p>
+    ///   - [`source_properties(Option<SourceProperties>)`](crate::output::RetryDataReplicationOutput::source_properties): <p>The source properties of the Source Server.</p>
+    /// - On failure, responds with [`SdkError<RetryDataReplicationError>`](crate::error::RetryDataReplicationError)
     pub fn retry_data_replication(&self) -> fluent_builders::RetryDataReplication<C, M, R> {
         fluent_builders::RetryDataReplication::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartFailbackLaunch` operation.
+    /// Constructs a fluent builder for the [`StartFailbackLaunch`](crate::client::fluent_builders::StartFailbackLaunch) operation.
     ///
-    /// See [`StartFailbackLaunch`](crate::client::fluent_builders::StartFailbackLaunch) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartFailbackLaunchInput`](crate::input::StartFailbackLaunchInput) with field(s):
+    ///   - [`recovery_instance_i_ds(Option<Vec<String>>)`](crate::input::StartFailbackLaunchInput::recovery_instance_i_ds): <p>The IDs of the Recovery Instance whose failback launch we want to request.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::StartFailbackLaunchInput::tags): <p>The tags to be associated with the failback launch Job.</p>
+    /// - On success, responds with [`StartFailbackLaunchOutput`](crate::output::StartFailbackLaunchOutput) with field(s):
+    ///   - [`job(Option<Job>)`](crate::output::StartFailbackLaunchOutput::job): <p>The failback launch Job.</p>
+    /// - On failure, responds with [`SdkError<StartFailbackLaunchError>`](crate::error::StartFailbackLaunchError)
     pub fn start_failback_launch(&self) -> fluent_builders::StartFailbackLaunch<C, M, R> {
         fluent_builders::StartFailbackLaunch::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartRecovery` operation.
+    /// Constructs a fluent builder for the [`StartRecovery`](crate::client::fluent_builders::StartRecovery) operation.
     ///
-    /// See [`StartRecovery`](crate::client::fluent_builders::StartRecovery) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartRecoveryInput`](crate::input::StartRecoveryInput) with field(s):
+    ///   - [`source_servers(Option<Vec<StartRecoveryRequestSourceServer>>)`](crate::input::StartRecoveryInput::source_servers): <p>The Source Servers that we want to start a Recovery Job for.</p>
+    ///   - [`is_drill(Option<bool>)`](crate::input::StartRecoveryInput::is_drill): <p>Whether this Source Server Recovery operation is a drill or not.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::StartRecoveryInput::tags): <p>The tags to be associated with the Recovery Job.</p>
+    /// - On success, responds with [`StartRecoveryOutput`](crate::output::StartRecoveryOutput) with field(s):
+    ///   - [`job(Option<Job>)`](crate::output::StartRecoveryOutput::job): <p>The Recovery Job.</p>
+    /// - On failure, responds with [`SdkError<StartRecoveryError>`](crate::error::StartRecoveryError)
     pub fn start_recovery(&self) -> fluent_builders::StartRecovery<C, M, R> {
         fluent_builders::StartRecovery::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopFailback` operation.
+    /// Constructs a fluent builder for the [`StopFailback`](crate::client::fluent_builders::StopFailback) operation.
     ///
-    /// See [`StopFailback`](crate::client::fluent_builders::StopFailback) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StopFailbackInput`](crate::input::StopFailbackInput) with field(s):
+    ///   - [`recovery_instance_id(Option<String>)`](crate::input::StopFailbackInput::recovery_instance_id): <p>The ID of the Recovery Instance we want to stop failback for.</p>
+    /// - On success, responds with [`StopFailbackOutput`](crate::output::StopFailbackOutput)
+
+    /// - On failure, responds with [`SdkError<StopFailbackError>`](crate::error::StopFailbackError)
     pub fn stop_failback(&self) -> fluent_builders::StopFailback<C, M, R> {
         fluent_builders::StopFailback::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>ARN of the resource for which tags are to be added or updated.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>Array of tags to be added or updated.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TerminateRecoveryInstances` operation.
+    /// Constructs a fluent builder for the [`TerminateRecoveryInstances`](crate::client::fluent_builders::TerminateRecoveryInstances) operation.
     ///
-    /// See [`TerminateRecoveryInstances`](crate::client::fluent_builders::TerminateRecoveryInstances) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TerminateRecoveryInstancesInput`](crate::input::TerminateRecoveryInstancesInput) with field(s):
+    ///   - [`recovery_instance_i_ds(Option<Vec<String>>)`](crate::input::TerminateRecoveryInstancesInput::recovery_instance_i_ds): <p>The IDs of the Recovery Instances that should be terminated.</p>
+    /// - On success, responds with [`TerminateRecoveryInstancesOutput`](crate::output::TerminateRecoveryInstancesOutput) with field(s):
+    ///   - [`job(Option<Job>)`](crate::output::TerminateRecoveryInstancesOutput::job): <p>The Job for terminating the Recovery Instances.</p>
+    /// - On failure, responds with [`SdkError<TerminateRecoveryInstancesError>`](crate::error::TerminateRecoveryInstancesError)
     pub fn terminate_recovery_instances(
         &self,
     ) -> fluent_builders::TerminateRecoveryInstances<C, M, R> {
         fluent_builders::TerminateRecoveryInstances::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>ARN of the resource for which tags are to be removed.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>Array of tags to be removed.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateFailbackReplicationConfiguration` operation.
+    /// Constructs a fluent builder for the [`UpdateFailbackReplicationConfiguration`](crate::client::fluent_builders::UpdateFailbackReplicationConfiguration) operation.
     ///
-    /// See [`UpdateFailbackReplicationConfiguration`](crate::client::fluent_builders::UpdateFailbackReplicationConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateFailbackReplicationConfigurationInput`](crate::input::UpdateFailbackReplicationConfigurationInput) with field(s):
+    ///   - [`recovery_instance_id(Option<String>)`](crate::input::UpdateFailbackReplicationConfigurationInput::recovery_instance_id): <p>The ID of the Recovery Instance.</p>
+    ///   - [`name(Option<String>)`](crate::input::UpdateFailbackReplicationConfigurationInput::name): <p>The name of the Failback Replication Configuration.</p>
+    ///   - [`bandwidth_throttling(i64)`](crate::input::UpdateFailbackReplicationConfigurationInput::bandwidth_throttling): <p>Configure bandwidth throttling for the outbound data transfer rate of the Recovery Instance in Mbps.</p>
+    ///   - [`use_private_ip(Option<bool>)`](crate::input::UpdateFailbackReplicationConfigurationInput::use_private_ip): <p>Whether to use Private IP for the failback replication of the Recovery Instance.</p>
+    /// - On success, responds with [`UpdateFailbackReplicationConfigurationOutput`](crate::output::UpdateFailbackReplicationConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateFailbackReplicationConfigurationError>`](crate::error::UpdateFailbackReplicationConfigurationError)
     pub fn update_failback_replication_configuration(
         &self,
     ) -> fluent_builders::UpdateFailbackReplicationConfiguration<C, M, R> {
         fluent_builders::UpdateFailbackReplicationConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateLaunchConfiguration` operation.
+    /// Constructs a fluent builder for the [`UpdateLaunchConfiguration`](crate::client::fluent_builders::UpdateLaunchConfiguration) operation.
     ///
-    /// See [`UpdateLaunchConfiguration`](crate::client::fluent_builders::UpdateLaunchConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateLaunchConfigurationInput`](crate::input::UpdateLaunchConfigurationInput) with field(s):
+    ///   - [`source_server_id(Option<String>)`](crate::input::UpdateLaunchConfigurationInput::source_server_id): <p>The ID of the Source Server that we want to retrieve a Launch Configuration for.</p>
+    ///   - [`name(Option<String>)`](crate::input::UpdateLaunchConfigurationInput::name): <p>The name of the launch configuration.</p>
+    ///   - [`launch_disposition(Option<LaunchDisposition>)`](crate::input::UpdateLaunchConfigurationInput::launch_disposition): <p>The state of the Recovery Instance in EC2 after the recovery operation.</p>
+    ///   - [`target_instance_type_right_sizing_method(Option<TargetInstanceTypeRightSizingMethod>)`](crate::input::UpdateLaunchConfigurationInput::target_instance_type_right_sizing_method): <p>Whether Elastic Disaster Recovery should try to automatically choose the instance type that best matches the OS, CPU, and RAM of your Source Server.</p>
+    ///   - [`copy_private_ip(Option<bool>)`](crate::input::UpdateLaunchConfigurationInput::copy_private_ip): <p>Whether we should copy the Private IP of the Source Server to the Recovery Instance.</p>
+    ///   - [`copy_tags(Option<bool>)`](crate::input::UpdateLaunchConfigurationInput::copy_tags): <p>Whether we want to copy the tags of the Source Server to the EC2 machine of the Recovery Instance.</p>
+    ///   - [`licensing(Option<Licensing>)`](crate::input::UpdateLaunchConfigurationInput::licensing): <p>The licensing configuration to be used for this launch configuration.</p>
+    /// - On success, responds with [`UpdateLaunchConfigurationOutput`](crate::output::UpdateLaunchConfigurationOutput) with field(s):
+    ///   - [`source_server_id(Option<String>)`](crate::output::UpdateLaunchConfigurationOutput::source_server_id): <p>The ID of the Source Server for this launch configuration.</p>
+    ///   - [`name(Option<String>)`](crate::output::UpdateLaunchConfigurationOutput::name): <p>The name of the launch configuration.</p>
+    ///   - [`ec2_launch_template_id(Option<String>)`](crate::output::UpdateLaunchConfigurationOutput::ec2_launch_template_id): <p>The EC2 launch template ID of this launch configuration.</p>
+    ///   - [`launch_disposition(Option<LaunchDisposition>)`](crate::output::UpdateLaunchConfigurationOutput::launch_disposition): <p>The state of the Recovery Instance in EC2 after the recovery operation.</p>
+    ///   - [`target_instance_type_right_sizing_method(Option<TargetInstanceTypeRightSizingMethod>)`](crate::output::UpdateLaunchConfigurationOutput::target_instance_type_right_sizing_method): <p>Whether Elastic Disaster Recovery should try to automatically choose the instance type that best matches the OS, CPU, and RAM of your Source Server.</p>
+    ///   - [`copy_private_ip(Option<bool>)`](crate::output::UpdateLaunchConfigurationOutput::copy_private_ip): <p>Whether we should copy the Private IP of the Source Server to the Recovery Instance.</p>
+    ///   - [`copy_tags(Option<bool>)`](crate::output::UpdateLaunchConfigurationOutput::copy_tags): <p>Whether we want to copy the tags of the Source Server to the EC2 machine of the Recovery Instance.</p>
+    ///   - [`licensing(Option<Licensing>)`](crate::output::UpdateLaunchConfigurationOutput::licensing): <p>The licensing configuration to be used for this launch configuration.</p>
+    /// - On failure, responds with [`SdkError<UpdateLaunchConfigurationError>`](crate::error::UpdateLaunchConfigurationError)
     pub fn update_launch_configuration(
         &self,
     ) -> fluent_builders::UpdateLaunchConfiguration<C, M, R> {
         fluent_builders::UpdateLaunchConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateReplicationConfiguration` operation.
+    /// Constructs a fluent builder for the [`UpdateReplicationConfiguration`](crate::client::fluent_builders::UpdateReplicationConfiguration) operation.
     ///
-    /// See [`UpdateReplicationConfiguration`](crate::client::fluent_builders::UpdateReplicationConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateReplicationConfigurationInput`](crate::input::UpdateReplicationConfigurationInput) with field(s):
+    ///   - [`source_server_id(Option<String>)`](crate::input::UpdateReplicationConfigurationInput::source_server_id): <p>The ID of the Source Server for this Replication Configuration.</p>
+    ///   - [`name(Option<String>)`](crate::input::UpdateReplicationConfigurationInput::name): <p>The name of the Replication Configuration.</p>
+    ///   - [`staging_area_subnet_id(Option<String>)`](crate::input::UpdateReplicationConfigurationInput::staging_area_subnet_id): <p>The subnet to be used by the replication staging area.</p>
+    ///   - [`associate_default_security_group(Option<bool>)`](crate::input::UpdateReplicationConfigurationInput::associate_default_security_group): <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration.</p>
+    ///   - [`replication_servers_security_groups_i_ds(Option<Vec<String>>)`](crate::input::UpdateReplicationConfigurationInput::replication_servers_security_groups_i_ds): <p>The security group IDs that will be used by the replication server.</p>
+    ///   - [`replication_server_instance_type(Option<String>)`](crate::input::UpdateReplicationConfigurationInput::replication_server_instance_type): <p>The instance type to be used for the replication server.</p>
+    ///   - [`use_dedicated_replication_server(Option<bool>)`](crate::input::UpdateReplicationConfigurationInput::use_dedicated_replication_server): <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
+    ///   - [`default_large_staging_disk_type(Option<ReplicationConfigurationDefaultLargeStagingDiskType>)`](crate::input::UpdateReplicationConfigurationInput::default_large_staging_disk_type): <p>The Staging Disk EBS volume type to be used during replication.</p>
+    ///   - [`replicated_disks(Option<Vec<ReplicationConfigurationReplicatedDisk>>)`](crate::input::UpdateReplicationConfigurationInput::replicated_disks): <p>The configuration of the disks of the Source Server to be replicated.</p>
+    ///   - [`ebs_encryption(Option<ReplicationConfigurationEbsEncryption>)`](crate::input::UpdateReplicationConfigurationInput::ebs_encryption): <p>The type of EBS encryption to be used during replication.</p>
+    ///   - [`ebs_encryption_key_arn(Option<String>)`](crate::input::UpdateReplicationConfigurationInput::ebs_encryption_key_arn): <p>The ARN of the EBS encryption key to be used during replication.</p>
+    ///   - [`bandwidth_throttling(i64)`](crate::input::UpdateReplicationConfigurationInput::bandwidth_throttling): <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
+    ///   - [`data_plane_routing(Option<ReplicationConfigurationDataPlaneRouting>)`](crate::input::UpdateReplicationConfigurationInput::data_plane_routing): <p>The data plane routing mechanism that will be used for replication.</p>
+    ///   - [`create_public_ip(Option<bool>)`](crate::input::UpdateReplicationConfigurationInput::create_public_ip): <p>Whether to create a Public IP for the Recovery Instance by default.</p>
+    ///   - [`staging_area_tags(Option<HashMap<String, String>>)`](crate::input::UpdateReplicationConfigurationInput::staging_area_tags): <p>A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.</p>
+    ///   - [`pit_policy(Option<Vec<PitPolicyRule>>)`](crate::input::UpdateReplicationConfigurationInput::pit_policy): <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
+    /// - On success, responds with [`UpdateReplicationConfigurationOutput`](crate::output::UpdateReplicationConfigurationOutput) with field(s):
+    ///   - [`source_server_id(Option<String>)`](crate::output::UpdateReplicationConfigurationOutput::source_server_id): <p>The ID of the Source Server for this Replication Configuration.</p>
+    ///   - [`name(Option<String>)`](crate::output::UpdateReplicationConfigurationOutput::name): <p>The name of the Replication Configuration.</p>
+    ///   - [`staging_area_subnet_id(Option<String>)`](crate::output::UpdateReplicationConfigurationOutput::staging_area_subnet_id): <p>The subnet to be used by the replication staging area.</p>
+    ///   - [`associate_default_security_group(Option<bool>)`](crate::output::UpdateReplicationConfigurationOutput::associate_default_security_group): <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration.</p>
+    ///   - [`replication_servers_security_groups_i_ds(Option<Vec<String>>)`](crate::output::UpdateReplicationConfigurationOutput::replication_servers_security_groups_i_ds): <p>The security group IDs that will be used by the replication server.</p>
+    ///   - [`replication_server_instance_type(Option<String>)`](crate::output::UpdateReplicationConfigurationOutput::replication_server_instance_type): <p>The instance type to be used for the replication server.</p>
+    ///   - [`use_dedicated_replication_server(Option<bool>)`](crate::output::UpdateReplicationConfigurationOutput::use_dedicated_replication_server): <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
+    ///   - [`default_large_staging_disk_type(Option<ReplicationConfigurationDefaultLargeStagingDiskType>)`](crate::output::UpdateReplicationConfigurationOutput::default_large_staging_disk_type): <p>The Staging Disk EBS volume type to be used during replication.</p>
+    ///   - [`replicated_disks(Option<Vec<ReplicationConfigurationReplicatedDisk>>)`](crate::output::UpdateReplicationConfigurationOutput::replicated_disks): <p>The configuration of the disks of the Source Server to be replicated.</p>
+    ///   - [`ebs_encryption(Option<ReplicationConfigurationEbsEncryption>)`](crate::output::UpdateReplicationConfigurationOutput::ebs_encryption): <p>The type of EBS encryption to be used during replication.</p>
+    ///   - [`ebs_encryption_key_arn(Option<String>)`](crate::output::UpdateReplicationConfigurationOutput::ebs_encryption_key_arn): <p>The ARN of the EBS encryption key to be used during replication.</p>
+    ///   - [`bandwidth_throttling(i64)`](crate::output::UpdateReplicationConfigurationOutput::bandwidth_throttling): <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
+    ///   - [`data_plane_routing(Option<ReplicationConfigurationDataPlaneRouting>)`](crate::output::UpdateReplicationConfigurationOutput::data_plane_routing): <p>The data plane routing mechanism that will be used for replication.</p>
+    ///   - [`create_public_ip(Option<bool>)`](crate::output::UpdateReplicationConfigurationOutput::create_public_ip): <p>Whether to create a Public IP for the Recovery Instance by default.</p>
+    ///   - [`staging_area_tags(Option<HashMap<String, String>>)`](crate::output::UpdateReplicationConfigurationOutput::staging_area_tags): <p>A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.</p>
+    ///   - [`pit_policy(Option<Vec<PitPolicyRule>>)`](crate::output::UpdateReplicationConfigurationOutput::pit_policy): <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
+    /// - On failure, responds with [`SdkError<UpdateReplicationConfigurationError>`](crate::error::UpdateReplicationConfigurationError)
     pub fn update_replication_configuration(
         &self,
     ) -> fluent_builders::UpdateReplicationConfiguration<C, M, R> {
         fluent_builders::UpdateReplicationConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateReplicationConfigurationTemplate` operation.
+    /// Constructs a fluent builder for the [`UpdateReplicationConfigurationTemplate`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate) operation.
     ///
-    /// See [`UpdateReplicationConfigurationTemplate`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateReplicationConfigurationTemplateInput`](crate::input::UpdateReplicationConfigurationTemplateInput) with field(s):
+    ///   - [`replication_configuration_template_id(Option<String>)`](crate::input::UpdateReplicationConfigurationTemplateInput::replication_configuration_template_id): <p>The Replication Configuration Template ID.</p>
+    ///   - [`arn(Option<String>)`](crate::input::UpdateReplicationConfigurationTemplateInput::arn): <p>The Replication Configuration Template ARN.</p>
+    ///   - [`staging_area_subnet_id(Option<String>)`](crate::input::UpdateReplicationConfigurationTemplateInput::staging_area_subnet_id): <p>The subnet to be used by the replication staging area.</p>
+    ///   - [`associate_default_security_group(Option<bool>)`](crate::input::UpdateReplicationConfigurationTemplateInput::associate_default_security_group): <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration Template.</p>
+    ///   - [`replication_servers_security_groups_i_ds(Option<Vec<String>>)`](crate::input::UpdateReplicationConfigurationTemplateInput::replication_servers_security_groups_i_ds): <p>The security group IDs that will be used by the replication server.</p>
+    ///   - [`replication_server_instance_type(Option<String>)`](crate::input::UpdateReplicationConfigurationTemplateInput::replication_server_instance_type): <p>The instance type to be used for the replication server.</p>
+    ///   - [`use_dedicated_replication_server(Option<bool>)`](crate::input::UpdateReplicationConfigurationTemplateInput::use_dedicated_replication_server): <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
+    ///   - [`default_large_staging_disk_type(Option<ReplicationConfigurationDefaultLargeStagingDiskType>)`](crate::input::UpdateReplicationConfigurationTemplateInput::default_large_staging_disk_type): <p>The Staging Disk EBS volume type to be used during replication.</p>
+    ///   - [`ebs_encryption(Option<ReplicationConfigurationEbsEncryption>)`](crate::input::UpdateReplicationConfigurationTemplateInput::ebs_encryption): <p>The type of EBS encryption to be used during replication.</p>
+    ///   - [`ebs_encryption_key_arn(Option<String>)`](crate::input::UpdateReplicationConfigurationTemplateInput::ebs_encryption_key_arn): <p>The ARN of the EBS encryption key to be used during replication.</p>
+    ///   - [`bandwidth_throttling(i64)`](crate::input::UpdateReplicationConfigurationTemplateInput::bandwidth_throttling): <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
+    ///   - [`data_plane_routing(Option<ReplicationConfigurationDataPlaneRouting>)`](crate::input::UpdateReplicationConfigurationTemplateInput::data_plane_routing): <p>The data plane routing mechanism that will be used for replication.</p>
+    ///   - [`create_public_ip(Option<bool>)`](crate::input::UpdateReplicationConfigurationTemplateInput::create_public_ip): <p>Whether to create a Public IP for the Recovery Instance by default.</p>
+    ///   - [`staging_area_tags(Option<HashMap<String, String>>)`](crate::input::UpdateReplicationConfigurationTemplateInput::staging_area_tags): <p>A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.</p>
+    ///   - [`pit_policy(Option<Vec<PitPolicyRule>>)`](crate::input::UpdateReplicationConfigurationTemplateInput::pit_policy): <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
+    /// - On success, responds with [`UpdateReplicationConfigurationTemplateOutput`](crate::output::UpdateReplicationConfigurationTemplateOutput) with field(s):
+    ///   - [`replication_configuration_template_id(Option<String>)`](crate::output::UpdateReplicationConfigurationTemplateOutput::replication_configuration_template_id): <p>The Replication Configuration Template ID.</p>
+    ///   - [`arn(Option<String>)`](crate::output::UpdateReplicationConfigurationTemplateOutput::arn): <p>The Replication Configuration Template ARN.</p>
+    ///   - [`staging_area_subnet_id(Option<String>)`](crate::output::UpdateReplicationConfigurationTemplateOutput::staging_area_subnet_id): <p>The subnet to be used by the replication staging area.</p>
+    ///   - [`associate_default_security_group(Option<bool>)`](crate::output::UpdateReplicationConfigurationTemplateOutput::associate_default_security_group): <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration Template.</p>
+    ///   - [`replication_servers_security_groups_i_ds(Option<Vec<String>>)`](crate::output::UpdateReplicationConfigurationTemplateOutput::replication_servers_security_groups_i_ds): <p>The security group IDs that will be used by the replication server.</p>
+    ///   - [`replication_server_instance_type(Option<String>)`](crate::output::UpdateReplicationConfigurationTemplateOutput::replication_server_instance_type): <p>The instance type to be used for the replication server.</p>
+    ///   - [`use_dedicated_replication_server(Option<bool>)`](crate::output::UpdateReplicationConfigurationTemplateOutput::use_dedicated_replication_server): <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
+    ///   - [`default_large_staging_disk_type(Option<ReplicationConfigurationDefaultLargeStagingDiskType>)`](crate::output::UpdateReplicationConfigurationTemplateOutput::default_large_staging_disk_type): <p>The Staging Disk EBS volume type to be used during replication.</p>
+    ///   - [`ebs_encryption(Option<ReplicationConfigurationEbsEncryption>)`](crate::output::UpdateReplicationConfigurationTemplateOutput::ebs_encryption): <p>The type of EBS encryption to be used during replication.</p>
+    ///   - [`ebs_encryption_key_arn(Option<String>)`](crate::output::UpdateReplicationConfigurationTemplateOutput::ebs_encryption_key_arn): <p>The ARN of the EBS encryption key to be used during replication.</p>
+    ///   - [`bandwidth_throttling(i64)`](crate::output::UpdateReplicationConfigurationTemplateOutput::bandwidth_throttling): <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
+    ///   - [`data_plane_routing(Option<ReplicationConfigurationDataPlaneRouting>)`](crate::output::UpdateReplicationConfigurationTemplateOutput::data_plane_routing): <p>The data plane routing mechanism that will be used for replication.</p>
+    ///   - [`create_public_ip(Option<bool>)`](crate::output::UpdateReplicationConfigurationTemplateOutput::create_public_ip): <p>Whether to create a Public IP for the Recovery Instance by default.</p>
+    ///   - [`staging_area_tags(Option<HashMap<String, String>>)`](crate::output::UpdateReplicationConfigurationTemplateOutput::staging_area_tags): <p>A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateReplicationConfigurationTemplateOutput::tags): <p>A set of tags to be associated with the Replication Configuration Template resource.</p>
+    ///   - [`pit_policy(Option<Vec<PitPolicyRule>>)`](crate::output::UpdateReplicationConfigurationTemplateOutput::pit_policy): <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
+    /// - On failure, responds with [`SdkError<UpdateReplicationConfigurationTemplateError>`](crate::error::UpdateReplicationConfigurationTemplateError)
     pub fn update_replication_configuration_template(
         &self,
     ) -> fluent_builders::UpdateReplicationConfigurationTemplate<C, M, R> {

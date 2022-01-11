@@ -83,53 +83,86 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CloseTunnel` operation.
+    /// Constructs a fluent builder for the [`CloseTunnel`](crate::client::fluent_builders::CloseTunnel) operation.
     ///
-    /// See [`CloseTunnel`](crate::client::fluent_builders::CloseTunnel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CloseTunnelInput`](crate::input::CloseTunnelInput) with field(s):
+    ///   - [`tunnel_id(Option<String>)`](crate::input::CloseTunnelInput::tunnel_id): <p>The ID of the tunnel to close.</p>
+    ///   - [`delete(Option<bool>)`](crate::input::CloseTunnelInput::delete): <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data immediately.</p>
+    /// - On success, responds with [`CloseTunnelOutput`](crate::output::CloseTunnelOutput)
+
+    /// - On failure, responds with [`SdkError<CloseTunnelError>`](crate::error::CloseTunnelError)
     pub fn close_tunnel(&self) -> fluent_builders::CloseTunnel<C, M, R> {
         fluent_builders::CloseTunnel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeTunnel` operation.
+    /// Constructs a fluent builder for the [`DescribeTunnel`](crate::client::fluent_builders::DescribeTunnel) operation.
     ///
-    /// See [`DescribeTunnel`](crate::client::fluent_builders::DescribeTunnel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeTunnelInput`](crate::input::DescribeTunnelInput) with field(s):
+    ///   - [`tunnel_id(Option<String>)`](crate::input::DescribeTunnelInput::tunnel_id): <p>The tunnel to describe.</p>
+    /// - On success, responds with [`DescribeTunnelOutput`](crate::output::DescribeTunnelOutput) with field(s):
+    ///   - [`tunnel(Option<Tunnel>)`](crate::output::DescribeTunnelOutput::tunnel): <p>The tunnel being described.</p>
+    /// - On failure, responds with [`SdkError<DescribeTunnelError>`](crate::error::DescribeTunnelError)
     pub fn describe_tunnel(&self) -> fluent_builders::DescribeTunnel<C, M, R> {
         fluent_builders::DescribeTunnel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The resource ARN.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags for the specified resource.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTunnels` operation.
-    ///
-    /// See [`ListTunnels`](crate::client::fluent_builders::ListTunnels) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListTunnels`](crate::client::fluent_builders::ListTunnels) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTunnels::into_paginator).
+    ///
+    /// - Takes [`ListTunnelsInput`](crate::input::ListTunnelsInput) with field(s):
+    ///   - [`thing_name(Option<String>)`](crate::input::ListTunnelsInput::thing_name): <p>The name of the IoT thing associated with the destination device.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListTunnelsInput::max_results): <p>The maximum number of results to return at once.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListTunnelsInput::next_token): <p>A token to retrieve the next set of results.</p>
+    /// - On success, responds with [`ListTunnelsOutput`](crate::output::ListTunnelsOutput) with field(s):
+    ///   - [`tunnel_summaries(Option<Vec<TunnelSummary>>)`](crate::output::ListTunnelsOutput::tunnel_summaries): <p>A short description of the tunnels in an AWS account.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTunnelsOutput::next_token): <p>A token to used to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListTunnelsError>`](crate::error::ListTunnelsError)
     pub fn list_tunnels(&self) -> fluent_builders::ListTunnels<C, M, R> {
         fluent_builders::ListTunnels::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `OpenTunnel` operation.
+    /// Constructs a fluent builder for the [`OpenTunnel`](crate::client::fluent_builders::OpenTunnel) operation.
     ///
-    /// See [`OpenTunnel`](crate::client::fluent_builders::OpenTunnel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`OpenTunnelInput`](crate::input::OpenTunnelInput) with field(s):
+    ///   - [`description(Option<String>)`](crate::input::OpenTunnelInput::description): <p>A short text description of the tunnel. </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::OpenTunnelInput::tags): <p>A collection of tag metadata.</p>
+    ///   - [`destination_config(Option<DestinationConfig>)`](crate::input::OpenTunnelInput::destination_config): <p>The destination configuration for the OpenTunnel request.</p>
+    ///   - [`timeout_config(Option<TimeoutConfig>)`](crate::input::OpenTunnelInput::timeout_config): <p>Timeout configuration for a tunnel.</p>
+    /// - On success, responds with [`OpenTunnelOutput`](crate::output::OpenTunnelOutput) with field(s):
+    ///   - [`tunnel_id(Option<String>)`](crate::output::OpenTunnelOutput::tunnel_id): <p>A unique alpha-numeric tunnel ID.</p>
+    ///   - [`tunnel_arn(Option<String>)`](crate::output::OpenTunnelOutput::tunnel_arn): <p>The Amazon Resource Name for the tunnel. The tunnel ARN format is <code>arn:aws:tunnel:   <region>    :    <account-id>     :tunnel/     <tunnel-id></tunnel-id>    </account-id>   </region></code> </p>
+    ///   - [`source_access_token(Option<String>)`](crate::output::OpenTunnelOutput::source_access_token): <p>The access token the source local proxy uses to connect to AWS IoT Secure Tunneling.</p>
+    ///   - [`destination_access_token(Option<String>)`](crate::output::OpenTunnelOutput::destination_access_token): <p>The access token the destination local proxy uses to connect to AWS IoT Secure Tunneling.</p>
+    /// - On failure, responds with [`SdkError<OpenTunnelError>`](crate::error::OpenTunnelError)
     pub fn open_tunnel(&self) -> fluent_builders::OpenTunnel<C, M, R> {
         fluent_builders::OpenTunnel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The ARN of the resource.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>The tags for the resource.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The resource ARN.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The keys of the tags to remove.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }

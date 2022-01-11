@@ -83,275 +83,579 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `ConfigureLogsForPlaybackConfiguration` operation.
+    /// Constructs a fluent builder for the [`ConfigureLogsForPlaybackConfiguration`](crate::client::fluent_builders::ConfigureLogsForPlaybackConfiguration) operation.
     ///
-    /// See [`ConfigureLogsForPlaybackConfiguration`](crate::client::fluent_builders::ConfigureLogsForPlaybackConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ConfigureLogsForPlaybackConfigurationInput`](crate::input::ConfigureLogsForPlaybackConfigurationInput) with field(s):
+    ///   - [`percent_enabled(i32)`](crate::input::ConfigureLogsForPlaybackConfigurationInput::percent_enabled): <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>  <p>Valid values: 0 - 100</p>
+    ///   - [`playback_configuration_name(Option<String>)`](crate::input::ConfigureLogsForPlaybackConfigurationInput::playback_configuration_name): <p>The name of the playback configuration.</p>
+    /// - On success, responds with [`ConfigureLogsForPlaybackConfigurationOutput`](crate::output::ConfigureLogsForPlaybackConfigurationOutput) with field(s):
+    ///   - [`percent_enabled(i32)`](crate::output::ConfigureLogsForPlaybackConfigurationOutput::percent_enabled): <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account.</p>
+    ///   - [`playback_configuration_name(Option<String>)`](crate::output::ConfigureLogsForPlaybackConfigurationOutput::playback_configuration_name): <p>The name of the playback configuration.</p>
+    /// - On failure, responds with [`SdkError<ConfigureLogsForPlaybackConfigurationError>`](crate::error::ConfigureLogsForPlaybackConfigurationError)
     pub fn configure_logs_for_playback_configuration(
         &self,
     ) -> fluent_builders::ConfigureLogsForPlaybackConfiguration<C, M, R> {
         fluent_builders::ConfigureLogsForPlaybackConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateChannel` operation.
+    /// Constructs a fluent builder for the [`CreateChannel`](crate::client::fluent_builders::CreateChannel) operation.
     ///
-    /// See [`CreateChannel`](crate::client::fluent_builders::CreateChannel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateChannelInput`](crate::input::CreateChannelInput) with field(s):
+    ///   - [`channel_name(Option<String>)`](crate::input::CreateChannelInput::channel_name): <p>The identifier for the channel you are working on.</p>
+    ///   - [`filler_slate(Option<SlateSource>)`](crate::input::CreateChannelInput::filler_slate): <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses a LINEAR PlaybackMode.</p>
+    ///   - [`outputs(Option<Vec<RequestOutputItem>>)`](crate::input::CreateChannelInput::outputs): <p>The channel's output properties.</p>
+    ///   - [`playback_mode(Option<PlaybackMode>)`](crate::input::CreateChannelInput::playback_mode): <p>The type of playback mode to use for this channel.</p>  <p>LINEAR - The programs in the schedule play once back-to-back in the schedule.</p>  <p>LOOP - The programs in the schedule play back-to-back in an endless loop. When the last program in the schedule stops playing, playback loops back to the first program in the schedule.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateChannelInput::tags): <p>The tags to assign to the channel.</p>
+    /// - On success, responds with [`CreateChannelOutput`](crate::output::CreateChannelOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateChannelOutput::arn): <p>The ARN of the channel.</p>
+    ///   - [`channel_name(Option<String>)`](crate::output::CreateChannelOutput::channel_name): <p>The name of the channel.</p>
+    ///   - [`channel_state(Option<ChannelState>)`](crate::output::CreateChannelOutput::channel_state): <p>Indicates whether the channel is in a running state or not.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::CreateChannelOutput::creation_time): <p>The timestamp of when the channel was created.</p>
+    ///   - [`filler_slate(Option<SlateSource>)`](crate::output::CreateChannelOutput::filler_slate): <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::CreateChannelOutput::last_modified_time): <p>The timestamp of when the channel was last modified.</p>
+    ///   - [`outputs(Option<Vec<ResponseOutputItem>>)`](crate::output::CreateChannelOutput::outputs): <p>The channel's output properties.</p>
+    ///   - [`playback_mode(Option<String>)`](crate::output::CreateChannelOutput::playback_mode): <p>The channel's playback mode.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateChannelOutput::tags): <p>The tags assigned to the channel.</p>
+    /// - On failure, responds with [`SdkError<CreateChannelError>`](crate::error::CreateChannelError)
     pub fn create_channel(&self) -> fluent_builders::CreateChannel<C, M, R> {
         fluent_builders::CreateChannel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreatePrefetchSchedule` operation.
+    /// Constructs a fluent builder for the [`CreatePrefetchSchedule`](crate::client::fluent_builders::CreatePrefetchSchedule) operation.
     ///
-    /// See [`CreatePrefetchSchedule`](crate::client::fluent_builders::CreatePrefetchSchedule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreatePrefetchScheduleInput`](crate::input::CreatePrefetchScheduleInput) with field(s):
+    ///   - [`consumption(Option<PrefetchConsumption>)`](crate::input::CreatePrefetchScheduleInput::consumption): <p>The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision server. Each consumption configuration contains an end time and an optional start time that define the <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.</p>
+    ///   - [`name(Option<String>)`](crate::input::CreatePrefetchScheduleInput::name): <p>The identifier for the playback configuration.</p>
+    ///   - [`playback_configuration_name(Option<String>)`](crate::input::CreatePrefetchScheduleInput::playback_configuration_name): <p>The name of the playback configuration.</p>
+    ///   - [`retrieval(Option<PrefetchRetrieval>)`](crate::input::CreatePrefetchScheduleInput::retrieval): <p>The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of prefetched ads will be retrieved and subsequently consumed for each ad break.</p>
+    ///   - [`stream_id(Option<String>)`](crate::input::CreatePrefetchScheduleInput::stream_id): <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If StreamId is specified, MediaTailor returns all of the prefetch schedules with an exact match on StreamId. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of StreamId.</p>
+    /// - On success, responds with [`CreatePrefetchScheduleOutput`](crate::output::CreatePrefetchScheduleOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreatePrefetchScheduleOutput::arn): <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
+    ///   - [`consumption(Option<PrefetchConsumption>)`](crate::output::CreatePrefetchScheduleOutput::consumption): <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
+    ///   - [`name(Option<String>)`](crate::output::CreatePrefetchScheduleOutput::name): <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
+    ///   - [`playback_configuration_name(Option<String>)`](crate::output::CreatePrefetchScheduleOutput::playback_configuration_name): <p>The name of the playback configuration to create the prefetch schedule for.</p>
+    ///   - [`retrieval(Option<PrefetchRetrieval>)`](crate::output::CreatePrefetchScheduleOutput::retrieval): <p>A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).</p>
+    ///   - [`stream_id(Option<String>)`](crate::output::CreatePrefetchScheduleOutput::stream_id): <p>An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.</p>
+    /// - On failure, responds with [`SdkError<CreatePrefetchScheduleError>`](crate::error::CreatePrefetchScheduleError)
     pub fn create_prefetch_schedule(&self) -> fluent_builders::CreatePrefetchSchedule<C, M, R> {
         fluent_builders::CreatePrefetchSchedule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateProgram` operation.
+    /// Constructs a fluent builder for the [`CreateProgram`](crate::client::fluent_builders::CreateProgram) operation.
     ///
-    /// See [`CreateProgram`](crate::client::fluent_builders::CreateProgram) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateProgramInput`](crate::input::CreateProgramInput) with field(s):
+    ///   - [`ad_breaks(Option<Vec<AdBreak>>)`](crate::input::CreateProgramInput::ad_breaks): <p>The ad break configuration settings.</p>
+    ///   - [`channel_name(Option<String>)`](crate::input::CreateProgramInput::channel_name): <p>The identifier for the channel you are working on.</p>
+    ///   - [`program_name(Option<String>)`](crate::input::CreateProgramInput::program_name): <p>The identifier for the program you are working on.</p>
+    ///   - [`schedule_configuration(Option<ScheduleConfiguration>)`](crate::input::CreateProgramInput::schedule_configuration): <p>The schedule configuration settings.</p>
+    ///   - [`source_location_name(Option<String>)`](crate::input::CreateProgramInput::source_location_name): <p>The name of the source location.</p>
+    ///   - [`vod_source_name(Option<String>)`](crate::input::CreateProgramInput::vod_source_name): <p>The name that's used to refer to a VOD source.</p>
+    /// - On success, responds with [`CreateProgramOutput`](crate::output::CreateProgramOutput) with field(s):
+    ///   - [`ad_breaks(Option<Vec<AdBreak>>)`](crate::output::CreateProgramOutput::ad_breaks): <p>The ad break configuration settings.</p>
+    ///   - [`arn(Option<String>)`](crate::output::CreateProgramOutput::arn): <p>The ARN of the program.</p>
+    ///   - [`channel_name(Option<String>)`](crate::output::CreateProgramOutput::channel_name): <p>The name of the channel that the program belongs to.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::CreateProgramOutput::creation_time): <p>The timestamp of when the program was created.</p>
+    ///   - [`program_name(Option<String>)`](crate::output::CreateProgramOutput::program_name): <p>The name of the program.</p>
+    ///   - [`scheduled_start_time(Option<DateTime>)`](crate::output::CreateProgramOutput::scheduled_start_time): <p>The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
+    ///   - [`source_location_name(Option<String>)`](crate::output::CreateProgramOutput::source_location_name): <p>The source location name.</p>
+    ///   - [`vod_source_name(Option<String>)`](crate::output::CreateProgramOutput::vod_source_name): <p>The name that's used to refer to a VOD source.</p>
+    /// - On failure, responds with [`SdkError<CreateProgramError>`](crate::error::CreateProgramError)
     pub fn create_program(&self) -> fluent_builders::CreateProgram<C, M, R> {
         fluent_builders::CreateProgram::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateSourceLocation` operation.
+    /// Constructs a fluent builder for the [`CreateSourceLocation`](crate::client::fluent_builders::CreateSourceLocation) operation.
     ///
-    /// See [`CreateSourceLocation`](crate::client::fluent_builders::CreateSourceLocation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateSourceLocationInput`](crate::input::CreateSourceLocationInput) with field(s):
+    ///   - [`access_configuration(Option<AccessConfiguration>)`](crate::input::CreateSourceLocationInput::access_configuration): <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
+    ///   - [`default_segment_delivery_configuration(Option<DefaultSegmentDeliveryConfiguration>)`](crate::input::CreateSourceLocationInput::default_segment_delivery_configuration): <p>The optional configuration for the server that serves segments.</p>
+    ///   - [`http_configuration(Option<HttpConfiguration>)`](crate::input::CreateSourceLocationInput::http_configuration): <p>The source's HTTP package configurations.</p>
+    ///   - [`source_location_name(Option<String>)`](crate::input::CreateSourceLocationInput::source_location_name): <p>The identifier for the source location you are working on.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateSourceLocationInput::tags): <p>The tags to assign to the source location.</p>
+    /// - On success, responds with [`CreateSourceLocationOutput`](crate::output::CreateSourceLocationOutput) with field(s):
+    ///   - [`access_configuration(Option<AccessConfiguration>)`](crate::output::CreateSourceLocationOutput::access_configuration): <p>The access configuration for the source location.</p>
+    ///   - [`arn(Option<String>)`](crate::output::CreateSourceLocationOutput::arn): <p>The ARN of the source location.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::CreateSourceLocationOutput::creation_time): <p>The timestamp that indicates when the source location was created.</p>
+    ///   - [`default_segment_delivery_configuration(Option<DefaultSegmentDeliveryConfiguration>)`](crate::output::CreateSourceLocationOutput::default_segment_delivery_configuration): <p>The default segment delivery configuration settings.</p>
+    ///   - [`http_configuration(Option<HttpConfiguration>)`](crate::output::CreateSourceLocationOutput::http_configuration): <p>The HTTP package configuration settings for the source location.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::CreateSourceLocationOutput::last_modified_time): <p>The timestamp that indicates when the source location was last modified.</p>
+    ///   - [`source_location_name(Option<String>)`](crate::output::CreateSourceLocationOutput::source_location_name): <p>The name of the source location.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateSourceLocationOutput::tags): <p>The tags assigned to the source location.</p>
+    /// - On failure, responds with [`SdkError<CreateSourceLocationError>`](crate::error::CreateSourceLocationError)
     pub fn create_source_location(&self) -> fluent_builders::CreateSourceLocation<C, M, R> {
         fluent_builders::CreateSourceLocation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateVodSource` operation.
+    /// Constructs a fluent builder for the [`CreateVodSource`](crate::client::fluent_builders::CreateVodSource) operation.
     ///
-    /// See [`CreateVodSource`](crate::client::fluent_builders::CreateVodSource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateVodSourceInput`](crate::input::CreateVodSourceInput) with field(s):
+    ///   - [`http_package_configurations(Option<Vec<HttpPackageConfiguration>>)`](crate::input::CreateVodSourceInput::http_package_configurations): <p>An array of HTTP package configuration parameters for this VOD source.</p>
+    ///   - [`source_location_name(Option<String>)`](crate::input::CreateVodSourceInput::source_location_name): <p>The identifier for the source location you are working on.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateVodSourceInput::tags): <p>The tags to assign to the VOD source.</p>
+    ///   - [`vod_source_name(Option<String>)`](crate::input::CreateVodSourceInput::vod_source_name): <p>The identifier for the VOD source you are working on.</p>
+    /// - On success, responds with [`CreateVodSourceOutput`](crate::output::CreateVodSourceOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateVodSourceOutput::arn): <p>The ARN of the VOD source.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::CreateVodSourceOutput::creation_time): <p>The timestamp that indicates when the VOD source was created.</p>
+    ///   - [`http_package_configurations(Option<Vec<HttpPackageConfiguration>>)`](crate::output::CreateVodSourceOutput::http_package_configurations): <p>The HTTP package configurations.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::CreateVodSourceOutput::last_modified_time): <p>The ARN for the VOD source.</p>
+    ///   - [`source_location_name(Option<String>)`](crate::output::CreateVodSourceOutput::source_location_name): <p>The name of the source location associated with the VOD source.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateVodSourceOutput::tags): <p>The tags assigned to the VOD source.</p>
+    ///   - [`vod_source_name(Option<String>)`](crate::output::CreateVodSourceOutput::vod_source_name): <p>The name of the VOD source.</p>
+    /// - On failure, responds with [`SdkError<CreateVodSourceError>`](crate::error::CreateVodSourceError)
     pub fn create_vod_source(&self) -> fluent_builders::CreateVodSource<C, M, R> {
         fluent_builders::CreateVodSource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteChannel` operation.
+    /// Constructs a fluent builder for the [`DeleteChannel`](crate::client::fluent_builders::DeleteChannel) operation.
     ///
-    /// See [`DeleteChannel`](crate::client::fluent_builders::DeleteChannel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteChannelInput`](crate::input::DeleteChannelInput) with field(s):
+    ///   - [`channel_name(Option<String>)`](crate::input::DeleteChannelInput::channel_name): <p>The identifier for the channel you are working on.</p>
+    /// - On success, responds with [`DeleteChannelOutput`](crate::output::DeleteChannelOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteChannelError>`](crate::error::DeleteChannelError)
     pub fn delete_channel(&self) -> fluent_builders::DeleteChannel<C, M, R> {
         fluent_builders::DeleteChannel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteChannelPolicy` operation.
+    /// Constructs a fluent builder for the [`DeleteChannelPolicy`](crate::client::fluent_builders::DeleteChannelPolicy) operation.
     ///
-    /// See [`DeleteChannelPolicy`](crate::client::fluent_builders::DeleteChannelPolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteChannelPolicyInput`](crate::input::DeleteChannelPolicyInput) with field(s):
+    ///   - [`channel_name(Option<String>)`](crate::input::DeleteChannelPolicyInput::channel_name): <p>The identifier for the channel you are working on.</p>
+    /// - On success, responds with [`DeleteChannelPolicyOutput`](crate::output::DeleteChannelPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteChannelPolicyError>`](crate::error::DeleteChannelPolicyError)
     pub fn delete_channel_policy(&self) -> fluent_builders::DeleteChannelPolicy<C, M, R> {
         fluent_builders::DeleteChannelPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeletePlaybackConfiguration` operation.
+    /// Constructs a fluent builder for the [`DeletePlaybackConfiguration`](crate::client::fluent_builders::DeletePlaybackConfiguration) operation.
     ///
-    /// See [`DeletePlaybackConfiguration`](crate::client::fluent_builders::DeletePlaybackConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeletePlaybackConfigurationInput`](crate::input::DeletePlaybackConfigurationInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeletePlaybackConfigurationInput::name): <p>The identifier for the playback configuration.</p>
+    /// - On success, responds with [`DeletePlaybackConfigurationOutput`](crate::output::DeletePlaybackConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<DeletePlaybackConfigurationError>`](crate::error::DeletePlaybackConfigurationError)
     pub fn delete_playback_configuration(
         &self,
     ) -> fluent_builders::DeletePlaybackConfiguration<C, M, R> {
         fluent_builders::DeletePlaybackConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeletePrefetchSchedule` operation.
+    /// Constructs a fluent builder for the [`DeletePrefetchSchedule`](crate::client::fluent_builders::DeletePrefetchSchedule) operation.
     ///
-    /// See [`DeletePrefetchSchedule`](crate::client::fluent_builders::DeletePrefetchSchedule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeletePrefetchScheduleInput`](crate::input::DeletePrefetchScheduleInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeletePrefetchScheduleInput::name): <p>The identifier for the playback configuration.</p>
+    ///   - [`playback_configuration_name(Option<String>)`](crate::input::DeletePrefetchScheduleInput::playback_configuration_name): <p>The name of the playback configuration.</p>
+    /// - On success, responds with [`DeletePrefetchScheduleOutput`](crate::output::DeletePrefetchScheduleOutput)
+
+    /// - On failure, responds with [`SdkError<DeletePrefetchScheduleError>`](crate::error::DeletePrefetchScheduleError)
     pub fn delete_prefetch_schedule(&self) -> fluent_builders::DeletePrefetchSchedule<C, M, R> {
         fluent_builders::DeletePrefetchSchedule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteProgram` operation.
+    /// Constructs a fluent builder for the [`DeleteProgram`](crate::client::fluent_builders::DeleteProgram) operation.
     ///
-    /// See [`DeleteProgram`](crate::client::fluent_builders::DeleteProgram) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteProgramInput`](crate::input::DeleteProgramInput) with field(s):
+    ///   - [`channel_name(Option<String>)`](crate::input::DeleteProgramInput::channel_name): <p>The identifier for the channel you are working on.</p>
+    ///   - [`program_name(Option<String>)`](crate::input::DeleteProgramInput::program_name): <p>The identifier for the program you are working on.</p>
+    /// - On success, responds with [`DeleteProgramOutput`](crate::output::DeleteProgramOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteProgramError>`](crate::error::DeleteProgramError)
     pub fn delete_program(&self) -> fluent_builders::DeleteProgram<C, M, R> {
         fluent_builders::DeleteProgram::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteSourceLocation` operation.
+    /// Constructs a fluent builder for the [`DeleteSourceLocation`](crate::client::fluent_builders::DeleteSourceLocation) operation.
     ///
-    /// See [`DeleteSourceLocation`](crate::client::fluent_builders::DeleteSourceLocation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteSourceLocationInput`](crate::input::DeleteSourceLocationInput) with field(s):
+    ///   - [`source_location_name(Option<String>)`](crate::input::DeleteSourceLocationInput::source_location_name): <p>The identifier for the source location you are working on.</p>
+    /// - On success, responds with [`DeleteSourceLocationOutput`](crate::output::DeleteSourceLocationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteSourceLocationError>`](crate::error::DeleteSourceLocationError)
     pub fn delete_source_location(&self) -> fluent_builders::DeleteSourceLocation<C, M, R> {
         fluent_builders::DeleteSourceLocation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteVodSource` operation.
+    /// Constructs a fluent builder for the [`DeleteVodSource`](crate::client::fluent_builders::DeleteVodSource) operation.
     ///
-    /// See [`DeleteVodSource`](crate::client::fluent_builders::DeleteVodSource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteVodSourceInput`](crate::input::DeleteVodSourceInput) with field(s):
+    ///   - [`source_location_name(Option<String>)`](crate::input::DeleteVodSourceInput::source_location_name): <p>The identifier for the source location you are working on.</p>
+    ///   - [`vod_source_name(Option<String>)`](crate::input::DeleteVodSourceInput::vod_source_name): <p>The identifier for the VOD source you are working on.</p>
+    /// - On success, responds with [`DeleteVodSourceOutput`](crate::output::DeleteVodSourceOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteVodSourceError>`](crate::error::DeleteVodSourceError)
     pub fn delete_vod_source(&self) -> fluent_builders::DeleteVodSource<C, M, R> {
         fluent_builders::DeleteVodSource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeChannel` operation.
+    /// Constructs a fluent builder for the [`DescribeChannel`](crate::client::fluent_builders::DescribeChannel) operation.
     ///
-    /// See [`DescribeChannel`](crate::client::fluent_builders::DescribeChannel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeChannelInput`](crate::input::DescribeChannelInput) with field(s):
+    ///   - [`channel_name(Option<String>)`](crate::input::DescribeChannelInput::channel_name): <p>The identifier for the channel you are working on.</p>
+    /// - On success, responds with [`DescribeChannelOutput`](crate::output::DescribeChannelOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::DescribeChannelOutput::arn): <p>The ARN of the channel.</p>
+    ///   - [`channel_name(Option<String>)`](crate::output::DescribeChannelOutput::channel_name): <p>The name of the channel.</p>
+    ///   - [`channel_state(Option<ChannelState>)`](crate::output::DescribeChannelOutput::channel_state): <p>Indicates whether the channel is in a running state or not.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeChannelOutput::creation_time): <p>The timestamp of when the channel was created.</p>
+    ///   - [`filler_slate(Option<SlateSource>)`](crate::output::DescribeChannelOutput::filler_slate): <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribeChannelOutput::last_modified_time): <p>The timestamp of when the channel was last modified.</p>
+    ///   - [`outputs(Option<Vec<ResponseOutputItem>>)`](crate::output::DescribeChannelOutput::outputs): <p>The channel's output properties.</p>
+    ///   - [`playback_mode(Option<String>)`](crate::output::DescribeChannelOutput::playback_mode): <p>The channel's playback mode.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeChannelOutput::tags): <p>The tags assigned to the channel.</p>
+    /// - On failure, responds with [`SdkError<DescribeChannelError>`](crate::error::DescribeChannelError)
     pub fn describe_channel(&self) -> fluent_builders::DescribeChannel<C, M, R> {
         fluent_builders::DescribeChannel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeProgram` operation.
+    /// Constructs a fluent builder for the [`DescribeProgram`](crate::client::fluent_builders::DescribeProgram) operation.
     ///
-    /// See [`DescribeProgram`](crate::client::fluent_builders::DescribeProgram) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeProgramInput`](crate::input::DescribeProgramInput) with field(s):
+    ///   - [`channel_name(Option<String>)`](crate::input::DescribeProgramInput::channel_name): <p>The identifier for the channel you are working on.</p>
+    ///   - [`program_name(Option<String>)`](crate::input::DescribeProgramInput::program_name): <p>The identifier for the program you are working on.</p>
+    /// - On success, responds with [`DescribeProgramOutput`](crate::output::DescribeProgramOutput) with field(s):
+    ///   - [`ad_breaks(Option<Vec<AdBreak>>)`](crate::output::DescribeProgramOutput::ad_breaks): <p>The ad break configuration settings.</p>
+    ///   - [`arn(Option<String>)`](crate::output::DescribeProgramOutput::arn): <p>The ARN of the program.</p>
+    ///   - [`channel_name(Option<String>)`](crate::output::DescribeProgramOutput::channel_name): <p>The name of the channel that the program belongs to.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeProgramOutput::creation_time): <p>The timestamp of when the program was created.</p>
+    ///   - [`program_name(Option<String>)`](crate::output::DescribeProgramOutput::program_name): <p>The name of the program.</p>
+    ///   - [`scheduled_start_time(Option<DateTime>)`](crate::output::DescribeProgramOutput::scheduled_start_time): <p>The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
+    ///   - [`source_location_name(Option<String>)`](crate::output::DescribeProgramOutput::source_location_name): <p>The source location name.</p>
+    ///   - [`vod_source_name(Option<String>)`](crate::output::DescribeProgramOutput::vod_source_name): <p>The name that's used to refer to a VOD source.</p>
+    /// - On failure, responds with [`SdkError<DescribeProgramError>`](crate::error::DescribeProgramError)
     pub fn describe_program(&self) -> fluent_builders::DescribeProgram<C, M, R> {
         fluent_builders::DescribeProgram::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeSourceLocation` operation.
+    /// Constructs a fluent builder for the [`DescribeSourceLocation`](crate::client::fluent_builders::DescribeSourceLocation) operation.
     ///
-    /// See [`DescribeSourceLocation`](crate::client::fluent_builders::DescribeSourceLocation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeSourceLocationInput`](crate::input::DescribeSourceLocationInput) with field(s):
+    ///   - [`source_location_name(Option<String>)`](crate::input::DescribeSourceLocationInput::source_location_name): <p>The identifier for the source location you are working on.</p>
+    /// - On success, responds with [`DescribeSourceLocationOutput`](crate::output::DescribeSourceLocationOutput) with field(s):
+    ///   - [`access_configuration(Option<AccessConfiguration>)`](crate::output::DescribeSourceLocationOutput::access_configuration): <p>The access configuration for the source location.</p>
+    ///   - [`arn(Option<String>)`](crate::output::DescribeSourceLocationOutput::arn): <p>The ARN of the source location.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeSourceLocationOutput::creation_time): <p>The timestamp that indicates when the source location was created.</p>
+    ///   - [`default_segment_delivery_configuration(Option<DefaultSegmentDeliveryConfiguration>)`](crate::output::DescribeSourceLocationOutput::default_segment_delivery_configuration): <p>The default segment delivery configuration settings.</p>
+    ///   - [`http_configuration(Option<HttpConfiguration>)`](crate::output::DescribeSourceLocationOutput::http_configuration): <p>The HTTP package configuration settings for the source location.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribeSourceLocationOutput::last_modified_time): <p>The timestamp that indicates when the source location was last modified.</p>
+    ///   - [`source_location_name(Option<String>)`](crate::output::DescribeSourceLocationOutput::source_location_name): <p>The name of the source location.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeSourceLocationOutput::tags): <p>The tags assigned to the source location.</p>
+    /// - On failure, responds with [`SdkError<DescribeSourceLocationError>`](crate::error::DescribeSourceLocationError)
     pub fn describe_source_location(&self) -> fluent_builders::DescribeSourceLocation<C, M, R> {
         fluent_builders::DescribeSourceLocation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeVodSource` operation.
+    /// Constructs a fluent builder for the [`DescribeVodSource`](crate::client::fluent_builders::DescribeVodSource) operation.
     ///
-    /// See [`DescribeVodSource`](crate::client::fluent_builders::DescribeVodSource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeVodSourceInput`](crate::input::DescribeVodSourceInput) with field(s):
+    ///   - [`source_location_name(Option<String>)`](crate::input::DescribeVodSourceInput::source_location_name): <p>The identifier for the source location you are working on.</p>
+    ///   - [`vod_source_name(Option<String>)`](crate::input::DescribeVodSourceInput::vod_source_name): <p>The identifier for the VOD source you are working on.</p>
+    /// - On success, responds with [`DescribeVodSourceOutput`](crate::output::DescribeVodSourceOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::DescribeVodSourceOutput::arn): <p>The ARN of the VOD source.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeVodSourceOutput::creation_time): <p>The timestamp that indicates when the VOD source was created.</p>
+    ///   - [`http_package_configurations(Option<Vec<HttpPackageConfiguration>>)`](crate::output::DescribeVodSourceOutput::http_package_configurations): <p>The HTTP package configurations.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribeVodSourceOutput::last_modified_time): <p>The ARN for the VOD source.</p>
+    ///   - [`source_location_name(Option<String>)`](crate::output::DescribeVodSourceOutput::source_location_name): <p>The name of the source location associated with the VOD source.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeVodSourceOutput::tags): <p>The tags assigned to the VOD source.</p>
+    ///   - [`vod_source_name(Option<String>)`](crate::output::DescribeVodSourceOutput::vod_source_name): <p>The name of the VOD source.</p>
+    /// - On failure, responds with [`SdkError<DescribeVodSourceError>`](crate::error::DescribeVodSourceError)
     pub fn describe_vod_source(&self) -> fluent_builders::DescribeVodSource<C, M, R> {
         fluent_builders::DescribeVodSource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetChannelPolicy` operation.
+    /// Constructs a fluent builder for the [`GetChannelPolicy`](crate::client::fluent_builders::GetChannelPolicy) operation.
     ///
-    /// See [`GetChannelPolicy`](crate::client::fluent_builders::GetChannelPolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetChannelPolicyInput`](crate::input::GetChannelPolicyInput) with field(s):
+    ///   - [`channel_name(Option<String>)`](crate::input::GetChannelPolicyInput::channel_name): <p>The identifier for the channel you are working on.</p>
+    /// - On success, responds with [`GetChannelPolicyOutput`](crate::output::GetChannelPolicyOutput) with field(s):
+    ///   - [`policy(Option<String>)`](crate::output::GetChannelPolicyOutput::policy): <p>The IAM policy for the channel.</p>
+    /// - On failure, responds with [`SdkError<GetChannelPolicyError>`](crate::error::GetChannelPolicyError)
     pub fn get_channel_policy(&self) -> fluent_builders::GetChannelPolicy<C, M, R> {
         fluent_builders::GetChannelPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetChannelSchedule` operation.
-    ///
-    /// See [`GetChannelSchedule`](crate::client::fluent_builders::GetChannelSchedule) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetChannelSchedule`](crate::client::fluent_builders::GetChannelSchedule) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetChannelSchedule::into_paginator).
+    ///
+    /// - Takes [`GetChannelScheduleInput`](crate::input::GetChannelScheduleInput) with field(s):
+    ///   - [`channel_name(Option<String>)`](crate::input::GetChannelScheduleInput::channel_name): <p>The identifier for the channel you are working on.</p>
+    ///   - [`duration_minutes(Option<String>)`](crate::input::GetChannelScheduleInput::duration_minutes): <p>The schedule duration in minutes. The maximum duration is 4320 minutes (three days).</p>
+    ///   - [`max_results(i32)`](crate::input::GetChannelScheduleInput::max_results): <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetChannelScheduleInput::next_token): <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+    /// - On success, responds with [`GetChannelScheduleOutput`](crate::output::GetChannelScheduleOutput) with field(s):
+    ///   - [`items(Option<Vec<ScheduleEntry>>)`](crate::output::GetChannelScheduleOutput::items): <p>An array of schedule entries for the channel.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetChannelScheduleOutput::next_token): <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+    /// - On failure, responds with [`SdkError<GetChannelScheduleError>`](crate::error::GetChannelScheduleError)
     pub fn get_channel_schedule(&self) -> fluent_builders::GetChannelSchedule<C, M, R> {
         fluent_builders::GetChannelSchedule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetPlaybackConfiguration` operation.
+    /// Constructs a fluent builder for the [`GetPlaybackConfiguration`](crate::client::fluent_builders::GetPlaybackConfiguration) operation.
     ///
-    /// See [`GetPlaybackConfiguration`](crate::client::fluent_builders::GetPlaybackConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetPlaybackConfigurationInput`](crate::input::GetPlaybackConfigurationInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::GetPlaybackConfigurationInput::name): <p>The identifier for the playback configuration.</p>
+    /// - On success, responds with [`GetPlaybackConfigurationOutput`](crate::output::GetPlaybackConfigurationOutput) with field(s):
+    ///   - [`ad_decision_server_url(Option<String>)`](crate::output::GetPlaybackConfigurationOutput::ad_decision_server_url): <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
+    ///   - [`avail_suppression(Option<AvailSuppression>)`](crate::output::GetPlaybackConfigurationOutput::avail_suppression): <p>The configuration for avail suppression, also known as ad suppression. For more information about ad suppression, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Suppression</a>.</p>
+    ///   - [`bumper(Option<Bumper>)`](crate::output::GetPlaybackConfigurationOutput::bumper): <p>The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of an ad break. To learn more about bumpers, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.</p>
+    ///   - [`cdn_configuration(Option<CdnConfiguration>)`](crate::output::GetPlaybackConfigurationOutput::cdn_configuration): <p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.</p>
+    ///   - [`configuration_aliases(Option<HashMap<String, HashMap<String, String>>>)`](crate::output::GetPlaybackConfigurationOutput::configuration_aliases): <p>The player parameters and aliases used as dynamic variables during session initialization. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain Variables</a>.</p>
+    ///   - [`dash_configuration(Option<DashConfiguration>)`](crate::output::GetPlaybackConfigurationOutput::dash_configuration): <p>The configuration for DASH content.</p>
+    ///   - [`hls_configuration(Option<HlsConfiguration>)`](crate::output::GetPlaybackConfigurationOutput::hls_configuration): <p>The configuration for HLS content.</p>
+    ///   - [`live_pre_roll_configuration(Option<LivePreRollConfiguration>)`](crate::output::GetPlaybackConfigurationOutput::live_pre_roll_configuration): <p>The configuration for pre-roll ad insertion.</p>
+    ///   - [`log_configuration(Option<LogConfiguration>)`](crate::output::GetPlaybackConfigurationOutput::log_configuration): <p>The Amazon CloudWatch log settings for a playback configuration.</p>
+    ///   - [`manifest_processing_rules(Option<ManifestProcessingRules>)`](crate::output::GetPlaybackConfigurationOutput::manifest_processing_rules): <p>The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.</p>
+    ///   - [`name(Option<String>)`](crate::output::GetPlaybackConfigurationOutput::name): <p>The identifier for the playback configuration.</p>
+    ///   - [`personalization_threshold_seconds(i32)`](crate::output::GetPlaybackConfigurationOutput::personalization_threshold_seconds): <p>Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration of underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is abandoned and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and VOD streams, rather than ad insertion, because it relies on an underlying content stream. For more information about ad break behavior, including ad replacement and insertion, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental MediaTailor</a>.</p>
+    ///   - [`playback_configuration_arn(Option<String>)`](crate::output::GetPlaybackConfigurationOutput::playback_configuration_arn): <p>The Amazon Resource Name (ARN) for the playback configuration.</p>
+    ///   - [`playback_endpoint_prefix(Option<String>)`](crate::output::GetPlaybackConfigurationOutput::playback_endpoint_prefix): <p>The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting.</p>
+    ///   - [`session_initialization_endpoint_prefix(Option<String>)`](crate::output::GetPlaybackConfigurationOutput::session_initialization_endpoint_prefix): <p>The URL that the player uses to initialize a session that uses client-side reporting.</p>
+    ///   - [`slate_ad_url(Option<String>)`](crate::output::GetPlaybackConfigurationOutput::slate_ad_url): <p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID playback configurations. For VPAID, the slate is required because MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetPlaybackConfigurationOutput::tags): <p>The tags assigned to the playback configuration.</p>
+    ///   - [`transcode_profile_name(Option<String>)`](crate::output::GetPlaybackConfigurationOutput::transcode_profile_name): <p>The name that is used to associate this playback configuration with a custom transcode profile. This overrides the dynamic transcoding defaults of MediaTailor. Use this only if you have already set up custom profiles with the help of AWS Support.</p>
+    ///   - [`video_content_source_url(Option<String>)`](crate::output::GetPlaybackConfigurationOutput::video_content_source_url): <p>The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.</p>
+    /// - On failure, responds with [`SdkError<GetPlaybackConfigurationError>`](crate::error::GetPlaybackConfigurationError)
     pub fn get_playback_configuration(&self) -> fluent_builders::GetPlaybackConfiguration<C, M, R> {
         fluent_builders::GetPlaybackConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetPrefetchSchedule` operation.
+    /// Constructs a fluent builder for the [`GetPrefetchSchedule`](crate::client::fluent_builders::GetPrefetchSchedule) operation.
     ///
-    /// See [`GetPrefetchSchedule`](crate::client::fluent_builders::GetPrefetchSchedule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetPrefetchScheduleInput`](crate::input::GetPrefetchScheduleInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::GetPrefetchScheduleInput::name): <p>The identifier for the playback configuration.</p>
+    ///   - [`playback_configuration_name(Option<String>)`](crate::input::GetPrefetchScheduleInput::playback_configuration_name): <p>The name of the playback configuration.</p>
+    /// - On success, responds with [`GetPrefetchScheduleOutput`](crate::output::GetPrefetchScheduleOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::GetPrefetchScheduleOutput::arn): <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
+    ///   - [`consumption(Option<PrefetchConsumption>)`](crate::output::GetPrefetchScheduleOutput::consumption): <p>Consumption settings determine how, and when, MediaTailor places the prefetched ads into ad breaks. Ad consumption occurs within a span of time that you define, called a <i>consumption window</i>. You can designate which ad breaks that MediaTailor fills with prefetch ads by setting avail matching criteria.</p>
+    ///   - [`name(Option<String>)`](crate::output::GetPrefetchScheduleOutput::name): <p>The name of the prefetch schedule. The name must be unique among all prefetch schedules that are associated with the specified playback configuration.</p>
+    ///   - [`playback_configuration_name(Option<String>)`](crate::output::GetPrefetchScheduleOutput::playback_configuration_name): <p>The name of the playback configuration to create the prefetch schedule for.</p>
+    ///   - [`retrieval(Option<PrefetchRetrieval>)`](crate::output::GetPrefetchScheduleOutput::retrieval): <p>A complex type that contains settings for prefetch retrieval from the ad decision server (ADS).</p>
+    ///   - [`stream_id(Option<String>)`](crate::output::GetPrefetchScheduleOutput::stream_id): <p>An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.</p>
+    /// - On failure, responds with [`SdkError<GetPrefetchScheduleError>`](crate::error::GetPrefetchScheduleError)
     pub fn get_prefetch_schedule(&self) -> fluent_builders::GetPrefetchSchedule<C, M, R> {
         fluent_builders::GetPrefetchSchedule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAlerts` operation.
-    ///
-    /// See [`ListAlerts`](crate::client::fluent_builders::ListAlerts) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListAlerts`](crate::client::fluent_builders::ListAlerts) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAlerts::into_paginator).
+    ///
+    /// - Takes [`ListAlertsInput`](crate::input::ListAlertsInput) with field(s):
+    ///   - [`max_results(i32)`](crate::input::ListAlertsInput::max_results): <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListAlertsInput::next_token): <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListAlertsInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    /// - On success, responds with [`ListAlertsOutput`](crate::output::ListAlertsOutput) with field(s):
+    ///   - [`items(Option<Vec<Alert>>)`](crate::output::ListAlertsOutput::items): <p>An array of alerts that are associated with this resource.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAlertsOutput::next_token): <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ListAlertsError>`](crate::error::ListAlertsError)
     pub fn list_alerts(&self) -> fluent_builders::ListAlerts<C, M, R> {
         fluent_builders::ListAlerts::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListChannels` operation.
-    ///
-    /// See [`ListChannels`](crate::client::fluent_builders::ListChannels) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListChannels`](crate::client::fluent_builders::ListChannels) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChannels::into_paginator).
+    ///
+    /// - Takes [`ListChannelsInput`](crate::input::ListChannelsInput) with field(s):
+    ///   - [`max_results(i32)`](crate::input::ListChannelsInput::max_results): <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListChannelsInput::next_token): <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+    /// - On success, responds with [`ListChannelsOutput`](crate::output::ListChannelsOutput) with field(s):
+    ///   - [`items(Option<Vec<Channel>>)`](crate::output::ListChannelsOutput::items): <p>An array of channels that are associated with this account.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListChannelsOutput::next_token): <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ListChannelsError>`](crate::error::ListChannelsError)
     pub fn list_channels(&self) -> fluent_builders::ListChannels<C, M, R> {
         fluent_builders::ListChannels::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPlaybackConfigurations` operation.
-    ///
-    /// See [`ListPlaybackConfigurations`](crate::client::fluent_builders::ListPlaybackConfigurations) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListPlaybackConfigurations`](crate::client::fluent_builders::ListPlaybackConfigurations) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPlaybackConfigurations::into_paginator).
+    ///
+    /// - Takes [`ListPlaybackConfigurationsInput`](crate::input::ListPlaybackConfigurationsInput) with field(s):
+    ///   - [`max_results(i32)`](crate::input::ListPlaybackConfigurationsInput::max_results): <p>Maximum number of records to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListPlaybackConfigurationsInput::next_token): <p>Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+    /// - On success, responds with [`ListPlaybackConfigurationsOutput`](crate::output::ListPlaybackConfigurationsOutput) with field(s):
+    ///   - [`items(Option<Vec<PlaybackConfiguration>>)`](crate::output::ListPlaybackConfigurationsOutput::items): <p>Array of playback configurations. This might be all the available configurations or a subset, depending on the settings that you provide and the total number of configurations stored.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPlaybackConfigurationsOutput::next_token): <p>Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ListPlaybackConfigurationsError>`](crate::error::ListPlaybackConfigurationsError)
     pub fn list_playback_configurations(
         &self,
     ) -> fluent_builders::ListPlaybackConfigurations<C, M, R> {
         fluent_builders::ListPlaybackConfigurations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPrefetchSchedules` operation.
-    ///
-    /// See [`ListPrefetchSchedules`](crate::client::fluent_builders::ListPrefetchSchedules) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListPrefetchSchedules`](crate::client::fluent_builders::ListPrefetchSchedules) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPrefetchSchedules::into_paginator).
+    ///
+    /// - Takes [`ListPrefetchSchedulesInput`](crate::input::ListPrefetchSchedulesInput) with field(s):
+    ///   - [`max_results(i32)`](crate::input::ListPrefetchSchedulesInput::max_results): <p>The maximum number of prefetch schedules that you want MediaTailor to return in response to the current request. If the playback configuration has more than MaxResults prefetch schedules, use the value of NextToken in the response to get the next page of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListPrefetchSchedulesInput::next_token): <p>(Optional) If the playback configuration has more than MaxResults prefetch schedules, use NextToken to get the second and subsequent pages of results.</p>  <p>For the first ListPrefetchSchedulesRequest request, omit this value.</p>  <p>For the second and subsequent requests, get the value of NextToken from the previous response and specify that value for NextToken in the request.</p>  <p>If the previous response didn't include a NextToken element, there are no more prefetch schedules to get.</p>
+    ///   - [`playback_configuration_name(Option<String>)`](crate::input::ListPrefetchSchedulesInput::playback_configuration_name): <p>The name of the playback configuration.</p>
+    ///   - [`stream_id(Option<String>)`](crate::input::ListPrefetchSchedulesInput::stream_id): <p>An optional filtering parameter whereby MediaTailor filters the prefetch schedules to include only specific streams.</p>
+    /// - On success, responds with [`ListPrefetchSchedulesOutput`](crate::output::ListPrefetchSchedulesOutput) with field(s):
+    ///   - [`items(Option<Vec<PrefetchSchedule>>)`](crate::output::ListPrefetchSchedulesOutput::items): <p>Lists the prefetch schedules. An empty Items list doesn't mean there aren't more items to fetch, just that that page was empty.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPrefetchSchedulesOutput::next_token): <p>The value that you will use forNextToken in the next ListPrefetchSchedulesRequest request.</p>
+    /// - On failure, responds with [`SdkError<ListPrefetchSchedulesError>`](crate::error::ListPrefetchSchedulesError)
     pub fn list_prefetch_schedules(&self) -> fluent_builders::ListPrefetchSchedules<C, M, R> {
         fluent_builders::ListPrefetchSchedules::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSourceLocations` operation.
-    ///
-    /// See [`ListSourceLocations`](crate::client::fluent_builders::ListSourceLocations) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListSourceLocations`](crate::client::fluent_builders::ListSourceLocations) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSourceLocations::into_paginator).
+    ///
+    /// - Takes [`ListSourceLocationsInput`](crate::input::ListSourceLocationsInput) with field(s):
+    ///   - [`max_results(i32)`](crate::input::ListSourceLocationsInput::max_results): <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListSourceLocationsInput::next_token): <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+    /// - On success, responds with [`ListSourceLocationsOutput`](crate::output::ListSourceLocationsOutput) with field(s):
+    ///   - [`items(Option<Vec<SourceLocation>>)`](crate::output::ListSourceLocationsOutput::items): <p>An array of source locations.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSourceLocationsOutput::next_token): <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ListSourceLocationsError>`](crate::error::ListSourceLocationsError)
     pub fn list_source_locations(&self) -> fluent_builders::ListSourceLocations<C, M, R> {
         fluent_builders::ListSourceLocations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A comma-separated list of tag key:value pairs.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListVodSources` operation.
-    ///
-    /// See [`ListVodSources`](crate::client::fluent_builders::ListVodSources) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListVodSources`](crate::client::fluent_builders::ListVodSources) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListVodSources::into_paginator).
+    ///
+    /// - Takes [`ListVodSourcesInput`](crate::input::ListVodSourcesInput) with field(s):
+    ///   - [`max_results(i32)`](crate::input::ListVodSourcesInput::max_results): <p>Upper bound on number of records to return. The maximum number of results is 100.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListVodSourcesInput::next_token): <p>Pagination token from the GET list request. Use the token to fetch the next page of results.</p>
+    ///   - [`source_location_name(Option<String>)`](crate::input::ListVodSourcesInput::source_location_name): <p>The identifier for the source location you are working on.</p>
+    /// - On success, responds with [`ListVodSourcesOutput`](crate::output::ListVodSourcesOutput) with field(s):
+    ///   - [`items(Option<Vec<VodSource>>)`](crate::output::ListVodSourcesOutput::items): <p>Lists the VOD sources.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListVodSourcesOutput::next_token): <p>Pagination token from the list request. Use the token to fetch the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ListVodSourcesError>`](crate::error::ListVodSourcesError)
     pub fn list_vod_sources(&self) -> fluent_builders::ListVodSources<C, M, R> {
         fluent_builders::ListVodSources::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutChannelPolicy` operation.
+    /// Constructs a fluent builder for the [`PutChannelPolicy`](crate::client::fluent_builders::PutChannelPolicy) operation.
     ///
-    /// See [`PutChannelPolicy`](crate::client::fluent_builders::PutChannelPolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutChannelPolicyInput`](crate::input::PutChannelPolicyInput) with field(s):
+    ///   - [`channel_name(Option<String>)`](crate::input::PutChannelPolicyInput::channel_name): <p>The identifier for the channel you are working on.</p>
+    ///   - [`policy(Option<String>)`](crate::input::PutChannelPolicyInput::policy): <p>Adds an IAM role that determines the permissions of your channel.</p>
+    /// - On success, responds with [`PutChannelPolicyOutput`](crate::output::PutChannelPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<PutChannelPolicyError>`](crate::error::PutChannelPolicyError)
     pub fn put_channel_policy(&self) -> fluent_builders::PutChannelPolicy<C, M, R> {
         fluent_builders::PutChannelPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutPlaybackConfiguration` operation.
+    /// Constructs a fluent builder for the [`PutPlaybackConfiguration`](crate::client::fluent_builders::PutPlaybackConfiguration) operation.
     ///
-    /// See [`PutPlaybackConfiguration`](crate::client::fluent_builders::PutPlaybackConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutPlaybackConfigurationInput`](crate::input::PutPlaybackConfigurationInput) with field(s):
+    ///   - [`ad_decision_server_url(Option<String>)`](crate::input::PutPlaybackConfigurationInput::ad_decision_server_url): <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
+    ///   - [`avail_suppression(Option<AvailSuppression>)`](crate::input::PutPlaybackConfigurationInput::avail_suppression): <p>The configuration for avail suppression, also known as ad suppression. For more information about ad suppression, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Suppression</a>.</p>
+    ///   - [`bumper(Option<Bumper>)`](crate::input::PutPlaybackConfigurationInput::bumper): <p>The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of an ad break. To learn more about bumpers, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.</p>
+    ///   - [`cdn_configuration(Option<CdnConfiguration>)`](crate::input::PutPlaybackConfigurationInput::cdn_configuration): <p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.</p>
+    ///   - [`configuration_aliases(Option<HashMap<String, HashMap<String, String>>>)`](crate::input::PutPlaybackConfigurationInput::configuration_aliases): <p>The player parameters and aliases used as dynamic variables during session initialization. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain Variables</a>.</p>
+    ///   - [`dash_configuration(Option<DashConfigurationForPut>)`](crate::input::PutPlaybackConfigurationInput::dash_configuration): <p>The configuration for DASH content.</p>
+    ///   - [`live_pre_roll_configuration(Option<LivePreRollConfiguration>)`](crate::input::PutPlaybackConfigurationInput::live_pre_roll_configuration): <p>The configuration for pre-roll ad insertion.</p>
+    ///   - [`manifest_processing_rules(Option<ManifestProcessingRules>)`](crate::input::PutPlaybackConfigurationInput::manifest_processing_rules): <p>The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.</p>
+    ///   - [`name(Option<String>)`](crate::input::PutPlaybackConfigurationInput::name): <p>The identifier for the playback configuration.</p>
+    ///   - [`personalization_threshold_seconds(i32)`](crate::input::PutPlaybackConfigurationInput::personalization_threshold_seconds): <p>Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration of underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is abandoned and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and VOD streams, rather than ad insertion, because it relies on an underlying content stream. For more information about ad break behavior, including ad replacement and insertion, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental MediaTailor</a>.</p>
+    ///   - [`slate_ad_url(Option<String>)`](crate::input::PutPlaybackConfigurationInput::slate_ad_url): <p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because MediaTailor provides it in the slots that are designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::PutPlaybackConfigurationInput::tags): <p>The tags to assign to the playback configuration.</p>
+    ///   - [`transcode_profile_name(Option<String>)`](crate::input::PutPlaybackConfigurationInput::transcode_profile_name): <p>The name that is used to associate this playback configuration with a custom transcode profile. This overrides the dynamic transcoding defaults of MediaTailor. Use this only if you have already set up custom profiles with the help of AWS Support.</p>
+    ///   - [`video_content_source_url(Option<String>)`](crate::input::PutPlaybackConfigurationInput::video_content_source_url): <p>The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.</p>
+    /// - On success, responds with [`PutPlaybackConfigurationOutput`](crate::output::PutPlaybackConfigurationOutput) with field(s):
+    ///   - [`ad_decision_server_url(Option<String>)`](crate::output::PutPlaybackConfigurationOutput::ad_decision_server_url): <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
+    ///   - [`avail_suppression(Option<AvailSuppression>)`](crate::output::PutPlaybackConfigurationOutput::avail_suppression): <p>The configuration for avail suppression, also known as ad suppression. For more information about ad suppression, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Suppression</a>.</p>
+    ///   - [`bumper(Option<Bumper>)`](crate::output::PutPlaybackConfigurationOutput::bumper): <p>The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of an ad break. To learn more about bumpers, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.</p>
+    ///   - [`cdn_configuration(Option<CdnConfiguration>)`](crate::output::PutPlaybackConfigurationOutput::cdn_configuration): <p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.</p>
+    ///   - [`configuration_aliases(Option<HashMap<String, HashMap<String, String>>>)`](crate::output::PutPlaybackConfigurationOutput::configuration_aliases): <p>The player parameters and aliases used as dynamic variables during session initialization. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain Variables</a>.</p>
+    ///   - [`dash_configuration(Option<DashConfiguration>)`](crate::output::PutPlaybackConfigurationOutput::dash_configuration): <p>The configuration for DASH content.</p>
+    ///   - [`hls_configuration(Option<HlsConfiguration>)`](crate::output::PutPlaybackConfigurationOutput::hls_configuration): <p>The configuration for HLS content.</p>
+    ///   - [`live_pre_roll_configuration(Option<LivePreRollConfiguration>)`](crate::output::PutPlaybackConfigurationOutput::live_pre_roll_configuration): <p>The configuration for pre-roll ad insertion.</p>
+    ///   - [`log_configuration(Option<LogConfiguration>)`](crate::output::PutPlaybackConfigurationOutput::log_configuration): <p>The Amazon CloudWatch log settings for a playback configuration.</p>
+    ///   - [`manifest_processing_rules(Option<ManifestProcessingRules>)`](crate::output::PutPlaybackConfigurationOutput::manifest_processing_rules): <p>The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.</p>
+    ///   - [`name(Option<String>)`](crate::output::PutPlaybackConfigurationOutput::name): <p>The identifier for the playback configuration.</p>
+    ///   - [`personalization_threshold_seconds(i32)`](crate::output::PutPlaybackConfigurationOutput::personalization_threshold_seconds): <p>Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration of underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is abandoned and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and VOD streams, rather than ad insertion, because it relies on an underlying content stream. For more information about ad break behavior, including ad replacement and insertion, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental MediaTailor</a>.</p>
+    ///   - [`playback_configuration_arn(Option<String>)`](crate::output::PutPlaybackConfigurationOutput::playback_configuration_arn): <p>The Amazon Resource Name (ARN) for the playback configuration.</p>
+    ///   - [`playback_endpoint_prefix(Option<String>)`](crate::output::PutPlaybackConfigurationOutput::playback_endpoint_prefix): <p>The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting.</p>
+    ///   - [`session_initialization_endpoint_prefix(Option<String>)`](crate::output::PutPlaybackConfigurationOutput::session_initialization_endpoint_prefix): <p>The URL that the player uses to initialize a session that uses client-side reporting.</p>
+    ///   - [`slate_ad_url(Option<String>)`](crate::output::PutPlaybackConfigurationOutput::slate_ad_url): <p>The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID playback configurations. For VPAID, the slate is required because MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::PutPlaybackConfigurationOutput::tags): <p>The tags assigned to the playback configuration.</p>
+    ///   - [`transcode_profile_name(Option<String>)`](crate::output::PutPlaybackConfigurationOutput::transcode_profile_name): <p>The name that is used to associate this playback configuration with a custom transcode profile. This overrides the dynamic transcoding defaults of MediaTailor. Use this only if you have already set up custom profiles with the help of AWS Support.</p>
+    ///   - [`video_content_source_url(Option<String>)`](crate::output::PutPlaybackConfigurationOutput::video_content_source_url): <p>The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.</p>
+    /// - On failure, responds with [`SdkError<PutPlaybackConfigurationError>`](crate::error::PutPlaybackConfigurationError)
     pub fn put_playback_configuration(&self) -> fluent_builders::PutPlaybackConfiguration<C, M, R> {
         fluent_builders::PutPlaybackConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartChannel` operation.
+    /// Constructs a fluent builder for the [`StartChannel`](crate::client::fluent_builders::StartChannel) operation.
     ///
-    /// See [`StartChannel`](crate::client::fluent_builders::StartChannel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartChannelInput`](crate::input::StartChannelInput) with field(s):
+    ///   - [`channel_name(Option<String>)`](crate::input::StartChannelInput::channel_name): <p>The identifier for the channel you are working on.</p>
+    /// - On success, responds with [`StartChannelOutput`](crate::output::StartChannelOutput)
+
+    /// - On failure, responds with [`SdkError<StartChannelError>`](crate::error::StartChannelError)
     pub fn start_channel(&self) -> fluent_builders::StartChannel<C, M, R> {
         fluent_builders::StartChannel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopChannel` operation.
+    /// Constructs a fluent builder for the [`StopChannel`](crate::client::fluent_builders::StopChannel) operation.
     ///
-    /// See [`StopChannel`](crate::client::fluent_builders::StopChannel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StopChannelInput`](crate::input::StopChannelInput) with field(s):
+    ///   - [`channel_name(Option<String>)`](crate::input::StopChannelInput::channel_name): <p>The identifier for the channel you are working on.</p>
+    /// - On success, responds with [`StopChannelOutput`](crate::output::StopChannelOutput)
+
+    /// - On failure, responds with [`SdkError<StopChannelError>`](crate::error::StopChannelError)
     pub fn stop_channel(&self) -> fluent_builders::StopChannel<C, M, R> {
         fluent_builders::StopChannel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>A comma-separated list of tag key:value pairs.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback configuration request.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>A comma-separated list of the tag keys to remove from the playback configuration.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateChannel` operation.
+    /// Constructs a fluent builder for the [`UpdateChannel`](crate::client::fluent_builders::UpdateChannel) operation.
     ///
-    /// See [`UpdateChannel`](crate::client::fluent_builders::UpdateChannel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateChannelInput`](crate::input::UpdateChannelInput) with field(s):
+    ///   - [`channel_name(Option<String>)`](crate::input::UpdateChannelInput::channel_name): <p>The identifier for the channel you are working on.</p>
+    ///   - [`outputs(Option<Vec<RequestOutputItem>>)`](crate::input::UpdateChannelInput::outputs): <p>The channel's output properties.</p>
+    /// - On success, responds with [`UpdateChannelOutput`](crate::output::UpdateChannelOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::UpdateChannelOutput::arn): <p>The ARN of the channel.</p>
+    ///   - [`channel_name(Option<String>)`](crate::output::UpdateChannelOutput::channel_name): <p>The name of the channel.</p>
+    ///   - [`channel_state(Option<ChannelState>)`](crate::output::UpdateChannelOutput::channel_state): <p>Indicates whether the channel is in a running state or not.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::UpdateChannelOutput::creation_time): <p>The timestamp of when the channel was created.</p>
+    ///   - [`filler_slate(Option<SlateSource>)`](crate::output::UpdateChannelOutput::filler_slate): <p>Contains information about the slate used to fill gaps between programs in the schedule.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::UpdateChannelOutput::last_modified_time): <p>The timestamp of when the channel was last modified.</p>
+    ///   - [`outputs(Option<Vec<ResponseOutputItem>>)`](crate::output::UpdateChannelOutput::outputs): <p>The channel's output properties.</p>
+    ///   - [`playback_mode(Option<String>)`](crate::output::UpdateChannelOutput::playback_mode): <p>The channel's playback mode.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateChannelOutput::tags): <p>The tags assigned to the channel.</p>
+    /// - On failure, responds with [`SdkError<UpdateChannelError>`](crate::error::UpdateChannelError)
     pub fn update_channel(&self) -> fluent_builders::UpdateChannel<C, M, R> {
         fluent_builders::UpdateChannel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateSourceLocation` operation.
+    /// Constructs a fluent builder for the [`UpdateSourceLocation`](crate::client::fluent_builders::UpdateSourceLocation) operation.
     ///
-    /// See [`UpdateSourceLocation`](crate::client::fluent_builders::UpdateSourceLocation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateSourceLocationInput`](crate::input::UpdateSourceLocationInput) with field(s):
+    ///   - [`access_configuration(Option<AccessConfiguration>)`](crate::input::UpdateSourceLocationInput::access_configuration): <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
+    ///   - [`default_segment_delivery_configuration(Option<DefaultSegmentDeliveryConfiguration>)`](crate::input::UpdateSourceLocationInput::default_segment_delivery_configuration): <p>The optional configuration for the host server that serves segments.</p>
+    ///   - [`http_configuration(Option<HttpConfiguration>)`](crate::input::UpdateSourceLocationInput::http_configuration): <p>The HTTP configuration for the source location.</p>
+    ///   - [`source_location_name(Option<String>)`](crate::input::UpdateSourceLocationInput::source_location_name): <p>The identifier for the source location you are working on.</p>
+    /// - On success, responds with [`UpdateSourceLocationOutput`](crate::output::UpdateSourceLocationOutput) with field(s):
+    ///   - [`access_configuration(Option<AccessConfiguration>)`](crate::output::UpdateSourceLocationOutput::access_configuration): <p>The access configuration for the source location.</p>
+    ///   - [`arn(Option<String>)`](crate::output::UpdateSourceLocationOutput::arn): <p>The ARN of the source location.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::UpdateSourceLocationOutput::creation_time): <p>The timestamp that indicates when the source location was created.</p>
+    ///   - [`default_segment_delivery_configuration(Option<DefaultSegmentDeliveryConfiguration>)`](crate::output::UpdateSourceLocationOutput::default_segment_delivery_configuration): <p>The default segment delivery configuration settings.</p>
+    ///   - [`http_configuration(Option<HttpConfiguration>)`](crate::output::UpdateSourceLocationOutput::http_configuration): <p>The HTTP package configuration settings for the source location.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::UpdateSourceLocationOutput::last_modified_time): <p>The timestamp that indicates when the source location was last modified.</p>
+    ///   - [`source_location_name(Option<String>)`](crate::output::UpdateSourceLocationOutput::source_location_name): <p>The name of the source location.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateSourceLocationOutput::tags): <p>The tags assigned to the source location.</p>
+    /// - On failure, responds with [`SdkError<UpdateSourceLocationError>`](crate::error::UpdateSourceLocationError)
     pub fn update_source_location(&self) -> fluent_builders::UpdateSourceLocation<C, M, R> {
         fluent_builders::UpdateSourceLocation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateVodSource` operation.
+    /// Constructs a fluent builder for the [`UpdateVodSource`](crate::client::fluent_builders::UpdateVodSource) operation.
     ///
-    /// See [`UpdateVodSource`](crate::client::fluent_builders::UpdateVodSource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateVodSourceInput`](crate::input::UpdateVodSourceInput) with field(s):
+    ///   - [`http_package_configurations(Option<Vec<HttpPackageConfiguration>>)`](crate::input::UpdateVodSourceInput::http_package_configurations): <p>An array of HTTP package configurations for the VOD source on this account.</p>
+    ///   - [`source_location_name(Option<String>)`](crate::input::UpdateVodSourceInput::source_location_name): <p>The identifier for the source location you are working on.</p>
+    ///   - [`vod_source_name(Option<String>)`](crate::input::UpdateVodSourceInput::vod_source_name): <p>The identifier for the VOD source you are working on.</p>
+    /// - On success, responds with [`UpdateVodSourceOutput`](crate::output::UpdateVodSourceOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::UpdateVodSourceOutput::arn): <p>The ARN of the VOD source.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::UpdateVodSourceOutput::creation_time): <p>The timestamp that indicates when the VOD source was created.</p>
+    ///   - [`http_package_configurations(Option<Vec<HttpPackageConfiguration>>)`](crate::output::UpdateVodSourceOutput::http_package_configurations): <p>The HTTP package configurations.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::UpdateVodSourceOutput::last_modified_time): <p>The ARN for the VOD source.</p>
+    ///   - [`source_location_name(Option<String>)`](crate::output::UpdateVodSourceOutput::source_location_name): <p>The name of the source location associated with the VOD source.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateVodSourceOutput::tags): <p>The tags assigned to the VOD source.</p>
+    ///   - [`vod_source_name(Option<String>)`](crate::output::UpdateVodSourceOutput::vod_source_name): <p>The name of the VOD source.</p>
+    /// - On failure, responds with [`SdkError<UpdateVodSourceError>`](crate::error::UpdateVodSourceError)
     pub fn update_vod_source(&self) -> fluent_builders::UpdateVodSource<C, M, R> {
         fluent_builders::UpdateVodSource::new(self.handle.clone())
     }

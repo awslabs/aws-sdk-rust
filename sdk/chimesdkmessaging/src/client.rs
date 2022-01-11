@@ -83,347 +83,619 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AssociateChannelFlow` operation.
+    /// Constructs a fluent builder for the [`AssociateChannelFlow`](crate::client::fluent_builders::AssociateChannelFlow) operation.
     ///
-    /// See [`AssociateChannelFlow`](crate::client::fluent_builders::AssociateChannelFlow) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateChannelFlowInput`](crate::input::AssociateChannelFlowInput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::input::AssociateChannelFlowInput::channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`channel_flow_arn(Option<String>)`](crate::input::AssociateChannelFlowInput::channel_flow_arn): <p>The ARN of the channel flow.</p>
+    ///   - [`chime_bearer(Option<String>)`](crate::input::AssociateChannelFlowInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
+    /// - On success, responds with [`AssociateChannelFlowOutput`](crate::output::AssociateChannelFlowOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateChannelFlowError>`](crate::error::AssociateChannelFlowError)
     pub fn associate_channel_flow(&self) -> fluent_builders::AssociateChannelFlow<C, M, R> {
         fluent_builders::AssociateChannelFlow::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchCreateChannelMembership` operation.
+    /// Constructs a fluent builder for the [`BatchCreateChannelMembership`](crate::client::fluent_builders::BatchCreateChannelMembership) operation.
     ///
-    /// See [`BatchCreateChannelMembership`](crate::client::fluent_builders::BatchCreateChannelMembership) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchCreateChannelMembershipInput`](crate::input::BatchCreateChannelMembershipInput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::input::BatchCreateChannelMembershipInput::channel_arn): <p>The ARN of the channel to which you're adding users.</p>
+    ///   - [`r#type(Option<ChannelMembershipType>)`](crate::input::BatchCreateChannelMembershipInput::r#type): <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
+    ///   - [`member_arns(Option<Vec<String>>)`](crate::input::BatchCreateChannelMembershipInput::member_arns): <p>The <code>AppInstanceUserArn</code>s of the members you want to add to the channel.</p>
+    ///   - [`chime_bearer(Option<String>)`](crate::input::BatchCreateChannelMembershipInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - On success, responds with [`BatchCreateChannelMembershipOutput`](crate::output::BatchCreateChannelMembershipOutput) with field(s):
+    ///   - [`batch_channel_memberships(Option<BatchChannelMemberships>)`](crate::output::BatchCreateChannelMembershipOutput::batch_channel_memberships): <p>The list of channel memberships in the response.</p>
+    ///   - [`errors(Option<Vec<BatchCreateChannelMembershipError>>)`](crate::output::BatchCreateChannelMembershipOutput::errors): <p>If the action fails for one or more of the memberships in the request, a list of the memberships is returned, along with error codes and error messages.</p>
+    /// - On failure, responds with [`SdkError<BatchCreateChannelMembershipError>`](crate::error::BatchCreateChannelMembershipError)
     pub fn batch_create_channel_membership(
         &self,
     ) -> fluent_builders::BatchCreateChannelMembership<C, M, R> {
         fluent_builders::BatchCreateChannelMembership::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ChannelFlowCallback` operation.
+    /// Constructs a fluent builder for the [`ChannelFlowCallback`](crate::client::fluent_builders::ChannelFlowCallback) operation.
     ///
-    /// See [`ChannelFlowCallback`](crate::client::fluent_builders::ChannelFlowCallback) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ChannelFlowCallbackInput`](crate::input::ChannelFlowCallbackInput) with field(s):
+    ///   - [`callback_id(Option<String>)`](crate::input::ChannelFlowCallbackInput::callback_id): <p>The identifier passed to the processor by the service when invoked. Use the identifier to call back the service.</p>
+    ///   - [`channel_arn(Option<String>)`](crate::input::ChannelFlowCallbackInput::channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`delete_resource(bool)`](crate::input::ChannelFlowCallbackInput::delete_resource): <p>When a processor determines that a message needs to be <code>DENIED</code>, pass this parameter with a value of true.</p>
+    ///   - [`channel_message(Option<ChannelMessageCallback>)`](crate::input::ChannelFlowCallbackInput::channel_message): <p>Stores information about the processed message.</p>
+    /// - On success, responds with [`ChannelFlowCallbackOutput`](crate::output::ChannelFlowCallbackOutput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::output::ChannelFlowCallbackOutput::channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`callback_id(Option<String>)`](crate::output::ChannelFlowCallbackOutput::callback_id): <p>The call back ID passed in the request.</p>
+    /// - On failure, responds with [`SdkError<ChannelFlowCallbackError>`](crate::error::ChannelFlowCallbackError)
     pub fn channel_flow_callback(&self) -> fluent_builders::ChannelFlowCallback<C, M, R> {
         fluent_builders::ChannelFlowCallback::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateChannel` operation.
+    /// Constructs a fluent builder for the [`CreateChannel`](crate::client::fluent_builders::CreateChannel) operation.
     ///
-    /// See [`CreateChannel`](crate::client::fluent_builders::CreateChannel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateChannelInput`](crate::input::CreateChannelInput) with field(s):
+    ///   - [`app_instance_arn(Option<String>)`](crate::input::CreateChannelInput::app_instance_arn): <p>The ARN of the channel request.</p>
+    ///   - [`name(Option<String>)`](crate::input::CreateChannelInput::name): <p>The name of the channel.</p>
+    ///   - [`mode(Option<ChannelMode>)`](crate::input::CreateChannelInput::mode): <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators, moderators, and channel members can add themselves and other members to unrestricted channels. Only administrators and moderators can add members to restricted channels.</p>
+    ///   - [`privacy(Option<ChannelPrivacy>)`](crate::input::CreateChannelInput::privacy): <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by users outside the channel. Public channels are discoverable by anyone in the <code>AppInstance</code>.</p>
+    ///   - [`metadata(Option<String>)`](crate::input::CreateChannelInput::metadata): <p>The metadata of the creation request. Limited to 1KB and UTF-8.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::CreateChannelInput::client_request_token): <p>The client token for the request. An <code>Idempotency</code> token.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateChannelInput::tags): <p>The tags for the creation request.</p>
+    ///   - [`chime_bearer(Option<String>)`](crate::input::CreateChannelInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - On success, responds with [`CreateChannelOutput`](crate::output::CreateChannelOutput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::output::CreateChannelOutput::channel_arn): <p>The ARN of the channel.</p>
+    /// - On failure, responds with [`SdkError<CreateChannelError>`](crate::error::CreateChannelError)
     pub fn create_channel(&self) -> fluent_builders::CreateChannel<C, M, R> {
         fluent_builders::CreateChannel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateChannelBan` operation.
+    /// Constructs a fluent builder for the [`CreateChannelBan`](crate::client::fluent_builders::CreateChannelBan) operation.
     ///
-    /// See [`CreateChannelBan`](crate::client::fluent_builders::CreateChannelBan) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateChannelBanInput`](crate::input::CreateChannelBanInput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::input::CreateChannelBanInput::channel_arn): <p>The ARN of the ban request.</p>
+    ///   - [`member_arn(Option<String>)`](crate::input::CreateChannelBanInput::member_arn): <p>The <code>AppInstanceUserArn</code> of the member being banned.</p>
+    ///   - [`chime_bearer(Option<String>)`](crate::input::CreateChannelBanInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - On success, responds with [`CreateChannelBanOutput`](crate::output::CreateChannelBanOutput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::output::CreateChannelBanOutput::channel_arn): <p>The ARN of the response to the ban request.</p>
+    ///   - [`member(Option<Identity>)`](crate::output::CreateChannelBanOutput::member): <p>The <code>ChannelArn</code> and <code>BannedIdentity</code> of the member in the ban response.</p>
+    /// - On failure, responds with [`SdkError<CreateChannelBanError>`](crate::error::CreateChannelBanError)
     pub fn create_channel_ban(&self) -> fluent_builders::CreateChannelBan<C, M, R> {
         fluent_builders::CreateChannelBan::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateChannelFlow` operation.
+    /// Constructs a fluent builder for the [`CreateChannelFlow`](crate::client::fluent_builders::CreateChannelFlow) operation.
     ///
-    /// See [`CreateChannelFlow`](crate::client::fluent_builders::CreateChannelFlow) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateChannelFlowInput`](crate::input::CreateChannelFlowInput) with field(s):
+    ///   - [`app_instance_arn(Option<String>)`](crate::input::CreateChannelFlowInput::app_instance_arn): <p>The ARN of the channel flow request.</p>
+    ///   - [`processors(Option<Vec<Processor>>)`](crate::input::CreateChannelFlowInput::processors): <p>Information about the processor Lambda functions.</p>
+    ///   - [`name(Option<String>)`](crate::input::CreateChannelFlowInput::name): <p>The name of the channel flow.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateChannelFlowInput::tags): <p>The tags for the creation request.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::CreateChannelFlowInput::client_request_token): <p>The client token for the request. An Idempotency token.</p>
+    /// - On success, responds with [`CreateChannelFlowOutput`](crate::output::CreateChannelFlowOutput) with field(s):
+    ///   - [`channel_flow_arn(Option<String>)`](crate::output::CreateChannelFlowOutput::channel_flow_arn): <p>The ARN of the channel flow.</p>
+    /// - On failure, responds with [`SdkError<CreateChannelFlowError>`](crate::error::CreateChannelFlowError)
     pub fn create_channel_flow(&self) -> fluent_builders::CreateChannelFlow<C, M, R> {
         fluent_builders::CreateChannelFlow::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateChannelMembership` operation.
+    /// Constructs a fluent builder for the [`CreateChannelMembership`](crate::client::fluent_builders::CreateChannelMembership) operation.
     ///
-    /// See [`CreateChannelMembership`](crate::client::fluent_builders::CreateChannelMembership) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateChannelMembershipInput`](crate::input::CreateChannelMembershipInput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::input::CreateChannelMembershipInput::channel_arn): <p>The ARN of the channel to which you're adding users.</p>
+    ///   - [`member_arn(Option<String>)`](crate::input::CreateChannelMembershipInput::member_arn): <p>The <code>AppInstanceUserArn</code> of the member you want to add to the channel.</p>
+    ///   - [`r#type(Option<ChannelMembershipType>)`](crate::input::CreateChannelMembershipInput::r#type): <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
+    ///   - [`chime_bearer(Option<String>)`](crate::input::CreateChannelMembershipInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - On success, responds with [`CreateChannelMembershipOutput`](crate::output::CreateChannelMembershipOutput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::output::CreateChannelMembershipOutput::channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`member(Option<Identity>)`](crate::output::CreateChannelMembershipOutput::member): <p>The ARN and metadata of the member being added.</p>
+    /// - On failure, responds with [`SdkError<CreateChannelMembershipError>`](crate::error::CreateChannelMembershipError)
     pub fn create_channel_membership(&self) -> fluent_builders::CreateChannelMembership<C, M, R> {
         fluent_builders::CreateChannelMembership::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateChannelModerator` operation.
+    /// Constructs a fluent builder for the [`CreateChannelModerator`](crate::client::fluent_builders::CreateChannelModerator) operation.
     ///
-    /// See [`CreateChannelModerator`](crate::client::fluent_builders::CreateChannelModerator) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateChannelModeratorInput`](crate::input::CreateChannelModeratorInput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::input::CreateChannelModeratorInput::channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`channel_moderator_arn(Option<String>)`](crate::input::CreateChannelModeratorInput::channel_moderator_arn): <p>The <code>AppInstanceUserArn</code> of the moderator.</p>
+    ///   - [`chime_bearer(Option<String>)`](crate::input::CreateChannelModeratorInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - On success, responds with [`CreateChannelModeratorOutput`](crate::output::CreateChannelModeratorOutput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::output::CreateChannelModeratorOutput::channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`channel_moderator(Option<Identity>)`](crate::output::CreateChannelModeratorOutput::channel_moderator): <p>The ARNs of the channel and the moderator.</p>
+    /// - On failure, responds with [`SdkError<CreateChannelModeratorError>`](crate::error::CreateChannelModeratorError)
     pub fn create_channel_moderator(&self) -> fluent_builders::CreateChannelModerator<C, M, R> {
         fluent_builders::CreateChannelModerator::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteChannel` operation.
+    /// Constructs a fluent builder for the [`DeleteChannel`](crate::client::fluent_builders::DeleteChannel) operation.
     ///
-    /// See [`DeleteChannel`](crate::client::fluent_builders::DeleteChannel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteChannelInput`](crate::input::DeleteChannelInput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::input::DeleteChannelInput::channel_arn): <p>The ARN of the channel being deleted.</p>
+    ///   - [`chime_bearer(Option<String>)`](crate::input::DeleteChannelInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - On success, responds with [`DeleteChannelOutput`](crate::output::DeleteChannelOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteChannelError>`](crate::error::DeleteChannelError)
     pub fn delete_channel(&self) -> fluent_builders::DeleteChannel<C, M, R> {
         fluent_builders::DeleteChannel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteChannelBan` operation.
+    /// Constructs a fluent builder for the [`DeleteChannelBan`](crate::client::fluent_builders::DeleteChannelBan) operation.
     ///
-    /// See [`DeleteChannelBan`](crate::client::fluent_builders::DeleteChannelBan) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteChannelBanInput`](crate::input::DeleteChannelBanInput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::input::DeleteChannelBanInput::channel_arn): <p>The ARN of the channel from which the <code>AppInstanceUser</code> was banned.</p>
+    ///   - [`member_arn(Option<String>)`](crate::input::DeleteChannelBanInput::member_arn): <p>The ARN of the <code>AppInstanceUser</code> that you want to reinstate.</p>
+    ///   - [`chime_bearer(Option<String>)`](crate::input::DeleteChannelBanInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - On success, responds with [`DeleteChannelBanOutput`](crate::output::DeleteChannelBanOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteChannelBanError>`](crate::error::DeleteChannelBanError)
     pub fn delete_channel_ban(&self) -> fluent_builders::DeleteChannelBan<C, M, R> {
         fluent_builders::DeleteChannelBan::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteChannelFlow` operation.
+    /// Constructs a fluent builder for the [`DeleteChannelFlow`](crate::client::fluent_builders::DeleteChannelFlow) operation.
     ///
-    /// See [`DeleteChannelFlow`](crate::client::fluent_builders::DeleteChannelFlow) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteChannelFlowInput`](crate::input::DeleteChannelFlowInput) with field(s):
+    ///   - [`channel_flow_arn(Option<String>)`](crate::input::DeleteChannelFlowInput::channel_flow_arn): <p>The ARN of the channel flow.</p>
+    /// - On success, responds with [`DeleteChannelFlowOutput`](crate::output::DeleteChannelFlowOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteChannelFlowError>`](crate::error::DeleteChannelFlowError)
     pub fn delete_channel_flow(&self) -> fluent_builders::DeleteChannelFlow<C, M, R> {
         fluent_builders::DeleteChannelFlow::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteChannelMembership` operation.
+    /// Constructs a fluent builder for the [`DeleteChannelMembership`](crate::client::fluent_builders::DeleteChannelMembership) operation.
     ///
-    /// See [`DeleteChannelMembership`](crate::client::fluent_builders::DeleteChannelMembership) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteChannelMembershipInput`](crate::input::DeleteChannelMembershipInput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::input::DeleteChannelMembershipInput::channel_arn): <p>The ARN of the channel from which you want to remove the user.</p>
+    ///   - [`member_arn(Option<String>)`](crate::input::DeleteChannelMembershipInput::member_arn): <p>The <code>AppInstanceUserArn</code> of the member that you're removing from the channel.</p>
+    ///   - [`chime_bearer(Option<String>)`](crate::input::DeleteChannelMembershipInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - On success, responds with [`DeleteChannelMembershipOutput`](crate::output::DeleteChannelMembershipOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteChannelMembershipError>`](crate::error::DeleteChannelMembershipError)
     pub fn delete_channel_membership(&self) -> fluent_builders::DeleteChannelMembership<C, M, R> {
         fluent_builders::DeleteChannelMembership::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteChannelMessage` operation.
+    /// Constructs a fluent builder for the [`DeleteChannelMessage`](crate::client::fluent_builders::DeleteChannelMessage) operation.
     ///
-    /// See [`DeleteChannelMessage`](crate::client::fluent_builders::DeleteChannelMessage) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteChannelMessageInput`](crate::input::DeleteChannelMessageInput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::input::DeleteChannelMessageInput::channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`message_id(Option<String>)`](crate::input::DeleteChannelMessageInput::message_id): <p>The ID of the message being deleted.</p>
+    ///   - [`chime_bearer(Option<String>)`](crate::input::DeleteChannelMessageInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - On success, responds with [`DeleteChannelMessageOutput`](crate::output::DeleteChannelMessageOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteChannelMessageError>`](crate::error::DeleteChannelMessageError)
     pub fn delete_channel_message(&self) -> fluent_builders::DeleteChannelMessage<C, M, R> {
         fluent_builders::DeleteChannelMessage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteChannelModerator` operation.
+    /// Constructs a fluent builder for the [`DeleteChannelModerator`](crate::client::fluent_builders::DeleteChannelModerator) operation.
     ///
-    /// See [`DeleteChannelModerator`](crate::client::fluent_builders::DeleteChannelModerator) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteChannelModeratorInput`](crate::input::DeleteChannelModeratorInput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::input::DeleteChannelModeratorInput::channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`channel_moderator_arn(Option<String>)`](crate::input::DeleteChannelModeratorInput::channel_moderator_arn): <p>The <code>AppInstanceUserArn</code> of the moderator being deleted.</p>
+    ///   - [`chime_bearer(Option<String>)`](crate::input::DeleteChannelModeratorInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - On success, responds with [`DeleteChannelModeratorOutput`](crate::output::DeleteChannelModeratorOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteChannelModeratorError>`](crate::error::DeleteChannelModeratorError)
     pub fn delete_channel_moderator(&self) -> fluent_builders::DeleteChannelModerator<C, M, R> {
         fluent_builders::DeleteChannelModerator::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeChannel` operation.
+    /// Constructs a fluent builder for the [`DescribeChannel`](crate::client::fluent_builders::DescribeChannel) operation.
     ///
-    /// See [`DescribeChannel`](crate::client::fluent_builders::DescribeChannel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeChannelInput`](crate::input::DescribeChannelInput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::input::DescribeChannelInput::channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`chime_bearer(Option<String>)`](crate::input::DescribeChannelInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - On success, responds with [`DescribeChannelOutput`](crate::output::DescribeChannelOutput) with field(s):
+    ///   - [`channel(Option<Channel>)`](crate::output::DescribeChannelOutput::channel): <p>The channel details.</p>
+    /// - On failure, responds with [`SdkError<DescribeChannelError>`](crate::error::DescribeChannelError)
     pub fn describe_channel(&self) -> fluent_builders::DescribeChannel<C, M, R> {
         fluent_builders::DescribeChannel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeChannelBan` operation.
+    /// Constructs a fluent builder for the [`DescribeChannelBan`](crate::client::fluent_builders::DescribeChannelBan) operation.
     ///
-    /// See [`DescribeChannelBan`](crate::client::fluent_builders::DescribeChannelBan) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeChannelBanInput`](crate::input::DescribeChannelBanInput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::input::DescribeChannelBanInput::channel_arn): <p>The ARN of the channel from which the user is banned.</p>
+    ///   - [`member_arn(Option<String>)`](crate::input::DescribeChannelBanInput::member_arn): <p>The <code>AppInstanceUserArn</code> of the member being banned.</p>
+    ///   - [`chime_bearer(Option<String>)`](crate::input::DescribeChannelBanInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - On success, responds with [`DescribeChannelBanOutput`](crate::output::DescribeChannelBanOutput) with field(s):
+    ///   - [`channel_ban(Option<ChannelBan>)`](crate::output::DescribeChannelBanOutput::channel_ban): <p>The details of the ban.</p>
+    /// - On failure, responds with [`SdkError<DescribeChannelBanError>`](crate::error::DescribeChannelBanError)
     pub fn describe_channel_ban(&self) -> fluent_builders::DescribeChannelBan<C, M, R> {
         fluent_builders::DescribeChannelBan::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeChannelFlow` operation.
+    /// Constructs a fluent builder for the [`DescribeChannelFlow`](crate::client::fluent_builders::DescribeChannelFlow) operation.
     ///
-    /// See [`DescribeChannelFlow`](crate::client::fluent_builders::DescribeChannelFlow) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeChannelFlowInput`](crate::input::DescribeChannelFlowInput) with field(s):
+    ///   - [`channel_flow_arn(Option<String>)`](crate::input::DescribeChannelFlowInput::channel_flow_arn): <p>The ARN of the channel flow.</p>
+    /// - On success, responds with [`DescribeChannelFlowOutput`](crate::output::DescribeChannelFlowOutput) with field(s):
+    ///   - [`channel_flow(Option<ChannelFlow>)`](crate::output::DescribeChannelFlowOutput::channel_flow): <p>The channel flow details.</p>
+    /// - On failure, responds with [`SdkError<DescribeChannelFlowError>`](crate::error::DescribeChannelFlowError)
     pub fn describe_channel_flow(&self) -> fluent_builders::DescribeChannelFlow<C, M, R> {
         fluent_builders::DescribeChannelFlow::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeChannelMembership` operation.
+    /// Constructs a fluent builder for the [`DescribeChannelMembership`](crate::client::fluent_builders::DescribeChannelMembership) operation.
     ///
-    /// See [`DescribeChannelMembership`](crate::client::fluent_builders::DescribeChannelMembership) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeChannelMembershipInput`](crate::input::DescribeChannelMembershipInput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::input::DescribeChannelMembershipInput::channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`member_arn(Option<String>)`](crate::input::DescribeChannelMembershipInput::member_arn): <p>The <code>AppInstanceUserArn</code> of the member.</p>
+    ///   - [`chime_bearer(Option<String>)`](crate::input::DescribeChannelMembershipInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - On success, responds with [`DescribeChannelMembershipOutput`](crate::output::DescribeChannelMembershipOutput) with field(s):
+    ///   - [`channel_membership(Option<ChannelMembership>)`](crate::output::DescribeChannelMembershipOutput::channel_membership): <p>The details of the membership.</p>
+    /// - On failure, responds with [`SdkError<DescribeChannelMembershipError>`](crate::error::DescribeChannelMembershipError)
     pub fn describe_channel_membership(
         &self,
     ) -> fluent_builders::DescribeChannelMembership<C, M, R> {
         fluent_builders::DescribeChannelMembership::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeChannelMembershipForAppInstanceUser` operation.
+    /// Constructs a fluent builder for the [`DescribeChannelMembershipForAppInstanceUser`](crate::client::fluent_builders::DescribeChannelMembershipForAppInstanceUser) operation.
     ///
-    /// See [`DescribeChannelMembershipForAppInstanceUser`](crate::client::fluent_builders::DescribeChannelMembershipForAppInstanceUser) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeChannelMembershipForAppInstanceUserInput`](crate::input::DescribeChannelMembershipForAppInstanceUserInput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::input::DescribeChannelMembershipForAppInstanceUserInput::channel_arn): <p>The ARN of the channel to which the user belongs.</p>
+    ///   - [`app_instance_user_arn(Option<String>)`](crate::input::DescribeChannelMembershipForAppInstanceUserInput::app_instance_user_arn): <p>The ARN of the user in a channel.</p>
+    ///   - [`chime_bearer(Option<String>)`](crate::input::DescribeChannelMembershipForAppInstanceUserInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - On success, responds with [`DescribeChannelMembershipForAppInstanceUserOutput`](crate::output::DescribeChannelMembershipForAppInstanceUserOutput) with field(s):
+    ///   - [`channel_membership(Option<ChannelMembershipForAppInstanceUserSummary>)`](crate::output::DescribeChannelMembershipForAppInstanceUserOutput::channel_membership): <p>The channel to which a user belongs.</p>
+    /// - On failure, responds with [`SdkError<DescribeChannelMembershipForAppInstanceUserError>`](crate::error::DescribeChannelMembershipForAppInstanceUserError)
     pub fn describe_channel_membership_for_app_instance_user(
         &self,
     ) -> fluent_builders::DescribeChannelMembershipForAppInstanceUser<C, M, R> {
         fluent_builders::DescribeChannelMembershipForAppInstanceUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeChannelModeratedByAppInstanceUser` operation.
+    /// Constructs a fluent builder for the [`DescribeChannelModeratedByAppInstanceUser`](crate::client::fluent_builders::DescribeChannelModeratedByAppInstanceUser) operation.
     ///
-    /// See [`DescribeChannelModeratedByAppInstanceUser`](crate::client::fluent_builders::DescribeChannelModeratedByAppInstanceUser) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeChannelModeratedByAppInstanceUserInput`](crate::input::DescribeChannelModeratedByAppInstanceUserInput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::input::DescribeChannelModeratedByAppInstanceUserInput::channel_arn): <p>The ARN of the moderated channel.</p>
+    ///   - [`app_instance_user_arn(Option<String>)`](crate::input::DescribeChannelModeratedByAppInstanceUserInput::app_instance_user_arn): <p>The ARN of the <code>AppInstanceUser</code> in the moderated channel.</p>
+    ///   - [`chime_bearer(Option<String>)`](crate::input::DescribeChannelModeratedByAppInstanceUserInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - On success, responds with [`DescribeChannelModeratedByAppInstanceUserOutput`](crate::output::DescribeChannelModeratedByAppInstanceUserOutput) with field(s):
+    ///   - [`channel(Option<ChannelModeratedByAppInstanceUserSummary>)`](crate::output::DescribeChannelModeratedByAppInstanceUserOutput::channel): <p>The moderated channel.</p>
+    /// - On failure, responds with [`SdkError<DescribeChannelModeratedByAppInstanceUserError>`](crate::error::DescribeChannelModeratedByAppInstanceUserError)
     pub fn describe_channel_moderated_by_app_instance_user(
         &self,
     ) -> fluent_builders::DescribeChannelModeratedByAppInstanceUser<C, M, R> {
         fluent_builders::DescribeChannelModeratedByAppInstanceUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeChannelModerator` operation.
+    /// Constructs a fluent builder for the [`DescribeChannelModerator`](crate::client::fluent_builders::DescribeChannelModerator) operation.
     ///
-    /// See [`DescribeChannelModerator`](crate::client::fluent_builders::DescribeChannelModerator) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeChannelModeratorInput`](crate::input::DescribeChannelModeratorInput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::input::DescribeChannelModeratorInput::channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`channel_moderator_arn(Option<String>)`](crate::input::DescribeChannelModeratorInput::channel_moderator_arn): <p>The <code>AppInstanceUserArn</code> of the channel moderator.</p>
+    ///   - [`chime_bearer(Option<String>)`](crate::input::DescribeChannelModeratorInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - On success, responds with [`DescribeChannelModeratorOutput`](crate::output::DescribeChannelModeratorOutput) with field(s):
+    ///   - [`channel_moderator(Option<ChannelModerator>)`](crate::output::DescribeChannelModeratorOutput::channel_moderator): <p>The details of the channel moderator.</p>
+    /// - On failure, responds with [`SdkError<DescribeChannelModeratorError>`](crate::error::DescribeChannelModeratorError)
     pub fn describe_channel_moderator(&self) -> fluent_builders::DescribeChannelModerator<C, M, R> {
         fluent_builders::DescribeChannelModerator::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateChannelFlow` operation.
+    /// Constructs a fluent builder for the [`DisassociateChannelFlow`](crate::client::fluent_builders::DisassociateChannelFlow) operation.
     ///
-    /// See [`DisassociateChannelFlow`](crate::client::fluent_builders::DisassociateChannelFlow) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateChannelFlowInput`](crate::input::DisassociateChannelFlowInput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::input::DisassociateChannelFlowInput::channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`channel_flow_arn(Option<String>)`](crate::input::DisassociateChannelFlowInput::channel_flow_arn): <p>The ARN of the channel flow.</p>
+    ///   - [`chime_bearer(Option<String>)`](crate::input::DisassociateChannelFlowInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
+    /// - On success, responds with [`DisassociateChannelFlowOutput`](crate::output::DisassociateChannelFlowOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateChannelFlowError>`](crate::error::DisassociateChannelFlowError)
     pub fn disassociate_channel_flow(&self) -> fluent_builders::DisassociateChannelFlow<C, M, R> {
         fluent_builders::DisassociateChannelFlow::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetChannelMembershipPreferences` operation.
+    /// Constructs a fluent builder for the [`GetChannelMembershipPreferences`](crate::client::fluent_builders::GetChannelMembershipPreferences) operation.
     ///
-    /// See [`GetChannelMembershipPreferences`](crate::client::fluent_builders::GetChannelMembershipPreferences) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetChannelMembershipPreferencesInput`](crate::input::GetChannelMembershipPreferencesInput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::input::GetChannelMembershipPreferencesInput::channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`member_arn(Option<String>)`](crate::input::GetChannelMembershipPreferencesInput::member_arn): <p>The <code>AppInstanceUserArn</code> of the member retrieving the preferences.</p>
+    ///   - [`chime_bearer(Option<String>)`](crate::input::GetChannelMembershipPreferencesInput::chime_bearer): <p>The <code>AppInstanceUserARN</code> of the user making the API call.</p>
+    /// - On success, responds with [`GetChannelMembershipPreferencesOutput`](crate::output::GetChannelMembershipPreferencesOutput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::output::GetChannelMembershipPreferencesOutput::channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`member(Option<Identity>)`](crate::output::GetChannelMembershipPreferencesOutput::member): <p>The details of a user.</p>
+    ///   - [`preferences(Option<ChannelMembershipPreferences>)`](crate::output::GetChannelMembershipPreferencesOutput::preferences): <p>The channel membership preferences for an <code>AppInstanceUser</code> .</p>
+    /// - On failure, responds with [`SdkError<GetChannelMembershipPreferencesError>`](crate::error::GetChannelMembershipPreferencesError)
     pub fn get_channel_membership_preferences(
         &self,
     ) -> fluent_builders::GetChannelMembershipPreferences<C, M, R> {
         fluent_builders::GetChannelMembershipPreferences::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetChannelMessage` operation.
+    /// Constructs a fluent builder for the [`GetChannelMessage`](crate::client::fluent_builders::GetChannelMessage) operation.
     ///
-    /// See [`GetChannelMessage`](crate::client::fluent_builders::GetChannelMessage) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetChannelMessageInput`](crate::input::GetChannelMessageInput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::input::GetChannelMessageInput::channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`message_id(Option<String>)`](crate::input::GetChannelMessageInput::message_id): <p>The ID of the message.</p>
+    ///   - [`chime_bearer(Option<String>)`](crate::input::GetChannelMessageInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - On success, responds with [`GetChannelMessageOutput`](crate::output::GetChannelMessageOutput) with field(s):
+    ///   - [`channel_message(Option<ChannelMessage>)`](crate::output::GetChannelMessageOutput::channel_message): <p>The details of and content in the message.</p>
+    /// - On failure, responds with [`SdkError<GetChannelMessageError>`](crate::error::GetChannelMessageError)
     pub fn get_channel_message(&self) -> fluent_builders::GetChannelMessage<C, M, R> {
         fluent_builders::GetChannelMessage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetChannelMessageStatus` operation.
+    /// Constructs a fluent builder for the [`GetChannelMessageStatus`](crate::client::fluent_builders::GetChannelMessageStatus) operation.
     ///
-    /// See [`GetChannelMessageStatus`](crate::client::fluent_builders::GetChannelMessageStatus) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetChannelMessageStatusInput`](crate::input::GetChannelMessageStatusInput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::input::GetChannelMessageStatusInput::channel_arn): <p>The ARN of the channel</p>
+    ///   - [`message_id(Option<String>)`](crate::input::GetChannelMessageStatusInput::message_id): <p>The ID of the message.</p>
+    ///   - [`chime_bearer(Option<String>)`](crate::input::GetChannelMessageStatusInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
+    /// - On success, responds with [`GetChannelMessageStatusOutput`](crate::output::GetChannelMessageStatusOutput) with field(s):
+    ///   - [`status(Option<ChannelMessageStatusStructure>)`](crate::output::GetChannelMessageStatusOutput::status): <p>The message status and details.</p>
+    /// - On failure, responds with [`SdkError<GetChannelMessageStatusError>`](crate::error::GetChannelMessageStatusError)
     pub fn get_channel_message_status(&self) -> fluent_builders::GetChannelMessageStatus<C, M, R> {
         fluent_builders::GetChannelMessageStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMessagingSessionEndpoint` operation.
+    /// Constructs a fluent builder for the [`GetMessagingSessionEndpoint`](crate::client::fluent_builders::GetMessagingSessionEndpoint) operation.
     ///
-    /// See [`GetMessagingSessionEndpoint`](crate::client::fluent_builders::GetMessagingSessionEndpoint) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetMessagingSessionEndpointInput`](crate::input::GetMessagingSessionEndpointInput)
+
+    /// - On success, responds with [`GetMessagingSessionEndpointOutput`](crate::output::GetMessagingSessionEndpointOutput) with field(s):
+    ///   - [`endpoint(Option<MessagingSessionEndpoint>)`](crate::output::GetMessagingSessionEndpointOutput::endpoint): <p>The endpoint returned in the response.</p>
+    /// - On failure, responds with [`SdkError<GetMessagingSessionEndpointError>`](crate::error::GetMessagingSessionEndpointError)
     pub fn get_messaging_session_endpoint(
         &self,
     ) -> fluent_builders::GetMessagingSessionEndpoint<C, M, R> {
         fluent_builders::GetMessagingSessionEndpoint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListChannelBans` operation.
-    ///
-    /// See [`ListChannelBans`](crate::client::fluent_builders::ListChannelBans) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListChannelBans`](crate::client::fluent_builders::ListChannelBans) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChannelBans::into_paginator).
+    ///
+    /// - Takes [`ListChannelBansInput`](crate::input::ListChannelBansInput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::input::ListChannelBansInput::channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListChannelBansInput::max_results): <p>The maximum number of bans that you want returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListChannelBansInput::next_token): <p>The token passed by previous API calls until all requested bans are returned.</p>
+    ///   - [`chime_bearer(Option<String>)`](crate::input::ListChannelBansInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - On success, responds with [`ListChannelBansOutput`](crate::output::ListChannelBansOutput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::output::ListChannelBansOutput::channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListChannelBansOutput::next_token): <p>The token passed by previous API calls until all requested bans are returned.</p>
+    ///   - [`channel_bans(Option<Vec<ChannelBanSummary>>)`](crate::output::ListChannelBansOutput::channel_bans): <p>The information for each requested ban.</p>
+    /// - On failure, responds with [`SdkError<ListChannelBansError>`](crate::error::ListChannelBansError)
     pub fn list_channel_bans(&self) -> fluent_builders::ListChannelBans<C, M, R> {
         fluent_builders::ListChannelBans::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListChannelFlows` operation.
-    ///
-    /// See [`ListChannelFlows`](crate::client::fluent_builders::ListChannelFlows) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListChannelFlows`](crate::client::fluent_builders::ListChannelFlows) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChannelFlows::into_paginator).
+    ///
+    /// - Takes [`ListChannelFlowsInput`](crate::input::ListChannelFlowsInput) with field(s):
+    ///   - [`app_instance_arn(Option<String>)`](crate::input::ListChannelFlowsInput::app_instance_arn): <p>The ARN of the app instance.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListChannelFlowsInput::max_results): <p>The maximum number of channel flows that you want to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListChannelFlowsInput::next_token): <p>The token passed by previous API calls until all requested channel flows are returned.</p>
+    /// - On success, responds with [`ListChannelFlowsOutput`](crate::output::ListChannelFlowsOutput) with field(s):
+    ///   - [`channel_flows(Option<Vec<ChannelFlowSummary>>)`](crate::output::ListChannelFlowsOutput::channel_flows): <p>The information about each channel flow.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListChannelFlowsOutput::next_token): <p>The token passed by previous API calls until all requested channels are returned.</p>
+    /// - On failure, responds with [`SdkError<ListChannelFlowsError>`](crate::error::ListChannelFlowsError)
     pub fn list_channel_flows(&self) -> fluent_builders::ListChannelFlows<C, M, R> {
         fluent_builders::ListChannelFlows::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListChannelMemberships` operation.
-    ///
-    /// See [`ListChannelMemberships`](crate::client::fluent_builders::ListChannelMemberships) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListChannelMemberships`](crate::client::fluent_builders::ListChannelMemberships) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChannelMemberships::into_paginator).
+    ///
+    /// - Takes [`ListChannelMembershipsInput`](crate::input::ListChannelMembershipsInput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::input::ListChannelMembershipsInput::channel_arn): <p>The maximum number of channel memberships that you want returned.</p>
+    ///   - [`r#type(Option<ChannelMembershipType>)`](crate::input::ListChannelMembershipsInput::r#type): <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are returned as part of <code>ListChannelMemberships</code> if no type is specified. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListChannelMembershipsInput::max_results): <p>The maximum number of channel memberships that you want returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListChannelMembershipsInput::next_token): <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
+    ///   - [`chime_bearer(Option<String>)`](crate::input::ListChannelMembershipsInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - On success, responds with [`ListChannelMembershipsOutput`](crate::output::ListChannelMembershipsOutput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::output::ListChannelMembershipsOutput::channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`channel_memberships(Option<Vec<ChannelMembershipSummary>>)`](crate::output::ListChannelMembershipsOutput::channel_memberships): <p>The information for the requested channel memberships.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListChannelMembershipsOutput::next_token): <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
+    /// - On failure, responds with [`SdkError<ListChannelMembershipsError>`](crate::error::ListChannelMembershipsError)
     pub fn list_channel_memberships(&self) -> fluent_builders::ListChannelMemberships<C, M, R> {
         fluent_builders::ListChannelMemberships::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListChannelMembershipsForAppInstanceUser` operation.
-    ///
-    /// See [`ListChannelMembershipsForAppInstanceUser`](crate::client::fluent_builders::ListChannelMembershipsForAppInstanceUser) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListChannelMembershipsForAppInstanceUser`](crate::client::fluent_builders::ListChannelMembershipsForAppInstanceUser) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChannelMembershipsForAppInstanceUser::into_paginator).
+    ///
+    /// - Takes [`ListChannelMembershipsForAppInstanceUserInput`](crate::input::ListChannelMembershipsForAppInstanceUserInput) with field(s):
+    ///   - [`app_instance_user_arn(Option<String>)`](crate::input::ListChannelMembershipsForAppInstanceUserInput::app_instance_user_arn): <p>The ARN of the <code>AppInstanceUser</code>s</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListChannelMembershipsForAppInstanceUserInput::max_results): <p>The maximum number of users that you want returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListChannelMembershipsForAppInstanceUserInput::next_token): <p>The token returned from previous API requests until the number of channel memberships is reached.</p>
+    ///   - [`chime_bearer(Option<String>)`](crate::input::ListChannelMembershipsForAppInstanceUserInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - On success, responds with [`ListChannelMembershipsForAppInstanceUserOutput`](crate::output::ListChannelMembershipsForAppInstanceUserOutput) with field(s):
+    ///   - [`channel_memberships(Option<Vec<ChannelMembershipForAppInstanceUserSummary>>)`](crate::output::ListChannelMembershipsForAppInstanceUserOutput::channel_memberships): <p>The token passed by previous API calls until all requested users are returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListChannelMembershipsForAppInstanceUserOutput::next_token): <p>The token passed by previous API calls until all requested users are returned.</p>
+    /// - On failure, responds with [`SdkError<ListChannelMembershipsForAppInstanceUserError>`](crate::error::ListChannelMembershipsForAppInstanceUserError)
     pub fn list_channel_memberships_for_app_instance_user(
         &self,
     ) -> fluent_builders::ListChannelMembershipsForAppInstanceUser<C, M, R> {
         fluent_builders::ListChannelMembershipsForAppInstanceUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListChannelMessages` operation.
-    ///
-    /// See [`ListChannelMessages`](crate::client::fluent_builders::ListChannelMessages) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListChannelMessages`](crate::client::fluent_builders::ListChannelMessages) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChannelMessages::into_paginator).
+    ///
+    /// - Takes [`ListChannelMessagesInput`](crate::input::ListChannelMessagesInput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::input::ListChannelMessagesInput::channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`sort_order(Option<SortOrder>)`](crate::input::ListChannelMessagesInput::sort_order): <p>The order in which you want messages sorted. Default is Descending, based on time created.</p>
+    ///   - [`not_before(Option<DateTime>)`](crate::input::ListChannelMessagesInput::not_before): <p>The initial or starting time stamp for your requested messages.</p>
+    ///   - [`not_after(Option<DateTime>)`](crate::input::ListChannelMessagesInput::not_after): <p>The final or ending time stamp for your requested messages.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListChannelMessagesInput::max_results): <p>The maximum number of messages that you want returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListChannelMessagesInput::next_token): <p>The token passed by previous API calls until all requested messages are returned.</p>
+    ///   - [`chime_bearer(Option<String>)`](crate::input::ListChannelMessagesInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - On success, responds with [`ListChannelMessagesOutput`](crate::output::ListChannelMessagesOutput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::output::ListChannelMessagesOutput::channel_arn): <p>The ARN of the channel containing the requested messages.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListChannelMessagesOutput::next_token): <p>The token passed by previous API calls until all requested messages are returned.</p>
+    ///   - [`channel_messages(Option<Vec<ChannelMessageSummary>>)`](crate::output::ListChannelMessagesOutput::channel_messages): <p>The information about, and content of, each requested message.</p>
+    /// - On failure, responds with [`SdkError<ListChannelMessagesError>`](crate::error::ListChannelMessagesError)
     pub fn list_channel_messages(&self) -> fluent_builders::ListChannelMessages<C, M, R> {
         fluent_builders::ListChannelMessages::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListChannelModerators` operation.
-    ///
-    /// See [`ListChannelModerators`](crate::client::fluent_builders::ListChannelModerators) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListChannelModerators`](crate::client::fluent_builders::ListChannelModerators) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChannelModerators::into_paginator).
+    ///
+    /// - Takes [`ListChannelModeratorsInput`](crate::input::ListChannelModeratorsInput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::input::ListChannelModeratorsInput::channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListChannelModeratorsInput::max_results): <p>The maximum number of moderators that you want returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListChannelModeratorsInput::next_token): <p>The token passed by previous API calls until all requested moderators are returned.</p>
+    ///   - [`chime_bearer(Option<String>)`](crate::input::ListChannelModeratorsInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - On success, responds with [`ListChannelModeratorsOutput`](crate::output::ListChannelModeratorsOutput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::output::ListChannelModeratorsOutput::channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListChannelModeratorsOutput::next_token): <p>The token passed by previous API calls until all requested moderators are returned.</p>
+    ///   - [`channel_moderators(Option<Vec<ChannelModeratorSummary>>)`](crate::output::ListChannelModeratorsOutput::channel_moderators): <p>The information about and names of each moderator.</p>
+    /// - On failure, responds with [`SdkError<ListChannelModeratorsError>`](crate::error::ListChannelModeratorsError)
     pub fn list_channel_moderators(&self) -> fluent_builders::ListChannelModerators<C, M, R> {
         fluent_builders::ListChannelModerators::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListChannels` operation.
-    ///
-    /// See [`ListChannels`](crate::client::fluent_builders::ListChannels) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListChannels`](crate::client::fluent_builders::ListChannels) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChannels::into_paginator).
+    ///
+    /// - Takes [`ListChannelsInput`](crate::input::ListChannelsInput) with field(s):
+    ///   - [`app_instance_arn(Option<String>)`](crate::input::ListChannelsInput::app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
+    ///   - [`privacy(Option<ChannelPrivacy>)`](crate::input::ListChannelsInput::privacy): <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListChannelsInput::max_results): <p>The maximum number of channels that you want to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListChannelsInput::next_token): <p>The token passed by previous API calls until all requested channels are returned.</p>
+    ///   - [`chime_bearer(Option<String>)`](crate::input::ListChannelsInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - On success, responds with [`ListChannelsOutput`](crate::output::ListChannelsOutput) with field(s):
+    ///   - [`channels(Option<Vec<ChannelSummary>>)`](crate::output::ListChannelsOutput::channels): <p>The information about each channel.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListChannelsOutput::next_token): <p>The token returned from previous API requests until the number of channels is reached.</p>
+    /// - On failure, responds with [`SdkError<ListChannelsError>`](crate::error::ListChannelsError)
     pub fn list_channels(&self) -> fluent_builders::ListChannels<C, M, R> {
         fluent_builders::ListChannels::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListChannelsAssociatedWithChannelFlow` operation.
-    ///
-    /// See [`ListChannelsAssociatedWithChannelFlow`](crate::client::fluent_builders::ListChannelsAssociatedWithChannelFlow) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListChannelsAssociatedWithChannelFlow`](crate::client::fluent_builders::ListChannelsAssociatedWithChannelFlow) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChannelsAssociatedWithChannelFlow::into_paginator).
+    ///
+    /// - Takes [`ListChannelsAssociatedWithChannelFlowInput`](crate::input::ListChannelsAssociatedWithChannelFlowInput) with field(s):
+    ///   - [`channel_flow_arn(Option<String>)`](crate::input::ListChannelsAssociatedWithChannelFlowInput::channel_flow_arn): <p>The ARN of the channel flow.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListChannelsAssociatedWithChannelFlowInput::max_results): <p>The maximum number of channels that you want to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListChannelsAssociatedWithChannelFlowInput::next_token): <p>The token passed by previous API calls until all requested channels are returned.</p>
+    /// - On success, responds with [`ListChannelsAssociatedWithChannelFlowOutput`](crate::output::ListChannelsAssociatedWithChannelFlowOutput) with field(s):
+    ///   - [`channels(Option<Vec<ChannelAssociatedWithFlowSummary>>)`](crate::output::ListChannelsAssociatedWithChannelFlowOutput::channels): <p>The information about each channel.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListChannelsAssociatedWithChannelFlowOutput::next_token): <p>The token passed by previous API calls until all requested channels are returned.</p>
+    /// - On failure, responds with [`SdkError<ListChannelsAssociatedWithChannelFlowError>`](crate::error::ListChannelsAssociatedWithChannelFlowError)
     pub fn list_channels_associated_with_channel_flow(
         &self,
     ) -> fluent_builders::ListChannelsAssociatedWithChannelFlow<C, M, R> {
         fluent_builders::ListChannelsAssociatedWithChannelFlow::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListChannelsModeratedByAppInstanceUser` operation.
-    ///
-    /// See [`ListChannelsModeratedByAppInstanceUser`](crate::client::fluent_builders::ListChannelsModeratedByAppInstanceUser) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListChannelsModeratedByAppInstanceUser`](crate::client::fluent_builders::ListChannelsModeratedByAppInstanceUser) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChannelsModeratedByAppInstanceUser::into_paginator).
+    ///
+    /// - Takes [`ListChannelsModeratedByAppInstanceUserInput`](crate::input::ListChannelsModeratedByAppInstanceUserInput) with field(s):
+    ///   - [`app_instance_user_arn(Option<String>)`](crate::input::ListChannelsModeratedByAppInstanceUserInput::app_instance_user_arn): <p>The ARN of the user in the moderated channel.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListChannelsModeratedByAppInstanceUserInput::max_results): <p>The maximum number of channels in the request.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListChannelsModeratedByAppInstanceUserInput::next_token): <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
+    ///   - [`chime_bearer(Option<String>)`](crate::input::ListChannelsModeratedByAppInstanceUserInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - On success, responds with [`ListChannelsModeratedByAppInstanceUserOutput`](crate::output::ListChannelsModeratedByAppInstanceUserOutput) with field(s):
+    ///   - [`channels(Option<Vec<ChannelModeratedByAppInstanceUserSummary>>)`](crate::output::ListChannelsModeratedByAppInstanceUserOutput::channels): <p>The moderated channels in the request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListChannelsModeratedByAppInstanceUserOutput::next_token): <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
+    /// - On failure, responds with [`SdkError<ListChannelsModeratedByAppInstanceUserError>`](crate::error::ListChannelsModeratedByAppInstanceUserError)
     pub fn list_channels_moderated_by_app_instance_user(
         &self,
     ) -> fluent_builders::ListChannelsModeratedByAppInstanceUser<C, M, R> {
         fluent_builders::ListChannelsModeratedByAppInstanceUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The ARN of the resource.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tag key-value pairs.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutChannelMembershipPreferences` operation.
+    /// Constructs a fluent builder for the [`PutChannelMembershipPreferences`](crate::client::fluent_builders::PutChannelMembershipPreferences) operation.
     ///
-    /// See [`PutChannelMembershipPreferences`](crate::client::fluent_builders::PutChannelMembershipPreferences) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutChannelMembershipPreferencesInput`](crate::input::PutChannelMembershipPreferencesInput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::input::PutChannelMembershipPreferencesInput::channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`member_arn(Option<String>)`](crate::input::PutChannelMembershipPreferencesInput::member_arn): <p>The <code>AppInstanceUserArn</code> of the member setting the preferences.</p>
+    ///   - [`chime_bearer(Option<String>)`](crate::input::PutChannelMembershipPreferencesInput::chime_bearer): <p>The <code>AppInstanceUserARN</code> of the user making the API call.</p>
+    ///   - [`preferences(Option<ChannelMembershipPreferences>)`](crate::input::PutChannelMembershipPreferencesInput::preferences): <p>The channel membership preferences of an <code>AppInstanceUser</code> .</p>
+    /// - On success, responds with [`PutChannelMembershipPreferencesOutput`](crate::output::PutChannelMembershipPreferencesOutput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::output::PutChannelMembershipPreferencesOutput::channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`member(Option<Identity>)`](crate::output::PutChannelMembershipPreferencesOutput::member): <p>The details of a user.</p>
+    ///   - [`preferences(Option<ChannelMembershipPreferences>)`](crate::output::PutChannelMembershipPreferencesOutput::preferences): <p>The ARN and metadata of the member being added.</p>
+    /// - On failure, responds with [`SdkError<PutChannelMembershipPreferencesError>`](crate::error::PutChannelMembershipPreferencesError)
     pub fn put_channel_membership_preferences(
         &self,
     ) -> fluent_builders::PutChannelMembershipPreferences<C, M, R> {
         fluent_builders::PutChannelMembershipPreferences::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RedactChannelMessage` operation.
+    /// Constructs a fluent builder for the [`RedactChannelMessage`](crate::client::fluent_builders::RedactChannelMessage) operation.
     ///
-    /// See [`RedactChannelMessage`](crate::client::fluent_builders::RedactChannelMessage) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RedactChannelMessageInput`](crate::input::RedactChannelMessageInput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::input::RedactChannelMessageInput::channel_arn): <p>The ARN of the channel containing the messages that you want to redact.</p>
+    ///   - [`message_id(Option<String>)`](crate::input::RedactChannelMessageInput::message_id): <p>The ID of the message being redacted.</p>
+    ///   - [`chime_bearer(Option<String>)`](crate::input::RedactChannelMessageInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - On success, responds with [`RedactChannelMessageOutput`](crate::output::RedactChannelMessageOutput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::output::RedactChannelMessageOutput::channel_arn): <p>The ARN of the channel containing the messages that you want to redact.</p>
+    ///   - [`message_id(Option<String>)`](crate::output::RedactChannelMessageOutput::message_id): <p>The ID of the message being redacted.</p>
+    /// - On failure, responds with [`SdkError<RedactChannelMessageError>`](crate::error::RedactChannelMessageError)
     pub fn redact_channel_message(&self) -> fluent_builders::RedactChannelMessage<C, M, R> {
         fluent_builders::RedactChannelMessage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SendChannelMessage` operation.
+    /// Constructs a fluent builder for the [`SendChannelMessage`](crate::client::fluent_builders::SendChannelMessage) operation.
     ///
-    /// See [`SendChannelMessage`](crate::client::fluent_builders::SendChannelMessage) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`SendChannelMessageInput`](crate::input::SendChannelMessageInput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::input::SendChannelMessageInput::channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`content(Option<String>)`](crate::input::SendChannelMessageInput::content): <p>The content of the message.</p>
+    ///   - [`r#type(Option<ChannelMessageType>)`](crate::input::SendChannelMessageInput::r#type): <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
+    ///   - [`persistence(Option<ChannelMessagePersistenceType>)`](crate::input::SendChannelMessageInput::persistence): <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
+    ///   - [`metadata(Option<String>)`](crate::input::SendChannelMessageInput::metadata): <p>The optional metadata for each message.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::SendChannelMessageInput::client_request_token): <p>The <code>Idempotency</code> token for each client request.</p>
+    ///   - [`chime_bearer(Option<String>)`](crate::input::SendChannelMessageInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    ///   - [`push_notification(Option<PushNotificationConfiguration>)`](crate::input::SendChannelMessageInput::push_notification): <p>The push notification configuration of the message.</p>
+    ///   - [`message_attributes(Option<HashMap<String, MessageAttributeValue>>)`](crate::input::SendChannelMessageInput::message_attributes): <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>.</p>
+    /// - On success, responds with [`SendChannelMessageOutput`](crate::output::SendChannelMessageOutput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::output::SendChannelMessageOutput::channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`message_id(Option<String>)`](crate::output::SendChannelMessageOutput::message_id): <p>The ID string assigned to each message.</p>
+    ///   - [`status(Option<ChannelMessageStatusStructure>)`](crate::output::SendChannelMessageOutput::status): <p>The status of the channel message.</p>
+    /// - On failure, responds with [`SdkError<SendChannelMessageError>`](crate::error::SendChannelMessageError)
     pub fn send_channel_message(&self) -> fluent_builders::SendChannelMessage<C, M, R> {
         fluent_builders::SendChannelMessage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The resource ARN.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>The tag key-value pairs.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The resource ARN.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The tag keys.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateChannel` operation.
+    /// Constructs a fluent builder for the [`UpdateChannel`](crate::client::fluent_builders::UpdateChannel) operation.
     ///
-    /// See [`UpdateChannel`](crate::client::fluent_builders::UpdateChannel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateChannelInput`](crate::input::UpdateChannelInput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::input::UpdateChannelInput::channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`name(Option<String>)`](crate::input::UpdateChannelInput::name): <p>The name of the channel.</p>
+    ///   - [`mode(Option<ChannelMode>)`](crate::input::UpdateChannelInput::mode): <p>The mode of the update request.</p>
+    ///   - [`metadata(Option<String>)`](crate::input::UpdateChannelInput::metadata): <p>The metadata for the update request.</p>
+    ///   - [`chime_bearer(Option<String>)`](crate::input::UpdateChannelInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - On success, responds with [`UpdateChannelOutput`](crate::output::UpdateChannelOutput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::output::UpdateChannelOutput::channel_arn): <p>The ARN of the channel.</p>
+    /// - On failure, responds with [`SdkError<UpdateChannelError>`](crate::error::UpdateChannelError)
     pub fn update_channel(&self) -> fluent_builders::UpdateChannel<C, M, R> {
         fluent_builders::UpdateChannel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateChannelFlow` operation.
+    /// Constructs a fluent builder for the [`UpdateChannelFlow`](crate::client::fluent_builders::UpdateChannelFlow) operation.
     ///
-    /// See [`UpdateChannelFlow`](crate::client::fluent_builders::UpdateChannelFlow) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateChannelFlowInput`](crate::input::UpdateChannelFlowInput) with field(s):
+    ///   - [`channel_flow_arn(Option<String>)`](crate::input::UpdateChannelFlowInput::channel_flow_arn): <p>The ARN of the channel flow.</p>
+    ///   - [`processors(Option<Vec<Processor>>)`](crate::input::UpdateChannelFlowInput::processors): <p>Information about the processor Lambda functions </p>
+    ///   - [`name(Option<String>)`](crate::input::UpdateChannelFlowInput::name): <p>The name of the channel flow.</p>
+    /// - On success, responds with [`UpdateChannelFlowOutput`](crate::output::UpdateChannelFlowOutput) with field(s):
+    ///   - [`channel_flow_arn(Option<String>)`](crate::output::UpdateChannelFlowOutput::channel_flow_arn): <p>The ARN of the channel flow.</p>
+    /// - On failure, responds with [`SdkError<UpdateChannelFlowError>`](crate::error::UpdateChannelFlowError)
     pub fn update_channel_flow(&self) -> fluent_builders::UpdateChannelFlow<C, M, R> {
         fluent_builders::UpdateChannelFlow::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateChannelMessage` operation.
+    /// Constructs a fluent builder for the [`UpdateChannelMessage`](crate::client::fluent_builders::UpdateChannelMessage) operation.
     ///
-    /// See [`UpdateChannelMessage`](crate::client::fluent_builders::UpdateChannelMessage) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateChannelMessageInput`](crate::input::UpdateChannelMessageInput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::input::UpdateChannelMessageInput::channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`message_id(Option<String>)`](crate::input::UpdateChannelMessageInput::message_id): <p>The ID string of the message being updated.</p>
+    ///   - [`content(Option<String>)`](crate::input::UpdateChannelMessageInput::content): <p>The content of the message being updated.</p>
+    ///   - [`metadata(Option<String>)`](crate::input::UpdateChannelMessageInput::metadata): <p>The metadata of the message being updated.</p>
+    ///   - [`chime_bearer(Option<String>)`](crate::input::UpdateChannelMessageInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - On success, responds with [`UpdateChannelMessageOutput`](crate::output::UpdateChannelMessageOutput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::output::UpdateChannelMessageOutput::channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`message_id(Option<String>)`](crate::output::UpdateChannelMessageOutput::message_id): <p>The ID string of the message being updated.</p>
+    ///   - [`status(Option<ChannelMessageStatusStructure>)`](crate::output::UpdateChannelMessageOutput::status): <p>The status of the message update.</p>
+    /// - On failure, responds with [`SdkError<UpdateChannelMessageError>`](crate::error::UpdateChannelMessageError)
     pub fn update_channel_message(&self) -> fluent_builders::UpdateChannelMessage<C, M, R> {
         fluent_builders::UpdateChannelMessage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateChannelReadMarker` operation.
+    /// Constructs a fluent builder for the [`UpdateChannelReadMarker`](crate::client::fluent_builders::UpdateChannelReadMarker) operation.
     ///
-    /// See [`UpdateChannelReadMarker`](crate::client::fluent_builders::UpdateChannelReadMarker) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateChannelReadMarkerInput`](crate::input::UpdateChannelReadMarkerInput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::input::UpdateChannelReadMarkerInput::channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`chime_bearer(Option<String>)`](crate::input::UpdateChannelReadMarkerInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+    /// - On success, responds with [`UpdateChannelReadMarkerOutput`](crate::output::UpdateChannelReadMarkerOutput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::output::UpdateChannelReadMarkerOutput::channel_arn): <p>The ARN of the channel.</p>
+    /// - On failure, responds with [`SdkError<UpdateChannelReadMarkerError>`](crate::error::UpdateChannelReadMarkerError)
     pub fn update_channel_read_marker(&self) -> fluent_builders::UpdateChannelReadMarker<C, M, R> {
         fluent_builders::UpdateChannelReadMarker::new(self.handle.clone())
     }

@@ -83,171 +83,273 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateCluster` operation.
+    /// Constructs a fluent builder for the [`CreateCluster`](crate::client::fluent_builders::CreateCluster) operation.
     ///
-    /// See [`CreateCluster`](crate::client::fluent_builders::CreateCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateClusterInput`](crate::input::CreateClusterInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::CreateClusterInput::client_token): <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
+    ///   - [`cluster_name(Option<String>)`](crate::input::CreateClusterInput::cluster_name): <p>The name of the cluster.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateClusterInput::tags): <p>The tags associated with the cluster.</p>
+    /// - On success, responds with [`CreateClusterOutput`](crate::output::CreateClusterOutput) with field(s):
+    ///   - [`cluster(Option<Cluster>)`](crate::output::CreateClusterOutput::cluster): <p>The cluster that was created.</p>
+    /// - On failure, responds with [`SdkError<CreateClusterError>`](crate::error::CreateClusterError)
     pub fn create_cluster(&self) -> fluent_builders::CreateCluster<C, M, R> {
         fluent_builders::CreateCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateControlPanel` operation.
+    /// Constructs a fluent builder for the [`CreateControlPanel`](crate::client::fluent_builders::CreateControlPanel) operation.
     ///
-    /// See [`CreateControlPanel`](crate::client::fluent_builders::CreateControlPanel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateControlPanelInput`](crate::input::CreateControlPanelInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::CreateControlPanelInput::client_token): <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
+    ///   - [`cluster_arn(Option<String>)`](crate::input::CreateControlPanelInput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster for the control panel.</p>
+    ///   - [`control_panel_name(Option<String>)`](crate::input::CreateControlPanelInput::control_panel_name): <p>The name of the control panel.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateControlPanelInput::tags): <p>The tags associated with the control panel.</p>
+    /// - On success, responds with [`CreateControlPanelOutput`](crate::output::CreateControlPanelOutput) with field(s):
+    ///   - [`control_panel(Option<ControlPanel>)`](crate::output::CreateControlPanelOutput::control_panel): <p>Information about a control panel.</p>
+    /// - On failure, responds with [`SdkError<CreateControlPanelError>`](crate::error::CreateControlPanelError)
     pub fn create_control_panel(&self) -> fluent_builders::CreateControlPanel<C, M, R> {
         fluent_builders::CreateControlPanel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateRoutingControl` operation.
+    /// Constructs a fluent builder for the [`CreateRoutingControl`](crate::client::fluent_builders::CreateRoutingControl) operation.
     ///
-    /// See [`CreateRoutingControl`](crate::client::fluent_builders::CreateRoutingControl) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateRoutingControlInput`](crate::input::CreateRoutingControlInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::CreateRoutingControlInput::client_token): <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
+    ///   - [`cluster_arn(Option<String>)`](crate::input::CreateRoutingControlInput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster that includes the routing control.</p>
+    ///   - [`control_panel_arn(Option<String>)`](crate::input::CreateRoutingControlInput::control_panel_arn): <p>The Amazon Resource Name (ARN) of the control panel that includes the routing control.</p>
+    ///   - [`routing_control_name(Option<String>)`](crate::input::CreateRoutingControlInput::routing_control_name): <p>The name of the routing control.</p>
+    /// - On success, responds with [`CreateRoutingControlOutput`](crate::output::CreateRoutingControlOutput) with field(s):
+    ///   - [`routing_control(Option<RoutingControl>)`](crate::output::CreateRoutingControlOutput::routing_control): <p>The routing control that is created.</p>
+    /// - On failure, responds with [`SdkError<CreateRoutingControlError>`](crate::error::CreateRoutingControlError)
     pub fn create_routing_control(&self) -> fluent_builders::CreateRoutingControl<C, M, R> {
         fluent_builders::CreateRoutingControl::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateSafetyRule` operation.
+    /// Constructs a fluent builder for the [`CreateSafetyRule`](crate::client::fluent_builders::CreateSafetyRule) operation.
     ///
-    /// See [`CreateSafetyRule`](crate::client::fluent_builders::CreateSafetyRule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateSafetyRuleInput`](crate::input::CreateSafetyRuleInput) with field(s):
+    ///   - [`assertion_rule(Option<NewAssertionRule>)`](crate::input::CreateSafetyRuleInput::assertion_rule): <p>The assertion rule requested.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateSafetyRuleInput::client_token): <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
+    ///   - [`gating_rule(Option<NewGatingRule>)`](crate::input::CreateSafetyRuleInput::gating_rule): <p>The gating rule requested.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateSafetyRuleInput::tags): <p>The tags associated with the safety rule.</p>
+    /// - On success, responds with [`CreateSafetyRuleOutput`](crate::output::CreateSafetyRuleOutput) with field(s):
+    ///   - [`assertion_rule(Option<AssertionRule>)`](crate::output::CreateSafetyRuleOutput::assertion_rule): <p>The assertion rule created.</p>
+    ///   - [`gating_rule(Option<GatingRule>)`](crate::output::CreateSafetyRuleOutput::gating_rule): <p>The gating rule created.</p>
+    /// - On failure, responds with [`SdkError<CreateSafetyRuleError>`](crate::error::CreateSafetyRuleError)
     pub fn create_safety_rule(&self) -> fluent_builders::CreateSafetyRule<C, M, R> {
         fluent_builders::CreateSafetyRule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteCluster` operation.
+    /// Constructs a fluent builder for the [`DeleteCluster`](crate::client::fluent_builders::DeleteCluster) operation.
     ///
-    /// See [`DeleteCluster`](crate::client::fluent_builders::DeleteCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteClusterInput`](crate::input::DeleteClusterInput) with field(s):
+    ///   - [`cluster_arn(Option<String>)`](crate::input::DeleteClusterInput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster that you're deleting.</p>
+    /// - On success, responds with [`DeleteClusterOutput`](crate::output::DeleteClusterOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteClusterError>`](crate::error::DeleteClusterError)
     pub fn delete_cluster(&self) -> fluent_builders::DeleteCluster<C, M, R> {
         fluent_builders::DeleteCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteControlPanel` operation.
+    /// Constructs a fluent builder for the [`DeleteControlPanel`](crate::client::fluent_builders::DeleteControlPanel) operation.
     ///
-    /// See [`DeleteControlPanel`](crate::client::fluent_builders::DeleteControlPanel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteControlPanelInput`](crate::input::DeleteControlPanelInput) with field(s):
+    ///   - [`control_panel_arn(Option<String>)`](crate::input::DeleteControlPanelInput::control_panel_arn): <p>The Amazon Resource Name (ARN) of the control panel.</p>
+    /// - On success, responds with [`DeleteControlPanelOutput`](crate::output::DeleteControlPanelOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteControlPanelError>`](crate::error::DeleteControlPanelError)
     pub fn delete_control_panel(&self) -> fluent_builders::DeleteControlPanel<C, M, R> {
         fluent_builders::DeleteControlPanel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteRoutingControl` operation.
+    /// Constructs a fluent builder for the [`DeleteRoutingControl`](crate::client::fluent_builders::DeleteRoutingControl) operation.
     ///
-    /// See [`DeleteRoutingControl`](crate::client::fluent_builders::DeleteRoutingControl) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteRoutingControlInput`](crate::input::DeleteRoutingControlInput) with field(s):
+    ///   - [`routing_control_arn(Option<String>)`](crate::input::DeleteRoutingControlInput::routing_control_arn): <p>The Amazon Resource Name (ARN) of the routing control that you're deleting.</p>
+    /// - On success, responds with [`DeleteRoutingControlOutput`](crate::output::DeleteRoutingControlOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteRoutingControlError>`](crate::error::DeleteRoutingControlError)
     pub fn delete_routing_control(&self) -> fluent_builders::DeleteRoutingControl<C, M, R> {
         fluent_builders::DeleteRoutingControl::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteSafetyRule` operation.
+    /// Constructs a fluent builder for the [`DeleteSafetyRule`](crate::client::fluent_builders::DeleteSafetyRule) operation.
     ///
-    /// See [`DeleteSafetyRule`](crate::client::fluent_builders::DeleteSafetyRule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteSafetyRuleInput`](crate::input::DeleteSafetyRuleInput) with field(s):
+    ///   - [`safety_rule_arn(Option<String>)`](crate::input::DeleteSafetyRuleInput::safety_rule_arn): <p>The ARN of the safety rule.</p>
+    /// - On success, responds with [`DeleteSafetyRuleOutput`](crate::output::DeleteSafetyRuleOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteSafetyRuleError>`](crate::error::DeleteSafetyRuleError)
     pub fn delete_safety_rule(&self) -> fluent_builders::DeleteSafetyRule<C, M, R> {
         fluent_builders::DeleteSafetyRule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeCluster` operation.
+    /// Constructs a fluent builder for the [`DescribeCluster`](crate::client::fluent_builders::DescribeCluster) operation.
     ///
-    /// See [`DescribeCluster`](crate::client::fluent_builders::DescribeCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeClusterInput`](crate::input::DescribeClusterInput) with field(s):
+    ///   - [`cluster_arn(Option<String>)`](crate::input::DescribeClusterInput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster.</p>
+    /// - On success, responds with [`DescribeClusterOutput`](crate::output::DescribeClusterOutput) with field(s):
+    ///   - [`cluster(Option<Cluster>)`](crate::output::DescribeClusterOutput::cluster): <p>The cluster for the DescribeCluster request.</p>
+    /// - On failure, responds with [`SdkError<DescribeClusterError>`](crate::error::DescribeClusterError)
     pub fn describe_cluster(&self) -> fluent_builders::DescribeCluster<C, M, R> {
         fluent_builders::DescribeCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeControlPanel` operation.
+    /// Constructs a fluent builder for the [`DescribeControlPanel`](crate::client::fluent_builders::DescribeControlPanel) operation.
     ///
-    /// See [`DescribeControlPanel`](crate::client::fluent_builders::DescribeControlPanel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeControlPanelInput`](crate::input::DescribeControlPanelInput) with field(s):
+    ///   - [`control_panel_arn(Option<String>)`](crate::input::DescribeControlPanelInput::control_panel_arn): <p>The Amazon Resource Name (ARN) of the control panel.</p>
+    /// - On success, responds with [`DescribeControlPanelOutput`](crate::output::DescribeControlPanelOutput) with field(s):
+    ///   - [`control_panel(Option<ControlPanel>)`](crate::output::DescribeControlPanelOutput::control_panel): <p>Information about the control panel.</p>
+    /// - On failure, responds with [`SdkError<DescribeControlPanelError>`](crate::error::DescribeControlPanelError)
     pub fn describe_control_panel(&self) -> fluent_builders::DescribeControlPanel<C, M, R> {
         fluent_builders::DescribeControlPanel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeRoutingControl` operation.
+    /// Constructs a fluent builder for the [`DescribeRoutingControl`](crate::client::fluent_builders::DescribeRoutingControl) operation.
     ///
-    /// See [`DescribeRoutingControl`](crate::client::fluent_builders::DescribeRoutingControl) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeRoutingControlInput`](crate::input::DescribeRoutingControlInput) with field(s):
+    ///   - [`routing_control_arn(Option<String>)`](crate::input::DescribeRoutingControlInput::routing_control_arn): <p>The Amazon Resource Name (ARN) of the routing control.</p>
+    /// - On success, responds with [`DescribeRoutingControlOutput`](crate::output::DescribeRoutingControlOutput) with field(s):
+    ///   - [`routing_control(Option<RoutingControl>)`](crate::output::DescribeRoutingControlOutput::routing_control): <p>Information about the routing control.</p>
+    /// - On failure, responds with [`SdkError<DescribeRoutingControlError>`](crate::error::DescribeRoutingControlError)
     pub fn describe_routing_control(&self) -> fluent_builders::DescribeRoutingControl<C, M, R> {
         fluent_builders::DescribeRoutingControl::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeSafetyRule` operation.
+    /// Constructs a fluent builder for the [`DescribeSafetyRule`](crate::client::fluent_builders::DescribeSafetyRule) operation.
     ///
-    /// See [`DescribeSafetyRule`](crate::client::fluent_builders::DescribeSafetyRule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeSafetyRuleInput`](crate::input::DescribeSafetyRuleInput) with field(s):
+    ///   - [`safety_rule_arn(Option<String>)`](crate::input::DescribeSafetyRuleInput::safety_rule_arn): <p>The ARN of the safety rule.</p>
+    /// - On success, responds with [`DescribeSafetyRuleOutput`](crate::output::DescribeSafetyRuleOutput) with field(s):
+    ///   - [`assertion_rule(Option<AssertionRule>)`](crate::output::DescribeSafetyRuleOutput::assertion_rule): <p>The assertion rule in the response.</p>
+    ///   - [`gating_rule(Option<GatingRule>)`](crate::output::DescribeSafetyRuleOutput::gating_rule): <p>The gating rule in the response.</p>
+    /// - On failure, responds with [`SdkError<DescribeSafetyRuleError>`](crate::error::DescribeSafetyRuleError)
     pub fn describe_safety_rule(&self) -> fluent_builders::DescribeSafetyRule<C, M, R> {
         fluent_builders::DescribeSafetyRule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAssociatedRoute53HealthChecks` operation.
-    ///
-    /// See [`ListAssociatedRoute53HealthChecks`](crate::client::fluent_builders::ListAssociatedRoute53HealthChecks) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListAssociatedRoute53HealthChecks`](crate::client::fluent_builders::ListAssociatedRoute53HealthChecks) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssociatedRoute53HealthChecks::into_paginator).
+    ///
+    /// - Takes [`ListAssociatedRoute53HealthChecksInput`](crate::input::ListAssociatedRoute53HealthChecksInput) with field(s):
+    ///   - [`max_results(i32)`](crate::input::ListAssociatedRoute53HealthChecksInput::max_results): <p>The number of objects that you want to return with this call.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListAssociatedRoute53HealthChecksInput::next_token): <p>The token that identifies which batch of results you want to see.</p>
+    ///   - [`routing_control_arn(Option<String>)`](crate::input::ListAssociatedRoute53HealthChecksInput::routing_control_arn): <p>The Amazon Resource Name (ARN) of the routing control.</p>
+    /// - On success, responds with [`ListAssociatedRoute53HealthChecksOutput`](crate::output::ListAssociatedRoute53HealthChecksOutput) with field(s):
+    ///   - [`health_check_ids(Option<Vec<String>>)`](crate::output::ListAssociatedRoute53HealthChecksOutput::health_check_ids): <p>Identifiers for the health checks.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAssociatedRoute53HealthChecksOutput::next_token): <p>Next token for listing health checks.</p>
+    /// - On failure, responds with [`SdkError<ListAssociatedRoute53HealthChecksError>`](crate::error::ListAssociatedRoute53HealthChecksError)
     pub fn list_associated_route53_health_checks(
         &self,
     ) -> fluent_builders::ListAssociatedRoute53HealthChecks<C, M, R> {
         fluent_builders::ListAssociatedRoute53HealthChecks::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListClusters` operation.
-    ///
-    /// See [`ListClusters`](crate::client::fluent_builders::ListClusters) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListClusters`](crate::client::fluent_builders::ListClusters) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListClusters::into_paginator).
+    ///
+    /// - Takes [`ListClustersInput`](crate::input::ListClustersInput) with field(s):
+    ///   - [`max_results(i32)`](crate::input::ListClustersInput::max_results): <p>The number of objects that you want to return with this call.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListClustersInput::next_token): <p>The token that identifies which batch of results you want to see.</p>
+    /// - On success, responds with [`ListClustersOutput`](crate::output::ListClustersOutput) with field(s):
+    ///   - [`clusters(Option<Vec<Cluster>>)`](crate::output::ListClustersOutput::clusters): <p>An array of the clusters in an account.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListClustersOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
+    /// - On failure, responds with [`SdkError<ListClustersError>`](crate::error::ListClustersError)
     pub fn list_clusters(&self) -> fluent_builders::ListClusters<C, M, R> {
         fluent_builders::ListClusters::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListControlPanels` operation.
-    ///
-    /// See [`ListControlPanels`](crate::client::fluent_builders::ListControlPanels) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListControlPanels`](crate::client::fluent_builders::ListControlPanels) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListControlPanels::into_paginator).
+    ///
+    /// - Takes [`ListControlPanelsInput`](crate::input::ListControlPanelsInput) with field(s):
+    ///   - [`cluster_arn(Option<String>)`](crate::input::ListControlPanelsInput::cluster_arn): <p>The Amazon Resource Name (ARN) of a cluster.</p>
+    ///   - [`max_results(i32)`](crate::input::ListControlPanelsInput::max_results): <p>The number of objects that you want to return with this call.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListControlPanelsInput::next_token): <p>The token that identifies which batch of results you want to see.</p>
+    /// - On success, responds with [`ListControlPanelsOutput`](crate::output::ListControlPanelsOutput) with field(s):
+    ///   - [`control_panels(Option<Vec<ControlPanel>>)`](crate::output::ListControlPanelsOutput::control_panels): <p>The result of a successful ListControlPanel request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListControlPanelsOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
+    /// - On failure, responds with [`SdkError<ListControlPanelsError>`](crate::error::ListControlPanelsError)
     pub fn list_control_panels(&self) -> fluent_builders::ListControlPanels<C, M, R> {
         fluent_builders::ListControlPanels::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRoutingControls` operation.
-    ///
-    /// See [`ListRoutingControls`](crate::client::fluent_builders::ListRoutingControls) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListRoutingControls`](crate::client::fluent_builders::ListRoutingControls) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRoutingControls::into_paginator).
+    ///
+    /// - Takes [`ListRoutingControlsInput`](crate::input::ListRoutingControlsInput) with field(s):
+    ///   - [`control_panel_arn(Option<String>)`](crate::input::ListRoutingControlsInput::control_panel_arn): <p>The Amazon Resource Name (ARN) of the control panel.</p>
+    ///   - [`max_results(i32)`](crate::input::ListRoutingControlsInput::max_results): <p>The number of objects that you want to return with this call.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListRoutingControlsInput::next_token): <p>The token that identifies which batch of results you want to see.</p>
+    /// - On success, responds with [`ListRoutingControlsOutput`](crate::output::ListRoutingControlsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListRoutingControlsOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
+    ///   - [`routing_controls(Option<Vec<RoutingControl>>)`](crate::output::ListRoutingControlsOutput::routing_controls): <p>An array of routing controls.</p>
+    /// - On failure, responds with [`SdkError<ListRoutingControlsError>`](crate::error::ListRoutingControlsError)
     pub fn list_routing_controls(&self) -> fluent_builders::ListRoutingControls<C, M, R> {
         fluent_builders::ListRoutingControls::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSafetyRules` operation.
-    ///
-    /// See [`ListSafetyRules`](crate::client::fluent_builders::ListSafetyRules) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListSafetyRules`](crate::client::fluent_builders::ListSafetyRules) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSafetyRules::into_paginator).
+    ///
+    /// - Takes [`ListSafetyRulesInput`](crate::input::ListSafetyRulesInput) with field(s):
+    ///   - [`control_panel_arn(Option<String>)`](crate::input::ListSafetyRulesInput::control_panel_arn): <p>The Amazon Resource Name (ARN) of the control panel.</p>
+    ///   - [`max_results(i32)`](crate::input::ListSafetyRulesInput::max_results): <p>The number of objects that you want to return with this call.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListSafetyRulesInput::next_token): <p>The token that identifies which batch of results you want to see.</p>
+    /// - On success, responds with [`ListSafetyRulesOutput`](crate::output::ListSafetyRulesOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListSafetyRulesOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
+    ///   - [`safety_rules(Option<Vec<Rule>>)`](crate::output::ListSafetyRulesOutput::safety_rules): <p>The list of safety rules in a control panel.</p>
+    /// - On failure, responds with [`SdkError<ListSafetyRulesError>`](crate::error::ListSafetyRulesError)
     pub fn list_safety_rules(&self) -> fluent_builders::ListSafetyRules<C, M, R> {
         fluent_builders::ListSafetyRules::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) for the resource that's tagged.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags associated with the resource.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) for the resource that's tagged.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>The tags associated with the resource.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) for the resource that's tagged.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>Keys for the tags to be removed.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateControlPanel` operation.
+    /// Constructs a fluent builder for the [`UpdateControlPanel`](crate::client::fluent_builders::UpdateControlPanel) operation.
     ///
-    /// See [`UpdateControlPanel`](crate::client::fluent_builders::UpdateControlPanel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateControlPanelInput`](crate::input::UpdateControlPanelInput) with field(s):
+    ///   - [`control_panel_arn(Option<String>)`](crate::input::UpdateControlPanelInput::control_panel_arn): <p>The Amazon Resource Name (ARN) of the control panel.</p>
+    ///   - [`control_panel_name(Option<String>)`](crate::input::UpdateControlPanelInput::control_panel_name): <p>The name of the control panel.</p>
+    /// - On success, responds with [`UpdateControlPanelOutput`](crate::output::UpdateControlPanelOutput) with field(s):
+    ///   - [`control_panel(Option<ControlPanel>)`](crate::output::UpdateControlPanelOutput::control_panel): <p>The control panel to update.</p>
+    /// - On failure, responds with [`SdkError<UpdateControlPanelError>`](crate::error::UpdateControlPanelError)
     pub fn update_control_panel(&self) -> fluent_builders::UpdateControlPanel<C, M, R> {
         fluent_builders::UpdateControlPanel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateRoutingControl` operation.
+    /// Constructs a fluent builder for the [`UpdateRoutingControl`](crate::client::fluent_builders::UpdateRoutingControl) operation.
     ///
-    /// See [`UpdateRoutingControl`](crate::client::fluent_builders::UpdateRoutingControl) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateRoutingControlInput`](crate::input::UpdateRoutingControlInput) with field(s):
+    ///   - [`routing_control_arn(Option<String>)`](crate::input::UpdateRoutingControlInput::routing_control_arn): <p>The Amazon Resource Name (ARN) of the routing control.</p>
+    ///   - [`routing_control_name(Option<String>)`](crate::input::UpdateRoutingControlInput::routing_control_name): <p>The name of the routing control.</p>
+    /// - On success, responds with [`UpdateRoutingControlOutput`](crate::output::UpdateRoutingControlOutput) with field(s):
+    ///   - [`routing_control(Option<RoutingControl>)`](crate::output::UpdateRoutingControlOutput::routing_control): <p>The routing control that was updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateRoutingControlError>`](crate::error::UpdateRoutingControlError)
     pub fn update_routing_control(&self) -> fluent_builders::UpdateRoutingControl<C, M, R> {
         fluent_builders::UpdateRoutingControl::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateSafetyRule` operation.
+    /// Constructs a fluent builder for the [`UpdateSafetyRule`](crate::client::fluent_builders::UpdateSafetyRule) operation.
     ///
-    /// See [`UpdateSafetyRule`](crate::client::fluent_builders::UpdateSafetyRule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateSafetyRuleInput`](crate::input::UpdateSafetyRuleInput) with field(s):
+    ///   - [`assertion_rule_update(Option<AssertionRuleUpdate>)`](crate::input::UpdateSafetyRuleInput::assertion_rule_update): <p>The assertion rule to update.</p>
+    ///   - [`gating_rule_update(Option<GatingRuleUpdate>)`](crate::input::UpdateSafetyRuleInput::gating_rule_update): <p>The gating rule to update.</p>
+    /// - On success, responds with [`UpdateSafetyRuleOutput`](crate::output::UpdateSafetyRuleOutput) with field(s):
+    ///   - [`assertion_rule(Option<AssertionRule>)`](crate::output::UpdateSafetyRuleOutput::assertion_rule): <p>The assertion rule updated.</p>
+    ///   - [`gating_rule(Option<GatingRule>)`](crate::output::UpdateSafetyRuleOutput::gating_rule): <p>The gating rule updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateSafetyRuleError>`](crate::error::UpdateSafetyRuleError)
     pub fn update_safety_rule(&self) -> fluent_builders::UpdateSafetyRule<C, M, R> {
         fluent_builders::UpdateSafetyRule::new(self.handle.clone())
     }

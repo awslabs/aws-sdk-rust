@@ -83,34 +83,49 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `DeleteReportDefinition` operation.
+    /// Constructs a fluent builder for the [`DeleteReportDefinition`](crate::client::fluent_builders::DeleteReportDefinition) operation.
     ///
-    /// See [`DeleteReportDefinition`](crate::client::fluent_builders::DeleteReportDefinition) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteReportDefinitionInput`](crate::input::DeleteReportDefinitionInput) with field(s):
+    ///   - [`report_name(Option<String>)`](crate::input::DeleteReportDefinitionInput::report_name): <p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>
+    /// - On success, responds with [`DeleteReportDefinitionOutput`](crate::output::DeleteReportDefinitionOutput) with field(s):
+    ///   - [`response_message(Option<String>)`](crate::output::DeleteReportDefinitionOutput::response_message): <p>Whether the deletion was successful or not.</p>
+    /// - On failure, responds with [`SdkError<DeleteReportDefinitionError>`](crate::error::DeleteReportDefinitionError)
     pub fn delete_report_definition(&self) -> fluent_builders::DeleteReportDefinition<C, M, R> {
         fluent_builders::DeleteReportDefinition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeReportDefinitions` operation.
-    ///
-    /// See [`DescribeReportDefinitions`](crate::client::fluent_builders::DescribeReportDefinitions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeReportDefinitions`](crate::client::fluent_builders::DescribeReportDefinitions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeReportDefinitions::into_paginator).
+    ///
+    /// - Takes [`DescribeReportDefinitionsInput`](crate::input::DescribeReportDefinitionsInput) with field(s):
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeReportDefinitionsInput::max_results): <p>The maximum number of results that AWS returns for the operation.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeReportDefinitionsInput::next_token): <p>A generic string.</p>
+    /// - On success, responds with [`DescribeReportDefinitionsOutput`](crate::output::DescribeReportDefinitionsOutput) with field(s):
+    ///   - [`report_definitions(Option<Vec<ReportDefinition>>)`](crate::output::DescribeReportDefinitionsOutput::report_definitions): <p>A list of AWS Cost and Usage reports owned by the account.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeReportDefinitionsOutput::next_token): <p>A generic string.</p>
+    /// - On failure, responds with [`SdkError<DescribeReportDefinitionsError>`](crate::error::DescribeReportDefinitionsError)
     pub fn describe_report_definitions(
         &self,
     ) -> fluent_builders::DescribeReportDefinitions<C, M, R> {
         fluent_builders::DescribeReportDefinitions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyReportDefinition` operation.
+    /// Constructs a fluent builder for the [`ModifyReportDefinition`](crate::client::fluent_builders::ModifyReportDefinition) operation.
     ///
-    /// See [`ModifyReportDefinition`](crate::client::fluent_builders::ModifyReportDefinition) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyReportDefinitionInput`](crate::input::ModifyReportDefinitionInput) with field(s):
+    ///   - [`report_name(Option<String>)`](crate::input::ModifyReportDefinitionInput::report_name): <p>The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces. </p>
+    ///   - [`report_definition(Option<ReportDefinition>)`](crate::input::ModifyReportDefinitionInput::report_definition): <p>The definition of AWS Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition. </p>
+    /// - On success, responds with [`ModifyReportDefinitionOutput`](crate::output::ModifyReportDefinitionOutput)
+
+    /// - On failure, responds with [`SdkError<ModifyReportDefinitionError>`](crate::error::ModifyReportDefinitionError)
     pub fn modify_report_definition(&self) -> fluent_builders::ModifyReportDefinition<C, M, R> {
         fluent_builders::ModifyReportDefinition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutReportDefinition` operation.
+    /// Constructs a fluent builder for the [`PutReportDefinition`](crate::client::fluent_builders::PutReportDefinition) operation.
     ///
-    /// See [`PutReportDefinition`](crate::client::fluent_builders::PutReportDefinition) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutReportDefinitionInput`](crate::input::PutReportDefinitionInput) with field(s):
+    ///   - [`report_definition(Option<ReportDefinition>)`](crate::input::PutReportDefinitionInput::report_definition): <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>
+    /// - On success, responds with [`PutReportDefinitionOutput`](crate::output::PutReportDefinitionOutput)
+
+    /// - On failure, responds with [`SdkError<PutReportDefinitionError>`](crate::error::PutReportDefinitionError)
     pub fn put_report_definition(&self) -> fluent_builders::PutReportDefinition<C, M, R> {
         fluent_builders::PutReportDefinition::new(self.handle.clone())
     }

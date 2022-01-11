@@ -83,446 +83,771 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AcceptInvitation` operation.
+    /// Constructs a fluent builder for the [`AcceptInvitation`](crate::client::fluent_builders::AcceptInvitation) operation.
     ///
-    /// See [`AcceptInvitation`](crate::client::fluent_builders::AcceptInvitation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AcceptInvitationInput`](crate::input::AcceptInvitationInput) with field(s):
+    ///   - [`administrator_account_id(Option<String>)`](crate::input::AcceptInvitationInput::administrator_account_id): <p>The Amazon Web Services account ID for the account that sent the invitation.</p>
+    ///   - [`invitation_id(Option<String>)`](crate::input::AcceptInvitationInput::invitation_id): <p>The unique identifier for the invitation to accept.</p>
+    ///   - [`master_account(Option<String>)`](crate::input::AcceptInvitationInput::master_account): <p>(Deprecated) The Amazon Web Services account ID for the account that sent the invitation. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
+    /// - On success, responds with [`AcceptInvitationOutput`](crate::output::AcceptInvitationOutput)
+
+    /// - On failure, responds with [`SdkError<AcceptInvitationError>`](crate::error::AcceptInvitationError)
     pub fn accept_invitation(&self) -> fluent_builders::AcceptInvitation<C, M, R> {
         fluent_builders::AcceptInvitation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchGetCustomDataIdentifiers` operation.
+    /// Constructs a fluent builder for the [`BatchGetCustomDataIdentifiers`](crate::client::fluent_builders::BatchGetCustomDataIdentifiers) operation.
     ///
-    /// See [`BatchGetCustomDataIdentifiers`](crate::client::fluent_builders::BatchGetCustomDataIdentifiers) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchGetCustomDataIdentifiersInput`](crate::input::BatchGetCustomDataIdentifiersInput) with field(s):
+    ///   - [`ids(Option<Vec<String>>)`](crate::input::BatchGetCustomDataIdentifiersInput::ids): <p>An array of custom data identifier IDs, one for each custom data identifier to retrieve information about.</p>
+    /// - On success, responds with [`BatchGetCustomDataIdentifiersOutput`](crate::output::BatchGetCustomDataIdentifiersOutput) with field(s):
+    ///   - [`custom_data_identifiers(Option<Vec<BatchGetCustomDataIdentifierSummary>>)`](crate::output::BatchGetCustomDataIdentifiersOutput::custom_data_identifiers): <p>An array of objects, one for each custom data identifier that meets the criteria specified in the request.</p>
+    ///   - [`not_found_identifier_ids(Option<Vec<String>>)`](crate::output::BatchGetCustomDataIdentifiersOutput::not_found_identifier_ids): <p>An array of custom data identifier IDs, one for each custom data identifier that was specified in the request but doesn't correlate to an existing custom data identifier.</p>
+    /// - On failure, responds with [`SdkError<BatchGetCustomDataIdentifiersError>`](crate::error::BatchGetCustomDataIdentifiersError)
     pub fn batch_get_custom_data_identifiers(
         &self,
     ) -> fluent_builders::BatchGetCustomDataIdentifiers<C, M, R> {
         fluent_builders::BatchGetCustomDataIdentifiers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateClassificationJob` operation.
+    /// Constructs a fluent builder for the [`CreateClassificationJob`](crate::client::fluent_builders::CreateClassificationJob) operation.
     ///
-    /// See [`CreateClassificationJob`](crate::client::fluent_builders::CreateClassificationJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateClassificationJobInput`](crate::input::CreateClassificationJobInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::CreateClassificationJobInput::client_token): <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    ///   - [`custom_data_identifier_ids(Option<Vec<String>>)`](crate::input::CreateClassificationJobInput::custom_data_identifier_ids): <p>An array of unique identifiers, one for each custom data identifier for the job to use when it analyzes data. To use only managed data identifiers, don't specify a value for this property and specify a value other than NONE for the managedDataIdentifierSelector property.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateClassificationJobInput::description): <p>A custom description of the job. The description can contain as many as 200 characters.</p>
+    ///   - [`initial_run(bool)`](crate::input::CreateClassificationJobInput::initial_run): <p>For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the job is created (true). To analyze only those objects that are created or changed after you create the job and before the job's first scheduled run, set this value to false.</p> <p>If you configure the job to run only once, don't specify a value for this property.</p>
+    ///   - [`job_type(Option<JobType>)`](crate::input::CreateClassificationJobInput::job_type): <p>The schedule for running the job. Valid values are:</p>  <ul>  <li><p>ONE_TIME - Run the job only once. If you specify this value, don't specify a value for the scheduleFrequency property.</p></li>   <li><p>SCHEDULED - Run the job on a daily, weekly, or monthly basis. If you specify this value, use the scheduleFrequency property to define the recurrence pattern for the job.</p></li> </ul>
+    ///   - [`managed_data_identifier_ids(Option<Vec<String>>)`](crate::input::CreateClassificationJobInput::managed_data_identifier_ids): <p>An array of unique identifiers, one for each managed data identifier for the job to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type that you specify for the job (managedDataIdentifierSelector).</p> <p>To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.</p>
+    ///   - [`managed_data_identifier_selector(Option<ManagedDataIdentifierSelector>)`](crate::input::CreateClassificationJobInput::managed_data_identifier_selector): <p>The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid values are:</p>  <ul>  <li><p>ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li>   <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>   <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>   <li><p>NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data identifier for the job (customDataIdentifierIds) and don't specify any values for the managedDataIdentifierIds property.</p></li> </ul>  <p>If you don't specify a value for this property, the job uses all managed data identifiers. If you don't specify a value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
+    ///   - [`name(Option<String>)`](crate::input::CreateClassificationJobInput::name): <p>A custom name for the job. The name can contain as many as 500 characters.</p>
+    ///   - [`s3_job_definition(Option<S3JobDefinition>)`](crate::input::CreateClassificationJobInput::s3_job_definition): <p>The S3 buckets that contain the objects to analyze, and the scope of that analysis.</p>
+    ///   - [`sampling_percentage(i32)`](crate::input::CreateClassificationJobInput::sampling_percentage): <p>The sampling depth, as a percentage, for the job to apply when processing objects. This value determines the percentage of eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects the objects to analyze at random, up to the specified percentage, and analyzes all the data in those objects.</p>
+    ///   - [`schedule_frequency(Option<JobScheduleFrequency>)`](crate::input::CreateClassificationJobInput::schedule_frequency): <p>The recurrence pattern for running the job. To run the job only once, don't specify a value for this property and set the value for the jobType property to ONE_TIME.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateClassificationJobInput::tags): <p>A map of key-value pairs that specifies the tags to associate with the job.</p>  <p>A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    /// - On success, responds with [`CreateClassificationJobOutput`](crate::output::CreateClassificationJobOutput) with field(s):
+    ///   - [`job_arn(Option<String>)`](crate::output::CreateClassificationJobOutput::job_arn): <p>The Amazon Resource Name (ARN) of the job.</p>
+    ///   - [`job_id(Option<String>)`](crate::output::CreateClassificationJobOutput::job_id): <p>The unique identifier for the job.</p>
+    /// - On failure, responds with [`SdkError<CreateClassificationJobError>`](crate::error::CreateClassificationJobError)
     pub fn create_classification_job(&self) -> fluent_builders::CreateClassificationJob<C, M, R> {
         fluent_builders::CreateClassificationJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateCustomDataIdentifier` operation.
+    /// Constructs a fluent builder for the [`CreateCustomDataIdentifier`](crate::client::fluent_builders::CreateCustomDataIdentifier) operation.
     ///
-    /// See [`CreateCustomDataIdentifier`](crate::client::fluent_builders::CreateCustomDataIdentifier) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateCustomDataIdentifierInput`](crate::input::CreateCustomDataIdentifierInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::CreateCustomDataIdentifierInput::client_token): <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateCustomDataIdentifierInput::description): <p>A custom description of the custom data identifier. The description can contain as many as 512 characters.</p>  <p>We strongly recommend that you avoid including any sensitive data in the description of a custom data identifier. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    ///   - [`ignore_words(Option<Vec<String>>)`](crate::input::CreateCustomDataIdentifierInput::ignore_words): <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
+    ///   - [`keywords(Option<Vec<String>>)`](crate::input::CreateCustomDataIdentifierInput::keywords): <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
+    ///   - [`maximum_match_distance(i32)`](crate::input::CreateCustomDataIdentifierInput::maximum_match_distance): <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression. The distance can be 1-300 characters. The default value is 50.</p>
+    ///   - [`name(Option<String>)`](crate::input::CreateCustomDataIdentifierInput::name): <p>A custom name for the custom data identifier. The name can contain as many as 128 characters.</p>  <p>We strongly recommend that you avoid including any sensitive data in the name of a custom data identifier. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    ///   - [`regex(Option<String>)`](crate::input::CreateCustomDataIdentifierInput::regex): <p>The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as 512 characters.</p>
+    ///   - [`severity_levels(Option<Vec<SeverityLevel>>)`](crate::input::CreateCustomDataIdentifierInput::severity_levels): <p>The severity to assign to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. You can specify as many as three SeverityLevel objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you specify more than one, the occurrences thresholds must be in ascending order by severity, moving from LOW to HIGH. For example, 1 for LOW, 50 for MEDIUM, and 100 for HIGH. If an S3 object contains fewer occurrences than the lowest specified threshold, Amazon Macie doesn't create a finding.</p>  <p>If you don't specify any values for this array, Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateCustomDataIdentifierInput::tags): <p>A map of key-value pairs that specifies the tags to associate with the custom data identifier.</p>  <p>A custom data identifier can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    /// - On success, responds with [`CreateCustomDataIdentifierOutput`](crate::output::CreateCustomDataIdentifierOutput) with field(s):
+    ///   - [`custom_data_identifier_id(Option<String>)`](crate::output::CreateCustomDataIdentifierOutput::custom_data_identifier_id): <p>The unique identifier for the custom data identifier that was created.</p>
+    /// - On failure, responds with [`SdkError<CreateCustomDataIdentifierError>`](crate::error::CreateCustomDataIdentifierError)
     pub fn create_custom_data_identifier(
         &self,
     ) -> fluent_builders::CreateCustomDataIdentifier<C, M, R> {
         fluent_builders::CreateCustomDataIdentifier::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateFindingsFilter` operation.
+    /// Constructs a fluent builder for the [`CreateFindingsFilter`](crate::client::fluent_builders::CreateFindingsFilter) operation.
     ///
-    /// See [`CreateFindingsFilter`](crate::client::fluent_builders::CreateFindingsFilter) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateFindingsFilterInput`](crate::input::CreateFindingsFilterInput) with field(s):
+    ///   - [`action(Option<FindingsFilterAction>)`](crate::input::CreateFindingsFilterInput::action): <p>The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateFindingsFilterInput::client_token): <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateFindingsFilterInput::description): <p>A custom description of the filter. The description can contain as many as 512 characters.</p>  <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    ///   - [`finding_criteria(Option<FindingCriteria>)`](crate::input::CreateFindingsFilterInput::finding_criteria): <p>The criteria to use to filter findings.</p>
+    ///   - [`name(Option<String>)`](crate::input::CreateFindingsFilterInput::name): <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p>  <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    ///   - [`position(i32)`](crate::input::CreateFindingsFilterInput::position): <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateFindingsFilterInput::tags): <p>A map of key-value pairs that specifies the tags to associate with the filter.</p>  <p>A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    /// - On success, responds with [`CreateFindingsFilterOutput`](crate::output::CreateFindingsFilterOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateFindingsFilterOutput::arn): <p>The Amazon Resource Name (ARN) of the filter that was created.</p>
+    ///   - [`id(Option<String>)`](crate::output::CreateFindingsFilterOutput::id): <p>The unique identifier for the filter that was created.</p>
+    /// - On failure, responds with [`SdkError<CreateFindingsFilterError>`](crate::error::CreateFindingsFilterError)
     pub fn create_findings_filter(&self) -> fluent_builders::CreateFindingsFilter<C, M, R> {
         fluent_builders::CreateFindingsFilter::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateInvitations` operation.
+    /// Constructs a fluent builder for the [`CreateInvitations`](crate::client::fluent_builders::CreateInvitations) operation.
     ///
-    /// See [`CreateInvitations`](crate::client::fluent_builders::CreateInvitations) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateInvitationsInput`](crate::input::CreateInvitationsInput) with field(s):
+    ///   - [`account_ids(Option<Vec<String>>)`](crate::input::CreateInvitationsInput::account_ids): <p>An array that lists Amazon Web Services account IDs, one for each account to send the invitation to.</p>
+    ///   - [`disable_email_notification(bool)`](crate::input::CreateInvitationsInput::disable_email_notification): <p>Specifies whether to send the invitation as an email message. If this value is false, Amazon Macie sends the invitation (as an email message) to the email address that you specified for the recipient's account when you associated the account with your account. The default value is false.</p>
+    ///   - [`message(Option<String>)`](crate::input::CreateInvitationsInput::message): <p>Custom text to include in the email message that contains the invitation. The text can contain as many as 80 alphanumeric characters.</p>
+    /// - On success, responds with [`CreateInvitationsOutput`](crate::output::CreateInvitationsOutput) with field(s):
+    ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::output::CreateInvitationsOutput::unprocessed_accounts): <p>An array of objects, one for each account whose invitation hasn't been processed. Each object identifies the account and explains why the invitation hasn't been processed for the account.</p>
+    /// - On failure, responds with [`SdkError<CreateInvitationsError>`](crate::error::CreateInvitationsError)
     pub fn create_invitations(&self) -> fluent_builders::CreateInvitations<C, M, R> {
         fluent_builders::CreateInvitations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateMember` operation.
+    /// Constructs a fluent builder for the [`CreateMember`](crate::client::fluent_builders::CreateMember) operation.
     ///
-    /// See [`CreateMember`](crate::client::fluent_builders::CreateMember) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateMemberInput`](crate::input::CreateMemberInput) with field(s):
+    ///   - [`account(Option<AccountDetail>)`](crate::input::CreateMemberInput::account): <p>The details of the account to associate with the administrator account.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateMemberInput::tags): <p>A map of key-value pairs that specifies the tags to associate with the account in Amazon Macie.</p>  <p>An account can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    /// - On success, responds with [`CreateMemberOutput`](crate::output::CreateMemberOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateMemberOutput::arn): <p>The Amazon Resource Name (ARN) of the account that was associated with the administrator account.</p>
+    /// - On failure, responds with [`SdkError<CreateMemberError>`](crate::error::CreateMemberError)
     pub fn create_member(&self) -> fluent_builders::CreateMember<C, M, R> {
         fluent_builders::CreateMember::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateSampleFindings` operation.
+    /// Constructs a fluent builder for the [`CreateSampleFindings`](crate::client::fluent_builders::CreateSampleFindings) operation.
     ///
-    /// See [`CreateSampleFindings`](crate::client::fluent_builders::CreateSampleFindings) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateSampleFindingsInput`](crate::input::CreateSampleFindingsInput) with field(s):
+    ///   - [`finding_types(Option<Vec<FindingType>>)`](crate::input::CreateSampleFindingsInput::finding_types): <p>An array of finding types, one for each type of sample finding to create. To create a sample of every type of finding that Amazon Macie supports, don't include this array in your request.</p>
+    /// - On success, responds with [`CreateSampleFindingsOutput`](crate::output::CreateSampleFindingsOutput)
+
+    /// - On failure, responds with [`SdkError<CreateSampleFindingsError>`](crate::error::CreateSampleFindingsError)
     pub fn create_sample_findings(&self) -> fluent_builders::CreateSampleFindings<C, M, R> {
         fluent_builders::CreateSampleFindings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeclineInvitations` operation.
+    /// Constructs a fluent builder for the [`DeclineInvitations`](crate::client::fluent_builders::DeclineInvitations) operation.
     ///
-    /// See [`DeclineInvitations`](crate::client::fluent_builders::DeclineInvitations) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeclineInvitationsInput`](crate::input::DeclineInvitationsInput) with field(s):
+    ///   - [`account_ids(Option<Vec<String>>)`](crate::input::DeclineInvitationsInput::account_ids): <p>An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to decline.</p>
+    /// - On success, responds with [`DeclineInvitationsOutput`](crate::output::DeclineInvitationsOutput) with field(s):
+    ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::output::DeclineInvitationsOutput::unprocessed_accounts): <p>An array of objects, one for each account whose invitation hasn't been declined. Each object identifies the account and explains why the request hasn't been processed for that account.</p>
+    /// - On failure, responds with [`SdkError<DeclineInvitationsError>`](crate::error::DeclineInvitationsError)
     pub fn decline_invitations(&self) -> fluent_builders::DeclineInvitations<C, M, R> {
         fluent_builders::DeclineInvitations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteCustomDataIdentifier` operation.
+    /// Constructs a fluent builder for the [`DeleteCustomDataIdentifier`](crate::client::fluent_builders::DeleteCustomDataIdentifier) operation.
     ///
-    /// See [`DeleteCustomDataIdentifier`](crate::client::fluent_builders::DeleteCustomDataIdentifier) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteCustomDataIdentifierInput`](crate::input::DeleteCustomDataIdentifierInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::DeleteCustomDataIdentifierInput::id): <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    /// - On success, responds with [`DeleteCustomDataIdentifierOutput`](crate::output::DeleteCustomDataIdentifierOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteCustomDataIdentifierError>`](crate::error::DeleteCustomDataIdentifierError)
     pub fn delete_custom_data_identifier(
         &self,
     ) -> fluent_builders::DeleteCustomDataIdentifier<C, M, R> {
         fluent_builders::DeleteCustomDataIdentifier::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteFindingsFilter` operation.
+    /// Constructs a fluent builder for the [`DeleteFindingsFilter`](crate::client::fluent_builders::DeleteFindingsFilter) operation.
     ///
-    /// See [`DeleteFindingsFilter`](crate::client::fluent_builders::DeleteFindingsFilter) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteFindingsFilterInput`](crate::input::DeleteFindingsFilterInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::DeleteFindingsFilterInput::id): <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    /// - On success, responds with [`DeleteFindingsFilterOutput`](crate::output::DeleteFindingsFilterOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteFindingsFilterError>`](crate::error::DeleteFindingsFilterError)
     pub fn delete_findings_filter(&self) -> fluent_builders::DeleteFindingsFilter<C, M, R> {
         fluent_builders::DeleteFindingsFilter::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteInvitations` operation.
+    /// Constructs a fluent builder for the [`DeleteInvitations`](crate::client::fluent_builders::DeleteInvitations) operation.
     ///
-    /// See [`DeleteInvitations`](crate::client::fluent_builders::DeleteInvitations) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteInvitationsInput`](crate::input::DeleteInvitationsInput) with field(s):
+    ///   - [`account_ids(Option<Vec<String>>)`](crate::input::DeleteInvitationsInput::account_ids): <p>An array that lists Amazon Web Services account IDs, one for each account that sent an invitation to delete.</p>
+    /// - On success, responds with [`DeleteInvitationsOutput`](crate::output::DeleteInvitationsOutput) with field(s):
+    ///   - [`unprocessed_accounts(Option<Vec<UnprocessedAccount>>)`](crate::output::DeleteInvitationsOutput::unprocessed_accounts): <p>An array of objects, one for each account whose invitation hasn't been deleted. Each object identifies the account and explains why the request hasn't been processed for that account.</p>
+    /// - On failure, responds with [`SdkError<DeleteInvitationsError>`](crate::error::DeleteInvitationsError)
     pub fn delete_invitations(&self) -> fluent_builders::DeleteInvitations<C, M, R> {
         fluent_builders::DeleteInvitations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteMember` operation.
+    /// Constructs a fluent builder for the [`DeleteMember`](crate::client::fluent_builders::DeleteMember) operation.
     ///
-    /// See [`DeleteMember`](crate::client::fluent_builders::DeleteMember) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteMemberInput`](crate::input::DeleteMemberInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::DeleteMemberInput::id): <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    /// - On success, responds with [`DeleteMemberOutput`](crate::output::DeleteMemberOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteMemberError>`](crate::error::DeleteMemberError)
     pub fn delete_member(&self) -> fluent_builders::DeleteMember<C, M, R> {
         fluent_builders::DeleteMember::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeBuckets` operation.
-    ///
-    /// See [`DescribeBuckets`](crate::client::fluent_builders::DescribeBuckets) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeBuckets`](crate::client::fluent_builders::DescribeBuckets) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeBuckets::into_paginator).
+    ///
+    /// - Takes [`DescribeBucketsInput`](crate::input::DescribeBucketsInput) with field(s):
+    ///   - [`criteria(Option<HashMap<String, BucketCriteriaAdditionalProperties>>)`](crate::input::DescribeBucketsInput::criteria): <p>The criteria to use to filter the query results.</p>
+    ///   - [`max_results(i32)`](crate::input::DescribeBucketsInput::max_results): <p>The maximum number of items to include in each page of the response. The default value is 50.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeBucketsInput::next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    ///   - [`sort_criteria(Option<BucketSortCriteria>)`](crate::input::DescribeBucketsInput::sort_criteria): <p>The criteria to use to sort the query results.</p>
+    /// - On success, responds with [`DescribeBucketsOutput`](crate::output::DescribeBucketsOutput) with field(s):
+    ///   - [`buckets(Option<Vec<BucketMetadata>>)`](crate::output::DescribeBucketsOutput::buckets): <p>An array of objects, one for each bucket that meets the filter criteria specified in the request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeBucketsOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    /// - On failure, responds with [`SdkError<DescribeBucketsError>`](crate::error::DescribeBucketsError)
     pub fn describe_buckets(&self) -> fluent_builders::DescribeBuckets<C, M, R> {
         fluent_builders::DescribeBuckets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeClassificationJob` operation.
+    /// Constructs a fluent builder for the [`DescribeClassificationJob`](crate::client::fluent_builders::DescribeClassificationJob) operation.
     ///
-    /// See [`DescribeClassificationJob`](crate::client::fluent_builders::DescribeClassificationJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeClassificationJobInput`](crate::input::DescribeClassificationJobInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::DescribeClassificationJobInput::job_id): <p>The unique identifier for the classification job.</p>
+    /// - On success, responds with [`DescribeClassificationJobOutput`](crate::output::DescribeClassificationJobOutput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::output::DescribeClassificationJobOutput::client_token): <p>The token that was provided to ensure the idempotency of the request to create the job.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeClassificationJobOutput::created_at): <p>The date and time, in UTC and extended ISO 8601 format, when the job was created.</p>
+    ///   - [`custom_data_identifier_ids(Option<Vec<String>>)`](crate::output::DescribeClassificationJobOutput::custom_data_identifier_ids): <p>An array of unique identifiers, one for each custom data identifier that the job uses to analyze data. This value is null if the job uses only managed data identifiers to analyze data.</p>
+    ///   - [`description(Option<String>)`](crate::output::DescribeClassificationJobOutput::description): <p>The custom description of the job.</p>
+    ///   - [`initial_run(bool)`](crate::output::DescribeClassificationJobOutput::initial_run): <p>For a recurring job, specifies whether you configured the job to analyze all existing, eligible objects immediately after the job was created (true). If you configured the job to analyze only those objects that were created or changed after the job was created and before the job's first scheduled run, this value is false. This value is also false for a one-time job.</p>
+    ///   - [`job_arn(Option<String>)`](crate::output::DescribeClassificationJobOutput::job_arn): <p>The Amazon Resource Name (ARN) of the job.</p>
+    ///   - [`job_id(Option<String>)`](crate::output::DescribeClassificationJobOutput::job_id): <p>The unique identifier for the job.</p>
+    ///   - [`job_status(Option<JobStatus>)`](crate::output::DescribeClassificationJobOutput::job_status): <p>The current status of the job. Possible values are:</p>  <ul>  <li><p>CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30 days.</p></li>   <li><p>COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value doesn't apply to recurring jobs.</p></li>   <li><p>IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This value doesn't apply to one-time jobs.</p></li>   <li><p>PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data discovery quota for your account or one or more member accounts that the job analyzes data for.</p></li>   <li><p>RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.</p></li>   <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li> </ul>
+    ///   - [`job_type(Option<JobType>)`](crate::output::DescribeClassificationJobOutput::job_type): <p>The schedule for running the job. Possible values are:</p>  <ul>  <li><p>ONE_TIME - The job runs only once.</p></li>   <li><p>SCHEDULED - The job runs on a daily, weekly, or monthly basis. The scheduleFrequency property indicates the recurrence pattern for the job.</p></li> </ul>
+    ///   - [`last_run_error_status(Option<LastRunErrorStatus>)`](crate::output::DescribeClassificationJobOutput::last_run_error_status): <p>Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this value indicates the error status of the job's most recent run.</p>
+    ///   - [`last_run_time(Option<DateTime>)`](crate::output::DescribeClassificationJobOutput::last_run_time): <p>The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring job, this value indicates when the most recent run started.</p>
+    ///   - [`managed_data_identifier_ids(Option<Vec<String>>)`](crate::output::DescribeClassificationJobOutput::managed_data_identifier_ids): <p>An array of unique identifiers, one for each managed data identifier that the job is explicitly configured to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type specified for the job (managedDataIdentifierSelector). This value is null if the job's managed data identifier selection type is ALL or the job uses only custom data identifiers (customDataIdentifierIds) to analyze data.</p>
+    ///   - [`managed_data_identifier_selector(Option<ManagedDataIdentifierSelector>)`](crate::output::DescribeClassificationJobOutput::managed_data_identifier_selector): <p>The selection type that determines which managed data identifiers the job uses to analyze data. Possible values are:</p>  <ul>  <li><p>ALL - Use all the managed data identifiers that Amazon Macie provides.</p></li>   <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>   <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>   <li><p>NONE - Don't use any managed data identifiers.</p></li> </ul>  <p>If this value is null, the job uses all managed data identifiers. If this value is null, ALL, or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
+    ///   - [`name(Option<String>)`](crate::output::DescribeClassificationJobOutput::name): <p>The custom name of the job.</p>
+    ///   - [`s3_job_definition(Option<S3JobDefinition>)`](crate::output::DescribeClassificationJobOutput::s3_job_definition): <p>The S3 buckets that contain the objects to analyze, and the scope of that analysis.</p>
+    ///   - [`sampling_percentage(i32)`](crate::output::DescribeClassificationJobOutput::sampling_percentage): <p>The sampling depth, as a percentage, that determines the percentage of eligible objects that the job analyzes.</p>
+    ///   - [`schedule_frequency(Option<JobScheduleFrequency>)`](crate::output::DescribeClassificationJobOutput::schedule_frequency): <p>The recurrence pattern for running the job. This value is null if the job is configured to run only once.</p>
+    ///   - [`statistics(Option<Statistics>)`](crate::output::DescribeClassificationJobOutput::statistics): <p>The number of times that the job has run and processing statistics for the job's current run.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeClassificationJobOutput::tags): <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the classification job.</p>
+    ///   - [`user_paused_details(Option<UserPausedDetails>)`](crate::output::DescribeClassificationJobOutput::user_paused_details): <p>If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job or job run will expire and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is USER_PAUSED.</p>
+    /// - On failure, responds with [`SdkError<DescribeClassificationJobError>`](crate::error::DescribeClassificationJobError)
     pub fn describe_classification_job(
         &self,
     ) -> fluent_builders::DescribeClassificationJob<C, M, R> {
         fluent_builders::DescribeClassificationJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeOrganizationConfiguration` operation.
+    /// Constructs a fluent builder for the [`DescribeOrganizationConfiguration`](crate::client::fluent_builders::DescribeOrganizationConfiguration) operation.
     ///
-    /// See [`DescribeOrganizationConfiguration`](crate::client::fluent_builders::DescribeOrganizationConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeOrganizationConfigurationInput`](crate::input::DescribeOrganizationConfigurationInput)
+
+    /// - On success, responds with [`DescribeOrganizationConfigurationOutput`](crate::output::DescribeOrganizationConfigurationOutput) with field(s):
+    ///   - [`auto_enable(bool)`](crate::output::DescribeOrganizationConfigurationOutput::auto_enable): <p>Specifies whether Amazon Macie is enabled automatically for accounts that are added to the organization.</p>
+    ///   - [`max_account_limit_reached(bool)`](crate::output::DescribeOrganizationConfigurationOutput::max_account_limit_reached): <p>Specifies whether the maximum number of Amazon Macie member accounts are part of the organization.</p>
+    /// - On failure, responds with [`SdkError<DescribeOrganizationConfigurationError>`](crate::error::DescribeOrganizationConfigurationError)
     pub fn describe_organization_configuration(
         &self,
     ) -> fluent_builders::DescribeOrganizationConfiguration<C, M, R> {
         fluent_builders::DescribeOrganizationConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisableMacie` operation.
+    /// Constructs a fluent builder for the [`DisableMacie`](crate::client::fluent_builders::DisableMacie) operation.
     ///
-    /// See [`DisableMacie`](crate::client::fluent_builders::DisableMacie) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisableMacieInput`](crate::input::DisableMacieInput)
+
+    /// - On success, responds with [`DisableMacieOutput`](crate::output::DisableMacieOutput)
+
+    /// - On failure, responds with [`SdkError<DisableMacieError>`](crate::error::DisableMacieError)
     pub fn disable_macie(&self) -> fluent_builders::DisableMacie<C, M, R> {
         fluent_builders::DisableMacie::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisableOrganizationAdminAccount` operation.
+    /// Constructs a fluent builder for the [`DisableOrganizationAdminAccount`](crate::client::fluent_builders::DisableOrganizationAdminAccount) operation.
     ///
-    /// See [`DisableOrganizationAdminAccount`](crate::client::fluent_builders::DisableOrganizationAdminAccount) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisableOrganizationAdminAccountInput`](crate::input::DisableOrganizationAdminAccountInput) with field(s):
+    ///   - [`admin_account_id(Option<String>)`](crate::input::DisableOrganizationAdminAccountInput::admin_account_id): <p>The Amazon Web Services account ID of the delegated Amazon Macie administrator account.</p>
+    /// - On success, responds with [`DisableOrganizationAdminAccountOutput`](crate::output::DisableOrganizationAdminAccountOutput)
+
+    /// - On failure, responds with [`SdkError<DisableOrganizationAdminAccountError>`](crate::error::DisableOrganizationAdminAccountError)
     pub fn disable_organization_admin_account(
         &self,
     ) -> fluent_builders::DisableOrganizationAdminAccount<C, M, R> {
         fluent_builders::DisableOrganizationAdminAccount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateFromAdministratorAccount` operation.
+    /// Constructs a fluent builder for the [`DisassociateFromAdministratorAccount`](crate::client::fluent_builders::DisassociateFromAdministratorAccount) operation.
     ///
-    /// See [`DisassociateFromAdministratorAccount`](crate::client::fluent_builders::DisassociateFromAdministratorAccount) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateFromAdministratorAccountInput`](crate::input::DisassociateFromAdministratorAccountInput)
+
+    /// - On success, responds with [`DisassociateFromAdministratorAccountOutput`](crate::output::DisassociateFromAdministratorAccountOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateFromAdministratorAccountError>`](crate::error::DisassociateFromAdministratorAccountError)
     pub fn disassociate_from_administrator_account(
         &self,
     ) -> fluent_builders::DisassociateFromAdministratorAccount<C, M, R> {
         fluent_builders::DisassociateFromAdministratorAccount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateFromMasterAccount` operation.
+    /// Constructs a fluent builder for the [`DisassociateFromMasterAccount`](crate::client::fluent_builders::DisassociateFromMasterAccount) operation.
     ///
-    /// See [`DisassociateFromMasterAccount`](crate::client::fluent_builders::DisassociateFromMasterAccount) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateFromMasterAccountInput`](crate::input::DisassociateFromMasterAccountInput)
+
+    /// - On success, responds with [`DisassociateFromMasterAccountOutput`](crate::output::DisassociateFromMasterAccountOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateFromMasterAccountError>`](crate::error::DisassociateFromMasterAccountError)
     pub fn disassociate_from_master_account(
         &self,
     ) -> fluent_builders::DisassociateFromMasterAccount<C, M, R> {
         fluent_builders::DisassociateFromMasterAccount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateMember` operation.
+    /// Constructs a fluent builder for the [`DisassociateMember`](crate::client::fluent_builders::DisassociateMember) operation.
     ///
-    /// See [`DisassociateMember`](crate::client::fluent_builders::DisassociateMember) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateMemberInput`](crate::input::DisassociateMemberInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::DisassociateMemberInput::id): <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    /// - On success, responds with [`DisassociateMemberOutput`](crate::output::DisassociateMemberOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateMemberError>`](crate::error::DisassociateMemberError)
     pub fn disassociate_member(&self) -> fluent_builders::DisassociateMember<C, M, R> {
         fluent_builders::DisassociateMember::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `EnableMacie` operation.
+    /// Constructs a fluent builder for the [`EnableMacie`](crate::client::fluent_builders::EnableMacie) operation.
     ///
-    /// See [`EnableMacie`](crate::client::fluent_builders::EnableMacie) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`EnableMacieInput`](crate::input::EnableMacieInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::EnableMacieInput::client_token): <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    ///   - [`finding_publishing_frequency(Option<FindingPublishingFrequency>)`](crate::input::EnableMacieInput::finding_publishing_frequency): <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
+    ///   - [`status(Option<MacieStatus>)`](crate::input::EnableMacieInput::status): <p>Specifies the new status for the account. To enable Amazon Macie and start all Macie activities for the account, set this value to ENABLED.</p>
+    /// - On success, responds with [`EnableMacieOutput`](crate::output::EnableMacieOutput)
+
+    /// - On failure, responds with [`SdkError<EnableMacieError>`](crate::error::EnableMacieError)
     pub fn enable_macie(&self) -> fluent_builders::EnableMacie<C, M, R> {
         fluent_builders::EnableMacie::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `EnableOrganizationAdminAccount` operation.
+    /// Constructs a fluent builder for the [`EnableOrganizationAdminAccount`](crate::client::fluent_builders::EnableOrganizationAdminAccount) operation.
     ///
-    /// See [`EnableOrganizationAdminAccount`](crate::client::fluent_builders::EnableOrganizationAdminAccount) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`EnableOrganizationAdminAccountInput`](crate::input::EnableOrganizationAdminAccountInput) with field(s):
+    ///   - [`admin_account_id(Option<String>)`](crate::input::EnableOrganizationAdminAccountInput::admin_account_id): <p>The Amazon Web Services account ID for the account to designate as the delegated Amazon Macie administrator account for the organization.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::EnableOrganizationAdminAccountInput::client_token): <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    /// - On success, responds with [`EnableOrganizationAdminAccountOutput`](crate::output::EnableOrganizationAdminAccountOutput)
+
+    /// - On failure, responds with [`SdkError<EnableOrganizationAdminAccountError>`](crate::error::EnableOrganizationAdminAccountError)
     pub fn enable_organization_admin_account(
         &self,
     ) -> fluent_builders::EnableOrganizationAdminAccount<C, M, R> {
         fluent_builders::EnableOrganizationAdminAccount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAdministratorAccount` operation.
+    /// Constructs a fluent builder for the [`GetAdministratorAccount`](crate::client::fluent_builders::GetAdministratorAccount) operation.
     ///
-    /// See [`GetAdministratorAccount`](crate::client::fluent_builders::GetAdministratorAccount) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetAdministratorAccountInput`](crate::input::GetAdministratorAccountInput)
+
+    /// - On success, responds with [`GetAdministratorAccountOutput`](crate::output::GetAdministratorAccountOutput) with field(s):
+    ///   - [`administrator(Option<Invitation>)`](crate::output::GetAdministratorAccountOutput::administrator): <p>The Amazon Web Services account ID for the administrator account. If the accounts are associated by an Amazon Macie membership invitation, this object also provides details about the invitation that was sent to establish the relationship between the accounts.</p>
+    /// - On failure, responds with [`SdkError<GetAdministratorAccountError>`](crate::error::GetAdministratorAccountError)
     pub fn get_administrator_account(&self) -> fluent_builders::GetAdministratorAccount<C, M, R> {
         fluent_builders::GetAdministratorAccount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBucketStatistics` operation.
+    /// Constructs a fluent builder for the [`GetBucketStatistics`](crate::client::fluent_builders::GetBucketStatistics) operation.
     ///
-    /// See [`GetBucketStatistics`](crate::client::fluent_builders::GetBucketStatistics) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetBucketStatisticsInput`](crate::input::GetBucketStatisticsInput) with field(s):
+    ///   - [`account_id(Option<String>)`](crate::input::GetBucketStatisticsInput::account_id): <p>The unique identifier for the Amazon Web Services account.</p>
+    /// - On success, responds with [`GetBucketStatisticsOutput`](crate::output::GetBucketStatisticsOutput) with field(s):
+    ///   - [`bucket_count(i64)`](crate::output::GetBucketStatisticsOutput::bucket_count): <p>The total number of buckets.</p>
+    ///   - [`bucket_count_by_effective_permission(Option<BucketCountByEffectivePermission>)`](crate::output::GetBucketStatisticsOutput::bucket_count_by_effective_permission): <p>The total number of buckets that are publicly accessible based on a combination of permissions settings for each bucket.</p>
+    ///   - [`bucket_count_by_encryption_type(Option<BucketCountByEncryptionType>)`](crate::output::GetBucketStatisticsOutput::bucket_count_by_encryption_type): <p>The total number of buckets that use certain types of server-side encryption to encrypt new objects by default. This object also reports the total number of buckets that don't encrypt new objects by default.</p>
+    ///   - [`bucket_count_by_object_encryption_requirement(Option<BucketCountPolicyAllowsUnencryptedObjectUploads>)`](crate::output::GetBucketStatisticsOutput::bucket_count_by_object_encryption_requirement): <p>The total number of buckets whose bucket policies do or don't require server-side encryption of objects when objects are uploaded to the buckets.</p>
+    ///   - [`bucket_count_by_shared_access_type(Option<BucketCountBySharedAccessType>)`](crate::output::GetBucketStatisticsOutput::bucket_count_by_shared_access_type): <p>The total number of buckets that are or aren't shared with another Amazon Web Services account.</p>
+    ///   - [`classifiable_object_count(i64)`](crate::output::GetBucketStatisticsOutput::classifiable_object_count): <p>The total number of objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
+    ///   - [`classifiable_size_in_bytes(i64)`](crate::output::GetBucketStatisticsOutput::classifiable_size_in_bytes): <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>  <p>If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the latest version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
+    ///   - [`last_updated(Option<DateTime>)`](crate::output::GetBucketStatisticsOutput::last_updated): <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and object metadata from Amazon S3 for the buckets.</p>
+    ///   - [`object_count(i64)`](crate::output::GetBucketStatisticsOutput::object_count): <p>The total number of objects in the buckets.</p>
+    ///   - [`size_in_bytes(i64)`](crate::output::GetBucketStatisticsOutput::size_in_bytes): <p>The total storage size, in bytes, of the buckets.</p>  <p>If versioning is enabled for any of the buckets, Amazon Macie calculates this value based on the size of the latest version of each object in those buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
+    ///   - [`size_in_bytes_compressed(i64)`](crate::output::GetBucketStatisticsOutput::size_in_bytes_compressed): <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.</p>  <p>If versioning is enabled for any of the buckets, Amazon Macie calculates this value based on the size of the latest version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions of the applicable objects in the buckets.</p>
+    ///   - [`unclassifiable_object_count(Option<ObjectLevelStatistics>)`](crate::output::GetBucketStatisticsOutput::unclassifiable_object_count): <p>The total number of objects that Amazon Macie can't analyze in the buckets. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
+    ///   - [`unclassifiable_object_size_in_bytes(Option<ObjectLevelStatistics>)`](crate::output::GetBucketStatisticsOutput::unclassifiable_object_size_in_bytes): <p>The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the buckets. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
+    /// - On failure, responds with [`SdkError<GetBucketStatisticsError>`](crate::error::GetBucketStatisticsError)
     pub fn get_bucket_statistics(&self) -> fluent_builders::GetBucketStatistics<C, M, R> {
         fluent_builders::GetBucketStatistics::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetClassificationExportConfiguration` operation.
+    /// Constructs a fluent builder for the [`GetClassificationExportConfiguration`](crate::client::fluent_builders::GetClassificationExportConfiguration) operation.
     ///
-    /// See [`GetClassificationExportConfiguration`](crate::client::fluent_builders::GetClassificationExportConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetClassificationExportConfigurationInput`](crate::input::GetClassificationExportConfigurationInput)
+
+    /// - On success, responds with [`GetClassificationExportConfigurationOutput`](crate::output::GetClassificationExportConfigurationOutput) with field(s):
+    ///   - [`configuration(Option<ClassificationExportConfiguration>)`](crate::output::GetClassificationExportConfigurationOutput::configuration): <p>The location where data classification results are stored, and the encryption settings that are used when storing results in that location.</p>
+    /// - On failure, responds with [`SdkError<GetClassificationExportConfigurationError>`](crate::error::GetClassificationExportConfigurationError)
     pub fn get_classification_export_configuration(
         &self,
     ) -> fluent_builders::GetClassificationExportConfiguration<C, M, R> {
         fluent_builders::GetClassificationExportConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCustomDataIdentifier` operation.
+    /// Constructs a fluent builder for the [`GetCustomDataIdentifier`](crate::client::fluent_builders::GetCustomDataIdentifier) operation.
     ///
-    /// See [`GetCustomDataIdentifier`](crate::client::fluent_builders::GetCustomDataIdentifier) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetCustomDataIdentifierInput`](crate::input::GetCustomDataIdentifierInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::GetCustomDataIdentifierInput::id): <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    /// - On success, responds with [`GetCustomDataIdentifierOutput`](crate::output::GetCustomDataIdentifierOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::GetCustomDataIdentifierOutput::arn): <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::GetCustomDataIdentifierOutput::created_at): <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>
+    ///   - [`deleted(bool)`](crate::output::GetCustomDataIdentifierOutput::deleted): <p>Specifies whether the custom data identifier was deleted. If you delete a custom data identifier, Amazon Macie doesn't delete it permanently. Instead, it soft deletes the identifier.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetCustomDataIdentifierOutput::description): <p>The custom description of the custom data identifier.</p>
+    ///   - [`id(Option<String>)`](crate::output::GetCustomDataIdentifierOutput::id): <p>The unique identifier for the custom data identifier.</p>
+    ///   - [`ignore_words(Option<Vec<String>>)`](crate::output::GetCustomDataIdentifierOutput::ignore_words): <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. Ignore words are case sensitive.</p>
+    ///   - [`keywords(Option<Vec<String>>)`](crate::output::GetCustomDataIdentifierOutput::keywords): <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.</p>
+    ///   - [`maximum_match_distance(i32)`](crate::output::GetCustomDataIdentifierOutput::maximum_match_distance): <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression.</p>
+    ///   - [`name(Option<String>)`](crate::output::GetCustomDataIdentifierOutput::name): <p>The custom name of the custom data identifier.</p>
+    ///   - [`regex(Option<String>)`](crate::output::GetCustomDataIdentifierOutput::regex): <p>The regular expression (<i>regex</i>) that defines the pattern to match.</p>
+    ///   - [`severity_levels(Option<Vec<SeverityLevel>>)`](crate::output::GetCustomDataIdentifierOutput::severity_levels): <p>Specifies the severity that's assigned to findings that the custom data identifier produces, based on the number of occurrences of text that matches the custom data identifier's detection criteria. By default, Amazon Macie creates findings for S3 objects that contain at least one occurrence of text that matches the detection criteria, and Macie assigns the MEDIUM severity to those findings.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetCustomDataIdentifierOutput::tags): <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the custom data identifier.</p>
+    /// - On failure, responds with [`SdkError<GetCustomDataIdentifierError>`](crate::error::GetCustomDataIdentifierError)
     pub fn get_custom_data_identifier(&self) -> fluent_builders::GetCustomDataIdentifier<C, M, R> {
         fluent_builders::GetCustomDataIdentifier::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetFindings` operation.
+    /// Constructs a fluent builder for the [`GetFindings`](crate::client::fluent_builders::GetFindings) operation.
     ///
-    /// See [`GetFindings`](crate::client::fluent_builders::GetFindings) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetFindingsInput`](crate::input::GetFindingsInput) with field(s):
+    ///   - [`finding_ids(Option<Vec<String>>)`](crate::input::GetFindingsInput::finding_ids): <p>An array of strings that lists the unique identifiers for the findings to retrieve.</p>
+    ///   - [`sort_criteria(Option<SortCriteria>)`](crate::input::GetFindingsInput::sort_criteria): <p>The criteria for sorting the results of the request.</p>
+    /// - On success, responds with [`GetFindingsOutput`](crate::output::GetFindingsOutput) with field(s):
+    ///   - [`findings(Option<Vec<Finding>>)`](crate::output::GetFindingsOutput::findings): <p>An array of objects, one for each finding that meets the criteria specified in the request.</p>
+    /// - On failure, responds with [`SdkError<GetFindingsError>`](crate::error::GetFindingsError)
     pub fn get_findings(&self) -> fluent_builders::GetFindings<C, M, R> {
         fluent_builders::GetFindings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetFindingsFilter` operation.
+    /// Constructs a fluent builder for the [`GetFindingsFilter`](crate::client::fluent_builders::GetFindingsFilter) operation.
     ///
-    /// See [`GetFindingsFilter`](crate::client::fluent_builders::GetFindingsFilter) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetFindingsFilterInput`](crate::input::GetFindingsFilterInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::GetFindingsFilterInput::id): <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    /// - On success, responds with [`GetFindingsFilterOutput`](crate::output::GetFindingsFilterOutput) with field(s):
+    ///   - [`action(Option<FindingsFilterAction>)`](crate::output::GetFindingsFilterOutput::action): <p>The action that's performed on findings that meet the filter criteria (findingCriteria). Possible values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
+    ///   - [`arn(Option<String>)`](crate::output::GetFindingsFilterOutput::arn): <p>The Amazon Resource Name (ARN) of the filter.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetFindingsFilterOutput::description): <p>The custom description of the filter.</p>
+    ///   - [`finding_criteria(Option<FindingCriteria>)`](crate::output::GetFindingsFilterOutput::finding_criteria): <p>The criteria that's used to filter findings.</p>
+    ///   - [`id(Option<String>)`](crate::output::GetFindingsFilterOutput::id): <p>The unique identifier for the filter.</p>
+    ///   - [`name(Option<String>)`](crate::output::GetFindingsFilterOutput::name): <p>The custom name of the filter.</p>
+    ///   - [`position(i32)`](crate::output::GetFindingsFilterOutput::position): <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetFindingsFilterOutput::tags): <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the filter.</p>
+    /// - On failure, responds with [`SdkError<GetFindingsFilterError>`](crate::error::GetFindingsFilterError)
     pub fn get_findings_filter(&self) -> fluent_builders::GetFindingsFilter<C, M, R> {
         fluent_builders::GetFindingsFilter::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetFindingsPublicationConfiguration` operation.
+    /// Constructs a fluent builder for the [`GetFindingsPublicationConfiguration`](crate::client::fluent_builders::GetFindingsPublicationConfiguration) operation.
     ///
-    /// See [`GetFindingsPublicationConfiguration`](crate::client::fluent_builders::GetFindingsPublicationConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetFindingsPublicationConfigurationInput`](crate::input::GetFindingsPublicationConfigurationInput)
+
+    /// - On success, responds with [`GetFindingsPublicationConfigurationOutput`](crate::output::GetFindingsPublicationConfigurationOutput) with field(s):
+    ///   - [`security_hub_configuration(Option<SecurityHubConfiguration>)`](crate::output::GetFindingsPublicationConfigurationOutput::security_hub_configuration): <p>The configuration settings that determine which findings are published to Security Hub.</p>
+    /// - On failure, responds with [`SdkError<GetFindingsPublicationConfigurationError>`](crate::error::GetFindingsPublicationConfigurationError)
     pub fn get_findings_publication_configuration(
         &self,
     ) -> fluent_builders::GetFindingsPublicationConfiguration<C, M, R> {
         fluent_builders::GetFindingsPublicationConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetFindingStatistics` operation.
+    /// Constructs a fluent builder for the [`GetFindingStatistics`](crate::client::fluent_builders::GetFindingStatistics) operation.
     ///
-    /// See [`GetFindingStatistics`](crate::client::fluent_builders::GetFindingStatistics) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetFindingStatisticsInput`](crate::input::GetFindingStatisticsInput) with field(s):
+    ///   - [`finding_criteria(Option<FindingCriteria>)`](crate::input::GetFindingStatisticsInput::finding_criteria): <p>The criteria to use to filter the query results.</p>
+    ///   - [`group_by(Option<GroupBy>)`](crate::input::GetFindingStatisticsInput::group_by): <p>The finding property to use to group the query results. Valid values are:</p>  <ul>  <li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li>   <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li>   <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li>   <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li> </ul>
+    ///   - [`size(i32)`](crate::input::GetFindingStatisticsInput::size): <p>The maximum number of items to include in each page of the response.</p>
+    ///   - [`sort_criteria(Option<FindingStatisticsSortCriteria>)`](crate::input::GetFindingStatisticsInput::sort_criteria): <p>The criteria to use to sort the query results.</p>
+    /// - On success, responds with [`GetFindingStatisticsOutput`](crate::output::GetFindingStatisticsOutput) with field(s):
+    ///   - [`counts_by_group(Option<Vec<GroupCount>>)`](crate::output::GetFindingStatisticsOutput::counts_by_group): <p>An array of objects, one for each group of findings that meet the filter criteria specified in the request.</p>
+    /// - On failure, responds with [`SdkError<GetFindingStatisticsError>`](crate::error::GetFindingStatisticsError)
     pub fn get_finding_statistics(&self) -> fluent_builders::GetFindingStatistics<C, M, R> {
         fluent_builders::GetFindingStatistics::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetInvitationsCount` operation.
+    /// Constructs a fluent builder for the [`GetInvitationsCount`](crate::client::fluent_builders::GetInvitationsCount) operation.
     ///
-    /// See [`GetInvitationsCount`](crate::client::fluent_builders::GetInvitationsCount) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetInvitationsCountInput`](crate::input::GetInvitationsCountInput)
+
+    /// - On success, responds with [`GetInvitationsCountOutput`](crate::output::GetInvitationsCountOutput) with field(s):
+    ///   - [`invitations_count(i64)`](crate::output::GetInvitationsCountOutput::invitations_count): <p>The total number of invitations that were received by the account, not including the currently accepted invitation.</p>
+    /// - On failure, responds with [`SdkError<GetInvitationsCountError>`](crate::error::GetInvitationsCountError)
     pub fn get_invitations_count(&self) -> fluent_builders::GetInvitationsCount<C, M, R> {
         fluent_builders::GetInvitationsCount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMacieSession` operation.
+    /// Constructs a fluent builder for the [`GetMacieSession`](crate::client::fluent_builders::GetMacieSession) operation.
     ///
-    /// See [`GetMacieSession`](crate::client::fluent_builders::GetMacieSession) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetMacieSessionInput`](crate::input::GetMacieSessionInput)
+
+    /// - On success, responds with [`GetMacieSessionOutput`](crate::output::GetMacieSessionOutput) with field(s):
+    ///   - [`created_at(Option<DateTime>)`](crate::output::GetMacieSessionOutput::created_at): <p>The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie account was created.</p>
+    ///   - [`finding_publishing_frequency(Option<FindingPublishingFrequency>)`](crate::output::GetMacieSessionOutput::finding_publishing_frequency): <p>The frequency with which Amazon Macie publishes updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
+    ///   - [`service_role(Option<String>)`](crate::output::GetMacieSessionOutput::service_role): <p>The Amazon Resource Name (ARN) of the service-linked role that allows Amazon Macie to monitor and analyze data in Amazon Web Services resources for the account.</p>
+    ///   - [`status(Option<MacieStatus>)`](crate::output::GetMacieSessionOutput::status): <p>The current status of the Amazon Macie account. Possible values are: PAUSED, the account is enabled but all Macie activities are suspended (paused) for the account; and, ENABLED, the account is enabled and all Macie activities are enabled for the account.</p>
+    ///   - [`updated_at(Option<DateTime>)`](crate::output::GetMacieSessionOutput::updated_at): <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Amazon Macie account.</p>
+    /// - On failure, responds with [`SdkError<GetMacieSessionError>`](crate::error::GetMacieSessionError)
     pub fn get_macie_session(&self) -> fluent_builders::GetMacieSession<C, M, R> {
         fluent_builders::GetMacieSession::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMasterAccount` operation.
+    /// Constructs a fluent builder for the [`GetMasterAccount`](crate::client::fluent_builders::GetMasterAccount) operation.
     ///
-    /// See [`GetMasterAccount`](crate::client::fluent_builders::GetMasterAccount) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetMasterAccountInput`](crate::input::GetMasterAccountInput)
+
+    /// - On success, responds with [`GetMasterAccountOutput`](crate::output::GetMasterAccountOutput) with field(s):
+    ///   - [`master(Option<Invitation>)`](crate::output::GetMasterAccountOutput::master): <p>(Deprecated) The Amazon Web Services account ID for the administrator account. If the accounts are associated by a Macie membership invitation, this object also provides details about the invitation that was sent to establish the relationship between the accounts.</p>
+    /// - On failure, responds with [`SdkError<GetMasterAccountError>`](crate::error::GetMasterAccountError)
     pub fn get_master_account(&self) -> fluent_builders::GetMasterAccount<C, M, R> {
         fluent_builders::GetMasterAccount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMember` operation.
+    /// Constructs a fluent builder for the [`GetMember`](crate::client::fluent_builders::GetMember) operation.
     ///
-    /// See [`GetMember`](crate::client::fluent_builders::GetMember) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetMemberInput`](crate::input::GetMemberInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::GetMemberInput::id): <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    /// - On success, responds with [`GetMemberOutput`](crate::output::GetMemberOutput) with field(s):
+    ///   - [`account_id(Option<String>)`](crate::output::GetMemberOutput::account_id): <p>The Amazon Web Services account ID for the account.</p>
+    ///   - [`administrator_account_id(Option<String>)`](crate::output::GetMemberOutput::administrator_account_id): <p>The Amazon Web Services account ID for the administrator account.</p>
+    ///   - [`arn(Option<String>)`](crate::output::GetMemberOutput::arn): <p>The Amazon Resource Name (ARN) of the account.</p>
+    ///   - [`email(Option<String>)`](crate::output::GetMemberOutput::email): <p>The email address for the account.</p>
+    ///   - [`invited_at(Option<DateTime>)`](crate::output::GetMemberOutput::invited_at): <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if an invitation hasn't been sent to the account.</p>
+    ///   - [`master_account_id(Option<String>)`](crate::output::GetMemberOutput::master_account_id): <p>(Deprecated) The Amazon Web Services account ID for the administrator account. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
+    ///   - [`relationship_status(Option<RelationshipStatus>)`](crate::output::GetMemberOutput::relationship_status): <p>The current status of the relationship between the account and the administrator account.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetMemberOutput::tags): <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the member account in Amazon Macie.</p>
+    ///   - [`updated_at(Option<DateTime>)`](crate::output::GetMemberOutput::updated_at): <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the relationship between the account and the administrator account.</p>
+    /// - On failure, responds with [`SdkError<GetMemberError>`](crate::error::GetMemberError)
     pub fn get_member(&self) -> fluent_builders::GetMember<C, M, R> {
         fluent_builders::GetMember::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetUsageStatistics` operation.
-    ///
-    /// See [`GetUsageStatistics`](crate::client::fluent_builders::GetUsageStatistics) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetUsageStatistics`](crate::client::fluent_builders::GetUsageStatistics) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetUsageStatistics::into_paginator).
+    ///
+    /// - Takes [`GetUsageStatisticsInput`](crate::input::GetUsageStatisticsInput) with field(s):
+    ///   - [`filter_by(Option<Vec<UsageStatisticsFilter>>)`](crate::input::GetUsageStatisticsInput::filter_by): <p>An array of objects, one for each condition to use to filter the query results. If you specify more than one condition, Amazon Macie uses an AND operator to join the conditions.</p>
+    ///   - [`max_results(i32)`](crate::input::GetUsageStatisticsInput::max_results): <p>The maximum number of items to include in each page of the response.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetUsageStatisticsInput::next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    ///   - [`sort_by(Option<UsageStatisticsSortBy>)`](crate::input::GetUsageStatisticsInput::sort_by): <p>The criteria to use to sort the query results.</p>
+    ///   - [`time_range(Option<TimeRange>)`](crate::input::GetUsageStatisticsInput::time_range): <p>The inclusive time period to query usage data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value, Amazon Macie provides usage data for the preceding 30 days.</p>
+    /// - On success, responds with [`GetUsageStatisticsOutput`](crate::output::GetUsageStatisticsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::GetUsageStatisticsOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    ///   - [`records(Option<Vec<UsageRecord>>)`](crate::output::GetUsageStatisticsOutput::records): <p>An array of objects that contains the results of the query. Each object contains the data for an account that meets the filter criteria specified in the request.</p>
+    ///   - [`time_range(Option<TimeRange>)`](crate::output::GetUsageStatisticsOutput::time_range): <p>The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.</p>
+    /// - On failure, responds with [`SdkError<GetUsageStatisticsError>`](crate::error::GetUsageStatisticsError)
     pub fn get_usage_statistics(&self) -> fluent_builders::GetUsageStatistics<C, M, R> {
         fluent_builders::GetUsageStatistics::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetUsageTotals` operation.
+    /// Constructs a fluent builder for the [`GetUsageTotals`](crate::client::fluent_builders::GetUsageTotals) operation.
     ///
-    /// See [`GetUsageTotals`](crate::client::fluent_builders::GetUsageTotals) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetUsageTotalsInput`](crate::input::GetUsageTotalsInput) with field(s):
+    ///   - [`time_range(Option<String>)`](crate::input::GetUsageTotalsInput::time_range): <p>The inclusive time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value for this parameter, Amazon Macie provides aggregated usage data for the preceding 30 days.</p>
+    /// - On success, responds with [`GetUsageTotalsOutput`](crate::output::GetUsageTotalsOutput) with field(s):
+    ///   - [`time_range(Option<TimeRange>)`](crate::output::GetUsageTotalsOutput::time_range): <p>The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.</p>
+    ///   - [`usage_totals(Option<Vec<UsageTotal>>)`](crate::output::GetUsageTotalsOutput::usage_totals): <p>An array of objects that contains the results of the query. Each object contains the data for a specific usage metric.</p>
+    /// - On failure, responds with [`SdkError<GetUsageTotalsError>`](crate::error::GetUsageTotalsError)
     pub fn get_usage_totals(&self) -> fluent_builders::GetUsageTotals<C, M, R> {
         fluent_builders::GetUsageTotals::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListClassificationJobs` operation.
-    ///
-    /// See [`ListClassificationJobs`](crate::client::fluent_builders::ListClassificationJobs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListClassificationJobs`](crate::client::fluent_builders::ListClassificationJobs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListClassificationJobs::into_paginator).
+    ///
+    /// - Takes [`ListClassificationJobsInput`](crate::input::ListClassificationJobsInput) with field(s):
+    ///   - [`filter_criteria(Option<ListJobsFilterCriteria>)`](crate::input::ListClassificationJobsInput::filter_criteria): <p>The criteria to use to filter the results.</p>
+    ///   - [`max_results(i32)`](crate::input::ListClassificationJobsInput::max_results): <p>The maximum number of items to include in each page of the response.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListClassificationJobsInput::next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    ///   - [`sort_criteria(Option<ListJobsSortCriteria>)`](crate::input::ListClassificationJobsInput::sort_criteria): <p>The criteria to use to sort the results.</p>
+    /// - On success, responds with [`ListClassificationJobsOutput`](crate::output::ListClassificationJobsOutput) with field(s):
+    ///   - [`items(Option<Vec<JobSummary>>)`](crate::output::ListClassificationJobsOutput::items): <p>An array of objects, one for each job that meets the filter criteria specified in the request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListClassificationJobsOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    /// - On failure, responds with [`SdkError<ListClassificationJobsError>`](crate::error::ListClassificationJobsError)
     pub fn list_classification_jobs(&self) -> fluent_builders::ListClassificationJobs<C, M, R> {
         fluent_builders::ListClassificationJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListCustomDataIdentifiers` operation.
-    ///
-    /// See [`ListCustomDataIdentifiers`](crate::client::fluent_builders::ListCustomDataIdentifiers) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListCustomDataIdentifiers`](crate::client::fluent_builders::ListCustomDataIdentifiers) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCustomDataIdentifiers::into_paginator).
+    ///
+    /// - Takes [`ListCustomDataIdentifiersInput`](crate::input::ListCustomDataIdentifiersInput) with field(s):
+    ///   - [`max_results(i32)`](crate::input::ListCustomDataIdentifiersInput::max_results): <p>The maximum number of items to include in each page of the response.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListCustomDataIdentifiersInput::next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    /// - On success, responds with [`ListCustomDataIdentifiersOutput`](crate::output::ListCustomDataIdentifiersOutput) with field(s):
+    ///   - [`items(Option<Vec<CustomDataIdentifierSummary>>)`](crate::output::ListCustomDataIdentifiersOutput::items): <p>An array of objects, one for each custom data identifier.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListCustomDataIdentifiersOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    /// - On failure, responds with [`SdkError<ListCustomDataIdentifiersError>`](crate::error::ListCustomDataIdentifiersError)
     pub fn list_custom_data_identifiers(
         &self,
     ) -> fluent_builders::ListCustomDataIdentifiers<C, M, R> {
         fluent_builders::ListCustomDataIdentifiers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListFindings` operation.
-    ///
-    /// See [`ListFindings`](crate::client::fluent_builders::ListFindings) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListFindings`](crate::client::fluent_builders::ListFindings) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFindings::into_paginator).
+    ///
+    /// - Takes [`ListFindingsInput`](crate::input::ListFindingsInput) with field(s):
+    ///   - [`finding_criteria(Option<FindingCriteria>)`](crate::input::ListFindingsInput::finding_criteria): <p>The criteria to use to filter the results.</p>
+    ///   - [`max_results(i32)`](crate::input::ListFindingsInput::max_results): <p>The maximum number of items to include in each page of the response.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListFindingsInput::next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    ///   - [`sort_criteria(Option<SortCriteria>)`](crate::input::ListFindingsInput::sort_criteria): <p>The criteria to use to sort the results.</p>
+    /// - On success, responds with [`ListFindingsOutput`](crate::output::ListFindingsOutput) with field(s):
+    ///   - [`finding_ids(Option<Vec<String>>)`](crate::output::ListFindingsOutput::finding_ids): <p>An array of strings, where each string is the unique identifier for a finding that meets the filter criteria specified in the request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListFindingsOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    /// - On failure, responds with [`SdkError<ListFindingsError>`](crate::error::ListFindingsError)
     pub fn list_findings(&self) -> fluent_builders::ListFindings<C, M, R> {
         fluent_builders::ListFindings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListFindingsFilters` operation.
-    ///
-    /// See [`ListFindingsFilters`](crate::client::fluent_builders::ListFindingsFilters) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListFindingsFilters`](crate::client::fluent_builders::ListFindingsFilters) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFindingsFilters::into_paginator).
+    ///
+    /// - Takes [`ListFindingsFiltersInput`](crate::input::ListFindingsFiltersInput) with field(s):
+    ///   - [`max_results(i32)`](crate::input::ListFindingsFiltersInput::max_results): <p>The maximum number of items to include in each page of a paginated response.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListFindingsFiltersInput::next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    /// - On success, responds with [`ListFindingsFiltersOutput`](crate::output::ListFindingsFiltersOutput) with field(s):
+    ///   - [`findings_filter_list_items(Option<Vec<FindingsFilterListItem>>)`](crate::output::ListFindingsFiltersOutput::findings_filter_list_items): <p>An array of objects, one for each filter that's associated with the account.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListFindingsFiltersOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    /// - On failure, responds with [`SdkError<ListFindingsFiltersError>`](crate::error::ListFindingsFiltersError)
     pub fn list_findings_filters(&self) -> fluent_builders::ListFindingsFilters<C, M, R> {
         fluent_builders::ListFindingsFilters::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListInvitations` operation.
-    ///
-    /// See [`ListInvitations`](crate::client::fluent_builders::ListInvitations) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListInvitations`](crate::client::fluent_builders::ListInvitations) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInvitations::into_paginator).
+    ///
+    /// - Takes [`ListInvitationsInput`](crate::input::ListInvitationsInput) with field(s):
+    ///   - [`max_results(i32)`](crate::input::ListInvitationsInput::max_results): <p>The maximum number of items to include in each page of a paginated response.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListInvitationsInput::next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    /// - On success, responds with [`ListInvitationsOutput`](crate::output::ListInvitationsOutput) with field(s):
+    ///   - [`invitations(Option<Vec<Invitation>>)`](crate::output::ListInvitationsOutput::invitations): <p>An array of objects, one for each invitation that was received by the account.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListInvitationsOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    /// - On failure, responds with [`SdkError<ListInvitationsError>`](crate::error::ListInvitationsError)
     pub fn list_invitations(&self) -> fluent_builders::ListInvitations<C, M, R> {
         fluent_builders::ListInvitations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListManagedDataIdentifiers` operation.
+    /// Constructs a fluent builder for the [`ListManagedDataIdentifiers`](crate::client::fluent_builders::ListManagedDataIdentifiers) operation.
     ///
-    /// See [`ListManagedDataIdentifiers`](crate::client::fluent_builders::ListManagedDataIdentifiers) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListManagedDataIdentifiersInput`](crate::input::ListManagedDataIdentifiersInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListManagedDataIdentifiersInput::next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    /// - On success, responds with [`ListManagedDataIdentifiersOutput`](crate::output::ListManagedDataIdentifiersOutput) with field(s):
+    ///   - [`items(Option<Vec<ManagedDataIdentifierSummary>>)`](crate::output::ListManagedDataIdentifiersOutput::items): <p>An array of objects, one for each managed data identifier.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListManagedDataIdentifiersOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    /// - On failure, responds with [`SdkError<ListManagedDataIdentifiersError>`](crate::error::ListManagedDataIdentifiersError)
     pub fn list_managed_data_identifiers(
         &self,
     ) -> fluent_builders::ListManagedDataIdentifiers<C, M, R> {
         fluent_builders::ListManagedDataIdentifiers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListMembers` operation.
-    ///
-    /// See [`ListMembers`](crate::client::fluent_builders::ListMembers) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListMembers`](crate::client::fluent_builders::ListMembers) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMembers::into_paginator).
+    ///
+    /// - Takes [`ListMembersInput`](crate::input::ListMembersInput) with field(s):
+    ///   - [`max_results(i32)`](crate::input::ListMembersInput::max_results): <p>The maximum number of items to include in each page of a paginated response.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListMembersInput::next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    ///   - [`only_associated(Option<String>)`](crate::input::ListMembersInput::only_associated): <p>Specifies which accounts to include in the response, based on the status of an account's relationship with the administrator account. By default, the response includes only current member accounts. To include all accounts, set this value to false.</p>
+    /// - On success, responds with [`ListMembersOutput`](crate::output::ListMembersOutput) with field(s):
+    ///   - [`members(Option<Vec<Member>>)`](crate::output::ListMembersOutput::members): <p>An array of objects, one for each account that's associated with the administrator account and meets the criteria specified in the request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListMembersOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    /// - On failure, responds with [`SdkError<ListMembersError>`](crate::error::ListMembersError)
     pub fn list_members(&self) -> fluent_builders::ListMembers<C, M, R> {
         fluent_builders::ListMembers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListOrganizationAdminAccounts` operation.
-    ///
-    /// See [`ListOrganizationAdminAccounts`](crate::client::fluent_builders::ListOrganizationAdminAccounts) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListOrganizationAdminAccounts`](crate::client::fluent_builders::ListOrganizationAdminAccounts) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListOrganizationAdminAccounts::into_paginator).
+    ///
+    /// - Takes [`ListOrganizationAdminAccountsInput`](crate::input::ListOrganizationAdminAccountsInput) with field(s):
+    ///   - [`max_results(i32)`](crate::input::ListOrganizationAdminAccountsInput::max_results): <p>The maximum number of items to include in each page of a paginated response.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListOrganizationAdminAccountsInput::next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    /// - On success, responds with [`ListOrganizationAdminAccountsOutput`](crate::output::ListOrganizationAdminAccountsOutput) with field(s):
+    ///   - [`admin_accounts(Option<Vec<AdminAccount>>)`](crate::output::ListOrganizationAdminAccountsOutput::admin_accounts): <p>An array of objects, one for each delegated Amazon Macie administrator account for the organization. Only one of these accounts can have a status of ENABLED.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListOrganizationAdminAccountsOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    /// - On failure, responds with [`SdkError<ListOrganizationAdminAccountsError>`](crate::error::ListOrganizationAdminAccountsError)
     pub fn list_organization_admin_accounts(
         &self,
     ) -> fluent_builders::ListOrganizationAdminAccounts<C, M, R> {
         fluent_builders::ListOrganizationAdminAccounts::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the resource.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutClassificationExportConfiguration` operation.
+    /// Constructs a fluent builder for the [`PutClassificationExportConfiguration`](crate::client::fluent_builders::PutClassificationExportConfiguration) operation.
     ///
-    /// See [`PutClassificationExportConfiguration`](crate::client::fluent_builders::PutClassificationExportConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutClassificationExportConfigurationInput`](crate::input::PutClassificationExportConfigurationInput) with field(s):
+    ///   - [`configuration(Option<ClassificationExportConfiguration>)`](crate::input::PutClassificationExportConfigurationInput::configuration): <p>The location to store data classification results in, and the encryption settings to use when storing results in that location.</p>
+    /// - On success, responds with [`PutClassificationExportConfigurationOutput`](crate::output::PutClassificationExportConfigurationOutput) with field(s):
+    ///   - [`configuration(Option<ClassificationExportConfiguration>)`](crate::output::PutClassificationExportConfigurationOutput::configuration): <p>The location where the data classification results are stored, and the encryption settings that are used when storing results in that location.</p>
+    /// - On failure, responds with [`SdkError<PutClassificationExportConfigurationError>`](crate::error::PutClassificationExportConfigurationError)
     pub fn put_classification_export_configuration(
         &self,
     ) -> fluent_builders::PutClassificationExportConfiguration<C, M, R> {
         fluent_builders::PutClassificationExportConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutFindingsPublicationConfiguration` operation.
+    /// Constructs a fluent builder for the [`PutFindingsPublicationConfiguration`](crate::client::fluent_builders::PutFindingsPublicationConfiguration) operation.
     ///
-    /// See [`PutFindingsPublicationConfiguration`](crate::client::fluent_builders::PutFindingsPublicationConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutFindingsPublicationConfigurationInput`](crate::input::PutFindingsPublicationConfigurationInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::PutFindingsPublicationConfigurationInput::client_token): <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    ///   - [`security_hub_configuration(Option<SecurityHubConfiguration>)`](crate::input::PutFindingsPublicationConfigurationInput::security_hub_configuration): <p>The configuration settings that determine which findings to publish to Security Hub.</p>
+    /// - On success, responds with [`PutFindingsPublicationConfigurationOutput`](crate::output::PutFindingsPublicationConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<PutFindingsPublicationConfigurationError>`](crate::error::PutFindingsPublicationConfigurationError)
     pub fn put_findings_publication_configuration(
         &self,
     ) -> fluent_builders::PutFindingsPublicationConfiguration<C, M, R> {
         fluent_builders::PutFindingsPublicationConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SearchResources` operation.
-    ///
-    /// See [`SearchResources`](crate::client::fluent_builders::SearchResources) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`SearchResources`](crate::client::fluent_builders::SearchResources) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchResources::into_paginator).
+    ///
+    /// - Takes [`SearchResourcesInput`](crate::input::SearchResourcesInput) with field(s):
+    ///   - [`bucket_criteria(Option<SearchResourcesBucketCriteria>)`](crate::input::SearchResourcesInput::bucket_criteria): <p>The filter conditions that determine which S3 buckets to include or exclude from the query results.</p>
+    ///   - [`max_results(i32)`](crate::input::SearchResourcesInput::max_results): <p>The maximum number of items to include in each page of the response. The default value is 50.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::SearchResourcesInput::next_token): <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
+    ///   - [`sort_criteria(Option<SearchResourcesSortCriteria>)`](crate::input::SearchResourcesInput::sort_criteria): <p>The criteria to use to sort the results.</p>
+    /// - On success, responds with [`SearchResourcesOutput`](crate::output::SearchResourcesOutput) with field(s):
+    ///   - [`matching_resources(Option<Vec<MatchingResource>>)`](crate::output::SearchResourcesOutput::matching_resources): <p>An array of objects, one for each resource that meets the filter criteria specified in the request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::SearchResourcesOutput::next_token): <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
+    /// - On failure, responds with [`SdkError<SearchResourcesError>`](crate::error::SearchResourcesError)
     pub fn search_resources(&self) -> fluent_builders::SearchResources<C, M, R> {
         fluent_builders::SearchResources::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>A map of key-value pairs that specifies the tags to associate with the resource.</p>  <p>A resource can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TestCustomDataIdentifier` operation.
+    /// Constructs a fluent builder for the [`TestCustomDataIdentifier`](crate::client::fluent_builders::TestCustomDataIdentifier) operation.
     ///
-    /// See [`TestCustomDataIdentifier`](crate::client::fluent_builders::TestCustomDataIdentifier) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TestCustomDataIdentifierInput`](crate::input::TestCustomDataIdentifierInput) with field(s):
+    ///   - [`ignore_words(Option<Vec<String>>)`](crate::input::TestCustomDataIdentifierInput::ignore_words): <p>An array that lists specific character sequences (<i>ignore words</i>) to exclude from the results. If the text matched by the regular expression contains any string in this array, Amazon Macie ignores it. The array can contain as many as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore words are case sensitive.</p>
+    ///   - [`keywords(Option<Vec<String>>)`](crate::input::TestCustomDataIdentifierInput::keywords): <p>An array that lists specific character sequences (<i>keywords</i>), one of which must be within proximity (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each keyword can contain 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
+    ///   - [`maximum_match_distance(i32)`](crate::input::TestCustomDataIdentifierInput::maximum_match_distance): <p>The maximum number of characters that can exist between text that matches the regular expression and the character sequences specified by the keywords array. Amazon Macie includes or excludes a result based on the proximity of a keyword to text that matches the regular expression. The distance can be 1-300 characters. The default value is 50.</p>
+    ///   - [`regex(Option<String>)`](crate::input::TestCustomDataIdentifierInput::regex): <p>The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as 512 characters.</p>
+    ///   - [`sample_text(Option<String>)`](crate::input::TestCustomDataIdentifierInput::sample_text): <p>The sample text to inspect by using the custom data identifier. The text can contain as many as 1,000 characters.</p>
+    /// - On success, responds with [`TestCustomDataIdentifierOutput`](crate::output::TestCustomDataIdentifierOutput) with field(s):
+    ///   - [`match_count(i32)`](crate::output::TestCustomDataIdentifierOutput::match_count): <p>The number of occurrences of sample text that matched the criteria specified by the custom data identifier.</p>
+    /// - On failure, responds with [`SdkError<TestCustomDataIdentifierError>`](crate::error::TestCustomDataIdentifierError)
     pub fn test_custom_data_identifier(
         &self,
     ) -> fluent_builders::TestCustomDataIdentifier<C, M, R> {
         fluent_builders::TestCustomDataIdentifier::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the classification job, custom data identifier, findings filter, or member account.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The key of the tag to remove from the resource. To remove multiple tags, append the tagKeys parameter and argument for each additional tag to remove, separated by an ampersand (&amp;).</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateClassificationJob` operation.
+    /// Constructs a fluent builder for the [`UpdateClassificationJob`](crate::client::fluent_builders::UpdateClassificationJob) operation.
     ///
-    /// See [`UpdateClassificationJob`](crate::client::fluent_builders::UpdateClassificationJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateClassificationJobInput`](crate::input::UpdateClassificationJobInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::UpdateClassificationJobInput::job_id): <p>The unique identifier for the classification job.</p>
+    ///   - [`job_status(Option<JobStatus>)`](crate::input::UpdateClassificationJobInput::job_status): <p>The new status for the job. Valid values are:</p>  <ul>  <li><p>CANCELLED - Stops the job permanently and cancels it. This value is valid only if the job's current status is IDLE, PAUSED, RUNNING, or USER_PAUSED.</p> <p>If you specify this value and the job's current status is RUNNING, Amazon Macie immediately begins to stop all processing tasks for the job. You can't resume or restart a job after you cancel it.</p></li>   <li><p>RUNNING - Resumes the job. This value is valid only if the job's current status is USER_PAUSED.</p> <p>If you paused the job while it was actively running and you specify this value less than 30 days after you paused the job, Macie immediately resumes processing from the point where you paused the job. Otherwise, Macie resumes the job according to the schedule and other settings for the job.</p></li>   <li><p>USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE, PAUSED, or RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately begins to pause all processing tasks for the job.</p> <p>If you pause a one-time job and you don't resume it within 30 days, the job expires and Macie cancels the job. If you pause a recurring job when its status is RUNNING and you don't resume it within 30 days, the job run expires and Macie cancels the run. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li> </ul>
+    /// - On success, responds with [`UpdateClassificationJobOutput`](crate::output::UpdateClassificationJobOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateClassificationJobError>`](crate::error::UpdateClassificationJobError)
     pub fn update_classification_job(&self) -> fluent_builders::UpdateClassificationJob<C, M, R> {
         fluent_builders::UpdateClassificationJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateFindingsFilter` operation.
+    /// Constructs a fluent builder for the [`UpdateFindingsFilter`](crate::client::fluent_builders::UpdateFindingsFilter) operation.
     ///
-    /// See [`UpdateFindingsFilter`](crate::client::fluent_builders::UpdateFindingsFilter) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateFindingsFilterInput`](crate::input::UpdateFindingsFilterInput) with field(s):
+    ///   - [`action(Option<FindingsFilterAction>)`](crate::input::UpdateFindingsFilterInput::action): <p>The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateFindingsFilterInput::description): <p>A custom description of the filter. The description can contain as many as 512 characters.</p>  <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    ///   - [`finding_criteria(Option<FindingCriteria>)`](crate::input::UpdateFindingsFilterInput::finding_criteria): <p>The criteria to use to filter findings.</p>
+    ///   - [`id(Option<String>)`](crate::input::UpdateFindingsFilterInput::id): <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    ///   - [`name(Option<String>)`](crate::input::UpdateFindingsFilterInput::name): <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p>  <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
+    ///   - [`position(i32)`](crate::input::UpdateFindingsFilterInput::position): <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::UpdateFindingsFilterInput::client_token): <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
+    /// - On success, responds with [`UpdateFindingsFilterOutput`](crate::output::UpdateFindingsFilterOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::UpdateFindingsFilterOutput::arn): <p>The Amazon Resource Name (ARN) of the filter that was updated.</p>
+    ///   - [`id(Option<String>)`](crate::output::UpdateFindingsFilterOutput::id): <p>The unique identifier for the filter that was updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateFindingsFilterError>`](crate::error::UpdateFindingsFilterError)
     pub fn update_findings_filter(&self) -> fluent_builders::UpdateFindingsFilter<C, M, R> {
         fluent_builders::UpdateFindingsFilter::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateMacieSession` operation.
+    /// Constructs a fluent builder for the [`UpdateMacieSession`](crate::client::fluent_builders::UpdateMacieSession) operation.
     ///
-    /// See [`UpdateMacieSession`](crate::client::fluent_builders::UpdateMacieSession) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateMacieSessionInput`](crate::input::UpdateMacieSessionInput) with field(s):
+    ///   - [`finding_publishing_frequency(Option<FindingPublishingFrequency>)`](crate::input::UpdateMacieSessionInput::finding_publishing_frequency): <p>Specifies how often to publish updates to policy findings for the account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).</p>
+    ///   - [`status(Option<MacieStatus>)`](crate::input::UpdateMacieSessionInput::status): <p>Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
+    /// - On success, responds with [`UpdateMacieSessionOutput`](crate::output::UpdateMacieSessionOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateMacieSessionError>`](crate::error::UpdateMacieSessionError)
     pub fn update_macie_session(&self) -> fluent_builders::UpdateMacieSession<C, M, R> {
         fluent_builders::UpdateMacieSession::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateMemberSession` operation.
+    /// Constructs a fluent builder for the [`UpdateMemberSession`](crate::client::fluent_builders::UpdateMemberSession) operation.
     ///
-    /// See [`UpdateMemberSession`](crate::client::fluent_builders::UpdateMemberSession) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateMemberSessionInput`](crate::input::UpdateMemberSessionInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::UpdateMemberSessionInput::id): <p>The unique identifier for the Amazon Macie resource or account that the request applies to.</p>
+    ///   - [`status(Option<MacieStatus>)`](crate::input::UpdateMemberSessionInput::status): <p>Specifies the new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
+    /// - On success, responds with [`UpdateMemberSessionOutput`](crate::output::UpdateMemberSessionOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateMemberSessionError>`](crate::error::UpdateMemberSessionError)
     pub fn update_member_session(&self) -> fluent_builders::UpdateMemberSession<C, M, R> {
         fluent_builders::UpdateMemberSession::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateOrganizationConfiguration` operation.
+    /// Constructs a fluent builder for the [`UpdateOrganizationConfiguration`](crate::client::fluent_builders::UpdateOrganizationConfiguration) operation.
     ///
-    /// See [`UpdateOrganizationConfiguration`](crate::client::fluent_builders::UpdateOrganizationConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateOrganizationConfigurationInput`](crate::input::UpdateOrganizationConfigurationInput) with field(s):
+    ///   - [`auto_enable(bool)`](crate::input::UpdateOrganizationConfigurationInput::auto_enable): <p>Specifies whether to enable Amazon Macie automatically for an account when the account is added to the organization in Organizations.</p>
+    /// - On success, responds with [`UpdateOrganizationConfigurationOutput`](crate::output::UpdateOrganizationConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateOrganizationConfigurationError>`](crate::error::UpdateOrganizationConfigurationError)
     pub fn update_organization_configuration(
         &self,
     ) -> fluent_builders::UpdateOrganizationConfiguration<C, M, R> {

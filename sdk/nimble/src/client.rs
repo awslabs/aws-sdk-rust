@@ -83,355 +83,640 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AcceptEulas` operation.
+    /// Constructs a fluent builder for the [`AcceptEulas`](crate::client::fluent_builders::AcceptEulas) operation.
     ///
-    /// See [`AcceptEulas`](crate::client::fluent_builders::AcceptEulas) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AcceptEulasInput`](crate::input::AcceptEulasInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::AcceptEulasInput::client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`eula_ids(Option<Vec<String>>)`](crate::input::AcceptEulasInput::eula_ids): <p>The EULA ID.</p>
+    ///   - [`studio_id(Option<String>)`](crate::input::AcceptEulasInput::studio_id): <p>A collection of EULA IDs.</p>
+    /// - On success, responds with [`AcceptEulasOutput`](crate::output::AcceptEulasOutput) with field(s):
+    ///   - [`eula_acceptances(Option<Vec<EulaAcceptance>>)`](crate::output::AcceptEulasOutput::eula_acceptances): <p>A collection of EULA acceptances.</p>
+    /// - On failure, responds with [`SdkError<AcceptEulasError>`](crate::error::AcceptEulasError)
     pub fn accept_eulas(&self) -> fluent_builders::AcceptEulas<C, M, R> {
         fluent_builders::AcceptEulas::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateLaunchProfile` operation.
+    /// Constructs a fluent builder for the [`CreateLaunchProfile`](crate::client::fluent_builders::CreateLaunchProfile) operation.
     ///
-    /// See [`CreateLaunchProfile`](crate::client::fluent_builders::CreateLaunchProfile) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateLaunchProfileInput`](crate::input::CreateLaunchProfileInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::CreateLaunchProfileInput::client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateLaunchProfileInput::description): <p>The description.</p>
+    ///   - [`ec2_subnet_ids(Option<Vec<String>>)`](crate::input::CreateLaunchProfileInput::ec2_subnet_ids): <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must support the specified instance types. </p>
+    ///   - [`launch_profile_protocol_versions(Option<Vec<String>>)`](crate::input::CreateLaunchProfileInput::launch_profile_protocol_versions): <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
+    ///   - [`name(Option<String>)`](crate::input::CreateLaunchProfileInput::name): <p>The name for the launch profile.</p>
+    ///   - [`stream_configuration(Option<StreamConfigurationCreate>)`](crate::input::CreateLaunchProfileInput::stream_configuration): <p>A configuration for a streaming session.</p>
+    ///   - [`studio_component_ids(Option<Vec<String>>)`](crate::input::CreateLaunchProfileInput::studio_component_ids): <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
+    ///   - [`studio_id(Option<String>)`](crate::input::CreateLaunchProfileInput::studio_id): <p>The studio ID. </p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateLaunchProfileInput::tags): <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    /// - On success, responds with [`CreateLaunchProfileOutput`](crate::output::CreateLaunchProfileOutput) with field(s):
+    ///   - [`launch_profile(Option<LaunchProfile>)`](crate::output::CreateLaunchProfileOutput::launch_profile): <p>The launch profile.</p>
+    /// - On failure, responds with [`SdkError<CreateLaunchProfileError>`](crate::error::CreateLaunchProfileError)
     pub fn create_launch_profile(&self) -> fluent_builders::CreateLaunchProfile<C, M, R> {
         fluent_builders::CreateLaunchProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateStreamingImage` operation.
+    /// Constructs a fluent builder for the [`CreateStreamingImage`](crate::client::fluent_builders::CreateStreamingImage) operation.
     ///
-    /// See [`CreateStreamingImage`](crate::client::fluent_builders::CreateStreamingImage) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateStreamingImageInput`](crate::input::CreateStreamingImageInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::CreateStreamingImageInput::client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateStreamingImageInput::description): <p>A human-readable description of the streaming image.</p>
+    ///   - [`ec2_image_id(Option<String>)`](crate::input::CreateStreamingImageInput::ec2_image_id): <p>The ID of an EC2 machine image with which to create this streaming image.</p>
+    ///   - [`name(Option<String>)`](crate::input::CreateStreamingImageInput::name): <p>A friendly name for a streaming image resource.</p>
+    ///   - [`studio_id(Option<String>)`](crate::input::CreateStreamingImageInput::studio_id): <p>The studio ID. </p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateStreamingImageInput::tags): <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    /// - On success, responds with [`CreateStreamingImageOutput`](crate::output::CreateStreamingImageOutput) with field(s):
+    ///   - [`streaming_image(Option<StreamingImage>)`](crate::output::CreateStreamingImageOutput::streaming_image): <p>The streaming image.</p>
+    /// - On failure, responds with [`SdkError<CreateStreamingImageError>`](crate::error::CreateStreamingImageError)
     pub fn create_streaming_image(&self) -> fluent_builders::CreateStreamingImage<C, M, R> {
         fluent_builders::CreateStreamingImage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateStreamingSession` operation.
+    /// Constructs a fluent builder for the [`CreateStreamingSession`](crate::client::fluent_builders::CreateStreamingSession) operation.
     ///
-    /// See [`CreateStreamingSession`](crate::client::fluent_builders::CreateStreamingSession) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateStreamingSessionInput`](crate::input::CreateStreamingSessionInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::CreateStreamingSessionInput::client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`ec2_instance_type(Option<StreamingInstanceType>)`](crate::input::CreateStreamingSessionInput::ec2_instance_type): <p>The EC2 Instance type used for the streaming session.</p>
+    ///   - [`launch_profile_id(Option<String>)`](crate::input::CreateStreamingSessionInput::launch_profile_id): <p>The launch profile ID.</p>
+    ///   - [`owned_by(Option<String>)`](crate::input::CreateStreamingSessionInput::owned_by): <p>The user ID of the user that owns the streaming session.</p>
+    ///   - [`streaming_image_id(Option<String>)`](crate::input::CreateStreamingSessionInput::streaming_image_id): <p>The ID of the streaming image.</p>
+    ///   - [`studio_id(Option<String>)`](crate::input::CreateStreamingSessionInput::studio_id): <p>The studio ID. </p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateStreamingSessionInput::tags): <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    /// - On success, responds with [`CreateStreamingSessionOutput`](crate::output::CreateStreamingSessionOutput) with field(s):
+    ///   - [`session(Option<StreamingSession>)`](crate::output::CreateStreamingSessionOutput::session): <p>The session.</p>
+    /// - On failure, responds with [`SdkError<CreateStreamingSessionError>`](crate::error::CreateStreamingSessionError)
     pub fn create_streaming_session(&self) -> fluent_builders::CreateStreamingSession<C, M, R> {
         fluent_builders::CreateStreamingSession::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateStreamingSessionStream` operation.
+    /// Constructs a fluent builder for the [`CreateStreamingSessionStream`](crate::client::fluent_builders::CreateStreamingSessionStream) operation.
     ///
-    /// See [`CreateStreamingSessionStream`](crate::client::fluent_builders::CreateStreamingSessionStream) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateStreamingSessionStreamInput`](crate::input::CreateStreamingSessionStreamInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::CreateStreamingSessionStreamInput::client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`expiration_in_seconds(i32)`](crate::input::CreateStreamingSessionStreamInput::expiration_in_seconds): <p>The expiration time in seconds.</p>
+    ///   - [`session_id(Option<String>)`](crate::input::CreateStreamingSessionStreamInput::session_id): <p>The streaming session ID.</p>
+    ///   - [`studio_id(Option<String>)`](crate::input::CreateStreamingSessionStreamInput::studio_id): <p>The studio ID. </p>
+    /// - On success, responds with [`CreateStreamingSessionStreamOutput`](crate::output::CreateStreamingSessionStreamOutput) with field(s):
+    ///   - [`stream(Option<StreamingSessionStream>)`](crate::output::CreateStreamingSessionStreamOutput::stream): <p>The stream.</p>
+    /// - On failure, responds with [`SdkError<CreateStreamingSessionStreamError>`](crate::error::CreateStreamingSessionStreamError)
     pub fn create_streaming_session_stream(
         &self,
     ) -> fluent_builders::CreateStreamingSessionStream<C, M, R> {
         fluent_builders::CreateStreamingSessionStream::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateStudio` operation.
+    /// Constructs a fluent builder for the [`CreateStudio`](crate::client::fluent_builders::CreateStudio) operation.
     ///
-    /// See [`CreateStudio`](crate::client::fluent_builders::CreateStudio) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateStudioInput`](crate::input::CreateStudioInput) with field(s):
+    ///   - [`admin_role_arn(Option<String>)`](crate::input::CreateStudioInput::admin_role_arn): <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateStudioInput::client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`display_name(Option<String>)`](crate::input::CreateStudioInput::display_name): <p>A friendly name for the studio.</p>
+    ///   - [`studio_encryption_configuration(Option<StudioEncryptionConfiguration>)`](crate::input::CreateStudioInput::studio_encryption_configuration): <p>The studio encryption configuration.</p>
+    ///   - [`studio_name(Option<String>)`](crate::input::CreateStudioInput::studio_name): <p>The studio name that is used in the URL of the Nimble Studio portal when accessed by Nimble Studio users.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateStudioInput::tags): <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    ///   - [`user_role_arn(Option<String>)`](crate::input::CreateStudioInput::user_role_arn): <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
+    /// - On success, responds with [`CreateStudioOutput`](crate::output::CreateStudioOutput) with field(s):
+    ///   - [`studio(Option<Studio>)`](crate::output::CreateStudioOutput::studio): <p>Information about a studio.</p>
+    /// - On failure, responds with [`SdkError<CreateStudioError>`](crate::error::CreateStudioError)
     pub fn create_studio(&self) -> fluent_builders::CreateStudio<C, M, R> {
         fluent_builders::CreateStudio::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateStudioComponent` operation.
+    /// Constructs a fluent builder for the [`CreateStudioComponent`](crate::client::fluent_builders::CreateStudioComponent) operation.
     ///
-    /// See [`CreateStudioComponent`](crate::client::fluent_builders::CreateStudioComponent) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateStudioComponentInput`](crate::input::CreateStudioComponentInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::CreateStudioComponentInput::client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`configuration(Option<StudioComponentConfiguration>)`](crate::input::CreateStudioComponentInput::configuration): <p>The configuration of the studio component, based on component type.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateStudioComponentInput::description): <p>The description.</p>
+    ///   - [`ec2_security_group_ids(Option<Vec<String>>)`](crate::input::CreateStudioComponentInput::ec2_security_group_ids): <p>The EC2 security groups that control access to the studio component.</p>
+    ///   - [`initialization_scripts(Option<Vec<StudioComponentInitializationScript>>)`](crate::input::CreateStudioComponentInput::initialization_scripts): <p>Initialization scripts for studio components.</p>
+    ///   - [`name(Option<String>)`](crate::input::CreateStudioComponentInput::name): <p>The name for the studio component.</p>
+    ///   - [`script_parameters(Option<Vec<ScriptParameterKeyValue>>)`](crate::input::CreateStudioComponentInput::script_parameters): <p>Parameters for the studio component scripts.</p>
+    ///   - [`studio_id(Option<String>)`](crate::input::CreateStudioComponentInput::studio_id): <p>The studio ID. </p>
+    ///   - [`subtype(Option<StudioComponentSubtype>)`](crate::input::CreateStudioComponentInput::subtype): <p>The specific subtype of a studio component.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateStudioComponentInput::tags): <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    ///   - [`r#type(Option<StudioComponentType>)`](crate::input::CreateStudioComponentInput::r#type): <p>The type of the studio component.</p>
+    /// - On success, responds with [`CreateStudioComponentOutput`](crate::output::CreateStudioComponentOutput) with field(s):
+    ///   - [`studio_component(Option<StudioComponent>)`](crate::output::CreateStudioComponentOutput::studio_component): <p>Information about the studio component.</p>
+    /// - On failure, responds with [`SdkError<CreateStudioComponentError>`](crate::error::CreateStudioComponentError)
     pub fn create_studio_component(&self) -> fluent_builders::CreateStudioComponent<C, M, R> {
         fluent_builders::CreateStudioComponent::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteLaunchProfile` operation.
+    /// Constructs a fluent builder for the [`DeleteLaunchProfile`](crate::client::fluent_builders::DeleteLaunchProfile) operation.
     ///
-    /// See [`DeleteLaunchProfile`](crate::client::fluent_builders::DeleteLaunchProfile) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteLaunchProfileInput`](crate::input::DeleteLaunchProfileInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::DeleteLaunchProfileInput::client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`launch_profile_id(Option<String>)`](crate::input::DeleteLaunchProfileInput::launch_profile_id): <p>The Launch Profile ID.</p>
+    ///   - [`studio_id(Option<String>)`](crate::input::DeleteLaunchProfileInput::studio_id): <p>The studio ID. </p>
+    /// - On success, responds with [`DeleteLaunchProfileOutput`](crate::output::DeleteLaunchProfileOutput) with field(s):
+    ///   - [`launch_profile(Option<LaunchProfile>)`](crate::output::DeleteLaunchProfileOutput::launch_profile): <p>The launch profile.</p>
+    /// - On failure, responds with [`SdkError<DeleteLaunchProfileError>`](crate::error::DeleteLaunchProfileError)
     pub fn delete_launch_profile(&self) -> fluent_builders::DeleteLaunchProfile<C, M, R> {
         fluent_builders::DeleteLaunchProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteLaunchProfileMember` operation.
+    /// Constructs a fluent builder for the [`DeleteLaunchProfileMember`](crate::client::fluent_builders::DeleteLaunchProfileMember) operation.
     ///
-    /// See [`DeleteLaunchProfileMember`](crate::client::fluent_builders::DeleteLaunchProfileMember) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteLaunchProfileMemberInput`](crate::input::DeleteLaunchProfileMemberInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::DeleteLaunchProfileMemberInput::client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`launch_profile_id(Option<String>)`](crate::input::DeleteLaunchProfileMemberInput::launch_profile_id): <p>The Launch Profile ID.</p>
+    ///   - [`principal_id(Option<String>)`](crate::input::DeleteLaunchProfileMemberInput::principal_id): <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    ///   - [`studio_id(Option<String>)`](crate::input::DeleteLaunchProfileMemberInput::studio_id): <p>The studio ID. </p>
+    /// - On success, responds with [`DeleteLaunchProfileMemberOutput`](crate::output::DeleteLaunchProfileMemberOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteLaunchProfileMemberError>`](crate::error::DeleteLaunchProfileMemberError)
     pub fn delete_launch_profile_member(
         &self,
     ) -> fluent_builders::DeleteLaunchProfileMember<C, M, R> {
         fluent_builders::DeleteLaunchProfileMember::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteStreamingImage` operation.
+    /// Constructs a fluent builder for the [`DeleteStreamingImage`](crate::client::fluent_builders::DeleteStreamingImage) operation.
     ///
-    /// See [`DeleteStreamingImage`](crate::client::fluent_builders::DeleteStreamingImage) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteStreamingImageInput`](crate::input::DeleteStreamingImageInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::DeleteStreamingImageInput::client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`streaming_image_id(Option<String>)`](crate::input::DeleteStreamingImageInput::streaming_image_id): <p>The streaming image ID.</p>
+    ///   - [`studio_id(Option<String>)`](crate::input::DeleteStreamingImageInput::studio_id): <p>The studio ID. </p>
+    /// - On success, responds with [`DeleteStreamingImageOutput`](crate::output::DeleteStreamingImageOutput) with field(s):
+    ///   - [`streaming_image(Option<StreamingImage>)`](crate::output::DeleteStreamingImageOutput::streaming_image): <p>The streaming image.</p>
+    /// - On failure, responds with [`SdkError<DeleteStreamingImageError>`](crate::error::DeleteStreamingImageError)
     pub fn delete_streaming_image(&self) -> fluent_builders::DeleteStreamingImage<C, M, R> {
         fluent_builders::DeleteStreamingImage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteStreamingSession` operation.
+    /// Constructs a fluent builder for the [`DeleteStreamingSession`](crate::client::fluent_builders::DeleteStreamingSession) operation.
     ///
-    /// See [`DeleteStreamingSession`](crate::client::fluent_builders::DeleteStreamingSession) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteStreamingSessionInput`](crate::input::DeleteStreamingSessionInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::DeleteStreamingSessionInput::client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`session_id(Option<String>)`](crate::input::DeleteStreamingSessionInput::session_id): <p>The streaming session ID.</p>
+    ///   - [`studio_id(Option<String>)`](crate::input::DeleteStreamingSessionInput::studio_id): <p>The studio ID. </p>
+    /// - On success, responds with [`DeleteStreamingSessionOutput`](crate::output::DeleteStreamingSessionOutput) with field(s):
+    ///   - [`session(Option<StreamingSession>)`](crate::output::DeleteStreamingSessionOutput::session): <p>The session.</p>
+    /// - On failure, responds with [`SdkError<DeleteStreamingSessionError>`](crate::error::DeleteStreamingSessionError)
     pub fn delete_streaming_session(&self) -> fluent_builders::DeleteStreamingSession<C, M, R> {
         fluent_builders::DeleteStreamingSession::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteStudio` operation.
+    /// Constructs a fluent builder for the [`DeleteStudio`](crate::client::fluent_builders::DeleteStudio) operation.
     ///
-    /// See [`DeleteStudio`](crate::client::fluent_builders::DeleteStudio) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteStudioInput`](crate::input::DeleteStudioInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::DeleteStudioInput::client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`studio_id(Option<String>)`](crate::input::DeleteStudioInput::studio_id): <p>The studio ID. </p>
+    /// - On success, responds with [`DeleteStudioOutput`](crate::output::DeleteStudioOutput) with field(s):
+    ///   - [`studio(Option<Studio>)`](crate::output::DeleteStudioOutput::studio): <p>Information about a studio.</p>
+    /// - On failure, responds with [`SdkError<DeleteStudioError>`](crate::error::DeleteStudioError)
     pub fn delete_studio(&self) -> fluent_builders::DeleteStudio<C, M, R> {
         fluent_builders::DeleteStudio::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteStudioComponent` operation.
+    /// Constructs a fluent builder for the [`DeleteStudioComponent`](crate::client::fluent_builders::DeleteStudioComponent) operation.
     ///
-    /// See [`DeleteStudioComponent`](crate::client::fluent_builders::DeleteStudioComponent) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteStudioComponentInput`](crate::input::DeleteStudioComponentInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::DeleteStudioComponentInput::client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`studio_component_id(Option<String>)`](crate::input::DeleteStudioComponentInput::studio_component_id): <p>The studio component ID.</p>
+    ///   - [`studio_id(Option<String>)`](crate::input::DeleteStudioComponentInput::studio_id): <p>The studio ID. </p>
+    /// - On success, responds with [`DeleteStudioComponentOutput`](crate::output::DeleteStudioComponentOutput) with field(s):
+    ///   - [`studio_component(Option<StudioComponent>)`](crate::output::DeleteStudioComponentOutput::studio_component): <p>Information about the studio component.</p>
+    /// - On failure, responds with [`SdkError<DeleteStudioComponentError>`](crate::error::DeleteStudioComponentError)
     pub fn delete_studio_component(&self) -> fluent_builders::DeleteStudioComponent<C, M, R> {
         fluent_builders::DeleteStudioComponent::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteStudioMember` operation.
+    /// Constructs a fluent builder for the [`DeleteStudioMember`](crate::client::fluent_builders::DeleteStudioMember) operation.
     ///
-    /// See [`DeleteStudioMember`](crate::client::fluent_builders::DeleteStudioMember) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteStudioMemberInput`](crate::input::DeleteStudioMemberInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::DeleteStudioMemberInput::client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`principal_id(Option<String>)`](crate::input::DeleteStudioMemberInput::principal_id): <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    ///   - [`studio_id(Option<String>)`](crate::input::DeleteStudioMemberInput::studio_id): <p>The studio ID. </p>
+    /// - On success, responds with [`DeleteStudioMemberOutput`](crate::output::DeleteStudioMemberOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteStudioMemberError>`](crate::error::DeleteStudioMemberError)
     pub fn delete_studio_member(&self) -> fluent_builders::DeleteStudioMember<C, M, R> {
         fluent_builders::DeleteStudioMember::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetEula` operation.
+    /// Constructs a fluent builder for the [`GetEula`](crate::client::fluent_builders::GetEula) operation.
     ///
-    /// See [`GetEula`](crate::client::fluent_builders::GetEula) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetEulaInput`](crate::input::GetEulaInput) with field(s):
+    ///   - [`eula_id(Option<String>)`](crate::input::GetEulaInput::eula_id): <p>The EULA ID.</p>
+    /// - On success, responds with [`GetEulaOutput`](crate::output::GetEulaOutput) with field(s):
+    ///   - [`eula(Option<Eula>)`](crate::output::GetEulaOutput::eula): <p>The EULA.</p>
+    /// - On failure, responds with [`SdkError<GetEulaError>`](crate::error::GetEulaError)
     pub fn get_eula(&self) -> fluent_builders::GetEula<C, M, R> {
         fluent_builders::GetEula::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetLaunchProfile` operation.
+    /// Constructs a fluent builder for the [`GetLaunchProfile`](crate::client::fluent_builders::GetLaunchProfile) operation.
     ///
-    /// See [`GetLaunchProfile`](crate::client::fluent_builders::GetLaunchProfile) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetLaunchProfileInput`](crate::input::GetLaunchProfileInput) with field(s):
+    ///   - [`launch_profile_id(Option<String>)`](crate::input::GetLaunchProfileInput::launch_profile_id): <p>The Launch Profile ID.</p>
+    ///   - [`studio_id(Option<String>)`](crate::input::GetLaunchProfileInput::studio_id): <p>The studio ID. </p>
+    /// - On success, responds with [`GetLaunchProfileOutput`](crate::output::GetLaunchProfileOutput) with field(s):
+    ///   - [`launch_profile(Option<LaunchProfile>)`](crate::output::GetLaunchProfileOutput::launch_profile): <p>The launch profile.</p>
+    /// - On failure, responds with [`SdkError<GetLaunchProfileError>`](crate::error::GetLaunchProfileError)
     pub fn get_launch_profile(&self) -> fluent_builders::GetLaunchProfile<C, M, R> {
         fluent_builders::GetLaunchProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetLaunchProfileDetails` operation.
+    /// Constructs a fluent builder for the [`GetLaunchProfileDetails`](crate::client::fluent_builders::GetLaunchProfileDetails) operation.
     ///
-    /// See [`GetLaunchProfileDetails`](crate::client::fluent_builders::GetLaunchProfileDetails) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetLaunchProfileDetailsInput`](crate::input::GetLaunchProfileDetailsInput) with field(s):
+    ///   - [`launch_profile_id(Option<String>)`](crate::input::GetLaunchProfileDetailsInput::launch_profile_id): <p>The Launch Profile ID.</p>
+    ///   - [`studio_id(Option<String>)`](crate::input::GetLaunchProfileDetailsInput::studio_id): <p>The studio ID. </p>
+    /// - On success, responds with [`GetLaunchProfileDetailsOutput`](crate::output::GetLaunchProfileDetailsOutput) with field(s):
+    ///   - [`launch_profile(Option<LaunchProfile>)`](crate::output::GetLaunchProfileDetailsOutput::launch_profile): <p>The launch profile.</p>
+    ///   - [`streaming_images(Option<Vec<StreamingImage>>)`](crate::output::GetLaunchProfileDetailsOutput::streaming_images): <p>A collection of streaming images.</p>
+    ///   - [`studio_component_summaries(Option<Vec<StudioComponentSummary>>)`](crate::output::GetLaunchProfileDetailsOutput::studio_component_summaries): <p>A collection of studio component summaries.</p>
+    /// - On failure, responds with [`SdkError<GetLaunchProfileDetailsError>`](crate::error::GetLaunchProfileDetailsError)
     pub fn get_launch_profile_details(&self) -> fluent_builders::GetLaunchProfileDetails<C, M, R> {
         fluent_builders::GetLaunchProfileDetails::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetLaunchProfileInitialization` operation.
+    /// Constructs a fluent builder for the [`GetLaunchProfileInitialization`](crate::client::fluent_builders::GetLaunchProfileInitialization) operation.
     ///
-    /// See [`GetLaunchProfileInitialization`](crate::client::fluent_builders::GetLaunchProfileInitialization) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetLaunchProfileInitializationInput`](crate::input::GetLaunchProfileInitializationInput) with field(s):
+    ///   - [`launch_profile_id(Option<String>)`](crate::input::GetLaunchProfileInitializationInput::launch_profile_id): <p>The Launch Profile ID.</p>
+    ///   - [`launch_profile_protocol_versions(Option<Vec<String>>)`](crate::input::GetLaunchProfileInitializationInput::launch_profile_protocol_versions): <p>The launch profile protocol versions supported by the client.</p>
+    ///   - [`launch_purpose(Option<String>)`](crate::input::GetLaunchProfileInitializationInput::launch_purpose): <p>The launch purpose.</p>
+    ///   - [`platform(Option<String>)`](crate::input::GetLaunchProfileInitializationInput::platform): <p>The platform where this Launch Profile will be used, either WINDOWS or LINUX.</p>
+    ///   - [`studio_id(Option<String>)`](crate::input::GetLaunchProfileInitializationInput::studio_id): <p>The studio ID. </p>
+    /// - On success, responds with [`GetLaunchProfileInitializationOutput`](crate::output::GetLaunchProfileInitializationOutput) with field(s):
+    ///   - [`launch_profile_initialization(Option<LaunchProfileInitialization>)`](crate::output::GetLaunchProfileInitializationOutput::launch_profile_initialization): <p>The launch profile initialization.</p>
+    /// - On failure, responds with [`SdkError<GetLaunchProfileInitializationError>`](crate::error::GetLaunchProfileInitializationError)
     pub fn get_launch_profile_initialization(
         &self,
     ) -> fluent_builders::GetLaunchProfileInitialization<C, M, R> {
         fluent_builders::GetLaunchProfileInitialization::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetLaunchProfileMember` operation.
+    /// Constructs a fluent builder for the [`GetLaunchProfileMember`](crate::client::fluent_builders::GetLaunchProfileMember) operation.
     ///
-    /// See [`GetLaunchProfileMember`](crate::client::fluent_builders::GetLaunchProfileMember) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetLaunchProfileMemberInput`](crate::input::GetLaunchProfileMemberInput) with field(s):
+    ///   - [`launch_profile_id(Option<String>)`](crate::input::GetLaunchProfileMemberInput::launch_profile_id): <p>The Launch Profile ID.</p>
+    ///   - [`principal_id(Option<String>)`](crate::input::GetLaunchProfileMemberInput::principal_id): <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    ///   - [`studio_id(Option<String>)`](crate::input::GetLaunchProfileMemberInput::studio_id): <p>The studio ID. </p>
+    /// - On success, responds with [`GetLaunchProfileMemberOutput`](crate::output::GetLaunchProfileMemberOutput) with field(s):
+    ///   - [`member(Option<LaunchProfileMembership>)`](crate::output::GetLaunchProfileMemberOutput::member): <p>The member.</p>
+    /// - On failure, responds with [`SdkError<GetLaunchProfileMemberError>`](crate::error::GetLaunchProfileMemberError)
     pub fn get_launch_profile_member(&self) -> fluent_builders::GetLaunchProfileMember<C, M, R> {
         fluent_builders::GetLaunchProfileMember::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetStreamingImage` operation.
+    /// Constructs a fluent builder for the [`GetStreamingImage`](crate::client::fluent_builders::GetStreamingImage) operation.
     ///
-    /// See [`GetStreamingImage`](crate::client::fluent_builders::GetStreamingImage) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetStreamingImageInput`](crate::input::GetStreamingImageInput) with field(s):
+    ///   - [`streaming_image_id(Option<String>)`](crate::input::GetStreamingImageInput::streaming_image_id): <p>The streaming image ID.</p>
+    ///   - [`studio_id(Option<String>)`](crate::input::GetStreamingImageInput::studio_id): <p>The studio ID. </p>
+    /// - On success, responds with [`GetStreamingImageOutput`](crate::output::GetStreamingImageOutput) with field(s):
+    ///   - [`streaming_image(Option<StreamingImage>)`](crate::output::GetStreamingImageOutput::streaming_image): <p>The streaming image.</p>
+    /// - On failure, responds with [`SdkError<GetStreamingImageError>`](crate::error::GetStreamingImageError)
     pub fn get_streaming_image(&self) -> fluent_builders::GetStreamingImage<C, M, R> {
         fluent_builders::GetStreamingImage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetStreamingSession` operation.
+    /// Constructs a fluent builder for the [`GetStreamingSession`](crate::client::fluent_builders::GetStreamingSession) operation.
     ///
-    /// See [`GetStreamingSession`](crate::client::fluent_builders::GetStreamingSession) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetStreamingSessionInput`](crate::input::GetStreamingSessionInput) with field(s):
+    ///   - [`session_id(Option<String>)`](crate::input::GetStreamingSessionInput::session_id): <p>The streaming session ID.</p>
+    ///   - [`studio_id(Option<String>)`](crate::input::GetStreamingSessionInput::studio_id): <p>The studio ID. </p>
+    /// - On success, responds with [`GetStreamingSessionOutput`](crate::output::GetStreamingSessionOutput) with field(s):
+    ///   - [`session(Option<StreamingSession>)`](crate::output::GetStreamingSessionOutput::session): <p>The session.</p>
+    /// - On failure, responds with [`SdkError<GetStreamingSessionError>`](crate::error::GetStreamingSessionError)
     pub fn get_streaming_session(&self) -> fluent_builders::GetStreamingSession<C, M, R> {
         fluent_builders::GetStreamingSession::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetStreamingSessionStream` operation.
+    /// Constructs a fluent builder for the [`GetStreamingSessionStream`](crate::client::fluent_builders::GetStreamingSessionStream) operation.
     ///
-    /// See [`GetStreamingSessionStream`](crate::client::fluent_builders::GetStreamingSessionStream) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetStreamingSessionStreamInput`](crate::input::GetStreamingSessionStreamInput) with field(s):
+    ///   - [`session_id(Option<String>)`](crate::input::GetStreamingSessionStreamInput::session_id): <p>The streaming session ID.</p>
+    ///   - [`stream_id(Option<String>)`](crate::input::GetStreamingSessionStreamInput::stream_id): <p>The streaming session stream ID.</p>
+    ///   - [`studio_id(Option<String>)`](crate::input::GetStreamingSessionStreamInput::studio_id): <p>The studio ID. </p>
+    /// - On success, responds with [`GetStreamingSessionStreamOutput`](crate::output::GetStreamingSessionStreamOutput) with field(s):
+    ///   - [`stream(Option<StreamingSessionStream>)`](crate::output::GetStreamingSessionStreamOutput::stream): <p>The stream.</p>
+    /// - On failure, responds with [`SdkError<GetStreamingSessionStreamError>`](crate::error::GetStreamingSessionStreamError)
     pub fn get_streaming_session_stream(
         &self,
     ) -> fluent_builders::GetStreamingSessionStream<C, M, R> {
         fluent_builders::GetStreamingSessionStream::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetStudio` operation.
+    /// Constructs a fluent builder for the [`GetStudio`](crate::client::fluent_builders::GetStudio) operation.
     ///
-    /// See [`GetStudio`](crate::client::fluent_builders::GetStudio) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetStudioInput`](crate::input::GetStudioInput) with field(s):
+    ///   - [`studio_id(Option<String>)`](crate::input::GetStudioInput::studio_id): <p>The studio ID. </p>
+    /// - On success, responds with [`GetStudioOutput`](crate::output::GetStudioOutput) with field(s):
+    ///   - [`studio(Option<Studio>)`](crate::output::GetStudioOutput::studio): <p>Information about a studio.</p>
+    /// - On failure, responds with [`SdkError<GetStudioError>`](crate::error::GetStudioError)
     pub fn get_studio(&self) -> fluent_builders::GetStudio<C, M, R> {
         fluent_builders::GetStudio::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetStudioComponent` operation.
+    /// Constructs a fluent builder for the [`GetStudioComponent`](crate::client::fluent_builders::GetStudioComponent) operation.
     ///
-    /// See [`GetStudioComponent`](crate::client::fluent_builders::GetStudioComponent) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetStudioComponentInput`](crate::input::GetStudioComponentInput) with field(s):
+    ///   - [`studio_component_id(Option<String>)`](crate::input::GetStudioComponentInput::studio_component_id): <p>The studio component ID.</p>
+    ///   - [`studio_id(Option<String>)`](crate::input::GetStudioComponentInput::studio_id): <p>The studio ID. </p>
+    /// - On success, responds with [`GetStudioComponentOutput`](crate::output::GetStudioComponentOutput) with field(s):
+    ///   - [`studio_component(Option<StudioComponent>)`](crate::output::GetStudioComponentOutput::studio_component): <p>Information about the studio component.</p>
+    /// - On failure, responds with [`SdkError<GetStudioComponentError>`](crate::error::GetStudioComponentError)
     pub fn get_studio_component(&self) -> fluent_builders::GetStudioComponent<C, M, R> {
         fluent_builders::GetStudioComponent::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetStudioMember` operation.
+    /// Constructs a fluent builder for the [`GetStudioMember`](crate::client::fluent_builders::GetStudioMember) operation.
     ///
-    /// See [`GetStudioMember`](crate::client::fluent_builders::GetStudioMember) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetStudioMemberInput`](crate::input::GetStudioMemberInput) with field(s):
+    ///   - [`principal_id(Option<String>)`](crate::input::GetStudioMemberInput::principal_id): <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    ///   - [`studio_id(Option<String>)`](crate::input::GetStudioMemberInput::studio_id): <p>The studio ID. </p>
+    /// - On success, responds with [`GetStudioMemberOutput`](crate::output::GetStudioMemberOutput) with field(s):
+    ///   - [`member(Option<StudioMembership>)`](crate::output::GetStudioMemberOutput::member): <p>The member.</p>
+    /// - On failure, responds with [`SdkError<GetStudioMemberError>`](crate::error::GetStudioMemberError)
     pub fn get_studio_member(&self) -> fluent_builders::GetStudioMember<C, M, R> {
         fluent_builders::GetStudioMember::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListEulaAcceptances` operation.
-    ///
-    /// See [`ListEulaAcceptances`](crate::client::fluent_builders::ListEulaAcceptances) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListEulaAcceptances`](crate::client::fluent_builders::ListEulaAcceptances) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEulaAcceptances::into_paginator).
+    ///
+    /// - Takes [`ListEulaAcceptancesInput`](crate::input::ListEulaAcceptancesInput) with field(s):
+    ///   - [`eula_ids(Option<Vec<String>>)`](crate::input::ListEulaAcceptancesInput::eula_ids): <p>The list of EULA IDs that have been previously accepted.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListEulaAcceptancesInput::next_token): <p>The token to request the next page of results. </p>
+    ///   - [`studio_id(Option<String>)`](crate::input::ListEulaAcceptancesInput::studio_id): <p>The studio ID. </p>
+    /// - On success, responds with [`ListEulaAcceptancesOutput`](crate::output::ListEulaAcceptancesOutput) with field(s):
+    ///   - [`eula_acceptances(Option<Vec<EulaAcceptance>>)`](crate::output::ListEulaAcceptancesOutput::eula_acceptances): <p>A collection of EULA acceptances.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListEulaAcceptancesOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
+    /// - On failure, responds with [`SdkError<ListEulaAcceptancesError>`](crate::error::ListEulaAcceptancesError)
     pub fn list_eula_acceptances(&self) -> fluent_builders::ListEulaAcceptances<C, M, R> {
         fluent_builders::ListEulaAcceptances::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListEulas` operation.
-    ///
-    /// See [`ListEulas`](crate::client::fluent_builders::ListEulas) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListEulas`](crate::client::fluent_builders::ListEulas) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEulas::into_paginator).
+    ///
+    /// - Takes [`ListEulasInput`](crate::input::ListEulasInput) with field(s):
+    ///   - [`eula_ids(Option<Vec<String>>)`](crate::input::ListEulasInput::eula_ids): <p>The list of EULA IDs that should be returned</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListEulasInput::next_token): <p>The token to request the next page of results. </p>
+    /// - On success, responds with [`ListEulasOutput`](crate::output::ListEulasOutput) with field(s):
+    ///   - [`eulas(Option<Vec<Eula>>)`](crate::output::ListEulasOutput::eulas): <p>A collection of EULA resources.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListEulasOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
+    /// - On failure, responds with [`SdkError<ListEulasError>`](crate::error::ListEulasError)
     pub fn list_eulas(&self) -> fluent_builders::ListEulas<C, M, R> {
         fluent_builders::ListEulas::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListLaunchProfileMembers` operation.
-    ///
-    /// See [`ListLaunchProfileMembers`](crate::client::fluent_builders::ListLaunchProfileMembers) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListLaunchProfileMembers`](crate::client::fluent_builders::ListLaunchProfileMembers) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListLaunchProfileMembers::into_paginator).
+    ///
+    /// - Takes [`ListLaunchProfileMembersInput`](crate::input::ListLaunchProfileMembersInput) with field(s):
+    ///   - [`launch_profile_id(Option<String>)`](crate::input::ListLaunchProfileMembersInput::launch_profile_id): <p>The Launch Profile ID.</p>
+    ///   - [`max_results(i32)`](crate::input::ListLaunchProfileMembersInput::max_results): <p>The max number of results to return in the response.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListLaunchProfileMembersInput::next_token): <p>The token to request the next page of results. </p>
+    ///   - [`studio_id(Option<String>)`](crate::input::ListLaunchProfileMembersInput::studio_id): <p>The studio ID. </p>
+    /// - On success, responds with [`ListLaunchProfileMembersOutput`](crate::output::ListLaunchProfileMembersOutput) with field(s):
+    ///   - [`members(Option<Vec<LaunchProfileMembership>>)`](crate::output::ListLaunchProfileMembersOutput::members): <p>A list of members.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListLaunchProfileMembersOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
+    /// - On failure, responds with [`SdkError<ListLaunchProfileMembersError>`](crate::error::ListLaunchProfileMembersError)
     pub fn list_launch_profile_members(
         &self,
     ) -> fluent_builders::ListLaunchProfileMembers<C, M, R> {
         fluent_builders::ListLaunchProfileMembers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListLaunchProfiles` operation.
-    ///
-    /// See [`ListLaunchProfiles`](crate::client::fluent_builders::ListLaunchProfiles) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListLaunchProfiles`](crate::client::fluent_builders::ListLaunchProfiles) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListLaunchProfiles::into_paginator).
+    ///
+    /// - Takes [`ListLaunchProfilesInput`](crate::input::ListLaunchProfilesInput) with field(s):
+    ///   - [`max_results(i32)`](crate::input::ListLaunchProfilesInput::max_results): <p>The max number of results to return in the response.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListLaunchProfilesInput::next_token): <p>The token to request the next page of results. </p>
+    ///   - [`principal_id(Option<String>)`](crate::input::ListLaunchProfilesInput::principal_id): <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    ///   - [`states(Option<Vec<String>>)`](crate::input::ListLaunchProfilesInput::states): <p>Filter this request to launch profiles in any of the given states.</p>
+    ///   - [`studio_id(Option<String>)`](crate::input::ListLaunchProfilesInput::studio_id): <p>The studio ID. </p>
+    /// - On success, responds with [`ListLaunchProfilesOutput`](crate::output::ListLaunchProfilesOutput) with field(s):
+    ///   - [`launch_profiles(Option<Vec<LaunchProfile>>)`](crate::output::ListLaunchProfilesOutput::launch_profiles): <p>A collection of launch profiles.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListLaunchProfilesOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
+    /// - On failure, responds with [`SdkError<ListLaunchProfilesError>`](crate::error::ListLaunchProfilesError)
     pub fn list_launch_profiles(&self) -> fluent_builders::ListLaunchProfiles<C, M, R> {
         fluent_builders::ListLaunchProfiles::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListStreamingImages` operation.
-    ///
-    /// See [`ListStreamingImages`](crate::client::fluent_builders::ListStreamingImages) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListStreamingImages`](crate::client::fluent_builders::ListStreamingImages) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListStreamingImages::into_paginator).
+    ///
+    /// - Takes [`ListStreamingImagesInput`](crate::input::ListStreamingImagesInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListStreamingImagesInput::next_token): <p>The token to request the next page of results. </p>
+    ///   - [`owner(Option<String>)`](crate::input::ListStreamingImagesInput::owner): <p>Filter this request to streaming images with the given owner</p>
+    ///   - [`studio_id(Option<String>)`](crate::input::ListStreamingImagesInput::studio_id): <p>The studio ID. </p>
+    /// - On success, responds with [`ListStreamingImagesOutput`](crate::output::ListStreamingImagesOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListStreamingImagesOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
+    ///   - [`streaming_images(Option<Vec<StreamingImage>>)`](crate::output::ListStreamingImagesOutput::streaming_images): <p>A collection of streaming images.</p>
+    /// - On failure, responds with [`SdkError<ListStreamingImagesError>`](crate::error::ListStreamingImagesError)
     pub fn list_streaming_images(&self) -> fluent_builders::ListStreamingImages<C, M, R> {
         fluent_builders::ListStreamingImages::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListStreamingSessions` operation.
-    ///
-    /// See [`ListStreamingSessions`](crate::client::fluent_builders::ListStreamingSessions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListStreamingSessions`](crate::client::fluent_builders::ListStreamingSessions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListStreamingSessions::into_paginator).
+    ///
+    /// - Takes [`ListStreamingSessionsInput`](crate::input::ListStreamingSessionsInput) with field(s):
+    ///   - [`created_by(Option<String>)`](crate::input::ListStreamingSessionsInput::created_by): <p>Filters the request to streaming sessions created by the given user.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListStreamingSessionsInput::next_token): <p>The token to request the next page of results. </p>
+    ///   - [`owned_by(Option<String>)`](crate::input::ListStreamingSessionsInput::owned_by): <p>Filters the request to streaming session owned by the given user</p>
+    ///   - [`session_ids(Option<String>)`](crate::input::ListStreamingSessionsInput::session_ids): <p>Filters the request to only the provided session IDs.</p>
+    ///   - [`studio_id(Option<String>)`](crate::input::ListStreamingSessionsInput::studio_id): <p>The studio ID. </p>
+    /// - On success, responds with [`ListStreamingSessionsOutput`](crate::output::ListStreamingSessionsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListStreamingSessionsOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
+    ///   - [`sessions(Option<Vec<StreamingSession>>)`](crate::output::ListStreamingSessionsOutput::sessions): <p>A collection of streaming sessions.</p>
+    /// - On failure, responds with [`SdkError<ListStreamingSessionsError>`](crate::error::ListStreamingSessionsError)
     pub fn list_streaming_sessions(&self) -> fluent_builders::ListStreamingSessions<C, M, R> {
         fluent_builders::ListStreamingSessions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListStudioComponents` operation.
-    ///
-    /// See [`ListStudioComponents`](crate::client::fluent_builders::ListStudioComponents) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListStudioComponents`](crate::client::fluent_builders::ListStudioComponents) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListStudioComponents::into_paginator).
+    ///
+    /// - Takes [`ListStudioComponentsInput`](crate::input::ListStudioComponentsInput) with field(s):
+    ///   - [`max_results(i32)`](crate::input::ListStudioComponentsInput::max_results): <p>The max number of results to return in the response.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListStudioComponentsInput::next_token): <p>The token to request the next page of results. </p>
+    ///   - [`states(Option<Vec<String>>)`](crate::input::ListStudioComponentsInput::states): <p>Filters the request to studio components that are in one of the given states. </p>
+    ///   - [`studio_id(Option<String>)`](crate::input::ListStudioComponentsInput::studio_id): <p>The studio ID. </p>
+    ///   - [`types(Option<Vec<String>>)`](crate::input::ListStudioComponentsInput::types): <p>Filters the request to studio components that are of one of the given types.</p>
+    /// - On success, responds with [`ListStudioComponentsOutput`](crate::output::ListStudioComponentsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListStudioComponentsOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
+    ///   - [`studio_components(Option<Vec<StudioComponent>>)`](crate::output::ListStudioComponentsOutput::studio_components): <p>A collection of studio components.</p>
+    /// - On failure, responds with [`SdkError<ListStudioComponentsError>`](crate::error::ListStudioComponentsError)
     pub fn list_studio_components(&self) -> fluent_builders::ListStudioComponents<C, M, R> {
         fluent_builders::ListStudioComponents::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListStudioMembers` operation.
-    ///
-    /// See [`ListStudioMembers`](crate::client::fluent_builders::ListStudioMembers) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListStudioMembers`](crate::client::fluent_builders::ListStudioMembers) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListStudioMembers::into_paginator).
+    ///
+    /// - Takes [`ListStudioMembersInput`](crate::input::ListStudioMembersInput) with field(s):
+    ///   - [`max_results(i32)`](crate::input::ListStudioMembersInput::max_results): <p>The max number of results to return in the response.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListStudioMembersInput::next_token): <p>The token to request the next page of results. </p>
+    ///   - [`studio_id(Option<String>)`](crate::input::ListStudioMembersInput::studio_id): <p>The studio ID. </p>
+    /// - On success, responds with [`ListStudioMembersOutput`](crate::output::ListStudioMembersOutput) with field(s):
+    ///   - [`members(Option<Vec<StudioMembership>>)`](crate::output::ListStudioMembersOutput::members): <p>A list of admin members.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListStudioMembersOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
+    /// - On failure, responds with [`SdkError<ListStudioMembersError>`](crate::error::ListStudioMembersError)
     pub fn list_studio_members(&self) -> fluent_builders::ListStudioMembers<C, M, R> {
         fluent_builders::ListStudioMembers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListStudios` operation.
-    ///
-    /// See [`ListStudios`](crate::client::fluent_builders::ListStudios) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListStudios`](crate::client::fluent_builders::ListStudios) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListStudios::into_paginator).
+    ///
+    /// - Takes [`ListStudiosInput`](crate::input::ListStudiosInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListStudiosInput::next_token): <p>The token to request the next page of results. </p>
+    /// - On success, responds with [`ListStudiosOutput`](crate::output::ListStudiosOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListStudiosOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
+    ///   - [`studios(Option<Vec<Studio>>)`](crate::output::ListStudiosOutput::studios): <p>A collection of studios.</p>
+    /// - On failure, responds with [`SdkError<ListStudiosError>`](crate::error::ListStudiosError)
     pub fn list_studios(&self) -> fluent_builders::ListStudios<C, M, R> {
         fluent_builders::ListStudios::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource for which you want to list tags.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutLaunchProfileMembers` operation.
+    /// Constructs a fluent builder for the [`PutLaunchProfileMembers`](crate::client::fluent_builders::PutLaunchProfileMembers) operation.
     ///
-    /// See [`PutLaunchProfileMembers`](crate::client::fluent_builders::PutLaunchProfileMembers) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutLaunchProfileMembersInput`](crate::input::PutLaunchProfileMembersInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::PutLaunchProfileMembersInput::client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`identity_store_id(Option<String>)`](crate::input::PutLaunchProfileMembersInput::identity_store_id): <p>The ID of the identity store.</p>
+    ///   - [`launch_profile_id(Option<String>)`](crate::input::PutLaunchProfileMembersInput::launch_profile_id): <p>The Launch Profile ID.</p>
+    ///   - [`members(Option<Vec<NewLaunchProfileMember>>)`](crate::input::PutLaunchProfileMembersInput::members): <p>A list of members.</p>
+    ///   - [`studio_id(Option<String>)`](crate::input::PutLaunchProfileMembersInput::studio_id): <p>The studio ID. </p>
+    /// - On success, responds with [`PutLaunchProfileMembersOutput`](crate::output::PutLaunchProfileMembersOutput)
+
+    /// - On failure, responds with [`SdkError<PutLaunchProfileMembersError>`](crate::error::PutLaunchProfileMembersError)
     pub fn put_launch_profile_members(&self) -> fluent_builders::PutLaunchProfileMembers<C, M, R> {
         fluent_builders::PutLaunchProfileMembers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutStudioMembers` operation.
+    /// Constructs a fluent builder for the [`PutStudioMembers`](crate::client::fluent_builders::PutStudioMembers) operation.
     ///
-    /// See [`PutStudioMembers`](crate::client::fluent_builders::PutStudioMembers) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutStudioMembersInput`](crate::input::PutStudioMembersInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::PutStudioMembersInput::client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`identity_store_id(Option<String>)`](crate::input::PutStudioMembersInput::identity_store_id): <p>The ID of the identity store.</p>
+    ///   - [`members(Option<Vec<NewStudioMember>>)`](crate::input::PutStudioMembersInput::members): <p>A list of members.</p>
+    ///   - [`studio_id(Option<String>)`](crate::input::PutStudioMembersInput::studio_id): <p>The studio ID. </p>
+    /// - On success, responds with [`PutStudioMembersOutput`](crate::output::PutStudioMembersOutput)
+
+    /// - On failure, responds with [`SdkError<PutStudioMembersError>`](crate::error::PutStudioMembersError)
     pub fn put_studio_members(&self) -> fluent_builders::PutStudioMembers<C, M, R> {
         fluent_builders::PutStudioMembers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartStreamingSession` operation.
+    /// Constructs a fluent builder for the [`StartStreamingSession`](crate::client::fluent_builders::StartStreamingSession) operation.
     ///
-    /// See [`StartStreamingSession`](crate::client::fluent_builders::StartStreamingSession) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartStreamingSessionInput`](crate::input::StartStreamingSessionInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::StartStreamingSessionInput::client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`session_id(Option<String>)`](crate::input::StartStreamingSessionInput::session_id): <p>The streaming session ID for the StartStreamingSessionRequest.</p>
+    ///   - [`studio_id(Option<String>)`](crate::input::StartStreamingSessionInput::studio_id): <p>The studio ID for the StartStreamingSessionRequest.</p>
+    /// - On success, responds with [`StartStreamingSessionOutput`](crate::output::StartStreamingSessionOutput) with field(s):
+    ///   - [`session(Option<StreamingSession>)`](crate::output::StartStreamingSessionOutput::session): <p>A streaming session is a virtual workstation created using a particular launch profile.</p>
+    /// - On failure, responds with [`SdkError<StartStreamingSessionError>`](crate::error::StartStreamingSessionError)
     pub fn start_streaming_session(&self) -> fluent_builders::StartStreamingSession<C, M, R> {
         fluent_builders::StartStreamingSession::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartStudioSSOConfigurationRepair` operation.
+    /// Constructs a fluent builder for the [`StartStudioSSOConfigurationRepair`](crate::client::fluent_builders::StartStudioSSOConfigurationRepair) operation.
     ///
-    /// See [`StartStudioSSOConfigurationRepair`](crate::client::fluent_builders::StartStudioSSOConfigurationRepair) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartStudioSsoConfigurationRepairInput`](crate::input::StartStudioSsoConfigurationRepairInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::StartStudioSsoConfigurationRepairInput::client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`studio_id(Option<String>)`](crate::input::StartStudioSsoConfigurationRepairInput::studio_id): <p>The studio ID. </p>
+    /// - On success, responds with [`StartStudioSsoConfigurationRepairOutput`](crate::output::StartStudioSsoConfigurationRepairOutput) with field(s):
+    ///   - [`studio(Option<Studio>)`](crate::output::StartStudioSsoConfigurationRepairOutput::studio): <p>Information about a studio.</p>
+    /// - On failure, responds with [`SdkError<StartStudioSSOConfigurationRepairError>`](crate::error::StartStudioSSOConfigurationRepairError)
     pub fn start_studio_sso_configuration_repair(
         &self,
     ) -> fluent_builders::StartStudioSSOConfigurationRepair<C, M, R> {
         fluent_builders::StartStudioSSOConfigurationRepair::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopStreamingSession` operation.
+    /// Constructs a fluent builder for the [`StopStreamingSession`](crate::client::fluent_builders::StopStreamingSession) operation.
     ///
-    /// See [`StopStreamingSession`](crate::client::fluent_builders::StopStreamingSession) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StopStreamingSessionInput`](crate::input::StopStreamingSessionInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::StopStreamingSessionInput::client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`session_id(Option<String>)`](crate::input::StopStreamingSessionInput::session_id): <p>The streaming session ID for the StopStreamingSessionRequest.</p>
+    ///   - [`studio_id(Option<String>)`](crate::input::StopStreamingSessionInput::studio_id): <p>The studioId for the StopStreamingSessionRequest.</p>
+    /// - On success, responds with [`StopStreamingSessionOutput`](crate::output::StopStreamingSessionOutput) with field(s):
+    ///   - [`session(Option<StreamingSession>)`](crate::output::StopStreamingSessionOutput::session): <p>A streaming session is a virtual workstation created using a particular launch profile.</p>
+    /// - On failure, responds with [`SdkError<StopStreamingSessionError>`](crate::error::StopStreamingSessionError)
     pub fn stop_streaming_session(&self) -> fluent_builders::StopStreamingSession<C, M, R> {
         fluent_builders::StopStreamingSession::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p> The Amazon Resource Name (ARN) of the resource you want to add tags to. </p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>Identifies the Amazon Resource Name(ARN) key from which you are removing tags. </p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateLaunchProfile` operation.
+    /// Constructs a fluent builder for the [`UpdateLaunchProfile`](crate::client::fluent_builders::UpdateLaunchProfile) operation.
     ///
-    /// See [`UpdateLaunchProfile`](crate::client::fluent_builders::UpdateLaunchProfile) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateLaunchProfileInput`](crate::input::UpdateLaunchProfileInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::UpdateLaunchProfileInput::client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateLaunchProfileInput::description): <p>The description.</p>
+    ///   - [`launch_profile_id(Option<String>)`](crate::input::UpdateLaunchProfileInput::launch_profile_id): <p>The Launch Profile ID.</p>
+    ///   - [`launch_profile_protocol_versions(Option<Vec<String>>)`](crate::input::UpdateLaunchProfileInput::launch_profile_protocol_versions): <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
+    ///   - [`name(Option<String>)`](crate::input::UpdateLaunchProfileInput::name): <p>The name for the launch profile.</p>
+    ///   - [`stream_configuration(Option<StreamConfigurationCreate>)`](crate::input::UpdateLaunchProfileInput::stream_configuration): <p>A configuration for a streaming session.</p>
+    ///   - [`studio_component_ids(Option<Vec<String>>)`](crate::input::UpdateLaunchProfileInput::studio_component_ids): <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
+    ///   - [`studio_id(Option<String>)`](crate::input::UpdateLaunchProfileInput::studio_id): <p>The studio ID. </p>
+    /// - On success, responds with [`UpdateLaunchProfileOutput`](crate::output::UpdateLaunchProfileOutput) with field(s):
+    ///   - [`launch_profile(Option<LaunchProfile>)`](crate::output::UpdateLaunchProfileOutput::launch_profile): <p>The launch profile.</p>
+    /// - On failure, responds with [`SdkError<UpdateLaunchProfileError>`](crate::error::UpdateLaunchProfileError)
     pub fn update_launch_profile(&self) -> fluent_builders::UpdateLaunchProfile<C, M, R> {
         fluent_builders::UpdateLaunchProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateLaunchProfileMember` operation.
+    /// Constructs a fluent builder for the [`UpdateLaunchProfileMember`](crate::client::fluent_builders::UpdateLaunchProfileMember) operation.
     ///
-    /// See [`UpdateLaunchProfileMember`](crate::client::fluent_builders::UpdateLaunchProfileMember) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateLaunchProfileMemberInput`](crate::input::UpdateLaunchProfileMemberInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::UpdateLaunchProfileMemberInput::client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`launch_profile_id(Option<String>)`](crate::input::UpdateLaunchProfileMemberInput::launch_profile_id): <p>The Launch Profile ID.</p>
+    ///   - [`persona(Option<LaunchProfilePersona>)`](crate::input::UpdateLaunchProfileMemberInput::persona): <p>The persona.</p>
+    ///   - [`principal_id(Option<String>)`](crate::input::UpdateLaunchProfileMemberInput::principal_id): <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
+    ///   - [`studio_id(Option<String>)`](crate::input::UpdateLaunchProfileMemberInput::studio_id): <p>The studio ID. </p>
+    /// - On success, responds with [`UpdateLaunchProfileMemberOutput`](crate::output::UpdateLaunchProfileMemberOutput) with field(s):
+    ///   - [`member(Option<LaunchProfileMembership>)`](crate::output::UpdateLaunchProfileMemberOutput::member): <p>The updated member. </p>
+    /// - On failure, responds with [`SdkError<UpdateLaunchProfileMemberError>`](crate::error::UpdateLaunchProfileMemberError)
     pub fn update_launch_profile_member(
         &self,
     ) -> fluent_builders::UpdateLaunchProfileMember<C, M, R> {
         fluent_builders::UpdateLaunchProfileMember::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateStreamingImage` operation.
+    /// Constructs a fluent builder for the [`UpdateStreamingImage`](crate::client::fluent_builders::UpdateStreamingImage) operation.
     ///
-    /// See [`UpdateStreamingImage`](crate::client::fluent_builders::UpdateStreamingImage) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateStreamingImageInput`](crate::input::UpdateStreamingImageInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::UpdateStreamingImageInput::client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateStreamingImageInput::description): <p>The description.</p>
+    ///   - [`name(Option<String>)`](crate::input::UpdateStreamingImageInput::name): <p>The name for the streaming image.</p>
+    ///   - [`streaming_image_id(Option<String>)`](crate::input::UpdateStreamingImageInput::streaming_image_id): <p>The streaming image ID.</p>
+    ///   - [`studio_id(Option<String>)`](crate::input::UpdateStreamingImageInput::studio_id): <p>The studio ID. </p>
+    /// - On success, responds with [`UpdateStreamingImageOutput`](crate::output::UpdateStreamingImageOutput) with field(s):
+    ///   - [`streaming_image(Option<StreamingImage>)`](crate::output::UpdateStreamingImageOutput::streaming_image): <p>Represents a streaming image resource.</p>  <p>Streaming images are used by studio users to select which operating system and software they want to use in a Nimble Studio streaming session.</p>  <p>Amazon provides a number of streaming images that include popular 3rd-party software.</p>  <p>You can create your own streaming images using an Amazon Elastic Compute Cloud (Amazon EC2) machine image that you create for this purpose. You can also include software that your users require.</p>
+    /// - On failure, responds with [`SdkError<UpdateStreamingImageError>`](crate::error::UpdateStreamingImageError)
     pub fn update_streaming_image(&self) -> fluent_builders::UpdateStreamingImage<C, M, R> {
         fluent_builders::UpdateStreamingImage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateStudio` operation.
+    /// Constructs a fluent builder for the [`UpdateStudio`](crate::client::fluent_builders::UpdateStudio) operation.
     ///
-    /// See [`UpdateStudio`](crate::client::fluent_builders::UpdateStudio) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateStudioInput`](crate::input::UpdateStudioInput) with field(s):
+    ///   - [`admin_role_arn(Option<String>)`](crate::input::UpdateStudioInput::admin_role_arn): <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::UpdateStudioInput::client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`display_name(Option<String>)`](crate::input::UpdateStudioInput::display_name): <p>A friendly name for the studio.</p>
+    ///   - [`studio_id(Option<String>)`](crate::input::UpdateStudioInput::studio_id): <p>The studio ID. </p>
+    ///   - [`user_role_arn(Option<String>)`](crate::input::UpdateStudioInput::user_role_arn): <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
+    /// - On success, responds with [`UpdateStudioOutput`](crate::output::UpdateStudioOutput) with field(s):
+    ///   - [`studio(Option<Studio>)`](crate::output::UpdateStudioOutput::studio): <p>Information about a studio.</p>
+    /// - On failure, responds with [`SdkError<UpdateStudioError>`](crate::error::UpdateStudioError)
     pub fn update_studio(&self) -> fluent_builders::UpdateStudio<C, M, R> {
         fluent_builders::UpdateStudio::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateStudioComponent` operation.
+    /// Constructs a fluent builder for the [`UpdateStudioComponent`](crate::client::fluent_builders::UpdateStudioComponent) operation.
     ///
-    /// See [`UpdateStudioComponent`](crate::client::fluent_builders::UpdateStudioComponent) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateStudioComponentInput`](crate::input::UpdateStudioComponentInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::UpdateStudioComponentInput::client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
+    ///   - [`configuration(Option<StudioComponentConfiguration>)`](crate::input::UpdateStudioComponentInput::configuration): <p>The configuration of the studio component, based on component type.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateStudioComponentInput::description): <p>The description.</p>
+    ///   - [`ec2_security_group_ids(Option<Vec<String>>)`](crate::input::UpdateStudioComponentInput::ec2_security_group_ids): <p>The EC2 security groups that control access to the studio component.</p>
+    ///   - [`initialization_scripts(Option<Vec<StudioComponentInitializationScript>>)`](crate::input::UpdateStudioComponentInput::initialization_scripts): <p>Initialization scripts for studio components.</p>
+    ///   - [`name(Option<String>)`](crate::input::UpdateStudioComponentInput::name): <p>The name for the studio component.</p>
+    ///   - [`script_parameters(Option<Vec<ScriptParameterKeyValue>>)`](crate::input::UpdateStudioComponentInput::script_parameters): <p>Parameters for the studio component scripts.</p>
+    ///   - [`studio_component_id(Option<String>)`](crate::input::UpdateStudioComponentInput::studio_component_id): <p>The studio component ID.</p>
+    ///   - [`studio_id(Option<String>)`](crate::input::UpdateStudioComponentInput::studio_id): <p>The studio ID. </p>
+    ///   - [`subtype(Option<StudioComponentSubtype>)`](crate::input::UpdateStudioComponentInput::subtype): <p>The specific subtype of a studio component.</p>
+    ///   - [`r#type(Option<StudioComponentType>)`](crate::input::UpdateStudioComponentInput::r#type): <p>The type of the studio component.</p>
+    /// - On success, responds with [`UpdateStudioComponentOutput`](crate::output::UpdateStudioComponentOutput) with field(s):
+    ///   - [`studio_component(Option<StudioComponent>)`](crate::output::UpdateStudioComponentOutput::studio_component): <p>Information about the studio component.</p>
+    /// - On failure, responds with [`SdkError<UpdateStudioComponentError>`](crate::error::UpdateStudioComponentError)
     pub fn update_studio_component(&self) -> fluent_builders::UpdateStudioComponent<C, M, R> {
         fluent_builders::UpdateStudioComponent::new(self.handle.clone())
     }

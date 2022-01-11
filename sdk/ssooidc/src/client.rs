@@ -83,24 +83,58 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateToken` operation.
+    /// Constructs a fluent builder for the [`CreateToken`](crate::client::fluent_builders::CreateToken) operation.
     ///
-    /// See [`CreateToken`](crate::client::fluent_builders::CreateToken) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateTokenInput`](crate::input::CreateTokenInput) with field(s):
+    ///   - [`client_id(Option<String>)`](crate::input::CreateTokenInput::client_id): <p>The unique identifier string for each client. This value should come from the persisted result of the <code>RegisterClient</code> API.</p>
+    ///   - [`client_secret(Option<String>)`](crate::input::CreateTokenInput::client_secret): <p>A secret string generated for the client. This value should come from the persisted result of the <code>RegisterClient</code> API.</p>
+    ///   - [`grant_type(Option<String>)`](crate::input::CreateTokenInput::grant_type): <p>Supports grant types for authorization code, refresh token, and device code request.</p>
+    ///   - [`device_code(Option<String>)`](crate::input::CreateTokenInput::device_code): <p>Used only when calling this API for the device code grant type. This short-term code is used to identify this authentication attempt. This should come from an in-memory reference to the result of the <code>StartDeviceAuthorization</code> API.</p>
+    ///   - [`code(Option<String>)`](crate::input::CreateTokenInput::code): <p>The authorization code received from the authorization service. This parameter is required to perform an authorization grant request to get access to a token.</p>
+    ///   - [`refresh_token(Option<String>)`](crate::input::CreateTokenInput::refresh_token): <p>The token used to obtain an access token in the event that the access token is invalid or expired. This token is not issued by the service.</p>
+    ///   - [`scope(Option<Vec<String>>)`](crate::input::CreateTokenInput::scope): <p>The list of scopes that is defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token.</p>
+    ///   - [`redirect_uri(Option<String>)`](crate::input::CreateTokenInput::redirect_uri): <p>The location of the application that will receive the authorization code. Users authorize the service to send the request to this location.</p>
+    /// - On success, responds with [`CreateTokenOutput`](crate::output::CreateTokenOutput) with field(s):
+    ///   - [`access_token(Option<String>)`](crate::output::CreateTokenOutput::access_token): <p>An opaque token to access AWS SSO resources assigned to a user.</p>
+    ///   - [`token_type(Option<String>)`](crate::output::CreateTokenOutput::token_type): <p>Used to notify the client that the returned token is an access token. The supported type is <code>BearerToken</code>.</p>
+    ///   - [`expires_in(i32)`](crate::output::CreateTokenOutput::expires_in): <p>Indicates the time in seconds when an access token will expire.</p>
+    ///   - [`refresh_token(Option<String>)`](crate::output::CreateTokenOutput::refresh_token): <p>A token that, if present, can be used to refresh a previously issued access token that might have expired.</p>
+    ///   - [`id_token(Option<String>)`](crate::output::CreateTokenOutput::id_token): <p>The identifier of the user that associated with the access token, if present.</p>
+    /// - On failure, responds with [`SdkError<CreateTokenError>`](crate::error::CreateTokenError)
     pub fn create_token(&self) -> fluent_builders::CreateToken<C, M, R> {
         fluent_builders::CreateToken::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RegisterClient` operation.
+    /// Constructs a fluent builder for the [`RegisterClient`](crate::client::fluent_builders::RegisterClient) operation.
     ///
-    /// See [`RegisterClient`](crate::client::fluent_builders::RegisterClient) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RegisterClientInput`](crate::input::RegisterClientInput) with field(s):
+    ///   - [`client_name(Option<String>)`](crate::input::RegisterClientInput::client_name): <p>The friendly name of the client.</p>
+    ///   - [`client_type(Option<String>)`](crate::input::RegisterClientInput::client_type): <p>The type of client. The service supports only <code>public</code> as a client type. Anything other than public will be rejected by the service.</p>
+    ///   - [`scopes(Option<Vec<String>>)`](crate::input::RegisterClientInput::scopes): <p>The list of scopes that are defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token.</p>
+    /// - On success, responds with [`RegisterClientOutput`](crate::output::RegisterClientOutput) with field(s):
+    ///   - [`client_id(Option<String>)`](crate::output::RegisterClientOutput::client_id): <p>The unique identifier string for each client. This client uses this identifier to get authenticated by the service in subsequent calls.</p>
+    ///   - [`client_secret(Option<String>)`](crate::output::RegisterClientOutput::client_secret): <p>A secret string generated for the client. The client will use this string to get authenticated by the service in subsequent calls.</p>
+    ///   - [`client_id_issued_at(i64)`](crate::output::RegisterClientOutput::client_id_issued_at): <p>Indicates the time at which the <code>clientId</code> and <code>clientSecret</code> were issued.</p>
+    ///   - [`client_secret_expires_at(i64)`](crate::output::RegisterClientOutput::client_secret_expires_at): <p>Indicates the time at which the <code>clientId</code> and <code>clientSecret</code> will become invalid.</p>
+    ///   - [`authorization_endpoint(Option<String>)`](crate::output::RegisterClientOutput::authorization_endpoint): <p>The endpoint where the client can request authorization.</p>
+    ///   - [`token_endpoint(Option<String>)`](crate::output::RegisterClientOutput::token_endpoint): <p>The endpoint where the client can get an access token.</p>
+    /// - On failure, responds with [`SdkError<RegisterClientError>`](crate::error::RegisterClientError)
     pub fn register_client(&self) -> fluent_builders::RegisterClient<C, M, R> {
         fluent_builders::RegisterClient::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartDeviceAuthorization` operation.
+    /// Constructs a fluent builder for the [`StartDeviceAuthorization`](crate::client::fluent_builders::StartDeviceAuthorization) operation.
     ///
-    /// See [`StartDeviceAuthorization`](crate::client::fluent_builders::StartDeviceAuthorization) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartDeviceAuthorizationInput`](crate::input::StartDeviceAuthorizationInput) with field(s):
+    ///   - [`client_id(Option<String>)`](crate::input::StartDeviceAuthorizationInput::client_id): <p>The unique identifier string for the client that is registered with AWS SSO. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
+    ///   - [`client_secret(Option<String>)`](crate::input::StartDeviceAuthorizationInput::client_secret): <p>A secret string that is generated for the client. This value should come from the persisted result of the <code>RegisterClient</code> API operation.</p>
+    ///   - [`start_url(Option<String>)`](crate::input::StartDeviceAuthorizationInput::start_url): <p>The URL for the AWS SSO user portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the User Portal</a> in the <i>AWS Single Sign-On User Guide</i>.</p>
+    /// - On success, responds with [`StartDeviceAuthorizationOutput`](crate::output::StartDeviceAuthorizationOutput) with field(s):
+    ///   - [`device_code(Option<String>)`](crate::output::StartDeviceAuthorizationOutput::device_code): <p>The short-lived code that is used by the device when polling for a session token.</p>
+    ///   - [`user_code(Option<String>)`](crate::output::StartDeviceAuthorizationOutput::user_code): <p>A one-time user verification code. This is needed to authorize an in-use device.</p>
+    ///   - [`verification_uri(Option<String>)`](crate::output::StartDeviceAuthorizationOutput::verification_uri): <p>The URI of the verification page that takes the <code>userCode</code> to authorize the device.</p>
+    ///   - [`verification_uri_complete(Option<String>)`](crate::output::StartDeviceAuthorizationOutput::verification_uri_complete): <p>An alternate URL that the client can use to automatically launch a browser. This process skips the manual step in which the user visits the verification page and enters their code.</p>
+    ///   - [`expires_in(i32)`](crate::output::StartDeviceAuthorizationOutput::expires_in): <p>Indicates the number of seconds in which the verification code will become invalid.</p>
+    ///   - [`interval(i32)`](crate::output::StartDeviceAuthorizationOutput::interval): <p>Indicates the number of seconds the client must wait between attempts when polling for a session.</p>
+    /// - On failure, responds with [`SdkError<StartDeviceAuthorizationError>`](crate::error::StartDeviceAuthorizationError)
     pub fn start_device_authorization(&self) -> fluent_builders::StartDeviceAuthorization<C, M, R> {
         fluent_builders::StartDeviceAuthorization::new(self.handle.clone())
     }

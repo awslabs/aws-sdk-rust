@@ -83,528 +83,949 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AssociateDelegateToResource` operation.
+    /// Constructs a fluent builder for the [`AssociateDelegateToResource`](crate::client::fluent_builders::AssociateDelegateToResource) operation.
     ///
-    /// See [`AssociateDelegateToResource`](crate::client::fluent_builders::AssociateDelegateToResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateDelegateToResourceInput`](crate::input::AssociateDelegateToResourceInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::AssociateDelegateToResourceInput::organization_id): <p>The organization under which the resource exists.</p>
+    ///   - [`resource_id(Option<String>)`](crate::input::AssociateDelegateToResourceInput::resource_id): <p>The resource for which members (users or groups) are associated.</p>
+    ///   - [`entity_id(Option<String>)`](crate::input::AssociateDelegateToResourceInput::entity_id): <p>The member (user or group) to associate to the resource.</p>
+    /// - On success, responds with [`AssociateDelegateToResourceOutput`](crate::output::AssociateDelegateToResourceOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateDelegateToResourceError>`](crate::error::AssociateDelegateToResourceError)
     pub fn associate_delegate_to_resource(
         &self,
     ) -> fluent_builders::AssociateDelegateToResource<C, M, R> {
         fluent_builders::AssociateDelegateToResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateMemberToGroup` operation.
+    /// Constructs a fluent builder for the [`AssociateMemberToGroup`](crate::client::fluent_builders::AssociateMemberToGroup) operation.
     ///
-    /// See [`AssociateMemberToGroup`](crate::client::fluent_builders::AssociateMemberToGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateMemberToGroupInput`](crate::input::AssociateMemberToGroupInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::AssociateMemberToGroupInput::organization_id): <p>The organization under which the group exists.</p>
+    ///   - [`group_id(Option<String>)`](crate::input::AssociateMemberToGroupInput::group_id): <p>The group to which the member (user or group) is associated.</p>
+    ///   - [`member_id(Option<String>)`](crate::input::AssociateMemberToGroupInput::member_id): <p>The member (user or group) to associate to the group.</p>
+    /// - On success, responds with [`AssociateMemberToGroupOutput`](crate::output::AssociateMemberToGroupOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateMemberToGroupError>`](crate::error::AssociateMemberToGroupError)
     pub fn associate_member_to_group(&self) -> fluent_builders::AssociateMemberToGroup<C, M, R> {
         fluent_builders::AssociateMemberToGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CancelMailboxExportJob` operation.
+    /// Constructs a fluent builder for the [`CancelMailboxExportJob`](crate::client::fluent_builders::CancelMailboxExportJob) operation.
     ///
-    /// See [`CancelMailboxExportJob`](crate::client::fluent_builders::CancelMailboxExportJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CancelMailboxExportJobInput`](crate::input::CancelMailboxExportJobInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::CancelMailboxExportJobInput::client_token): <p>The idempotency token for the client request.</p>
+    ///   - [`job_id(Option<String>)`](crate::input::CancelMailboxExportJobInput::job_id): <p>The job ID.</p>
+    ///   - [`organization_id(Option<String>)`](crate::input::CancelMailboxExportJobInput::organization_id): <p>The organization ID.</p>
+    /// - On success, responds with [`CancelMailboxExportJobOutput`](crate::output::CancelMailboxExportJobOutput)
+
+    /// - On failure, responds with [`SdkError<CancelMailboxExportJobError>`](crate::error::CancelMailboxExportJobError)
     pub fn cancel_mailbox_export_job(&self) -> fluent_builders::CancelMailboxExportJob<C, M, R> {
         fluent_builders::CancelMailboxExportJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateAlias` operation.
+    /// Constructs a fluent builder for the [`CreateAlias`](crate::client::fluent_builders::CreateAlias) operation.
     ///
-    /// See [`CreateAlias`](crate::client::fluent_builders::CreateAlias) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateAliasInput`](crate::input::CreateAliasInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::CreateAliasInput::organization_id): <p>The organization under which the member (user or group) exists.</p>
+    ///   - [`entity_id(Option<String>)`](crate::input::CreateAliasInput::entity_id): <p>The member (user or group) to which this alias is added.</p>
+    ///   - [`alias(Option<String>)`](crate::input::CreateAliasInput::alias): <p>The alias to add to the member set.</p>
+    /// - On success, responds with [`CreateAliasOutput`](crate::output::CreateAliasOutput)
+
+    /// - On failure, responds with [`SdkError<CreateAliasError>`](crate::error::CreateAliasError)
     pub fn create_alias(&self) -> fluent_builders::CreateAlias<C, M, R> {
         fluent_builders::CreateAlias::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateGroup` operation.
+    /// Constructs a fluent builder for the [`CreateGroup`](crate::client::fluent_builders::CreateGroup) operation.
     ///
-    /// See [`CreateGroup`](crate::client::fluent_builders::CreateGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateGroupInput`](crate::input::CreateGroupInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::CreateGroupInput::organization_id): <p>The organization under which the group is to be created.</p>
+    ///   - [`name(Option<String>)`](crate::input::CreateGroupInput::name): <p>The name of the group.</p>
+    /// - On success, responds with [`CreateGroupOutput`](crate::output::CreateGroupOutput) with field(s):
+    ///   - [`group_id(Option<String>)`](crate::output::CreateGroupOutput::group_id): <p>The identifier of the group.</p>
+    /// - On failure, responds with [`SdkError<CreateGroupError>`](crate::error::CreateGroupError)
     pub fn create_group(&self) -> fluent_builders::CreateGroup<C, M, R> {
         fluent_builders::CreateGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateMobileDeviceAccessRule` operation.
+    /// Constructs a fluent builder for the [`CreateMobileDeviceAccessRule`](crate::client::fluent_builders::CreateMobileDeviceAccessRule) operation.
     ///
-    /// See [`CreateMobileDeviceAccessRule`](crate::client::fluent_builders::CreateMobileDeviceAccessRule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateMobileDeviceAccessRuleInput`](crate::input::CreateMobileDeviceAccessRuleInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::CreateMobileDeviceAccessRuleInput::organization_id): <p>The Amazon WorkMail organization under which the rule will be created.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateMobileDeviceAccessRuleInput::client_token): <p>The idempotency token for the client request.</p>
+    ///   - [`name(Option<String>)`](crate::input::CreateMobileDeviceAccessRuleInput::name): <p>The rule name.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateMobileDeviceAccessRuleInput::description): <p>The rule description.</p>
+    ///   - [`effect(Option<MobileDeviceAccessRuleEffect>)`](crate::input::CreateMobileDeviceAccessRuleInput::effect): <p>The effect of the rule when it matches. Allowed values are <code>ALLOW</code> or <code>DENY</code>.</p>
+    ///   - [`device_types(Option<Vec<String>>)`](crate::input::CreateMobileDeviceAccessRuleInput::device_types): <p>Device types that the rule will match.</p>
+    ///   - [`not_device_types(Option<Vec<String>>)`](crate::input::CreateMobileDeviceAccessRuleInput::not_device_types): <p>Device types that the rule <b>will not</b> match. All other device types will match.</p>
+    ///   - [`device_models(Option<Vec<String>>)`](crate::input::CreateMobileDeviceAccessRuleInput::device_models): <p>Device models that the rule will match.</p>
+    ///   - [`not_device_models(Option<Vec<String>>)`](crate::input::CreateMobileDeviceAccessRuleInput::not_device_models): <p>Device models that the rule <b>will not</b> match. All other device models will match.</p>
+    ///   - [`device_operating_systems(Option<Vec<String>>)`](crate::input::CreateMobileDeviceAccessRuleInput::device_operating_systems): <p>Device operating systems that the rule will match.</p>
+    ///   - [`not_device_operating_systems(Option<Vec<String>>)`](crate::input::CreateMobileDeviceAccessRuleInput::not_device_operating_systems): <p>Device operating systems that the rule <b>will not</b> match. All other device operating systems will match.</p>
+    ///   - [`device_user_agents(Option<Vec<String>>)`](crate::input::CreateMobileDeviceAccessRuleInput::device_user_agents): <p>Device user agents that the rule will match.</p>
+    ///   - [`not_device_user_agents(Option<Vec<String>>)`](crate::input::CreateMobileDeviceAccessRuleInput::not_device_user_agents): <p>Device user agents that the rule <b>will not</b> match. All other device user agents will match.</p>
+    /// - On success, responds with [`CreateMobileDeviceAccessRuleOutput`](crate::output::CreateMobileDeviceAccessRuleOutput) with field(s):
+    ///   - [`mobile_device_access_rule_id(Option<String>)`](crate::output::CreateMobileDeviceAccessRuleOutput::mobile_device_access_rule_id): <p>The identifier for the newly created mobile device access rule.</p>
+    /// - On failure, responds with [`SdkError<CreateMobileDeviceAccessRuleError>`](crate::error::CreateMobileDeviceAccessRuleError)
     pub fn create_mobile_device_access_rule(
         &self,
     ) -> fluent_builders::CreateMobileDeviceAccessRule<C, M, R> {
         fluent_builders::CreateMobileDeviceAccessRule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateOrganization` operation.
+    /// Constructs a fluent builder for the [`CreateOrganization`](crate::client::fluent_builders::CreateOrganization) operation.
     ///
-    /// See [`CreateOrganization`](crate::client::fluent_builders::CreateOrganization) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateOrganizationInput`](crate::input::CreateOrganizationInput) with field(s):
+    ///   - [`directory_id(Option<String>)`](crate::input::CreateOrganizationInput::directory_id): <p>The AWS Directory Service directory ID.</p>
+    ///   - [`alias(Option<String>)`](crate::input::CreateOrganizationInput::alias): <p>The organization alias.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateOrganizationInput::client_token): <p>The idempotency token associated with the request.</p>
+    ///   - [`domains(Option<Vec<Domain>>)`](crate::input::CreateOrganizationInput::domains): <p>The email domains to associate with the organization.</p>
+    ///   - [`kms_key_arn(Option<String>)`](crate::input::CreateOrganizationInput::kms_key_arn): <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.</p>
+    ///   - [`enable_interoperability(bool)`](crate::input::CreateOrganizationInput::enable_interoperability): <p>When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.</p>
+    /// - On success, responds with [`CreateOrganizationOutput`](crate::output::CreateOrganizationOutput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::output::CreateOrganizationOutput::organization_id): <p>The organization ID.</p>
+    /// - On failure, responds with [`SdkError<CreateOrganizationError>`](crate::error::CreateOrganizationError)
     pub fn create_organization(&self) -> fluent_builders::CreateOrganization<C, M, R> {
         fluent_builders::CreateOrganization::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateResource` operation.
+    /// Constructs a fluent builder for the [`CreateResource`](crate::client::fluent_builders::CreateResource) operation.
     ///
-    /// See [`CreateResource`](crate::client::fluent_builders::CreateResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateResourceInput`](crate::input::CreateResourceInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::CreateResourceInput::organization_id): <p>The identifier associated with the organization for which the resource is created.</p>
+    ///   - [`name(Option<String>)`](crate::input::CreateResourceInput::name): <p>The name of the new resource.</p>
+    ///   - [`r#type(Option<ResourceType>)`](crate::input::CreateResourceInput::r#type): <p>The type of the new resource. The available types are <code>equipment</code> and <code>room</code>.</p>
+    /// - On success, responds with [`CreateResourceOutput`](crate::output::CreateResourceOutput) with field(s):
+    ///   - [`resource_id(Option<String>)`](crate::output::CreateResourceOutput::resource_id): <p>The identifier of the new resource.</p>
+    /// - On failure, responds with [`SdkError<CreateResourceError>`](crate::error::CreateResourceError)
     pub fn create_resource(&self) -> fluent_builders::CreateResource<C, M, R> {
         fluent_builders::CreateResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateUser` operation.
+    /// Constructs a fluent builder for the [`CreateUser`](crate::client::fluent_builders::CreateUser) operation.
     ///
-    /// See [`CreateUser`](crate::client::fluent_builders::CreateUser) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateUserInput`](crate::input::CreateUserInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::CreateUserInput::organization_id): <p>The identifier of the organization for which the user is created.</p>
+    ///   - [`name(Option<String>)`](crate::input::CreateUserInput::name): <p>The name for the new user. WorkMail directory user names have a maximum length of 64. All others have a maximum length of 20.</p>
+    ///   - [`display_name(Option<String>)`](crate::input::CreateUserInput::display_name): <p>The display name for the new user.</p>
+    ///   - [`password(Option<String>)`](crate::input::CreateUserInput::password): <p>The password for the new user.</p>
+    /// - On success, responds with [`CreateUserOutput`](crate::output::CreateUserOutput) with field(s):
+    ///   - [`user_id(Option<String>)`](crate::output::CreateUserOutput::user_id): <p>The identifier for the new user.</p>
+    /// - On failure, responds with [`SdkError<CreateUserError>`](crate::error::CreateUserError)
     pub fn create_user(&self) -> fluent_builders::CreateUser<C, M, R> {
         fluent_builders::CreateUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAccessControlRule` operation.
+    /// Constructs a fluent builder for the [`DeleteAccessControlRule`](crate::client::fluent_builders::DeleteAccessControlRule) operation.
     ///
-    /// See [`DeleteAccessControlRule`](crate::client::fluent_builders::DeleteAccessControlRule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteAccessControlRuleInput`](crate::input::DeleteAccessControlRuleInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::DeleteAccessControlRuleInput::organization_id): <p>The identifier for the organization.</p>
+    ///   - [`name(Option<String>)`](crate::input::DeleteAccessControlRuleInput::name): <p>The name of the access control rule.</p>
+    /// - On success, responds with [`DeleteAccessControlRuleOutput`](crate::output::DeleteAccessControlRuleOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAccessControlRuleError>`](crate::error::DeleteAccessControlRuleError)
     pub fn delete_access_control_rule(&self) -> fluent_builders::DeleteAccessControlRule<C, M, R> {
         fluent_builders::DeleteAccessControlRule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAlias` operation.
+    /// Constructs a fluent builder for the [`DeleteAlias`](crate::client::fluent_builders::DeleteAlias) operation.
     ///
-    /// See [`DeleteAlias`](crate::client::fluent_builders::DeleteAlias) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteAliasInput`](crate::input::DeleteAliasInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::DeleteAliasInput::organization_id): <p>The identifier for the organization under which the user exists.</p>
+    ///   - [`entity_id(Option<String>)`](crate::input::DeleteAliasInput::entity_id): <p>The identifier for the member (user or group) from which to have the aliases removed.</p>
+    ///   - [`alias(Option<String>)`](crate::input::DeleteAliasInput::alias): <p>The aliases to be removed from the user's set of aliases. Duplicate entries in the list are collapsed into single entries (the list is transformed into a set).</p>
+    /// - On success, responds with [`DeleteAliasOutput`](crate::output::DeleteAliasOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAliasError>`](crate::error::DeleteAliasError)
     pub fn delete_alias(&self) -> fluent_builders::DeleteAlias<C, M, R> {
         fluent_builders::DeleteAlias::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteEmailMonitoringConfiguration` operation.
+    /// Constructs a fluent builder for the [`DeleteEmailMonitoringConfiguration`](crate::client::fluent_builders::DeleteEmailMonitoringConfiguration) operation.
     ///
-    /// See [`DeleteEmailMonitoringConfiguration`](crate::client::fluent_builders::DeleteEmailMonitoringConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteEmailMonitoringConfigurationInput`](crate::input::DeleteEmailMonitoringConfigurationInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::DeleteEmailMonitoringConfigurationInput::organization_id): <p>The ID of the organization from which the email monitoring configuration is deleted.</p>
+    /// - On success, responds with [`DeleteEmailMonitoringConfigurationOutput`](crate::output::DeleteEmailMonitoringConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteEmailMonitoringConfigurationError>`](crate::error::DeleteEmailMonitoringConfigurationError)
     pub fn delete_email_monitoring_configuration(
         &self,
     ) -> fluent_builders::DeleteEmailMonitoringConfiguration<C, M, R> {
         fluent_builders::DeleteEmailMonitoringConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteGroup`](crate::client::fluent_builders::DeleteGroup) operation.
     ///
-    /// See [`DeleteGroup`](crate::client::fluent_builders::DeleteGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteGroupInput`](crate::input::DeleteGroupInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::DeleteGroupInput::organization_id): <p>The organization that contains the group.</p>
+    ///   - [`group_id(Option<String>)`](crate::input::DeleteGroupInput::group_id): <p>The identifier of the group to be deleted.</p>
+    /// - On success, responds with [`DeleteGroupOutput`](crate::output::DeleteGroupOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteGroupError>`](crate::error::DeleteGroupError)
     pub fn delete_group(&self) -> fluent_builders::DeleteGroup<C, M, R> {
         fluent_builders::DeleteGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteMailboxPermissions` operation.
+    /// Constructs a fluent builder for the [`DeleteMailboxPermissions`](crate::client::fluent_builders::DeleteMailboxPermissions) operation.
     ///
-    /// See [`DeleteMailboxPermissions`](crate::client::fluent_builders::DeleteMailboxPermissions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteMailboxPermissionsInput`](crate::input::DeleteMailboxPermissionsInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::DeleteMailboxPermissionsInput::organization_id): <p>The identifier of the organization under which the member (user or group) exists.</p>
+    ///   - [`entity_id(Option<String>)`](crate::input::DeleteMailboxPermissionsInput::entity_id): <p>The identifier of the member (user or group) that owns the mailbox.</p>
+    ///   - [`grantee_id(Option<String>)`](crate::input::DeleteMailboxPermissionsInput::grantee_id): <p>The identifier of the member (user or group) for which to delete granted permissions.</p>
+    /// - On success, responds with [`DeleteMailboxPermissionsOutput`](crate::output::DeleteMailboxPermissionsOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteMailboxPermissionsError>`](crate::error::DeleteMailboxPermissionsError)
     pub fn delete_mailbox_permissions(&self) -> fluent_builders::DeleteMailboxPermissions<C, M, R> {
         fluent_builders::DeleteMailboxPermissions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteMobileDeviceAccessOverride` operation.
+    /// Constructs a fluent builder for the [`DeleteMobileDeviceAccessOverride`](crate::client::fluent_builders::DeleteMobileDeviceAccessOverride) operation.
     ///
-    /// See [`DeleteMobileDeviceAccessOverride`](crate::client::fluent_builders::DeleteMobileDeviceAccessOverride) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteMobileDeviceAccessOverrideInput`](crate::input::DeleteMobileDeviceAccessOverrideInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::DeleteMobileDeviceAccessOverrideInput::organization_id): <p>The Amazon WorkMail organization for which the access override will be deleted.</p>
+    ///   - [`user_id(Option<String>)`](crate::input::DeleteMobileDeviceAccessOverrideInput::user_id): <p>The WorkMail user for which you want to delete the override. Accepts the following types of user identities:</p>  <ul>   <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>   <li> <p>Email address: <code>user@domain.tld</code> </p> </li>   <li> <p>User name: <code>user</code> </p> </li>  </ul>
+    ///   - [`device_id(Option<String>)`](crate::input::DeleteMobileDeviceAccessOverrideInput::device_id): <p>The mobile device for which you delete the override. <code>DeviceId</code> is case insensitive.</p>
+    /// - On success, responds with [`DeleteMobileDeviceAccessOverrideOutput`](crate::output::DeleteMobileDeviceAccessOverrideOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteMobileDeviceAccessOverrideError>`](crate::error::DeleteMobileDeviceAccessOverrideError)
     pub fn delete_mobile_device_access_override(
         &self,
     ) -> fluent_builders::DeleteMobileDeviceAccessOverride<C, M, R> {
         fluent_builders::DeleteMobileDeviceAccessOverride::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteMobileDeviceAccessRule` operation.
+    /// Constructs a fluent builder for the [`DeleteMobileDeviceAccessRule`](crate::client::fluent_builders::DeleteMobileDeviceAccessRule) operation.
     ///
-    /// See [`DeleteMobileDeviceAccessRule`](crate::client::fluent_builders::DeleteMobileDeviceAccessRule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteMobileDeviceAccessRuleInput`](crate::input::DeleteMobileDeviceAccessRuleInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::DeleteMobileDeviceAccessRuleInput::organization_id): <p>The Amazon WorkMail organization under which the rule will be deleted.</p>
+    ///   - [`mobile_device_access_rule_id(Option<String>)`](crate::input::DeleteMobileDeviceAccessRuleInput::mobile_device_access_rule_id): <p>The identifier of the rule to be deleted.</p>
+    /// - On success, responds with [`DeleteMobileDeviceAccessRuleOutput`](crate::output::DeleteMobileDeviceAccessRuleOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteMobileDeviceAccessRuleError>`](crate::error::DeleteMobileDeviceAccessRuleError)
     pub fn delete_mobile_device_access_rule(
         &self,
     ) -> fluent_builders::DeleteMobileDeviceAccessRule<C, M, R> {
         fluent_builders::DeleteMobileDeviceAccessRule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteOrganization` operation.
+    /// Constructs a fluent builder for the [`DeleteOrganization`](crate::client::fluent_builders::DeleteOrganization) operation.
     ///
-    /// See [`DeleteOrganization`](crate::client::fluent_builders::DeleteOrganization) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteOrganizationInput`](crate::input::DeleteOrganizationInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::DeleteOrganizationInput::client_token): <p>The idempotency token associated with the request.</p>
+    ///   - [`organization_id(Option<String>)`](crate::input::DeleteOrganizationInput::organization_id): <p>The organization ID.</p>
+    ///   - [`delete_directory(bool)`](crate::input::DeleteOrganizationInput::delete_directory): <p>If true, deletes the AWS Directory Service directory associated with the organization.</p>
+    /// - On success, responds with [`DeleteOrganizationOutput`](crate::output::DeleteOrganizationOutput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::output::DeleteOrganizationOutput::organization_id): <p>The organization ID.</p>
+    ///   - [`state(Option<String>)`](crate::output::DeleteOrganizationOutput::state): <p>The state of the organization.</p>
+    /// - On failure, responds with [`SdkError<DeleteOrganizationError>`](crate::error::DeleteOrganizationError)
     pub fn delete_organization(&self) -> fluent_builders::DeleteOrganization<C, M, R> {
         fluent_builders::DeleteOrganization::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteResource` operation.
+    /// Constructs a fluent builder for the [`DeleteResource`](crate::client::fluent_builders::DeleteResource) operation.
     ///
-    /// See [`DeleteResource`](crate::client::fluent_builders::DeleteResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteResourceInput`](crate::input::DeleteResourceInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::DeleteResourceInput::organization_id): <p>The identifier associated with the organization from which the resource is deleted.</p>
+    ///   - [`resource_id(Option<String>)`](crate::input::DeleteResourceInput::resource_id): <p>The identifier of the resource to be deleted.</p>
+    /// - On success, responds with [`DeleteResourceOutput`](crate::output::DeleteResourceOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteResourceError>`](crate::error::DeleteResourceError)
     pub fn delete_resource(&self) -> fluent_builders::DeleteResource<C, M, R> {
         fluent_builders::DeleteResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteRetentionPolicy` operation.
+    /// Constructs a fluent builder for the [`DeleteRetentionPolicy`](crate::client::fluent_builders::DeleteRetentionPolicy) operation.
     ///
-    /// See [`DeleteRetentionPolicy`](crate::client::fluent_builders::DeleteRetentionPolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteRetentionPolicyInput`](crate::input::DeleteRetentionPolicyInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::DeleteRetentionPolicyInput::organization_id): <p>The organization ID.</p>
+    ///   - [`id(Option<String>)`](crate::input::DeleteRetentionPolicyInput::id): <p>The retention policy ID.</p>
+    /// - On success, responds with [`DeleteRetentionPolicyOutput`](crate::output::DeleteRetentionPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteRetentionPolicyError>`](crate::error::DeleteRetentionPolicyError)
     pub fn delete_retention_policy(&self) -> fluent_builders::DeleteRetentionPolicy<C, M, R> {
         fluent_builders::DeleteRetentionPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteUser` operation.
+    /// Constructs a fluent builder for the [`DeleteUser`](crate::client::fluent_builders::DeleteUser) operation.
     ///
-    /// See [`DeleteUser`](crate::client::fluent_builders::DeleteUser) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteUserInput`](crate::input::DeleteUserInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::DeleteUserInput::organization_id): <p>The organization that contains the user to be deleted.</p>
+    ///   - [`user_id(Option<String>)`](crate::input::DeleteUserInput::user_id): <p>The identifier of the user to be deleted.</p>
+    /// - On success, responds with [`DeleteUserOutput`](crate::output::DeleteUserOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteUserError>`](crate::error::DeleteUserError)
     pub fn delete_user(&self) -> fluent_builders::DeleteUser<C, M, R> {
         fluent_builders::DeleteUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeregisterFromWorkMail` operation.
+    /// Constructs a fluent builder for the [`DeregisterFromWorkMail`](crate::client::fluent_builders::DeregisterFromWorkMail) operation.
     ///
-    /// See [`DeregisterFromWorkMail`](crate::client::fluent_builders::DeregisterFromWorkMail) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeregisterFromWorkMailInput`](crate::input::DeregisterFromWorkMailInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::DeregisterFromWorkMailInput::organization_id): <p>The identifier for the organization under which the Amazon WorkMail entity exists.</p>
+    ///   - [`entity_id(Option<String>)`](crate::input::DeregisterFromWorkMailInput::entity_id): <p>The identifier for the member (user or group) to be updated.</p>
+    /// - On success, responds with [`DeregisterFromWorkMailOutput`](crate::output::DeregisterFromWorkMailOutput)
+
+    /// - On failure, responds with [`SdkError<DeregisterFromWorkMailError>`](crate::error::DeregisterFromWorkMailError)
     pub fn deregister_from_work_mail(&self) -> fluent_builders::DeregisterFromWorkMail<C, M, R> {
         fluent_builders::DeregisterFromWorkMail::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeregisterMailDomain` operation.
+    /// Constructs a fluent builder for the [`DeregisterMailDomain`](crate::client::fluent_builders::DeregisterMailDomain) operation.
     ///
-    /// See [`DeregisterMailDomain`](crate::client::fluent_builders::DeregisterMailDomain) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeregisterMailDomainInput`](crate::input::DeregisterMailDomainInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::DeregisterMailDomainInput::organization_id): <p>The Amazon WorkMail organization for which the domain will be deregistered.</p>
+    ///   - [`domain_name(Option<String>)`](crate::input::DeregisterMailDomainInput::domain_name): <p>The domain to deregister in WorkMail and SES. </p>
+    /// - On success, responds with [`DeregisterMailDomainOutput`](crate::output::DeregisterMailDomainOutput)
+
+    /// - On failure, responds with [`SdkError<DeregisterMailDomainError>`](crate::error::DeregisterMailDomainError)
     pub fn deregister_mail_domain(&self) -> fluent_builders::DeregisterMailDomain<C, M, R> {
         fluent_builders::DeregisterMailDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEmailMonitoringConfiguration` operation.
+    /// Constructs a fluent builder for the [`DescribeEmailMonitoringConfiguration`](crate::client::fluent_builders::DescribeEmailMonitoringConfiguration) operation.
     ///
-    /// See [`DescribeEmailMonitoringConfiguration`](crate::client::fluent_builders::DescribeEmailMonitoringConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeEmailMonitoringConfigurationInput`](crate::input::DescribeEmailMonitoringConfigurationInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::DescribeEmailMonitoringConfigurationInput::organization_id): <p>The ID of the organization for which the email monitoring configuration is described.</p>
+    /// - On success, responds with [`DescribeEmailMonitoringConfigurationOutput`](crate::output::DescribeEmailMonitoringConfigurationOutput) with field(s):
+    ///   - [`role_arn(Option<String>)`](crate::output::DescribeEmailMonitoringConfigurationOutput::role_arn): <p>The Amazon Resource Name (ARN) of the IAM Role associated with the email monitoring configuration.</p>
+    ///   - [`log_group_arn(Option<String>)`](crate::output::DescribeEmailMonitoringConfigurationOutput::log_group_arn): <p>The Amazon Resource Name (ARN) of the CloudWatch Log group associated with the email monitoring configuration.</p>
+    /// - On failure, responds with [`SdkError<DescribeEmailMonitoringConfigurationError>`](crate::error::DescribeEmailMonitoringConfigurationError)
     pub fn describe_email_monitoring_configuration(
         &self,
     ) -> fluent_builders::DescribeEmailMonitoringConfiguration<C, M, R> {
         fluent_builders::DescribeEmailMonitoringConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeGroup` operation.
+    /// Constructs a fluent builder for the [`DescribeGroup`](crate::client::fluent_builders::DescribeGroup) operation.
     ///
-    /// See [`DescribeGroup`](crate::client::fluent_builders::DescribeGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeGroupInput`](crate::input::DescribeGroupInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::DescribeGroupInput::organization_id): <p>The identifier for the organization under which the group exists.</p>
+    ///   - [`group_id(Option<String>)`](crate::input::DescribeGroupInput::group_id): <p>The identifier for the group to be described.</p>
+    /// - On success, responds with [`DescribeGroupOutput`](crate::output::DescribeGroupOutput) with field(s):
+    ///   - [`group_id(Option<String>)`](crate::output::DescribeGroupOutput::group_id): <p>The identifier of the described group.</p>
+    ///   - [`name(Option<String>)`](crate::output::DescribeGroupOutput::name): <p>The name of the described group.</p>
+    ///   - [`email(Option<String>)`](crate::output::DescribeGroupOutput::email): <p>The email of the described group.</p>
+    ///   - [`state(Option<EntityState>)`](crate::output::DescribeGroupOutput::state): <p>The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
+    ///   - [`enabled_date(Option<DateTime>)`](crate::output::DescribeGroupOutput::enabled_date): <p>The date and time when a user was registered to WorkMail, in UNIX epoch time format.</p>
+    ///   - [`disabled_date(Option<DateTime>)`](crate::output::DescribeGroupOutput::disabled_date): <p>The date and time when a user was deregistered from WorkMail, in UNIX epoch time format.</p>
+    /// - On failure, responds with [`SdkError<DescribeGroupError>`](crate::error::DescribeGroupError)
     pub fn describe_group(&self) -> fluent_builders::DescribeGroup<C, M, R> {
         fluent_builders::DescribeGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeInboundDmarcSettings` operation.
+    /// Constructs a fluent builder for the [`DescribeInboundDmarcSettings`](crate::client::fluent_builders::DescribeInboundDmarcSettings) operation.
     ///
-    /// See [`DescribeInboundDmarcSettings`](crate::client::fluent_builders::DescribeInboundDmarcSettings) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeInboundDmarcSettingsInput`](crate::input::DescribeInboundDmarcSettingsInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::DescribeInboundDmarcSettingsInput::organization_id): <p>Lists the ID of the given organization.</p>
+    /// - On success, responds with [`DescribeInboundDmarcSettingsOutput`](crate::output::DescribeInboundDmarcSettingsOutput) with field(s):
+    ///   - [`enforced(bool)`](crate::output::DescribeInboundDmarcSettingsOutput::enforced): <p>Lists the enforcement setting of the applied policy.</p>
+    /// - On failure, responds with [`SdkError<DescribeInboundDmarcSettingsError>`](crate::error::DescribeInboundDmarcSettingsError)
     pub fn describe_inbound_dmarc_settings(
         &self,
     ) -> fluent_builders::DescribeInboundDmarcSettings<C, M, R> {
         fluent_builders::DescribeInboundDmarcSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeMailboxExportJob` operation.
+    /// Constructs a fluent builder for the [`DescribeMailboxExportJob`](crate::client::fluent_builders::DescribeMailboxExportJob) operation.
     ///
-    /// See [`DescribeMailboxExportJob`](crate::client::fluent_builders::DescribeMailboxExportJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeMailboxExportJobInput`](crate::input::DescribeMailboxExportJobInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::DescribeMailboxExportJobInput::job_id): <p>The mailbox export job ID.</p>
+    ///   - [`organization_id(Option<String>)`](crate::input::DescribeMailboxExportJobInput::organization_id): <p>The organization ID.</p>
+    /// - On success, responds with [`DescribeMailboxExportJobOutput`](crate::output::DescribeMailboxExportJobOutput) with field(s):
+    ///   - [`entity_id(Option<String>)`](crate::output::DescribeMailboxExportJobOutput::entity_id): <p>The identifier of the user or resource associated with the mailbox.</p>
+    ///   - [`description(Option<String>)`](crate::output::DescribeMailboxExportJobOutput::description): <p>The mailbox export job description.</p>
+    ///   - [`role_arn(Option<String>)`](crate::output::DescribeMailboxExportJobOutput::role_arn): <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the Amazon Simple Storage Service (Amazon S3) bucket.</p>
+    ///   - [`kms_key_arn(Option<String>)`](crate::output::DescribeMailboxExportJobOutput::kms_key_arn): <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS) key that encrypts the exported mailbox content.</p>
+    ///   - [`s3_bucket_name(Option<String>)`](crate::output::DescribeMailboxExportJobOutput::s3_bucket_name): <p>The name of the S3 bucket.</p>
+    ///   - [`s3_prefix(Option<String>)`](crate::output::DescribeMailboxExportJobOutput::s3_prefix): <p>The S3 bucket prefix.</p>
+    ///   - [`s3_path(Option<String>)`](crate::output::DescribeMailboxExportJobOutput::s3_path): <p>The path to the S3 bucket and file that the mailbox export job is exporting to.</p>
+    ///   - [`estimated_progress(i32)`](crate::output::DescribeMailboxExportJobOutput::estimated_progress): <p>The estimated progress of the mailbox export job, in percentage points.</p>
+    ///   - [`state(Option<MailboxExportJobState>)`](crate::output::DescribeMailboxExportJobOutput::state): <p>The state of the mailbox export job.</p>
+    ///   - [`error_info(Option<String>)`](crate::output::DescribeMailboxExportJobOutput::error_info): <p>Error information for failed mailbox export jobs.</p>
+    ///   - [`start_time(Option<DateTime>)`](crate::output::DescribeMailboxExportJobOutput::start_time): <p>The mailbox export job start timestamp.</p>
+    ///   - [`end_time(Option<DateTime>)`](crate::output::DescribeMailboxExportJobOutput::end_time): <p>The mailbox export job end timestamp.</p>
+    /// - On failure, responds with [`SdkError<DescribeMailboxExportJobError>`](crate::error::DescribeMailboxExportJobError)
     pub fn describe_mailbox_export_job(
         &self,
     ) -> fluent_builders::DescribeMailboxExportJob<C, M, R> {
         fluent_builders::DescribeMailboxExportJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeOrganization` operation.
+    /// Constructs a fluent builder for the [`DescribeOrganization`](crate::client::fluent_builders::DescribeOrganization) operation.
     ///
-    /// See [`DescribeOrganization`](crate::client::fluent_builders::DescribeOrganization) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeOrganizationInput`](crate::input::DescribeOrganizationInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::DescribeOrganizationInput::organization_id): <p>The identifier for the organization to be described.</p>
+    /// - On success, responds with [`DescribeOrganizationOutput`](crate::output::DescribeOrganizationOutput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::output::DescribeOrganizationOutput::organization_id): <p>The identifier of an organization.</p>
+    ///   - [`alias(Option<String>)`](crate::output::DescribeOrganizationOutput::alias): <p>The alias for an organization.</p>
+    ///   - [`state(Option<String>)`](crate::output::DescribeOrganizationOutput::state): <p>The state of an organization.</p>
+    ///   - [`directory_id(Option<String>)`](crate::output::DescribeOrganizationOutput::directory_id): <p>The identifier for the directory associated with an Amazon WorkMail organization.</p>
+    ///   - [`directory_type(Option<String>)`](crate::output::DescribeOrganizationOutput::directory_type): <p>The type of directory associated with the WorkMail organization.</p>
+    ///   - [`default_mail_domain(Option<String>)`](crate::output::DescribeOrganizationOutput::default_mail_domain): <p>The default mail domain associated with the organization.</p>
+    ///   - [`completed_date(Option<DateTime>)`](crate::output::DescribeOrganizationOutput::completed_date): <p>The date at which the organization became usable in the WorkMail context, in UNIX epoch time format.</p>
+    ///   - [`error_message(Option<String>)`](crate::output::DescribeOrganizationOutput::error_message): <p>(Optional) The error message indicating if unexpected behavior was encountered with regards to the organization.</p>
+    ///   - [`arn(Option<String>)`](crate::output::DescribeOrganizationOutput::arn): <p>The Amazon Resource Name (ARN) of the organization.</p>
+    /// - On failure, responds with [`SdkError<DescribeOrganizationError>`](crate::error::DescribeOrganizationError)
     pub fn describe_organization(&self) -> fluent_builders::DescribeOrganization<C, M, R> {
         fluent_builders::DescribeOrganization::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeResource` operation.
+    /// Constructs a fluent builder for the [`DescribeResource`](crate::client::fluent_builders::DescribeResource) operation.
     ///
-    /// See [`DescribeResource`](crate::client::fluent_builders::DescribeResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeResourceInput`](crate::input::DescribeResourceInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::DescribeResourceInput::organization_id): <p>The identifier associated with the organization for which the resource is described.</p>
+    ///   - [`resource_id(Option<String>)`](crate::input::DescribeResourceInput::resource_id): <p>The identifier of the resource to be described.</p>
+    /// - On success, responds with [`DescribeResourceOutput`](crate::output::DescribeResourceOutput) with field(s):
+    ///   - [`resource_id(Option<String>)`](crate::output::DescribeResourceOutput::resource_id): <p>The identifier of the described resource.</p>
+    ///   - [`email(Option<String>)`](crate::output::DescribeResourceOutput::email): <p>The email of the described resource.</p>
+    ///   - [`name(Option<String>)`](crate::output::DescribeResourceOutput::name): <p>The name of the described resource.</p>
+    ///   - [`r#type(Option<ResourceType>)`](crate::output::DescribeResourceOutput::r#type): <p>The type of the described resource.</p>
+    ///   - [`booking_options(Option<BookingOptions>)`](crate::output::DescribeResourceOutput::booking_options): <p>The booking options for the described resource.</p>
+    ///   - [`state(Option<EntityState>)`](crate::output::DescribeResourceOutput::state): <p>The state of the resource: enabled (registered to Amazon WorkMail), disabled (deregistered or never registered to WorkMail), or deleted.</p>
+    ///   - [`enabled_date(Option<DateTime>)`](crate::output::DescribeResourceOutput::enabled_date): <p>The date and time when a resource was enabled for WorkMail, in UNIX epoch time format.</p>
+    ///   - [`disabled_date(Option<DateTime>)`](crate::output::DescribeResourceOutput::disabled_date): <p>The date and time when a resource was disabled from WorkMail, in UNIX epoch time format.</p>
+    /// - On failure, responds with [`SdkError<DescribeResourceError>`](crate::error::DescribeResourceError)
     pub fn describe_resource(&self) -> fluent_builders::DescribeResource<C, M, R> {
         fluent_builders::DescribeResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeUser` operation.
+    /// Constructs a fluent builder for the [`DescribeUser`](crate::client::fluent_builders::DescribeUser) operation.
     ///
-    /// See [`DescribeUser`](crate::client::fluent_builders::DescribeUser) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeUserInput`](crate::input::DescribeUserInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::DescribeUserInput::organization_id): <p>The identifier for the organization under which the user exists.</p>
+    ///   - [`user_id(Option<String>)`](crate::input::DescribeUserInput::user_id): <p>The identifier for the user to be described.</p>
+    /// - On success, responds with [`DescribeUserOutput`](crate::output::DescribeUserOutput) with field(s):
+    ///   - [`user_id(Option<String>)`](crate::output::DescribeUserOutput::user_id): <p>The identifier for the described user.</p>
+    ///   - [`name(Option<String>)`](crate::output::DescribeUserOutput::name): <p>The name for the user.</p>
+    ///   - [`email(Option<String>)`](crate::output::DescribeUserOutput::email): <p>The email of the user.</p>
+    ///   - [`display_name(Option<String>)`](crate::output::DescribeUserOutput::display_name): <p>The display name of the user.</p>
+    ///   - [`state(Option<EntityState>)`](crate::output::DescribeUserOutput::state): <p>The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
+    ///   - [`user_role(Option<UserRole>)`](crate::output::DescribeUserOutput::user_role): <p>In certain cases, other entities are modeled as users. If interoperability is enabled, resources are imported into Amazon WorkMail as users. Because different WorkMail organizations rely on different directory types, administrators can distinguish between an unregistered user (account is disabled and has a user role) and the directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.</p>
+    ///   - [`enabled_date(Option<DateTime>)`](crate::output::DescribeUserOutput::enabled_date): <p>The date and time at which the user was enabled for Amazon WorkMail usage, in UNIX epoch time format.</p>
+    ///   - [`disabled_date(Option<DateTime>)`](crate::output::DescribeUserOutput::disabled_date): <p>The date and time at which the user was disabled for Amazon WorkMail usage, in UNIX epoch time format.</p>
+    /// - On failure, responds with [`SdkError<DescribeUserError>`](crate::error::DescribeUserError)
     pub fn describe_user(&self) -> fluent_builders::DescribeUser<C, M, R> {
         fluent_builders::DescribeUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateDelegateFromResource` operation.
+    /// Constructs a fluent builder for the [`DisassociateDelegateFromResource`](crate::client::fluent_builders::DisassociateDelegateFromResource) operation.
     ///
-    /// See [`DisassociateDelegateFromResource`](crate::client::fluent_builders::DisassociateDelegateFromResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateDelegateFromResourceInput`](crate::input::DisassociateDelegateFromResourceInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::DisassociateDelegateFromResourceInput::organization_id): <p>The identifier for the organization under which the resource exists.</p>
+    ///   - [`resource_id(Option<String>)`](crate::input::DisassociateDelegateFromResourceInput::resource_id): <p>The identifier of the resource from which delegates' set members are removed. </p>
+    ///   - [`entity_id(Option<String>)`](crate::input::DisassociateDelegateFromResourceInput::entity_id): <p>The identifier for the member (user, group) to be removed from the resource's delegates.</p>
+    /// - On success, responds with [`DisassociateDelegateFromResourceOutput`](crate::output::DisassociateDelegateFromResourceOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateDelegateFromResourceError>`](crate::error::DisassociateDelegateFromResourceError)
     pub fn disassociate_delegate_from_resource(
         &self,
     ) -> fluent_builders::DisassociateDelegateFromResource<C, M, R> {
         fluent_builders::DisassociateDelegateFromResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateMemberFromGroup` operation.
+    /// Constructs a fluent builder for the [`DisassociateMemberFromGroup`](crate::client::fluent_builders::DisassociateMemberFromGroup) operation.
     ///
-    /// See [`DisassociateMemberFromGroup`](crate::client::fluent_builders::DisassociateMemberFromGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateMemberFromGroupInput`](crate::input::DisassociateMemberFromGroupInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::DisassociateMemberFromGroupInput::organization_id): <p>The identifier for the organization under which the group exists.</p>
+    ///   - [`group_id(Option<String>)`](crate::input::DisassociateMemberFromGroupInput::group_id): <p>The identifier for the group from which members are removed.</p>
+    ///   - [`member_id(Option<String>)`](crate::input::DisassociateMemberFromGroupInput::member_id): <p>The identifier for the member to be removed to the group.</p>
+    /// - On success, responds with [`DisassociateMemberFromGroupOutput`](crate::output::DisassociateMemberFromGroupOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateMemberFromGroupError>`](crate::error::DisassociateMemberFromGroupError)
     pub fn disassociate_member_from_group(
         &self,
     ) -> fluent_builders::DisassociateMemberFromGroup<C, M, R> {
         fluent_builders::DisassociateMemberFromGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAccessControlEffect` operation.
+    /// Constructs a fluent builder for the [`GetAccessControlEffect`](crate::client::fluent_builders::GetAccessControlEffect) operation.
     ///
-    /// See [`GetAccessControlEffect`](crate::client::fluent_builders::GetAccessControlEffect) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetAccessControlEffectInput`](crate::input::GetAccessControlEffectInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::GetAccessControlEffectInput::organization_id): <p>The identifier for the organization.</p>
+    ///   - [`ip_address(Option<String>)`](crate::input::GetAccessControlEffectInput::ip_address): <p>The IPv4 address.</p>
+    ///   - [`action(Option<String>)`](crate::input::GetAccessControlEffectInput::action): <p>The access protocol action. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+    ///   - [`user_id(Option<String>)`](crate::input::GetAccessControlEffectInput::user_id): <p>The user ID.</p>
+    /// - On success, responds with [`GetAccessControlEffectOutput`](crate::output::GetAccessControlEffectOutput) with field(s):
+    ///   - [`effect(Option<AccessControlRuleEffect>)`](crate::output::GetAccessControlEffectOutput::effect): <p>The rule effect.</p>
+    ///   - [`matched_rules(Option<Vec<String>>)`](crate::output::GetAccessControlEffectOutput::matched_rules): <p>The rules that match the given parameters, resulting in an effect.</p>
+    /// - On failure, responds with [`SdkError<GetAccessControlEffectError>`](crate::error::GetAccessControlEffectError)
     pub fn get_access_control_effect(&self) -> fluent_builders::GetAccessControlEffect<C, M, R> {
         fluent_builders::GetAccessControlEffect::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDefaultRetentionPolicy` operation.
+    /// Constructs a fluent builder for the [`GetDefaultRetentionPolicy`](crate::client::fluent_builders::GetDefaultRetentionPolicy) operation.
     ///
-    /// See [`GetDefaultRetentionPolicy`](crate::client::fluent_builders::GetDefaultRetentionPolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetDefaultRetentionPolicyInput`](crate::input::GetDefaultRetentionPolicyInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::GetDefaultRetentionPolicyInput::organization_id): <p>The organization ID.</p>
+    /// - On success, responds with [`GetDefaultRetentionPolicyOutput`](crate::output::GetDefaultRetentionPolicyOutput) with field(s):
+    ///   - [`id(Option<String>)`](crate::output::GetDefaultRetentionPolicyOutput::id): <p>The retention policy ID.</p>
+    ///   - [`name(Option<String>)`](crate::output::GetDefaultRetentionPolicyOutput::name): <p>The retention policy name.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetDefaultRetentionPolicyOutput::description): <p>The retention policy description.</p>
+    ///   - [`folder_configurations(Option<Vec<FolderConfiguration>>)`](crate::output::GetDefaultRetentionPolicyOutput::folder_configurations): <p>The retention policy folder configurations.</p>
+    /// - On failure, responds with [`SdkError<GetDefaultRetentionPolicyError>`](crate::error::GetDefaultRetentionPolicyError)
     pub fn get_default_retention_policy(
         &self,
     ) -> fluent_builders::GetDefaultRetentionPolicy<C, M, R> {
         fluent_builders::GetDefaultRetentionPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMailboxDetails` operation.
+    /// Constructs a fluent builder for the [`GetMailboxDetails`](crate::client::fluent_builders::GetMailboxDetails) operation.
     ///
-    /// See [`GetMailboxDetails`](crate::client::fluent_builders::GetMailboxDetails) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetMailboxDetailsInput`](crate::input::GetMailboxDetailsInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::GetMailboxDetailsInput::organization_id): <p>The identifier for the organization that contains the user whose mailbox details are being requested.</p>
+    ///   - [`user_id(Option<String>)`](crate::input::GetMailboxDetailsInput::user_id): <p>The identifier for the user whose mailbox details are being requested.</p>
+    /// - On success, responds with [`GetMailboxDetailsOutput`](crate::output::GetMailboxDetailsOutput) with field(s):
+    ///   - [`mailbox_quota(Option<i32>)`](crate::output::GetMailboxDetailsOutput::mailbox_quota): <p>The maximum allowed mailbox size, in MB, for the specified user.</p>
+    ///   - [`mailbox_size(f64)`](crate::output::GetMailboxDetailsOutput::mailbox_size): <p>The current mailbox size, in MB, for the specified user.</p>
+    /// - On failure, responds with [`SdkError<GetMailboxDetailsError>`](crate::error::GetMailboxDetailsError)
     pub fn get_mailbox_details(&self) -> fluent_builders::GetMailboxDetails<C, M, R> {
         fluent_builders::GetMailboxDetails::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMailDomain` operation.
+    /// Constructs a fluent builder for the [`GetMailDomain`](crate::client::fluent_builders::GetMailDomain) operation.
     ///
-    /// See [`GetMailDomain`](crate::client::fluent_builders::GetMailDomain) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetMailDomainInput`](crate::input::GetMailDomainInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::GetMailDomainInput::organization_id): <p>The Amazon WorkMail organization for which the domain is retrieved.</p>
+    ///   - [`domain_name(Option<String>)`](crate::input::GetMailDomainInput::domain_name): <p>The domain from which you want to retrieve details.</p>
+    /// - On success, responds with [`GetMailDomainOutput`](crate::output::GetMailDomainOutput) with field(s):
+    ///   - [`records(Option<Vec<DnsRecord>>)`](crate::output::GetMailDomainOutput::records): <p>A list of the DNS records that Amazon WorkMail recommends adding in your DNS provider for the best user experience. The records configure your domain with DMARC, SPF, DKIM, and direct incoming email traffic to SES. See admin guide for more details.</p>
+    ///   - [`is_test_domain(bool)`](crate::output::GetMailDomainOutput::is_test_domain): <p>Specifies whether the domain is a test domain provided by WorkMail, or a custom domain.</p>
+    ///   - [`is_default(bool)`](crate::output::GetMailDomainOutput::is_default): <p>Specifies whether the domain is the default domain for your organization.</p>
+    ///   - [`ownership_verification_status(Option<DnsRecordVerificationStatus>)`](crate::output::GetMailDomainOutput::ownership_verification_status): <p> Indicates the status of the domain ownership verification.</p>
+    ///   - [`dkim_verification_status(Option<DnsRecordVerificationStatus>)`](crate::output::GetMailDomainOutput::dkim_verification_status): <p>Indicates the status of a DKIM verification.</p>
+    /// - On failure, responds with [`SdkError<GetMailDomainError>`](crate::error::GetMailDomainError)
     pub fn get_mail_domain(&self) -> fluent_builders::GetMailDomain<C, M, R> {
         fluent_builders::GetMailDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMobileDeviceAccessEffect` operation.
+    /// Constructs a fluent builder for the [`GetMobileDeviceAccessEffect`](crate::client::fluent_builders::GetMobileDeviceAccessEffect) operation.
     ///
-    /// See [`GetMobileDeviceAccessEffect`](crate::client::fluent_builders::GetMobileDeviceAccessEffect) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetMobileDeviceAccessEffectInput`](crate::input::GetMobileDeviceAccessEffectInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::GetMobileDeviceAccessEffectInput::organization_id): <p>The Amazon WorkMail organization to simulate the access effect for.</p>
+    ///   - [`device_type(Option<String>)`](crate::input::GetMobileDeviceAccessEffectInput::device_type): <p>Device type the simulated user will report.</p>
+    ///   - [`device_model(Option<String>)`](crate::input::GetMobileDeviceAccessEffectInput::device_model): <p>Device model the simulated user will report.</p>
+    ///   - [`device_operating_system(Option<String>)`](crate::input::GetMobileDeviceAccessEffectInput::device_operating_system): <p>Device operating system the simulated user will report.</p>
+    ///   - [`device_user_agent(Option<String>)`](crate::input::GetMobileDeviceAccessEffectInput::device_user_agent): <p>Device user agent the simulated user will report.</p>
+    /// - On success, responds with [`GetMobileDeviceAccessEffectOutput`](crate::output::GetMobileDeviceAccessEffectOutput) with field(s):
+    ///   - [`effect(Option<MobileDeviceAccessRuleEffect>)`](crate::output::GetMobileDeviceAccessEffectOutput::effect): <p>The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>, after evaluating mobile device access rules in the Amazon WorkMail organization for the simulated user parameters.</p>
+    ///   - [`matched_rules(Option<Vec<MobileDeviceAccessMatchedRule>>)`](crate::output::GetMobileDeviceAccessEffectOutput::matched_rules): <p>A list of the rules which matched the simulated user input and produced the effect.</p>
+    /// - On failure, responds with [`SdkError<GetMobileDeviceAccessEffectError>`](crate::error::GetMobileDeviceAccessEffectError)
     pub fn get_mobile_device_access_effect(
         &self,
     ) -> fluent_builders::GetMobileDeviceAccessEffect<C, M, R> {
         fluent_builders::GetMobileDeviceAccessEffect::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMobileDeviceAccessOverride` operation.
+    /// Constructs a fluent builder for the [`GetMobileDeviceAccessOverride`](crate::client::fluent_builders::GetMobileDeviceAccessOverride) operation.
     ///
-    /// See [`GetMobileDeviceAccessOverride`](crate::client::fluent_builders::GetMobileDeviceAccessOverride) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetMobileDeviceAccessOverrideInput`](crate::input::GetMobileDeviceAccessOverrideInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::GetMobileDeviceAccessOverrideInput::organization_id): <p>The Amazon WorkMail organization to which you want to apply the override.</p>
+    ///   - [`user_id(Option<String>)`](crate::input::GetMobileDeviceAccessOverrideInput::user_id): <p>Identifies the WorkMail user for the override. Accepts the following types of user identities: </p>  <ul>   <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>   <li> <p>Email address: <code>user@domain.tld</code> </p> </li>   <li> <p>User name: <code>user</code> </p> </li>  </ul>
+    ///   - [`device_id(Option<String>)`](crate::input::GetMobileDeviceAccessOverrideInput::device_id): <p>The mobile device to which the override applies. <code>DeviceId</code> is case insensitive.</p>
+    /// - On success, responds with [`GetMobileDeviceAccessOverrideOutput`](crate::output::GetMobileDeviceAccessOverrideOutput) with field(s):
+    ///   - [`user_id(Option<String>)`](crate::output::GetMobileDeviceAccessOverrideOutput::user_id): <p>The WorkMail user to which the access override applies.</p>
+    ///   - [`device_id(Option<String>)`](crate::output::GetMobileDeviceAccessOverrideOutput::device_id): <p>The device to which the access override applies.</p>
+    ///   - [`effect(Option<MobileDeviceAccessRuleEffect>)`](crate::output::GetMobileDeviceAccessOverrideOutput::effect): <p>The effect of the override, <code>ALLOW</code> or <code>DENY</code>.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetMobileDeviceAccessOverrideOutput::description): <p>A description of the override.</p>
+    ///   - [`date_created(Option<DateTime>)`](crate::output::GetMobileDeviceAccessOverrideOutput::date_created): <p>The date the override was first created.</p>
+    ///   - [`date_modified(Option<DateTime>)`](crate::output::GetMobileDeviceAccessOverrideOutput::date_modified): <p>The date the description was last modified.</p>
+    /// - On failure, responds with [`SdkError<GetMobileDeviceAccessOverrideError>`](crate::error::GetMobileDeviceAccessOverrideError)
     pub fn get_mobile_device_access_override(
         &self,
     ) -> fluent_builders::GetMobileDeviceAccessOverride<C, M, R> {
         fluent_builders::GetMobileDeviceAccessOverride::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAccessControlRules` operation.
+    /// Constructs a fluent builder for the [`ListAccessControlRules`](crate::client::fluent_builders::ListAccessControlRules) operation.
     ///
-    /// See [`ListAccessControlRules`](crate::client::fluent_builders::ListAccessControlRules) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListAccessControlRulesInput`](crate::input::ListAccessControlRulesInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::ListAccessControlRulesInput::organization_id): <p>The identifier for the organization.</p>
+    /// - On success, responds with [`ListAccessControlRulesOutput`](crate::output::ListAccessControlRulesOutput) with field(s):
+    ///   - [`rules(Option<Vec<AccessControlRule>>)`](crate::output::ListAccessControlRulesOutput::rules): <p>The access control rules.</p>
+    /// - On failure, responds with [`SdkError<ListAccessControlRulesError>`](crate::error::ListAccessControlRulesError)
     pub fn list_access_control_rules(&self) -> fluent_builders::ListAccessControlRules<C, M, R> {
         fluent_builders::ListAccessControlRules::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAliases` operation.
-    ///
-    /// See [`ListAliases`](crate::client::fluent_builders::ListAliases) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListAliases`](crate::client::fluent_builders::ListAliases) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAliases::into_paginator).
+    ///
+    /// - Takes [`ListAliasesInput`](crate::input::ListAliasesInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::ListAliasesInput::organization_id): <p>The identifier for the organization under which the entity exists.</p>
+    ///   - [`entity_id(Option<String>)`](crate::input::ListAliasesInput::entity_id): <p>The identifier for the entity for which to list the aliases.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListAliasesInput::next_token): <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListAliasesInput::max_results): <p>The maximum number of results to return in a single call.</p>
+    /// - On success, responds with [`ListAliasesOutput`](crate::output::ListAliasesOutput) with field(s):
+    ///   - [`aliases(Option<Vec<String>>)`](crate::output::ListAliasesOutput::aliases): <p>The entity's paginated aliases.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAliasesOutput::next_token): <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<ListAliasesError>`](crate::error::ListAliasesError)
     pub fn list_aliases(&self) -> fluent_builders::ListAliases<C, M, R> {
         fluent_builders::ListAliases::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListGroupMembers` operation.
-    ///
-    /// See [`ListGroupMembers`](crate::client::fluent_builders::ListGroupMembers) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListGroupMembers`](crate::client::fluent_builders::ListGroupMembers) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListGroupMembers::into_paginator).
+    ///
+    /// - Takes [`ListGroupMembersInput`](crate::input::ListGroupMembersInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::ListGroupMembersInput::organization_id): <p>The identifier for the organization under which the group exists.</p>
+    ///   - [`group_id(Option<String>)`](crate::input::ListGroupMembersInput::group_id): <p>The identifier for the group to which the members (users or groups) are associated.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListGroupMembersInput::next_token): <p> The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListGroupMembersInput::max_results): <p>The maximum number of results to return in a single call.</p>
+    /// - On success, responds with [`ListGroupMembersOutput`](crate::output::ListGroupMembersOutput) with field(s):
+    ///   - [`members(Option<Vec<Member>>)`](crate::output::ListGroupMembersOutput::members): <p>The members associated to the group.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListGroupMembersOutput::next_token): <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
+    /// - On failure, responds with [`SdkError<ListGroupMembersError>`](crate::error::ListGroupMembersError)
     pub fn list_group_members(&self) -> fluent_builders::ListGroupMembers<C, M, R> {
         fluent_builders::ListGroupMembers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListGroups` operation.
-    ///
-    /// See [`ListGroups`](crate::client::fluent_builders::ListGroups) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListGroups`](crate::client::fluent_builders::ListGroups) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListGroups::into_paginator).
+    ///
+    /// - Takes [`ListGroupsInput`](crate::input::ListGroupsInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::ListGroupsInput::organization_id): <p>The identifier for the organization under which the groups exist.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListGroupsInput::next_token): <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListGroupsInput::max_results): <p>The maximum number of results to return in a single call.</p>
+    /// - On success, responds with [`ListGroupsOutput`](crate::output::ListGroupsOutput) with field(s):
+    ///   - [`groups(Option<Vec<Group>>)`](crate::output::ListGroupsOutput::groups): <p>The overview of groups for an organization.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListGroupsOutput::next_token): <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<ListGroupsError>`](crate::error::ListGroupsError)
     pub fn list_groups(&self) -> fluent_builders::ListGroups<C, M, R> {
         fluent_builders::ListGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListMailboxExportJobs` operation.
-    ///
-    /// See [`ListMailboxExportJobs`](crate::client::fluent_builders::ListMailboxExportJobs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListMailboxExportJobs`](crate::client::fluent_builders::ListMailboxExportJobs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMailboxExportJobs::into_paginator).
+    ///
+    /// - Takes [`ListMailboxExportJobsInput`](crate::input::ListMailboxExportJobsInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::ListMailboxExportJobsInput::organization_id): <p>The organization ID.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListMailboxExportJobsInput::next_token): <p>The token to use to retrieve the next page of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListMailboxExportJobsInput::max_results): <p>The maximum number of results to return in a single call.</p>
+    /// - On success, responds with [`ListMailboxExportJobsOutput`](crate::output::ListMailboxExportJobsOutput) with field(s):
+    ///   - [`jobs(Option<Vec<MailboxExportJob>>)`](crate::output::ListMailboxExportJobsOutput::jobs): <p>The mailbox export job details.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListMailboxExportJobsOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ListMailboxExportJobsError>`](crate::error::ListMailboxExportJobsError)
     pub fn list_mailbox_export_jobs(&self) -> fluent_builders::ListMailboxExportJobs<C, M, R> {
         fluent_builders::ListMailboxExportJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListMailboxPermissions` operation.
-    ///
-    /// See [`ListMailboxPermissions`](crate::client::fluent_builders::ListMailboxPermissions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListMailboxPermissions`](crate::client::fluent_builders::ListMailboxPermissions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMailboxPermissions::into_paginator).
+    ///
+    /// - Takes [`ListMailboxPermissionsInput`](crate::input::ListMailboxPermissionsInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::ListMailboxPermissionsInput::organization_id): <p>The identifier of the organization under which the user, group, or resource exists.</p>
+    ///   - [`entity_id(Option<String>)`](crate::input::ListMailboxPermissionsInput::entity_id): <p>The identifier of the user, group, or resource for which to list mailbox permissions.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListMailboxPermissionsInput::next_token): <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListMailboxPermissionsInput::max_results): <p>The maximum number of results to return in a single call.</p>
+    /// - On success, responds with [`ListMailboxPermissionsOutput`](crate::output::ListMailboxPermissionsOutput) with field(s):
+    ///   - [`permissions(Option<Vec<Permission>>)`](crate::output::ListMailboxPermissionsOutput::permissions): <p>One page of the user, group, or resource mailbox permissions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListMailboxPermissionsOutput::next_token): <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<ListMailboxPermissionsError>`](crate::error::ListMailboxPermissionsError)
     pub fn list_mailbox_permissions(&self) -> fluent_builders::ListMailboxPermissions<C, M, R> {
         fluent_builders::ListMailboxPermissions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListMailDomains` operation.
-    ///
-    /// See [`ListMailDomains`](crate::client::fluent_builders::ListMailDomains) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListMailDomains`](crate::client::fluent_builders::ListMailDomains) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMailDomains::into_paginator).
+    ///
+    /// - Takes [`ListMailDomainsInput`](crate::input::ListMailDomainsInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::ListMailDomainsInput::organization_id): <p>The Amazon WorkMail organization for which to list domains.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListMailDomainsInput::max_results): <p>The maximum number of results to return in a single call.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListMailDomainsInput::next_token): <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
+    /// - On success, responds with [`ListMailDomainsOutput`](crate::output::ListMailDomainsOutput) with field(s):
+    ///   - [`mail_domains(Option<Vec<MailDomainSummary>>)`](crate::output::ListMailDomainsOutput::mail_domains): <p>The list of mail domain summaries, specifying domains that exist in the specified Amazon WorkMail organization, along with the information about whether the domain is or isn't the default.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListMailDomainsOutput::next_token): <p>The token to use to retrieve the next page of results. The value becomes <code>null</code> when there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<ListMailDomainsError>`](crate::error::ListMailDomainsError)
     pub fn list_mail_domains(&self) -> fluent_builders::ListMailDomains<C, M, R> {
         fluent_builders::ListMailDomains::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListMobileDeviceAccessOverrides` operation.
-    ///
-    /// See [`ListMobileDeviceAccessOverrides`](crate::client::fluent_builders::ListMobileDeviceAccessOverrides) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListMobileDeviceAccessOverrides`](crate::client::fluent_builders::ListMobileDeviceAccessOverrides) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMobileDeviceAccessOverrides::into_paginator).
+    ///
+    /// - Takes [`ListMobileDeviceAccessOverridesInput`](crate::input::ListMobileDeviceAccessOverridesInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::ListMobileDeviceAccessOverridesInput::organization_id): <p>The Amazon WorkMail organization under which to list mobile device access overrides.</p>
+    ///   - [`user_id(Option<String>)`](crate::input::ListMobileDeviceAccessOverridesInput::user_id): <p>The WorkMail user under which you list the mobile device access overrides. Accepts the following types of user identities:</p>  <ul>   <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>   <li> <p>Email address: <code>user@domain.tld</code> </p> </li>   <li> <p>User name: <code>user</code> </p> </li>  </ul>
+    ///   - [`device_id(Option<String>)`](crate::input::ListMobileDeviceAccessOverridesInput::device_id): <p>The mobile device to which the access override applies.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListMobileDeviceAccessOverridesInput::next_token): <p>The token to use to retrieve the next page of results. The first call does not require a token.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListMobileDeviceAccessOverridesInput::max_results): <p>The maximum number of results to return in a single call.</p>
+    /// - On success, responds with [`ListMobileDeviceAccessOverridesOutput`](crate::output::ListMobileDeviceAccessOverridesOutput) with field(s):
+    ///   - [`overrides(Option<Vec<MobileDeviceAccessOverride>>)`](crate::output::ListMobileDeviceAccessOverridesOutput::overrides): <p>The list of mobile device access overrides that exist for the specified Amazon WorkMail organization and user.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListMobileDeviceAccessOverridesOutput::next_token): <p>The token to use to retrieve the next page of results. The value is “null” when there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<ListMobileDeviceAccessOverridesError>`](crate::error::ListMobileDeviceAccessOverridesError)
     pub fn list_mobile_device_access_overrides(
         &self,
     ) -> fluent_builders::ListMobileDeviceAccessOverrides<C, M, R> {
         fluent_builders::ListMobileDeviceAccessOverrides::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListMobileDeviceAccessRules` operation.
+    /// Constructs a fluent builder for the [`ListMobileDeviceAccessRules`](crate::client::fluent_builders::ListMobileDeviceAccessRules) operation.
     ///
-    /// See [`ListMobileDeviceAccessRules`](crate::client::fluent_builders::ListMobileDeviceAccessRules) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListMobileDeviceAccessRulesInput`](crate::input::ListMobileDeviceAccessRulesInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::ListMobileDeviceAccessRulesInput::organization_id): <p>The Amazon WorkMail organization for which to list the rules.</p>
+    /// - On success, responds with [`ListMobileDeviceAccessRulesOutput`](crate::output::ListMobileDeviceAccessRulesOutput) with field(s):
+    ///   - [`rules(Option<Vec<MobileDeviceAccessRule>>)`](crate::output::ListMobileDeviceAccessRulesOutput::rules): <p>The list of mobile device access rules that exist under the specified Amazon WorkMail organization.</p>
+    /// - On failure, responds with [`SdkError<ListMobileDeviceAccessRulesError>`](crate::error::ListMobileDeviceAccessRulesError)
     pub fn list_mobile_device_access_rules(
         &self,
     ) -> fluent_builders::ListMobileDeviceAccessRules<C, M, R> {
         fluent_builders::ListMobileDeviceAccessRules::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListOrganizations` operation.
-    ///
-    /// See [`ListOrganizations`](crate::client::fluent_builders::ListOrganizations) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListOrganizations`](crate::client::fluent_builders::ListOrganizations) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListOrganizations::into_paginator).
+    ///
+    /// - Takes [`ListOrganizationsInput`](crate::input::ListOrganizationsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListOrganizationsInput::next_token): <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListOrganizationsInput::max_results): <p>The maximum number of results to return in a single call.</p>
+    /// - On success, responds with [`ListOrganizationsOutput`](crate::output::ListOrganizationsOutput) with field(s):
+    ///   - [`organization_summaries(Option<Vec<OrganizationSummary>>)`](crate::output::ListOrganizationsOutput::organization_summaries): <p>The overview of owned organizations presented as a list of organization summaries.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListOrganizationsOutput::next_token): <p>The token to use to retrieve the next page of results. The value is "null" when there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<ListOrganizationsError>`](crate::error::ListOrganizationsError)
     pub fn list_organizations(&self) -> fluent_builders::ListOrganizations<C, M, R> {
         fluent_builders::ListOrganizations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListResourceDelegates` operation.
-    ///
-    /// See [`ListResourceDelegates`](crate::client::fluent_builders::ListResourceDelegates) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListResourceDelegates`](crate::client::fluent_builders::ListResourceDelegates) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListResourceDelegates::into_paginator).
+    ///
+    /// - Takes [`ListResourceDelegatesInput`](crate::input::ListResourceDelegatesInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::ListResourceDelegatesInput::organization_id): <p>The identifier for the organization that contains the resource for which delegates are listed.</p>
+    ///   - [`resource_id(Option<String>)`](crate::input::ListResourceDelegatesInput::resource_id): <p>The identifier for the resource whose delegates are listed.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListResourceDelegatesInput::next_token): <p>The token used to paginate through the delegates associated with a resource.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListResourceDelegatesInput::max_results): <p>The number of maximum results in a page.</p>
+    /// - On success, responds with [`ListResourceDelegatesOutput`](crate::output::ListResourceDelegatesOutput) with field(s):
+    ///   - [`delegates(Option<Vec<Delegate>>)`](crate::output::ListResourceDelegatesOutput::delegates): <p>One page of the resource's delegates.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListResourceDelegatesOutput::next_token): <p>The token used to paginate through the delegates associated with a resource. While results are still available, it has an associated value. When the last page is reached, the token is empty. </p>
+    /// - On failure, responds with [`SdkError<ListResourceDelegatesError>`](crate::error::ListResourceDelegatesError)
     pub fn list_resource_delegates(&self) -> fluent_builders::ListResourceDelegates<C, M, R> {
         fluent_builders::ListResourceDelegates::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListResources` operation.
-    ///
-    /// See [`ListResources`](crate::client::fluent_builders::ListResources) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListResources`](crate::client::fluent_builders::ListResources) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListResources::into_paginator).
+    ///
+    /// - Takes [`ListResourcesInput`](crate::input::ListResourcesInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::ListResourcesInput::organization_id): <p>The identifier for the organization under which the resources exist.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListResourcesInput::next_token): <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListResourcesInput::max_results): <p>The maximum number of results to return in a single call.</p>
+    /// - On success, responds with [`ListResourcesOutput`](crate::output::ListResourcesOutput) with field(s):
+    ///   - [`resources(Option<Vec<Resource>>)`](crate::output::ListResourcesOutput::resources): <p>One page of the organization's resource representation.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListResourcesOutput::next_token): <p> The token used to paginate through all the organization's resources. While results are still available, it has an associated value. When the last page is reached, the token is empty.</p>
+    /// - On failure, responds with [`SdkError<ListResourcesError>`](crate::error::ListResourcesError)
     pub fn list_resources(&self) -> fluent_builders::ListResources<C, M, R> {
         fluent_builders::ListResources::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The resource ARN.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A list of tag key-value pairs.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListUsers` operation.
-    ///
-    /// See [`ListUsers`](crate::client::fluent_builders::ListUsers) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListUsers`](crate::client::fluent_builders::ListUsers) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListUsers::into_paginator).
+    ///
+    /// - Takes [`ListUsersInput`](crate::input::ListUsersInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::ListUsersInput::organization_id): <p>The identifier for the organization under which the users exist.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListUsersInput::next_token): <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListUsersInput::max_results): <p>The maximum number of results to return in a single call.</p>
+    /// - On success, responds with [`ListUsersOutput`](crate::output::ListUsersOutput) with field(s):
+    ///   - [`users(Option<Vec<User>>)`](crate::output::ListUsersOutput::users): <p>The overview of users for an organization.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListUsersOutput::next_token): <p> The token to use to retrieve the next page of results. This value is `null` when there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<ListUsersError>`](crate::error::ListUsersError)
     pub fn list_users(&self) -> fluent_builders::ListUsers<C, M, R> {
         fluent_builders::ListUsers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutAccessControlRule` operation.
+    /// Constructs a fluent builder for the [`PutAccessControlRule`](crate::client::fluent_builders::PutAccessControlRule) operation.
     ///
-    /// See [`PutAccessControlRule`](crate::client::fluent_builders::PutAccessControlRule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutAccessControlRuleInput`](crate::input::PutAccessControlRuleInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::PutAccessControlRuleInput::name): <p>The rule name.</p>
+    ///   - [`effect(Option<AccessControlRuleEffect>)`](crate::input::PutAccessControlRuleInput::effect): <p>The rule effect.</p>
+    ///   - [`description(Option<String>)`](crate::input::PutAccessControlRuleInput::description): <p>The rule description.</p>
+    ///   - [`ip_ranges(Option<Vec<String>>)`](crate::input::PutAccessControlRuleInput::ip_ranges): <p>IPv4 CIDR ranges to include in the rule.</p>
+    ///   - [`not_ip_ranges(Option<Vec<String>>)`](crate::input::PutAccessControlRuleInput::not_ip_ranges): <p>IPv4 CIDR ranges to exclude from the rule.</p>
+    ///   - [`actions(Option<Vec<String>>)`](crate::input::PutAccessControlRuleInput::actions): <p>Access protocol actions to include in the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+    ///   - [`not_actions(Option<Vec<String>>)`](crate::input::PutAccessControlRuleInput::not_actions): <p>Access protocol actions to exclude from the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+    ///   - [`user_ids(Option<Vec<String>>)`](crate::input::PutAccessControlRuleInput::user_ids): <p>User IDs to include in the rule.</p>
+    ///   - [`not_user_ids(Option<Vec<String>>)`](crate::input::PutAccessControlRuleInput::not_user_ids): <p>User IDs to exclude from the rule.</p>
+    ///   - [`organization_id(Option<String>)`](crate::input::PutAccessControlRuleInput::organization_id): <p>The identifier of the organization.</p>
+    /// - On success, responds with [`PutAccessControlRuleOutput`](crate::output::PutAccessControlRuleOutput)
+
+    /// - On failure, responds with [`SdkError<PutAccessControlRuleError>`](crate::error::PutAccessControlRuleError)
     pub fn put_access_control_rule(&self) -> fluent_builders::PutAccessControlRule<C, M, R> {
         fluent_builders::PutAccessControlRule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutEmailMonitoringConfiguration` operation.
+    /// Constructs a fluent builder for the [`PutEmailMonitoringConfiguration`](crate::client::fluent_builders::PutEmailMonitoringConfiguration) operation.
     ///
-    /// See [`PutEmailMonitoringConfiguration`](crate::client::fluent_builders::PutEmailMonitoringConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutEmailMonitoringConfigurationInput`](crate::input::PutEmailMonitoringConfigurationInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::PutEmailMonitoringConfigurationInput::organization_id): <p>The ID of the organization for which the email monitoring configuration is set.</p>
+    ///   - [`role_arn(Option<String>)`](crate::input::PutEmailMonitoringConfigurationInput::role_arn): <p>The Amazon Resource Name (ARN) of the IAM Role associated with the email monitoring configuration.</p>
+    ///   - [`log_group_arn(Option<String>)`](crate::input::PutEmailMonitoringConfigurationInput::log_group_arn): <p>The Amazon Resource Name (ARN) of the CloudWatch Log group associated with the email monitoring configuration.</p>
+    /// - On success, responds with [`PutEmailMonitoringConfigurationOutput`](crate::output::PutEmailMonitoringConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<PutEmailMonitoringConfigurationError>`](crate::error::PutEmailMonitoringConfigurationError)
     pub fn put_email_monitoring_configuration(
         &self,
     ) -> fluent_builders::PutEmailMonitoringConfiguration<C, M, R> {
         fluent_builders::PutEmailMonitoringConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutInboundDmarcSettings` operation.
+    /// Constructs a fluent builder for the [`PutInboundDmarcSettings`](crate::client::fluent_builders::PutInboundDmarcSettings) operation.
     ///
-    /// See [`PutInboundDmarcSettings`](crate::client::fluent_builders::PutInboundDmarcSettings) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutInboundDmarcSettingsInput`](crate::input::PutInboundDmarcSettingsInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::PutInboundDmarcSettingsInput::organization_id): <p>The ID of the organization that you are applying the DMARC policy to. </p>
+    ///   - [`enforced(Option<bool>)`](crate::input::PutInboundDmarcSettingsInput::enforced): <p>Enforces or suspends a policy after it's applied.</p>
+    /// - On success, responds with [`PutInboundDmarcSettingsOutput`](crate::output::PutInboundDmarcSettingsOutput)
+
+    /// - On failure, responds with [`SdkError<PutInboundDmarcSettingsError>`](crate::error::PutInboundDmarcSettingsError)
     pub fn put_inbound_dmarc_settings(&self) -> fluent_builders::PutInboundDmarcSettings<C, M, R> {
         fluent_builders::PutInboundDmarcSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutMailboxPermissions` operation.
+    /// Constructs a fluent builder for the [`PutMailboxPermissions`](crate::client::fluent_builders::PutMailboxPermissions) operation.
     ///
-    /// See [`PutMailboxPermissions`](crate::client::fluent_builders::PutMailboxPermissions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutMailboxPermissionsInput`](crate::input::PutMailboxPermissionsInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::PutMailboxPermissionsInput::organization_id): <p>The identifier of the organization under which the user, group, or resource exists.</p>
+    ///   - [`entity_id(Option<String>)`](crate::input::PutMailboxPermissionsInput::entity_id): <p>The identifier of the user, group, or resource for which to update mailbox permissions.</p>
+    ///   - [`grantee_id(Option<String>)`](crate::input::PutMailboxPermissionsInput::grantee_id): <p>The identifier of the user, group, or resource to which to grant the permissions.</p>
+    ///   - [`permission_values(Option<Vec<PermissionType>>)`](crate::input::PutMailboxPermissionsInput::permission_values): <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>
+    /// - On success, responds with [`PutMailboxPermissionsOutput`](crate::output::PutMailboxPermissionsOutput)
+
+    /// - On failure, responds with [`SdkError<PutMailboxPermissionsError>`](crate::error::PutMailboxPermissionsError)
     pub fn put_mailbox_permissions(&self) -> fluent_builders::PutMailboxPermissions<C, M, R> {
         fluent_builders::PutMailboxPermissions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutMobileDeviceAccessOverride` operation.
+    /// Constructs a fluent builder for the [`PutMobileDeviceAccessOverride`](crate::client::fluent_builders::PutMobileDeviceAccessOverride) operation.
     ///
-    /// See [`PutMobileDeviceAccessOverride`](crate::client::fluent_builders::PutMobileDeviceAccessOverride) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutMobileDeviceAccessOverrideInput`](crate::input::PutMobileDeviceAccessOverrideInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::PutMobileDeviceAccessOverrideInput::organization_id): <p>Identifies the Amazon WorkMail organization for which you create the override.</p>
+    ///   - [`user_id(Option<String>)`](crate::input::PutMobileDeviceAccessOverrideInput::user_id): <p>The WorkMail user for which you create the override. Accepts the following types of user identities:</p>  <ul>   <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>   <li> <p>Email address: <code>user@domain.tld</code> </p> </li>   <li> <p>User name: <code>user</code> </p> </li>  </ul>
+    ///   - [`device_id(Option<String>)`](crate::input::PutMobileDeviceAccessOverrideInput::device_id): <p>The mobile device for which you create the override. <code>DeviceId</code> is case insensitive.</p>
+    ///   - [`effect(Option<MobileDeviceAccessRuleEffect>)`](crate::input::PutMobileDeviceAccessOverrideInput::effect): <p>The effect of the override, <code>ALLOW</code> or <code>DENY</code>.</p>
+    ///   - [`description(Option<String>)`](crate::input::PutMobileDeviceAccessOverrideInput::description): <p>A description of the override.</p>
+    /// - On success, responds with [`PutMobileDeviceAccessOverrideOutput`](crate::output::PutMobileDeviceAccessOverrideOutput)
+
+    /// - On failure, responds with [`SdkError<PutMobileDeviceAccessOverrideError>`](crate::error::PutMobileDeviceAccessOverrideError)
     pub fn put_mobile_device_access_override(
         &self,
     ) -> fluent_builders::PutMobileDeviceAccessOverride<C, M, R> {
         fluent_builders::PutMobileDeviceAccessOverride::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutRetentionPolicy` operation.
+    /// Constructs a fluent builder for the [`PutRetentionPolicy`](crate::client::fluent_builders::PutRetentionPolicy) operation.
     ///
-    /// See [`PutRetentionPolicy`](crate::client::fluent_builders::PutRetentionPolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutRetentionPolicyInput`](crate::input::PutRetentionPolicyInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::PutRetentionPolicyInput::organization_id): <p>The organization ID.</p>
+    ///   - [`id(Option<String>)`](crate::input::PutRetentionPolicyInput::id): <p>The retention policy ID.</p>
+    ///   - [`name(Option<String>)`](crate::input::PutRetentionPolicyInput::name): <p>The retention policy name.</p>
+    ///   - [`description(Option<String>)`](crate::input::PutRetentionPolicyInput::description): <p>The retention policy description.</p>
+    ///   - [`folder_configurations(Option<Vec<FolderConfiguration>>)`](crate::input::PutRetentionPolicyInput::folder_configurations): <p>The retention policy folder configurations.</p>
+    /// - On success, responds with [`PutRetentionPolicyOutput`](crate::output::PutRetentionPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<PutRetentionPolicyError>`](crate::error::PutRetentionPolicyError)
     pub fn put_retention_policy(&self) -> fluent_builders::PutRetentionPolicy<C, M, R> {
         fluent_builders::PutRetentionPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RegisterMailDomain` operation.
+    /// Constructs a fluent builder for the [`RegisterMailDomain`](crate::client::fluent_builders::RegisterMailDomain) operation.
     ///
-    /// See [`RegisterMailDomain`](crate::client::fluent_builders::RegisterMailDomain) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RegisterMailDomainInput`](crate::input::RegisterMailDomainInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::RegisterMailDomainInput::client_token): <p>Idempotency token used when retrying requests.</p>
+    ///   - [`organization_id(Option<String>)`](crate::input::RegisterMailDomainInput::organization_id): <p>The Amazon WorkMail organization under which you're creating the domain.</p>
+    ///   - [`domain_name(Option<String>)`](crate::input::RegisterMailDomainInput::domain_name): <p>The name of the mail domain to create in Amazon WorkMail and SES.</p>
+    /// - On success, responds with [`RegisterMailDomainOutput`](crate::output::RegisterMailDomainOutput)
+
+    /// - On failure, responds with [`SdkError<RegisterMailDomainError>`](crate::error::RegisterMailDomainError)
     pub fn register_mail_domain(&self) -> fluent_builders::RegisterMailDomain<C, M, R> {
         fluent_builders::RegisterMailDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RegisterToWorkMail` operation.
+    /// Constructs a fluent builder for the [`RegisterToWorkMail`](crate::client::fluent_builders::RegisterToWorkMail) operation.
     ///
-    /// See [`RegisterToWorkMail`](crate::client::fluent_builders::RegisterToWorkMail) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RegisterToWorkMailInput`](crate::input::RegisterToWorkMailInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::RegisterToWorkMailInput::organization_id): <p>The identifier for the organization under which the user, group, or resource exists.</p>
+    ///   - [`entity_id(Option<String>)`](crate::input::RegisterToWorkMailInput::entity_id): <p>The identifier for the user, group, or resource to be updated.</p>
+    ///   - [`email(Option<String>)`](crate::input::RegisterToWorkMailInput::email): <p>The email for the user, group, or resource to be updated.</p>
+    /// - On success, responds with [`RegisterToWorkMailOutput`](crate::output::RegisterToWorkMailOutput)
+
+    /// - On failure, responds with [`SdkError<RegisterToWorkMailError>`](crate::error::RegisterToWorkMailError)
     pub fn register_to_work_mail(&self) -> fluent_builders::RegisterToWorkMail<C, M, R> {
         fluent_builders::RegisterToWorkMail::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ResetPassword` operation.
+    /// Constructs a fluent builder for the [`ResetPassword`](crate::client::fluent_builders::ResetPassword) operation.
     ///
-    /// See [`ResetPassword`](crate::client::fluent_builders::ResetPassword) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ResetPasswordInput`](crate::input::ResetPasswordInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::ResetPasswordInput::organization_id): <p>The identifier of the organization that contains the user for which the password is reset.</p>
+    ///   - [`user_id(Option<String>)`](crate::input::ResetPasswordInput::user_id): <p>The identifier of the user for whom the password is reset.</p>
+    ///   - [`password(Option<String>)`](crate::input::ResetPasswordInput::password): <p>The new password for the user.</p>
+    /// - On success, responds with [`ResetPasswordOutput`](crate::output::ResetPasswordOutput)
+
+    /// - On failure, responds with [`SdkError<ResetPasswordError>`](crate::error::ResetPasswordError)
     pub fn reset_password(&self) -> fluent_builders::ResetPassword<C, M, R> {
         fluent_builders::ResetPassword::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartMailboxExportJob` operation.
+    /// Constructs a fluent builder for the [`StartMailboxExportJob`](crate::client::fluent_builders::StartMailboxExportJob) operation.
     ///
-    /// See [`StartMailboxExportJob`](crate::client::fluent_builders::StartMailboxExportJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartMailboxExportJobInput`](crate::input::StartMailboxExportJobInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::StartMailboxExportJobInput::client_token): <p>The idempotency token for the client request.</p>
+    ///   - [`organization_id(Option<String>)`](crate::input::StartMailboxExportJobInput::organization_id): <p>The identifier associated with the organization.</p>
+    ///   - [`entity_id(Option<String>)`](crate::input::StartMailboxExportJobInput::entity_id): <p>The identifier of the user or resource associated with the mailbox.</p>
+    ///   - [`description(Option<String>)`](crate::input::StartMailboxExportJobInput::description): <p>The mailbox export job description.</p>
+    ///   - [`role_arn(Option<String>)`](crate::input::StartMailboxExportJobInput::role_arn): <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the S3 bucket.</p>
+    ///   - [`kms_key_arn(Option<String>)`](crate::input::StartMailboxExportJobInput::kms_key_arn): <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS) key that encrypts the exported mailbox content.</p>
+    ///   - [`s3_bucket_name(Option<String>)`](crate::input::StartMailboxExportJobInput::s3_bucket_name): <p>The name of the S3 bucket.</p>
+    ///   - [`s3_prefix(Option<String>)`](crate::input::StartMailboxExportJobInput::s3_prefix): <p>The S3 bucket prefix.</p>
+    /// - On success, responds with [`StartMailboxExportJobOutput`](crate::output::StartMailboxExportJobOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::StartMailboxExportJobOutput::job_id): <p>The job ID.</p>
+    /// - On failure, responds with [`SdkError<StartMailboxExportJobError>`](crate::error::StartMailboxExportJobError)
     pub fn start_mailbox_export_job(&self) -> fluent_builders::StartMailboxExportJob<C, M, R> {
         fluent_builders::StartMailboxExportJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The resource ARN.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>The tag key-value pairs.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The resource ARN.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The tag keys.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDefaultMailDomain` operation.
+    /// Constructs a fluent builder for the [`UpdateDefaultMailDomain`](crate::client::fluent_builders::UpdateDefaultMailDomain) operation.
     ///
-    /// See [`UpdateDefaultMailDomain`](crate::client::fluent_builders::UpdateDefaultMailDomain) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateDefaultMailDomainInput`](crate::input::UpdateDefaultMailDomainInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::UpdateDefaultMailDomainInput::organization_id): <p>The Amazon WorkMail organization for which to list domains.</p>
+    ///   - [`domain_name(Option<String>)`](crate::input::UpdateDefaultMailDomainInput::domain_name): <p>The domain name that will become the default domain.</p>
+    /// - On success, responds with [`UpdateDefaultMailDomainOutput`](crate::output::UpdateDefaultMailDomainOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateDefaultMailDomainError>`](crate::error::UpdateDefaultMailDomainError)
     pub fn update_default_mail_domain(&self) -> fluent_builders::UpdateDefaultMailDomain<C, M, R> {
         fluent_builders::UpdateDefaultMailDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateMailboxQuota` operation.
+    /// Constructs a fluent builder for the [`UpdateMailboxQuota`](crate::client::fluent_builders::UpdateMailboxQuota) operation.
     ///
-    /// See [`UpdateMailboxQuota`](crate::client::fluent_builders::UpdateMailboxQuota) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateMailboxQuotaInput`](crate::input::UpdateMailboxQuotaInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::UpdateMailboxQuotaInput::organization_id): <p>The identifier for the organization that contains the user for whom to update the mailbox quota.</p>
+    ///   - [`user_id(Option<String>)`](crate::input::UpdateMailboxQuotaInput::user_id): <p>The identifer for the user for whom to update the mailbox quota.</p>
+    ///   - [`mailbox_quota(Option<i32>)`](crate::input::UpdateMailboxQuotaInput::mailbox_quota): <p>The updated mailbox quota, in MB, for the specified user.</p>
+    /// - On success, responds with [`UpdateMailboxQuotaOutput`](crate::output::UpdateMailboxQuotaOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateMailboxQuotaError>`](crate::error::UpdateMailboxQuotaError)
     pub fn update_mailbox_quota(&self) -> fluent_builders::UpdateMailboxQuota<C, M, R> {
         fluent_builders::UpdateMailboxQuota::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateMobileDeviceAccessRule` operation.
+    /// Constructs a fluent builder for the [`UpdateMobileDeviceAccessRule`](crate::client::fluent_builders::UpdateMobileDeviceAccessRule) operation.
     ///
-    /// See [`UpdateMobileDeviceAccessRule`](crate::client::fluent_builders::UpdateMobileDeviceAccessRule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateMobileDeviceAccessRuleInput`](crate::input::UpdateMobileDeviceAccessRuleInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::UpdateMobileDeviceAccessRuleInput::organization_id): <p>The Amazon WorkMail organization under which the rule will be updated.</p>
+    ///   - [`mobile_device_access_rule_id(Option<String>)`](crate::input::UpdateMobileDeviceAccessRuleInput::mobile_device_access_rule_id): <p>The identifier of the rule to be updated.</p>
+    ///   - [`name(Option<String>)`](crate::input::UpdateMobileDeviceAccessRuleInput::name): <p>The updated rule name.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateMobileDeviceAccessRuleInput::description): <p>The updated rule description.</p>
+    ///   - [`effect(Option<MobileDeviceAccessRuleEffect>)`](crate::input::UpdateMobileDeviceAccessRuleInput::effect): <p>The effect of the rule when it matches. Allowed values are <code>ALLOW</code> or <code>DENY</code>.</p>
+    ///   - [`device_types(Option<Vec<String>>)`](crate::input::UpdateMobileDeviceAccessRuleInput::device_types): <p>Device types that the updated rule will match.</p>
+    ///   - [`not_device_types(Option<Vec<String>>)`](crate::input::UpdateMobileDeviceAccessRuleInput::not_device_types): <p>Device types that the updated rule <b>will not</b> match. All other device types will match.</p>
+    ///   - [`device_models(Option<Vec<String>>)`](crate::input::UpdateMobileDeviceAccessRuleInput::device_models): <p>Device models that the updated rule will match.</p>
+    ///   - [`not_device_models(Option<Vec<String>>)`](crate::input::UpdateMobileDeviceAccessRuleInput::not_device_models): <p>Device models that the updated rule <b>will not</b> match. All other device models will match.</p>
+    ///   - [`device_operating_systems(Option<Vec<String>>)`](crate::input::UpdateMobileDeviceAccessRuleInput::device_operating_systems): <p>Device operating systems that the updated rule will match.</p>
+    ///   - [`not_device_operating_systems(Option<Vec<String>>)`](crate::input::UpdateMobileDeviceAccessRuleInput::not_device_operating_systems): <p>Device operating systems that the updated rule <b>will not</b> match. All other device operating systems will match.</p>
+    ///   - [`device_user_agents(Option<Vec<String>>)`](crate::input::UpdateMobileDeviceAccessRuleInput::device_user_agents): <p>User agents that the updated rule will match.</p>
+    ///   - [`not_device_user_agents(Option<Vec<String>>)`](crate::input::UpdateMobileDeviceAccessRuleInput::not_device_user_agents): <p>User agents that the updated rule <b>will not</b> match. All other user agents will match.</p>
+    /// - On success, responds with [`UpdateMobileDeviceAccessRuleOutput`](crate::output::UpdateMobileDeviceAccessRuleOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateMobileDeviceAccessRuleError>`](crate::error::UpdateMobileDeviceAccessRuleError)
     pub fn update_mobile_device_access_rule(
         &self,
     ) -> fluent_builders::UpdateMobileDeviceAccessRule<C, M, R> {
         fluent_builders::UpdateMobileDeviceAccessRule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdatePrimaryEmailAddress` operation.
+    /// Constructs a fluent builder for the [`UpdatePrimaryEmailAddress`](crate::client::fluent_builders::UpdatePrimaryEmailAddress) operation.
     ///
-    /// See [`UpdatePrimaryEmailAddress`](crate::client::fluent_builders::UpdatePrimaryEmailAddress) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdatePrimaryEmailAddressInput`](crate::input::UpdatePrimaryEmailAddressInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::UpdatePrimaryEmailAddressInput::organization_id): <p>The organization that contains the user, group, or resource to update.</p>
+    ///   - [`entity_id(Option<String>)`](crate::input::UpdatePrimaryEmailAddressInput::entity_id): <p>The user, group, or resource to update.</p>
+    ///   - [`email(Option<String>)`](crate::input::UpdatePrimaryEmailAddressInput::email): <p>The value of the email to be updated as primary.</p>
+    /// - On success, responds with [`UpdatePrimaryEmailAddressOutput`](crate::output::UpdatePrimaryEmailAddressOutput)
+
+    /// - On failure, responds with [`SdkError<UpdatePrimaryEmailAddressError>`](crate::error::UpdatePrimaryEmailAddressError)
     pub fn update_primary_email_address(
         &self,
     ) -> fluent_builders::UpdatePrimaryEmailAddress<C, M, R> {
         fluent_builders::UpdatePrimaryEmailAddress::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateResource` operation.
+    /// Constructs a fluent builder for the [`UpdateResource`](crate::client::fluent_builders::UpdateResource) operation.
     ///
-    /// See [`UpdateResource`](crate::client::fluent_builders::UpdateResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateResourceInput`](crate::input::UpdateResourceInput) with field(s):
+    ///   - [`organization_id(Option<String>)`](crate::input::UpdateResourceInput::organization_id): <p>The identifier associated with the organization for which the resource is updated.</p>
+    ///   - [`resource_id(Option<String>)`](crate::input::UpdateResourceInput::resource_id): <p>The identifier of the resource to be updated.</p>
+    ///   - [`name(Option<String>)`](crate::input::UpdateResourceInput::name): <p>The name of the resource to be updated.</p>
+    ///   - [`booking_options(Option<BookingOptions>)`](crate::input::UpdateResourceInput::booking_options): <p>The resource's booking options to be updated.</p>
+    /// - On success, responds with [`UpdateResourceOutput`](crate::output::UpdateResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateResourceError>`](crate::error::UpdateResourceError)
     pub fn update_resource(&self) -> fluent_builders::UpdateResource<C, M, R> {
         fluent_builders::UpdateResource::new(self.handle.clone())
     }

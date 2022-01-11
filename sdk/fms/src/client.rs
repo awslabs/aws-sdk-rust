@@ -83,192 +83,312 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AssociateAdminAccount` operation.
+    /// Constructs a fluent builder for the [`AssociateAdminAccount`](crate::client::fluent_builders::AssociateAdminAccount) operation.
     ///
-    /// See [`AssociateAdminAccount`](crate::client::fluent_builders::AssociateAdminAccount) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateAdminAccountInput`](crate::input::AssociateAdminAccountInput) with field(s):
+    ///   - [`admin_account(Option<String>)`](crate::input::AssociateAdminAccountInput::admin_account): <p>The Amazon Web Services account ID to associate with Firewall Manager as the Firewall Manager administrator account. This must be an Organizations member account. For more information about Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon Web Services Accounts in Your Organization</a>. </p>
+    /// - On success, responds with [`AssociateAdminAccountOutput`](crate::output::AssociateAdminAccountOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateAdminAccountError>`](crate::error::AssociateAdminAccountError)
     pub fn associate_admin_account(&self) -> fluent_builders::AssociateAdminAccount<C, M, R> {
         fluent_builders::AssociateAdminAccount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAppsList` operation.
+    /// Constructs a fluent builder for the [`DeleteAppsList`](crate::client::fluent_builders::DeleteAppsList) operation.
     ///
-    /// See [`DeleteAppsList`](crate::client::fluent_builders::DeleteAppsList) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteAppsListInput`](crate::input::DeleteAppsListInput) with field(s):
+    ///   - [`list_id(Option<String>)`](crate::input::DeleteAppsListInput::list_id): <p>The ID of the applications list that you want to delete. You can retrieve this ID from <code>PutAppsList</code>, <code>ListAppsLists</code>, and <code>GetAppsList</code>.</p>
+    /// - On success, responds with [`DeleteAppsListOutput`](crate::output::DeleteAppsListOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAppsListError>`](crate::error::DeleteAppsListError)
     pub fn delete_apps_list(&self) -> fluent_builders::DeleteAppsList<C, M, R> {
         fluent_builders::DeleteAppsList::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteNotificationChannel` operation.
+    /// Constructs a fluent builder for the [`DeleteNotificationChannel`](crate::client::fluent_builders::DeleteNotificationChannel) operation.
     ///
-    /// See [`DeleteNotificationChannel`](crate::client::fluent_builders::DeleteNotificationChannel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteNotificationChannelInput`](crate::input::DeleteNotificationChannelInput)
+
+    /// - On success, responds with [`DeleteNotificationChannelOutput`](crate::output::DeleteNotificationChannelOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteNotificationChannelError>`](crate::error::DeleteNotificationChannelError)
     pub fn delete_notification_channel(
         &self,
     ) -> fluent_builders::DeleteNotificationChannel<C, M, R> {
         fluent_builders::DeleteNotificationChannel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeletePolicy` operation.
+    /// Constructs a fluent builder for the [`DeletePolicy`](crate::client::fluent_builders::DeletePolicy) operation.
     ///
-    /// See [`DeletePolicy`](crate::client::fluent_builders::DeletePolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeletePolicyInput`](crate::input::DeletePolicyInput) with field(s):
+    ///   - [`policy_id(Option<String>)`](crate::input::DeletePolicyInput::policy_id): <p>The ID of the policy that you want to delete. You can retrieve this ID from <code>PutPolicy</code> and <code>ListPolicies</code>.</p>
+    ///   - [`delete_all_policy_resources(bool)`](crate::input::DeletePolicyInput::delete_all_policy_resources): <p>If <code>True</code>, the request performs cleanup according to the policy type. </p>  <p>For WAF and Shield Advanced policies, the cleanup does the following:</p>  <ul>   <li> <p>Deletes rule groups created by Firewall Manager</p> </li>   <li> <p>Removes web ACLs from in-scope resources</p> </li>   <li> <p>Deletes web ACLs that contain no rules or rule groups</p> </li>  </ul>  <p>For security group policies, the cleanup does the following for each security group in the policy:</p>  <ul>   <li> <p>Disassociates the security group from in-scope resources </p> </li>   <li> <p>Deletes the security group if it was created through Firewall Manager and if it's no longer associated with any resources through another policy</p> </li>  </ul>  <p>After the cleanup, in-scope resources are no longer protected by web ACLs in this policy. Protection of out-of-scope resources remains unchanged. Scope is determined by tags that you create and accounts that you associate with the policy. When creating the policy, if you specify that only resources in specific accounts or with specific tags are in scope of the policy, those accounts and resources are handled by the policy. All others are out of scope. If you don't specify tags or accounts, all resources are in scope. </p>
+    /// - On success, responds with [`DeletePolicyOutput`](crate::output::DeletePolicyOutput)
+
+    /// - On failure, responds with [`SdkError<DeletePolicyError>`](crate::error::DeletePolicyError)
     pub fn delete_policy(&self) -> fluent_builders::DeletePolicy<C, M, R> {
         fluent_builders::DeletePolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteProtocolsList` operation.
+    /// Constructs a fluent builder for the [`DeleteProtocolsList`](crate::client::fluent_builders::DeleteProtocolsList) operation.
     ///
-    /// See [`DeleteProtocolsList`](crate::client::fluent_builders::DeleteProtocolsList) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteProtocolsListInput`](crate::input::DeleteProtocolsListInput) with field(s):
+    ///   - [`list_id(Option<String>)`](crate::input::DeleteProtocolsListInput::list_id): <p>The ID of the protocols list that you want to delete. You can retrieve this ID from <code>PutProtocolsList</code>, <code>ListProtocolsLists</code>, and <code>GetProtocolsLost</code>.</p>
+    /// - On success, responds with [`DeleteProtocolsListOutput`](crate::output::DeleteProtocolsListOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteProtocolsListError>`](crate::error::DeleteProtocolsListError)
     pub fn delete_protocols_list(&self) -> fluent_builders::DeleteProtocolsList<C, M, R> {
         fluent_builders::DeleteProtocolsList::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateAdminAccount` operation.
+    /// Constructs a fluent builder for the [`DisassociateAdminAccount`](crate::client::fluent_builders::DisassociateAdminAccount) operation.
     ///
-    /// See [`DisassociateAdminAccount`](crate::client::fluent_builders::DisassociateAdminAccount) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateAdminAccountInput`](crate::input::DisassociateAdminAccountInput)
+
+    /// - On success, responds with [`DisassociateAdminAccountOutput`](crate::output::DisassociateAdminAccountOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateAdminAccountError>`](crate::error::DisassociateAdminAccountError)
     pub fn disassociate_admin_account(&self) -> fluent_builders::DisassociateAdminAccount<C, M, R> {
         fluent_builders::DisassociateAdminAccount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAdminAccount` operation.
+    /// Constructs a fluent builder for the [`GetAdminAccount`](crate::client::fluent_builders::GetAdminAccount) operation.
     ///
-    /// See [`GetAdminAccount`](crate::client::fluent_builders::GetAdminAccount) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetAdminAccountInput`](crate::input::GetAdminAccountInput)
+
+    /// - On success, responds with [`GetAdminAccountOutput`](crate::output::GetAdminAccountOutput) with field(s):
+    ///   - [`admin_account(Option<String>)`](crate::output::GetAdminAccountOutput::admin_account): <p>The Amazon Web Services account that is set as the Firewall Manager administrator.</p>
+    ///   - [`role_status(Option<AccountRoleStatus>)`](crate::output::GetAdminAccountOutput::role_status): <p>The status of the Amazon Web Services account that you set as the Firewall Manager administrator.</p>
+    /// - On failure, responds with [`SdkError<GetAdminAccountError>`](crate::error::GetAdminAccountError)
     pub fn get_admin_account(&self) -> fluent_builders::GetAdminAccount<C, M, R> {
         fluent_builders::GetAdminAccount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAppsList` operation.
+    /// Constructs a fluent builder for the [`GetAppsList`](crate::client::fluent_builders::GetAppsList) operation.
     ///
-    /// See [`GetAppsList`](crate::client::fluent_builders::GetAppsList) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetAppsListInput`](crate::input::GetAppsListInput) with field(s):
+    ///   - [`list_id(Option<String>)`](crate::input::GetAppsListInput::list_id): <p>The ID of the Firewall Manager applications list that you want the details for.</p>
+    ///   - [`default_list(bool)`](crate::input::GetAppsListInput::default_list): <p>Specifies whether the list to retrieve is a default list owned by Firewall Manager.</p>
+    /// - On success, responds with [`GetAppsListOutput`](crate::output::GetAppsListOutput) with field(s):
+    ///   - [`apps_list(Option<AppsListData>)`](crate::output::GetAppsListOutput::apps_list): <p>Information about the specified Firewall Manager applications list.</p>
+    ///   - [`apps_list_arn(Option<String>)`](crate::output::GetAppsListOutput::apps_list_arn): <p>The Amazon Resource Name (ARN) of the applications list.</p>
+    /// - On failure, responds with [`SdkError<GetAppsListError>`](crate::error::GetAppsListError)
     pub fn get_apps_list(&self) -> fluent_builders::GetAppsList<C, M, R> {
         fluent_builders::GetAppsList::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetComplianceDetail` operation.
+    /// Constructs a fluent builder for the [`GetComplianceDetail`](crate::client::fluent_builders::GetComplianceDetail) operation.
     ///
-    /// See [`GetComplianceDetail`](crate::client::fluent_builders::GetComplianceDetail) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetComplianceDetailInput`](crate::input::GetComplianceDetailInput) with field(s):
+    ///   - [`policy_id(Option<String>)`](crate::input::GetComplianceDetailInput::policy_id): <p>The ID of the policy that you want to get the details for. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>
+    ///   - [`member_account(Option<String>)`](crate::input::GetComplianceDetailInput::member_account): <p>The Amazon Web Services account that owns the resources that you want to get the details for.</p>
+    /// - On success, responds with [`GetComplianceDetailOutput`](crate::output::GetComplianceDetailOutput) with field(s):
+    ///   - [`policy_compliance_detail(Option<PolicyComplianceDetail>)`](crate::output::GetComplianceDetailOutput::policy_compliance_detail): <p>Information about the resources and the policy that you specified in the <code>GetComplianceDetail</code> request.</p>
+    /// - On failure, responds with [`SdkError<GetComplianceDetailError>`](crate::error::GetComplianceDetailError)
     pub fn get_compliance_detail(&self) -> fluent_builders::GetComplianceDetail<C, M, R> {
         fluent_builders::GetComplianceDetail::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetNotificationChannel` operation.
+    /// Constructs a fluent builder for the [`GetNotificationChannel`](crate::client::fluent_builders::GetNotificationChannel) operation.
     ///
-    /// See [`GetNotificationChannel`](crate::client::fluent_builders::GetNotificationChannel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetNotificationChannelInput`](crate::input::GetNotificationChannelInput)
+
+    /// - On success, responds with [`GetNotificationChannelOutput`](crate::output::GetNotificationChannelOutput) with field(s):
+    ///   - [`sns_topic_arn(Option<String>)`](crate::output::GetNotificationChannelOutput::sns_topic_arn): <p>The SNS topic that records Firewall Manager activity. </p>
+    ///   - [`sns_role_name(Option<String>)`](crate::output::GetNotificationChannelOutput::sns_role_name): <p>The IAM role that is used by Firewall Manager to record activity to SNS.</p>
+    /// - On failure, responds with [`SdkError<GetNotificationChannelError>`](crate::error::GetNotificationChannelError)
     pub fn get_notification_channel(&self) -> fluent_builders::GetNotificationChannel<C, M, R> {
         fluent_builders::GetNotificationChannel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetPolicy` operation.
+    /// Constructs a fluent builder for the [`GetPolicy`](crate::client::fluent_builders::GetPolicy) operation.
     ///
-    /// See [`GetPolicy`](crate::client::fluent_builders::GetPolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetPolicyInput`](crate::input::GetPolicyInput) with field(s):
+    ///   - [`policy_id(Option<String>)`](crate::input::GetPolicyInput::policy_id): <p>The ID of the Firewall Manager policy that you want the details for.</p>
+    /// - On success, responds with [`GetPolicyOutput`](crate::output::GetPolicyOutput) with field(s):
+    ///   - [`policy(Option<Policy>)`](crate::output::GetPolicyOutput::policy): <p>Information about the specified Firewall Manager policy.</p>
+    ///   - [`policy_arn(Option<String>)`](crate::output::GetPolicyOutput::policy_arn): <p>The Amazon Resource Name (ARN) of the specified policy.</p>
+    /// - On failure, responds with [`SdkError<GetPolicyError>`](crate::error::GetPolicyError)
     pub fn get_policy(&self) -> fluent_builders::GetPolicy<C, M, R> {
         fluent_builders::GetPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetProtectionStatus` operation.
+    /// Constructs a fluent builder for the [`GetProtectionStatus`](crate::client::fluent_builders::GetProtectionStatus) operation.
     ///
-    /// See [`GetProtectionStatus`](crate::client::fluent_builders::GetProtectionStatus) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetProtectionStatusInput`](crate::input::GetProtectionStatusInput) with field(s):
+    ///   - [`policy_id(Option<String>)`](crate::input::GetProtectionStatusInput::policy_id): <p>The ID of the policy for which you want to get the attack information.</p>
+    ///   - [`member_account_id(Option<String>)`](crate::input::GetProtectionStatusInput::member_account_id): <p>The Amazon Web Services account that is in scope of the policy that you want to get the details for.</p>
+    ///   - [`start_time(Option<DateTime>)`](crate::input::GetProtectionStatusInput::start_time): <p>The start of the time period to query for the attacks. This is a <code>timestamp</code> type. The request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is allowed.</p>
+    ///   - [`end_time(Option<DateTime>)`](crate::input::GetProtectionStatusInput::end_time): <p>The end of the time period to query for the attacks. This is a <code>timestamp</code> type. The request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is allowed.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetProtectionStatusInput::next_token): <p>If you specify a value for <code>MaxResults</code> and you have more objects than the number that you specify for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response, which you can use to retrieve another group of objects. For the second and subsequent <code>GetProtectionStatus</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of objects.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetProtectionStatusInput::max_results): <p>Specifies the number of objects that you want Firewall Manager to return for this request. If you have more objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of objects.</p>
+    /// - On success, responds with [`GetProtectionStatusOutput`](crate::output::GetProtectionStatusOutput) with field(s):
+    ///   - [`admin_account_id(Option<String>)`](crate::output::GetProtectionStatusOutput::admin_account_id): <p>The ID of the Firewall Manager administrator account for this policy.</p>
+    ///   - [`service_type(Option<SecurityServiceType>)`](crate::output::GetProtectionStatusOutput::service_type): <p>The service type that is protected by the policy. Currently, this is always <code>SHIELD_ADVANCED</code>.</p>
+    ///   - [`data(Option<String>)`](crate::output::GetProtectionStatusOutput::data): <p>Details about the attack, including the following:</p>  <ul>   <li> <p>Attack type</p> </li>   <li> <p>Account ID</p> </li>   <li> <p>ARN of the resource attacked</p> </li>   <li> <p>Start time of the attack</p> </li>   <li> <p>End time of the attack (ongoing attacks will not have an end time)</p> </li>  </ul>  <p>The details are in JSON format. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetProtectionStatusOutput::next_token): <p>If you have more objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more objects, submit another <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>  <p>Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and make subsequent request calls automatically on your behalf. However, this feature is not supported by <code>GetProtectionStatus</code>. You must submit subsequent requests with <code>NextToken</code> using your own processes. </p>
+    /// - On failure, responds with [`SdkError<GetProtectionStatusError>`](crate::error::GetProtectionStatusError)
     pub fn get_protection_status(&self) -> fluent_builders::GetProtectionStatus<C, M, R> {
         fluent_builders::GetProtectionStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetProtocolsList` operation.
+    /// Constructs a fluent builder for the [`GetProtocolsList`](crate::client::fluent_builders::GetProtocolsList) operation.
     ///
-    /// See [`GetProtocolsList`](crate::client::fluent_builders::GetProtocolsList) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetProtocolsListInput`](crate::input::GetProtocolsListInput) with field(s):
+    ///   - [`list_id(Option<String>)`](crate::input::GetProtocolsListInput::list_id): <p>The ID of the Firewall Manager protocols list that you want the details for.</p>
+    ///   - [`default_list(bool)`](crate::input::GetProtocolsListInput::default_list): <p>Specifies whether the list to retrieve is a default list owned by Firewall Manager.</p>
+    /// - On success, responds with [`GetProtocolsListOutput`](crate::output::GetProtocolsListOutput) with field(s):
+    ///   - [`protocols_list(Option<ProtocolsListData>)`](crate::output::GetProtocolsListOutput::protocols_list): <p>Information about the specified Firewall Manager protocols list.</p>
+    ///   - [`protocols_list_arn(Option<String>)`](crate::output::GetProtocolsListOutput::protocols_list_arn): <p>The Amazon Resource Name (ARN) of the specified protocols list.</p>
+    /// - On failure, responds with [`SdkError<GetProtocolsListError>`](crate::error::GetProtocolsListError)
     pub fn get_protocols_list(&self) -> fluent_builders::GetProtocolsList<C, M, R> {
         fluent_builders::GetProtocolsList::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetViolationDetails` operation.
+    /// Constructs a fluent builder for the [`GetViolationDetails`](crate::client::fluent_builders::GetViolationDetails) operation.
     ///
-    /// See [`GetViolationDetails`](crate::client::fluent_builders::GetViolationDetails) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetViolationDetailsInput`](crate::input::GetViolationDetailsInput) with field(s):
+    ///   - [`policy_id(Option<String>)`](crate::input::GetViolationDetailsInput::policy_id): <p>The ID of the Firewall Manager policy that you want the details for. This currently only supports security group content audit policies.</p>
+    ///   - [`member_account(Option<String>)`](crate::input::GetViolationDetailsInput::member_account): <p>The Amazon Web Services account ID that you want the details for.</p>
+    ///   - [`resource_id(Option<String>)`](crate::input::GetViolationDetailsInput::resource_id): <p>The ID of the resource that has violations.</p>
+    ///   - [`resource_type(Option<String>)`](crate::input::GetViolationDetailsInput::resource_type): <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>, <code>AWS::EC2::NetworkInterface</code>, <code>AWS::EC2::SecurityGroup</code>, <code>AWS::NetworkFirewall::FirewallPolicy</code>, and <code>AWS::EC2::Subnet</code>. </p>
+    /// - On success, responds with [`GetViolationDetailsOutput`](crate::output::GetViolationDetailsOutput) with field(s):
+    ///   - [`violation_detail(Option<ViolationDetail>)`](crate::output::GetViolationDetailsOutput::violation_detail): <p>Violation detail for a resource.</p>
+    /// - On failure, responds with [`SdkError<GetViolationDetailsError>`](crate::error::GetViolationDetailsError)
     pub fn get_violation_details(&self) -> fluent_builders::GetViolationDetails<C, M, R> {
         fluent_builders::GetViolationDetails::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAppsLists` operation.
-    ///
-    /// See [`ListAppsLists`](crate::client::fluent_builders::ListAppsLists) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListAppsLists`](crate::client::fluent_builders::ListAppsLists) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAppsLists::into_paginator).
+    ///
+    /// - Takes [`ListAppsListsInput`](crate::input::ListAppsListsInput) with field(s):
+    ///   - [`default_lists(bool)`](crate::input::ListAppsListsInput::default_lists): <p>Specifies whether the lists to retrieve are default lists owned by Firewall Manager.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListAppsListsInput::next_token): <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request in the request parameters, to retrieve the next batch of objects.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListAppsListsInput::max_results): <p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>  <p>If you don't specify this, Firewall Manager returns all available objects.</p>
+    /// - On success, responds with [`ListAppsListsOutput`](crate::output::ListAppsListsOutput) with field(s):
+    ///   - [`apps_lists(Option<Vec<AppsListDataSummary>>)`](crate::output::ListAppsListsOutput::apps_lists): <p>An array of <code>AppsListDataSummary</code> objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAppsListsOutput::next_token): <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
+    /// - On failure, responds with [`SdkError<ListAppsListsError>`](crate::error::ListAppsListsError)
     pub fn list_apps_lists(&self) -> fluent_builders::ListAppsLists<C, M, R> {
         fluent_builders::ListAppsLists::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListComplianceStatus` operation.
-    ///
-    /// See [`ListComplianceStatus`](crate::client::fluent_builders::ListComplianceStatus) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListComplianceStatus`](crate::client::fluent_builders::ListComplianceStatus) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListComplianceStatus::into_paginator).
+    ///
+    /// - Takes [`ListComplianceStatusInput`](crate::input::ListComplianceStatusInput) with field(s):
+    ///   - [`policy_id(Option<String>)`](crate::input::ListComplianceStatusInput::policy_id): <p>The ID of the Firewall Manager policy that you want the details for.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListComplianceStatusInput::next_token): <p>If you specify a value for <code>MaxResults</code> and you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicyComplianceStatus</code> objects. For the second and subsequent <code>ListComplianceStatus</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicyComplianceStatus</code> objects.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListComplianceStatusInput::max_results): <p>Specifies the number of <code>PolicyComplianceStatus</code> objects that you want Firewall Manager to return for this request. If you have more <code>PolicyComplianceStatus</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicyComplianceStatus</code> objects.</p>
+    /// - On success, responds with [`ListComplianceStatusOutput`](crate::output::ListComplianceStatusOutput) with field(s):
+    ///   - [`policy_compliance_status_list(Option<Vec<PolicyComplianceStatus>>)`](crate::output::ListComplianceStatusOutput::policy_compliance_status_list): <p>An array of <code>PolicyComplianceStatus</code> objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListComplianceStatusOutput::next_token): <p>If you have more <code>PolicyComplianceStatus</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicyComplianceStatus</code> objects, submit another <code>ListComplianceStatus</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
+    /// - On failure, responds with [`SdkError<ListComplianceStatusError>`](crate::error::ListComplianceStatusError)
     pub fn list_compliance_status(&self) -> fluent_builders::ListComplianceStatus<C, M, R> {
         fluent_builders::ListComplianceStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListMemberAccounts` operation.
-    ///
-    /// See [`ListMemberAccounts`](crate::client::fluent_builders::ListMemberAccounts) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListMemberAccounts`](crate::client::fluent_builders::ListMemberAccounts) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMemberAccounts::into_paginator).
+    ///
+    /// - Takes [`ListMemberAccountsInput`](crate::input::ListMemberAccountsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListMemberAccountsInput::next_token): <p>If you specify a value for <code>MaxResults</code> and you have more account IDs than the number that you specify for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of IDs. For the second and subsequent <code>ListMemberAccountsRequest</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of member account IDs.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListMemberAccountsInput::max_results): <p>Specifies the number of member account IDs that you want Firewall Manager to return for this request. If you have more IDs than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of member account IDs.</p>
+    /// - On success, responds with [`ListMemberAccountsOutput`](crate::output::ListMemberAccountsOutput) with field(s):
+    ///   - [`member_accounts(Option<Vec<String>>)`](crate::output::ListMemberAccountsOutput::member_accounts): <p>An array of account IDs.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListMemberAccountsOutput::next_token): <p>If you have more member account IDs than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more IDs, submit another <code>ListMemberAccounts</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
+    /// - On failure, responds with [`SdkError<ListMemberAccountsError>`](crate::error::ListMemberAccountsError)
     pub fn list_member_accounts(&self) -> fluent_builders::ListMemberAccounts<C, M, R> {
         fluent_builders::ListMemberAccounts::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPolicies` operation.
-    ///
-    /// See [`ListPolicies`](crate::client::fluent_builders::ListPolicies) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListPolicies`](crate::client::fluent_builders::ListPolicies) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPolicies::into_paginator).
+    ///
+    /// - Takes [`ListPoliciesInput`](crate::input::ListPoliciesInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListPoliciesInput::next_token): <p>If you specify a value for <code>MaxResults</code> and you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response that allows you to list another group of <code>PolicySummary</code> objects. For the second and subsequent <code>ListPolicies</code> requests, specify the value of <code>NextToken</code> from the previous response to get information about another batch of <code>PolicySummary</code> objects.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListPoliciesInput::max_results): <p>Specifies the number of <code>PolicySummary</code> objects that you want Firewall Manager to return for this request. If you have more <code>PolicySummary</code> objects than the number that you specify for <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can use to get another batch of <code>PolicySummary</code> objects.</p>
+    /// - On success, responds with [`ListPoliciesOutput`](crate::output::ListPoliciesOutput) with field(s):
+    ///   - [`policy_list(Option<Vec<PolicySummary>>)`](crate::output::ListPoliciesOutput::policy_list): <p>An array of <code>PolicySummary</code> objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPoliciesOutput::next_token): <p>If you have more <code>PolicySummary</code> objects than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more <code>PolicySummary</code> objects, submit another <code>ListPolicies</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
+    /// - On failure, responds with [`SdkError<ListPoliciesError>`](crate::error::ListPoliciesError)
     pub fn list_policies(&self) -> fluent_builders::ListPolicies<C, M, R> {
         fluent_builders::ListPolicies::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListProtocolsLists` operation.
-    ///
-    /// See [`ListProtocolsLists`](crate::client::fluent_builders::ListProtocolsLists) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListProtocolsLists`](crate::client::fluent_builders::ListProtocolsLists) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProtocolsLists::into_paginator).
+    ///
+    /// - Takes [`ListProtocolsListsInput`](crate::input::ListProtocolsListsInput) with field(s):
+    ///   - [`default_lists(bool)`](crate::input::ListProtocolsListsInput::default_lists): <p>Specifies whether the lists to retrieve are default lists owned by Firewall Manager.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListProtocolsListsInput::next_token): <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request in the request parameters, to retrieve the next batch of objects.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListProtocolsListsInput::max_results): <p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>  <p>If you don't specify this, Firewall Manager returns all available objects.</p>
+    /// - On success, responds with [`ListProtocolsListsOutput`](crate::output::ListProtocolsListsOutput) with field(s):
+    ///   - [`protocols_lists(Option<Vec<ProtocolsListDataSummary>>)`](crate::output::ListProtocolsListsOutput::protocols_lists): <p>An array of <code>ProtocolsListDataSummary</code> objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListProtocolsListsOutput::next_token): <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
+    /// - On failure, responds with [`SdkError<ListProtocolsListsError>`](crate::error::ListProtocolsListsError)
     pub fn list_protocols_lists(&self) -> fluent_builders::ListProtocolsLists<C, M, R> {
         fluent_builders::ListProtocolsLists::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tag_list(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tag_list): <p>The tags associated with the resource.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutAppsList` operation.
+    /// Constructs a fluent builder for the [`PutAppsList`](crate::client::fluent_builders::PutAppsList) operation.
     ///
-    /// See [`PutAppsList`](crate::client::fluent_builders::PutAppsList) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutAppsListInput`](crate::input::PutAppsListInput) with field(s):
+    ///   - [`apps_list(Option<AppsListData>)`](crate::input::PutAppsListInput::apps_list): <p>The details of the Firewall Manager applications list to be created.</p>
+    ///   - [`tag_list(Option<Vec<Tag>>)`](crate::input::PutAppsListInput::tag_list): <p>The tags associated with the resource.</p>
+    /// - On success, responds with [`PutAppsListOutput`](crate::output::PutAppsListOutput) with field(s):
+    ///   - [`apps_list(Option<AppsListData>)`](crate::output::PutAppsListOutput::apps_list): <p>The details of the Firewall Manager applications list.</p>
+    ///   - [`apps_list_arn(Option<String>)`](crate::output::PutAppsListOutput::apps_list_arn): <p>The Amazon Resource Name (ARN) of the applications list.</p>
+    /// - On failure, responds with [`SdkError<PutAppsListError>`](crate::error::PutAppsListError)
     pub fn put_apps_list(&self) -> fluent_builders::PutAppsList<C, M, R> {
         fluent_builders::PutAppsList::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutNotificationChannel` operation.
+    /// Constructs a fluent builder for the [`PutNotificationChannel`](crate::client::fluent_builders::PutNotificationChannel) operation.
     ///
-    /// See [`PutNotificationChannel`](crate::client::fluent_builders::PutNotificationChannel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutNotificationChannelInput`](crate::input::PutNotificationChannelInput) with field(s):
+    ///   - [`sns_topic_arn(Option<String>)`](crate::input::PutNotificationChannelInput::sns_topic_arn): <p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from Firewall Manager.</p>
+    ///   - [`sns_role_name(Option<String>)`](crate::input::PutNotificationChannelInput::sns_role_name): <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record Firewall Manager activity. </p>
+    /// - On success, responds with [`PutNotificationChannelOutput`](crate::output::PutNotificationChannelOutput)
+
+    /// - On failure, responds with [`SdkError<PutNotificationChannelError>`](crate::error::PutNotificationChannelError)
     pub fn put_notification_channel(&self) -> fluent_builders::PutNotificationChannel<C, M, R> {
         fluent_builders::PutNotificationChannel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutPolicy` operation.
+    /// Constructs a fluent builder for the [`PutPolicy`](crate::client::fluent_builders::PutPolicy) operation.
     ///
-    /// See [`PutPolicy`](crate::client::fluent_builders::PutPolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutPolicyInput`](crate::input::PutPolicyInput) with field(s):
+    ///   - [`policy(Option<Policy>)`](crate::input::PutPolicyInput::policy): <p>The details of the Firewall Manager policy to be created.</p>
+    ///   - [`tag_list(Option<Vec<Tag>>)`](crate::input::PutPolicyInput::tag_list): <p>The tags to add to the Amazon Web Services resource.</p>
+    /// - On success, responds with [`PutPolicyOutput`](crate::output::PutPolicyOutput) with field(s):
+    ///   - [`policy(Option<Policy>)`](crate::output::PutPolicyOutput::policy): <p>The details of the Firewall Manager policy.</p>
+    ///   - [`policy_arn(Option<String>)`](crate::output::PutPolicyOutput::policy_arn): <p>The Amazon Resource Name (ARN) of the policy.</p>
+    /// - On failure, responds with [`SdkError<PutPolicyError>`](crate::error::PutPolicyError)
     pub fn put_policy(&self) -> fluent_builders::PutPolicy<C, M, R> {
         fluent_builders::PutPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutProtocolsList` operation.
+    /// Constructs a fluent builder for the [`PutProtocolsList`](crate::client::fluent_builders::PutProtocolsList) operation.
     ///
-    /// See [`PutProtocolsList`](crate::client::fluent_builders::PutProtocolsList) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutProtocolsListInput`](crate::input::PutProtocolsListInput) with field(s):
+    ///   - [`protocols_list(Option<ProtocolsListData>)`](crate::input::PutProtocolsListInput::protocols_list): <p>The details of the Firewall Manager protocols list to be created.</p>
+    ///   - [`tag_list(Option<Vec<Tag>>)`](crate::input::PutProtocolsListInput::tag_list): <p>The tags associated with the resource.</p>
+    /// - On success, responds with [`PutProtocolsListOutput`](crate::output::PutProtocolsListOutput) with field(s):
+    ///   - [`protocols_list(Option<ProtocolsListData>)`](crate::output::PutProtocolsListOutput::protocols_list): <p>The details of the Firewall Manager protocols list.</p>
+    ///   - [`protocols_list_arn(Option<String>)`](crate::output::PutProtocolsListOutput::protocols_list_arn): <p>The Amazon Resource Name (ARN) of the protocols list.</p>
+    /// - On failure, responds with [`SdkError<PutProtocolsListError>`](crate::error::PutProtocolsListError)
     pub fn put_protocols_list(&self) -> fluent_builders::PutProtocolsList<C, M, R> {
         fluent_builders::PutProtocolsList::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
+    ///   - [`tag_list(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tag_list): <p>The tags to add to the resource.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The keys of the tags to remove from the resource. </p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }

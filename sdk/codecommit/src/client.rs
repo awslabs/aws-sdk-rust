@@ -83,19 +83,28 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AssociateApprovalRuleTemplateWithRepository` operation.
+    /// Constructs a fluent builder for the [`AssociateApprovalRuleTemplateWithRepository`](crate::client::fluent_builders::AssociateApprovalRuleTemplateWithRepository) operation.
     ///
-    /// See [`AssociateApprovalRuleTemplateWithRepository`](crate::client::fluent_builders::AssociateApprovalRuleTemplateWithRepository) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateApprovalRuleTemplateWithRepositoryInput`](crate::input::AssociateApprovalRuleTemplateWithRepositoryInput) with field(s):
+    ///   - [`approval_rule_template_name(Option<String>)`](crate::input::AssociateApprovalRuleTemplateWithRepositoryInput::approval_rule_template_name): <p>The name for the approval rule template. </p>
+    ///   - [`repository_name(Option<String>)`](crate::input::AssociateApprovalRuleTemplateWithRepositoryInput::repository_name): <p>The name of the repository that you want to associate with the template.</p>
+    /// - On success, responds with [`AssociateApprovalRuleTemplateWithRepositoryOutput`](crate::output::AssociateApprovalRuleTemplateWithRepositoryOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateApprovalRuleTemplateWithRepositoryError>`](crate::error::AssociateApprovalRuleTemplateWithRepositoryError)
     pub fn associate_approval_rule_template_with_repository(
         &self,
     ) -> fluent_builders::AssociateApprovalRuleTemplateWithRepository<C, M, R> {
         fluent_builders::AssociateApprovalRuleTemplateWithRepository::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchAssociateApprovalRuleTemplateWithRepositories` operation.
+    /// Constructs a fluent builder for the [`BatchAssociateApprovalRuleTemplateWithRepositories`](crate::client::fluent_builders::BatchAssociateApprovalRuleTemplateWithRepositories) operation.
     ///
-    /// See [`BatchAssociateApprovalRuleTemplateWithRepositories`](crate::client::fluent_builders::BatchAssociateApprovalRuleTemplateWithRepositories) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchAssociateApprovalRuleTemplateWithRepositoriesInput`](crate::input::BatchAssociateApprovalRuleTemplateWithRepositoriesInput) with field(s):
+    ///   - [`approval_rule_template_name(Option<String>)`](crate::input::BatchAssociateApprovalRuleTemplateWithRepositoriesInput::approval_rule_template_name): <p>The name of the template you want to associate with one or more repositories.</p>
+    ///   - [`repository_names(Option<Vec<String>>)`](crate::input::BatchAssociateApprovalRuleTemplateWithRepositoriesInput::repository_names): <p>The names of the repositories you want to associate with the template.</p> <note>   <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>  </note>
+    /// - On success, responds with [`BatchAssociateApprovalRuleTemplateWithRepositoriesOutput`](crate::output::BatchAssociateApprovalRuleTemplateWithRepositoriesOutput) with field(s):
+    ///   - [`associated_repository_names(Option<Vec<String>>)`](crate::output::BatchAssociateApprovalRuleTemplateWithRepositoriesOutput::associated_repository_names): <p>A list of names of the repositories that have been associated with the template.</p>
+    ///   - [`errors(Option<Vec<BatchAssociateApprovalRuleTemplateWithRepositoriesError>>)`](crate::output::BatchAssociateApprovalRuleTemplateWithRepositoriesOutput::errors): <p>A list of any errors that might have occurred while attempting to create the association between the template and the repositories.</p>
+    /// - On failure, responds with [`SdkError<BatchAssociateApprovalRuleTemplateWithRepositoriesError>`](crate::error::BatchAssociateApprovalRuleTemplateWithRepositoriesError)
     pub fn batch_associate_approval_rule_template_with_repositories(
         &self,
     ) -> fluent_builders::BatchAssociateApprovalRuleTemplateWithRepositories<C, M, R> {
@@ -103,19 +112,41 @@ where
             self.handle.clone(),
         )
     }
-    /// Constructs a fluent builder for the `BatchDescribeMergeConflicts` operation.
+    /// Constructs a fluent builder for the [`BatchDescribeMergeConflicts`](crate::client::fluent_builders::BatchDescribeMergeConflicts) operation.
     ///
-    /// See [`BatchDescribeMergeConflicts`](crate::client::fluent_builders::BatchDescribeMergeConflicts) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchDescribeMergeConflictsInput`](crate::input::BatchDescribeMergeConflictsInput) with field(s):
+    ///   - [`repository_name(Option<String>)`](crate::input::BatchDescribeMergeConflictsInput::repository_name): <p>The name of the repository that contains the merge conflicts you want to review.</p>
+    ///   - [`destination_commit_specifier(Option<String>)`](crate::input::BatchDescribeMergeConflictsInput::destination_commit_specifier): <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    ///   - [`source_commit_specifier(Option<String>)`](crate::input::BatchDescribeMergeConflictsInput::source_commit_specifier): <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    ///   - [`merge_option(Option<MergeOptionTypeEnum>)`](crate::input::BatchDescribeMergeConflictsInput::merge_option): <p>The merge option or strategy you want to use to merge the code.</p>
+    ///   - [`max_merge_hunks(Option<i32>)`](crate::input::BatchDescribeMergeConflictsInput::max_merge_hunks): <p>The maximum number of merge hunks to include in the output.</p>
+    ///   - [`max_conflict_files(Option<i32>)`](crate::input::BatchDescribeMergeConflictsInput::max_conflict_files): <p>The maximum number of files to include in the output.</p>
+    ///   - [`file_paths(Option<Vec<String>>)`](crate::input::BatchDescribeMergeConflictsInput::file_paths): <p>The path of the target files used to describe the conflicts. If not specified, the default is all conflict files.</p>
+    ///   - [`conflict_detail_level(Option<ConflictDetailLevelTypeEnum>)`](crate::input::BatchDescribeMergeConflictsInput::conflict_detail_level): <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
+    ///   - [`conflict_resolution_strategy(Option<ConflictResolutionStrategyTypeEnum>)`](crate::input::BatchDescribeMergeConflictsInput::conflict_resolution_strategy): <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::BatchDescribeMergeConflictsInput::next_token): <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    /// - On success, responds with [`BatchDescribeMergeConflictsOutput`](crate::output::BatchDescribeMergeConflictsOutput) with field(s):
+    ///   - [`conflicts(Option<Vec<Conflict>>)`](crate::output::BatchDescribeMergeConflictsOutput::conflicts): <p>A list of conflicts for each file, including the conflict metadata and the hunks of the differences between the files.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::BatchDescribeMergeConflictsOutput::next_token): <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
+    ///   - [`errors(Option<Vec<BatchDescribeMergeConflictsError>>)`](crate::output::BatchDescribeMergeConflictsOutput::errors): <p>A list of any errors returned while describing the merge conflicts for each file.</p>
+    ///   - [`destination_commit_id(Option<String>)`](crate::output::BatchDescribeMergeConflictsOutput::destination_commit_id): <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
+    ///   - [`source_commit_id(Option<String>)`](crate::output::BatchDescribeMergeConflictsOutput::source_commit_id): <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
+    ///   - [`base_commit_id(Option<String>)`](crate::output::BatchDescribeMergeConflictsOutput::base_commit_id): <p>The commit ID of the merge base.</p>
+    /// - On failure, responds with [`SdkError<BatchDescribeMergeConflictsError>`](crate::error::BatchDescribeMergeConflictsError)
     pub fn batch_describe_merge_conflicts(
         &self,
     ) -> fluent_builders::BatchDescribeMergeConflicts<C, M, R> {
         fluent_builders::BatchDescribeMergeConflicts::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchDisassociateApprovalRuleTemplateFromRepositories` operation.
+    /// Constructs a fluent builder for the [`BatchDisassociateApprovalRuleTemplateFromRepositories`](crate::client::fluent_builders::BatchDisassociateApprovalRuleTemplateFromRepositories) operation.
     ///
-    /// See [`BatchDisassociateApprovalRuleTemplateFromRepositories`](crate::client::fluent_builders::BatchDisassociateApprovalRuleTemplateFromRepositories) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchDisassociateApprovalRuleTemplateFromRepositoriesInput`](crate::input::BatchDisassociateApprovalRuleTemplateFromRepositoriesInput) with field(s):
+    ///   - [`approval_rule_template_name(Option<String>)`](crate::input::BatchDisassociateApprovalRuleTemplateFromRepositoriesInput::approval_rule_template_name): <p>The name of the template that you want to disassociate from one or more repositories.</p>
+    ///   - [`repository_names(Option<Vec<String>>)`](crate::input::BatchDisassociateApprovalRuleTemplateFromRepositoriesInput::repository_names): <p>The repository names that you want to disassociate from the approval rule template.</p> <note>   <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>  </note>
+    /// - On success, responds with [`BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput`](crate::output::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput) with field(s):
+    ///   - [`disassociated_repository_names(Option<Vec<String>>)`](crate::output::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput::disassociated_repository_names): <p>A list of repository names that have had their association with the template removed.</p>
+    ///   - [`errors(Option<Vec<BatchDisassociateApprovalRuleTemplateFromRepositoriesError>>)`](crate::output::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput::errors): <p>A list of any errors that might have occurred while attempting to remove the association between the template and the repositories.</p>
+    /// - On failure, responds with [`SdkError<BatchDisassociateApprovalRuleTemplateFromRepositoriesError>`](crate::error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError)
     pub fn batch_disassociate_approval_rule_template_from_repositories(
         &self,
     ) -> fluent_builders::BatchDisassociateApprovalRuleTemplateFromRepositories<C, M, R> {
@@ -123,585 +154,1070 @@ where
             self.handle.clone(),
         )
     }
-    /// Constructs a fluent builder for the `BatchGetCommits` operation.
+    /// Constructs a fluent builder for the [`BatchGetCommits`](crate::client::fluent_builders::BatchGetCommits) operation.
     ///
-    /// See [`BatchGetCommits`](crate::client::fluent_builders::BatchGetCommits) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchGetCommitsInput`](crate::input::BatchGetCommitsInput) with field(s):
+    ///   - [`commit_ids(Option<Vec<String>>)`](crate::input::BatchGetCommitsInput::commit_ids): <p>The full commit IDs of the commits to get information about.</p> <note>   <p>You must supply the full SHA IDs of each commit. You cannot use shortened SHA IDs.</p>  </note>
+    ///   - [`repository_name(Option<String>)`](crate::input::BatchGetCommitsInput::repository_name): <p>The name of the repository that contains the commits.</p>
+    /// - On success, responds with [`BatchGetCommitsOutput`](crate::output::BatchGetCommitsOutput) with field(s):
+    ///   - [`commits(Option<Vec<Commit>>)`](crate::output::BatchGetCommitsOutput::commits): <p>An array of commit data type objects, each of which contains information about a specified commit.</p>
+    ///   - [`errors(Option<Vec<BatchGetCommitsError>>)`](crate::output::BatchGetCommitsOutput::errors): <p>Returns any commit IDs for which information could not be found. For example, if one of the commit IDs was a shortened SHA ID or that commit was not found in the specified repository, the ID returns an error object with more information.</p>
+    /// - On failure, responds with [`SdkError<BatchGetCommitsError>`](crate::error::BatchGetCommitsError)
     pub fn batch_get_commits(&self) -> fluent_builders::BatchGetCommits<C, M, R> {
         fluent_builders::BatchGetCommits::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchGetRepositories` operation.
+    /// Constructs a fluent builder for the [`BatchGetRepositories`](crate::client::fluent_builders::BatchGetRepositories) operation.
     ///
-    /// See [`BatchGetRepositories`](crate::client::fluent_builders::BatchGetRepositories) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchGetRepositoriesInput`](crate::input::BatchGetRepositoriesInput) with field(s):
+    ///   - [`repository_names(Option<Vec<String>>)`](crate::input::BatchGetRepositoriesInput::repository_names): <p>The names of the repositories to get information about.</p> <note>   <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>  </note>
+    /// - On success, responds with [`BatchGetRepositoriesOutput`](crate::output::BatchGetRepositoriesOutput) with field(s):
+    ///   - [`repositories(Option<Vec<RepositoryMetadata>>)`](crate::output::BatchGetRepositoriesOutput::repositories): <p>A list of repositories returned by the batch get repositories operation.</p>
+    ///   - [`repositories_not_found(Option<Vec<String>>)`](crate::output::BatchGetRepositoriesOutput::repositories_not_found): <p>Returns a list of repository names for which information could not be found.</p>
+    /// - On failure, responds with [`SdkError<BatchGetRepositoriesError>`](crate::error::BatchGetRepositoriesError)
     pub fn batch_get_repositories(&self) -> fluent_builders::BatchGetRepositories<C, M, R> {
         fluent_builders::BatchGetRepositories::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateApprovalRuleTemplate` operation.
+    /// Constructs a fluent builder for the [`CreateApprovalRuleTemplate`](crate::client::fluent_builders::CreateApprovalRuleTemplate) operation.
     ///
-    /// See [`CreateApprovalRuleTemplate`](crate::client::fluent_builders::CreateApprovalRuleTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateApprovalRuleTemplateInput`](crate::input::CreateApprovalRuleTemplateInput) with field(s):
+    ///   - [`approval_rule_template_name(Option<String>)`](crate::input::CreateApprovalRuleTemplateInput::approval_rule_template_name): <p>The name of the approval rule template. Provide descriptive names, because this name is applied to the approval rules created automatically in associated repositories.</p>
+    ///   - [`approval_rule_template_content(Option<String>)`](crate::input::CreateApprovalRuleTemplateInput::approval_rule_template_content): <p>The content of the approval rule that is created on pull requests in associated repositories. If you specify one or more destination references (branches), approval rules are created in an associated repository only if their destination references (branches) match those specified in the template.</p> <note>   <p>When you create the content of the approval rule template, you can specify approvers in an approval pool in one of two ways:</p>   <ul>    <li> <p> <b>CodeCommitApprovers</b>: This option only requires an AWS account and a resource. It can be used for both IAM users and federated access users whose name matches the provided resource name. This is a very powerful option that offers a great deal of flexibility. For example, if you specify the AWS account <i>123456789012</i> and <i>Mary_Major</i>, all of the following are counted as approvals coming from that user:</p>     <ul>      <li> <p>An IAM user in the account (arn:aws:iam::<i>123456789012</i>:user/<i>Mary_Major</i>)</p> </li>      <li> <p>A federated user identified in IAM as Mary_Major (arn:aws:sts::<i>123456789012</i>:federated-user/<i>Mary_Major</i>)</p> </li>     </ul> <p>This option does not recognize an active session of someone assuming the role of CodeCommitReview with a role session name of <i>Mary_Major</i> (arn:aws:sts::<i>123456789012</i>:assumed-role/CodeCommitReview/<i>Mary_Major</i>) unless you include a wildcard (*Mary_Major).</p> </li>    <li> <p> <b>Fully qualified ARN</b>: This option allows you to specify the fully qualified Amazon Resource Name (ARN) of the IAM user or role. </p> </li>   </ul>   <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>  </note>
+    ///   - [`approval_rule_template_description(Option<String>)`](crate::input::CreateApprovalRuleTemplateInput::approval_rule_template_description): <p>The description of the approval rule template. Consider providing a description that explains what this template does and when it might be appropriate to associate it with repositories.</p>
+    /// - On success, responds with [`CreateApprovalRuleTemplateOutput`](crate::output::CreateApprovalRuleTemplateOutput) with field(s):
+    ///   - [`approval_rule_template(Option<ApprovalRuleTemplate>)`](crate::output::CreateApprovalRuleTemplateOutput::approval_rule_template): <p>The content and structure of the created approval rule template.</p>
+    /// - On failure, responds with [`SdkError<CreateApprovalRuleTemplateError>`](crate::error::CreateApprovalRuleTemplateError)
     pub fn create_approval_rule_template(
         &self,
     ) -> fluent_builders::CreateApprovalRuleTemplate<C, M, R> {
         fluent_builders::CreateApprovalRuleTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateBranch` operation.
+    /// Constructs a fluent builder for the [`CreateBranch`](crate::client::fluent_builders::CreateBranch) operation.
     ///
-    /// See [`CreateBranch`](crate::client::fluent_builders::CreateBranch) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateBranchInput`](crate::input::CreateBranchInput) with field(s):
+    ///   - [`repository_name(Option<String>)`](crate::input::CreateBranchInput::repository_name): <p>The name of the repository in which you want to create the new branch.</p>
+    ///   - [`branch_name(Option<String>)`](crate::input::CreateBranchInput::branch_name): <p>The name of the new branch to create.</p>
+    ///   - [`commit_id(Option<String>)`](crate::input::CreateBranchInput::commit_id): <p>The ID of the commit to point the new branch to.</p>
+    /// - On success, responds with [`CreateBranchOutput`](crate::output::CreateBranchOutput)
+
+    /// - On failure, responds with [`SdkError<CreateBranchError>`](crate::error::CreateBranchError)
     pub fn create_branch(&self) -> fluent_builders::CreateBranch<C, M, R> {
         fluent_builders::CreateBranch::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateCommit` operation.
+    /// Constructs a fluent builder for the [`CreateCommit`](crate::client::fluent_builders::CreateCommit) operation.
     ///
-    /// See [`CreateCommit`](crate::client::fluent_builders::CreateCommit) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateCommitInput`](crate::input::CreateCommitInput) with field(s):
+    ///   - [`repository_name(Option<String>)`](crate::input::CreateCommitInput::repository_name): <p>The name of the repository where you create the commit.</p>
+    ///   - [`branch_name(Option<String>)`](crate::input::CreateCommitInput::branch_name): <p>The name of the branch where you create the commit.</p>
+    ///   - [`parent_commit_id(Option<String>)`](crate::input::CreateCommitInput::parent_commit_id): <p>The ID of the commit that is the parent of the commit you create. Not required if this is an empty repository.</p>
+    ///   - [`author_name(Option<String>)`](crate::input::CreateCommitInput::author_name): <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
+    ///   - [`email(Option<String>)`](crate::input::CreateCommitInput::email): <p>The email address of the person who created the commit.</p>
+    ///   - [`commit_message(Option<String>)`](crate::input::CreateCommitInput::commit_message): <p>The commit message you want to include in the commit. Commit messages are limited to 256 KB. If no message is specified, a default message is used.</p>
+    ///   - [`keep_empty_folders(bool)`](crate::input::CreateCommitInput::keep_empty_folders): <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a ..gitkeep file is created for empty folders. The default is false.</p>
+    ///   - [`put_files(Option<Vec<PutFileEntry>>)`](crate::input::CreateCommitInput::put_files): <p>The files to add or update in this commit.</p>
+    ///   - [`delete_files(Option<Vec<DeleteFileEntry>>)`](crate::input::CreateCommitInput::delete_files): <p>The files to delete in this commit. These files still exist in earlier commits.</p>
+    ///   - [`set_file_modes(Option<Vec<SetFileModeEntry>>)`](crate::input::CreateCommitInput::set_file_modes): <p>The file modes to update for files in this commit.</p>
+    /// - On success, responds with [`CreateCommitOutput`](crate::output::CreateCommitOutput) with field(s):
+    ///   - [`commit_id(Option<String>)`](crate::output::CreateCommitOutput::commit_id): <p>The full commit ID of the commit that contains your committed file changes.</p>
+    ///   - [`tree_id(Option<String>)`](crate::output::CreateCommitOutput::tree_id): <p>The full SHA-1 pointer of the tree information for the commit that contains the commited file changes.</p>
+    ///   - [`files_added(Option<Vec<FileMetadata>>)`](crate::output::CreateCommitOutput::files_added): <p>The files added as part of the committed file changes.</p>
+    ///   - [`files_updated(Option<Vec<FileMetadata>>)`](crate::output::CreateCommitOutput::files_updated): <p>The files updated as part of the commited file changes.</p>
+    ///   - [`files_deleted(Option<Vec<FileMetadata>>)`](crate::output::CreateCommitOutput::files_deleted): <p>The files deleted as part of the committed file changes.</p>
+    /// - On failure, responds with [`SdkError<CreateCommitError>`](crate::error::CreateCommitError)
     pub fn create_commit(&self) -> fluent_builders::CreateCommit<C, M, R> {
         fluent_builders::CreateCommit::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreatePullRequest` operation.
+    /// Constructs a fluent builder for the [`CreatePullRequest`](crate::client::fluent_builders::CreatePullRequest) operation.
     ///
-    /// See [`CreatePullRequest`](crate::client::fluent_builders::CreatePullRequest) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreatePullRequestInput`](crate::input::CreatePullRequestInput) with field(s):
+    ///   - [`title(Option<String>)`](crate::input::CreatePullRequestInput::title): <p>The title of the pull request. This title is used to identify the pull request to other users in the repository.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreatePullRequestInput::description): <p>A description of the pull request.</p>
+    ///   - [`targets(Option<Vec<Target>>)`](crate::input::CreatePullRequestInput::targets): <p>The targets for the pull request, including the source of the code to be reviewed (the source branch) and the destination where the creator of the pull request intends the code to be merged after the pull request is closed (the destination branch).</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::CreatePullRequestInput::client_request_token): <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p> <note>   <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for you.</p>  </note>
+    /// - On success, responds with [`CreatePullRequestOutput`](crate::output::CreatePullRequestOutput) with field(s):
+    ///   - [`pull_request(Option<PullRequest>)`](crate::output::CreatePullRequestOutput::pull_request): <p>Information about the newly created pull request.</p>
+    /// - On failure, responds with [`SdkError<CreatePullRequestError>`](crate::error::CreatePullRequestError)
     pub fn create_pull_request(&self) -> fluent_builders::CreatePullRequest<C, M, R> {
         fluent_builders::CreatePullRequest::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreatePullRequestApprovalRule` operation.
+    /// Constructs a fluent builder for the [`CreatePullRequestApprovalRule`](crate::client::fluent_builders::CreatePullRequestApprovalRule) operation.
     ///
-    /// See [`CreatePullRequestApprovalRule`](crate::client::fluent_builders::CreatePullRequestApprovalRule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreatePullRequestApprovalRuleInput`](crate::input::CreatePullRequestApprovalRuleInput) with field(s):
+    ///   - [`pull_request_id(Option<String>)`](crate::input::CreatePullRequestApprovalRuleInput::pull_request_id): <p>The system-generated ID of the pull request for which you want to create the approval rule.</p>
+    ///   - [`approval_rule_name(Option<String>)`](crate::input::CreatePullRequestApprovalRuleInput::approval_rule_name): <p>The name for the approval rule.</p>
+    ///   - [`approval_rule_content(Option<String>)`](crate::input::CreatePullRequestApprovalRuleInput::approval_rule_content): <p>The content of the approval rule, including the number of approvals needed and the structure of an approval pool defined for approvals, if any. For more information about approval pools, see the AWS CodeCommit User Guide.</p> <note>   <p>When you create the content of the approval rule, you can specify approvers in an approval pool in one of two ways:</p>   <ul>    <li> <p> <b>CodeCommitApprovers</b>: This option only requires an AWS account and a resource. It can be used for both IAM users and federated access users whose name matches the provided resource name. This is a very powerful option that offers a great deal of flexibility. For example, if you specify the AWS account <i>123456789012</i> and <i>Mary_Major</i>, all of the following would be counted as approvals coming from that user:</p>     <ul>      <li> <p>An IAM user in the account (arn:aws:iam::<i>123456789012</i>:user/<i>Mary_Major</i>)</p> </li>      <li> <p>A federated user identified in IAM as Mary_Major (arn:aws:sts::<i>123456789012</i>:federated-user/<i>Mary_Major</i>)</p> </li>     </ul> <p>This option does not recognize an active session of someone assuming the role of CodeCommitReview with a role session name of <i>Mary_Major</i> (arn:aws:sts::<i>123456789012</i>:assumed-role/CodeCommitReview/<i>Mary_Major</i>) unless you include a wildcard (*Mary_Major).</p> </li>    <li> <p> <b>Fully qualified ARN</b>: This option allows you to specify the fully qualified Amazon Resource Name (ARN) of the IAM user or role. </p> </li>   </ul>   <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>  </note>
+    /// - On success, responds with [`CreatePullRequestApprovalRuleOutput`](crate::output::CreatePullRequestApprovalRuleOutput) with field(s):
+    ///   - [`approval_rule(Option<ApprovalRule>)`](crate::output::CreatePullRequestApprovalRuleOutput::approval_rule): <p>Information about the created approval rule.</p>
+    /// - On failure, responds with [`SdkError<CreatePullRequestApprovalRuleError>`](crate::error::CreatePullRequestApprovalRuleError)
     pub fn create_pull_request_approval_rule(
         &self,
     ) -> fluent_builders::CreatePullRequestApprovalRule<C, M, R> {
         fluent_builders::CreatePullRequestApprovalRule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateRepository` operation.
+    /// Constructs a fluent builder for the [`CreateRepository`](crate::client::fluent_builders::CreateRepository) operation.
     ///
-    /// See [`CreateRepository`](crate::client::fluent_builders::CreateRepository) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateRepositoryInput`](crate::input::CreateRepositoryInput) with field(s):
+    ///   - [`repository_name(Option<String>)`](crate::input::CreateRepositoryInput::repository_name): <p>The name of the new repository to be created.</p> <note>   <p>The repository name must be unique across the calling AWS account. Repository names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. For more information about the limits on repository names, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the <i>AWS CodeCommit User Guide</i>. The suffix .git is prohibited.</p>  </note>
+    ///   - [`repository_description(Option<String>)`](crate::input::CreateRepositoryInput::repository_description): <p>A comment or description about the new repository.</p> <note>   <p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a webpage can expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a webpage.</p>  </note>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateRepositoryInput::tags): <p>One or more tag key-value pairs to use when tagging this repository.</p>
+    /// - On success, responds with [`CreateRepositoryOutput`](crate::output::CreateRepositoryOutput) with field(s):
+    ///   - [`repository_metadata(Option<RepositoryMetadata>)`](crate::output::CreateRepositoryOutput::repository_metadata): <p>Information about the newly created repository.</p>
+    /// - On failure, responds with [`SdkError<CreateRepositoryError>`](crate::error::CreateRepositoryError)
     pub fn create_repository(&self) -> fluent_builders::CreateRepository<C, M, R> {
         fluent_builders::CreateRepository::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateUnreferencedMergeCommit` operation.
+    /// Constructs a fluent builder for the [`CreateUnreferencedMergeCommit`](crate::client::fluent_builders::CreateUnreferencedMergeCommit) operation.
     ///
-    /// See [`CreateUnreferencedMergeCommit`](crate::client::fluent_builders::CreateUnreferencedMergeCommit) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateUnreferencedMergeCommitInput`](crate::input::CreateUnreferencedMergeCommitInput) with field(s):
+    ///   - [`repository_name(Option<String>)`](crate::input::CreateUnreferencedMergeCommitInput::repository_name): <p>The name of the repository where you want to create the unreferenced merge commit.</p>
+    ///   - [`source_commit_specifier(Option<String>)`](crate::input::CreateUnreferencedMergeCommitInput::source_commit_specifier): <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    ///   - [`destination_commit_specifier(Option<String>)`](crate::input::CreateUnreferencedMergeCommitInput::destination_commit_specifier): <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    ///   - [`merge_option(Option<MergeOptionTypeEnum>)`](crate::input::CreateUnreferencedMergeCommitInput::merge_option): <p>The merge option or strategy you want to use to merge the code.</p>
+    ///   - [`conflict_detail_level(Option<ConflictDetailLevelTypeEnum>)`](crate::input::CreateUnreferencedMergeCommitInput::conflict_detail_level): <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
+    ///   - [`conflict_resolution_strategy(Option<ConflictResolutionStrategyTypeEnum>)`](crate::input::CreateUnreferencedMergeCommitInput::conflict_resolution_strategy): <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
+    ///   - [`author_name(Option<String>)`](crate::input::CreateUnreferencedMergeCommitInput::author_name): <p>The name of the author who created the unreferenced commit. This information is used as both the author and committer for the commit.</p>
+    ///   - [`email(Option<String>)`](crate::input::CreateUnreferencedMergeCommitInput::email): <p>The email address for the person who created the unreferenced commit.</p>
+    ///   - [`commit_message(Option<String>)`](crate::input::CreateUnreferencedMergeCommitInput::commit_message): <p>The commit message for the unreferenced commit.</p>
+    ///   - [`keep_empty_folders(bool)`](crate::input::CreateUnreferencedMergeCommitInput::keep_empty_folders): <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If this is specified as true, a .gitkeep file is created for empty folders. The default is false.</p>
+    ///   - [`conflict_resolution(Option<ConflictResolution>)`](crate::input::CreateUnreferencedMergeCommitInput::conflict_resolution): <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
+    /// - On success, responds with [`CreateUnreferencedMergeCommitOutput`](crate::output::CreateUnreferencedMergeCommitOutput) with field(s):
+    ///   - [`commit_id(Option<String>)`](crate::output::CreateUnreferencedMergeCommitOutput::commit_id): <p>The full commit ID of the commit that contains your merge results.</p>
+    ///   - [`tree_id(Option<String>)`](crate::output::CreateUnreferencedMergeCommitOutput::tree_id): <p>The full SHA-1 pointer of the tree information for the commit that contains the merge results.</p>
+    /// - On failure, responds with [`SdkError<CreateUnreferencedMergeCommitError>`](crate::error::CreateUnreferencedMergeCommitError)
     pub fn create_unreferenced_merge_commit(
         &self,
     ) -> fluent_builders::CreateUnreferencedMergeCommit<C, M, R> {
         fluent_builders::CreateUnreferencedMergeCommit::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteApprovalRuleTemplate` operation.
+    /// Constructs a fluent builder for the [`DeleteApprovalRuleTemplate`](crate::client::fluent_builders::DeleteApprovalRuleTemplate) operation.
     ///
-    /// See [`DeleteApprovalRuleTemplate`](crate::client::fluent_builders::DeleteApprovalRuleTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteApprovalRuleTemplateInput`](crate::input::DeleteApprovalRuleTemplateInput) with field(s):
+    ///   - [`approval_rule_template_name(Option<String>)`](crate::input::DeleteApprovalRuleTemplateInput::approval_rule_template_name): <p>The name of the approval rule template to delete.</p>
+    /// - On success, responds with [`DeleteApprovalRuleTemplateOutput`](crate::output::DeleteApprovalRuleTemplateOutput) with field(s):
+    ///   - [`approval_rule_template_id(Option<String>)`](crate::output::DeleteApprovalRuleTemplateOutput::approval_rule_template_id): <p>The system-generated ID of the deleted approval rule template. If the template has been previously deleted, the only response is a 200 OK.</p>
+    /// - On failure, responds with [`SdkError<DeleteApprovalRuleTemplateError>`](crate::error::DeleteApprovalRuleTemplateError)
     pub fn delete_approval_rule_template(
         &self,
     ) -> fluent_builders::DeleteApprovalRuleTemplate<C, M, R> {
         fluent_builders::DeleteApprovalRuleTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteBranch` operation.
+    /// Constructs a fluent builder for the [`DeleteBranch`](crate::client::fluent_builders::DeleteBranch) operation.
     ///
-    /// See [`DeleteBranch`](crate::client::fluent_builders::DeleteBranch) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteBranchInput`](crate::input::DeleteBranchInput) with field(s):
+    ///   - [`repository_name(Option<String>)`](crate::input::DeleteBranchInput::repository_name): <p>The name of the repository that contains the branch to be deleted.</p>
+    ///   - [`branch_name(Option<String>)`](crate::input::DeleteBranchInput::branch_name): <p>The name of the branch to delete.</p>
+    /// - On success, responds with [`DeleteBranchOutput`](crate::output::DeleteBranchOutput) with field(s):
+    ///   - [`deleted_branch(Option<BranchInfo>)`](crate::output::DeleteBranchOutput::deleted_branch): <p>Information about the branch deleted by the operation, including the branch name and the commit ID that was the tip of the branch.</p>
+    /// - On failure, responds with [`SdkError<DeleteBranchError>`](crate::error::DeleteBranchError)
     pub fn delete_branch(&self) -> fluent_builders::DeleteBranch<C, M, R> {
         fluent_builders::DeleteBranch::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteCommentContent` operation.
+    /// Constructs a fluent builder for the [`DeleteCommentContent`](crate::client::fluent_builders::DeleteCommentContent) operation.
     ///
-    /// See [`DeleteCommentContent`](crate::client::fluent_builders::DeleteCommentContent) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteCommentContentInput`](crate::input::DeleteCommentContentInput) with field(s):
+    ///   - [`comment_id(Option<String>)`](crate::input::DeleteCommentContentInput::comment_id): <p>The unique, system-generated ID of the comment. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
+    /// - On success, responds with [`DeleteCommentContentOutput`](crate::output::DeleteCommentContentOutput) with field(s):
+    ///   - [`comment(Option<Comment>)`](crate::output::DeleteCommentContentOutput::comment): <p>Information about the comment you just deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteCommentContentError>`](crate::error::DeleteCommentContentError)
     pub fn delete_comment_content(&self) -> fluent_builders::DeleteCommentContent<C, M, R> {
         fluent_builders::DeleteCommentContent::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteFile` operation.
+    /// Constructs a fluent builder for the [`DeleteFile`](crate::client::fluent_builders::DeleteFile) operation.
     ///
-    /// See [`DeleteFile`](crate::client::fluent_builders::DeleteFile) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteFileInput`](crate::input::DeleteFileInput) with field(s):
+    ///   - [`repository_name(Option<String>)`](crate::input::DeleteFileInput::repository_name): <p>The name of the repository that contains the file to delete.</p>
+    ///   - [`branch_name(Option<String>)`](crate::input::DeleteFileInput::branch_name): <p>The name of the branch where the commit that deletes the file is made.</p>
+    ///   - [`file_path(Option<String>)`](crate::input::DeleteFileInput::file_path): <p>The fully qualified path to the file that to be deleted, including the full name and extension of that file. For example, /examples/file.md is a fully qualified path to a file named file.md in a folder named examples.</p>
+    ///   - [`parent_commit_id(Option<String>)`](crate::input::DeleteFileInput::parent_commit_id): <p>The ID of the commit that is the tip of the branch where you want to create the commit that deletes the file. This must be the HEAD commit for the branch. The commit that deletes the file is created from this commit ID.</p>
+    ///   - [`keep_empty_folders(bool)`](crate::input::DeleteFileInput::keep_empty_folders): <p>If a file is the only object in the folder or directory, specifies whether to delete the folder or directory that contains the file. By default, empty folders are deleted. This includes empty folders that are part of the directory structure. For example, if the path to a file is dir1/dir2/dir3/dir4, and dir2 and dir3 are empty, deleting the last file in dir4 also deletes the empty folders dir4, dir3, and dir2.</p>
+    ///   - [`commit_message(Option<String>)`](crate::input::DeleteFileInput::commit_message): <p>The commit message you want to include as part of deleting the file. Commit messages are limited to 256 KB. If no message is specified, a default message is used.</p>
+    ///   - [`name(Option<String>)`](crate::input::DeleteFileInput::name): <p>The name of the author of the commit that deletes the file. If no name is specified, the user's ARN is used as the author name and committer name.</p>
+    ///   - [`email(Option<String>)`](crate::input::DeleteFileInput::email): <p>The email address for the commit that deletes the file. If no email address is specified, the email address is left blank.</p>
+    /// - On success, responds with [`DeleteFileOutput`](crate::output::DeleteFileOutput) with field(s):
+    ///   - [`commit_id(Option<String>)`](crate::output::DeleteFileOutput::commit_id): <p>The full commit ID of the commit that contains the change that deletes the file.</p>
+    ///   - [`blob_id(Option<String>)`](crate::output::DeleteFileOutput::blob_id): <p>The blob ID removed from the tree as part of deleting the file.</p>
+    ///   - [`tree_id(Option<String>)`](crate::output::DeleteFileOutput::tree_id): <p>The full SHA-1 pointer of the tree information for the commit that contains the delete file change.</p>
+    ///   - [`file_path(Option<String>)`](crate::output::DeleteFileOutput::file_path): <p>The fully qualified path to the file to be deleted, including the full name and extension of that file.</p>
+    /// - On failure, responds with [`SdkError<DeleteFileError>`](crate::error::DeleteFileError)
     pub fn delete_file(&self) -> fluent_builders::DeleteFile<C, M, R> {
         fluent_builders::DeleteFile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeletePullRequestApprovalRule` operation.
+    /// Constructs a fluent builder for the [`DeletePullRequestApprovalRule`](crate::client::fluent_builders::DeletePullRequestApprovalRule) operation.
     ///
-    /// See [`DeletePullRequestApprovalRule`](crate::client::fluent_builders::DeletePullRequestApprovalRule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeletePullRequestApprovalRuleInput`](crate::input::DeletePullRequestApprovalRuleInput) with field(s):
+    ///   - [`pull_request_id(Option<String>)`](crate::input::DeletePullRequestApprovalRuleInput::pull_request_id): <p>The system-generated ID of the pull request that contains the approval rule you want to delete.</p>
+    ///   - [`approval_rule_name(Option<String>)`](crate::input::DeletePullRequestApprovalRuleInput::approval_rule_name): <p>The name of the approval rule you want to delete.</p>
+    /// - On success, responds with [`DeletePullRequestApprovalRuleOutput`](crate::output::DeletePullRequestApprovalRuleOutput) with field(s):
+    ///   - [`approval_rule_id(Option<String>)`](crate::output::DeletePullRequestApprovalRuleOutput::approval_rule_id): <p>The ID of the deleted approval rule. </p> <note>   <p>If the approval rule was deleted in an earlier API call, the response is 200 OK without content.</p>  </note>
+    /// - On failure, responds with [`SdkError<DeletePullRequestApprovalRuleError>`](crate::error::DeletePullRequestApprovalRuleError)
     pub fn delete_pull_request_approval_rule(
         &self,
     ) -> fluent_builders::DeletePullRequestApprovalRule<C, M, R> {
         fluent_builders::DeletePullRequestApprovalRule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteRepository` operation.
+    /// Constructs a fluent builder for the [`DeleteRepository`](crate::client::fluent_builders::DeleteRepository) operation.
     ///
-    /// See [`DeleteRepository`](crate::client::fluent_builders::DeleteRepository) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteRepositoryInput`](crate::input::DeleteRepositoryInput) with field(s):
+    ///   - [`repository_name(Option<String>)`](crate::input::DeleteRepositoryInput::repository_name): <p>The name of the repository to delete.</p>
+    /// - On success, responds with [`DeleteRepositoryOutput`](crate::output::DeleteRepositoryOutput) with field(s):
+    ///   - [`repository_id(Option<String>)`](crate::output::DeleteRepositoryOutput::repository_id): <p>The ID of the repository that was deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteRepositoryError>`](crate::error::DeleteRepositoryError)
     pub fn delete_repository(&self) -> fluent_builders::DeleteRepository<C, M, R> {
         fluent_builders::DeleteRepository::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeMergeConflicts` operation.
-    ///
-    /// See [`DescribeMergeConflicts`](crate::client::fluent_builders::DescribeMergeConflicts) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeMergeConflicts`](crate::client::fluent_builders::DescribeMergeConflicts) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeMergeConflicts::into_paginator).
+    ///
+    /// - Takes [`DescribeMergeConflictsInput`](crate::input::DescribeMergeConflictsInput) with field(s):
+    ///   - [`repository_name(Option<String>)`](crate::input::DescribeMergeConflictsInput::repository_name): <p>The name of the repository where you want to get information about a merge conflict.</p>
+    ///   - [`destination_commit_specifier(Option<String>)`](crate::input::DescribeMergeConflictsInput::destination_commit_specifier): <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    ///   - [`source_commit_specifier(Option<String>)`](crate::input::DescribeMergeConflictsInput::source_commit_specifier): <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    ///   - [`merge_option(Option<MergeOptionTypeEnum>)`](crate::input::DescribeMergeConflictsInput::merge_option): <p>The merge option or strategy you want to use to merge the code.</p>
+    ///   - [`max_merge_hunks(Option<i32>)`](crate::input::DescribeMergeConflictsInput::max_merge_hunks): <p>The maximum number of merge hunks to include in the output.</p>
+    ///   - [`file_path(Option<String>)`](crate::input::DescribeMergeConflictsInput::file_path): <p>The path of the target files used to describe the conflicts. </p>
+    ///   - [`conflict_detail_level(Option<ConflictDetailLevelTypeEnum>)`](crate::input::DescribeMergeConflictsInput::conflict_detail_level): <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
+    ///   - [`conflict_resolution_strategy(Option<ConflictResolutionStrategyTypeEnum>)`](crate::input::DescribeMergeConflictsInput::conflict_resolution_strategy): <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeMergeConflictsInput::next_token): <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    /// - On success, responds with [`DescribeMergeConflictsOutput`](crate::output::DescribeMergeConflictsOutput) with field(s):
+    ///   - [`conflict_metadata(Option<ConflictMetadata>)`](crate::output::DescribeMergeConflictsOutput::conflict_metadata): <p>Contains metadata about the conflicts found in the merge.</p>
+    ///   - [`merge_hunks(Option<Vec<MergeHunk>>)`](crate::output::DescribeMergeConflictsOutput::merge_hunks): <p>A list of merge hunks of the differences between the files or lines.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeMergeConflictsOutput::next_token): <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
+    ///   - [`destination_commit_id(Option<String>)`](crate::output::DescribeMergeConflictsOutput::destination_commit_id): <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
+    ///   - [`source_commit_id(Option<String>)`](crate::output::DescribeMergeConflictsOutput::source_commit_id): <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
+    ///   - [`base_commit_id(Option<String>)`](crate::output::DescribeMergeConflictsOutput::base_commit_id): <p>The commit ID of the merge base.</p>
+    /// - On failure, responds with [`SdkError<DescribeMergeConflictsError>`](crate::error::DescribeMergeConflictsError)
     pub fn describe_merge_conflicts(&self) -> fluent_builders::DescribeMergeConflicts<C, M, R> {
         fluent_builders::DescribeMergeConflicts::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribePullRequestEvents` operation.
-    ///
-    /// See [`DescribePullRequestEvents`](crate::client::fluent_builders::DescribePullRequestEvents) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribePullRequestEvents`](crate::client::fluent_builders::DescribePullRequestEvents) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribePullRequestEvents::into_paginator).
+    ///
+    /// - Takes [`DescribePullRequestEventsInput`](crate::input::DescribePullRequestEventsInput) with field(s):
+    ///   - [`pull_request_id(Option<String>)`](crate::input::DescribePullRequestEventsInput::pull_request_id): <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    ///   - [`pull_request_event_type(Option<PullRequestEventType>)`](crate::input::DescribePullRequestEventsInput::pull_request_event_type): <p>Optional. The pull request event type about which you want to return information.</p>
+    ///   - [`actor_arn(Option<String>)`](crate::input::DescribePullRequestEventsInput::actor_arn): <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the event. Examples include updating the pull request with more commits or changing the status of a pull request.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribePullRequestEventsInput::next_token): <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribePullRequestEventsInput::max_results): <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 events, which is also the maximum number of events that can be returned in a result.</p>
+    /// - On success, responds with [`DescribePullRequestEventsOutput`](crate::output::DescribePullRequestEventsOutput) with field(s):
+    ///   - [`pull_request_events(Option<Vec<PullRequestEvent>>)`](crate::output::DescribePullRequestEventsOutput::pull_request_events): <p>Information about the pull request events.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribePullRequestEventsOutput::next_token): <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
+    /// - On failure, responds with [`SdkError<DescribePullRequestEventsError>`](crate::error::DescribePullRequestEventsError)
     pub fn describe_pull_request_events(
         &self,
     ) -> fluent_builders::DescribePullRequestEvents<C, M, R> {
         fluent_builders::DescribePullRequestEvents::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateApprovalRuleTemplateFromRepository` operation.
+    /// Constructs a fluent builder for the [`DisassociateApprovalRuleTemplateFromRepository`](crate::client::fluent_builders::DisassociateApprovalRuleTemplateFromRepository) operation.
     ///
-    /// See [`DisassociateApprovalRuleTemplateFromRepository`](crate::client::fluent_builders::DisassociateApprovalRuleTemplateFromRepository) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateApprovalRuleTemplateFromRepositoryInput`](crate::input::DisassociateApprovalRuleTemplateFromRepositoryInput) with field(s):
+    ///   - [`approval_rule_template_name(Option<String>)`](crate::input::DisassociateApprovalRuleTemplateFromRepositoryInput::approval_rule_template_name): <p>The name of the approval rule template to disassociate from a specified repository.</p>
+    ///   - [`repository_name(Option<String>)`](crate::input::DisassociateApprovalRuleTemplateFromRepositoryInput::repository_name): <p>The name of the repository you want to disassociate from the template.</p>
+    /// - On success, responds with [`DisassociateApprovalRuleTemplateFromRepositoryOutput`](crate::output::DisassociateApprovalRuleTemplateFromRepositoryOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateApprovalRuleTemplateFromRepositoryError>`](crate::error::DisassociateApprovalRuleTemplateFromRepositoryError)
     pub fn disassociate_approval_rule_template_from_repository(
         &self,
     ) -> fluent_builders::DisassociateApprovalRuleTemplateFromRepository<C, M, R> {
         fluent_builders::DisassociateApprovalRuleTemplateFromRepository::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `EvaluatePullRequestApprovalRules` operation.
+    /// Constructs a fluent builder for the [`EvaluatePullRequestApprovalRules`](crate::client::fluent_builders::EvaluatePullRequestApprovalRules) operation.
     ///
-    /// See [`EvaluatePullRequestApprovalRules`](crate::client::fluent_builders::EvaluatePullRequestApprovalRules) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`EvaluatePullRequestApprovalRulesInput`](crate::input::EvaluatePullRequestApprovalRulesInput) with field(s):
+    ///   - [`pull_request_id(Option<String>)`](crate::input::EvaluatePullRequestApprovalRulesInput::pull_request_id): <p>The system-generated ID of the pull request you want to evaluate.</p>
+    ///   - [`revision_id(Option<String>)`](crate::input::EvaluatePullRequestApprovalRulesInput::revision_id): <p>The system-generated ID for the pull request revision. To retrieve the most recent revision ID for a pull request, use <code>GetPullRequest</code>.</p>
+    /// - On success, responds with [`EvaluatePullRequestApprovalRulesOutput`](crate::output::EvaluatePullRequestApprovalRulesOutput) with field(s):
+    ///   - [`evaluation(Option<Evaluation>)`](crate::output::EvaluatePullRequestApprovalRulesOutput::evaluation): <p>The result of the evaluation, including the names of the rules whose conditions have been met (if any), the names of the rules whose conditions have not been met (if any), whether the pull request is in the approved state, and whether the pull request approval rule has been set aside by an override. </p>
+    /// - On failure, responds with [`SdkError<EvaluatePullRequestApprovalRulesError>`](crate::error::EvaluatePullRequestApprovalRulesError)
     pub fn evaluate_pull_request_approval_rules(
         &self,
     ) -> fluent_builders::EvaluatePullRequestApprovalRules<C, M, R> {
         fluent_builders::EvaluatePullRequestApprovalRules::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetApprovalRuleTemplate` operation.
+    /// Constructs a fluent builder for the [`GetApprovalRuleTemplate`](crate::client::fluent_builders::GetApprovalRuleTemplate) operation.
     ///
-    /// See [`GetApprovalRuleTemplate`](crate::client::fluent_builders::GetApprovalRuleTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetApprovalRuleTemplateInput`](crate::input::GetApprovalRuleTemplateInput) with field(s):
+    ///   - [`approval_rule_template_name(Option<String>)`](crate::input::GetApprovalRuleTemplateInput::approval_rule_template_name): <p>The name of the approval rule template for which you want to get information.</p>
+    /// - On success, responds with [`GetApprovalRuleTemplateOutput`](crate::output::GetApprovalRuleTemplateOutput) with field(s):
+    ///   - [`approval_rule_template(Option<ApprovalRuleTemplate>)`](crate::output::GetApprovalRuleTemplateOutput::approval_rule_template): <p>The content and structure of the approval rule template.</p>
+    /// - On failure, responds with [`SdkError<GetApprovalRuleTemplateError>`](crate::error::GetApprovalRuleTemplateError)
     pub fn get_approval_rule_template(&self) -> fluent_builders::GetApprovalRuleTemplate<C, M, R> {
         fluent_builders::GetApprovalRuleTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBlob` operation.
+    /// Constructs a fluent builder for the [`GetBlob`](crate::client::fluent_builders::GetBlob) operation.
     ///
-    /// See [`GetBlob`](crate::client::fluent_builders::GetBlob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetBlobInput`](crate::input::GetBlobInput) with field(s):
+    ///   - [`repository_name(Option<String>)`](crate::input::GetBlobInput::repository_name): <p>The name of the repository that contains the blob.</p>
+    ///   - [`blob_id(Option<String>)`](crate::input::GetBlobInput::blob_id): <p>The ID of the blob, which is its SHA-1 pointer.</p>
+    /// - On success, responds with [`GetBlobOutput`](crate::output::GetBlobOutput) with field(s):
+    ///   - [`content(Option<Blob>)`](crate::output::GetBlobOutput::content): <p>The content of the blob, usually a file.</p>
+    /// - On failure, responds with [`SdkError<GetBlobError>`](crate::error::GetBlobError)
     pub fn get_blob(&self) -> fluent_builders::GetBlob<C, M, R> {
         fluent_builders::GetBlob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBranch` operation.
+    /// Constructs a fluent builder for the [`GetBranch`](crate::client::fluent_builders::GetBranch) operation.
     ///
-    /// See [`GetBranch`](crate::client::fluent_builders::GetBranch) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetBranchInput`](crate::input::GetBranchInput) with field(s):
+    ///   - [`repository_name(Option<String>)`](crate::input::GetBranchInput::repository_name): <p>The name of the repository that contains the branch for which you want to retrieve information.</p>
+    ///   - [`branch_name(Option<String>)`](crate::input::GetBranchInput::branch_name): <p>The name of the branch for which you want to retrieve information.</p>
+    /// - On success, responds with [`GetBranchOutput`](crate::output::GetBranchOutput) with field(s):
+    ///   - [`branch(Option<BranchInfo>)`](crate::output::GetBranchOutput::branch): <p>The name of the branch.</p>
+    /// - On failure, responds with [`SdkError<GetBranchError>`](crate::error::GetBranchError)
     pub fn get_branch(&self) -> fluent_builders::GetBranch<C, M, R> {
         fluent_builders::GetBranch::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetComment` operation.
+    /// Constructs a fluent builder for the [`GetComment`](crate::client::fluent_builders::GetComment) operation.
     ///
-    /// See [`GetComment`](crate::client::fluent_builders::GetComment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetCommentInput`](crate::input::GetCommentInput) with field(s):
+    ///   - [`comment_id(Option<String>)`](crate::input::GetCommentInput::comment_id): <p>The unique, system-generated ID of the comment. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
+    /// - On success, responds with [`GetCommentOutput`](crate::output::GetCommentOutput) with field(s):
+    ///   - [`comment(Option<Comment>)`](crate::output::GetCommentOutput::comment): <p>The contents of the comment.</p>
+    /// - On failure, responds with [`SdkError<GetCommentError>`](crate::error::GetCommentError)
     pub fn get_comment(&self) -> fluent_builders::GetComment<C, M, R> {
         fluent_builders::GetComment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCommentReactions` operation.
-    ///
-    /// See [`GetCommentReactions`](crate::client::fluent_builders::GetCommentReactions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetCommentReactions`](crate::client::fluent_builders::GetCommentReactions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetCommentReactions::into_paginator).
+    ///
+    /// - Takes [`GetCommentReactionsInput`](crate::input::GetCommentReactionsInput) with field(s):
+    ///   - [`comment_id(Option<String>)`](crate::input::GetCommentReactionsInput::comment_id): <p>The ID of the comment for which you want to get reactions information.</p>
+    ///   - [`reaction_user_arn(Option<String>)`](crate::input::GetCommentReactionsInput::reaction_user_arn): <p>Optional. The Amazon Resource Name (ARN) of the user or identity for which you want to get reaction information.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetCommentReactionsInput::next_token): <p>An enumeration token that, when provided in a request, returns the next batch of the results. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetCommentReactionsInput::max_results): <p>A non-zero, non-negative integer used to limit the number of returned results. The default is the same as the allowed maximum, 1,000.</p>
+    /// - On success, responds with [`GetCommentReactionsOutput`](crate::output::GetCommentReactionsOutput) with field(s):
+    ///   - [`reactions_for_comment(Option<Vec<ReactionForComment>>)`](crate::output::GetCommentReactionsOutput::reactions_for_comment): <p>An array of reactions to the specified comment.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetCommentReactionsOutput::next_token): <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
+    /// - On failure, responds with [`SdkError<GetCommentReactionsError>`](crate::error::GetCommentReactionsError)
     pub fn get_comment_reactions(&self) -> fluent_builders::GetCommentReactions<C, M, R> {
         fluent_builders::GetCommentReactions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCommentsForComparedCommit` operation.
-    ///
-    /// See [`GetCommentsForComparedCommit`](crate::client::fluent_builders::GetCommentsForComparedCommit) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetCommentsForComparedCommit`](crate::client::fluent_builders::GetCommentsForComparedCommit) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetCommentsForComparedCommit::into_paginator).
+    ///
+    /// - Takes [`GetCommentsForComparedCommitInput`](crate::input::GetCommentsForComparedCommitInput) with field(s):
+    ///   - [`repository_name(Option<String>)`](crate::input::GetCommentsForComparedCommitInput::repository_name): <p>The name of the repository where you want to compare commits.</p>
+    ///   - [`before_commit_id(Option<String>)`](crate::input::GetCommentsForComparedCommitInput::before_commit_id): <p>To establish the directionality of the comparison, the full commit ID of the before commit.</p>
+    ///   - [`after_commit_id(Option<String>)`](crate::input::GetCommentsForComparedCommitInput::after_commit_id): <p>To establish the directionality of the comparison, the full commit ID of the after commit.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetCommentsForComparedCommitInput::next_token): <p>An enumeration token that when provided in a request, returns the next batch of the results. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetCommentsForComparedCommitInput::max_results): <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 comments, but you can configure up to 500.</p>
+    /// - On success, responds with [`GetCommentsForComparedCommitOutput`](crate::output::GetCommentsForComparedCommitOutput) with field(s):
+    ///   - [`comments_for_compared_commit_data(Option<Vec<CommentsForComparedCommit>>)`](crate::output::GetCommentsForComparedCommitOutput::comments_for_compared_commit_data): <p>A list of comment objects on the compared commit.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetCommentsForComparedCommitOutput::next_token): <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
+    /// - On failure, responds with [`SdkError<GetCommentsForComparedCommitError>`](crate::error::GetCommentsForComparedCommitError)
     pub fn get_comments_for_compared_commit(
         &self,
     ) -> fluent_builders::GetCommentsForComparedCommit<C, M, R> {
         fluent_builders::GetCommentsForComparedCommit::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCommentsForPullRequest` operation.
-    ///
-    /// See [`GetCommentsForPullRequest`](crate::client::fluent_builders::GetCommentsForPullRequest) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetCommentsForPullRequest`](crate::client::fluent_builders::GetCommentsForPullRequest) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetCommentsForPullRequest::into_paginator).
+    ///
+    /// - Takes [`GetCommentsForPullRequestInput`](crate::input::GetCommentsForPullRequestInput) with field(s):
+    ///   - [`pull_request_id(Option<String>)`](crate::input::GetCommentsForPullRequestInput::pull_request_id): <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    ///   - [`repository_name(Option<String>)`](crate::input::GetCommentsForPullRequestInput::repository_name): <p>The name of the repository that contains the pull request.</p>
+    ///   - [`before_commit_id(Option<String>)`](crate::input::GetCommentsForPullRequestInput::before_commit_id): <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created.</p>
+    ///   - [`after_commit_id(Option<String>)`](crate::input::GetCommentsForPullRequestInput::after_commit_id): <p>The full commit ID of the commit in the source branch that was the tip of the branch at the time the comment was made.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetCommentsForPullRequestInput::next_token): <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetCommentsForPullRequestInput::max_results): <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 comments. You can return up to 500 comments with a single request.</p>
+    /// - On success, responds with [`GetCommentsForPullRequestOutput`](crate::output::GetCommentsForPullRequestOutput) with field(s):
+    ///   - [`comments_for_pull_request_data(Option<Vec<CommentsForPullRequest>>)`](crate::output::GetCommentsForPullRequestOutput::comments_for_pull_request_data): <p>An array of comment objects on the pull request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetCommentsForPullRequestOutput::next_token): <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
+    /// - On failure, responds with [`SdkError<GetCommentsForPullRequestError>`](crate::error::GetCommentsForPullRequestError)
     pub fn get_comments_for_pull_request(
         &self,
     ) -> fluent_builders::GetCommentsForPullRequest<C, M, R> {
         fluent_builders::GetCommentsForPullRequest::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCommit` operation.
+    /// Constructs a fluent builder for the [`GetCommit`](crate::client::fluent_builders::GetCommit) operation.
     ///
-    /// See [`GetCommit`](crate::client::fluent_builders::GetCommit) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetCommitInput`](crate::input::GetCommitInput) with field(s):
+    ///   - [`repository_name(Option<String>)`](crate::input::GetCommitInput::repository_name): <p>The name of the repository to which the commit was made.</p>
+    ///   - [`commit_id(Option<String>)`](crate::input::GetCommitInput::commit_id): <p>The commit ID. Commit IDs are the full SHA ID of the commit.</p>
+    /// - On success, responds with [`GetCommitOutput`](crate::output::GetCommitOutput) with field(s):
+    ///   - [`commit(Option<Commit>)`](crate::output::GetCommitOutput::commit): <p>A commit data type object that contains information about the specified commit.</p>
+    /// - On failure, responds with [`SdkError<GetCommitError>`](crate::error::GetCommitError)
     pub fn get_commit(&self) -> fluent_builders::GetCommit<C, M, R> {
         fluent_builders::GetCommit::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDifferences` operation.
-    ///
-    /// See [`GetDifferences`](crate::client::fluent_builders::GetDifferences) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetDifferences`](crate::client::fluent_builders::GetDifferences) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetDifferences::into_paginator).
+    ///
+    /// - Takes [`GetDifferencesInput`](crate::input::GetDifferencesInput) with field(s):
+    ///   - [`repository_name(Option<String>)`](crate::input::GetDifferencesInput::repository_name): <p>The name of the repository where you want to get differences.</p>
+    ///   - [`before_commit_specifier(Option<String>)`](crate::input::GetDifferencesInput::before_commit_specifier): <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, the full commit ID). Optional. If not specified, all changes before the <code>afterCommitSpecifier</code> value are shown. If you do not use <code>beforeCommitSpecifier</code> in your request, consider limiting the results with <code>maxResults</code>.</p>
+    ///   - [`after_commit_specifier(Option<String>)`](crate::input::GetDifferencesInput::after_commit_specifier): <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit.</p>
+    ///   - [`before_path(Option<String>)`](crate::input::GetDifferencesInput::before_path): <p>The file path in which to check for differences. Limits the results to this path. Can also be used to specify the previous name of a directory or folder. If <code>beforePath</code> and <code>afterPath</code> are not specified, differences are shown for all paths.</p>
+    ///   - [`after_path(Option<String>)`](crate::input::GetDifferencesInput::after_path): <p>The file path in which to check differences. Limits the results to this path. Can also be used to specify the changed name of a directory or folder, if it has changed. If not specified, differences are shown for all paths.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetDifferencesInput::max_results): <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetDifferencesInput::next_token): <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    /// - On success, responds with [`GetDifferencesOutput`](crate::output::GetDifferencesOutput) with field(s):
+    ///   - [`differences(Option<Vec<Difference>>)`](crate::output::GetDifferencesOutput::differences): <p>A data type object that contains information about the differences, including whether the difference is added, modified, or deleted (A, D, M).</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetDifferencesOutput::next_token): <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
+    /// - On failure, responds with [`SdkError<GetDifferencesError>`](crate::error::GetDifferencesError)
     pub fn get_differences(&self) -> fluent_builders::GetDifferences<C, M, R> {
         fluent_builders::GetDifferences::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetFile` operation.
+    /// Constructs a fluent builder for the [`GetFile`](crate::client::fluent_builders::GetFile) operation.
     ///
-    /// See [`GetFile`](crate::client::fluent_builders::GetFile) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetFileInput`](crate::input::GetFileInput) with field(s):
+    ///   - [`repository_name(Option<String>)`](crate::input::GetFileInput::repository_name): <p>The name of the repository that contains the file.</p>
+    ///   - [`commit_specifier(Option<String>)`](crate::input::GetFileInput::commit_specifier): <p>The fully quaified reference that identifies the commit that contains the file. For example, you can specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is provided, the head commit is used.</p>
+    ///   - [`file_path(Option<String>)`](crate::input::GetFileInput::file_path): <p>The fully qualified path to the file, including the full name and extension of the file. For example, /examples/file.md is the fully qualified path to a file named file.md in a folder named examples.</p>
+    /// - On success, responds with [`GetFileOutput`](crate::output::GetFileOutput) with field(s):
+    ///   - [`commit_id(Option<String>)`](crate::output::GetFileOutput::commit_id): <p>The full commit ID of the commit that contains the content returned by GetFile.</p>
+    ///   - [`blob_id(Option<String>)`](crate::output::GetFileOutput::blob_id): <p>The blob ID of the object that represents the file content.</p>
+    ///   - [`file_path(Option<String>)`](crate::output::GetFileOutput::file_path): <p>The fully qualified path to the specified file. Returns the name and extension of the file.</p>
+    ///   - [`file_mode(Option<FileModeTypeEnum>)`](crate::output::GetFileOutput::file_mode): <p>The extrapolated file mode permissions of the blob. Valid values include strings such as EXECUTABLE and not numeric values.</p> <note>   <p>The file mode permissions returned by this API are not the standard file mode permission values, such as 100644, but rather extrapolated values. See the supported return values.</p>  </note>
+    ///   - [`file_size(i64)`](crate::output::GetFileOutput::file_size): <p>The size of the contents of the file, in bytes.</p>
+    ///   - [`file_content(Option<Blob>)`](crate::output::GetFileOutput::file_content): <p>The base-64 encoded binary data object that represents the content of the file.</p>
+    /// - On failure, responds with [`SdkError<GetFileError>`](crate::error::GetFileError)
     pub fn get_file(&self) -> fluent_builders::GetFile<C, M, R> {
         fluent_builders::GetFile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetFolder` operation.
+    /// Constructs a fluent builder for the [`GetFolder`](crate::client::fluent_builders::GetFolder) operation.
     ///
-    /// See [`GetFolder`](crate::client::fluent_builders::GetFolder) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetFolderInput`](crate::input::GetFolderInput) with field(s):
+    ///   - [`repository_name(Option<String>)`](crate::input::GetFolderInput::repository_name): <p>The name of the repository.</p>
+    ///   - [`commit_specifier(Option<String>)`](crate::input::GetFolderInput::commit_specifier): <p>A fully qualified reference used to identify a commit that contains the version of the folder's content to return. A fully qualified reference can be a commit ID, branch name, tag, or reference such as HEAD. If no specifier is provided, the folder content is returned as it exists in the HEAD commit.</p>
+    ///   - [`folder_path(Option<String>)`](crate::input::GetFolderInput::folder_path): <p>The fully qualified path to the folder whose contents are returned, including the folder name. For example, /examples is a fully-qualified path to a folder named examples that was created off of the root directory (/) of a repository. </p>
+    /// - On success, responds with [`GetFolderOutput`](crate::output::GetFolderOutput) with field(s):
+    ///   - [`commit_id(Option<String>)`](crate::output::GetFolderOutput::commit_id): <p>The full commit ID used as a reference for the returned version of the folder content.</p>
+    ///   - [`folder_path(Option<String>)`](crate::output::GetFolderOutput::folder_path): <p>The fully qualified path of the folder whose contents are returned.</p>
+    ///   - [`tree_id(Option<String>)`](crate::output::GetFolderOutput::tree_id): <p>The full SHA-1 pointer of the tree information for the commit that contains the folder.</p>
+    ///   - [`sub_folders(Option<Vec<Folder>>)`](crate::output::GetFolderOutput::sub_folders): <p>The list of folders that exist under the specified folder, if any.</p>
+    ///   - [`files(Option<Vec<File>>)`](crate::output::GetFolderOutput::files): <p>The list of files in the specified folder, if any.</p>
+    ///   - [`symbolic_links(Option<Vec<SymbolicLink>>)`](crate::output::GetFolderOutput::symbolic_links): <p>The list of symbolic links to other files and folders in the specified folder, if any.</p>
+    ///   - [`sub_modules(Option<Vec<SubModule>>)`](crate::output::GetFolderOutput::sub_modules): <p>The list of submodules in the specified folder, if any.</p>
+    /// - On failure, responds with [`SdkError<GetFolderError>`](crate::error::GetFolderError)
     pub fn get_folder(&self) -> fluent_builders::GetFolder<C, M, R> {
         fluent_builders::GetFolder::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMergeCommit` operation.
+    /// Constructs a fluent builder for the [`GetMergeCommit`](crate::client::fluent_builders::GetMergeCommit) operation.
     ///
-    /// See [`GetMergeCommit`](crate::client::fluent_builders::GetMergeCommit) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetMergeCommitInput`](crate::input::GetMergeCommitInput) with field(s):
+    ///   - [`repository_name(Option<String>)`](crate::input::GetMergeCommitInput::repository_name): <p>The name of the repository that contains the merge commit about which you want to get information.</p>
+    ///   - [`source_commit_specifier(Option<String>)`](crate::input::GetMergeCommitInput::source_commit_specifier): <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    ///   - [`destination_commit_specifier(Option<String>)`](crate::input::GetMergeCommitInput::destination_commit_specifier): <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    ///   - [`conflict_detail_level(Option<ConflictDetailLevelTypeEnum>)`](crate::input::GetMergeCommitInput::conflict_detail_level): <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
+    ///   - [`conflict_resolution_strategy(Option<ConflictResolutionStrategyTypeEnum>)`](crate::input::GetMergeCommitInput::conflict_resolution_strategy): <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
+    /// - On success, responds with [`GetMergeCommitOutput`](crate::output::GetMergeCommitOutput) with field(s):
+    ///   - [`source_commit_id(Option<String>)`](crate::output::GetMergeCommitOutput::source_commit_id): <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
+    ///   - [`destination_commit_id(Option<String>)`](crate::output::GetMergeCommitOutput::destination_commit_id): <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
+    ///   - [`base_commit_id(Option<String>)`](crate::output::GetMergeCommitOutput::base_commit_id): <p>The commit ID of the merge base.</p>
+    ///   - [`merged_commit_id(Option<String>)`](crate::output::GetMergeCommitOutput::merged_commit_id): <p>The commit ID for the merge commit created when the source branch was merged into the destination branch. If the fast-forward merge strategy was used, there is no merge commit.</p>
+    /// - On failure, responds with [`SdkError<GetMergeCommitError>`](crate::error::GetMergeCommitError)
     pub fn get_merge_commit(&self) -> fluent_builders::GetMergeCommit<C, M, R> {
         fluent_builders::GetMergeCommit::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMergeConflicts` operation.
-    ///
-    /// See [`GetMergeConflicts`](crate::client::fluent_builders::GetMergeConflicts) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetMergeConflicts`](crate::client::fluent_builders::GetMergeConflicts) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetMergeConflicts::into_paginator).
+    ///
+    /// - Takes [`GetMergeConflictsInput`](crate::input::GetMergeConflictsInput) with field(s):
+    ///   - [`repository_name(Option<String>)`](crate::input::GetMergeConflictsInput::repository_name): <p>The name of the repository where the pull request was created.</p>
+    ///   - [`destination_commit_specifier(Option<String>)`](crate::input::GetMergeConflictsInput::destination_commit_specifier): <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    ///   - [`source_commit_specifier(Option<String>)`](crate::input::GetMergeConflictsInput::source_commit_specifier): <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    ///   - [`merge_option(Option<MergeOptionTypeEnum>)`](crate::input::GetMergeConflictsInput::merge_option): <p>The merge option or strategy you want to use to merge the code. </p>
+    ///   - [`conflict_detail_level(Option<ConflictDetailLevelTypeEnum>)`](crate::input::GetMergeConflictsInput::conflict_detail_level): <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
+    ///   - [`max_conflict_files(Option<i32>)`](crate::input::GetMergeConflictsInput::max_conflict_files): <p>The maximum number of files to include in the output.</p>
+    ///   - [`conflict_resolution_strategy(Option<ConflictResolutionStrategyTypeEnum>)`](crate::input::GetMergeConflictsInput::conflict_resolution_strategy): <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetMergeConflictsInput::next_token): <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    /// - On success, responds with [`GetMergeConflictsOutput`](crate::output::GetMergeConflictsOutput) with field(s):
+    ///   - [`mergeable(bool)`](crate::output::GetMergeConflictsOutput::mergeable): <p>A Boolean value that indicates whether the code is mergeable by the specified merge option.</p>
+    ///   - [`destination_commit_id(Option<String>)`](crate::output::GetMergeConflictsOutput::destination_commit_id): <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
+    ///   - [`source_commit_id(Option<String>)`](crate::output::GetMergeConflictsOutput::source_commit_id): <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
+    ///   - [`base_commit_id(Option<String>)`](crate::output::GetMergeConflictsOutput::base_commit_id): <p>The commit ID of the merge base.</p>
+    ///   - [`conflict_metadata_list(Option<Vec<ConflictMetadata>>)`](crate::output::GetMergeConflictsOutput::conflict_metadata_list): <p>A list of metadata for any conflicting files. If the specified merge strategy is FAST_FORWARD_MERGE, this list is always empty.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetMergeConflictsOutput::next_token): <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
+    /// - On failure, responds with [`SdkError<GetMergeConflictsError>`](crate::error::GetMergeConflictsError)
     pub fn get_merge_conflicts(&self) -> fluent_builders::GetMergeConflicts<C, M, R> {
         fluent_builders::GetMergeConflicts::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMergeOptions` operation.
+    /// Constructs a fluent builder for the [`GetMergeOptions`](crate::client::fluent_builders::GetMergeOptions) operation.
     ///
-    /// See [`GetMergeOptions`](crate::client::fluent_builders::GetMergeOptions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetMergeOptionsInput`](crate::input::GetMergeOptionsInput) with field(s):
+    ///   - [`repository_name(Option<String>)`](crate::input::GetMergeOptionsInput::repository_name): <p>The name of the repository that contains the commits about which you want to get merge options.</p>
+    ///   - [`source_commit_specifier(Option<String>)`](crate::input::GetMergeOptionsInput::source_commit_specifier): <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    ///   - [`destination_commit_specifier(Option<String>)`](crate::input::GetMergeOptionsInput::destination_commit_specifier): <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    ///   - [`conflict_detail_level(Option<ConflictDetailLevelTypeEnum>)`](crate::input::GetMergeOptionsInput::conflict_detail_level): <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
+    ///   - [`conflict_resolution_strategy(Option<ConflictResolutionStrategyTypeEnum>)`](crate::input::GetMergeOptionsInput::conflict_resolution_strategy): <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
+    /// - On success, responds with [`GetMergeOptionsOutput`](crate::output::GetMergeOptionsOutput) with field(s):
+    ///   - [`merge_options(Option<Vec<MergeOptionTypeEnum>>)`](crate::output::GetMergeOptionsOutput::merge_options): <p>The merge option or strategy used to merge the code.</p>
+    ///   - [`source_commit_id(Option<String>)`](crate::output::GetMergeOptionsOutput::source_commit_id): <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
+    ///   - [`destination_commit_id(Option<String>)`](crate::output::GetMergeOptionsOutput::destination_commit_id): <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
+    ///   - [`base_commit_id(Option<String>)`](crate::output::GetMergeOptionsOutput::base_commit_id): <p>The commit ID of the merge base.</p>
+    /// - On failure, responds with [`SdkError<GetMergeOptionsError>`](crate::error::GetMergeOptionsError)
     pub fn get_merge_options(&self) -> fluent_builders::GetMergeOptions<C, M, R> {
         fluent_builders::GetMergeOptions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetPullRequest` operation.
+    /// Constructs a fluent builder for the [`GetPullRequest`](crate::client::fluent_builders::GetPullRequest) operation.
     ///
-    /// See [`GetPullRequest`](crate::client::fluent_builders::GetPullRequest) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetPullRequestInput`](crate::input::GetPullRequestInput) with field(s):
+    ///   - [`pull_request_id(Option<String>)`](crate::input::GetPullRequestInput::pull_request_id): <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    /// - On success, responds with [`GetPullRequestOutput`](crate::output::GetPullRequestOutput) with field(s):
+    ///   - [`pull_request(Option<PullRequest>)`](crate::output::GetPullRequestOutput::pull_request): <p>Information about the specified pull request.</p>
+    /// - On failure, responds with [`SdkError<GetPullRequestError>`](crate::error::GetPullRequestError)
     pub fn get_pull_request(&self) -> fluent_builders::GetPullRequest<C, M, R> {
         fluent_builders::GetPullRequest::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetPullRequestApprovalStates` operation.
+    /// Constructs a fluent builder for the [`GetPullRequestApprovalStates`](crate::client::fluent_builders::GetPullRequestApprovalStates) operation.
     ///
-    /// See [`GetPullRequestApprovalStates`](crate::client::fluent_builders::GetPullRequestApprovalStates) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetPullRequestApprovalStatesInput`](crate::input::GetPullRequestApprovalStatesInput) with field(s):
+    ///   - [`pull_request_id(Option<String>)`](crate::input::GetPullRequestApprovalStatesInput::pull_request_id): <p>The system-generated ID for the pull request.</p>
+    ///   - [`revision_id(Option<String>)`](crate::input::GetPullRequestApprovalStatesInput::revision_id): <p>The system-generated ID for the pull request revision.</p>
+    /// - On success, responds with [`GetPullRequestApprovalStatesOutput`](crate::output::GetPullRequestApprovalStatesOutput) with field(s):
+    ///   - [`approvals(Option<Vec<Approval>>)`](crate::output::GetPullRequestApprovalStatesOutput::approvals): <p>Information about users who have approved the pull request.</p>
+    /// - On failure, responds with [`SdkError<GetPullRequestApprovalStatesError>`](crate::error::GetPullRequestApprovalStatesError)
     pub fn get_pull_request_approval_states(
         &self,
     ) -> fluent_builders::GetPullRequestApprovalStates<C, M, R> {
         fluent_builders::GetPullRequestApprovalStates::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetPullRequestOverrideState` operation.
+    /// Constructs a fluent builder for the [`GetPullRequestOverrideState`](crate::client::fluent_builders::GetPullRequestOverrideState) operation.
     ///
-    /// See [`GetPullRequestOverrideState`](crate::client::fluent_builders::GetPullRequestOverrideState) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetPullRequestOverrideStateInput`](crate::input::GetPullRequestOverrideStateInput) with field(s):
+    ///   - [`pull_request_id(Option<String>)`](crate::input::GetPullRequestOverrideStateInput::pull_request_id): <p>The ID of the pull request for which you want to get information about whether approval rules have been set aside (overridden).</p>
+    ///   - [`revision_id(Option<String>)`](crate::input::GetPullRequestOverrideStateInput::revision_id): <p>The system-generated ID of the revision for the pull request. To retrieve the most recent revision ID, use <code>GetPullRequest</code>.</p>
+    /// - On success, responds with [`GetPullRequestOverrideStateOutput`](crate::output::GetPullRequestOverrideStateOutput) with field(s):
+    ///   - [`overridden(bool)`](crate::output::GetPullRequestOverrideStateOutput::overridden): <p>A Boolean value that indicates whether a pull request has had its rules set aside (TRUE) or whether all approval rules still apply (FALSE).</p>
+    ///   - [`overrider(Option<String>)`](crate::output::GetPullRequestOverrideStateOutput::overrider): <p>The Amazon Resource Name (ARN) of the user or identity that overrode the rules and their requirements for the pull request.</p>
+    /// - On failure, responds with [`SdkError<GetPullRequestOverrideStateError>`](crate::error::GetPullRequestOverrideStateError)
     pub fn get_pull_request_override_state(
         &self,
     ) -> fluent_builders::GetPullRequestOverrideState<C, M, R> {
         fluent_builders::GetPullRequestOverrideState::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRepository` operation.
+    /// Constructs a fluent builder for the [`GetRepository`](crate::client::fluent_builders::GetRepository) operation.
     ///
-    /// See [`GetRepository`](crate::client::fluent_builders::GetRepository) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetRepositoryInput`](crate::input::GetRepositoryInput) with field(s):
+    ///   - [`repository_name(Option<String>)`](crate::input::GetRepositoryInput::repository_name): <p>The name of the repository to get information about.</p>
+    /// - On success, responds with [`GetRepositoryOutput`](crate::output::GetRepositoryOutput) with field(s):
+    ///   - [`repository_metadata(Option<RepositoryMetadata>)`](crate::output::GetRepositoryOutput::repository_metadata): <p>Information about the repository.</p>
+    /// - On failure, responds with [`SdkError<GetRepositoryError>`](crate::error::GetRepositoryError)
     pub fn get_repository(&self) -> fluent_builders::GetRepository<C, M, R> {
         fluent_builders::GetRepository::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRepositoryTriggers` operation.
+    /// Constructs a fluent builder for the [`GetRepositoryTriggers`](crate::client::fluent_builders::GetRepositoryTriggers) operation.
     ///
-    /// See [`GetRepositoryTriggers`](crate::client::fluent_builders::GetRepositoryTriggers) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetRepositoryTriggersInput`](crate::input::GetRepositoryTriggersInput) with field(s):
+    ///   - [`repository_name(Option<String>)`](crate::input::GetRepositoryTriggersInput::repository_name): <p>The name of the repository for which the trigger is configured.</p>
+    /// - On success, responds with [`GetRepositoryTriggersOutput`](crate::output::GetRepositoryTriggersOutput) with field(s):
+    ///   - [`configuration_id(Option<String>)`](crate::output::GetRepositoryTriggersOutput::configuration_id): <p>The system-generated unique ID for the trigger.</p>
+    ///   - [`triggers(Option<Vec<RepositoryTrigger>>)`](crate::output::GetRepositoryTriggersOutput::triggers): <p>The JSON block of configuration information for each trigger.</p>
+    /// - On failure, responds with [`SdkError<GetRepositoryTriggersError>`](crate::error::GetRepositoryTriggersError)
     pub fn get_repository_triggers(&self) -> fluent_builders::GetRepositoryTriggers<C, M, R> {
         fluent_builders::GetRepositoryTriggers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListApprovalRuleTemplates` operation.
-    ///
-    /// See [`ListApprovalRuleTemplates`](crate::client::fluent_builders::ListApprovalRuleTemplates) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListApprovalRuleTemplates`](crate::client::fluent_builders::ListApprovalRuleTemplates) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListApprovalRuleTemplates::into_paginator).
+    ///
+    /// - Takes [`ListApprovalRuleTemplatesInput`](crate::input::ListApprovalRuleTemplatesInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListApprovalRuleTemplatesInput::next_token): <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListApprovalRuleTemplatesInput::max_results): <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
+    /// - On success, responds with [`ListApprovalRuleTemplatesOutput`](crate::output::ListApprovalRuleTemplatesOutput) with field(s):
+    ///   - [`approval_rule_template_names(Option<Vec<String>>)`](crate::output::ListApprovalRuleTemplatesOutput::approval_rule_template_names): <p>The names of all the approval rule templates found in the AWS Region for your AWS account.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListApprovalRuleTemplatesOutput::next_token): <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
+    /// - On failure, responds with [`SdkError<ListApprovalRuleTemplatesError>`](crate::error::ListApprovalRuleTemplatesError)
     pub fn list_approval_rule_templates(
         &self,
     ) -> fluent_builders::ListApprovalRuleTemplates<C, M, R> {
         fluent_builders::ListApprovalRuleTemplates::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAssociatedApprovalRuleTemplatesForRepository` operation.
-    ///
-    /// See [`ListAssociatedApprovalRuleTemplatesForRepository`](crate::client::fluent_builders::ListAssociatedApprovalRuleTemplatesForRepository) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListAssociatedApprovalRuleTemplatesForRepository`](crate::client::fluent_builders::ListAssociatedApprovalRuleTemplatesForRepository) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssociatedApprovalRuleTemplatesForRepository::into_paginator).
+    ///
+    /// - Takes [`ListAssociatedApprovalRuleTemplatesForRepositoryInput`](crate::input::ListAssociatedApprovalRuleTemplatesForRepositoryInput) with field(s):
+    ///   - [`repository_name(Option<String>)`](crate::input::ListAssociatedApprovalRuleTemplatesForRepositoryInput::repository_name): <p>The name of the repository for which you want to list all associated approval rule templates.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListAssociatedApprovalRuleTemplatesForRepositoryInput::next_token): <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListAssociatedApprovalRuleTemplatesForRepositoryInput::max_results): <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
+    /// - On success, responds with [`ListAssociatedApprovalRuleTemplatesForRepositoryOutput`](crate::output::ListAssociatedApprovalRuleTemplatesForRepositoryOutput) with field(s):
+    ///   - [`approval_rule_template_names(Option<Vec<String>>)`](crate::output::ListAssociatedApprovalRuleTemplatesForRepositoryOutput::approval_rule_template_names): <p>The names of all approval rule templates associated with the repository.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAssociatedApprovalRuleTemplatesForRepositoryOutput::next_token): <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
+    /// - On failure, responds with [`SdkError<ListAssociatedApprovalRuleTemplatesForRepositoryError>`](crate::error::ListAssociatedApprovalRuleTemplatesForRepositoryError)
     pub fn list_associated_approval_rule_templates_for_repository(
         &self,
     ) -> fluent_builders::ListAssociatedApprovalRuleTemplatesForRepository<C, M, R> {
         fluent_builders::ListAssociatedApprovalRuleTemplatesForRepository::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListBranches` operation.
-    ///
-    /// See [`ListBranches`](crate::client::fluent_builders::ListBranches) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListBranches`](crate::client::fluent_builders::ListBranches) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBranches::into_paginator).
+    ///
+    /// - Takes [`ListBranchesInput`](crate::input::ListBranchesInput) with field(s):
+    ///   - [`repository_name(Option<String>)`](crate::input::ListBranchesInput::repository_name): <p>The name of the repository that contains the branches.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListBranchesInput::next_token): <p>An enumeration token that allows the operation to batch the results.</p>
+    /// - On success, responds with [`ListBranchesOutput`](crate::output::ListBranchesOutput) with field(s):
+    ///   - [`branches(Option<Vec<String>>)`](crate::output::ListBranchesOutput::branches): <p>The list of branch names.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListBranchesOutput::next_token): <p>An enumeration token that returns the batch of the results.</p>
+    /// - On failure, responds with [`SdkError<ListBranchesError>`](crate::error::ListBranchesError)
     pub fn list_branches(&self) -> fluent_builders::ListBranches<C, M, R> {
         fluent_builders::ListBranches::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPullRequests` operation.
-    ///
-    /// See [`ListPullRequests`](crate::client::fluent_builders::ListPullRequests) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListPullRequests`](crate::client::fluent_builders::ListPullRequests) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPullRequests::into_paginator).
+    ///
+    /// - Takes [`ListPullRequestsInput`](crate::input::ListPullRequestsInput) with field(s):
+    ///   - [`repository_name(Option<String>)`](crate::input::ListPullRequestsInput::repository_name): <p>The name of the repository for which you want to list pull requests.</p>
+    ///   - [`author_arn(Option<String>)`](crate::input::ListPullRequestsInput::author_arn): <p>Optional. The Amazon Resource Name (ARN) of the user who created the pull request. If used, this filters the results to pull requests created by that user.</p>
+    ///   - [`pull_request_status(Option<PullRequestStatusEnum>)`](crate::input::ListPullRequestsInput::pull_request_status): <p>Optional. The status of the pull request. If used, this refines the results to the pull requests that match the specified status.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListPullRequestsInput::next_token): <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListPullRequestsInput::max_results): <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
+    /// - On success, responds with [`ListPullRequestsOutput`](crate::output::ListPullRequestsOutput) with field(s):
+    ///   - [`pull_request_ids(Option<Vec<String>>)`](crate::output::ListPullRequestsOutput::pull_request_ids): <p>The system-generated IDs of the pull requests.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPullRequestsOutput::next_token): <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
+    /// - On failure, responds with [`SdkError<ListPullRequestsError>`](crate::error::ListPullRequestsError)
     pub fn list_pull_requests(&self) -> fluent_builders::ListPullRequests<C, M, R> {
         fluent_builders::ListPullRequests::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRepositories` operation.
-    ///
-    /// See [`ListRepositories`](crate::client::fluent_builders::ListRepositories) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListRepositories`](crate::client::fluent_builders::ListRepositories) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRepositories::into_paginator).
+    ///
+    /// - Takes [`ListRepositoriesInput`](crate::input::ListRepositoriesInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListRepositoriesInput::next_token): <p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>
+    ///   - [`sort_by(Option<SortByEnum>)`](crate::input::ListRepositoriesInput::sort_by): <p>The criteria used to sort the results of a list repositories operation.</p>
+    ///   - [`order(Option<OrderEnum>)`](crate::input::ListRepositoriesInput::order): <p>The order in which to sort the results of a list repositories operation.</p>
+    /// - On success, responds with [`ListRepositoriesOutput`](crate::output::ListRepositoriesOutput) with field(s):
+    ///   - [`repositories(Option<Vec<RepositoryNameIdPair>>)`](crate::output::ListRepositoriesOutput::repositories): <p>Lists the repositories called by the list repositories operation.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListRepositoriesOutput::next_token): <p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>
+    /// - On failure, responds with [`SdkError<ListRepositoriesError>`](crate::error::ListRepositoriesError)
     pub fn list_repositories(&self) -> fluent_builders::ListRepositories<C, M, R> {
         fluent_builders::ListRepositories::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRepositoriesForApprovalRuleTemplate` operation.
-    ///
-    /// See [`ListRepositoriesForApprovalRuleTemplate`](crate::client::fluent_builders::ListRepositoriesForApprovalRuleTemplate) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListRepositoriesForApprovalRuleTemplate`](crate::client::fluent_builders::ListRepositoriesForApprovalRuleTemplate) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRepositoriesForApprovalRuleTemplate::into_paginator).
+    ///
+    /// - Takes [`ListRepositoriesForApprovalRuleTemplateInput`](crate::input::ListRepositoriesForApprovalRuleTemplateInput) with field(s):
+    ///   - [`approval_rule_template_name(Option<String>)`](crate::input::ListRepositoriesForApprovalRuleTemplateInput::approval_rule_template_name): <p>The name of the approval rule template for which you want to list repositories that are associated with that template.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListRepositoriesForApprovalRuleTemplateInput::next_token): <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListRepositoriesForApprovalRuleTemplateInput::max_results): <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
+    /// - On success, responds with [`ListRepositoriesForApprovalRuleTemplateOutput`](crate::output::ListRepositoriesForApprovalRuleTemplateOutput) with field(s):
+    ///   - [`repository_names(Option<Vec<String>>)`](crate::output::ListRepositoriesForApprovalRuleTemplateOutput::repository_names): <p>A list of repository names that are associated with the specified approval rule template.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListRepositoriesForApprovalRuleTemplateOutput::next_token): <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
+    /// - On failure, responds with [`SdkError<ListRepositoriesForApprovalRuleTemplateError>`](crate::error::ListRepositoriesForApprovalRuleTemplateError)
     pub fn list_repositories_for_approval_rule_template(
         &self,
     ) -> fluent_builders::ListRepositoriesForApprovalRuleTemplate<C, M, R> {
         fluent_builders::ListRepositoriesForApprovalRuleTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource for which you want to get information about tags, if any.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListTagsForResourceInput::next_token): <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A list of tag key and value pairs associated with the specified resource.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTagsForResourceOutput::next_token): <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `MergeBranchesByFastForward` operation.
+    /// Constructs a fluent builder for the [`MergeBranchesByFastForward`](crate::client::fluent_builders::MergeBranchesByFastForward) operation.
     ///
-    /// See [`MergeBranchesByFastForward`](crate::client::fluent_builders::MergeBranchesByFastForward) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`MergeBranchesByFastForwardInput`](crate::input::MergeBranchesByFastForwardInput) with field(s):
+    ///   - [`repository_name(Option<String>)`](crate::input::MergeBranchesByFastForwardInput::repository_name): <p>The name of the repository where you want to merge two branches.</p>
+    ///   - [`source_commit_specifier(Option<String>)`](crate::input::MergeBranchesByFastForwardInput::source_commit_specifier): <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    ///   - [`destination_commit_specifier(Option<String>)`](crate::input::MergeBranchesByFastForwardInput::destination_commit_specifier): <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    ///   - [`target_branch(Option<String>)`](crate::input::MergeBranchesByFastForwardInput::target_branch): <p>The branch where the merge is applied.</p>
+    /// - On success, responds with [`MergeBranchesByFastForwardOutput`](crate::output::MergeBranchesByFastForwardOutput) with field(s):
+    ///   - [`commit_id(Option<String>)`](crate::output::MergeBranchesByFastForwardOutput::commit_id): <p>The commit ID of the merge in the destination or target branch.</p>
+    ///   - [`tree_id(Option<String>)`](crate::output::MergeBranchesByFastForwardOutput::tree_id): <p>The tree ID of the merge in the destination or target branch.</p>
+    /// - On failure, responds with [`SdkError<MergeBranchesByFastForwardError>`](crate::error::MergeBranchesByFastForwardError)
     pub fn merge_branches_by_fast_forward(
         &self,
     ) -> fluent_builders::MergeBranchesByFastForward<C, M, R> {
         fluent_builders::MergeBranchesByFastForward::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `MergeBranchesBySquash` operation.
+    /// Constructs a fluent builder for the [`MergeBranchesBySquash`](crate::client::fluent_builders::MergeBranchesBySquash) operation.
     ///
-    /// See [`MergeBranchesBySquash`](crate::client::fluent_builders::MergeBranchesBySquash) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`MergeBranchesBySquashInput`](crate::input::MergeBranchesBySquashInput) with field(s):
+    ///   - [`repository_name(Option<String>)`](crate::input::MergeBranchesBySquashInput::repository_name): <p>The name of the repository where you want to merge two branches.</p>
+    ///   - [`source_commit_specifier(Option<String>)`](crate::input::MergeBranchesBySquashInput::source_commit_specifier): <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    ///   - [`destination_commit_specifier(Option<String>)`](crate::input::MergeBranchesBySquashInput::destination_commit_specifier): <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    ///   - [`target_branch(Option<String>)`](crate::input::MergeBranchesBySquashInput::target_branch): <p>The branch where the merge is applied. </p>
+    ///   - [`conflict_detail_level(Option<ConflictDetailLevelTypeEnum>)`](crate::input::MergeBranchesBySquashInput::conflict_detail_level): <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
+    ///   - [`conflict_resolution_strategy(Option<ConflictResolutionStrategyTypeEnum>)`](crate::input::MergeBranchesBySquashInput::conflict_resolution_strategy): <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
+    ///   - [`author_name(Option<String>)`](crate::input::MergeBranchesBySquashInput::author_name): <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
+    ///   - [`email(Option<String>)`](crate::input::MergeBranchesBySquashInput::email): <p>The email address of the person merging the branches. This information is used in the commit information for the merge.</p>
+    ///   - [`commit_message(Option<String>)`](crate::input::MergeBranchesBySquashInput::commit_message): <p>The commit message for the merge.</p>
+    ///   - [`keep_empty_folders(bool)`](crate::input::MergeBranchesBySquashInput::keep_empty_folders): <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If this is specified as true, a .gitkeep file is created for empty folders. The default is false.</p>
+    ///   - [`conflict_resolution(Option<ConflictResolution>)`](crate::input::MergeBranchesBySquashInput::conflict_resolution): <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
+    /// - On success, responds with [`MergeBranchesBySquashOutput`](crate::output::MergeBranchesBySquashOutput) with field(s):
+    ///   - [`commit_id(Option<String>)`](crate::output::MergeBranchesBySquashOutput::commit_id): <p>The commit ID of the merge in the destination or target branch.</p>
+    ///   - [`tree_id(Option<String>)`](crate::output::MergeBranchesBySquashOutput::tree_id): <p>The tree ID of the merge in the destination or target branch.</p>
+    /// - On failure, responds with [`SdkError<MergeBranchesBySquashError>`](crate::error::MergeBranchesBySquashError)
     pub fn merge_branches_by_squash(&self) -> fluent_builders::MergeBranchesBySquash<C, M, R> {
         fluent_builders::MergeBranchesBySquash::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `MergeBranchesByThreeWay` operation.
+    /// Constructs a fluent builder for the [`MergeBranchesByThreeWay`](crate::client::fluent_builders::MergeBranchesByThreeWay) operation.
     ///
-    /// See [`MergeBranchesByThreeWay`](crate::client::fluent_builders::MergeBranchesByThreeWay) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`MergeBranchesByThreeWayInput`](crate::input::MergeBranchesByThreeWayInput) with field(s):
+    ///   - [`repository_name(Option<String>)`](crate::input::MergeBranchesByThreeWayInput::repository_name): <p>The name of the repository where you want to merge two branches.</p>
+    ///   - [`source_commit_specifier(Option<String>)`](crate::input::MergeBranchesByThreeWayInput::source_commit_specifier): <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    ///   - [`destination_commit_specifier(Option<String>)`](crate::input::MergeBranchesByThreeWayInput::destination_commit_specifier): <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
+    ///   - [`target_branch(Option<String>)`](crate::input::MergeBranchesByThreeWayInput::target_branch): <p>The branch where the merge is applied. </p>
+    ///   - [`conflict_detail_level(Option<ConflictDetailLevelTypeEnum>)`](crate::input::MergeBranchesByThreeWayInput::conflict_detail_level): <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
+    ///   - [`conflict_resolution_strategy(Option<ConflictResolutionStrategyTypeEnum>)`](crate::input::MergeBranchesByThreeWayInput::conflict_resolution_strategy): <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
+    ///   - [`author_name(Option<String>)`](crate::input::MergeBranchesByThreeWayInput::author_name): <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
+    ///   - [`email(Option<String>)`](crate::input::MergeBranchesByThreeWayInput::email): <p>The email address of the person merging the branches. This information is used in the commit information for the merge.</p>
+    ///   - [`commit_message(Option<String>)`](crate::input::MergeBranchesByThreeWayInput::commit_message): <p>The commit message to include in the commit information for the merge.</p>
+    ///   - [`keep_empty_folders(bool)`](crate::input::MergeBranchesByThreeWayInput::keep_empty_folders): <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a .gitkeep file is created for empty folders. The default is false.</p>
+    ///   - [`conflict_resolution(Option<ConflictResolution>)`](crate::input::MergeBranchesByThreeWayInput::conflict_resolution): <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
+    /// - On success, responds with [`MergeBranchesByThreeWayOutput`](crate::output::MergeBranchesByThreeWayOutput) with field(s):
+    ///   - [`commit_id(Option<String>)`](crate::output::MergeBranchesByThreeWayOutput::commit_id): <p>The commit ID of the merge in the destination or target branch.</p>
+    ///   - [`tree_id(Option<String>)`](crate::output::MergeBranchesByThreeWayOutput::tree_id): <p>The tree ID of the merge in the destination or target branch.</p>
+    /// - On failure, responds with [`SdkError<MergeBranchesByThreeWayError>`](crate::error::MergeBranchesByThreeWayError)
     pub fn merge_branches_by_three_way(&self) -> fluent_builders::MergeBranchesByThreeWay<C, M, R> {
         fluent_builders::MergeBranchesByThreeWay::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `MergePullRequestByFastForward` operation.
+    /// Constructs a fluent builder for the [`MergePullRequestByFastForward`](crate::client::fluent_builders::MergePullRequestByFastForward) operation.
     ///
-    /// See [`MergePullRequestByFastForward`](crate::client::fluent_builders::MergePullRequestByFastForward) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`MergePullRequestByFastForwardInput`](crate::input::MergePullRequestByFastForwardInput) with field(s):
+    ///   - [`pull_request_id(Option<String>)`](crate::input::MergePullRequestByFastForwardInput::pull_request_id): <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    ///   - [`repository_name(Option<String>)`](crate::input::MergePullRequestByFastForwardInput::repository_name): <p>The name of the repository where the pull request was created.</p>
+    ///   - [`source_commit_id(Option<String>)`](crate::input::MergePullRequestByFastForwardInput::source_commit_id): <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
+    /// - On success, responds with [`MergePullRequestByFastForwardOutput`](crate::output::MergePullRequestByFastForwardOutput) with field(s):
+    ///   - [`pull_request(Option<PullRequest>)`](crate::output::MergePullRequestByFastForwardOutput::pull_request): <p>Information about the specified pull request, including the merge.</p>
+    /// - On failure, responds with [`SdkError<MergePullRequestByFastForwardError>`](crate::error::MergePullRequestByFastForwardError)
     pub fn merge_pull_request_by_fast_forward(
         &self,
     ) -> fluent_builders::MergePullRequestByFastForward<C, M, R> {
         fluent_builders::MergePullRequestByFastForward::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `MergePullRequestBySquash` operation.
+    /// Constructs a fluent builder for the [`MergePullRequestBySquash`](crate::client::fluent_builders::MergePullRequestBySquash) operation.
     ///
-    /// See [`MergePullRequestBySquash`](crate::client::fluent_builders::MergePullRequestBySquash) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`MergePullRequestBySquashInput`](crate::input::MergePullRequestBySquashInput) with field(s):
+    ///   - [`pull_request_id(Option<String>)`](crate::input::MergePullRequestBySquashInput::pull_request_id): <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    ///   - [`repository_name(Option<String>)`](crate::input::MergePullRequestBySquashInput::repository_name): <p>The name of the repository where the pull request was created.</p>
+    ///   - [`source_commit_id(Option<String>)`](crate::input::MergePullRequestBySquashInput::source_commit_id): <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
+    ///   - [`conflict_detail_level(Option<ConflictDetailLevelTypeEnum>)`](crate::input::MergePullRequestBySquashInput::conflict_detail_level): <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
+    ///   - [`conflict_resolution_strategy(Option<ConflictResolutionStrategyTypeEnum>)`](crate::input::MergePullRequestBySquashInput::conflict_resolution_strategy): <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
+    ///   - [`commit_message(Option<String>)`](crate::input::MergePullRequestBySquashInput::commit_message): <p>The commit message to include in the commit information for the merge.</p>
+    ///   - [`author_name(Option<String>)`](crate::input::MergePullRequestBySquashInput::author_name): <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
+    ///   - [`email(Option<String>)`](crate::input::MergePullRequestBySquashInput::email): <p>The email address of the person merging the branches. This information is used in the commit information for the merge.</p>
+    ///   - [`keep_empty_folders(bool)`](crate::input::MergePullRequestBySquashInput::keep_empty_folders): <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a .gitkeep file is created for empty folders. The default is false.</p>
+    ///   - [`conflict_resolution(Option<ConflictResolution>)`](crate::input::MergePullRequestBySquashInput::conflict_resolution): <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
+    /// - On success, responds with [`MergePullRequestBySquashOutput`](crate::output::MergePullRequestBySquashOutput) with field(s):
+    ///   - [`pull_request(Option<PullRequest>)`](crate::output::MergePullRequestBySquashOutput::pull_request): <p>Returns information about a pull request.</p>
+    /// - On failure, responds with [`SdkError<MergePullRequestBySquashError>`](crate::error::MergePullRequestBySquashError)
     pub fn merge_pull_request_by_squash(
         &self,
     ) -> fluent_builders::MergePullRequestBySquash<C, M, R> {
         fluent_builders::MergePullRequestBySquash::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `MergePullRequestByThreeWay` operation.
+    /// Constructs a fluent builder for the [`MergePullRequestByThreeWay`](crate::client::fluent_builders::MergePullRequestByThreeWay) operation.
     ///
-    /// See [`MergePullRequestByThreeWay`](crate::client::fluent_builders::MergePullRequestByThreeWay) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`MergePullRequestByThreeWayInput`](crate::input::MergePullRequestByThreeWayInput) with field(s):
+    ///   - [`pull_request_id(Option<String>)`](crate::input::MergePullRequestByThreeWayInput::pull_request_id): <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    ///   - [`repository_name(Option<String>)`](crate::input::MergePullRequestByThreeWayInput::repository_name): <p>The name of the repository where the pull request was created.</p>
+    ///   - [`source_commit_id(Option<String>)`](crate::input::MergePullRequestByThreeWayInput::source_commit_id): <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
+    ///   - [`conflict_detail_level(Option<ConflictDetailLevelTypeEnum>)`](crate::input::MergePullRequestByThreeWayInput::conflict_detail_level): <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
+    ///   - [`conflict_resolution_strategy(Option<ConflictResolutionStrategyTypeEnum>)`](crate::input::MergePullRequestByThreeWayInput::conflict_resolution_strategy): <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
+    ///   - [`commit_message(Option<String>)`](crate::input::MergePullRequestByThreeWayInput::commit_message): <p>The commit message to include in the commit information for the merge.</p>
+    ///   - [`author_name(Option<String>)`](crate::input::MergePullRequestByThreeWayInput::author_name): <p>The name of the author who created the commit. This information is used as both the author and committer for the commit.</p>
+    ///   - [`email(Option<String>)`](crate::input::MergePullRequestByThreeWayInput::email): <p>The email address of the person merging the branches. This information is used in the commit information for the merge.</p>
+    ///   - [`keep_empty_folders(bool)`](crate::input::MergePullRequestByThreeWayInput::keep_empty_folders): <p>If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a .gitkeep file is created for empty folders. The default is false.</p>
+    ///   - [`conflict_resolution(Option<ConflictResolution>)`](crate::input::MergePullRequestByThreeWayInput::conflict_resolution): <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
+    /// - On success, responds with [`MergePullRequestByThreeWayOutput`](crate::output::MergePullRequestByThreeWayOutput) with field(s):
+    ///   - [`pull_request(Option<PullRequest>)`](crate::output::MergePullRequestByThreeWayOutput::pull_request): <p>Returns information about a pull request.</p>
+    /// - On failure, responds with [`SdkError<MergePullRequestByThreeWayError>`](crate::error::MergePullRequestByThreeWayError)
     pub fn merge_pull_request_by_three_way(
         &self,
     ) -> fluent_builders::MergePullRequestByThreeWay<C, M, R> {
         fluent_builders::MergePullRequestByThreeWay::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `OverridePullRequestApprovalRules` operation.
+    /// Constructs a fluent builder for the [`OverridePullRequestApprovalRules`](crate::client::fluent_builders::OverridePullRequestApprovalRules) operation.
     ///
-    /// See [`OverridePullRequestApprovalRules`](crate::client::fluent_builders::OverridePullRequestApprovalRules) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`OverridePullRequestApprovalRulesInput`](crate::input::OverridePullRequestApprovalRulesInput) with field(s):
+    ///   - [`pull_request_id(Option<String>)`](crate::input::OverridePullRequestApprovalRulesInput::pull_request_id): <p>The system-generated ID of the pull request for which you want to override all approval rule requirements. To get this information, use <code>GetPullRequest</code>.</p>
+    ///   - [`revision_id(Option<String>)`](crate::input::OverridePullRequestApprovalRulesInput::revision_id): <p>The system-generated ID of the most recent revision of the pull request. You cannot override approval rules for anything but the most recent revision of a pull request. To get the revision ID, use GetPullRequest.</p>
+    ///   - [`override_status(Option<OverrideStatus>)`](crate::input::OverridePullRequestApprovalRulesInput::override_status): <p>Whether you want to set aside approval rule requirements for the pull request (OVERRIDE) or revoke a previous override and apply approval rule requirements (REVOKE). REVOKE status is not stored.</p>
+    /// - On success, responds with [`OverridePullRequestApprovalRulesOutput`](crate::output::OverridePullRequestApprovalRulesOutput)
+
+    /// - On failure, responds with [`SdkError<OverridePullRequestApprovalRulesError>`](crate::error::OverridePullRequestApprovalRulesError)
     pub fn override_pull_request_approval_rules(
         &self,
     ) -> fluent_builders::OverridePullRequestApprovalRules<C, M, R> {
         fluent_builders::OverridePullRequestApprovalRules::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PostCommentForComparedCommit` operation.
+    /// Constructs a fluent builder for the [`PostCommentForComparedCommit`](crate::client::fluent_builders::PostCommentForComparedCommit) operation.
     ///
-    /// See [`PostCommentForComparedCommit`](crate::client::fluent_builders::PostCommentForComparedCommit) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PostCommentForComparedCommitInput`](crate::input::PostCommentForComparedCommitInput) with field(s):
+    ///   - [`repository_name(Option<String>)`](crate::input::PostCommentForComparedCommitInput::repository_name): <p>The name of the repository where you want to post a comment on the comparison between commits.</p>
+    ///   - [`before_commit_id(Option<String>)`](crate::input::PostCommentForComparedCommitInput::before_commit_id): <p>To establish the directionality of the comparison, the full commit ID of the before commit. Required for commenting on any commit unless that commit is the initial commit.</p>
+    ///   - [`after_commit_id(Option<String>)`](crate::input::PostCommentForComparedCommitInput::after_commit_id): <p>To establish the directionality of the comparison, the full commit ID of the after commit.</p>
+    ///   - [`location(Option<Location>)`](crate::input::PostCommentForComparedCommitInput::location): <p>The location of the comparison where you want to comment.</p>
+    ///   - [`content(Option<String>)`](crate::input::PostCommentForComparedCommitInput::content): <p>The content of the comment you want to make.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::PostCommentForComparedCommitInput::client_request_token): <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
+    /// - On success, responds with [`PostCommentForComparedCommitOutput`](crate::output::PostCommentForComparedCommitOutput) with field(s):
+    ///   - [`repository_name(Option<String>)`](crate::output::PostCommentForComparedCommitOutput::repository_name): <p>The name of the repository where you posted a comment on the comparison between commits.</p>
+    ///   - [`before_commit_id(Option<String>)`](crate::output::PostCommentForComparedCommitOutput::before_commit_id): <p>In the directionality you established, the full commit ID of the before commit.</p>
+    ///   - [`after_commit_id(Option<String>)`](crate::output::PostCommentForComparedCommitOutput::after_commit_id): <p>In the directionality you established, the full commit ID of the after commit.</p>
+    ///   - [`before_blob_id(Option<String>)`](crate::output::PostCommentForComparedCommitOutput::before_blob_id): <p>In the directionality you established, the blob ID of the before blob.</p>
+    ///   - [`after_blob_id(Option<String>)`](crate::output::PostCommentForComparedCommitOutput::after_blob_id): <p>In the directionality you established, the blob ID of the after blob.</p>
+    ///   - [`location(Option<Location>)`](crate::output::PostCommentForComparedCommitOutput::location): <p>The location of the comment in the comparison between the two commits.</p>
+    ///   - [`comment(Option<Comment>)`](crate::output::PostCommentForComparedCommitOutput::comment): <p>The content of the comment you posted.</p>
+    /// - On failure, responds with [`SdkError<PostCommentForComparedCommitError>`](crate::error::PostCommentForComparedCommitError)
     pub fn post_comment_for_compared_commit(
         &self,
     ) -> fluent_builders::PostCommentForComparedCommit<C, M, R> {
         fluent_builders::PostCommentForComparedCommit::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PostCommentForPullRequest` operation.
+    /// Constructs a fluent builder for the [`PostCommentForPullRequest`](crate::client::fluent_builders::PostCommentForPullRequest) operation.
     ///
-    /// See [`PostCommentForPullRequest`](crate::client::fluent_builders::PostCommentForPullRequest) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PostCommentForPullRequestInput`](crate::input::PostCommentForPullRequestInput) with field(s):
+    ///   - [`pull_request_id(Option<String>)`](crate::input::PostCommentForPullRequestInput::pull_request_id): <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    ///   - [`repository_name(Option<String>)`](crate::input::PostCommentForPullRequestInput::repository_name): <p>The name of the repository where you want to post a comment on a pull request.</p>
+    ///   - [`before_commit_id(Option<String>)`](crate::input::PostCommentForPullRequestInput::before_commit_id): <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created.</p>
+    ///   - [`after_commit_id(Option<String>)`](crate::input::PostCommentForPullRequestInput::after_commit_id): <p>The full commit ID of the commit in the source branch that is the current tip of the branch for the pull request when you post the comment.</p>
+    ///   - [`location(Option<Location>)`](crate::input::PostCommentForPullRequestInput::location): <p>The location of the change where you want to post your comment. If no location is provided, the comment is posted as a general comment on the pull request difference between the before commit ID and the after commit ID.</p>
+    ///   - [`content(Option<String>)`](crate::input::PostCommentForPullRequestInput::content): <p>The content of your comment on the change.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::PostCommentForPullRequestInput::client_request_token): <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
+    /// - On success, responds with [`PostCommentForPullRequestOutput`](crate::output::PostCommentForPullRequestOutput) with field(s):
+    ///   - [`repository_name(Option<String>)`](crate::output::PostCommentForPullRequestOutput::repository_name): <p>The name of the repository where you posted a comment on a pull request.</p>
+    ///   - [`pull_request_id(Option<String>)`](crate::output::PostCommentForPullRequestOutput::pull_request_id): <p>The system-generated ID of the pull request. </p>
+    ///   - [`before_commit_id(Option<String>)`](crate::output::PostCommentForPullRequestOutput::before_commit_id): <p>The full commit ID of the commit in the source branch used to create the pull request, or in the case of an updated pull request, the full commit ID of the commit used to update the pull request.</p>
+    ///   - [`after_commit_id(Option<String>)`](crate::output::PostCommentForPullRequestOutput::after_commit_id): <p>The full commit ID of the commit in the destination branch where the pull request is merged.</p>
+    ///   - [`before_blob_id(Option<String>)`](crate::output::PostCommentForPullRequestOutput::before_blob_id): <p>In the directionality of the pull request, the blob ID of the before blob.</p>
+    ///   - [`after_blob_id(Option<String>)`](crate::output::PostCommentForPullRequestOutput::after_blob_id): <p>In the directionality of the pull request, the blob ID of the after blob.</p>
+    ///   - [`location(Option<Location>)`](crate::output::PostCommentForPullRequestOutput::location): <p>The location of the change where you posted your comment.</p>
+    ///   - [`comment(Option<Comment>)`](crate::output::PostCommentForPullRequestOutput::comment): <p>The content of the comment you posted.</p>
+    /// - On failure, responds with [`SdkError<PostCommentForPullRequestError>`](crate::error::PostCommentForPullRequestError)
     pub fn post_comment_for_pull_request(
         &self,
     ) -> fluent_builders::PostCommentForPullRequest<C, M, R> {
         fluent_builders::PostCommentForPullRequest::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PostCommentReply` operation.
+    /// Constructs a fluent builder for the [`PostCommentReply`](crate::client::fluent_builders::PostCommentReply) operation.
     ///
-    /// See [`PostCommentReply`](crate::client::fluent_builders::PostCommentReply) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PostCommentReplyInput`](crate::input::PostCommentReplyInput) with field(s):
+    ///   - [`in_reply_to(Option<String>)`](crate::input::PostCommentReplyInput::in_reply_to): <p>The system-generated ID of the comment to which you want to reply. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::PostCommentReplyInput::client_request_token): <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
+    ///   - [`content(Option<String>)`](crate::input::PostCommentReplyInput::content): <p>The contents of your reply to a comment.</p>
+    /// - On success, responds with [`PostCommentReplyOutput`](crate::output::PostCommentReplyOutput) with field(s):
+    ///   - [`comment(Option<Comment>)`](crate::output::PostCommentReplyOutput::comment): <p>Information about the reply to a comment.</p>
+    /// - On failure, responds with [`SdkError<PostCommentReplyError>`](crate::error::PostCommentReplyError)
     pub fn post_comment_reply(&self) -> fluent_builders::PostCommentReply<C, M, R> {
         fluent_builders::PostCommentReply::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutCommentReaction` operation.
+    /// Constructs a fluent builder for the [`PutCommentReaction`](crate::client::fluent_builders::PutCommentReaction) operation.
     ///
-    /// See [`PutCommentReaction`](crate::client::fluent_builders::PutCommentReaction) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutCommentReactionInput`](crate::input::PutCommentReactionInput) with field(s):
+    ///   - [`comment_id(Option<String>)`](crate::input::PutCommentReactionInput::comment_id): <p>The ID of the comment to which you want to add or update a reaction.</p>
+    ///   - [`reaction_value(Option<String>)`](crate::input::PutCommentReactionInput::reaction_value): <p>The emoji reaction you want to add or update. To remove a reaction, provide a value of blank or null. You can also provide the value of none. For information about emoji reaction values supported in AWS CodeCommit, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">AWS CodeCommit User Guide</a>.</p>
+    /// - On success, responds with [`PutCommentReactionOutput`](crate::output::PutCommentReactionOutput)
+
+    /// - On failure, responds with [`SdkError<PutCommentReactionError>`](crate::error::PutCommentReactionError)
     pub fn put_comment_reaction(&self) -> fluent_builders::PutCommentReaction<C, M, R> {
         fluent_builders::PutCommentReaction::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutFile` operation.
+    /// Constructs a fluent builder for the [`PutFile`](crate::client::fluent_builders::PutFile) operation.
     ///
-    /// See [`PutFile`](crate::client::fluent_builders::PutFile) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutFileInput`](crate::input::PutFileInput) with field(s):
+    ///   - [`repository_name(Option<String>)`](crate::input::PutFileInput::repository_name): <p>The name of the repository where you want to add or update the file.</p>
+    ///   - [`branch_name(Option<String>)`](crate::input::PutFileInput::branch_name): <p>The name of the branch where you want to add or update the file. If this is an empty repository, this branch is created.</p>
+    ///   - [`file_content(Option<Blob>)`](crate::input::PutFileInput::file_content): <p>The content of the file, in binary object format. </p>
+    ///   - [`file_path(Option<String>)`](crate::input::PutFileInput::file_path): <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p> <note>   <p>If the path does not currently exist in the repository, the path is created as part of adding the file.</p>  </note>
+    ///   - [`file_mode(Option<FileModeTypeEnum>)`](crate::input::PutFileInput::file_mode): <p>The file mode permissions of the blob. Valid file mode permissions are listed here.</p>
+    ///   - [`parent_commit_id(Option<String>)`](crate::input::PutFileInput::parent_commit_id): <p>The full commit ID of the head commit in the branch where you want to add or update the file. If this is an empty repository, no commit ID is required. If this is not an empty repository, a commit ID is required. </p>  <p>The commit ID must match the ID of the head commit at the time of the operation. Otherwise, an error occurs, and the file is not added or updated.</p>
+    ///   - [`commit_message(Option<String>)`](crate::input::PutFileInput::commit_message): <p>A message about why this file was added or updated. Although it is optional, a message makes the commit history for your repository more useful.</p>
+    ///   - [`name(Option<String>)`](crate::input::PutFileInput::name): <p>The name of the person adding or updating the file. Although it is optional, a name makes the commit history for your repository more useful.</p>
+    ///   - [`email(Option<String>)`](crate::input::PutFileInput::email): <p>An email address for the person adding or updating the file.</p>
+    /// - On success, responds with [`PutFileOutput`](crate::output::PutFileOutput) with field(s):
+    ///   - [`commit_id(Option<String>)`](crate::output::PutFileOutput::commit_id): <p>The full SHA ID of the commit that contains this file change.</p>
+    ///   - [`blob_id(Option<String>)`](crate::output::PutFileOutput::blob_id): <p>The ID of the blob, which is its SHA-1 pointer.</p>
+    ///   - [`tree_id(Option<String>)`](crate::output::PutFileOutput::tree_id): <p>The full SHA-1 pointer of the tree information for the commit that contains this file change.</p>
+    /// - On failure, responds with [`SdkError<PutFileError>`](crate::error::PutFileError)
     pub fn put_file(&self) -> fluent_builders::PutFile<C, M, R> {
         fluent_builders::PutFile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutRepositoryTriggers` operation.
+    /// Constructs a fluent builder for the [`PutRepositoryTriggers`](crate::client::fluent_builders::PutRepositoryTriggers) operation.
     ///
-    /// See [`PutRepositoryTriggers`](crate::client::fluent_builders::PutRepositoryTriggers) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutRepositoryTriggersInput`](crate::input::PutRepositoryTriggersInput) with field(s):
+    ///   - [`repository_name(Option<String>)`](crate::input::PutRepositoryTriggersInput::repository_name): <p>The name of the repository where you want to create or update the trigger.</p>
+    ///   - [`triggers(Option<Vec<RepositoryTrigger>>)`](crate::input::PutRepositoryTriggersInput::triggers): <p>The JSON block of configuration information for each trigger.</p>
+    /// - On success, responds with [`PutRepositoryTriggersOutput`](crate::output::PutRepositoryTriggersOutput) with field(s):
+    ///   - [`configuration_id(Option<String>)`](crate::output::PutRepositoryTriggersOutput::configuration_id): <p>The system-generated unique ID for the create or update operation.</p>
+    /// - On failure, responds with [`SdkError<PutRepositoryTriggersError>`](crate::error::PutRepositoryTriggersError)
     pub fn put_repository_triggers(&self) -> fluent_builders::PutRepositoryTriggers<C, M, R> {
         fluent_builders::PutRepositoryTriggers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource to which you want to add or update tags.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>The key-value pair to use when tagging this repository.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TestRepositoryTriggers` operation.
+    /// Constructs a fluent builder for the [`TestRepositoryTriggers`](crate::client::fluent_builders::TestRepositoryTriggers) operation.
     ///
-    /// See [`TestRepositoryTriggers`](crate::client::fluent_builders::TestRepositoryTriggers) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TestRepositoryTriggersInput`](crate::input::TestRepositoryTriggersInput) with field(s):
+    ///   - [`repository_name(Option<String>)`](crate::input::TestRepositoryTriggersInput::repository_name): <p>The name of the repository in which to test the triggers.</p>
+    ///   - [`triggers(Option<Vec<RepositoryTrigger>>)`](crate::input::TestRepositoryTriggersInput::triggers): <p>The list of triggers to test.</p>
+    /// - On success, responds with [`TestRepositoryTriggersOutput`](crate::output::TestRepositoryTriggersOutput) with field(s):
+    ///   - [`successful_executions(Option<Vec<String>>)`](crate::output::TestRepositoryTriggersOutput::successful_executions): <p>The list of triggers that were successfully tested. This list provides the names of the triggers that were successfully tested, separated by commas.</p>
+    ///   - [`failed_executions(Option<Vec<RepositoryTriggerExecutionFailure>>)`](crate::output::TestRepositoryTriggersOutput::failed_executions): <p>The list of triggers that were not tested. This list provides the names of the triggers that could not be tested, separated by commas.</p>
+    /// - On failure, responds with [`SdkError<TestRepositoryTriggersError>`](crate::error::TestRepositoryTriggersError)
     pub fn test_repository_triggers(&self) -> fluent_builders::TestRepositoryTriggers<C, M, R> {
         fluent_builders::TestRepositoryTriggers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource to which you want to remove tags.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The tag key for each tag that you want to remove from the resource.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateApprovalRuleTemplateContent` operation.
+    /// Constructs a fluent builder for the [`UpdateApprovalRuleTemplateContent`](crate::client::fluent_builders::UpdateApprovalRuleTemplateContent) operation.
     ///
-    /// See [`UpdateApprovalRuleTemplateContent`](crate::client::fluent_builders::UpdateApprovalRuleTemplateContent) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateApprovalRuleTemplateContentInput`](crate::input::UpdateApprovalRuleTemplateContentInput) with field(s):
+    ///   - [`approval_rule_template_name(Option<String>)`](crate::input::UpdateApprovalRuleTemplateContentInput::approval_rule_template_name): <p>The name of the approval rule template where you want to update the content of the rule. </p>
+    ///   - [`new_rule_content(Option<String>)`](crate::input::UpdateApprovalRuleTemplateContentInput::new_rule_content): <p>The content that replaces the existing content of the rule. Content statements must be complete. You cannot provide only the changes.</p>
+    ///   - [`existing_rule_content_sha256(Option<String>)`](crate::input::UpdateApprovalRuleTemplateContentInput::existing_rule_content_sha256): <p>The SHA-256 hash signature for the content of the approval rule. You can retrieve this information by using <code>GetPullRequest</code>.</p>
+    /// - On success, responds with [`UpdateApprovalRuleTemplateContentOutput`](crate::output::UpdateApprovalRuleTemplateContentOutput) with field(s):
+    ///   - [`approval_rule_template(Option<ApprovalRuleTemplate>)`](crate::output::UpdateApprovalRuleTemplateContentOutput::approval_rule_template): <p>Returns information about an approval rule template.</p>
+    /// - On failure, responds with [`SdkError<UpdateApprovalRuleTemplateContentError>`](crate::error::UpdateApprovalRuleTemplateContentError)
     pub fn update_approval_rule_template_content(
         &self,
     ) -> fluent_builders::UpdateApprovalRuleTemplateContent<C, M, R> {
         fluent_builders::UpdateApprovalRuleTemplateContent::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateApprovalRuleTemplateDescription` operation.
+    /// Constructs a fluent builder for the [`UpdateApprovalRuleTemplateDescription`](crate::client::fluent_builders::UpdateApprovalRuleTemplateDescription) operation.
     ///
-    /// See [`UpdateApprovalRuleTemplateDescription`](crate::client::fluent_builders::UpdateApprovalRuleTemplateDescription) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateApprovalRuleTemplateDescriptionInput`](crate::input::UpdateApprovalRuleTemplateDescriptionInput) with field(s):
+    ///   - [`approval_rule_template_name(Option<String>)`](crate::input::UpdateApprovalRuleTemplateDescriptionInput::approval_rule_template_name): <p>The name of the template for which you want to update the description.</p>
+    ///   - [`approval_rule_template_description(Option<String>)`](crate::input::UpdateApprovalRuleTemplateDescriptionInput::approval_rule_template_description): <p>The updated description of the approval rule template.</p>
+    /// - On success, responds with [`UpdateApprovalRuleTemplateDescriptionOutput`](crate::output::UpdateApprovalRuleTemplateDescriptionOutput) with field(s):
+    ///   - [`approval_rule_template(Option<ApprovalRuleTemplate>)`](crate::output::UpdateApprovalRuleTemplateDescriptionOutput::approval_rule_template): <p>The structure and content of the updated approval rule template.</p>
+    /// - On failure, responds with [`SdkError<UpdateApprovalRuleTemplateDescriptionError>`](crate::error::UpdateApprovalRuleTemplateDescriptionError)
     pub fn update_approval_rule_template_description(
         &self,
     ) -> fluent_builders::UpdateApprovalRuleTemplateDescription<C, M, R> {
         fluent_builders::UpdateApprovalRuleTemplateDescription::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateApprovalRuleTemplateName` operation.
+    /// Constructs a fluent builder for the [`UpdateApprovalRuleTemplateName`](crate::client::fluent_builders::UpdateApprovalRuleTemplateName) operation.
     ///
-    /// See [`UpdateApprovalRuleTemplateName`](crate::client::fluent_builders::UpdateApprovalRuleTemplateName) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateApprovalRuleTemplateNameInput`](crate::input::UpdateApprovalRuleTemplateNameInput) with field(s):
+    ///   - [`old_approval_rule_template_name(Option<String>)`](crate::input::UpdateApprovalRuleTemplateNameInput::old_approval_rule_template_name): <p>The current name of the approval rule template.</p>
+    ///   - [`new_approval_rule_template_name(Option<String>)`](crate::input::UpdateApprovalRuleTemplateNameInput::new_approval_rule_template_name): <p>The new name you want to apply to the approval rule template.</p>
+    /// - On success, responds with [`UpdateApprovalRuleTemplateNameOutput`](crate::output::UpdateApprovalRuleTemplateNameOutput) with field(s):
+    ///   - [`approval_rule_template(Option<ApprovalRuleTemplate>)`](crate::output::UpdateApprovalRuleTemplateNameOutput::approval_rule_template): <p>The structure and content of the updated approval rule template.</p>
+    /// - On failure, responds with [`SdkError<UpdateApprovalRuleTemplateNameError>`](crate::error::UpdateApprovalRuleTemplateNameError)
     pub fn update_approval_rule_template_name(
         &self,
     ) -> fluent_builders::UpdateApprovalRuleTemplateName<C, M, R> {
         fluent_builders::UpdateApprovalRuleTemplateName::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateComment` operation.
+    /// Constructs a fluent builder for the [`UpdateComment`](crate::client::fluent_builders::UpdateComment) operation.
     ///
-    /// See [`UpdateComment`](crate::client::fluent_builders::UpdateComment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateCommentInput`](crate::input::UpdateCommentInput) with field(s):
+    ///   - [`comment_id(Option<String>)`](crate::input::UpdateCommentInput::comment_id): <p>The system-generated ID of the comment you want to update. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
+    ///   - [`content(Option<String>)`](crate::input::UpdateCommentInput::content): <p>The updated content to replace the existing content of the comment.</p>
+    /// - On success, responds with [`UpdateCommentOutput`](crate::output::UpdateCommentOutput) with field(s):
+    ///   - [`comment(Option<Comment>)`](crate::output::UpdateCommentOutput::comment): <p>Information about the updated comment.</p>
+    /// - On failure, responds with [`SdkError<UpdateCommentError>`](crate::error::UpdateCommentError)
     pub fn update_comment(&self) -> fluent_builders::UpdateComment<C, M, R> {
         fluent_builders::UpdateComment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDefaultBranch` operation.
+    /// Constructs a fluent builder for the [`UpdateDefaultBranch`](crate::client::fluent_builders::UpdateDefaultBranch) operation.
     ///
-    /// See [`UpdateDefaultBranch`](crate::client::fluent_builders::UpdateDefaultBranch) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateDefaultBranchInput`](crate::input::UpdateDefaultBranchInput) with field(s):
+    ///   - [`repository_name(Option<String>)`](crate::input::UpdateDefaultBranchInput::repository_name): <p>The name of the repository to set or change the default branch for.</p>
+    ///   - [`default_branch_name(Option<String>)`](crate::input::UpdateDefaultBranchInput::default_branch_name): <p>The name of the branch to set as the default.</p>
+    /// - On success, responds with [`UpdateDefaultBranchOutput`](crate::output::UpdateDefaultBranchOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateDefaultBranchError>`](crate::error::UpdateDefaultBranchError)
     pub fn update_default_branch(&self) -> fluent_builders::UpdateDefaultBranch<C, M, R> {
         fluent_builders::UpdateDefaultBranch::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdatePullRequestApprovalRuleContent` operation.
+    /// Constructs a fluent builder for the [`UpdatePullRequestApprovalRuleContent`](crate::client::fluent_builders::UpdatePullRequestApprovalRuleContent) operation.
     ///
-    /// See [`UpdatePullRequestApprovalRuleContent`](crate::client::fluent_builders::UpdatePullRequestApprovalRuleContent) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdatePullRequestApprovalRuleContentInput`](crate::input::UpdatePullRequestApprovalRuleContentInput) with field(s):
+    ///   - [`pull_request_id(Option<String>)`](crate::input::UpdatePullRequestApprovalRuleContentInput::pull_request_id): <p>The system-generated ID of the pull request.</p>
+    ///   - [`approval_rule_name(Option<String>)`](crate::input::UpdatePullRequestApprovalRuleContentInput::approval_rule_name): <p>The name of the approval rule you want to update.</p>
+    ///   - [`existing_rule_content_sha256(Option<String>)`](crate::input::UpdatePullRequestApprovalRuleContentInput::existing_rule_content_sha256): <p>The SHA-256 hash signature for the content of the approval rule. You can retrieve this information by using <code>GetPullRequest</code>.</p>
+    ///   - [`new_rule_content(Option<String>)`](crate::input::UpdatePullRequestApprovalRuleContentInput::new_rule_content): <p>The updated content for the approval rule.</p> <note>   <p>When you update the content of the approval rule, you can specify approvers in an approval pool in one of two ways:</p>   <ul>    <li> <p> <b>CodeCommitApprovers</b>: This option only requires an AWS account and a resource. It can be used for both IAM users and federated access users whose name matches the provided resource name. This is a very powerful option that offers a great deal of flexibility. For example, if you specify the AWS account <i>123456789012</i> and <i>Mary_Major</i>, all of the following are counted as approvals coming from that user:</p>     <ul>      <li> <p>An IAM user in the account (arn:aws:iam::<i>123456789012</i>:user/<i>Mary_Major</i>)</p> </li>      <li> <p>A federated user identified in IAM as Mary_Major (arn:aws:sts::<i>123456789012</i>:federated-user/<i>Mary_Major</i>)</p> </li>     </ul> <p>This option does not recognize an active session of someone assuming the role of CodeCommitReview with a role session name of <i>Mary_Major</i> (arn:aws:sts::<i>123456789012</i>:assumed-role/CodeCommitReview/<i>Mary_Major</i>) unless you include a wildcard (*Mary_Major).</p> </li>    <li> <p> <b>Fully qualified ARN</b>: This option allows you to specify the fully qualified Amazon Resource Name (ARN) of the IAM user or role. </p> </li>   </ul>   <p>For more information about IAM ARNs, wildcards, and formats, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>  </note>
+    /// - On success, responds with [`UpdatePullRequestApprovalRuleContentOutput`](crate::output::UpdatePullRequestApprovalRuleContentOutput) with field(s):
+    ///   - [`approval_rule(Option<ApprovalRule>)`](crate::output::UpdatePullRequestApprovalRuleContentOutput::approval_rule): <p>Information about the updated approval rule.</p>
+    /// - On failure, responds with [`SdkError<UpdatePullRequestApprovalRuleContentError>`](crate::error::UpdatePullRequestApprovalRuleContentError)
     pub fn update_pull_request_approval_rule_content(
         &self,
     ) -> fluent_builders::UpdatePullRequestApprovalRuleContent<C, M, R> {
         fluent_builders::UpdatePullRequestApprovalRuleContent::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdatePullRequestApprovalState` operation.
+    /// Constructs a fluent builder for the [`UpdatePullRequestApprovalState`](crate::client::fluent_builders::UpdatePullRequestApprovalState) operation.
     ///
-    /// See [`UpdatePullRequestApprovalState`](crate::client::fluent_builders::UpdatePullRequestApprovalState) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdatePullRequestApprovalStateInput`](crate::input::UpdatePullRequestApprovalStateInput) with field(s):
+    ///   - [`pull_request_id(Option<String>)`](crate::input::UpdatePullRequestApprovalStateInput::pull_request_id): <p>The system-generated ID of the pull request.</p>
+    ///   - [`revision_id(Option<String>)`](crate::input::UpdatePullRequestApprovalStateInput::revision_id): <p>The system-generated ID of the revision.</p>
+    ///   - [`approval_state(Option<ApprovalState>)`](crate::input::UpdatePullRequestApprovalStateInput::approval_state): <p>The approval state to associate with the user on the pull request.</p>
+    /// - On success, responds with [`UpdatePullRequestApprovalStateOutput`](crate::output::UpdatePullRequestApprovalStateOutput)
+
+    /// - On failure, responds with [`SdkError<UpdatePullRequestApprovalStateError>`](crate::error::UpdatePullRequestApprovalStateError)
     pub fn update_pull_request_approval_state(
         &self,
     ) -> fluent_builders::UpdatePullRequestApprovalState<C, M, R> {
         fluent_builders::UpdatePullRequestApprovalState::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdatePullRequestDescription` operation.
+    /// Constructs a fluent builder for the [`UpdatePullRequestDescription`](crate::client::fluent_builders::UpdatePullRequestDescription) operation.
     ///
-    /// See [`UpdatePullRequestDescription`](crate::client::fluent_builders::UpdatePullRequestDescription) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdatePullRequestDescriptionInput`](crate::input::UpdatePullRequestDescriptionInput) with field(s):
+    ///   - [`pull_request_id(Option<String>)`](crate::input::UpdatePullRequestDescriptionInput::pull_request_id): <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdatePullRequestDescriptionInput::description): <p>The updated content of the description for the pull request. This content replaces the existing description.</p>
+    /// - On success, responds with [`UpdatePullRequestDescriptionOutput`](crate::output::UpdatePullRequestDescriptionOutput) with field(s):
+    ///   - [`pull_request(Option<PullRequest>)`](crate::output::UpdatePullRequestDescriptionOutput::pull_request): <p>Information about the updated pull request.</p>
+    /// - On failure, responds with [`SdkError<UpdatePullRequestDescriptionError>`](crate::error::UpdatePullRequestDescriptionError)
     pub fn update_pull_request_description(
         &self,
     ) -> fluent_builders::UpdatePullRequestDescription<C, M, R> {
         fluent_builders::UpdatePullRequestDescription::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdatePullRequestStatus` operation.
+    /// Constructs a fluent builder for the [`UpdatePullRequestStatus`](crate::client::fluent_builders::UpdatePullRequestStatus) operation.
     ///
-    /// See [`UpdatePullRequestStatus`](crate::client::fluent_builders::UpdatePullRequestStatus) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdatePullRequestStatusInput`](crate::input::UpdatePullRequestStatusInput) with field(s):
+    ///   - [`pull_request_id(Option<String>)`](crate::input::UpdatePullRequestStatusInput::pull_request_id): <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    ///   - [`pull_request_status(Option<PullRequestStatusEnum>)`](crate::input::UpdatePullRequestStatusInput::pull_request_status): <p>The status of the pull request. The only valid operations are to update the status from <code>OPEN</code> to <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or from <code>CLOSED</code> to <code>CLOSED</code>.</p>
+    /// - On success, responds with [`UpdatePullRequestStatusOutput`](crate::output::UpdatePullRequestStatusOutput) with field(s):
+    ///   - [`pull_request(Option<PullRequest>)`](crate::output::UpdatePullRequestStatusOutput::pull_request): <p>Information about the pull request.</p>
+    /// - On failure, responds with [`SdkError<UpdatePullRequestStatusError>`](crate::error::UpdatePullRequestStatusError)
     pub fn update_pull_request_status(&self) -> fluent_builders::UpdatePullRequestStatus<C, M, R> {
         fluent_builders::UpdatePullRequestStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdatePullRequestTitle` operation.
+    /// Constructs a fluent builder for the [`UpdatePullRequestTitle`](crate::client::fluent_builders::UpdatePullRequestTitle) operation.
     ///
-    /// See [`UpdatePullRequestTitle`](crate::client::fluent_builders::UpdatePullRequestTitle) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdatePullRequestTitleInput`](crate::input::UpdatePullRequestTitleInput) with field(s):
+    ///   - [`pull_request_id(Option<String>)`](crate::input::UpdatePullRequestTitleInput::pull_request_id): <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
+    ///   - [`title(Option<String>)`](crate::input::UpdatePullRequestTitleInput::title): <p>The updated title of the pull request. This replaces the existing title.</p>
+    /// - On success, responds with [`UpdatePullRequestTitleOutput`](crate::output::UpdatePullRequestTitleOutput) with field(s):
+    ///   - [`pull_request(Option<PullRequest>)`](crate::output::UpdatePullRequestTitleOutput::pull_request): <p>Information about the updated pull request.</p>
+    /// - On failure, responds with [`SdkError<UpdatePullRequestTitleError>`](crate::error::UpdatePullRequestTitleError)
     pub fn update_pull_request_title(&self) -> fluent_builders::UpdatePullRequestTitle<C, M, R> {
         fluent_builders::UpdatePullRequestTitle::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateRepositoryDescription` operation.
+    /// Constructs a fluent builder for the [`UpdateRepositoryDescription`](crate::client::fluent_builders::UpdateRepositoryDescription) operation.
     ///
-    /// See [`UpdateRepositoryDescription`](crate::client::fluent_builders::UpdateRepositoryDescription) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateRepositoryDescriptionInput`](crate::input::UpdateRepositoryDescriptionInput) with field(s):
+    ///   - [`repository_name(Option<String>)`](crate::input::UpdateRepositoryDescriptionInput::repository_name): <p>The name of the repository to set or change the comment or description for.</p>
+    ///   - [`repository_description(Option<String>)`](crate::input::UpdateRepositoryDescriptionInput::repository_description): <p>The new comment or description for the specified repository. Repository descriptions are limited to 1,000 characters.</p>
+    /// - On success, responds with [`UpdateRepositoryDescriptionOutput`](crate::output::UpdateRepositoryDescriptionOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateRepositoryDescriptionError>`](crate::error::UpdateRepositoryDescriptionError)
     pub fn update_repository_description(
         &self,
     ) -> fluent_builders::UpdateRepositoryDescription<C, M, R> {
         fluent_builders::UpdateRepositoryDescription::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateRepositoryName` operation.
+    /// Constructs a fluent builder for the [`UpdateRepositoryName`](crate::client::fluent_builders::UpdateRepositoryName) operation.
     ///
-    /// See [`UpdateRepositoryName`](crate::client::fluent_builders::UpdateRepositoryName) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateRepositoryNameInput`](crate::input::UpdateRepositoryNameInput) with field(s):
+    ///   - [`old_name(Option<String>)`](crate::input::UpdateRepositoryNameInput::old_name): <p>The current name of the repository.</p>
+    ///   - [`new_name(Option<String>)`](crate::input::UpdateRepositoryNameInput::new_name): <p>The new name for the repository.</p>
+    /// - On success, responds with [`UpdateRepositoryNameOutput`](crate::output::UpdateRepositoryNameOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateRepositoryNameError>`](crate::error::UpdateRepositoryNameError)
     pub fn update_repository_name(&self) -> fluent_builders::UpdateRepositoryName<C, M, R> {
         fluent_builders::UpdateRepositoryName::new(self.handle.clone())
     }

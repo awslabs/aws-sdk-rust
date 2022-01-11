@@ -83,141 +83,237 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AssociateCreatedArtifact` operation.
+    /// Constructs a fluent builder for the [`AssociateCreatedArtifact`](crate::client::fluent_builders::AssociateCreatedArtifact) operation.
     ///
-    /// See [`AssociateCreatedArtifact`](crate::client::fluent_builders::AssociateCreatedArtifact) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateCreatedArtifactInput`](crate::input::AssociateCreatedArtifactInput) with field(s):
+    ///   - [`progress_update_stream(Option<String>)`](crate::input::AssociateCreatedArtifactInput::progress_update_stream): <p>The name of the ProgressUpdateStream. </p>
+    ///   - [`migration_task_name(Option<String>)`](crate::input::AssociateCreatedArtifactInput::migration_task_name): <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
+    ///   - [`created_artifact(Option<CreatedArtifact>)`](crate::input::AssociateCreatedArtifactInput::created_artifact): <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.) </p>
+    ///   - [`dry_run(bool)`](crate::input::AssociateCreatedArtifactInput::dry_run): <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+    /// - On success, responds with [`AssociateCreatedArtifactOutput`](crate::output::AssociateCreatedArtifactOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateCreatedArtifactError>`](crate::error::AssociateCreatedArtifactError)
     pub fn associate_created_artifact(&self) -> fluent_builders::AssociateCreatedArtifact<C, M, R> {
         fluent_builders::AssociateCreatedArtifact::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateDiscoveredResource` operation.
+    /// Constructs a fluent builder for the [`AssociateDiscoveredResource`](crate::client::fluent_builders::AssociateDiscoveredResource) operation.
     ///
-    /// See [`AssociateDiscoveredResource`](crate::client::fluent_builders::AssociateDiscoveredResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateDiscoveredResourceInput`](crate::input::AssociateDiscoveredResourceInput) with field(s):
+    ///   - [`progress_update_stream(Option<String>)`](crate::input::AssociateDiscoveredResourceInput::progress_update_stream): <p>The name of the ProgressUpdateStream.</p>
+    ///   - [`migration_task_name(Option<String>)`](crate::input::AssociateDiscoveredResourceInput::migration_task_name): <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
+    ///   - [`discovered_resource(Option<DiscoveredResource>)`](crate::input::AssociateDiscoveredResourceInput::discovered_resource): <p>Object representing a Resource.</p>
+    ///   - [`dry_run(bool)`](crate::input::AssociateDiscoveredResourceInput::dry_run): <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+    /// - On success, responds with [`AssociateDiscoveredResourceOutput`](crate::output::AssociateDiscoveredResourceOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateDiscoveredResourceError>`](crate::error::AssociateDiscoveredResourceError)
     pub fn associate_discovered_resource(
         &self,
     ) -> fluent_builders::AssociateDiscoveredResource<C, M, R> {
         fluent_builders::AssociateDiscoveredResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateProgressUpdateStream` operation.
+    /// Constructs a fluent builder for the [`CreateProgressUpdateStream`](crate::client::fluent_builders::CreateProgressUpdateStream) operation.
     ///
-    /// See [`CreateProgressUpdateStream`](crate::client::fluent_builders::CreateProgressUpdateStream) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateProgressUpdateStreamInput`](crate::input::CreateProgressUpdateStreamInput) with field(s):
+    ///   - [`progress_update_stream_name(Option<String>)`](crate::input::CreateProgressUpdateStreamInput::progress_update_stream_name): <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
+    ///   - [`dry_run(bool)`](crate::input::CreateProgressUpdateStreamInput::dry_run): <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+    /// - On success, responds with [`CreateProgressUpdateStreamOutput`](crate::output::CreateProgressUpdateStreamOutput)
+
+    /// - On failure, responds with [`SdkError<CreateProgressUpdateStreamError>`](crate::error::CreateProgressUpdateStreamError)
     pub fn create_progress_update_stream(
         &self,
     ) -> fluent_builders::CreateProgressUpdateStream<C, M, R> {
         fluent_builders::CreateProgressUpdateStream::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteProgressUpdateStream` operation.
+    /// Constructs a fluent builder for the [`DeleteProgressUpdateStream`](crate::client::fluent_builders::DeleteProgressUpdateStream) operation.
     ///
-    /// See [`DeleteProgressUpdateStream`](crate::client::fluent_builders::DeleteProgressUpdateStream) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteProgressUpdateStreamInput`](crate::input::DeleteProgressUpdateStreamInput) with field(s):
+    ///   - [`progress_update_stream_name(Option<String>)`](crate::input::DeleteProgressUpdateStreamInput::progress_update_stream_name): <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
+    ///   - [`dry_run(bool)`](crate::input::DeleteProgressUpdateStreamInput::dry_run): <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+    /// - On success, responds with [`DeleteProgressUpdateStreamOutput`](crate::output::DeleteProgressUpdateStreamOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteProgressUpdateStreamError>`](crate::error::DeleteProgressUpdateStreamError)
     pub fn delete_progress_update_stream(
         &self,
     ) -> fluent_builders::DeleteProgressUpdateStream<C, M, R> {
         fluent_builders::DeleteProgressUpdateStream::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeApplicationState` operation.
+    /// Constructs a fluent builder for the [`DescribeApplicationState`](crate::client::fluent_builders::DescribeApplicationState) operation.
     ///
-    /// See [`DescribeApplicationState`](crate::client::fluent_builders::DescribeApplicationState) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeApplicationStateInput`](crate::input::DescribeApplicationStateInput) with field(s):
+    ///   - [`application_id(Option<String>)`](crate::input::DescribeApplicationStateInput::application_id): <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
+    /// - On success, responds with [`DescribeApplicationStateOutput`](crate::output::DescribeApplicationStateOutput) with field(s):
+    ///   - [`application_status(Option<ApplicationStatus>)`](crate::output::DescribeApplicationStateOutput::application_status): <p>Status of the application - Not Started, In-Progress, Complete.</p>
+    ///   - [`last_updated_time(Option<DateTime>)`](crate::output::DescribeApplicationStateOutput::last_updated_time): <p>The timestamp when the application status was last updated.</p>
+    /// - On failure, responds with [`SdkError<DescribeApplicationStateError>`](crate::error::DescribeApplicationStateError)
     pub fn describe_application_state(&self) -> fluent_builders::DescribeApplicationState<C, M, R> {
         fluent_builders::DescribeApplicationState::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeMigrationTask` operation.
+    /// Constructs a fluent builder for the [`DescribeMigrationTask`](crate::client::fluent_builders::DescribeMigrationTask) operation.
     ///
-    /// See [`DescribeMigrationTask`](crate::client::fluent_builders::DescribeMigrationTask) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeMigrationTaskInput`](crate::input::DescribeMigrationTaskInput) with field(s):
+    ///   - [`progress_update_stream(Option<String>)`](crate::input::DescribeMigrationTaskInput::progress_update_stream): <p>The name of the ProgressUpdateStream. </p>
+    ///   - [`migration_task_name(Option<String>)`](crate::input::DescribeMigrationTaskInput::migration_task_name): <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
+    /// - On success, responds with [`DescribeMigrationTaskOutput`](crate::output::DescribeMigrationTaskOutput) with field(s):
+    ///   - [`migration_task(Option<MigrationTask>)`](crate::output::DescribeMigrationTaskOutput::migration_task): <p>Object encapsulating information about the migration task.</p>
+    /// - On failure, responds with [`SdkError<DescribeMigrationTaskError>`](crate::error::DescribeMigrationTaskError)
     pub fn describe_migration_task(&self) -> fluent_builders::DescribeMigrationTask<C, M, R> {
         fluent_builders::DescribeMigrationTask::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateCreatedArtifact` operation.
+    /// Constructs a fluent builder for the [`DisassociateCreatedArtifact`](crate::client::fluent_builders::DisassociateCreatedArtifact) operation.
     ///
-    /// See [`DisassociateCreatedArtifact`](crate::client::fluent_builders::DisassociateCreatedArtifact) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateCreatedArtifactInput`](crate::input::DisassociateCreatedArtifactInput) with field(s):
+    ///   - [`progress_update_stream(Option<String>)`](crate::input::DisassociateCreatedArtifactInput::progress_update_stream): <p>The name of the ProgressUpdateStream. </p>
+    ///   - [`migration_task_name(Option<String>)`](crate::input::DisassociateCreatedArtifactInput::migration_task_name): <p>Unique identifier that references the migration task to be disassociated with the artifact. <i>Do not store personal data in this field.</i> </p>
+    ///   - [`created_artifact_name(Option<String>)`](crate::input::DisassociateCreatedArtifactInput::created_artifact_name): <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS instance, etc.)</p>
+    ///   - [`dry_run(bool)`](crate::input::DisassociateCreatedArtifactInput::dry_run): <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+    /// - On success, responds with [`DisassociateCreatedArtifactOutput`](crate::output::DisassociateCreatedArtifactOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateCreatedArtifactError>`](crate::error::DisassociateCreatedArtifactError)
     pub fn disassociate_created_artifact(
         &self,
     ) -> fluent_builders::DisassociateCreatedArtifact<C, M, R> {
         fluent_builders::DisassociateCreatedArtifact::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateDiscoveredResource` operation.
+    /// Constructs a fluent builder for the [`DisassociateDiscoveredResource`](crate::client::fluent_builders::DisassociateDiscoveredResource) operation.
     ///
-    /// See [`DisassociateDiscoveredResource`](crate::client::fluent_builders::DisassociateDiscoveredResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateDiscoveredResourceInput`](crate::input::DisassociateDiscoveredResourceInput) with field(s):
+    ///   - [`progress_update_stream(Option<String>)`](crate::input::DisassociateDiscoveredResourceInput::progress_update_stream): <p>The name of the ProgressUpdateStream.</p>
+    ///   - [`migration_task_name(Option<String>)`](crate::input::DisassociateDiscoveredResourceInput::migration_task_name): <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
+    ///   - [`configuration_id(Option<String>)`](crate::input::DisassociateDiscoveredResourceInput::configuration_id): <p>ConfigurationId of the Application Discovery Service resource to be disassociated.</p>
+    ///   - [`dry_run(bool)`](crate::input::DisassociateDiscoveredResourceInput::dry_run): <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+    /// - On success, responds with [`DisassociateDiscoveredResourceOutput`](crate::output::DisassociateDiscoveredResourceOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateDiscoveredResourceError>`](crate::error::DisassociateDiscoveredResourceError)
     pub fn disassociate_discovered_resource(
         &self,
     ) -> fluent_builders::DisassociateDiscoveredResource<C, M, R> {
         fluent_builders::DisassociateDiscoveredResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ImportMigrationTask` operation.
+    /// Constructs a fluent builder for the [`ImportMigrationTask`](crate::client::fluent_builders::ImportMigrationTask) operation.
     ///
-    /// See [`ImportMigrationTask`](crate::client::fluent_builders::ImportMigrationTask) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ImportMigrationTaskInput`](crate::input::ImportMigrationTaskInput) with field(s):
+    ///   - [`progress_update_stream(Option<String>)`](crate::input::ImportMigrationTaskInput::progress_update_stream): <p>The name of the ProgressUpdateStream. &gt;</p>
+    ///   - [`migration_task_name(Option<String>)`](crate::input::ImportMigrationTaskInput::migration_task_name): <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
+    ///   - [`dry_run(bool)`](crate::input::ImportMigrationTaskInput::dry_run): <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+    /// - On success, responds with [`ImportMigrationTaskOutput`](crate::output::ImportMigrationTaskOutput)
+
+    /// - On failure, responds with [`SdkError<ImportMigrationTaskError>`](crate::error::ImportMigrationTaskError)
     pub fn import_migration_task(&self) -> fluent_builders::ImportMigrationTask<C, M, R> {
         fluent_builders::ImportMigrationTask::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListApplicationStates` operation.
-    ///
-    /// See [`ListApplicationStates`](crate::client::fluent_builders::ListApplicationStates) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListApplicationStates`](crate::client::fluent_builders::ListApplicationStates) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListApplicationStates::into_paginator).
+    ///
+    /// - Takes [`ListApplicationStatesInput`](crate::input::ListApplicationStatesInput) with field(s):
+    ///   - [`application_ids(Option<Vec<String>>)`](crate::input::ListApplicationStatesInput::application_ids): <p>The configurationIds from the Application Discovery Service that uniquely identifies your applications.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListApplicationStatesInput::next_token): <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListApplicationStatesInput::max_results): <p>Maximum number of results to be returned per page.</p>
+    /// - On success, responds with [`ListApplicationStatesOutput`](crate::output::ListApplicationStatesOutput) with field(s):
+    ///   - [`application_state_list(Option<Vec<ApplicationState>>)`](crate::output::ListApplicationStatesOutput::application_state_list): <p>A list of Applications that exist in Application Discovery Service.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListApplicationStatesOutput::next_token): <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
+    /// - On failure, responds with [`SdkError<ListApplicationStatesError>`](crate::error::ListApplicationStatesError)
     pub fn list_application_states(&self) -> fluent_builders::ListApplicationStates<C, M, R> {
         fluent_builders::ListApplicationStates::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListCreatedArtifacts` operation.
-    ///
-    /// See [`ListCreatedArtifacts`](crate::client::fluent_builders::ListCreatedArtifacts) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListCreatedArtifacts`](crate::client::fluent_builders::ListCreatedArtifacts) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCreatedArtifacts::into_paginator).
+    ///
+    /// - Takes [`ListCreatedArtifactsInput`](crate::input::ListCreatedArtifactsInput) with field(s):
+    ///   - [`progress_update_stream(Option<String>)`](crate::input::ListCreatedArtifactsInput::progress_update_stream): <p>The name of the ProgressUpdateStream. </p>
+    ///   - [`migration_task_name(Option<String>)`](crate::input::ListCreatedArtifactsInput::migration_task_name): <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListCreatedArtifactsInput::next_token): <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListCreatedArtifactsInput::max_results): <p>Maximum number of results to be returned per page.</p>
+    /// - On success, responds with [`ListCreatedArtifactsOutput`](crate::output::ListCreatedArtifactsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListCreatedArtifactsOutput::next_token): <p>If there are more created artifacts than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
+    ///   - [`created_artifact_list(Option<Vec<CreatedArtifact>>)`](crate::output::ListCreatedArtifactsOutput::created_artifact_list): <p>List of created artifacts up to the maximum number of results specified in the request.</p>
+    /// - On failure, responds with [`SdkError<ListCreatedArtifactsError>`](crate::error::ListCreatedArtifactsError)
     pub fn list_created_artifacts(&self) -> fluent_builders::ListCreatedArtifacts<C, M, R> {
         fluent_builders::ListCreatedArtifacts::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDiscoveredResources` operation.
-    ///
-    /// See [`ListDiscoveredResources`](crate::client::fluent_builders::ListDiscoveredResources) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListDiscoveredResources`](crate::client::fluent_builders::ListDiscoveredResources) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDiscoveredResources::into_paginator).
+    ///
+    /// - Takes [`ListDiscoveredResourcesInput`](crate::input::ListDiscoveredResourcesInput) with field(s):
+    ///   - [`progress_update_stream(Option<String>)`](crate::input::ListDiscoveredResourcesInput::progress_update_stream): <p>The name of the ProgressUpdateStream.</p>
+    ///   - [`migration_task_name(Option<String>)`](crate::input::ListDiscoveredResourcesInput::migration_task_name): <p>The name of the MigrationTask. <i>Do not store personal data in this field.</i> </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListDiscoveredResourcesInput::next_token): <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListDiscoveredResourcesInput::max_results): <p>The maximum number of results returned per page.</p>
+    /// - On success, responds with [`ListDiscoveredResourcesOutput`](crate::output::ListDiscoveredResourcesOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListDiscoveredResourcesOutput::next_token): <p>If there are more discovered resources than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
+    ///   - [`discovered_resource_list(Option<Vec<DiscoveredResource>>)`](crate::output::ListDiscoveredResourcesOutput::discovered_resource_list): <p>Returned list of discovered resources associated with the given MigrationTask.</p>
+    /// - On failure, responds with [`SdkError<ListDiscoveredResourcesError>`](crate::error::ListDiscoveredResourcesError)
     pub fn list_discovered_resources(&self) -> fluent_builders::ListDiscoveredResources<C, M, R> {
         fluent_builders::ListDiscoveredResources::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListMigrationTasks` operation.
-    ///
-    /// See [`ListMigrationTasks`](crate::client::fluent_builders::ListMigrationTasks) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListMigrationTasks`](crate::client::fluent_builders::ListMigrationTasks) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMigrationTasks::into_paginator).
+    ///
+    /// - Takes [`ListMigrationTasksInput`](crate::input::ListMigrationTasksInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListMigrationTasksInput::next_token): <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListMigrationTasksInput::max_results): <p>Value to specify how many results are returned per page.</p>
+    ///   - [`resource_name(Option<String>)`](crate::input::ListMigrationTasksInput::resource_name): <p>Filter migration tasks by discovered resource name.</p>
+    /// - On success, responds with [`ListMigrationTasksOutput`](crate::output::ListMigrationTasksOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListMigrationTasksOutput::next_token): <p>If there are more migration tasks than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
+    ///   - [`migration_task_summary_list(Option<Vec<MigrationTaskSummary>>)`](crate::output::ListMigrationTasksOutput::migration_task_summary_list): <p>Lists the migration task's summary which includes: <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and the <code>UpdateDateTime</code> for each task.</p>
+    /// - On failure, responds with [`SdkError<ListMigrationTasksError>`](crate::error::ListMigrationTasksError)
     pub fn list_migration_tasks(&self) -> fluent_builders::ListMigrationTasks<C, M, R> {
         fluent_builders::ListMigrationTasks::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListProgressUpdateStreams` operation.
-    ///
-    /// See [`ListProgressUpdateStreams`](crate::client::fluent_builders::ListProgressUpdateStreams) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListProgressUpdateStreams`](crate::client::fluent_builders::ListProgressUpdateStreams) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProgressUpdateStreams::into_paginator).
+    ///
+    /// - Takes [`ListProgressUpdateStreamsInput`](crate::input::ListProgressUpdateStreamsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListProgressUpdateStreamsInput::next_token): <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListProgressUpdateStreamsInput::max_results): <p>Filter to limit the maximum number of results to list per page.</p>
+    /// - On success, responds with [`ListProgressUpdateStreamsOutput`](crate::output::ListProgressUpdateStreamsOutput) with field(s):
+    ///   - [`progress_update_stream_summary_list(Option<Vec<ProgressUpdateStreamSummary>>)`](crate::output::ListProgressUpdateStreamsOutput::progress_update_stream_summary_list): <p>List of progress update streams up to the max number of results passed in the input.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListProgressUpdateStreamsOutput::next_token): <p>If there are more streams created than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
+    /// - On failure, responds with [`SdkError<ListProgressUpdateStreamsError>`](crate::error::ListProgressUpdateStreamsError)
     pub fn list_progress_update_streams(
         &self,
     ) -> fluent_builders::ListProgressUpdateStreams<C, M, R> {
         fluent_builders::ListProgressUpdateStreams::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `NotifyApplicationState` operation.
+    /// Constructs a fluent builder for the [`NotifyApplicationState`](crate::client::fluent_builders::NotifyApplicationState) operation.
     ///
-    /// See [`NotifyApplicationState`](crate::client::fluent_builders::NotifyApplicationState) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`NotifyApplicationStateInput`](crate::input::NotifyApplicationStateInput) with field(s):
+    ///   - [`application_id(Option<String>)`](crate::input::NotifyApplicationStateInput::application_id): <p>The configurationId in Application Discovery Service that uniquely identifies the grouped application.</p>
+    ///   - [`status(Option<ApplicationStatus>)`](crate::input::NotifyApplicationStateInput::status): <p>Status of the application - Not Started, In-Progress, Complete.</p>
+    ///   - [`update_date_time(Option<DateTime>)`](crate::input::NotifyApplicationStateInput::update_date_time): <p>The timestamp when the application state changed.</p>
+    ///   - [`dry_run(bool)`](crate::input::NotifyApplicationStateInput::dry_run): <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+    /// - On success, responds with [`NotifyApplicationStateOutput`](crate::output::NotifyApplicationStateOutput)
+
+    /// - On failure, responds with [`SdkError<NotifyApplicationStateError>`](crate::error::NotifyApplicationStateError)
     pub fn notify_application_state(&self) -> fluent_builders::NotifyApplicationState<C, M, R> {
         fluent_builders::NotifyApplicationState::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `NotifyMigrationTaskState` operation.
+    /// Constructs a fluent builder for the [`NotifyMigrationTaskState`](crate::client::fluent_builders::NotifyMigrationTaskState) operation.
     ///
-    /// See [`NotifyMigrationTaskState`](crate::client::fluent_builders::NotifyMigrationTaskState) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`NotifyMigrationTaskStateInput`](crate::input::NotifyMigrationTaskStateInput) with field(s):
+    ///   - [`progress_update_stream(Option<String>)`](crate::input::NotifyMigrationTaskStateInput::progress_update_stream): <p>The name of the ProgressUpdateStream. </p>
+    ///   - [`migration_task_name(Option<String>)`](crate::input::NotifyMigrationTaskStateInput::migration_task_name): <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
+    ///   - [`task(Option<Task>)`](crate::input::NotifyMigrationTaskStateInput::task): <p>Information about the task's progress and status.</p>
+    ///   - [`update_date_time(Option<DateTime>)`](crate::input::NotifyMigrationTaskStateInput::update_date_time): <p>The timestamp when the task was gathered.</p>
+    ///   - [`next_update_seconds(i32)`](crate::input::NotifyMigrationTaskStateInput::next_update_seconds): <p>Number of seconds after the UpdateDateTime within which the Migration Hub can expect an update. If Migration Hub does not receive an update within the specified interval, then the migration task will be considered stale.</p>
+    ///   - [`dry_run(bool)`](crate::input::NotifyMigrationTaskStateInput::dry_run): <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+    /// - On success, responds with [`NotifyMigrationTaskStateOutput`](crate::output::NotifyMigrationTaskStateOutput)
+
+    /// - On failure, responds with [`SdkError<NotifyMigrationTaskStateError>`](crate::error::NotifyMigrationTaskStateError)
     pub fn notify_migration_task_state(
         &self,
     ) -> fluent_builders::NotifyMigrationTaskState<C, M, R> {
         fluent_builders::NotifyMigrationTaskState::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutResourceAttributes` operation.
+    /// Constructs a fluent builder for the [`PutResourceAttributes`](crate::client::fluent_builders::PutResourceAttributes) operation.
     ///
-    /// See [`PutResourceAttributes`](crate::client::fluent_builders::PutResourceAttributes) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutResourceAttributesInput`](crate::input::PutResourceAttributesInput) with field(s):
+    ///   - [`progress_update_stream(Option<String>)`](crate::input::PutResourceAttributesInput::progress_update_stream): <p>The name of the ProgressUpdateStream. </p>
+    ///   - [`migration_task_name(Option<String>)`](crate::input::PutResourceAttributesInput::migration_task_name): <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
+    ///   - [`resource_attribute_list(Option<Vec<ResourceAttribute>>)`](crate::input::PutResourceAttributesInput::resource_attribute_list): <p>Information about the resource that is being migrated. This data will be used to map the task to a resource in the Application Discovery Service repository.</p> <note>   <p>Takes the object array of <code>ResourceAttribute</code> where the <code>Type</code> field is reserved for the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN | VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID | MOTHERBOARD_SERIAL_NUMBER</code> where the identifying value can be a string up to 256 characters.</p>  </note> <important>   <ul>    <li> <p>If any "VM" related value is set for a <code>ResourceAttribute</code> object, it is required that <code>VM_MANAGER_ID</code>, as a minimum, is always set. If <code>VM_MANAGER_ID</code> is not set, then all "VM" fields will be discarded and "VM" fields will not be used for matching the migration task to a server in Application Discovery Service repository. See the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples">Example</a> section below for a use case of specifying "VM" related values.</p> </li>    <li> <p> If a server you are trying to match has multiple IP or MAC addresses, you should provide as many as you know in separate type/value pairs passed to the <code>ResourceAttributeList</code> parameter to maximize the chances of matching.</p> </li>   </ul>  </important>
+    ///   - [`dry_run(bool)`](crate::input::PutResourceAttributesInput::dry_run): <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
+    /// - On success, responds with [`PutResourceAttributesOutput`](crate::output::PutResourceAttributesOutput)
+
+    /// - On failure, responds with [`SdkError<PutResourceAttributesError>`](crate::error::PutResourceAttributesError)
     pub fn put_resource_attributes(&self) -> fluent_builders::PutResourceAttributes<C, M, R> {
         fluent_builders::PutResourceAttributes::new(self.handle.clone())
     }

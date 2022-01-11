@@ -83,1082 +83,2165 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AddTagsToResource` operation.
+    /// Constructs a fluent builder for the [`AddTagsToResource`](crate::client::fluent_builders::AddTagsToResource) operation.
     ///
-    /// See [`AddTagsToResource`](crate::client::fluent_builders::AddTagsToResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AddTagsToResourceInput`](crate::input::AddTagsToResourceInput) with field(s):
+    ///   - [`resource_type(Option<ResourceTypeForTagging>)`](crate::input::AddTagsToResourceInput::resource_type): <p>Specifies the type of resource you are tagging.</p> <note>   <p>The <code>ManagedInstance</code> type for this API operation is for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>  </note>
+    ///   - [`resource_id(Option<String>)`](crate::input::AddTagsToResourceInput::resource_id): <p>The resource ID you want to tag.</p>  <p>Use the ID of the resource. Here are some examples:</p>  <p> <code>MaintenanceWindow</code>: <code>mw-012345abcde</code> </p>  <p> <code>PatchBaseline</code>: <code>pb-012345abcde</code> </p>  <p> <code>OpsMetadata</code> object: <code>ResourceID</code> for tagging is created from the Amazon Resource Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from the strings that come after the word <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with an ARN of <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code> has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or <code>/aws/ssm/MyGroup/appmanager</code>.</p>  <p>For the <code>Document</code> and <code>Parameter</code> values, use the name of the resource.</p>  <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p> <note>   <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>  </note>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::AddTagsToResourceInput::tags): <p>One or more tags. The value parameter is required.</p> <important>   <p>Don't enter personally identifiable information in this field.</p>  </important>
+    /// - On success, responds with [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput)
+
+    /// - On failure, responds with [`SdkError<AddTagsToResourceError>`](crate::error::AddTagsToResourceError)
     pub fn add_tags_to_resource(&self) -> fluent_builders::AddTagsToResource<C, M, R> {
         fluent_builders::AddTagsToResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateOpsItemRelatedItem` operation.
+    /// Constructs a fluent builder for the [`AssociateOpsItemRelatedItem`](crate::client::fluent_builders::AssociateOpsItemRelatedItem) operation.
     ///
-    /// See [`AssociateOpsItemRelatedItem`](crate::client::fluent_builders::AssociateOpsItemRelatedItem) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateOpsItemRelatedItemInput`](crate::input::AssociateOpsItemRelatedItemInput) with field(s):
+    ///   - [`ops_item_id(Option<String>)`](crate::input::AssociateOpsItemRelatedItemInput::ops_item_id): <p>The ID of the OpsItem to which you want to associate a resource as a related item.</p>
+    ///   - [`association_type(Option<String>)`](crate::input::AssociateOpsItemRelatedItemInput::association_type): <p>The type of association that you want to create between an OpsItem and a resource. OpsCenter supports <code>IsParentOf</code> and <code>RelatesTo</code> association types.</p>
+    ///   - [`resource_type(Option<String>)`](crate::input::AssociateOpsItemRelatedItemInput::resource_type): <p>The type of resource that you want to associate with an OpsItem. OpsCenter supports the following types:</p>  <p> <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. </p>  <p> <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
+    ///   - [`resource_uri(Option<String>)`](crate::input::AssociateOpsItemRelatedItemInput::resource_uri): <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource that you want to associate with the OpsItem.</p>
+    /// - On success, responds with [`AssociateOpsItemRelatedItemOutput`](crate::output::AssociateOpsItemRelatedItemOutput) with field(s):
+    ///   - [`association_id(Option<String>)`](crate::output::AssociateOpsItemRelatedItemOutput::association_id): <p>The association ID.</p>
+    /// - On failure, responds with [`SdkError<AssociateOpsItemRelatedItemError>`](crate::error::AssociateOpsItemRelatedItemError)
     pub fn associate_ops_item_related_item(
         &self,
     ) -> fluent_builders::AssociateOpsItemRelatedItem<C, M, R> {
         fluent_builders::AssociateOpsItemRelatedItem::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CancelCommand` operation.
+    /// Constructs a fluent builder for the [`CancelCommand`](crate::client::fluent_builders::CancelCommand) operation.
     ///
-    /// See [`CancelCommand`](crate::client::fluent_builders::CancelCommand) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CancelCommandInput`](crate::input::CancelCommandInput) with field(s):
+    ///   - [`command_id(Option<String>)`](crate::input::CancelCommandInput::command_id): <p>The ID of the command you want to cancel.</p>
+    ///   - [`instance_ids(Option<Vec<String>>)`](crate::input::CancelCommandInput::instance_ids): <p>(Optional) A list of managed node IDs on which you want to cancel the command. If not provided, the command is canceled on every node on which it was requested.</p>
+    /// - On success, responds with [`CancelCommandOutput`](crate::output::CancelCommandOutput)
+
+    /// - On failure, responds with [`SdkError<CancelCommandError>`](crate::error::CancelCommandError)
     pub fn cancel_command(&self) -> fluent_builders::CancelCommand<C, M, R> {
         fluent_builders::CancelCommand::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CancelMaintenanceWindowExecution` operation.
+    /// Constructs a fluent builder for the [`CancelMaintenanceWindowExecution`](crate::client::fluent_builders::CancelMaintenanceWindowExecution) operation.
     ///
-    /// See [`CancelMaintenanceWindowExecution`](crate::client::fluent_builders::CancelMaintenanceWindowExecution) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CancelMaintenanceWindowExecutionInput`](crate::input::CancelMaintenanceWindowExecutionInput) with field(s):
+    ///   - [`window_execution_id(Option<String>)`](crate::input::CancelMaintenanceWindowExecutionInput::window_execution_id): <p>The ID of the maintenance window execution to stop.</p>
+    /// - On success, responds with [`CancelMaintenanceWindowExecutionOutput`](crate::output::CancelMaintenanceWindowExecutionOutput) with field(s):
+    ///   - [`window_execution_id(Option<String>)`](crate::output::CancelMaintenanceWindowExecutionOutput::window_execution_id): <p>The ID of the maintenance window execution that has been stopped.</p>
+    /// - On failure, responds with [`SdkError<CancelMaintenanceWindowExecutionError>`](crate::error::CancelMaintenanceWindowExecutionError)
     pub fn cancel_maintenance_window_execution(
         &self,
     ) -> fluent_builders::CancelMaintenanceWindowExecution<C, M, R> {
         fluent_builders::CancelMaintenanceWindowExecution::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateActivation` operation.
+    /// Constructs a fluent builder for the [`CreateActivation`](crate::client::fluent_builders::CreateActivation) operation.
     ///
-    /// See [`CreateActivation`](crate::client::fluent_builders::CreateActivation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateActivationInput`](crate::input::CreateActivationInput) with field(s):
+    ///   - [`description(Option<String>)`](crate::input::CreateActivationInput::description): <p>A user-defined description of the resource that you want to register with Systems Manager. </p> <important>   <p>Don't enter personally identifiable information in this field.</p>  </important>
+    ///   - [`default_instance_name(Option<String>)`](crate::input::CreateActivationInput::default_instance_name): <p>The name of the registered, managed node as it will appear in the Amazon Web Services Systems Manager console or when you use the Amazon Web Services command line tools to list Systems Manager resources.</p> <important>   <p>Don't enter personally identifiable information in this field.</p>  </important>
+    ///   - [`iam_role(Option<String>)`](crate::input::CreateActivationInput::iam_role): <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    ///   - [`registration_limit(Option<i32>)`](crate::input::CreateActivationInput::registration_limit): <p>Specify the maximum number of managed nodes you want to register. The default value is <code>1</code>.</p>
+    ///   - [`expiration_date(Option<DateTime>)`](crate::input::CreateActivationInput::expiration_date): <p>The date by which this activation request should expire, in timestamp format, such as "2021-07-07T00:00:00". You can specify a date up to 30 days in advance. If you don't provide an expiration date, the activation code expires in 24 hours.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateActivationInput::tags): <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an activation to identify which servers or virtual machines (VMs) in your on-premises environment you intend to activate. In this case, you could specify the following key-value pairs:</p>  <ul>   <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>   <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>  </ul> <important>   <p>When you install SSM Agent on your on-premises servers and VMs, you specify an activation ID and code. When you specify the activation ID and code, tags assigned to the activation are automatically applied to the on-premises servers or VMs.</p>  </important>  <p>You can't add tags to or delete tags from an existing activation. You can tag your on-premises servers, edge devices, and VMs after they connect to Systems Manager for the first time and are assigned a managed node ID. This means they are listed in the Amazon Web Services Systems Manager console with an ID that is prefixed with "mi-". For information about how to add tags to your managed nodes, see <code>AddTagsToResource</code>. For information about how to remove tags from your managed nodes, see <code>RemoveTagsFromResource</code>.</p>
+    ///   - [`registration_metadata(Option<Vec<RegistrationMetadataItem>>)`](crate::input::CreateActivationInput::registration_metadata): <p>Reserved for internal use.</p>
+    /// - On success, responds with [`CreateActivationOutput`](crate::output::CreateActivationOutput) with field(s):
+    ///   - [`activation_id(Option<String>)`](crate::output::CreateActivationOutput::activation_id): <p>The ID number generated by the system when it processed the activation. The activation ID functions like a user name.</p>
+    ///   - [`activation_code(Option<String>)`](crate::output::CreateActivationOutput::activation_code): <p>The code the system generates when it processes the activation. The activation code functions like a password to validate the activation ID. </p>
+    /// - On failure, responds with [`SdkError<CreateActivationError>`](crate::error::CreateActivationError)
     pub fn create_activation(&self) -> fluent_builders::CreateActivation<C, M, R> {
         fluent_builders::CreateActivation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateAssociation` operation.
+    /// Constructs a fluent builder for the [`CreateAssociation`](crate::client::fluent_builders::CreateAssociation) operation.
     ///
-    /// See [`CreateAssociation`](crate::client::fluent_builders::CreateAssociation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateAssociationInput`](crate::input::CreateAssociationInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateAssociationInput::name): <p>The name of the SSM Command document or Automation runbook that contains the configuration information for the managed node.</p>  <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared with you from another account.</p>  <p>For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services accounts, you must specify the complete SSM document ARN, in the following format:</p>  <p> <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code> </p>  <p>For example:</p>  <p> <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>  <p>For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</p>
+    ///   - [`document_version(Option<String>)`](crate::input::CreateAssociationInput::document_version): <p>The document version you want to associate with the target(s). Can be a specific version or the default version.</p>
+    ///   - [`instance_id(Option<String>)`](crate::input::CreateAssociationInput::instance_id): <p>The managed node ID.</p> <note>   <p> <code>InstanceId</code> has been deprecated. To specify a managed node ID for an association, use the <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version 2.0 or later will fail. In addition, if you use the parameter <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code> parameter.</p>  </note>
+    ///   - [`parameters(Option<HashMap<String, Vec<String>>>)`](crate::input::CreateAssociationInput::parameters): <p>The parameters for the runtime configuration of the document.</p>
+    ///   - [`targets(Option<Vec<Target>>)`](crate::input::CreateAssociationInput::targets): <p>The targets for the association. You can target managed nodes by using tags, Amazon Web Services resource groups, all managed nodes in an Amazon Web Services account, or individual managed node IDs. You can target all managed nodes in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of <code>*</code>. For more information about choosing targets for an association, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using targets and rate controls with State Manager associations</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    ///   - [`schedule_expression(Option<String>)`](crate::input::CreateAssociationInput::schedule_expression): <p>A cron expression when the association will be applied to the target(s).</p>
+    ///   - [`output_location(Option<InstanceAssociationOutputLocation>)`](crate::input::CreateAssociationInput::output_location): <p>An Amazon Simple Storage Service (Amazon S3) bucket where you want to store the output details of the request.</p>
+    ///   - [`association_name(Option<String>)`](crate::input::CreateAssociationInput::association_name): <p>Specify a descriptive name for the association.</p>
+    ///   - [`automation_target_parameter_name(Option<String>)`](crate::input::CreateAssociationInput::automation_target_parameter_name): <p>Choose the parameter that will define how your automation will branch out. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
+    ///   - [`max_errors(Option<String>)`](crate::input::CreateAssociationInput::max_errors): <p>The number of errors that are allowed before the system stops sending requests to run the association on additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth error is received. If you specify 0, then the system stops sending requests after the first error is returned. If you run an association on 50 managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request when the sixth error is received.</p>  <p>Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to complete, but some of these executions may fail as well. If you need to ensure that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at a time.</p>
+    ///   - [`max_concurrency(Option<String>)`](crate::input::CreateAssociationInput::max_concurrency): <p>The maximum number of targets allowed to run the association at the same time. You can specify a number, for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means all targets run the association at the same time.</p>  <p>If a new managed node starts and attempts to run an association while Systems Manager is running <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association interval, the new managed node will process its association within the limit specified for <code>MaxConcurrency</code>.</p>
+    ///   - [`compliance_severity(Option<AssociationComplianceSeverity>)`](crate::input::CreateAssociationInput::compliance_severity): <p>The severity level to assign to the association.</p>
+    ///   - [`sync_compliance(Option<AssociationSyncCompliance>)`](crate::input::CreateAssociationInput::sync_compliance): <p>The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system uses the status of the association execution to determine the compliance status. If the association execution runs successfully, then the association is <code>COMPLIANT</code>. If the association execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>.</p>  <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the <code>PutComplianceItems</code> API operation. In this case, compliance data isn't managed by State Manager. It is managed by your direct call to the <code>PutComplianceItems</code> API operation.</p>  <p>By default, all associations use <code>AUTO</code> mode.</p>
+    ///   - [`apply_only_at_cron_interval(bool)`](crate::input::CreateAssociationInput::apply_only_at_cron_interval): <p>By default, when you create a new association, the system runs it immediately after it is created and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you create it. This parameter isn't supported for rate expressions.</p>
+    ///   - [`calendar_names(Option<Vec<String>>)`](crate::input::CreateAssociationInput::calendar_names): <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your associations under. The associations only run when that change calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
+    ///   - [`target_locations(Option<Vec<TargetLocation>>)`](crate::input::CreateAssociationInput::target_locations): <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to create an association in multiple Regions and multiple accounts.</p>
+    /// - On success, responds with [`CreateAssociationOutput`](crate::output::CreateAssociationOutput) with field(s):
+    ///   - [`association_description(Option<AssociationDescription>)`](crate::output::CreateAssociationOutput::association_description): <p>Information about the association.</p>
+    /// - On failure, responds with [`SdkError<CreateAssociationError>`](crate::error::CreateAssociationError)
     pub fn create_association(&self) -> fluent_builders::CreateAssociation<C, M, R> {
         fluent_builders::CreateAssociation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateAssociationBatch` operation.
+    /// Constructs a fluent builder for the [`CreateAssociationBatch`](crate::client::fluent_builders::CreateAssociationBatch) operation.
     ///
-    /// See [`CreateAssociationBatch`](crate::client::fluent_builders::CreateAssociationBatch) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateAssociationBatchInput`](crate::input::CreateAssociationBatchInput) with field(s):
+    ///   - [`entries(Option<Vec<CreateAssociationBatchRequestEntry>>)`](crate::input::CreateAssociationBatchInput::entries): <p>One or more associations.</p>
+    /// - On success, responds with [`CreateAssociationBatchOutput`](crate::output::CreateAssociationBatchOutput) with field(s):
+    ///   - [`successful(Option<Vec<AssociationDescription>>)`](crate::output::CreateAssociationBatchOutput::successful): <p>Information about the associations that succeeded.</p>
+    ///   - [`failed(Option<Vec<FailedCreateAssociation>>)`](crate::output::CreateAssociationBatchOutput::failed): <p>Information about the associations that failed.</p>
+    /// - On failure, responds with [`SdkError<CreateAssociationBatchError>`](crate::error::CreateAssociationBatchError)
     pub fn create_association_batch(&self) -> fluent_builders::CreateAssociationBatch<C, M, R> {
         fluent_builders::CreateAssociationBatch::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDocument` operation.
+    /// Constructs a fluent builder for the [`CreateDocument`](crate::client::fluent_builders::CreateDocument) operation.
     ///
-    /// See [`CreateDocument`](crate::client::fluent_builders::CreateDocument) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateDocumentInput`](crate::input::CreateDocumentInput) with field(s):
+    ///   - [`content(Option<String>)`](crate::input::CreateDocumentInput::content): <p>The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command.</p>  <p>For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>  <ul>   <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a> </p> </li>   <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a> </p> </li>   <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a> </p> </li>  </ul>
+    ///   - [`requires(Option<Vec<DocumentRequires>>)`](crate::input::CreateDocumentInput::requires): <p>A list of SSM documents required by a document. This parameter is used exclusively by AppConfig. When a user creates an AppConfig configuration in an SSM document, the user must also specify a required document for validation purposes. In this case, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document for validation purposes. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html">What is AppConfig?</a> in the <i>AppConfig User Guide</i>.</p>
+    ///   - [`attachments(Option<Vec<AttachmentsSource>>)`](crate::input::CreateDocumentInput::attachments): <p>A list of key-value pairs that describe attachments to a version of a document.</p>
+    ///   - [`name(Option<String>)`](crate::input::CreateDocumentInput::name): <p>A name for the SSM document.</p> <important>   <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes:</p>   <ul>    <li> <p> <code>aws-</code> </p> </li>    <li> <p> <code>amazon</code> </p> </li>    <li> <p> <code>amzn</code> </p> </li>   </ul>  </important>
+    ///   - [`display_name(Option<String>)`](crate::input::CreateDocumentInput::display_name): <p>An optional field where you can specify a friendly name for the SSM document. This value can differ for each version of the document. You can update this value at a later time using the <code>UpdateDocument</code> operation.</p>
+    ///   - [`version_name(Option<String>)`](crate::input::CreateDocumentInput::version_name): <p>An optional field specifying the version of the artifact you are creating with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
+    ///   - [`document_type(Option<DocumentType>)`](crate::input::CreateDocumentInput::document_type): <p>The type of document to create.</p>
+    ///   - [`document_format(Option<DocumentFormat>)`](crate::input::CreateDocumentInput::document_format): <p>Specify the document format for the request. The document format can be JSON, YAML, or TEXT. JSON is the default format.</p>
+    ///   - [`target_type(Option<String>)`](crate::input::CreateDocumentInput::target_type): <p>Specify a target type to define the kinds of resources the document can run on. For example, to run a document on EC2 instances, specify the following value: <code>/AWS::EC2::Instance</code>. If you specify a value of '/' the document can run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateDocumentInput::tags): <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an SSM document to identify the types of targets or the environment where it will run. In this case, you could specify the following key-value pairs:</p>  <ul>   <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>   <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>  </ul> <note>   <p>To add tags to an existing SSM document, use the <code>AddTagsToResource</code> operation.</p>  </note>
+    /// - On success, responds with [`CreateDocumentOutput`](crate::output::CreateDocumentOutput) with field(s):
+    ///   - [`document_description(Option<DocumentDescription>)`](crate::output::CreateDocumentOutput::document_description): <p>Information about the SSM document.</p>
+    /// - On failure, responds with [`SdkError<CreateDocumentError>`](crate::error::CreateDocumentError)
     pub fn create_document(&self) -> fluent_builders::CreateDocument<C, M, R> {
         fluent_builders::CreateDocument::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateMaintenanceWindow` operation.
+    /// Constructs a fluent builder for the [`CreateMaintenanceWindow`](crate::client::fluent_builders::CreateMaintenanceWindow) operation.
     ///
-    /// See [`CreateMaintenanceWindow`](crate::client::fluent_builders::CreateMaintenanceWindow) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateMaintenanceWindowInput`](crate::input::CreateMaintenanceWindowInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateMaintenanceWindowInput::name): <p>The name of the maintenance window.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateMaintenanceWindowInput::description): <p>An optional description for the maintenance window. We recommend specifying a description to help you organize your maintenance windows. </p>
+    ///   - [`start_date(Option<String>)`](crate::input::CreateMaintenanceWindowInput::start_date): <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become active. <code>StartDate</code> allows you to delay activation of the maintenance window until the specified future date.</p>
+    ///   - [`end_date(Option<String>)`](crate::input::CreateMaintenanceWindowInput::end_date): <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become inactive. <code>EndDate</code> allows you to set a date and time in the future when the maintenance window will no longer run.</p>
+    ///   - [`schedule(Option<String>)`](crate::input::CreateMaintenanceWindowInput::schedule): <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
+    ///   - [`schedule_timezone(Option<String>)`](crate::input::CreateMaintenanceWindowInput::schedule_timezone): <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
+    ///   - [`schedule_offset(Option<i32>)`](crate::input::CreateMaintenanceWindowInput::schedule_offset): <p>The number of days to wait after the date and time specified by a cron expression before running the maintenance window.</p>  <p>For example, the following cron expression schedules a maintenance window to run on the third Tuesday of every month at 11:30 PM.</p>  <p> <code>cron(30 23 ? * TUE#3 *)</code> </p>  <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days later.</p>
+    ///   - [`duration(i32)`](crate::input::CreateMaintenanceWindowInput::duration): <p>The duration of the maintenance window in hours.</p>
+    ///   - [`cutoff(i32)`](crate::input::CreateMaintenanceWindowInput::cutoff): <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
+    ///   - [`allow_unassociated_targets(bool)`](crate::input::CreateMaintenanceWindowInput::allow_unassociated_targets): <p>Enables a maintenance window task to run on managed nodes, even if you haven't registered those nodes as targets. If enabled, then you must specify the unregistered managed nodes (by node ID) when you register a task with the maintenance window.</p>  <p>If you don't enable this option, then you must specify previously-registered targets when you register a task with the maintenance window.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateMaintenanceWindowInput::client_token): <p>User-provided idempotency token.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateMaintenanceWindowInput::tags): <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a maintenance window to identify the type of tasks it will run, the types of targets, and the environment it will run in. In this case, you could specify the following key-value pairs:</p>  <ul>   <li> <p> <code>Key=TaskType,Value=AgentUpdate</code> </p> </li>   <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>   <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>  </ul> <note>   <p>To add tags to an existing maintenance window, use the <code>AddTagsToResource</code> operation.</p>  </note>
+    /// - On success, responds with [`CreateMaintenanceWindowOutput`](crate::output::CreateMaintenanceWindowOutput) with field(s):
+    ///   - [`window_id(Option<String>)`](crate::output::CreateMaintenanceWindowOutput::window_id): <p>The ID of the created maintenance window.</p>
+    /// - On failure, responds with [`SdkError<CreateMaintenanceWindowError>`](crate::error::CreateMaintenanceWindowError)
     pub fn create_maintenance_window(&self) -> fluent_builders::CreateMaintenanceWindow<C, M, R> {
         fluent_builders::CreateMaintenanceWindow::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateOpsItem` operation.
+    /// Constructs a fluent builder for the [`CreateOpsItem`](crate::client::fluent_builders::CreateOpsItem) operation.
     ///
-    /// See [`CreateOpsItem`](crate::client::fluent_builders::CreateOpsItem) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateOpsItemInput`](crate::input::CreateOpsItemInput) with field(s):
+    ///   - [`description(Option<String>)`](crate::input::CreateOpsItemInput::description): <p>Information about the OpsItem. </p>
+    ///   - [`ops_item_type(Option<String>)`](crate::input::CreateOpsItemInput::ops_item_type): <p>The type of OpsItem to create. Currently, the only valid values are <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+    ///   - [`operational_data(Option<HashMap<String, OpsItemDataValue>>)`](crate::input::CreateOpsItemInput::operational_data): <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p> <important>   <p>Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p>  </important>  <p>You can choose to make the data searchable by other users in the account or you can restrict search access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the <code>DescribeOpsItems</code> API operation) can view and search on the specified data. Operational data that isn't searchable is only viewable by users who have access to the OpsItem (as provided by the <code>GetOpsItem</code> API operation).</p>  <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    ///   - [`notifications(Option<Vec<OpsItemNotification>>)`](crate::input::CreateOpsItemInput::notifications): <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this OpsItem is edited or changed.</p>
+    ///   - [`priority(Option<i32>)`](crate::input::CreateOpsItemInput::priority): <p>The importance of this OpsItem in relation to other OpsItems in the system.</p>
+    ///   - [`related_ops_items(Option<Vec<RelatedOpsItem>>)`](crate::input::CreateOpsItemInput::related_ops_items): <p>One or more OpsItems that share something in common with the current OpsItems. For example, related OpsItems can include OpsItems with similar error messages, impacted resources, or statuses for the impacted resource.</p>
+    ///   - [`source(Option<String>)`](crate::input::CreateOpsItemInput::source): <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>   <p>The source name can't contain the following strings: <code>aws</code>, <code>amazon</code>, and <code>amzn</code>. </p>  </note>
+    ///   - [`title(Option<String>)`](crate::input::CreateOpsItemInput::title): <p>A short heading that describes the nature of the OpsItem and the impacted resource.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateOpsItemInput::tags): <p>Optional metadata that you assign to a resource. You can restrict access to OpsItems by using an inline IAM policy that specifies tags. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>  <p>Tags use a key-value pair. For example:</p>  <p> <code>Key=Department,Value=Finance</code> </p> <important>   <p>To add tags to a new OpsItem, a user must have IAM permissions for both the <code>ssm:CreateOpsItems</code> operation and the <code>ssm:AddTagsToResource</code> operation. To add tags to an existing OpsItem, use the <code>AddTagsToResource</code> operation.</p>  </important>
+    ///   - [`category(Option<String>)`](crate::input::CreateOpsItemInput::category): <p>Specify a category to assign to an OpsItem. </p>
+    ///   - [`severity(Option<String>)`](crate::input::CreateOpsItemInput::severity): <p>Specify a severity to assign to an OpsItem.</p>
+    ///   - [`actual_start_time(Option<DateTime>)`](crate::input::CreateOpsItemInput::actual_start_time): <p>The time a runbook workflow started. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
+    ///   - [`actual_end_time(Option<DateTime>)`](crate::input::CreateOpsItemInput::actual_end_time): <p>The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
+    ///   - [`planned_start_time(Option<DateTime>)`](crate::input::CreateOpsItemInput::planned_start_time): <p>The time specified in a change request for a runbook workflow to start. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
+    ///   - [`planned_end_time(Option<DateTime>)`](crate::input::CreateOpsItemInput::planned_end_time): <p>The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
+    /// - On success, responds with [`CreateOpsItemOutput`](crate::output::CreateOpsItemOutput) with field(s):
+    ///   - [`ops_item_id(Option<String>)`](crate::output::CreateOpsItemOutput::ops_item_id): <p>The ID of the OpsItem.</p>
+    /// - On failure, responds with [`SdkError<CreateOpsItemError>`](crate::error::CreateOpsItemError)
     pub fn create_ops_item(&self) -> fluent_builders::CreateOpsItem<C, M, R> {
         fluent_builders::CreateOpsItem::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateOpsMetadata` operation.
+    /// Constructs a fluent builder for the [`CreateOpsMetadata`](crate::client::fluent_builders::CreateOpsMetadata) operation.
     ///
-    /// See [`CreateOpsMetadata`](crate::client::fluent_builders::CreateOpsMetadata) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateOpsMetadataInput`](crate::input::CreateOpsMetadataInput) with field(s):
+    ///   - [`resource_id(Option<String>)`](crate::input::CreateOpsMetadataInput::resource_id): <p>A resource ID for a new Application Manager application.</p>
+    ///   - [`metadata(Option<HashMap<String, MetadataValue>>)`](crate::input::CreateOpsMetadataInput::metadata): <p>Metadata for a new Application Manager application. </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateOpsMetadataInput::tags): <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for an OpsMetadata object. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an OpsMetadata object to identify an environment or target Amazon Web Services Region. In this case, you could specify the following key-value pairs:</p>  <ul>   <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>   <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li>  </ul>
+    /// - On success, responds with [`CreateOpsMetadataOutput`](crate::output::CreateOpsMetadataOutput) with field(s):
+    ///   - [`ops_metadata_arn(Option<String>)`](crate::output::CreateOpsMetadataOutput::ops_metadata_arn): <p>The Amazon Resource Name (ARN) of the OpsMetadata Object or blob created by the call.</p>
+    /// - On failure, responds with [`SdkError<CreateOpsMetadataError>`](crate::error::CreateOpsMetadataError)
     pub fn create_ops_metadata(&self) -> fluent_builders::CreateOpsMetadata<C, M, R> {
         fluent_builders::CreateOpsMetadata::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreatePatchBaseline` operation.
+    /// Constructs a fluent builder for the [`CreatePatchBaseline`](crate::client::fluent_builders::CreatePatchBaseline) operation.
     ///
-    /// See [`CreatePatchBaseline`](crate::client::fluent_builders::CreatePatchBaseline) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreatePatchBaselineInput`](crate::input::CreatePatchBaselineInput) with field(s):
+    ///   - [`operating_system(Option<OperatingSystem>)`](crate::input::CreatePatchBaselineInput::operating_system): <p>Defines the operating system the patch baseline applies to. The default value is <code>WINDOWS</code>.</p>
+    ///   - [`name(Option<String>)`](crate::input::CreatePatchBaselineInput::name): <p>The name of the patch baseline.</p>
+    ///   - [`global_filters(Option<PatchFilterGroup>)`](crate::input::CreatePatchBaselineInput::global_filters): <p>A set of global filters used to include patches in the baseline.</p>
+    ///   - [`approval_rules(Option<PatchRuleGroup>)`](crate::input::CreatePatchBaselineInput::approval_rules): <p>A set of rules used to include patches in the baseline.</p>
+    ///   - [`approved_patches(Option<Vec<String>>)`](crate::input::CreatePatchBaselineInput::approved_patches): <p>A list of explicitly approved patches for the baseline.</p>  <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    ///   - [`approved_patches_compliance_level(Option<PatchComplianceLevel>)`](crate::input::CreatePatchBaselineInput::approved_patches_compliance_level): <p>Defines the compliance level for approved patches. When an approved patch is reported as missing, this value describes the severity of the compliance violation. The default value is <code>UNSPECIFIED</code>.</p>
+    ///   - [`approved_patches_enable_non_security(Option<bool>)`](crate::input::CreatePatchBaselineInput::approved_patches_enable_non_security): <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
+    ///   - [`rejected_patches(Option<Vec<String>>)`](crate::input::CreatePatchBaselineInput::rejected_patches): <p>A list of explicitly rejected patches for the baseline.</p>  <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    ///   - [`rejected_patches_action(Option<PatchAction>)`](crate::input::CreatePatchBaselineInput::rejected_patches_action): <p>The action for Patch Manager to take on patches included in the <code>RejectedPackages</code> list.</p>  <ul>   <li> <p> <b> <code>ALLOW_AS_DEPENDENCY</code> </b>: A package in the <code>Rejected</code> patches list is installed only if it is a dependency of another package. It is considered compliant with the patch baseline, and its status is reported as <code>InstalledOther</code>. This is the default action if no option is specified.</p> </li>   <li> <p> <b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't installed under any circumstances. If a package was installed before it was added to the Rejected patches list, it is considered non-compliant with the patch baseline, and its status is reported as <code>InstalledRejected</code>.</p> </li>  </ul>
+    ///   - [`description(Option<String>)`](crate::input::CreatePatchBaselineInput::description): <p>A description of the patch baseline.</p>
+    ///   - [`sources(Option<Vec<PatchSource>>)`](crate::input::CreatePatchBaselineInput::sources): <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreatePatchBaselineInput::client_token): <p>User-provided idempotency token.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreatePatchBaselineInput::tags): <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a patch baseline to identify the severity level of patches it specifies and the operating system family it applies to. In this case, you could specify the following key-value pairs:</p>  <ul>   <li> <p> <code>Key=PatchSeverity,Value=Critical</code> </p> </li>   <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>  </ul> <note>   <p>To add tags to an existing patch baseline, use the <code>AddTagsToResource</code> operation.</p>  </note>
+    /// - On success, responds with [`CreatePatchBaselineOutput`](crate::output::CreatePatchBaselineOutput) with field(s):
+    ///   - [`baseline_id(Option<String>)`](crate::output::CreatePatchBaselineOutput::baseline_id): <p>The ID of the created patch baseline.</p>
+    /// - On failure, responds with [`SdkError<CreatePatchBaselineError>`](crate::error::CreatePatchBaselineError)
     pub fn create_patch_baseline(&self) -> fluent_builders::CreatePatchBaseline<C, M, R> {
         fluent_builders::CreatePatchBaseline::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateResourceDataSync` operation.
+    /// Constructs a fluent builder for the [`CreateResourceDataSync`](crate::client::fluent_builders::CreateResourceDataSync) operation.
     ///
-    /// See [`CreateResourceDataSync`](crate::client::fluent_builders::CreateResourceDataSync) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateResourceDataSyncInput`](crate::input::CreateResourceDataSyncInput) with field(s):
+    ///   - [`sync_name(Option<String>)`](crate::input::CreateResourceDataSyncInput::sync_name): <p>A name for the configuration.</p>
+    ///   - [`s3_destination(Option<ResourceDataSyncS3Destination>)`](crate::input::CreateResourceDataSyncInput::s3_destination): <p>Amazon S3 configuration details for the sync. This parameter is required if the <code>SyncType</code> value is SyncToDestination.</p>
+    ///   - [`sync_type(Option<String>)`](crate::input::CreateResourceDataSyncInput::sync_type): <p>Specify <code>SyncToDestination</code> to create a resource data sync that synchronizes data to an S3 bucket for Inventory. If you specify <code>SyncToDestination</code>, you must provide a value for <code>S3Destination</code>. Specify <code>SyncFromSource</code> to synchronize data from a single account and multiple Regions, or multiple Amazon Web Services accounts and Amazon Web Services Regions, as listed in Organizations for Explorer. If you specify <code>SyncFromSource</code>, you must provide a value for <code>SyncSource</code>. The default value is <code>SyncToDestination</code>.</p>
+    ///   - [`sync_source(Option<ResourceDataSyncSource>)`](crate::input::CreateResourceDataSyncInput::sync_source): <p>Specify information about the data sources to synchronize. This parameter is required if the <code>SyncType</code> value is SyncFromSource.</p>
+    /// - On success, responds with [`CreateResourceDataSyncOutput`](crate::output::CreateResourceDataSyncOutput)
+
+    /// - On failure, responds with [`SdkError<CreateResourceDataSyncError>`](crate::error::CreateResourceDataSyncError)
     pub fn create_resource_data_sync(&self) -> fluent_builders::CreateResourceDataSync<C, M, R> {
         fluent_builders::CreateResourceDataSync::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteActivation` operation.
+    /// Constructs a fluent builder for the [`DeleteActivation`](crate::client::fluent_builders::DeleteActivation) operation.
     ///
-    /// See [`DeleteActivation`](crate::client::fluent_builders::DeleteActivation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteActivationInput`](crate::input::DeleteActivationInput) with field(s):
+    ///   - [`activation_id(Option<String>)`](crate::input::DeleteActivationInput::activation_id): <p>The ID of the activation that you want to delete.</p>
+    /// - On success, responds with [`DeleteActivationOutput`](crate::output::DeleteActivationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteActivationError>`](crate::error::DeleteActivationError)
     pub fn delete_activation(&self) -> fluent_builders::DeleteActivation<C, M, R> {
         fluent_builders::DeleteActivation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAssociation` operation.
+    /// Constructs a fluent builder for the [`DeleteAssociation`](crate::client::fluent_builders::DeleteAssociation) operation.
     ///
-    /// See [`DeleteAssociation`](crate::client::fluent_builders::DeleteAssociation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteAssociationInput`](crate::input::DeleteAssociationInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteAssociationInput::name): <p>The name of the SSM document.</p>
+    ///   - [`instance_id(Option<String>)`](crate::input::DeleteAssociationInput::instance_id): <p>The managed node ID.</p> <note>   <p> <code>InstanceId</code> has been deprecated. To specify a managed node ID for an association, use the <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version 2.0 or later will fail. In addition, if you use the parameter <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code> parameter.</p>  </note>
+    ///   - [`association_id(Option<String>)`](crate::input::DeleteAssociationInput::association_id): <p>The association ID that you want to delete.</p>
+    /// - On success, responds with [`DeleteAssociationOutput`](crate::output::DeleteAssociationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAssociationError>`](crate::error::DeleteAssociationError)
     pub fn delete_association(&self) -> fluent_builders::DeleteAssociation<C, M, R> {
         fluent_builders::DeleteAssociation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDocument` operation.
+    /// Constructs a fluent builder for the [`DeleteDocument`](crate::client::fluent_builders::DeleteDocument) operation.
     ///
-    /// See [`DeleteDocument`](crate::client::fluent_builders::DeleteDocument) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteDocumentInput`](crate::input::DeleteDocumentInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteDocumentInput::name): <p>The name of the document.</p>
+    ///   - [`document_version(Option<String>)`](crate::input::DeleteDocumentInput::document_version): <p>The version of the document that you want to delete. If not provided, all versions of the document are deleted.</p>
+    ///   - [`version_name(Option<String>)`](crate::input::DeleteDocumentInput::version_name): <p>The version name of the document that you want to delete. If not provided, all versions of the document are deleted.</p>
+    ///   - [`force(bool)`](crate::input::DeleteDocumentInput::force): <p>Some SSM document types require that you specify a <code>Force</code> flag before you can delete the document. For example, you must specify a <code>Force</code> flag to delete a document of type <code>ApplicationConfigurationSchema</code>. You can restrict access to the <code>Force</code> flag in an Identity and Access Management (IAM) policy.</p>
+    /// - On success, responds with [`DeleteDocumentOutput`](crate::output::DeleteDocumentOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteDocumentError>`](crate::error::DeleteDocumentError)
     pub fn delete_document(&self) -> fluent_builders::DeleteDocument<C, M, R> {
         fluent_builders::DeleteDocument::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteInventory` operation.
+    /// Constructs a fluent builder for the [`DeleteInventory`](crate::client::fluent_builders::DeleteInventory) operation.
     ///
-    /// See [`DeleteInventory`](crate::client::fluent_builders::DeleteInventory) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteInventoryInput`](crate::input::DeleteInventoryInput) with field(s):
+    ///   - [`type_name(Option<String>)`](crate::input::DeleteInventoryInput::type_name): <p>The name of the custom inventory type for which you want to delete either all previously collected data or the inventory type itself. </p>
+    ///   - [`schema_delete_option(Option<InventorySchemaDeleteOption>)`](crate::input::DeleteInventoryInput::schema_delete_option): <p>Use the <code>SchemaDeleteOption</code> to delete a custom inventory type (schema). If you don't choose this option, the system only deletes existing inventory data associated with the custom inventory type. Choose one of the following options:</p>  <p>DisableSchema: If you choose this option, the system ignores all inventory data for the specified version, and any earlier versions. To enable this schema again, you must call the <code>PutInventory</code> operation for a version greater than the disabled version.</p>  <p>DeleteSchema: This option deletes the specified custom type from the Inventory service. You can recreate the schema later, if you want.</p>
+    ///   - [`dry_run(bool)`](crate::input::DeleteInventoryInput::dry_run): <p>Use this option to view a summary of the deletion request without deleting any data or the data type. This option is useful when you only want to understand what will be deleted. Once you validate that the data to be deleted is what you intend to delete, you can run the same command without specifying the <code>DryRun</code> option.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::DeleteInventoryInput::client_token): <p>User-provided idempotency token.</p>
+    /// - On success, responds with [`DeleteInventoryOutput`](crate::output::DeleteInventoryOutput) with field(s):
+    ///   - [`deletion_id(Option<String>)`](crate::output::DeleteInventoryOutput::deletion_id): <p>Every <code>DeleteInventory</code> operation is assigned a unique ID. This option returns a unique ID. You can use this ID to query the status of a delete operation. This option is useful for ensuring that a delete operation has completed before you begin other operations. </p>
+    ///   - [`type_name(Option<String>)`](crate::output::DeleteInventoryOutput::type_name): <p>The name of the inventory data type specified in the request.</p>
+    ///   - [`deletion_summary(Option<InventoryDeletionSummary>)`](crate::output::DeleteInventoryOutput::deletion_summary): <p>A summary of the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete-summary">Deleting custom inventory</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// - On failure, responds with [`SdkError<DeleteInventoryError>`](crate::error::DeleteInventoryError)
     pub fn delete_inventory(&self) -> fluent_builders::DeleteInventory<C, M, R> {
         fluent_builders::DeleteInventory::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteMaintenanceWindow` operation.
+    /// Constructs a fluent builder for the [`DeleteMaintenanceWindow`](crate::client::fluent_builders::DeleteMaintenanceWindow) operation.
     ///
-    /// See [`DeleteMaintenanceWindow`](crate::client::fluent_builders::DeleteMaintenanceWindow) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteMaintenanceWindowInput`](crate::input::DeleteMaintenanceWindowInput) with field(s):
+    ///   - [`window_id(Option<String>)`](crate::input::DeleteMaintenanceWindowInput::window_id): <p>The ID of the maintenance window to delete.</p>
+    /// - On success, responds with [`DeleteMaintenanceWindowOutput`](crate::output::DeleteMaintenanceWindowOutput) with field(s):
+    ///   - [`window_id(Option<String>)`](crate::output::DeleteMaintenanceWindowOutput::window_id): <p>The ID of the deleted maintenance window.</p>
+    /// - On failure, responds with [`SdkError<DeleteMaintenanceWindowError>`](crate::error::DeleteMaintenanceWindowError)
     pub fn delete_maintenance_window(&self) -> fluent_builders::DeleteMaintenanceWindow<C, M, R> {
         fluent_builders::DeleteMaintenanceWindow::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteOpsMetadata` operation.
+    /// Constructs a fluent builder for the [`DeleteOpsMetadata`](crate::client::fluent_builders::DeleteOpsMetadata) operation.
     ///
-    /// See [`DeleteOpsMetadata`](crate::client::fluent_builders::DeleteOpsMetadata) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteOpsMetadataInput`](crate::input::DeleteOpsMetadataInput) with field(s):
+    ///   - [`ops_metadata_arn(Option<String>)`](crate::input::DeleteOpsMetadataInput::ops_metadata_arn): <p>The Amazon Resource Name (ARN) of an OpsMetadata Object to delete.</p>
+    /// - On success, responds with [`DeleteOpsMetadataOutput`](crate::output::DeleteOpsMetadataOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteOpsMetadataError>`](crate::error::DeleteOpsMetadataError)
     pub fn delete_ops_metadata(&self) -> fluent_builders::DeleteOpsMetadata<C, M, R> {
         fluent_builders::DeleteOpsMetadata::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteParameter` operation.
+    /// Constructs a fluent builder for the [`DeleteParameter`](crate::client::fluent_builders::DeleteParameter) operation.
     ///
-    /// See [`DeleteParameter`](crate::client::fluent_builders::DeleteParameter) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteParameterInput`](crate::input::DeleteParameterInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteParameterInput::name): <p>The name of the parameter to delete.</p>
+    /// - On success, responds with [`DeleteParameterOutput`](crate::output::DeleteParameterOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteParameterError>`](crate::error::DeleteParameterError)
     pub fn delete_parameter(&self) -> fluent_builders::DeleteParameter<C, M, R> {
         fluent_builders::DeleteParameter::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteParameters` operation.
+    /// Constructs a fluent builder for the [`DeleteParameters`](crate::client::fluent_builders::DeleteParameters) operation.
     ///
-    /// See [`DeleteParameters`](crate::client::fluent_builders::DeleteParameters) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteParametersInput`](crate::input::DeleteParametersInput) with field(s):
+    ///   - [`names(Option<Vec<String>>)`](crate::input::DeleteParametersInput::names): <p>The names of the parameters to delete. After deleting a parameter, wait for at least 30 seconds to create a parameter with the same name.</p>
+    /// - On success, responds with [`DeleteParametersOutput`](crate::output::DeleteParametersOutput) with field(s):
+    ///   - [`deleted_parameters(Option<Vec<String>>)`](crate::output::DeleteParametersOutput::deleted_parameters): <p>The names of the deleted parameters.</p>
+    ///   - [`invalid_parameters(Option<Vec<String>>)`](crate::output::DeleteParametersOutput::invalid_parameters): <p>The names of parameters that weren't deleted because the parameters aren't valid.</p>
+    /// - On failure, responds with [`SdkError<DeleteParametersError>`](crate::error::DeleteParametersError)
     pub fn delete_parameters(&self) -> fluent_builders::DeleteParameters<C, M, R> {
         fluent_builders::DeleteParameters::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeletePatchBaseline` operation.
+    /// Constructs a fluent builder for the [`DeletePatchBaseline`](crate::client::fluent_builders::DeletePatchBaseline) operation.
     ///
-    /// See [`DeletePatchBaseline`](crate::client::fluent_builders::DeletePatchBaseline) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeletePatchBaselineInput`](crate::input::DeletePatchBaselineInput) with field(s):
+    ///   - [`baseline_id(Option<String>)`](crate::input::DeletePatchBaselineInput::baseline_id): <p>The ID of the patch baseline to delete.</p>
+    /// - On success, responds with [`DeletePatchBaselineOutput`](crate::output::DeletePatchBaselineOutput) with field(s):
+    ///   - [`baseline_id(Option<String>)`](crate::output::DeletePatchBaselineOutput::baseline_id): <p>The ID of the deleted patch baseline.</p>
+    /// - On failure, responds with [`SdkError<DeletePatchBaselineError>`](crate::error::DeletePatchBaselineError)
     pub fn delete_patch_baseline(&self) -> fluent_builders::DeletePatchBaseline<C, M, R> {
         fluent_builders::DeletePatchBaseline::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteResourceDataSync` operation.
+    /// Constructs a fluent builder for the [`DeleteResourceDataSync`](crate::client::fluent_builders::DeleteResourceDataSync) operation.
     ///
-    /// See [`DeleteResourceDataSync`](crate::client::fluent_builders::DeleteResourceDataSync) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteResourceDataSyncInput`](crate::input::DeleteResourceDataSyncInput) with field(s):
+    ///   - [`sync_name(Option<String>)`](crate::input::DeleteResourceDataSyncInput::sync_name): <p>The name of the configuration to delete.</p>
+    ///   - [`sync_type(Option<String>)`](crate::input::DeleteResourceDataSyncInput::sync_type): <p>Specify the type of resource data sync to delete.</p>
+    /// - On success, responds with [`DeleteResourceDataSyncOutput`](crate::output::DeleteResourceDataSyncOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteResourceDataSyncError>`](crate::error::DeleteResourceDataSyncError)
     pub fn delete_resource_data_sync(&self) -> fluent_builders::DeleteResourceDataSync<C, M, R> {
         fluent_builders::DeleteResourceDataSync::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeregisterManagedInstance` operation.
+    /// Constructs a fluent builder for the [`DeregisterManagedInstance`](crate::client::fluent_builders::DeregisterManagedInstance) operation.
     ///
-    /// See [`DeregisterManagedInstance`](crate::client::fluent_builders::DeregisterManagedInstance) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeregisterManagedInstanceInput`](crate::input::DeregisterManagedInstanceInput) with field(s):
+    ///   - [`instance_id(Option<String>)`](crate::input::DeregisterManagedInstanceInput::instance_id): <p>The ID assigned to the managed node when you registered it using the activation process. </p>
+    /// - On success, responds with [`DeregisterManagedInstanceOutput`](crate::output::DeregisterManagedInstanceOutput)
+
+    /// - On failure, responds with [`SdkError<DeregisterManagedInstanceError>`](crate::error::DeregisterManagedInstanceError)
     pub fn deregister_managed_instance(
         &self,
     ) -> fluent_builders::DeregisterManagedInstance<C, M, R> {
         fluent_builders::DeregisterManagedInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeregisterPatchBaselineForPatchGroup` operation.
+    /// Constructs a fluent builder for the [`DeregisterPatchBaselineForPatchGroup`](crate::client::fluent_builders::DeregisterPatchBaselineForPatchGroup) operation.
     ///
-    /// See [`DeregisterPatchBaselineForPatchGroup`](crate::client::fluent_builders::DeregisterPatchBaselineForPatchGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeregisterPatchBaselineForPatchGroupInput`](crate::input::DeregisterPatchBaselineForPatchGroupInput) with field(s):
+    ///   - [`baseline_id(Option<String>)`](crate::input::DeregisterPatchBaselineForPatchGroupInput::baseline_id): <p>The ID of the patch baseline to deregister the patch group from.</p>
+    ///   - [`patch_group(Option<String>)`](crate::input::DeregisterPatchBaselineForPatchGroupInput::patch_group): <p>The name of the patch group that should be deregistered from the patch baseline.</p>
+    /// - On success, responds with [`DeregisterPatchBaselineForPatchGroupOutput`](crate::output::DeregisterPatchBaselineForPatchGroupOutput) with field(s):
+    ///   - [`baseline_id(Option<String>)`](crate::output::DeregisterPatchBaselineForPatchGroupOutput::baseline_id): <p>The ID of the patch baseline the patch group was deregistered from.</p>
+    ///   - [`patch_group(Option<String>)`](crate::output::DeregisterPatchBaselineForPatchGroupOutput::patch_group): <p>The name of the patch group deregistered from the patch baseline.</p>
+    /// - On failure, responds with [`SdkError<DeregisterPatchBaselineForPatchGroupError>`](crate::error::DeregisterPatchBaselineForPatchGroupError)
     pub fn deregister_patch_baseline_for_patch_group(
         &self,
     ) -> fluent_builders::DeregisterPatchBaselineForPatchGroup<C, M, R> {
         fluent_builders::DeregisterPatchBaselineForPatchGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeregisterTargetFromMaintenanceWindow` operation.
+    /// Constructs a fluent builder for the [`DeregisterTargetFromMaintenanceWindow`](crate::client::fluent_builders::DeregisterTargetFromMaintenanceWindow) operation.
     ///
-    /// See [`DeregisterTargetFromMaintenanceWindow`](crate::client::fluent_builders::DeregisterTargetFromMaintenanceWindow) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeregisterTargetFromMaintenanceWindowInput`](crate::input::DeregisterTargetFromMaintenanceWindowInput) with field(s):
+    ///   - [`window_id(Option<String>)`](crate::input::DeregisterTargetFromMaintenanceWindowInput::window_id): <p>The ID of the maintenance window the target should be removed from.</p>
+    ///   - [`window_target_id(Option<String>)`](crate::input::DeregisterTargetFromMaintenanceWindowInput::window_target_id): <p>The ID of the target definition to remove.</p>
+    ///   - [`safe(Option<bool>)`](crate::input::DeregisterTargetFromMaintenanceWindowInput::safe): <p>The system checks if the target is being referenced by a task. If the target is being referenced, the system returns an error and doesn't deregister the target from the maintenance window.</p>
+    /// - On success, responds with [`DeregisterTargetFromMaintenanceWindowOutput`](crate::output::DeregisterTargetFromMaintenanceWindowOutput) with field(s):
+    ///   - [`window_id(Option<String>)`](crate::output::DeregisterTargetFromMaintenanceWindowOutput::window_id): <p>The ID of the maintenance window the target was removed from.</p>
+    ///   - [`window_target_id(Option<String>)`](crate::output::DeregisterTargetFromMaintenanceWindowOutput::window_target_id): <p>The ID of the removed target definition.</p>
+    /// - On failure, responds with [`SdkError<DeregisterTargetFromMaintenanceWindowError>`](crate::error::DeregisterTargetFromMaintenanceWindowError)
     pub fn deregister_target_from_maintenance_window(
         &self,
     ) -> fluent_builders::DeregisterTargetFromMaintenanceWindow<C, M, R> {
         fluent_builders::DeregisterTargetFromMaintenanceWindow::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeregisterTaskFromMaintenanceWindow` operation.
+    /// Constructs a fluent builder for the [`DeregisterTaskFromMaintenanceWindow`](crate::client::fluent_builders::DeregisterTaskFromMaintenanceWindow) operation.
     ///
-    /// See [`DeregisterTaskFromMaintenanceWindow`](crate::client::fluent_builders::DeregisterTaskFromMaintenanceWindow) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeregisterTaskFromMaintenanceWindowInput`](crate::input::DeregisterTaskFromMaintenanceWindowInput) with field(s):
+    ///   - [`window_id(Option<String>)`](crate::input::DeregisterTaskFromMaintenanceWindowInput::window_id): <p>The ID of the maintenance window the task should be removed from.</p>
+    ///   - [`window_task_id(Option<String>)`](crate::input::DeregisterTaskFromMaintenanceWindowInput::window_task_id): <p>The ID of the task to remove from the maintenance window.</p>
+    /// - On success, responds with [`DeregisterTaskFromMaintenanceWindowOutput`](crate::output::DeregisterTaskFromMaintenanceWindowOutput) with field(s):
+    ///   - [`window_id(Option<String>)`](crate::output::DeregisterTaskFromMaintenanceWindowOutput::window_id): <p>The ID of the maintenance window the task was removed from.</p>
+    ///   - [`window_task_id(Option<String>)`](crate::output::DeregisterTaskFromMaintenanceWindowOutput::window_task_id): <p>The ID of the task removed from the maintenance window.</p>
+    /// - On failure, responds with [`SdkError<DeregisterTaskFromMaintenanceWindowError>`](crate::error::DeregisterTaskFromMaintenanceWindowError)
     pub fn deregister_task_from_maintenance_window(
         &self,
     ) -> fluent_builders::DeregisterTaskFromMaintenanceWindow<C, M, R> {
         fluent_builders::DeregisterTaskFromMaintenanceWindow::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeActivations` operation.
-    ///
-    /// See [`DescribeActivations`](crate::client::fluent_builders::DescribeActivations) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeActivations`](crate::client::fluent_builders::DescribeActivations) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeActivations::into_paginator).
+    ///
+    /// - Takes [`DescribeActivationsInput`](crate::input::DescribeActivationsInput) with field(s):
+    ///   - [`filters(Option<Vec<DescribeActivationsFilter>>)`](crate::input::DescribeActivationsInput::filters): <p>A filter to view information about your activations.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeActivationsInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeActivationsInput::next_token): <p>A token to start the list. Use this token to get the next set of results. </p>
+    /// - On success, responds with [`DescribeActivationsOutput`](crate::output::DescribeActivationsOutput) with field(s):
+    ///   - [`activation_list(Option<Vec<Activation>>)`](crate::output::DescribeActivationsOutput::activation_list): <p>A list of activations for your Amazon Web Services account.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeActivationsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results. </p>
+    /// - On failure, responds with [`SdkError<DescribeActivationsError>`](crate::error::DescribeActivationsError)
     pub fn describe_activations(&self) -> fluent_builders::DescribeActivations<C, M, R> {
         fluent_builders::DescribeActivations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAssociation` operation.
+    /// Constructs a fluent builder for the [`DescribeAssociation`](crate::client::fluent_builders::DescribeAssociation) operation.
     ///
-    /// See [`DescribeAssociation`](crate::client::fluent_builders::DescribeAssociation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeAssociationInput`](crate::input::DescribeAssociationInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DescribeAssociationInput::name): <p>The name of the SSM document.</p>
+    ///   - [`instance_id(Option<String>)`](crate::input::DescribeAssociationInput::instance_id): <p>The managed node ID.</p>
+    ///   - [`association_id(Option<String>)`](crate::input::DescribeAssociationInput::association_id): <p>The association ID for which you want information.</p>
+    ///   - [`association_version(Option<String>)`](crate::input::DescribeAssociationInput::association_version): <p>Specify the association version to retrieve. To view the latest version, either specify <code>$LATEST</code> for this parameter, or omit this parameter. To view a list of all associations for a managed node, use <code>ListAssociations</code>. To get a list of versions for a specific association, use <code>ListAssociationVersions</code>. </p>
+    /// - On success, responds with [`DescribeAssociationOutput`](crate::output::DescribeAssociationOutput) with field(s):
+    ///   - [`association_description(Option<AssociationDescription>)`](crate::output::DescribeAssociationOutput::association_description): <p>Information about the association.</p>
+    /// - On failure, responds with [`SdkError<DescribeAssociationError>`](crate::error::DescribeAssociationError)
     pub fn describe_association(&self) -> fluent_builders::DescribeAssociation<C, M, R> {
         fluent_builders::DescribeAssociation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAssociationExecutions` operation.
-    ///
-    /// See [`DescribeAssociationExecutions`](crate::client::fluent_builders::DescribeAssociationExecutions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeAssociationExecutions`](crate::client::fluent_builders::DescribeAssociationExecutions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeAssociationExecutions::into_paginator).
+    ///
+    /// - Takes [`DescribeAssociationExecutionsInput`](crate::input::DescribeAssociationExecutionsInput) with field(s):
+    ///   - [`association_id(Option<String>)`](crate::input::DescribeAssociationExecutionsInput::association_id): <p>The association ID for which you want to view execution history details.</p>
+    ///   - [`filters(Option<Vec<AssociationExecutionFilter>>)`](crate::input::DescribeAssociationExecutionsInput::filters): <p>Filters for the request. You can specify the following filters and values.</p>  <p>ExecutionId (EQUAL)</p>  <p>Status (EQUAL)</p>  <p>CreatedTime (EQUAL, GREATER_THAN, LESS_THAN)</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeAssociationExecutionsInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeAssociationExecutionsInput::next_token): <p>A token to start the list. Use this token to get the next set of results. </p>
+    /// - On success, responds with [`DescribeAssociationExecutionsOutput`](crate::output::DescribeAssociationExecutionsOutput) with field(s):
+    ///   - [`association_executions(Option<Vec<AssociationExecution>>)`](crate::output::DescribeAssociationExecutionsOutput::association_executions): <p>A list of the executions for the specified association ID.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeAssociationExecutionsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    /// - On failure, responds with [`SdkError<DescribeAssociationExecutionsError>`](crate::error::DescribeAssociationExecutionsError)
     pub fn describe_association_executions(
         &self,
     ) -> fluent_builders::DescribeAssociationExecutions<C, M, R> {
         fluent_builders::DescribeAssociationExecutions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAssociationExecutionTargets` operation.
-    ///
-    /// See [`DescribeAssociationExecutionTargets`](crate::client::fluent_builders::DescribeAssociationExecutionTargets) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeAssociationExecutionTargets`](crate::client::fluent_builders::DescribeAssociationExecutionTargets) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeAssociationExecutionTargets::into_paginator).
+    ///
+    /// - Takes [`DescribeAssociationExecutionTargetsInput`](crate::input::DescribeAssociationExecutionTargetsInput) with field(s):
+    ///   - [`association_id(Option<String>)`](crate::input::DescribeAssociationExecutionTargetsInput::association_id): <p>The association ID that includes the execution for which you want to view details.</p>
+    ///   - [`execution_id(Option<String>)`](crate::input::DescribeAssociationExecutionTargetsInput::execution_id): <p>The execution ID for which you want to view details.</p>
+    ///   - [`filters(Option<Vec<AssociationExecutionTargetsFilter>>)`](crate::input::DescribeAssociationExecutionTargetsInput::filters): <p>Filters for the request. You can specify the following filters and values.</p>  <p>Status (EQUAL)</p>  <p>ResourceId (EQUAL)</p>  <p>ResourceType (EQUAL)</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeAssociationExecutionTargetsInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeAssociationExecutionTargetsInput::next_token): <p>A token to start the list. Use this token to get the next set of results. </p>
+    /// - On success, responds with [`DescribeAssociationExecutionTargetsOutput`](crate::output::DescribeAssociationExecutionTargetsOutput) with field(s):
+    ///   - [`association_execution_targets(Option<Vec<AssociationExecutionTarget>>)`](crate::output::DescribeAssociationExecutionTargetsOutput::association_execution_targets): <p>Information about the execution.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeAssociationExecutionTargetsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    /// - On failure, responds with [`SdkError<DescribeAssociationExecutionTargetsError>`](crate::error::DescribeAssociationExecutionTargetsError)
     pub fn describe_association_execution_targets(
         &self,
     ) -> fluent_builders::DescribeAssociationExecutionTargets<C, M, R> {
         fluent_builders::DescribeAssociationExecutionTargets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAutomationExecutions` operation.
-    ///
-    /// See [`DescribeAutomationExecutions`](crate::client::fluent_builders::DescribeAutomationExecutions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeAutomationExecutions`](crate::client::fluent_builders::DescribeAutomationExecutions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeAutomationExecutions::into_paginator).
+    ///
+    /// - Takes [`DescribeAutomationExecutionsInput`](crate::input::DescribeAutomationExecutionsInput) with field(s):
+    ///   - [`filters(Option<Vec<AutomationExecutionFilter>>)`](crate::input::DescribeAutomationExecutionsInput::filters): <p>Filters used to limit the scope of executions that are requested.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeAutomationExecutionsInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeAutomationExecutionsInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    /// - On success, responds with [`DescribeAutomationExecutionsOutput`](crate::output::DescribeAutomationExecutionsOutput) with field(s):
+    ///   - [`automation_execution_metadata_list(Option<Vec<AutomationExecutionMetadata>>)`](crate::output::DescribeAutomationExecutionsOutput::automation_execution_metadata_list): <p>The list of details about each automation execution which has occurred which matches the filter specification, if any.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeAutomationExecutionsOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    /// - On failure, responds with [`SdkError<DescribeAutomationExecutionsError>`](crate::error::DescribeAutomationExecutionsError)
     pub fn describe_automation_executions(
         &self,
     ) -> fluent_builders::DescribeAutomationExecutions<C, M, R> {
         fluent_builders::DescribeAutomationExecutions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAutomationStepExecutions` operation.
-    ///
-    /// See [`DescribeAutomationStepExecutions`](crate::client::fluent_builders::DescribeAutomationStepExecutions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeAutomationStepExecutions`](crate::client::fluent_builders::DescribeAutomationStepExecutions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeAutomationStepExecutions::into_paginator).
+    ///
+    /// - Takes [`DescribeAutomationStepExecutionsInput`](crate::input::DescribeAutomationStepExecutionsInput) with field(s):
+    ///   - [`automation_execution_id(Option<String>)`](crate::input::DescribeAutomationStepExecutionsInput::automation_execution_id): <p>The Automation execution ID for which you want step execution descriptions.</p>
+    ///   - [`filters(Option<Vec<StepExecutionFilter>>)`](crate::input::DescribeAutomationStepExecutionsInput::filters): <p>One or more filters to limit the number of step executions returned by the request.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeAutomationStepExecutionsInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeAutomationStepExecutionsInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`reverse_order(Option<bool>)`](crate::input::DescribeAutomationStepExecutionsInput::reverse_order): <p>Indicates whether to list step executions in reverse order by start time. The default value is 'false'.</p>
+    /// - On success, responds with [`DescribeAutomationStepExecutionsOutput`](crate::output::DescribeAutomationStepExecutionsOutput) with field(s):
+    ///   - [`step_executions(Option<Vec<StepExecution>>)`](crate::output::DescribeAutomationStepExecutionsOutput::step_executions): <p>A list of details about the current state of all steps that make up an execution.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeAutomationStepExecutionsOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    /// - On failure, responds with [`SdkError<DescribeAutomationStepExecutionsError>`](crate::error::DescribeAutomationStepExecutionsError)
     pub fn describe_automation_step_executions(
         &self,
     ) -> fluent_builders::DescribeAutomationStepExecutions<C, M, R> {
         fluent_builders::DescribeAutomationStepExecutions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAvailablePatches` operation.
-    ///
-    /// See [`DescribeAvailablePatches`](crate::client::fluent_builders::DescribeAvailablePatches) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeAvailablePatches`](crate::client::fluent_builders::DescribeAvailablePatches) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeAvailablePatches::into_paginator).
+    ///
+    /// - Takes [`DescribeAvailablePatchesInput`](crate::input::DescribeAvailablePatchesInput) with field(s):
+    ///   - [`filters(Option<Vec<PatchOrchestratorFilter>>)`](crate::input::DescribeAvailablePatchesInput::filters): <p>Each element in the array is a structure containing a key-value pair.</p>  <p> <b>Windows Server</b> </p>  <p>Supported keys for Windows Server managed node patches include the following:</p>  <ul>   <li> <p> <b> <code>PATCH_SET</code> </b> </p> <p>Sample values: <code>OS</code> | <code>APPLICATION</code> </p> </li>   <li> <p> <b> <code>PRODUCT</code> </b> </p> <p>Sample values: <code>WindowsServer2012</code> | <code>Office 2010</code> | <code>MicrosoftDefenderAntivirus</code> </p> </li>   <li> <p> <b> <code>PRODUCT_FAMILY</code> </b> </p> <p>Sample values: <code>Windows</code> | <code>Office</code> </p> </li>   <li> <p> <b> <code>MSRC_SEVERITY</code> </b> </p> <p>Sample values: <code>ServicePacks</code> | <code>Important</code> | <code>Moderate</code> </p> </li>   <li> <p> <b> <code>CLASSIFICATION</code> </b> </p> <p>Sample values: <code>ServicePacks</code> | <code>SecurityUpdates</code> | <code>DefinitionUpdates</code> </p> </li>   <li> <p> <b> <code>PATCH_ID</code> </b> </p> <p>Sample values: <code>KB123456</code> | <code>KB4516046</code> </p> </li>  </ul>  <p> <b>Linux</b> </p> <important>   <p>When specifying filters for Linux patches, you must specify a key-pair for <code>PRODUCT</code>. For example, using the Command Line Interface (CLI), the following command fails:</p>   <p> <code>aws ssm describe-available-patches --filters Key=CVE_ID,Values=CVE-2018-3615</code> </p>   <p>However, the following command succeeds:</p>   <p> <code>aws ssm describe-available-patches --filters Key=PRODUCT,Values=AmazonLinux2018.03 Key=CVE_ID,Values=CVE-2018-3615</code> </p>  </important>  <p>Supported keys for Linux managed node patches include the following:</p>  <ul>   <li> <p> <b> <code>PRODUCT</code> </b> </p> <p>Sample values: <code>AmazonLinux2018.03</code> | <code>AmazonLinux2.0</code> </p> </li>   <li> <p> <b> <code>NAME</code> </b> </p> <p>Sample values: <code>kernel-headers</code> | <code>samba-python</code> | <code>php</code> </p> </li>   <li> <p> <b> <code>SEVERITY</code> </b> </p> <p>Sample values: <code>Critical</code> | <code>Important</code> | <code>Medium</code> | <code>Low</code> </p> </li>   <li> <p> <b> <code>EPOCH</code> </b> </p> <p>Sample values: <code>0</code> | <code>1</code> </p> </li>   <li> <p> <b> <code>VERSION</code> </b> </p> <p>Sample values: <code>78.6.1</code> | <code>4.10.16</code> </p> </li>   <li> <p> <b> <code>RELEASE</code> </b> </p> <p>Sample values: <code>9.56.amzn1</code> | <code>1.amzn2</code> </p> </li>   <li> <p> <b> <code>ARCH</code> </b> </p> <p>Sample values: <code>i686</code> | <code>x86_64</code> </p> </li>   <li> <p> <b> <code>REPOSITORY</code> </b> </p> <p>Sample values: <code>Core</code> | <code>Updates</code> </p> </li>   <li> <p> <b> <code>ADVISORY_ID</code> </b> </p> <p>Sample values: <code>ALAS-2018-1058</code> | <code>ALAS2-2021-1594</code> </p> </li>   <li> <p> <b> <code>CVE_ID</code> </b> </p> <p>Sample values: <code>CVE-2018-3615</code> | <code>CVE-2020-1472</code> </p> </li>   <li> <p> <b> <code>BUGZILLA_ID</code> </b> </p> <p>Sample values: <code>1463241</code> </p> </li>  </ul>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeAvailablePatchesInput::max_results): <p>The maximum number of patches to return (per page).</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeAvailablePatchesInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    /// - On success, responds with [`DescribeAvailablePatchesOutput`](crate::output::DescribeAvailablePatchesOutput) with field(s):
+    ///   - [`patches(Option<Vec<Patch>>)`](crate::output::DescribeAvailablePatchesOutput::patches): <p>An array of patches. Each entry in the array is a patch structure.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeAvailablePatchesOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    /// - On failure, responds with [`SdkError<DescribeAvailablePatchesError>`](crate::error::DescribeAvailablePatchesError)
     pub fn describe_available_patches(&self) -> fluent_builders::DescribeAvailablePatches<C, M, R> {
         fluent_builders::DescribeAvailablePatches::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDocument` operation.
+    /// Constructs a fluent builder for the [`DescribeDocument`](crate::client::fluent_builders::DescribeDocument) operation.
     ///
-    /// See [`DescribeDocument`](crate::client::fluent_builders::DescribeDocument) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeDocumentInput`](crate::input::DescribeDocumentInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DescribeDocumentInput::name): <p>The name of the SSM document.</p>
+    ///   - [`document_version(Option<String>)`](crate::input::DescribeDocumentInput::document_version): <p>The document version for which you want information. Can be a specific version or the default version.</p>
+    ///   - [`version_name(Option<String>)`](crate::input::DescribeDocumentInput::version_name): <p>An optional field specifying the version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
+    /// - On success, responds with [`DescribeDocumentOutput`](crate::output::DescribeDocumentOutput) with field(s):
+    ///   - [`document(Option<DocumentDescription>)`](crate::output::DescribeDocumentOutput::document): <p>Information about the SSM document.</p>
+    /// - On failure, responds with [`SdkError<DescribeDocumentError>`](crate::error::DescribeDocumentError)
     pub fn describe_document(&self) -> fluent_builders::DescribeDocument<C, M, R> {
         fluent_builders::DescribeDocument::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDocumentPermission` operation.
+    /// Constructs a fluent builder for the [`DescribeDocumentPermission`](crate::client::fluent_builders::DescribeDocumentPermission) operation.
     ///
-    /// See [`DescribeDocumentPermission`](crate::client::fluent_builders::DescribeDocumentPermission) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeDocumentPermissionInput`](crate::input::DescribeDocumentPermissionInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DescribeDocumentPermissionInput::name): <p>The name of the document for which you are the owner.</p>
+    ///   - [`permission_type(Option<DocumentPermissionType>)`](crate::input::DescribeDocumentPermissionInput::permission_type): <p>The permission type for the document. The permission type can be <i>Share</i>.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeDocumentPermissionInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeDocumentPermissionInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    /// - On success, responds with [`DescribeDocumentPermissionOutput`](crate::output::DescribeDocumentPermissionOutput) with field(s):
+    ///   - [`account_ids(Option<Vec<String>>)`](crate::output::DescribeDocumentPermissionOutput::account_ids): <p>The account IDs that have permission to use this document. The ID can be either an Amazon Web Services account or <i>All</i>.</p>
+    ///   - [`account_sharing_info_list(Option<Vec<AccountSharingInfo>>)`](crate::output::DescribeDocumentPermissionOutput::account_sharing_info_list): <p>A list of Amazon Web Services accounts where the current document is shared and the version shared with each account.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeDocumentPermissionOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    /// - On failure, responds with [`SdkError<DescribeDocumentPermissionError>`](crate::error::DescribeDocumentPermissionError)
     pub fn describe_document_permission(
         &self,
     ) -> fluent_builders::DescribeDocumentPermission<C, M, R> {
         fluent_builders::DescribeDocumentPermission::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEffectiveInstanceAssociations` operation.
-    ///
-    /// See [`DescribeEffectiveInstanceAssociations`](crate::client::fluent_builders::DescribeEffectiveInstanceAssociations) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeEffectiveInstanceAssociations`](crate::client::fluent_builders::DescribeEffectiveInstanceAssociations) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeEffectiveInstanceAssociations::into_paginator).
+    ///
+    /// - Takes [`DescribeEffectiveInstanceAssociationsInput`](crate::input::DescribeEffectiveInstanceAssociationsInput) with field(s):
+    ///   - [`instance_id(Option<String>)`](crate::input::DescribeEffectiveInstanceAssociationsInput::instance_id): <p>The managed node ID for which you want to view all associations.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeEffectiveInstanceAssociationsInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeEffectiveInstanceAssociationsInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    /// - On success, responds with [`DescribeEffectiveInstanceAssociationsOutput`](crate::output::DescribeEffectiveInstanceAssociationsOutput) with field(s):
+    ///   - [`associations(Option<Vec<InstanceAssociation>>)`](crate::output::DescribeEffectiveInstanceAssociationsOutput::associations): <p>The associations for the requested managed node.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeEffectiveInstanceAssociationsOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    /// - On failure, responds with [`SdkError<DescribeEffectiveInstanceAssociationsError>`](crate::error::DescribeEffectiveInstanceAssociationsError)
     pub fn describe_effective_instance_associations(
         &self,
     ) -> fluent_builders::DescribeEffectiveInstanceAssociations<C, M, R> {
         fluent_builders::DescribeEffectiveInstanceAssociations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEffectivePatchesForPatchBaseline` operation.
-    ///
-    /// See [`DescribeEffectivePatchesForPatchBaseline`](crate::client::fluent_builders::DescribeEffectivePatchesForPatchBaseline) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeEffectivePatchesForPatchBaseline`](crate::client::fluent_builders::DescribeEffectivePatchesForPatchBaseline) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeEffectivePatchesForPatchBaseline::into_paginator).
+    ///
+    /// - Takes [`DescribeEffectivePatchesForPatchBaselineInput`](crate::input::DescribeEffectivePatchesForPatchBaselineInput) with field(s):
+    ///   - [`baseline_id(Option<String>)`](crate::input::DescribeEffectivePatchesForPatchBaselineInput::baseline_id): <p>The ID of the patch baseline to retrieve the effective patches for.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeEffectivePatchesForPatchBaselineInput::max_results): <p>The maximum number of patches to return (per page).</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeEffectivePatchesForPatchBaselineInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    /// - On success, responds with [`DescribeEffectivePatchesForPatchBaselineOutput`](crate::output::DescribeEffectivePatchesForPatchBaselineOutput) with field(s):
+    ///   - [`effective_patches(Option<Vec<EffectivePatch>>)`](crate::output::DescribeEffectivePatchesForPatchBaselineOutput::effective_patches): <p>An array of patches and patch status.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeEffectivePatchesForPatchBaselineOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    /// - On failure, responds with [`SdkError<DescribeEffectivePatchesForPatchBaselineError>`](crate::error::DescribeEffectivePatchesForPatchBaselineError)
     pub fn describe_effective_patches_for_patch_baseline(
         &self,
     ) -> fluent_builders::DescribeEffectivePatchesForPatchBaseline<C, M, R> {
         fluent_builders::DescribeEffectivePatchesForPatchBaseline::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeInstanceAssociationsStatus` operation.
-    ///
-    /// See [`DescribeInstanceAssociationsStatus`](crate::client::fluent_builders::DescribeInstanceAssociationsStatus) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeInstanceAssociationsStatus`](crate::client::fluent_builders::DescribeInstanceAssociationsStatus) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeInstanceAssociationsStatus::into_paginator).
+    ///
+    /// - Takes [`DescribeInstanceAssociationsStatusInput`](crate::input::DescribeInstanceAssociationsStatusInput) with field(s):
+    ///   - [`instance_id(Option<String>)`](crate::input::DescribeInstanceAssociationsStatusInput::instance_id): <p>The managed node IDs for which you want association status information.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeInstanceAssociationsStatusInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeInstanceAssociationsStatusInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    /// - On success, responds with [`DescribeInstanceAssociationsStatusOutput`](crate::output::DescribeInstanceAssociationsStatusOutput) with field(s):
+    ///   - [`instance_association_status_infos(Option<Vec<InstanceAssociationStatusInfo>>)`](crate::output::DescribeInstanceAssociationsStatusOutput::instance_association_status_infos): <p>Status information about the association.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeInstanceAssociationsStatusOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    /// - On failure, responds with [`SdkError<DescribeInstanceAssociationsStatusError>`](crate::error::DescribeInstanceAssociationsStatusError)
     pub fn describe_instance_associations_status(
         &self,
     ) -> fluent_builders::DescribeInstanceAssociationsStatus<C, M, R> {
         fluent_builders::DescribeInstanceAssociationsStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeInstanceInformation` operation.
-    ///
-    /// See [`DescribeInstanceInformation`](crate::client::fluent_builders::DescribeInstanceInformation) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeInstanceInformation`](crate::client::fluent_builders::DescribeInstanceInformation) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeInstanceInformation::into_paginator).
+    ///
+    /// - Takes [`DescribeInstanceInformationInput`](crate::input::DescribeInstanceInformationInput) with field(s):
+    ///   - [`instance_information_filter_list(Option<Vec<InstanceInformationFilter>>)`](crate::input::DescribeInstanceInformationInput::instance_information_filter_list): <p>This is a legacy method. We recommend that you don't use this method. Instead, use the <code>Filters</code> data type. <code>Filters</code> enables you to return node information by filtering based on tags applied to managed nodes.</p> <note>   <p>Attempting to use <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an exception error. </p>  </note>
+    ///   - [`filters(Option<Vec<InstanceInformationStringFilter>>)`](crate::input::DescribeInstanceInformationInput::filters): <p>One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags applied to EC2 instances. Use this <code>Filters</code> data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeInstanceInformationInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeInstanceInformationInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    /// - On success, responds with [`DescribeInstanceInformationOutput`](crate::output::DescribeInstanceInformationOutput) with field(s):
+    ///   - [`instance_information_list(Option<Vec<InstanceInformation>>)`](crate::output::DescribeInstanceInformationOutput::instance_information_list): <p>The managed node information list.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeInstanceInformationOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty. </p>
+    /// - On failure, responds with [`SdkError<DescribeInstanceInformationError>`](crate::error::DescribeInstanceInformationError)
     pub fn describe_instance_information(
         &self,
     ) -> fluent_builders::DescribeInstanceInformation<C, M, R> {
         fluent_builders::DescribeInstanceInformation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeInstancePatches` operation.
-    ///
-    /// See [`DescribeInstancePatches`](crate::client::fluent_builders::DescribeInstancePatches) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeInstancePatches`](crate::client::fluent_builders::DescribeInstancePatches) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeInstancePatches::into_paginator).
+    ///
+    /// - Takes [`DescribeInstancePatchesInput`](crate::input::DescribeInstancePatchesInput) with field(s):
+    ///   - [`instance_id(Option<String>)`](crate::input::DescribeInstancePatchesInput::instance_id): <p>The ID of the managed node whose patch state information should be retrieved.</p>
+    ///   - [`filters(Option<Vec<PatchOrchestratorFilter>>)`](crate::input::DescribeInstancePatchesInput::filters): <p>Each element in the array is a structure containing a key-value pair.</p>  <p>Supported keys for <code>DescribeInstancePatches</code>include the following:</p>  <ul>   <li> <p> <b> <code>Classification</code> </b> </p> <p>Sample values: <code>Security</code> | <code>SecurityUpdates</code> </p> </li>   <li> <p> <b> <code>KBId</code> </b> </p> <p>Sample values: <code>KB4480056</code> | <code>java-1.7.0-openjdk.x86_64</code> </p> </li>   <li> <p> <b> <code>Severity</code> </b> </p> <p>Sample values: <code>Important</code> | <code>Medium</code> | <code>Low</code> </p> </li>   <li> <p> <b> <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> </li>  </ul>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeInstancePatchesInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeInstancePatchesInput::max_results): <p>The maximum number of patches to return (per page).</p>
+    /// - On success, responds with [`DescribeInstancePatchesOutput`](crate::output::DescribeInstancePatchesOutput) with field(s):
+    ///   - [`patches(Option<Vec<PatchComplianceData>>)`](crate::output::DescribeInstancePatchesOutput::patches): <p>Each entry in the array is a structure containing:</p>  <ul>   <li> <p>Title (string)</p> </li>   <li> <p>KBId (string)</p> </li>   <li> <p>Classification (string)</p> </li>   <li> <p>Severity (string)</p> </li>   <li> <p>State (string, such as "INSTALLED" or "FAILED")</p> </li>   <li> <p>InstalledTime (DateTime)</p> </li>   <li> <p>InstalledBy (string)</p> </li>  </ul>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeInstancePatchesOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    /// - On failure, responds with [`SdkError<DescribeInstancePatchesError>`](crate::error::DescribeInstancePatchesError)
     pub fn describe_instance_patches(&self) -> fluent_builders::DescribeInstancePatches<C, M, R> {
         fluent_builders::DescribeInstancePatches::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeInstancePatchStates` operation.
-    ///
-    /// See [`DescribeInstancePatchStates`](crate::client::fluent_builders::DescribeInstancePatchStates) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeInstancePatchStates`](crate::client::fluent_builders::DescribeInstancePatchStates) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeInstancePatchStates::into_paginator).
+    ///
+    /// - Takes [`DescribeInstancePatchStatesInput`](crate::input::DescribeInstancePatchStatesInput) with field(s):
+    ///   - [`instance_ids(Option<Vec<String>>)`](crate::input::DescribeInstancePatchStatesInput::instance_ids): <p>The ID of the managed node for which patch state information should be retrieved.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeInstancePatchStatesInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeInstancePatchStatesInput::max_results): <p>The maximum number of managed nodes to return (per page).</p>
+    /// - On success, responds with [`DescribeInstancePatchStatesOutput`](crate::output::DescribeInstancePatchStatesOutput) with field(s):
+    ///   - [`instance_patch_states(Option<Vec<InstancePatchState>>)`](crate::output::DescribeInstancePatchStatesOutput::instance_patch_states): <p>The high-level patch state for the requested managed nodes.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeInstancePatchStatesOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    /// - On failure, responds with [`SdkError<DescribeInstancePatchStatesError>`](crate::error::DescribeInstancePatchStatesError)
     pub fn describe_instance_patch_states(
         &self,
     ) -> fluent_builders::DescribeInstancePatchStates<C, M, R> {
         fluent_builders::DescribeInstancePatchStates::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeInstancePatchStatesForPatchGroup` operation.
-    ///
-    /// See [`DescribeInstancePatchStatesForPatchGroup`](crate::client::fluent_builders::DescribeInstancePatchStatesForPatchGroup) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeInstancePatchStatesForPatchGroup`](crate::client::fluent_builders::DescribeInstancePatchStatesForPatchGroup) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeInstancePatchStatesForPatchGroup::into_paginator).
+    ///
+    /// - Takes [`DescribeInstancePatchStatesForPatchGroupInput`](crate::input::DescribeInstancePatchStatesForPatchGroupInput) with field(s):
+    ///   - [`patch_group(Option<String>)`](crate::input::DescribeInstancePatchStatesForPatchGroupInput::patch_group): <p>The name of the patch group for which the patch state information should be retrieved.</p>
+    ///   - [`filters(Option<Vec<InstancePatchStateFilter>>)`](crate::input::DescribeInstancePatchStatesForPatchGroupInput::filters): <p>Each entry in the array is a structure containing:</p>  <ul>   <li> <p>Key (string between 1 and 200 characters)</p> </li>   <li> <p>Values (array containing a single string)</p> </li>   <li> <p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p> </li>  </ul>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeInstancePatchStatesForPatchGroupInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeInstancePatchStatesForPatchGroupInput::max_results): <p>The maximum number of patches to return (per page).</p>
+    /// - On success, responds with [`DescribeInstancePatchStatesForPatchGroupOutput`](crate::output::DescribeInstancePatchStatesForPatchGroupOutput) with field(s):
+    ///   - [`instance_patch_states(Option<Vec<InstancePatchState>>)`](crate::output::DescribeInstancePatchStatesForPatchGroupOutput::instance_patch_states): <p>The high-level patch state for the requested managed nodes. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeInstancePatchStatesForPatchGroupOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    /// - On failure, responds with [`SdkError<DescribeInstancePatchStatesForPatchGroupError>`](crate::error::DescribeInstancePatchStatesForPatchGroupError)
     pub fn describe_instance_patch_states_for_patch_group(
         &self,
     ) -> fluent_builders::DescribeInstancePatchStatesForPatchGroup<C, M, R> {
         fluent_builders::DescribeInstancePatchStatesForPatchGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeInventoryDeletions` operation.
-    ///
-    /// See [`DescribeInventoryDeletions`](crate::client::fluent_builders::DescribeInventoryDeletions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeInventoryDeletions`](crate::client::fluent_builders::DescribeInventoryDeletions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeInventoryDeletions::into_paginator).
+    ///
+    /// - Takes [`DescribeInventoryDeletionsInput`](crate::input::DescribeInventoryDeletionsInput) with field(s):
+    ///   - [`deletion_id(Option<String>)`](crate::input::DescribeInventoryDeletionsInput::deletion_id): <p>Specify the delete inventory ID for which you want information. This ID was returned by the <code>DeleteInventory</code> operation.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeInventoryDeletionsInput::next_token): <p>A token to start the list. Use this token to get the next set of results. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeInventoryDeletionsInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    /// - On success, responds with [`DescribeInventoryDeletionsOutput`](crate::output::DescribeInventoryDeletionsOutput) with field(s):
+    ///   - [`inventory_deletions(Option<Vec<InventoryDeletionStatusItem>>)`](crate::output::DescribeInventoryDeletionsOutput::inventory_deletions): <p>A list of status items for deleted inventory.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeInventoryDeletionsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    /// - On failure, responds with [`SdkError<DescribeInventoryDeletionsError>`](crate::error::DescribeInventoryDeletionsError)
     pub fn describe_inventory_deletions(
         &self,
     ) -> fluent_builders::DescribeInventoryDeletions<C, M, R> {
         fluent_builders::DescribeInventoryDeletions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeMaintenanceWindowExecutions` operation.
-    ///
-    /// See [`DescribeMaintenanceWindowExecutions`](crate::client::fluent_builders::DescribeMaintenanceWindowExecutions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeMaintenanceWindowExecutions`](crate::client::fluent_builders::DescribeMaintenanceWindowExecutions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeMaintenanceWindowExecutions::into_paginator).
+    ///
+    /// - Takes [`DescribeMaintenanceWindowExecutionsInput`](crate::input::DescribeMaintenanceWindowExecutionsInput) with field(s):
+    ///   - [`window_id(Option<String>)`](crate::input::DescribeMaintenanceWindowExecutionsInput::window_id): <p>The ID of the maintenance window whose executions should be retrieved.</p>
+    ///   - [`filters(Option<Vec<MaintenanceWindowFilter>>)`](crate::input::DescribeMaintenanceWindowExecutionsInput::filters): <p>Each entry in the array is a structure containing:</p>  <ul>   <li> <p>Key. A string between 1 and 128 characters. Supported keys include <code>ExecutedBefore</code> and <code>ExecutedAfter</code>.</p> </li>   <li> <p>Values. An array of strings, each between 1 and 256 characters. Supported values are date/time strings in a valid ISO 8601 date/time format, such as <code>2021-11-04T05:00:00Z</code>.</p> </li>  </ul>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeMaintenanceWindowExecutionsInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeMaintenanceWindowExecutionsInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    /// - On success, responds with [`DescribeMaintenanceWindowExecutionsOutput`](crate::output::DescribeMaintenanceWindowExecutionsOutput) with field(s):
+    ///   - [`window_executions(Option<Vec<MaintenanceWindowExecution>>)`](crate::output::DescribeMaintenanceWindowExecutionsOutput::window_executions): <p>Information about the maintenance window executions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeMaintenanceWindowExecutionsOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    /// - On failure, responds with [`SdkError<DescribeMaintenanceWindowExecutionsError>`](crate::error::DescribeMaintenanceWindowExecutionsError)
     pub fn describe_maintenance_window_executions(
         &self,
     ) -> fluent_builders::DescribeMaintenanceWindowExecutions<C, M, R> {
         fluent_builders::DescribeMaintenanceWindowExecutions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeMaintenanceWindowExecutionTaskInvocations` operation.
-    ///
-    /// See [`DescribeMaintenanceWindowExecutionTaskInvocations`](crate::client::fluent_builders::DescribeMaintenanceWindowExecutionTaskInvocations) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeMaintenanceWindowExecutionTaskInvocations`](crate::client::fluent_builders::DescribeMaintenanceWindowExecutionTaskInvocations) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeMaintenanceWindowExecutionTaskInvocations::into_paginator).
+    ///
+    /// - Takes [`DescribeMaintenanceWindowExecutionTaskInvocationsInput`](crate::input::DescribeMaintenanceWindowExecutionTaskInvocationsInput) with field(s):
+    ///   - [`window_execution_id(Option<String>)`](crate::input::DescribeMaintenanceWindowExecutionTaskInvocationsInput::window_execution_id): <p>The ID of the maintenance window execution the task is part of.</p>
+    ///   - [`task_id(Option<String>)`](crate::input::DescribeMaintenanceWindowExecutionTaskInvocationsInput::task_id): <p>The ID of the specific task in the maintenance window task that should be retrieved.</p>
+    ///   - [`filters(Option<Vec<MaintenanceWindowFilter>>)`](crate::input::DescribeMaintenanceWindowExecutionTaskInvocationsInput::filters): <p>Optional filters used to scope down the returned task invocations. The supported filter key is <code>STATUS</code> with the corresponding values <code>PENDING</code>, <code>IN_PROGRESS</code>, <code>SUCCESS</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, <code>CANCELLING</code>, and <code>CANCELLED</code>.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeMaintenanceWindowExecutionTaskInvocationsInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeMaintenanceWindowExecutionTaskInvocationsInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    /// - On success, responds with [`DescribeMaintenanceWindowExecutionTaskInvocationsOutput`](crate::output::DescribeMaintenanceWindowExecutionTaskInvocationsOutput) with field(s):
+    ///   - [`window_execution_task_invocation_identities(Option<Vec<MaintenanceWindowExecutionTaskInvocationIdentity>>)`](crate::output::DescribeMaintenanceWindowExecutionTaskInvocationsOutput::window_execution_task_invocation_identities): <p>Information about the task invocation results per invocation.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeMaintenanceWindowExecutionTaskInvocationsOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    /// - On failure, responds with [`SdkError<DescribeMaintenanceWindowExecutionTaskInvocationsError>`](crate::error::DescribeMaintenanceWindowExecutionTaskInvocationsError)
     pub fn describe_maintenance_window_execution_task_invocations(
         &self,
     ) -> fluent_builders::DescribeMaintenanceWindowExecutionTaskInvocations<C, M, R> {
         fluent_builders::DescribeMaintenanceWindowExecutionTaskInvocations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeMaintenanceWindowExecutionTasks` operation.
-    ///
-    /// See [`DescribeMaintenanceWindowExecutionTasks`](crate::client::fluent_builders::DescribeMaintenanceWindowExecutionTasks) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeMaintenanceWindowExecutionTasks`](crate::client::fluent_builders::DescribeMaintenanceWindowExecutionTasks) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeMaintenanceWindowExecutionTasks::into_paginator).
+    ///
+    /// - Takes [`DescribeMaintenanceWindowExecutionTasksInput`](crate::input::DescribeMaintenanceWindowExecutionTasksInput) with field(s):
+    ///   - [`window_execution_id(Option<String>)`](crate::input::DescribeMaintenanceWindowExecutionTasksInput::window_execution_id): <p>The ID of the maintenance window execution whose task executions should be retrieved.</p>
+    ///   - [`filters(Option<Vec<MaintenanceWindowFilter>>)`](crate::input::DescribeMaintenanceWindowExecutionTasksInput::filters): <p>Optional filters used to scope down the returned tasks. The supported filter key is <code>STATUS</code> with the corresponding values <code>PENDING</code>, <code>IN_PROGRESS</code>, <code>SUCCESS</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, <code>CANCELLING</code>, and <code>CANCELLED</code>.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeMaintenanceWindowExecutionTasksInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeMaintenanceWindowExecutionTasksInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    /// - On success, responds with [`DescribeMaintenanceWindowExecutionTasksOutput`](crate::output::DescribeMaintenanceWindowExecutionTasksOutput) with field(s):
+    ///   - [`window_execution_task_identities(Option<Vec<MaintenanceWindowExecutionTaskIdentity>>)`](crate::output::DescribeMaintenanceWindowExecutionTasksOutput::window_execution_task_identities): <p>Information about the task executions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeMaintenanceWindowExecutionTasksOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    /// - On failure, responds with [`SdkError<DescribeMaintenanceWindowExecutionTasksError>`](crate::error::DescribeMaintenanceWindowExecutionTasksError)
     pub fn describe_maintenance_window_execution_tasks(
         &self,
     ) -> fluent_builders::DescribeMaintenanceWindowExecutionTasks<C, M, R> {
         fluent_builders::DescribeMaintenanceWindowExecutionTasks::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeMaintenanceWindows` operation.
-    ///
-    /// See [`DescribeMaintenanceWindows`](crate::client::fluent_builders::DescribeMaintenanceWindows) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeMaintenanceWindows`](crate::client::fluent_builders::DescribeMaintenanceWindows) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeMaintenanceWindows::into_paginator).
+    ///
+    /// - Takes [`DescribeMaintenanceWindowsInput`](crate::input::DescribeMaintenanceWindowsInput) with field(s):
+    ///   - [`filters(Option<Vec<MaintenanceWindowFilter>>)`](crate::input::DescribeMaintenanceWindowsInput::filters): <p>Optional filters used to narrow down the scope of the returned maintenance windows. Supported filter keys are <code>Name</code> and <code>Enabled</code>. For example, <code>Name=MyMaintenanceWindow</code> and <code>Enabled=True</code>.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeMaintenanceWindowsInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeMaintenanceWindowsInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    /// - On success, responds with [`DescribeMaintenanceWindowsOutput`](crate::output::DescribeMaintenanceWindowsOutput) with field(s):
+    ///   - [`window_identities(Option<Vec<MaintenanceWindowIdentity>>)`](crate::output::DescribeMaintenanceWindowsOutput::window_identities): <p>Information about the maintenance windows.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeMaintenanceWindowsOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    /// - On failure, responds with [`SdkError<DescribeMaintenanceWindowsError>`](crate::error::DescribeMaintenanceWindowsError)
     pub fn describe_maintenance_windows(
         &self,
     ) -> fluent_builders::DescribeMaintenanceWindows<C, M, R> {
         fluent_builders::DescribeMaintenanceWindows::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeMaintenanceWindowSchedule` operation.
-    ///
-    /// See [`DescribeMaintenanceWindowSchedule`](crate::client::fluent_builders::DescribeMaintenanceWindowSchedule) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeMaintenanceWindowSchedule`](crate::client::fluent_builders::DescribeMaintenanceWindowSchedule) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeMaintenanceWindowSchedule::into_paginator).
+    ///
+    /// - Takes [`DescribeMaintenanceWindowScheduleInput`](crate::input::DescribeMaintenanceWindowScheduleInput) with field(s):
+    ///   - [`window_id(Option<String>)`](crate::input::DescribeMaintenanceWindowScheduleInput::window_id): <p>The ID of the maintenance window to retrieve information about.</p>
+    ///   - [`targets(Option<Vec<Target>>)`](crate::input::DescribeMaintenanceWindowScheduleInput::targets): <p>The managed node ID or key-value pair to retrieve information about.</p>
+    ///   - [`resource_type(Option<MaintenanceWindowResourceType>)`](crate::input::DescribeMaintenanceWindowScheduleInput::resource_type): <p>The type of resource you want to retrieve information about. For example, <code>INSTANCE</code>.</p>
+    ///   - [`filters(Option<Vec<PatchOrchestratorFilter>>)`](crate::input::DescribeMaintenanceWindowScheduleInput::filters): <p>Filters used to limit the range of results. For example, you can limit maintenance window executions to only those scheduled before or after a certain date and time.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeMaintenanceWindowScheduleInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeMaintenanceWindowScheduleInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    /// - On success, responds with [`DescribeMaintenanceWindowScheduleOutput`](crate::output::DescribeMaintenanceWindowScheduleOutput) with field(s):
+    ///   - [`scheduled_window_executions(Option<Vec<ScheduledWindowExecution>>)`](crate::output::DescribeMaintenanceWindowScheduleOutput::scheduled_window_executions): <p>Information about maintenance window executions scheduled for the specified time range.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeMaintenanceWindowScheduleOutput::next_token): <p>The token for the next set of items to return. (You use this token in the next call.)</p>
+    /// - On failure, responds with [`SdkError<DescribeMaintenanceWindowScheduleError>`](crate::error::DescribeMaintenanceWindowScheduleError)
     pub fn describe_maintenance_window_schedule(
         &self,
     ) -> fluent_builders::DescribeMaintenanceWindowSchedule<C, M, R> {
         fluent_builders::DescribeMaintenanceWindowSchedule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeMaintenanceWindowsForTarget` operation.
-    ///
-    /// See [`DescribeMaintenanceWindowsForTarget`](crate::client::fluent_builders::DescribeMaintenanceWindowsForTarget) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeMaintenanceWindowsForTarget`](crate::client::fluent_builders::DescribeMaintenanceWindowsForTarget) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeMaintenanceWindowsForTarget::into_paginator).
+    ///
+    /// - Takes [`DescribeMaintenanceWindowsForTargetInput`](crate::input::DescribeMaintenanceWindowsForTargetInput) with field(s):
+    ///   - [`targets(Option<Vec<Target>>)`](crate::input::DescribeMaintenanceWindowsForTargetInput::targets): <p>The managed node ID or key-value pair to retrieve information about.</p>
+    ///   - [`resource_type(Option<MaintenanceWindowResourceType>)`](crate::input::DescribeMaintenanceWindowsForTargetInput::resource_type): <p>The type of resource you want to retrieve information about. For example, <code>INSTANCE</code>.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeMaintenanceWindowsForTargetInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeMaintenanceWindowsForTargetInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    /// - On success, responds with [`DescribeMaintenanceWindowsForTargetOutput`](crate::output::DescribeMaintenanceWindowsForTargetOutput) with field(s):
+    ///   - [`window_identities(Option<Vec<MaintenanceWindowIdentityForTarget>>)`](crate::output::DescribeMaintenanceWindowsForTargetOutput::window_identities): <p>Information about the maintenance window targets and tasks a managed node is associated with.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeMaintenanceWindowsForTargetOutput::next_token): <p>The token for the next set of items to return. (You use this token in the next call.)</p>
+    /// - On failure, responds with [`SdkError<DescribeMaintenanceWindowsForTargetError>`](crate::error::DescribeMaintenanceWindowsForTargetError)
     pub fn describe_maintenance_windows_for_target(
         &self,
     ) -> fluent_builders::DescribeMaintenanceWindowsForTarget<C, M, R> {
         fluent_builders::DescribeMaintenanceWindowsForTarget::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeMaintenanceWindowTargets` operation.
-    ///
-    /// See [`DescribeMaintenanceWindowTargets`](crate::client::fluent_builders::DescribeMaintenanceWindowTargets) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeMaintenanceWindowTargets`](crate::client::fluent_builders::DescribeMaintenanceWindowTargets) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeMaintenanceWindowTargets::into_paginator).
+    ///
+    /// - Takes [`DescribeMaintenanceWindowTargetsInput`](crate::input::DescribeMaintenanceWindowTargetsInput) with field(s):
+    ///   - [`window_id(Option<String>)`](crate::input::DescribeMaintenanceWindowTargetsInput::window_id): <p>The ID of the maintenance window whose targets should be retrieved.</p>
+    ///   - [`filters(Option<Vec<MaintenanceWindowFilter>>)`](crate::input::DescribeMaintenanceWindowTargetsInput::filters): <p>Optional filters that can be used to narrow down the scope of the returned window targets. The supported filter keys are <code>Type</code>, <code>WindowTargetId</code>, and <code>OwnerInformation</code>.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeMaintenanceWindowTargetsInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeMaintenanceWindowTargetsInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    /// - On success, responds with [`DescribeMaintenanceWindowTargetsOutput`](crate::output::DescribeMaintenanceWindowTargetsOutput) with field(s):
+    ///   - [`targets(Option<Vec<MaintenanceWindowTarget>>)`](crate::output::DescribeMaintenanceWindowTargetsOutput::targets): <p>Information about the targets in the maintenance window.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeMaintenanceWindowTargetsOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    /// - On failure, responds with [`SdkError<DescribeMaintenanceWindowTargetsError>`](crate::error::DescribeMaintenanceWindowTargetsError)
     pub fn describe_maintenance_window_targets(
         &self,
     ) -> fluent_builders::DescribeMaintenanceWindowTargets<C, M, R> {
         fluent_builders::DescribeMaintenanceWindowTargets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeMaintenanceWindowTasks` operation.
-    ///
-    /// See [`DescribeMaintenanceWindowTasks`](crate::client::fluent_builders::DescribeMaintenanceWindowTasks) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeMaintenanceWindowTasks`](crate::client::fluent_builders::DescribeMaintenanceWindowTasks) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeMaintenanceWindowTasks::into_paginator).
+    ///
+    /// - Takes [`DescribeMaintenanceWindowTasksInput`](crate::input::DescribeMaintenanceWindowTasksInput) with field(s):
+    ///   - [`window_id(Option<String>)`](crate::input::DescribeMaintenanceWindowTasksInput::window_id): <p>The ID of the maintenance window whose tasks should be retrieved.</p>
+    ///   - [`filters(Option<Vec<MaintenanceWindowFilter>>)`](crate::input::DescribeMaintenanceWindowTasksInput::filters): <p>Optional filters used to narrow down the scope of the returned tasks. The supported filter keys are <code>WindowTaskId</code>, <code>TaskArn</code>, <code>Priority</code>, and <code>TaskType</code>.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeMaintenanceWindowTasksInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeMaintenanceWindowTasksInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    /// - On success, responds with [`DescribeMaintenanceWindowTasksOutput`](crate::output::DescribeMaintenanceWindowTasksOutput) with field(s):
+    ///   - [`tasks(Option<Vec<MaintenanceWindowTask>>)`](crate::output::DescribeMaintenanceWindowTasksOutput::tasks): <p>Information about the tasks in the maintenance window.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeMaintenanceWindowTasksOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    /// - On failure, responds with [`SdkError<DescribeMaintenanceWindowTasksError>`](crate::error::DescribeMaintenanceWindowTasksError)
     pub fn describe_maintenance_window_tasks(
         &self,
     ) -> fluent_builders::DescribeMaintenanceWindowTasks<C, M, R> {
         fluent_builders::DescribeMaintenanceWindowTasks::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeOpsItems` operation.
-    ///
-    /// See [`DescribeOpsItems`](crate::client::fluent_builders::DescribeOpsItems) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeOpsItems`](crate::client::fluent_builders::DescribeOpsItems) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeOpsItems::into_paginator).
+    ///
+    /// - Takes [`DescribeOpsItemsInput`](crate::input::DescribeOpsItemsInput) with field(s):
+    ///   - [`ops_item_filters(Option<Vec<OpsItemFilter>>)`](crate::input::DescribeOpsItemsInput::ops_item_filters): <p>One or more filters to limit the response.</p>  <ul>   <li> <p>Key: CreatedTime</p> <p>Operations: GreaterThan, LessThan</p> </li>   <li> <p>Key: LastModifiedBy</p> <p>Operations: Contains, Equals</p> </li>   <li> <p>Key: LastModifiedTime</p> <p>Operations: GreaterThan, LessThan</p> </li>   <li> <p>Key: Priority</p> <p>Operations: Equals</p> </li>   <li> <p>Key: Source</p> <p>Operations: Contains, Equals</p> </li>   <li> <p>Key: Status</p> <p>Operations: Equals</p> </li>   <li> <p>Key: Title*</p> <p>Operations: Equals,Contains</p> </li>   <li> <p>Key: OperationalData**</p> <p>Operations: Equals</p> </li>   <li> <p>Key: OperationalDataKey</p> <p>Operations: Equals</p> </li>   <li> <p>Key: OperationalDataValue</p> <p>Operations: Equals, Contains</p> </li>   <li> <p>Key: OpsItemId</p> <p>Operations: Equals</p> </li>   <li> <p>Key: ResourceId</p> <p>Operations: Contains</p> </li>   <li> <p>Key: AutomationId</p> <p>Operations: Equals</p> </li>  </ul>  <p>*The Equals operator for Title matches the first 100 characters. If you specify more than 100 characters, they system returns an error that the filter value exceeds the length limit.</p>  <p>**If you filter the response by using the OperationalData operator, specify a key-value pair by using the following JSON format: {"key":"key_name","value":"a_value"}</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeOpsItemsInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeOpsItemsInput::next_token): <p>A token to start the list. Use this token to get the next set of results.</p>
+    /// - On success, responds with [`DescribeOpsItemsOutput`](crate::output::DescribeOpsItemsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeOpsItemsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    ///   - [`ops_item_summaries(Option<Vec<OpsItemSummary>>)`](crate::output::DescribeOpsItemsOutput::ops_item_summaries): <p>A list of OpsItems.</p>
+    /// - On failure, responds with [`SdkError<DescribeOpsItemsError>`](crate::error::DescribeOpsItemsError)
     pub fn describe_ops_items(&self) -> fluent_builders::DescribeOpsItems<C, M, R> {
         fluent_builders::DescribeOpsItems::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeParameters` operation.
-    ///
-    /// See [`DescribeParameters`](crate::client::fluent_builders::DescribeParameters) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeParameters`](crate::client::fluent_builders::DescribeParameters) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeParameters::into_paginator).
+    ///
+    /// - Takes [`DescribeParametersInput`](crate::input::DescribeParametersInput) with field(s):
+    ///   - [`filters(Option<Vec<ParametersFilter>>)`](crate::input::DescribeParametersInput::filters): <p>This data type is deprecated. Instead, use <code>ParameterFilters</code>.</p>
+    ///   - [`parameter_filters(Option<Vec<ParameterStringFilter>>)`](crate::input::DescribeParametersInput::parameter_filters): <p>Filters to limit the request results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeParametersInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeParametersInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    /// - On success, responds with [`DescribeParametersOutput`](crate::output::DescribeParametersOutput) with field(s):
+    ///   - [`parameters(Option<Vec<ParameterMetadata>>)`](crate::output::DescribeParametersOutput::parameters): <p>Parameters returned by the request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeParametersOutput::next_token): <p>The token to use when requesting the next set of items.</p>
+    /// - On failure, responds with [`SdkError<DescribeParametersError>`](crate::error::DescribeParametersError)
     pub fn describe_parameters(&self) -> fluent_builders::DescribeParameters<C, M, R> {
         fluent_builders::DescribeParameters::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribePatchBaselines` operation.
-    ///
-    /// See [`DescribePatchBaselines`](crate::client::fluent_builders::DescribePatchBaselines) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribePatchBaselines`](crate::client::fluent_builders::DescribePatchBaselines) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribePatchBaselines::into_paginator).
+    ///
+    /// - Takes [`DescribePatchBaselinesInput`](crate::input::DescribePatchBaselinesInput) with field(s):
+    ///   - [`filters(Option<Vec<PatchOrchestratorFilter>>)`](crate::input::DescribePatchBaselinesInput::filters): <p>Each element in the array is a structure containing a key-value pair.</p>  <p>Supported keys for <code>DescribePatchBaselines</code> include the following:</p>  <ul>   <li> <p> <b> <code>NAME_PREFIX</code> </b> </p> <p>Sample values: <code>AWS-</code> | <code>My-</code> </p> </li>   <li> <p> <b> <code>OWNER</code> </b> </p> <p>Sample values: <code>AWS</code> | <code>Self</code> </p> </li>   <li> <p> <b> <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li>  </ul>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribePatchBaselinesInput::max_results): <p>The maximum number of patch baselines to return (per page).</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribePatchBaselinesInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    /// - On success, responds with [`DescribePatchBaselinesOutput`](crate::output::DescribePatchBaselinesOutput) with field(s):
+    ///   - [`baseline_identities(Option<Vec<PatchBaselineIdentity>>)`](crate::output::DescribePatchBaselinesOutput::baseline_identities): <p>An array of <code>PatchBaselineIdentity</code> elements.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribePatchBaselinesOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    /// - On failure, responds with [`SdkError<DescribePatchBaselinesError>`](crate::error::DescribePatchBaselinesError)
     pub fn describe_patch_baselines(&self) -> fluent_builders::DescribePatchBaselines<C, M, R> {
         fluent_builders::DescribePatchBaselines::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribePatchGroups` operation.
-    ///
-    /// See [`DescribePatchGroups`](crate::client::fluent_builders::DescribePatchGroups) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribePatchGroups`](crate::client::fluent_builders::DescribePatchGroups) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribePatchGroups::into_paginator).
+    ///
+    /// - Takes [`DescribePatchGroupsInput`](crate::input::DescribePatchGroupsInput) with field(s):
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribePatchGroupsInput::max_results): <p>The maximum number of patch groups to return (per page).</p>
+    ///   - [`filters(Option<Vec<PatchOrchestratorFilter>>)`](crate::input::DescribePatchGroupsInput::filters): <p>Each element in the array is a structure containing a key-value pair.</p>  <p>Supported keys for <code>DescribePatchGroups</code> include the following:</p>  <ul>   <li> <p> <b> <code>NAME_PREFIX</code> </b> </p> <p>Sample values: <code>AWS-</code> | <code>My-</code>.</p> </li>   <li> <p> <b> <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li>  </ul>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribePatchGroupsInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    /// - On success, responds with [`DescribePatchGroupsOutput`](crate::output::DescribePatchGroupsOutput) with field(s):
+    ///   - [`mappings(Option<Vec<PatchGroupPatchBaselineMapping>>)`](crate::output::DescribePatchGroupsOutput::mappings): <p>Each entry in the array contains:</p>  <ul>   <li> <p> <code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code> </p> </li>   <li> <p> <code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p> </li>  </ul>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribePatchGroupsOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    /// - On failure, responds with [`SdkError<DescribePatchGroupsError>`](crate::error::DescribePatchGroupsError)
     pub fn describe_patch_groups(&self) -> fluent_builders::DescribePatchGroups<C, M, R> {
         fluent_builders::DescribePatchGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribePatchGroupState` operation.
+    /// Constructs a fluent builder for the [`DescribePatchGroupState`](crate::client::fluent_builders::DescribePatchGroupState) operation.
     ///
-    /// See [`DescribePatchGroupState`](crate::client::fluent_builders::DescribePatchGroupState) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribePatchGroupStateInput`](crate::input::DescribePatchGroupStateInput) with field(s):
+    ///   - [`patch_group(Option<String>)`](crate::input::DescribePatchGroupStateInput::patch_group): <p>The name of the patch group whose patch snapshot should be retrieved.</p>
+    /// - On success, responds with [`DescribePatchGroupStateOutput`](crate::output::DescribePatchGroupStateOutput) with field(s):
+    ///   - [`instances(i32)`](crate::output::DescribePatchGroupStateOutput::instances): <p>The number of managed nodes in the patch group.</p>
+    ///   - [`instances_with_installed_patches(i32)`](crate::output::DescribePatchGroupStateOutput::instances_with_installed_patches): <p>The number of managed nodes with installed patches.</p>
+    ///   - [`instances_with_installed_other_patches(i32)`](crate::output::DescribePatchGroupStateOutput::instances_with_installed_other_patches): <p>The number of managed nodes with patches installed that aren't defined in the patch baseline.</p>
+    ///   - [`instances_with_installed_pending_reboot_patches(Option<i32>)`](crate::output::DescribePatchGroupStateOutput::instances_with_installed_pending_reboot_patches): <p>The number of managed nodes with patches installed by Patch Manager that haven't been rebooted after the patch installation. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
+    ///   - [`instances_with_installed_rejected_patches(Option<i32>)`](crate::output::DescribePatchGroupStateOutput::instances_with_installed_rejected_patches): <p>The number of managed nodes with patches installed that are specified in a <code>RejectedPatches</code> list. Patches with a status of <code>INSTALLED_REJECTED</code> were typically installed before they were added to a <code>RejectedPatches</code> list.</p> <note>   <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of <code>InstancesWithInstalledRejectedPatches</code> will always be <code>0</code> (zero).</p>  </note>
+    ///   - [`instances_with_missing_patches(i32)`](crate::output::DescribePatchGroupStateOutput::instances_with_missing_patches): <p>The number of managed nodes with missing patches from the patch baseline.</p>
+    ///   - [`instances_with_failed_patches(i32)`](crate::output::DescribePatchGroupStateOutput::instances_with_failed_patches): <p>The number of managed nodes with patches from the patch baseline that failed to install.</p>
+    ///   - [`instances_with_not_applicable_patches(i32)`](crate::output::DescribePatchGroupStateOutput::instances_with_not_applicable_patches): <p>The number of managed nodes with patches that aren't applicable.</p>
+    ///   - [`instances_with_unreported_not_applicable_patches(Option<i32>)`](crate::output::DescribePatchGroupStateOutput::instances_with_unreported_not_applicable_patches): <p>The number of managed nodes with <code>NotApplicable</code> patches beyond the supported limit, which aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
+    ///   - [`instances_with_critical_non_compliant_patches(Option<i32>)`](crate::output::DescribePatchGroupStateOutput::instances_with_critical_non_compliant_patches): <p>The number of managed nodes where patches that are specified as <code>Critical</code> for compliance reporting in the patch baseline aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
+    ///   - [`instances_with_security_non_compliant_patches(Option<i32>)`](crate::output::DescribePatchGroupStateOutput::instances_with_security_non_compliant_patches): <p>The number of managed nodes where patches that are specified as <code>Security</code> in a patch advisory aren't installed. These patches might be missing, have failed installation, were rejected, or were installed but awaiting a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
+    ///   - [`instances_with_other_non_compliant_patches(Option<i32>)`](crate::output::DescribePatchGroupStateOutput::instances_with_other_non_compliant_patches): <p>The number of managed nodes with patches installed that are specified as other than <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
+    /// - On failure, responds with [`SdkError<DescribePatchGroupStateError>`](crate::error::DescribePatchGroupStateError)
     pub fn describe_patch_group_state(&self) -> fluent_builders::DescribePatchGroupState<C, M, R> {
         fluent_builders::DescribePatchGroupState::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribePatchProperties` operation.
-    ///
-    /// See [`DescribePatchProperties`](crate::client::fluent_builders::DescribePatchProperties) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribePatchProperties`](crate::client::fluent_builders::DescribePatchProperties) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribePatchProperties::into_paginator).
+    ///
+    /// - Takes [`DescribePatchPropertiesInput`](crate::input::DescribePatchPropertiesInput) with field(s):
+    ///   - [`operating_system(Option<OperatingSystem>)`](crate::input::DescribePatchPropertiesInput::operating_system): <p>The operating system type for which to list patches.</p>
+    ///   - [`property(Option<PatchProperty>)`](crate::input::DescribePatchPropertiesInput::property): <p>The patch property for which you want to view patch details. </p>
+    ///   - [`patch_set(Option<PatchSet>)`](crate::input::DescribePatchPropertiesInput::patch_set): <p>Indicates whether to list patches for the Windows operating system or for applications released by Microsoft. Not applicable for the Linux or macOS operating systems.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribePatchPropertiesInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribePatchPropertiesInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    /// - On success, responds with [`DescribePatchPropertiesOutput`](crate::output::DescribePatchPropertiesOutput) with field(s):
+    ///   - [`properties(Option<Vec<HashMap<String, String>>>)`](crate::output::DescribePatchPropertiesOutput::properties): <p>A list of the properties for patches matching the filter request parameters.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribePatchPropertiesOutput::next_token): <p>The token for the next set of items to return. (You use this token in the next call.)</p>
+    /// - On failure, responds with [`SdkError<DescribePatchPropertiesError>`](crate::error::DescribePatchPropertiesError)
     pub fn describe_patch_properties(&self) -> fluent_builders::DescribePatchProperties<C, M, R> {
         fluent_builders::DescribePatchProperties::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeSessions` operation.
-    ///
-    /// See [`DescribeSessions`](crate::client::fluent_builders::DescribeSessions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeSessions`](crate::client::fluent_builders::DescribeSessions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeSessions::into_paginator).
+    ///
+    /// - Takes [`DescribeSessionsInput`](crate::input::DescribeSessionsInput) with field(s):
+    ///   - [`state(Option<SessionState>)`](crate::input::DescribeSessionsInput::state): <p>The session status to retrieve a list of sessions for. For example, "Active".</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeSessionsInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeSessionsInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    ///   - [`filters(Option<Vec<SessionFilter>>)`](crate::input::DescribeSessionsInput::filters): <p>One or more filters to limit the type of sessions returned by the request.</p>
+    /// - On success, responds with [`DescribeSessionsOutput`](crate::output::DescribeSessionsOutput) with field(s):
+    ///   - [`sessions(Option<Vec<Session>>)`](crate::output::DescribeSessionsOutput::sessions): <p>A list of sessions meeting the request parameters.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeSessionsOutput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    /// - On failure, responds with [`SdkError<DescribeSessionsError>`](crate::error::DescribeSessionsError)
     pub fn describe_sessions(&self) -> fluent_builders::DescribeSessions<C, M, R> {
         fluent_builders::DescribeSessions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateOpsItemRelatedItem` operation.
+    /// Constructs a fluent builder for the [`DisassociateOpsItemRelatedItem`](crate::client::fluent_builders::DisassociateOpsItemRelatedItem) operation.
     ///
-    /// See [`DisassociateOpsItemRelatedItem`](crate::client::fluent_builders::DisassociateOpsItemRelatedItem) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateOpsItemRelatedItemInput`](crate::input::DisassociateOpsItemRelatedItemInput) with field(s):
+    ///   - [`ops_item_id(Option<String>)`](crate::input::DisassociateOpsItemRelatedItemInput::ops_item_id): <p>The ID of the OpsItem for which you want to delete an association between the OpsItem and a related item.</p>
+    ///   - [`association_id(Option<String>)`](crate::input::DisassociateOpsItemRelatedItemInput::association_id): <p>The ID of the association for which you want to delete an association between the OpsItem and a related item.</p>
+    /// - On success, responds with [`DisassociateOpsItemRelatedItemOutput`](crate::output::DisassociateOpsItemRelatedItemOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateOpsItemRelatedItemError>`](crate::error::DisassociateOpsItemRelatedItemError)
     pub fn disassociate_ops_item_related_item(
         &self,
     ) -> fluent_builders::DisassociateOpsItemRelatedItem<C, M, R> {
         fluent_builders::DisassociateOpsItemRelatedItem::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAutomationExecution` operation.
+    /// Constructs a fluent builder for the [`GetAutomationExecution`](crate::client::fluent_builders::GetAutomationExecution) operation.
     ///
-    /// See [`GetAutomationExecution`](crate::client::fluent_builders::GetAutomationExecution) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetAutomationExecutionInput`](crate::input::GetAutomationExecutionInput) with field(s):
+    ///   - [`automation_execution_id(Option<String>)`](crate::input::GetAutomationExecutionInput::automation_execution_id): <p>The unique identifier for an existing automation execution to examine. The execution ID is returned by StartAutomationExecution when the execution of an Automation runbook is initiated.</p>
+    /// - On success, responds with [`GetAutomationExecutionOutput`](crate::output::GetAutomationExecutionOutput) with field(s):
+    ///   - [`automation_execution(Option<AutomationExecution>)`](crate::output::GetAutomationExecutionOutput::automation_execution): <p>Detailed information about the current state of an automation execution.</p>
+    /// - On failure, responds with [`SdkError<GetAutomationExecutionError>`](crate::error::GetAutomationExecutionError)
     pub fn get_automation_execution(&self) -> fluent_builders::GetAutomationExecution<C, M, R> {
         fluent_builders::GetAutomationExecution::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCalendarState` operation.
+    /// Constructs a fluent builder for the [`GetCalendarState`](crate::client::fluent_builders::GetCalendarState) operation.
     ///
-    /// See [`GetCalendarState`](crate::client::fluent_builders::GetCalendarState) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetCalendarStateInput`](crate::input::GetCalendarStateInput) with field(s):
+    ///   - [`calendar_names(Option<Vec<String>>)`](crate::input::GetCalendarStateInput::calendar_names): <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the calendar entries for which you want to get the state.</p>
+    ///   - [`at_time(Option<String>)`](crate::input::GetCalendarStateInput::at_time): <p>(Optional) The specific time for which you want to get calendar state information, in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you don't specify a value or <code>AtTime</code>, the current time is used.</p>
+    /// - On success, responds with [`GetCalendarStateOutput`](crate::output::GetCalendarStateOutput) with field(s):
+    ///   - [`state(Option<CalendarState>)`](crate::output::GetCalendarStateOutput::state): <p>The state of the calendar. An <code>OPEN</code> calendar indicates that actions are allowed to proceed, and a <code>CLOSED</code> calendar indicates that actions aren't allowed to proceed.</p>
+    ///   - [`at_time(Option<String>)`](crate::output::GetCalendarStateOutput::at_time): <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string, that you specified in your command. If you don't specify a time, <code>GetCalendarState</code> uses the current time.</p>
+    ///   - [`next_transition_time(Option<String>)`](crate::output::GetCalendarStateOutput::next_transition_time): <p>The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string, that the calendar state will change. If the current calendar state is <code>OPEN</code>, <code>NextTransitionTime</code> indicates when the calendar state changes to <code>CLOSED</code>, and vice-versa.</p>
+    /// - On failure, responds with [`SdkError<GetCalendarStateError>`](crate::error::GetCalendarStateError)
     pub fn get_calendar_state(&self) -> fluent_builders::GetCalendarState<C, M, R> {
         fluent_builders::GetCalendarState::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCommandInvocation` operation.
+    /// Constructs a fluent builder for the [`GetCommandInvocation`](crate::client::fluent_builders::GetCommandInvocation) operation.
     ///
-    /// See [`GetCommandInvocation`](crate::client::fluent_builders::GetCommandInvocation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetCommandInvocationInput`](crate::input::GetCommandInvocationInput) with field(s):
+    ///   - [`command_id(Option<String>)`](crate::input::GetCommandInvocationInput::command_id): <p>(Required) The parent command ID of the invocation plugin.</p>
+    ///   - [`instance_id(Option<String>)`](crate::input::GetCommandInvocationInput::instance_id): <p>(Required) The ID of the managed node targeted by the command. A <i>managed node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, and on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
+    ///   - [`plugin_name(Option<String>)`](crate::input::GetCommandInvocationInput::plugin_name): <p>The name of the plugin for which you want detailed results. If the document contains only one plugin, you can omit the name and details for that plugin. If the document contains more than one plugin, you must specify the name of the plugin for which you want to view details.</p>  <p>Plugin names are also referred to as <i>step names</i> in Systems Manager documents (SSM documents). For example, <code>aws:RunShellScript</code> is a plugin.</p>  <p>To find the <code>PluginName</code>, check the document content and find the name of the plugin. Alternatively, use <code>ListCommandInvocations</code> with the <code>CommandId</code> and <code>Details</code> parameters. The <code>PluginName</code> is the <code>Name</code> attribute of the <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
+    /// - On success, responds with [`GetCommandInvocationOutput`](crate::output::GetCommandInvocationOutput) with field(s):
+    ///   - [`command_id(Option<String>)`](crate::output::GetCommandInvocationOutput::command_id): <p>The parent command ID of the invocation plugin.</p>
+    ///   - [`instance_id(Option<String>)`](crate::output::GetCommandInvocationOutput::instance_id): <p>The ID of the managed node targeted by the command. A <i>managed node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, or on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
+    ///   - [`comment(Option<String>)`](crate::output::GetCommandInvocationOutput::comment): <p>The comment text for the command.</p>
+    ///   - [`document_name(Option<String>)`](crate::output::GetCommandInvocationOutput::document_name): <p>The name of the document that was run. For example, <code>AWS-RunShellScript</code>.</p>
+    ///   - [`document_version(Option<String>)`](crate::output::GetCommandInvocationOutput::document_version): <p>The Systems Manager document (SSM document) version used in the request.</p>
+    ///   - [`plugin_name(Option<String>)`](crate::output::GetCommandInvocationOutput::plugin_name): <p>The name of the plugin, or <i>step name</i>, for which details are reported. For example, <code>aws:RunShellScript</code> is a plugin.</p>
+    ///   - [`response_code(i32)`](crate::output::GetCommandInvocationOutput::response_code): <p>The error level response code for the plugin script. If the response code is <code>-1</code>, then the command hasn't started running on the managed node, or it wasn't received by the node.</p>
+    ///   - [`execution_start_date_time(Option<String>)`](crate::output::GetCommandInvocationOutput::execution_start_date_time): <p>The date and time the plugin started running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedBefore</code> filter.</p>  <p> <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code> </p>  <p>If the plugin hasn't started to run, the string is empty.</p>
+    ///   - [`execution_elapsed_time(Option<String>)`](crate::output::GetCommandInvocationOutput::execution_elapsed_time): <p>Duration since <code>ExecutionStartDateTime</code>.</p>
+    ///   - [`execution_end_date_time(Option<String>)`](crate::output::GetCommandInvocationOutput::execution_end_date_time): <p>The date and time the plugin finished running. Date and time are written in ISO 8601 format. For example, June 7, 2017 is represented as 2017-06-7. The following sample Amazon Web Services CLI command uses the <code>InvokedAfter</code> filter.</p>  <p> <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code> </p>  <p>If the plugin hasn't started to run, the string is empty.</p>
+    ///   - [`status(Option<CommandInvocationStatus>)`](crate::output::GetCommandInvocationOutput::status): <p>The status of this invocation plugin. This status can be different than <code>StatusDetails</code>.</p>
+    ///   - [`status_details(Option<String>)`](crate::output::GetCommandInvocationOutput::status_details): <p>A detailed status of the command execution for an invocation. <code>StatusDetails</code> includes more information than <code>Status</code> because it includes states resulting from error and concurrency control parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. <code>StatusDetails</code> can be one of the following values:</p>  <ul>   <li> <p>Pending: The command hasn't been sent to the managed node.</p> </li>   <li> <p>In Progress: The command has been sent to the managed node but hasn't reached a terminal state.</p> </li>   <li> <p>Delayed: The system attempted to send the command to the target, but the target wasn't available. The managed node might not be available because of network issues, because the node was stopped, or for similar reasons. The system will try to send the command again.</p> </li>   <li> <p>Success: The command or plugin ran successfully. This is a terminal state.</p> </li>   <li> <p>Delivery Timed Out: The command wasn't delivered to the managed node before the delivery timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>   <li> <p>Execution Timed Out: The command started to run on the managed node, but the execution wasn't complete before the timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>   <li> <p>Failed: The command wasn't run successfully on the managed node. For a plugin, this indicates that the result code wasn't zero. For a command invocation, this indicates that the result code for one or more plugins wasn't zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li>   <li> <p>Canceled: The command was terminated before it was completed. This is a terminal state.</p> </li>   <li> <p>Undeliverable: The command can't be delivered to the managed node. The node might not exist or might not be responding. Undeliverable invocations don't count against the parent command's <code>MaxErrors</code> limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>   <li> <p>Terminated: The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>  </ul>
+    ///   - [`standard_output_content(Option<String>)`](crate::output::GetCommandInvocationOutput::standard_output_content): <p>The first 24,000 characters written by the plugin to <code>stdout</code>. If the command hasn't finished running, if <code>ExecutionStatus</code> is neither Succeeded nor Failed, then this string is empty.</p>
+    ///   - [`standard_output_url(Option<String>)`](crate::output::GetCommandInvocationOutput::standard_output_url): <p>The URL for the complete text written by the plugin to <code>stdout</code> in Amazon Simple Storage Service (Amazon S3). If an S3 bucket wasn't specified, then this string is empty.</p>
+    ///   - [`standard_error_content(Option<String>)`](crate::output::GetCommandInvocationOutput::standard_error_content): <p>The first 8,000 characters written by the plugin to <code>stderr</code>. If the command hasn't finished running, then this string is empty.</p>
+    ///   - [`standard_error_url(Option<String>)`](crate::output::GetCommandInvocationOutput::standard_error_url): <p>The URL for the complete text written by the plugin to <code>stderr</code>. If the command hasn't finished running, then this string is empty.</p>
+    ///   - [`cloud_watch_output_config(Option<CloudWatchOutputConfig>)`](crate::output::GetCommandInvocationOutput::cloud_watch_output_config): <p>Amazon CloudWatch Logs information where Systems Manager sent the command output.</p>
+    /// - On failure, responds with [`SdkError<GetCommandInvocationError>`](crate::error::GetCommandInvocationError)
     pub fn get_command_invocation(&self) -> fluent_builders::GetCommandInvocation<C, M, R> {
         fluent_builders::GetCommandInvocation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetConnectionStatus` operation.
+    /// Constructs a fluent builder for the [`GetConnectionStatus`](crate::client::fluent_builders::GetConnectionStatus) operation.
     ///
-    /// See [`GetConnectionStatus`](crate::client::fluent_builders::GetConnectionStatus) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetConnectionStatusInput`](crate::input::GetConnectionStatusInput) with field(s):
+    ///   - [`target(Option<String>)`](crate::input::GetConnectionStatusInput::target): <p>The managed node ID.</p>
+    /// - On success, responds with [`GetConnectionStatusOutput`](crate::output::GetConnectionStatusOutput) with field(s):
+    ///   - [`target(Option<String>)`](crate::output::GetConnectionStatusOutput::target): <p>The ID of the managed node to check connection status. </p>
+    ///   - [`status(Option<ConnectionStatus>)`](crate::output::GetConnectionStatusOutput::status): <p>The status of the connection to the managed node. For example, 'Connected' or 'Not Connected'.</p>
+    /// - On failure, responds with [`SdkError<GetConnectionStatusError>`](crate::error::GetConnectionStatusError)
     pub fn get_connection_status(&self) -> fluent_builders::GetConnectionStatus<C, M, R> {
         fluent_builders::GetConnectionStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDefaultPatchBaseline` operation.
+    /// Constructs a fluent builder for the [`GetDefaultPatchBaseline`](crate::client::fluent_builders::GetDefaultPatchBaseline) operation.
     ///
-    /// See [`GetDefaultPatchBaseline`](crate::client::fluent_builders::GetDefaultPatchBaseline) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetDefaultPatchBaselineInput`](crate::input::GetDefaultPatchBaselineInput) with field(s):
+    ///   - [`operating_system(Option<OperatingSystem>)`](crate::input::GetDefaultPatchBaselineInput::operating_system): <p>Returns the default patch baseline for the specified operating system.</p>
+    /// - On success, responds with [`GetDefaultPatchBaselineOutput`](crate::output::GetDefaultPatchBaselineOutput) with field(s):
+    ///   - [`baseline_id(Option<String>)`](crate::output::GetDefaultPatchBaselineOutput::baseline_id): <p>The ID of the default patch baseline.</p>
+    ///   - [`operating_system(Option<OperatingSystem>)`](crate::output::GetDefaultPatchBaselineOutput::operating_system): <p>The operating system for the returned patch baseline. </p>
+    /// - On failure, responds with [`SdkError<GetDefaultPatchBaselineError>`](crate::error::GetDefaultPatchBaselineError)
     pub fn get_default_patch_baseline(&self) -> fluent_builders::GetDefaultPatchBaseline<C, M, R> {
         fluent_builders::GetDefaultPatchBaseline::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDeployablePatchSnapshotForInstance` operation.
+    /// Constructs a fluent builder for the [`GetDeployablePatchSnapshotForInstance`](crate::client::fluent_builders::GetDeployablePatchSnapshotForInstance) operation.
     ///
-    /// See [`GetDeployablePatchSnapshotForInstance`](crate::client::fluent_builders::GetDeployablePatchSnapshotForInstance) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetDeployablePatchSnapshotForInstanceInput`](crate::input::GetDeployablePatchSnapshotForInstanceInput) with field(s):
+    ///   - [`instance_id(Option<String>)`](crate::input::GetDeployablePatchSnapshotForInstanceInput::instance_id): <p>The ID of the managed node for which the appropriate patch snapshot should be retrieved.</p>
+    ///   - [`snapshot_id(Option<String>)`](crate::input::GetDeployablePatchSnapshotForInstanceInput::snapshot_id): <p>The snapshot ID provided by the user when running <code>AWS-RunPatchBaseline</code>.</p>
+    ///   - [`baseline_override(Option<BaselineOverride>)`](crate::input::GetDeployablePatchSnapshotForInstanceInput::baseline_override): <p>Defines the basic information about a patch baseline override.</p>
+    /// - On success, responds with [`GetDeployablePatchSnapshotForInstanceOutput`](crate::output::GetDeployablePatchSnapshotForInstanceOutput) with field(s):
+    ///   - [`instance_id(Option<String>)`](crate::output::GetDeployablePatchSnapshotForInstanceOutput::instance_id): <p>The managed node ID.</p>
+    ///   - [`snapshot_id(Option<String>)`](crate::output::GetDeployablePatchSnapshotForInstanceOutput::snapshot_id): <p>The user-defined snapshot ID.</p>
+    ///   - [`snapshot_download_url(Option<String>)`](crate::output::GetDeployablePatchSnapshotForInstanceOutput::snapshot_download_url): <p>A pre-signed Amazon Simple Storage Service (Amazon S3) URL that can be used to download the patch snapshot.</p>
+    ///   - [`product(Option<String>)`](crate::output::GetDeployablePatchSnapshotForInstanceOutput::product): <p>Returns the specific operating system (for example Windows Server 2012 or Amazon Linux 2015.09) on the managed node for the specified patch snapshot.</p>
+    /// - On failure, responds with [`SdkError<GetDeployablePatchSnapshotForInstanceError>`](crate::error::GetDeployablePatchSnapshotForInstanceError)
     pub fn get_deployable_patch_snapshot_for_instance(
         &self,
     ) -> fluent_builders::GetDeployablePatchSnapshotForInstance<C, M, R> {
         fluent_builders::GetDeployablePatchSnapshotForInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDocument` operation.
+    /// Constructs a fluent builder for the [`GetDocument`](crate::client::fluent_builders::GetDocument) operation.
     ///
-    /// See [`GetDocument`](crate::client::fluent_builders::GetDocument) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetDocumentInput`](crate::input::GetDocumentInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::GetDocumentInput::name): <p>The name of the SSM document.</p>
+    ///   - [`version_name(Option<String>)`](crate::input::GetDocumentInput::version_name): <p>An optional field specifying the version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document and can't be changed.</p>
+    ///   - [`document_version(Option<String>)`](crate::input::GetDocumentInput::document_version): <p>The document version for which you want information.</p>
+    ///   - [`document_format(Option<DocumentFormat>)`](crate::input::GetDocumentInput::document_format): <p>Returns the document in the specified format. The document format can be either JSON or YAML. JSON is the default format.</p>
+    /// - On success, responds with [`GetDocumentOutput`](crate::output::GetDocumentOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::GetDocumentOutput::name): <p>The name of the SSM document.</p>
+    ///   - [`created_date(Option<DateTime>)`](crate::output::GetDocumentOutput::created_date): <p>The date the SSM document was created.</p>
+    ///   - [`display_name(Option<String>)`](crate::output::GetDocumentOutput::display_name): <p>The friendly name of the SSM document. This value can differ for each version of the document. If you want to update this value, see <code>UpdateDocument</code>.</p>
+    ///   - [`version_name(Option<String>)`](crate::output::GetDocumentOutput::version_name): <p>The version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
+    ///   - [`document_version(Option<String>)`](crate::output::GetDocumentOutput::document_version): <p>The document version.</p>
+    ///   - [`status(Option<DocumentStatus>)`](crate::output::GetDocumentOutput::status): <p>The status of the SSM document, such as <code>Creating</code>, <code>Active</code>, <code>Updating</code>, <code>Failed</code>, and <code>Deleting</code>.</p>
+    ///   - [`status_information(Option<String>)`](crate::output::GetDocumentOutput::status_information): <p>A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code> message, "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
+    ///   - [`content(Option<String>)`](crate::output::GetDocumentOutput::content): <p>The contents of the SSM document.</p>
+    ///   - [`document_type(Option<DocumentType>)`](crate::output::GetDocumentOutput::document_type): <p>The document type.</p>
+    ///   - [`document_format(Option<DocumentFormat>)`](crate::output::GetDocumentOutput::document_format): <p>The document format, either JSON or YAML.</p>
+    ///   - [`requires(Option<Vec<DocumentRequires>>)`](crate::output::GetDocumentOutput::requires): <p>A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document.</p>
+    ///   - [`attachments_content(Option<Vec<AttachmentContent>>)`](crate::output::GetDocumentOutput::attachments_content): <p>A description of the document attachments, including names, locations, sizes, and so on.</p>
+    ///   - [`review_status(Option<ReviewStatus>)`](crate::output::GetDocumentOutput::review_status): <p>The current review status of a new custom Systems Manager document (SSM document) created by a member of your organization, or of the latest version of an existing SSM document.</p>  <p>Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p>  <p>Only one version of an SSM document can be in review, or PENDING, at a time.</p>
+    /// - On failure, responds with [`SdkError<GetDocumentError>`](crate::error::GetDocumentError)
     pub fn get_document(&self) -> fluent_builders::GetDocument<C, M, R> {
         fluent_builders::GetDocument::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetInventory` operation.
-    ///
-    /// See [`GetInventory`](crate::client::fluent_builders::GetInventory) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetInventory`](crate::client::fluent_builders::GetInventory) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetInventory::into_paginator).
+    ///
+    /// - Takes [`GetInventoryInput`](crate::input::GetInventoryInput) with field(s):
+    ///   - [`filters(Option<Vec<InventoryFilter>>)`](crate::input::GetInventoryInput::filters): <p>One or more filters. Use a filter to return a more specific list of results.</p>
+    ///   - [`aggregators(Option<Vec<InventoryAggregator>>)`](crate::input::GetInventoryInput::aggregators): <p>Returns counts of inventory types based on one or more expressions. For example, if you aggregate by using an expression that uses the <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of how many Windows and Linux managed nodes exist in your inventoried fleet.</p>
+    ///   - [`result_attributes(Option<Vec<ResultAttribute>>)`](crate::input::GetInventoryInput::result_attributes): <p>The list of inventory item types to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetInventoryInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetInventoryInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    /// - On success, responds with [`GetInventoryOutput`](crate::output::GetInventoryOutput) with field(s):
+    ///   - [`entities(Option<Vec<InventoryResultEntity>>)`](crate::output::GetInventoryOutput::entities): <p>Collection of inventory entities such as a collection of managed node inventory. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetInventoryOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    /// - On failure, responds with [`SdkError<GetInventoryError>`](crate::error::GetInventoryError)
     pub fn get_inventory(&self) -> fluent_builders::GetInventory<C, M, R> {
         fluent_builders::GetInventory::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetInventorySchema` operation.
-    ///
-    /// See [`GetInventorySchema`](crate::client::fluent_builders::GetInventorySchema) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetInventorySchema`](crate::client::fluent_builders::GetInventorySchema) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetInventorySchema::into_paginator).
+    ///
+    /// - Takes [`GetInventorySchemaInput`](crate::input::GetInventorySchemaInput) with field(s):
+    ///   - [`type_name(Option<String>)`](crate::input::GetInventorySchemaInput::type_name): <p>The type of inventory item to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetInventorySchemaInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetInventorySchemaInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`aggregator(bool)`](crate::input::GetInventorySchemaInput::aggregator): <p>Returns inventory schemas that support aggregation. For example, this call returns the <code>AWS:InstanceInformation</code> type, because it supports aggregation based on the <code>PlatformName</code>, <code>PlatformType</code>, and <code>PlatformVersion</code> attributes.</p>
+    ///   - [`sub_type(Option<bool>)`](crate::input::GetInventorySchemaInput::sub_type): <p>Returns the sub-type schema for a specified inventory type.</p>
+    /// - On success, responds with [`GetInventorySchemaOutput`](crate::output::GetInventorySchemaOutput) with field(s):
+    ///   - [`schemas(Option<Vec<InventoryItemSchema>>)`](crate::output::GetInventorySchemaOutput::schemas): <p>Inventory schemas returned by the request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetInventorySchemaOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    /// - On failure, responds with [`SdkError<GetInventorySchemaError>`](crate::error::GetInventorySchemaError)
     pub fn get_inventory_schema(&self) -> fluent_builders::GetInventorySchema<C, M, R> {
         fluent_builders::GetInventorySchema::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMaintenanceWindow` operation.
+    /// Constructs a fluent builder for the [`GetMaintenanceWindow`](crate::client::fluent_builders::GetMaintenanceWindow) operation.
     ///
-    /// See [`GetMaintenanceWindow`](crate::client::fluent_builders::GetMaintenanceWindow) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetMaintenanceWindowInput`](crate::input::GetMaintenanceWindowInput) with field(s):
+    ///   - [`window_id(Option<String>)`](crate::input::GetMaintenanceWindowInput::window_id): <p>The ID of the maintenance window for which you want to retrieve information.</p>
+    /// - On success, responds with [`GetMaintenanceWindowOutput`](crate::output::GetMaintenanceWindowOutput) with field(s):
+    ///   - [`window_id(Option<String>)`](crate::output::GetMaintenanceWindowOutput::window_id): <p>The ID of the created maintenance window.</p>
+    ///   - [`name(Option<String>)`](crate::output::GetMaintenanceWindowOutput::name): <p>The name of the maintenance window.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetMaintenanceWindowOutput::description): <p>The description of the maintenance window.</p>
+    ///   - [`start_date(Option<String>)`](crate::output::GetMaintenanceWindowOutput::start_date): <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become active. The maintenance window won't run before this specified time.</p>
+    ///   - [`end_date(Option<String>)`](crate::output::GetMaintenanceWindowOutput::end_date): <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive. The maintenance window won't run after this specified time.</p>
+    ///   - [`schedule(Option<String>)`](crate::output::GetMaintenanceWindowOutput::schedule): <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
+    ///   - [`schedule_timezone(Option<String>)`](crate::output::GetMaintenanceWindowOutput::schedule_timezone): <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
+    ///   - [`schedule_offset(Option<i32>)`](crate::output::GetMaintenanceWindowOutput::schedule_offset): <p>The number of days to wait to run a maintenance window after the scheduled cron expression date and time.</p>
+    ///   - [`next_execution_time(Option<String>)`](crate::output::GetMaintenanceWindowOutput::next_execution_time): <p>The next time the maintenance window will actually run, taking into account any specified times for the maintenance window to become active or inactive.</p>
+    ///   - [`duration(i32)`](crate::output::GetMaintenanceWindowOutput::duration): <p>The duration of the maintenance window in hours.</p>
+    ///   - [`cutoff(i32)`](crate::output::GetMaintenanceWindowOutput::cutoff): <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
+    ///   - [`allow_unassociated_targets(bool)`](crate::output::GetMaintenanceWindowOutput::allow_unassociated_targets): <p>Whether targets must be registered with the maintenance window before tasks can be defined for those targets.</p>
+    ///   - [`enabled(bool)`](crate::output::GetMaintenanceWindowOutput::enabled): <p>Indicates whether the maintenance window is enabled.</p>
+    ///   - [`created_date(Option<DateTime>)`](crate::output::GetMaintenanceWindowOutput::created_date): <p>The date the maintenance window was created.</p>
+    ///   - [`modified_date(Option<DateTime>)`](crate::output::GetMaintenanceWindowOutput::modified_date): <p>The date the maintenance window was last modified.</p>
+    /// - On failure, responds with [`SdkError<GetMaintenanceWindowError>`](crate::error::GetMaintenanceWindowError)
     pub fn get_maintenance_window(&self) -> fluent_builders::GetMaintenanceWindow<C, M, R> {
         fluent_builders::GetMaintenanceWindow::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMaintenanceWindowExecution` operation.
+    /// Constructs a fluent builder for the [`GetMaintenanceWindowExecution`](crate::client::fluent_builders::GetMaintenanceWindowExecution) operation.
     ///
-    /// See [`GetMaintenanceWindowExecution`](crate::client::fluent_builders::GetMaintenanceWindowExecution) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetMaintenanceWindowExecutionInput`](crate::input::GetMaintenanceWindowExecutionInput) with field(s):
+    ///   - [`window_execution_id(Option<String>)`](crate::input::GetMaintenanceWindowExecutionInput::window_execution_id): <p>The ID of the maintenance window execution that includes the task.</p>
+    /// - On success, responds with [`GetMaintenanceWindowExecutionOutput`](crate::output::GetMaintenanceWindowExecutionOutput) with field(s):
+    ///   - [`window_execution_id(Option<String>)`](crate::output::GetMaintenanceWindowExecutionOutput::window_execution_id): <p>The ID of the maintenance window execution.</p>
+    ///   - [`task_ids(Option<Vec<String>>)`](crate::output::GetMaintenanceWindowExecutionOutput::task_ids): <p>The ID of the task executions from the maintenance window execution.</p>
+    ///   - [`status(Option<MaintenanceWindowExecutionStatus>)`](crate::output::GetMaintenanceWindowExecutionOutput::status): <p>The status of the maintenance window execution.</p>
+    ///   - [`status_details(Option<String>)`](crate::output::GetMaintenanceWindowExecutionOutput::status_details): <p>The details explaining the status. Not available for all status values.</p>
+    ///   - [`start_time(Option<DateTime>)`](crate::output::GetMaintenanceWindowExecutionOutput::start_time): <p>The time the maintenance window started running.</p>
+    ///   - [`end_time(Option<DateTime>)`](crate::output::GetMaintenanceWindowExecutionOutput::end_time): <p>The time the maintenance window finished running.</p>
+    /// - On failure, responds with [`SdkError<GetMaintenanceWindowExecutionError>`](crate::error::GetMaintenanceWindowExecutionError)
     pub fn get_maintenance_window_execution(
         &self,
     ) -> fluent_builders::GetMaintenanceWindowExecution<C, M, R> {
         fluent_builders::GetMaintenanceWindowExecution::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMaintenanceWindowExecutionTask` operation.
+    /// Constructs a fluent builder for the [`GetMaintenanceWindowExecutionTask`](crate::client::fluent_builders::GetMaintenanceWindowExecutionTask) operation.
     ///
-    /// See [`GetMaintenanceWindowExecutionTask`](crate::client::fluent_builders::GetMaintenanceWindowExecutionTask) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetMaintenanceWindowExecutionTaskInput`](crate::input::GetMaintenanceWindowExecutionTaskInput) with field(s):
+    ///   - [`window_execution_id(Option<String>)`](crate::input::GetMaintenanceWindowExecutionTaskInput::window_execution_id): <p>The ID of the maintenance window execution that includes the task.</p>
+    ///   - [`task_id(Option<String>)`](crate::input::GetMaintenanceWindowExecutionTaskInput::task_id): <p>The ID of the specific task execution in the maintenance window task that should be retrieved.</p>
+    /// - On success, responds with [`GetMaintenanceWindowExecutionTaskOutput`](crate::output::GetMaintenanceWindowExecutionTaskOutput) with field(s):
+    ///   - [`window_execution_id(Option<String>)`](crate::output::GetMaintenanceWindowExecutionTaskOutput::window_execution_id): <p>The ID of the maintenance window execution that includes the task.</p>
+    ///   - [`task_execution_id(Option<String>)`](crate::output::GetMaintenanceWindowExecutionTaskOutput::task_execution_id): <p>The ID of the specific task execution in the maintenance window task that was retrieved.</p>
+    ///   - [`task_arn(Option<String>)`](crate::output::GetMaintenanceWindowExecutionTaskOutput::task_arn): <p>The Amazon Resource Name (ARN) of the task that ran.</p>
+    ///   - [`service_role(Option<String>)`](crate::output::GetMaintenanceWindowExecutionTaskOutput::service_role): <p>The role that was assumed when running the task.</p>
+    ///   - [`r#type(Option<MaintenanceWindowTaskType>)`](crate::output::GetMaintenanceWindowExecutionTaskOutput::r#type): <p>The type of task that was run.</p>
+    ///   - [`task_parameters(Option<Vec<HashMap<String, MaintenanceWindowTaskParameterValueExpression>>>)`](crate::output::GetMaintenanceWindowExecutionTaskOutput::task_parameters): <p>The parameters passed to the task when it was run.</p> <note>   <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>  </note>  <p>The map has the following format:</p>  <ul>   <li> <p> <code>Key</code>: string, between 1 and 255 characters</p> </li>   <li> <p> <code>Value</code>: an array of strings, each between 1 and 255 characters</p> </li>  </ul>
+    ///   - [`priority(i32)`](crate::output::GetMaintenanceWindowExecutionTaskOutput::priority): <p>The priority of the task.</p>
+    ///   - [`max_concurrency(Option<String>)`](crate::output::GetMaintenanceWindowExecutionTaskOutput::max_concurrency): <p>The defined maximum number of task executions that could be run in parallel.</p>
+    ///   - [`max_errors(Option<String>)`](crate::output::GetMaintenanceWindowExecutionTaskOutput::max_errors): <p>The defined maximum number of task execution errors allowed before scheduling of the task execution would have been stopped.</p>
+    ///   - [`status(Option<MaintenanceWindowExecutionStatus>)`](crate::output::GetMaintenanceWindowExecutionTaskOutput::status): <p>The status of the task.</p>
+    ///   - [`status_details(Option<String>)`](crate::output::GetMaintenanceWindowExecutionTaskOutput::status_details): <p>The details explaining the status. Not available for all status values.</p>
+    ///   - [`start_time(Option<DateTime>)`](crate::output::GetMaintenanceWindowExecutionTaskOutput::start_time): <p>The time the task execution started.</p>
+    ///   - [`end_time(Option<DateTime>)`](crate::output::GetMaintenanceWindowExecutionTaskOutput::end_time): <p>The time the task execution completed.</p>
+    /// - On failure, responds with [`SdkError<GetMaintenanceWindowExecutionTaskError>`](crate::error::GetMaintenanceWindowExecutionTaskError)
     pub fn get_maintenance_window_execution_task(
         &self,
     ) -> fluent_builders::GetMaintenanceWindowExecutionTask<C, M, R> {
         fluent_builders::GetMaintenanceWindowExecutionTask::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMaintenanceWindowExecutionTaskInvocation` operation.
+    /// Constructs a fluent builder for the [`GetMaintenanceWindowExecutionTaskInvocation`](crate::client::fluent_builders::GetMaintenanceWindowExecutionTaskInvocation) operation.
     ///
-    /// See [`GetMaintenanceWindowExecutionTaskInvocation`](crate::client::fluent_builders::GetMaintenanceWindowExecutionTaskInvocation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetMaintenanceWindowExecutionTaskInvocationInput`](crate::input::GetMaintenanceWindowExecutionTaskInvocationInput) with field(s):
+    ///   - [`window_execution_id(Option<String>)`](crate::input::GetMaintenanceWindowExecutionTaskInvocationInput::window_execution_id): <p>The ID of the maintenance window execution for which the task is a part.</p>
+    ///   - [`task_id(Option<String>)`](crate::input::GetMaintenanceWindowExecutionTaskInvocationInput::task_id): <p>The ID of the specific task in the maintenance window task that should be retrieved. </p>
+    ///   - [`invocation_id(Option<String>)`](crate::input::GetMaintenanceWindowExecutionTaskInvocationInput::invocation_id): <p>The invocation ID to retrieve.</p>
+    /// - On success, responds with [`GetMaintenanceWindowExecutionTaskInvocationOutput`](crate::output::GetMaintenanceWindowExecutionTaskInvocationOutput) with field(s):
+    ///   - [`window_execution_id(Option<String>)`](crate::output::GetMaintenanceWindowExecutionTaskInvocationOutput::window_execution_id): <p>The maintenance window execution ID.</p>
+    ///   - [`task_execution_id(Option<String>)`](crate::output::GetMaintenanceWindowExecutionTaskInvocationOutput::task_execution_id): <p>The task execution ID.</p>
+    ///   - [`invocation_id(Option<String>)`](crate::output::GetMaintenanceWindowExecutionTaskInvocationOutput::invocation_id): <p>The invocation ID.</p>
+    ///   - [`execution_id(Option<String>)`](crate::output::GetMaintenanceWindowExecutionTaskInvocationOutput::execution_id): <p>The execution ID.</p>
+    ///   - [`task_type(Option<MaintenanceWindowTaskType>)`](crate::output::GetMaintenanceWindowExecutionTaskInvocationOutput::task_type): <p>Retrieves the task type for a maintenance window.</p>
+    ///   - [`parameters(Option<String>)`](crate::output::GetMaintenanceWindowExecutionTaskInvocationOutput::parameters): <p>The parameters used at the time that the task ran.</p>
+    ///   - [`status(Option<MaintenanceWindowExecutionStatus>)`](crate::output::GetMaintenanceWindowExecutionTaskInvocationOutput::status): <p>The task status for an invocation.</p>
+    ///   - [`status_details(Option<String>)`](crate::output::GetMaintenanceWindowExecutionTaskInvocationOutput::status_details): <p>The details explaining the status. Details are only available for certain status values.</p>
+    ///   - [`start_time(Option<DateTime>)`](crate::output::GetMaintenanceWindowExecutionTaskInvocationOutput::start_time): <p>The time that the task started running on the target.</p>
+    ///   - [`end_time(Option<DateTime>)`](crate::output::GetMaintenanceWindowExecutionTaskInvocationOutput::end_time): <p>The time that the task finished running on the target.</p>
+    ///   - [`owner_information(Option<String>)`](crate::output::GetMaintenanceWindowExecutionTaskInvocationOutput::owner_information): <p>User-provided value to be included in any Amazon CloudWatch Events or Amazon EventBridge events raised while running tasks for these targets in this maintenance window.</p>
+    ///   - [`window_target_id(Option<String>)`](crate::output::GetMaintenanceWindowExecutionTaskInvocationOutput::window_target_id): <p>The maintenance window target ID.</p>
+    /// - On failure, responds with [`SdkError<GetMaintenanceWindowExecutionTaskInvocationError>`](crate::error::GetMaintenanceWindowExecutionTaskInvocationError)
     pub fn get_maintenance_window_execution_task_invocation(
         &self,
     ) -> fluent_builders::GetMaintenanceWindowExecutionTaskInvocation<C, M, R> {
         fluent_builders::GetMaintenanceWindowExecutionTaskInvocation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMaintenanceWindowTask` operation.
+    /// Constructs a fluent builder for the [`GetMaintenanceWindowTask`](crate::client::fluent_builders::GetMaintenanceWindowTask) operation.
     ///
-    /// See [`GetMaintenanceWindowTask`](crate::client::fluent_builders::GetMaintenanceWindowTask) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetMaintenanceWindowTaskInput`](crate::input::GetMaintenanceWindowTaskInput) with field(s):
+    ///   - [`window_id(Option<String>)`](crate::input::GetMaintenanceWindowTaskInput::window_id): <p>The maintenance window ID that includes the task to retrieve.</p>
+    ///   - [`window_task_id(Option<String>)`](crate::input::GetMaintenanceWindowTaskInput::window_task_id): <p>The maintenance window task ID to retrieve.</p>
+    /// - On success, responds with [`GetMaintenanceWindowTaskOutput`](crate::output::GetMaintenanceWindowTaskOutput) with field(s):
+    ///   - [`window_id(Option<String>)`](crate::output::GetMaintenanceWindowTaskOutput::window_id): <p>The retrieved maintenance window ID.</p>
+    ///   - [`window_task_id(Option<String>)`](crate::output::GetMaintenanceWindowTaskOutput::window_task_id): <p>The retrieved maintenance window task ID.</p>
+    ///   - [`targets(Option<Vec<Target>>)`](crate::output::GetMaintenanceWindowTaskOutput::targets): <p>The targets where the task should run.</p>
+    ///   - [`task_arn(Option<String>)`](crate::output::GetMaintenanceWindowTaskOutput::task_arn): <p>The resource that the task used during execution. For <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task types, the value of <code>TaskArn</code> is the SSM document name/ARN. For <code>LAMBDA</code> tasks, the value is the function name/ARN. For <code>STEP_FUNCTIONS</code> tasks, the value is the state machine ARN.</p>
+    ///   - [`service_role_arn(Option<String>)`](crate::output::GetMaintenanceWindowTaskOutput::service_role_arn): <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+    ///   - [`task_type(Option<MaintenanceWindowTaskType>)`](crate::output::GetMaintenanceWindowTaskOutput::task_type): <p>The type of task to run.</p>
+    ///   - [`task_parameters(Option<HashMap<String, MaintenanceWindowTaskParameterValueExpression>>)`](crate::output::GetMaintenanceWindowTaskOutput::task_parameters): <p>The parameters to pass to the task when it runs.</p> <note>   <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>  </note>
+    ///   - [`task_invocation_parameters(Option<MaintenanceWindowTaskInvocationParameters>)`](crate::output::GetMaintenanceWindowTaskOutput::task_invocation_parameters): <p>The parameters to pass to the task when it runs.</p>
+    ///   - [`priority(i32)`](crate::output::GetMaintenanceWindowTaskOutput::priority): <p>The priority of the task when it runs. The lower the number, the higher the priority. Tasks that have the same priority are scheduled in parallel.</p>
+    ///   - [`max_concurrency(Option<String>)`](crate::output::GetMaintenanceWindowTaskOutput::max_concurrency): <p>The maximum number of targets allowed to run this task in parallel.</p> <note>   <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>  </note>
+    ///   - [`max_errors(Option<String>)`](crate::output::GetMaintenanceWindowTaskOutput::max_errors): <p>The maximum number of errors allowed before the task stops being scheduled.</p> <note>   <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>  </note>
+    ///   - [`logging_info(Option<LoggingInfo>)`](crate::output::GetMaintenanceWindowTaskOutput::logging_info): <p>The location in Amazon Simple Storage Service (Amazon S3) where the task results are logged.</p> <note>   <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>  </note>
+    ///   - [`name(Option<String>)`](crate::output::GetMaintenanceWindowTaskOutput::name): <p>The retrieved task name.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetMaintenanceWindowTaskOutput::description): <p>The retrieved task description.</p>
+    ///   - [`cutoff_behavior(Option<MaintenanceWindowTaskCutoffBehavior>)`](crate::output::GetMaintenanceWindowTaskOutput::cutoff_behavior): <p>The action to take on tasks when the maintenance window cutoff time is reached. <code>CONTINUE_TASK</code> means that tasks continue to run. For Automation, Lambda, Step Functions tasks, <code>CANCEL_TASK</code> means that currently running task invocations continue, but no new task invocations are started. For Run Command tasks, <code>CANCEL_TASK</code> means the system attempts to stop the task by sending a <code>CancelCommand</code> operation.</p>
+    /// - On failure, responds with [`SdkError<GetMaintenanceWindowTaskError>`](crate::error::GetMaintenanceWindowTaskError)
     pub fn get_maintenance_window_task(
         &self,
     ) -> fluent_builders::GetMaintenanceWindowTask<C, M, R> {
         fluent_builders::GetMaintenanceWindowTask::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetOpsItem` operation.
+    /// Constructs a fluent builder for the [`GetOpsItem`](crate::client::fluent_builders::GetOpsItem) operation.
     ///
-    /// See [`GetOpsItem`](crate::client::fluent_builders::GetOpsItem) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetOpsItemInput`](crate::input::GetOpsItemInput) with field(s):
+    ///   - [`ops_item_id(Option<String>)`](crate::input::GetOpsItemInput::ops_item_id): <p>The ID of the OpsItem that you want to get.</p>
+    /// - On success, responds with [`GetOpsItemOutput`](crate::output::GetOpsItemOutput) with field(s):
+    ///   - [`ops_item(Option<OpsItem>)`](crate::output::GetOpsItemOutput::ops_item): <p>The OpsItem.</p>
+    /// - On failure, responds with [`SdkError<GetOpsItemError>`](crate::error::GetOpsItemError)
     pub fn get_ops_item(&self) -> fluent_builders::GetOpsItem<C, M, R> {
         fluent_builders::GetOpsItem::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetOpsMetadata` operation.
+    /// Constructs a fluent builder for the [`GetOpsMetadata`](crate::client::fluent_builders::GetOpsMetadata) operation.
     ///
-    /// See [`GetOpsMetadata`](crate::client::fluent_builders::GetOpsMetadata) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetOpsMetadataInput`](crate::input::GetOpsMetadataInput) with field(s):
+    ///   - [`ops_metadata_arn(Option<String>)`](crate::input::GetOpsMetadataInput::ops_metadata_arn): <p>The Amazon Resource Name (ARN) of an OpsMetadata Object to view.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetOpsMetadataInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetOpsMetadataInput::next_token): <p>A token to start the list. Use this token to get the next set of results.</p>
+    /// - On success, responds with [`GetOpsMetadataOutput`](crate::output::GetOpsMetadataOutput) with field(s):
+    ///   - [`resource_id(Option<String>)`](crate::output::GetOpsMetadataOutput::resource_id): <p>The resource ID of the Application Manager application.</p>
+    ///   - [`metadata(Option<HashMap<String, MetadataValue>>)`](crate::output::GetOpsMetadataOutput::metadata): <p>OpsMetadata for an Application Manager application.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetOpsMetadataOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    /// - On failure, responds with [`SdkError<GetOpsMetadataError>`](crate::error::GetOpsMetadataError)
     pub fn get_ops_metadata(&self) -> fluent_builders::GetOpsMetadata<C, M, R> {
         fluent_builders::GetOpsMetadata::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetOpsSummary` operation.
-    ///
-    /// See [`GetOpsSummary`](crate::client::fluent_builders::GetOpsSummary) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetOpsSummary`](crate::client::fluent_builders::GetOpsSummary) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetOpsSummary::into_paginator).
+    ///
+    /// - Takes [`GetOpsSummaryInput`](crate::input::GetOpsSummaryInput) with field(s):
+    ///   - [`sync_name(Option<String>)`](crate::input::GetOpsSummaryInput::sync_name): <p>Specify the name of a resource data sync to get.</p>
+    ///   - [`filters(Option<Vec<OpsFilter>>)`](crate::input::GetOpsSummaryInput::filters): <p>Optional filters used to scope down the returned OpsData. </p>
+    ///   - [`aggregators(Option<Vec<OpsAggregator>>)`](crate::input::GetOpsSummaryInput::aggregators): <p>Optional aggregators that return counts of OpsData based on one or more expressions.</p>
+    ///   - [`result_attributes(Option<Vec<OpsResultAttribute>>)`](crate::input::GetOpsSummaryInput::result_attributes): <p>The OpsData data type to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetOpsSummaryInput::next_token): <p>A token to start the list. Use this token to get the next set of results. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetOpsSummaryInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    /// - On success, responds with [`GetOpsSummaryOutput`](crate::output::GetOpsSummaryOutput) with field(s):
+    ///   - [`entities(Option<Vec<OpsEntity>>)`](crate::output::GetOpsSummaryOutput::entities): <p>The list of aggregated details and filtered OpsData.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetOpsSummaryOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    /// - On failure, responds with [`SdkError<GetOpsSummaryError>`](crate::error::GetOpsSummaryError)
     pub fn get_ops_summary(&self) -> fluent_builders::GetOpsSummary<C, M, R> {
         fluent_builders::GetOpsSummary::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetParameter` operation.
+    /// Constructs a fluent builder for the [`GetParameter`](crate::client::fluent_builders::GetParameter) operation.
     ///
-    /// See [`GetParameter`](crate::client::fluent_builders::GetParameter) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetParameterInput`](crate::input::GetParameterInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::GetParameterInput::name): <p>The name of the parameter you want to query.</p>  <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use <code>"Name": "name:version"</code>.</p>
+    ///   - [`with_decryption(Option<bool>)`](crate::input::GetParameterInput::with_decryption): <p>Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
+    /// - On success, responds with [`GetParameterOutput`](crate::output::GetParameterOutput) with field(s):
+    ///   - [`parameter(Option<Parameter>)`](crate::output::GetParameterOutput::parameter): <p>Information about a parameter.</p>
+    /// - On failure, responds with [`SdkError<GetParameterError>`](crate::error::GetParameterError)
     pub fn get_parameter(&self) -> fluent_builders::GetParameter<C, M, R> {
         fluent_builders::GetParameter::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetParameterHistory` operation.
-    ///
-    /// See [`GetParameterHistory`](crate::client::fluent_builders::GetParameterHistory) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetParameterHistory`](crate::client::fluent_builders::GetParameterHistory) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetParameterHistory::into_paginator).
+    ///
+    /// - Takes [`GetParameterHistoryInput`](crate::input::GetParameterHistoryInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::GetParameterHistoryInput::name): <p>The name of the parameter for which you want to review history.</p>
+    ///   - [`with_decryption(Option<bool>)`](crate::input::GetParameterHistoryInput::with_decryption): <p>Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetParameterHistoryInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetParameterHistoryInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    /// - On success, responds with [`GetParameterHistoryOutput`](crate::output::GetParameterHistoryOutput) with field(s):
+    ///   - [`parameters(Option<Vec<ParameterHistory>>)`](crate::output::GetParameterHistoryOutput::parameters): <p>A list of parameters returned by the request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetParameterHistoryOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    /// - On failure, responds with [`SdkError<GetParameterHistoryError>`](crate::error::GetParameterHistoryError)
     pub fn get_parameter_history(&self) -> fluent_builders::GetParameterHistory<C, M, R> {
         fluent_builders::GetParameterHistory::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetParameters` operation.
+    /// Constructs a fluent builder for the [`GetParameters`](crate::client::fluent_builders::GetParameters) operation.
     ///
-    /// See [`GetParameters`](crate::client::fluent_builders::GetParameters) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetParametersInput`](crate::input::GetParametersInput) with field(s):
+    ///   - [`names(Option<Vec<String>>)`](crate::input::GetParametersInput::names): <p>Names of the parameters for which you want to query information.</p>  <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use <code>"Name": "name:version"</code>.</p>
+    ///   - [`with_decryption(Option<bool>)`](crate::input::GetParametersInput::with_decryption): <p>Return decrypted secure string value. Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
+    /// - On success, responds with [`GetParametersOutput`](crate::output::GetParametersOutput) with field(s):
+    ///   - [`parameters(Option<Vec<Parameter>>)`](crate::output::GetParametersOutput::parameters): <p>A list of details for a parameter.</p>
+    ///   - [`invalid_parameters(Option<Vec<String>>)`](crate::output::GetParametersOutput::invalid_parameters): <p>A list of parameters that aren't formatted correctly or don't run during an execution.</p>
+    /// - On failure, responds with [`SdkError<GetParametersError>`](crate::error::GetParametersError)
     pub fn get_parameters(&self) -> fluent_builders::GetParameters<C, M, R> {
         fluent_builders::GetParameters::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetParametersByPath` operation.
-    ///
-    /// See [`GetParametersByPath`](crate::client::fluent_builders::GetParametersByPath) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetParametersByPath`](crate::client::fluent_builders::GetParametersByPath) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetParametersByPath::into_paginator).
+    ///
+    /// - Takes [`GetParametersByPathInput`](crate::input::GetParametersByPathInput) with field(s):
+    ///   - [`path(Option<String>)`](crate::input::GetParametersByPathInput::path): <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/). The hierachy is the parameter name except the last part of the parameter. For the API call to succeeed, the last part of the parameter name can't be in the path. A parameter name hierarchy can have a maximum of 15 levels. Here is an example of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33 </code> </p>
+    ///   - [`recursive(Option<bool>)`](crate::input::GetParametersByPathInput::recursive): <p>Retrieve all parameters within a hierarchy.</p> <important>   <p>If a user has access to a path, then the user can access all levels of that path. For example, if a user has permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation recursively for <code>/a</code> and view <code>/a/b</code>.</p>  </important>
+    ///   - [`parameter_filters(Option<Vec<ParameterStringFilter>>)`](crate::input::GetParametersByPathInput::parameter_filters): <p>Filters to limit the request results.</p> <note>   <p>The following <code>Key</code> values are supported for <code>GetParametersByPath</code>: <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p>   <p>The following <code>Key</code> values aren't supported for <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p>  </note>
+    ///   - [`with_decryption(Option<bool>)`](crate::input::GetParametersByPathInput::with_decryption): <p>Retrieve all parameters in a hierarchy with their value decrypted.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetParametersByPathInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetParametersByPathInput::next_token): <p>A token to start the list. Use this token to get the next set of results. </p>
+    /// - On success, responds with [`GetParametersByPathOutput`](crate::output::GetParametersByPathOutput) with field(s):
+    ///   - [`parameters(Option<Vec<Parameter>>)`](crate::output::GetParametersByPathOutput::parameters): <p>A list of parameters found in the specified hierarchy.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetParametersByPathOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    /// - On failure, responds with [`SdkError<GetParametersByPathError>`](crate::error::GetParametersByPathError)
     pub fn get_parameters_by_path(&self) -> fluent_builders::GetParametersByPath<C, M, R> {
         fluent_builders::GetParametersByPath::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetPatchBaseline` operation.
+    /// Constructs a fluent builder for the [`GetPatchBaseline`](crate::client::fluent_builders::GetPatchBaseline) operation.
     ///
-    /// See [`GetPatchBaseline`](crate::client::fluent_builders::GetPatchBaseline) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetPatchBaselineInput`](crate::input::GetPatchBaselineInput) with field(s):
+    ///   - [`baseline_id(Option<String>)`](crate::input::GetPatchBaselineInput::baseline_id): <p>The ID of the patch baseline to retrieve.</p> <note>   <p>To retrieve information about an Amazon Web Services managed patch baseline, specify the full Amazon Resource Name (ARN) of the baseline. For example, for the baseline <code>AWS-AmazonLinuxDefaultPatchBaseline</code>, specify <code>arn:aws:ssm:us-east-2:733109147000:patchbaseline/pb-0e392de35e7c563b7</code> instead of <code>pb-0e392de35e7c563b7</code>.</p>  </note>
+    /// - On success, responds with [`GetPatchBaselineOutput`](crate::output::GetPatchBaselineOutput) with field(s):
+    ///   - [`baseline_id(Option<String>)`](crate::output::GetPatchBaselineOutput::baseline_id): <p>The ID of the retrieved patch baseline.</p>
+    ///   - [`name(Option<String>)`](crate::output::GetPatchBaselineOutput::name): <p>The name of the patch baseline.</p>
+    ///   - [`operating_system(Option<OperatingSystem>)`](crate::output::GetPatchBaselineOutput::operating_system): <p>Returns the operating system specified for the patch baseline.</p>
+    ///   - [`global_filters(Option<PatchFilterGroup>)`](crate::output::GetPatchBaselineOutput::global_filters): <p>A set of global filters used to exclude patches from the baseline.</p>
+    ///   - [`approval_rules(Option<PatchRuleGroup>)`](crate::output::GetPatchBaselineOutput::approval_rules): <p>A set of rules used to include patches in the baseline.</p>
+    ///   - [`approved_patches(Option<Vec<String>>)`](crate::output::GetPatchBaselineOutput::approved_patches): <p>A list of explicitly approved patches for the baseline.</p>
+    ///   - [`approved_patches_compliance_level(Option<PatchComplianceLevel>)`](crate::output::GetPatchBaselineOutput::approved_patches_compliance_level): <p>Returns the specified compliance severity level for approved patches in the patch baseline.</p>
+    ///   - [`approved_patches_enable_non_security(Option<bool>)`](crate::output::GetPatchBaselineOutput::approved_patches_enable_non_security): <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
+    ///   - [`rejected_patches(Option<Vec<String>>)`](crate::output::GetPatchBaselineOutput::rejected_patches): <p>A list of explicitly rejected patches for the baseline.</p>
+    ///   - [`rejected_patches_action(Option<PatchAction>)`](crate::output::GetPatchBaselineOutput::rejected_patches_action): <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it as a dependency.</p>
+    ///   - [`patch_groups(Option<Vec<String>>)`](crate::output::GetPatchBaselineOutput::patch_groups): <p>Patch groups included in the patch baseline.</p>
+    ///   - [`created_date(Option<DateTime>)`](crate::output::GetPatchBaselineOutput::created_date): <p>The date the patch baseline was created.</p>
+    ///   - [`modified_date(Option<DateTime>)`](crate::output::GetPatchBaselineOutput::modified_date): <p>The date the patch baseline was last modified.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetPatchBaselineOutput::description): <p>A description of the patch baseline.</p>
+    ///   - [`sources(Option<Vec<PatchSource>>)`](crate::output::GetPatchBaselineOutput::sources): <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
+    /// - On failure, responds with [`SdkError<GetPatchBaselineError>`](crate::error::GetPatchBaselineError)
     pub fn get_patch_baseline(&self) -> fluent_builders::GetPatchBaseline<C, M, R> {
         fluent_builders::GetPatchBaseline::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetPatchBaselineForPatchGroup` operation.
+    /// Constructs a fluent builder for the [`GetPatchBaselineForPatchGroup`](crate::client::fluent_builders::GetPatchBaselineForPatchGroup) operation.
     ///
-    /// See [`GetPatchBaselineForPatchGroup`](crate::client::fluent_builders::GetPatchBaselineForPatchGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetPatchBaselineForPatchGroupInput`](crate::input::GetPatchBaselineForPatchGroupInput) with field(s):
+    ///   - [`patch_group(Option<String>)`](crate::input::GetPatchBaselineForPatchGroupInput::patch_group): <p>The name of the patch group whose patch baseline should be retrieved.</p>
+    ///   - [`operating_system(Option<OperatingSystem>)`](crate::input::GetPatchBaselineForPatchGroupInput::operating_system): <p>Returns he operating system rule specified for patch groups using the patch baseline.</p>
+    /// - On success, responds with [`GetPatchBaselineForPatchGroupOutput`](crate::output::GetPatchBaselineForPatchGroupOutput) with field(s):
+    ///   - [`baseline_id(Option<String>)`](crate::output::GetPatchBaselineForPatchGroupOutput::baseline_id): <p>The ID of the patch baseline that should be used for the patch group.</p>
+    ///   - [`patch_group(Option<String>)`](crate::output::GetPatchBaselineForPatchGroupOutput::patch_group): <p>The name of the patch group.</p>
+    ///   - [`operating_system(Option<OperatingSystem>)`](crate::output::GetPatchBaselineForPatchGroupOutput::operating_system): <p>The operating system rule specified for patch groups using the patch baseline.</p>
+    /// - On failure, responds with [`SdkError<GetPatchBaselineForPatchGroupError>`](crate::error::GetPatchBaselineForPatchGroupError)
     pub fn get_patch_baseline_for_patch_group(
         &self,
     ) -> fluent_builders::GetPatchBaselineForPatchGroup<C, M, R> {
         fluent_builders::GetPatchBaselineForPatchGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetServiceSetting` operation.
+    /// Constructs a fluent builder for the [`GetServiceSetting`](crate::client::fluent_builders::GetServiceSetting) operation.
     ///
-    /// See [`GetServiceSetting`](crate::client::fluent_builders::GetServiceSetting) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetServiceSettingInput`](crate::input::GetServiceSettingInput) with field(s):
+    ///   - [`setting_id(Option<String>)`](crate::input::GetServiceSettingInput::setting_id): <p>The ID of the service setting to get. The setting ID can be one of the following.</p>  <ul>   <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>   <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>   <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>   <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>   <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>   <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>  </ul>
+    /// - On success, responds with [`GetServiceSettingOutput`](crate::output::GetServiceSettingOutput) with field(s):
+    ///   - [`service_setting(Option<ServiceSetting>)`](crate::output::GetServiceSettingOutput::service_setting): <p>The query result of the current service setting.</p>
+    /// - On failure, responds with [`SdkError<GetServiceSettingError>`](crate::error::GetServiceSettingError)
     pub fn get_service_setting(&self) -> fluent_builders::GetServiceSetting<C, M, R> {
         fluent_builders::GetServiceSetting::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `LabelParameterVersion` operation.
+    /// Constructs a fluent builder for the [`LabelParameterVersion`](crate::client::fluent_builders::LabelParameterVersion) operation.
     ///
-    /// See [`LabelParameterVersion`](crate::client::fluent_builders::LabelParameterVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`LabelParameterVersionInput`](crate::input::LabelParameterVersionInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::LabelParameterVersionInput::name): <p>The parameter name on which you want to attach one or more labels.</p>
+    ///   - [`parameter_version(Option<i64>)`](crate::input::LabelParameterVersionInput::parameter_version): <p>The specific version of the parameter on which you want to attach one or more labels. If no version is specified, the system attaches the label to the latest version.</p>
+    ///   - [`labels(Option<Vec<String>>)`](crate::input::LabelParameterVersionInput::labels): <p>One or more labels to attach to the specified parameter version.</p>
+    /// - On success, responds with [`LabelParameterVersionOutput`](crate::output::LabelParameterVersionOutput) with field(s):
+    ///   - [`invalid_labels(Option<Vec<String>>)`](crate::output::LabelParameterVersionOutput::invalid_labels): <p>The label doesn't meet the requirements. For information about parameter label requirements, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    ///   - [`parameter_version(i64)`](crate::output::LabelParameterVersionOutput::parameter_version): <p>The version of the parameter that has been labeled.</p>
+    /// - On failure, responds with [`SdkError<LabelParameterVersionError>`](crate::error::LabelParameterVersionError)
     pub fn label_parameter_version(&self) -> fluent_builders::LabelParameterVersion<C, M, R> {
         fluent_builders::LabelParameterVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAssociations` operation.
-    ///
-    /// See [`ListAssociations`](crate::client::fluent_builders::ListAssociations) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListAssociations`](crate::client::fluent_builders::ListAssociations) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssociations::into_paginator).
+    ///
+    /// - Takes [`ListAssociationsInput`](crate::input::ListAssociationsInput) with field(s):
+    ///   - [`association_filter_list(Option<Vec<AssociationFilter>>)`](crate::input::ListAssociationsInput::association_filter_list): <p>One or more filters. Use a filter to return a more specific list of results.</p> <note>   <p>Filtering associations using the <code>InstanceID</code> attribute only returns legacy associations created using the <code>InstanceID</code> attribute. Associations targeting the managed node that are part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code> aren't returned.</p>  </note>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListAssociationsInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListAssociationsInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    /// - On success, responds with [`ListAssociationsOutput`](crate::output::ListAssociationsOutput) with field(s):
+    ///   - [`associations(Option<Vec<Association>>)`](crate::output::ListAssociationsOutput::associations): <p>The associations.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAssociationsOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    /// - On failure, responds with [`SdkError<ListAssociationsError>`](crate::error::ListAssociationsError)
     pub fn list_associations(&self) -> fluent_builders::ListAssociations<C, M, R> {
         fluent_builders::ListAssociations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAssociationVersions` operation.
-    ///
-    /// See [`ListAssociationVersions`](crate::client::fluent_builders::ListAssociationVersions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListAssociationVersions`](crate::client::fluent_builders::ListAssociationVersions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssociationVersions::into_paginator).
+    ///
+    /// - Takes [`ListAssociationVersionsInput`](crate::input::ListAssociationVersionsInput) with field(s):
+    ///   - [`association_id(Option<String>)`](crate::input::ListAssociationVersionsInput::association_id): <p>The association ID for which you want to view all versions.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListAssociationVersionsInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListAssociationVersionsInput::next_token): <p>A token to start the list. Use this token to get the next set of results. </p>
+    /// - On success, responds with [`ListAssociationVersionsOutput`](crate::output::ListAssociationVersionsOutput) with field(s):
+    ///   - [`association_versions(Option<Vec<AssociationVersionInfo>>)`](crate::output::ListAssociationVersionsOutput::association_versions): <p>Information about all versions of the association for the specified association ID.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAssociationVersionsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListAssociationVersionsError>`](crate::error::ListAssociationVersionsError)
     pub fn list_association_versions(&self) -> fluent_builders::ListAssociationVersions<C, M, R> {
         fluent_builders::ListAssociationVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListCommandInvocations` operation.
-    ///
-    /// See [`ListCommandInvocations`](crate::client::fluent_builders::ListCommandInvocations) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListCommandInvocations`](crate::client::fluent_builders::ListCommandInvocations) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCommandInvocations::into_paginator).
+    ///
+    /// - Takes [`ListCommandInvocationsInput`](crate::input::ListCommandInvocationsInput) with field(s):
+    ///   - [`command_id(Option<String>)`](crate::input::ListCommandInvocationsInput::command_id): <p>(Optional) The invocations for a specific command ID.</p>
+    ///   - [`instance_id(Option<String>)`](crate::input::ListCommandInvocationsInput::instance_id): <p>(Optional) The command execution details for a specific managed node ID.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListCommandInvocationsInput::max_results): <p>(Optional) The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListCommandInvocationsInput::next_token): <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
+    ///   - [`filters(Option<Vec<CommandFilter>>)`](crate::input::ListCommandInvocationsInput::filters): <p>(Optional) One or more filters. Use a filter to return a more specific list of results.</p>
+    ///   - [`details(bool)`](crate::input::ListCommandInvocationsInput::details): <p>(Optional) If set this returns the response of the command executions and any command output. The default value is <code>false</code>. </p>
+    /// - On success, responds with [`ListCommandInvocationsOutput`](crate::output::ListCommandInvocationsOutput) with field(s):
+    ///   - [`command_invocations(Option<Vec<CommandInvocation>>)`](crate::output::ListCommandInvocationsOutput::command_invocations): <p>(Optional) A list of all invocations. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListCommandInvocationsOutput::next_token): <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
+    /// - On failure, responds with [`SdkError<ListCommandInvocationsError>`](crate::error::ListCommandInvocationsError)
     pub fn list_command_invocations(&self) -> fluent_builders::ListCommandInvocations<C, M, R> {
         fluent_builders::ListCommandInvocations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListCommands` operation.
-    ///
-    /// See [`ListCommands`](crate::client::fluent_builders::ListCommands) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListCommands`](crate::client::fluent_builders::ListCommands) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCommands::into_paginator).
+    ///
+    /// - Takes [`ListCommandsInput`](crate::input::ListCommandsInput) with field(s):
+    ///   - [`command_id(Option<String>)`](crate::input::ListCommandsInput::command_id): <p>(Optional) If provided, lists only the specified command.</p>
+    ///   - [`instance_id(Option<String>)`](crate::input::ListCommandsInput::instance_id): <p>(Optional) Lists commands issued against this managed node ID.</p> <note>   <p>You can't specify a managed node ID in the same command that you specify <code>Status</code> = <code>Pending</code>. This is because the command hasn't reached the managed node yet.</p>  </note>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListCommandsInput::max_results): <p>(Optional) The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListCommandsInput::next_token): <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
+    ///   - [`filters(Option<Vec<CommandFilter>>)`](crate::input::ListCommandsInput::filters): <p>(Optional) One or more filters. Use a filter to return a more specific list of results. </p>
+    /// - On success, responds with [`ListCommandsOutput`](crate::output::ListCommandsOutput) with field(s):
+    ///   - [`commands(Option<Vec<Command>>)`](crate::output::ListCommandsOutput::commands): <p>(Optional) The list of commands requested by the user. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListCommandsOutput::next_token): <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
+    /// - On failure, responds with [`SdkError<ListCommandsError>`](crate::error::ListCommandsError)
     pub fn list_commands(&self) -> fluent_builders::ListCommands<C, M, R> {
         fluent_builders::ListCommands::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListComplianceItems` operation.
-    ///
-    /// See [`ListComplianceItems`](crate::client::fluent_builders::ListComplianceItems) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListComplianceItems`](crate::client::fluent_builders::ListComplianceItems) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListComplianceItems::into_paginator).
+    ///
+    /// - Takes [`ListComplianceItemsInput`](crate::input::ListComplianceItemsInput) with field(s):
+    ///   - [`filters(Option<Vec<ComplianceStringFilter>>)`](crate::input::ListComplianceItemsInput::filters): <p>One or more compliance filters. Use a filter to return a more specific list of results.</p>
+    ///   - [`resource_ids(Option<Vec<String>>)`](crate::input::ListComplianceItemsInput::resource_ids): <p>The ID for the resources from which to get compliance information. Currently, you can only specify one resource ID.</p>
+    ///   - [`resource_types(Option<Vec<String>>)`](crate::input::ListComplianceItemsInput::resource_types): <p>The type of resource from which to get compliance information. Currently, the only supported resource type is <code>ManagedInstance</code>.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListComplianceItemsInput::next_token): <p>A token to start the list. Use this token to get the next set of results. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListComplianceItemsInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    /// - On success, responds with [`ListComplianceItemsOutput`](crate::output::ListComplianceItemsOutput) with field(s):
+    ///   - [`compliance_items(Option<Vec<ComplianceItem>>)`](crate::output::ListComplianceItemsOutput::compliance_items): <p>A list of compliance information for the specified resource ID. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListComplianceItemsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListComplianceItemsError>`](crate::error::ListComplianceItemsError)
     pub fn list_compliance_items(&self) -> fluent_builders::ListComplianceItems<C, M, R> {
         fluent_builders::ListComplianceItems::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListComplianceSummaries` operation.
-    ///
-    /// See [`ListComplianceSummaries`](crate::client::fluent_builders::ListComplianceSummaries) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListComplianceSummaries`](crate::client::fluent_builders::ListComplianceSummaries) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListComplianceSummaries::into_paginator).
+    ///
+    /// - Takes [`ListComplianceSummariesInput`](crate::input::ListComplianceSummariesInput) with field(s):
+    ///   - [`filters(Option<Vec<ComplianceStringFilter>>)`](crate::input::ListComplianceSummariesInput::filters): <p>One or more compliance or inventory filters. Use a filter to return a more specific list of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListComplianceSummariesInput::next_token): <p>A token to start the list. Use this token to get the next set of results. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListComplianceSummariesInput::max_results): <p>The maximum number of items to return for this call. Currently, you can specify null or 50. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    /// - On success, responds with [`ListComplianceSummariesOutput`](crate::output::ListComplianceSummariesOutput) with field(s):
+    ///   - [`compliance_summary_items(Option<Vec<ComplianceSummaryItem>>)`](crate::output::ListComplianceSummariesOutput::compliance_summary_items): <p>A list of compliant and non-compliant summary counts based on compliance types. For example, this call returns State Manager associations, patches, or custom compliance types according to the filter criteria that you specified.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListComplianceSummariesOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListComplianceSummariesError>`](crate::error::ListComplianceSummariesError)
     pub fn list_compliance_summaries(&self) -> fluent_builders::ListComplianceSummaries<C, M, R> {
         fluent_builders::ListComplianceSummaries::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDocumentMetadataHistory` operation.
+    /// Constructs a fluent builder for the [`ListDocumentMetadataHistory`](crate::client::fluent_builders::ListDocumentMetadataHistory) operation.
     ///
-    /// See [`ListDocumentMetadataHistory`](crate::client::fluent_builders::ListDocumentMetadataHistory) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListDocumentMetadataHistoryInput`](crate::input::ListDocumentMetadataHistoryInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::ListDocumentMetadataHistoryInput::name): <p>The name of the change template.</p>
+    ///   - [`document_version(Option<String>)`](crate::input::ListDocumentMetadataHistoryInput::document_version): <p>The version of the change template.</p>
+    ///   - [`metadata(Option<DocumentMetadataEnum>)`](crate::input::ListDocumentMetadataHistoryInput::metadata): <p>The type of data for which details are being requested. Currently, the only supported value is <code>DocumentReviews</code>.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListDocumentMetadataHistoryInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListDocumentMetadataHistoryInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    /// - On success, responds with [`ListDocumentMetadataHistoryOutput`](crate::output::ListDocumentMetadataHistoryOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::ListDocumentMetadataHistoryOutput::name): <p>The name of the change template.</p>
+    ///   - [`document_version(Option<String>)`](crate::output::ListDocumentMetadataHistoryOutput::document_version): <p>The version of the change template.</p>
+    ///   - [`author(Option<String>)`](crate::output::ListDocumentMetadataHistoryOutput::author): <p>The user ID of the person in the organization who requested the review of the change template.</p>
+    ///   - [`metadata(Option<DocumentMetadataResponseInfo>)`](crate::output::ListDocumentMetadataHistoryOutput::metadata): <p>Information about the response to the change template approval request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDocumentMetadataHistoryOutput::next_token): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListDocumentMetadataHistoryError>`](crate::error::ListDocumentMetadataHistoryError)
     pub fn list_document_metadata_history(
         &self,
     ) -> fluent_builders::ListDocumentMetadataHistory<C, M, R> {
         fluent_builders::ListDocumentMetadataHistory::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDocuments` operation.
-    ///
-    /// See [`ListDocuments`](crate::client::fluent_builders::ListDocuments) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListDocuments`](crate::client::fluent_builders::ListDocuments) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDocuments::into_paginator).
+    ///
+    /// - Takes [`ListDocumentsInput`](crate::input::ListDocumentsInput) with field(s):
+    ///   - [`document_filter_list(Option<Vec<DocumentFilter>>)`](crate::input::ListDocumentsInput::document_filter_list): <p>This data type is deprecated. Instead, use <code>Filters</code>.</p>
+    ///   - [`filters(Option<Vec<DocumentKeyValuesFilter>>)`](crate::input::ListDocumentsInput::filters): <p>One or more <code>DocumentKeyValuesFilter</code> objects. Use a filter to return a more specific list of results. For keys, you can specify one or more key-value pair tags that have been applied to a document. Other valid keys include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, <code>DocumentType</code>, and <code>TargetType</code>. For example, to return documents you own use <code>Key=Owner,Values=Self</code>. To specify a custom key-value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.</p> <note>   <p>This API operation only supports filtering documents by using a single tag key and one or more tag values. For example: <code>Key=tag:tagName,Values=valueName1,valueName2</code> </p>  </note>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListDocumentsInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListDocumentsInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    /// - On success, responds with [`ListDocumentsOutput`](crate::output::ListDocumentsOutput) with field(s):
+    ///   - [`document_identifiers(Option<Vec<DocumentIdentifier>>)`](crate::output::ListDocumentsOutput::document_identifiers): <p>The names of the SSM documents.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDocumentsOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    /// - On failure, responds with [`SdkError<ListDocumentsError>`](crate::error::ListDocumentsError)
     pub fn list_documents(&self) -> fluent_builders::ListDocuments<C, M, R> {
         fluent_builders::ListDocuments::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDocumentVersions` operation.
-    ///
-    /// See [`ListDocumentVersions`](crate::client::fluent_builders::ListDocumentVersions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListDocumentVersions`](crate::client::fluent_builders::ListDocumentVersions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDocumentVersions::into_paginator).
+    ///
+    /// - Takes [`ListDocumentVersionsInput`](crate::input::ListDocumentVersionsInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::ListDocumentVersionsInput::name): <p>The name of the document. You can specify an Amazon Resource Name (ARN).</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListDocumentVersionsInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListDocumentVersionsInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    /// - On success, responds with [`ListDocumentVersionsOutput`](crate::output::ListDocumentVersionsOutput) with field(s):
+    ///   - [`document_versions(Option<Vec<DocumentVersionInfo>>)`](crate::output::ListDocumentVersionsOutput::document_versions): <p>The document versions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDocumentVersionsOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    /// - On failure, responds with [`SdkError<ListDocumentVersionsError>`](crate::error::ListDocumentVersionsError)
     pub fn list_document_versions(&self) -> fluent_builders::ListDocumentVersions<C, M, R> {
         fluent_builders::ListDocumentVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListInventoryEntries` operation.
+    /// Constructs a fluent builder for the [`ListInventoryEntries`](crate::client::fluent_builders::ListInventoryEntries) operation.
     ///
-    /// See [`ListInventoryEntries`](crate::client::fluent_builders::ListInventoryEntries) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListInventoryEntriesInput`](crate::input::ListInventoryEntriesInput) with field(s):
+    ///   - [`instance_id(Option<String>)`](crate::input::ListInventoryEntriesInput::instance_id): <p>The managed node ID for which you want inventory information.</p>
+    ///   - [`type_name(Option<String>)`](crate::input::ListInventoryEntriesInput::type_name): <p>The type of inventory item for which you want information.</p>
+    ///   - [`filters(Option<Vec<InventoryFilter>>)`](crate::input::ListInventoryEntriesInput::filters): <p>One or more filters. Use a filter to return a more specific list of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListInventoryEntriesInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListInventoryEntriesInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    /// - On success, responds with [`ListInventoryEntriesOutput`](crate::output::ListInventoryEntriesOutput) with field(s):
+    ///   - [`type_name(Option<String>)`](crate::output::ListInventoryEntriesOutput::type_name): <p>The type of inventory item returned by the request.</p>
+    ///   - [`instance_id(Option<String>)`](crate::output::ListInventoryEntriesOutput::instance_id): <p>The managed node ID targeted by the request to query inventory information.</p>
+    ///   - [`schema_version(Option<String>)`](crate::output::ListInventoryEntriesOutput::schema_version): <p>The inventory schema version used by the managed node(s).</p>
+    ///   - [`capture_time(Option<String>)`](crate::output::ListInventoryEntriesOutput::capture_time): <p>The time that inventory information was collected for the managed node(s).</p>
+    ///   - [`entries(Option<Vec<HashMap<String, String>>>)`](crate::output::ListInventoryEntriesOutput::entries): <p>A list of inventory items on the managed node(s).</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListInventoryEntriesOutput::next_token): <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
+    /// - On failure, responds with [`SdkError<ListInventoryEntriesError>`](crate::error::ListInventoryEntriesError)
     pub fn list_inventory_entries(&self) -> fluent_builders::ListInventoryEntries<C, M, R> {
         fluent_builders::ListInventoryEntries::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListOpsItemEvents` operation.
-    ///
-    /// See [`ListOpsItemEvents`](crate::client::fluent_builders::ListOpsItemEvents) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListOpsItemEvents`](crate::client::fluent_builders::ListOpsItemEvents) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListOpsItemEvents::into_paginator).
+    ///
+    /// - Takes [`ListOpsItemEventsInput`](crate::input::ListOpsItemEventsInput) with field(s):
+    ///   - [`filters(Option<Vec<OpsItemEventFilter>>)`](crate::input::ListOpsItemEventsInput::filters): <p>One or more OpsItem filters. Use a filter to return a more specific list of results. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListOpsItemEventsInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListOpsItemEventsInput::next_token): <p>A token to start the list. Use this token to get the next set of results. </p>
+    /// - On success, responds with [`ListOpsItemEventsOutput`](crate::output::ListOpsItemEventsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListOpsItemEventsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results. </p>
+    ///   - [`summaries(Option<Vec<OpsItemEventSummary>>)`](crate::output::ListOpsItemEventsOutput::summaries): <p>A list of event information for the specified OpsItems.</p>
+    /// - On failure, responds with [`SdkError<ListOpsItemEventsError>`](crate::error::ListOpsItemEventsError)
     pub fn list_ops_item_events(&self) -> fluent_builders::ListOpsItemEvents<C, M, R> {
         fluent_builders::ListOpsItemEvents::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListOpsItemRelatedItems` operation.
-    ///
-    /// See [`ListOpsItemRelatedItems`](crate::client::fluent_builders::ListOpsItemRelatedItems) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListOpsItemRelatedItems`](crate::client::fluent_builders::ListOpsItemRelatedItems) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListOpsItemRelatedItems::into_paginator).
+    ///
+    /// - Takes [`ListOpsItemRelatedItemsInput`](crate::input::ListOpsItemRelatedItemsInput) with field(s):
+    ///   - [`ops_item_id(Option<String>)`](crate::input::ListOpsItemRelatedItemsInput::ops_item_id): <p>The ID of the OpsItem for which you want to list all related-item resources.</p>
+    ///   - [`filters(Option<Vec<OpsItemRelatedItemsFilter>>)`](crate::input::ListOpsItemRelatedItemsInput::filters): <p>One or more OpsItem filters. Use a filter to return a more specific list of results. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListOpsItemRelatedItemsInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListOpsItemRelatedItemsInput::next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
+    /// - On success, responds with [`ListOpsItemRelatedItemsOutput`](crate::output::ListOpsItemRelatedItemsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListOpsItemRelatedItemsOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    ///   - [`summaries(Option<Vec<OpsItemRelatedItemSummary>>)`](crate::output::ListOpsItemRelatedItemsOutput::summaries): <p>A list of related-item resources for the specified OpsItem.</p>
+    /// - On failure, responds with [`SdkError<ListOpsItemRelatedItemsError>`](crate::error::ListOpsItemRelatedItemsError)
     pub fn list_ops_item_related_items(&self) -> fluent_builders::ListOpsItemRelatedItems<C, M, R> {
         fluent_builders::ListOpsItemRelatedItems::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListOpsMetadata` operation.
-    ///
-    /// See [`ListOpsMetadata`](crate::client::fluent_builders::ListOpsMetadata) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListOpsMetadata`](crate::client::fluent_builders::ListOpsMetadata) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListOpsMetadata::into_paginator).
+    ///
+    /// - Takes [`ListOpsMetadataInput`](crate::input::ListOpsMetadataInput) with field(s):
+    ///   - [`filters(Option<Vec<OpsMetadataFilter>>)`](crate::input::ListOpsMetadataInput::filters): <p>One or more filters to limit the number of OpsMetadata objects returned by the call.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListOpsMetadataInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListOpsMetadataInput::next_token): <p>A token to start the list. Use this token to get the next set of results.</p>
+    /// - On success, responds with [`ListOpsMetadataOutput`](crate::output::ListOpsMetadataOutput) with field(s):
+    ///   - [`ops_metadata_list(Option<Vec<OpsMetadata>>)`](crate::output::ListOpsMetadataOutput::ops_metadata_list): <p>Returns a list of OpsMetadata objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListOpsMetadataOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListOpsMetadataError>`](crate::error::ListOpsMetadataError)
     pub fn list_ops_metadata(&self) -> fluent_builders::ListOpsMetadata<C, M, R> {
         fluent_builders::ListOpsMetadata::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListResourceComplianceSummaries` operation.
-    ///
-    /// See [`ListResourceComplianceSummaries`](crate::client::fluent_builders::ListResourceComplianceSummaries) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListResourceComplianceSummaries`](crate::client::fluent_builders::ListResourceComplianceSummaries) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListResourceComplianceSummaries::into_paginator).
+    ///
+    /// - Takes [`ListResourceComplianceSummariesInput`](crate::input::ListResourceComplianceSummariesInput) with field(s):
+    ///   - [`filters(Option<Vec<ComplianceStringFilter>>)`](crate::input::ListResourceComplianceSummariesInput::filters): <p>One or more filters. Use a filter to return a more specific list of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListResourceComplianceSummariesInput::next_token): <p>A token to start the list. Use this token to get the next set of results. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListResourceComplianceSummariesInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    /// - On success, responds with [`ListResourceComplianceSummariesOutput`](crate::output::ListResourceComplianceSummariesOutput) with field(s):
+    ///   - [`resource_compliance_summary_items(Option<Vec<ResourceComplianceSummaryItem>>)`](crate::output::ListResourceComplianceSummariesOutput::resource_compliance_summary_items): <p>A summary count for specified or targeted managed nodes. Summary count includes information about compliant and non-compliant State Manager associations, patch status, or custom items according to the filter criteria that you specify. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListResourceComplianceSummariesOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListResourceComplianceSummariesError>`](crate::error::ListResourceComplianceSummariesError)
     pub fn list_resource_compliance_summaries(
         &self,
     ) -> fluent_builders::ListResourceComplianceSummaries<C, M, R> {
         fluent_builders::ListResourceComplianceSummaries::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListResourceDataSync` operation.
-    ///
-    /// See [`ListResourceDataSync`](crate::client::fluent_builders::ListResourceDataSync) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListResourceDataSync`](crate::client::fluent_builders::ListResourceDataSync) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListResourceDataSync::into_paginator).
+    ///
+    /// - Takes [`ListResourceDataSyncInput`](crate::input::ListResourceDataSyncInput) with field(s):
+    ///   - [`sync_type(Option<String>)`](crate::input::ListResourceDataSyncInput::sync_type): <p>View a list of resource data syncs according to the sync type. Specify <code>SyncToDestination</code> to view resource data syncs that synchronize data to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to view resource data syncs from Organizations or from multiple Amazon Web Services Regions.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListResourceDataSyncInput::next_token): <p>A token to start the list. Use this token to get the next set of results. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListResourceDataSyncInput::max_results): <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
+    /// - On success, responds with [`ListResourceDataSyncOutput`](crate::output::ListResourceDataSyncOutput) with field(s):
+    ///   - [`resource_data_sync_items(Option<Vec<ResourceDataSyncItem>>)`](crate::output::ListResourceDataSyncOutput::resource_data_sync_items): <p>A list of your current resource data sync configurations and their statuses.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListResourceDataSyncOutput::next_token): <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListResourceDataSyncError>`](crate::error::ListResourceDataSyncError)
     pub fn list_resource_data_sync(&self) -> fluent_builders::ListResourceDataSync<C, M, R> {
         fluent_builders::ListResourceDataSync::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_type(Option<ResourceTypeForTagging>)`](crate::input::ListTagsForResourceInput::resource_type): <p>Returns a list of tags for a specific resource type.</p>
+    ///   - [`resource_id(Option<String>)`](crate::input::ListTagsForResourceInput::resource_id): <p>The resource ID for which you want to see a list of tags.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tag_list(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tag_list): <p>A list of tags.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyDocumentPermission` operation.
+    /// Constructs a fluent builder for the [`ModifyDocumentPermission`](crate::client::fluent_builders::ModifyDocumentPermission) operation.
     ///
-    /// See [`ModifyDocumentPermission`](crate::client::fluent_builders::ModifyDocumentPermission) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyDocumentPermissionInput`](crate::input::ModifyDocumentPermissionInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::ModifyDocumentPermissionInput::name): <p>The name of the document that you want to share.</p>
+    ///   - [`permission_type(Option<DocumentPermissionType>)`](crate::input::ModifyDocumentPermissionInput::permission_type): <p>The permission type for the document. The permission type can be <i>Share</i>.</p>
+    ///   - [`account_ids_to_add(Option<Vec<String>>)`](crate::input::ModifyDocumentPermissionInput::account_ids_to_add): <p>The Amazon Web Services user accounts that should have access to the document. The account IDs can either be a group of account IDs or <i>All</i>.</p>
+    ///   - [`account_ids_to_remove(Option<Vec<String>>)`](crate::input::ModifyDocumentPermissionInput::account_ids_to_remove): <p>The Amazon Web Services user accounts that should no longer have access to the document. The Amazon Web Services user account can either be a group of account IDs or <i>All</i>. This action has a higher priority than <i>AccountIdsToAdd</i>. If you specify an account ID to add and the same ID to remove, the system removes access to the document.</p>
+    ///   - [`shared_document_version(Option<String>)`](crate::input::ModifyDocumentPermissionInput::shared_document_version): <p>(Optional) The version of the document to share. If it isn't specified, the system choose the <code>Default</code> version to share.</p>
+    /// - On success, responds with [`ModifyDocumentPermissionOutput`](crate::output::ModifyDocumentPermissionOutput)
+
+    /// - On failure, responds with [`SdkError<ModifyDocumentPermissionError>`](crate::error::ModifyDocumentPermissionError)
     pub fn modify_document_permission(&self) -> fluent_builders::ModifyDocumentPermission<C, M, R> {
         fluent_builders::ModifyDocumentPermission::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutComplianceItems` operation.
+    /// Constructs a fluent builder for the [`PutComplianceItems`](crate::client::fluent_builders::PutComplianceItems) operation.
     ///
-    /// See [`PutComplianceItems`](crate::client::fluent_builders::PutComplianceItems) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutComplianceItemsInput`](crate::input::PutComplianceItemsInput) with field(s):
+    ///   - [`resource_id(Option<String>)`](crate::input::PutComplianceItemsInput::resource_id): <p>Specify an ID for this resource. For a managed node, this is the node ID.</p>
+    ///   - [`resource_type(Option<String>)`](crate::input::PutComplianceItemsInput::resource_type): <p>Specify the type of resource. <code>ManagedInstance</code> is currently the only supported resource type.</p>
+    ///   - [`compliance_type(Option<String>)`](crate::input::PutComplianceItemsInput::compliance_type): <p>Specify the compliance type. For example, specify Association (for a State Manager association), Patch, or Custom:<code>string</code>.</p>
+    ///   - [`execution_summary(Option<ComplianceExecutionSummary>)`](crate::input::PutComplianceItemsInput::execution_summary): <p>A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
+    ///   - [`items(Option<Vec<ComplianceItemEntry>>)`](crate::input::PutComplianceItemsInput::items): <p>Information about the compliance as defined by the resource type. For example, for a patch compliance type, <code>Items</code> includes information about the PatchSeverity, Classification, and so on.</p>
+    ///   - [`item_content_hash(Option<String>)`](crate::input::PutComplianceItemsInput::item_content_hash): <p>MD5 or SHA-256 content hash. The content hash is used to determine if existing information should be overwritten or ignored. If the content hashes match, the request to put compliance information is ignored.</p>
+    ///   - [`upload_type(Option<ComplianceUploadType>)`](crate::input::PutComplianceItemsInput::upload_type): <p>The mode for uploading compliance items. You can specify <code>COMPLETE</code> or <code>PARTIAL</code>. In <code>COMPLETE</code> mode, the system overwrites all existing compliance information for the resource. You must provide a full list of compliance items each time you send the request.</p>  <p>In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific association. The association must be configured with <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests use <code>COMPLETE</code> mode.</p> <note>   <p>This attribute is only valid for association compliance.</p>  </note>
+    /// - On success, responds with [`PutComplianceItemsOutput`](crate::output::PutComplianceItemsOutput)
+
+    /// - On failure, responds with [`SdkError<PutComplianceItemsError>`](crate::error::PutComplianceItemsError)
     pub fn put_compliance_items(&self) -> fluent_builders::PutComplianceItems<C, M, R> {
         fluent_builders::PutComplianceItems::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutInventory` operation.
+    /// Constructs a fluent builder for the [`PutInventory`](crate::client::fluent_builders::PutInventory) operation.
     ///
-    /// See [`PutInventory`](crate::client::fluent_builders::PutInventory) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutInventoryInput`](crate::input::PutInventoryInput) with field(s):
+    ///   - [`instance_id(Option<String>)`](crate::input::PutInventoryInput::instance_id): <p>An managed node ID where you want to add or update inventory items.</p>
+    ///   - [`items(Option<Vec<InventoryItem>>)`](crate::input::PutInventoryInput::items): <p>The inventory items that you want to add or update on managed nodes.</p>
+    /// - On success, responds with [`PutInventoryOutput`](crate::output::PutInventoryOutput) with field(s):
+    ///   - [`message(Option<String>)`](crate::output::PutInventoryOutput::message): <p>Information about the request.</p>
+    /// - On failure, responds with [`SdkError<PutInventoryError>`](crate::error::PutInventoryError)
     pub fn put_inventory(&self) -> fluent_builders::PutInventory<C, M, R> {
         fluent_builders::PutInventory::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutParameter` operation.
+    /// Constructs a fluent builder for the [`PutParameter`](crate::client::fluent_builders::PutParameter) operation.
     ///
-    /// See [`PutParameter`](crate::client::fluent_builders::PutParameter) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutParameterInput`](crate::input::PutParameterInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::PutParameterInput::name): <p>The fully qualified name of the parameter that you want to add to the system. The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must include a leading forward slash character (/) when you create or reference a parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p>  <p>Naming Constraints:</p>  <ul>   <li> <p>Parameter names are case sensitive.</p> </li>   <li> <p>A parameter name must be unique within an Amazon Web Services Region</p> </li>   <li> <p>A parameter name can't be prefixed with "<code>aws</code>" or "<code>ssm</code>" (case-insensitive).</p> </li>   <li> <p>Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-</code> </p> <p>In addition, the slash character ( / ) is used to delineate hierarchies in parameter names. For example: <code>/Dev/Production/East/Project-ABC/MyParameter</code> </p> </li>   <li> <p>A parameter name can't include spaces.</p> </li>   <li> <p>Parameter hierarchies are limited to a maximum depth of fifteen levels.</p> </li>  </ul>  <p>For additional information about valid values for parameter names, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>   <p>The maximum length constraint listed below includes capacity for additional system attributes that aren't part of the name. The maximum length for a parameter name, including the full length of the parameter ARN, is 1011 characters. For example, the length of the following parameter name is 65 characters, not 20 characters:</p>   <p> <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code> </p>  </note>
+    ///   - [`description(Option<String>)`](crate::input::PutParameterInput::description): <p>Information about the parameter that you want to add to the system. Optional but recommended.</p> <important>   <p>Don't enter personally identifiable information in this field.</p>  </important>
+    ///   - [`value(Option<String>)`](crate::input::PutParameterInput::value): <p>The parameter value that you want to add to the system. Standard parameters have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p> <note>   <p>Parameters can't be referenced or nested in the values of other parameters. You can't include <code>{{}}</code> or <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.</p>  </note>
+    ///   - [`r#type(Option<ParameterType>)`](crate::input::PutParameterInput::r#type): <p>The type of parameter that you want to add to the system.</p> <note>   <p> <code>SecureString</code> isn't currently supported for CloudFormation templates.</p>  </note>  <p>Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or special character to escape items in the list. If you have a parameter value that requires a comma, then use the <code>String</code> data type.</p> <important>   <p>Specifying a parameter type isn't required when updating a parameter. You must specify a parameter type when creating a parameter.</p>  </important>
+    ///   - [`key_id(Option<String>)`](crate::input::PutParameterInput::key_id): <p>The Key Management Service (KMS) ID that you want to use to encrypt a parameter. Either the default KMS key automatically assigned to your Amazon Web Services account or a custom key. Required for parameters that use the <code>SecureString</code> data type.</p>  <p>If you don't specify a key ID, the system uses the default key associated with your Amazon Web Services account.</p>  <ul>   <li> <p>To use your default KMS key, choose the <code>SecureString</code> data type, and do <i>not</i> specify the <code>Key ID</code> when you create the parameter. The system automatically populates <code>Key ID</code> with your default KMS key.</p> </li>   <li> <p>To use a custom KMS key, choose the <code>SecureString</code> data type with the <code>Key ID</code> parameter.</p> </li>  </ul>
+    ///   - [`overwrite(Option<bool>)`](crate::input::PutParameterInput::overwrite): <p>Overwrite an existing parameter. The default value is <code>false</code>.</p>
+    ///   - [`allowed_pattern(Option<String>)`](crate::input::PutParameterInput::allowed_pattern): <p>A regular expression used to validate the parameter value. For example, for String types with values restricted to numbers, you can specify the following: AllowedPattern=^\d+$ </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::PutParameterInput::tags): <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a Systems Manager parameter to identify the type of resource to which it applies, the environment, or the type of configuration data referenced by the parameter. In this case, you could specify the following key-value pairs:</p>  <ul>   <li> <p> <code>Key=Resource,Value=S3bucket</code> </p> </li>   <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>   <li> <p> <code>Key=ParameterType,Value=LicenseKey</code> </p> </li>  </ul> <note>   <p>To add tags to an existing Systems Manager parameter, use the <code>AddTagsToResource</code> operation.</p>  </note>
+    ///   - [`tier(Option<ParameterTier>)`](crate::input::PutParameterInput::tier): <p>The parameter tier to assign to a parameter.</p>  <p>Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a content size limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of 10,000 standard parameters for each Region in an Amazon Web Services account. Standard parameters are offered at no additional cost. </p>  <p>Advanced parameters have a content size limit of 8 KB and can be configured to use parameter policies. You can create a maximum of 100,000 advanced parameters for each Region in an Amazon Web Services account. Advanced parameters incur a charge. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard and advanced parameter tiers</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>  <p>You can change a standard parameter to an advanced parameter any time. But you can't revert an advanced parameter to a standard parameter. Reverting an advanced parameter to a standard parameter would result in data loss because the system would truncate the size of the parameter from 8 KB to 4 KB. Reverting would also remove any policies attached to the parameter. Lastly, advanced parameters use a different form of encryption than standard parameters. </p>  <p>If you no longer need an advanced parameter, or if you no longer want to incur charges for an advanced parameter, you must delete it and recreate it as a new standard parameter. </p>  <p> <b>Using the Default Tier Configuration</b> </p>  <p>In <code>PutParameter</code> requests, you can specify the tier to create the parameter in. Whenever you specify a tier in the request, Parameter Store creates or updates the parameter according to that request. However, if you don't specify a tier in a request, Parameter Store assigns the tier based on the current Parameter Store default tier configuration.</p>  <p>The default tier when you begin using Parameter Store is the standard-parameter tier. If you use the advanced-parameter tier, you can specify one of the following as the default:</p>  <ul>   <li> <p> <b>Advanced</b>: With this option, Parameter Store evaluates all requests as advanced parameters. </p> </li>   <li> <p> <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each request to determine if the parameter is standard or advanced. </p> <p>If the request doesn't include any options that require an advanced parameter, the parameter is created in the standard-parameter tier. If one or more options requiring an advanced parameter are included in the request, Parameter Store create a parameter in the advanced-parameter tier.</p> <p>This approach helps control your parameter-related costs by always creating standard parameters unless an advanced parameter is necessary. </p> </li>  </ul>  <p>Options that require an advanced parameter include the following:</p>  <ul>   <li> <p>The content size of the parameter is more than 4 KB.</p> </li>   <li> <p>The parameter uses a parameter policy.</p> </li>   <li> <p>More than 10,000 parameters already exist in your Amazon Web Services account in the current Amazon Web Services Region.</p> </li>  </ul>  <p>For more information about configuring the default tier option, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a default parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    ///   - [`policies(Option<String>)`](crate::input::PutParameterInput::policies): <p>One or more policies to apply to a parameter. This operation takes a JSON array. Parameter Store, a capability of Amazon Web Services Systems Manager supports the following policy types:</p>  <p>Expiration: This policy deletes the parameter after it expires. When you create the policy, you specify the expiration date. You can update the expiration date and time by updating the policy. Updating the <i>parameter</i> doesn't affect the expiration date and time. When the expiration time is reached, Parameter Store deletes the parameter.</p>  <p>ExpirationNotification: This policy initiates an event in Amazon CloudWatch Events that notifies you about the expiration. By using this policy, you can receive notification before or after the expiration time is reached, in units of days or hours.</p>  <p>NoChangeNotification: This policy initiates a CloudWatch Events event if a parameter hasn't been modified for a specified period of time. This policy type is useful when, for example, a secret needs to be changed within a period of time, but it hasn't been changed.</p>  <p>All existing policies are preserved until you send new policies or an empty policy. For more information about parameter policies, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning parameter policies</a>. </p>
+    ///   - [`data_type(Option<String>)`](crate::input::PutParameterInput::data_type): <p>The data type for a <code>String</code> parameter. Supported data types include plain text and Amazon Machine Image (AMI) IDs.</p>  <p> <b>The following data type values are supported.</b> </p>  <ul>   <li> <p> <code>text</code> </p> </li>   <li> <p> <code>aws:ec2:image</code> </p> </li>  </ul>  <p>When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web Services Systems Manager validates the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native parameter support for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// - On success, responds with [`PutParameterOutput`](crate::output::PutParameterOutput) with field(s):
+    ///   - [`version(i64)`](crate::output::PutParameterOutput::version): <p>The new version number of a parameter. If you edit a parameter value, Parameter Store automatically creates a new version and assigns this new version a unique ID. You can reference a parameter version ID in API operations or in Systems Manager documents (SSM documents). By default, if you don't specify a specific version, the system returns the latest parameter value when a parameter is called.</p>
+    ///   - [`tier(Option<ParameterTier>)`](crate::output::PutParameterOutput::tier): <p>The tier assigned to the parameter.</p>
+    /// - On failure, responds with [`SdkError<PutParameterError>`](crate::error::PutParameterError)
     pub fn put_parameter(&self) -> fluent_builders::PutParameter<C, M, R> {
         fluent_builders::PutParameter::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RegisterDefaultPatchBaseline` operation.
+    /// Constructs a fluent builder for the [`RegisterDefaultPatchBaseline`](crate::client::fluent_builders::RegisterDefaultPatchBaseline) operation.
     ///
-    /// See [`RegisterDefaultPatchBaseline`](crate::client::fluent_builders::RegisterDefaultPatchBaseline) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RegisterDefaultPatchBaselineInput`](crate::input::RegisterDefaultPatchBaselineInput) with field(s):
+    ///   - [`baseline_id(Option<String>)`](crate::input::RegisterDefaultPatchBaselineInput::baseline_id): <p>The ID of the patch baseline that should be the default patch baseline.</p>
+    /// - On success, responds with [`RegisterDefaultPatchBaselineOutput`](crate::output::RegisterDefaultPatchBaselineOutput) with field(s):
+    ///   - [`baseline_id(Option<String>)`](crate::output::RegisterDefaultPatchBaselineOutput::baseline_id): <p>The ID of the default patch baseline.</p>
+    /// - On failure, responds with [`SdkError<RegisterDefaultPatchBaselineError>`](crate::error::RegisterDefaultPatchBaselineError)
     pub fn register_default_patch_baseline(
         &self,
     ) -> fluent_builders::RegisterDefaultPatchBaseline<C, M, R> {
         fluent_builders::RegisterDefaultPatchBaseline::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RegisterPatchBaselineForPatchGroup` operation.
+    /// Constructs a fluent builder for the [`RegisterPatchBaselineForPatchGroup`](crate::client::fluent_builders::RegisterPatchBaselineForPatchGroup) operation.
     ///
-    /// See [`RegisterPatchBaselineForPatchGroup`](crate::client::fluent_builders::RegisterPatchBaselineForPatchGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RegisterPatchBaselineForPatchGroupInput`](crate::input::RegisterPatchBaselineForPatchGroupInput) with field(s):
+    ///   - [`baseline_id(Option<String>)`](crate::input::RegisterPatchBaselineForPatchGroupInput::baseline_id): <p>The ID of the patch baseline to register with the patch group.</p>
+    ///   - [`patch_group(Option<String>)`](crate::input::RegisterPatchBaselineForPatchGroupInput::patch_group): <p>The name of the patch group to be registered with the patch baseline.</p>
+    /// - On success, responds with [`RegisterPatchBaselineForPatchGroupOutput`](crate::output::RegisterPatchBaselineForPatchGroupOutput) with field(s):
+    ///   - [`baseline_id(Option<String>)`](crate::output::RegisterPatchBaselineForPatchGroupOutput::baseline_id): <p>The ID of the patch baseline the patch group was registered with.</p>
+    ///   - [`patch_group(Option<String>)`](crate::output::RegisterPatchBaselineForPatchGroupOutput::patch_group): <p>The name of the patch group registered with the patch baseline.</p>
+    /// - On failure, responds with [`SdkError<RegisterPatchBaselineForPatchGroupError>`](crate::error::RegisterPatchBaselineForPatchGroupError)
     pub fn register_patch_baseline_for_patch_group(
         &self,
     ) -> fluent_builders::RegisterPatchBaselineForPatchGroup<C, M, R> {
         fluent_builders::RegisterPatchBaselineForPatchGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RegisterTargetWithMaintenanceWindow` operation.
+    /// Constructs a fluent builder for the [`RegisterTargetWithMaintenanceWindow`](crate::client::fluent_builders::RegisterTargetWithMaintenanceWindow) operation.
     ///
-    /// See [`RegisterTargetWithMaintenanceWindow`](crate::client::fluent_builders::RegisterTargetWithMaintenanceWindow) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RegisterTargetWithMaintenanceWindowInput`](crate::input::RegisterTargetWithMaintenanceWindowInput) with field(s):
+    ///   - [`window_id(Option<String>)`](crate::input::RegisterTargetWithMaintenanceWindowInput::window_id): <p>The ID of the maintenance window the target should be registered with.</p>
+    ///   - [`resource_type(Option<MaintenanceWindowResourceType>)`](crate::input::RegisterTargetWithMaintenanceWindowInput::resource_type): <p>The type of target being registered with the maintenance window.</p>
+    ///   - [`targets(Option<Vec<Target>>)`](crate::input::RegisterTargetWithMaintenanceWindowInput::targets): <p>The targets to register with the maintenance window. In other words, the managed nodes to run commands on when the maintenance window runs.</p> <note>   <p>If a single maintenance window task is registered with multiple targets, its task invocations occur sequentially and not in parallel. If your task must run on multiple targets at the same time, register a task for each target individually and assign each task the same priority level.</p>  </note>  <p>You can specify targets using managed node IDs, resource group names, or tags that have been applied to managed nodes.</p>  <p> <b>Example 1</b>: Specify managed node IDs</p>  <p> <code>Key=InstanceIds,Values=   <instance-id-1>    ,    <instance-id-2>     ,     <instance-id-3></instance-id-3>    </instance-id-2>   </instance-id-1></code> </p>  <p> <b>Example 2</b>: Use tag key-pairs applied to managed nodes</p>  <p> <code>Key=tag:   <my-tag-key>    ,Values=    <my-tag-value-1>     ,     <my-tag-value-2></my-tag-value-2>    </my-tag-value-1>   </my-tag-key></code> </p>  <p> <b>Example 3</b>: Use tag-keys applied to managed nodes</p>  <p> <code>Key=tag-key,Values=   <my-tag-key-1>    ,    <my-tag-key-2></my-tag-key-2>   </my-tag-key-1></code> </p>  <p> <b>Example 4</b>: Use resource group names</p>  <p> <code>Key=resource-groups:Name,Values=   <resource-group-name></resource-group-name></code> </p>  <p> <b>Example 5</b>: Use filters for resource group types</p>  <p> <code>Key=resource-groups:ResourceTypeFilters,Values=   <resource-type-1>    ,    <resource-type-2></resource-type-2>   </resource-type-1></code> </p> <note>   <p>For <code>Key=resource-groups:ResourceTypeFilters</code>, specify resource types in the following format</p>   <p> <code>Key=resource-groups:ResourceTypeFilters,Values=AWS::EC2::INSTANCE,AWS::EC2::VPC</code> </p>  </note>  <p>For more information about these examples formats, including the best use case for each one, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples: Register targets with a maintenance window</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    ///   - [`owner_information(Option<String>)`](crate::input::RegisterTargetWithMaintenanceWindowInput::owner_information): <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while running tasks for these targets in this maintenance window.</p>
+    ///   - [`name(Option<String>)`](crate::input::RegisterTargetWithMaintenanceWindowInput::name): <p>An optional name for the target.</p>
+    ///   - [`description(Option<String>)`](crate::input::RegisterTargetWithMaintenanceWindowInput::description): <p>An optional description for the target.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::RegisterTargetWithMaintenanceWindowInput::client_token): <p>User-provided idempotency token.</p>
+    /// - On success, responds with [`RegisterTargetWithMaintenanceWindowOutput`](crate::output::RegisterTargetWithMaintenanceWindowOutput) with field(s):
+    ///   - [`window_target_id(Option<String>)`](crate::output::RegisterTargetWithMaintenanceWindowOutput::window_target_id): <p>The ID of the target definition in this maintenance window.</p>
+    /// - On failure, responds with [`SdkError<RegisterTargetWithMaintenanceWindowError>`](crate::error::RegisterTargetWithMaintenanceWindowError)
     pub fn register_target_with_maintenance_window(
         &self,
     ) -> fluent_builders::RegisterTargetWithMaintenanceWindow<C, M, R> {
         fluent_builders::RegisterTargetWithMaintenanceWindow::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RegisterTaskWithMaintenanceWindow` operation.
+    /// Constructs a fluent builder for the [`RegisterTaskWithMaintenanceWindow`](crate::client::fluent_builders::RegisterTaskWithMaintenanceWindow) operation.
     ///
-    /// See [`RegisterTaskWithMaintenanceWindow`](crate::client::fluent_builders::RegisterTaskWithMaintenanceWindow) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RegisterTaskWithMaintenanceWindowInput`](crate::input::RegisterTaskWithMaintenanceWindowInput) with field(s):
+    ///   - [`window_id(Option<String>)`](crate::input::RegisterTaskWithMaintenanceWindowInput::window_id): <p>The ID of the maintenance window the task should be added to.</p>
+    ///   - [`targets(Option<Vec<Target>>)`](crate::input::RegisterTaskWithMaintenanceWindowInput::targets): <p>The targets (either managed nodes or maintenance window targets).</p> <note>   <p>One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task, targets are optional for other maintenance window task types (Automation, Lambda, and Step Functions). For more information about running tasks that don't specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>  </note>  <p>Specify managed nodes using the following format: </p>  <p> <code>Key=InstanceIds,Values=   <instance-id-1>    ,    <instance-id-2></instance-id-2>   </instance-id-1></code> </p>  <p>Specify maintenance window targets using the following format:</p>  <p> <code>Key=WindowTargetIds,Values=   <window-target-id-1>    ,    <window-target-id-2></window-target-id-2>   </window-target-id-1></code> </p>
+    ///   - [`task_arn(Option<String>)`](crate::input::RegisterTaskWithMaintenanceWindowInput::task_arn): <p>The ARN of the task to run.</p>
+    ///   - [`service_role_arn(Option<String>)`](crate::input::RegisterTaskWithMaintenanceWindowInput::service_role_arn): <p>The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume when running a maintenance window task. If you do not specify a service role ARN, Systems Manager uses your account's service-linked role. If no service-linked role for Systems Manager exists in your account, it is created when you run <code>RegisterTaskWithMaintenanceWindow</code>.</p>  <p>For more information, see the following topics in the in the <i>Amazon Web Services Systems Manager User Guide</i>:</p>  <ul>   <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using service-linked roles for Systems Manager</a> </p> </li>   <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should I use a service-linked role or a custom service role to run maintenance window tasks? </a> </p> </li>  </ul>
+    ///   - [`task_type(Option<MaintenanceWindowTaskType>)`](crate::input::RegisterTaskWithMaintenanceWindowInput::task_type): <p>The type of task being registered.</p>
+    ///   - [`task_parameters(Option<HashMap<String, MaintenanceWindowTaskParameterValueExpression>>)`](crate::input::RegisterTaskWithMaintenanceWindowInput::task_parameters): <p>The parameters that should be passed to the task when it is run.</p> <note>   <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>  </note>
+    ///   - [`task_invocation_parameters(Option<MaintenanceWindowTaskInvocationParameters>)`](crate::input::RegisterTaskWithMaintenanceWindowInput::task_invocation_parameters): <p>The parameters that the task should use during execution. Populate only the fields that match the task type. All other fields should be empty. </p>
+    ///   - [`priority(Option<i32>)`](crate::input::RegisterTaskWithMaintenanceWindowInput::priority): <p>The priority of the task in the maintenance window, the lower the number the higher the priority. Tasks in a maintenance window are scheduled in priority order with tasks that have the same priority scheduled in parallel.</p>
+    ///   - [`max_concurrency(Option<String>)`](crate::input::RegisterTaskWithMaintenanceWindowInput::max_concurrency): <p>The maximum number of targets this task can be run for in parallel.</p> <note>   <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>  </note>
+    ///   - [`max_errors(Option<String>)`](crate::input::RegisterTaskWithMaintenanceWindowInput::max_errors): <p>The maximum number of errors allowed before this task stops being scheduled.</p> <note>   <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>  </note>
+    ///   - [`logging_info(Option<LoggingInfo>)`](crate::input::RegisterTaskWithMaintenanceWindowInput::logging_info): <p>A structure containing information about an Amazon Simple Storage Service (Amazon S3) bucket to write managed node-level logs to. </p> <note>   <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>  </note>
+    ///   - [`name(Option<String>)`](crate::input::RegisterTaskWithMaintenanceWindowInput::name): <p>An optional name for the task.</p>
+    ///   - [`description(Option<String>)`](crate::input::RegisterTaskWithMaintenanceWindowInput::description): <p>An optional description for the task.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::RegisterTaskWithMaintenanceWindowInput::client_token): <p>User-provided idempotency token.</p>
+    ///   - [`cutoff_behavior(Option<MaintenanceWindowTaskCutoffBehavior>)`](crate::input::RegisterTaskWithMaintenanceWindowInput::cutoff_behavior): <p>Indicates whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>  <ul>   <li> <p> <code>CONTINUE_TASK</code>: When the cutoff time is reached, any tasks that are running continue. The default value.</p> </li>   <li> <p> <code>CANCEL_TASK</code>:</p>    <ul>     <li> <p>For Automation, Lambda, Step Functions tasks: When the cutoff time is reached, any task invocations that are already running continue, but no new task invocations are started.</p> </li>     <li> <p>For Run Command tasks: When the cutoff time is reached, the system sends a <code>CancelCommand</code> operation that attempts to cancel the command associated with the task. However, there is no guarantee that the command will be terminated and the underlying process stopped.</p> </li>    </ul> <p>The status for tasks that are not completed is <code>TIMED_OUT</code>.</p> </li>  </ul>
+    /// - On success, responds with [`RegisterTaskWithMaintenanceWindowOutput`](crate::output::RegisterTaskWithMaintenanceWindowOutput) with field(s):
+    ///   - [`window_task_id(Option<String>)`](crate::output::RegisterTaskWithMaintenanceWindowOutput::window_task_id): <p>The ID of the task in the maintenance window.</p>
+    /// - On failure, responds with [`SdkError<RegisterTaskWithMaintenanceWindowError>`](crate::error::RegisterTaskWithMaintenanceWindowError)
     pub fn register_task_with_maintenance_window(
         &self,
     ) -> fluent_builders::RegisterTaskWithMaintenanceWindow<C, M, R> {
         fluent_builders::RegisterTaskWithMaintenanceWindow::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RemoveTagsFromResource` operation.
+    /// Constructs a fluent builder for the [`RemoveTagsFromResource`](crate::client::fluent_builders::RemoveTagsFromResource) operation.
     ///
-    /// See [`RemoveTagsFromResource`](crate::client::fluent_builders::RemoveTagsFromResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RemoveTagsFromResourceInput`](crate::input::RemoveTagsFromResourceInput) with field(s):
+    ///   - [`resource_type(Option<ResourceTypeForTagging>)`](crate::input::RemoveTagsFromResourceInput::resource_type): <p>The type of resource from which you want to remove a tag.</p> <note>   <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. Specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>  </note>
+    ///   - [`resource_id(Option<String>)`](crate::input::RemoveTagsFromResourceInput::resource_id): <p>The ID of the resource from which you want to remove tags. For example:</p>  <p>ManagedInstance: mi-012345abcde</p>  <p>MaintenanceWindow: mw-012345abcde</p>  <p>PatchBaseline: pb-012345abcde</p>  <p>OpsMetadata object: <code>ResourceID</code> for tagging is created from the Amazon Resource Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from the strings that come after the word <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with an ARN of <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code> has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or <code>/aws/ssm/MyGroup/appmanager</code>.</p>  <p>For the Document and Parameter values, use the name of the resource.</p> <note>   <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. Specify the name of the managed node in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.</p>  </note>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::RemoveTagsFromResourceInput::tag_keys): <p>Tag keys that you want to remove from the specified resource.</p>
+    /// - On success, responds with [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput)
+
+    /// - On failure, responds with [`SdkError<RemoveTagsFromResourceError>`](crate::error::RemoveTagsFromResourceError)
     pub fn remove_tags_from_resource(&self) -> fluent_builders::RemoveTagsFromResource<C, M, R> {
         fluent_builders::RemoveTagsFromResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ResetServiceSetting` operation.
+    /// Constructs a fluent builder for the [`ResetServiceSetting`](crate::client::fluent_builders::ResetServiceSetting) operation.
     ///
-    /// See [`ResetServiceSetting`](crate::client::fluent_builders::ResetServiceSetting) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ResetServiceSettingInput`](crate::input::ResetServiceSettingInput) with field(s):
+    ///   - [`setting_id(Option<String>)`](crate::input::ResetServiceSettingInput::setting_id): <p>The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be one of the following.</p>  <ul>   <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>   <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>   <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>   <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>   <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>   <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>  </ul>
+    /// - On success, responds with [`ResetServiceSettingOutput`](crate::output::ResetServiceSettingOutput) with field(s):
+    ///   - [`service_setting(Option<ServiceSetting>)`](crate::output::ResetServiceSettingOutput::service_setting): <p>The current, effective service setting after calling the ResetServiceSetting API operation.</p>
+    /// - On failure, responds with [`SdkError<ResetServiceSettingError>`](crate::error::ResetServiceSettingError)
     pub fn reset_service_setting(&self) -> fluent_builders::ResetServiceSetting<C, M, R> {
         fluent_builders::ResetServiceSetting::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ResumeSession` operation.
+    /// Constructs a fluent builder for the [`ResumeSession`](crate::client::fluent_builders::ResumeSession) operation.
     ///
-    /// See [`ResumeSession`](crate::client::fluent_builders::ResumeSession) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ResumeSessionInput`](crate::input::ResumeSessionInput) with field(s):
+    ///   - [`session_id(Option<String>)`](crate::input::ResumeSessionInput::session_id): <p>The ID of the disconnected session to resume.</p>
+    /// - On success, responds with [`ResumeSessionOutput`](crate::output::ResumeSessionOutput) with field(s):
+    ///   - [`session_id(Option<String>)`](crate::output::ResumeSessionOutput::session_id): <p>The ID of the session.</p>
+    ///   - [`token_value(Option<String>)`](crate::output::ResumeSessionOutput::token_value): <p>An encrypted token value containing session and caller information. Used to authenticate the connection to the managed node.</p>
+    ///   - [`stream_url(Option<String>)`](crate::output::ResumeSessionOutput::stream_url): <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the managed node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>  <p> <b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>  <p> <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
+    /// - On failure, responds with [`SdkError<ResumeSessionError>`](crate::error::ResumeSessionError)
     pub fn resume_session(&self) -> fluent_builders::ResumeSession<C, M, R> {
         fluent_builders::ResumeSession::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SendAutomationSignal` operation.
+    /// Constructs a fluent builder for the [`SendAutomationSignal`](crate::client::fluent_builders::SendAutomationSignal) operation.
     ///
-    /// See [`SendAutomationSignal`](crate::client::fluent_builders::SendAutomationSignal) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`SendAutomationSignalInput`](crate::input::SendAutomationSignalInput) with field(s):
+    ///   - [`automation_execution_id(Option<String>)`](crate::input::SendAutomationSignalInput::automation_execution_id): <p>The unique identifier for an existing Automation execution that you want to send the signal to.</p>
+    ///   - [`signal_type(Option<SignalType>)`](crate::input::SendAutomationSignalInput::signal_type): <p>The type of signal to send to an Automation execution. </p>
+    ///   - [`payload(Option<HashMap<String, Vec<String>>>)`](crate::input::SendAutomationSignalInput::payload): <p>The data sent with the signal. The data schema depends on the type of signal used in the request.</p>  <p>For <code>Approve</code> and <code>Reject</code> signal types, the payload is an optional comment that you can send with the signal type. For example:</p>  <p> <code>Comment="Looks good"</code> </p>  <p>For <code>StartStep</code> and <code>Resume</code> signal types, you must send the name of the Automation step to start or resume as the payload. For example:</p>  <p> <code>StepName="step1"</code> </p>  <p>For the <code>StopStep</code> signal type, you must send the step execution ID as the payload. For example:</p>  <p> <code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code> </p>
+    /// - On success, responds with [`SendAutomationSignalOutput`](crate::output::SendAutomationSignalOutput)
+
+    /// - On failure, responds with [`SdkError<SendAutomationSignalError>`](crate::error::SendAutomationSignalError)
     pub fn send_automation_signal(&self) -> fluent_builders::SendAutomationSignal<C, M, R> {
         fluent_builders::SendAutomationSignal::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SendCommand` operation.
+    /// Constructs a fluent builder for the [`SendCommand`](crate::client::fluent_builders::SendCommand) operation.
     ///
-    /// See [`SendCommand`](crate::client::fluent_builders::SendCommand) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`SendCommandInput`](crate::input::SendCommandInput) with field(s):
+    ///   - [`instance_ids(Option<Vec<String>>)`](crate::input::SendCommandInput::instance_ids): <p>The IDs of the managed nodes where the command should run. Specifying managed node IDs is most useful when you are targeting a limited number of managed nodes, though you can specify up to 50 IDs.</p>  <p>To target a larger number of managed nodes, or if you prefer not to list individual node IDs, we recommend using the <code>Targets</code> option instead. Using <code>Targets</code>, which accepts tag key-value pairs to identify the managed nodes to send commands to, you can a send command to tens, hundreds, or thousands of nodes at once.</p>  <p>For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    ///   - [`targets(Option<Vec<Target>>)`](crate::input::SendCommandInput::targets): <p>An array of search criteria that targets managed nodes using a <code>Key,Value</code> combination that you specify. Specifying targets is most useful when you want to send a command to a large number of managed nodes at once. Using <code>Targets</code>, which accepts tag key-value pairs to identify managed nodes, you can send a command to tens, hundreds, or thousands of nodes at once.</p>  <p>To send a command to a smaller number of managed nodes, you can use the <code>InstanceIds</code> option instead.</p>  <p>For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    ///   - [`document_name(Option<String>)`](crate::input::SendCommandInput::document_name): <p>The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document Amazon Resource Name (ARN). For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>   <p>If you specify a document name or ARN that hasn't been shared with your account, you receive an <code>InvalidDocument</code> error. </p>  </note>
+    ///   - [`document_version(Option<String>)`](crate::input::SendCommandInput::document_version): <p>The SSM document version to use in the request. You can specify $DEFAULT, $LATEST, or a specific version number. If you run commands by using the Command Line Interface (Amazon Web Services CLI), then you must escape the first two options by using a backslash. If you specify a version number, then you don't need to use the backslash. For example:</p>  <p>--document-version "\$DEFAULT"</p>  <p>--document-version "\$LATEST"</p>  <p>--document-version "3"</p>
+    ///   - [`document_hash(Option<String>)`](crate::input::SendCommandInput::document_hash): <p>The Sha256 or Sha1 hash created by the system when the document was created. </p> <note>   <p>Sha1 hashes have been deprecated.</p>  </note>
+    ///   - [`document_hash_type(Option<DocumentHashType>)`](crate::input::SendCommandInput::document_hash_type): <p>Sha256 or Sha1.</p> <note>   <p>Sha1 hashes have been deprecated.</p>  </note>
+    ///   - [`timeout_seconds(Option<i32>)`](crate::input::SendCommandInput::timeout_seconds): <p>If this time is reached and the command hasn't already started running, it won't run.</p>
+    ///   - [`comment(Option<String>)`](crate::input::SendCommandInput::comment): <p>User-specified information about the command, such as a brief description of what the command should do.</p>
+    ///   - [`parameters(Option<HashMap<String, Vec<String>>>)`](crate::input::SendCommandInput::parameters): <p>The required and optional parameters specified in the document being run.</p>
+    ///   - [`output_s3_region(Option<String>)`](crate::input::SendCommandInput::output_s3_region): <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager automatically determines the Amazon Web Services Region of the S3 bucket.</p>
+    ///   - [`output_s3_bucket_name(Option<String>)`](crate::input::SendCommandInput::output_s3_bucket_name): <p>The name of the S3 bucket where command execution responses should be stored.</p>
+    ///   - [`output_s3_key_prefix(Option<String>)`](crate::input::SendCommandInput::output_s3_key_prefix): <p>The directory structure within the S3 bucket where the responses should be stored.</p>
+    ///   - [`max_concurrency(Option<String>)`](crate::input::SendCommandInput::max_concurrency): <p>(Optional) The maximum number of managed nodes that are allowed to run the command at the same time. You can specify a number such as 10 or a percentage such as 10%. The default value is <code>50</code>. For more information about how to use <code>MaxConcurrency</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using concurrency controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    ///   - [`max_errors(Option<String>)`](crate::input::SendCommandInput::max_errors): <p>The maximum number of errors allowed without the command failing. When the command fails one more time beyond the value of <code>MaxErrors</code>, the systems stops sending the command to additional targets. You can specify a number like 10 or a percentage like 10%. The default value is <code>0</code>. For more information about how to use <code>MaxErrors</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using error controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    ///   - [`service_role_arn(Option<String>)`](crate::input::SendCommandInput::service_role_arn): <p>The ARN of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for Run Command commands.</p>
+    ///   - [`notification_config(Option<NotificationConfig>)`](crate::input::SendCommandInput::notification_config): <p>Configurations for sending notifications.</p>
+    ///   - [`cloud_watch_output_config(Option<CloudWatchOutputConfig>)`](crate::input::SendCommandInput::cloud_watch_output_config): <p>Enables Amazon Web Services Systems Manager to send Run Command output to Amazon CloudWatch Logs. Run Command is a capability of Amazon Web Services Systems Manager.</p>
+    /// - On success, responds with [`SendCommandOutput`](crate::output::SendCommandOutput) with field(s):
+    ///   - [`command(Option<Command>)`](crate::output::SendCommandOutput::command): <p>The request as it was received by Systems Manager. Also provides the command ID which can be used future references to this request.</p>
+    /// - On failure, responds with [`SdkError<SendCommandError>`](crate::error::SendCommandError)
     pub fn send_command(&self) -> fluent_builders::SendCommand<C, M, R> {
         fluent_builders::SendCommand::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartAssociationsOnce` operation.
+    /// Constructs a fluent builder for the [`StartAssociationsOnce`](crate::client::fluent_builders::StartAssociationsOnce) operation.
     ///
-    /// See [`StartAssociationsOnce`](crate::client::fluent_builders::StartAssociationsOnce) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartAssociationsOnceInput`](crate::input::StartAssociationsOnceInput) with field(s):
+    ///   - [`association_ids(Option<Vec<String>>)`](crate::input::StartAssociationsOnceInput::association_ids): <p>The association IDs that you want to run immediately and only one time.</p>
+    /// - On success, responds with [`StartAssociationsOnceOutput`](crate::output::StartAssociationsOnceOutput)
+
+    /// - On failure, responds with [`SdkError<StartAssociationsOnceError>`](crate::error::StartAssociationsOnceError)
     pub fn start_associations_once(&self) -> fluent_builders::StartAssociationsOnce<C, M, R> {
         fluent_builders::StartAssociationsOnce::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartAutomationExecution` operation.
+    /// Constructs a fluent builder for the [`StartAutomationExecution`](crate::client::fluent_builders::StartAutomationExecution) operation.
     ///
-    /// See [`StartAutomationExecution`](crate::client::fluent_builders::StartAutomationExecution) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartAutomationExecutionInput`](crate::input::StartAutomationExecutionInput) with field(s):
+    ///   - [`document_name(Option<String>)`](crate::input::StartAutomationExecutionInput::document_name): <p>The name of the SSM document to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document ARN. For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    ///   - [`document_version(Option<String>)`](crate::input::StartAutomationExecutionInput::document_version): <p>The version of the Automation runbook to use for this execution.</p>
+    ///   - [`parameters(Option<HashMap<String, Vec<String>>>)`](crate::input::StartAutomationExecutionInput::parameters): <p>A key-value map of execution parameters, which match the declared parameters in the Automation runbook.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::StartAutomationExecutionInput::client_token): <p>User-provided idempotency token. The token must be unique, is case insensitive, enforces the UUID format, and can't be reused.</p>
+    ///   - [`mode(Option<ExecutionMode>)`](crate::input::StartAutomationExecutionInput::mode): <p>The execution mode of the automation. Valid modes include the following: Auto and Interactive. The default mode is Auto.</p>
+    ///   - [`target_parameter_name(Option<String>)`](crate::input::StartAutomationExecutionInput::target_parameter_name): <p>The name of the parameter used as the target resource for the rate-controlled execution. Required if you specify targets.</p>
+    ///   - [`targets(Option<Vec<Target>>)`](crate::input::StartAutomationExecutionInput::targets): <p>A key-value mapping to target resources. Required if you specify TargetParameterName.</p>
+    ///   - [`target_maps(Option<Vec<HashMap<String, Vec<String>>>>)`](crate::input::StartAutomationExecutionInput::target_maps): <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
+    ///   - [`max_concurrency(Option<String>)`](crate::input::StartAutomationExecutionInput::max_concurrency): <p>The maximum number of targets allowed to run this task in parallel. You can specify a number, such as 10, or a percentage, such as 10%. The default value is <code>10</code>.</p>
+    ///   - [`max_errors(Option<String>)`](crate::input::StartAutomationExecutionInput::max_errors): <p>The number of errors that are allowed before the system stops running the automation on additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the target set, for example 10%. If you specify 3, for example, the system stops running the automation when the fourth error is received. If you specify 0, then the system stops running the automation on additional targets after the first error result is returned. If you run an automation on 50 resources and set max-errors to 10%, then the system stops running the automation on additional targets when the sixth error is received.</p>  <p>Executions that are already running an automation when max-errors is reached are allowed to complete, but some of these executions may fail as well. If you need to ensure that there won't be more than max-errors failed executions, set max-concurrency to 1 so the executions proceed one at a time.</p>
+    ///   - [`target_locations(Option<Vec<TargetLocation>>)`](crate::input::StartAutomationExecutionInput::target_locations): <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the automation. Use this operation to start an automation in multiple Amazon Web Services Regions and multiple Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and Amazon Web Services accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::StartAutomationExecutionInput::tags): <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for an automation. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an automation to identify an environment or operating system. In this case, you could specify the following key-value pairs:</p>  <ul>   <li> <p> <code>Key=environment,Value=test</code> </p> </li>   <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>  </ul> <note>   <p>To add tags to an existing patch baseline, use the <code>AddTagsToResource</code> operation.</p>  </note>
+    /// - On success, responds with [`StartAutomationExecutionOutput`](crate::output::StartAutomationExecutionOutput) with field(s):
+    ///   - [`automation_execution_id(Option<String>)`](crate::output::StartAutomationExecutionOutput::automation_execution_id): <p>The unique ID of a newly scheduled automation execution.</p>
+    /// - On failure, responds with [`SdkError<StartAutomationExecutionError>`](crate::error::StartAutomationExecutionError)
     pub fn start_automation_execution(&self) -> fluent_builders::StartAutomationExecution<C, M, R> {
         fluent_builders::StartAutomationExecution::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartChangeRequestExecution` operation.
+    /// Constructs a fluent builder for the [`StartChangeRequestExecution`](crate::client::fluent_builders::StartChangeRequestExecution) operation.
     ///
-    /// See [`StartChangeRequestExecution`](crate::client::fluent_builders::StartChangeRequestExecution) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartChangeRequestExecutionInput`](crate::input::StartChangeRequestExecutionInput) with field(s):
+    ///   - [`scheduled_time(Option<DateTime>)`](crate::input::StartChangeRequestExecutionInput::scheduled_time): <p>The date and time specified in the change request to run the Automation runbooks.</p> <note>   <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>  </note>
+    ///   - [`document_name(Option<String>)`](crate::input::StartChangeRequestExecutionInput::document_name): <p>The name of the change template document to run during the runbook workflow.</p>
+    ///   - [`document_version(Option<String>)`](crate::input::StartChangeRequestExecutionInput::document_version): <p>The version of the change template document to run during the runbook workflow.</p>
+    ///   - [`parameters(Option<HashMap<String, Vec<String>>>)`](crate::input::StartChangeRequestExecutionInput::parameters): <p>A key-value map of parameters that match the declared parameters in the change template document.</p>
+    ///   - [`change_request_name(Option<String>)`](crate::input::StartChangeRequestExecutionInput::change_request_name): <p>The name of the change request associated with the runbook workflow to be run.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::StartChangeRequestExecutionInput::client_token): <p>The user-provided idempotency token. The token must be unique, is case insensitive, enforces the UUID format, and can't be reused.</p>
+    ///   - [`auto_approve(bool)`](crate::input::StartChangeRequestExecutionInput::auto_approve): <p>Indicates whether the change request can be approved automatically without the need for manual approvals.</p>  <p>If <code>AutoApprovable</code> is enabled in a change template, then setting <code>AutoApprove</code> to <code>true</code> in <code>StartChangeRequestExecution</code> creates a change request that bypasses approver review.</p> <note>   <p>Change Calendar restrictions are not bypassed in this scenario. If the state of an associated calendar is <code>CLOSED</code>, change freeze approvers must still grant permission for this change request to run. If they don't, the change won't be processed until the calendar state is again <code>OPEN</code>. </p>  </note>
+    ///   - [`runbooks(Option<Vec<Runbook>>)`](crate::input::StartChangeRequestExecutionInput::runbooks): <p>Information about the Automation runbooks that are run during the runbook workflow.</p> <note>   <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>  </note>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::StartChangeRequestExecutionInput::tags): <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for a change request. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a change request to identify an environment or target Amazon Web Services Region. In this case, you could specify the following key-value pairs:</p>  <ul>   <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>   <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li>  </ul>
+    ///   - [`scheduled_end_time(Option<DateTime>)`](crate::input::StartChangeRequestExecutionInput::scheduled_end_time): <p>The time that the requester expects the runbook workflow related to the change request to complete. The time is an estimate only that the requester provides for reviewers.</p>
+    ///   - [`change_details(Option<String>)`](crate::input::StartChangeRequestExecutionInput::change_details): <p>User-provided details about the change. If no details are provided, content specified in the <b>Template information</b> section of the associated change template is added.</p>
+    /// - On success, responds with [`StartChangeRequestExecutionOutput`](crate::output::StartChangeRequestExecutionOutput) with field(s):
+    ///   - [`automation_execution_id(Option<String>)`](crate::output::StartChangeRequestExecutionOutput::automation_execution_id): <p>The unique ID of a runbook workflow operation. (A runbook workflow is a type of Automation operation.) </p>
+    /// - On failure, responds with [`SdkError<StartChangeRequestExecutionError>`](crate::error::StartChangeRequestExecutionError)
     pub fn start_change_request_execution(
         &self,
     ) -> fluent_builders::StartChangeRequestExecution<C, M, R> {
         fluent_builders::StartChangeRequestExecution::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartSession` operation.
+    /// Constructs a fluent builder for the [`StartSession`](crate::client::fluent_builders::StartSession) operation.
     ///
-    /// See [`StartSession`](crate::client::fluent_builders::StartSession) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartSessionInput`](crate::input::StartSessionInput) with field(s):
+    ///   - [`target(Option<String>)`](crate::input::StartSessionInput::target): <p>The managed node to connect to for the session.</p>
+    ///   - [`document_name(Option<String>)`](crate::input::StartSessionInput::document_name): <p>The name of the SSM document to define the parameters and plugin settings for the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call the <code>GetDocument</code> API to verify the document exists before attempting to start a session. If no document name is provided, a shell to the managed node is launched by default.</p>
+    ///   - [`reason(Option<String>)`](crate::input::StartSessionInput::reason): <p>The reason for connecting to the instance. This value is included in the details for the Amazon CloudWatch Events event created when you start the session.</p>
+    ///   - [`parameters(Option<HashMap<String, Vec<String>>>)`](crate::input::StartSessionInput::parameters): <p>Reserved for future use.</p>
+    /// - On success, responds with [`StartSessionOutput`](crate::output::StartSessionOutput) with field(s):
+    ///   - [`session_id(Option<String>)`](crate::output::StartSessionOutput::session_id): <p>The ID of the session.</p>
+    ///   - [`token_value(Option<String>)`](crate::output::StartSessionOutput::token_value): <p>An encrypted token value containing session and caller information. Used to authenticate the connection to the managed node.</p>
+    ///   - [`stream_url(Option<String>)`](crate::output::StartSessionOutput::stream_url): <p>A URL back to SSM Agent on the managed node that the Session Manager client uses to send commands and receive output from the node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code> </p>  <p> <b>region</b> represents the Region identifier for an Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>  <p> <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
+    /// - On failure, responds with [`SdkError<StartSessionError>`](crate::error::StartSessionError)
     pub fn start_session(&self) -> fluent_builders::StartSession<C, M, R> {
         fluent_builders::StartSession::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopAutomationExecution` operation.
+    /// Constructs a fluent builder for the [`StopAutomationExecution`](crate::client::fluent_builders::StopAutomationExecution) operation.
     ///
-    /// See [`StopAutomationExecution`](crate::client::fluent_builders::StopAutomationExecution) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StopAutomationExecutionInput`](crate::input::StopAutomationExecutionInput) with field(s):
+    ///   - [`automation_execution_id(Option<String>)`](crate::input::StopAutomationExecutionInput::automation_execution_id): <p>The execution ID of the Automation to stop.</p>
+    ///   - [`r#type(Option<StopType>)`](crate::input::StopAutomationExecutionInput::r#type): <p>The stop request type. Valid types include the following: Cancel and Complete. The default type is Cancel.</p>
+    /// - On success, responds with [`StopAutomationExecutionOutput`](crate::output::StopAutomationExecutionOutput)
+
+    /// - On failure, responds with [`SdkError<StopAutomationExecutionError>`](crate::error::StopAutomationExecutionError)
     pub fn stop_automation_execution(&self) -> fluent_builders::StopAutomationExecution<C, M, R> {
         fluent_builders::StopAutomationExecution::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TerminateSession` operation.
+    /// Constructs a fluent builder for the [`TerminateSession`](crate::client::fluent_builders::TerminateSession) operation.
     ///
-    /// See [`TerminateSession`](crate::client::fluent_builders::TerminateSession) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TerminateSessionInput`](crate::input::TerminateSessionInput) with field(s):
+    ///   - [`session_id(Option<String>)`](crate::input::TerminateSessionInput::session_id): <p>The ID of the session to terminate.</p>
+    /// - On success, responds with [`TerminateSessionOutput`](crate::output::TerminateSessionOutput) with field(s):
+    ///   - [`session_id(Option<String>)`](crate::output::TerminateSessionOutput::session_id): <p>The ID of the session that has been terminated.</p>
+    /// - On failure, responds with [`SdkError<TerminateSessionError>`](crate::error::TerminateSessionError)
     pub fn terminate_session(&self) -> fluent_builders::TerminateSession<C, M, R> {
         fluent_builders::TerminateSession::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UnlabelParameterVersion` operation.
+    /// Constructs a fluent builder for the [`UnlabelParameterVersion`](crate::client::fluent_builders::UnlabelParameterVersion) operation.
     ///
-    /// See [`UnlabelParameterVersion`](crate::client::fluent_builders::UnlabelParameterVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UnlabelParameterVersionInput`](crate::input::UnlabelParameterVersionInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::UnlabelParameterVersionInput::name): <p>The name of the parameter from which you want to delete one or more labels.</p>
+    ///   - [`parameter_version(Option<i64>)`](crate::input::UnlabelParameterVersionInput::parameter_version): <p>The specific version of the parameter which you want to delete one or more labels from. If it isn't present, the call will fail.</p>
+    ///   - [`labels(Option<Vec<String>>)`](crate::input::UnlabelParameterVersionInput::labels): <p>One or more labels to delete from the specified parameter version.</p>
+    /// - On success, responds with [`UnlabelParameterVersionOutput`](crate::output::UnlabelParameterVersionOutput) with field(s):
+    ///   - [`removed_labels(Option<Vec<String>>)`](crate::output::UnlabelParameterVersionOutput::removed_labels): <p>A list of all labels deleted from the parameter.</p>
+    ///   - [`invalid_labels(Option<Vec<String>>)`](crate::output::UnlabelParameterVersionOutput::invalid_labels): <p>The labels that aren't attached to the given parameter version.</p>
+    /// - On failure, responds with [`SdkError<UnlabelParameterVersionError>`](crate::error::UnlabelParameterVersionError)
     pub fn unlabel_parameter_version(&self) -> fluent_builders::UnlabelParameterVersion<C, M, R> {
         fluent_builders::UnlabelParameterVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateAssociation` operation.
+    /// Constructs a fluent builder for the [`UpdateAssociation`](crate::client::fluent_builders::UpdateAssociation) operation.
     ///
-    /// See [`UpdateAssociation`](crate::client::fluent_builders::UpdateAssociation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateAssociationInput`](crate::input::UpdateAssociationInput) with field(s):
+    ///   - [`association_id(Option<String>)`](crate::input::UpdateAssociationInput::association_id): <p>The ID of the association you want to update. </p>
+    ///   - [`parameters(Option<HashMap<String, Vec<String>>>)`](crate::input::UpdateAssociationInput::parameters): <p>The parameters you want to update for the association. If you create a parameter using Parameter Store, a capability of Amazon Web Services Systems Manager, you can reference the parameter using <code>{{ssm:parameter-name}}</code>.</p>
+    ///   - [`document_version(Option<String>)`](crate::input::UpdateAssociationInput::document_version): <p>The document version you want update for the association. </p>
+    ///   - [`schedule_expression(Option<String>)`](crate::input::UpdateAssociationInput::schedule_expression): <p>The cron expression used to schedule the association that you want to update.</p>
+    ///   - [`output_location(Option<InstanceAssociationOutputLocation>)`](crate::input::UpdateAssociationInput::output_location): <p>An S3 bucket where you want to store the results of this request.</p>
+    ///   - [`name(Option<String>)`](crate::input::UpdateAssociationInput::name): <p>The name of the SSM Command document or Automation runbook that contains the configuration information for the managed node.</p>  <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared with you from another account.</p>  <p>For Systems Manager document (SSM document) that are shared with you from other Amazon Web Services accounts, you must specify the complete SSM document ARN, in the following format:</p>  <p> <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code> </p>  <p>For example:</p>  <p> <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>  <p>For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</p>
+    ///   - [`targets(Option<Vec<Target>>)`](crate::input::UpdateAssociationInput::targets): <p>The targets of the association.</p>
+    ///   - [`association_name(Option<String>)`](crate::input::UpdateAssociationInput::association_name): <p>The name of the association that you want to update.</p>
+    ///   - [`association_version(Option<String>)`](crate::input::UpdateAssociationInput::association_version): <p>This parameter is provided for concurrency control purposes. You must specify the latest association version in the service. If you want to ensure that this request succeeds, either specify <code>$LATEST</code>, or omit this parameter.</p>
+    ///   - [`automation_target_parameter_name(Option<String>)`](crate::input::UpdateAssociationInput::automation_target_parameter_name): <p>Choose the parameter that will define how your automation will branch out. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
+    ///   - [`max_errors(Option<String>)`](crate::input::UpdateAssociationInput::max_errors): <p>The number of errors that are allowed before the system stops sending requests to run the association on additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth error is received. If you specify 0, then the system stops sending requests after the first error is returned. If you run an association on 50 managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request when the sixth error is received.</p>  <p>Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to complete, but some of these executions may fail as well. If you need to ensure that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at a time.</p>
+    ///   - [`max_concurrency(Option<String>)`](crate::input::UpdateAssociationInput::max_concurrency): <p>The maximum number of targets allowed to run the association at the same time. You can specify a number, for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means all targets run the association at the same time.</p>  <p>If a new managed node starts and attempts to run an association while Systems Manager is running <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association interval, the new managed node will process its association within the limit specified for <code>MaxConcurrency</code>.</p>
+    ///   - [`compliance_severity(Option<AssociationComplianceSeverity>)`](crate::input::UpdateAssociationInput::compliance_severity): <p>The severity level to assign to the association.</p>
+    ///   - [`sync_compliance(Option<AssociationSyncCompliance>)`](crate::input::UpdateAssociationInput::sync_compliance): <p>The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system uses the status of the association execution to determine the compliance status. If the association execution runs successfully, then the association is <code>COMPLIANT</code>. If the association execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>.</p>  <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the <code>PutComplianceItems</code> API operation. In this case, compliance data isn't managed by State Manager, a capability of Amazon Web Services Systems Manager. It is managed by your direct call to the <code>PutComplianceItems</code> API operation.</p>  <p>By default, all associations use <code>AUTO</code> mode.</p>
+    ///   - [`apply_only_at_cron_interval(bool)`](crate::input::UpdateAssociationInput::apply_only_at_cron_interval): <p>By default, when you update an association, the system runs it immediately after it is updated and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you update it. This parameter isn't supported for rate expressions.</p>  <p>Also, if you specified this option when you created the association, you can reset it. To do so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you update the association from the command line. This parameter forces the association to run immediately after updating it and according to the interval specified.</p>
+    ///   - [`calendar_names(Option<Vec<String>>)`](crate::input::UpdateAssociationInput::calendar_names): <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your associations under. The associations only run when that change calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
+    ///   - [`target_locations(Option<Vec<TargetLocation>>)`](crate::input::UpdateAssociationInput::target_locations): <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to update an association in multiple Regions and multiple accounts.</p>
+    /// - On success, responds with [`UpdateAssociationOutput`](crate::output::UpdateAssociationOutput) with field(s):
+    ///   - [`association_description(Option<AssociationDescription>)`](crate::output::UpdateAssociationOutput::association_description): <p>The description of the association that was updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateAssociationError>`](crate::error::UpdateAssociationError)
     pub fn update_association(&self) -> fluent_builders::UpdateAssociation<C, M, R> {
         fluent_builders::UpdateAssociation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateAssociationStatus` operation.
+    /// Constructs a fluent builder for the [`UpdateAssociationStatus`](crate::client::fluent_builders::UpdateAssociationStatus) operation.
     ///
-    /// See [`UpdateAssociationStatus`](crate::client::fluent_builders::UpdateAssociationStatus) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateAssociationStatusInput`](crate::input::UpdateAssociationStatusInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::UpdateAssociationStatusInput::name): <p>The name of the SSM document.</p>
+    ///   - [`instance_id(Option<String>)`](crate::input::UpdateAssociationStatusInput::instance_id): <p>The managed node ID.</p>
+    ///   - [`association_status(Option<AssociationStatus>)`](crate::input::UpdateAssociationStatusInput::association_status): <p>The association status.</p>
+    /// - On success, responds with [`UpdateAssociationStatusOutput`](crate::output::UpdateAssociationStatusOutput) with field(s):
+    ///   - [`association_description(Option<AssociationDescription>)`](crate::output::UpdateAssociationStatusOutput::association_description): <p>Information about the association.</p>
+    /// - On failure, responds with [`SdkError<UpdateAssociationStatusError>`](crate::error::UpdateAssociationStatusError)
     pub fn update_association_status(&self) -> fluent_builders::UpdateAssociationStatus<C, M, R> {
         fluent_builders::UpdateAssociationStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDocument` operation.
+    /// Constructs a fluent builder for the [`UpdateDocument`](crate::client::fluent_builders::UpdateDocument) operation.
     ///
-    /// See [`UpdateDocument`](crate::client::fluent_builders::UpdateDocument) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateDocumentInput`](crate::input::UpdateDocumentInput) with field(s):
+    ///   - [`content(Option<String>)`](crate::input::UpdateDocumentInput::content): <p>A valid JSON or YAML string.</p>
+    ///   - [`attachments(Option<Vec<AttachmentsSource>>)`](crate::input::UpdateDocumentInput::attachments): <p>A list of key-value pairs that describe attachments to a version of a document.</p>
+    ///   - [`name(Option<String>)`](crate::input::UpdateDocumentInput::name): <p>The name of the SSM document that you want to update.</p>
+    ///   - [`display_name(Option<String>)`](crate::input::UpdateDocumentInput::display_name): <p>The friendly name of the SSM document that you want to update. This value can differ for each version of the document. If you don't specify a value for this parameter in your request, the existing value is applied to the new document version.</p>
+    ///   - [`version_name(Option<String>)`](crate::input::UpdateDocumentInput::version_name): <p>An optional field specifying the version of the artifact you are updating with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
+    ///   - [`document_version(Option<String>)`](crate::input::UpdateDocumentInput::document_version): <p>The version of the document that you want to update. Currently, Systems Manager supports updating only the latest version of the document. You can specify the version number of the latest version or use the <code>$LATEST</code> variable.</p>
+    ///   - [`document_format(Option<DocumentFormat>)`](crate::input::UpdateDocumentInput::document_format): <p>Specify the document format for the new document version. Systems Manager supports JSON and YAML documents. JSON is the default format.</p>
+    ///   - [`target_type(Option<String>)`](crate::input::UpdateDocumentInput::target_type): <p>Specify a new target type for the document.</p>
+    /// - On success, responds with [`UpdateDocumentOutput`](crate::output::UpdateDocumentOutput) with field(s):
+    ///   - [`document_description(Option<DocumentDescription>)`](crate::output::UpdateDocumentOutput::document_description): <p>A description of the document that was updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateDocumentError>`](crate::error::UpdateDocumentError)
     pub fn update_document(&self) -> fluent_builders::UpdateDocument<C, M, R> {
         fluent_builders::UpdateDocument::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDocumentDefaultVersion` operation.
+    /// Constructs a fluent builder for the [`UpdateDocumentDefaultVersion`](crate::client::fluent_builders::UpdateDocumentDefaultVersion) operation.
     ///
-    /// See [`UpdateDocumentDefaultVersion`](crate::client::fluent_builders::UpdateDocumentDefaultVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateDocumentDefaultVersionInput`](crate::input::UpdateDocumentDefaultVersionInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::UpdateDocumentDefaultVersionInput::name): <p>The name of a custom document that you want to set as the default version.</p>
+    ///   - [`document_version(Option<String>)`](crate::input::UpdateDocumentDefaultVersionInput::document_version): <p>The version of a custom document that you want to set as the default version.</p>
+    /// - On success, responds with [`UpdateDocumentDefaultVersionOutput`](crate::output::UpdateDocumentDefaultVersionOutput) with field(s):
+    ///   - [`description(Option<DocumentDefaultVersionDescription>)`](crate::output::UpdateDocumentDefaultVersionOutput::description): <p>The description of a custom document that you want to set as the default version.</p>
+    /// - On failure, responds with [`SdkError<UpdateDocumentDefaultVersionError>`](crate::error::UpdateDocumentDefaultVersionError)
     pub fn update_document_default_version(
         &self,
     ) -> fluent_builders::UpdateDocumentDefaultVersion<C, M, R> {
         fluent_builders::UpdateDocumentDefaultVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDocumentMetadata` operation.
+    /// Constructs a fluent builder for the [`UpdateDocumentMetadata`](crate::client::fluent_builders::UpdateDocumentMetadata) operation.
     ///
-    /// See [`UpdateDocumentMetadata`](crate::client::fluent_builders::UpdateDocumentMetadata) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateDocumentMetadataInput`](crate::input::UpdateDocumentMetadataInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::UpdateDocumentMetadataInput::name): <p>The name of the change template for which a version's metadata is to be updated.</p>
+    ///   - [`document_version(Option<String>)`](crate::input::UpdateDocumentMetadataInput::document_version): <p>The version of a change template in which to update approval metadata.</p>
+    ///   - [`document_reviews(Option<DocumentReviews>)`](crate::input::UpdateDocumentMetadataInput::document_reviews): <p>The change template review details to update.</p>
+    /// - On success, responds with [`UpdateDocumentMetadataOutput`](crate::output::UpdateDocumentMetadataOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateDocumentMetadataError>`](crate::error::UpdateDocumentMetadataError)
     pub fn update_document_metadata(&self) -> fluent_builders::UpdateDocumentMetadata<C, M, R> {
         fluent_builders::UpdateDocumentMetadata::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateMaintenanceWindow` operation.
+    /// Constructs a fluent builder for the [`UpdateMaintenanceWindow`](crate::client::fluent_builders::UpdateMaintenanceWindow) operation.
     ///
-    /// See [`UpdateMaintenanceWindow`](crate::client::fluent_builders::UpdateMaintenanceWindow) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateMaintenanceWindowInput`](crate::input::UpdateMaintenanceWindowInput) with field(s):
+    ///   - [`window_id(Option<String>)`](crate::input::UpdateMaintenanceWindowInput::window_id): <p>The ID of the maintenance window to update.</p>
+    ///   - [`name(Option<String>)`](crate::input::UpdateMaintenanceWindowInput::name): <p>The name of the maintenance window.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateMaintenanceWindowInput::description): <p>An optional description for the update request.</p>
+    ///   - [`start_date(Option<String>)`](crate::input::UpdateMaintenanceWindowInput::start_date): <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
+    ///   - [`end_date(Option<String>)`](crate::input::UpdateMaintenanceWindowInput::end_date): <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become inactive. <code>EndDate</code> allows you to set a date and time in the future when the maintenance window will no longer run.</p>
+    ///   - [`schedule(Option<String>)`](crate::input::UpdateMaintenanceWindowInput::schedule): <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
+    ///   - [`schedule_timezone(Option<String>)`](crate::input::UpdateMaintenanceWindowInput::schedule_timezone): <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
+    ///   - [`schedule_offset(Option<i32>)`](crate::input::UpdateMaintenanceWindowInput::schedule_offset): <p>The number of days to wait after the date and time specified by a cron expression before running the maintenance window.</p>  <p>For example, the following cron expression schedules a maintenance window to run the third Tuesday of every month at 11:30 PM.</p>  <p> <code>cron(30 23 ? * TUE#3 *)</code> </p>  <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days later.</p>
+    ///   - [`duration(Option<i32>)`](crate::input::UpdateMaintenanceWindowInput::duration): <p>The duration of the maintenance window in hours.</p>
+    ///   - [`cutoff(Option<i32>)`](crate::input::UpdateMaintenanceWindowInput::cutoff): <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
+    ///   - [`allow_unassociated_targets(Option<bool>)`](crate::input::UpdateMaintenanceWindowInput::allow_unassociated_targets): <p>Whether targets must be registered with the maintenance window before tasks can be defined for those targets.</p>
+    ///   - [`enabled(Option<bool>)`](crate::input::UpdateMaintenanceWindowInput::enabled): <p>Whether the maintenance window is enabled.</p>
+    ///   - [`replace(Option<bool>)`](crate::input::UpdateMaintenanceWindowInput::replace): <p>If <code>True</code>, then all fields that are required by the <code>CreateMaintenanceWindow</code> operation are also required for this API request. Optional fields that aren't specified are set to null. </p>
+    /// - On success, responds with [`UpdateMaintenanceWindowOutput`](crate::output::UpdateMaintenanceWindowOutput) with field(s):
+    ///   - [`window_id(Option<String>)`](crate::output::UpdateMaintenanceWindowOutput::window_id): <p>The ID of the created maintenance window.</p>
+    ///   - [`name(Option<String>)`](crate::output::UpdateMaintenanceWindowOutput::name): <p>The name of the maintenance window.</p>
+    ///   - [`description(Option<String>)`](crate::output::UpdateMaintenanceWindowOutput::description): <p>An optional description of the update.</p>
+    ///   - [`start_date(Option<String>)`](crate::output::UpdateMaintenanceWindowOutput::start_date): <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become active. The maintenance window won't run before this specified time.</p>
+    ///   - [`end_date(Option<String>)`](crate::output::UpdateMaintenanceWindowOutput::end_date): <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive. The maintenance window won't run after this specified time.</p>
+    ///   - [`schedule(Option<String>)`](crate::output::UpdateMaintenanceWindowOutput::schedule): <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
+    ///   - [`schedule_timezone(Option<String>)`](crate::output::UpdateMaintenanceWindowOutput::schedule_timezone): <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
+    ///   - [`schedule_offset(Option<i32>)`](crate::output::UpdateMaintenanceWindowOutput::schedule_offset): <p>The number of days to wait to run a maintenance window after the scheduled cron expression date and time.</p>
+    ///   - [`duration(i32)`](crate::output::UpdateMaintenanceWindowOutput::duration): <p>The duration of the maintenance window in hours.</p>
+    ///   - [`cutoff(i32)`](crate::output::UpdateMaintenanceWindowOutput::cutoff): <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
+    ///   - [`allow_unassociated_targets(bool)`](crate::output::UpdateMaintenanceWindowOutput::allow_unassociated_targets): <p>Whether targets must be registered with the maintenance window before tasks can be defined for those targets.</p>
+    ///   - [`enabled(bool)`](crate::output::UpdateMaintenanceWindowOutput::enabled): <p>Whether the maintenance window is enabled.</p>
+    /// - On failure, responds with [`SdkError<UpdateMaintenanceWindowError>`](crate::error::UpdateMaintenanceWindowError)
     pub fn update_maintenance_window(&self) -> fluent_builders::UpdateMaintenanceWindow<C, M, R> {
         fluent_builders::UpdateMaintenanceWindow::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateMaintenanceWindowTarget` operation.
+    /// Constructs a fluent builder for the [`UpdateMaintenanceWindowTarget`](crate::client::fluent_builders::UpdateMaintenanceWindowTarget) operation.
     ///
-    /// See [`UpdateMaintenanceWindowTarget`](crate::client::fluent_builders::UpdateMaintenanceWindowTarget) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateMaintenanceWindowTargetInput`](crate::input::UpdateMaintenanceWindowTargetInput) with field(s):
+    ///   - [`window_id(Option<String>)`](crate::input::UpdateMaintenanceWindowTargetInput::window_id): <p>The maintenance window ID with which to modify the target.</p>
+    ///   - [`window_target_id(Option<String>)`](crate::input::UpdateMaintenanceWindowTargetInput::window_target_id): <p>The target ID to modify.</p>
+    ///   - [`targets(Option<Vec<Target>>)`](crate::input::UpdateMaintenanceWindowTargetInput::targets): <p>The targets to add or replace.</p>
+    ///   - [`owner_information(Option<String>)`](crate::input::UpdateMaintenanceWindowTargetInput::owner_information): <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while running tasks for these targets in this maintenance window.</p>
+    ///   - [`name(Option<String>)`](crate::input::UpdateMaintenanceWindowTargetInput::name): <p>A name for the update.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateMaintenanceWindowTargetInput::description): <p>An optional description for the update.</p>
+    ///   - [`replace(Option<bool>)`](crate::input::UpdateMaintenanceWindowTargetInput::replace): <p>If <code>True</code>, then all fields that are required by the <code>RegisterTargetWithMaintenanceWindow</code> operation are also required for this API request. Optional fields that aren't specified are set to null.</p>
+    /// - On success, responds with [`UpdateMaintenanceWindowTargetOutput`](crate::output::UpdateMaintenanceWindowTargetOutput) with field(s):
+    ///   - [`window_id(Option<String>)`](crate::output::UpdateMaintenanceWindowTargetOutput::window_id): <p>The maintenance window ID specified in the update request.</p>
+    ///   - [`window_target_id(Option<String>)`](crate::output::UpdateMaintenanceWindowTargetOutput::window_target_id): <p>The target ID specified in the update request.</p>
+    ///   - [`targets(Option<Vec<Target>>)`](crate::output::UpdateMaintenanceWindowTargetOutput::targets): <p>The updated targets.</p>
+    ///   - [`owner_information(Option<String>)`](crate::output::UpdateMaintenanceWindowTargetOutput::owner_information): <p>The updated owner.</p>
+    ///   - [`name(Option<String>)`](crate::output::UpdateMaintenanceWindowTargetOutput::name): <p>The updated name.</p>
+    ///   - [`description(Option<String>)`](crate::output::UpdateMaintenanceWindowTargetOutput::description): <p>The updated description.</p>
+    /// - On failure, responds with [`SdkError<UpdateMaintenanceWindowTargetError>`](crate::error::UpdateMaintenanceWindowTargetError)
     pub fn update_maintenance_window_target(
         &self,
     ) -> fluent_builders::UpdateMaintenanceWindowTarget<C, M, R> {
         fluent_builders::UpdateMaintenanceWindowTarget::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateMaintenanceWindowTask` operation.
+    /// Constructs a fluent builder for the [`UpdateMaintenanceWindowTask`](crate::client::fluent_builders::UpdateMaintenanceWindowTask) operation.
     ///
-    /// See [`UpdateMaintenanceWindowTask`](crate::client::fluent_builders::UpdateMaintenanceWindowTask) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateMaintenanceWindowTaskInput`](crate::input::UpdateMaintenanceWindowTaskInput) with field(s):
+    ///   - [`window_id(Option<String>)`](crate::input::UpdateMaintenanceWindowTaskInput::window_id): <p>The maintenance window ID that contains the task to modify.</p>
+    ///   - [`window_task_id(Option<String>)`](crate::input::UpdateMaintenanceWindowTaskInput::window_task_id): <p>The task ID to modify.</p>
+    ///   - [`targets(Option<Vec<Target>>)`](crate::input::UpdateMaintenanceWindowTaskInput::targets): <p>The targets (either managed nodes or tags) to modify. Managed nodes are specified using the format <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>. Tags are specified using the format <code> Key=tag_name,Values=tag_value</code>. </p> <note>   <p>One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task, targets are optional for other maintenance window task types (Automation, Lambda, and Step Functions). For more information about running tasks that don't specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>  </note>
+    ///   - [`task_arn(Option<String>)`](crate::input::UpdateMaintenanceWindowTaskInput::task_arn): <p>The task ARN to modify.</p>
+    ///   - [`service_role_arn(Option<String>)`](crate::input::UpdateMaintenanceWindowTaskInput::service_role_arn): <p>The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume when running a maintenance window task. If you do not specify a service role ARN, Systems Manager uses your account's service-linked role. If no service-linked role for Systems Manager exists in your account, it is created when you run <code>RegisterTaskWithMaintenanceWindow</code>.</p>  <p>For more information, see the following topics in the in the <i>Amazon Web Services Systems Manager User Guide</i>:</p>  <ul>   <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using service-linked roles for Systems Manager</a> </p> </li>   <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should I use a service-linked role or a custom service role to run maintenance window tasks? </a> </p> </li>  </ul>
+    ///   - [`task_parameters(Option<HashMap<String, MaintenanceWindowTaskParameterValueExpression>>)`](crate::input::UpdateMaintenanceWindowTaskInput::task_parameters): <p>The parameters to modify.</p> <note>   <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>  </note>  <p>The map has the following format:</p>  <p>Key: string, between 1 and 255 characters</p>  <p>Value: an array of strings, each string is between 1 and 255 characters</p>
+    ///   - [`task_invocation_parameters(Option<MaintenanceWindowTaskInvocationParameters>)`](crate::input::UpdateMaintenanceWindowTaskInput::task_invocation_parameters): <p>The parameters that the task should use during execution. Populate only the fields that match the task type. All other fields should be empty.</p> <important>   <p>When you update a maintenance window task that has options specified in <code>TaskInvocationParameters</code>, you must provide again all the <code>TaskInvocationParameters</code> values that you want to retain. The values you don't specify again are removed. For example, suppose that when you registered a Run Command task, you specified <code>TaskInvocationParameters</code> values for <code>Comment</code>, <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>. If you update the maintenance window task and specify only a different <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and <code>NotificationConfig</code> are removed.</p>  </important>
+    ///   - [`priority(Option<i32>)`](crate::input::UpdateMaintenanceWindowTaskInput::priority): <p>The new task priority to specify. The lower the number, the higher the priority. Tasks that have the same priority are scheduled in parallel.</p>
+    ///   - [`max_concurrency(Option<String>)`](crate::input::UpdateMaintenanceWindowTaskInput::max_concurrency): <p>The new <code>MaxConcurrency</code> value you want to specify. <code>MaxConcurrency</code> is the number of targets that are allowed to run this task in parallel.</p> <note>   <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>  </note>
+    ///   - [`max_errors(Option<String>)`](crate::input::UpdateMaintenanceWindowTaskInput::max_errors): <p>The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is the maximum number of errors that are allowed before the task stops being scheduled.</p> <note>   <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>  </note>
+    ///   - [`logging_info(Option<LoggingInfo>)`](crate::input::UpdateMaintenanceWindowTaskInput::logging_info): <p>The new logging location in Amazon S3 to specify.</p> <note>   <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>  </note>
+    ///   - [`name(Option<String>)`](crate::input::UpdateMaintenanceWindowTaskInput::name): <p>The new task name to specify.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateMaintenanceWindowTaskInput::description): <p>The new task description to specify.</p>
+    ///   - [`replace(Option<bool>)`](crate::input::UpdateMaintenanceWindowTaskInput::replace): <p>If True, then all fields that are required by the <code>RegisterTaskWithMaintenanceWindow</code> operation are also required for this API request. Optional fields that aren't specified are set to null.</p>
+    ///   - [`cutoff_behavior(Option<MaintenanceWindowTaskCutoffBehavior>)`](crate::input::UpdateMaintenanceWindowTaskInput::cutoff_behavior): <p>Indicates whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>  <ul>   <li> <p> <code>CONTINUE_TASK</code>: When the cutoff time is reached, any tasks that are running continue. The default value.</p> </li>   <li> <p> <code>CANCEL_TASK</code>:</p>    <ul>     <li> <p>For Automation, Lambda, Step Functions tasks: When the cutoff time is reached, any task invocations that are already running continue, but no new task invocations are started.</p> </li>     <li> <p>For Run Command tasks: When the cutoff time is reached, the system sends a <code>CancelCommand</code> operation that attempts to cancel the command associated with the task. However, there is no guarantee that the command will be terminated and the underlying process stopped.</p> </li>    </ul> <p>The status for tasks that are not completed is <code>TIMED_OUT</code>.</p> </li>  </ul>
+    /// - On success, responds with [`UpdateMaintenanceWindowTaskOutput`](crate::output::UpdateMaintenanceWindowTaskOutput) with field(s):
+    ///   - [`window_id(Option<String>)`](crate::output::UpdateMaintenanceWindowTaskOutput::window_id): <p>The ID of the maintenance window that was updated.</p>
+    ///   - [`window_task_id(Option<String>)`](crate::output::UpdateMaintenanceWindowTaskOutput::window_task_id): <p>The task ID of the maintenance window that was updated.</p>
+    ///   - [`targets(Option<Vec<Target>>)`](crate::output::UpdateMaintenanceWindowTaskOutput::targets): <p>The updated target values.</p>
+    ///   - [`task_arn(Option<String>)`](crate::output::UpdateMaintenanceWindowTaskOutput::task_arn): <p>The updated task ARN value.</p>
+    ///   - [`service_role_arn(Option<String>)`](crate::output::UpdateMaintenanceWindowTaskOutput::service_role_arn): <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+    ///   - [`task_parameters(Option<HashMap<String, MaintenanceWindowTaskParameterValueExpression>>)`](crate::output::UpdateMaintenanceWindowTaskOutput::task_parameters): <p>The updated parameter values.</p> <note>   <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>  </note>
+    ///   - [`task_invocation_parameters(Option<MaintenanceWindowTaskInvocationParameters>)`](crate::output::UpdateMaintenanceWindowTaskOutput::task_invocation_parameters): <p>The updated parameter values.</p>
+    ///   - [`priority(i32)`](crate::output::UpdateMaintenanceWindowTaskOutput::priority): <p>The updated priority value.</p>
+    ///   - [`max_concurrency(Option<String>)`](crate::output::UpdateMaintenanceWindowTaskOutput::max_concurrency): <p>The updated <code>MaxConcurrency</code> value.</p>
+    ///   - [`max_errors(Option<String>)`](crate::output::UpdateMaintenanceWindowTaskOutput::max_errors): <p>The updated <code>MaxErrors</code> value.</p>
+    ///   - [`logging_info(Option<LoggingInfo>)`](crate::output::UpdateMaintenanceWindowTaskOutput::logging_info): <p>The updated logging information in Amazon S3.</p> <note>   <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>  </note>
+    ///   - [`name(Option<String>)`](crate::output::UpdateMaintenanceWindowTaskOutput::name): <p>The updated task name.</p>
+    ///   - [`description(Option<String>)`](crate::output::UpdateMaintenanceWindowTaskOutput::description): <p>The updated task description.</p>
+    ///   - [`cutoff_behavior(Option<MaintenanceWindowTaskCutoffBehavior>)`](crate::output::UpdateMaintenanceWindowTaskOutput::cutoff_behavior): <p>The specification for whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>
+    /// - On failure, responds with [`SdkError<UpdateMaintenanceWindowTaskError>`](crate::error::UpdateMaintenanceWindowTaskError)
     pub fn update_maintenance_window_task(
         &self,
     ) -> fluent_builders::UpdateMaintenanceWindowTask<C, M, R> {
         fluent_builders::UpdateMaintenanceWindowTask::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateManagedInstanceRole` operation.
+    /// Constructs a fluent builder for the [`UpdateManagedInstanceRole`](crate::client::fluent_builders::UpdateManagedInstanceRole) operation.
     ///
-    /// See [`UpdateManagedInstanceRole`](crate::client::fluent_builders::UpdateManagedInstanceRole) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateManagedInstanceRoleInput`](crate::input::UpdateManagedInstanceRoleInput) with field(s):
+    ///   - [`instance_id(Option<String>)`](crate::input::UpdateManagedInstanceRoleInput::instance_id): <p>The ID of the managed node where you want to update the role.</p>
+    ///   - [`iam_role(Option<String>)`](crate::input::UpdateManagedInstanceRoleInput::iam_role): <p>The IAM role you want to assign or change.</p>
+    /// - On success, responds with [`UpdateManagedInstanceRoleOutput`](crate::output::UpdateManagedInstanceRoleOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateManagedInstanceRoleError>`](crate::error::UpdateManagedInstanceRoleError)
     pub fn update_managed_instance_role(
         &self,
     ) -> fluent_builders::UpdateManagedInstanceRole<C, M, R> {
         fluent_builders::UpdateManagedInstanceRole::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateOpsItem` operation.
+    /// Constructs a fluent builder for the [`UpdateOpsItem`](crate::client::fluent_builders::UpdateOpsItem) operation.
     ///
-    /// See [`UpdateOpsItem`](crate::client::fluent_builders::UpdateOpsItem) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateOpsItemInput`](crate::input::UpdateOpsItemInput) with field(s):
+    ///   - [`description(Option<String>)`](crate::input::UpdateOpsItemInput::description): <p>Update the information about the OpsItem. Provide enough information so that users reading this OpsItem for the first time understand the issue. </p>
+    ///   - [`operational_data(Option<HashMap<String, OpsItemDataValue>>)`](crate::input::UpdateOpsItemInput::operational_data): <p>Add new keys or edit existing key-value pairs of the OperationalData map in the OpsItem object.</p>  <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p> <important>   <p>Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p>  </important>  <p>You can choose to make the data searchable by other users in the account or you can restrict search access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the <code>DescribeOpsItems</code> API operation) can view and search on the specified data. Operational data that isn't searchable is only viewable by users who have access to the OpsItem (as provided by the <code>GetOpsItem</code> API operation).</p>  <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    ///   - [`operational_data_to_delete(Option<Vec<String>>)`](crate::input::UpdateOpsItemInput::operational_data_to_delete): <p>Keys that you want to remove from the OperationalData map.</p>
+    ///   - [`notifications(Option<Vec<OpsItemNotification>>)`](crate::input::UpdateOpsItemInput::notifications): <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this OpsItem is edited or changed.</p>
+    ///   - [`priority(Option<i32>)`](crate::input::UpdateOpsItemInput::priority): <p>The importance of this OpsItem in relation to other OpsItems in the system.</p>
+    ///   - [`related_ops_items(Option<Vec<RelatedOpsItem>>)`](crate::input::UpdateOpsItemInput::related_ops_items): <p>One or more OpsItems that share something in common with the current OpsItems. For example, related OpsItems can include OpsItems with similar error messages, impacted resources, or statuses for the impacted resource.</p>
+    ///   - [`status(Option<OpsItemStatus>)`](crate::input::UpdateOpsItemInput::status): <p>The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details">Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    ///   - [`ops_item_id(Option<String>)`](crate::input::UpdateOpsItemInput::ops_item_id): <p>The ID of the OpsItem.</p>
+    ///   - [`title(Option<String>)`](crate::input::UpdateOpsItemInput::title): <p>A short heading that describes the nature of the OpsItem and the impacted resource.</p>
+    ///   - [`category(Option<String>)`](crate::input::UpdateOpsItemInput::category): <p>Specify a new category for an OpsItem.</p>
+    ///   - [`severity(Option<String>)`](crate::input::UpdateOpsItemInput::severity): <p>Specify a new severity for an OpsItem.</p>
+    ///   - [`actual_start_time(Option<DateTime>)`](crate::input::UpdateOpsItemInput::actual_start_time): <p>The time a runbook workflow started. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
+    ///   - [`actual_end_time(Option<DateTime>)`](crate::input::UpdateOpsItemInput::actual_end_time): <p>The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
+    ///   - [`planned_start_time(Option<DateTime>)`](crate::input::UpdateOpsItemInput::planned_start_time): <p>The time specified in a change request for a runbook workflow to start. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
+    ///   - [`planned_end_time(Option<DateTime>)`](crate::input::UpdateOpsItemInput::planned_end_time): <p>The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
+    /// - On success, responds with [`UpdateOpsItemOutput`](crate::output::UpdateOpsItemOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateOpsItemError>`](crate::error::UpdateOpsItemError)
     pub fn update_ops_item(&self) -> fluent_builders::UpdateOpsItem<C, M, R> {
         fluent_builders::UpdateOpsItem::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateOpsMetadata` operation.
+    /// Constructs a fluent builder for the [`UpdateOpsMetadata`](crate::client::fluent_builders::UpdateOpsMetadata) operation.
     ///
-    /// See [`UpdateOpsMetadata`](crate::client::fluent_builders::UpdateOpsMetadata) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateOpsMetadataInput`](crate::input::UpdateOpsMetadataInput) with field(s):
+    ///   - [`ops_metadata_arn(Option<String>)`](crate::input::UpdateOpsMetadataInput::ops_metadata_arn): <p>The Amazon Resoure Name (ARN) of the OpsMetadata Object to update.</p>
+    ///   - [`metadata_to_update(Option<HashMap<String, MetadataValue>>)`](crate::input::UpdateOpsMetadataInput::metadata_to_update): <p>Metadata to add to an OpsMetadata object.</p>
+    ///   - [`keys_to_delete(Option<Vec<String>>)`](crate::input::UpdateOpsMetadataInput::keys_to_delete): <p>The metadata keys to delete from the OpsMetadata object. </p>
+    /// - On success, responds with [`UpdateOpsMetadataOutput`](crate::output::UpdateOpsMetadataOutput) with field(s):
+    ///   - [`ops_metadata_arn(Option<String>)`](crate::output::UpdateOpsMetadataOutput::ops_metadata_arn): <p>The Amazon Resource Name (ARN) of the OpsMetadata Object that was updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateOpsMetadataError>`](crate::error::UpdateOpsMetadataError)
     pub fn update_ops_metadata(&self) -> fluent_builders::UpdateOpsMetadata<C, M, R> {
         fluent_builders::UpdateOpsMetadata::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdatePatchBaseline` operation.
+    /// Constructs a fluent builder for the [`UpdatePatchBaseline`](crate::client::fluent_builders::UpdatePatchBaseline) operation.
     ///
-    /// See [`UpdatePatchBaseline`](crate::client::fluent_builders::UpdatePatchBaseline) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdatePatchBaselineInput`](crate::input::UpdatePatchBaselineInput) with field(s):
+    ///   - [`baseline_id(Option<String>)`](crate::input::UpdatePatchBaselineInput::baseline_id): <p>The ID of the patch baseline to update.</p>
+    ///   - [`name(Option<String>)`](crate::input::UpdatePatchBaselineInput::name): <p>The name of the patch baseline.</p>
+    ///   - [`global_filters(Option<PatchFilterGroup>)`](crate::input::UpdatePatchBaselineInput::global_filters): <p>A set of global filters used to include patches in the baseline.</p>
+    ///   - [`approval_rules(Option<PatchRuleGroup>)`](crate::input::UpdatePatchBaselineInput::approval_rules): <p>A set of rules used to include patches in the baseline.</p>
+    ///   - [`approved_patches(Option<Vec<String>>)`](crate::input::UpdatePatchBaselineInput::approved_patches): <p>A list of explicitly approved patches for the baseline.</p>  <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    ///   - [`approved_patches_compliance_level(Option<PatchComplianceLevel>)`](crate::input::UpdatePatchBaselineInput::approved_patches_compliance_level): <p>Assigns a new compliance severity level to an existing patch baseline.</p>
+    ///   - [`approved_patches_enable_non_security(Option<bool>)`](crate::input::UpdatePatchBaselineInput::approved_patches_enable_non_security): <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
+    ///   - [`rejected_patches(Option<Vec<String>>)`](crate::input::UpdatePatchBaselineInput::rejected_patches): <p>A list of explicitly rejected patches for the baseline.</p>  <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    ///   - [`rejected_patches_action(Option<PatchAction>)`](crate::input::UpdatePatchBaselineInput::rejected_patches_action): <p>The action for Patch Manager to take on patches included in the <code>RejectedPackages</code> list.</p>  <ul>   <li> <p> <b> <code>ALLOW_AS_DEPENDENCY</code> </b>: A package in the <code>Rejected</code> patches list is installed only if it is a dependency of another package. It is considered compliant with the patch baseline, and its status is reported as <code>InstalledOther</code>. This is the default action if no option is specified.</p> </li>   <li> <p> <b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't installed under any circumstances. If a package was installed before it was added to the <code>Rejected</code> patches list, it is considered non-compliant with the patch baseline, and its status is reported as <code>InstalledRejected</code>.</p> </li>  </ul>
+    ///   - [`description(Option<String>)`](crate::input::UpdatePatchBaselineInput::description): <p>A description of the patch baseline.</p>
+    ///   - [`sources(Option<Vec<PatchSource>>)`](crate::input::UpdatePatchBaselineInput::sources): <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
+    ///   - [`replace(Option<bool>)`](crate::input::UpdatePatchBaselineInput::replace): <p>If True, then all fields that are required by the <code>CreatePatchBaseline</code> operation are also required for this API request. Optional fields that aren't specified are set to null.</p>
+    /// - On success, responds with [`UpdatePatchBaselineOutput`](crate::output::UpdatePatchBaselineOutput) with field(s):
+    ///   - [`baseline_id(Option<String>)`](crate::output::UpdatePatchBaselineOutput::baseline_id): <p>The ID of the deleted patch baseline.</p>
+    ///   - [`name(Option<String>)`](crate::output::UpdatePatchBaselineOutput::name): <p>The name of the patch baseline.</p>
+    ///   - [`operating_system(Option<OperatingSystem>)`](crate::output::UpdatePatchBaselineOutput::operating_system): <p>The operating system rule used by the updated patch baseline.</p>
+    ///   - [`global_filters(Option<PatchFilterGroup>)`](crate::output::UpdatePatchBaselineOutput::global_filters): <p>A set of global filters used to exclude patches from the baseline.</p>
+    ///   - [`approval_rules(Option<PatchRuleGroup>)`](crate::output::UpdatePatchBaselineOutput::approval_rules): <p>A set of rules used to include patches in the baseline.</p>
+    ///   - [`approved_patches(Option<Vec<String>>)`](crate::output::UpdatePatchBaselineOutput::approved_patches): <p>A list of explicitly approved patches for the baseline.</p>
+    ///   - [`approved_patches_compliance_level(Option<PatchComplianceLevel>)`](crate::output::UpdatePatchBaselineOutput::approved_patches_compliance_level): <p>The compliance severity level assigned to the patch baseline after the update completed.</p>
+    ///   - [`approved_patches_enable_non_security(Option<bool>)`](crate::output::UpdatePatchBaselineOutput::approved_patches_enable_non_security): <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
+    ///   - [`rejected_patches(Option<Vec<String>>)`](crate::output::UpdatePatchBaselineOutput::rejected_patches): <p>A list of explicitly rejected patches for the baseline.</p>
+    ///   - [`rejected_patches_action(Option<PatchAction>)`](crate::output::UpdatePatchBaselineOutput::rejected_patches_action): <p>The action specified to take on patches included in the <code>RejectedPatches</code> list. A patch can be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it as a dependency.</p>
+    ///   - [`created_date(Option<DateTime>)`](crate::output::UpdatePatchBaselineOutput::created_date): <p>The date when the patch baseline was created.</p>
+    ///   - [`modified_date(Option<DateTime>)`](crate::output::UpdatePatchBaselineOutput::modified_date): <p>The date when the patch baseline was last modified.</p>
+    ///   - [`description(Option<String>)`](crate::output::UpdatePatchBaselineOutput::description): <p>A description of the patch baseline.</p>
+    ///   - [`sources(Option<Vec<PatchSource>>)`](crate::output::UpdatePatchBaselineOutput::sources): <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
+    /// - On failure, responds with [`SdkError<UpdatePatchBaselineError>`](crate::error::UpdatePatchBaselineError)
     pub fn update_patch_baseline(&self) -> fluent_builders::UpdatePatchBaseline<C, M, R> {
         fluent_builders::UpdatePatchBaseline::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateResourceDataSync` operation.
+    /// Constructs a fluent builder for the [`UpdateResourceDataSync`](crate::client::fluent_builders::UpdateResourceDataSync) operation.
     ///
-    /// See [`UpdateResourceDataSync`](crate::client::fluent_builders::UpdateResourceDataSync) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateResourceDataSyncInput`](crate::input::UpdateResourceDataSyncInput) with field(s):
+    ///   - [`sync_name(Option<String>)`](crate::input::UpdateResourceDataSyncInput::sync_name): <p>The name of the resource data sync you want to update.</p>
+    ///   - [`sync_type(Option<String>)`](crate::input::UpdateResourceDataSyncInput::sync_type): <p>The type of resource data sync. The supported <code>SyncType</code> is SyncFromSource.</p>
+    ///   - [`sync_source(Option<ResourceDataSyncSource>)`](crate::input::UpdateResourceDataSyncInput::sync_source): <p>Specify information about the data sources to synchronize.</p>
+    /// - On success, responds with [`UpdateResourceDataSyncOutput`](crate::output::UpdateResourceDataSyncOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateResourceDataSyncError>`](crate::error::UpdateResourceDataSyncError)
     pub fn update_resource_data_sync(&self) -> fluent_builders::UpdateResourceDataSync<C, M, R> {
         fluent_builders::UpdateResourceDataSync::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateServiceSetting` operation.
+    /// Constructs a fluent builder for the [`UpdateServiceSetting`](crate::client::fluent_builders::UpdateServiceSetting) operation.
     ///
-    /// See [`UpdateServiceSetting`](crate::client::fluent_builders::UpdateServiceSetting) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateServiceSettingInput`](crate::input::UpdateServiceSettingInput) with field(s):
+    ///   - [`setting_id(Option<String>)`](crate::input::UpdateServiceSettingInput::setting_id): <p>The Amazon Resource Name (ARN) of the service setting to reset. For example, <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>. The setting ID can be one of the following.</p>  <ul>   <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>   <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>   <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>   <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>   <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>   <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>  </ul>
+    ///   - [`setting_value(Option<String>)`](crate::input::UpdateServiceSettingInput::setting_value): <p>The new value to specify for the service setting. The following list specifies the available values for each setting.</p>  <ul>   <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li>   <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code> </p> </li>   <li> <p> <code>/ssm/managed-instance/activation-tier</code>: <code>true</code> or <code>false</code> </p> </li>   <li> <p> <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code> </p> </li>   <li> <p> <code>/ssm/automation/customer-script-log-group-name</code>: the name of an Amazon CloudWatch Logs log group</p> </li>   <li> <p> <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or <code>Disable</code> </p> </li>   <li> <p> <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code> </p> </li>  </ul>
+    /// - On success, responds with [`UpdateServiceSettingOutput`](crate::output::UpdateServiceSettingOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateServiceSettingError>`](crate::error::UpdateServiceSettingError)
     pub fn update_service_setting(&self) -> fluent_builders::UpdateServiceSetting<C, M, R> {
         fluent_builders::UpdateServiceSetting::new(self.handle.clone())
     }

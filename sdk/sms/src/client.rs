@@ -83,276 +83,448 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateApp` operation.
+    /// Constructs a fluent builder for the [`CreateApp`](crate::client::fluent_builders::CreateApp) operation.
     ///
-    /// See [`CreateApp`](crate::client::fluent_builders::CreateApp) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateAppInput`](crate::input::CreateAppInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateAppInput::name): <p>The name of the new application.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateAppInput::description): <p>The description of the new application</p>
+    ///   - [`role_name(Option<String>)`](crate::input::CreateAppInput::role_name): <p>The name of the service role in the customer's account to be used by Server Migration Service.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateAppInput::client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of application creation.</p>
+    ///   - [`server_groups(Option<Vec<ServerGroup>>)`](crate::input::CreateAppInput::server_groups): <p>The server groups to include in the application.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateAppInput::tags): <p>The tags to be associated with the application.</p>
+    /// - On success, responds with [`CreateAppOutput`](crate::output::CreateAppOutput) with field(s):
+    ///   - [`app_summary(Option<AppSummary>)`](crate::output::CreateAppOutput::app_summary): <p>A summary description of the application.</p>
+    ///   - [`server_groups(Option<Vec<ServerGroup>>)`](crate::output::CreateAppOutput::server_groups): <p>The server groups included in the application.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::CreateAppOutput::tags): <p>The tags associated with the application.</p>
+    /// - On failure, responds with [`SdkError<CreateAppError>`](crate::error::CreateAppError)
     pub fn create_app(&self) -> fluent_builders::CreateApp<C, M, R> {
         fluent_builders::CreateApp::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateReplicationJob` operation.
+    /// Constructs a fluent builder for the [`CreateReplicationJob`](crate::client::fluent_builders::CreateReplicationJob) operation.
     ///
-    /// See [`CreateReplicationJob`](crate::client::fluent_builders::CreateReplicationJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateReplicationJobInput`](crate::input::CreateReplicationJobInput) with field(s):
+    ///   - [`server_id(Option<String>)`](crate::input::CreateReplicationJobInput::server_id): <p>The ID of the server.</p>
+    ///   - [`seed_replication_time(Option<DateTime>)`](crate::input::CreateReplicationJobInput::seed_replication_time): <p>The seed replication time.</p>
+    ///   - [`frequency(Option<i32>)`](crate::input::CreateReplicationJobInput::frequency): <p>The time between consecutive replication runs, in hours.</p>
+    ///   - [`run_once(Option<bool>)`](crate::input::CreateReplicationJobInput::run_once): <p>Indicates whether to run the replication job one time.</p>
+    ///   - [`license_type(Option<LicenseType>)`](crate::input::CreateReplicationJobInput::license_type): <p>The license type to be used for the AMI created by a successful replication run.</p>
+    ///   - [`role_name(Option<String>)`](crate::input::CreateReplicationJobInput::role_name): <p>The name of the IAM role to be used by the Server Migration Service.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateReplicationJobInput::description): <p>The description of the replication job.</p>
+    ///   - [`number_of_recent_amis_to_keep(Option<i32>)`](crate::input::CreateReplicationJobInput::number_of_recent_amis_to_keep): <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is reached and a new AMI is created.</p>
+    ///   - [`encrypted(Option<bool>)`](crate::input::CreateReplicationJobInput::encrypted): <p>Indicates whether the replication job produces encrypted AMIs.</p>
+    ///   - [`kms_key_id(Option<String>)`](crate::input::CreateReplicationJobInput::kms_key_id): <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>  <ul>   <li> <p>KMS key ID</p> </li>   <li> <p>KMS key alias</p> </li>   <li> <p>ARN referring to the KMS key ID</p> </li>   <li> <p>ARN referring to the KMS key alias</p> </li>  </ul>  <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used. </p>
+    /// - On success, responds with [`CreateReplicationJobOutput`](crate::output::CreateReplicationJobOutput) with field(s):
+    ///   - [`replication_job_id(Option<String>)`](crate::output::CreateReplicationJobOutput::replication_job_id): <p>The unique identifier of the replication job.</p>
+    /// - On failure, responds with [`SdkError<CreateReplicationJobError>`](crate::error::CreateReplicationJobError)
     pub fn create_replication_job(&self) -> fluent_builders::CreateReplicationJob<C, M, R> {
         fluent_builders::CreateReplicationJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteApp` operation.
+    /// Constructs a fluent builder for the [`DeleteApp`](crate::client::fluent_builders::DeleteApp) operation.
     ///
-    /// See [`DeleteApp`](crate::client::fluent_builders::DeleteApp) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteAppInput`](crate::input::DeleteAppInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::DeleteAppInput::app_id): <p>The ID of the application.</p>
+    ///   - [`force_stop_app_replication(Option<bool>)`](crate::input::DeleteAppInput::force_stop_app_replication): <p>Indicates whether to stop all replication jobs corresponding to the servers in the application while deleting the application.</p>
+    ///   - [`force_terminate_app(Option<bool>)`](crate::input::DeleteAppInput::force_terminate_app): <p>Indicates whether to terminate the stack corresponding to the application while deleting the application.</p>
+    /// - On success, responds with [`DeleteAppOutput`](crate::output::DeleteAppOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAppError>`](crate::error::DeleteAppError)
     pub fn delete_app(&self) -> fluent_builders::DeleteApp<C, M, R> {
         fluent_builders::DeleteApp::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAppLaunchConfiguration` operation.
+    /// Constructs a fluent builder for the [`DeleteAppLaunchConfiguration`](crate::client::fluent_builders::DeleteAppLaunchConfiguration) operation.
     ///
-    /// See [`DeleteAppLaunchConfiguration`](crate::client::fluent_builders::DeleteAppLaunchConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteAppLaunchConfigurationInput`](crate::input::DeleteAppLaunchConfigurationInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::DeleteAppLaunchConfigurationInput::app_id): <p>The ID of the application.</p>
+    /// - On success, responds with [`DeleteAppLaunchConfigurationOutput`](crate::output::DeleteAppLaunchConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAppLaunchConfigurationError>`](crate::error::DeleteAppLaunchConfigurationError)
     pub fn delete_app_launch_configuration(
         &self,
     ) -> fluent_builders::DeleteAppLaunchConfiguration<C, M, R> {
         fluent_builders::DeleteAppLaunchConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAppReplicationConfiguration` operation.
+    /// Constructs a fluent builder for the [`DeleteAppReplicationConfiguration`](crate::client::fluent_builders::DeleteAppReplicationConfiguration) operation.
     ///
-    /// See [`DeleteAppReplicationConfiguration`](crate::client::fluent_builders::DeleteAppReplicationConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteAppReplicationConfigurationInput`](crate::input::DeleteAppReplicationConfigurationInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::DeleteAppReplicationConfigurationInput::app_id): <p>The ID of the application.</p>
+    /// - On success, responds with [`DeleteAppReplicationConfigurationOutput`](crate::output::DeleteAppReplicationConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAppReplicationConfigurationError>`](crate::error::DeleteAppReplicationConfigurationError)
     pub fn delete_app_replication_configuration(
         &self,
     ) -> fluent_builders::DeleteAppReplicationConfiguration<C, M, R> {
         fluent_builders::DeleteAppReplicationConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAppValidationConfiguration` operation.
+    /// Constructs a fluent builder for the [`DeleteAppValidationConfiguration`](crate::client::fluent_builders::DeleteAppValidationConfiguration) operation.
     ///
-    /// See [`DeleteAppValidationConfiguration`](crate::client::fluent_builders::DeleteAppValidationConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteAppValidationConfigurationInput`](crate::input::DeleteAppValidationConfigurationInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::DeleteAppValidationConfigurationInput::app_id): <p>The ID of the application.</p>
+    /// - On success, responds with [`DeleteAppValidationConfigurationOutput`](crate::output::DeleteAppValidationConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAppValidationConfigurationError>`](crate::error::DeleteAppValidationConfigurationError)
     pub fn delete_app_validation_configuration(
         &self,
     ) -> fluent_builders::DeleteAppValidationConfiguration<C, M, R> {
         fluent_builders::DeleteAppValidationConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteReplicationJob` operation.
+    /// Constructs a fluent builder for the [`DeleteReplicationJob`](crate::client::fluent_builders::DeleteReplicationJob) operation.
     ///
-    /// See [`DeleteReplicationJob`](crate::client::fluent_builders::DeleteReplicationJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteReplicationJobInput`](crate::input::DeleteReplicationJobInput) with field(s):
+    ///   - [`replication_job_id(Option<String>)`](crate::input::DeleteReplicationJobInput::replication_job_id): <p>The ID of the replication job.</p>
+    /// - On success, responds with [`DeleteReplicationJobOutput`](crate::output::DeleteReplicationJobOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteReplicationJobError>`](crate::error::DeleteReplicationJobError)
     pub fn delete_replication_job(&self) -> fluent_builders::DeleteReplicationJob<C, M, R> {
         fluent_builders::DeleteReplicationJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteServerCatalog` operation.
+    /// Constructs a fluent builder for the [`DeleteServerCatalog`](crate::client::fluent_builders::DeleteServerCatalog) operation.
     ///
-    /// See [`DeleteServerCatalog`](crate::client::fluent_builders::DeleteServerCatalog) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteServerCatalogInput`](crate::input::DeleteServerCatalogInput)
+
+    /// - On success, responds with [`DeleteServerCatalogOutput`](crate::output::DeleteServerCatalogOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteServerCatalogError>`](crate::error::DeleteServerCatalogError)
     pub fn delete_server_catalog(&self) -> fluent_builders::DeleteServerCatalog<C, M, R> {
         fluent_builders::DeleteServerCatalog::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateConnector` operation.
+    /// Constructs a fluent builder for the [`DisassociateConnector`](crate::client::fluent_builders::DisassociateConnector) operation.
     ///
-    /// See [`DisassociateConnector`](crate::client::fluent_builders::DisassociateConnector) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateConnectorInput`](crate::input::DisassociateConnectorInput) with field(s):
+    ///   - [`connector_id(Option<String>)`](crate::input::DisassociateConnectorInput::connector_id): <p>The ID of the connector.</p>
+    /// - On success, responds with [`DisassociateConnectorOutput`](crate::output::DisassociateConnectorOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateConnectorError>`](crate::error::DisassociateConnectorError)
     pub fn disassociate_connector(&self) -> fluent_builders::DisassociateConnector<C, M, R> {
         fluent_builders::DisassociateConnector::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GenerateChangeSet` operation.
+    /// Constructs a fluent builder for the [`GenerateChangeSet`](crate::client::fluent_builders::GenerateChangeSet) operation.
     ///
-    /// See [`GenerateChangeSet`](crate::client::fluent_builders::GenerateChangeSet) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GenerateChangeSetInput`](crate::input::GenerateChangeSetInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::GenerateChangeSetInput::app_id): <p>The ID of the application associated with the change set.</p>
+    ///   - [`changeset_format(Option<OutputFormat>)`](crate::input::GenerateChangeSetInput::changeset_format): <p>The format for the change set.</p>
+    /// - On success, responds with [`GenerateChangeSetOutput`](crate::output::GenerateChangeSetOutput) with field(s):
+    ///   - [`s3_location(Option<S3Location>)`](crate::output::GenerateChangeSetOutput::s3_location): <p>The location of the Amazon S3 object.</p>
+    /// - On failure, responds with [`SdkError<GenerateChangeSetError>`](crate::error::GenerateChangeSetError)
     pub fn generate_change_set(&self) -> fluent_builders::GenerateChangeSet<C, M, R> {
         fluent_builders::GenerateChangeSet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GenerateTemplate` operation.
+    /// Constructs a fluent builder for the [`GenerateTemplate`](crate::client::fluent_builders::GenerateTemplate) operation.
     ///
-    /// See [`GenerateTemplate`](crate::client::fluent_builders::GenerateTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GenerateTemplateInput`](crate::input::GenerateTemplateInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::GenerateTemplateInput::app_id): <p>The ID of the application associated with the CloudFormation template.</p>
+    ///   - [`template_format(Option<OutputFormat>)`](crate::input::GenerateTemplateInput::template_format): <p>The format for generating the CloudFormation template.</p>
+    /// - On success, responds with [`GenerateTemplateOutput`](crate::output::GenerateTemplateOutput) with field(s):
+    ///   - [`s3_location(Option<S3Location>)`](crate::output::GenerateTemplateOutput::s3_location): <p>The location of the Amazon S3 object.</p>
+    /// - On failure, responds with [`SdkError<GenerateTemplateError>`](crate::error::GenerateTemplateError)
     pub fn generate_template(&self) -> fluent_builders::GenerateTemplate<C, M, R> {
         fluent_builders::GenerateTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetApp` operation.
+    /// Constructs a fluent builder for the [`GetApp`](crate::client::fluent_builders::GetApp) operation.
     ///
-    /// See [`GetApp`](crate::client::fluent_builders::GetApp) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetAppInput`](crate::input::GetAppInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::GetAppInput::app_id): <p>The ID of the application.</p>
+    /// - On success, responds with [`GetAppOutput`](crate::output::GetAppOutput) with field(s):
+    ///   - [`app_summary(Option<AppSummary>)`](crate::output::GetAppOutput::app_summary): <p>Information about the application.</p>
+    ///   - [`server_groups(Option<Vec<ServerGroup>>)`](crate::output::GetAppOutput::server_groups): <p>The server groups that belong to the application.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::GetAppOutput::tags): <p>The tags associated with the application.</p>
+    /// - On failure, responds with [`SdkError<GetAppError>`](crate::error::GetAppError)
     pub fn get_app(&self) -> fluent_builders::GetApp<C, M, R> {
         fluent_builders::GetApp::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAppLaunchConfiguration` operation.
+    /// Constructs a fluent builder for the [`GetAppLaunchConfiguration`](crate::client::fluent_builders::GetAppLaunchConfiguration) operation.
     ///
-    /// See [`GetAppLaunchConfiguration`](crate::client::fluent_builders::GetAppLaunchConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetAppLaunchConfigurationInput`](crate::input::GetAppLaunchConfigurationInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::GetAppLaunchConfigurationInput::app_id): <p>The ID of the application.</p>
+    /// - On success, responds with [`GetAppLaunchConfigurationOutput`](crate::output::GetAppLaunchConfigurationOutput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::output::GetAppLaunchConfigurationOutput::app_id): <p>The ID of the application.</p>
+    ///   - [`role_name(Option<String>)`](crate::output::GetAppLaunchConfigurationOutput::role_name): <p>The name of the service role in the customer's account that CloudFormation uses to launch the application.</p>
+    ///   - [`auto_launch(Option<bool>)`](crate::output::GetAppLaunchConfigurationOutput::auto_launch): <p>Indicates whether the application is configured to launch automatically after replication is complete.</p>
+    ///   - [`server_group_launch_configurations(Option<Vec<ServerGroupLaunchConfiguration>>)`](crate::output::GetAppLaunchConfigurationOutput::server_group_launch_configurations): <p>The launch configurations for server groups in this application.</p>
+    /// - On failure, responds with [`SdkError<GetAppLaunchConfigurationError>`](crate::error::GetAppLaunchConfigurationError)
     pub fn get_app_launch_configuration(
         &self,
     ) -> fluent_builders::GetAppLaunchConfiguration<C, M, R> {
         fluent_builders::GetAppLaunchConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAppReplicationConfiguration` operation.
+    /// Constructs a fluent builder for the [`GetAppReplicationConfiguration`](crate::client::fluent_builders::GetAppReplicationConfiguration) operation.
     ///
-    /// See [`GetAppReplicationConfiguration`](crate::client::fluent_builders::GetAppReplicationConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetAppReplicationConfigurationInput`](crate::input::GetAppReplicationConfigurationInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::GetAppReplicationConfigurationInput::app_id): <p>The ID of the application.</p>
+    /// - On success, responds with [`GetAppReplicationConfigurationOutput`](crate::output::GetAppReplicationConfigurationOutput) with field(s):
+    ///   - [`server_group_replication_configurations(Option<Vec<ServerGroupReplicationConfiguration>>)`](crate::output::GetAppReplicationConfigurationOutput::server_group_replication_configurations): <p>The replication configurations associated with server groups in this application.</p>
+    /// - On failure, responds with [`SdkError<GetAppReplicationConfigurationError>`](crate::error::GetAppReplicationConfigurationError)
     pub fn get_app_replication_configuration(
         &self,
     ) -> fluent_builders::GetAppReplicationConfiguration<C, M, R> {
         fluent_builders::GetAppReplicationConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAppValidationConfiguration` operation.
+    /// Constructs a fluent builder for the [`GetAppValidationConfiguration`](crate::client::fluent_builders::GetAppValidationConfiguration) operation.
     ///
-    /// See [`GetAppValidationConfiguration`](crate::client::fluent_builders::GetAppValidationConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetAppValidationConfigurationInput`](crate::input::GetAppValidationConfigurationInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::GetAppValidationConfigurationInput::app_id): <p>The ID of the application.</p>
+    /// - On success, responds with [`GetAppValidationConfigurationOutput`](crate::output::GetAppValidationConfigurationOutput) with field(s):
+    ///   - [`app_validation_configurations(Option<Vec<AppValidationConfiguration>>)`](crate::output::GetAppValidationConfigurationOutput::app_validation_configurations): <p>The configuration for application validation.</p>
+    ///   - [`server_group_validation_configurations(Option<Vec<ServerGroupValidationConfiguration>>)`](crate::output::GetAppValidationConfigurationOutput::server_group_validation_configurations): <p>The configuration for instance validation.</p>
+    /// - On failure, responds with [`SdkError<GetAppValidationConfigurationError>`](crate::error::GetAppValidationConfigurationError)
     pub fn get_app_validation_configuration(
         &self,
     ) -> fluent_builders::GetAppValidationConfiguration<C, M, R> {
         fluent_builders::GetAppValidationConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAppValidationOutput` operation.
+    /// Constructs a fluent builder for the [`GetAppValidationOutput`](crate::client::fluent_builders::GetAppValidationOutput) operation.
     ///
-    /// See [`GetAppValidationOutput`](crate::client::fluent_builders::GetAppValidationOutput) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetAppValidationOutputInput`](crate::input::GetAppValidationOutputInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::GetAppValidationOutputInput::app_id): <p>The ID of the application.</p>
+    /// - On success, responds with [`GetAppValidationOutputOutput`](crate::output::GetAppValidationOutputOutput) with field(s):
+    ///   - [`validation_output_list(Option<Vec<ValidationOutput>>)`](crate::output::GetAppValidationOutputOutput::validation_output_list): <p>The validation output.</p>
+    /// - On failure, responds with [`SdkError<GetAppValidationOutputError>`](crate::error::GetAppValidationOutputError)
     pub fn get_app_validation_output(&self) -> fluent_builders::GetAppValidationOutput<C, M, R> {
         fluent_builders::GetAppValidationOutput::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetConnectors` operation.
-    ///
-    /// See [`GetConnectors`](crate::client::fluent_builders::GetConnectors) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetConnectors`](crate::client::fluent_builders::GetConnectors) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetConnectors::into_paginator).
+    ///
+    /// - Takes [`GetConnectorsInput`](crate::input::GetConnectorsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::GetConnectorsInput::next_token): <p>The token for the next set of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetConnectorsInput::max_results): <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
+    /// - On success, responds with [`GetConnectorsOutput`](crate::output::GetConnectorsOutput) with field(s):
+    ///   - [`connector_list(Option<Vec<Connector>>)`](crate::output::GetConnectorsOutput::connector_list): <p>Information about the registered connectors.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetConnectorsOutput::next_token): <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<GetConnectorsError>`](crate::error::GetConnectorsError)
     pub fn get_connectors(&self) -> fluent_builders::GetConnectors<C, M, R> {
         fluent_builders::GetConnectors::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetReplicationJobs` operation.
-    ///
-    /// See [`GetReplicationJobs`](crate::client::fluent_builders::GetReplicationJobs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetReplicationJobs`](crate::client::fluent_builders::GetReplicationJobs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetReplicationJobs::into_paginator).
+    ///
+    /// - Takes [`GetReplicationJobsInput`](crate::input::GetReplicationJobsInput) with field(s):
+    ///   - [`replication_job_id(Option<String>)`](crate::input::GetReplicationJobsInput::replication_job_id): <p>The ID of the replication job.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetReplicationJobsInput::next_token): <p>The token for the next set of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetReplicationJobsInput::max_results): <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
+    /// - On success, responds with [`GetReplicationJobsOutput`](crate::output::GetReplicationJobsOutput) with field(s):
+    ///   - [`replication_job_list(Option<Vec<ReplicationJob>>)`](crate::output::GetReplicationJobsOutput::replication_job_list): <p>Information about the replication jobs.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetReplicationJobsOutput::next_token): <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<GetReplicationJobsError>`](crate::error::GetReplicationJobsError)
     pub fn get_replication_jobs(&self) -> fluent_builders::GetReplicationJobs<C, M, R> {
         fluent_builders::GetReplicationJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetReplicationRuns` operation.
-    ///
-    /// See [`GetReplicationRuns`](crate::client::fluent_builders::GetReplicationRuns) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetReplicationRuns`](crate::client::fluent_builders::GetReplicationRuns) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetReplicationRuns::into_paginator).
+    ///
+    /// - Takes [`GetReplicationRunsInput`](crate::input::GetReplicationRunsInput) with field(s):
+    ///   - [`replication_job_id(Option<String>)`](crate::input::GetReplicationRunsInput::replication_job_id): <p>The ID of the replication job.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetReplicationRunsInput::next_token): <p>The token for the next set of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetReplicationRunsInput::max_results): <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
+    /// - On success, responds with [`GetReplicationRunsOutput`](crate::output::GetReplicationRunsOutput) with field(s):
+    ///   - [`replication_job(Option<ReplicationJob>)`](crate::output::GetReplicationRunsOutput::replication_job): <p>Information about the replication job.</p>
+    ///   - [`replication_run_list(Option<Vec<ReplicationRun>>)`](crate::output::GetReplicationRunsOutput::replication_run_list): <p>Information about the replication runs.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetReplicationRunsOutput::next_token): <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<GetReplicationRunsError>`](crate::error::GetReplicationRunsError)
     pub fn get_replication_runs(&self) -> fluent_builders::GetReplicationRuns<C, M, R> {
         fluent_builders::GetReplicationRuns::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetServers` operation.
-    ///
-    /// See [`GetServers`](crate::client::fluent_builders::GetServers) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetServers`](crate::client::fluent_builders::GetServers) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetServers::into_paginator).
+    ///
+    /// - Takes [`GetServersInput`](crate::input::GetServersInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::GetServersInput::next_token): <p>The token for the next set of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetServersInput::max_results): <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
+    ///   - [`vm_server_address_list(Option<Vec<VmServerAddress>>)`](crate::input::GetServersInput::vm_server_address_list): <p>The server addresses.</p>
+    /// - On success, responds with [`GetServersOutput`](crate::output::GetServersOutput) with field(s):
+    ///   - [`last_modified_on(Option<DateTime>)`](crate::output::GetServersOutput::last_modified_on): <p>The time when the server was last modified.</p>
+    ///   - [`server_catalog_status(Option<ServerCatalogStatus>)`](crate::output::GetServersOutput::server_catalog_status): <p>The status of the server catalog.</p>
+    ///   - [`server_list(Option<Vec<Server>>)`](crate::output::GetServersOutput::server_list): <p>Information about the servers.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetServersOutput::next_token): <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<GetServersError>`](crate::error::GetServersError)
     pub fn get_servers(&self) -> fluent_builders::GetServers<C, M, R> {
         fluent_builders::GetServers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ImportAppCatalog` operation.
+    /// Constructs a fluent builder for the [`ImportAppCatalog`](crate::client::fluent_builders::ImportAppCatalog) operation.
     ///
-    /// See [`ImportAppCatalog`](crate::client::fluent_builders::ImportAppCatalog) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ImportAppCatalogInput`](crate::input::ImportAppCatalogInput) with field(s):
+    ///   - [`role_name(Option<String>)`](crate::input::ImportAppCatalogInput::role_name): <p>The name of the service role. If you omit this parameter, we create a service-linked role for Migration Hub in your account. Otherwise, the role that you provide must have the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/new-customer-setup.html#sms-managed">policy and trust policy</a> described in the <i>Migration Hub User Guide</i>.</p>
+    /// - On success, responds with [`ImportAppCatalogOutput`](crate::output::ImportAppCatalogOutput)
+
+    /// - On failure, responds with [`SdkError<ImportAppCatalogError>`](crate::error::ImportAppCatalogError)
     pub fn import_app_catalog(&self) -> fluent_builders::ImportAppCatalog<C, M, R> {
         fluent_builders::ImportAppCatalog::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ImportServerCatalog` operation.
+    /// Constructs a fluent builder for the [`ImportServerCatalog`](crate::client::fluent_builders::ImportServerCatalog) operation.
     ///
-    /// See [`ImportServerCatalog`](crate::client::fluent_builders::ImportServerCatalog) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ImportServerCatalogInput`](crate::input::ImportServerCatalogInput)
+
+    /// - On success, responds with [`ImportServerCatalogOutput`](crate::output::ImportServerCatalogOutput)
+
+    /// - On failure, responds with [`SdkError<ImportServerCatalogError>`](crate::error::ImportServerCatalogError)
     pub fn import_server_catalog(&self) -> fluent_builders::ImportServerCatalog<C, M, R> {
         fluent_builders::ImportServerCatalog::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `LaunchApp` operation.
+    /// Constructs a fluent builder for the [`LaunchApp`](crate::client::fluent_builders::LaunchApp) operation.
     ///
-    /// See [`LaunchApp`](crate::client::fluent_builders::LaunchApp) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`LaunchAppInput`](crate::input::LaunchAppInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::LaunchAppInput::app_id): <p>The ID of the application.</p>
+    /// - On success, responds with [`LaunchAppOutput`](crate::output::LaunchAppOutput)
+
+    /// - On failure, responds with [`SdkError<LaunchAppError>`](crate::error::LaunchAppError)
     pub fn launch_app(&self) -> fluent_builders::LaunchApp<C, M, R> {
         fluent_builders::LaunchApp::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListApps` operation.
+    /// Constructs a fluent builder for the [`ListApps`](crate::client::fluent_builders::ListApps) operation.
     ///
-    /// See [`ListApps`](crate::client::fluent_builders::ListApps) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListAppsInput`](crate::input::ListAppsInput) with field(s):
+    ///   - [`app_ids(Option<Vec<String>>)`](crate::input::ListAppsInput::app_ids): <p>The unique application IDs.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListAppsInput::next_token): <p>The token for the next set of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListAppsInput::max_results): <p>The maximum number of results to return in a single call. The default value is 100. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
+    /// - On success, responds with [`ListAppsOutput`](crate::output::ListAppsOutput) with field(s):
+    ///   - [`apps(Option<Vec<AppSummary>>)`](crate::output::ListAppsOutput::apps): <p>The application summaries.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAppsOutput::next_token): <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<ListAppsError>`](crate::error::ListAppsError)
     pub fn list_apps(&self) -> fluent_builders::ListApps<C, M, R> {
         fluent_builders::ListApps::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `NotifyAppValidationOutput` operation.
+    /// Constructs a fluent builder for the [`NotifyAppValidationOutput`](crate::client::fluent_builders::NotifyAppValidationOutput) operation.
     ///
-    /// See [`NotifyAppValidationOutput`](crate::client::fluent_builders::NotifyAppValidationOutput) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`NotifyAppValidationOutputInput`](crate::input::NotifyAppValidationOutputInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::NotifyAppValidationOutputInput::app_id): <p>The ID of the application.</p>
+    ///   - [`notification_context(Option<NotificationContext>)`](crate::input::NotifyAppValidationOutputInput::notification_context): <p>The notification information.</p>
+    /// - On success, responds with [`NotifyAppValidationOutputOutput`](crate::output::NotifyAppValidationOutputOutput)
+
+    /// - On failure, responds with [`SdkError<NotifyAppValidationOutputError>`](crate::error::NotifyAppValidationOutputError)
     pub fn notify_app_validation_output(
         &self,
     ) -> fluent_builders::NotifyAppValidationOutput<C, M, R> {
         fluent_builders::NotifyAppValidationOutput::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutAppLaunchConfiguration` operation.
+    /// Constructs a fluent builder for the [`PutAppLaunchConfiguration`](crate::client::fluent_builders::PutAppLaunchConfiguration) operation.
     ///
-    /// See [`PutAppLaunchConfiguration`](crate::client::fluent_builders::PutAppLaunchConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutAppLaunchConfigurationInput`](crate::input::PutAppLaunchConfigurationInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::PutAppLaunchConfigurationInput::app_id): <p>The ID of the application.</p>
+    ///   - [`role_name(Option<String>)`](crate::input::PutAppLaunchConfigurationInput::role_name): <p>The name of service role in the customer's account that CloudFormation uses to launch the application.</p>
+    ///   - [`auto_launch(Option<bool>)`](crate::input::PutAppLaunchConfigurationInput::auto_launch): <p>Indicates whether the application is configured to launch automatically after replication is complete.</p>
+    ///   - [`server_group_launch_configurations(Option<Vec<ServerGroupLaunchConfiguration>>)`](crate::input::PutAppLaunchConfigurationInput::server_group_launch_configurations): <p>Information about the launch configurations for server groups in the application.</p>
+    /// - On success, responds with [`PutAppLaunchConfigurationOutput`](crate::output::PutAppLaunchConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<PutAppLaunchConfigurationError>`](crate::error::PutAppLaunchConfigurationError)
     pub fn put_app_launch_configuration(
         &self,
     ) -> fluent_builders::PutAppLaunchConfiguration<C, M, R> {
         fluent_builders::PutAppLaunchConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutAppReplicationConfiguration` operation.
+    /// Constructs a fluent builder for the [`PutAppReplicationConfiguration`](crate::client::fluent_builders::PutAppReplicationConfiguration) operation.
     ///
-    /// See [`PutAppReplicationConfiguration`](crate::client::fluent_builders::PutAppReplicationConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutAppReplicationConfigurationInput`](crate::input::PutAppReplicationConfigurationInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::PutAppReplicationConfigurationInput::app_id): <p>The ID of the application.</p>
+    ///   - [`server_group_replication_configurations(Option<Vec<ServerGroupReplicationConfiguration>>)`](crate::input::PutAppReplicationConfigurationInput::server_group_replication_configurations): <p>Information about the replication configurations for server groups in the application.</p>
+    /// - On success, responds with [`PutAppReplicationConfigurationOutput`](crate::output::PutAppReplicationConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<PutAppReplicationConfigurationError>`](crate::error::PutAppReplicationConfigurationError)
     pub fn put_app_replication_configuration(
         &self,
     ) -> fluent_builders::PutAppReplicationConfiguration<C, M, R> {
         fluent_builders::PutAppReplicationConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutAppValidationConfiguration` operation.
+    /// Constructs a fluent builder for the [`PutAppValidationConfiguration`](crate::client::fluent_builders::PutAppValidationConfiguration) operation.
     ///
-    /// See [`PutAppValidationConfiguration`](crate::client::fluent_builders::PutAppValidationConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutAppValidationConfigurationInput`](crate::input::PutAppValidationConfigurationInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::PutAppValidationConfigurationInput::app_id): <p>The ID of the application.</p>
+    ///   - [`app_validation_configurations(Option<Vec<AppValidationConfiguration>>)`](crate::input::PutAppValidationConfigurationInput::app_validation_configurations): <p>The configuration for application validation.</p>
+    ///   - [`server_group_validation_configurations(Option<Vec<ServerGroupValidationConfiguration>>)`](crate::input::PutAppValidationConfigurationInput::server_group_validation_configurations): <p>The configuration for instance validation.</p>
+    /// - On success, responds with [`PutAppValidationConfigurationOutput`](crate::output::PutAppValidationConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<PutAppValidationConfigurationError>`](crate::error::PutAppValidationConfigurationError)
     pub fn put_app_validation_configuration(
         &self,
     ) -> fluent_builders::PutAppValidationConfiguration<C, M, R> {
         fluent_builders::PutAppValidationConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartAppReplication` operation.
+    /// Constructs a fluent builder for the [`StartAppReplication`](crate::client::fluent_builders::StartAppReplication) operation.
     ///
-    /// See [`StartAppReplication`](crate::client::fluent_builders::StartAppReplication) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartAppReplicationInput`](crate::input::StartAppReplicationInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::StartAppReplicationInput::app_id): <p>The ID of the application.</p>
+    /// - On success, responds with [`StartAppReplicationOutput`](crate::output::StartAppReplicationOutput)
+
+    /// - On failure, responds with [`SdkError<StartAppReplicationError>`](crate::error::StartAppReplicationError)
     pub fn start_app_replication(&self) -> fluent_builders::StartAppReplication<C, M, R> {
         fluent_builders::StartAppReplication::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartOnDemandAppReplication` operation.
+    /// Constructs a fluent builder for the [`StartOnDemandAppReplication`](crate::client::fluent_builders::StartOnDemandAppReplication) operation.
     ///
-    /// See [`StartOnDemandAppReplication`](crate::client::fluent_builders::StartOnDemandAppReplication) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartOnDemandAppReplicationInput`](crate::input::StartOnDemandAppReplicationInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::StartOnDemandAppReplicationInput::app_id): <p>The ID of the application.</p>
+    ///   - [`description(Option<String>)`](crate::input::StartOnDemandAppReplicationInput::description): <p>The description of the replication run.</p>
+    /// - On success, responds with [`StartOnDemandAppReplicationOutput`](crate::output::StartOnDemandAppReplicationOutput)
+
+    /// - On failure, responds with [`SdkError<StartOnDemandAppReplicationError>`](crate::error::StartOnDemandAppReplicationError)
     pub fn start_on_demand_app_replication(
         &self,
     ) -> fluent_builders::StartOnDemandAppReplication<C, M, R> {
         fluent_builders::StartOnDemandAppReplication::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartOnDemandReplicationRun` operation.
+    /// Constructs a fluent builder for the [`StartOnDemandReplicationRun`](crate::client::fluent_builders::StartOnDemandReplicationRun) operation.
     ///
-    /// See [`StartOnDemandReplicationRun`](crate::client::fluent_builders::StartOnDemandReplicationRun) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartOnDemandReplicationRunInput`](crate::input::StartOnDemandReplicationRunInput) with field(s):
+    ///   - [`replication_job_id(Option<String>)`](crate::input::StartOnDemandReplicationRunInput::replication_job_id): <p>The ID of the replication job.</p>
+    ///   - [`description(Option<String>)`](crate::input::StartOnDemandReplicationRunInput::description): <p>The description of the replication run.</p>
+    /// - On success, responds with [`StartOnDemandReplicationRunOutput`](crate::output::StartOnDemandReplicationRunOutput) with field(s):
+    ///   - [`replication_run_id(Option<String>)`](crate::output::StartOnDemandReplicationRunOutput::replication_run_id): <p>The ID of the replication run.</p>
+    /// - On failure, responds with [`SdkError<StartOnDemandReplicationRunError>`](crate::error::StartOnDemandReplicationRunError)
     pub fn start_on_demand_replication_run(
         &self,
     ) -> fluent_builders::StartOnDemandReplicationRun<C, M, R> {
         fluent_builders::StartOnDemandReplicationRun::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopAppReplication` operation.
+    /// Constructs a fluent builder for the [`StopAppReplication`](crate::client::fluent_builders::StopAppReplication) operation.
     ///
-    /// See [`StopAppReplication`](crate::client::fluent_builders::StopAppReplication) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StopAppReplicationInput`](crate::input::StopAppReplicationInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::StopAppReplicationInput::app_id): <p>The ID of the application.</p>
+    /// - On success, responds with [`StopAppReplicationOutput`](crate::output::StopAppReplicationOutput)
+
+    /// - On failure, responds with [`SdkError<StopAppReplicationError>`](crate::error::StopAppReplicationError)
     pub fn stop_app_replication(&self) -> fluent_builders::StopAppReplication<C, M, R> {
         fluent_builders::StopAppReplication::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TerminateApp` operation.
+    /// Constructs a fluent builder for the [`TerminateApp`](crate::client::fluent_builders::TerminateApp) operation.
     ///
-    /// See [`TerminateApp`](crate::client::fluent_builders::TerminateApp) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TerminateAppInput`](crate::input::TerminateAppInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::TerminateAppInput::app_id): <p>The ID of the application.</p>
+    /// - On success, responds with [`TerminateAppOutput`](crate::output::TerminateAppOutput)
+
+    /// - On failure, responds with [`SdkError<TerminateAppError>`](crate::error::TerminateAppError)
     pub fn terminate_app(&self) -> fluent_builders::TerminateApp<C, M, R> {
         fluent_builders::TerminateApp::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateApp` operation.
+    /// Constructs a fluent builder for the [`UpdateApp`](crate::client::fluent_builders::UpdateApp) operation.
     ///
-    /// See [`UpdateApp`](crate::client::fluent_builders::UpdateApp) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateAppInput`](crate::input::UpdateAppInput) with field(s):
+    ///   - [`app_id(Option<String>)`](crate::input::UpdateAppInput::app_id): <p>The ID of the application.</p>
+    ///   - [`name(Option<String>)`](crate::input::UpdateAppInput::name): <p>The new name of the application.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateAppInput::description): <p>The new description of the application.</p>
+    ///   - [`role_name(Option<String>)`](crate::input::UpdateAppInput::role_name): <p>The name of the service role in the customer's account used by Server Migration Service.</p>
+    ///   - [`server_groups(Option<Vec<ServerGroup>>)`](crate::input::UpdateAppInput::server_groups): <p>The server groups in the application to update.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::UpdateAppInput::tags): <p>The tags to associate with the application.</p>
+    /// - On success, responds with [`UpdateAppOutput`](crate::output::UpdateAppOutput) with field(s):
+    ///   - [`app_summary(Option<AppSummary>)`](crate::output::UpdateAppOutput::app_summary): <p>A summary description of the application.</p>
+    ///   - [`server_groups(Option<Vec<ServerGroup>>)`](crate::output::UpdateAppOutput::server_groups): <p>The updated server groups in the application.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::UpdateAppOutput::tags): <p>The tags associated with the application.</p>
+    /// - On failure, responds with [`SdkError<UpdateAppError>`](crate::error::UpdateAppError)
     pub fn update_app(&self) -> fluent_builders::UpdateApp<C, M, R> {
         fluent_builders::UpdateApp::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateReplicationJob` operation.
+    /// Constructs a fluent builder for the [`UpdateReplicationJob`](crate::client::fluent_builders::UpdateReplicationJob) operation.
     ///
-    /// See [`UpdateReplicationJob`](crate::client::fluent_builders::UpdateReplicationJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateReplicationJobInput`](crate::input::UpdateReplicationJobInput) with field(s):
+    ///   - [`replication_job_id(Option<String>)`](crate::input::UpdateReplicationJobInput::replication_job_id): <p>The ID of the replication job.</p>
+    ///   - [`frequency(Option<i32>)`](crate::input::UpdateReplicationJobInput::frequency): <p>The time between consecutive replication runs, in hours.</p>
+    ///   - [`next_replication_run_start_time(Option<DateTime>)`](crate::input::UpdateReplicationJobInput::next_replication_run_start_time): <p>The start time of the next replication run.</p>
+    ///   - [`license_type(Option<LicenseType>)`](crate::input::UpdateReplicationJobInput::license_type): <p>The license type to be used for the AMI created by a successful replication run.</p>
+    ///   - [`role_name(Option<String>)`](crate::input::UpdateReplicationJobInput::role_name): <p>The name of the IAM role to be used by Server Migration Service.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateReplicationJobInput::description): <p>The description of the replication job.</p>
+    ///   - [`number_of_recent_amis_to_keep(Option<i32>)`](crate::input::UpdateReplicationJobInput::number_of_recent_amis_to_keep): <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is reached and a new AMI is created.</p>
+    ///   - [`encrypted(Option<bool>)`](crate::input::UpdateReplicationJobInput::encrypted): <p>When true, the replication job produces encrypted AMIs. For more information, <code>KmsKeyId</code>.</p>
+    ///   - [`kms_key_id(Option<String>)`](crate::input::UpdateReplicationJobInput::kms_key_id): <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>  <ul>   <li> <p>KMS key ID</p> </li>   <li> <p>KMS key alias</p> </li>   <li> <p>ARN referring to the KMS key ID</p> </li>   <li> <p>ARN referring to the KMS key alias</p> </li>  </ul>  <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
+    /// - On success, responds with [`UpdateReplicationJobOutput`](crate::output::UpdateReplicationJobOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateReplicationJobError>`](crate::error::UpdateReplicationJobError)
     pub fn update_replication_job(&self) -> fluent_builders::UpdateReplicationJob<C, M, R> {
         fluent_builders::UpdateReplicationJob::new(self.handle.clone())
     }

@@ -83,268 +83,447 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AssociateEntityToThing` operation.
+    /// Constructs a fluent builder for the [`AssociateEntityToThing`](crate::client::fluent_builders::AssociateEntityToThing) operation.
     ///
-    /// See [`AssociateEntityToThing`](crate::client::fluent_builders::AssociateEntityToThing) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateEntityToThingInput`](crate::input::AssociateEntityToThingInput) with field(s):
+    ///   - [`thing_name(Option<String>)`](crate::input::AssociateEntityToThingInput::thing_name): <p>The name of the thing to which the entity is to be associated.</p>
+    ///   - [`entity_id(Option<String>)`](crate::input::AssociateEntityToThingInput::entity_id): <p>The ID of the device to be associated with the thing.</p>  <p>The ID should be in the following format.</p>  <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
+    ///   - [`namespace_version(Option<i64>)`](crate::input::AssociateEntityToThingInput::namespace_version): <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
+    /// - On success, responds with [`AssociateEntityToThingOutput`](crate::output::AssociateEntityToThingOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateEntityToThingError>`](crate::error::AssociateEntityToThingError)
     pub fn associate_entity_to_thing(&self) -> fluent_builders::AssociateEntityToThing<C, M, R> {
         fluent_builders::AssociateEntityToThing::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateFlowTemplate` operation.
+    /// Constructs a fluent builder for the [`CreateFlowTemplate`](crate::client::fluent_builders::CreateFlowTemplate) operation.
     ///
-    /// See [`CreateFlowTemplate`](crate::client::fluent_builders::CreateFlowTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateFlowTemplateInput`](crate::input::CreateFlowTemplateInput) with field(s):
+    ///   - [`definition(Option<DefinitionDocument>)`](crate::input::CreateFlowTemplateInput::definition): <p>The workflow <code>DefinitionDocument</code>.</p>
+    ///   - [`compatible_namespace_version(Option<i64>)`](crate::input::CreateFlowTemplateInput::compatible_namespace_version): <p>The namespace version in which the workflow is to be created.</p>  <p>If no value is specified, the latest version is used by default.</p>
+    /// - On success, responds with [`CreateFlowTemplateOutput`](crate::output::CreateFlowTemplateOutput) with field(s):
+    ///   - [`summary(Option<FlowTemplateSummary>)`](crate::output::CreateFlowTemplateOutput::summary): <p>The summary object that describes the created workflow.</p>
+    /// - On failure, responds with [`SdkError<CreateFlowTemplateError>`](crate::error::CreateFlowTemplateError)
     pub fn create_flow_template(&self) -> fluent_builders::CreateFlowTemplate<C, M, R> {
         fluent_builders::CreateFlowTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateSystemInstance` operation.
+    /// Constructs a fluent builder for the [`CreateSystemInstance`](crate::client::fluent_builders::CreateSystemInstance) operation.
     ///
-    /// See [`CreateSystemInstance`](crate::client::fluent_builders::CreateSystemInstance) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateSystemInstanceInput`](crate::input::CreateSystemInstanceInput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateSystemInstanceInput::tags): <p>Metadata, consisting of key-value pairs, that can be used to categorize your system instances.</p>
+    ///   - [`definition(Option<DefinitionDocument>)`](crate::input::CreateSystemInstanceInput::definition): <p>A document that defines an entity. </p>
+    ///   - [`target(Option<DeploymentTarget>)`](crate::input::CreateSystemInstanceInput::target): <p>The target type of the deployment. Valid values are <code>GREENGRASS</code> and <code>CLOUD</code>.</p>
+    ///   - [`greengrass_group_name(Option<String>)`](crate::input::CreateSystemInstanceInput::greengrass_group_name): <p>The name of the Greengrass group where the system instance will be deployed. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
+    ///   - [`s3_bucket_name(Option<String>)`](crate::input::CreateSystemInstanceInput::s3_bucket_name): <p>The name of the Amazon Simple Storage Service bucket that will be used to store and deploy the system instance's resource file. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
+    ///   - [`metrics_configuration(Option<MetricsConfiguration>)`](crate::input::CreateSystemInstanceInput::metrics_configuration): <p>An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics.</p>
+    ///   - [`flow_actions_role_arn(Option<String>)`](crate::input::CreateSystemInstanceInput::flow_actions_role_arn): <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes. This value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
+    /// - On success, responds with [`CreateSystemInstanceOutput`](crate::output::CreateSystemInstanceOutput) with field(s):
+    ///   - [`summary(Option<SystemInstanceSummary>)`](crate::output::CreateSystemInstanceOutput::summary): <p>The summary object that describes the new system instance.</p>
+    /// - On failure, responds with [`SdkError<CreateSystemInstanceError>`](crate::error::CreateSystemInstanceError)
     pub fn create_system_instance(&self) -> fluent_builders::CreateSystemInstance<C, M, R> {
         fluent_builders::CreateSystemInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateSystemTemplate` operation.
+    /// Constructs a fluent builder for the [`CreateSystemTemplate`](crate::client::fluent_builders::CreateSystemTemplate) operation.
     ///
-    /// See [`CreateSystemTemplate`](crate::client::fluent_builders::CreateSystemTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateSystemTemplateInput`](crate::input::CreateSystemTemplateInput) with field(s):
+    ///   - [`definition(Option<DefinitionDocument>)`](crate::input::CreateSystemTemplateInput::definition): <p>The <code>DefinitionDocument</code> used to create the system.</p>
+    ///   - [`compatible_namespace_version(Option<i64>)`](crate::input::CreateSystemTemplateInput::compatible_namespace_version): <p>The namespace version in which the system is to be created.</p>  <p>If no value is specified, the latest version is used by default.</p>
+    /// - On success, responds with [`CreateSystemTemplateOutput`](crate::output::CreateSystemTemplateOutput) with field(s):
+    ///   - [`summary(Option<SystemTemplateSummary>)`](crate::output::CreateSystemTemplateOutput::summary): <p>The summary object that describes the created system.</p>
+    /// - On failure, responds with [`SdkError<CreateSystemTemplateError>`](crate::error::CreateSystemTemplateError)
     pub fn create_system_template(&self) -> fluent_builders::CreateSystemTemplate<C, M, R> {
         fluent_builders::CreateSystemTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteFlowTemplate` operation.
+    /// Constructs a fluent builder for the [`DeleteFlowTemplate`](crate::client::fluent_builders::DeleteFlowTemplate) operation.
     ///
-    /// See [`DeleteFlowTemplate`](crate::client::fluent_builders::DeleteFlowTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteFlowTemplateInput`](crate::input::DeleteFlowTemplateInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::DeleteFlowTemplateInput::id): <p>The ID of the workflow to be deleted.</p>  <p>The ID should be in the following format.</p>  <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
+    /// - On success, responds with [`DeleteFlowTemplateOutput`](crate::output::DeleteFlowTemplateOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteFlowTemplateError>`](crate::error::DeleteFlowTemplateError)
     pub fn delete_flow_template(&self) -> fluent_builders::DeleteFlowTemplate<C, M, R> {
         fluent_builders::DeleteFlowTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteNamespace` operation.
+    /// Constructs a fluent builder for the [`DeleteNamespace`](crate::client::fluent_builders::DeleteNamespace) operation.
     ///
-    /// See [`DeleteNamespace`](crate::client::fluent_builders::DeleteNamespace) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteNamespaceInput`](crate::input::DeleteNamespaceInput)
+
+    /// - On success, responds with [`DeleteNamespaceOutput`](crate::output::DeleteNamespaceOutput) with field(s):
+    ///   - [`namespace_arn(Option<String>)`](crate::output::DeleteNamespaceOutput::namespace_arn): <p>The ARN of the namespace to be deleted.</p>
+    ///   - [`namespace_name(Option<String>)`](crate::output::DeleteNamespaceOutput::namespace_name): <p>The name of the namespace to be deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteNamespaceError>`](crate::error::DeleteNamespaceError)
     pub fn delete_namespace(&self) -> fluent_builders::DeleteNamespace<C, M, R> {
         fluent_builders::DeleteNamespace::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteSystemInstance` operation.
+    /// Constructs a fluent builder for the [`DeleteSystemInstance`](crate::client::fluent_builders::DeleteSystemInstance) operation.
     ///
-    /// See [`DeleteSystemInstance`](crate::client::fluent_builders::DeleteSystemInstance) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteSystemInstanceInput`](crate::input::DeleteSystemInstanceInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::DeleteSystemInstanceInput::id): <p>The ID of the system instance to be deleted.</p>
+    /// - On success, responds with [`DeleteSystemInstanceOutput`](crate::output::DeleteSystemInstanceOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteSystemInstanceError>`](crate::error::DeleteSystemInstanceError)
     pub fn delete_system_instance(&self) -> fluent_builders::DeleteSystemInstance<C, M, R> {
         fluent_builders::DeleteSystemInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteSystemTemplate` operation.
+    /// Constructs a fluent builder for the [`DeleteSystemTemplate`](crate::client::fluent_builders::DeleteSystemTemplate) operation.
     ///
-    /// See [`DeleteSystemTemplate`](crate::client::fluent_builders::DeleteSystemTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteSystemTemplateInput`](crate::input::DeleteSystemTemplateInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::DeleteSystemTemplateInput::id): <p>The ID of the system to be deleted.</p>  <p>The ID should be in the following format.</p>  <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
+    /// - On success, responds with [`DeleteSystemTemplateOutput`](crate::output::DeleteSystemTemplateOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteSystemTemplateError>`](crate::error::DeleteSystemTemplateError)
     pub fn delete_system_template(&self) -> fluent_builders::DeleteSystemTemplate<C, M, R> {
         fluent_builders::DeleteSystemTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeploySystemInstance` operation.
+    /// Constructs a fluent builder for the [`DeploySystemInstance`](crate::client::fluent_builders::DeploySystemInstance) operation.
     ///
-    /// See [`DeploySystemInstance`](crate::client::fluent_builders::DeploySystemInstance) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeploySystemInstanceInput`](crate::input::DeploySystemInstanceInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::DeploySystemInstanceInput::id): <p>The ID of the system instance. This value is returned by the <code>CreateSystemInstance</code> action.</p>  <p>The ID should be in the following format.</p>  <p> <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code> </p>
+    /// - On success, responds with [`DeploySystemInstanceOutput`](crate::output::DeploySystemInstanceOutput) with field(s):
+    ///   - [`summary(Option<SystemInstanceSummary>)`](crate::output::DeploySystemInstanceOutput::summary): <p>An object that contains summary information about a system instance that was deployed. </p>
+    ///   - [`greengrass_deployment_id(Option<String>)`](crate::output::DeploySystemInstanceOutput::greengrass_deployment_id): <p>The ID of the Greengrass deployment used to deploy the system instance.</p>
+    /// - On failure, responds with [`SdkError<DeploySystemInstanceError>`](crate::error::DeploySystemInstanceError)
     pub fn deploy_system_instance(&self) -> fluent_builders::DeploySystemInstance<C, M, R> {
         fluent_builders::DeploySystemInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeprecateFlowTemplate` operation.
+    /// Constructs a fluent builder for the [`DeprecateFlowTemplate`](crate::client::fluent_builders::DeprecateFlowTemplate) operation.
     ///
-    /// See [`DeprecateFlowTemplate`](crate::client::fluent_builders::DeprecateFlowTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeprecateFlowTemplateInput`](crate::input::DeprecateFlowTemplateInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::DeprecateFlowTemplateInput::id): <p>The ID of the workflow to be deleted.</p>  <p>The ID should be in the following format.</p>  <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
+    /// - On success, responds with [`DeprecateFlowTemplateOutput`](crate::output::DeprecateFlowTemplateOutput)
+
+    /// - On failure, responds with [`SdkError<DeprecateFlowTemplateError>`](crate::error::DeprecateFlowTemplateError)
     pub fn deprecate_flow_template(&self) -> fluent_builders::DeprecateFlowTemplate<C, M, R> {
         fluent_builders::DeprecateFlowTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeprecateSystemTemplate` operation.
+    /// Constructs a fluent builder for the [`DeprecateSystemTemplate`](crate::client::fluent_builders::DeprecateSystemTemplate) operation.
     ///
-    /// See [`DeprecateSystemTemplate`](crate::client::fluent_builders::DeprecateSystemTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeprecateSystemTemplateInput`](crate::input::DeprecateSystemTemplateInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::DeprecateSystemTemplateInput::id): <p>The ID of the system to delete.</p>  <p>The ID should be in the following format.</p>  <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
+    /// - On success, responds with [`DeprecateSystemTemplateOutput`](crate::output::DeprecateSystemTemplateOutput)
+
+    /// - On failure, responds with [`SdkError<DeprecateSystemTemplateError>`](crate::error::DeprecateSystemTemplateError)
     pub fn deprecate_system_template(&self) -> fluent_builders::DeprecateSystemTemplate<C, M, R> {
         fluent_builders::DeprecateSystemTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeNamespace` operation.
+    /// Constructs a fluent builder for the [`DescribeNamespace`](crate::client::fluent_builders::DescribeNamespace) operation.
     ///
-    /// See [`DescribeNamespace`](crate::client::fluent_builders::DescribeNamespace) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeNamespaceInput`](crate::input::DescribeNamespaceInput) with field(s):
+    ///   - [`namespace_name(Option<String>)`](crate::input::DescribeNamespaceInput::namespace_name): <p>The name of the user's namespace. Set this to <code>aws</code> to get the public namespace.</p>
+    /// - On success, responds with [`DescribeNamespaceOutput`](crate::output::DescribeNamespaceOutput) with field(s):
+    ///   - [`namespace_arn(Option<String>)`](crate::output::DescribeNamespaceOutput::namespace_arn): <p>The ARN of the namespace.</p>
+    ///   - [`namespace_name(Option<String>)`](crate::output::DescribeNamespaceOutput::namespace_name): <p>The name of the namespace.</p>
+    ///   - [`tracking_namespace_name(Option<String>)`](crate::output::DescribeNamespaceOutput::tracking_namespace_name): <p>The name of the public namespace that the latest namespace version is tracking.</p>
+    ///   - [`tracking_namespace_version(Option<i64>)`](crate::output::DescribeNamespaceOutput::tracking_namespace_version): <p>The version of the public namespace that the latest version is tracking.</p>
+    ///   - [`namespace_version(Option<i64>)`](crate::output::DescribeNamespaceOutput::namespace_version): <p>The version of the user's namespace to describe.</p>
+    /// - On failure, responds with [`SdkError<DescribeNamespaceError>`](crate::error::DescribeNamespaceError)
     pub fn describe_namespace(&self) -> fluent_builders::DescribeNamespace<C, M, R> {
         fluent_builders::DescribeNamespace::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DissociateEntityFromThing` operation.
+    /// Constructs a fluent builder for the [`DissociateEntityFromThing`](crate::client::fluent_builders::DissociateEntityFromThing) operation.
     ///
-    /// See [`DissociateEntityFromThing`](crate::client::fluent_builders::DissociateEntityFromThing) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DissociateEntityFromThingInput`](crate::input::DissociateEntityFromThingInput) with field(s):
+    ///   - [`thing_name(Option<String>)`](crate::input::DissociateEntityFromThingInput::thing_name): <p>The name of the thing to disassociate.</p>
+    ///   - [`entity_type(Option<EntityType>)`](crate::input::DissociateEntityFromThingInput::entity_type): <p>The entity type from which to disassociate the thing.</p>
+    /// - On success, responds with [`DissociateEntityFromThingOutput`](crate::output::DissociateEntityFromThingOutput)
+
+    /// - On failure, responds with [`SdkError<DissociateEntityFromThingError>`](crate::error::DissociateEntityFromThingError)
     pub fn dissociate_entity_from_thing(
         &self,
     ) -> fluent_builders::DissociateEntityFromThing<C, M, R> {
         fluent_builders::DissociateEntityFromThing::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetEntities` operation.
+    /// Constructs a fluent builder for the [`GetEntities`](crate::client::fluent_builders::GetEntities) operation.
     ///
-    /// See [`GetEntities`](crate::client::fluent_builders::GetEntities) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetEntitiesInput`](crate::input::GetEntitiesInput) with field(s):
+    ///   - [`ids(Option<Vec<String>>)`](crate::input::GetEntitiesInput::ids): <p>An array of entity IDs.</p>  <p>The IDs should be in the following format.</p>  <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
+    ///   - [`namespace_version(Option<i64>)`](crate::input::GetEntitiesInput::namespace_version): <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
+    /// - On success, responds with [`GetEntitiesOutput`](crate::output::GetEntitiesOutput) with field(s):
+    ///   - [`descriptions(Option<Vec<EntityDescription>>)`](crate::output::GetEntitiesOutput::descriptions): <p>An array of descriptions for the specified entities.</p>
+    /// - On failure, responds with [`SdkError<GetEntitiesError>`](crate::error::GetEntitiesError)
     pub fn get_entities(&self) -> fluent_builders::GetEntities<C, M, R> {
         fluent_builders::GetEntities::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetFlowTemplate` operation.
+    /// Constructs a fluent builder for the [`GetFlowTemplate`](crate::client::fluent_builders::GetFlowTemplate) operation.
     ///
-    /// See [`GetFlowTemplate`](crate::client::fluent_builders::GetFlowTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetFlowTemplateInput`](crate::input::GetFlowTemplateInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::GetFlowTemplateInput::id): <p>The ID of the workflow.</p>  <p>The ID should be in the following format.</p>  <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
+    ///   - [`revision_number(Option<i64>)`](crate::input::GetFlowTemplateInput::revision_number): <p>The number of the workflow revision to retrieve.</p>
+    /// - On success, responds with [`GetFlowTemplateOutput`](crate::output::GetFlowTemplateOutput) with field(s):
+    ///   - [`description(Option<FlowTemplateDescription>)`](crate::output::GetFlowTemplateOutput::description): <p>The object that describes the specified workflow.</p>
+    /// - On failure, responds with [`SdkError<GetFlowTemplateError>`](crate::error::GetFlowTemplateError)
     pub fn get_flow_template(&self) -> fluent_builders::GetFlowTemplate<C, M, R> {
         fluent_builders::GetFlowTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetFlowTemplateRevisions` operation.
-    ///
-    /// See [`GetFlowTemplateRevisions`](crate::client::fluent_builders::GetFlowTemplateRevisions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetFlowTemplateRevisions`](crate::client::fluent_builders::GetFlowTemplateRevisions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetFlowTemplateRevisions::into_paginator).
+    ///
+    /// - Takes [`GetFlowTemplateRevisionsInput`](crate::input::GetFlowTemplateRevisionsInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::GetFlowTemplateRevisionsInput::id): <p>The ID of the workflow.</p>  <p>The ID should be in the following format.</p>  <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetFlowTemplateRevisionsInput::next_token): <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetFlowTemplateRevisionsInput::max_results): <p>The maximum number of results to return in the response.</p>
+    /// - On success, responds with [`GetFlowTemplateRevisionsOutput`](crate::output::GetFlowTemplateRevisionsOutput) with field(s):
+    ///   - [`summaries(Option<Vec<FlowTemplateSummary>>)`](crate::output::GetFlowTemplateRevisionsOutput::summaries): <p>An array of objects that provide summary data about each revision.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetFlowTemplateRevisionsOutput::next_token): <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
+    /// - On failure, responds with [`SdkError<GetFlowTemplateRevisionsError>`](crate::error::GetFlowTemplateRevisionsError)
     pub fn get_flow_template_revisions(
         &self,
     ) -> fluent_builders::GetFlowTemplateRevisions<C, M, R> {
         fluent_builders::GetFlowTemplateRevisions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetNamespaceDeletionStatus` operation.
+    /// Constructs a fluent builder for the [`GetNamespaceDeletionStatus`](crate::client::fluent_builders::GetNamespaceDeletionStatus) operation.
     ///
-    /// See [`GetNamespaceDeletionStatus`](crate::client::fluent_builders::GetNamespaceDeletionStatus) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetNamespaceDeletionStatusInput`](crate::input::GetNamespaceDeletionStatusInput)
+
+    /// - On success, responds with [`GetNamespaceDeletionStatusOutput`](crate::output::GetNamespaceDeletionStatusOutput) with field(s):
+    ///   - [`namespace_arn(Option<String>)`](crate::output::GetNamespaceDeletionStatusOutput::namespace_arn): <p>The ARN of the namespace that is being deleted.</p>
+    ///   - [`namespace_name(Option<String>)`](crate::output::GetNamespaceDeletionStatusOutput::namespace_name): <p>The name of the namespace that is being deleted.</p>
+    ///   - [`status(Option<NamespaceDeletionStatus>)`](crate::output::GetNamespaceDeletionStatusOutput::status): <p>The status of the deletion request.</p>
+    ///   - [`error_code(Option<NamespaceDeletionStatusErrorCodes>)`](crate::output::GetNamespaceDeletionStatusOutput::error_code): <p>An error code returned by the namespace deletion task.</p>
+    ///   - [`error_message(Option<String>)`](crate::output::GetNamespaceDeletionStatusOutput::error_message): <p>An error code returned by the namespace deletion task.</p>
+    /// - On failure, responds with [`SdkError<GetNamespaceDeletionStatusError>`](crate::error::GetNamespaceDeletionStatusError)
     pub fn get_namespace_deletion_status(
         &self,
     ) -> fluent_builders::GetNamespaceDeletionStatus<C, M, R> {
         fluent_builders::GetNamespaceDeletionStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSystemInstance` operation.
+    /// Constructs a fluent builder for the [`GetSystemInstance`](crate::client::fluent_builders::GetSystemInstance) operation.
     ///
-    /// See [`GetSystemInstance`](crate::client::fluent_builders::GetSystemInstance) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetSystemInstanceInput`](crate::input::GetSystemInstanceInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::GetSystemInstanceInput::id): <p>The ID of the system deployment instance. This value is returned by <code>CreateSystemInstance</code>.</p>  <p>The ID should be in the following format.</p>  <p> <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code> </p>
+    /// - On success, responds with [`GetSystemInstanceOutput`](crate::output::GetSystemInstanceOutput) with field(s):
+    ///   - [`description(Option<SystemInstanceDescription>)`](crate::output::GetSystemInstanceOutput::description): <p>An object that describes the system instance.</p>
+    /// - On failure, responds with [`SdkError<GetSystemInstanceError>`](crate::error::GetSystemInstanceError)
     pub fn get_system_instance(&self) -> fluent_builders::GetSystemInstance<C, M, R> {
         fluent_builders::GetSystemInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSystemTemplate` operation.
+    /// Constructs a fluent builder for the [`GetSystemTemplate`](crate::client::fluent_builders::GetSystemTemplate) operation.
     ///
-    /// See [`GetSystemTemplate`](crate::client::fluent_builders::GetSystemTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetSystemTemplateInput`](crate::input::GetSystemTemplateInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::GetSystemTemplateInput::id): <p>The ID of the system to get. This ID must be in the user's namespace.</p>  <p>The ID should be in the following format.</p>  <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
+    ///   - [`revision_number(Option<i64>)`](crate::input::GetSystemTemplateInput::revision_number): <p>The number that specifies the revision of the system to get.</p>
+    /// - On success, responds with [`GetSystemTemplateOutput`](crate::output::GetSystemTemplateOutput) with field(s):
+    ///   - [`description(Option<SystemTemplateDescription>)`](crate::output::GetSystemTemplateOutput::description): <p>An object that contains summary data about the system.</p>
+    /// - On failure, responds with [`SdkError<GetSystemTemplateError>`](crate::error::GetSystemTemplateError)
     pub fn get_system_template(&self) -> fluent_builders::GetSystemTemplate<C, M, R> {
         fluent_builders::GetSystemTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSystemTemplateRevisions` operation.
-    ///
-    /// See [`GetSystemTemplateRevisions`](crate::client::fluent_builders::GetSystemTemplateRevisions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetSystemTemplateRevisions`](crate::client::fluent_builders::GetSystemTemplateRevisions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetSystemTemplateRevisions::into_paginator).
+    ///
+    /// - Takes [`GetSystemTemplateRevisionsInput`](crate::input::GetSystemTemplateRevisionsInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::GetSystemTemplateRevisionsInput::id): <p>The ID of the system template.</p>  <p>The ID should be in the following format.</p>  <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetSystemTemplateRevisionsInput::next_token): <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetSystemTemplateRevisionsInput::max_results): <p>The maximum number of results to return in the response.</p>
+    /// - On success, responds with [`GetSystemTemplateRevisionsOutput`](crate::output::GetSystemTemplateRevisionsOutput) with field(s):
+    ///   - [`summaries(Option<Vec<SystemTemplateSummary>>)`](crate::output::GetSystemTemplateRevisionsOutput::summaries): <p>An array of objects that contain summary data about the system template revisions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetSystemTemplateRevisionsOutput::next_token): <p>The string to specify as <code>nextToken</code> when you request the next page of results. </p>
+    /// - On failure, responds with [`SdkError<GetSystemTemplateRevisionsError>`](crate::error::GetSystemTemplateRevisionsError)
     pub fn get_system_template_revisions(
         &self,
     ) -> fluent_builders::GetSystemTemplateRevisions<C, M, R> {
         fluent_builders::GetSystemTemplateRevisions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetUploadStatus` operation.
+    /// Constructs a fluent builder for the [`GetUploadStatus`](crate::client::fluent_builders::GetUploadStatus) operation.
     ///
-    /// See [`GetUploadStatus`](crate::client::fluent_builders::GetUploadStatus) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetUploadStatusInput`](crate::input::GetUploadStatusInput) with field(s):
+    ///   - [`upload_id(Option<String>)`](crate::input::GetUploadStatusInput::upload_id): <p>The ID of the upload. This value is returned by the <code>UploadEntityDefinitions</code> action.</p>
+    /// - On success, responds with [`GetUploadStatusOutput`](crate::output::GetUploadStatusOutput) with field(s):
+    ///   - [`upload_id(Option<String>)`](crate::output::GetUploadStatusOutput::upload_id): <p>The ID of the upload.</p>
+    ///   - [`upload_status(Option<UploadStatus>)`](crate::output::GetUploadStatusOutput::upload_status): <p>The status of the upload. The initial status is <code>IN_PROGRESS</code>. The response show all validation failures if the upload fails.</p>
+    ///   - [`namespace_arn(Option<String>)`](crate::output::GetUploadStatusOutput::namespace_arn): <p>The ARN of the upload.</p>
+    ///   - [`namespace_name(Option<String>)`](crate::output::GetUploadStatusOutput::namespace_name): <p>The name of the upload's namespace.</p>
+    ///   - [`namespace_version(Option<i64>)`](crate::output::GetUploadStatusOutput::namespace_version): <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
+    ///   - [`failure_reason(Option<Vec<String>>)`](crate::output::GetUploadStatusOutput::failure_reason): <p>The reason for an upload failure.</p>
+    ///   - [`created_date(Option<DateTime>)`](crate::output::GetUploadStatusOutput::created_date): <p>The date at which the upload was created.</p>
+    /// - On failure, responds with [`SdkError<GetUploadStatusError>`](crate::error::GetUploadStatusError)
     pub fn get_upload_status(&self) -> fluent_builders::GetUploadStatus<C, M, R> {
         fluent_builders::GetUploadStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListFlowExecutionMessages` operation.
-    ///
-    /// See [`ListFlowExecutionMessages`](crate::client::fluent_builders::ListFlowExecutionMessages) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListFlowExecutionMessages`](crate::client::fluent_builders::ListFlowExecutionMessages) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFlowExecutionMessages::into_paginator).
+    ///
+    /// - Takes [`ListFlowExecutionMessagesInput`](crate::input::ListFlowExecutionMessagesInput) with field(s):
+    ///   - [`flow_execution_id(Option<String>)`](crate::input::ListFlowExecutionMessagesInput::flow_execution_id): <p>The ID of the flow execution.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListFlowExecutionMessagesInput::next_token): <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListFlowExecutionMessagesInput::max_results): <p>The maximum number of results to return in the response.</p>
+    /// - On success, responds with [`ListFlowExecutionMessagesOutput`](crate::output::ListFlowExecutionMessagesOutput) with field(s):
+    ///   - [`messages(Option<Vec<FlowExecutionMessage>>)`](crate::output::ListFlowExecutionMessagesOutput::messages): <p>A list of objects that contain information about events in the specified flow execution.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListFlowExecutionMessagesOutput::next_token): <p>The string to specify as <code>nextToken</code> when you request the next page of results. </p>
+    /// - On failure, responds with [`SdkError<ListFlowExecutionMessagesError>`](crate::error::ListFlowExecutionMessagesError)
     pub fn list_flow_execution_messages(
         &self,
     ) -> fluent_builders::ListFlowExecutionMessages<C, M, R> {
         fluent_builders::ListFlowExecutionMessages::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
-    ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
+    ///
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`max_results(Option<i32>)`](crate::input::ListTagsForResourceInput::max_results): <p>The maximum number of tags to return.</p>
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource whose tags are to be returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListTagsForResourceInput::next_token): <p>The token that specifies the next page of results to return.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>List of tags returned by the <code>ListTagsForResource</code> operation.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTagsForResourceOutput::next_token): <p>The token that specifies the next page of results to return.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SearchEntities` operation.
-    ///
-    /// See [`SearchEntities`](crate::client::fluent_builders::SearchEntities) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`SearchEntities`](crate::client::fluent_builders::SearchEntities) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchEntities::into_paginator).
+    ///
+    /// - Takes [`SearchEntitiesInput`](crate::input::SearchEntitiesInput) with field(s):
+    ///   - [`entity_types(Option<Vec<EntityType>>)`](crate::input::SearchEntitiesInput::entity_types): <p>The entity types for which to search.</p>
+    ///   - [`filters(Option<Vec<EntityFilter>>)`](crate::input::SearchEntitiesInput::filters): <p>Optional filter to apply to the search. Valid filters are <code>NAME</code> <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>  <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::SearchEntitiesInput::next_token): <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::SearchEntitiesInput::max_results): <p>The maximum number of results to return in the response.</p>
+    ///   - [`namespace_version(Option<i64>)`](crate::input::SearchEntitiesInput::namespace_version): <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
+    /// - On success, responds with [`SearchEntitiesOutput`](crate::output::SearchEntitiesOutput) with field(s):
+    ///   - [`descriptions(Option<Vec<EntityDescription>>)`](crate::output::SearchEntitiesOutput::descriptions): <p>An array of descriptions for each entity returned in the search result.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::SearchEntitiesOutput::next_token): <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
+    /// - On failure, responds with [`SdkError<SearchEntitiesError>`](crate::error::SearchEntitiesError)
     pub fn search_entities(&self) -> fluent_builders::SearchEntities<C, M, R> {
         fluent_builders::SearchEntities::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SearchFlowExecutions` operation.
-    ///
-    /// See [`SearchFlowExecutions`](crate::client::fluent_builders::SearchFlowExecutions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`SearchFlowExecutions`](crate::client::fluent_builders::SearchFlowExecutions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchFlowExecutions::into_paginator).
+    ///
+    /// - Takes [`SearchFlowExecutionsInput`](crate::input::SearchFlowExecutionsInput) with field(s):
+    ///   - [`system_instance_id(Option<String>)`](crate::input::SearchFlowExecutionsInput::system_instance_id): <p>The ID of the system instance that contains the flow.</p>
+    ///   - [`flow_execution_id(Option<String>)`](crate::input::SearchFlowExecutionsInput::flow_execution_id): <p>The ID of a flow execution.</p>
+    ///   - [`start_time(Option<DateTime>)`](crate::input::SearchFlowExecutionsInput::start_time): <p>The date and time of the earliest flow execution to return.</p>
+    ///   - [`end_time(Option<DateTime>)`](crate::input::SearchFlowExecutionsInput::end_time): <p>The date and time of the latest flow execution to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::SearchFlowExecutionsInput::next_token): <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::SearchFlowExecutionsInput::max_results): <p>The maximum number of results to return in the response.</p>
+    /// - On success, responds with [`SearchFlowExecutionsOutput`](crate::output::SearchFlowExecutionsOutput) with field(s):
+    ///   - [`summaries(Option<Vec<FlowExecutionSummary>>)`](crate::output::SearchFlowExecutionsOutput::summaries): <p>An array of objects that contain summary information about each workflow execution in the result set.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::SearchFlowExecutionsOutput::next_token): <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
+    /// - On failure, responds with [`SdkError<SearchFlowExecutionsError>`](crate::error::SearchFlowExecutionsError)
     pub fn search_flow_executions(&self) -> fluent_builders::SearchFlowExecutions<C, M, R> {
         fluent_builders::SearchFlowExecutions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SearchFlowTemplates` operation.
-    ///
-    /// See [`SearchFlowTemplates`](crate::client::fluent_builders::SearchFlowTemplates) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`SearchFlowTemplates`](crate::client::fluent_builders::SearchFlowTemplates) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchFlowTemplates::into_paginator).
+    ///
+    /// - Takes [`SearchFlowTemplatesInput`](crate::input::SearchFlowTemplatesInput) with field(s):
+    ///   - [`filters(Option<Vec<FlowTemplateFilter>>)`](crate::input::SearchFlowTemplatesInput::filters): <p>An array of objects that limit the result set. The only valid filter is <code>DEVICE_MODEL_ID</code>.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::SearchFlowTemplatesInput::next_token): <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::SearchFlowTemplatesInput::max_results): <p>The maximum number of results to return in the response.</p>
+    /// - On success, responds with [`SearchFlowTemplatesOutput`](crate::output::SearchFlowTemplatesOutput) with field(s):
+    ///   - [`summaries(Option<Vec<FlowTemplateSummary>>)`](crate::output::SearchFlowTemplatesOutput::summaries): <p>An array of objects that contain summary information about each workflow in the result set.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::SearchFlowTemplatesOutput::next_token): <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
+    /// - On failure, responds with [`SdkError<SearchFlowTemplatesError>`](crate::error::SearchFlowTemplatesError)
     pub fn search_flow_templates(&self) -> fluent_builders::SearchFlowTemplates<C, M, R> {
         fluent_builders::SearchFlowTemplates::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SearchSystemInstances` operation.
-    ///
-    /// See [`SearchSystemInstances`](crate::client::fluent_builders::SearchSystemInstances) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`SearchSystemInstances`](crate::client::fluent_builders::SearchSystemInstances) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchSystemInstances::into_paginator).
+    ///
+    /// - Takes [`SearchSystemInstancesInput`](crate::input::SearchSystemInstancesInput) with field(s):
+    ///   - [`filters(Option<Vec<SystemInstanceFilter>>)`](crate::input::SearchSystemInstancesInput::filters): <p>Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>, <code>STATUS</code>, and <code>GREENGRASS_GROUP_NAME</code>.</p>  <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::SearchSystemInstancesInput::next_token): <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::SearchSystemInstancesInput::max_results): <p>The maximum number of results to return in the response.</p>
+    /// - On success, responds with [`SearchSystemInstancesOutput`](crate::output::SearchSystemInstancesOutput) with field(s):
+    ///   - [`summaries(Option<Vec<SystemInstanceSummary>>)`](crate::output::SearchSystemInstancesOutput::summaries): <p>An array of objects that contain summary data abour the system instances in the result set.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::SearchSystemInstancesOutput::next_token): <p>The string to specify as <code>nextToken</code> when you request the next page of results. </p>
+    /// - On failure, responds with [`SdkError<SearchSystemInstancesError>`](crate::error::SearchSystemInstancesError)
     pub fn search_system_instances(&self) -> fluent_builders::SearchSystemInstances<C, M, R> {
         fluent_builders::SearchSystemInstances::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SearchSystemTemplates` operation.
-    ///
-    /// See [`SearchSystemTemplates`](crate::client::fluent_builders::SearchSystemTemplates) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`SearchSystemTemplates`](crate::client::fluent_builders::SearchSystemTemplates) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchSystemTemplates::into_paginator).
+    ///
+    /// - Takes [`SearchSystemTemplatesInput`](crate::input::SearchSystemTemplatesInput) with field(s):
+    ///   - [`filters(Option<Vec<SystemTemplateFilter>>)`](crate::input::SearchSystemTemplatesInput::filters): <p>An array of filters that limit the result set. The only valid filter is <code>FLOW_TEMPLATE_ID</code>.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::SearchSystemTemplatesInput::next_token): <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::SearchSystemTemplatesInput::max_results): <p>The maximum number of results to return in the response.</p>
+    /// - On success, responds with [`SearchSystemTemplatesOutput`](crate::output::SearchSystemTemplatesOutput) with field(s):
+    ///   - [`summaries(Option<Vec<SystemTemplateSummary>>)`](crate::output::SearchSystemTemplatesOutput::summaries): <p>An array of objects that contain summary information about each system deployment in the result set.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::SearchSystemTemplatesOutput::next_token): <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
+    /// - On failure, responds with [`SdkError<SearchSystemTemplatesError>`](crate::error::SearchSystemTemplatesError)
     pub fn search_system_templates(&self) -> fluent_builders::SearchSystemTemplates<C, M, R> {
         fluent_builders::SearchSystemTemplates::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SearchThings` operation.
-    ///
-    /// See [`SearchThings`](crate::client::fluent_builders::SearchThings) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`SearchThings`](crate::client::fluent_builders::SearchThings) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchThings::into_paginator).
+    ///
+    /// - Takes [`SearchThingsInput`](crate::input::SearchThingsInput) with field(s):
+    ///   - [`entity_id(Option<String>)`](crate::input::SearchThingsInput::entity_id): <p>The ID of the entity to which the things are associated.</p>  <p>The IDs should be in the following format.</p>  <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
+    ///   - [`next_token(Option<String>)`](crate::input::SearchThingsInput::next_token): <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::SearchThingsInput::max_results): <p>The maximum number of results to return in the response.</p>
+    ///   - [`namespace_version(Option<i64>)`](crate::input::SearchThingsInput::namespace_version): <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
+    /// - On success, responds with [`SearchThingsOutput`](crate::output::SearchThingsOutput) with field(s):
+    ///   - [`things(Option<Vec<Thing>>)`](crate::output::SearchThingsOutput::things): <p>An array of things in the result set.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::SearchThingsOutput::next_token): <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
+    /// - On failure, responds with [`SdkError<SearchThingsError>`](crate::error::SearchThingsError)
     pub fn search_things(&self) -> fluent_builders::SearchThings<C, M, R> {
         fluent_builders::SearchThings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource whose tags are returned.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>A list of tags to add to the resource.&gt;</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UndeploySystemInstance` operation.
+    /// Constructs a fluent builder for the [`UndeploySystemInstance`](crate::client::fluent_builders::UndeploySystemInstance) operation.
     ///
-    /// See [`UndeploySystemInstance`](crate::client::fluent_builders::UndeploySystemInstance) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UndeploySystemInstanceInput`](crate::input::UndeploySystemInstanceInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::UndeploySystemInstanceInput::id): <p>The ID of the system instance to remove from its target.</p>
+    /// - On success, responds with [`UndeploySystemInstanceOutput`](crate::output::UndeploySystemInstanceOutput) with field(s):
+    ///   - [`summary(Option<SystemInstanceSummary>)`](crate::output::UndeploySystemInstanceOutput::summary): <p>An object that contains summary information about the system instance that was removed from its target.</p>
+    /// - On failure, responds with [`SdkError<UndeploySystemInstanceError>`](crate::error::UndeploySystemInstanceError)
     pub fn undeploy_system_instance(&self) -> fluent_builders::UndeploySystemInstance<C, M, R> {
         fluent_builders::UndeploySystemInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource whose tags are to be removed.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>A list of tag key names to remove from the resource. You don't specify the value. Both the key and its associated value are removed. </p>  <p>This parameter to the API requires a JSON text string argument. For information on how to format a JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html#cli-using-param-json">Using JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. </p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateFlowTemplate` operation.
+    /// Constructs a fluent builder for the [`UpdateFlowTemplate`](crate::client::fluent_builders::UpdateFlowTemplate) operation.
     ///
-    /// See [`UpdateFlowTemplate`](crate::client::fluent_builders::UpdateFlowTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateFlowTemplateInput`](crate::input::UpdateFlowTemplateInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::UpdateFlowTemplateInput::id): <p>The ID of the workflow to be updated.</p>  <p>The ID should be in the following format.</p>  <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
+    ///   - [`definition(Option<DefinitionDocument>)`](crate::input::UpdateFlowTemplateInput::definition): <p>The <code>DefinitionDocument</code> that contains the updated workflow definition.</p>
+    ///   - [`compatible_namespace_version(Option<i64>)`](crate::input::UpdateFlowTemplateInput::compatible_namespace_version): <p>The version of the user's namespace.</p>  <p>If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code> if you want to find earlier revisions of the flow to update.</p>
+    /// - On success, responds with [`UpdateFlowTemplateOutput`](crate::output::UpdateFlowTemplateOutput) with field(s):
+    ///   - [`summary(Option<FlowTemplateSummary>)`](crate::output::UpdateFlowTemplateOutput::summary): <p>An object containing summary information about the updated workflow.</p>
+    /// - On failure, responds with [`SdkError<UpdateFlowTemplateError>`](crate::error::UpdateFlowTemplateError)
     pub fn update_flow_template(&self) -> fluent_builders::UpdateFlowTemplate<C, M, R> {
         fluent_builders::UpdateFlowTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateSystemTemplate` operation.
+    /// Constructs a fluent builder for the [`UpdateSystemTemplate`](crate::client::fluent_builders::UpdateSystemTemplate) operation.
     ///
-    /// See [`UpdateSystemTemplate`](crate::client::fluent_builders::UpdateSystemTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateSystemTemplateInput`](crate::input::UpdateSystemTemplateInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::UpdateSystemTemplateInput::id): <p>The ID of the system to be updated.</p>  <p>The ID should be in the following format.</p>  <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
+    ///   - [`definition(Option<DefinitionDocument>)`](crate::input::UpdateSystemTemplateInput::definition): <p>The <code>DefinitionDocument</code> that contains the updated system definition.</p>
+    ///   - [`compatible_namespace_version(Option<i64>)`](crate::input::UpdateSystemTemplateInput::compatible_namespace_version): <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>  <p>If no value is specified, the latest version is used by default.</p>
+    /// - On success, responds with [`UpdateSystemTemplateOutput`](crate::output::UpdateSystemTemplateOutput) with field(s):
+    ///   - [`summary(Option<SystemTemplateSummary>)`](crate::output::UpdateSystemTemplateOutput::summary): <p>An object containing summary information about the updated system.</p>
+    /// - On failure, responds with [`SdkError<UpdateSystemTemplateError>`](crate::error::UpdateSystemTemplateError)
     pub fn update_system_template(&self) -> fluent_builders::UpdateSystemTemplate<C, M, R> {
         fluent_builders::UpdateSystemTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UploadEntityDefinitions` operation.
+    /// Constructs a fluent builder for the [`UploadEntityDefinitions`](crate::client::fluent_builders::UploadEntityDefinitions) operation.
     ///
-    /// See [`UploadEntityDefinitions`](crate::client::fluent_builders::UploadEntityDefinitions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UploadEntityDefinitionsInput`](crate::input::UploadEntityDefinitionsInput) with field(s):
+    ///   - [`document(Option<DefinitionDocument>)`](crate::input::UploadEntityDefinitionsInput::document): <p>The <code>DefinitionDocument</code> that defines the updated entities.</p>
+    ///   - [`sync_with_public_namespace(bool)`](crate::input::UploadEntityDefinitionsInput::sync_with_public_namespace): <p>A Boolean that specifies whether to synchronize with the latest version of the public namespace. If set to <code>true</code>, the upload will create a new namespace version.</p>
+    ///   - [`deprecate_existing_entities(bool)`](crate::input::UploadEntityDefinitionsInput::deprecate_existing_entities): <p>A Boolean that specifies whether to deprecate all entities in the latest version before uploading the new <code>DefinitionDocument</code>. If set to <code>true</code>, the upload will create a new namespace version.</p>
+    /// - On success, responds with [`UploadEntityDefinitionsOutput`](crate::output::UploadEntityDefinitionsOutput) with field(s):
+    ///   - [`upload_id(Option<String>)`](crate::output::UploadEntityDefinitionsOutput::upload_id): <p>The ID that specifies the upload action. You can use this to track the status of the upload.</p>
+    /// - On failure, responds with [`SdkError<UploadEntityDefinitionsError>`](crate::error::UploadEntityDefinitionsError)
     pub fn upload_entity_definitions(&self) -> fluent_builders::UploadEntityDefinitions<C, M, R> {
         fluent_builders::UploadEntityDefinitions::new(self.handle.clone())
     }

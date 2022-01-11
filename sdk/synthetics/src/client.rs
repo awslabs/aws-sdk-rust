@@ -83,98 +83,170 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateCanary` operation.
+    /// Constructs a fluent builder for the [`CreateCanary`](crate::client::fluent_builders::CreateCanary) operation.
     ///
-    /// See [`CreateCanary`](crate::client::fluent_builders::CreateCanary) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateCanaryInput`](crate::input::CreateCanaryInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateCanaryInput::name): <p>The name for this canary. Be sure to give it a descriptive name that distinguishes it from other canaries in your account.</p>  <p>Do not include secrets or proprietary information in your canary names. The canary name makes up part of the canary ARN, and the ARN is included in outbound calls over the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/servicelens_canaries_security.html">Security Considerations for Synthetics Canaries</a>.</p>
+    ///   - [`code(Option<CanaryCodeInput>)`](crate::input::CreateCanaryInput::code): <p>A structure that includes the entry point from which the canary should start running your script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. </p>
+    ///   - [`artifact_s3_location(Option<String>)`](crate::input::CreateCanaryInput::artifact_s3_location): <p>The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include the log file, screenshots, and HAR files. The name of the S3 bucket can't include a period (.).</p>
+    ///   - [`execution_role_arn(Option<String>)`](crate::input::CreateCanaryInput::execution_role_arn): <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p>  <ul>   <li> <p> <code>s3:PutObject</code> </p> </li>   <li> <p> <code>s3:GetBucketLocation</code> </p> </li>   <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li>   <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li>   <li> <p> <code>logs:CreateLogGroup</code> </p> </li>   <li> <p> <code>logs:CreateLogStream</code> </p> </li>   <li> <p> <code>logs:PutLogEvents</code> </p> </li>  </ul>
+    ///   - [`schedule(Option<CanaryScheduleInput>)`](crate::input::CreateCanaryInput::schedule): <p>A structure that contains information about how often the canary is to run and when these test runs are to stop.</p>
+    ///   - [`run_config(Option<CanaryRunConfigInput>)`](crate::input::CreateCanaryInput::run_config): <p>A structure that contains the configuration for individual canary runs, such as timeout value.</p>
+    ///   - [`success_retention_period_in_days(Option<i32>)`](crate::input::CreateCanaryInput::success_retention_period_in_days): <p>The number of days to retain data about successful runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
+    ///   - [`failure_retention_period_in_days(Option<i32>)`](crate::input::CreateCanaryInput::failure_retention_period_in_days): <p>The number of days to retain data about failed runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
+    ///   - [`runtime_version(Option<String>)`](crate::input::CreateCanaryInput::runtime_version): <p>Specifies the runtime version to use for the canary. For a list of valid runtime versions and more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
+    ///   - [`vpc_config(Option<VpcConfigInput>)`](crate::input::CreateCanaryInput::vpc_config): <p>If this canary is to test an endpoint in a VPC, this structure contains information about the subnet and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateCanaryInput::tags): <p>A list of key-value pairs to associate with the canary. You can associate as many as 50 tags with a canary.</p>  <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
+    ///   - [`artifact_config(Option<ArtifactConfigInput>)`](crate::input::CreateCanaryInput::artifact_config): <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
+    /// - On success, responds with [`CreateCanaryOutput`](crate::output::CreateCanaryOutput) with field(s):
+    ///   - [`canary(Option<Canary>)`](crate::output::CreateCanaryOutput::canary): <p>The full details about the canary you have created.</p>
+    /// - On failure, responds with [`SdkError<CreateCanaryError>`](crate::error::CreateCanaryError)
     pub fn create_canary(&self) -> fluent_builders::CreateCanary<C, M, R> {
         fluent_builders::CreateCanary::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteCanary` operation.
+    /// Constructs a fluent builder for the [`DeleteCanary`](crate::client::fluent_builders::DeleteCanary) operation.
     ///
-    /// See [`DeleteCanary`](crate::client::fluent_builders::DeleteCanary) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteCanaryInput`](crate::input::DeleteCanaryInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteCanaryInput::name): <p>The name of the canary that you want to delete. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
+    /// - On success, responds with [`DeleteCanaryOutput`](crate::output::DeleteCanaryOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteCanaryError>`](crate::error::DeleteCanaryError)
     pub fn delete_canary(&self) -> fluent_builders::DeleteCanary<C, M, R> {
         fluent_builders::DeleteCanary::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeCanaries` operation.
-    ///
-    /// See [`DescribeCanaries`](crate::client::fluent_builders::DescribeCanaries) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeCanaries`](crate::client::fluent_builders::DescribeCanaries) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeCanaries::into_paginator).
+    ///
+    /// - Takes [`DescribeCanariesInput`](crate::input::DescribeCanariesInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeCanariesInput::next_token): <p>A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeCanariesInput::max_results): <p>Specify this parameter to limit how many canaries are returned each time you use the <code>DescribeCanaries</code> operation. If you omit this parameter, the default of 100 is used.</p>
+    /// - On success, responds with [`DescribeCanariesOutput`](crate::output::DescribeCanariesOutput) with field(s):
+    ///   - [`canaries(Option<Vec<Canary>>)`](crate::output::DescribeCanariesOutput::canaries): <p>Returns an array. Each item in the array contains the full information about one canary.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeCanariesOutput::next_token): <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<DescribeCanariesError>`](crate::error::DescribeCanariesError)
     pub fn describe_canaries(&self) -> fluent_builders::DescribeCanaries<C, M, R> {
         fluent_builders::DescribeCanaries::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeCanariesLastRun` operation.
-    ///
-    /// See [`DescribeCanariesLastRun`](crate::client::fluent_builders::DescribeCanariesLastRun) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeCanariesLastRun`](crate::client::fluent_builders::DescribeCanariesLastRun) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeCanariesLastRun::into_paginator).
+    ///
+    /// - Takes [`DescribeCanariesLastRunInput`](crate::input::DescribeCanariesLastRunInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeCanariesLastRunInput::next_token): <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next set of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeCanariesLastRunInput::max_results): <p>Specify this parameter to limit how many runs are returned each time you use the <code>DescribeLastRun</code> operation. If you omit this parameter, the default of 100 is used.</p>
+    /// - On success, responds with [`DescribeCanariesLastRunOutput`](crate::output::DescribeCanariesLastRunOutput) with field(s):
+    ///   - [`canaries_last_run(Option<Vec<CanaryLastRun>>)`](crate::output::DescribeCanariesLastRunOutput::canaries_last_run): <p>An array that contains the information from the most recent run of each canary.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeCanariesLastRunOutput::next_token): <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<DescribeCanariesLastRunError>`](crate::error::DescribeCanariesLastRunError)
     pub fn describe_canaries_last_run(&self) -> fluent_builders::DescribeCanariesLastRun<C, M, R> {
         fluent_builders::DescribeCanariesLastRun::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeRuntimeVersions` operation.
-    ///
-    /// See [`DescribeRuntimeVersions`](crate::client::fluent_builders::DescribeRuntimeVersions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeRuntimeVersions`](crate::client::fluent_builders::DescribeRuntimeVersions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeRuntimeVersions::into_paginator).
+    ///
+    /// - Takes [`DescribeRuntimeVersionsInput`](crate::input::DescribeRuntimeVersionsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeRuntimeVersionsInput::next_token): <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next set of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeRuntimeVersionsInput::max_results): <p>Specify this parameter to limit how many runs are returned each time you use the <code>DescribeRuntimeVersions</code> operation. If you omit this parameter, the default of 100 is used.</p>
+    /// - On success, responds with [`DescribeRuntimeVersionsOutput`](crate::output::DescribeRuntimeVersionsOutput) with field(s):
+    ///   - [`runtime_versions(Option<Vec<RuntimeVersion>>)`](crate::output::DescribeRuntimeVersionsOutput::runtime_versions): <p>An array of objects that display the details about each Synthetics canary runtime version.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeRuntimeVersionsOutput::next_token): <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<DescribeRuntimeVersionsError>`](crate::error::DescribeRuntimeVersionsError)
     pub fn describe_runtime_versions(&self) -> fluent_builders::DescribeRuntimeVersions<C, M, R> {
         fluent_builders::DescribeRuntimeVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCanary` operation.
+    /// Constructs a fluent builder for the [`GetCanary`](crate::client::fluent_builders::GetCanary) operation.
     ///
-    /// See [`GetCanary`](crate::client::fluent_builders::GetCanary) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetCanaryInput`](crate::input::GetCanaryInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::GetCanaryInput::name): <p>The name of the canary that you want details for.</p>
+    /// - On success, responds with [`GetCanaryOutput`](crate::output::GetCanaryOutput) with field(s):
+    ///   - [`canary(Option<Canary>)`](crate::output::GetCanaryOutput::canary): <p>A strucure that contains the full information about the canary.</p>
+    /// - On failure, responds with [`SdkError<GetCanaryError>`](crate::error::GetCanaryError)
     pub fn get_canary(&self) -> fluent_builders::GetCanary<C, M, R> {
         fluent_builders::GetCanary::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCanaryRuns` operation.
-    ///
-    /// See [`GetCanaryRuns`](crate::client::fluent_builders::GetCanaryRuns) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetCanaryRuns`](crate::client::fluent_builders::GetCanaryRuns) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetCanaryRuns::into_paginator).
+    ///
+    /// - Takes [`GetCanaryRunsInput`](crate::input::GetCanaryRunsInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::GetCanaryRunsInput::name): <p>The name of the canary that you want to see runs for.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetCanaryRunsInput::next_token): <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next set of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetCanaryRunsInput::max_results): <p>Specify this parameter to limit how many runs are returned each time you use the <code>GetCanaryRuns</code> operation. If you omit this parameter, the default of 100 is used.</p>
+    /// - On success, responds with [`GetCanaryRunsOutput`](crate::output::GetCanaryRunsOutput) with field(s):
+    ///   - [`canary_runs(Option<Vec<CanaryRun>>)`](crate::output::GetCanaryRunsOutput::canary_runs): <p>An array of structures. Each structure contains the details of one of the retrieved canary runs.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetCanaryRunsOutput::next_token): <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<GetCanaryRunsError>`](crate::error::GetCanaryRunsError)
     pub fn get_canary_runs(&self) -> fluent_builders::GetCanaryRuns<C, M, R> {
         fluent_builders::GetCanaryRuns::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The ARN of the canary that you want to view tags for.</p>  <p>The ARN format of a canary is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The list of tag keys and values associated with the canary that you specified.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartCanary` operation.
+    /// Constructs a fluent builder for the [`StartCanary`](crate::client::fluent_builders::StartCanary) operation.
     ///
-    /// See [`StartCanary`](crate::client::fluent_builders::StartCanary) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartCanaryInput`](crate::input::StartCanaryInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::StartCanaryInput::name): <p>The name of the canary that you want to run. To find canary names, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
+    /// - On success, responds with [`StartCanaryOutput`](crate::output::StartCanaryOutput)
+
+    /// - On failure, responds with [`SdkError<StartCanaryError>`](crate::error::StartCanaryError)
     pub fn start_canary(&self) -> fluent_builders::StartCanary<C, M, R> {
         fluent_builders::StartCanary::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopCanary` operation.
+    /// Constructs a fluent builder for the [`StopCanary`](crate::client::fluent_builders::StopCanary) operation.
     ///
-    /// See [`StopCanary`](crate::client::fluent_builders::StopCanary) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StopCanaryInput`](crate::input::StopCanaryInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::StopCanaryInput::name): <p>The name of the canary that you want to stop. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
+    /// - On success, responds with [`StopCanaryOutput`](crate::output::StopCanaryOutput)
+
+    /// - On failure, responds with [`SdkError<StopCanaryError>`](crate::error::StopCanaryError)
     pub fn stop_canary(&self) -> fluent_builders::StopCanary<C, M, R> {
         fluent_builders::StopCanary::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The ARN of the canary that you're adding tags to.</p>  <p>The ARN format of a canary is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>The list of key-value pairs to associate with the canary.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The ARN of the canary that you're removing tags from.</p>  <p>The ARN format of a canary is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The list of tag keys to remove from the resource.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateCanary` operation.
+    /// Constructs a fluent builder for the [`UpdateCanary`](crate::client::fluent_builders::UpdateCanary) operation.
     ///
-    /// See [`UpdateCanary`](crate::client::fluent_builders::UpdateCanary) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateCanaryInput`](crate::input::UpdateCanaryInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::UpdateCanaryInput::name): <p>The name of the canary that you want to update. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>  <p>You cannot change the name of a canary that has already been created.</p>
+    ///   - [`code(Option<CanaryCodeInput>)`](crate::input::UpdateCanaryInput::code): <p>A structure that includes the entry point from which the canary should start running your script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. </p>
+    ///   - [`execution_role_arn(Option<String>)`](crate::input::UpdateCanaryInput::execution_role_arn): <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p>  <ul>   <li> <p> <code>s3:PutObject</code> </p> </li>   <li> <p> <code>s3:GetBucketLocation</code> </p> </li>   <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li>   <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li>   <li> <p> <code>logs:CreateLogGroup</code> </p> </li>   <li> <p> <code>logs:CreateLogStream</code> </p> </li>   <li> <p> <code>logs:CreateLogStream</code> </p> </li>  </ul>
+    ///   - [`runtime_version(Option<String>)`](crate::input::UpdateCanaryInput::runtime_version): <p>Specifies the runtime version to use for the canary. For a list of valid runtime versions and for more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
+    ///   - [`schedule(Option<CanaryScheduleInput>)`](crate::input::UpdateCanaryInput::schedule): <p>A structure that contains information about how often the canary is to run, and when these runs are to stop.</p>
+    ///   - [`run_config(Option<CanaryRunConfigInput>)`](crate::input::UpdateCanaryInput::run_config): <p>A structure that contains the timeout value that is used for each individual run of the canary.</p>
+    ///   - [`success_retention_period_in_days(Option<i32>)`](crate::input::UpdateCanaryInput::success_retention_period_in_days): <p>The number of days to retain data about successful runs of this canary.</p>
+    ///   - [`failure_retention_period_in_days(Option<i32>)`](crate::input::UpdateCanaryInput::failure_retention_period_in_days): <p>The number of days to retain data about failed runs of this canary.</p>
+    ///   - [`vpc_config(Option<VpcConfigInput>)`](crate::input::UpdateCanaryInput::vpc_config): <p>If this canary is to test an endpoint in a VPC, this structure contains information about the subnet and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>.</p>
+    ///   - [`visual_reference(Option<VisualReferenceInput>)`](crate::input::UpdateCanaryInput::visual_reference): <p>Defines the screenshots to use as the baseline for comparisons during visual monitoring comparisons during future runs of this canary. If you omit this parameter, no changes are made to any baseline screenshots that the canary might be using already.</p>  <p>Visual monitoring is supported only on canaries running the <b>syn-puppeteer-node-3.2</b> runtime or later. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Library_SyntheticsLogger_VisualTesting.html"> Visual monitoring</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Blueprints_VisualTesting.html"> Visual monitoring blueprint</a> </p>
+    ///   - [`artifact_s3_location(Option<String>)`](crate::input::UpdateCanaryInput::artifact_s3_location): <p>The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include the log file, screenshots, and HAR files. The name of the S3 bucket can't include a period (.).</p>
+    ///   - [`artifact_config(Option<ArtifactConfigInput>)`](crate::input::UpdateCanaryInput::artifact_config): <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
+    /// - On success, responds with [`UpdateCanaryOutput`](crate::output::UpdateCanaryOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateCanaryError>`](crate::error::UpdateCanaryError)
     pub fn update_canary(&self) -> fluent_builders::UpdateCanary<C, M, R> {
         fluent_builders::UpdateCanary::new(self.handle.clone())
     }

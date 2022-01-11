@@ -83,343 +83,557 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AcceptInboundCrossClusterSearchConnection` operation.
+    /// Constructs a fluent builder for the [`AcceptInboundCrossClusterSearchConnection`](crate::client::fluent_builders::AcceptInboundCrossClusterSearchConnection) operation.
     ///
-    /// See [`AcceptInboundCrossClusterSearchConnection`](crate::client::fluent_builders::AcceptInboundCrossClusterSearchConnection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AcceptInboundCrossClusterSearchConnectionInput`](crate::input::AcceptInboundCrossClusterSearchConnectionInput) with field(s):
+    ///   - [`cross_cluster_search_connection_id(Option<String>)`](crate::input::AcceptInboundCrossClusterSearchConnectionInput::cross_cluster_search_connection_id): <p>The id of the inbound connection that you want to accept.</p>
+    /// - On success, responds with [`AcceptInboundCrossClusterSearchConnectionOutput`](crate::output::AcceptInboundCrossClusterSearchConnectionOutput) with field(s):
+    ///   - [`cross_cluster_search_connection(Option<InboundCrossClusterSearchConnection>)`](crate::output::AcceptInboundCrossClusterSearchConnectionOutput::cross_cluster_search_connection): <p>Specifies the <code><code>InboundCrossClusterSearchConnection</code></code> of accepted inbound connection. </p>
+    /// - On failure, responds with [`SdkError<AcceptInboundCrossClusterSearchConnectionError>`](crate::error::AcceptInboundCrossClusterSearchConnectionError)
     pub fn accept_inbound_cross_cluster_search_connection(
         &self,
     ) -> fluent_builders::AcceptInboundCrossClusterSearchConnection<C, M, R> {
         fluent_builders::AcceptInboundCrossClusterSearchConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AddTags` operation.
+    /// Constructs a fluent builder for the [`AddTags`](crate::client::fluent_builders::AddTags) operation.
     ///
-    /// See [`AddTags`](crate::client::fluent_builders::AddTags) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AddTagsInput`](crate::input::AddTagsInput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::input::AddTagsInput::arn): <p> Specify the <code>ARN</code> for which you want to add the tags.</p>
+    ///   - [`tag_list(Option<Vec<Tag>>)`](crate::input::AddTagsInput::tag_list): <p> List of <code>Tag</code> that need to be added for the Elasticsearch domain. </p>
+    /// - On success, responds with [`AddTagsOutput`](crate::output::AddTagsOutput)
+
+    /// - On failure, responds with [`SdkError<AddTagsError>`](crate::error::AddTagsError)
     pub fn add_tags(&self) -> fluent_builders::AddTags<C, M, R> {
         fluent_builders::AddTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociatePackage` operation.
+    /// Constructs a fluent builder for the [`AssociatePackage`](crate::client::fluent_builders::AssociatePackage) operation.
     ///
-    /// See [`AssociatePackage`](crate::client::fluent_builders::AssociatePackage) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociatePackageInput`](crate::input::AssociatePackageInput) with field(s):
+    ///   - [`package_id(Option<String>)`](crate::input::AssociatePackageInput::package_id): <p>Internal ID of the package that you want to associate with a domain. Use <code>DescribePackages</code> to find this value.</p>
+    ///   - [`domain_name(Option<String>)`](crate::input::AssociatePackageInput::domain_name): <p>Name of the domain that you want to associate the package with.</p>
+    /// - On success, responds with [`AssociatePackageOutput`](crate::output::AssociatePackageOutput) with field(s):
+    ///   - [`domain_package_details(Option<DomainPackageDetails>)`](crate::output::AssociatePackageOutput::domain_package_details): <p><code>DomainPackageDetails</code></p>
+    /// - On failure, responds with [`SdkError<AssociatePackageError>`](crate::error::AssociatePackageError)
     pub fn associate_package(&self) -> fluent_builders::AssociatePackage<C, M, R> {
         fluent_builders::AssociatePackage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CancelElasticsearchServiceSoftwareUpdate` operation.
+    /// Constructs a fluent builder for the [`CancelElasticsearchServiceSoftwareUpdate`](crate::client::fluent_builders::CancelElasticsearchServiceSoftwareUpdate) operation.
     ///
-    /// See [`CancelElasticsearchServiceSoftwareUpdate`](crate::client::fluent_builders::CancelElasticsearchServiceSoftwareUpdate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CancelElasticsearchServiceSoftwareUpdateInput`](crate::input::CancelElasticsearchServiceSoftwareUpdateInput) with field(s):
+    ///   - [`domain_name(Option<String>)`](crate::input::CancelElasticsearchServiceSoftwareUpdateInput::domain_name): <p>The name of the domain that you want to stop the latest service software update on.</p>
+    /// - On success, responds with [`CancelElasticsearchServiceSoftwareUpdateOutput`](crate::output::CancelElasticsearchServiceSoftwareUpdateOutput) with field(s):
+    ///   - [`service_software_options(Option<ServiceSoftwareOptions>)`](crate::output::CancelElasticsearchServiceSoftwareUpdateOutput::service_software_options): <p>The current status of the Elasticsearch service software update.</p>
+    /// - On failure, responds with [`SdkError<CancelElasticsearchServiceSoftwareUpdateError>`](crate::error::CancelElasticsearchServiceSoftwareUpdateError)
     pub fn cancel_elasticsearch_service_software_update(
         &self,
     ) -> fluent_builders::CancelElasticsearchServiceSoftwareUpdate<C, M, R> {
         fluent_builders::CancelElasticsearchServiceSoftwareUpdate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateElasticsearchDomain` operation.
+    /// Constructs a fluent builder for the [`CreateElasticsearchDomain`](crate::client::fluent_builders::CreateElasticsearchDomain) operation.
     ///
-    /// See [`CreateElasticsearchDomain`](crate::client::fluent_builders::CreateElasticsearchDomain) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateElasticsearchDomainInput`](crate::input::CreateElasticsearchDomainInput) with field(s):
+    ///   - [`domain_name(Option<String>)`](crate::input::CreateElasticsearchDomainInput::domain_name): <p>The name of the Elasticsearch domain that you are creating. Domain names are unique across the domains owned by an account within an AWS region. Domain names must start with a lowercase letter and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    ///   - [`elasticsearch_version(Option<String>)`](crate::input::CreateElasticsearchDomainInput::elasticsearch_version): <p>String of format X.Y to specify version for the Elasticsearch domain eg. "1.5" or "2.3". For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains" target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>.</p>
+    ///   - [`elasticsearch_cluster_config(Option<ElasticsearchClusterConfig>)`](crate::input::CreateElasticsearchDomainInput::elasticsearch_cluster_config): <p>Configuration options for an Elasticsearch domain. Specifies the instance type and number of instances in the domain cluster. </p>
+    ///   - [`ebs_options(Option<EbsOptions>)`](crate::input::CreateElasticsearchDomainInput::ebs_options): <p>Options to enable, disable and specify the type and size of EBS storage volumes. </p>
+    ///   - [`access_policies(Option<String>)`](crate::input::CreateElasticsearchDomainInput::access_policies): <p> IAM access policy as a JSON-formatted string.</p>
+    ///   - [`snapshot_options(Option<SnapshotOptions>)`](crate::input::CreateElasticsearchDomainInput::snapshot_options): <p>Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours. </p>
+    ///   - [`vpc_options(Option<VpcOptions>)`](crate::input::CreateElasticsearchDomainInput::vpc_options): <p>Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-creating-vpc" target="_blank">Creating a VPC</a> in <i>VPC Endpoints for Amazon Elasticsearch Service Domains</i></p>
+    ///   - [`cognito_options(Option<CognitoOptions>)`](crate::input::CreateElasticsearchDomainInput::cognito_options): <p>Options to specify the Cognito user and identity pools for Kibana authentication. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html" target="_blank">Amazon Cognito Authentication for Kibana</a>.</p>
+    ///   - [`encryption_at_rest_options(Option<EncryptionAtRestOptions>)`](crate::input::CreateElasticsearchDomainInput::encryption_at_rest_options): <p>Specifies the Encryption At Rest Options.</p>
+    ///   - [`node_to_node_encryption_options(Option<NodeToNodeEncryptionOptions>)`](crate::input::CreateElasticsearchDomainInput::node_to_node_encryption_options): <p>Specifies the NodeToNodeEncryptionOptions.</p>
+    ///   - [`advanced_options(Option<HashMap<String, String>>)`](crate::input::CreateElasticsearchDomainInput::advanced_options): <p> Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
+    ///   - [`log_publishing_options(Option<HashMap<LogType, LogPublishingOption>>)`](crate::input::CreateElasticsearchDomainInput::log_publishing_options): <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type of Elasticsearch log.</p>
+    ///   - [`domain_endpoint_options(Option<DomainEndpointOptions>)`](crate::input::CreateElasticsearchDomainInput::domain_endpoint_options): <p>Options to specify configuration that will be applied to the domain endpoint.</p>
+    ///   - [`advanced_security_options(Option<AdvancedSecurityOptionsInput>)`](crate::input::CreateElasticsearchDomainInput::advanced_security_options): <p>Specifies advanced security options.</p>
+    ///   - [`auto_tune_options(Option<AutoTuneOptionsInput>)`](crate::input::CreateElasticsearchDomainInput::auto_tune_options): <p>Specifies Auto-Tune options.</p>
+    ///   - [`tag_list(Option<Vec<Tag>>)`](crate::input::CreateElasticsearchDomainInput::tag_list): <p>A list of <code>Tag</code> added during domain creation.</p>
+    /// - On success, responds with [`CreateElasticsearchDomainOutput`](crate::output::CreateElasticsearchDomainOutput) with field(s):
+    ///   - [`domain_status(Option<ElasticsearchDomainStatus>)`](crate::output::CreateElasticsearchDomainOutput::domain_status): <p>The status of the newly created Elasticsearch domain. </p>
+    /// - On failure, responds with [`SdkError<CreateElasticsearchDomainError>`](crate::error::CreateElasticsearchDomainError)
     pub fn create_elasticsearch_domain(
         &self,
     ) -> fluent_builders::CreateElasticsearchDomain<C, M, R> {
         fluent_builders::CreateElasticsearchDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateOutboundCrossClusterSearchConnection` operation.
+    /// Constructs a fluent builder for the [`CreateOutboundCrossClusterSearchConnection`](crate::client::fluent_builders::CreateOutboundCrossClusterSearchConnection) operation.
     ///
-    /// See [`CreateOutboundCrossClusterSearchConnection`](crate::client::fluent_builders::CreateOutboundCrossClusterSearchConnection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateOutboundCrossClusterSearchConnectionInput`](crate::input::CreateOutboundCrossClusterSearchConnectionInput) with field(s):
+    ///   - [`source_domain_info(Option<DomainInformation>)`](crate::input::CreateOutboundCrossClusterSearchConnectionInput::source_domain_info): <p>Specifies the <code><code>DomainInformation</code></code> for the source Elasticsearch domain.</p>
+    ///   - [`destination_domain_info(Option<DomainInformation>)`](crate::input::CreateOutboundCrossClusterSearchConnectionInput::destination_domain_info): <p>Specifies the <code><code>DomainInformation</code></code> for the destination Elasticsearch domain.</p>
+    ///   - [`connection_alias(Option<String>)`](crate::input::CreateOutboundCrossClusterSearchConnectionInput::connection_alias): <p>Specifies the connection alias that will be used by the customer for this connection.</p>
+    /// - On success, responds with [`CreateOutboundCrossClusterSearchConnectionOutput`](crate::output::CreateOutboundCrossClusterSearchConnectionOutput) with field(s):
+    ///   - [`source_domain_info(Option<DomainInformation>)`](crate::output::CreateOutboundCrossClusterSearchConnectionOutput::source_domain_info): <p>Specifies the <code><code>DomainInformation</code></code> for the source Elasticsearch domain.</p>
+    ///   - [`destination_domain_info(Option<DomainInformation>)`](crate::output::CreateOutboundCrossClusterSearchConnectionOutput::destination_domain_info): <p>Specifies the <code><code>DomainInformation</code></code> for the destination Elasticsearch domain.</p>
+    ///   - [`connection_alias(Option<String>)`](crate::output::CreateOutboundCrossClusterSearchConnectionOutput::connection_alias): <p>Specifies the connection alias provided during the create connection request.</p>
+    ///   - [`connection_status(Option<OutboundCrossClusterSearchConnectionStatus>)`](crate::output::CreateOutboundCrossClusterSearchConnectionOutput::connection_status): <p>Specifies the <code><code>OutboundCrossClusterSearchConnectionStatus</code></code> for the newly created connection.</p>
+    ///   - [`cross_cluster_search_connection_id(Option<String>)`](crate::output::CreateOutboundCrossClusterSearchConnectionOutput::cross_cluster_search_connection_id): <p>Unique id for the created outbound connection, which is used for subsequent operations on connection.</p>
+    /// - On failure, responds with [`SdkError<CreateOutboundCrossClusterSearchConnectionError>`](crate::error::CreateOutboundCrossClusterSearchConnectionError)
     pub fn create_outbound_cross_cluster_search_connection(
         &self,
     ) -> fluent_builders::CreateOutboundCrossClusterSearchConnection<C, M, R> {
         fluent_builders::CreateOutboundCrossClusterSearchConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreatePackage` operation.
+    /// Constructs a fluent builder for the [`CreatePackage`](crate::client::fluent_builders::CreatePackage) operation.
     ///
-    /// See [`CreatePackage`](crate::client::fluent_builders::CreatePackage) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreatePackageInput`](crate::input::CreatePackageInput) with field(s):
+    ///   - [`package_name(Option<String>)`](crate::input::CreatePackageInput::package_name): <p>Unique identifier for the package.</p>
+    ///   - [`package_type(Option<PackageType>)`](crate::input::CreatePackageInput::package_type): <p>Type of package. Currently supports only TXT-DICTIONARY.</p>
+    ///   - [`package_description(Option<String>)`](crate::input::CreatePackageInput::package_description): <p>Description of the package.</p>
+    ///   - [`package_source(Option<PackageSource>)`](crate::input::CreatePackageInput::package_source): <p>The customer S3 location <code>PackageSource</code> for importing the package.</p>
+    /// - On success, responds with [`CreatePackageOutput`](crate::output::CreatePackageOutput) with field(s):
+    ///   - [`package_details(Option<PackageDetails>)`](crate::output::CreatePackageOutput::package_details): <p>Information about the package <code>PackageDetails</code>.</p>
+    /// - On failure, responds with [`SdkError<CreatePackageError>`](crate::error::CreatePackageError)
     pub fn create_package(&self) -> fluent_builders::CreatePackage<C, M, R> {
         fluent_builders::CreatePackage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteElasticsearchDomain` operation.
+    /// Constructs a fluent builder for the [`DeleteElasticsearchDomain`](crate::client::fluent_builders::DeleteElasticsearchDomain) operation.
     ///
-    /// See [`DeleteElasticsearchDomain`](crate::client::fluent_builders::DeleteElasticsearchDomain) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteElasticsearchDomainInput`](crate::input::DeleteElasticsearchDomainInput) with field(s):
+    ///   - [`domain_name(Option<String>)`](crate::input::DeleteElasticsearchDomainInput::domain_name): <p>The name of the Elasticsearch domain that you want to permanently delete.</p>
+    /// - On success, responds with [`DeleteElasticsearchDomainOutput`](crate::output::DeleteElasticsearchDomainOutput) with field(s):
+    ///   - [`domain_status(Option<ElasticsearchDomainStatus>)`](crate::output::DeleteElasticsearchDomainOutput::domain_status): <p>The status of the Elasticsearch domain being deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteElasticsearchDomainError>`](crate::error::DeleteElasticsearchDomainError)
     pub fn delete_elasticsearch_domain(
         &self,
     ) -> fluent_builders::DeleteElasticsearchDomain<C, M, R> {
         fluent_builders::DeleteElasticsearchDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteElasticsearchServiceRole` operation.
+    /// Constructs a fluent builder for the [`DeleteElasticsearchServiceRole`](crate::client::fluent_builders::DeleteElasticsearchServiceRole) operation.
     ///
-    /// See [`DeleteElasticsearchServiceRole`](crate::client::fluent_builders::DeleteElasticsearchServiceRole) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteElasticsearchServiceRoleInput`](crate::input::DeleteElasticsearchServiceRoleInput)
+
+    /// - On success, responds with [`DeleteElasticsearchServiceRoleOutput`](crate::output::DeleteElasticsearchServiceRoleOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteElasticsearchServiceRoleError>`](crate::error::DeleteElasticsearchServiceRoleError)
     pub fn delete_elasticsearch_service_role(
         &self,
     ) -> fluent_builders::DeleteElasticsearchServiceRole<C, M, R> {
         fluent_builders::DeleteElasticsearchServiceRole::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteInboundCrossClusterSearchConnection` operation.
+    /// Constructs a fluent builder for the [`DeleteInboundCrossClusterSearchConnection`](crate::client::fluent_builders::DeleteInboundCrossClusterSearchConnection) operation.
     ///
-    /// See [`DeleteInboundCrossClusterSearchConnection`](crate::client::fluent_builders::DeleteInboundCrossClusterSearchConnection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteInboundCrossClusterSearchConnectionInput`](crate::input::DeleteInboundCrossClusterSearchConnectionInput) with field(s):
+    ///   - [`cross_cluster_search_connection_id(Option<String>)`](crate::input::DeleteInboundCrossClusterSearchConnectionInput::cross_cluster_search_connection_id): <p>The id of the inbound connection that you want to permanently delete.</p>
+    /// - On success, responds with [`DeleteInboundCrossClusterSearchConnectionOutput`](crate::output::DeleteInboundCrossClusterSearchConnectionOutput) with field(s):
+    ///   - [`cross_cluster_search_connection(Option<InboundCrossClusterSearchConnection>)`](crate::output::DeleteInboundCrossClusterSearchConnectionOutput::cross_cluster_search_connection): <p>Specifies the <code><code>InboundCrossClusterSearchConnection</code></code> of deleted inbound connection. </p>
+    /// - On failure, responds with [`SdkError<DeleteInboundCrossClusterSearchConnectionError>`](crate::error::DeleteInboundCrossClusterSearchConnectionError)
     pub fn delete_inbound_cross_cluster_search_connection(
         &self,
     ) -> fluent_builders::DeleteInboundCrossClusterSearchConnection<C, M, R> {
         fluent_builders::DeleteInboundCrossClusterSearchConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteOutboundCrossClusterSearchConnection` operation.
+    /// Constructs a fluent builder for the [`DeleteOutboundCrossClusterSearchConnection`](crate::client::fluent_builders::DeleteOutboundCrossClusterSearchConnection) operation.
     ///
-    /// See [`DeleteOutboundCrossClusterSearchConnection`](crate::client::fluent_builders::DeleteOutboundCrossClusterSearchConnection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteOutboundCrossClusterSearchConnectionInput`](crate::input::DeleteOutboundCrossClusterSearchConnectionInput) with field(s):
+    ///   - [`cross_cluster_search_connection_id(Option<String>)`](crate::input::DeleteOutboundCrossClusterSearchConnectionInput::cross_cluster_search_connection_id): <p>The id of the outbound connection that you want to permanently delete.</p>
+    /// - On success, responds with [`DeleteOutboundCrossClusterSearchConnectionOutput`](crate::output::DeleteOutboundCrossClusterSearchConnectionOutput) with field(s):
+    ///   - [`cross_cluster_search_connection(Option<OutboundCrossClusterSearchConnection>)`](crate::output::DeleteOutboundCrossClusterSearchConnectionOutput::cross_cluster_search_connection): <p>Specifies the <code><code>OutboundCrossClusterSearchConnection</code></code> of deleted outbound connection. </p>
+    /// - On failure, responds with [`SdkError<DeleteOutboundCrossClusterSearchConnectionError>`](crate::error::DeleteOutboundCrossClusterSearchConnectionError)
     pub fn delete_outbound_cross_cluster_search_connection(
         &self,
     ) -> fluent_builders::DeleteOutboundCrossClusterSearchConnection<C, M, R> {
         fluent_builders::DeleteOutboundCrossClusterSearchConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeletePackage` operation.
+    /// Constructs a fluent builder for the [`DeletePackage`](crate::client::fluent_builders::DeletePackage) operation.
     ///
-    /// See [`DeletePackage`](crate::client::fluent_builders::DeletePackage) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeletePackageInput`](crate::input::DeletePackageInput) with field(s):
+    ///   - [`package_id(Option<String>)`](crate::input::DeletePackageInput::package_id): <p>Internal ID of the package that you want to delete. Use <code>DescribePackages</code> to find this value.</p>
+    /// - On success, responds with [`DeletePackageOutput`](crate::output::DeletePackageOutput) with field(s):
+    ///   - [`package_details(Option<PackageDetails>)`](crate::output::DeletePackageOutput::package_details): <p><code>PackageDetails</code></p>
+    /// - On failure, responds with [`SdkError<DeletePackageError>`](crate::error::DeletePackageError)
     pub fn delete_package(&self) -> fluent_builders::DeletePackage<C, M, R> {
         fluent_builders::DeletePackage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDomainAutoTunes` operation.
-    ///
-    /// See [`DescribeDomainAutoTunes`](crate::client::fluent_builders::DescribeDomainAutoTunes) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeDomainAutoTunes`](crate::client::fluent_builders::DescribeDomainAutoTunes) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeDomainAutoTunes::into_paginator).
+    ///
+    /// - Takes [`DescribeDomainAutoTunesInput`](crate::input::DescribeDomainAutoTunesInput) with field(s):
+    ///   - [`domain_name(Option<String>)`](crate::input::DescribeDomainAutoTunesInput::domain_name): <p>Specifies the domain name for which you want Auto-Tune action details.</p>
+    ///   - [`max_results(i32)`](crate::input::DescribeDomainAutoTunesInput::max_results): <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeDomainAutoTunesInput::next_token): <p>NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
+    /// - On success, responds with [`DescribeDomainAutoTunesOutput`](crate::output::DescribeDomainAutoTunesOutput) with field(s):
+    ///   - [`auto_tunes(Option<Vec<AutoTune>>)`](crate::output::DescribeDomainAutoTunesOutput::auto_tunes): <p>Specifies the list of setting adjustments that Auto-Tune has made to the domain. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeDomainAutoTunesOutput::next_token): <p>Specifies an identifier to allow retrieval of paginated results.</p>
+    /// - On failure, responds with [`SdkError<DescribeDomainAutoTunesError>`](crate::error::DescribeDomainAutoTunesError)
     pub fn describe_domain_auto_tunes(&self) -> fluent_builders::DescribeDomainAutoTunes<C, M, R> {
         fluent_builders::DescribeDomainAutoTunes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeElasticsearchDomain` operation.
+    /// Constructs a fluent builder for the [`DescribeElasticsearchDomain`](crate::client::fluent_builders::DescribeElasticsearchDomain) operation.
     ///
-    /// See [`DescribeElasticsearchDomain`](crate::client::fluent_builders::DescribeElasticsearchDomain) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeElasticsearchDomainInput`](crate::input::DescribeElasticsearchDomainInput) with field(s):
+    ///   - [`domain_name(Option<String>)`](crate::input::DescribeElasticsearchDomainInput::domain_name): <p>The name of the Elasticsearch domain for which you want information.</p>
+    /// - On success, responds with [`DescribeElasticsearchDomainOutput`](crate::output::DescribeElasticsearchDomainOutput) with field(s):
+    ///   - [`domain_status(Option<ElasticsearchDomainStatus>)`](crate::output::DescribeElasticsearchDomainOutput::domain_status): <p>The current status of the Elasticsearch domain.</p>
+    /// - On failure, responds with [`SdkError<DescribeElasticsearchDomainError>`](crate::error::DescribeElasticsearchDomainError)
     pub fn describe_elasticsearch_domain(
         &self,
     ) -> fluent_builders::DescribeElasticsearchDomain<C, M, R> {
         fluent_builders::DescribeElasticsearchDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeElasticsearchDomainConfig` operation.
+    /// Constructs a fluent builder for the [`DescribeElasticsearchDomainConfig`](crate::client::fluent_builders::DescribeElasticsearchDomainConfig) operation.
     ///
-    /// See [`DescribeElasticsearchDomainConfig`](crate::client::fluent_builders::DescribeElasticsearchDomainConfig) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeElasticsearchDomainConfigInput`](crate::input::DescribeElasticsearchDomainConfigInput) with field(s):
+    ///   - [`domain_name(Option<String>)`](crate::input::DescribeElasticsearchDomainConfigInput::domain_name): <p>The Elasticsearch domain that you want to get information about.</p>
+    /// - On success, responds with [`DescribeElasticsearchDomainConfigOutput`](crate::output::DescribeElasticsearchDomainConfigOutput) with field(s):
+    ///   - [`domain_config(Option<ElasticsearchDomainConfig>)`](crate::output::DescribeElasticsearchDomainConfigOutput::domain_config): <p>The configuration information of the domain requested in the <code>DescribeElasticsearchDomainConfig</code> request.</p>
+    /// - On failure, responds with [`SdkError<DescribeElasticsearchDomainConfigError>`](crate::error::DescribeElasticsearchDomainConfigError)
     pub fn describe_elasticsearch_domain_config(
         &self,
     ) -> fluent_builders::DescribeElasticsearchDomainConfig<C, M, R> {
         fluent_builders::DescribeElasticsearchDomainConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeElasticsearchDomains` operation.
+    /// Constructs a fluent builder for the [`DescribeElasticsearchDomains`](crate::client::fluent_builders::DescribeElasticsearchDomains) operation.
     ///
-    /// See [`DescribeElasticsearchDomains`](crate::client::fluent_builders::DescribeElasticsearchDomains) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeElasticsearchDomainsInput`](crate::input::DescribeElasticsearchDomainsInput) with field(s):
+    ///   - [`domain_names(Option<Vec<String>>)`](crate::input::DescribeElasticsearchDomainsInput::domain_names): <p>The Elasticsearch domains for which you want information.</p>
+    /// - On success, responds with [`DescribeElasticsearchDomainsOutput`](crate::output::DescribeElasticsearchDomainsOutput) with field(s):
+    ///   - [`domain_status_list(Option<Vec<ElasticsearchDomainStatus>>)`](crate::output::DescribeElasticsearchDomainsOutput::domain_status_list): <p>The status of the domains requested in the <code>DescribeElasticsearchDomains</code> request.</p>
+    /// - On failure, responds with [`SdkError<DescribeElasticsearchDomainsError>`](crate::error::DescribeElasticsearchDomainsError)
     pub fn describe_elasticsearch_domains(
         &self,
     ) -> fluent_builders::DescribeElasticsearchDomains<C, M, R> {
         fluent_builders::DescribeElasticsearchDomains::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeElasticsearchInstanceTypeLimits` operation.
+    /// Constructs a fluent builder for the [`DescribeElasticsearchInstanceTypeLimits`](crate::client::fluent_builders::DescribeElasticsearchInstanceTypeLimits) operation.
     ///
-    /// See [`DescribeElasticsearchInstanceTypeLimits`](crate::client::fluent_builders::DescribeElasticsearchInstanceTypeLimits) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeElasticsearchInstanceTypeLimitsInput`](crate::input::DescribeElasticsearchInstanceTypeLimitsInput) with field(s):
+    ///   - [`domain_name(Option<String>)`](crate::input::DescribeElasticsearchInstanceTypeLimitsInput::domain_name): <p> DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for Elasticsearch <code> <code>Limits</code> </code> for existing domain. </p>
+    ///   - [`instance_type(Option<EsPartitionInstanceType>)`](crate::input::DescribeElasticsearchInstanceTypeLimitsInput::instance_type): <p> The instance type for an Elasticsearch cluster for which Elasticsearch <code> <code>Limits</code> </code> are needed. </p>
+    ///   - [`elasticsearch_version(Option<String>)`](crate::input::DescribeElasticsearchInstanceTypeLimitsInput::elasticsearch_version): <p> Version of Elasticsearch for which <code> <code>Limits</code> </code> are needed. </p>
+    /// - On success, responds with [`DescribeElasticsearchInstanceTypeLimitsOutput`](crate::output::DescribeElasticsearchInstanceTypeLimitsOutput) with field(s):
+    ///   - [`limits_by_role(Option<HashMap<String, Limits>>)`](crate::output::DescribeElasticsearchInstanceTypeLimitsOutput::limits_by_role): <p> Map of Role of the Instance and Limits that are applicable. Role performed by given Instance in Elasticsearch can be one of the following: </p> <ul>   <li>data: If the given InstanceType is used as data node</li>   <li>master: If the given InstanceType is used as master node</li>   <li>ultra_warm: If the given InstanceType is used as warm node</li>  </ul>  <p></p>
+    /// - On failure, responds with [`SdkError<DescribeElasticsearchInstanceTypeLimitsError>`](crate::error::DescribeElasticsearchInstanceTypeLimitsError)
     pub fn describe_elasticsearch_instance_type_limits(
         &self,
     ) -> fluent_builders::DescribeElasticsearchInstanceTypeLimits<C, M, R> {
         fluent_builders::DescribeElasticsearchInstanceTypeLimits::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeInboundCrossClusterSearchConnections` operation.
-    ///
-    /// See [`DescribeInboundCrossClusterSearchConnections`](crate::client::fluent_builders::DescribeInboundCrossClusterSearchConnections) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeInboundCrossClusterSearchConnections`](crate::client::fluent_builders::DescribeInboundCrossClusterSearchConnections) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeInboundCrossClusterSearchConnections::into_paginator).
+    ///
+    /// - Takes [`DescribeInboundCrossClusterSearchConnectionsInput`](crate::input::DescribeInboundCrossClusterSearchConnectionsInput) with field(s):
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::DescribeInboundCrossClusterSearchConnectionsInput::filters): <p> A list of filters used to match properties for inbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are: </p> <ul>   <li>cross-cluster-search-connection-id</li>   <li>source-domain-info.domain-name</li>   <li>source-domain-info.owner-id</li>   <li>source-domain-info.region</li>   <li>destination-domain-info.domain-name</li>  </ul>  <p></p>
+    ///   - [`max_results(i32)`](crate::input::DescribeInboundCrossClusterSearchConnectionsInput::max_results): <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeInboundCrossClusterSearchConnectionsInput::next_token): <p> NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
+    /// - On success, responds with [`DescribeInboundCrossClusterSearchConnectionsOutput`](crate::output::DescribeInboundCrossClusterSearchConnectionsOutput) with field(s):
+    ///   - [`cross_cluster_search_connections(Option<Vec<InboundCrossClusterSearchConnection>>)`](crate::output::DescribeInboundCrossClusterSearchConnectionsOutput::cross_cluster_search_connections): <p>Consists of list of <code><code>InboundCrossClusterSearchConnection</code></code> matching the specified filter criteria.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeInboundCrossClusterSearchConnectionsOutput::next_token): <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results. </p>
+    /// - On failure, responds with [`SdkError<DescribeInboundCrossClusterSearchConnectionsError>`](crate::error::DescribeInboundCrossClusterSearchConnectionsError)
     pub fn describe_inbound_cross_cluster_search_connections(
         &self,
     ) -> fluent_builders::DescribeInboundCrossClusterSearchConnections<C, M, R> {
         fluent_builders::DescribeInboundCrossClusterSearchConnections::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeOutboundCrossClusterSearchConnections` operation.
-    ///
-    /// See [`DescribeOutboundCrossClusterSearchConnections`](crate::client::fluent_builders::DescribeOutboundCrossClusterSearchConnections) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeOutboundCrossClusterSearchConnections`](crate::client::fluent_builders::DescribeOutboundCrossClusterSearchConnections) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeOutboundCrossClusterSearchConnections::into_paginator).
+    ///
+    /// - Takes [`DescribeOutboundCrossClusterSearchConnectionsInput`](crate::input::DescribeOutboundCrossClusterSearchConnectionsInput) with field(s):
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::DescribeOutboundCrossClusterSearchConnectionsInput::filters): <p> A list of filters used to match properties for outbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are: </p> <ul>   <li>cross-cluster-search-connection-id</li>   <li>destination-domain-info.domain-name</li>   <li>destination-domain-info.owner-id</li>   <li>destination-domain-info.region</li>   <li>source-domain-info.domain-name</li>  </ul>  <p></p>
+    ///   - [`max_results(i32)`](crate::input::DescribeOutboundCrossClusterSearchConnectionsInput::max_results): <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeOutboundCrossClusterSearchConnectionsInput::next_token): <p> NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
+    /// - On success, responds with [`DescribeOutboundCrossClusterSearchConnectionsOutput`](crate::output::DescribeOutboundCrossClusterSearchConnectionsOutput) with field(s):
+    ///   - [`cross_cluster_search_connections(Option<Vec<OutboundCrossClusterSearchConnection>>)`](crate::output::DescribeOutboundCrossClusterSearchConnectionsOutput::cross_cluster_search_connections): <p>Consists of list of <code><code>OutboundCrossClusterSearchConnection</code></code> matching the specified filter criteria.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeOutboundCrossClusterSearchConnectionsOutput::next_token): <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results. </p>
+    /// - On failure, responds with [`SdkError<DescribeOutboundCrossClusterSearchConnectionsError>`](crate::error::DescribeOutboundCrossClusterSearchConnectionsError)
     pub fn describe_outbound_cross_cluster_search_connections(
         &self,
     ) -> fluent_builders::DescribeOutboundCrossClusterSearchConnections<C, M, R> {
         fluent_builders::DescribeOutboundCrossClusterSearchConnections::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribePackages` operation.
-    ///
-    /// See [`DescribePackages`](crate::client::fluent_builders::DescribePackages) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribePackages`](crate::client::fluent_builders::DescribePackages) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribePackages::into_paginator).
+    ///
+    /// - Takes [`DescribePackagesInput`](crate::input::DescribePackagesInput) with field(s):
+    ///   - [`filters(Option<Vec<DescribePackagesFilter>>)`](crate::input::DescribePackagesInput::filters): <p>Only returns packages that match the <code>DescribePackagesFilterList</code> values.</p>
+    ///   - [`max_results(i32)`](crate::input::DescribePackagesInput::max_results): <p>Limits results to a maximum number of packages.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribePackagesInput::next_token): <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</p>
+    /// - On success, responds with [`DescribePackagesOutput`](crate::output::DescribePackagesOutput) with field(s):
+    ///   - [`package_details_list(Option<Vec<PackageDetails>>)`](crate::output::DescribePackagesOutput::package_details_list): <p>List of <code>PackageDetails</code> objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribePackagesOutput::next_token): (undocumented)
+    /// - On failure, responds with [`SdkError<DescribePackagesError>`](crate::error::DescribePackagesError)
     pub fn describe_packages(&self) -> fluent_builders::DescribePackages<C, M, R> {
         fluent_builders::DescribePackages::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeReservedElasticsearchInstanceOfferings` operation.
-    ///
-    /// See [`DescribeReservedElasticsearchInstanceOfferings`](crate::client::fluent_builders::DescribeReservedElasticsearchInstanceOfferings) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeReservedElasticsearchInstanceOfferings`](crate::client::fluent_builders::DescribeReservedElasticsearchInstanceOfferings) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeReservedElasticsearchInstanceOfferings::into_paginator).
+    ///
+    /// - Takes [`DescribeReservedElasticsearchInstanceOfferingsInput`](crate::input::DescribeReservedElasticsearchInstanceOfferingsInput) with field(s):
+    ///   - [`reserved_elasticsearch_instance_offering_id(Option<String>)`](crate::input::DescribeReservedElasticsearchInstanceOfferingsInput::reserved_elasticsearch_instance_offering_id): <p>The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier.</p>
+    ///   - [`max_results(i32)`](crate::input::DescribeReservedElasticsearchInstanceOfferingsInput::max_results): <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeReservedElasticsearchInstanceOfferingsInput::next_token): <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.</p>
+    /// - On success, responds with [`DescribeReservedElasticsearchInstanceOfferingsOutput`](crate::output::DescribeReservedElasticsearchInstanceOfferingsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeReservedElasticsearchInstanceOfferingsOutput::next_token): <p>Provides an identifier to allow retrieval of paginated results.</p>
+    ///   - [`reserved_elasticsearch_instance_offerings(Option<Vec<ReservedElasticsearchInstanceOffering>>)`](crate::output::DescribeReservedElasticsearchInstanceOfferingsOutput::reserved_elasticsearch_instance_offerings): <p>List of reserved Elasticsearch instance offerings</p>
+    /// - On failure, responds with [`SdkError<DescribeReservedElasticsearchInstanceOfferingsError>`](crate::error::DescribeReservedElasticsearchInstanceOfferingsError)
     pub fn describe_reserved_elasticsearch_instance_offerings(
         &self,
     ) -> fluent_builders::DescribeReservedElasticsearchInstanceOfferings<C, M, R> {
         fluent_builders::DescribeReservedElasticsearchInstanceOfferings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeReservedElasticsearchInstances` operation.
-    ///
-    /// See [`DescribeReservedElasticsearchInstances`](crate::client::fluent_builders::DescribeReservedElasticsearchInstances) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeReservedElasticsearchInstances`](crate::client::fluent_builders::DescribeReservedElasticsearchInstances) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeReservedElasticsearchInstances::into_paginator).
+    ///
+    /// - Takes [`DescribeReservedElasticsearchInstancesInput`](crate::input::DescribeReservedElasticsearchInstancesInput) with field(s):
+    ///   - [`reserved_elasticsearch_instance_id(Option<String>)`](crate::input::DescribeReservedElasticsearchInstancesInput::reserved_elasticsearch_instance_id): <p>The reserved instance identifier filter value. Use this parameter to show only the reservation that matches the specified reserved Elasticsearch instance ID.</p>
+    ///   - [`max_results(i32)`](crate::input::DescribeReservedElasticsearchInstancesInput::max_results): <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeReservedElasticsearchInstancesInput::next_token): <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.</p>
+    /// - On success, responds with [`DescribeReservedElasticsearchInstancesOutput`](crate::output::DescribeReservedElasticsearchInstancesOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeReservedElasticsearchInstancesOutput::next_token): <p>Provides an identifier to allow retrieval of paginated results.</p>
+    ///   - [`reserved_elasticsearch_instances(Option<Vec<ReservedElasticsearchInstance>>)`](crate::output::DescribeReservedElasticsearchInstancesOutput::reserved_elasticsearch_instances): <p>List of reserved Elasticsearch instances.</p>
+    /// - On failure, responds with [`SdkError<DescribeReservedElasticsearchInstancesError>`](crate::error::DescribeReservedElasticsearchInstancesError)
     pub fn describe_reserved_elasticsearch_instances(
         &self,
     ) -> fluent_builders::DescribeReservedElasticsearchInstances<C, M, R> {
         fluent_builders::DescribeReservedElasticsearchInstances::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DissociatePackage` operation.
+    /// Constructs a fluent builder for the [`DissociatePackage`](crate::client::fluent_builders::DissociatePackage) operation.
     ///
-    /// See [`DissociatePackage`](crate::client::fluent_builders::DissociatePackage) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DissociatePackageInput`](crate::input::DissociatePackageInput) with field(s):
+    ///   - [`package_id(Option<String>)`](crate::input::DissociatePackageInput::package_id): <p>Internal ID of the package that you want to associate with a domain. Use <code>DescribePackages</code> to find this value.</p>
+    ///   - [`domain_name(Option<String>)`](crate::input::DissociatePackageInput::domain_name): <p>Name of the domain that you want to associate the package with.</p>
+    /// - On success, responds with [`DissociatePackageOutput`](crate::output::DissociatePackageOutput) with field(s):
+    ///   - [`domain_package_details(Option<DomainPackageDetails>)`](crate::output::DissociatePackageOutput::domain_package_details): <p><code>DomainPackageDetails</code></p>
+    /// - On failure, responds with [`SdkError<DissociatePackageError>`](crate::error::DissociatePackageError)
     pub fn dissociate_package(&self) -> fluent_builders::DissociatePackage<C, M, R> {
         fluent_builders::DissociatePackage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCompatibleElasticsearchVersions` operation.
+    /// Constructs a fluent builder for the [`GetCompatibleElasticsearchVersions`](crate::client::fluent_builders::GetCompatibleElasticsearchVersions) operation.
     ///
-    /// See [`GetCompatibleElasticsearchVersions`](crate::client::fluent_builders::GetCompatibleElasticsearchVersions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetCompatibleElasticsearchVersionsInput`](crate::input::GetCompatibleElasticsearchVersionsInput) with field(s):
+    ///   - [`domain_name(Option<String>)`](crate::input::GetCompatibleElasticsearchVersionsInput::domain_name): <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    /// - On success, responds with [`GetCompatibleElasticsearchVersionsOutput`](crate::output::GetCompatibleElasticsearchVersionsOutput) with field(s):
+    ///   - [`compatible_elasticsearch_versions(Option<Vec<CompatibleVersionsMap>>)`](crate::output::GetCompatibleElasticsearchVersionsOutput::compatible_elasticsearch_versions): <p> A map of compatible Elasticsearch versions returned as part of the <code> <code>GetCompatibleElasticsearchVersions</code> </code> operation. </p>
+    /// - On failure, responds with [`SdkError<GetCompatibleElasticsearchVersionsError>`](crate::error::GetCompatibleElasticsearchVersionsError)
     pub fn get_compatible_elasticsearch_versions(
         &self,
     ) -> fluent_builders::GetCompatibleElasticsearchVersions<C, M, R> {
         fluent_builders::GetCompatibleElasticsearchVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetPackageVersionHistory` operation.
-    ///
-    /// See [`GetPackageVersionHistory`](crate::client::fluent_builders::GetPackageVersionHistory) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetPackageVersionHistory`](crate::client::fluent_builders::GetPackageVersionHistory) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetPackageVersionHistory::into_paginator).
+    ///
+    /// - Takes [`GetPackageVersionHistoryInput`](crate::input::GetPackageVersionHistoryInput) with field(s):
+    ///   - [`package_id(Option<String>)`](crate::input::GetPackageVersionHistoryInput::package_id): <p>Returns an audit history of versions of the package.</p>
+    ///   - [`max_results(i32)`](crate::input::GetPackageVersionHistoryInput::max_results): <p>Limits results to a maximum number of versions.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetPackageVersionHistoryInput::next_token): <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</p>
+    /// - On success, responds with [`GetPackageVersionHistoryOutput`](crate::output::GetPackageVersionHistoryOutput) with field(s):
+    ///   - [`package_id(Option<String>)`](crate::output::GetPackageVersionHistoryOutput::package_id): (undocumented)
+    ///   - [`package_version_history_list(Option<Vec<PackageVersionHistory>>)`](crate::output::GetPackageVersionHistoryOutput::package_version_history_list): <p>List of <code>PackageVersionHistory</code> objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetPackageVersionHistoryOutput::next_token): (undocumented)
+    /// - On failure, responds with [`SdkError<GetPackageVersionHistoryError>`](crate::error::GetPackageVersionHistoryError)
     pub fn get_package_version_history(
         &self,
     ) -> fluent_builders::GetPackageVersionHistory<C, M, R> {
         fluent_builders::GetPackageVersionHistory::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetUpgradeHistory` operation.
-    ///
-    /// See [`GetUpgradeHistory`](crate::client::fluent_builders::GetUpgradeHistory) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetUpgradeHistory`](crate::client::fluent_builders::GetUpgradeHistory) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetUpgradeHistory::into_paginator).
+    ///
+    /// - Takes [`GetUpgradeHistoryInput`](crate::input::GetUpgradeHistoryInput) with field(s):
+    ///   - [`domain_name(Option<String>)`](crate::input::GetUpgradeHistoryInput::domain_name): <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    ///   - [`max_results(i32)`](crate::input::GetUpgradeHistoryInput::max_results): <p> Set this value to limit the number of results returned. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetUpgradeHistoryInput::next_token): <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
+    /// - On success, responds with [`GetUpgradeHistoryOutput`](crate::output::GetUpgradeHistoryOutput) with field(s):
+    ///   - [`upgrade_histories(Option<Vec<UpgradeHistory>>)`](crate::output::GetUpgradeHistoryOutput::upgrade_histories): <p> A list of <code> <code>UpgradeHistory</code> </code> objects corresponding to each Upgrade or Upgrade Eligibility Check performed on a domain returned as part of <code> <code>GetUpgradeHistoryResponse</code> </code> object. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetUpgradeHistoryOutput::next_token): <p>Pagination token that needs to be supplied to the next call to get the next page of results</p>
+    /// - On failure, responds with [`SdkError<GetUpgradeHistoryError>`](crate::error::GetUpgradeHistoryError)
     pub fn get_upgrade_history(&self) -> fluent_builders::GetUpgradeHistory<C, M, R> {
         fluent_builders::GetUpgradeHistory::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetUpgradeStatus` operation.
+    /// Constructs a fluent builder for the [`GetUpgradeStatus`](crate::client::fluent_builders::GetUpgradeStatus) operation.
     ///
-    /// See [`GetUpgradeStatus`](crate::client::fluent_builders::GetUpgradeStatus) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetUpgradeStatusInput`](crate::input::GetUpgradeStatusInput) with field(s):
+    ///   - [`domain_name(Option<String>)`](crate::input::GetUpgradeStatusInput::domain_name): <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    /// - On success, responds with [`GetUpgradeStatusOutput`](crate::output::GetUpgradeStatusOutput) with field(s):
+    ///   - [`upgrade_step(Option<UpgradeStep>)`](crate::output::GetUpgradeStatusOutput::upgrade_step): <p> Represents one of 3 steps that an Upgrade or Upgrade Eligibility Check does through: </p> <ul>   <li>PreUpgradeCheck</li>   <li>Snapshot</li>   <li>Upgrade</li>  </ul>  <p></p>
+    ///   - [`step_status(Option<UpgradeStatus>)`](crate::output::GetUpgradeStatusOutput::step_status): <p> One of 4 statuses that a step can go through returned as part of the <code> <code>GetUpgradeStatusResponse</code> </code> object. The status can take one of the following values: </p> <ul>   <li>In Progress</li>   <li>Succeeded</li>   <li>Succeeded with Issues</li>   <li>Failed</li>  </ul>  <p></p>
+    ///   - [`upgrade_name(Option<String>)`](crate::output::GetUpgradeStatusOutput::upgrade_name): <p>A string that describes the update briefly</p>
+    /// - On failure, responds with [`SdkError<GetUpgradeStatusError>`](crate::error::GetUpgradeStatusError)
     pub fn get_upgrade_status(&self) -> fluent_builders::GetUpgradeStatus<C, M, R> {
         fluent_builders::GetUpgradeStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDomainNames` operation.
+    /// Constructs a fluent builder for the [`ListDomainNames`](crate::client::fluent_builders::ListDomainNames) operation.
     ///
-    /// See [`ListDomainNames`](crate::client::fluent_builders::ListDomainNames) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListDomainNamesInput`](crate::input::ListDomainNamesInput) with field(s):
+    ///   - [`engine_type(Option<EngineType>)`](crate::input::ListDomainNamesInput::engine_type): <p> Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and 'OpenSearch'. </p>
+    /// - On success, responds with [`ListDomainNamesOutput`](crate::output::ListDomainNamesOutput) with field(s):
+    ///   - [`domain_names(Option<Vec<DomainInfo>>)`](crate::output::ListDomainNamesOutput::domain_names): <p>List of domain names and respective engine types.</p>
+    /// - On failure, responds with [`SdkError<ListDomainNamesError>`](crate::error::ListDomainNamesError)
     pub fn list_domain_names(&self) -> fluent_builders::ListDomainNames<C, M, R> {
         fluent_builders::ListDomainNames::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDomainsForPackage` operation.
-    ///
-    /// See [`ListDomainsForPackage`](crate::client::fluent_builders::ListDomainsForPackage) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListDomainsForPackage`](crate::client::fluent_builders::ListDomainsForPackage) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDomainsForPackage::into_paginator).
+    ///
+    /// - Takes [`ListDomainsForPackageInput`](crate::input::ListDomainsForPackageInput) with field(s):
+    ///   - [`package_id(Option<String>)`](crate::input::ListDomainsForPackageInput::package_id): <p>The package for which to list domains.</p>
+    ///   - [`max_results(i32)`](crate::input::ListDomainsForPackageInput::max_results): <p>Limits results to a maximum number of domains.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListDomainsForPackageInput::next_token): <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</p>
+    /// - On success, responds with [`ListDomainsForPackageOutput`](crate::output::ListDomainsForPackageOutput) with field(s):
+    ///   - [`domain_package_details_list(Option<Vec<DomainPackageDetails>>)`](crate::output::ListDomainsForPackageOutput::domain_package_details_list): <p>List of <code>DomainPackageDetails</code> objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDomainsForPackageOutput::next_token): (undocumented)
+    /// - On failure, responds with [`SdkError<ListDomainsForPackageError>`](crate::error::ListDomainsForPackageError)
     pub fn list_domains_for_package(&self) -> fluent_builders::ListDomainsForPackage<C, M, R> {
         fluent_builders::ListDomainsForPackage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListElasticsearchInstanceTypes` operation.
-    ///
-    /// See [`ListElasticsearchInstanceTypes`](crate::client::fluent_builders::ListElasticsearchInstanceTypes) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListElasticsearchInstanceTypes`](crate::client::fluent_builders::ListElasticsearchInstanceTypes) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListElasticsearchInstanceTypes::into_paginator).
+    ///
+    /// - Takes [`ListElasticsearchInstanceTypesInput`](crate::input::ListElasticsearchInstanceTypesInput) with field(s):
+    ///   - [`elasticsearch_version(Option<String>)`](crate::input::ListElasticsearchInstanceTypesInput::elasticsearch_version): <p>Version of Elasticsearch for which list of supported elasticsearch instance types are needed. </p>
+    ///   - [`domain_name(Option<String>)`](crate::input::ListElasticsearchInstanceTypesInput::domain_name): <p>DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for list of available Elasticsearch instance types when modifying existing domain. </p>
+    ///   - [`max_results(i32)`](crate::input::ListElasticsearchInstanceTypesInput::max_results): <p> Set this value to limit the number of results returned. Value provided must be greater than 30 else it wont be honored. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListElasticsearchInstanceTypesInput::next_token): <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination. </p>
+    /// - On success, responds with [`ListElasticsearchInstanceTypesOutput`](crate::output::ListElasticsearchInstanceTypesOutput) with field(s):
+    ///   - [`elasticsearch_instance_types(Option<Vec<EsPartitionInstanceType>>)`](crate::output::ListElasticsearchInstanceTypesOutput::elasticsearch_instance_types): <p> List of instance types supported by Amazon Elasticsearch service for given <code> <code>ElasticsearchVersion</code> </code> </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListElasticsearchInstanceTypesOutput::next_token): <p>In case if there are more results available NextToken would be present, make further request to the same API with received NextToken to paginate remaining results. </p>
+    /// - On failure, responds with [`SdkError<ListElasticsearchInstanceTypesError>`](crate::error::ListElasticsearchInstanceTypesError)
     pub fn list_elasticsearch_instance_types(
         &self,
     ) -> fluent_builders::ListElasticsearchInstanceTypes<C, M, R> {
         fluent_builders::ListElasticsearchInstanceTypes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListElasticsearchVersions` operation.
-    ///
-    /// See [`ListElasticsearchVersions`](crate::client::fluent_builders::ListElasticsearchVersions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListElasticsearchVersions`](crate::client::fluent_builders::ListElasticsearchVersions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListElasticsearchVersions::into_paginator).
+    ///
+    /// - Takes [`ListElasticsearchVersionsInput`](crate::input::ListElasticsearchVersionsInput) with field(s):
+    ///   - [`max_results(i32)`](crate::input::ListElasticsearchVersionsInput::max_results): <p> Set this value to limit the number of results returned. Value provided must be greater than 10 else it wont be honored. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListElasticsearchVersionsInput::next_token): <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
+    /// - On success, responds with [`ListElasticsearchVersionsOutput`](crate::output::ListElasticsearchVersionsOutput) with field(s):
+    ///   - [`elasticsearch_versions(Option<Vec<String>>)`](crate::output::ListElasticsearchVersionsOutput::elasticsearch_versions): <p>List of supported elastic search versions. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListElasticsearchVersionsOutput::next_token): <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
+    /// - On failure, responds with [`SdkError<ListElasticsearchVersionsError>`](crate::error::ListElasticsearchVersionsError)
     pub fn list_elasticsearch_versions(
         &self,
     ) -> fluent_builders::ListElasticsearchVersions<C, M, R> {
         fluent_builders::ListElasticsearchVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPackagesForDomain` operation.
-    ///
-    /// See [`ListPackagesForDomain`](crate::client::fluent_builders::ListPackagesForDomain) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListPackagesForDomain`](crate::client::fluent_builders::ListPackagesForDomain) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPackagesForDomain::into_paginator).
+    ///
+    /// - Takes [`ListPackagesForDomainInput`](crate::input::ListPackagesForDomainInput) with field(s):
+    ///   - [`domain_name(Option<String>)`](crate::input::ListPackagesForDomainInput::domain_name): <p>The name of the domain for which you want to list associated packages.</p>
+    ///   - [`max_results(i32)`](crate::input::ListPackagesForDomainInput::max_results): <p>Limits results to a maximum number of packages.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListPackagesForDomainInput::next_token): <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</p>
+    /// - On success, responds with [`ListPackagesForDomainOutput`](crate::output::ListPackagesForDomainOutput) with field(s):
+    ///   - [`domain_package_details_list(Option<Vec<DomainPackageDetails>>)`](crate::output::ListPackagesForDomainOutput::domain_package_details_list): <p>List of <code>DomainPackageDetails</code> objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPackagesForDomainOutput::next_token): <p>Pagination token that needs to be supplied to the next call to get the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ListPackagesForDomainError>`](crate::error::ListPackagesForDomainError)
     pub fn list_packages_for_domain(&self) -> fluent_builders::ListPackagesForDomain<C, M, R> {
         fluent_builders::ListPackagesForDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTags` operation.
+    /// Constructs a fluent builder for the [`ListTags`](crate::client::fluent_builders::ListTags) operation.
     ///
-    /// See [`ListTags`](crate::client::fluent_builders::ListTags) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsInput`](crate::input::ListTagsInput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::input::ListTagsInput::arn): <p> Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view.</p>
+    /// - On success, responds with [`ListTagsOutput`](crate::output::ListTagsOutput) with field(s):
+    ///   - [`tag_list(Option<Vec<Tag>>)`](crate::output::ListTagsOutput::tag_list): <p> List of <code>Tag</code> for the requested Elasticsearch domain.</p>
+    /// - On failure, responds with [`SdkError<ListTagsError>`](crate::error::ListTagsError)
     pub fn list_tags(&self) -> fluent_builders::ListTags<C, M, R> {
         fluent_builders::ListTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PurchaseReservedElasticsearchInstanceOffering` operation.
+    /// Constructs a fluent builder for the [`PurchaseReservedElasticsearchInstanceOffering`](crate::client::fluent_builders::PurchaseReservedElasticsearchInstanceOffering) operation.
     ///
-    /// See [`PurchaseReservedElasticsearchInstanceOffering`](crate::client::fluent_builders::PurchaseReservedElasticsearchInstanceOffering) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PurchaseReservedElasticsearchInstanceOfferingInput`](crate::input::PurchaseReservedElasticsearchInstanceOfferingInput) with field(s):
+    ///   - [`reserved_elasticsearch_instance_offering_id(Option<String>)`](crate::input::PurchaseReservedElasticsearchInstanceOfferingInput::reserved_elasticsearch_instance_offering_id): <p>The ID of the reserved Elasticsearch instance offering to purchase.</p>
+    ///   - [`reservation_name(Option<String>)`](crate::input::PurchaseReservedElasticsearchInstanceOfferingInput::reservation_name): <p>A customer-specified identifier to track this reservation.</p>
+    ///   - [`instance_count(i32)`](crate::input::PurchaseReservedElasticsearchInstanceOfferingInput::instance_count): <p>The number of Elasticsearch instances to reserve.</p>
+    /// - On success, responds with [`PurchaseReservedElasticsearchInstanceOfferingOutput`](crate::output::PurchaseReservedElasticsearchInstanceOfferingOutput) with field(s):
+    ///   - [`reserved_elasticsearch_instance_id(Option<String>)`](crate::output::PurchaseReservedElasticsearchInstanceOfferingOutput::reserved_elasticsearch_instance_id): <p>Details of the reserved Elasticsearch instance which was purchased.</p>
+    ///   - [`reservation_name(Option<String>)`](crate::output::PurchaseReservedElasticsearchInstanceOfferingOutput::reservation_name): <p>The customer-specified identifier used to track this reservation.</p>
+    /// - On failure, responds with [`SdkError<PurchaseReservedElasticsearchInstanceOfferingError>`](crate::error::PurchaseReservedElasticsearchInstanceOfferingError)
     pub fn purchase_reserved_elasticsearch_instance_offering(
         &self,
     ) -> fluent_builders::PurchaseReservedElasticsearchInstanceOffering<C, M, R> {
         fluent_builders::PurchaseReservedElasticsearchInstanceOffering::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RejectInboundCrossClusterSearchConnection` operation.
+    /// Constructs a fluent builder for the [`RejectInboundCrossClusterSearchConnection`](crate::client::fluent_builders::RejectInboundCrossClusterSearchConnection) operation.
     ///
-    /// See [`RejectInboundCrossClusterSearchConnection`](crate::client::fluent_builders::RejectInboundCrossClusterSearchConnection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RejectInboundCrossClusterSearchConnectionInput`](crate::input::RejectInboundCrossClusterSearchConnectionInput) with field(s):
+    ///   - [`cross_cluster_search_connection_id(Option<String>)`](crate::input::RejectInboundCrossClusterSearchConnectionInput::cross_cluster_search_connection_id): <p>The id of the inbound connection that you want to reject.</p>
+    /// - On success, responds with [`RejectInboundCrossClusterSearchConnectionOutput`](crate::output::RejectInboundCrossClusterSearchConnectionOutput) with field(s):
+    ///   - [`cross_cluster_search_connection(Option<InboundCrossClusterSearchConnection>)`](crate::output::RejectInboundCrossClusterSearchConnectionOutput::cross_cluster_search_connection): <p>Specifies the <code><code>InboundCrossClusterSearchConnection</code></code> of rejected inbound connection. </p>
+    /// - On failure, responds with [`SdkError<RejectInboundCrossClusterSearchConnectionError>`](crate::error::RejectInboundCrossClusterSearchConnectionError)
     pub fn reject_inbound_cross_cluster_search_connection(
         &self,
     ) -> fluent_builders::RejectInboundCrossClusterSearchConnection<C, M, R> {
         fluent_builders::RejectInboundCrossClusterSearchConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RemoveTags` operation.
+    /// Constructs a fluent builder for the [`RemoveTags`](crate::client::fluent_builders::RemoveTags) operation.
     ///
-    /// See [`RemoveTags`](crate::client::fluent_builders::RemoveTags) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RemoveTagsInput`](crate::input::RemoveTagsInput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::input::RemoveTagsInput::arn): <p>Specifies the <code>ARN</code> for the Elasticsearch domain from which you want to delete the specified tags.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::RemoveTagsInput::tag_keys): <p>Specifies the <code>TagKey</code> list which you want to remove from the Elasticsearch domain.</p>
+    /// - On success, responds with [`RemoveTagsOutput`](crate::output::RemoveTagsOutput)
+
+    /// - On failure, responds with [`SdkError<RemoveTagsError>`](crate::error::RemoveTagsError)
     pub fn remove_tags(&self) -> fluent_builders::RemoveTags<C, M, R> {
         fluent_builders::RemoveTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartElasticsearchServiceSoftwareUpdate` operation.
+    /// Constructs a fluent builder for the [`StartElasticsearchServiceSoftwareUpdate`](crate::client::fluent_builders::StartElasticsearchServiceSoftwareUpdate) operation.
     ///
-    /// See [`StartElasticsearchServiceSoftwareUpdate`](crate::client::fluent_builders::StartElasticsearchServiceSoftwareUpdate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartElasticsearchServiceSoftwareUpdateInput`](crate::input::StartElasticsearchServiceSoftwareUpdateInput) with field(s):
+    ///   - [`domain_name(Option<String>)`](crate::input::StartElasticsearchServiceSoftwareUpdateInput::domain_name): <p>The name of the domain that you want to update to the latest service software.</p>
+    /// - On success, responds with [`StartElasticsearchServiceSoftwareUpdateOutput`](crate::output::StartElasticsearchServiceSoftwareUpdateOutput) with field(s):
+    ///   - [`service_software_options(Option<ServiceSoftwareOptions>)`](crate::output::StartElasticsearchServiceSoftwareUpdateOutput::service_software_options): <p>The current status of the Elasticsearch service software update.</p>
+    /// - On failure, responds with [`SdkError<StartElasticsearchServiceSoftwareUpdateError>`](crate::error::StartElasticsearchServiceSoftwareUpdateError)
     pub fn start_elasticsearch_service_software_update(
         &self,
     ) -> fluent_builders::StartElasticsearchServiceSoftwareUpdate<C, M, R> {
         fluent_builders::StartElasticsearchServiceSoftwareUpdate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateElasticsearchDomainConfig` operation.
+    /// Constructs a fluent builder for the [`UpdateElasticsearchDomainConfig`](crate::client::fluent_builders::UpdateElasticsearchDomainConfig) operation.
     ///
-    /// See [`UpdateElasticsearchDomainConfig`](crate::client::fluent_builders::UpdateElasticsearchDomainConfig) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateElasticsearchDomainConfigInput`](crate::input::UpdateElasticsearchDomainConfigInput) with field(s):
+    ///   - [`domain_name(Option<String>)`](crate::input::UpdateElasticsearchDomainConfigInput::domain_name): <p>The name of the Elasticsearch domain that you are updating. </p>
+    ///   - [`elasticsearch_cluster_config(Option<ElasticsearchClusterConfig>)`](crate::input::UpdateElasticsearchDomainConfigInput::elasticsearch_cluster_config): <p>The type and number of instances to instantiate for the domain cluster.</p>
+    ///   - [`ebs_options(Option<EbsOptions>)`](crate::input::UpdateElasticsearchDomainConfigInput::ebs_options): <p>Specify the type and size of the EBS volume that you want to use. </p>
+    ///   - [`snapshot_options(Option<SnapshotOptions>)`](crate::input::UpdateElasticsearchDomainConfigInput::snapshot_options): <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours. </p>
+    ///   - [`vpc_options(Option<VpcOptions>)`](crate::input::UpdateElasticsearchDomainConfigInput::vpc_options): <p>Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-creating-vpc" target="_blank">Creating a VPC</a> in <i>VPC Endpoints for Amazon Elasticsearch Service Domains</i></p>
+    ///   - [`cognito_options(Option<CognitoOptions>)`](crate::input::UpdateElasticsearchDomainConfigInput::cognito_options): <p>Options to specify the Cognito user and identity pools for Kibana authentication. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html" target="_blank">Amazon Cognito Authentication for Kibana</a>.</p>
+    ///   - [`advanced_options(Option<HashMap<String, String>>)`](crate::input::UpdateElasticsearchDomainConfigInput::advanced_options): <p>Modifies the advanced option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
+    ///   - [`access_policies(Option<String>)`](crate::input::UpdateElasticsearchDomainConfigInput::access_policies): <p>IAM access policy as a JSON-formatted string.</p>
+    ///   - [`log_publishing_options(Option<HashMap<LogType, LogPublishingOption>>)`](crate::input::UpdateElasticsearchDomainConfigInput::log_publishing_options): <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type of Elasticsearch log.</p>
+    ///   - [`domain_endpoint_options(Option<DomainEndpointOptions>)`](crate::input::UpdateElasticsearchDomainConfigInput::domain_endpoint_options): <p>Options to specify configuration that will be applied to the domain endpoint.</p>
+    ///   - [`advanced_security_options(Option<AdvancedSecurityOptionsInput>)`](crate::input::UpdateElasticsearchDomainConfigInput::advanced_security_options): <p>Specifies advanced security options.</p>
+    ///   - [`node_to_node_encryption_options(Option<NodeToNodeEncryptionOptions>)`](crate::input::UpdateElasticsearchDomainConfigInput::node_to_node_encryption_options): <p>Specifies the NodeToNodeEncryptionOptions.</p>
+    ///   - [`encryption_at_rest_options(Option<EncryptionAtRestOptions>)`](crate::input::UpdateElasticsearchDomainConfigInput::encryption_at_rest_options): <p>Specifies the Encryption At Rest Options.</p>
+    ///   - [`auto_tune_options(Option<AutoTuneOptions>)`](crate::input::UpdateElasticsearchDomainConfigInput::auto_tune_options): <p>Specifies Auto-Tune options.</p>
+    ///   - [`dry_run(Option<bool>)`](crate::input::UpdateElasticsearchDomainConfigInput::dry_run): <p> This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code> request should return the results of validation checks without actually applying the change. This flag, when set to True, specifies the deployment mechanism through which the update shall be applied on the domain. This will not actually perform the Update. </p>
+    /// - On success, responds with [`UpdateElasticsearchDomainConfigOutput`](crate::output::UpdateElasticsearchDomainConfigOutput) with field(s):
+    ///   - [`domain_config(Option<ElasticsearchDomainConfig>)`](crate::output::UpdateElasticsearchDomainConfigOutput::domain_config): <p>The status of the updated Elasticsearch domain. </p>
+    ///   - [`dry_run_results(Option<DryRunResults>)`](crate::output::UpdateElasticsearchDomainConfigOutput::dry_run_results): <p>Contains result of DryRun. </p>
+    /// - On failure, responds with [`SdkError<UpdateElasticsearchDomainConfigError>`](crate::error::UpdateElasticsearchDomainConfigError)
     pub fn update_elasticsearch_domain_config(
         &self,
     ) -> fluent_builders::UpdateElasticsearchDomainConfig<C, M, R> {
         fluent_builders::UpdateElasticsearchDomainConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdatePackage` operation.
+    /// Constructs a fluent builder for the [`UpdatePackage`](crate::client::fluent_builders::UpdatePackage) operation.
     ///
-    /// See [`UpdatePackage`](crate::client::fluent_builders::UpdatePackage) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdatePackageInput`](crate::input::UpdatePackageInput) with field(s):
+    ///   - [`package_id(Option<String>)`](crate::input::UpdatePackageInput::package_id): <p>Unique identifier for the package.</p>
+    ///   - [`package_source(Option<PackageSource>)`](crate::input::UpdatePackageInput::package_source): <p>The S3 location for importing the package specified as <code>S3BucketName</code> and <code>S3Key</code></p>
+    ///   - [`package_description(Option<String>)`](crate::input::UpdatePackageInput::package_description): <p>New description of the package.</p>
+    ///   - [`commit_message(Option<String>)`](crate::input::UpdatePackageInput::commit_message): <p>An info message for the new version which will be shown as part of <code>GetPackageVersionHistoryResponse</code>.</p>
+    /// - On success, responds with [`UpdatePackageOutput`](crate::output::UpdatePackageOutput) with field(s):
+    ///   - [`package_details(Option<PackageDetails>)`](crate::output::UpdatePackageOutput::package_details): <p>Information about the package <code>PackageDetails</code>.</p>
+    /// - On failure, responds with [`SdkError<UpdatePackageError>`](crate::error::UpdatePackageError)
     pub fn update_package(&self) -> fluent_builders::UpdatePackage<C, M, R> {
         fluent_builders::UpdatePackage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpgradeElasticsearchDomain` operation.
+    /// Constructs a fluent builder for the [`UpgradeElasticsearchDomain`](crate::client::fluent_builders::UpgradeElasticsearchDomain) operation.
     ///
-    /// See [`UpgradeElasticsearchDomain`](crate::client::fluent_builders::UpgradeElasticsearchDomain) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpgradeElasticsearchDomainInput`](crate::input::UpgradeElasticsearchDomainInput) with field(s):
+    ///   - [`domain_name(Option<String>)`](crate::input::UpgradeElasticsearchDomainInput::domain_name): <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    ///   - [`target_version(Option<String>)`](crate::input::UpgradeElasticsearchDomainInput::target_version): <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
+    ///   - [`perform_check_only(Option<bool>)`](crate::input::UpgradeElasticsearchDomainInput::perform_check_only): <p> This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade. </p>
+    /// - On success, responds with [`UpgradeElasticsearchDomainOutput`](crate::output::UpgradeElasticsearchDomainOutput) with field(s):
+    ///   - [`domain_name(Option<String>)`](crate::output::UpgradeElasticsearchDomainOutput::domain_name): <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
+    ///   - [`target_version(Option<String>)`](crate::output::UpgradeElasticsearchDomainOutput::target_version): <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
+    ///   - [`perform_check_only(Option<bool>)`](crate::output::UpgradeElasticsearchDomainOutput::perform_check_only): <p> This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade. </p>
+    /// - On failure, responds with [`SdkError<UpgradeElasticsearchDomainError>`](crate::error::UpgradeElasticsearchDomainError)
     pub fn upgrade_elasticsearch_domain(
         &self,
     ) -> fluent_builders::UpgradeElasticsearchDomain<C, M, R> {

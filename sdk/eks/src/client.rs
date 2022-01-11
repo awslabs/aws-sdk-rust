@@ -83,258 +83,467 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AssociateEncryptionConfig` operation.
+    /// Constructs a fluent builder for the [`AssociateEncryptionConfig`](crate::client::fluent_builders::AssociateEncryptionConfig) operation.
     ///
-    /// See [`AssociateEncryptionConfig`](crate::client::fluent_builders::AssociateEncryptionConfig) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateEncryptionConfigInput`](crate::input::AssociateEncryptionConfigInput) with field(s):
+    ///   - [`cluster_name(Option<String>)`](crate::input::AssociateEncryptionConfigInput::cluster_name): <p>The name of the cluster that you are associating with encryption configuration.</p>
+    ///   - [`encryption_config(Option<Vec<EncryptionConfig>>)`](crate::input::AssociateEncryptionConfigInput::encryption_config): <p>The configuration you are using for encryption.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::AssociateEncryptionConfigInput::client_request_token): <p>The client request token you are using with the encryption configuration.</p>
+    /// - On success, responds with [`AssociateEncryptionConfigOutput`](crate::output::AssociateEncryptionConfigOutput) with field(s):
+    ///   - [`update(Option<Update>)`](crate::output::AssociateEncryptionConfigOutput::update): <p>An object representing an asynchronous update.</p>
+    /// - On failure, responds with [`SdkError<AssociateEncryptionConfigError>`](crate::error::AssociateEncryptionConfigError)
     pub fn associate_encryption_config(
         &self,
     ) -> fluent_builders::AssociateEncryptionConfig<C, M, R> {
         fluent_builders::AssociateEncryptionConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateIdentityProviderConfig` operation.
+    /// Constructs a fluent builder for the [`AssociateIdentityProviderConfig`](crate::client::fluent_builders::AssociateIdentityProviderConfig) operation.
     ///
-    /// See [`AssociateIdentityProviderConfig`](crate::client::fluent_builders::AssociateIdentityProviderConfig) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateIdentityProviderConfigInput`](crate::input::AssociateIdentityProviderConfigInput) with field(s):
+    ///   - [`cluster_name(Option<String>)`](crate::input::AssociateIdentityProviderConfigInput::cluster_name): <p>The name of the cluster to associate the configuration to.</p>
+    ///   - [`oidc(Option<OidcIdentityProviderConfigRequest>)`](crate::input::AssociateIdentityProviderConfigInput::oidc): <p>An object that represents an OpenID Connect (OIDC) identity provider configuration.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::AssociateIdentityProviderConfigInput::tags): <p>The metadata to apply to the configuration to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::AssociateIdentityProviderConfigInput::client_request_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// - On success, responds with [`AssociateIdentityProviderConfigOutput`](crate::output::AssociateIdentityProviderConfigOutput) with field(s):
+    ///   - [`update(Option<Update>)`](crate::output::AssociateIdentityProviderConfigOutput::update): <p>An object representing an asynchronous update.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::AssociateIdentityProviderConfigOutput::tags): <p>The tags for the resource.</p>
+    /// - On failure, responds with [`SdkError<AssociateIdentityProviderConfigError>`](crate::error::AssociateIdentityProviderConfigError)
     pub fn associate_identity_provider_config(
         &self,
     ) -> fluent_builders::AssociateIdentityProviderConfig<C, M, R> {
         fluent_builders::AssociateIdentityProviderConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateAddon` operation.
+    /// Constructs a fluent builder for the [`CreateAddon`](crate::client::fluent_builders::CreateAddon) operation.
     ///
-    /// See [`CreateAddon`](crate::client::fluent_builders::CreateAddon) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateAddonInput`](crate::input::CreateAddonInput) with field(s):
+    ///   - [`cluster_name(Option<String>)`](crate::input::CreateAddonInput::cluster_name): <p>The name of the cluster to create the add-on for.</p>
+    ///   - [`addon_name(Option<String>)`](crate::input::CreateAddonInput::addon_name): <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
+    ///   - [`addon_version(Option<String>)`](crate::input::CreateAddonInput::addon_version): <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
+    ///   - [`service_account_role_arn(Option<String>)`](crate::input::CreateAddonInput::service_account_role_arn): <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p> <note>   <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling IAM roles for service accounts on your cluster</a> in the <i>Amazon EKS User Guide</i>.</p>  </note>
+    ///   - [`resolve_conflicts(Option<ResolveConflicts>)`](crate::input::CreateAddonInput::resolve_conflicts): <p>How to resolve parameter value conflicts when migrating an existing add-on to an Amazon EKS add-on.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::CreateAddonInput::client_request_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateAddonInput::tags): <p>The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
+    /// - On success, responds with [`CreateAddonOutput`](crate::output::CreateAddonOutput) with field(s):
+    ///   - [`addon(Option<Addon>)`](crate::output::CreateAddonOutput::addon): <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// - On failure, responds with [`SdkError<CreateAddonError>`](crate::error::CreateAddonError)
     pub fn create_addon(&self) -> fluent_builders::CreateAddon<C, M, R> {
         fluent_builders::CreateAddon::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateCluster` operation.
+    /// Constructs a fluent builder for the [`CreateCluster`](crate::client::fluent_builders::CreateCluster) operation.
     ///
-    /// See [`CreateCluster`](crate::client::fluent_builders::CreateCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateClusterInput`](crate::input::CreateClusterInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateClusterInput::name): <p>The unique name to give to your cluster.</p>
+    ///   - [`version(Option<String>)`](crate::input::CreateClusterInput::version): <p>The desired Kubernetes version for your cluster. If you don't specify a value here, the latest version available in Amazon EKS is used.</p>
+    ///   - [`role_arn(Option<String>)`](crate::input::CreateClusterInput::role_arn): <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to Amazon Web Services API operations on your behalf. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
+    ///   - [`resources_vpc_config(Option<VpcConfigRequest>)`](crate::input::CreateClusterInput::resources_vpc_config): <p>The VPC configuration that's used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You can specify up to five security groups. However, we recommend that you use a dedicated security group for your cluster control plane.</p>
+    ///   - [`kubernetes_network_config(Option<KubernetesNetworkConfigRequest>)`](crate::input::CreateClusterInput::kubernetes_network_config): <p>The Kubernetes network configuration for the cluster.</p>
+    ///   - [`logging(Option<Logging>)`](crate::input::CreateClusterInput::logging): <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster control plane logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p> <note>   <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>  </note>
+    ///   - [`client_request_token(Option<String>)`](crate::input::CreateClusterInput::client_request_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateClusterInput::tags): <p>The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
+    ///   - [`encryption_config(Option<Vec<EncryptionConfig>>)`](crate::input::CreateClusterInput::encryption_config): <p>The encryption configuration for the cluster.</p>
+    /// - On success, responds with [`CreateClusterOutput`](crate::output::CreateClusterOutput) with field(s):
+    ///   - [`cluster(Option<Cluster>)`](crate::output::CreateClusterOutput::cluster): <p>The full description of your new cluster.</p>
+    /// - On failure, responds with [`SdkError<CreateClusterError>`](crate::error::CreateClusterError)
     pub fn create_cluster(&self) -> fluent_builders::CreateCluster<C, M, R> {
         fluent_builders::CreateCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateFargateProfile` operation.
+    /// Constructs a fluent builder for the [`CreateFargateProfile`](crate::client::fluent_builders::CreateFargateProfile) operation.
     ///
-    /// See [`CreateFargateProfile`](crate::client::fluent_builders::CreateFargateProfile) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateFargateProfileInput`](crate::input::CreateFargateProfileInput) with field(s):
+    ///   - [`fargate_profile_name(Option<String>)`](crate::input::CreateFargateProfileInput::fargate_profile_name): <p>The name of the Fargate profile.</p>
+    ///   - [`cluster_name(Option<String>)`](crate::input::CreateFargateProfileInput::cluster_name): <p>The name of the Amazon EKS cluster to apply the Fargate profile to.</p>
+    ///   - [`pod_execution_role_arn(Option<String>)`](crate::input::CreateFargateProfileInput::pod_execution_role_arn): <p>The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in the Fargate profile. The pod execution role allows Fargate infrastructure to register with your cluster as a node, and it provides read access to Amazon ECR image repositories. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the <i>Amazon EKS User Guide</i>.</p>
+    ///   - [`subnets(Option<Vec<String>>)`](crate::input::CreateFargateProfileInput::subnets): <p>The IDs of subnets to launch your pods into. At this time, pods running on Fargate are not assigned public IP addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted for this parameter.</p>
+    ///   - [`selectors(Option<Vec<FargateProfileSelector>>)`](crate::input::CreateFargateProfileInput::selectors): <p>The selectors to match for pods to use this Fargate profile. Each selector must have an associated namespace. Optionally, you can also specify labels for a namespace. You may specify up to five selectors in a Fargate profile.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::CreateFargateProfileInput::client_request_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateFargateProfileInput::tags): <p>The metadata to apply to the Fargate profile to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Fargate profile tags do not propagate to any other resources associated with the Fargate profile, such as the pods that are scheduled with it.</p>
+    /// - On success, responds with [`CreateFargateProfileOutput`](crate::output::CreateFargateProfileOutput) with field(s):
+    ///   - [`fargate_profile(Option<FargateProfile>)`](crate::output::CreateFargateProfileOutput::fargate_profile): <p>The full description of your new Fargate profile.</p>
+    /// - On failure, responds with [`SdkError<CreateFargateProfileError>`](crate::error::CreateFargateProfileError)
     pub fn create_fargate_profile(&self) -> fluent_builders::CreateFargateProfile<C, M, R> {
         fluent_builders::CreateFargateProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateNodegroup` operation.
+    /// Constructs a fluent builder for the [`CreateNodegroup`](crate::client::fluent_builders::CreateNodegroup) operation.
     ///
-    /// See [`CreateNodegroup`](crate::client::fluent_builders::CreateNodegroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateNodegroupInput`](crate::input::CreateNodegroupInput) with field(s):
+    ///   - [`cluster_name(Option<String>)`](crate::input::CreateNodegroupInput::cluster_name): <p>The name of the cluster to create the node group in.</p>
+    ///   - [`nodegroup_name(Option<String>)`](crate::input::CreateNodegroupInput::nodegroup_name): <p>The unique name to give your node group.</p>
+    ///   - [`scaling_config(Option<NodegroupScalingConfig>)`](crate::input::CreateNodegroupInput::scaling_config): <p>The scaling configuration details for the Auto Scaling group that is created for your node group.</p>
+    ///   - [`disk_size(Option<i32>)`](crate::input::CreateNodegroupInput::disk_size): <p>The root device disk size (in GiB) for your node group instances. The default disk size is 20 GiB. If you specify <code>launchTemplate</code>, then don't specify <code>diskSize</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+    ///   - [`subnets(Option<Vec<String>>)`](crate::input::CreateNodegroupInput::subnets): <p>The subnets to use for the Auto Scaling group that is created for your node group. If you specify <code>launchTemplate</code>, then don't specify <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html"> <code>SubnetId</code> </a> in your launch template, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+    ///   - [`instance_types(Option<Vec<String>>)`](crate::input::CreateNodegroupInput::instance_types): <p>Specify the instance types for a node group. If you specify a GPU instance type, be sure to specify <code>AL2_x86_64_GPU</code> with the <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then you can specify zero or one instance type in your launch template <i>or</i> you can specify 0-20 instance types for <code>instanceTypes</code>. If however, you specify an instance type in your launch template <i>and</i> specify any <code>instanceTypes</code>, the node group deployment will fail. If you don't specify an instance type in a launch template or for <code>instanceTypes</code>, then <code>t3.medium</code> is used, by default. If you specify <code>Spot</code> for <code>capacityType</code>, then we recommend specifying multiple values for <code>instanceTypes</code>. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html#managed-node-group-capacity-types">Managed node group capacity types</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
+    ///   - [`ami_type(Option<AmiTypes>)`](crate::input::CreateNodegroupInput::ami_type): <p>The AMI type for your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code> AMI type. Non-GPU instances should use the <code>AL2_x86_64</code> AMI type. Arm instances should use the <code>AL2_ARM_64</code> AMI type. All types use the Amazon EKS optimized Amazon Linux 2 AMI. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>amiType</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+    ///   - [`remote_access(Option<RemoteAccessConfig>)`](crate::input::CreateNodegroupInput::remote_access): <p>The remote access (SSH) configuration to use with your node group. If you specify <code>launchTemplate</code>, then don't specify <code>remoteAccess</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+    ///   - [`node_role(Option<String>)`](crate::input::CreateNodegroupInput::node_role): <p>The Amazon Resource Name (ARN) of the IAM role to associate with your node group. The Amazon EKS worker node <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile and associated policies. Before you can launch nodes and register them into a cluster, you must create an IAM role for those nodes to use when they are launched. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS node IAM role</a> in the <i> <i>Amazon EKS User Guide</i> </i>. If you specify <code>launchTemplate</code>, then don't specify <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html"> <code>IamInstanceProfile</code> </a> in your launch template, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+    ///   - [`labels(Option<HashMap<String, String>>)`](crate::input::CreateNodegroupInput::labels): <p>The Kubernetes labels to be applied to the nodes in the node group when they are created.</p>
+    ///   - [`taints(Option<Vec<Taint>>)`](crate::input::CreateNodegroupInput::taints): <p>The Kubernetes taints to be applied to the nodes in the node group.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateNodegroupInput::tags): <p>The metadata to apply to the node group to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Node group tags do not propagate to any other resources associated with the node group, such as the Amazon EC2 instances or subnets.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::CreateNodegroupInput::client_request_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`launch_template(Option<LaunchTemplateSpecification>)`](crate::input::CreateNodegroupInput::launch_template): <p>An object representing a node group's launch template specification. If specified, then do not specify <code>instanceTypes</code>, <code>diskSize</code>, or <code>remoteAccess</code> and make sure that the launch template meets the requirements in <code>launchTemplateSpecification</code>.</p>
+    ///   - [`update_config(Option<NodegroupUpdateConfig>)`](crate::input::CreateNodegroupInput::update_config): <p>The node group update configuration.</p>
+    ///   - [`capacity_type(Option<CapacityTypes>)`](crate::input::CreateNodegroupInput::capacity_type): <p>The capacity type for your node group.</p>
+    ///   - [`version(Option<String>)`](crate::input::CreateNodegroupInput::version): <p>The Kubernetes version to use for your managed nodes. By default, the Kubernetes version of the cluster is used, and this is the only accepted specified value. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>version</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+    ///   - [`release_version(Option<String>)`](crate::input::CreateNodegroupInput::release_version): <p>The AMI version of the Amazon EKS optimized AMI to use with your node group. By default, the latest available AMI version for the node group's current Kubernetes version is used. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+    /// - On success, responds with [`CreateNodegroupOutput`](crate::output::CreateNodegroupOutput) with field(s):
+    ///   - [`nodegroup(Option<Nodegroup>)`](crate::output::CreateNodegroupOutput::nodegroup): <p>The full description of your new node group.</p>
+    /// - On failure, responds with [`SdkError<CreateNodegroupError>`](crate::error::CreateNodegroupError)
     pub fn create_nodegroup(&self) -> fluent_builders::CreateNodegroup<C, M, R> {
         fluent_builders::CreateNodegroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAddon` operation.
+    /// Constructs a fluent builder for the [`DeleteAddon`](crate::client::fluent_builders::DeleteAddon) operation.
     ///
-    /// See [`DeleteAddon`](crate::client::fluent_builders::DeleteAddon) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteAddonInput`](crate::input::DeleteAddonInput) with field(s):
+    ///   - [`cluster_name(Option<String>)`](crate::input::DeleteAddonInput::cluster_name): <p>The name of the cluster to delete the add-on from.</p>
+    ///   - [`addon_name(Option<String>)`](crate::input::DeleteAddonInput::addon_name): <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
+    ///   - [`preserve(bool)`](crate::input::DeleteAddonInput::preserve): <p>Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any settings for the add-on. If an IAM account is associated with the add-on, it is not removed.</p>
+    /// - On success, responds with [`DeleteAddonOutput`](crate::output::DeleteAddonOutput) with field(s):
+    ///   - [`addon(Option<Addon>)`](crate::output::DeleteAddonOutput::addon): <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// - On failure, responds with [`SdkError<DeleteAddonError>`](crate::error::DeleteAddonError)
     pub fn delete_addon(&self) -> fluent_builders::DeleteAddon<C, M, R> {
         fluent_builders::DeleteAddon::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteCluster` operation.
+    /// Constructs a fluent builder for the [`DeleteCluster`](crate::client::fluent_builders::DeleteCluster) operation.
     ///
-    /// See [`DeleteCluster`](crate::client::fluent_builders::DeleteCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteClusterInput`](crate::input::DeleteClusterInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteClusterInput::name): <p>The name of the cluster to delete.</p>
+    /// - On success, responds with [`DeleteClusterOutput`](crate::output::DeleteClusterOutput) with field(s):
+    ///   - [`cluster(Option<Cluster>)`](crate::output::DeleteClusterOutput::cluster): <p>The full description of the cluster to delete.</p>
+    /// - On failure, responds with [`SdkError<DeleteClusterError>`](crate::error::DeleteClusterError)
     pub fn delete_cluster(&self) -> fluent_builders::DeleteCluster<C, M, R> {
         fluent_builders::DeleteCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteFargateProfile` operation.
+    /// Constructs a fluent builder for the [`DeleteFargateProfile`](crate::client::fluent_builders::DeleteFargateProfile) operation.
     ///
-    /// See [`DeleteFargateProfile`](crate::client::fluent_builders::DeleteFargateProfile) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteFargateProfileInput`](crate::input::DeleteFargateProfileInput) with field(s):
+    ///   - [`cluster_name(Option<String>)`](crate::input::DeleteFargateProfileInput::cluster_name): <p>The name of the Amazon EKS cluster associated with the Fargate profile to delete.</p>
+    ///   - [`fargate_profile_name(Option<String>)`](crate::input::DeleteFargateProfileInput::fargate_profile_name): <p>The name of the Fargate profile to delete.</p>
+    /// - On success, responds with [`DeleteFargateProfileOutput`](crate::output::DeleteFargateProfileOutput) with field(s):
+    ///   - [`fargate_profile(Option<FargateProfile>)`](crate::output::DeleteFargateProfileOutput::fargate_profile): <p>The deleted Fargate profile.</p>
+    /// - On failure, responds with [`SdkError<DeleteFargateProfileError>`](crate::error::DeleteFargateProfileError)
     pub fn delete_fargate_profile(&self) -> fluent_builders::DeleteFargateProfile<C, M, R> {
         fluent_builders::DeleteFargateProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteNodegroup` operation.
+    /// Constructs a fluent builder for the [`DeleteNodegroup`](crate::client::fluent_builders::DeleteNodegroup) operation.
     ///
-    /// See [`DeleteNodegroup`](crate::client::fluent_builders::DeleteNodegroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteNodegroupInput`](crate::input::DeleteNodegroupInput) with field(s):
+    ///   - [`cluster_name(Option<String>)`](crate::input::DeleteNodegroupInput::cluster_name): <p>The name of the Amazon EKS cluster that is associated with your node group.</p>
+    ///   - [`nodegroup_name(Option<String>)`](crate::input::DeleteNodegroupInput::nodegroup_name): <p>The name of the node group to delete.</p>
+    /// - On success, responds with [`DeleteNodegroupOutput`](crate::output::DeleteNodegroupOutput) with field(s):
+    ///   - [`nodegroup(Option<Nodegroup>)`](crate::output::DeleteNodegroupOutput::nodegroup): <p>The full description of your deleted node group.</p>
+    /// - On failure, responds with [`SdkError<DeleteNodegroupError>`](crate::error::DeleteNodegroupError)
     pub fn delete_nodegroup(&self) -> fluent_builders::DeleteNodegroup<C, M, R> {
         fluent_builders::DeleteNodegroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeregisterCluster` operation.
+    /// Constructs a fluent builder for the [`DeregisterCluster`](crate::client::fluent_builders::DeregisterCluster) operation.
     ///
-    /// See [`DeregisterCluster`](crate::client::fluent_builders::DeregisterCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeregisterClusterInput`](crate::input::DeregisterClusterInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeregisterClusterInput::name): <p>The name of the connected cluster to deregister.</p>
+    /// - On success, responds with [`DeregisterClusterOutput`](crate::output::DeregisterClusterOutput) with field(s):
+    ///   - [`cluster(Option<Cluster>)`](crate::output::DeregisterClusterOutput::cluster): <p>An object representing an Amazon EKS cluster.</p>
+    /// - On failure, responds with [`SdkError<DeregisterClusterError>`](crate::error::DeregisterClusterError)
     pub fn deregister_cluster(&self) -> fluent_builders::DeregisterCluster<C, M, R> {
         fluent_builders::DeregisterCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAddon` operation.
+    /// Constructs a fluent builder for the [`DescribeAddon`](crate::client::fluent_builders::DescribeAddon) operation.
     ///
-    /// See [`DescribeAddon`](crate::client::fluent_builders::DescribeAddon) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeAddonInput`](crate::input::DescribeAddonInput) with field(s):
+    ///   - [`cluster_name(Option<String>)`](crate::input::DescribeAddonInput::cluster_name): <p>The name of the cluster.</p>
+    ///   - [`addon_name(Option<String>)`](crate::input::DescribeAddonInput::addon_name): <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
+    /// - On success, responds with [`DescribeAddonOutput`](crate::output::DescribeAddonOutput) with field(s):
+    ///   - [`addon(Option<Addon>)`](crate::output::DescribeAddonOutput::addon): <p>An Amazon EKS add-on. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// - On failure, responds with [`SdkError<DescribeAddonError>`](crate::error::DescribeAddonError)
     pub fn describe_addon(&self) -> fluent_builders::DescribeAddon<C, M, R> {
         fluent_builders::DescribeAddon::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAddonVersions` operation.
-    ///
-    /// See [`DescribeAddonVersions`](crate::client::fluent_builders::DescribeAddonVersions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeAddonVersions`](crate::client::fluent_builders::DescribeAddonVersions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeAddonVersions::into_paginator).
+    ///
+    /// - Takes [`DescribeAddonVersionsInput`](crate::input::DescribeAddonVersionsInput) with field(s):
+    ///   - [`kubernetes_version(Option<String>)`](crate::input::DescribeAddonVersionsInput::kubernetes_version): <p>The Kubernetes versions that the add-on can be used with.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeAddonVersionsInput::max_results): <p>The maximum number of results to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeAddonVersionsInput::next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeAddonVersionsRequest</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>   <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>  </note>
+    ///   - [`addon_name(Option<String>)`](crate::input::DescribeAddonVersionsInput::addon_name): <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
+    /// - On success, responds with [`DescribeAddonVersionsOutput`](crate::output::DescribeAddonVersionsOutput) with field(s):
+    ///   - [`addons(Option<Vec<AddonInfo>>)`](crate::output::DescribeAddonVersionsOutput::addons): <p>The list of available versions with Kubernetes version compatibility.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeAddonVersionsOutput::next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeAddonVersionsResponse</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>   <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>  </note>
+    /// - On failure, responds with [`SdkError<DescribeAddonVersionsError>`](crate::error::DescribeAddonVersionsError)
     pub fn describe_addon_versions(&self) -> fluent_builders::DescribeAddonVersions<C, M, R> {
         fluent_builders::DescribeAddonVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeCluster` operation.
+    /// Constructs a fluent builder for the [`DescribeCluster`](crate::client::fluent_builders::DescribeCluster) operation.
     ///
-    /// See [`DescribeCluster`](crate::client::fluent_builders::DescribeCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeClusterInput`](crate::input::DescribeClusterInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DescribeClusterInput::name): <p>The name of the cluster to describe.</p>
+    /// - On success, responds with [`DescribeClusterOutput`](crate::output::DescribeClusterOutput) with field(s):
+    ///   - [`cluster(Option<Cluster>)`](crate::output::DescribeClusterOutput::cluster): <p>The full description of your specified cluster.</p>
+    /// - On failure, responds with [`SdkError<DescribeClusterError>`](crate::error::DescribeClusterError)
     pub fn describe_cluster(&self) -> fluent_builders::DescribeCluster<C, M, R> {
         fluent_builders::DescribeCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeFargateProfile` operation.
+    /// Constructs a fluent builder for the [`DescribeFargateProfile`](crate::client::fluent_builders::DescribeFargateProfile) operation.
     ///
-    /// See [`DescribeFargateProfile`](crate::client::fluent_builders::DescribeFargateProfile) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeFargateProfileInput`](crate::input::DescribeFargateProfileInput) with field(s):
+    ///   - [`cluster_name(Option<String>)`](crate::input::DescribeFargateProfileInput::cluster_name): <p>The name of the Amazon EKS cluster associated with the Fargate profile.</p>
+    ///   - [`fargate_profile_name(Option<String>)`](crate::input::DescribeFargateProfileInput::fargate_profile_name): <p>The name of the Fargate profile to describe.</p>
+    /// - On success, responds with [`DescribeFargateProfileOutput`](crate::output::DescribeFargateProfileOutput) with field(s):
+    ///   - [`fargate_profile(Option<FargateProfile>)`](crate::output::DescribeFargateProfileOutput::fargate_profile): <p>The full description of your Fargate profile.</p>
+    /// - On failure, responds with [`SdkError<DescribeFargateProfileError>`](crate::error::DescribeFargateProfileError)
     pub fn describe_fargate_profile(&self) -> fluent_builders::DescribeFargateProfile<C, M, R> {
         fluent_builders::DescribeFargateProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeIdentityProviderConfig` operation.
+    /// Constructs a fluent builder for the [`DescribeIdentityProviderConfig`](crate::client::fluent_builders::DescribeIdentityProviderConfig) operation.
     ///
-    /// See [`DescribeIdentityProviderConfig`](crate::client::fluent_builders::DescribeIdentityProviderConfig) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeIdentityProviderConfigInput`](crate::input::DescribeIdentityProviderConfigInput) with field(s):
+    ///   - [`cluster_name(Option<String>)`](crate::input::DescribeIdentityProviderConfigInput::cluster_name): <p>The cluster name that the identity provider configuration is associated to.</p>
+    ///   - [`identity_provider_config(Option<IdentityProviderConfig>)`](crate::input::DescribeIdentityProviderConfigInput::identity_provider_config): <p>An object that represents an identity provider configuration.</p>
+    /// - On success, responds with [`DescribeIdentityProviderConfigOutput`](crate::output::DescribeIdentityProviderConfigOutput) with field(s):
+    ///   - [`identity_provider_config(Option<IdentityProviderConfigResponse>)`](crate::output::DescribeIdentityProviderConfigOutput::identity_provider_config): <p>The object that represents an OpenID Connect (OIDC) identity provider configuration.</p>
+    /// - On failure, responds with [`SdkError<DescribeIdentityProviderConfigError>`](crate::error::DescribeIdentityProviderConfigError)
     pub fn describe_identity_provider_config(
         &self,
     ) -> fluent_builders::DescribeIdentityProviderConfig<C, M, R> {
         fluent_builders::DescribeIdentityProviderConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeNodegroup` operation.
+    /// Constructs a fluent builder for the [`DescribeNodegroup`](crate::client::fluent_builders::DescribeNodegroup) operation.
     ///
-    /// See [`DescribeNodegroup`](crate::client::fluent_builders::DescribeNodegroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeNodegroupInput`](crate::input::DescribeNodegroupInput) with field(s):
+    ///   - [`cluster_name(Option<String>)`](crate::input::DescribeNodegroupInput::cluster_name): <p>The name of the Amazon EKS cluster associated with the node group.</p>
+    ///   - [`nodegroup_name(Option<String>)`](crate::input::DescribeNodegroupInput::nodegroup_name): <p>The name of the node group to describe.</p>
+    /// - On success, responds with [`DescribeNodegroupOutput`](crate::output::DescribeNodegroupOutput) with field(s):
+    ///   - [`nodegroup(Option<Nodegroup>)`](crate::output::DescribeNodegroupOutput::nodegroup): <p>The full description of your node group.</p>
+    /// - On failure, responds with [`SdkError<DescribeNodegroupError>`](crate::error::DescribeNodegroupError)
     pub fn describe_nodegroup(&self) -> fluent_builders::DescribeNodegroup<C, M, R> {
         fluent_builders::DescribeNodegroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeUpdate` operation.
+    /// Constructs a fluent builder for the [`DescribeUpdate`](crate::client::fluent_builders::DescribeUpdate) operation.
     ///
-    /// See [`DescribeUpdate`](crate::client::fluent_builders::DescribeUpdate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeUpdateInput`](crate::input::DescribeUpdateInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DescribeUpdateInput::name): <p>The name of the Amazon EKS cluster associated with the update.</p>
+    ///   - [`update_id(Option<String>)`](crate::input::DescribeUpdateInput::update_id): <p>The ID of the update to describe.</p>
+    ///   - [`nodegroup_name(Option<String>)`](crate::input::DescribeUpdateInput::nodegroup_name): <p>The name of the Amazon EKS node group associated with the update.</p>
+    ///   - [`addon_name(Option<String>)`](crate::input::DescribeUpdateInput::addon_name): <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
+    /// - On success, responds with [`DescribeUpdateOutput`](crate::output::DescribeUpdateOutput) with field(s):
+    ///   - [`update(Option<Update>)`](crate::output::DescribeUpdateOutput::update): <p>The full description of the specified update.</p>
+    /// - On failure, responds with [`SdkError<DescribeUpdateError>`](crate::error::DescribeUpdateError)
     pub fn describe_update(&self) -> fluent_builders::DescribeUpdate<C, M, R> {
         fluent_builders::DescribeUpdate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateIdentityProviderConfig` operation.
+    /// Constructs a fluent builder for the [`DisassociateIdentityProviderConfig`](crate::client::fluent_builders::DisassociateIdentityProviderConfig) operation.
     ///
-    /// See [`DisassociateIdentityProviderConfig`](crate::client::fluent_builders::DisassociateIdentityProviderConfig) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateIdentityProviderConfigInput`](crate::input::DisassociateIdentityProviderConfigInput) with field(s):
+    ///   - [`cluster_name(Option<String>)`](crate::input::DisassociateIdentityProviderConfigInput::cluster_name): <p>The name of the cluster to disassociate an identity provider from.</p>
+    ///   - [`identity_provider_config(Option<IdentityProviderConfig>)`](crate::input::DisassociateIdentityProviderConfigInput::identity_provider_config): <p>An object that represents an identity provider configuration.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::DisassociateIdentityProviderConfigInput::client_request_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// - On success, responds with [`DisassociateIdentityProviderConfigOutput`](crate::output::DisassociateIdentityProviderConfigOutput) with field(s):
+    ///   - [`update(Option<Update>)`](crate::output::DisassociateIdentityProviderConfigOutput::update): <p>An object representing an asynchronous update.</p>
+    /// - On failure, responds with [`SdkError<DisassociateIdentityProviderConfigError>`](crate::error::DisassociateIdentityProviderConfigError)
     pub fn disassociate_identity_provider_config(
         &self,
     ) -> fluent_builders::DisassociateIdentityProviderConfig<C, M, R> {
         fluent_builders::DisassociateIdentityProviderConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAddons` operation.
-    ///
-    /// See [`ListAddons`](crate::client::fluent_builders::ListAddons) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListAddons`](crate::client::fluent_builders::ListAddons) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAddons::into_paginator).
+    ///
+    /// - Takes [`ListAddonsInput`](crate::input::ListAddonsInput) with field(s):
+    ///   - [`cluster_name(Option<String>)`](crate::input::ListAddonsInput::cluster_name): <p>The name of the cluster.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListAddonsInput::max_results): <p>The maximum number of add-on results returned by <code>ListAddonsRequest</code> in paginated output. When you use this parameter, <code>ListAddonsRequest</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListAddonsRequest</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListAddonsRequest</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListAddonsInput::next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>ListAddonsRequest</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>   <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>  </note>
+    /// - On success, responds with [`ListAddonsOutput`](crate::output::ListAddonsOutput) with field(s):
+    ///   - [`addons(Option<Vec<String>>)`](crate::output::ListAddonsOutput::addons): <p>A list of available add-ons.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAddonsOutput::next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>ListAddonsResponse</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>   <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>  </note>
+    /// - On failure, responds with [`SdkError<ListAddonsError>`](crate::error::ListAddonsError)
     pub fn list_addons(&self) -> fluent_builders::ListAddons<C, M, R> {
         fluent_builders::ListAddons::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListClusters` operation.
-    ///
-    /// See [`ListClusters`](crate::client::fluent_builders::ListClusters) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListClusters`](crate::client::fluent_builders::ListClusters) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListClusters::into_paginator).
+    ///
+    /// - Takes [`ListClustersInput`](crate::input::ListClustersInput) with field(s):
+    ///   - [`max_results(Option<i32>)`](crate::input::ListClustersInput::max_results): <p>The maximum number of cluster results returned by <code>ListClusters</code> in paginated output. When you use this parameter, <code>ListClusters</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListClusters</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListClusters</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListClustersInput::next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>ListClusters</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>   <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>  </note>
+    ///   - [`include(Option<Vec<String>>)`](crate::input::ListClustersInput::include): <p>Indicates whether external clusters are included in the returned list. Use '<code>all</code>' to return connected clusters, or blank to return only Amazon EKS clusters. '<code>all</code>' must be in lowercase otherwise an error occurs.</p>
+    /// - On success, responds with [`ListClustersOutput`](crate::output::ListClustersOutput) with field(s):
+    ///   - [`clusters(Option<Vec<String>>)`](crate::output::ListClustersOutput::clusters): <p>A list of all of the clusters for your account in the specified Region.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListClustersOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<ListClustersError>`](crate::error::ListClustersError)
     pub fn list_clusters(&self) -> fluent_builders::ListClusters<C, M, R> {
         fluent_builders::ListClusters::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListFargateProfiles` operation.
-    ///
-    /// See [`ListFargateProfiles`](crate::client::fluent_builders::ListFargateProfiles) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListFargateProfiles`](crate::client::fluent_builders::ListFargateProfiles) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFargateProfiles::into_paginator).
+    ///
+    /// - Takes [`ListFargateProfilesInput`](crate::input::ListFargateProfilesInput) with field(s):
+    ///   - [`cluster_name(Option<String>)`](crate::input::ListFargateProfilesInput::cluster_name): <p>The name of the Amazon EKS cluster that you would like to list Fargate profiles in.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListFargateProfilesInput::max_results): <p>The maximum number of Fargate profile results returned by <code>ListFargateProfiles</code> in paginated output. When you use this parameter, <code>ListFargateProfiles</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListFargateProfiles</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListFargateProfiles</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListFargateProfilesInput::next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>ListFargateProfiles</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
+    /// - On success, responds with [`ListFargateProfilesOutput`](crate::output::ListFargateProfilesOutput) with field(s):
+    ///   - [`fargate_profile_names(Option<Vec<String>>)`](crate::output::ListFargateProfilesOutput::fargate_profile_names): <p>A list of all of the Fargate profiles associated with the specified cluster.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListFargateProfilesOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListFargateProfiles</code> request. When the results of a <code>ListFargateProfiles</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<ListFargateProfilesError>`](crate::error::ListFargateProfilesError)
     pub fn list_fargate_profiles(&self) -> fluent_builders::ListFargateProfiles<C, M, R> {
         fluent_builders::ListFargateProfiles::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListIdentityProviderConfigs` operation.
-    ///
-    /// See [`ListIdentityProviderConfigs`](crate::client::fluent_builders::ListIdentityProviderConfigs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListIdentityProviderConfigs`](crate::client::fluent_builders::ListIdentityProviderConfigs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListIdentityProviderConfigs::into_paginator).
+    ///
+    /// - Takes [`ListIdentityProviderConfigsInput`](crate::input::ListIdentityProviderConfigsInput) with field(s):
+    ///   - [`cluster_name(Option<String>)`](crate::input::ListIdentityProviderConfigsInput::cluster_name): <p>The cluster name that you want to list identity provider configurations for.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListIdentityProviderConfigsInput::max_results): <p>The maximum number of identity provider configurations returned by <code>ListIdentityProviderConfigs</code> in paginated output. When you use this parameter, <code>ListIdentityProviderConfigs</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListIdentityProviderConfigs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListIdentityProviderConfigs</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListIdentityProviderConfigsInput::next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>IdentityProviderConfigsRequest</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
+    /// - On success, responds with [`ListIdentityProviderConfigsOutput`](crate::output::ListIdentityProviderConfigsOutput) with field(s):
+    ///   - [`identity_provider_configs(Option<Vec<IdentityProviderConfig>>)`](crate::output::ListIdentityProviderConfigsOutput::identity_provider_configs): <p>The identity provider configurations for the cluster.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListIdentityProviderConfigsOutput::next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>ListIdentityProviderConfigsResponse</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
+    /// - On failure, responds with [`SdkError<ListIdentityProviderConfigsError>`](crate::error::ListIdentityProviderConfigsError)
     pub fn list_identity_provider_configs(
         &self,
     ) -> fluent_builders::ListIdentityProviderConfigs<C, M, R> {
         fluent_builders::ListIdentityProviderConfigs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListNodegroups` operation.
-    ///
-    /// See [`ListNodegroups`](crate::client::fluent_builders::ListNodegroups) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListNodegroups`](crate::client::fluent_builders::ListNodegroups) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListNodegroups::into_paginator).
+    ///
+    /// - Takes [`ListNodegroupsInput`](crate::input::ListNodegroupsInput) with field(s):
+    ///   - [`cluster_name(Option<String>)`](crate::input::ListNodegroupsInput::cluster_name): <p>The name of the Amazon EKS cluster that you would like to list node groups in.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListNodegroupsInput::max_results): <p>The maximum number of node group results returned by <code>ListNodegroups</code> in paginated output. When you use this parameter, <code>ListNodegroups</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListNodegroups</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListNodegroups</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListNodegroupsInput::next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>ListNodegroups</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
+    /// - On success, responds with [`ListNodegroupsOutput`](crate::output::ListNodegroupsOutput) with field(s):
+    ///   - [`nodegroups(Option<Vec<String>>)`](crate::output::ListNodegroupsOutput::nodegroups): <p>A list of all of the node groups associated with the specified cluster.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListNodegroupsOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListNodegroups</code> request. When the results of a <code>ListNodegroups</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<ListNodegroupsError>`](crate::error::ListNodegroupsError)
     pub fn list_nodegroups(&self) -> fluent_builders::ListNodegroups<C, M, R> {
         fluent_builders::ListNodegroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are Amazon EKS clusters and managed node groups.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags for the resource.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListUpdates` operation.
-    ///
-    /// See [`ListUpdates`](crate::client::fluent_builders::ListUpdates) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListUpdates`](crate::client::fluent_builders::ListUpdates) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListUpdates::into_paginator).
+    ///
+    /// - Takes [`ListUpdatesInput`](crate::input::ListUpdatesInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::ListUpdatesInput::name): <p>The name of the Amazon EKS cluster to list updates for.</p>
+    ///   - [`nodegroup_name(Option<String>)`](crate::input::ListUpdatesInput::nodegroup_name): <p>The name of the Amazon EKS managed node group to list updates for.</p>
+    ///   - [`addon_name(Option<String>)`](crate::input::ListUpdatesInput::addon_name): <p>The names of the installed add-ons that have available updates.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListUpdatesInput::next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>ListUpdates</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListUpdatesInput::max_results): <p>The maximum number of update results returned by <code>ListUpdates</code> in paginated output. When you use this parameter, <code>ListUpdates</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListUpdates</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListUpdates</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
+    /// - On success, responds with [`ListUpdatesOutput`](crate::output::ListUpdatesOutput) with field(s):
+    ///   - [`update_ids(Option<Vec<String>>)`](crate::output::ListUpdatesOutput::update_ids): <p>A list of all the updates for the specified cluster and Region.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListUpdatesOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListUpdates</code> request. When the results of a <code>ListUpdates</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<ListUpdatesError>`](crate::error::ListUpdatesError)
     pub fn list_updates(&self) -> fluent_builders::ListUpdates<C, M, R> {
         fluent_builders::ListUpdates::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RegisterCluster` operation.
+    /// Constructs a fluent builder for the [`RegisterCluster`](crate::client::fluent_builders::RegisterCluster) operation.
     ///
-    /// See [`RegisterCluster`](crate::client::fluent_builders::RegisterCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RegisterClusterInput`](crate::input::RegisterClusterInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::RegisterClusterInput::name): <p>Define a unique name for this cluster for your Region.</p>
+    ///   - [`connector_config(Option<ConnectorConfigRequest>)`](crate::input::RegisterClusterInput::connector_config): <p>The configuration settings required to connect the Kubernetes cluster to the Amazon EKS control plane.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::RegisterClusterInput::client_request_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::RegisterClusterInput::tags): <p>The metadata that you apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Cluster tags do not propagate to any other resources associated with the cluster.</p>
+    /// - On success, responds with [`RegisterClusterOutput`](crate::output::RegisterClusterOutput) with field(s):
+    ///   - [`cluster(Option<Cluster>)`](crate::output::RegisterClusterOutput::cluster): <p>An object representing an Amazon EKS cluster.</p>
+    /// - On failure, responds with [`SdkError<RegisterClusterError>`](crate::error::RegisterClusterError)
     pub fn register_cluster(&self) -> fluent_builders::RegisterCluster<C, M, R> {
         fluent_builders::RegisterCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the supported resources are Amazon EKS clusters and managed node groups.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>The tags to add to the resource. A tag is an array of key-value pairs.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported resources are Amazon EKS clusters and managed node groups.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The keys of the tags to be removed.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateAddon` operation.
+    /// Constructs a fluent builder for the [`UpdateAddon`](crate::client::fluent_builders::UpdateAddon) operation.
     ///
-    /// See [`UpdateAddon`](crate::client::fluent_builders::UpdateAddon) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateAddonInput`](crate::input::UpdateAddonInput) with field(s):
+    ///   - [`cluster_name(Option<String>)`](crate::input::UpdateAddonInput::cluster_name): <p>The name of the cluster.</p>
+    ///   - [`addon_name(Option<String>)`](crate::input::UpdateAddonInput::addon_name): <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
+    ///   - [`addon_version(Option<String>)`](crate::input::UpdateAddonInput::addon_version): <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
+    ///   - [`service_account_role_arn(Option<String>)`](crate::input::UpdateAddonInput::service_account_role_arn): <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p> <note>   <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling IAM roles for service accounts on your cluster</a> in the <i>Amazon EKS User Guide</i>.</p>  </note>
+    ///   - [`resolve_conflicts(Option<ResolveConflicts>)`](crate::input::UpdateAddonInput::resolve_conflicts): <p>How to resolve parameter value conflicts when applying the new version of the add-on to the cluster.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::UpdateAddonInput::client_request_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// - On success, responds with [`UpdateAddonOutput`](crate::output::UpdateAddonOutput) with field(s):
+    ///   - [`update(Option<Update>)`](crate::output::UpdateAddonOutput::update): <p>An object representing an asynchronous update.</p>
+    /// - On failure, responds with [`SdkError<UpdateAddonError>`](crate::error::UpdateAddonError)
     pub fn update_addon(&self) -> fluent_builders::UpdateAddon<C, M, R> {
         fluent_builders::UpdateAddon::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateClusterConfig` operation.
+    /// Constructs a fluent builder for the [`UpdateClusterConfig`](crate::client::fluent_builders::UpdateClusterConfig) operation.
     ///
-    /// See [`UpdateClusterConfig`](crate::client::fluent_builders::UpdateClusterConfig) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateClusterConfigInput`](crate::input::UpdateClusterConfigInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::UpdateClusterConfigInput::name): <p>The name of the Amazon EKS cluster to update.</p>
+    ///   - [`resources_vpc_config(Option<VpcConfigRequest>)`](crate::input::UpdateClusterConfigInput::resources_vpc_config): <p>An object representing the VPC configuration to use for an Amazon EKS cluster.</p>
+    ///   - [`logging(Option<Logging>)`](crate::input::UpdateClusterConfigInput::logging): <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS cluster control plane logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p> <note>   <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>  </note>
+    ///   - [`client_request_token(Option<String>)`](crate::input::UpdateClusterConfigInput::client_request_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// - On success, responds with [`UpdateClusterConfigOutput`](crate::output::UpdateClusterConfigOutput) with field(s):
+    ///   - [`update(Option<Update>)`](crate::output::UpdateClusterConfigOutput::update): <p>An object representing an asynchronous update.</p>
+    /// - On failure, responds with [`SdkError<UpdateClusterConfigError>`](crate::error::UpdateClusterConfigError)
     pub fn update_cluster_config(&self) -> fluent_builders::UpdateClusterConfig<C, M, R> {
         fluent_builders::UpdateClusterConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateClusterVersion` operation.
+    /// Constructs a fluent builder for the [`UpdateClusterVersion`](crate::client::fluent_builders::UpdateClusterVersion) operation.
     ///
-    /// See [`UpdateClusterVersion`](crate::client::fluent_builders::UpdateClusterVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateClusterVersionInput`](crate::input::UpdateClusterVersionInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::UpdateClusterVersionInput::name): <p>The name of the Amazon EKS cluster to update.</p>
+    ///   - [`version(Option<String>)`](crate::input::UpdateClusterVersionInput::version): <p>The desired Kubernetes version following a successful update.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::UpdateClusterVersionInput::client_request_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// - On success, responds with [`UpdateClusterVersionOutput`](crate::output::UpdateClusterVersionOutput) with field(s):
+    ///   - [`update(Option<Update>)`](crate::output::UpdateClusterVersionOutput::update): <p>The full description of the specified update</p>
+    /// - On failure, responds with [`SdkError<UpdateClusterVersionError>`](crate::error::UpdateClusterVersionError)
     pub fn update_cluster_version(&self) -> fluent_builders::UpdateClusterVersion<C, M, R> {
         fluent_builders::UpdateClusterVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateNodegroupConfig` operation.
+    /// Constructs a fluent builder for the [`UpdateNodegroupConfig`](crate::client::fluent_builders::UpdateNodegroupConfig) operation.
     ///
-    /// See [`UpdateNodegroupConfig`](crate::client::fluent_builders::UpdateNodegroupConfig) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateNodegroupConfigInput`](crate::input::UpdateNodegroupConfigInput) with field(s):
+    ///   - [`cluster_name(Option<String>)`](crate::input::UpdateNodegroupConfigInput::cluster_name): <p>The name of the Amazon EKS cluster that the managed node group resides in.</p>
+    ///   - [`nodegroup_name(Option<String>)`](crate::input::UpdateNodegroupConfigInput::nodegroup_name): <p>The name of the managed node group to update.</p>
+    ///   - [`labels(Option<UpdateLabelsPayload>)`](crate::input::UpdateNodegroupConfigInput::labels): <p>The Kubernetes labels to be applied to the nodes in the node group after the update.</p>
+    ///   - [`taints(Option<UpdateTaintsPayload>)`](crate::input::UpdateNodegroupConfigInput::taints): <p>The Kubernetes taints to be applied to the nodes in the node group after the update.</p>
+    ///   - [`scaling_config(Option<NodegroupScalingConfig>)`](crate::input::UpdateNodegroupConfigInput::scaling_config): <p>The scaling configuration details for the Auto Scaling group after the update.</p>
+    ///   - [`update_config(Option<NodegroupUpdateConfig>)`](crate::input::UpdateNodegroupConfigInput::update_config): <p>The node group update configuration.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::UpdateNodegroupConfigInput::client_request_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// - On success, responds with [`UpdateNodegroupConfigOutput`](crate::output::UpdateNodegroupConfigOutput) with field(s):
+    ///   - [`update(Option<Update>)`](crate::output::UpdateNodegroupConfigOutput::update): <p>An object representing an asynchronous update.</p>
+    /// - On failure, responds with [`SdkError<UpdateNodegroupConfigError>`](crate::error::UpdateNodegroupConfigError)
     pub fn update_nodegroup_config(&self) -> fluent_builders::UpdateNodegroupConfig<C, M, R> {
         fluent_builders::UpdateNodegroupConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateNodegroupVersion` operation.
+    /// Constructs a fluent builder for the [`UpdateNodegroupVersion`](crate::client::fluent_builders::UpdateNodegroupVersion) operation.
     ///
-    /// See [`UpdateNodegroupVersion`](crate::client::fluent_builders::UpdateNodegroupVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateNodegroupVersionInput`](crate::input::UpdateNodegroupVersionInput) with field(s):
+    ///   - [`cluster_name(Option<String>)`](crate::input::UpdateNodegroupVersionInput::cluster_name): <p>The name of the Amazon EKS cluster that is associated with the managed node group to update.</p>
+    ///   - [`nodegroup_name(Option<String>)`](crate::input::UpdateNodegroupVersionInput::nodegroup_name): <p>The name of the managed node group to update.</p>
+    ///   - [`version(Option<String>)`](crate::input::UpdateNodegroupVersionInput::version): <p>The Kubernetes version to update to. If no version is specified, then the Kubernetes version of the node group does not change. You can specify the Kubernetes version of the cluster to update the node group to the latest AMI version of the cluster's Kubernetes version. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>version</code>, or the node group update will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+    ///   - [`release_version(Option<String>)`](crate::input::UpdateNodegroupVersionInput::release_version): <p>The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available AMI version for the node group's Kubernetes version is used. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux 2 AMI versions </a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group update will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the Amazon EKS User Guide.</p>
+    ///   - [`launch_template(Option<LaunchTemplateSpecification>)`](crate::input::UpdateNodegroupVersionInput::launch_template): <p>An object representing a node group's launch template specification. You can only update a node group using a launch template if the node group was originally deployed with a launch template.</p>
+    ///   - [`force(bool)`](crate::input::UpdateNodegroupVersionInput::force): <p>Force the update if the existing node group's pods are unable to be drained due to a pod disruption budget issue. If an update fails because pods could not be drained, you can force the update after it fails to terminate the old node whether or not any pods are running on the node.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::UpdateNodegroupVersionInput::client_request_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// - On success, responds with [`UpdateNodegroupVersionOutput`](crate::output::UpdateNodegroupVersionOutput) with field(s):
+    ///   - [`update(Option<Update>)`](crate::output::UpdateNodegroupVersionOutput::update): <p>An object representing an asynchronous update.</p>
+    /// - On failure, responds with [`SdkError<UpdateNodegroupVersionError>`](crate::error::UpdateNodegroupVersionError)
     pub fn update_nodegroup_version(&self) -> fluent_builders::UpdateNodegroupVersion<C, M, R> {
         fluent_builders::UpdateNodegroupVersion::new(self.handle.clone())
     }

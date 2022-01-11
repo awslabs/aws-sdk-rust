@@ -83,81 +83,157 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateCliToken` operation.
+    /// Constructs a fluent builder for the [`CreateCliToken`](crate::client::fluent_builders::CreateCliToken) operation.
     ///
-    /// See [`CreateCliToken`](crate::client::fluent_builders::CreateCliToken) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateCliTokenInput`](crate::input::CreateCliTokenInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateCliTokenInput::name): <p>Create a CLI token request for a MWAA environment.</p>
+    /// - On success, responds with [`CreateCliTokenOutput`](crate::output::CreateCliTokenOutput) with field(s):
+    ///   - [`cli_token(Option<String>)`](crate::output::CreateCliTokenOutput::cli_token): <p>Create an Airflow CLI login token response for the provided JWT token.</p>
+    ///   - [`web_server_hostname(Option<String>)`](crate::output::CreateCliTokenOutput::web_server_hostname): <p>Create an Airflow CLI login token response for the provided webserver hostname.</p>
+    /// - On failure, responds with [`SdkError<CreateCliTokenError>`](crate::error::CreateCliTokenError)
     pub fn create_cli_token(&self) -> fluent_builders::CreateCliToken<C, M, R> {
         fluent_builders::CreateCliToken::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateEnvironment` operation.
+    /// Constructs a fluent builder for the [`CreateEnvironment`](crate::client::fluent_builders::CreateEnvironment) operation.
     ///
-    /// See [`CreateEnvironment`](crate::client::fluent_builders::CreateEnvironment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateEnvironmentInput`](crate::input::CreateEnvironmentInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateEnvironmentInput::name): <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
+    ///   - [`execution_role_arn(Option<String>)`](crate::input::CreateEnvironmentInput::execution_role_arn): <p>The Amazon Resource Name (ARN) of the execution role for your environment. An execution role is an AWS Identity and Access Management (IAM) role that grants MWAA permission to access AWS services and resources used by your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.</p>
+    ///   - [`source_bucket_arn(Option<String>)`](crate::input::CreateEnvironmentInput::source_bucket_arn): <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for Amazon MWAA</a>.</p>
+    ///   - [`dag_s3_path(Option<String>)`](crate::input::CreateEnvironmentInput::dag_s3_path): <p>The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating DAGs</a>.</p>
+    ///   - [`network_configuration(Option<NetworkConfiguration>)`](crate::input::CreateEnvironmentInput::network_configuration): <p>The VPC networking components used to secure and enable network traffic between the AWS resources for your environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
+    ///   - [`plugins_s3_path(Option<String>)`](crate::input::CreateEnvironmentInput::plugins_s3_path): <p>The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example, <code>plugins.zip</code>. If specified, then the plugins.zip version is required. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom plugins</a>.</p>
+    ///   - [`plugins_s3_object_version(Option<String>)`](crate::input::CreateEnvironmentInput::plugins_s3_object_version): <p>The version of the plugins.zip file on your Amazon S3 bucket. A version must be specified each time a plugins.zip file is updated. To learn more, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning works</a>.</p>
+    ///   - [`requirements_s3_path(Option<String>)`](crate::input::CreateEnvironmentInput::requirements_s3_path): <p>The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example, <code>requirements.txt</code>. If specified, then a file version is required. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python dependencies</a>.</p>
+    ///   - [`requirements_s3_object_version(Option<String>)`](crate::input::CreateEnvironmentInput::requirements_s3_object_version): <p>The version of the requirements.txt file on your Amazon S3 bucket. A version must be specified each time a requirements.txt file is updated. To learn more, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning works</a>.</p>
+    ///   - [`airflow_configuration_options(Option<HashMap<String, String>>)`](crate::input::CreateEnvironmentInput::airflow_configuration_options): <p>A list of key-value pairs containing the Apache Airflow configuration options you want to attach to your environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache Airflow configuration options</a>.</p>
+    ///   - [`environment_class(Option<String>)`](crate::input::CreateEnvironmentInput::environment_class): <p>The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment class</a>.</p>
+    ///   - [`max_workers(Option<i32>)`](crate::input::CreateEnvironmentInput::max_workers): <p>The maximum number of workers that you want to run in your environment. MWAA scales the number of Apache Airflow workers up to the number you specify in the <code>MaxWorkers</code> field. For example, <code>20</code>. When there are no more tasks running, and no more in the queue, MWAA disposes of the extra workers leaving the one worker that is included with your environment, or the number you specify in <code>MinWorkers</code>.</p>
+    ///   - [`kms_key(Option<String>)`](crate::input::CreateEnvironmentInput::kms_key): <p>The AWS Key Management Service (KMS) key to encrypt the data in your environment. You can use an AWS owned CMK, or a Customer managed CMK (advanced). To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/get-started.html">Get started with Amazon Managed Workflows for Apache Airflow</a>.</p>
+    ///   - [`airflow_version(Option<String>)`](crate::input::CreateEnvironmentInput::airflow_version): <p>The Apache Airflow version for your environment. For example, <code>v1.10.12</code>. If no value is specified, defaults to the latest version. Valid values: <code>v1.10.12</code>.</p>
+    ///   - [`logging_configuration(Option<LoggingConfigurationInput>)`](crate::input::CreateEnvironmentInput::logging_configuration): <p>Defines the Apache Airflow logs to send to CloudWatch Logs: <code>DagProcessingLogs</code>, <code>SchedulerLogs</code>, <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.</p>
+    ///   - [`weekly_maintenance_window_start(Option<String>)`](crate::input::CreateEnvironmentInput::weekly_maintenance_window_start): <p>The day and time of the week to start weekly maintenance updates of your environment in the following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>. You can specify a start time in 30 minute increments only. Supported input includes the following:</p>  <ul>   <li> <p>MON|TUE|WED|THU|FRI|SAT|SUN:([01]\\d|2[0-3]):(00|30)</p> </li>  </ul>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateEnvironmentInput::tags): <p>The key-value tag pairs you want to associate to your environment. For example, <code>"Environment": "Staging"</code>. To learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a>.</p>
+    ///   - [`webserver_access_mode(Option<WebserverAccessMode>)`](crate::input::CreateEnvironmentInput::webserver_access_mode): <p>The Apache Airflow <i>Web server</i> access mode. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
+    ///   - [`min_workers(Option<i32>)`](crate::input::CreateEnvironmentInput::min_workers): <p>The minimum number of workers that you want to run in your environment. MWAA scales the number of Apache Airflow workers up to the number you specify in the <code>MaxWorkers</code> field. When there are no more tasks running, and no more in the queue, MWAA disposes of the extra workers leaving the worker count you specify in the <code>MinWorkers</code> field. For example, <code>2</code>.</p>
+    ///   - [`schedulers(Option<i32>)`](crate::input::CreateEnvironmentInput::schedulers): <p>The number of Apache Airflow schedulers to run in your environment.</p>
+    /// - On success, responds with [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateEnvironmentOutput::arn): <p>The Amazon Resource Name (ARN) returned in the response for the environment.</p>
+    /// - On failure, responds with [`SdkError<CreateEnvironmentError>`](crate::error::CreateEnvironmentError)
     pub fn create_environment(&self) -> fluent_builders::CreateEnvironment<C, M, R> {
         fluent_builders::CreateEnvironment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateWebLoginToken` operation.
+    /// Constructs a fluent builder for the [`CreateWebLoginToken`](crate::client::fluent_builders::CreateWebLoginToken) operation.
     ///
-    /// See [`CreateWebLoginToken`](crate::client::fluent_builders::CreateWebLoginToken) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateWebLoginTokenInput`](crate::input::CreateWebLoginTokenInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateWebLoginTokenInput::name): <p>Create an Airflow Web UI login token request for a MWAA environment.</p>
+    /// - On success, responds with [`CreateWebLoginTokenOutput`](crate::output::CreateWebLoginTokenOutput) with field(s):
+    ///   - [`web_token(Option<String>)`](crate::output::CreateWebLoginTokenOutput::web_token): <p>Create an Airflow Web UI login token response for the provided JWT token.</p>
+    ///   - [`web_server_hostname(Option<String>)`](crate::output::CreateWebLoginTokenOutput::web_server_hostname): <p>Create an Airflow Web UI login token response for the provided webserver hostname.</p>
+    /// - On failure, responds with [`SdkError<CreateWebLoginTokenError>`](crate::error::CreateWebLoginTokenError)
     pub fn create_web_login_token(&self) -> fluent_builders::CreateWebLoginToken<C, M, R> {
         fluent_builders::CreateWebLoginToken::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteEnvironment` operation.
+    /// Constructs a fluent builder for the [`DeleteEnvironment`](crate::client::fluent_builders::DeleteEnvironment) operation.
     ///
-    /// See [`DeleteEnvironment`](crate::client::fluent_builders::DeleteEnvironment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteEnvironmentInput`](crate::input::DeleteEnvironmentInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteEnvironmentInput::name): <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
+    /// - On success, responds with [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteEnvironmentError>`](crate::error::DeleteEnvironmentError)
     pub fn delete_environment(&self) -> fluent_builders::DeleteEnvironment<C, M, R> {
         fluent_builders::DeleteEnvironment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetEnvironment` operation.
+    /// Constructs a fluent builder for the [`GetEnvironment`](crate::client::fluent_builders::GetEnvironment) operation.
     ///
-    /// See [`GetEnvironment`](crate::client::fluent_builders::GetEnvironment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetEnvironmentInput`](crate::input::GetEnvironmentInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::GetEnvironmentInput::name): <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
+    /// - On success, responds with [`GetEnvironmentOutput`](crate::output::GetEnvironmentOutput) with field(s):
+    ///   - [`environment(Option<Environment>)`](crate::output::GetEnvironmentOutput::environment): <p>An object containing all available details about the environment.</p>
+    /// - On failure, responds with [`SdkError<GetEnvironmentError>`](crate::error::GetEnvironmentError)
     pub fn get_environment(&self) -> fluent_builders::GetEnvironment<C, M, R> {
         fluent_builders::GetEnvironment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListEnvironments` operation.
-    ///
-    /// See [`ListEnvironments`](crate::client::fluent_builders::ListEnvironments) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListEnvironments`](crate::client::fluent_builders::ListEnvironments) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEnvironments::into_paginator).
+    ///
+    /// - Takes [`ListEnvironmentsInput`](crate::input::ListEnvironmentsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListEnvironmentsInput::next_token): <p>Retrieves the next page of the results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListEnvironmentsInput::max_results): <p>The maximum number of results to retrieve per page. For example, <code>5</code> environments per page.</p>
+    /// - On success, responds with [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput) with field(s):
+    ///   - [`environments(Option<Vec<String>>)`](crate::output::ListEnvironmentsOutput::environments): <p>Returns the list of Amazon MWAA environments.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListEnvironmentsOutput::next_token): <p>Retrieves the next page of the results.</p>
+    /// - On failure, responds with [`SdkError<ListEnvironmentsError>`](crate::error::ListEnvironmentsError)
     pub fn list_environments(&self) -> fluent_builders::ListEnvironments<C, M, R> {
         fluent_builders::ListEnvironments::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The key-value tag pairs associated to your environment. To learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a>.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PublishMetrics` operation.
+    /// Constructs a fluent builder for the [`PublishMetrics`](crate::client::fluent_builders::PublishMetrics) operation.
     ///
-    /// See [`PublishMetrics`](crate::client::fluent_builders::PublishMetrics) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PublishMetricsInput`](crate::input::PublishMetricsInput) with field(s):
+    ///   - [`environment_name(Option<String>)`](crate::input::PublishMetricsInput::environment_name): <p>Publishes environment metric data to Amazon CloudWatch.</p>
+    ///   - [`metric_data(Option<Vec<MetricDatum>>)`](crate::input::PublishMetricsInput::metric_data): <p>Publishes metric data points to Amazon CloudWatch. CloudWatch associates the data points with the specified metrica.</p>
+    /// - On success, responds with [`PublishMetricsOutput`](crate::output::PublishMetricsOutput)
+
+    /// - On failure, responds with [`SdkError<PublishMetricsError>`](crate::error::PublishMetricsError)
     pub fn publish_metrics(&self) -> fluent_builders::PublishMetrics<C, M, R> {
         fluent_builders::PublishMetrics::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>The key-value tag pairs you want to associate to your environment. For example, <code>"Environment": "Staging"</code>. To learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a>.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The key-value tag pair you want to remove. For example, <code>"Environment": "Staging"</code>. </p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateEnvironment` operation.
+    /// Constructs a fluent builder for the [`UpdateEnvironment`](crate::client::fluent_builders::UpdateEnvironment) operation.
     ///
-    /// See [`UpdateEnvironment`](crate::client::fluent_builders::UpdateEnvironment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateEnvironmentInput`](crate::input::UpdateEnvironmentInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::UpdateEnvironmentInput::name): <p>The name of your Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
+    ///   - [`execution_role_arn(Option<String>)`](crate::input::UpdateEnvironmentInput::execution_role_arn): <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access AWS resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.</p>
+    ///   - [`airflow_version(Option<String>)`](crate::input::UpdateEnvironmentInput::airflow_version): <p>The Apache Airflow version for your environment. For example, <code>v1.10.12</code>. If no value is specified, defaults to the latest version. Valid values: <code>v1.10.12</code>.</p>
+    ///   - [`source_bucket_arn(Option<String>)`](crate::input::UpdateEnvironmentInput::source_bucket_arn): <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for Amazon MWAA</a>.</p>
+    ///   - [`dag_s3_path(Option<String>)`](crate::input::UpdateEnvironmentInput::dag_s3_path): <p>The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating DAGs</a>.</p>
+    ///   - [`plugins_s3_path(Option<String>)`](crate::input::UpdateEnvironmentInput::plugins_s3_path): <p>The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example, <code>plugins.zip</code>. If specified, then the plugins.zip version is required. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom plugins</a>.</p>
+    ///   - [`plugins_s3_object_version(Option<String>)`](crate::input::UpdateEnvironmentInput::plugins_s3_object_version): <p>The version of the plugins.zip file on your Amazon S3 bucket. A version must be specified each time a plugins.zip file is updated. To learn more, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning works</a>.</p>
+    ///   - [`requirements_s3_path(Option<String>)`](crate::input::UpdateEnvironmentInput::requirements_s3_path): <p>The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example, <code>requirements.txt</code>. If specified, then a file version is required. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python dependencies</a>.</p>
+    ///   - [`requirements_s3_object_version(Option<String>)`](crate::input::UpdateEnvironmentInput::requirements_s3_object_version): <p>The version of the requirements.txt file on your Amazon S3 bucket. A version must be specified each time a requirements.txt file is updated. To learn more, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning works</a>.</p>
+    ///   - [`airflow_configuration_options(Option<HashMap<String, String>>)`](crate::input::UpdateEnvironmentInput::airflow_configuration_options): <p>A list of key-value pairs containing the Apache Airflow configuration options you want to attach to your environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache Airflow configuration options</a>.</p>
+    ///   - [`environment_class(Option<String>)`](crate::input::UpdateEnvironmentInput::environment_class): <p>The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment class</a>.</p>
+    ///   - [`max_workers(Option<i32>)`](crate::input::UpdateEnvironmentInput::max_workers): <p>The maximum number of workers that you want to run in your environment. MWAA scales the number of Apache Airflow workers up to the number you specify in the <code>MaxWorkers</code> field. For example, <code>20</code>. When there are no more tasks running, and no more in the queue, MWAA disposes of the extra workers leaving the one worker that is included with your environment, or the number you specify in <code>MinWorkers</code>.</p>
+    ///   - [`network_configuration(Option<UpdateNetworkConfigurationInput>)`](crate::input::UpdateEnvironmentInput::network_configuration): <p>The VPC networking components used to secure and enable network traffic between the AWS resources for your environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
+    ///   - [`logging_configuration(Option<LoggingConfigurationInput>)`](crate::input::UpdateEnvironmentInput::logging_configuration): <p>Defines the Apache Airflow logs to send to CloudWatch Logs: <code>DagProcessingLogs</code>, <code>SchedulerLogs</code>, <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.</p>
+    ///   - [`weekly_maintenance_window_start(Option<String>)`](crate::input::UpdateEnvironmentInput::weekly_maintenance_window_start): <p>The day and time of the week to start weekly maintenance updates of your environment in the following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>. You can specify a start time in 30 minute increments only. Supported input includes the following:</p>  <ul>   <li> <p>MON|TUE|WED|THU|FRI|SAT|SUN:([01]\\d|2[0-3]):(00|30)</p> </li>  </ul>
+    ///   - [`webserver_access_mode(Option<WebserverAccessMode>)`](crate::input::UpdateEnvironmentInput::webserver_access_mode): <p>The Apache Airflow <i>Web server</i> access mode. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
+    ///   - [`min_workers(Option<i32>)`](crate::input::UpdateEnvironmentInput::min_workers): <p>The minimum number of workers that you want to run in your environment. MWAA scales the number of Apache Airflow workers up to the number you specify in the <code>MaxWorkers</code> field. When there are no more tasks running, and no more in the queue, MWAA disposes of the extra workers leaving the worker count you specify in the <code>MinWorkers</code> field. For example, <code>2</code>.</p>
+    ///   - [`schedulers(Option<i32>)`](crate::input::UpdateEnvironmentInput::schedulers): <p>The number of Apache Airflow schedulers to run in your Amazon MWAA environment.</p>
+    /// - On success, responds with [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::UpdateEnvironmentOutput::arn): <p>The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.</p>
+    /// - On failure, responds with [`SdkError<UpdateEnvironmentError>`](crate::error::UpdateEnvironmentError)
     pub fn update_environment(&self) -> fluent_builders::UpdateEnvironment<C, M, R> {
         fluent_builders::UpdateEnvironment::new(self.handle.clone())
     }

@@ -83,192 +83,320 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AssociateConfigurationItemsToApplication` operation.
+    /// Constructs a fluent builder for the [`AssociateConfigurationItemsToApplication`](crate::client::fluent_builders::AssociateConfigurationItemsToApplication) operation.
     ///
-    /// See [`AssociateConfigurationItemsToApplication`](crate::client::fluent_builders::AssociateConfigurationItemsToApplication) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateConfigurationItemsToApplicationInput`](crate::input::AssociateConfigurationItemsToApplicationInput) with field(s):
+    ///   - [`application_configuration_id(Option<String>)`](crate::input::AssociateConfigurationItemsToApplicationInput::application_configuration_id): <p>The configuration ID of an application with which items are to be associated.</p>
+    ///   - [`configuration_ids(Option<Vec<String>>)`](crate::input::AssociateConfigurationItemsToApplicationInput::configuration_ids): <p>The ID of each configuration item to be associated with an application.</p>
+    /// - On success, responds with [`AssociateConfigurationItemsToApplicationOutput`](crate::output::AssociateConfigurationItemsToApplicationOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateConfigurationItemsToApplicationError>`](crate::error::AssociateConfigurationItemsToApplicationError)
     pub fn associate_configuration_items_to_application(
         &self,
     ) -> fluent_builders::AssociateConfigurationItemsToApplication<C, M, R> {
         fluent_builders::AssociateConfigurationItemsToApplication::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchDeleteImportData` operation.
+    /// Constructs a fluent builder for the [`BatchDeleteImportData`](crate::client::fluent_builders::BatchDeleteImportData) operation.
     ///
-    /// See [`BatchDeleteImportData`](crate::client::fluent_builders::BatchDeleteImportData) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchDeleteImportDataInput`](crate::input::BatchDeleteImportDataInput) with field(s):
+    ///   - [`import_task_ids(Option<Vec<String>>)`](crate::input::BatchDeleteImportDataInput::import_task_ids): <p>The IDs for the import tasks that you want to delete.</p>
+    /// - On success, responds with [`BatchDeleteImportDataOutput`](crate::output::BatchDeleteImportDataOutput) with field(s):
+    ///   - [`errors(Option<Vec<BatchDeleteImportDataError>>)`](crate::output::BatchDeleteImportDataOutput::errors): <p>Error messages returned for each import task that you deleted as a response for this command.</p>
+    /// - On failure, responds with [`SdkError<BatchDeleteImportDataError>`](crate::error::BatchDeleteImportDataError)
     pub fn batch_delete_import_data(&self) -> fluent_builders::BatchDeleteImportData<C, M, R> {
         fluent_builders::BatchDeleteImportData::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateApplication` operation.
+    /// Constructs a fluent builder for the [`CreateApplication`](crate::client::fluent_builders::CreateApplication) operation.
     ///
-    /// See [`CreateApplication`](crate::client::fluent_builders::CreateApplication) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateApplicationInput`](crate::input::CreateApplicationInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateApplicationInput::name): <p>Name of the application to be created.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateApplicationInput::description): <p>Description of the application to be created.</p>
+    /// - On success, responds with [`CreateApplicationOutput`](crate::output::CreateApplicationOutput) with field(s):
+    ///   - [`configuration_id(Option<String>)`](crate::output::CreateApplicationOutput::configuration_id): <p>Configuration ID of an application to be created.</p>
+    /// - On failure, responds with [`SdkError<CreateApplicationError>`](crate::error::CreateApplicationError)
     pub fn create_application(&self) -> fluent_builders::CreateApplication<C, M, R> {
         fluent_builders::CreateApplication::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateTags` operation.
+    /// Constructs a fluent builder for the [`CreateTags`](crate::client::fluent_builders::CreateTags) operation.
     ///
-    /// See [`CreateTags`](crate::client::fluent_builders::CreateTags) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateTagsInput`](crate::input::CreateTagsInput) with field(s):
+    ///   - [`configuration_ids(Option<Vec<String>>)`](crate::input::CreateTagsInput::configuration_ids): <p>A list of configuration items that you want to tag.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateTagsInput::tags): <p>Tags that you want to associate with one or more configuration items. Specify the tags that you want to create in a <i>key</i>-<i>value</i> format. For example:</p>  <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
+    /// - On success, responds with [`CreateTagsOutput`](crate::output::CreateTagsOutput)
+
+    /// - On failure, responds with [`SdkError<CreateTagsError>`](crate::error::CreateTagsError)
     pub fn create_tags(&self) -> fluent_builders::CreateTags<C, M, R> {
         fluent_builders::CreateTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteApplications` operation.
+    /// Constructs a fluent builder for the [`DeleteApplications`](crate::client::fluent_builders::DeleteApplications) operation.
     ///
-    /// See [`DeleteApplications`](crate::client::fluent_builders::DeleteApplications) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteApplicationsInput`](crate::input::DeleteApplicationsInput) with field(s):
+    ///   - [`configuration_ids(Option<Vec<String>>)`](crate::input::DeleteApplicationsInput::configuration_ids): <p>Configuration ID of an application to be deleted.</p>
+    /// - On success, responds with [`DeleteApplicationsOutput`](crate::output::DeleteApplicationsOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteApplicationsError>`](crate::error::DeleteApplicationsError)
     pub fn delete_applications(&self) -> fluent_builders::DeleteApplications<C, M, R> {
         fluent_builders::DeleteApplications::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteTags` operation.
+    /// Constructs a fluent builder for the [`DeleteTags`](crate::client::fluent_builders::DeleteTags) operation.
     ///
-    /// See [`DeleteTags`](crate::client::fluent_builders::DeleteTags) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteTagsInput`](crate::input::DeleteTagsInput) with field(s):
+    ///   - [`configuration_ids(Option<Vec<String>>)`](crate::input::DeleteTagsInput::configuration_ids): <p>A list of configuration items with tags that you want to delete.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::DeleteTagsInput::tags): <p>Tags that you want to delete from one or more configuration items. Specify the tags that you want to delete in a <i>key</i>-<i>value</i> format. For example:</p>  <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
+    /// - On success, responds with [`DeleteTagsOutput`](crate::output::DeleteTagsOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteTagsError>`](crate::error::DeleteTagsError)
     pub fn delete_tags(&self) -> fluent_builders::DeleteTags<C, M, R> {
         fluent_builders::DeleteTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAgents` operation.
+    /// Constructs a fluent builder for the [`DescribeAgents`](crate::client::fluent_builders::DescribeAgents) operation.
     ///
-    /// See [`DescribeAgents`](crate::client::fluent_builders::DescribeAgents) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeAgentsInput`](crate::input::DescribeAgentsInput) with field(s):
+    ///   - [`agent_ids(Option<Vec<String>>)`](crate::input::DescribeAgentsInput::agent_ids): <p>The agent or the Connector IDs for which you want information. If you specify no IDs, the system returns information about all agents/Connectors associated with your AWS user account.</p>
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::DescribeAgentsInput::filters): <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>  <p> <code>{"key": "collectionStatus", "value": "STARTED"}</code> </p>
+    ///   - [`max_results(i32)`](crate::input::DescribeAgentsInput::max_results): <p>The total number of agents/Connectors to return in a single page of output. The maximum value is 100.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeAgentsInput::next_token): <p>Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
+    /// - On success, responds with [`DescribeAgentsOutput`](crate::output::DescribeAgentsOutput) with field(s):
+    ///   - [`agents_info(Option<Vec<AgentInfo>>)`](crate::output::DescribeAgentsOutput::agents_info): <p>Lists agents or the Connector by ID or lists all agents/Connectors associated with your user account if you did not specify an agent/Connector ID. The output includes agent/Connector IDs, IP addresses, media access control (MAC) addresses, agent/Connector health, host name where the agent/Connector resides, and the version number of each agent/Connector.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeAgentsOutput::next_token): <p>Token to retrieve the next set of results. For example, if you specified 100 IDs for <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>
+    /// - On failure, responds with [`SdkError<DescribeAgentsError>`](crate::error::DescribeAgentsError)
     pub fn describe_agents(&self) -> fluent_builders::DescribeAgents<C, M, R> {
         fluent_builders::DescribeAgents::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeConfigurations` operation.
+    /// Constructs a fluent builder for the [`DescribeConfigurations`](crate::client::fluent_builders::DescribeConfigurations) operation.
     ///
-    /// See [`DescribeConfigurations`](crate::client::fluent_builders::DescribeConfigurations) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeConfigurationsInput`](crate::input::DescribeConfigurationsInput) with field(s):
+    ///   - [`configuration_ids(Option<Vec<String>>)`](crate::input::DescribeConfigurationsInput::configuration_ids): <p>One or more configuration IDs.</p>
+    /// - On success, responds with [`DescribeConfigurationsOutput`](crate::output::DescribeConfigurationsOutput) with field(s):
+    ///   - [`configurations(Option<Vec<HashMap<String, String>>>)`](crate::output::DescribeConfigurationsOutput::configurations): <p>A key in the response map. The value is an array of data.</p>
+    /// - On failure, responds with [`SdkError<DescribeConfigurationsError>`](crate::error::DescribeConfigurationsError)
     pub fn describe_configurations(&self) -> fluent_builders::DescribeConfigurations<C, M, R> {
         fluent_builders::DescribeConfigurations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeContinuousExports` operation.
-    ///
-    /// See [`DescribeContinuousExports`](crate::client::fluent_builders::DescribeContinuousExports) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeContinuousExports`](crate::client::fluent_builders::DescribeContinuousExports) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeContinuousExports::into_paginator).
+    ///
+    /// - Takes [`DescribeContinuousExportsInput`](crate::input::DescribeContinuousExportsInput) with field(s):
+    ///   - [`export_ids(Option<Vec<String>>)`](crate::input::DescribeContinuousExportsInput::export_ids): <p>The unique IDs assigned to the exports.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeContinuousExportsInput::max_results): <p>A number between 1 and 100 specifying the maximum number of continuous export descriptions returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeContinuousExportsInput::next_token): <p>The token from the previous call to <code>DescribeExportTasks</code>.</p>
+    /// - On success, responds with [`DescribeContinuousExportsOutput`](crate::output::DescribeContinuousExportsOutput) with field(s):
+    ///   - [`descriptions(Option<Vec<ContinuousExportDescription>>)`](crate::output::DescribeContinuousExportsOutput::descriptions): <p>A list of continuous export descriptions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeContinuousExportsOutput::next_token): <p>The token from the previous call to <code>DescribeExportTasks</code>.</p>
+    /// - On failure, responds with [`SdkError<DescribeContinuousExportsError>`](crate::error::DescribeContinuousExportsError)
     pub fn describe_continuous_exports(
         &self,
     ) -> fluent_builders::DescribeContinuousExports<C, M, R> {
         fluent_builders::DescribeContinuousExports::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeExportConfigurations` operation.
+    /// Constructs a fluent builder for the [`DescribeExportConfigurations`](crate::client::fluent_builders::DescribeExportConfigurations) operation.
     ///
-    /// See [`DescribeExportConfigurations`](crate::client::fluent_builders::DescribeExportConfigurations) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeExportConfigurationsInput`](crate::input::DescribeExportConfigurationsInput) with field(s):
+    ///   - [`export_ids(Option<Vec<String>>)`](crate::input::DescribeExportConfigurationsInput::export_ids): <p>A list of continuous export IDs to search for.</p>
+    ///   - [`max_results(i32)`](crate::input::DescribeExportConfigurationsInput::max_results): <p>A number between 1 and 100 specifying the maximum number of continuous export descriptions returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeExportConfigurationsInput::next_token): <p>The token from the previous call to describe-export-tasks.</p>
+    /// - On success, responds with [`DescribeExportConfigurationsOutput`](crate::output::DescribeExportConfigurationsOutput) with field(s):
+    ///   - [`exports_info(Option<Vec<ExportInfo>>)`](crate::output::DescribeExportConfigurationsOutput::exports_info): <p></p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeExportConfigurationsOutput::next_token): <p>The token from the previous call to describe-export-tasks.</p>
+    /// - On failure, responds with [`SdkError<DescribeExportConfigurationsError>`](crate::error::DescribeExportConfigurationsError)
     pub fn describe_export_configurations(
         &self,
     ) -> fluent_builders::DescribeExportConfigurations<C, M, R> {
         fluent_builders::DescribeExportConfigurations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeExportTasks` operation.
+    /// Constructs a fluent builder for the [`DescribeExportTasks`](crate::client::fluent_builders::DescribeExportTasks) operation.
     ///
-    /// See [`DescribeExportTasks`](crate::client::fluent_builders::DescribeExportTasks) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeExportTasksInput`](crate::input::DescribeExportTasksInput) with field(s):
+    ///   - [`export_ids(Option<Vec<String>>)`](crate::input::DescribeExportTasksInput::export_ids): <p>One or more unique identifiers used to query the status of an export request.</p>
+    ///   - [`filters(Option<Vec<ExportFilter>>)`](crate::input::DescribeExportTasksInput::filters): <p>One or more filters.</p>  <ul>   <li> <p> <code>AgentId</code> - ID of the agent whose collected data will be exported</p> </li>  </ul>
+    ///   - [`max_results(i32)`](crate::input::DescribeExportTasksInput::max_results): <p>The maximum number of volume results returned by <code>DescribeExportTasks</code> in paginated output. When this parameter is used, <code>DescribeExportTasks</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeExportTasksInput::next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeExportTasks</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p>
+    /// - On success, responds with [`DescribeExportTasksOutput`](crate::output::DescribeExportTasksOutput) with field(s):
+    ///   - [`exports_info(Option<Vec<ExportInfo>>)`](crate::output::DescribeExportTasksOutput::exports_info): <p>Contains one or more sets of export request details. When the status of a request is <code>SUCCEEDED</code>, the response includes a URL for an Amazon S3 bucket where you can view the data in a CSV file.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeExportTasksOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>DescribeExportTasks</code> request. When the results of a <code>DescribeExportTasks</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<DescribeExportTasksError>`](crate::error::DescribeExportTasksError)
     pub fn describe_export_tasks(&self) -> fluent_builders::DescribeExportTasks<C, M, R> {
         fluent_builders::DescribeExportTasks::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeImportTasks` operation.
-    ///
-    /// See [`DescribeImportTasks`](crate::client::fluent_builders::DescribeImportTasks) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeImportTasks`](crate::client::fluent_builders::DescribeImportTasks) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeImportTasks::into_paginator).
+    ///
+    /// - Takes [`DescribeImportTasksInput`](crate::input::DescribeImportTasksInput) with field(s):
+    ///   - [`filters(Option<Vec<ImportTaskFilter>>)`](crate::input::DescribeImportTasksInput::filters): <p>An array of name-value pairs that you provide to filter the results for the <code>DescribeImportTask</code> request to a specific subset of results. Currently, wildcard values aren't supported for filters.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeImportTasksInput::max_results): <p>The maximum number of results that you want this request to return, up to 100.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeImportTasksInput::next_token): <p>The token to request a specific page of results.</p>
+    /// - On success, responds with [`DescribeImportTasksOutput`](crate::output::DescribeImportTasksOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeImportTasksOutput::next_token): <p>The token to request the next page of results.</p>
+    ///   - [`tasks(Option<Vec<ImportTask>>)`](crate::output::DescribeImportTasksOutput::tasks): <p>A returned array of import tasks that match any applied filters, up to the specified number of maximum results.</p>
+    /// - On failure, responds with [`SdkError<DescribeImportTasksError>`](crate::error::DescribeImportTasksError)
     pub fn describe_import_tasks(&self) -> fluent_builders::DescribeImportTasks<C, M, R> {
         fluent_builders::DescribeImportTasks::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeTags` operation.
+    /// Constructs a fluent builder for the [`DescribeTags`](crate::client::fluent_builders::DescribeTags) operation.
     ///
-    /// See [`DescribeTags`](crate::client::fluent_builders::DescribeTags) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeTagsInput`](crate::input::DescribeTagsInput) with field(s):
+    ///   - [`filters(Option<Vec<TagFilter>>)`](crate::input::DescribeTagsInput::filters): <p>You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>. </p>
+    ///   - [`max_results(i32)`](crate::input::DescribeTagsInput::max_results): <p>The total number of items to return in a single page of output. The maximum value is 100.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeTagsInput::next_token): <p>A token to start the list. Use this token to get the next set of results.</p>
+    /// - On success, responds with [`DescribeTagsOutput`](crate::output::DescribeTagsOutput) with field(s):
+    ///   - [`tags(Option<Vec<ConfigurationTag>>)`](crate::output::DescribeTagsOutput::tags): <p>Depending on the input, this is a list of configuration items tagged with a specific tag, or a list of tags for a specific configuration item.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeTagsOutput::next_token): <p>The call returns a token. Use this token to get the next set of results.</p>
+    /// - On failure, responds with [`SdkError<DescribeTagsError>`](crate::error::DescribeTagsError)
     pub fn describe_tags(&self) -> fluent_builders::DescribeTags<C, M, R> {
         fluent_builders::DescribeTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateConfigurationItemsFromApplication` operation.
+    /// Constructs a fluent builder for the [`DisassociateConfigurationItemsFromApplication`](crate::client::fluent_builders::DisassociateConfigurationItemsFromApplication) operation.
     ///
-    /// See [`DisassociateConfigurationItemsFromApplication`](crate::client::fluent_builders::DisassociateConfigurationItemsFromApplication) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateConfigurationItemsFromApplicationInput`](crate::input::DisassociateConfigurationItemsFromApplicationInput) with field(s):
+    ///   - [`application_configuration_id(Option<String>)`](crate::input::DisassociateConfigurationItemsFromApplicationInput::application_configuration_id): <p>Configuration ID of an application from which each item is disassociated.</p>
+    ///   - [`configuration_ids(Option<Vec<String>>)`](crate::input::DisassociateConfigurationItemsFromApplicationInput::configuration_ids): <p>Configuration ID of each item to be disassociated from an application.</p>
+    /// - On success, responds with [`DisassociateConfigurationItemsFromApplicationOutput`](crate::output::DisassociateConfigurationItemsFromApplicationOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateConfigurationItemsFromApplicationError>`](crate::error::DisassociateConfigurationItemsFromApplicationError)
     pub fn disassociate_configuration_items_from_application(
         &self,
     ) -> fluent_builders::DisassociateConfigurationItemsFromApplication<C, M, R> {
         fluent_builders::DisassociateConfigurationItemsFromApplication::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ExportConfigurations` operation.
+    /// Constructs a fluent builder for the [`ExportConfigurations`](crate::client::fluent_builders::ExportConfigurations) operation.
     ///
-    /// See [`ExportConfigurations`](crate::client::fluent_builders::ExportConfigurations) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ExportConfigurationsInput`](crate::input::ExportConfigurationsInput)
+
+    /// - On success, responds with [`ExportConfigurationsOutput`](crate::output::ExportConfigurationsOutput) with field(s):
+    ///   - [`export_id(Option<String>)`](crate::output::ExportConfigurationsOutput::export_id): <p>A unique identifier that you can use to query the export status.</p>
+    /// - On failure, responds with [`SdkError<ExportConfigurationsError>`](crate::error::ExportConfigurationsError)
     pub fn export_configurations(&self) -> fluent_builders::ExportConfigurations<C, M, R> {
         fluent_builders::ExportConfigurations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDiscoverySummary` operation.
+    /// Constructs a fluent builder for the [`GetDiscoverySummary`](crate::client::fluent_builders::GetDiscoverySummary) operation.
     ///
-    /// See [`GetDiscoverySummary`](crate::client::fluent_builders::GetDiscoverySummary) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetDiscoverySummaryInput`](crate::input::GetDiscoverySummaryInput)
+
+    /// - On success, responds with [`GetDiscoverySummaryOutput`](crate::output::GetDiscoverySummaryOutput) with field(s):
+    ///   - [`servers(i64)`](crate::output::GetDiscoverySummaryOutput::servers): <p>The number of servers discovered.</p>
+    ///   - [`applications(i64)`](crate::output::GetDiscoverySummaryOutput::applications): <p>The number of applications discovered.</p>
+    ///   - [`servers_mapped_to_applications(i64)`](crate::output::GetDiscoverySummaryOutput::servers_mapped_to_applications): <p>The number of servers mapped to applications.</p>
+    ///   - [`servers_mappedto_tags(i64)`](crate::output::GetDiscoverySummaryOutput::servers_mappedto_tags): <p>The number of servers mapped to tags.</p>
+    ///   - [`agent_summary(Option<CustomerAgentInfo>)`](crate::output::GetDiscoverySummaryOutput::agent_summary): <p>Details about discovered agents, including agent status and health.</p>
+    ///   - [`connector_summary(Option<CustomerConnectorInfo>)`](crate::output::GetDiscoverySummaryOutput::connector_summary): <p>Details about discovered connectors, including connector status and health.</p>
+    /// - On failure, responds with [`SdkError<GetDiscoverySummaryError>`](crate::error::GetDiscoverySummaryError)
     pub fn get_discovery_summary(&self) -> fluent_builders::GetDiscoverySummary<C, M, R> {
         fluent_builders::GetDiscoverySummary::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListConfigurations` operation.
+    /// Constructs a fluent builder for the [`ListConfigurations`](crate::client::fluent_builders::ListConfigurations) operation.
     ///
-    /// See [`ListConfigurations`](crate::client::fluent_builders::ListConfigurations) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListConfigurationsInput`](crate::input::ListConfigurationsInput) with field(s):
+    ///   - [`configuration_type(Option<ConfigurationItemType>)`](crate::input::ListConfigurationsInput::configuration_type): <p>A valid configuration identified by Application Discovery Service. </p>
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::ListConfigurationsInput::filters): <p>You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example: </p>  <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>  <p>For a complete list of filter options and guidance about using them with this action, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
+    ///   - [`max_results(i32)`](crate::input::ListConfigurationsInput::max_results): <p>The total number of items to return. The maximum value is 100.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListConfigurationsInput::next_token): <p>Token to retrieve the next set of results. For example, if a previous call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
+    ///   - [`order_by(Option<Vec<OrderByElement>>)`](crate::input::ListConfigurationsInput::order_by): <p>Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output characteristics for each filter, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#ListConfigurations">Using the ListConfigurations Action</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
+    /// - On success, responds with [`ListConfigurationsOutput`](crate::output::ListConfigurationsOutput) with field(s):
+    ///   - [`configurations(Option<Vec<HashMap<String, String>>>)`](crate::output::ListConfigurationsOutput::configurations): <p>Returns configuration details, including the configuration ID, attribute names, and attribute values.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListConfigurationsOutput::next_token): <p>Token to retrieve the next set of results. For example, if your call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>
+    /// - On failure, responds with [`SdkError<ListConfigurationsError>`](crate::error::ListConfigurationsError)
     pub fn list_configurations(&self) -> fluent_builders::ListConfigurations<C, M, R> {
         fluent_builders::ListConfigurations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListServerNeighbors` operation.
+    /// Constructs a fluent builder for the [`ListServerNeighbors`](crate::client::fluent_builders::ListServerNeighbors) operation.
     ///
-    /// See [`ListServerNeighbors`](crate::client::fluent_builders::ListServerNeighbors) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListServerNeighborsInput`](crate::input::ListServerNeighborsInput) with field(s):
+    ///   - [`configuration_id(Option<String>)`](crate::input::ListServerNeighborsInput::configuration_id): <p>Configuration ID of the server for which neighbors are being listed.</p>
+    ///   - [`port_information_needed(bool)`](crate::input::ListServerNeighborsInput::port_information_needed): <p>Flag to indicate if port and protocol information is needed as part of the response.</p>
+    ///   - [`neighbor_configuration_ids(Option<Vec<String>>)`](crate::input::ListServerNeighborsInput::neighbor_configuration_ids): <p>List of configuration IDs to test for one-hop-away.</p>
+    ///   - [`max_results(i32)`](crate::input::ListServerNeighborsInput::max_results): <p>Maximum number of results to return in a single page of output.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListServerNeighborsInput::next_token): <p>Token to retrieve the next set of results. For example, if you previously specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with a token. Use that token in this query to get the next set of 10.</p>
+    /// - On success, responds with [`ListServerNeighborsOutput`](crate::output::ListServerNeighborsOutput) with field(s):
+    ///   - [`neighbors(Option<Vec<NeighborConnectionDetail>>)`](crate::output::ListServerNeighborsOutput::neighbors): <p>List of distinct servers that are one hop away from the given server.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListServerNeighborsOutput::next_token): <p>Token to retrieve the next set of results. For example, if you specified 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>
+    ///   - [`known_dependency_count(i64)`](crate::output::ListServerNeighborsOutput::known_dependency_count): <p>Count of distinct servers that are one hop away from the given server.</p>
+    /// - On failure, responds with [`SdkError<ListServerNeighborsError>`](crate::error::ListServerNeighborsError)
     pub fn list_server_neighbors(&self) -> fluent_builders::ListServerNeighbors<C, M, R> {
         fluent_builders::ListServerNeighbors::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartContinuousExport` operation.
+    /// Constructs a fluent builder for the [`StartContinuousExport`](crate::client::fluent_builders::StartContinuousExport) operation.
     ///
-    /// See [`StartContinuousExport`](crate::client::fluent_builders::StartContinuousExport) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartContinuousExportInput`](crate::input::StartContinuousExportInput)
+
+    /// - On success, responds with [`StartContinuousExportOutput`](crate::output::StartContinuousExportOutput) with field(s):
+    ///   - [`export_id(Option<String>)`](crate::output::StartContinuousExportOutput::export_id): <p>The unique ID assigned to this export.</p>
+    ///   - [`s3_bucket(Option<String>)`](crate::output::StartContinuousExportOutput::s3_bucket): <p>The name of the s3 bucket where the export data parquet files are stored.</p>
+    ///   - [`start_time(Option<DateTime>)`](crate::output::StartContinuousExportOutput::start_time): <p>The timestamp representing when the continuous export was started.</p>
+    ///   - [`data_source(Option<DataSource>)`](crate::output::StartContinuousExportOutput::data_source): <p>The type of data collector used to gather this data (currently only offered for AGENT).</p>
+    ///   - [`schema_storage_config(Option<HashMap<String, String>>)`](crate::output::StartContinuousExportOutput::schema_storage_config): <p>A dictionary which describes how the data is stored.</p>  <ul>   <li> <p> <code>databaseName</code> - the name of the Glue database used to store the schema.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<StartContinuousExportError>`](crate::error::StartContinuousExportError)
     pub fn start_continuous_export(&self) -> fluent_builders::StartContinuousExport<C, M, R> {
         fluent_builders::StartContinuousExport::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartDataCollectionByAgentIds` operation.
+    /// Constructs a fluent builder for the [`StartDataCollectionByAgentIds`](crate::client::fluent_builders::StartDataCollectionByAgentIds) operation.
     ///
-    /// See [`StartDataCollectionByAgentIds`](crate::client::fluent_builders::StartDataCollectionByAgentIds) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartDataCollectionByAgentIdsInput`](crate::input::StartDataCollectionByAgentIdsInput) with field(s):
+    ///   - [`agent_ids(Option<Vec<String>>)`](crate::input::StartDataCollectionByAgentIdsInput::agent_ids): <p>The IDs of the agents or connectors from which to start collecting data. If you send a request to an agent/connector ID that you do not have permission to contact, according to your AWS account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple agents/connectors and you do not have permission to contact some of those agents/connectors, the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.</p>
+    /// - On success, responds with [`StartDataCollectionByAgentIdsOutput`](crate::output::StartDataCollectionByAgentIdsOutput) with field(s):
+    ///   - [`agents_configuration_status(Option<Vec<AgentConfigurationStatus>>)`](crate::output::StartDataCollectionByAgentIdsOutput::agents_configuration_status): <p>Information about agents or the connector that were instructed to start collecting data. Information includes the agent/connector ID, a description of the operation performed, and whether the agent/connector configuration was updated.</p>
+    /// - On failure, responds with [`SdkError<StartDataCollectionByAgentIdsError>`](crate::error::StartDataCollectionByAgentIdsError)
     pub fn start_data_collection_by_agent_ids(
         &self,
     ) -> fluent_builders::StartDataCollectionByAgentIds<C, M, R> {
         fluent_builders::StartDataCollectionByAgentIds::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartExportTask` operation.
+    /// Constructs a fluent builder for the [`StartExportTask`](crate::client::fluent_builders::StartExportTask) operation.
     ///
-    /// See [`StartExportTask`](crate::client::fluent_builders::StartExportTask) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartExportTaskInput`](crate::input::StartExportTaskInput) with field(s):
+    ///   - [`export_data_format(Option<Vec<ExportDataFormat>>)`](crate::input::StartExportTaskInput::export_data_format): <p>The file format for the returned export data. Default value is <code>CSV</code>. <b>Note:</b> <i>The</i> <code>GRAPHML</code> <i>option has been deprecated.</i> </p>
+    ///   - [`filters(Option<Vec<ExportFilter>>)`](crate::input::StartExportTaskInput::filters): <p>If a filter is present, it selects the single <code>agentId</code> of the Application Discovery Agent for which data is exported. The <code>agentId</code> can be found in the results of the <code>DescribeAgents</code> API or CLI. If no filter is present, <code>startTime</code> and <code>endTime</code> are ignored and exported data includes both Agentless Discovery Connector data and summary data from Application Discovery agents. </p>
+    ///   - [`start_time(Option<DateTime>)`](crate::input::StartExportTaskInput::start_time): <p>The start timestamp for exported data from the single Application Discovery Agent selected in the filters. If no value is specified, data is exported starting from the first data collected by the agent.</p>
+    ///   - [`end_time(Option<DateTime>)`](crate::input::StartExportTaskInput::end_time): <p>The end timestamp for exported data from the single Application Discovery Agent selected in the filters. If no value is specified, exported data includes the most recent data collected by the agent.</p>
+    /// - On success, responds with [`StartExportTaskOutput`](crate::output::StartExportTaskOutput) with field(s):
+    ///   - [`export_id(Option<String>)`](crate::output::StartExportTaskOutput::export_id): <p>A unique identifier used to query the status of an export request.</p>
+    /// - On failure, responds with [`SdkError<StartExportTaskError>`](crate::error::StartExportTaskError)
     pub fn start_export_task(&self) -> fluent_builders::StartExportTask<C, M, R> {
         fluent_builders::StartExportTask::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartImportTask` operation.
+    /// Constructs a fluent builder for the [`StartImportTask`](crate::client::fluent_builders::StartImportTask) operation.
     ///
-    /// See [`StartImportTask`](crate::client::fluent_builders::StartImportTask) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartImportTaskInput`](crate::input::StartImportTaskInput) with field(s):
+    ///   - [`client_request_token(Option<String>)`](crate::input::StartImportTaskInput::client_request_token): <p>Optional. A unique token that you can provide to prevent the same import request from occurring more than once. If you don't provide a token, a token is automatically generated.</p>  <p>Sending more than one <code>StartImportTask</code> request with the same client request token will return information about the original import task with that client request token.</p>
+    ///   - [`name(Option<String>)`](crate::input::StartImportTaskInput::name): <p>A descriptive name for this request. You can use this name to filter future requests related to this import task, such as identifying applications and servers that were included in this import task. We recommend that you use a meaningful name for each import task.</p>
+    ///   - [`import_url(Option<String>)`](crate::input::StartImportTaskInput::import_url): <p>The URL for your import file that you've uploaded to Amazon S3.</p> <note>   <p>If you're using the AWS CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code> </p>  </note>
+    /// - On success, responds with [`StartImportTaskOutput`](crate::output::StartImportTaskOutput) with field(s):
+    ///   - [`task(Option<ImportTask>)`](crate::output::StartImportTaskOutput::task): <p>An array of information related to the import task request including status information, times, IDs, the Amazon S3 Object URL for the import file, and more. </p>
+    /// - On failure, responds with [`SdkError<StartImportTaskError>`](crate::error::StartImportTaskError)
     pub fn start_import_task(&self) -> fluent_builders::StartImportTask<C, M, R> {
         fluent_builders::StartImportTask::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopContinuousExport` operation.
+    /// Constructs a fluent builder for the [`StopContinuousExport`](crate::client::fluent_builders::StopContinuousExport) operation.
     ///
-    /// See [`StopContinuousExport`](crate::client::fluent_builders::StopContinuousExport) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StopContinuousExportInput`](crate::input::StopContinuousExportInput) with field(s):
+    ///   - [`export_id(Option<String>)`](crate::input::StopContinuousExportInput::export_id): <p>The unique ID assigned to this export.</p>
+    /// - On success, responds with [`StopContinuousExportOutput`](crate::output::StopContinuousExportOutput) with field(s):
+    ///   - [`start_time(Option<DateTime>)`](crate::output::StopContinuousExportOutput::start_time): <p>Timestamp that represents when this continuous export started collecting data.</p>
+    ///   - [`stop_time(Option<DateTime>)`](crate::output::StopContinuousExportOutput::stop_time): <p>Timestamp that represents when this continuous export was stopped.</p>
+    /// - On failure, responds with [`SdkError<StopContinuousExportError>`](crate::error::StopContinuousExportError)
     pub fn stop_continuous_export(&self) -> fluent_builders::StopContinuousExport<C, M, R> {
         fluent_builders::StopContinuousExport::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopDataCollectionByAgentIds` operation.
+    /// Constructs a fluent builder for the [`StopDataCollectionByAgentIds`](crate::client::fluent_builders::StopDataCollectionByAgentIds) operation.
     ///
-    /// See [`StopDataCollectionByAgentIds`](crate::client::fluent_builders::StopDataCollectionByAgentIds) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StopDataCollectionByAgentIdsInput`](crate::input::StopDataCollectionByAgentIdsInput) with field(s):
+    ///   - [`agent_ids(Option<Vec<String>>)`](crate::input::StopDataCollectionByAgentIdsInput::agent_ids): <p>The IDs of the agents or connectors from which to stop collecting data.</p>
+    /// - On success, responds with [`StopDataCollectionByAgentIdsOutput`](crate::output::StopDataCollectionByAgentIdsOutput) with field(s):
+    ///   - [`agents_configuration_status(Option<Vec<AgentConfigurationStatus>>)`](crate::output::StopDataCollectionByAgentIdsOutput::agents_configuration_status): <p>Information about the agents or connector that were instructed to stop collecting data. Information includes the agent/connector ID, a description of the operation performed, and whether the agent/connector configuration was updated.</p>
+    /// - On failure, responds with [`SdkError<StopDataCollectionByAgentIdsError>`](crate::error::StopDataCollectionByAgentIdsError)
     pub fn stop_data_collection_by_agent_ids(
         &self,
     ) -> fluent_builders::StopDataCollectionByAgentIds<C, M, R> {
         fluent_builders::StopDataCollectionByAgentIds::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateApplication` operation.
+    /// Constructs a fluent builder for the [`UpdateApplication`](crate::client::fluent_builders::UpdateApplication) operation.
     ///
-    /// See [`UpdateApplication`](crate::client::fluent_builders::UpdateApplication) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateApplicationInput`](crate::input::UpdateApplicationInput) with field(s):
+    ///   - [`configuration_id(Option<String>)`](crate::input::UpdateApplicationInput::configuration_id): <p>Configuration ID of the application to be updated.</p>
+    ///   - [`name(Option<String>)`](crate::input::UpdateApplicationInput::name): <p>New name of the application to be updated.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateApplicationInput::description): <p>New description of the application to be updated.</p>
+    /// - On success, responds with [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateApplicationError>`](crate::error::UpdateApplicationError)
     pub fn update_application(&self) -> fluent_builders::UpdateApplication<C, M, R> {
         fluent_builders::UpdateApplication::new(self.handle.clone())
     }

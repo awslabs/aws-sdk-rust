@@ -83,336 +83,656 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `BatchDeleteBuilds` operation.
+    /// Constructs a fluent builder for the [`BatchDeleteBuilds`](crate::client::fluent_builders::BatchDeleteBuilds) operation.
     ///
-    /// See [`BatchDeleteBuilds`](crate::client::fluent_builders::BatchDeleteBuilds) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchDeleteBuildsInput`](crate::input::BatchDeleteBuildsInput) with field(s):
+    ///   - [`ids(Option<Vec<String>>)`](crate::input::BatchDeleteBuildsInput::ids): <p>The IDs of the builds to delete.</p>
+    /// - On success, responds with [`BatchDeleteBuildsOutput`](crate::output::BatchDeleteBuildsOutput) with field(s):
+    ///   - [`builds_deleted(Option<Vec<String>>)`](crate::output::BatchDeleteBuildsOutput::builds_deleted): <p>The IDs of the builds that were successfully deleted.</p>
+    ///   - [`builds_not_deleted(Option<Vec<BuildNotDeleted>>)`](crate::output::BatchDeleteBuildsOutput::builds_not_deleted): <p>Information about any builds that could not be successfully deleted.</p>
+    /// - On failure, responds with [`SdkError<BatchDeleteBuildsError>`](crate::error::BatchDeleteBuildsError)
     pub fn batch_delete_builds(&self) -> fluent_builders::BatchDeleteBuilds<C, M, R> {
         fluent_builders::BatchDeleteBuilds::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchGetBuildBatches` operation.
+    /// Constructs a fluent builder for the [`BatchGetBuildBatches`](crate::client::fluent_builders::BatchGetBuildBatches) operation.
     ///
-    /// See [`BatchGetBuildBatches`](crate::client::fluent_builders::BatchGetBuildBatches) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchGetBuildBatchesInput`](crate::input::BatchGetBuildBatchesInput) with field(s):
+    ///   - [`ids(Option<Vec<String>>)`](crate::input::BatchGetBuildBatchesInput::ids): <p>An array that contains the batch build identifiers to retrieve.</p>
+    /// - On success, responds with [`BatchGetBuildBatchesOutput`](crate::output::BatchGetBuildBatchesOutput) with field(s):
+    ///   - [`build_batches(Option<Vec<BuildBatch>>)`](crate::output::BatchGetBuildBatchesOutput::build_batches): <p>An array of <code>BuildBatch</code> objects that represent the retrieved batch builds.</p>
+    ///   - [`build_batches_not_found(Option<Vec<String>>)`](crate::output::BatchGetBuildBatchesOutput::build_batches_not_found): <p>An array that contains the identifiers of any batch builds that are not found.</p>
+    /// - On failure, responds with [`SdkError<BatchGetBuildBatchesError>`](crate::error::BatchGetBuildBatchesError)
     pub fn batch_get_build_batches(&self) -> fluent_builders::BatchGetBuildBatches<C, M, R> {
         fluent_builders::BatchGetBuildBatches::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchGetBuilds` operation.
+    /// Constructs a fluent builder for the [`BatchGetBuilds`](crate::client::fluent_builders::BatchGetBuilds) operation.
     ///
-    /// See [`BatchGetBuilds`](crate::client::fluent_builders::BatchGetBuilds) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchGetBuildsInput`](crate::input::BatchGetBuildsInput) with field(s):
+    ///   - [`ids(Option<Vec<String>>)`](crate::input::BatchGetBuildsInput::ids): <p>The IDs of the builds.</p>
+    /// - On success, responds with [`BatchGetBuildsOutput`](crate::output::BatchGetBuildsOutput) with field(s):
+    ///   - [`builds(Option<Vec<Build>>)`](crate::output::BatchGetBuildsOutput::builds): <p>Information about the requested builds.</p>
+    ///   - [`builds_not_found(Option<Vec<String>>)`](crate::output::BatchGetBuildsOutput::builds_not_found): <p>The IDs of builds for which information could not be found.</p>
+    /// - On failure, responds with [`SdkError<BatchGetBuildsError>`](crate::error::BatchGetBuildsError)
     pub fn batch_get_builds(&self) -> fluent_builders::BatchGetBuilds<C, M, R> {
         fluent_builders::BatchGetBuilds::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchGetProjects` operation.
+    /// Constructs a fluent builder for the [`BatchGetProjects`](crate::client::fluent_builders::BatchGetProjects) operation.
     ///
-    /// See [`BatchGetProjects`](crate::client::fluent_builders::BatchGetProjects) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchGetProjectsInput`](crate::input::BatchGetProjectsInput) with field(s):
+    ///   - [`names(Option<Vec<String>>)`](crate::input::BatchGetProjectsInput::names): <p>The names or ARNs of the build projects. To get information about a project shared with your Amazon Web Services account, its ARN must be specified. You cannot specify a shared project using its name.</p>
+    /// - On success, responds with [`BatchGetProjectsOutput`](crate::output::BatchGetProjectsOutput) with field(s):
+    ///   - [`projects(Option<Vec<Project>>)`](crate::output::BatchGetProjectsOutput::projects): <p>Information about the requested build projects.</p>
+    ///   - [`projects_not_found(Option<Vec<String>>)`](crate::output::BatchGetProjectsOutput::projects_not_found): <p>The names of build projects for which information could not be found.</p>
+    /// - On failure, responds with [`SdkError<BatchGetProjectsError>`](crate::error::BatchGetProjectsError)
     pub fn batch_get_projects(&self) -> fluent_builders::BatchGetProjects<C, M, R> {
         fluent_builders::BatchGetProjects::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchGetReportGroups` operation.
+    /// Constructs a fluent builder for the [`BatchGetReportGroups`](crate::client::fluent_builders::BatchGetReportGroups) operation.
     ///
-    /// See [`BatchGetReportGroups`](crate::client::fluent_builders::BatchGetReportGroups) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchGetReportGroupsInput`](crate::input::BatchGetReportGroupsInput) with field(s):
+    ///   - [`report_group_arns(Option<Vec<String>>)`](crate::input::BatchGetReportGroupsInput::report_group_arns): <p> An array of report group ARNs that identify the report groups to return. </p>
+    /// - On success, responds with [`BatchGetReportGroupsOutput`](crate::output::BatchGetReportGroupsOutput) with field(s):
+    ///   - [`report_groups(Option<Vec<ReportGroup>>)`](crate::output::BatchGetReportGroupsOutput::report_groups): <p> The array of report groups returned by <code>BatchGetReportGroups</code>. </p>
+    ///   - [`report_groups_not_found(Option<Vec<String>>)`](crate::output::BatchGetReportGroupsOutput::report_groups_not_found): <p> An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>ReportGroup</code>. </p>
+    /// - On failure, responds with [`SdkError<BatchGetReportGroupsError>`](crate::error::BatchGetReportGroupsError)
     pub fn batch_get_report_groups(&self) -> fluent_builders::BatchGetReportGroups<C, M, R> {
         fluent_builders::BatchGetReportGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchGetReports` operation.
+    /// Constructs a fluent builder for the [`BatchGetReports`](crate::client::fluent_builders::BatchGetReports) operation.
     ///
-    /// See [`BatchGetReports`](crate::client::fluent_builders::BatchGetReports) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchGetReportsInput`](crate::input::BatchGetReportsInput) with field(s):
+    ///   - [`report_arns(Option<Vec<String>>)`](crate::input::BatchGetReportsInput::report_arns): <p> An array of ARNs that identify the <code>Report</code> objects to return. </p>
+    /// - On success, responds with [`BatchGetReportsOutput`](crate::output::BatchGetReportsOutput) with field(s):
+    ///   - [`reports(Option<Vec<Report>>)`](crate::output::BatchGetReportsOutput::reports): <p> The array of <code>Report</code> objects returned by <code>BatchGetReports</code>. </p>
+    ///   - [`reports_not_found(Option<Vec<String>>)`](crate::output::BatchGetReportsOutput::reports_not_found): <p> An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated with a <code>Report</code>. </p>
+    /// - On failure, responds with [`SdkError<BatchGetReportsError>`](crate::error::BatchGetReportsError)
     pub fn batch_get_reports(&self) -> fluent_builders::BatchGetReports<C, M, R> {
         fluent_builders::BatchGetReports::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateProject` operation.
+    /// Constructs a fluent builder for the [`CreateProject`](crate::client::fluent_builders::CreateProject) operation.
     ///
-    /// See [`CreateProject`](crate::client::fluent_builders::CreateProject) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateProjectInput`](crate::input::CreateProjectInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateProjectInput::name): <p>The name of the build project.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateProjectInput::description): <p>A description that makes the build project easy to identify.</p>
+    ///   - [`source(Option<ProjectSource>)`](crate::input::CreateProjectInput::source): <p>Information about the build input source code for the build project.</p>
+    ///   - [`secondary_sources(Option<Vec<ProjectSource>>)`](crate::input::CreateProjectInput::secondary_sources): <p>An array of <code>ProjectSource</code> objects. </p>
+    ///   - [`source_version(Option<String>)`](crate::input::CreateProjectInput::source_version): <p>A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of: </p>  <ul>   <li> <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li>   <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>   <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>   <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>  </ul>  <p>If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p>  <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
+    ///   - [`secondary_source_versions(Option<Vec<ProjectSourceVersion>>)`](crate::input::CreateProjectInput::secondary_source_versions): <p>An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take precedence over these <code>secondarySourceVersions</code> (at the project level). </p>
+    ///   - [`artifacts(Option<ProjectArtifacts>)`](crate::input::CreateProjectInput::artifacts): <p>Information about the build output artifacts for the build project.</p>
+    ///   - [`secondary_artifacts(Option<Vec<ProjectArtifacts>>)`](crate::input::CreateProjectInput::secondary_artifacts): <p>An array of <code>ProjectArtifacts</code> objects. </p>
+    ///   - [`cache(Option<ProjectCache>)`](crate::input::CreateProjectInput::cache): <p>Stores recently used information so that it can be quickly accessed at a later time.</p>
+    ///   - [`environment(Option<ProjectEnvironment>)`](crate::input::CreateProjectInput::environment): <p>Information about the build environment for the build project.</p>
+    ///   - [`service_role(Option<String>)`](crate::input::CreateProjectInput::service_role): <p>The ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services on behalf of the Amazon Web Services account.</p>
+    ///   - [`timeout_in_minutes(Option<i32>)`](crate::input::CreateProjectInput::timeout_in_minutes): <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out any build that has not been marked as completed. The default is 60 minutes.</p>
+    ///   - [`queued_timeout_in_minutes(Option<i32>)`](crate::input::CreateProjectInput::queued_timeout_in_minutes): <p>The number of minutes a build is allowed to be queued before it times out. </p>
+    ///   - [`encryption_key(Option<String>)`](crate::input::CreateProjectInput::encryption_key): <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note>   <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>  </note>  <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/   <alias-name></alias-name></code>). </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateProjectInput::tags): <p>A list of tag key and value pairs associated with this build project.</p>  <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
+    ///   - [`vpc_config(Option<VpcConfig>)`](crate::input::CreateProjectInput::vpc_config): <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
+    ///   - [`badge_enabled(Option<bool>)`](crate::input::CreateProjectInput::badge_enabled): <p>Set this to true to generate a publicly accessible URL for your project's build badge.</p>
+    ///   - [`logs_config(Option<LogsConfig>)`](crate::input::CreateProjectInput::logs_config): <p>Information about logs for the build project. These can be logs in CloudWatch Logs, logs uploaded to a specified S3 bucket, or both. </p>
+    ///   - [`file_system_locations(Option<Vec<ProjectFileSystemLocation>>)`](crate::input::CreateProjectInput::file_system_locations): <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
+    ///   - [`build_batch_config(Option<ProjectBuildBatchConfig>)`](crate::input::CreateProjectInput::build_batch_config): <p>A <code>ProjectBuildBatchConfig</code> object that defines the batch build options for the project.</p>
+    ///   - [`concurrent_build_limit(Option<i32>)`](crate::input::CreateProjectInput::concurrent_build_limit): <p>The maximum number of concurrent builds that are allowed for this project.</p>  <p>New builds are only started if the current number of builds is less than or equal to this limit. If the current build count meets this limit, new builds are throttled and are not run.</p>
+    /// - On success, responds with [`CreateProjectOutput`](crate::output::CreateProjectOutput) with field(s):
+    ///   - [`project(Option<Project>)`](crate::output::CreateProjectOutput::project): <p>Information about the build project that was created.</p>
+    /// - On failure, responds with [`SdkError<CreateProjectError>`](crate::error::CreateProjectError)
     pub fn create_project(&self) -> fluent_builders::CreateProject<C, M, R> {
         fluent_builders::CreateProject::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateReportGroup` operation.
+    /// Constructs a fluent builder for the [`CreateReportGroup`](crate::client::fluent_builders::CreateReportGroup) operation.
     ///
-    /// See [`CreateReportGroup`](crate::client::fluent_builders::CreateReportGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateReportGroupInput`](crate::input::CreateReportGroupInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateReportGroupInput::name): <p> The name of the report group. </p>
+    ///   - [`r#type(Option<ReportType>)`](crate::input::CreateReportGroupInput::r#type): <p> The type of report group. </p>
+    ///   - [`export_config(Option<ReportExportConfig>)`](crate::input::CreateReportGroupInput::export_config): <p> A <code>ReportExportConfig</code> object that contains information about where the report group test results are exported. </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateReportGroupInput::tags): <p> A list of tag key and value pairs associated with this report group. </p>  <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
+    /// - On success, responds with [`CreateReportGroupOutput`](crate::output::CreateReportGroupOutput) with field(s):
+    ///   - [`report_group(Option<ReportGroup>)`](crate::output::CreateReportGroupOutput::report_group): <p> Information about the report group that was created. </p>
+    /// - On failure, responds with [`SdkError<CreateReportGroupError>`](crate::error::CreateReportGroupError)
     pub fn create_report_group(&self) -> fluent_builders::CreateReportGroup<C, M, R> {
         fluent_builders::CreateReportGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateWebhook` operation.
+    /// Constructs a fluent builder for the [`CreateWebhook`](crate::client::fluent_builders::CreateWebhook) operation.
     ///
-    /// See [`CreateWebhook`](crate::client::fluent_builders::CreateWebhook) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateWebhookInput`](crate::input::CreateWebhookInput) with field(s):
+    ///   - [`project_name(Option<String>)`](crate::input::CreateWebhookInput::project_name): <p>The name of the CodeBuild project.</p>
+    ///   - [`branch_filter(Option<String>)`](crate::input::CreateWebhookInput::branch_filter): <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>   <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p>  </note>
+    ///   - [`filter_groups(Option<Vec<Vec<WebhookFilter>>>)`](crate::input::CreateWebhookInput::filter_groups): <p>An array of arrays of <code>WebhookFilter</code> objects used to determine which webhooks are triggered. At least one <code>WebhookFilter</code> in the array must specify <code>EVENT</code> as its <code>type</code>. </p>  <p>For a build to be triggered, at least one filter group in the <code>filterGroups</code> array must pass. For a filter group to pass, each of its filters must pass. </p>
+    ///   - [`build_type(Option<WebhookBuildType>)`](crate::input::CreateWebhookInput::build_type): <p>Specifies the type of build this webhook will trigger.</p>
+    /// - On success, responds with [`CreateWebhookOutput`](crate::output::CreateWebhookOutput) with field(s):
+    ///   - [`webhook(Option<Webhook>)`](crate::output::CreateWebhookOutput::webhook): <p>Information about a webhook that connects repository events to a build project in CodeBuild.</p>
+    /// - On failure, responds with [`SdkError<CreateWebhookError>`](crate::error::CreateWebhookError)
     pub fn create_webhook(&self) -> fluent_builders::CreateWebhook<C, M, R> {
         fluent_builders::CreateWebhook::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteBuildBatch` operation.
+    /// Constructs a fluent builder for the [`DeleteBuildBatch`](crate::client::fluent_builders::DeleteBuildBatch) operation.
     ///
-    /// See [`DeleteBuildBatch`](crate::client::fluent_builders::DeleteBuildBatch) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteBuildBatchInput`](crate::input::DeleteBuildBatchInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::DeleteBuildBatchInput::id): <p>The identifier of the batch build to delete.</p>
+    /// - On success, responds with [`DeleteBuildBatchOutput`](crate::output::DeleteBuildBatchOutput) with field(s):
+    ///   - [`status_code(Option<String>)`](crate::output::DeleteBuildBatchOutput::status_code): <p>The status code.</p>
+    ///   - [`builds_deleted(Option<Vec<String>>)`](crate::output::DeleteBuildBatchOutput::builds_deleted): <p>An array of strings that contain the identifiers of the builds that were deleted.</p>
+    ///   - [`builds_not_deleted(Option<Vec<BuildNotDeleted>>)`](crate::output::DeleteBuildBatchOutput::builds_not_deleted): <p>An array of <code>BuildNotDeleted</code> objects that specify the builds that could not be deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteBuildBatchError>`](crate::error::DeleteBuildBatchError)
     pub fn delete_build_batch(&self) -> fluent_builders::DeleteBuildBatch<C, M, R> {
         fluent_builders::DeleteBuildBatch::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteProject` operation.
+    /// Constructs a fluent builder for the [`DeleteProject`](crate::client::fluent_builders::DeleteProject) operation.
     ///
-    /// See [`DeleteProject`](crate::client::fluent_builders::DeleteProject) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteProjectInput`](crate::input::DeleteProjectInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteProjectInput::name): <p>The name of the build project.</p>
+    /// - On success, responds with [`DeleteProjectOutput`](crate::output::DeleteProjectOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteProjectError>`](crate::error::DeleteProjectError)
     pub fn delete_project(&self) -> fluent_builders::DeleteProject<C, M, R> {
         fluent_builders::DeleteProject::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteReport` operation.
+    /// Constructs a fluent builder for the [`DeleteReport`](crate::client::fluent_builders::DeleteReport) operation.
     ///
-    /// See [`DeleteReport`](crate::client::fluent_builders::DeleteReport) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteReportInput`](crate::input::DeleteReportInput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::input::DeleteReportInput::arn): <p> The ARN of the report to delete. </p>
+    /// - On success, responds with [`DeleteReportOutput`](crate::output::DeleteReportOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteReportError>`](crate::error::DeleteReportError)
     pub fn delete_report(&self) -> fluent_builders::DeleteReport<C, M, R> {
         fluent_builders::DeleteReport::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteReportGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteReportGroup`](crate::client::fluent_builders::DeleteReportGroup) operation.
     ///
-    /// See [`DeleteReportGroup`](crate::client::fluent_builders::DeleteReportGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteReportGroupInput`](crate::input::DeleteReportGroupInput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::input::DeleteReportGroupInput::arn): <p>The ARN of the report group to delete. </p>
+    ///   - [`delete_reports(bool)`](crate::input::DeleteReportGroupInput::delete_reports): <p>If <code>true</code>, deletes any reports that belong to a report group before deleting the report group. </p>  <p>If <code>false</code>, you must delete any reports in the report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportsForReportGroup.html">ListReportsForReportGroup</a> to get the reports in a report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReport.html">DeleteReport</a> to delete the reports. If you call <code>DeleteReportGroup</code> for a report group that contains one or more reports, an exception is thrown. </p>
+    /// - On success, responds with [`DeleteReportGroupOutput`](crate::output::DeleteReportGroupOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteReportGroupError>`](crate::error::DeleteReportGroupError)
     pub fn delete_report_group(&self) -> fluent_builders::DeleteReportGroup<C, M, R> {
         fluent_builders::DeleteReportGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteResourcePolicy` operation.
+    /// Constructs a fluent builder for the [`DeleteResourcePolicy`](crate::client::fluent_builders::DeleteResourcePolicy) operation.
     ///
-    /// See [`DeleteResourcePolicy`](crate::client::fluent_builders::DeleteResourcePolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::DeleteResourcePolicyInput::resource_arn): <p> The ARN of the resource that is associated with the resource policy. </p>
+    /// - On success, responds with [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteResourcePolicyError>`](crate::error::DeleteResourcePolicyError)
     pub fn delete_resource_policy(&self) -> fluent_builders::DeleteResourcePolicy<C, M, R> {
         fluent_builders::DeleteResourcePolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteSourceCredentials` operation.
+    /// Constructs a fluent builder for the [`DeleteSourceCredentials`](crate::client::fluent_builders::DeleteSourceCredentials) operation.
     ///
-    /// See [`DeleteSourceCredentials`](crate::client::fluent_builders::DeleteSourceCredentials) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteSourceCredentialsInput`](crate::input::DeleteSourceCredentialsInput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::input::DeleteSourceCredentialsInput::arn): <p> The Amazon Resource Name (ARN) of the token.</p>
+    /// - On success, responds with [`DeleteSourceCredentialsOutput`](crate::output::DeleteSourceCredentialsOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::DeleteSourceCredentialsOutput::arn): <p> The Amazon Resource Name (ARN) of the token. </p>
+    /// - On failure, responds with [`SdkError<DeleteSourceCredentialsError>`](crate::error::DeleteSourceCredentialsError)
     pub fn delete_source_credentials(&self) -> fluent_builders::DeleteSourceCredentials<C, M, R> {
         fluent_builders::DeleteSourceCredentials::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteWebhook` operation.
+    /// Constructs a fluent builder for the [`DeleteWebhook`](crate::client::fluent_builders::DeleteWebhook) operation.
     ///
-    /// See [`DeleteWebhook`](crate::client::fluent_builders::DeleteWebhook) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteWebhookInput`](crate::input::DeleteWebhookInput) with field(s):
+    ///   - [`project_name(Option<String>)`](crate::input::DeleteWebhookInput::project_name): <p>The name of the CodeBuild project.</p>
+    /// - On success, responds with [`DeleteWebhookOutput`](crate::output::DeleteWebhookOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteWebhookError>`](crate::error::DeleteWebhookError)
     pub fn delete_webhook(&self) -> fluent_builders::DeleteWebhook<C, M, R> {
         fluent_builders::DeleteWebhook::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeCodeCoverages` operation.
-    ///
-    /// See [`DescribeCodeCoverages`](crate::client::fluent_builders::DescribeCodeCoverages) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeCodeCoverages`](crate::client::fluent_builders::DescribeCodeCoverages) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeCodeCoverages::into_paginator).
+    ///
+    /// - Takes [`DescribeCodeCoveragesInput`](crate::input::DescribeCodeCoveragesInput) with field(s):
+    ///   - [`report_arn(Option<String>)`](crate::input::DescribeCodeCoveragesInput::report_arn): <p> The ARN of the report for which test cases are returned. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeCodeCoveragesInput::next_token): <p>The <code>nextToken</code> value returned from a previous call to <code>DescribeCodeCoverages</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeCodeCoveragesInput::max_results): <p>The maximum number of results to return.</p>
+    ///   - [`sort_order(Option<SortOrderType>)`](crate::input::DescribeCodeCoveragesInput::sort_order): <p>Specifies if the results are sorted in ascending or descending order.</p>
+    ///   - [`sort_by(Option<ReportCodeCoverageSortByType>)`](crate::input::DescribeCodeCoveragesInput::sort_by): <p>Specifies how the results are sorted. Possible values are:</p>  <dl>   <dt>   FILE_PATH  </dt>   <dd>    <p>The results are sorted by file path.</p>   </dd>   <dt>   LINE_COVERAGE_PERCENTAGE  </dt>   <dd>    <p>The results are sorted by the percentage of lines that are covered.</p>   </dd>  </dl>
+    ///   - [`min_line_coverage_percentage(Option<f64>)`](crate::input::DescribeCodeCoveragesInput::min_line_coverage_percentage): <p>The minimum line coverage percentage to report.</p>
+    ///   - [`max_line_coverage_percentage(Option<f64>)`](crate::input::DescribeCodeCoveragesInput::max_line_coverage_percentage): <p>The maximum line coverage percentage to report.</p>
+    /// - On success, responds with [`DescribeCodeCoveragesOutput`](crate::output::DescribeCodeCoveragesOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeCodeCoveragesOutput::next_token): <p>If there are more items to return, this contains a token that is passed to a subsequent call to <code>DescribeCodeCoverages</code> to retrieve the next set of items.</p>
+    ///   - [`code_coverages(Option<Vec<CodeCoverage>>)`](crate::output::DescribeCodeCoveragesOutput::code_coverages): <p>An array of <code>CodeCoverage</code> objects that contain the results.</p>
+    /// - On failure, responds with [`SdkError<DescribeCodeCoveragesError>`](crate::error::DescribeCodeCoveragesError)
     pub fn describe_code_coverages(&self) -> fluent_builders::DescribeCodeCoverages<C, M, R> {
         fluent_builders::DescribeCodeCoverages::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeTestCases` operation.
-    ///
-    /// See [`DescribeTestCases`](crate::client::fluent_builders::DescribeTestCases) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeTestCases`](crate::client::fluent_builders::DescribeTestCases) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeTestCases::into_paginator).
+    ///
+    /// - Takes [`DescribeTestCasesInput`](crate::input::DescribeTestCasesInput) with field(s):
+    ///   - [`report_arn(Option<String>)`](crate::input::DescribeTestCasesInput::report_arn): <p> The ARN of the report for which test cases are returned. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeTestCasesInput::next_token): <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeTestCasesInput::max_results): <p> The maximum number of paginated test cases returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>TestCase</code> objects. The default value is 100. </p>
+    ///   - [`filter(Option<TestCaseFilter>)`](crate::input::DescribeTestCasesInput::filter): <p> A <code>TestCaseFilter</code> object used to filter the returned reports. </p>
+    /// - On success, responds with [`DescribeTestCasesOutput`](crate::output::DescribeTestCasesOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeTestCasesOutput::next_token): <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    ///   - [`test_cases(Option<Vec<TestCase>>)`](crate::output::DescribeTestCasesOutput::test_cases): <p> The returned list of test cases. </p>
+    /// - On failure, responds with [`SdkError<DescribeTestCasesError>`](crate::error::DescribeTestCasesError)
     pub fn describe_test_cases(&self) -> fluent_builders::DescribeTestCases<C, M, R> {
         fluent_builders::DescribeTestCases::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetReportGroupTrend` operation.
+    /// Constructs a fluent builder for the [`GetReportGroupTrend`](crate::client::fluent_builders::GetReportGroupTrend) operation.
     ///
-    /// See [`GetReportGroupTrend`](crate::client::fluent_builders::GetReportGroupTrend) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetReportGroupTrendInput`](crate::input::GetReportGroupTrendInput) with field(s):
+    ///   - [`report_group_arn(Option<String>)`](crate::input::GetReportGroupTrendInput::report_group_arn): <p>The ARN of the report group that contains the reports to analyze.</p>
+    ///   - [`num_of_reports(Option<i32>)`](crate::input::GetReportGroupTrendInput::num_of_reports): <p>The number of reports to analyze. This operation always retrieves the most recent reports.</p>  <p>If this parameter is omitted, the most recent 100 reports are analyzed.</p>
+    ///   - [`trend_field(Option<ReportGroupTrendFieldType>)`](crate::input::GetReportGroupTrendInput::trend_field): <p>The test report value to accumulate. This must be one of the following values:</p>  <dl>   <dt>   Test reports:  </dt>   <dd>    <dl>     <dt>     DURATION    </dt>     <dd>      <p>Accumulate the test run times for the specified reports.</p>     </dd>     <dt>     PASS_RATE    </dt>     <dd>      <p>Accumulate the percentage of tests that passed for the specified test reports.</p>     </dd>     <dt>     TOTAL    </dt>     <dd>      <p>Accumulate the total number of tests for the specified test reports.</p>     </dd>    </dl>   </dd>  </dl>  <dl>   <dt>   Code coverage reports:  </dt>   <dd>    <dl>     <dt>     BRANCH_COVERAGE    </dt>     <dd>      <p>Accumulate the branch coverage percentages for the specified test reports.</p>     </dd>     <dt>     BRANCHES_COVERED    </dt>     <dd>      <p>Accumulate the branches covered values for the specified test reports.</p>     </dd>     <dt>     BRANCHES_MISSED    </dt>     <dd>      <p>Accumulate the branches missed values for the specified test reports.</p>     </dd>     <dt>     LINE_COVERAGE    </dt>     <dd>      <p>Accumulate the line coverage percentages for the specified test reports.</p>     </dd>     <dt>     LINES_COVERED    </dt>     <dd>      <p>Accumulate the lines covered values for the specified test reports.</p>     </dd>     <dt>     LINES_MISSED    </dt>     <dd>      <p>Accumulate the lines not covered values for the specified test reports.</p>     </dd>    </dl>   </dd>  </dl>
+    /// - On success, responds with [`GetReportGroupTrendOutput`](crate::output::GetReportGroupTrendOutput) with field(s):
+    ///   - [`stats(Option<ReportGroupTrendStats>)`](crate::output::GetReportGroupTrendOutput::stats): <p>Contains the accumulated trend data.</p>
+    ///   - [`raw_data(Option<Vec<ReportWithRawData>>)`](crate::output::GetReportGroupTrendOutput::raw_data): <p>An array that contains the raw data for each report.</p>
+    /// - On failure, responds with [`SdkError<GetReportGroupTrendError>`](crate::error::GetReportGroupTrendError)
     pub fn get_report_group_trend(&self) -> fluent_builders::GetReportGroupTrend<C, M, R> {
         fluent_builders::GetReportGroupTrend::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetResourcePolicy` operation.
+    /// Constructs a fluent builder for the [`GetResourcePolicy`](crate::client::fluent_builders::GetResourcePolicy) operation.
     ///
-    /// See [`GetResourcePolicy`](crate::client::fluent_builders::GetResourcePolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetResourcePolicyInput`](crate::input::GetResourcePolicyInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::GetResourcePolicyInput::resource_arn): <p> The ARN of the resource that is associated with the resource policy. </p>
+    /// - On success, responds with [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput) with field(s):
+    ///   - [`policy(Option<String>)`](crate::output::GetResourcePolicyOutput::policy): <p> The resource policy for the resource identified by the input ARN parameter. </p>
+    /// - On failure, responds with [`SdkError<GetResourcePolicyError>`](crate::error::GetResourcePolicyError)
     pub fn get_resource_policy(&self) -> fluent_builders::GetResourcePolicy<C, M, R> {
         fluent_builders::GetResourcePolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ImportSourceCredentials` operation.
+    /// Constructs a fluent builder for the [`ImportSourceCredentials`](crate::client::fluent_builders::ImportSourceCredentials) operation.
     ///
-    /// See [`ImportSourceCredentials`](crate::client::fluent_builders::ImportSourceCredentials) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ImportSourceCredentialsInput`](crate::input::ImportSourceCredentialsInput) with field(s):
+    ///   - [`username(Option<String>)`](crate::input::ImportSourceCredentialsInput::username): <p> The Bitbucket username when the <code>authType</code> is BASIC_AUTH. This parameter is not valid for other types of source providers or connections. </p>
+    ///   - [`token(Option<String>)`](crate::input::ImportSourceCredentialsInput::token): <p> For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is the app password. </p>
+    ///   - [`server_type(Option<ServerType>)`](crate::input::ImportSourceCredentialsInput::server_type): <p> The source provider used for this project. </p>
+    ///   - [`auth_type(Option<AuthType>)`](crate::input::ImportSourceCredentialsInput::auth_type): <p> The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH connection is not supported by the API and must be created using the CodeBuild console. </p>
+    ///   - [`should_overwrite(Option<bool>)`](crate::input::ImportSourceCredentialsInput::should_overwrite): <p> Set to <code>false</code> to prevent overwriting the repository source credentials. Set to <code>true</code> to overwrite the repository source credentials. The default value is <code>true</code>. </p>
+    /// - On success, responds with [`ImportSourceCredentialsOutput`](crate::output::ImportSourceCredentialsOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::ImportSourceCredentialsOutput::arn): <p> The Amazon Resource Name (ARN) of the token. </p>
+    /// - On failure, responds with [`SdkError<ImportSourceCredentialsError>`](crate::error::ImportSourceCredentialsError)
     pub fn import_source_credentials(&self) -> fluent_builders::ImportSourceCredentials<C, M, R> {
         fluent_builders::ImportSourceCredentials::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `InvalidateProjectCache` operation.
+    /// Constructs a fluent builder for the [`InvalidateProjectCache`](crate::client::fluent_builders::InvalidateProjectCache) operation.
     ///
-    /// See [`InvalidateProjectCache`](crate::client::fluent_builders::InvalidateProjectCache) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`InvalidateProjectCacheInput`](crate::input::InvalidateProjectCacheInput) with field(s):
+    ///   - [`project_name(Option<String>)`](crate::input::InvalidateProjectCacheInput::project_name): <p>The name of the CodeBuild build project that the cache is reset for.</p>
+    /// - On success, responds with [`InvalidateProjectCacheOutput`](crate::output::InvalidateProjectCacheOutput)
+
+    /// - On failure, responds with [`SdkError<InvalidateProjectCacheError>`](crate::error::InvalidateProjectCacheError)
     pub fn invalidate_project_cache(&self) -> fluent_builders::InvalidateProjectCache<C, M, R> {
         fluent_builders::InvalidateProjectCache::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListBuildBatches` operation.
-    ///
-    /// See [`ListBuildBatches`](crate::client::fluent_builders::ListBuildBatches) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListBuildBatches`](crate::client::fluent_builders::ListBuildBatches) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBuildBatches::into_paginator).
+    ///
+    /// - Takes [`ListBuildBatchesInput`](crate::input::ListBuildBatchesInput) with field(s):
+    ///   - [`filter(Option<BuildBatchFilter>)`](crate::input::ListBuildBatchesInput::filter): <p>A <code>BuildBatchFilter</code> object that specifies the filters for the search.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListBuildBatchesInput::max_results): <p>The maximum number of results to return.</p>
+    ///   - [`sort_order(Option<SortOrderType>)`](crate::input::ListBuildBatchesInput::sort_order): <p>Specifies the sort order of the returned items. Valid values include:</p>  <ul>   <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li>   <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li>  </ul>
+    ///   - [`next_token(Option<String>)`](crate::input::ListBuildBatchesInput::next_token): <p>The <code>nextToken</code> value returned from a previous call to <code>ListBuildBatches</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
+    /// - On success, responds with [`ListBuildBatchesOutput`](crate::output::ListBuildBatchesOutput) with field(s):
+    ///   - [`ids(Option<Vec<String>>)`](crate::output::ListBuildBatchesOutput::ids): <p>An array of strings that contains the batch build identifiers.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListBuildBatchesOutput::next_token): <p>If there are more items to return, this contains a token that is passed to a subsequent call to <code>ListBuildBatches</code> to retrieve the next set of items.</p>
+    /// - On failure, responds with [`SdkError<ListBuildBatchesError>`](crate::error::ListBuildBatchesError)
     pub fn list_build_batches(&self) -> fluent_builders::ListBuildBatches<C, M, R> {
         fluent_builders::ListBuildBatches::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListBuildBatchesForProject` operation.
-    ///
-    /// See [`ListBuildBatchesForProject`](crate::client::fluent_builders::ListBuildBatchesForProject) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListBuildBatchesForProject`](crate::client::fluent_builders::ListBuildBatchesForProject) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBuildBatchesForProject::into_paginator).
+    ///
+    /// - Takes [`ListBuildBatchesForProjectInput`](crate::input::ListBuildBatchesForProjectInput) with field(s):
+    ///   - [`project_name(Option<String>)`](crate::input::ListBuildBatchesForProjectInput::project_name): <p>The name of the project.</p>
+    ///   - [`filter(Option<BuildBatchFilter>)`](crate::input::ListBuildBatchesForProjectInput::filter): <p>A <code>BuildBatchFilter</code> object that specifies the filters for the search.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListBuildBatchesForProjectInput::max_results): <p>The maximum number of results to return.</p>
+    ///   - [`sort_order(Option<SortOrderType>)`](crate::input::ListBuildBatchesForProjectInput::sort_order): <p>Specifies the sort order of the returned items. Valid values include:</p>  <ul>   <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li>   <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li>  </ul>
+    ///   - [`next_token(Option<String>)`](crate::input::ListBuildBatchesForProjectInput::next_token): <p>The <code>nextToken</code> value returned from a previous call to <code>ListBuildBatchesForProject</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
+    /// - On success, responds with [`ListBuildBatchesForProjectOutput`](crate::output::ListBuildBatchesForProjectOutput) with field(s):
+    ///   - [`ids(Option<Vec<String>>)`](crate::output::ListBuildBatchesForProjectOutput::ids): <p>An array of strings that contains the batch build identifiers.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListBuildBatchesForProjectOutput::next_token): <p>If there are more items to return, this contains a token that is passed to a subsequent call to <code>ListBuildBatchesForProject</code> to retrieve the next set of items.</p>
+    /// - On failure, responds with [`SdkError<ListBuildBatchesForProjectError>`](crate::error::ListBuildBatchesForProjectError)
     pub fn list_build_batches_for_project(
         &self,
     ) -> fluent_builders::ListBuildBatchesForProject<C, M, R> {
         fluent_builders::ListBuildBatchesForProject::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListBuilds` operation.
-    ///
-    /// See [`ListBuilds`](crate::client::fluent_builders::ListBuilds) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListBuilds`](crate::client::fluent_builders::ListBuilds) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBuilds::into_paginator).
+    ///
+    /// - Takes [`ListBuildsInput`](crate::input::ListBuildsInput) with field(s):
+    ///   - [`sort_order(Option<SortOrderType>)`](crate::input::ListBuildsInput::sort_order): <p>The order to list build IDs. Valid values include:</p>  <ul>   <li> <p> <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p> </li>   <li> <p> <code>DESCENDING</code>: List the build IDs in descending order by build ID.</p> </li>  </ul>
+    ///   - [`next_token(Option<String>)`](crate::input::ListBuildsInput::next_token): <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
+    /// - On success, responds with [`ListBuildsOutput`](crate::output::ListBuildsOutput) with field(s):
+    ///   - [`ids(Option<Vec<String>>)`](crate::output::ListBuildsOutput::ids): <p>A list of build IDs, with each build ID representing a single build.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListBuildsOutput::next_token): <p>If there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
+    /// - On failure, responds with [`SdkError<ListBuildsError>`](crate::error::ListBuildsError)
     pub fn list_builds(&self) -> fluent_builders::ListBuilds<C, M, R> {
         fluent_builders::ListBuilds::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListBuildsForProject` operation.
-    ///
-    /// See [`ListBuildsForProject`](crate::client::fluent_builders::ListBuildsForProject) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListBuildsForProject`](crate::client::fluent_builders::ListBuildsForProject) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBuildsForProject::into_paginator).
+    ///
+    /// - Takes [`ListBuildsForProjectInput`](crate::input::ListBuildsForProjectInput) with field(s):
+    ///   - [`project_name(Option<String>)`](crate::input::ListBuildsForProjectInput::project_name): <p>The name of the CodeBuild project.</p>
+    ///   - [`sort_order(Option<SortOrderType>)`](crate::input::ListBuildsForProjectInput::sort_order): <p>The order to sort the results in. The results are sorted by build number, not the build identifier. If this is not specified, the results are sorted in descending order.</p>  <p>Valid values include:</p>  <ul>   <li> <p> <code>ASCENDING</code>: List the build identifiers in ascending order, by build number.</p> </li>   <li> <p> <code>DESCENDING</code>: List the build identifiers in descending order, by build number.</p> </li>  </ul>  <p>If the project has more than 100 builds, setting the sort order will result in an error. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListBuildsForProjectInput::next_token): <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
+    /// - On success, responds with [`ListBuildsForProjectOutput`](crate::output::ListBuildsForProjectOutput) with field(s):
+    ///   - [`ids(Option<Vec<String>>)`](crate::output::ListBuildsForProjectOutput::ids): <p>A list of build identifiers for the specified build project, with each build ID representing a single build.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListBuildsForProjectOutput::next_token): <p>If there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
+    /// - On failure, responds with [`SdkError<ListBuildsForProjectError>`](crate::error::ListBuildsForProjectError)
     pub fn list_builds_for_project(&self) -> fluent_builders::ListBuildsForProject<C, M, R> {
         fluent_builders::ListBuildsForProject::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListCuratedEnvironmentImages` operation.
+    /// Constructs a fluent builder for the [`ListCuratedEnvironmentImages`](crate::client::fluent_builders::ListCuratedEnvironmentImages) operation.
     ///
-    /// See [`ListCuratedEnvironmentImages`](crate::client::fluent_builders::ListCuratedEnvironmentImages) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListCuratedEnvironmentImagesInput`](crate::input::ListCuratedEnvironmentImagesInput)
+
+    /// - On success, responds with [`ListCuratedEnvironmentImagesOutput`](crate::output::ListCuratedEnvironmentImagesOutput) with field(s):
+    ///   - [`platforms(Option<Vec<EnvironmentPlatform>>)`](crate::output::ListCuratedEnvironmentImagesOutput::platforms): <p>Information about supported platforms for Docker images that are managed by CodeBuild.</p>
+    /// - On failure, responds with [`SdkError<ListCuratedEnvironmentImagesError>`](crate::error::ListCuratedEnvironmentImagesError)
     pub fn list_curated_environment_images(
         &self,
     ) -> fluent_builders::ListCuratedEnvironmentImages<C, M, R> {
         fluent_builders::ListCuratedEnvironmentImages::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListProjects` operation.
-    ///
-    /// See [`ListProjects`](crate::client::fluent_builders::ListProjects) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListProjects`](crate::client::fluent_builders::ListProjects) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProjects::into_paginator).
+    ///
+    /// - Takes [`ListProjectsInput`](crate::input::ListProjectsInput) with field(s):
+    ///   - [`sort_by(Option<ProjectSortByType>)`](crate::input::ListProjectsInput::sort_by): <p>The criterion to be used to list build project names. Valid values include:</p>  <ul>   <li> <p> <code>CREATED_TIME</code>: List based on when each build project was created.</p> </li>   <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.</p> </li>   <li> <p> <code>NAME</code>: List based on each build project's name.</p> </li>  </ul>  <p>Use <code>sortOrder</code> to specify in what order to list the build project names based on the preceding criteria.</p>
+    ///   - [`sort_order(Option<SortOrderType>)`](crate::input::ListProjectsInput::sort_order): <p>The order in which to list build projects. Valid values include:</p>  <ul>   <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>   <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>  </ul>  <p>Use <code>sortBy</code> to specify the criterion to be used to list build project names.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListProjectsInput::next_token): <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
+    /// - On success, responds with [`ListProjectsOutput`](crate::output::ListProjectsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListProjectsOutput::next_token): <p>If there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
+    ///   - [`projects(Option<Vec<String>>)`](crate::output::ListProjectsOutput::projects): <p>The list of build project names, with each build project name representing a single build project.</p>
+    /// - On failure, responds with [`SdkError<ListProjectsError>`](crate::error::ListProjectsError)
     pub fn list_projects(&self) -> fluent_builders::ListProjects<C, M, R> {
         fluent_builders::ListProjects::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListReportGroups` operation.
-    ///
-    /// See [`ListReportGroups`](crate::client::fluent_builders::ListReportGroups) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListReportGroups`](crate::client::fluent_builders::ListReportGroups) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListReportGroups::into_paginator).
+    ///
+    /// - Takes [`ListReportGroupsInput`](crate::input::ListReportGroupsInput) with field(s):
+    ///   - [`sort_order(Option<SortOrderType>)`](crate::input::ListReportGroupsInput::sort_order): <p> Used to specify the order to sort the list of returned report groups. Valid values are <code>ASCENDING</code> and <code>DESCENDING</code>. </p>
+    ///   - [`sort_by(Option<ReportGroupSortByType>)`](crate::input::ListReportGroupsInput::sort_by): <p> The criterion to be used to list build report groups. Valid values include: </p>  <ul>   <li> <p> <code>CREATED_TIME</code>: List based on when each report group was created.</p> </li>   <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when each report group was last changed.</p> </li>   <li> <p> <code>NAME</code>: List based on each report group's name.</p> </li>  </ul>
+    ///   - [`next_token(Option<String>)`](crate::input::ListReportGroupsInput::next_token): <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListReportGroupsInput::max_results): <p> The maximum number of paginated report groups returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>ReportGroup</code> objects. The default value is 100. </p>
+    /// - On success, responds with [`ListReportGroupsOutput`](crate::output::ListReportGroupsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListReportGroupsOutput::next_token): <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    ///   - [`report_groups(Option<Vec<String>>)`](crate::output::ListReportGroupsOutput::report_groups): <p> The list of ARNs for the report groups in the current Amazon Web Services account. </p>
+    /// - On failure, responds with [`SdkError<ListReportGroupsError>`](crate::error::ListReportGroupsError)
     pub fn list_report_groups(&self) -> fluent_builders::ListReportGroups<C, M, R> {
         fluent_builders::ListReportGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListReports` operation.
-    ///
-    /// See [`ListReports`](crate::client::fluent_builders::ListReports) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListReports`](crate::client::fluent_builders::ListReports) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListReports::into_paginator).
+    ///
+    /// - Takes [`ListReportsInput`](crate::input::ListReportsInput) with field(s):
+    ///   - [`sort_order(Option<SortOrderType>)`](crate::input::ListReportsInput::sort_order): <p> Specifies the sort order for the list of returned reports. Valid values are: </p>  <ul>   <li> <p> <code>ASCENDING</code>: return reports in chronological order based on their creation date. </p> </li>   <li> <p> <code>DESCENDING</code>: return reports in the reverse chronological order based on their creation date. </p> </li>  </ul>
+    ///   - [`next_token(Option<String>)`](crate::input::ListReportsInput::next_token): <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListReportsInput::max_results): <p> The maximum number of paginated reports returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Report</code> objects. The default value is 100. </p>
+    ///   - [`filter(Option<ReportFilter>)`](crate::input::ListReportsInput::filter): <p> A <code>ReportFilter</code> object used to filter the returned reports. </p>
+    /// - On success, responds with [`ListReportsOutput`](crate::output::ListReportsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListReportsOutput::next_token): <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    ///   - [`reports(Option<Vec<String>>)`](crate::output::ListReportsOutput::reports): <p> The list of returned ARNs for the reports in the current Amazon Web Services account. </p>
+    /// - On failure, responds with [`SdkError<ListReportsError>`](crate::error::ListReportsError)
     pub fn list_reports(&self) -> fluent_builders::ListReports<C, M, R> {
         fluent_builders::ListReports::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListReportsForReportGroup` operation.
-    ///
-    /// See [`ListReportsForReportGroup`](crate::client::fluent_builders::ListReportsForReportGroup) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListReportsForReportGroup`](crate::client::fluent_builders::ListReportsForReportGroup) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListReportsForReportGroup::into_paginator).
+    ///
+    /// - Takes [`ListReportsForReportGroupInput`](crate::input::ListReportsForReportGroupInput) with field(s):
+    ///   - [`report_group_arn(Option<String>)`](crate::input::ListReportsForReportGroupInput::report_group_arn): <p> The ARN of the report group for which you want to return report ARNs. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListReportsForReportGroupInput::next_token): <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    ///   - [`sort_order(Option<SortOrderType>)`](crate::input::ListReportsForReportGroupInput::sort_order): <p> Use to specify whether the results are returned in ascending or descending order. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListReportsForReportGroupInput::max_results): <p> The maximum number of paginated reports in this report group returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Report</code> objects. The default value is 100. </p>
+    ///   - [`filter(Option<ReportFilter>)`](crate::input::ListReportsForReportGroupInput::filter): <p> A <code>ReportFilter</code> object used to filter the returned reports. </p>
+    /// - On success, responds with [`ListReportsForReportGroupOutput`](crate::output::ListReportsForReportGroupOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListReportsForReportGroupOutput::next_token): <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    ///   - [`reports(Option<Vec<String>>)`](crate::output::ListReportsForReportGroupOutput::reports): <p> The list of report ARNs. </p>
+    /// - On failure, responds with [`SdkError<ListReportsForReportGroupError>`](crate::error::ListReportsForReportGroupError)
     pub fn list_reports_for_report_group(
         &self,
     ) -> fluent_builders::ListReportsForReportGroup<C, M, R> {
         fluent_builders::ListReportsForReportGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSharedProjects` operation.
-    ///
-    /// See [`ListSharedProjects`](crate::client::fluent_builders::ListSharedProjects) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListSharedProjects`](crate::client::fluent_builders::ListSharedProjects) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSharedProjects::into_paginator).
+    ///
+    /// - Takes [`ListSharedProjectsInput`](crate::input::ListSharedProjectsInput) with field(s):
+    ///   - [`sort_by(Option<SharedResourceSortByType>)`](crate::input::ListSharedProjectsInput::sort_by): <p> The criterion to be used to list build projects shared with the current Amazon Web Services account or user. Valid values include: </p>  <ul>   <li> <p> <code>ARN</code>: List based on the ARN. </p> </li>   <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed. </p> </li>  </ul>
+    ///   - [`sort_order(Option<SortOrderType>)`](crate::input::ListSharedProjectsInput::sort_order): <p>The order in which to list shared build projects. Valid values include:</p>  <ul>   <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>   <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>  </ul>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListSharedProjectsInput::max_results): <p> The maximum number of paginated shared build projects returned per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>Project</code> objects. The default value is 100. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListSharedProjectsInput::next_token): <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    /// - On success, responds with [`ListSharedProjectsOutput`](crate::output::ListSharedProjectsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListSharedProjectsOutput::next_token): <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    ///   - [`projects(Option<Vec<String>>)`](crate::output::ListSharedProjectsOutput::projects): <p> The list of ARNs for the build projects shared with the current Amazon Web Services account or user. </p>
+    /// - On failure, responds with [`SdkError<ListSharedProjectsError>`](crate::error::ListSharedProjectsError)
     pub fn list_shared_projects(&self) -> fluent_builders::ListSharedProjects<C, M, R> {
         fluent_builders::ListSharedProjects::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSharedReportGroups` operation.
-    ///
-    /// See [`ListSharedReportGroups`](crate::client::fluent_builders::ListSharedReportGroups) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListSharedReportGroups`](crate::client::fluent_builders::ListSharedReportGroups) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSharedReportGroups::into_paginator).
+    ///
+    /// - Takes [`ListSharedReportGroupsInput`](crate::input::ListSharedReportGroupsInput) with field(s):
+    ///   - [`sort_order(Option<SortOrderType>)`](crate::input::ListSharedReportGroupsInput::sort_order): <p>The order in which to list shared report groups. Valid values include:</p>  <ul>   <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>   <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>  </ul>
+    ///   - [`sort_by(Option<SharedResourceSortByType>)`](crate::input::ListSharedReportGroupsInput::sort_by): <p> The criterion to be used to list report groups shared with the current Amazon Web Services account or user. Valid values include: </p>  <ul>   <li> <p> <code>ARN</code>: List based on the ARN. </p> </li>   <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared report group was last changed. </p> </li>  </ul>
+    ///   - [`next_token(Option<String>)`](crate::input::ListSharedReportGroupsInput::next_token): <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListSharedReportGroupsInput::max_results): <p> The maximum number of paginated shared report groups per response. Use <code>nextToken</code> to iterate pages in the list of returned <code>ReportGroup</code> objects. The default value is 100. </p>
+    /// - On success, responds with [`ListSharedReportGroupsOutput`](crate::output::ListSharedReportGroupsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListSharedReportGroupsOutput::next_token): <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
+    ///   - [`report_groups(Option<Vec<String>>)`](crate::output::ListSharedReportGroupsOutput::report_groups): <p> The list of ARNs for the report groups shared with the current Amazon Web Services account or user. </p>
+    /// - On failure, responds with [`SdkError<ListSharedReportGroupsError>`](crate::error::ListSharedReportGroupsError)
     pub fn list_shared_report_groups(&self) -> fluent_builders::ListSharedReportGroups<C, M, R> {
         fluent_builders::ListSharedReportGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSourceCredentials` operation.
+    /// Constructs a fluent builder for the [`ListSourceCredentials`](crate::client::fluent_builders::ListSourceCredentials) operation.
     ///
-    /// See [`ListSourceCredentials`](crate::client::fluent_builders::ListSourceCredentials) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListSourceCredentialsInput`](crate::input::ListSourceCredentialsInput)
+
+    /// - On success, responds with [`ListSourceCredentialsOutput`](crate::output::ListSourceCredentialsOutput) with field(s):
+    ///   - [`source_credentials_infos(Option<Vec<SourceCredentialsInfo>>)`](crate::output::ListSourceCredentialsOutput::source_credentials_infos): <p> A list of <code>SourceCredentialsInfo</code> objects. Each <code>SourceCredentialsInfo</code> object includes the authentication type, token ARN, and type of source provider for one set of credentials. </p>
+    /// - On failure, responds with [`SdkError<ListSourceCredentialsError>`](crate::error::ListSourceCredentialsError)
     pub fn list_source_credentials(&self) -> fluent_builders::ListSourceCredentials<C, M, R> {
         fluent_builders::ListSourceCredentials::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutResourcePolicy` operation.
+    /// Constructs a fluent builder for the [`PutResourcePolicy`](crate::client::fluent_builders::PutResourcePolicy) operation.
     ///
-    /// See [`PutResourcePolicy`](crate::client::fluent_builders::PutResourcePolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput) with field(s):
+    ///   - [`policy(Option<String>)`](crate::input::PutResourcePolicyInput::policy): <p> A JSON-formatted resource policy. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/project-sharing.html#project-sharing-share">Sharing a Project</a> and <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/report-groups-sharing.html#report-groups-sharing-share">Sharing a Report Group</a> in the <i>CodeBuild User Guide</i>. </p>
+    ///   - [`resource_arn(Option<String>)`](crate::input::PutResourcePolicyInput::resource_arn): <p> The ARN of the <code>Project</code> or <code>ReportGroup</code> resource you want to associate with a resource policy. </p>
+    /// - On success, responds with [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::output::PutResourcePolicyOutput::resource_arn): <p> The ARN of the <code>Project</code> or <code>ReportGroup</code> resource that is associated with a resource policy. </p>
+    /// - On failure, responds with [`SdkError<PutResourcePolicyError>`](crate::error::PutResourcePolicyError)
     pub fn put_resource_policy(&self) -> fluent_builders::PutResourcePolicy<C, M, R> {
         fluent_builders::PutResourcePolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RetryBuild` operation.
+    /// Constructs a fluent builder for the [`RetryBuild`](crate::client::fluent_builders::RetryBuild) operation.
     ///
-    /// See [`RetryBuild`](crate::client::fluent_builders::RetryBuild) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RetryBuildInput`](crate::input::RetryBuildInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::RetryBuildInput::id): <p>Specifies the identifier of the build to restart.</p>
+    ///   - [`idempotency_token(Option<String>)`](crate::input::RetryBuildInput::idempotency_token): <p>A unique, case sensitive identifier you provide to ensure the idempotency of the <code>RetryBuild</code> request. The token is included in the <code>RetryBuild</code> request and is valid for five minutes. If you repeat the <code>RetryBuild</code> request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.</p>
+    /// - On success, responds with [`RetryBuildOutput`](crate::output::RetryBuildOutput) with field(s):
+    ///   - [`build_value(Option<Build>)`](crate::output::RetryBuildOutput::build_value): <p>Information about a build.</p>
+    /// - On failure, responds with [`SdkError<RetryBuildError>`](crate::error::RetryBuildError)
     pub fn retry_build(&self) -> fluent_builders::RetryBuild<C, M, R> {
         fluent_builders::RetryBuild::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RetryBuildBatch` operation.
+    /// Constructs a fluent builder for the [`RetryBuildBatch`](crate::client::fluent_builders::RetryBuildBatch) operation.
     ///
-    /// See [`RetryBuildBatch`](crate::client::fluent_builders::RetryBuildBatch) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RetryBuildBatchInput`](crate::input::RetryBuildBatchInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::RetryBuildBatchInput::id): <p>Specifies the identifier of the batch build to restart.</p>
+    ///   - [`idempotency_token(Option<String>)`](crate::input::RetryBuildBatchInput::idempotency_token): <p>A unique, case sensitive identifier you provide to ensure the idempotency of the <code>RetryBuildBatch</code> request. The token is included in the <code>RetryBuildBatch</code> request and is valid for five minutes. If you repeat the <code>RetryBuildBatch</code> request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.</p>
+    ///   - [`retry_type(Option<RetryBuildBatchType>)`](crate::input::RetryBuildBatchInput::retry_type): <p>Specifies the type of retry to perform.</p>
+    /// - On success, responds with [`RetryBuildBatchOutput`](crate::output::RetryBuildBatchOutput) with field(s):
+    ///   - [`build_batch(Option<BuildBatch>)`](crate::output::RetryBuildBatchOutput::build_batch): <p>Contains information about a batch build.</p>
+    /// - On failure, responds with [`SdkError<RetryBuildBatchError>`](crate::error::RetryBuildBatchError)
     pub fn retry_build_batch(&self) -> fluent_builders::RetryBuildBatch<C, M, R> {
         fluent_builders::RetryBuildBatch::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartBuild` operation.
+    /// Constructs a fluent builder for the [`StartBuild`](crate::client::fluent_builders::StartBuild) operation.
     ///
-    /// See [`StartBuild`](crate::client::fluent_builders::StartBuild) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartBuildInput`](crate::input::StartBuildInput) with field(s):
+    ///   - [`project_name(Option<String>)`](crate::input::StartBuildInput::project_name): <p>The name of the CodeBuild build project to start running a build.</p>
+    ///   - [`secondary_sources_override(Option<Vec<ProjectSource>>)`](crate::input::StartBuildInput::secondary_sources_override): <p> An array of <code>ProjectSource</code> objects. </p>
+    ///   - [`secondary_sources_version_override(Option<Vec<ProjectSourceVersion>>)`](crate::input::StartBuildInput::secondary_sources_version_override): <p> An array of <code>ProjectSourceVersion</code> objects that specify one or more versions of the project's secondary sources to be used for this build only. </p>
+    ///   - [`source_version(Option<String>)`](crate::input::StartBuildInput::source_version): <p>The version of the build input to be built, for this build only. If not specified, the latest version is used. If specified, the contents depends on the source provider:</p>  <dl>   <dt>   CodeCommit  </dt>   <dd>    <p>The commit ID, branch, or Git tag to use.</p>   </dd>   <dt>   GitHub  </dt>   <dd>    <p>The commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p>   </dd>   <dt>   Bitbucket  </dt>   <dd>    <p>The commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p>   </dd>   <dt>   Amazon S3  </dt>   <dd>    <p>The version ID of the object that represents the build input ZIP file to use.</p>   </dd>  </dl>  <p>If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at the build level) takes precedence. </p>  <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
+    ///   - [`artifacts_override(Option<ProjectArtifacts>)`](crate::input::StartBuildInput::artifacts_override): <p>Build output artifact settings that override, for this build only, the latest ones already defined in the build project.</p>
+    ///   - [`secondary_artifacts_override(Option<Vec<ProjectArtifacts>>)`](crate::input::StartBuildInput::secondary_artifacts_override): <p> An array of <code>ProjectArtifacts</code> objects. </p>
+    ///   - [`environment_variables_override(Option<Vec<EnvironmentVariable>>)`](crate::input::StartBuildInput::environment_variables_override): <p>A set of environment variables that overrides, for this build only, the latest ones already defined in the build project.</p>
+    ///   - [`source_type_override(Option<SourceType>)`](crate::input::StartBuildInput::source_type_override): <p>A source input type, for this build, that overrides the source input defined in the build project.</p>
+    ///   - [`source_location_override(Option<String>)`](crate::input::StartBuildInput::source_location_override): <p>A location that overrides, for this build, the source location for the one defined in the build project.</p>
+    ///   - [`source_auth_override(Option<SourceAuth>)`](crate::input::StartBuildInput::source_auth_override): <p>An authorization type for this build that overrides the one defined in the build project. This override applies only if the build project's source is BitBucket or GitHub.</p>
+    ///   - [`git_clone_depth_override(Option<i32>)`](crate::input::StartBuildInput::git_clone_depth_override): <p>The user-defined depth of history, with a minimum value of 0, that overrides, for this build only, any previous depth of history defined in the build project.</p>
+    ///   - [`git_submodules_config_override(Option<GitSubmodulesConfig>)`](crate::input::StartBuildInput::git_submodules_config_override): <p> Information about the Git submodules configuration for this build of an CodeBuild build project. </p>
+    ///   - [`buildspec_override(Option<String>)`](crate::input::StartBuildInput::buildspec_override): <p>A buildspec file declaration that overrides, for this build only, the latest one already defined in the build project.</p>  <p> If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket. The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec file using its ARN (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is set to an empty string, the source code must contain a buildspec file in its root directory. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec File Name and Storage Location</a>. </p>
+    ///   - [`insecure_ssl_override(Option<bool>)`](crate::input::StartBuildInput::insecure_ssl_override): <p>Enable this flag to override the insecure SSL setting that is specified in the build project. The insecure SSL setting determines whether to ignore SSL warnings while connecting to the project source code. This override applies only if the build's source is GitHub Enterprise.</p>
+    ///   - [`report_build_status_override(Option<bool>)`](crate::input::StartBuildInput::report_build_status_override): <p> Set to true to report to your source provider the status of a build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown. </p>  <p>To be able to report the build status to the source provider, the user associated with the source provider must have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p> <note>   <p> The status of a build triggered by a webhook is always reported to your source provider. </p>  </note>
+    ///   - [`build_status_config_override(Option<BuildStatusConfig>)`](crate::input::StartBuildInput::build_status_config_override): <p>Contains information that defines how the build project reports the build status to the source provider. This option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or <code>BITBUCKET</code>.</p>
+    ///   - [`environment_type_override(Option<EnvironmentType>)`](crate::input::StartBuildInput::environment_type_override): <p>A container type for this build that overrides the one specified in the build project.</p>
+    ///   - [`image_override(Option<String>)`](crate::input::StartBuildInput::image_override): <p>The name of an image for this build that overrides the one specified in the build project.</p>
+    ///   - [`compute_type_override(Option<ComputeType>)`](crate::input::StartBuildInput::compute_type_override): <p>The name of a compute type for this build that overrides the one specified in the build project.</p>
+    ///   - [`certificate_override(Option<String>)`](crate::input::StartBuildInput::certificate_override): <p>The name of a certificate for this build that overrides the one specified in the build project.</p>
+    ///   - [`cache_override(Option<ProjectCache>)`](crate::input::StartBuildInput::cache_override): <p>A ProjectCache object specified for this build that overrides the one defined in the build project.</p>
+    ///   - [`service_role_override(Option<String>)`](crate::input::StartBuildInput::service_role_override): <p>The name of a service role for this build that overrides the one specified in the build project.</p>
+    ///   - [`privileged_mode_override(Option<bool>)`](crate::input::StartBuildInput::privileged_mode_override): <p>Enable this flag to override privileged mode in the build project.</p>
+    ///   - [`timeout_in_minutes_override(Option<i32>)`](crate::input::StartBuildInput::timeout_in_minutes_override): <p>The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the latest setting already defined in the build project.</p>
+    ///   - [`queued_timeout_in_minutes_override(Option<i32>)`](crate::input::StartBuildInput::queued_timeout_in_minutes_override): <p> The number of minutes a build is allowed to be queued before it times out. </p>
+    ///   - [`encryption_key_override(Option<String>)`](crate::input::StartBuildInput::encryption_key_override): <p>The Key Management Service customer master key (CMK) that overrides the one specified in the build project. The CMK key encrypts the build output artifacts.</p> <note>   <p> You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>  </note>  <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/   <alias-name></alias-name></code>).</p>
+    ///   - [`idempotency_token(Option<String>)`](crate::input::StartBuildInput::idempotency_token): <p>A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild request. The token is included in the StartBuild request and is valid for 5 minutes. If you repeat the StartBuild request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error. </p>
+    ///   - [`logs_config_override(Option<LogsConfig>)`](crate::input::StartBuildInput::logs_config_override): <p> Log settings for this build that override the log settings defined in the build project. </p>
+    ///   - [`registry_credential_override(Option<RegistryCredential>)`](crate::input::StartBuildInput::registry_credential_override): <p> The credentials for access to a private registry. </p>
+    ///   - [`image_pull_credentials_type_override(Option<ImagePullCredentialsType>)`](crate::input::StartBuildInput::image_pull_credentials_type_override): <p>The type of credentials CodeBuild uses to pull images in your build. There are two valid values: </p>  <dl>   <dt>   CODEBUILD  </dt>   <dd>    <p>Specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust CodeBuild's service principal.</p>   </dd>   <dt>   SERVICE_ROLE  </dt>   <dd>    <p>Specifies that CodeBuild uses your build project's service role. </p>   </dd>  </dl>  <p>When using a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When using an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials. </p>
+    ///   - [`debug_session_enabled(Option<bool>)`](crate::input::StartBuildInput::debug_session_enabled): <p>Specifies if session debugging is enabled for this build. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>.</p>
+    /// - On success, responds with [`StartBuildOutput`](crate::output::StartBuildOutput) with field(s):
+    ///   - [`build_value(Option<Build>)`](crate::output::StartBuildOutput::build_value): <p>Information about the build to be run.</p>
+    /// - On failure, responds with [`SdkError<StartBuildError>`](crate::error::StartBuildError)
     pub fn start_build(&self) -> fluent_builders::StartBuild<C, M, R> {
         fluent_builders::StartBuild::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartBuildBatch` operation.
+    /// Constructs a fluent builder for the [`StartBuildBatch`](crate::client::fluent_builders::StartBuildBatch) operation.
     ///
-    /// See [`StartBuildBatch`](crate::client::fluent_builders::StartBuildBatch) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartBuildBatchInput`](crate::input::StartBuildBatchInput) with field(s):
+    ///   - [`project_name(Option<String>)`](crate::input::StartBuildBatchInput::project_name): <p>The name of the project.</p>
+    ///   - [`secondary_sources_override(Option<Vec<ProjectSource>>)`](crate::input::StartBuildBatchInput::secondary_sources_override): <p>An array of <code>ProjectSource</code> objects that override the secondary sources defined in the batch build project.</p>
+    ///   - [`secondary_sources_version_override(Option<Vec<ProjectSourceVersion>>)`](crate::input::StartBuildBatchInput::secondary_sources_version_override): <p>An array of <code>ProjectSourceVersion</code> objects that override the secondary source versions in the batch build project.</p>
+    ///   - [`source_version(Option<String>)`](crate::input::StartBuildBatchInput::source_version): <p>The version of the batch build input to be built, for this build only. If not specified, the latest version is used. If specified, the contents depends on the source provider:</p>  <dl>   <dt>   CodeCommit  </dt>   <dd>    <p>The commit ID, branch, or Git tag to use.</p>   </dd>   <dt>   GitHub  </dt>   <dd>    <p>The commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p>   </dd>   <dt>   Bitbucket  </dt>   <dd>    <p>The commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p>   </dd>   <dt>   Amazon S3  </dt>   <dd>    <p>The version ID of the object that represents the build input ZIP file to use.</p>   </dd>  </dl>  <p>If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at the build level) takes precedence. </p>  <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
+    ///   - [`artifacts_override(Option<ProjectArtifacts>)`](crate::input::StartBuildBatchInput::artifacts_override): <p>An array of <code>ProjectArtifacts</code> objects that contains information about the build output artifact overrides for the build project.</p>
+    ///   - [`secondary_artifacts_override(Option<Vec<ProjectArtifacts>>)`](crate::input::StartBuildBatchInput::secondary_artifacts_override): <p>An array of <code>ProjectArtifacts</code> objects that override the secondary artifacts defined in the batch build project.</p>
+    ///   - [`environment_variables_override(Option<Vec<EnvironmentVariable>>)`](crate::input::StartBuildBatchInput::environment_variables_override): <p>An array of <code>EnvironmentVariable</code> objects that override, or add to, the environment variables defined in the batch build project.</p>
+    ///   - [`source_type_override(Option<SourceType>)`](crate::input::StartBuildBatchInput::source_type_override): <p>The source input type that overrides the source input defined in the batch build project.</p>
+    ///   - [`source_location_override(Option<String>)`](crate::input::StartBuildBatchInput::source_location_override): <p>A location that overrides, for this batch build, the source location defined in the batch build project.</p>
+    ///   - [`source_auth_override(Option<SourceAuth>)`](crate::input::StartBuildBatchInput::source_auth_override): <p>A <code>SourceAuth</code> object that overrides the one defined in the batch build project. This override applies only if the build project's source is BitBucket or GitHub.</p>
+    ///   - [`git_clone_depth_override(Option<i32>)`](crate::input::StartBuildBatchInput::git_clone_depth_override): <p>The user-defined depth of history, with a minimum value of 0, that overrides, for this batch build only, any previous depth of history defined in the batch build project.</p>
+    ///   - [`git_submodules_config_override(Option<GitSubmodulesConfig>)`](crate::input::StartBuildBatchInput::git_submodules_config_override): <p>A <code>GitSubmodulesConfig</code> object that overrides the Git submodules configuration for this batch build.</p>
+    ///   - [`buildspec_override(Option<String>)`](crate::input::StartBuildBatchInput::buildspec_override): <p>A buildspec file declaration that overrides, for this build only, the latest one already defined in the build project.</p>  <p>If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket. The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec file using its ARN (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not provided or is set to an empty string, the source code must contain a buildspec file in its root directory. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec File Name and Storage Location</a>. </p>
+    ///   - [`insecure_ssl_override(Option<bool>)`](crate::input::StartBuildBatchInput::insecure_ssl_override): <p>Enable this flag to override the insecure SSL setting that is specified in the batch build project. The insecure SSL setting determines whether to ignore SSL warnings while connecting to the project source code. This override applies only if the build's source is GitHub Enterprise.</p>
+    ///   - [`report_build_batch_status_override(Option<bool>)`](crate::input::StartBuildBatchInput::report_build_batch_status_override): <p>Set to <code>true</code> to report to your source provider the status of a batch build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown. </p> <note>   <p>The status of a build triggered by a webhook is always reported to your source provider. </p>  </note>
+    ///   - [`environment_type_override(Option<EnvironmentType>)`](crate::input::StartBuildBatchInput::environment_type_override): <p>A container type for this batch build that overrides the one specified in the batch build project.</p>
+    ///   - [`image_override(Option<String>)`](crate::input::StartBuildBatchInput::image_override): <p>The name of an image for this batch build that overrides the one specified in the batch build project.</p>
+    ///   - [`compute_type_override(Option<ComputeType>)`](crate::input::StartBuildBatchInput::compute_type_override): <p>The name of a compute type for this batch build that overrides the one specified in the batch build project.</p>
+    ///   - [`certificate_override(Option<String>)`](crate::input::StartBuildBatchInput::certificate_override): <p>The name of a certificate for this batch build that overrides the one specified in the batch build project.</p>
+    ///   - [`cache_override(Option<ProjectCache>)`](crate::input::StartBuildBatchInput::cache_override): <p>A <code>ProjectCache</code> object that specifies cache overrides.</p>
+    ///   - [`service_role_override(Option<String>)`](crate::input::StartBuildBatchInput::service_role_override): <p>The name of a service role for this batch build that overrides the one specified in the batch build project.</p>
+    ///   - [`privileged_mode_override(Option<bool>)`](crate::input::StartBuildBatchInput::privileged_mode_override): <p>Enable this flag to override privileged mode in the batch build project.</p>
+    ///   - [`build_timeout_in_minutes_override(Option<i32>)`](crate::input::StartBuildBatchInput::build_timeout_in_minutes_override): <p>Overrides the build timeout specified in the batch build project.</p>
+    ///   - [`queued_timeout_in_minutes_override(Option<i32>)`](crate::input::StartBuildBatchInput::queued_timeout_in_minutes_override): <p>The number of minutes a batch build is allowed to be queued before it times out.</p>
+    ///   - [`encryption_key_override(Option<String>)`](crate::input::StartBuildBatchInput::encryption_key_override): <p>The Key Management Service customer master key (CMK) that overrides the one specified in the batch build project. The CMK key encrypts the build output artifacts.</p> <note>   <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>  </note>  <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/   <alias-name></alias-name></code>).</p>
+    ///   - [`idempotency_token(Option<String>)`](crate::input::StartBuildBatchInput::idempotency_token): <p>A unique, case sensitive identifier you provide to ensure the idempotency of the <code>StartBuildBatch</code> request. The token is included in the <code>StartBuildBatch</code> request and is valid for five minutes. If you repeat the <code>StartBuildBatch</code> request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.</p>
+    ///   - [`logs_config_override(Option<LogsConfig>)`](crate::input::StartBuildBatchInput::logs_config_override): <p>A <code>LogsConfig</code> object that override the log settings defined in the batch build project.</p>
+    ///   - [`registry_credential_override(Option<RegistryCredential>)`](crate::input::StartBuildBatchInput::registry_credential_override): <p>A <code>RegistryCredential</code> object that overrides credentials for access to a private registry.</p>
+    ///   - [`image_pull_credentials_type_override(Option<ImagePullCredentialsType>)`](crate::input::StartBuildBatchInput::image_pull_credentials_type_override): <p>The type of credentials CodeBuild uses to pull images in your batch build. There are two valid values: </p>  <dl>   <dt>   CODEBUILD  </dt>   <dd>    <p>Specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust CodeBuild's service principal.</p>   </dd>   <dt>   SERVICE_ROLE  </dt>   <dd>    <p>Specifies that CodeBuild uses your build project's service role. </p>   </dd>  </dl>  <p>When using a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When using an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials. </p>
+    ///   - [`build_batch_config_override(Option<ProjectBuildBatchConfig>)`](crate::input::StartBuildBatchInput::build_batch_config_override): <p>A <code>BuildBatchConfigOverride</code> object that contains batch build configuration overrides.</p>
+    ///   - [`debug_session_enabled(Option<bool>)`](crate::input::StartBuildBatchInput::debug_session_enabled): <p>Specifies if session debugging is enabled for this batch build. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>. Batch session debugging is not supported for matrix batch builds.</p>
+    /// - On success, responds with [`StartBuildBatchOutput`](crate::output::StartBuildBatchOutput) with field(s):
+    ///   - [`build_batch(Option<BuildBatch>)`](crate::output::StartBuildBatchOutput::build_batch): <p>A <code>BuildBatch</code> object that contains information about the batch build.</p>
+    /// - On failure, responds with [`SdkError<StartBuildBatchError>`](crate::error::StartBuildBatchError)
     pub fn start_build_batch(&self) -> fluent_builders::StartBuildBatch<C, M, R> {
         fluent_builders::StartBuildBatch::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopBuild` operation.
+    /// Constructs a fluent builder for the [`StopBuild`](crate::client::fluent_builders::StopBuild) operation.
     ///
-    /// See [`StopBuild`](crate::client::fluent_builders::StopBuild) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StopBuildInput`](crate::input::StopBuildInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::StopBuildInput::id): <p>The ID of the build.</p>
+    /// - On success, responds with [`StopBuildOutput`](crate::output::StopBuildOutput) with field(s):
+    ///   - [`build_value(Option<Build>)`](crate::output::StopBuildOutput::build_value): <p>Information about the build.</p>
+    /// - On failure, responds with [`SdkError<StopBuildError>`](crate::error::StopBuildError)
     pub fn stop_build(&self) -> fluent_builders::StopBuild<C, M, R> {
         fluent_builders::StopBuild::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopBuildBatch` operation.
+    /// Constructs a fluent builder for the [`StopBuildBatch`](crate::client::fluent_builders::StopBuildBatch) operation.
     ///
-    /// See [`StopBuildBatch`](crate::client::fluent_builders::StopBuildBatch) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StopBuildBatchInput`](crate::input::StopBuildBatchInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::StopBuildBatchInput::id): <p>The identifier of the batch build to stop.</p>
+    /// - On success, responds with [`StopBuildBatchOutput`](crate::output::StopBuildBatchOutput) with field(s):
+    ///   - [`build_batch(Option<BuildBatch>)`](crate::output::StopBuildBatchOutput::build_batch): <p>Contains information about a batch build.</p>
+    /// - On failure, responds with [`SdkError<StopBuildBatchError>`](crate::error::StopBuildBatchError)
     pub fn stop_build_batch(&self) -> fluent_builders::StopBuildBatch<C, M, R> {
         fluent_builders::StopBuildBatch::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateProject` operation.
+    /// Constructs a fluent builder for the [`UpdateProject`](crate::client::fluent_builders::UpdateProject) operation.
     ///
-    /// See [`UpdateProject`](crate::client::fluent_builders::UpdateProject) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateProjectInput`](crate::input::UpdateProjectInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::UpdateProjectInput::name): <p>The name of the build project.</p> <note>   <p>You cannot change a build project's name.</p>  </note>
+    ///   - [`description(Option<String>)`](crate::input::UpdateProjectInput::description): <p>A new or replacement description of the build project.</p>
+    ///   - [`source(Option<ProjectSource>)`](crate::input::UpdateProjectInput::source): <p>Information to be changed about the build input source code for the build project.</p>
+    ///   - [`secondary_sources(Option<Vec<ProjectSource>>)`](crate::input::UpdateProjectInput::secondary_sources): <p> An array of <code>ProjectSource</code> objects. </p>
+    ///   - [`source_version(Option<String>)`](crate::input::UpdateProjectInput::source_version): <p> A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of: </p>  <ul>   <li> <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li>   <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>   <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>   <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>  </ul>  <p> If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p>  <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
+    ///   - [`secondary_source_versions(Option<Vec<ProjectSourceVersion>>)`](crate::input::UpdateProjectInput::secondary_source_versions): <p> An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take over these <code>secondarySourceVersions</code> (at the project level). </p>
+    ///   - [`artifacts(Option<ProjectArtifacts>)`](crate::input::UpdateProjectInput::artifacts): <p>Information to be changed about the build output artifacts for the build project.</p>
+    ///   - [`secondary_artifacts(Option<Vec<ProjectArtifacts>>)`](crate::input::UpdateProjectInput::secondary_artifacts): <p> An array of <code>ProjectArtifact</code> objects. </p>
+    ///   - [`cache(Option<ProjectCache>)`](crate::input::UpdateProjectInput::cache): <p>Stores recently used information so that it can be quickly accessed at a later time.</p>
+    ///   - [`environment(Option<ProjectEnvironment>)`](crate::input::UpdateProjectInput::environment): <p>Information to be changed about the build environment for the build project.</p>
+    ///   - [`service_role(Option<String>)`](crate::input::UpdateProjectInput::service_role): <p>The replacement ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services on behalf of the Amazon Web Services account.</p>
+    ///   - [`timeout_in_minutes(Option<i32>)`](crate::input::UpdateProjectInput::timeout_in_minutes): <p>The replacement value in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any related build that did not get marked as completed.</p>
+    ///   - [`queued_timeout_in_minutes(Option<i32>)`](crate::input::UpdateProjectInput::queued_timeout_in_minutes): <p> The number of minutes a build is allowed to be queued before it times out. </p>
+    ///   - [`encryption_key(Option<String>)`](crate::input::UpdateProjectInput::encryption_key): <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note>   <p> You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>  </note>  <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/   <alias-name></alias-name></code>). </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::UpdateProjectInput::tags): <p>An updated list of tag key and value pairs associated with this build project.</p>  <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
+    ///   - [`vpc_config(Option<VpcConfig>)`](crate::input::UpdateProjectInput::vpc_config): <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
+    ///   - [`badge_enabled(Option<bool>)`](crate::input::UpdateProjectInput::badge_enabled): <p>Set this to true to generate a publicly accessible URL for your project's build badge.</p>
+    ///   - [`logs_config(Option<LogsConfig>)`](crate::input::UpdateProjectInput::logs_config): <p> Information about logs for the build project. A project can create logs in CloudWatch Logs, logs in an S3 bucket, or both. </p>
+    ///   - [`file_system_locations(Option<Vec<ProjectFileSystemLocation>>)`](crate::input::UpdateProjectInput::file_system_locations): <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
+    ///   - [`build_batch_config(Option<ProjectBuildBatchConfig>)`](crate::input::UpdateProjectInput::build_batch_config): <p>Contains configuration information about a batch build project.</p>
+    ///   - [`concurrent_build_limit(Option<i32>)`](crate::input::UpdateProjectInput::concurrent_build_limit): <p>The maximum number of concurrent builds that are allowed for this project.</p>  <p>New builds are only started if the current number of builds is less than or equal to this limit. If the current build count meets this limit, new builds are throttled and are not run.</p>  <p>To remove this limit, set this value to -1.</p>
+    /// - On success, responds with [`UpdateProjectOutput`](crate::output::UpdateProjectOutput) with field(s):
+    ///   - [`project(Option<Project>)`](crate::output::UpdateProjectOutput::project): <p>Information about the build project that was changed.</p>
+    /// - On failure, responds with [`SdkError<UpdateProjectError>`](crate::error::UpdateProjectError)
     pub fn update_project(&self) -> fluent_builders::UpdateProject<C, M, R> {
         fluent_builders::UpdateProject::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateProjectVisibility` operation.
+    /// Constructs a fluent builder for the [`UpdateProjectVisibility`](crate::client::fluent_builders::UpdateProjectVisibility) operation.
     ///
-    /// See [`UpdateProjectVisibility`](crate::client::fluent_builders::UpdateProjectVisibility) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateProjectVisibilityInput`](crate::input::UpdateProjectVisibilityInput) with field(s):
+    ///   - [`project_arn(Option<String>)`](crate::input::UpdateProjectVisibilityInput::project_arn): <p>The Amazon Resource Name (ARN) of the build project.</p>
+    ///   - [`project_visibility(Option<ProjectVisibilityType>)`](crate::input::UpdateProjectVisibilityInput::project_visibility): <p>Specifies the visibility of the project's builds. Possible values are:</p>  <dl>   <dt>   PUBLIC_READ  </dt>   <dd>    <p>The project builds are visible to the public.</p>   </dd>   <dt>   PRIVATE  </dt>   <dd>    <p>The project builds are not visible to the public.</p>   </dd>  </dl>
+    ///   - [`resource_access_role(Option<String>)`](crate::input::UpdateProjectVisibilityInput::resource_access_role): <p>The ARN of the IAM role that enables CodeBuild to access the CloudWatch Logs and Amazon S3 artifacts for the project's builds.</p>
+    /// - On success, responds with [`UpdateProjectVisibilityOutput`](crate::output::UpdateProjectVisibilityOutput) with field(s):
+    ///   - [`project_arn(Option<String>)`](crate::output::UpdateProjectVisibilityOutput::project_arn): <p>The Amazon Resource Name (ARN) of the build project.</p>
+    ///   - [`public_project_alias(Option<String>)`](crate::output::UpdateProjectVisibilityOutput::public_project_alias): <p>Contains the project identifier used with the public build APIs. </p>
+    ///   - [`project_visibility(Option<ProjectVisibilityType>)`](crate::output::UpdateProjectVisibilityOutput::project_visibility): <p>Specifies the visibility of the project's builds. Possible values are:</p>  <dl>   <dt>   PUBLIC_READ  </dt>   <dd>    <p>The project builds are visible to the public.</p>   </dd>   <dt>   PRIVATE  </dt>   <dd>    <p>The project builds are not visible to the public.</p>   </dd>  </dl>
+    /// - On failure, responds with [`SdkError<UpdateProjectVisibilityError>`](crate::error::UpdateProjectVisibilityError)
     pub fn update_project_visibility(&self) -> fluent_builders::UpdateProjectVisibility<C, M, R> {
         fluent_builders::UpdateProjectVisibility::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateReportGroup` operation.
+    /// Constructs a fluent builder for the [`UpdateReportGroup`](crate::client::fluent_builders::UpdateReportGroup) operation.
     ///
-    /// See [`UpdateReportGroup`](crate::client::fluent_builders::UpdateReportGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateReportGroupInput`](crate::input::UpdateReportGroupInput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::input::UpdateReportGroupInput::arn): <p> The ARN of the report group to update. </p>
+    ///   - [`export_config(Option<ReportExportConfig>)`](crate::input::UpdateReportGroupInput::export_config): <p> Used to specify an updated export type. Valid values are: </p>  <ul>   <li> <p> <code>S3</code>: The report results are exported to an S3 bucket. </p> </li>   <li> <p> <code>NO_EXPORT</code>: The report results are not exported. </p> </li>  </ul>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::UpdateReportGroupInput::tags): <p> An updated list of tag key and value pairs associated with this report group. </p>  <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
+    /// - On success, responds with [`UpdateReportGroupOutput`](crate::output::UpdateReportGroupOutput) with field(s):
+    ///   - [`report_group(Option<ReportGroup>)`](crate::output::UpdateReportGroupOutput::report_group): <p> Information about the updated report group. </p>
+    /// - On failure, responds with [`SdkError<UpdateReportGroupError>`](crate::error::UpdateReportGroupError)
     pub fn update_report_group(&self) -> fluent_builders::UpdateReportGroup<C, M, R> {
         fluent_builders::UpdateReportGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateWebhook` operation.
+    /// Constructs a fluent builder for the [`UpdateWebhook`](crate::client::fluent_builders::UpdateWebhook) operation.
     ///
-    /// See [`UpdateWebhook`](crate::client::fluent_builders::UpdateWebhook) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateWebhookInput`](crate::input::UpdateWebhookInput) with field(s):
+    ///   - [`project_name(Option<String>)`](crate::input::UpdateWebhookInput::project_name): <p>The name of the CodeBuild project.</p>
+    ///   - [`branch_filter(Option<String>)`](crate::input::UpdateWebhookInput::branch_filter): <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>   <p> It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p>  </note>
+    ///   - [`rotate_secret(bool)`](crate::input::UpdateWebhookInput::rotate_secret): <p> A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you use Bitbucket for your repository, <code>rotateSecret</code> is ignored. </p>
+    ///   - [`filter_groups(Option<Vec<Vec<WebhookFilter>>>)`](crate::input::UpdateWebhookInput::filter_groups): <p> An array of arrays of <code>WebhookFilter</code> objects used to determine if a webhook event can trigger a build. A filter group must contain at least one <code>EVENT</code> <code>WebhookFilter</code>. </p>
+    ///   - [`build_type(Option<WebhookBuildType>)`](crate::input::UpdateWebhookInput::build_type): <p>Specifies the type of build this webhook will trigger.</p>
+    /// - On success, responds with [`UpdateWebhookOutput`](crate::output::UpdateWebhookOutput) with field(s):
+    ///   - [`webhook(Option<Webhook>)`](crate::output::UpdateWebhookOutput::webhook): <p> Information about a repository's webhook that is associated with a project in CodeBuild. </p>
+    /// - On failure, responds with [`SdkError<UpdateWebhookError>`](crate::error::UpdateWebhookError)
     pub fn update_webhook(&self) -> fluent_builders::UpdateWebhook<C, M, R> {
         fluent_builders::UpdateWebhook::new(self.handle.clone())
     }

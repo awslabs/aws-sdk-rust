@@ -83,17 +83,29 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `GetLatestConfiguration` operation.
+    /// Constructs a fluent builder for the [`GetLatestConfiguration`](crate::client::fluent_builders::GetLatestConfiguration) operation.
     ///
-    /// See [`GetLatestConfiguration`](crate::client::fluent_builders::GetLatestConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetLatestConfigurationInput`](crate::input::GetLatestConfigurationInput) with field(s):
+    ///   - [`configuration_token(Option<String>)`](crate::input::GetLatestConfigurationInput::configuration_token): <p>Token describing the current state of the configuration session. To obtain a token, first call the StartConfigurationSession API. Note that every call to GetLatestConfiguration will return a new ConfigurationToken (NextPollConfigurationToken in the response) and MUST be provided to subsequent GetLatestConfiguration API calls.</p>
+    /// - On success, responds with [`GetLatestConfigurationOutput`](crate::output::GetLatestConfigurationOutput) with field(s):
+    ///   - [`next_poll_configuration_token(Option<String>)`](crate::output::GetLatestConfigurationOutput::next_poll_configuration_token): <p>The latest token describing the current state of the configuration session. This MUST be provided to the next call to GetLatestConfiguration.</p>
+    ///   - [`next_poll_interval_in_seconds(i32)`](crate::output::GetLatestConfigurationOutput::next_poll_interval_in_seconds): <p>The amount of time the client should wait before polling for configuration updates again. See RequiredMinimumPollIntervalInSeconds to set the desired poll interval.</p>
+    ///   - [`content_type(Option<String>)`](crate::output::GetLatestConfigurationOutput::content_type): <p>A standard MIME type describing the format of the configuration content.</p>
+    ///   - [`configuration(Option<Blob>)`](crate::output::GetLatestConfigurationOutput::configuration): <p>The data of the configuration. Note that this may be empty if the client already has the latest version of configuration.</p>
+    /// - On failure, responds with [`SdkError<GetLatestConfigurationError>`](crate::error::GetLatestConfigurationError)
     pub fn get_latest_configuration(&self) -> fluent_builders::GetLatestConfiguration<C, M, R> {
         fluent_builders::GetLatestConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartConfigurationSession` operation.
+    /// Constructs a fluent builder for the [`StartConfigurationSession`](crate::client::fluent_builders::StartConfigurationSession) operation.
     ///
-    /// See [`StartConfigurationSession`](crate::client::fluent_builders::StartConfigurationSession) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartConfigurationSessionInput`](crate::input::StartConfigurationSessionInput) with field(s):
+    ///   - [`application_identifier(Option<String>)`](crate::input::StartConfigurationSessionInput::application_identifier): <p>The application ID or the application name.</p>
+    ///   - [`environment_identifier(Option<String>)`](crate::input::StartConfigurationSessionInput::environment_identifier): <p>The environment ID or the environment name.</p>
+    ///   - [`configuration_profile_identifier(Option<String>)`](crate::input::StartConfigurationSessionInput::configuration_profile_identifier): <p>The configuration profile ID or the configuration profile name.</p>
+    ///   - [`required_minimum_poll_interval_in_seconds(Option<i32>)`](crate::input::StartConfigurationSessionInput::required_minimum_poll_interval_in_seconds): <p>The interval at which your client will poll for configuration. If provided, the service will throw a BadRequestException if the client polls before the specified poll interval. By default, client poll intervals are not enforced.</p>
+    /// - On success, responds with [`StartConfigurationSessionOutput`](crate::output::StartConfigurationSessionOutput) with field(s):
+    ///   - [`initial_configuration_token(Option<String>)`](crate::output::StartConfigurationSessionOutput::initial_configuration_token): <p>Token encapsulating state about the configuration session. Provide this token to the GetLatestConfiguration API to retrieve configuration data.</p> <important>   <p>This token should only be used once in your first call to GetLatestConfiguration. You MUST use the new token in the GetConfiguration response (NextPollConfigurationToken) in each subsequent call to GetLatestConfiguration.</p>  </important>
+    /// - On failure, responds with [`SdkError<StartConfigurationSessionError>`](crate::error::StartConfigurationSessionError)
     pub fn start_configuration_session(
         &self,
     ) -> fluent_builders::StartConfigurationSession<C, M, R> {

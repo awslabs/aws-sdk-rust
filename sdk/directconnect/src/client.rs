@@ -83,508 +83,1208 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AcceptDirectConnectGatewayAssociationProposal` operation.
+    /// Constructs a fluent builder for the [`AcceptDirectConnectGatewayAssociationProposal`](crate::client::fluent_builders::AcceptDirectConnectGatewayAssociationProposal) operation.
     ///
-    /// See [`AcceptDirectConnectGatewayAssociationProposal`](crate::client::fluent_builders::AcceptDirectConnectGatewayAssociationProposal) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AcceptDirectConnectGatewayAssociationProposalInput`](crate::input::AcceptDirectConnectGatewayAssociationProposalInput) with field(s):
+    ///   - [`direct_connect_gateway_id(Option<String>)`](crate::input::AcceptDirectConnectGatewayAssociationProposalInput::direct_connect_gateway_id): <p>The ID of the Direct Connect gateway.</p>
+    ///   - [`proposal_id(Option<String>)`](crate::input::AcceptDirectConnectGatewayAssociationProposalInput::proposal_id): <p>The ID of the request proposal.</p>
+    ///   - [`associated_gateway_owner_account(Option<String>)`](crate::input::AcceptDirectConnectGatewayAssociationProposalInput::associated_gateway_owner_account): <p>The ID of the Amazon Web Services account that owns the virtual private gateway or transit gateway.</p>
+    ///   - [`override_allowed_prefixes_to_direct_connect_gateway(Option<Vec<RouteFilterPrefix>>)`](crate::input::AcceptDirectConnectGatewayAssociationProposalInput::override_allowed_prefixes_to_direct_connect_gateway): <p>Overrides the Amazon VPC prefixes advertised to the Direct Connect gateway.</p>  <p>For information about how to set the prefixes, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed Prefixes</a> in the <i>Direct Connect User Guide</i>.</p>
+    /// - On success, responds with [`AcceptDirectConnectGatewayAssociationProposalOutput`](crate::output::AcceptDirectConnectGatewayAssociationProposalOutput) with field(s):
+    ///   - [`direct_connect_gateway_association(Option<DirectConnectGatewayAssociation>)`](crate::output::AcceptDirectConnectGatewayAssociationProposalOutput::direct_connect_gateway_association): <p>Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway.</p>
+    /// - On failure, responds with [`SdkError<AcceptDirectConnectGatewayAssociationProposalError>`](crate::error::AcceptDirectConnectGatewayAssociationProposalError)
     pub fn accept_direct_connect_gateway_association_proposal(
         &self,
     ) -> fluent_builders::AcceptDirectConnectGatewayAssociationProposal<C, M, R> {
         fluent_builders::AcceptDirectConnectGatewayAssociationProposal::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AllocateConnectionOnInterconnect` operation.
+    /// Constructs a fluent builder for the [`AllocateConnectionOnInterconnect`](crate::client::fluent_builders::AllocateConnectionOnInterconnect) operation.
     ///
-    /// See [`AllocateConnectionOnInterconnect`](crate::client::fluent_builders::AllocateConnectionOnInterconnect) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AllocateConnectionOnInterconnectInput`](crate::input::AllocateConnectionOnInterconnectInput) with field(s):
+    ///   - [`bandwidth(Option<String>)`](crate::input::AllocateConnectionOnInterconnectInput::bandwidth): <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met specific requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.</p>
+    ///   - [`connection_name(Option<String>)`](crate::input::AllocateConnectionOnInterconnectInput::connection_name): <p>The name of the provisioned connection.</p>
+    ///   - [`owner_account(Option<String>)`](crate::input::AllocateConnectionOnInterconnectInput::owner_account): <p>The ID of the Amazon Web Services account of the customer for whom the connection will be provisioned.</p>
+    ///   - [`interconnect_id(Option<String>)`](crate::input::AllocateConnectionOnInterconnectInput::interconnect_id): <p>The ID of the interconnect on which the connection will be provisioned.</p>
+    ///   - [`vlan(i32)`](crate::input::AllocateConnectionOnInterconnectInput::vlan): <p>The dedicated VLAN provisioned to the connection.</p>
+    /// - On success, responds with [`AllocateConnectionOnInterconnectOutput`](crate::output::AllocateConnectionOnInterconnectOutput) with field(s):
+    ///   - [`owner_account(Option<String>)`](crate::output::AllocateConnectionOnInterconnectOutput::owner_account): <p>The ID of the Amazon Web Services account that owns the connection.</p>
+    ///   - [`connection_id(Option<String>)`](crate::output::AllocateConnectionOnInterconnectOutput::connection_id): <p>The ID of the connection.</p>
+    ///   - [`connection_name(Option<String>)`](crate::output::AllocateConnectionOnInterconnectOutput::connection_name): <p>The name of the connection.</p>
+    ///   - [`connection_state(Option<ConnectionState>)`](crate::output::AllocateConnectionOnInterconnectOutput::connection_state): <p>The state of the connection. The following are the possible values:</p>  <ul>   <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>   <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>   <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>   <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>   <li> <p> <code>down</code>: The network link is down.</p> </li>   <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>   <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>   <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>   <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>  </ul>
+    ///   - [`region(Option<String>)`](crate::output::AllocateConnectionOnInterconnectOutput::region): <p>The Amazon Web Services Region where the connection is located.</p>
+    ///   - [`location(Option<String>)`](crate::output::AllocateConnectionOnInterconnectOutput::location): <p>The location of the connection.</p>
+    ///   - [`bandwidth(Option<String>)`](crate::output::AllocateConnectionOnInterconnectOutput::bandwidth): <p>The bandwidth of the connection.</p>
+    ///   - [`vlan(i32)`](crate::output::AllocateConnectionOnInterconnectOutput::vlan): <p>The ID of the VLAN.</p>
+    ///   - [`partner_name(Option<String>)`](crate::output::AllocateConnectionOnInterconnectOutput::partner_name): <p>The name of the Direct Connect service provider associated with the connection.</p>
+    ///   - [`loa_issue_time(Option<DateTime>)`](crate::output::AllocateConnectionOnInterconnectOutput::loa_issue_time): <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
+    ///   - [`lag_id(Option<String>)`](crate::output::AllocateConnectionOnInterconnectOutput::lag_id): <p>The ID of the LAG.</p>
+    ///   - [`aws_device(Option<String>)`](crate::output::AllocateConnectionOnInterconnectOutput::aws_device): <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+    ///   - [`jumbo_frame_capable(Option<bool>)`](crate::output::AllocateConnectionOnInterconnectOutput::jumbo_frame_capable): <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    ///   - [`aws_device_v2(Option<String>)`](crate::output::AllocateConnectionOnInterconnectOutput::aws_device_v2): <p>The Direct Connect endpoint that terminates the physical connection.</p>
+    ///   - [`aws_logical_device_id(Option<String>)`](crate::output::AllocateConnectionOnInterconnectOutput::aws_logical_device_id): <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
+    ///   - [`has_logical_redundancy(Option<HasLogicalRedundancy>)`](crate::output::AllocateConnectionOnInterconnectOutput::has_logical_redundancy): <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::AllocateConnectionOnInterconnectOutput::tags): <p>The tags associated with the connection.</p>
+    ///   - [`provider_name(Option<String>)`](crate::output::AllocateConnectionOnInterconnectOutput::provider_name): <p>The name of the service provider associated with the connection.</p>
+    ///   - [`mac_sec_capable(Option<bool>)`](crate::output::AllocateConnectionOnInterconnectOutput::mac_sec_capable): <p>Indicates whether the connection supports MAC Security (MACsec).</p>
+    ///   - [`port_encryption_status(Option<String>)`](crate::output::AllocateConnectionOnInterconnectOutput::port_encryption_status): <p>The MAC Security (MACsec) port link status of the connection.</p>  <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
+    ///   - [`encryption_mode(Option<String>)`](crate::output::AllocateConnectionOnInterconnectOutput::encryption_mode): <p>The MAC Security (MACsec) connection encryption mode.</p>  <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
+    ///   - [`mac_sec_keys(Option<Vec<MacSecKey>>)`](crate::output::AllocateConnectionOnInterconnectOutput::mac_sec_keys): <p>The MAC Security (MACsec) security keys associated with the connection.</p>
+    /// - On failure, responds with [`SdkError<AllocateConnectionOnInterconnectError>`](crate::error::AllocateConnectionOnInterconnectError)
     pub fn allocate_connection_on_interconnect(
         &self,
     ) -> fluent_builders::AllocateConnectionOnInterconnect<C, M, R> {
         fluent_builders::AllocateConnectionOnInterconnect::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AllocateHostedConnection` operation.
+    /// Constructs a fluent builder for the [`AllocateHostedConnection`](crate::client::fluent_builders::AllocateHostedConnection) operation.
     ///
-    /// See [`AllocateHostedConnection`](crate::client::fluent_builders::AllocateHostedConnection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AllocateHostedConnectionInput`](crate::input::AllocateHostedConnectionInput) with field(s):
+    ///   - [`connection_id(Option<String>)`](crate::input::AllocateHostedConnectionInput::connection_id): <p>The ID of the interconnect or LAG.</p>
+    ///   - [`owner_account(Option<String>)`](crate::input::AllocateHostedConnectionInput::owner_account): <p>The ID of the Amazon Web Services account ID of the customer for the connection.</p>
+    ///   - [`bandwidth(Option<String>)`](crate::input::AllocateHostedConnectionInput::bandwidth): <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met specific requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection. </p>
+    ///   - [`connection_name(Option<String>)`](crate::input::AllocateHostedConnectionInput::connection_name): <p>The name of the hosted connection.</p>
+    ///   - [`vlan(i32)`](crate::input::AllocateHostedConnectionInput::vlan): <p>The dedicated VLAN provisioned to the hosted connection.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::AllocateHostedConnectionInput::tags): <p>The tags associated with the connection.</p>
+    /// - On success, responds with [`AllocateHostedConnectionOutput`](crate::output::AllocateHostedConnectionOutput) with field(s):
+    ///   - [`owner_account(Option<String>)`](crate::output::AllocateHostedConnectionOutput::owner_account): <p>The ID of the Amazon Web Services account that owns the connection.</p>
+    ///   - [`connection_id(Option<String>)`](crate::output::AllocateHostedConnectionOutput::connection_id): <p>The ID of the connection.</p>
+    ///   - [`connection_name(Option<String>)`](crate::output::AllocateHostedConnectionOutput::connection_name): <p>The name of the connection.</p>
+    ///   - [`connection_state(Option<ConnectionState>)`](crate::output::AllocateHostedConnectionOutput::connection_state): <p>The state of the connection. The following are the possible values:</p>  <ul>   <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>   <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>   <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>   <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>   <li> <p> <code>down</code>: The network link is down.</p> </li>   <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>   <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>   <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>   <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>  </ul>
+    ///   - [`region(Option<String>)`](crate::output::AllocateHostedConnectionOutput::region): <p>The Amazon Web Services Region where the connection is located.</p>
+    ///   - [`location(Option<String>)`](crate::output::AllocateHostedConnectionOutput::location): <p>The location of the connection.</p>
+    ///   - [`bandwidth(Option<String>)`](crate::output::AllocateHostedConnectionOutput::bandwidth): <p>The bandwidth of the connection.</p>
+    ///   - [`vlan(i32)`](crate::output::AllocateHostedConnectionOutput::vlan): <p>The ID of the VLAN.</p>
+    ///   - [`partner_name(Option<String>)`](crate::output::AllocateHostedConnectionOutput::partner_name): <p>The name of the Direct Connect service provider associated with the connection.</p>
+    ///   - [`loa_issue_time(Option<DateTime>)`](crate::output::AllocateHostedConnectionOutput::loa_issue_time): <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
+    ///   - [`lag_id(Option<String>)`](crate::output::AllocateHostedConnectionOutput::lag_id): <p>The ID of the LAG.</p>
+    ///   - [`aws_device(Option<String>)`](crate::output::AllocateHostedConnectionOutput::aws_device): <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+    ///   - [`jumbo_frame_capable(Option<bool>)`](crate::output::AllocateHostedConnectionOutput::jumbo_frame_capable): <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    ///   - [`aws_device_v2(Option<String>)`](crate::output::AllocateHostedConnectionOutput::aws_device_v2): <p>The Direct Connect endpoint that terminates the physical connection.</p>
+    ///   - [`aws_logical_device_id(Option<String>)`](crate::output::AllocateHostedConnectionOutput::aws_logical_device_id): <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
+    ///   - [`has_logical_redundancy(Option<HasLogicalRedundancy>)`](crate::output::AllocateHostedConnectionOutput::has_logical_redundancy): <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::AllocateHostedConnectionOutput::tags): <p>The tags associated with the connection.</p>
+    ///   - [`provider_name(Option<String>)`](crate::output::AllocateHostedConnectionOutput::provider_name): <p>The name of the service provider associated with the connection.</p>
+    ///   - [`mac_sec_capable(Option<bool>)`](crate::output::AllocateHostedConnectionOutput::mac_sec_capable): <p>Indicates whether the connection supports MAC Security (MACsec).</p>
+    ///   - [`port_encryption_status(Option<String>)`](crate::output::AllocateHostedConnectionOutput::port_encryption_status): <p>The MAC Security (MACsec) port link status of the connection.</p>  <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
+    ///   - [`encryption_mode(Option<String>)`](crate::output::AllocateHostedConnectionOutput::encryption_mode): <p>The MAC Security (MACsec) connection encryption mode.</p>  <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
+    ///   - [`mac_sec_keys(Option<Vec<MacSecKey>>)`](crate::output::AllocateHostedConnectionOutput::mac_sec_keys): <p>The MAC Security (MACsec) security keys associated with the connection.</p>
+    /// - On failure, responds with [`SdkError<AllocateHostedConnectionError>`](crate::error::AllocateHostedConnectionError)
     pub fn allocate_hosted_connection(&self) -> fluent_builders::AllocateHostedConnection<C, M, R> {
         fluent_builders::AllocateHostedConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AllocatePrivateVirtualInterface` operation.
+    /// Constructs a fluent builder for the [`AllocatePrivateVirtualInterface`](crate::client::fluent_builders::AllocatePrivateVirtualInterface) operation.
     ///
-    /// See [`AllocatePrivateVirtualInterface`](crate::client::fluent_builders::AllocatePrivateVirtualInterface) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AllocatePrivateVirtualInterfaceInput`](crate::input::AllocatePrivateVirtualInterfaceInput) with field(s):
+    ///   - [`connection_id(Option<String>)`](crate::input::AllocatePrivateVirtualInterfaceInput::connection_id): <p>The ID of the connection on which the private virtual interface is provisioned.</p>
+    ///   - [`owner_account(Option<String>)`](crate::input::AllocatePrivateVirtualInterfaceInput::owner_account): <p>The ID of the Amazon Web Services account that owns the virtual private interface.</p>
+    ///   - [`new_private_virtual_interface_allocation(Option<NewPrivateVirtualInterfaceAllocation>)`](crate::input::AllocatePrivateVirtualInterfaceInput::new_private_virtual_interface_allocation): <p>Information about the private virtual interface.</p>
+    /// - On success, responds with [`AllocatePrivateVirtualInterfaceOutput`](crate::output::AllocatePrivateVirtualInterfaceOutput) with field(s):
+    ///   - [`owner_account(Option<String>)`](crate::output::AllocatePrivateVirtualInterfaceOutput::owner_account): <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
+    ///   - [`virtual_interface_id(Option<String>)`](crate::output::AllocatePrivateVirtualInterfaceOutput::virtual_interface_id): <p>The ID of the virtual interface.</p>
+    ///   - [`location(Option<String>)`](crate::output::AllocatePrivateVirtualInterfaceOutput::location): <p>The location of the connection.</p>
+    ///   - [`connection_id(Option<String>)`](crate::output::AllocatePrivateVirtualInterfaceOutput::connection_id): <p>The ID of the connection.</p>
+    ///   - [`virtual_interface_type(Option<String>)`](crate::output::AllocatePrivateVirtualInterfaceOutput::virtual_interface_type): <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
+    ///   - [`virtual_interface_name(Option<String>)`](crate::output::AllocatePrivateVirtualInterfaceOutput::virtual_interface_name): <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
+    ///   - [`vlan(i32)`](crate::output::AllocatePrivateVirtualInterfaceOutput::vlan): <p>The ID of the VLAN.</p>
+    ///   - [`asn(i32)`](crate::output::AllocatePrivateVirtualInterfaceOutput::asn): <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>  <p>The valid values are 1-2147483647.</p>
+    ///   - [`amazon_side_asn(Option<i64>)`](crate::output::AllocatePrivateVirtualInterfaceOutput::amazon_side_asn): <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
+    ///   - [`auth_key(Option<String>)`](crate::output::AllocatePrivateVirtualInterfaceOutput::auth_key): <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
+    ///   - [`amazon_address(Option<String>)`](crate::output::AllocatePrivateVirtualInterfaceOutput::amazon_address): <p>The IP address assigned to the Amazon interface.</p>
+    ///   - [`customer_address(Option<String>)`](crate::output::AllocatePrivateVirtualInterfaceOutput::customer_address): <p>The IP address assigned to the customer interface.</p>
+    ///   - [`address_family(Option<AddressFamily>)`](crate::output::AllocatePrivateVirtualInterfaceOutput::address_family): <p>The address family for the BGP peer.</p>
+    ///   - [`virtual_interface_state(Option<VirtualInterfaceState>)`](crate::output::AllocatePrivateVirtualInterfaceOutput::virtual_interface_state): <p>The state of the virtual interface. The following are the possible values:</p>  <ul>   <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>   <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>   <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>   <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>   <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>   <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>   <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>   <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>   <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>  </ul>
+    ///   - [`customer_router_config(Option<String>)`](crate::output::AllocatePrivateVirtualInterfaceOutput::customer_router_config): <p>The customer router configuration.</p>
+    ///   - [`mtu(Option<i32>)`](crate::output::AllocatePrivateVirtualInterfaceOutput::mtu): <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
+    ///   - [`jumbo_frame_capable(Option<bool>)`](crate::output::AllocatePrivateVirtualInterfaceOutput::jumbo_frame_capable): <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    ///   - [`virtual_gateway_id(Option<String>)`](crate::output::AllocatePrivateVirtualInterfaceOutput::virtual_gateway_id): <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
+    ///   - [`direct_connect_gateway_id(Option<String>)`](crate::output::AllocatePrivateVirtualInterfaceOutput::direct_connect_gateway_id): <p>The ID of the Direct Connect gateway.</p>
+    ///   - [`route_filter_prefixes(Option<Vec<RouteFilterPrefix>>)`](crate::output::AllocatePrivateVirtualInterfaceOutput::route_filter_prefixes): <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
+    ///   - [`bgp_peers(Option<Vec<BgpPeer>>)`](crate::output::AllocatePrivateVirtualInterfaceOutput::bgp_peers): <p>The BGP peers configured on this virtual interface.</p>
+    ///   - [`region(Option<String>)`](crate::output::AllocatePrivateVirtualInterfaceOutput::region): <p>The Amazon Web Services Region where the virtual interface is located.</p>
+    ///   - [`aws_device_v2(Option<String>)`](crate::output::AllocatePrivateVirtualInterfaceOutput::aws_device_v2): <p>The Direct Connect endpoint that terminates the physical connection.</p>
+    ///   - [`aws_logical_device_id(Option<String>)`](crate::output::AllocatePrivateVirtualInterfaceOutput::aws_logical_device_id): <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::AllocatePrivateVirtualInterfaceOutput::tags): <p>The tags associated with the virtual interface.</p>
+    ///   - [`site_link_enabled(Option<bool>)`](crate::output::AllocatePrivateVirtualInterfaceOutput::site_link_enabled): <p>Indicates whether SiteLink is enabled.</p>
+    /// - On failure, responds with [`SdkError<AllocatePrivateVirtualInterfaceError>`](crate::error::AllocatePrivateVirtualInterfaceError)
     pub fn allocate_private_virtual_interface(
         &self,
     ) -> fluent_builders::AllocatePrivateVirtualInterface<C, M, R> {
         fluent_builders::AllocatePrivateVirtualInterface::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AllocatePublicVirtualInterface` operation.
+    /// Constructs a fluent builder for the [`AllocatePublicVirtualInterface`](crate::client::fluent_builders::AllocatePublicVirtualInterface) operation.
     ///
-    /// See [`AllocatePublicVirtualInterface`](crate::client::fluent_builders::AllocatePublicVirtualInterface) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AllocatePublicVirtualInterfaceInput`](crate::input::AllocatePublicVirtualInterfaceInput) with field(s):
+    ///   - [`connection_id(Option<String>)`](crate::input::AllocatePublicVirtualInterfaceInput::connection_id): <p>The ID of the connection on which the public virtual interface is provisioned.</p>
+    ///   - [`owner_account(Option<String>)`](crate::input::AllocatePublicVirtualInterfaceInput::owner_account): <p>The ID of the Amazon Web Services account that owns the public virtual interface.</p>
+    ///   - [`new_public_virtual_interface_allocation(Option<NewPublicVirtualInterfaceAllocation>)`](crate::input::AllocatePublicVirtualInterfaceInput::new_public_virtual_interface_allocation): <p>Information about the public virtual interface.</p>
+    /// - On success, responds with [`AllocatePublicVirtualInterfaceOutput`](crate::output::AllocatePublicVirtualInterfaceOutput) with field(s):
+    ///   - [`owner_account(Option<String>)`](crate::output::AllocatePublicVirtualInterfaceOutput::owner_account): <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
+    ///   - [`virtual_interface_id(Option<String>)`](crate::output::AllocatePublicVirtualInterfaceOutput::virtual_interface_id): <p>The ID of the virtual interface.</p>
+    ///   - [`location(Option<String>)`](crate::output::AllocatePublicVirtualInterfaceOutput::location): <p>The location of the connection.</p>
+    ///   - [`connection_id(Option<String>)`](crate::output::AllocatePublicVirtualInterfaceOutput::connection_id): <p>The ID of the connection.</p>
+    ///   - [`virtual_interface_type(Option<String>)`](crate::output::AllocatePublicVirtualInterfaceOutput::virtual_interface_type): <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
+    ///   - [`virtual_interface_name(Option<String>)`](crate::output::AllocatePublicVirtualInterfaceOutput::virtual_interface_name): <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
+    ///   - [`vlan(i32)`](crate::output::AllocatePublicVirtualInterfaceOutput::vlan): <p>The ID of the VLAN.</p>
+    ///   - [`asn(i32)`](crate::output::AllocatePublicVirtualInterfaceOutput::asn): <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>  <p>The valid values are 1-2147483647.</p>
+    ///   - [`amazon_side_asn(Option<i64>)`](crate::output::AllocatePublicVirtualInterfaceOutput::amazon_side_asn): <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
+    ///   - [`auth_key(Option<String>)`](crate::output::AllocatePublicVirtualInterfaceOutput::auth_key): <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
+    ///   - [`amazon_address(Option<String>)`](crate::output::AllocatePublicVirtualInterfaceOutput::amazon_address): <p>The IP address assigned to the Amazon interface.</p>
+    ///   - [`customer_address(Option<String>)`](crate::output::AllocatePublicVirtualInterfaceOutput::customer_address): <p>The IP address assigned to the customer interface.</p>
+    ///   - [`address_family(Option<AddressFamily>)`](crate::output::AllocatePublicVirtualInterfaceOutput::address_family): <p>The address family for the BGP peer.</p>
+    ///   - [`virtual_interface_state(Option<VirtualInterfaceState>)`](crate::output::AllocatePublicVirtualInterfaceOutput::virtual_interface_state): <p>The state of the virtual interface. The following are the possible values:</p>  <ul>   <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>   <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>   <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>   <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>   <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>   <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>   <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>   <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>   <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>  </ul>
+    ///   - [`customer_router_config(Option<String>)`](crate::output::AllocatePublicVirtualInterfaceOutput::customer_router_config): <p>The customer router configuration.</p>
+    ///   - [`mtu(Option<i32>)`](crate::output::AllocatePublicVirtualInterfaceOutput::mtu): <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
+    ///   - [`jumbo_frame_capable(Option<bool>)`](crate::output::AllocatePublicVirtualInterfaceOutput::jumbo_frame_capable): <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    ///   - [`virtual_gateway_id(Option<String>)`](crate::output::AllocatePublicVirtualInterfaceOutput::virtual_gateway_id): <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
+    ///   - [`direct_connect_gateway_id(Option<String>)`](crate::output::AllocatePublicVirtualInterfaceOutput::direct_connect_gateway_id): <p>The ID of the Direct Connect gateway.</p>
+    ///   - [`route_filter_prefixes(Option<Vec<RouteFilterPrefix>>)`](crate::output::AllocatePublicVirtualInterfaceOutput::route_filter_prefixes): <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
+    ///   - [`bgp_peers(Option<Vec<BgpPeer>>)`](crate::output::AllocatePublicVirtualInterfaceOutput::bgp_peers): <p>The BGP peers configured on this virtual interface.</p>
+    ///   - [`region(Option<String>)`](crate::output::AllocatePublicVirtualInterfaceOutput::region): <p>The Amazon Web Services Region where the virtual interface is located.</p>
+    ///   - [`aws_device_v2(Option<String>)`](crate::output::AllocatePublicVirtualInterfaceOutput::aws_device_v2): <p>The Direct Connect endpoint that terminates the physical connection.</p>
+    ///   - [`aws_logical_device_id(Option<String>)`](crate::output::AllocatePublicVirtualInterfaceOutput::aws_logical_device_id): <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::AllocatePublicVirtualInterfaceOutput::tags): <p>The tags associated with the virtual interface.</p>
+    ///   - [`site_link_enabled(Option<bool>)`](crate::output::AllocatePublicVirtualInterfaceOutput::site_link_enabled): <p>Indicates whether SiteLink is enabled.</p>
+    /// - On failure, responds with [`SdkError<AllocatePublicVirtualInterfaceError>`](crate::error::AllocatePublicVirtualInterfaceError)
     pub fn allocate_public_virtual_interface(
         &self,
     ) -> fluent_builders::AllocatePublicVirtualInterface<C, M, R> {
         fluent_builders::AllocatePublicVirtualInterface::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AllocateTransitVirtualInterface` operation.
+    /// Constructs a fluent builder for the [`AllocateTransitVirtualInterface`](crate::client::fluent_builders::AllocateTransitVirtualInterface) operation.
     ///
-    /// See [`AllocateTransitVirtualInterface`](crate::client::fluent_builders::AllocateTransitVirtualInterface) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AllocateTransitVirtualInterfaceInput`](crate::input::AllocateTransitVirtualInterfaceInput) with field(s):
+    ///   - [`connection_id(Option<String>)`](crate::input::AllocateTransitVirtualInterfaceInput::connection_id): <p>The ID of the connection on which the transit virtual interface is provisioned.</p>
+    ///   - [`owner_account(Option<String>)`](crate::input::AllocateTransitVirtualInterfaceInput::owner_account): <p>The ID of the Amazon Web Services account that owns the transit virtual interface.</p>
+    ///   - [`new_transit_virtual_interface_allocation(Option<NewTransitVirtualInterfaceAllocation>)`](crate::input::AllocateTransitVirtualInterfaceInput::new_transit_virtual_interface_allocation): <p>Information about the transit virtual interface.</p>
+    /// - On success, responds with [`AllocateTransitVirtualInterfaceOutput`](crate::output::AllocateTransitVirtualInterfaceOutput) with field(s):
+    ///   - [`virtual_interface(Option<VirtualInterface>)`](crate::output::AllocateTransitVirtualInterfaceOutput::virtual_interface): <p>Information about a virtual interface.</p>
+    /// - On failure, responds with [`SdkError<AllocateTransitVirtualInterfaceError>`](crate::error::AllocateTransitVirtualInterfaceError)
     pub fn allocate_transit_virtual_interface(
         &self,
     ) -> fluent_builders::AllocateTransitVirtualInterface<C, M, R> {
         fluent_builders::AllocateTransitVirtualInterface::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateConnectionWithLag` operation.
+    /// Constructs a fluent builder for the [`AssociateConnectionWithLag`](crate::client::fluent_builders::AssociateConnectionWithLag) operation.
     ///
-    /// See [`AssociateConnectionWithLag`](crate::client::fluent_builders::AssociateConnectionWithLag) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateConnectionWithLagInput`](crate::input::AssociateConnectionWithLagInput) with field(s):
+    ///   - [`connection_id(Option<String>)`](crate::input::AssociateConnectionWithLagInput::connection_id): <p>The ID of the connection.</p>
+    ///   - [`lag_id(Option<String>)`](crate::input::AssociateConnectionWithLagInput::lag_id): <p>The ID of the LAG with which to associate the connection.</p>
+    /// - On success, responds with [`AssociateConnectionWithLagOutput`](crate::output::AssociateConnectionWithLagOutput) with field(s):
+    ///   - [`owner_account(Option<String>)`](crate::output::AssociateConnectionWithLagOutput::owner_account): <p>The ID of the Amazon Web Services account that owns the connection.</p>
+    ///   - [`connection_id(Option<String>)`](crate::output::AssociateConnectionWithLagOutput::connection_id): <p>The ID of the connection.</p>
+    ///   - [`connection_name(Option<String>)`](crate::output::AssociateConnectionWithLagOutput::connection_name): <p>The name of the connection.</p>
+    ///   - [`connection_state(Option<ConnectionState>)`](crate::output::AssociateConnectionWithLagOutput::connection_state): <p>The state of the connection. The following are the possible values:</p>  <ul>   <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>   <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>   <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>   <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>   <li> <p> <code>down</code>: The network link is down.</p> </li>   <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>   <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>   <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>   <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>  </ul>
+    ///   - [`region(Option<String>)`](crate::output::AssociateConnectionWithLagOutput::region): <p>The Amazon Web Services Region where the connection is located.</p>
+    ///   - [`location(Option<String>)`](crate::output::AssociateConnectionWithLagOutput::location): <p>The location of the connection.</p>
+    ///   - [`bandwidth(Option<String>)`](crate::output::AssociateConnectionWithLagOutput::bandwidth): <p>The bandwidth of the connection.</p>
+    ///   - [`vlan(i32)`](crate::output::AssociateConnectionWithLagOutput::vlan): <p>The ID of the VLAN.</p>
+    ///   - [`partner_name(Option<String>)`](crate::output::AssociateConnectionWithLagOutput::partner_name): <p>The name of the Direct Connect service provider associated with the connection.</p>
+    ///   - [`loa_issue_time(Option<DateTime>)`](crate::output::AssociateConnectionWithLagOutput::loa_issue_time): <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
+    ///   - [`lag_id(Option<String>)`](crate::output::AssociateConnectionWithLagOutput::lag_id): <p>The ID of the LAG.</p>
+    ///   - [`aws_device(Option<String>)`](crate::output::AssociateConnectionWithLagOutput::aws_device): <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+    ///   - [`jumbo_frame_capable(Option<bool>)`](crate::output::AssociateConnectionWithLagOutput::jumbo_frame_capable): <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    ///   - [`aws_device_v2(Option<String>)`](crate::output::AssociateConnectionWithLagOutput::aws_device_v2): <p>The Direct Connect endpoint that terminates the physical connection.</p>
+    ///   - [`aws_logical_device_id(Option<String>)`](crate::output::AssociateConnectionWithLagOutput::aws_logical_device_id): <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
+    ///   - [`has_logical_redundancy(Option<HasLogicalRedundancy>)`](crate::output::AssociateConnectionWithLagOutput::has_logical_redundancy): <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::AssociateConnectionWithLagOutput::tags): <p>The tags associated with the connection.</p>
+    ///   - [`provider_name(Option<String>)`](crate::output::AssociateConnectionWithLagOutput::provider_name): <p>The name of the service provider associated with the connection.</p>
+    ///   - [`mac_sec_capable(Option<bool>)`](crate::output::AssociateConnectionWithLagOutput::mac_sec_capable): <p>Indicates whether the connection supports MAC Security (MACsec).</p>
+    ///   - [`port_encryption_status(Option<String>)`](crate::output::AssociateConnectionWithLagOutput::port_encryption_status): <p>The MAC Security (MACsec) port link status of the connection.</p>  <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
+    ///   - [`encryption_mode(Option<String>)`](crate::output::AssociateConnectionWithLagOutput::encryption_mode): <p>The MAC Security (MACsec) connection encryption mode.</p>  <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
+    ///   - [`mac_sec_keys(Option<Vec<MacSecKey>>)`](crate::output::AssociateConnectionWithLagOutput::mac_sec_keys): <p>The MAC Security (MACsec) security keys associated with the connection.</p>
+    /// - On failure, responds with [`SdkError<AssociateConnectionWithLagError>`](crate::error::AssociateConnectionWithLagError)
     pub fn associate_connection_with_lag(
         &self,
     ) -> fluent_builders::AssociateConnectionWithLag<C, M, R> {
         fluent_builders::AssociateConnectionWithLag::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateHostedConnection` operation.
+    /// Constructs a fluent builder for the [`AssociateHostedConnection`](crate::client::fluent_builders::AssociateHostedConnection) operation.
     ///
-    /// See [`AssociateHostedConnection`](crate::client::fluent_builders::AssociateHostedConnection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateHostedConnectionInput`](crate::input::AssociateHostedConnectionInput) with field(s):
+    ///   - [`connection_id(Option<String>)`](crate::input::AssociateHostedConnectionInput::connection_id): <p>The ID of the hosted connection.</p>
+    ///   - [`parent_connection_id(Option<String>)`](crate::input::AssociateHostedConnectionInput::parent_connection_id): <p>The ID of the interconnect or the LAG.</p>
+    /// - On success, responds with [`AssociateHostedConnectionOutput`](crate::output::AssociateHostedConnectionOutput) with field(s):
+    ///   - [`owner_account(Option<String>)`](crate::output::AssociateHostedConnectionOutput::owner_account): <p>The ID of the Amazon Web Services account that owns the connection.</p>
+    ///   - [`connection_id(Option<String>)`](crate::output::AssociateHostedConnectionOutput::connection_id): <p>The ID of the connection.</p>
+    ///   - [`connection_name(Option<String>)`](crate::output::AssociateHostedConnectionOutput::connection_name): <p>The name of the connection.</p>
+    ///   - [`connection_state(Option<ConnectionState>)`](crate::output::AssociateHostedConnectionOutput::connection_state): <p>The state of the connection. The following are the possible values:</p>  <ul>   <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>   <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>   <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>   <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>   <li> <p> <code>down</code>: The network link is down.</p> </li>   <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>   <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>   <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>   <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>  </ul>
+    ///   - [`region(Option<String>)`](crate::output::AssociateHostedConnectionOutput::region): <p>The Amazon Web Services Region where the connection is located.</p>
+    ///   - [`location(Option<String>)`](crate::output::AssociateHostedConnectionOutput::location): <p>The location of the connection.</p>
+    ///   - [`bandwidth(Option<String>)`](crate::output::AssociateHostedConnectionOutput::bandwidth): <p>The bandwidth of the connection.</p>
+    ///   - [`vlan(i32)`](crate::output::AssociateHostedConnectionOutput::vlan): <p>The ID of the VLAN.</p>
+    ///   - [`partner_name(Option<String>)`](crate::output::AssociateHostedConnectionOutput::partner_name): <p>The name of the Direct Connect service provider associated with the connection.</p>
+    ///   - [`loa_issue_time(Option<DateTime>)`](crate::output::AssociateHostedConnectionOutput::loa_issue_time): <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
+    ///   - [`lag_id(Option<String>)`](crate::output::AssociateHostedConnectionOutput::lag_id): <p>The ID of the LAG.</p>
+    ///   - [`aws_device(Option<String>)`](crate::output::AssociateHostedConnectionOutput::aws_device): <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+    ///   - [`jumbo_frame_capable(Option<bool>)`](crate::output::AssociateHostedConnectionOutput::jumbo_frame_capable): <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    ///   - [`aws_device_v2(Option<String>)`](crate::output::AssociateHostedConnectionOutput::aws_device_v2): <p>The Direct Connect endpoint that terminates the physical connection.</p>
+    ///   - [`aws_logical_device_id(Option<String>)`](crate::output::AssociateHostedConnectionOutput::aws_logical_device_id): <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
+    ///   - [`has_logical_redundancy(Option<HasLogicalRedundancy>)`](crate::output::AssociateHostedConnectionOutput::has_logical_redundancy): <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::AssociateHostedConnectionOutput::tags): <p>The tags associated with the connection.</p>
+    ///   - [`provider_name(Option<String>)`](crate::output::AssociateHostedConnectionOutput::provider_name): <p>The name of the service provider associated with the connection.</p>
+    ///   - [`mac_sec_capable(Option<bool>)`](crate::output::AssociateHostedConnectionOutput::mac_sec_capable): <p>Indicates whether the connection supports MAC Security (MACsec).</p>
+    ///   - [`port_encryption_status(Option<String>)`](crate::output::AssociateHostedConnectionOutput::port_encryption_status): <p>The MAC Security (MACsec) port link status of the connection.</p>  <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
+    ///   - [`encryption_mode(Option<String>)`](crate::output::AssociateHostedConnectionOutput::encryption_mode): <p>The MAC Security (MACsec) connection encryption mode.</p>  <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
+    ///   - [`mac_sec_keys(Option<Vec<MacSecKey>>)`](crate::output::AssociateHostedConnectionOutput::mac_sec_keys): <p>The MAC Security (MACsec) security keys associated with the connection.</p>
+    /// - On failure, responds with [`SdkError<AssociateHostedConnectionError>`](crate::error::AssociateHostedConnectionError)
     pub fn associate_hosted_connection(
         &self,
     ) -> fluent_builders::AssociateHostedConnection<C, M, R> {
         fluent_builders::AssociateHostedConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateMacSecKey` operation.
+    /// Constructs a fluent builder for the [`AssociateMacSecKey`](crate::client::fluent_builders::AssociateMacSecKey) operation.
     ///
-    /// See [`AssociateMacSecKey`](crate::client::fluent_builders::AssociateMacSecKey) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateMacSecKeyInput`](crate::input::AssociateMacSecKeyInput) with field(s):
+    ///   - [`connection_id(Option<String>)`](crate::input::AssociateMacSecKeyInput::connection_id): <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>  <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
+    ///   - [`secret_arn(Option<String>)`](crate::input::AssociateMacSecKeyInput::secret_arn): <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key to associate with the dedicated connection.</p>  <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve the MAC Security (MACsec) secret key.</p>  <p>If you use this request parameter, you do not use the <code>ckn</code> and <code>cak</code> request parameters.</p>
+    ///   - [`ckn(Option<String>)`](crate::input::AssociateMacSecKeyInput::ckn): <p>The MAC Security (MACsec) CKN to associate with the dedicated connection.</p>  <p>You can create the CKN/CAK pair using an industry standard tool.</p>  <p> The valid values are 64 hexadecimal characters (0-9, A-E).</p>  <p>If you use this request parameter, you must use the <code>cak</code> request parameter and not use the <code>secretARN</code> request parameter.</p>
+    ///   - [`cak(Option<String>)`](crate::input::AssociateMacSecKeyInput::cak): <p>The MAC Security (MACsec) CAK to associate with the dedicated connection.</p>  <p>You can create the CKN/CAK pair using an industry standard tool.</p>  <p> The valid values are 64 hexadecimal characters (0-9, A-E).</p>  <p>If you use this request parameter, you must use the <code>ckn</code> request parameter and not use the <code>secretARN</code> request parameter.</p>
+    /// - On success, responds with [`AssociateMacSecKeyOutput`](crate::output::AssociateMacSecKeyOutput) with field(s):
+    ///   - [`connection_id(Option<String>)`](crate::output::AssociateMacSecKeyOutput::connection_id): <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
+    ///   - [`mac_sec_keys(Option<Vec<MacSecKey>>)`](crate::output::AssociateMacSecKeyOutput::mac_sec_keys): <p>The MAC Security (MACsec) security keys associated with the dedicated connection.</p>
+    /// - On failure, responds with [`SdkError<AssociateMacSecKeyError>`](crate::error::AssociateMacSecKeyError)
     pub fn associate_mac_sec_key(&self) -> fluent_builders::AssociateMacSecKey<C, M, R> {
         fluent_builders::AssociateMacSecKey::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateVirtualInterface` operation.
+    /// Constructs a fluent builder for the [`AssociateVirtualInterface`](crate::client::fluent_builders::AssociateVirtualInterface) operation.
     ///
-    /// See [`AssociateVirtualInterface`](crate::client::fluent_builders::AssociateVirtualInterface) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateVirtualInterfaceInput`](crate::input::AssociateVirtualInterfaceInput) with field(s):
+    ///   - [`virtual_interface_id(Option<String>)`](crate::input::AssociateVirtualInterfaceInput::virtual_interface_id): <p>The ID of the virtual interface.</p>
+    ///   - [`connection_id(Option<String>)`](crate::input::AssociateVirtualInterfaceInput::connection_id): <p>The ID of the LAG or connection.</p>
+    /// - On success, responds with [`AssociateVirtualInterfaceOutput`](crate::output::AssociateVirtualInterfaceOutput) with field(s):
+    ///   - [`owner_account(Option<String>)`](crate::output::AssociateVirtualInterfaceOutput::owner_account): <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
+    ///   - [`virtual_interface_id(Option<String>)`](crate::output::AssociateVirtualInterfaceOutput::virtual_interface_id): <p>The ID of the virtual interface.</p>
+    ///   - [`location(Option<String>)`](crate::output::AssociateVirtualInterfaceOutput::location): <p>The location of the connection.</p>
+    ///   - [`connection_id(Option<String>)`](crate::output::AssociateVirtualInterfaceOutput::connection_id): <p>The ID of the connection.</p>
+    ///   - [`virtual_interface_type(Option<String>)`](crate::output::AssociateVirtualInterfaceOutput::virtual_interface_type): <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
+    ///   - [`virtual_interface_name(Option<String>)`](crate::output::AssociateVirtualInterfaceOutput::virtual_interface_name): <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
+    ///   - [`vlan(i32)`](crate::output::AssociateVirtualInterfaceOutput::vlan): <p>The ID of the VLAN.</p>
+    ///   - [`asn(i32)`](crate::output::AssociateVirtualInterfaceOutput::asn): <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>  <p>The valid values are 1-2147483647.</p>
+    ///   - [`amazon_side_asn(Option<i64>)`](crate::output::AssociateVirtualInterfaceOutput::amazon_side_asn): <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
+    ///   - [`auth_key(Option<String>)`](crate::output::AssociateVirtualInterfaceOutput::auth_key): <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
+    ///   - [`amazon_address(Option<String>)`](crate::output::AssociateVirtualInterfaceOutput::amazon_address): <p>The IP address assigned to the Amazon interface.</p>
+    ///   - [`customer_address(Option<String>)`](crate::output::AssociateVirtualInterfaceOutput::customer_address): <p>The IP address assigned to the customer interface.</p>
+    ///   - [`address_family(Option<AddressFamily>)`](crate::output::AssociateVirtualInterfaceOutput::address_family): <p>The address family for the BGP peer.</p>
+    ///   - [`virtual_interface_state(Option<VirtualInterfaceState>)`](crate::output::AssociateVirtualInterfaceOutput::virtual_interface_state): <p>The state of the virtual interface. The following are the possible values:</p>  <ul>   <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>   <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>   <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>   <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>   <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>   <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>   <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>   <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>   <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>  </ul>
+    ///   - [`customer_router_config(Option<String>)`](crate::output::AssociateVirtualInterfaceOutput::customer_router_config): <p>The customer router configuration.</p>
+    ///   - [`mtu(Option<i32>)`](crate::output::AssociateVirtualInterfaceOutput::mtu): <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
+    ///   - [`jumbo_frame_capable(Option<bool>)`](crate::output::AssociateVirtualInterfaceOutput::jumbo_frame_capable): <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    ///   - [`virtual_gateway_id(Option<String>)`](crate::output::AssociateVirtualInterfaceOutput::virtual_gateway_id): <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
+    ///   - [`direct_connect_gateway_id(Option<String>)`](crate::output::AssociateVirtualInterfaceOutput::direct_connect_gateway_id): <p>The ID of the Direct Connect gateway.</p>
+    ///   - [`route_filter_prefixes(Option<Vec<RouteFilterPrefix>>)`](crate::output::AssociateVirtualInterfaceOutput::route_filter_prefixes): <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
+    ///   - [`bgp_peers(Option<Vec<BgpPeer>>)`](crate::output::AssociateVirtualInterfaceOutput::bgp_peers): <p>The BGP peers configured on this virtual interface.</p>
+    ///   - [`region(Option<String>)`](crate::output::AssociateVirtualInterfaceOutput::region): <p>The Amazon Web Services Region where the virtual interface is located.</p>
+    ///   - [`aws_device_v2(Option<String>)`](crate::output::AssociateVirtualInterfaceOutput::aws_device_v2): <p>The Direct Connect endpoint that terminates the physical connection.</p>
+    ///   - [`aws_logical_device_id(Option<String>)`](crate::output::AssociateVirtualInterfaceOutput::aws_logical_device_id): <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::AssociateVirtualInterfaceOutput::tags): <p>The tags associated with the virtual interface.</p>
+    ///   - [`site_link_enabled(Option<bool>)`](crate::output::AssociateVirtualInterfaceOutput::site_link_enabled): <p>Indicates whether SiteLink is enabled.</p>
+    /// - On failure, responds with [`SdkError<AssociateVirtualInterfaceError>`](crate::error::AssociateVirtualInterfaceError)
     pub fn associate_virtual_interface(
         &self,
     ) -> fluent_builders::AssociateVirtualInterface<C, M, R> {
         fluent_builders::AssociateVirtualInterface::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ConfirmConnection` operation.
+    /// Constructs a fluent builder for the [`ConfirmConnection`](crate::client::fluent_builders::ConfirmConnection) operation.
     ///
-    /// See [`ConfirmConnection`](crate::client::fluent_builders::ConfirmConnection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ConfirmConnectionInput`](crate::input::ConfirmConnectionInput) with field(s):
+    ///   - [`connection_id(Option<String>)`](crate::input::ConfirmConnectionInput::connection_id): <p>The ID of the hosted connection.</p>
+    /// - On success, responds with [`ConfirmConnectionOutput`](crate::output::ConfirmConnectionOutput) with field(s):
+    ///   - [`connection_state(Option<ConnectionState>)`](crate::output::ConfirmConnectionOutput::connection_state): <p>The state of the connection. The following are the possible values:</p>  <ul>   <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>   <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>   <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>   <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>   <li> <p> <code>down</code>: The network link is down.</p> </li>   <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>   <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>   <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>   <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<ConfirmConnectionError>`](crate::error::ConfirmConnectionError)
     pub fn confirm_connection(&self) -> fluent_builders::ConfirmConnection<C, M, R> {
         fluent_builders::ConfirmConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ConfirmCustomerAgreement` operation.
+    /// Constructs a fluent builder for the [`ConfirmCustomerAgreement`](crate::client::fluent_builders::ConfirmCustomerAgreement) operation.
     ///
-    /// See [`ConfirmCustomerAgreement`](crate::client::fluent_builders::ConfirmCustomerAgreement) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ConfirmCustomerAgreementInput`](crate::input::ConfirmCustomerAgreementInput) with field(s):
+    ///   - [`agreement_name(Option<String>)`](crate::input::ConfirmCustomerAgreementInput::agreement_name): <p> The name of the customer agreement. </p>
+    /// - On success, responds with [`ConfirmCustomerAgreementOutput`](crate::output::ConfirmCustomerAgreementOutput) with field(s):
+    ///   - [`status(Option<String>)`](crate::output::ConfirmCustomerAgreementOutput::status): <p> The status of the customer agreement when the connection was created. This will be either <code>signed</code> or <code>unsigned</code>. </p>
+    /// - On failure, responds with [`SdkError<ConfirmCustomerAgreementError>`](crate::error::ConfirmCustomerAgreementError)
     pub fn confirm_customer_agreement(&self) -> fluent_builders::ConfirmCustomerAgreement<C, M, R> {
         fluent_builders::ConfirmCustomerAgreement::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ConfirmPrivateVirtualInterface` operation.
+    /// Constructs a fluent builder for the [`ConfirmPrivateVirtualInterface`](crate::client::fluent_builders::ConfirmPrivateVirtualInterface) operation.
     ///
-    /// See [`ConfirmPrivateVirtualInterface`](crate::client::fluent_builders::ConfirmPrivateVirtualInterface) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ConfirmPrivateVirtualInterfaceInput`](crate::input::ConfirmPrivateVirtualInterfaceInput) with field(s):
+    ///   - [`virtual_interface_id(Option<String>)`](crate::input::ConfirmPrivateVirtualInterfaceInput::virtual_interface_id): <p>The ID of the virtual interface.</p>
+    ///   - [`virtual_gateway_id(Option<String>)`](crate::input::ConfirmPrivateVirtualInterfaceInput::virtual_gateway_id): <p>The ID of the virtual private gateway.</p>
+    ///   - [`direct_connect_gateway_id(Option<String>)`](crate::input::ConfirmPrivateVirtualInterfaceInput::direct_connect_gateway_id): <p>The ID of the Direct Connect gateway.</p>
+    /// - On success, responds with [`ConfirmPrivateVirtualInterfaceOutput`](crate::output::ConfirmPrivateVirtualInterfaceOutput) with field(s):
+    ///   - [`virtual_interface_state(Option<VirtualInterfaceState>)`](crate::output::ConfirmPrivateVirtualInterfaceOutput::virtual_interface_state): <p>The state of the virtual interface. The following are the possible values:</p>  <ul>   <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>   <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>   <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>   <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>   <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>   <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>   <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>   <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>   <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<ConfirmPrivateVirtualInterfaceError>`](crate::error::ConfirmPrivateVirtualInterfaceError)
     pub fn confirm_private_virtual_interface(
         &self,
     ) -> fluent_builders::ConfirmPrivateVirtualInterface<C, M, R> {
         fluent_builders::ConfirmPrivateVirtualInterface::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ConfirmPublicVirtualInterface` operation.
+    /// Constructs a fluent builder for the [`ConfirmPublicVirtualInterface`](crate::client::fluent_builders::ConfirmPublicVirtualInterface) operation.
     ///
-    /// See [`ConfirmPublicVirtualInterface`](crate::client::fluent_builders::ConfirmPublicVirtualInterface) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ConfirmPublicVirtualInterfaceInput`](crate::input::ConfirmPublicVirtualInterfaceInput) with field(s):
+    ///   - [`virtual_interface_id(Option<String>)`](crate::input::ConfirmPublicVirtualInterfaceInput::virtual_interface_id): <p>The ID of the virtual interface.</p>
+    /// - On success, responds with [`ConfirmPublicVirtualInterfaceOutput`](crate::output::ConfirmPublicVirtualInterfaceOutput) with field(s):
+    ///   - [`virtual_interface_state(Option<VirtualInterfaceState>)`](crate::output::ConfirmPublicVirtualInterfaceOutput::virtual_interface_state): <p>The state of the virtual interface. The following are the possible values:</p>  <ul>   <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>   <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>   <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>   <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>   <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>   <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>   <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>   <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>   <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<ConfirmPublicVirtualInterfaceError>`](crate::error::ConfirmPublicVirtualInterfaceError)
     pub fn confirm_public_virtual_interface(
         &self,
     ) -> fluent_builders::ConfirmPublicVirtualInterface<C, M, R> {
         fluent_builders::ConfirmPublicVirtualInterface::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ConfirmTransitVirtualInterface` operation.
+    /// Constructs a fluent builder for the [`ConfirmTransitVirtualInterface`](crate::client::fluent_builders::ConfirmTransitVirtualInterface) operation.
     ///
-    /// See [`ConfirmTransitVirtualInterface`](crate::client::fluent_builders::ConfirmTransitVirtualInterface) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ConfirmTransitVirtualInterfaceInput`](crate::input::ConfirmTransitVirtualInterfaceInput) with field(s):
+    ///   - [`virtual_interface_id(Option<String>)`](crate::input::ConfirmTransitVirtualInterfaceInput::virtual_interface_id): <p>The ID of the virtual interface.</p>
+    ///   - [`direct_connect_gateway_id(Option<String>)`](crate::input::ConfirmTransitVirtualInterfaceInput::direct_connect_gateway_id): <p>The ID of the Direct Connect gateway.</p>
+    /// - On success, responds with [`ConfirmTransitVirtualInterfaceOutput`](crate::output::ConfirmTransitVirtualInterfaceOutput) with field(s):
+    ///   - [`virtual_interface_state(Option<VirtualInterfaceState>)`](crate::output::ConfirmTransitVirtualInterfaceOutput::virtual_interface_state): <p>The state of the virtual interface. The following are the possible values:</p>  <ul>   <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>   <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>   <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>   <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>   <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>   <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>   <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>   <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>   <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<ConfirmTransitVirtualInterfaceError>`](crate::error::ConfirmTransitVirtualInterfaceError)
     pub fn confirm_transit_virtual_interface(
         &self,
     ) -> fluent_builders::ConfirmTransitVirtualInterface<C, M, R> {
         fluent_builders::ConfirmTransitVirtualInterface::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateBGPPeer` operation.
+    /// Constructs a fluent builder for the [`CreateBGPPeer`](crate::client::fluent_builders::CreateBGPPeer) operation.
     ///
-    /// See [`CreateBGPPeer`](crate::client::fluent_builders::CreateBGPPeer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateBgpPeerInput`](crate::input::CreateBgpPeerInput) with field(s):
+    ///   - [`virtual_interface_id(Option<String>)`](crate::input::CreateBgpPeerInput::virtual_interface_id): <p>The ID of the virtual interface.</p>
+    ///   - [`new_bgp_peer(Option<NewBgpPeer>)`](crate::input::CreateBgpPeerInput::new_bgp_peer): <p>Information about the BGP peer.</p>
+    /// - On success, responds with [`CreateBgpPeerOutput`](crate::output::CreateBgpPeerOutput) with field(s):
+    ///   - [`virtual_interface(Option<VirtualInterface>)`](crate::output::CreateBgpPeerOutput::virtual_interface): <p>The virtual interface.</p>
+    /// - On failure, responds with [`SdkError<CreateBGPPeerError>`](crate::error::CreateBGPPeerError)
     pub fn create_bgp_peer(&self) -> fluent_builders::CreateBGPPeer<C, M, R> {
         fluent_builders::CreateBGPPeer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateConnection` operation.
+    /// Constructs a fluent builder for the [`CreateConnection`](crate::client::fluent_builders::CreateConnection) operation.
     ///
-    /// See [`CreateConnection`](crate::client::fluent_builders::CreateConnection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateConnectionInput`](crate::input::CreateConnectionInput) with field(s):
+    ///   - [`location(Option<String>)`](crate::input::CreateConnectionInput::location): <p>The location of the connection.</p>
+    ///   - [`bandwidth(Option<String>)`](crate::input::CreateConnectionInput::bandwidth): <p>The bandwidth of the connection.</p>
+    ///   - [`connection_name(Option<String>)`](crate::input::CreateConnectionInput::connection_name): <p>The name of the connection.</p>
+    ///   - [`lag_id(Option<String>)`](crate::input::CreateConnectionInput::lag_id): <p>The ID of the LAG.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateConnectionInput::tags): <p>The tags to associate with the lag.</p>
+    ///   - [`provider_name(Option<String>)`](crate::input::CreateConnectionInput::provider_name): <p>The name of the service provider associated with the requested connection.</p>
+    ///   - [`request_mac_sec(Option<bool>)`](crate::input::CreateConnectionInput::request_mac_sec): <p>Indicates whether you want the connection to support MAC Security (MACsec).</p>  <p>MAC Security (MACsec) is only available on dedicated connections. For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
+    /// - On success, responds with [`CreateConnectionOutput`](crate::output::CreateConnectionOutput) with field(s):
+    ///   - [`owner_account(Option<String>)`](crate::output::CreateConnectionOutput::owner_account): <p>The ID of the Amazon Web Services account that owns the connection.</p>
+    ///   - [`connection_id(Option<String>)`](crate::output::CreateConnectionOutput::connection_id): <p>The ID of the connection.</p>
+    ///   - [`connection_name(Option<String>)`](crate::output::CreateConnectionOutput::connection_name): <p>The name of the connection.</p>
+    ///   - [`connection_state(Option<ConnectionState>)`](crate::output::CreateConnectionOutput::connection_state): <p>The state of the connection. The following are the possible values:</p>  <ul>   <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>   <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>   <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>   <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>   <li> <p> <code>down</code>: The network link is down.</p> </li>   <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>   <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>   <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>   <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>  </ul>
+    ///   - [`region(Option<String>)`](crate::output::CreateConnectionOutput::region): <p>The Amazon Web Services Region where the connection is located.</p>
+    ///   - [`location(Option<String>)`](crate::output::CreateConnectionOutput::location): <p>The location of the connection.</p>
+    ///   - [`bandwidth(Option<String>)`](crate::output::CreateConnectionOutput::bandwidth): <p>The bandwidth of the connection.</p>
+    ///   - [`vlan(i32)`](crate::output::CreateConnectionOutput::vlan): <p>The ID of the VLAN.</p>
+    ///   - [`partner_name(Option<String>)`](crate::output::CreateConnectionOutput::partner_name): <p>The name of the Direct Connect service provider associated with the connection.</p>
+    ///   - [`loa_issue_time(Option<DateTime>)`](crate::output::CreateConnectionOutput::loa_issue_time): <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
+    ///   - [`lag_id(Option<String>)`](crate::output::CreateConnectionOutput::lag_id): <p>The ID of the LAG.</p>
+    ///   - [`aws_device(Option<String>)`](crate::output::CreateConnectionOutput::aws_device): <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+    ///   - [`jumbo_frame_capable(Option<bool>)`](crate::output::CreateConnectionOutput::jumbo_frame_capable): <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    ///   - [`aws_device_v2(Option<String>)`](crate::output::CreateConnectionOutput::aws_device_v2): <p>The Direct Connect endpoint that terminates the physical connection.</p>
+    ///   - [`aws_logical_device_id(Option<String>)`](crate::output::CreateConnectionOutput::aws_logical_device_id): <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
+    ///   - [`has_logical_redundancy(Option<HasLogicalRedundancy>)`](crate::output::CreateConnectionOutput::has_logical_redundancy): <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::CreateConnectionOutput::tags): <p>The tags associated with the connection.</p>
+    ///   - [`provider_name(Option<String>)`](crate::output::CreateConnectionOutput::provider_name): <p>The name of the service provider associated with the connection.</p>
+    ///   - [`mac_sec_capable(Option<bool>)`](crate::output::CreateConnectionOutput::mac_sec_capable): <p>Indicates whether the connection supports MAC Security (MACsec).</p>
+    ///   - [`port_encryption_status(Option<String>)`](crate::output::CreateConnectionOutput::port_encryption_status): <p>The MAC Security (MACsec) port link status of the connection.</p>  <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
+    ///   - [`encryption_mode(Option<String>)`](crate::output::CreateConnectionOutput::encryption_mode): <p>The MAC Security (MACsec) connection encryption mode.</p>  <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
+    ///   - [`mac_sec_keys(Option<Vec<MacSecKey>>)`](crate::output::CreateConnectionOutput::mac_sec_keys): <p>The MAC Security (MACsec) security keys associated with the connection.</p>
+    /// - On failure, responds with [`SdkError<CreateConnectionError>`](crate::error::CreateConnectionError)
     pub fn create_connection(&self) -> fluent_builders::CreateConnection<C, M, R> {
         fluent_builders::CreateConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDirectConnectGateway` operation.
+    /// Constructs a fluent builder for the [`CreateDirectConnectGateway`](crate::client::fluent_builders::CreateDirectConnectGateway) operation.
     ///
-    /// See [`CreateDirectConnectGateway`](crate::client::fluent_builders::CreateDirectConnectGateway) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateDirectConnectGatewayInput`](crate::input::CreateDirectConnectGatewayInput) with field(s):
+    ///   - [`direct_connect_gateway_name(Option<String>)`](crate::input::CreateDirectConnectGatewayInput::direct_connect_gateway_name): <p>The name of the Direct Connect gateway.</p>
+    ///   - [`amazon_side_asn(Option<i64>)`](crate::input::CreateDirectConnectGatewayInput::amazon_side_asn): <p>The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be configured on the Amazon side of the connection. The ASN must be in the private range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294. The default is 64512.</p>
+    /// - On success, responds with [`CreateDirectConnectGatewayOutput`](crate::output::CreateDirectConnectGatewayOutput) with field(s):
+    ///   - [`direct_connect_gateway(Option<DirectConnectGateway>)`](crate::output::CreateDirectConnectGatewayOutput::direct_connect_gateway): <p>The Direct Connect gateway.</p>
+    /// - On failure, responds with [`SdkError<CreateDirectConnectGatewayError>`](crate::error::CreateDirectConnectGatewayError)
     pub fn create_direct_connect_gateway(
         &self,
     ) -> fluent_builders::CreateDirectConnectGateway<C, M, R> {
         fluent_builders::CreateDirectConnectGateway::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDirectConnectGatewayAssociation` operation.
+    /// Constructs a fluent builder for the [`CreateDirectConnectGatewayAssociation`](crate::client::fluent_builders::CreateDirectConnectGatewayAssociation) operation.
     ///
-    /// See [`CreateDirectConnectGatewayAssociation`](crate::client::fluent_builders::CreateDirectConnectGatewayAssociation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateDirectConnectGatewayAssociationInput`](crate::input::CreateDirectConnectGatewayAssociationInput) with field(s):
+    ///   - [`direct_connect_gateway_id(Option<String>)`](crate::input::CreateDirectConnectGatewayAssociationInput::direct_connect_gateway_id): <p>The ID of the Direct Connect gateway.</p>
+    ///   - [`gateway_id(Option<String>)`](crate::input::CreateDirectConnectGatewayAssociationInput::gateway_id): <p>The ID of the virtual private gateway or transit gateway.</p>
+    ///   - [`add_allowed_prefixes_to_direct_connect_gateway(Option<Vec<RouteFilterPrefix>>)`](crate::input::CreateDirectConnectGatewayAssociationInput::add_allowed_prefixes_to_direct_connect_gateway): <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway</p>  <p>This parameter is required when you create an association to a transit gateway.</p>  <p>For information about how to set the prefixes, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed Prefixes</a> in the <i>Direct Connect User Guide</i>.</p>
+    ///   - [`virtual_gateway_id(Option<String>)`](crate::input::CreateDirectConnectGatewayAssociationInput::virtual_gateway_id): <p>The ID of the virtual private gateway.</p>
+    /// - On success, responds with [`CreateDirectConnectGatewayAssociationOutput`](crate::output::CreateDirectConnectGatewayAssociationOutput) with field(s):
+    ///   - [`direct_connect_gateway_association(Option<DirectConnectGatewayAssociation>)`](crate::output::CreateDirectConnectGatewayAssociationOutput::direct_connect_gateway_association): <p>The association to be created.</p>
+    /// - On failure, responds with [`SdkError<CreateDirectConnectGatewayAssociationError>`](crate::error::CreateDirectConnectGatewayAssociationError)
     pub fn create_direct_connect_gateway_association(
         &self,
     ) -> fluent_builders::CreateDirectConnectGatewayAssociation<C, M, R> {
         fluent_builders::CreateDirectConnectGatewayAssociation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDirectConnectGatewayAssociationProposal` operation.
+    /// Constructs a fluent builder for the [`CreateDirectConnectGatewayAssociationProposal`](crate::client::fluent_builders::CreateDirectConnectGatewayAssociationProposal) operation.
     ///
-    /// See [`CreateDirectConnectGatewayAssociationProposal`](crate::client::fluent_builders::CreateDirectConnectGatewayAssociationProposal) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateDirectConnectGatewayAssociationProposalInput`](crate::input::CreateDirectConnectGatewayAssociationProposalInput) with field(s):
+    ///   - [`direct_connect_gateway_id(Option<String>)`](crate::input::CreateDirectConnectGatewayAssociationProposalInput::direct_connect_gateway_id): <p>The ID of the Direct Connect gateway.</p>
+    ///   - [`direct_connect_gateway_owner_account(Option<String>)`](crate::input::CreateDirectConnectGatewayAssociationProposalInput::direct_connect_gateway_owner_account): <p>The ID of the Amazon Web Services account that owns the Direct Connect gateway.</p>
+    ///   - [`gateway_id(Option<String>)`](crate::input::CreateDirectConnectGatewayAssociationProposalInput::gateway_id): <p>The ID of the virtual private gateway or transit gateway.</p>
+    ///   - [`add_allowed_prefixes_to_direct_connect_gateway(Option<Vec<RouteFilterPrefix>>)`](crate::input::CreateDirectConnectGatewayAssociationProposalInput::add_allowed_prefixes_to_direct_connect_gateway): <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
+    ///   - [`remove_allowed_prefixes_to_direct_connect_gateway(Option<Vec<RouteFilterPrefix>>)`](crate::input::CreateDirectConnectGatewayAssociationProposalInput::remove_allowed_prefixes_to_direct_connect_gateway): <p>The Amazon VPC prefixes to no longer advertise to the Direct Connect gateway.</p>
+    /// - On success, responds with [`CreateDirectConnectGatewayAssociationProposalOutput`](crate::output::CreateDirectConnectGatewayAssociationProposalOutput) with field(s):
+    ///   - [`direct_connect_gateway_association_proposal(Option<DirectConnectGatewayAssociationProposal>)`](crate::output::CreateDirectConnectGatewayAssociationProposalOutput::direct_connect_gateway_association_proposal): <p>Information about the Direct Connect gateway proposal.</p>
+    /// - On failure, responds with [`SdkError<CreateDirectConnectGatewayAssociationProposalError>`](crate::error::CreateDirectConnectGatewayAssociationProposalError)
     pub fn create_direct_connect_gateway_association_proposal(
         &self,
     ) -> fluent_builders::CreateDirectConnectGatewayAssociationProposal<C, M, R> {
         fluent_builders::CreateDirectConnectGatewayAssociationProposal::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateInterconnect` operation.
+    /// Constructs a fluent builder for the [`CreateInterconnect`](crate::client::fluent_builders::CreateInterconnect) operation.
     ///
-    /// See [`CreateInterconnect`](crate::client::fluent_builders::CreateInterconnect) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateInterconnectInput`](crate::input::CreateInterconnectInput) with field(s):
+    ///   - [`interconnect_name(Option<String>)`](crate::input::CreateInterconnectInput::interconnect_name): <p>The name of the interconnect.</p>
+    ///   - [`bandwidth(Option<String>)`](crate::input::CreateInterconnectInput::bandwidth): <p>The port bandwidth, in Gbps. The possible values are 1 and 10.</p>
+    ///   - [`location(Option<String>)`](crate::input::CreateInterconnectInput::location): <p>The location of the interconnect.</p>
+    ///   - [`lag_id(Option<String>)`](crate::input::CreateInterconnectInput::lag_id): <p>The ID of the LAG.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateInterconnectInput::tags): <p>The tags to associate with the interconnect.</p>
+    ///   - [`provider_name(Option<String>)`](crate::input::CreateInterconnectInput::provider_name): <p>The name of the service provider associated with the interconnect.</p>
+    /// - On success, responds with [`CreateInterconnectOutput`](crate::output::CreateInterconnectOutput) with field(s):
+    ///   - [`interconnect_id(Option<String>)`](crate::output::CreateInterconnectOutput::interconnect_id): <p>The ID of the interconnect.</p>
+    ///   - [`interconnect_name(Option<String>)`](crate::output::CreateInterconnectOutput::interconnect_name): <p>The name of the interconnect.</p>
+    ///   - [`interconnect_state(Option<InterconnectState>)`](crate::output::CreateInterconnectOutput::interconnect_state): <p>The state of the interconnect. The following are the possible values:</p>  <ul>   <li> <p> <code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>   <li> <p> <code>pending</code>: The interconnect is approved, and is being initialized.</p> </li>   <li> <p> <code>available</code>: The network link is up, and the interconnect is ready for use.</p> </li>   <li> <p> <code>down</code>: The network link is down.</p> </li>   <li> <p> <code>deleting</code>: The interconnect is being deleted.</p> </li>   <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>   <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li>  </ul>
+    ///   - [`region(Option<String>)`](crate::output::CreateInterconnectOutput::region): <p>The Amazon Web Services Region where the connection is located.</p>
+    ///   - [`location(Option<String>)`](crate::output::CreateInterconnectOutput::location): <p>The location of the connection.</p>
+    ///   - [`bandwidth(Option<String>)`](crate::output::CreateInterconnectOutput::bandwidth): <p>The bandwidth of the connection.</p>
+    ///   - [`loa_issue_time(Option<DateTime>)`](crate::output::CreateInterconnectOutput::loa_issue_time): <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
+    ///   - [`lag_id(Option<String>)`](crate::output::CreateInterconnectOutput::lag_id): <p>The ID of the LAG.</p>
+    ///   - [`aws_device(Option<String>)`](crate::output::CreateInterconnectOutput::aws_device): <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+    ///   - [`jumbo_frame_capable(Option<bool>)`](crate::output::CreateInterconnectOutput::jumbo_frame_capable): <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    ///   - [`aws_device_v2(Option<String>)`](crate::output::CreateInterconnectOutput::aws_device_v2): <p>The Direct Connect endpoint that terminates the physical connection.</p>
+    ///   - [`aws_logical_device_id(Option<String>)`](crate::output::CreateInterconnectOutput::aws_logical_device_id): <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
+    ///   - [`has_logical_redundancy(Option<HasLogicalRedundancy>)`](crate::output::CreateInterconnectOutput::has_logical_redundancy): <p>Indicates whether the interconnect supports a secondary BGP in the same address family (IPv4/IPv6).</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::CreateInterconnectOutput::tags): <p>The tags associated with the interconnect.</p>
+    ///   - [`provider_name(Option<String>)`](crate::output::CreateInterconnectOutput::provider_name): <p>The name of the service provider associated with the interconnect.</p>
+    /// - On failure, responds with [`SdkError<CreateInterconnectError>`](crate::error::CreateInterconnectError)
     pub fn create_interconnect(&self) -> fluent_builders::CreateInterconnect<C, M, R> {
         fluent_builders::CreateInterconnect::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateLag` operation.
+    /// Constructs a fluent builder for the [`CreateLag`](crate::client::fluent_builders::CreateLag) operation.
     ///
-    /// See [`CreateLag`](crate::client::fluent_builders::CreateLag) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateLagInput`](crate::input::CreateLagInput) with field(s):
+    ///   - [`number_of_connections(i32)`](crate::input::CreateLagInput::number_of_connections): <p>The number of physical dedicated connections initially provisioned and bundled by the LAG.</p>
+    ///   - [`location(Option<String>)`](crate::input::CreateLagInput::location): <p>The location for the LAG.</p>
+    ///   - [`connections_bandwidth(Option<String>)`](crate::input::CreateLagInput::connections_bandwidth): <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
+    ///   - [`lag_name(Option<String>)`](crate::input::CreateLagInput::lag_name): <p>The name of the LAG.</p>
+    ///   - [`connection_id(Option<String>)`](crate::input::CreateLagInput::connection_id): <p>The ID of an existing dedicated connection to migrate to the LAG.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateLagInput::tags): <p>The tags to associate with the LAG.</p>
+    ///   - [`child_connection_tags(Option<Vec<Tag>>)`](crate::input::CreateLagInput::child_connection_tags): <p>The tags to associate with the automtically created LAGs.</p>
+    ///   - [`provider_name(Option<String>)`](crate::input::CreateLagInput::provider_name): <p>The name of the service provider associated with the LAG.</p>
+    ///   - [`request_mac_sec(Option<bool>)`](crate::input::CreateLagInput::request_mac_sec): <p>Indicates whether the connection will support MAC Security (MACsec).</p> <note>   <p>All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>  </note>
+    /// - On success, responds with [`CreateLagOutput`](crate::output::CreateLagOutput) with field(s):
+    ///   - [`connections_bandwidth(Option<String>)`](crate::output::CreateLagOutput::connections_bandwidth): <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
+    ///   - [`number_of_connections(i32)`](crate::output::CreateLagOutput::number_of_connections): <p>The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.</p>
+    ///   - [`lag_id(Option<String>)`](crate::output::CreateLagOutput::lag_id): <p>The ID of the LAG.</p>
+    ///   - [`owner_account(Option<String>)`](crate::output::CreateLagOutput::owner_account): <p>The ID of the Amazon Web Services account that owns the LAG.</p>
+    ///   - [`lag_name(Option<String>)`](crate::output::CreateLagOutput::lag_name): <p>The name of the LAG.</p>
+    ///   - [`lag_state(Option<LagState>)`](crate::output::CreateLagOutput::lag_state): <p>The state of the LAG. The following are the possible values:</p>  <ul>   <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li>   <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li>   <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li>   <li> <p> <code>down</code>: The network link is down.</p> </li>   <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li>   <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li>   <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li>  </ul>
+    ///   - [`location(Option<String>)`](crate::output::CreateLagOutput::location): <p>The location of the LAG.</p>
+    ///   - [`region(Option<String>)`](crate::output::CreateLagOutput::region): <p>The Amazon Web Services Region where the connection is located.</p>
+    ///   - [`minimum_links(i32)`](crate::output::CreateLagOutput::minimum_links): <p>The minimum number of physical dedicated connections that must be operational for the LAG itself to be operational.</p>
+    ///   - [`aws_device(Option<String>)`](crate::output::CreateLagOutput::aws_device): <p>The Direct Connect endpoint that hosts the LAG.</p>
+    ///   - [`aws_device_v2(Option<String>)`](crate::output::CreateLagOutput::aws_device_v2): <p>The Direct Connect endpoint that hosts the LAG.</p>
+    ///   - [`aws_logical_device_id(Option<String>)`](crate::output::CreateLagOutput::aws_logical_device_id): <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
+    ///   - [`connections(Option<Vec<Connection>>)`](crate::output::CreateLagOutput::connections): <p>The connections bundled by the LAG.</p>
+    ///   - [`allows_hosted_connections(bool)`](crate::output::CreateLagOutput::allows_hosted_connections): <p>Indicates whether the LAG can host other connections.</p>
+    ///   - [`jumbo_frame_capable(Option<bool>)`](crate::output::CreateLagOutput::jumbo_frame_capable): <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    ///   - [`has_logical_redundancy(Option<HasLogicalRedundancy>)`](crate::output::CreateLagOutput::has_logical_redundancy): <p>Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::CreateLagOutput::tags): <p>The tags associated with the LAG.</p>
+    ///   - [`provider_name(Option<String>)`](crate::output::CreateLagOutput::provider_name): <p>The name of the service provider associated with the LAG.</p>
+    ///   - [`mac_sec_capable(Option<bool>)`](crate::output::CreateLagOutput::mac_sec_capable): <p>Indicates whether the LAG supports MAC Security (MACsec).</p>
+    ///   - [`encryption_mode(Option<String>)`](crate::output::CreateLagOutput::encryption_mode): <p>The LAG MAC Security (MACsec) encryption mode.</p>  <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
+    ///   - [`mac_sec_keys(Option<Vec<MacSecKey>>)`](crate::output::CreateLagOutput::mac_sec_keys): <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
+    /// - On failure, responds with [`SdkError<CreateLagError>`](crate::error::CreateLagError)
     pub fn create_lag(&self) -> fluent_builders::CreateLag<C, M, R> {
         fluent_builders::CreateLag::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreatePrivateVirtualInterface` operation.
+    /// Constructs a fluent builder for the [`CreatePrivateVirtualInterface`](crate::client::fluent_builders::CreatePrivateVirtualInterface) operation.
     ///
-    /// See [`CreatePrivateVirtualInterface`](crate::client::fluent_builders::CreatePrivateVirtualInterface) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreatePrivateVirtualInterfaceInput`](crate::input::CreatePrivateVirtualInterfaceInput) with field(s):
+    ///   - [`connection_id(Option<String>)`](crate::input::CreatePrivateVirtualInterfaceInput::connection_id): <p>The ID of the connection.</p>
+    ///   - [`new_private_virtual_interface(Option<NewPrivateVirtualInterface>)`](crate::input::CreatePrivateVirtualInterfaceInput::new_private_virtual_interface): <p>Information about the private virtual interface.</p>
+    /// - On success, responds with [`CreatePrivateVirtualInterfaceOutput`](crate::output::CreatePrivateVirtualInterfaceOutput) with field(s):
+    ///   - [`owner_account(Option<String>)`](crate::output::CreatePrivateVirtualInterfaceOutput::owner_account): <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
+    ///   - [`virtual_interface_id(Option<String>)`](crate::output::CreatePrivateVirtualInterfaceOutput::virtual_interface_id): <p>The ID of the virtual interface.</p>
+    ///   - [`location(Option<String>)`](crate::output::CreatePrivateVirtualInterfaceOutput::location): <p>The location of the connection.</p>
+    ///   - [`connection_id(Option<String>)`](crate::output::CreatePrivateVirtualInterfaceOutput::connection_id): <p>The ID of the connection.</p>
+    ///   - [`virtual_interface_type(Option<String>)`](crate::output::CreatePrivateVirtualInterfaceOutput::virtual_interface_type): <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
+    ///   - [`virtual_interface_name(Option<String>)`](crate::output::CreatePrivateVirtualInterfaceOutput::virtual_interface_name): <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
+    ///   - [`vlan(i32)`](crate::output::CreatePrivateVirtualInterfaceOutput::vlan): <p>The ID of the VLAN.</p>
+    ///   - [`asn(i32)`](crate::output::CreatePrivateVirtualInterfaceOutput::asn): <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>  <p>The valid values are 1-2147483647.</p>
+    ///   - [`amazon_side_asn(Option<i64>)`](crate::output::CreatePrivateVirtualInterfaceOutput::amazon_side_asn): <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
+    ///   - [`auth_key(Option<String>)`](crate::output::CreatePrivateVirtualInterfaceOutput::auth_key): <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
+    ///   - [`amazon_address(Option<String>)`](crate::output::CreatePrivateVirtualInterfaceOutput::amazon_address): <p>The IP address assigned to the Amazon interface.</p>
+    ///   - [`customer_address(Option<String>)`](crate::output::CreatePrivateVirtualInterfaceOutput::customer_address): <p>The IP address assigned to the customer interface.</p>
+    ///   - [`address_family(Option<AddressFamily>)`](crate::output::CreatePrivateVirtualInterfaceOutput::address_family): <p>The address family for the BGP peer.</p>
+    ///   - [`virtual_interface_state(Option<VirtualInterfaceState>)`](crate::output::CreatePrivateVirtualInterfaceOutput::virtual_interface_state): <p>The state of the virtual interface. The following are the possible values:</p>  <ul>   <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>   <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>   <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>   <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>   <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>   <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>   <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>   <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>   <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>  </ul>
+    ///   - [`customer_router_config(Option<String>)`](crate::output::CreatePrivateVirtualInterfaceOutput::customer_router_config): <p>The customer router configuration.</p>
+    ///   - [`mtu(Option<i32>)`](crate::output::CreatePrivateVirtualInterfaceOutput::mtu): <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
+    ///   - [`jumbo_frame_capable(Option<bool>)`](crate::output::CreatePrivateVirtualInterfaceOutput::jumbo_frame_capable): <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    ///   - [`virtual_gateway_id(Option<String>)`](crate::output::CreatePrivateVirtualInterfaceOutput::virtual_gateway_id): <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
+    ///   - [`direct_connect_gateway_id(Option<String>)`](crate::output::CreatePrivateVirtualInterfaceOutput::direct_connect_gateway_id): <p>The ID of the Direct Connect gateway.</p>
+    ///   - [`route_filter_prefixes(Option<Vec<RouteFilterPrefix>>)`](crate::output::CreatePrivateVirtualInterfaceOutput::route_filter_prefixes): <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
+    ///   - [`bgp_peers(Option<Vec<BgpPeer>>)`](crate::output::CreatePrivateVirtualInterfaceOutput::bgp_peers): <p>The BGP peers configured on this virtual interface.</p>
+    ///   - [`region(Option<String>)`](crate::output::CreatePrivateVirtualInterfaceOutput::region): <p>The Amazon Web Services Region where the virtual interface is located.</p>
+    ///   - [`aws_device_v2(Option<String>)`](crate::output::CreatePrivateVirtualInterfaceOutput::aws_device_v2): <p>The Direct Connect endpoint that terminates the physical connection.</p>
+    ///   - [`aws_logical_device_id(Option<String>)`](crate::output::CreatePrivateVirtualInterfaceOutput::aws_logical_device_id): <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::CreatePrivateVirtualInterfaceOutput::tags): <p>The tags associated with the virtual interface.</p>
+    ///   - [`site_link_enabled(Option<bool>)`](crate::output::CreatePrivateVirtualInterfaceOutput::site_link_enabled): <p>Indicates whether SiteLink is enabled.</p>
+    /// - On failure, responds with [`SdkError<CreatePrivateVirtualInterfaceError>`](crate::error::CreatePrivateVirtualInterfaceError)
     pub fn create_private_virtual_interface(
         &self,
     ) -> fluent_builders::CreatePrivateVirtualInterface<C, M, R> {
         fluent_builders::CreatePrivateVirtualInterface::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreatePublicVirtualInterface` operation.
+    /// Constructs a fluent builder for the [`CreatePublicVirtualInterface`](crate::client::fluent_builders::CreatePublicVirtualInterface) operation.
     ///
-    /// See [`CreatePublicVirtualInterface`](crate::client::fluent_builders::CreatePublicVirtualInterface) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreatePublicVirtualInterfaceInput`](crate::input::CreatePublicVirtualInterfaceInput) with field(s):
+    ///   - [`connection_id(Option<String>)`](crate::input::CreatePublicVirtualInterfaceInput::connection_id): <p>The ID of the connection.</p>
+    ///   - [`new_public_virtual_interface(Option<NewPublicVirtualInterface>)`](crate::input::CreatePublicVirtualInterfaceInput::new_public_virtual_interface): <p>Information about the public virtual interface.</p>
+    /// - On success, responds with [`CreatePublicVirtualInterfaceOutput`](crate::output::CreatePublicVirtualInterfaceOutput) with field(s):
+    ///   - [`owner_account(Option<String>)`](crate::output::CreatePublicVirtualInterfaceOutput::owner_account): <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
+    ///   - [`virtual_interface_id(Option<String>)`](crate::output::CreatePublicVirtualInterfaceOutput::virtual_interface_id): <p>The ID of the virtual interface.</p>
+    ///   - [`location(Option<String>)`](crate::output::CreatePublicVirtualInterfaceOutput::location): <p>The location of the connection.</p>
+    ///   - [`connection_id(Option<String>)`](crate::output::CreatePublicVirtualInterfaceOutput::connection_id): <p>The ID of the connection.</p>
+    ///   - [`virtual_interface_type(Option<String>)`](crate::output::CreatePublicVirtualInterfaceOutput::virtual_interface_type): <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
+    ///   - [`virtual_interface_name(Option<String>)`](crate::output::CreatePublicVirtualInterfaceOutput::virtual_interface_name): <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
+    ///   - [`vlan(i32)`](crate::output::CreatePublicVirtualInterfaceOutput::vlan): <p>The ID of the VLAN.</p>
+    ///   - [`asn(i32)`](crate::output::CreatePublicVirtualInterfaceOutput::asn): <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>  <p>The valid values are 1-2147483647.</p>
+    ///   - [`amazon_side_asn(Option<i64>)`](crate::output::CreatePublicVirtualInterfaceOutput::amazon_side_asn): <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
+    ///   - [`auth_key(Option<String>)`](crate::output::CreatePublicVirtualInterfaceOutput::auth_key): <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
+    ///   - [`amazon_address(Option<String>)`](crate::output::CreatePublicVirtualInterfaceOutput::amazon_address): <p>The IP address assigned to the Amazon interface.</p>
+    ///   - [`customer_address(Option<String>)`](crate::output::CreatePublicVirtualInterfaceOutput::customer_address): <p>The IP address assigned to the customer interface.</p>
+    ///   - [`address_family(Option<AddressFamily>)`](crate::output::CreatePublicVirtualInterfaceOutput::address_family): <p>The address family for the BGP peer.</p>
+    ///   - [`virtual_interface_state(Option<VirtualInterfaceState>)`](crate::output::CreatePublicVirtualInterfaceOutput::virtual_interface_state): <p>The state of the virtual interface. The following are the possible values:</p>  <ul>   <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>   <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>   <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>   <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>   <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>   <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>   <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>   <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>   <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>  </ul>
+    ///   - [`customer_router_config(Option<String>)`](crate::output::CreatePublicVirtualInterfaceOutput::customer_router_config): <p>The customer router configuration.</p>
+    ///   - [`mtu(Option<i32>)`](crate::output::CreatePublicVirtualInterfaceOutput::mtu): <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
+    ///   - [`jumbo_frame_capable(Option<bool>)`](crate::output::CreatePublicVirtualInterfaceOutput::jumbo_frame_capable): <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    ///   - [`virtual_gateway_id(Option<String>)`](crate::output::CreatePublicVirtualInterfaceOutput::virtual_gateway_id): <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
+    ///   - [`direct_connect_gateway_id(Option<String>)`](crate::output::CreatePublicVirtualInterfaceOutput::direct_connect_gateway_id): <p>The ID of the Direct Connect gateway.</p>
+    ///   - [`route_filter_prefixes(Option<Vec<RouteFilterPrefix>>)`](crate::output::CreatePublicVirtualInterfaceOutput::route_filter_prefixes): <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
+    ///   - [`bgp_peers(Option<Vec<BgpPeer>>)`](crate::output::CreatePublicVirtualInterfaceOutput::bgp_peers): <p>The BGP peers configured on this virtual interface.</p>
+    ///   - [`region(Option<String>)`](crate::output::CreatePublicVirtualInterfaceOutput::region): <p>The Amazon Web Services Region where the virtual interface is located.</p>
+    ///   - [`aws_device_v2(Option<String>)`](crate::output::CreatePublicVirtualInterfaceOutput::aws_device_v2): <p>The Direct Connect endpoint that terminates the physical connection.</p>
+    ///   - [`aws_logical_device_id(Option<String>)`](crate::output::CreatePublicVirtualInterfaceOutput::aws_logical_device_id): <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::CreatePublicVirtualInterfaceOutput::tags): <p>The tags associated with the virtual interface.</p>
+    ///   - [`site_link_enabled(Option<bool>)`](crate::output::CreatePublicVirtualInterfaceOutput::site_link_enabled): <p>Indicates whether SiteLink is enabled.</p>
+    /// - On failure, responds with [`SdkError<CreatePublicVirtualInterfaceError>`](crate::error::CreatePublicVirtualInterfaceError)
     pub fn create_public_virtual_interface(
         &self,
     ) -> fluent_builders::CreatePublicVirtualInterface<C, M, R> {
         fluent_builders::CreatePublicVirtualInterface::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateTransitVirtualInterface` operation.
+    /// Constructs a fluent builder for the [`CreateTransitVirtualInterface`](crate::client::fluent_builders::CreateTransitVirtualInterface) operation.
     ///
-    /// See [`CreateTransitVirtualInterface`](crate::client::fluent_builders::CreateTransitVirtualInterface) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateTransitVirtualInterfaceInput`](crate::input::CreateTransitVirtualInterfaceInput) with field(s):
+    ///   - [`connection_id(Option<String>)`](crate::input::CreateTransitVirtualInterfaceInput::connection_id): <p>The ID of the connection.</p>
+    ///   - [`new_transit_virtual_interface(Option<NewTransitVirtualInterface>)`](crate::input::CreateTransitVirtualInterfaceInput::new_transit_virtual_interface): <p>Information about the transit virtual interface.</p>
+    /// - On success, responds with [`CreateTransitVirtualInterfaceOutput`](crate::output::CreateTransitVirtualInterfaceOutput) with field(s):
+    ///   - [`virtual_interface(Option<VirtualInterface>)`](crate::output::CreateTransitVirtualInterfaceOutput::virtual_interface): <p>Information about a virtual interface.</p>
+    /// - On failure, responds with [`SdkError<CreateTransitVirtualInterfaceError>`](crate::error::CreateTransitVirtualInterfaceError)
     pub fn create_transit_virtual_interface(
         &self,
     ) -> fluent_builders::CreateTransitVirtualInterface<C, M, R> {
         fluent_builders::CreateTransitVirtualInterface::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteBGPPeer` operation.
+    /// Constructs a fluent builder for the [`DeleteBGPPeer`](crate::client::fluent_builders::DeleteBGPPeer) operation.
     ///
-    /// See [`DeleteBGPPeer`](crate::client::fluent_builders::DeleteBGPPeer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteBgpPeerInput`](crate::input::DeleteBgpPeerInput) with field(s):
+    ///   - [`virtual_interface_id(Option<String>)`](crate::input::DeleteBgpPeerInput::virtual_interface_id): <p>The ID of the virtual interface.</p>
+    ///   - [`asn(i32)`](crate::input::DeleteBgpPeerInput::asn): <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
+    ///   - [`customer_address(Option<String>)`](crate::input::DeleteBgpPeerInput::customer_address): <p>The IP address assigned to the customer interface.</p>
+    ///   - [`bgp_peer_id(Option<String>)`](crate::input::DeleteBgpPeerInput::bgp_peer_id): <p>The ID of the BGP peer.</p>
+    /// - On success, responds with [`DeleteBgpPeerOutput`](crate::output::DeleteBgpPeerOutput) with field(s):
+    ///   - [`virtual_interface(Option<VirtualInterface>)`](crate::output::DeleteBgpPeerOutput::virtual_interface): <p>The virtual interface.</p>
+    /// - On failure, responds with [`SdkError<DeleteBGPPeerError>`](crate::error::DeleteBGPPeerError)
     pub fn delete_bgp_peer(&self) -> fluent_builders::DeleteBGPPeer<C, M, R> {
         fluent_builders::DeleteBGPPeer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteConnection` operation.
+    /// Constructs a fluent builder for the [`DeleteConnection`](crate::client::fluent_builders::DeleteConnection) operation.
     ///
-    /// See [`DeleteConnection`](crate::client::fluent_builders::DeleteConnection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteConnectionInput`](crate::input::DeleteConnectionInput) with field(s):
+    ///   - [`connection_id(Option<String>)`](crate::input::DeleteConnectionInput::connection_id): <p>The ID of the connection.</p>
+    /// - On success, responds with [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput) with field(s):
+    ///   - [`owner_account(Option<String>)`](crate::output::DeleteConnectionOutput::owner_account): <p>The ID of the Amazon Web Services account that owns the connection.</p>
+    ///   - [`connection_id(Option<String>)`](crate::output::DeleteConnectionOutput::connection_id): <p>The ID of the connection.</p>
+    ///   - [`connection_name(Option<String>)`](crate::output::DeleteConnectionOutput::connection_name): <p>The name of the connection.</p>
+    ///   - [`connection_state(Option<ConnectionState>)`](crate::output::DeleteConnectionOutput::connection_state): <p>The state of the connection. The following are the possible values:</p>  <ul>   <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>   <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>   <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>   <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>   <li> <p> <code>down</code>: The network link is down.</p> </li>   <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>   <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>   <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>   <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>  </ul>
+    ///   - [`region(Option<String>)`](crate::output::DeleteConnectionOutput::region): <p>The Amazon Web Services Region where the connection is located.</p>
+    ///   - [`location(Option<String>)`](crate::output::DeleteConnectionOutput::location): <p>The location of the connection.</p>
+    ///   - [`bandwidth(Option<String>)`](crate::output::DeleteConnectionOutput::bandwidth): <p>The bandwidth of the connection.</p>
+    ///   - [`vlan(i32)`](crate::output::DeleteConnectionOutput::vlan): <p>The ID of the VLAN.</p>
+    ///   - [`partner_name(Option<String>)`](crate::output::DeleteConnectionOutput::partner_name): <p>The name of the Direct Connect service provider associated with the connection.</p>
+    ///   - [`loa_issue_time(Option<DateTime>)`](crate::output::DeleteConnectionOutput::loa_issue_time): <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
+    ///   - [`lag_id(Option<String>)`](crate::output::DeleteConnectionOutput::lag_id): <p>The ID of the LAG.</p>
+    ///   - [`aws_device(Option<String>)`](crate::output::DeleteConnectionOutput::aws_device): <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+    ///   - [`jumbo_frame_capable(Option<bool>)`](crate::output::DeleteConnectionOutput::jumbo_frame_capable): <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    ///   - [`aws_device_v2(Option<String>)`](crate::output::DeleteConnectionOutput::aws_device_v2): <p>The Direct Connect endpoint that terminates the physical connection.</p>
+    ///   - [`aws_logical_device_id(Option<String>)`](crate::output::DeleteConnectionOutput::aws_logical_device_id): <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
+    ///   - [`has_logical_redundancy(Option<HasLogicalRedundancy>)`](crate::output::DeleteConnectionOutput::has_logical_redundancy): <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::DeleteConnectionOutput::tags): <p>The tags associated with the connection.</p>
+    ///   - [`provider_name(Option<String>)`](crate::output::DeleteConnectionOutput::provider_name): <p>The name of the service provider associated with the connection.</p>
+    ///   - [`mac_sec_capable(Option<bool>)`](crate::output::DeleteConnectionOutput::mac_sec_capable): <p>Indicates whether the connection supports MAC Security (MACsec).</p>
+    ///   - [`port_encryption_status(Option<String>)`](crate::output::DeleteConnectionOutput::port_encryption_status): <p>The MAC Security (MACsec) port link status of the connection.</p>  <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
+    ///   - [`encryption_mode(Option<String>)`](crate::output::DeleteConnectionOutput::encryption_mode): <p>The MAC Security (MACsec) connection encryption mode.</p>  <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
+    ///   - [`mac_sec_keys(Option<Vec<MacSecKey>>)`](crate::output::DeleteConnectionOutput::mac_sec_keys): <p>The MAC Security (MACsec) security keys associated with the connection.</p>
+    /// - On failure, responds with [`SdkError<DeleteConnectionError>`](crate::error::DeleteConnectionError)
     pub fn delete_connection(&self) -> fluent_builders::DeleteConnection<C, M, R> {
         fluent_builders::DeleteConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDirectConnectGateway` operation.
+    /// Constructs a fluent builder for the [`DeleteDirectConnectGateway`](crate::client::fluent_builders::DeleteDirectConnectGateway) operation.
     ///
-    /// See [`DeleteDirectConnectGateway`](crate::client::fluent_builders::DeleteDirectConnectGateway) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteDirectConnectGatewayInput`](crate::input::DeleteDirectConnectGatewayInput) with field(s):
+    ///   - [`direct_connect_gateway_id(Option<String>)`](crate::input::DeleteDirectConnectGatewayInput::direct_connect_gateway_id): <p>The ID of the Direct Connect gateway.</p>
+    /// - On success, responds with [`DeleteDirectConnectGatewayOutput`](crate::output::DeleteDirectConnectGatewayOutput) with field(s):
+    ///   - [`direct_connect_gateway(Option<DirectConnectGateway>)`](crate::output::DeleteDirectConnectGatewayOutput::direct_connect_gateway): <p>The Direct Connect gateway.</p>
+    /// - On failure, responds with [`SdkError<DeleteDirectConnectGatewayError>`](crate::error::DeleteDirectConnectGatewayError)
     pub fn delete_direct_connect_gateway(
         &self,
     ) -> fluent_builders::DeleteDirectConnectGateway<C, M, R> {
         fluent_builders::DeleteDirectConnectGateway::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDirectConnectGatewayAssociation` operation.
+    /// Constructs a fluent builder for the [`DeleteDirectConnectGatewayAssociation`](crate::client::fluent_builders::DeleteDirectConnectGatewayAssociation) operation.
     ///
-    /// See [`DeleteDirectConnectGatewayAssociation`](crate::client::fluent_builders::DeleteDirectConnectGatewayAssociation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteDirectConnectGatewayAssociationInput`](crate::input::DeleteDirectConnectGatewayAssociationInput) with field(s):
+    ///   - [`association_id(Option<String>)`](crate::input::DeleteDirectConnectGatewayAssociationInput::association_id): <p>The ID of the Direct Connect gateway association.</p>
+    ///   - [`direct_connect_gateway_id(Option<String>)`](crate::input::DeleteDirectConnectGatewayAssociationInput::direct_connect_gateway_id): <p>The ID of the Direct Connect gateway.</p>
+    ///   - [`virtual_gateway_id(Option<String>)`](crate::input::DeleteDirectConnectGatewayAssociationInput::virtual_gateway_id): <p>The ID of the virtual private gateway.</p>
+    /// - On success, responds with [`DeleteDirectConnectGatewayAssociationOutput`](crate::output::DeleteDirectConnectGatewayAssociationOutput) with field(s):
+    ///   - [`direct_connect_gateway_association(Option<DirectConnectGatewayAssociation>)`](crate::output::DeleteDirectConnectGatewayAssociationOutput::direct_connect_gateway_association): <p>Information about the deleted association.</p>
+    /// - On failure, responds with [`SdkError<DeleteDirectConnectGatewayAssociationError>`](crate::error::DeleteDirectConnectGatewayAssociationError)
     pub fn delete_direct_connect_gateway_association(
         &self,
     ) -> fluent_builders::DeleteDirectConnectGatewayAssociation<C, M, R> {
         fluent_builders::DeleteDirectConnectGatewayAssociation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDirectConnectGatewayAssociationProposal` operation.
+    /// Constructs a fluent builder for the [`DeleteDirectConnectGatewayAssociationProposal`](crate::client::fluent_builders::DeleteDirectConnectGatewayAssociationProposal) operation.
     ///
-    /// See [`DeleteDirectConnectGatewayAssociationProposal`](crate::client::fluent_builders::DeleteDirectConnectGatewayAssociationProposal) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteDirectConnectGatewayAssociationProposalInput`](crate::input::DeleteDirectConnectGatewayAssociationProposalInput) with field(s):
+    ///   - [`proposal_id(Option<String>)`](crate::input::DeleteDirectConnectGatewayAssociationProposalInput::proposal_id): <p>The ID of the proposal.</p>
+    /// - On success, responds with [`DeleteDirectConnectGatewayAssociationProposalOutput`](crate::output::DeleteDirectConnectGatewayAssociationProposalOutput) with field(s):
+    ///   - [`direct_connect_gateway_association_proposal(Option<DirectConnectGatewayAssociationProposal>)`](crate::output::DeleteDirectConnectGatewayAssociationProposalOutput::direct_connect_gateway_association_proposal): <p>The ID of the associated gateway.</p>
+    /// - On failure, responds with [`SdkError<DeleteDirectConnectGatewayAssociationProposalError>`](crate::error::DeleteDirectConnectGatewayAssociationProposalError)
     pub fn delete_direct_connect_gateway_association_proposal(
         &self,
     ) -> fluent_builders::DeleteDirectConnectGatewayAssociationProposal<C, M, R> {
         fluent_builders::DeleteDirectConnectGatewayAssociationProposal::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteInterconnect` operation.
+    /// Constructs a fluent builder for the [`DeleteInterconnect`](crate::client::fluent_builders::DeleteInterconnect) operation.
     ///
-    /// See [`DeleteInterconnect`](crate::client::fluent_builders::DeleteInterconnect) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteInterconnectInput`](crate::input::DeleteInterconnectInput) with field(s):
+    ///   - [`interconnect_id(Option<String>)`](crate::input::DeleteInterconnectInput::interconnect_id): <p>The ID of the interconnect.</p>
+    /// - On success, responds with [`DeleteInterconnectOutput`](crate::output::DeleteInterconnectOutput) with field(s):
+    ///   - [`interconnect_state(Option<InterconnectState>)`](crate::output::DeleteInterconnectOutput::interconnect_state): <p>The state of the interconnect. The following are the possible values:</p>  <ul>   <li> <p> <code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>   <li> <p> <code>pending</code>: The interconnect is approved, and is being initialized.</p> </li>   <li> <p> <code>available</code>: The network link is up, and the interconnect is ready for use.</p> </li>   <li> <p> <code>down</code>: The network link is down.</p> </li>   <li> <p> <code>deleting</code>: The interconnect is being deleted.</p> </li>   <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>   <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<DeleteInterconnectError>`](crate::error::DeleteInterconnectError)
     pub fn delete_interconnect(&self) -> fluent_builders::DeleteInterconnect<C, M, R> {
         fluent_builders::DeleteInterconnect::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteLag` operation.
+    /// Constructs a fluent builder for the [`DeleteLag`](crate::client::fluent_builders::DeleteLag) operation.
     ///
-    /// See [`DeleteLag`](crate::client::fluent_builders::DeleteLag) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteLagInput`](crate::input::DeleteLagInput) with field(s):
+    ///   - [`lag_id(Option<String>)`](crate::input::DeleteLagInput::lag_id): <p>The ID of the LAG.</p>
+    /// - On success, responds with [`DeleteLagOutput`](crate::output::DeleteLagOutput) with field(s):
+    ///   - [`connections_bandwidth(Option<String>)`](crate::output::DeleteLagOutput::connections_bandwidth): <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
+    ///   - [`number_of_connections(i32)`](crate::output::DeleteLagOutput::number_of_connections): <p>The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.</p>
+    ///   - [`lag_id(Option<String>)`](crate::output::DeleteLagOutput::lag_id): <p>The ID of the LAG.</p>
+    ///   - [`owner_account(Option<String>)`](crate::output::DeleteLagOutput::owner_account): <p>The ID of the Amazon Web Services account that owns the LAG.</p>
+    ///   - [`lag_name(Option<String>)`](crate::output::DeleteLagOutput::lag_name): <p>The name of the LAG.</p>
+    ///   - [`lag_state(Option<LagState>)`](crate::output::DeleteLagOutput::lag_state): <p>The state of the LAG. The following are the possible values:</p>  <ul>   <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li>   <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li>   <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li>   <li> <p> <code>down</code>: The network link is down.</p> </li>   <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li>   <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li>   <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li>  </ul>
+    ///   - [`location(Option<String>)`](crate::output::DeleteLagOutput::location): <p>The location of the LAG.</p>
+    ///   - [`region(Option<String>)`](crate::output::DeleteLagOutput::region): <p>The Amazon Web Services Region where the connection is located.</p>
+    ///   - [`minimum_links(i32)`](crate::output::DeleteLagOutput::minimum_links): <p>The minimum number of physical dedicated connections that must be operational for the LAG itself to be operational.</p>
+    ///   - [`aws_device(Option<String>)`](crate::output::DeleteLagOutput::aws_device): <p>The Direct Connect endpoint that hosts the LAG.</p>
+    ///   - [`aws_device_v2(Option<String>)`](crate::output::DeleteLagOutput::aws_device_v2): <p>The Direct Connect endpoint that hosts the LAG.</p>
+    ///   - [`aws_logical_device_id(Option<String>)`](crate::output::DeleteLagOutput::aws_logical_device_id): <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
+    ///   - [`connections(Option<Vec<Connection>>)`](crate::output::DeleteLagOutput::connections): <p>The connections bundled by the LAG.</p>
+    ///   - [`allows_hosted_connections(bool)`](crate::output::DeleteLagOutput::allows_hosted_connections): <p>Indicates whether the LAG can host other connections.</p>
+    ///   - [`jumbo_frame_capable(Option<bool>)`](crate::output::DeleteLagOutput::jumbo_frame_capable): <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    ///   - [`has_logical_redundancy(Option<HasLogicalRedundancy>)`](crate::output::DeleteLagOutput::has_logical_redundancy): <p>Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::DeleteLagOutput::tags): <p>The tags associated with the LAG.</p>
+    ///   - [`provider_name(Option<String>)`](crate::output::DeleteLagOutput::provider_name): <p>The name of the service provider associated with the LAG.</p>
+    ///   - [`mac_sec_capable(Option<bool>)`](crate::output::DeleteLagOutput::mac_sec_capable): <p>Indicates whether the LAG supports MAC Security (MACsec).</p>
+    ///   - [`encryption_mode(Option<String>)`](crate::output::DeleteLagOutput::encryption_mode): <p>The LAG MAC Security (MACsec) encryption mode.</p>  <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
+    ///   - [`mac_sec_keys(Option<Vec<MacSecKey>>)`](crate::output::DeleteLagOutput::mac_sec_keys): <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
+    /// - On failure, responds with [`SdkError<DeleteLagError>`](crate::error::DeleteLagError)
     pub fn delete_lag(&self) -> fluent_builders::DeleteLag<C, M, R> {
         fluent_builders::DeleteLag::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteVirtualInterface` operation.
+    /// Constructs a fluent builder for the [`DeleteVirtualInterface`](crate::client::fluent_builders::DeleteVirtualInterface) operation.
     ///
-    /// See [`DeleteVirtualInterface`](crate::client::fluent_builders::DeleteVirtualInterface) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteVirtualInterfaceInput`](crate::input::DeleteVirtualInterfaceInput) with field(s):
+    ///   - [`virtual_interface_id(Option<String>)`](crate::input::DeleteVirtualInterfaceInput::virtual_interface_id): <p>The ID of the virtual interface.</p>
+    /// - On success, responds with [`DeleteVirtualInterfaceOutput`](crate::output::DeleteVirtualInterfaceOutput) with field(s):
+    ///   - [`virtual_interface_state(Option<VirtualInterfaceState>)`](crate::output::DeleteVirtualInterfaceOutput::virtual_interface_state): <p>The state of the virtual interface. The following are the possible values:</p>  <ul>   <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>   <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>   <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>   <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>   <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>   <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>   <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>   <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>   <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<DeleteVirtualInterfaceError>`](crate::error::DeleteVirtualInterfaceError)
     pub fn delete_virtual_interface(&self) -> fluent_builders::DeleteVirtualInterface<C, M, R> {
         fluent_builders::DeleteVirtualInterface::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeConnectionLoa` operation.
+    /// Constructs a fluent builder for the [`DescribeConnectionLoa`](crate::client::fluent_builders::DescribeConnectionLoa) operation.
     ///
-    /// See [`DescribeConnectionLoa`](crate::client::fluent_builders::DescribeConnectionLoa) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeConnectionLoaInput`](crate::input::DescribeConnectionLoaInput) with field(s):
+    ///   - [`connection_id(Option<String>)`](crate::input::DescribeConnectionLoaInput::connection_id): <p>The ID of the connection.</p>
+    ///   - [`provider_name(Option<String>)`](crate::input::DescribeConnectionLoaInput::provider_name): <p>The name of the APN partner or service provider who establishes connectivity on your behalf. If you specify this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
+    ///   - [`loa_content_type(Option<LoaContentType>)`](crate::input::DescribeConnectionLoaInput::loa_content_type): <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
+    /// - On success, responds with [`DescribeConnectionLoaOutput`](crate::output::DescribeConnectionLoaOutput) with field(s):
+    ///   - [`loa(Option<Loa>)`](crate::output::DescribeConnectionLoaOutput::loa): <p>The Letter of Authorization - Connecting Facility Assignment (LOA-CFA).</p>
+    /// - On failure, responds with [`SdkError<DescribeConnectionLoaError>`](crate::error::DescribeConnectionLoaError)
     pub fn describe_connection_loa(&self) -> fluent_builders::DescribeConnectionLoa<C, M, R> {
         fluent_builders::DescribeConnectionLoa::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeConnections` operation.
+    /// Constructs a fluent builder for the [`DescribeConnections`](crate::client::fluent_builders::DescribeConnections) operation.
     ///
-    /// See [`DescribeConnections`](crate::client::fluent_builders::DescribeConnections) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeConnectionsInput`](crate::input::DescribeConnectionsInput) with field(s):
+    ///   - [`connection_id(Option<String>)`](crate::input::DescribeConnectionsInput::connection_id): <p>The ID of the connection.</p>
+    /// - On success, responds with [`DescribeConnectionsOutput`](crate::output::DescribeConnectionsOutput) with field(s):
+    ///   - [`connections(Option<Vec<Connection>>)`](crate::output::DescribeConnectionsOutput::connections): <p>The connections.</p>
+    /// - On failure, responds with [`SdkError<DescribeConnectionsError>`](crate::error::DescribeConnectionsError)
     pub fn describe_connections(&self) -> fluent_builders::DescribeConnections<C, M, R> {
         fluent_builders::DescribeConnections::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeConnectionsOnInterconnect` operation.
+    /// Constructs a fluent builder for the [`DescribeConnectionsOnInterconnect`](crate::client::fluent_builders::DescribeConnectionsOnInterconnect) operation.
     ///
-    /// See [`DescribeConnectionsOnInterconnect`](crate::client::fluent_builders::DescribeConnectionsOnInterconnect) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeConnectionsOnInterconnectInput`](crate::input::DescribeConnectionsOnInterconnectInput) with field(s):
+    ///   - [`interconnect_id(Option<String>)`](crate::input::DescribeConnectionsOnInterconnectInput::interconnect_id): <p>The ID of the interconnect.</p>
+    /// - On success, responds with [`DescribeConnectionsOnInterconnectOutput`](crate::output::DescribeConnectionsOnInterconnectOutput) with field(s):
+    ///   - [`connections(Option<Vec<Connection>>)`](crate::output::DescribeConnectionsOnInterconnectOutput::connections): <p>The connections.</p>
+    /// - On failure, responds with [`SdkError<DescribeConnectionsOnInterconnectError>`](crate::error::DescribeConnectionsOnInterconnectError)
     pub fn describe_connections_on_interconnect(
         &self,
     ) -> fluent_builders::DescribeConnectionsOnInterconnect<C, M, R> {
         fluent_builders::DescribeConnectionsOnInterconnect::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeCustomerMetadata` operation.
+    /// Constructs a fluent builder for the [`DescribeCustomerMetadata`](crate::client::fluent_builders::DescribeCustomerMetadata) operation.
     ///
-    /// See [`DescribeCustomerMetadata`](crate::client::fluent_builders::DescribeCustomerMetadata) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeCustomerMetadataInput`](crate::input::DescribeCustomerMetadataInput)
+
+    /// - On success, responds with [`DescribeCustomerMetadataOutput`](crate::output::DescribeCustomerMetadataOutput) with field(s):
+    ///   - [`agreements(Option<Vec<CustomerAgreement>>)`](crate::output::DescribeCustomerMetadataOutput::agreements): <p>The list of customer agreements.</p>
+    ///   - [`nni_partner_type(Option<NniPartnerType>)`](crate::output::DescribeCustomerMetadataOutput::nni_partner_type): <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p>  <ul>   <li> <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p> </li>   <li> <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p> </li>   <li> <p>nonPartner: The customer is not a partner.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<DescribeCustomerMetadataError>`](crate::error::DescribeCustomerMetadataError)
     pub fn describe_customer_metadata(&self) -> fluent_builders::DescribeCustomerMetadata<C, M, R> {
         fluent_builders::DescribeCustomerMetadata::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDirectConnectGatewayAssociationProposals` operation.
+    /// Constructs a fluent builder for the [`DescribeDirectConnectGatewayAssociationProposals`](crate::client::fluent_builders::DescribeDirectConnectGatewayAssociationProposals) operation.
     ///
-    /// See [`DescribeDirectConnectGatewayAssociationProposals`](crate::client::fluent_builders::DescribeDirectConnectGatewayAssociationProposals) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeDirectConnectGatewayAssociationProposalsInput`](crate::input::DescribeDirectConnectGatewayAssociationProposalsInput) with field(s):
+    ///   - [`direct_connect_gateway_id(Option<String>)`](crate::input::DescribeDirectConnectGatewayAssociationProposalsInput::direct_connect_gateway_id): <p>The ID of the Direct Connect gateway.</p>
+    ///   - [`proposal_id(Option<String>)`](crate::input::DescribeDirectConnectGatewayAssociationProposalsInput::proposal_id): <p>The ID of the proposal.</p>
+    ///   - [`associated_gateway_id(Option<String>)`](crate::input::DescribeDirectConnectGatewayAssociationProposalsInput::associated_gateway_id): <p>The ID of the associated gateway.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeDirectConnectGatewayAssociationProposalsInput::max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>  <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeDirectConnectGatewayAssociationProposalsInput::next_token): <p>The token for the next page of results.</p>
+    /// - On success, responds with [`DescribeDirectConnectGatewayAssociationProposalsOutput`](crate::output::DescribeDirectConnectGatewayAssociationProposalsOutput) with field(s):
+    ///   - [`direct_connect_gateway_association_proposals(Option<Vec<DirectConnectGatewayAssociationProposal>>)`](crate::output::DescribeDirectConnectGatewayAssociationProposalsOutput::direct_connect_gateway_association_proposals): <p>Describes the Direct Connect gateway association proposals.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeDirectConnectGatewayAssociationProposalsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<DescribeDirectConnectGatewayAssociationProposalsError>`](crate::error::DescribeDirectConnectGatewayAssociationProposalsError)
     pub fn describe_direct_connect_gateway_association_proposals(
         &self,
     ) -> fluent_builders::DescribeDirectConnectGatewayAssociationProposals<C, M, R> {
         fluent_builders::DescribeDirectConnectGatewayAssociationProposals::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDirectConnectGatewayAssociations` operation.
+    /// Constructs a fluent builder for the [`DescribeDirectConnectGatewayAssociations`](crate::client::fluent_builders::DescribeDirectConnectGatewayAssociations) operation.
     ///
-    /// See [`DescribeDirectConnectGatewayAssociations`](crate::client::fluent_builders::DescribeDirectConnectGatewayAssociations) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeDirectConnectGatewayAssociationsInput`](crate::input::DescribeDirectConnectGatewayAssociationsInput) with field(s):
+    ///   - [`association_id(Option<String>)`](crate::input::DescribeDirectConnectGatewayAssociationsInput::association_id): <p>The ID of the Direct Connect gateway association.</p>
+    ///   - [`associated_gateway_id(Option<String>)`](crate::input::DescribeDirectConnectGatewayAssociationsInput::associated_gateway_id): <p>The ID of the associated gateway.</p>
+    ///   - [`direct_connect_gateway_id(Option<String>)`](crate::input::DescribeDirectConnectGatewayAssociationsInput::direct_connect_gateway_id): <p>The ID of the Direct Connect gateway.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeDirectConnectGatewayAssociationsInput::max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>  <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeDirectConnectGatewayAssociationsInput::next_token): <p>The token provided in the previous call to retrieve the next page.</p>
+    ///   - [`virtual_gateway_id(Option<String>)`](crate::input::DescribeDirectConnectGatewayAssociationsInput::virtual_gateway_id): <p>The ID of the virtual private gateway or transit gateway.</p>
+    /// - On success, responds with [`DescribeDirectConnectGatewayAssociationsOutput`](crate::output::DescribeDirectConnectGatewayAssociationsOutput) with field(s):
+    ///   - [`direct_connect_gateway_associations(Option<Vec<DirectConnectGatewayAssociation>>)`](crate::output::DescribeDirectConnectGatewayAssociationsOutput::direct_connect_gateway_associations): <p>Information about the associations.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeDirectConnectGatewayAssociationsOutput::next_token): <p>The token to retrieve the next page.</p>
+    /// - On failure, responds with [`SdkError<DescribeDirectConnectGatewayAssociationsError>`](crate::error::DescribeDirectConnectGatewayAssociationsError)
     pub fn describe_direct_connect_gateway_associations(
         &self,
     ) -> fluent_builders::DescribeDirectConnectGatewayAssociations<C, M, R> {
         fluent_builders::DescribeDirectConnectGatewayAssociations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDirectConnectGatewayAttachments` operation.
+    /// Constructs a fluent builder for the [`DescribeDirectConnectGatewayAttachments`](crate::client::fluent_builders::DescribeDirectConnectGatewayAttachments) operation.
     ///
-    /// See [`DescribeDirectConnectGatewayAttachments`](crate::client::fluent_builders::DescribeDirectConnectGatewayAttachments) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeDirectConnectGatewayAttachmentsInput`](crate::input::DescribeDirectConnectGatewayAttachmentsInput) with field(s):
+    ///   - [`direct_connect_gateway_id(Option<String>)`](crate::input::DescribeDirectConnectGatewayAttachmentsInput::direct_connect_gateway_id): <p>The ID of the Direct Connect gateway.</p>
+    ///   - [`virtual_interface_id(Option<String>)`](crate::input::DescribeDirectConnectGatewayAttachmentsInput::virtual_interface_id): <p>The ID of the virtual interface.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeDirectConnectGatewayAttachmentsInput::max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>  <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeDirectConnectGatewayAttachmentsInput::next_token): <p>The token provided in the previous call to retrieve the next page.</p>
+    /// - On success, responds with [`DescribeDirectConnectGatewayAttachmentsOutput`](crate::output::DescribeDirectConnectGatewayAttachmentsOutput) with field(s):
+    ///   - [`direct_connect_gateway_attachments(Option<Vec<DirectConnectGatewayAttachment>>)`](crate::output::DescribeDirectConnectGatewayAttachmentsOutput::direct_connect_gateway_attachments): <p>The attachments.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeDirectConnectGatewayAttachmentsOutput::next_token): <p>The token to retrieve the next page.</p>
+    /// - On failure, responds with [`SdkError<DescribeDirectConnectGatewayAttachmentsError>`](crate::error::DescribeDirectConnectGatewayAttachmentsError)
     pub fn describe_direct_connect_gateway_attachments(
         &self,
     ) -> fluent_builders::DescribeDirectConnectGatewayAttachments<C, M, R> {
         fluent_builders::DescribeDirectConnectGatewayAttachments::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDirectConnectGateways` operation.
+    /// Constructs a fluent builder for the [`DescribeDirectConnectGateways`](crate::client::fluent_builders::DescribeDirectConnectGateways) operation.
     ///
-    /// See [`DescribeDirectConnectGateways`](crate::client::fluent_builders::DescribeDirectConnectGateways) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeDirectConnectGatewaysInput`](crate::input::DescribeDirectConnectGatewaysInput) with field(s):
+    ///   - [`direct_connect_gateway_id(Option<String>)`](crate::input::DescribeDirectConnectGatewaysInput::direct_connect_gateway_id): <p>The ID of the Direct Connect gateway.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeDirectConnectGatewaysInput::max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>  <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeDirectConnectGatewaysInput::next_token): <p>The token provided in the previous call to retrieve the next page.</p>
+    /// - On success, responds with [`DescribeDirectConnectGatewaysOutput`](crate::output::DescribeDirectConnectGatewaysOutput) with field(s):
+    ///   - [`direct_connect_gateways(Option<Vec<DirectConnectGateway>>)`](crate::output::DescribeDirectConnectGatewaysOutput::direct_connect_gateways): <p>The Direct Connect gateways.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeDirectConnectGatewaysOutput::next_token): <p>The token to retrieve the next page.</p>
+    /// - On failure, responds with [`SdkError<DescribeDirectConnectGatewaysError>`](crate::error::DescribeDirectConnectGatewaysError)
     pub fn describe_direct_connect_gateways(
         &self,
     ) -> fluent_builders::DescribeDirectConnectGateways<C, M, R> {
         fluent_builders::DescribeDirectConnectGateways::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeHostedConnections` operation.
+    /// Constructs a fluent builder for the [`DescribeHostedConnections`](crate::client::fluent_builders::DescribeHostedConnections) operation.
     ///
-    /// See [`DescribeHostedConnections`](crate::client::fluent_builders::DescribeHostedConnections) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeHostedConnectionsInput`](crate::input::DescribeHostedConnectionsInput) with field(s):
+    ///   - [`connection_id(Option<String>)`](crate::input::DescribeHostedConnectionsInput::connection_id): <p>The ID of the interconnect or LAG.</p>
+    /// - On success, responds with [`DescribeHostedConnectionsOutput`](crate::output::DescribeHostedConnectionsOutput) with field(s):
+    ///   - [`connections(Option<Vec<Connection>>)`](crate::output::DescribeHostedConnectionsOutput::connections): <p>The connections.</p>
+    /// - On failure, responds with [`SdkError<DescribeHostedConnectionsError>`](crate::error::DescribeHostedConnectionsError)
     pub fn describe_hosted_connections(
         &self,
     ) -> fluent_builders::DescribeHostedConnections<C, M, R> {
         fluent_builders::DescribeHostedConnections::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeInterconnectLoa` operation.
+    /// Constructs a fluent builder for the [`DescribeInterconnectLoa`](crate::client::fluent_builders::DescribeInterconnectLoa) operation.
     ///
-    /// See [`DescribeInterconnectLoa`](crate::client::fluent_builders::DescribeInterconnectLoa) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeInterconnectLoaInput`](crate::input::DescribeInterconnectLoaInput) with field(s):
+    ///   - [`interconnect_id(Option<String>)`](crate::input::DescribeInterconnectLoaInput::interconnect_id): <p>The ID of the interconnect.</p>
+    ///   - [`provider_name(Option<String>)`](crate::input::DescribeInterconnectLoaInput::provider_name): <p>The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
+    ///   - [`loa_content_type(Option<LoaContentType>)`](crate::input::DescribeInterconnectLoaInput::loa_content_type): <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
+    /// - On success, responds with [`DescribeInterconnectLoaOutput`](crate::output::DescribeInterconnectLoaOutput) with field(s):
+    ///   - [`loa(Option<Loa>)`](crate::output::DescribeInterconnectLoaOutput::loa): <p>The Letter of Authorization - Connecting Facility Assignment (LOA-CFA).</p>
+    /// - On failure, responds with [`SdkError<DescribeInterconnectLoaError>`](crate::error::DescribeInterconnectLoaError)
     pub fn describe_interconnect_loa(&self) -> fluent_builders::DescribeInterconnectLoa<C, M, R> {
         fluent_builders::DescribeInterconnectLoa::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeInterconnects` operation.
+    /// Constructs a fluent builder for the [`DescribeInterconnects`](crate::client::fluent_builders::DescribeInterconnects) operation.
     ///
-    /// See [`DescribeInterconnects`](crate::client::fluent_builders::DescribeInterconnects) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeInterconnectsInput`](crate::input::DescribeInterconnectsInput) with field(s):
+    ///   - [`interconnect_id(Option<String>)`](crate::input::DescribeInterconnectsInput::interconnect_id): <p>The ID of the interconnect.</p>
+    /// - On success, responds with [`DescribeInterconnectsOutput`](crate::output::DescribeInterconnectsOutput) with field(s):
+    ///   - [`interconnects(Option<Vec<Interconnect>>)`](crate::output::DescribeInterconnectsOutput::interconnects): <p>The interconnects.</p>
+    /// - On failure, responds with [`SdkError<DescribeInterconnectsError>`](crate::error::DescribeInterconnectsError)
     pub fn describe_interconnects(&self) -> fluent_builders::DescribeInterconnects<C, M, R> {
         fluent_builders::DescribeInterconnects::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeLags` operation.
+    /// Constructs a fluent builder for the [`DescribeLags`](crate::client::fluent_builders::DescribeLags) operation.
     ///
-    /// See [`DescribeLags`](crate::client::fluent_builders::DescribeLags) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeLagsInput`](crate::input::DescribeLagsInput) with field(s):
+    ///   - [`lag_id(Option<String>)`](crate::input::DescribeLagsInput::lag_id): <p>The ID of the LAG.</p>
+    /// - On success, responds with [`DescribeLagsOutput`](crate::output::DescribeLagsOutput) with field(s):
+    ///   - [`lags(Option<Vec<Lag>>)`](crate::output::DescribeLagsOutput::lags): <p>The LAGs.</p>
+    /// - On failure, responds with [`SdkError<DescribeLagsError>`](crate::error::DescribeLagsError)
     pub fn describe_lags(&self) -> fluent_builders::DescribeLags<C, M, R> {
         fluent_builders::DescribeLags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeLoa` operation.
+    /// Constructs a fluent builder for the [`DescribeLoa`](crate::client::fluent_builders::DescribeLoa) operation.
     ///
-    /// See [`DescribeLoa`](crate::client::fluent_builders::DescribeLoa) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeLoaInput`](crate::input::DescribeLoaInput) with field(s):
+    ///   - [`connection_id(Option<String>)`](crate::input::DescribeLoaInput::connection_id): <p>The ID of a connection, LAG, or interconnect.</p>
+    ///   - [`provider_name(Option<String>)`](crate::input::DescribeLoaInput::provider_name): <p>The name of the service provider who establishes connectivity on your behalf. If you specify this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
+    ///   - [`loa_content_type(Option<LoaContentType>)`](crate::input::DescribeLoaInput::loa_content_type): <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
+    /// - On success, responds with [`DescribeLoaOutput`](crate::output::DescribeLoaOutput) with field(s):
+    ///   - [`loa_content(Option<Blob>)`](crate::output::DescribeLoaOutput::loa_content): <p>The binary contents of the LOA-CFA document.</p>
+    ///   - [`loa_content_type(Option<LoaContentType>)`](crate::output::DescribeLoaOutput::loa_content_type): <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
+    /// - On failure, responds with [`SdkError<DescribeLoaError>`](crate::error::DescribeLoaError)
     pub fn describe_loa(&self) -> fluent_builders::DescribeLoa<C, M, R> {
         fluent_builders::DescribeLoa::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeLocations` operation.
+    /// Constructs a fluent builder for the [`DescribeLocations`](crate::client::fluent_builders::DescribeLocations) operation.
     ///
-    /// See [`DescribeLocations`](crate::client::fluent_builders::DescribeLocations) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeLocationsInput`](crate::input::DescribeLocationsInput)
+
+    /// - On success, responds with [`DescribeLocationsOutput`](crate::output::DescribeLocationsOutput) with field(s):
+    ///   - [`locations(Option<Vec<Location>>)`](crate::output::DescribeLocationsOutput::locations): <p>The locations.</p>
+    /// - On failure, responds with [`SdkError<DescribeLocationsError>`](crate::error::DescribeLocationsError)
     pub fn describe_locations(&self) -> fluent_builders::DescribeLocations<C, M, R> {
         fluent_builders::DescribeLocations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeRouterConfiguration` operation.
+    /// Constructs a fluent builder for the [`DescribeRouterConfiguration`](crate::client::fluent_builders::DescribeRouterConfiguration) operation.
     ///
-    /// See [`DescribeRouterConfiguration`](crate::client::fluent_builders::DescribeRouterConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeRouterConfigurationInput`](crate::input::DescribeRouterConfigurationInput) with field(s):
+    ///   - [`virtual_interface_id(Option<String>)`](crate::input::DescribeRouterConfigurationInput::virtual_interface_id): <p>The ID of the virtual interface.</p>
+    ///   - [`router_type_identifier(Option<String>)`](crate::input::DescribeRouterConfigurationInput::router_type_identifier): <p>Identifies the router by a combination of vendor, platform, and software version. For example, <code>CiscoSystemsInc-2900SeriesRouters-IOS124</code>.</p>
+    /// - On success, responds with [`DescribeRouterConfigurationOutput`](crate::output::DescribeRouterConfigurationOutput) with field(s):
+    ///   - [`customer_router_config(Option<String>)`](crate::output::DescribeRouterConfigurationOutput::customer_router_config): <p>The customer router configuration.</p>
+    ///   - [`router(Option<RouterType>)`](crate::output::DescribeRouterConfigurationOutput::router): <p>The details about the router.</p>
+    ///   - [`virtual_interface_id(Option<String>)`](crate::output::DescribeRouterConfigurationOutput::virtual_interface_id): <p>The ID assigned to the virtual interface.</p>
+    ///   - [`virtual_interface_name(Option<String>)`](crate::output::DescribeRouterConfigurationOutput::virtual_interface_name): <p>Provides the details about a virtual interface's router.</p>
+    /// - On failure, responds with [`SdkError<DescribeRouterConfigurationError>`](crate::error::DescribeRouterConfigurationError)
     pub fn describe_router_configuration(
         &self,
     ) -> fluent_builders::DescribeRouterConfiguration<C, M, R> {
         fluent_builders::DescribeRouterConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeTags` operation.
+    /// Constructs a fluent builder for the [`DescribeTags`](crate::client::fluent_builders::DescribeTags) operation.
     ///
-    /// See [`DescribeTags`](crate::client::fluent_builders::DescribeTags) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeTagsInput`](crate::input::DescribeTagsInput) with field(s):
+    ///   - [`resource_arns(Option<Vec<String>>)`](crate::input::DescribeTagsInput::resource_arns): <p>The Amazon Resource Names (ARNs) of the resources.</p>
+    /// - On success, responds with [`DescribeTagsOutput`](crate::output::DescribeTagsOutput) with field(s):
+    ///   - [`resource_tags(Option<Vec<ResourceTag>>)`](crate::output::DescribeTagsOutput::resource_tags): <p>Information about the tags.</p>
+    /// - On failure, responds with [`SdkError<DescribeTagsError>`](crate::error::DescribeTagsError)
     pub fn describe_tags(&self) -> fluent_builders::DescribeTags<C, M, R> {
         fluent_builders::DescribeTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeVirtualGateways` operation.
+    /// Constructs a fluent builder for the [`DescribeVirtualGateways`](crate::client::fluent_builders::DescribeVirtualGateways) operation.
     ///
-    /// See [`DescribeVirtualGateways`](crate::client::fluent_builders::DescribeVirtualGateways) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeVirtualGatewaysInput`](crate::input::DescribeVirtualGatewaysInput)
+
+    /// - On success, responds with [`DescribeVirtualGatewaysOutput`](crate::output::DescribeVirtualGatewaysOutput) with field(s):
+    ///   - [`virtual_gateways(Option<Vec<VirtualGateway>>)`](crate::output::DescribeVirtualGatewaysOutput::virtual_gateways): <p>The virtual private gateways.</p>
+    /// - On failure, responds with [`SdkError<DescribeVirtualGatewaysError>`](crate::error::DescribeVirtualGatewaysError)
     pub fn describe_virtual_gateways(&self) -> fluent_builders::DescribeVirtualGateways<C, M, R> {
         fluent_builders::DescribeVirtualGateways::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeVirtualInterfaces` operation.
+    /// Constructs a fluent builder for the [`DescribeVirtualInterfaces`](crate::client::fluent_builders::DescribeVirtualInterfaces) operation.
     ///
-    /// See [`DescribeVirtualInterfaces`](crate::client::fluent_builders::DescribeVirtualInterfaces) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeVirtualInterfacesInput`](crate::input::DescribeVirtualInterfacesInput) with field(s):
+    ///   - [`connection_id(Option<String>)`](crate::input::DescribeVirtualInterfacesInput::connection_id): <p>The ID of the connection.</p>
+    ///   - [`virtual_interface_id(Option<String>)`](crate::input::DescribeVirtualInterfacesInput::virtual_interface_id): <p>The ID of the virtual interface.</p>
+    /// - On success, responds with [`DescribeVirtualInterfacesOutput`](crate::output::DescribeVirtualInterfacesOutput) with field(s):
+    ///   - [`virtual_interfaces(Option<Vec<VirtualInterface>>)`](crate::output::DescribeVirtualInterfacesOutput::virtual_interfaces): <p>The virtual interfaces</p>
+    /// - On failure, responds with [`SdkError<DescribeVirtualInterfacesError>`](crate::error::DescribeVirtualInterfacesError)
     pub fn describe_virtual_interfaces(
         &self,
     ) -> fluent_builders::DescribeVirtualInterfaces<C, M, R> {
         fluent_builders::DescribeVirtualInterfaces::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateConnectionFromLag` operation.
+    /// Constructs a fluent builder for the [`DisassociateConnectionFromLag`](crate::client::fluent_builders::DisassociateConnectionFromLag) operation.
     ///
-    /// See [`DisassociateConnectionFromLag`](crate::client::fluent_builders::DisassociateConnectionFromLag) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateConnectionFromLagInput`](crate::input::DisassociateConnectionFromLagInput) with field(s):
+    ///   - [`connection_id(Option<String>)`](crate::input::DisassociateConnectionFromLagInput::connection_id): <p>The ID of the connection.</p>
+    ///   - [`lag_id(Option<String>)`](crate::input::DisassociateConnectionFromLagInput::lag_id): <p>The ID of the LAG.</p>
+    /// - On success, responds with [`DisassociateConnectionFromLagOutput`](crate::output::DisassociateConnectionFromLagOutput) with field(s):
+    ///   - [`owner_account(Option<String>)`](crate::output::DisassociateConnectionFromLagOutput::owner_account): <p>The ID of the Amazon Web Services account that owns the connection.</p>
+    ///   - [`connection_id(Option<String>)`](crate::output::DisassociateConnectionFromLagOutput::connection_id): <p>The ID of the connection.</p>
+    ///   - [`connection_name(Option<String>)`](crate::output::DisassociateConnectionFromLagOutput::connection_name): <p>The name of the connection.</p>
+    ///   - [`connection_state(Option<ConnectionState>)`](crate::output::DisassociateConnectionFromLagOutput::connection_state): <p>The state of the connection. The following are the possible values:</p>  <ul>   <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>   <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>   <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>   <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>   <li> <p> <code>down</code>: The network link is down.</p> </li>   <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>   <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>   <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>   <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>  </ul>
+    ///   - [`region(Option<String>)`](crate::output::DisassociateConnectionFromLagOutput::region): <p>The Amazon Web Services Region where the connection is located.</p>
+    ///   - [`location(Option<String>)`](crate::output::DisassociateConnectionFromLagOutput::location): <p>The location of the connection.</p>
+    ///   - [`bandwidth(Option<String>)`](crate::output::DisassociateConnectionFromLagOutput::bandwidth): <p>The bandwidth of the connection.</p>
+    ///   - [`vlan(i32)`](crate::output::DisassociateConnectionFromLagOutput::vlan): <p>The ID of the VLAN.</p>
+    ///   - [`partner_name(Option<String>)`](crate::output::DisassociateConnectionFromLagOutput::partner_name): <p>The name of the Direct Connect service provider associated with the connection.</p>
+    ///   - [`loa_issue_time(Option<DateTime>)`](crate::output::DisassociateConnectionFromLagOutput::loa_issue_time): <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
+    ///   - [`lag_id(Option<String>)`](crate::output::DisassociateConnectionFromLagOutput::lag_id): <p>The ID of the LAG.</p>
+    ///   - [`aws_device(Option<String>)`](crate::output::DisassociateConnectionFromLagOutput::aws_device): <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+    ///   - [`jumbo_frame_capable(Option<bool>)`](crate::output::DisassociateConnectionFromLagOutput::jumbo_frame_capable): <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    ///   - [`aws_device_v2(Option<String>)`](crate::output::DisassociateConnectionFromLagOutput::aws_device_v2): <p>The Direct Connect endpoint that terminates the physical connection.</p>
+    ///   - [`aws_logical_device_id(Option<String>)`](crate::output::DisassociateConnectionFromLagOutput::aws_logical_device_id): <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
+    ///   - [`has_logical_redundancy(Option<HasLogicalRedundancy>)`](crate::output::DisassociateConnectionFromLagOutput::has_logical_redundancy): <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::DisassociateConnectionFromLagOutput::tags): <p>The tags associated with the connection.</p>
+    ///   - [`provider_name(Option<String>)`](crate::output::DisassociateConnectionFromLagOutput::provider_name): <p>The name of the service provider associated with the connection.</p>
+    ///   - [`mac_sec_capable(Option<bool>)`](crate::output::DisassociateConnectionFromLagOutput::mac_sec_capable): <p>Indicates whether the connection supports MAC Security (MACsec).</p>
+    ///   - [`port_encryption_status(Option<String>)`](crate::output::DisassociateConnectionFromLagOutput::port_encryption_status): <p>The MAC Security (MACsec) port link status of the connection.</p>  <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
+    ///   - [`encryption_mode(Option<String>)`](crate::output::DisassociateConnectionFromLagOutput::encryption_mode): <p>The MAC Security (MACsec) connection encryption mode.</p>  <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
+    ///   - [`mac_sec_keys(Option<Vec<MacSecKey>>)`](crate::output::DisassociateConnectionFromLagOutput::mac_sec_keys): <p>The MAC Security (MACsec) security keys associated with the connection.</p>
+    /// - On failure, responds with [`SdkError<DisassociateConnectionFromLagError>`](crate::error::DisassociateConnectionFromLagError)
     pub fn disassociate_connection_from_lag(
         &self,
     ) -> fluent_builders::DisassociateConnectionFromLag<C, M, R> {
         fluent_builders::DisassociateConnectionFromLag::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateMacSecKey` operation.
+    /// Constructs a fluent builder for the [`DisassociateMacSecKey`](crate::client::fluent_builders::DisassociateMacSecKey) operation.
     ///
-    /// See [`DisassociateMacSecKey`](crate::client::fluent_builders::DisassociateMacSecKey) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateMacSecKeyInput`](crate::input::DisassociateMacSecKeyInput) with field(s):
+    ///   - [`connection_id(Option<String>)`](crate::input::DisassociateMacSecKeyInput::connection_id): <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>  <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
+    ///   - [`secret_arn(Option<String>)`](crate::input::DisassociateMacSecKeyInput::secret_arn): <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p>  <p>You can use <code>DescribeConnections</code> to retrieve the ARN of the MAC Security (MACsec) secret key.</p>
+    /// - On success, responds with [`DisassociateMacSecKeyOutput`](crate::output::DisassociateMacSecKeyOutput) with field(s):
+    ///   - [`connection_id(Option<String>)`](crate::output::DisassociateMacSecKeyOutput::connection_id): <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
+    ///   - [`mac_sec_keys(Option<Vec<MacSecKey>>)`](crate::output::DisassociateMacSecKeyOutput::mac_sec_keys): <p>The MAC Security (MACsec) security keys no longer associated with the dedicated connection.</p>
+    /// - On failure, responds with [`SdkError<DisassociateMacSecKeyError>`](crate::error::DisassociateMacSecKeyError)
     pub fn disassociate_mac_sec_key(&self) -> fluent_builders::DisassociateMacSecKey<C, M, R> {
         fluent_builders::DisassociateMacSecKey::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListVirtualInterfaceTestHistory` operation.
+    /// Constructs a fluent builder for the [`ListVirtualInterfaceTestHistory`](crate::client::fluent_builders::ListVirtualInterfaceTestHistory) operation.
     ///
-    /// See [`ListVirtualInterfaceTestHistory`](crate::client::fluent_builders::ListVirtualInterfaceTestHistory) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListVirtualInterfaceTestHistoryInput`](crate::input::ListVirtualInterfaceTestHistoryInput) with field(s):
+    ///   - [`test_id(Option<String>)`](crate::input::ListVirtualInterfaceTestHistoryInput::test_id): <p>The ID of the virtual interface failover test.</p>
+    ///   - [`virtual_interface_id(Option<String>)`](crate::input::ListVirtualInterfaceTestHistoryInput::virtual_interface_id): <p>The ID of the virtual interface that was tested.</p>
+    ///   - [`bgp_peers(Option<Vec<String>>)`](crate::input::ListVirtualInterfaceTestHistoryInput::bgp_peers): <p>The BGP peers that were placed in the DOWN state during the virtual interface failover test.</p>
+    ///   - [`status(Option<String>)`](crate::input::ListVirtualInterfaceTestHistoryInput::status): <p>The status of the virtual interface failover test.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListVirtualInterfaceTestHistoryInput::max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>  <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListVirtualInterfaceTestHistoryInput::next_token): <p>The token for the next page of results.</p>
+    /// - On success, responds with [`ListVirtualInterfaceTestHistoryOutput`](crate::output::ListVirtualInterfaceTestHistoryOutput) with field(s):
+    ///   - [`virtual_interface_test_history(Option<Vec<VirtualInterfaceTestHistory>>)`](crate::output::ListVirtualInterfaceTestHistoryOutput::virtual_interface_test_history): <p>The ID of the tested virtual interface.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListVirtualInterfaceTestHistoryOutput::next_token): <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<ListVirtualInterfaceTestHistoryError>`](crate::error::ListVirtualInterfaceTestHistoryError)
     pub fn list_virtual_interface_test_history(
         &self,
     ) -> fluent_builders::ListVirtualInterfaceTestHistory<C, M, R> {
         fluent_builders::ListVirtualInterfaceTestHistory::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartBgpFailoverTest` operation.
+    /// Constructs a fluent builder for the [`StartBgpFailoverTest`](crate::client::fluent_builders::StartBgpFailoverTest) operation.
     ///
-    /// See [`StartBgpFailoverTest`](crate::client::fluent_builders::StartBgpFailoverTest) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartBgpFailoverTestInput`](crate::input::StartBgpFailoverTestInput) with field(s):
+    ///   - [`virtual_interface_id(Option<String>)`](crate::input::StartBgpFailoverTestInput::virtual_interface_id): <p>The ID of the virtual interface you want to test.</p>
+    ///   - [`bgp_peers(Option<Vec<String>>)`](crate::input::StartBgpFailoverTestInput::bgp_peers): <p>The BGP peers to place in the DOWN state.</p>
+    ///   - [`test_duration_in_minutes(Option<i32>)`](crate::input::StartBgpFailoverTestInput::test_duration_in_minutes): <p>The time in minutes that the virtual interface failover test will last.</p>  <p>Maximum value: 180 minutes (3 hours).</p>  <p>Default: 180 minutes (3 hours).</p>
+    /// - On success, responds with [`StartBgpFailoverTestOutput`](crate::output::StartBgpFailoverTestOutput) with field(s):
+    ///   - [`virtual_interface_test(Option<VirtualInterfaceTestHistory>)`](crate::output::StartBgpFailoverTestOutput::virtual_interface_test): <p>Information about the virtual interface failover test.</p>
+    /// - On failure, responds with [`SdkError<StartBgpFailoverTestError>`](crate::error::StartBgpFailoverTestError)
     pub fn start_bgp_failover_test(&self) -> fluent_builders::StartBgpFailoverTest<C, M, R> {
         fluent_builders::StartBgpFailoverTest::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopBgpFailoverTest` operation.
+    /// Constructs a fluent builder for the [`StopBgpFailoverTest`](crate::client::fluent_builders::StopBgpFailoverTest) operation.
     ///
-    /// See [`StopBgpFailoverTest`](crate::client::fluent_builders::StopBgpFailoverTest) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StopBgpFailoverTestInput`](crate::input::StopBgpFailoverTestInput) with field(s):
+    ///   - [`virtual_interface_id(Option<String>)`](crate::input::StopBgpFailoverTestInput::virtual_interface_id): <p>The ID of the virtual interface you no longer want to test.</p>
+    /// - On success, responds with [`StopBgpFailoverTestOutput`](crate::output::StopBgpFailoverTestOutput) with field(s):
+    ///   - [`virtual_interface_test(Option<VirtualInterfaceTestHistory>)`](crate::output::StopBgpFailoverTestOutput::virtual_interface_test): <p>Information about the virtual interface failover test.</p>
+    /// - On failure, responds with [`SdkError<StopBgpFailoverTestError>`](crate::error::StopBgpFailoverTestError)
     pub fn stop_bgp_failover_test(&self) -> fluent_builders::StopBgpFailoverTest<C, M, R> {
         fluent_builders::StopBgpFailoverTest::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>The tags to add.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The tag keys of the tags to remove.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateConnection` operation.
+    /// Constructs a fluent builder for the [`UpdateConnection`](crate::client::fluent_builders::UpdateConnection) operation.
     ///
-    /// See [`UpdateConnection`](crate::client::fluent_builders::UpdateConnection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateConnectionInput`](crate::input::UpdateConnectionInput) with field(s):
+    ///   - [`connection_id(Option<String>)`](crate::input::UpdateConnectionInput::connection_id): <p>The ID of the dedicated connection.</p>  <p>You can use <code>DescribeConnections</code> to retrieve the connection ID.</p>
+    ///   - [`connection_name(Option<String>)`](crate::input::UpdateConnectionInput::connection_name): <p>The name of the connection.</p>
+    ///   - [`encryption_mode(Option<String>)`](crate::input::UpdateConnectionInput::encryption_mode): <p>The connection MAC Security (MACsec) encryption mode.</p>  <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
+    /// - On success, responds with [`UpdateConnectionOutput`](crate::output::UpdateConnectionOutput) with field(s):
+    ///   - [`owner_account(Option<String>)`](crate::output::UpdateConnectionOutput::owner_account): <p>The ID of the Amazon Web Services account that owns the connection.</p>
+    ///   - [`connection_id(Option<String>)`](crate::output::UpdateConnectionOutput::connection_id): <p>The ID of the connection.</p>
+    ///   - [`connection_name(Option<String>)`](crate::output::UpdateConnectionOutput::connection_name): <p>The name of the connection.</p>
+    ///   - [`connection_state(Option<ConnectionState>)`](crate::output::UpdateConnectionOutput::connection_state): <p>The state of the connection. The following are the possible values:</p>  <ul>   <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>   <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>   <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>   <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>   <li> <p> <code>down</code>: The network link is down.</p> </li>   <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>   <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>   <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>   <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>  </ul>
+    ///   - [`region(Option<String>)`](crate::output::UpdateConnectionOutput::region): <p>The Amazon Web Services Region where the connection is located.</p>
+    ///   - [`location(Option<String>)`](crate::output::UpdateConnectionOutput::location): <p>The location of the connection.</p>
+    ///   - [`bandwidth(Option<String>)`](crate::output::UpdateConnectionOutput::bandwidth): <p>The bandwidth of the connection.</p>
+    ///   - [`vlan(i32)`](crate::output::UpdateConnectionOutput::vlan): <p>The ID of the VLAN.</p>
+    ///   - [`partner_name(Option<String>)`](crate::output::UpdateConnectionOutput::partner_name): <p>The name of the Direct Connect service provider associated with the connection.</p>
+    ///   - [`loa_issue_time(Option<DateTime>)`](crate::output::UpdateConnectionOutput::loa_issue_time): <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
+    ///   - [`lag_id(Option<String>)`](crate::output::UpdateConnectionOutput::lag_id): <p>The ID of the LAG.</p>
+    ///   - [`aws_device(Option<String>)`](crate::output::UpdateConnectionOutput::aws_device): <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+    ///   - [`jumbo_frame_capable(Option<bool>)`](crate::output::UpdateConnectionOutput::jumbo_frame_capable): <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    ///   - [`aws_device_v2(Option<String>)`](crate::output::UpdateConnectionOutput::aws_device_v2): <p>The Direct Connect endpoint that terminates the physical connection.</p>
+    ///   - [`aws_logical_device_id(Option<String>)`](crate::output::UpdateConnectionOutput::aws_logical_device_id): <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
+    ///   - [`has_logical_redundancy(Option<HasLogicalRedundancy>)`](crate::output::UpdateConnectionOutput::has_logical_redundancy): <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::UpdateConnectionOutput::tags): <p>The tags associated with the connection.</p>
+    ///   - [`provider_name(Option<String>)`](crate::output::UpdateConnectionOutput::provider_name): <p>The name of the service provider associated with the connection.</p>
+    ///   - [`mac_sec_capable(Option<bool>)`](crate::output::UpdateConnectionOutput::mac_sec_capable): <p>Indicates whether the connection supports MAC Security (MACsec).</p>
+    ///   - [`port_encryption_status(Option<String>)`](crate::output::UpdateConnectionOutput::port_encryption_status): <p>The MAC Security (MACsec) port link status of the connection.</p>  <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
+    ///   - [`encryption_mode(Option<String>)`](crate::output::UpdateConnectionOutput::encryption_mode): <p>The MAC Security (MACsec) connection encryption mode.</p>  <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
+    ///   - [`mac_sec_keys(Option<Vec<MacSecKey>>)`](crate::output::UpdateConnectionOutput::mac_sec_keys): <p>The MAC Security (MACsec) security keys associated with the connection.</p>
+    /// - On failure, responds with [`SdkError<UpdateConnectionError>`](crate::error::UpdateConnectionError)
     pub fn update_connection(&self) -> fluent_builders::UpdateConnection<C, M, R> {
         fluent_builders::UpdateConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDirectConnectGateway` operation.
+    /// Constructs a fluent builder for the [`UpdateDirectConnectGateway`](crate::client::fluent_builders::UpdateDirectConnectGateway) operation.
     ///
-    /// See [`UpdateDirectConnectGateway`](crate::client::fluent_builders::UpdateDirectConnectGateway) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateDirectConnectGatewayInput`](crate::input::UpdateDirectConnectGatewayInput) with field(s):
+    ///   - [`direct_connect_gateway_id(Option<String>)`](crate::input::UpdateDirectConnectGatewayInput::direct_connect_gateway_id): <p>The ID of the Direct Connect gateway to update.</p>
+    ///   - [`new_direct_connect_gateway_name(Option<String>)`](crate::input::UpdateDirectConnectGatewayInput::new_direct_connect_gateway_name): <p>The new name for the Direct Connect gateway.</p>
+    /// - On success, responds with [`UpdateDirectConnectGatewayOutput`](crate::output::UpdateDirectConnectGatewayOutput) with field(s):
+    ///   - [`direct_connect_gateway(Option<DirectConnectGateway>)`](crate::output::UpdateDirectConnectGatewayOutput::direct_connect_gateway): <p>Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateway or transit gateways.</p>
+    /// - On failure, responds with [`SdkError<UpdateDirectConnectGatewayError>`](crate::error::UpdateDirectConnectGatewayError)
     pub fn update_direct_connect_gateway(
         &self,
     ) -> fluent_builders::UpdateDirectConnectGateway<C, M, R> {
         fluent_builders::UpdateDirectConnectGateway::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDirectConnectGatewayAssociation` operation.
+    /// Constructs a fluent builder for the [`UpdateDirectConnectGatewayAssociation`](crate::client::fluent_builders::UpdateDirectConnectGatewayAssociation) operation.
     ///
-    /// See [`UpdateDirectConnectGatewayAssociation`](crate::client::fluent_builders::UpdateDirectConnectGatewayAssociation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateDirectConnectGatewayAssociationInput`](crate::input::UpdateDirectConnectGatewayAssociationInput) with field(s):
+    ///   - [`association_id(Option<String>)`](crate::input::UpdateDirectConnectGatewayAssociationInput::association_id): <p>The ID of the Direct Connect gateway association.</p>
+    ///   - [`add_allowed_prefixes_to_direct_connect_gateway(Option<Vec<RouteFilterPrefix>>)`](crate::input::UpdateDirectConnectGatewayAssociationInput::add_allowed_prefixes_to_direct_connect_gateway): <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
+    ///   - [`remove_allowed_prefixes_to_direct_connect_gateway(Option<Vec<RouteFilterPrefix>>)`](crate::input::UpdateDirectConnectGatewayAssociationInput::remove_allowed_prefixes_to_direct_connect_gateway): <p>The Amazon VPC prefixes to no longer advertise to the Direct Connect gateway.</p>
+    /// - On success, responds with [`UpdateDirectConnectGatewayAssociationOutput`](crate::output::UpdateDirectConnectGatewayAssociationOutput) with field(s):
+    ///   - [`direct_connect_gateway_association(Option<DirectConnectGatewayAssociation>)`](crate::output::UpdateDirectConnectGatewayAssociationOutput::direct_connect_gateway_association): <p>Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway.</p>
+    /// - On failure, responds with [`SdkError<UpdateDirectConnectGatewayAssociationError>`](crate::error::UpdateDirectConnectGatewayAssociationError)
     pub fn update_direct_connect_gateway_association(
         &self,
     ) -> fluent_builders::UpdateDirectConnectGatewayAssociation<C, M, R> {
         fluent_builders::UpdateDirectConnectGatewayAssociation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateLag` operation.
+    /// Constructs a fluent builder for the [`UpdateLag`](crate::client::fluent_builders::UpdateLag) operation.
     ///
-    /// See [`UpdateLag`](crate::client::fluent_builders::UpdateLag) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateLagInput`](crate::input::UpdateLagInput) with field(s):
+    ///   - [`lag_id(Option<String>)`](crate::input::UpdateLagInput::lag_id): <p>The ID of the LAG.</p>
+    ///   - [`lag_name(Option<String>)`](crate::input::UpdateLagInput::lag_name): <p>The name of the LAG.</p>
+    ///   - [`minimum_links(i32)`](crate::input::UpdateLagInput::minimum_links): <p>The minimum number of physical connections that must be operational for the LAG itself to be operational.</p>
+    ///   - [`encryption_mode(Option<String>)`](crate::input::UpdateLagInput::encryption_mode): <p>The LAG MAC Security (MACsec) encryption mode.</p>  <p>Amazon Web Services applies the value to all connections which are part of the LAG.</p>
+    /// - On success, responds with [`UpdateLagOutput`](crate::output::UpdateLagOutput) with field(s):
+    ///   - [`connections_bandwidth(Option<String>)`](crate::output::UpdateLagOutput::connections_bandwidth): <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
+    ///   - [`number_of_connections(i32)`](crate::output::UpdateLagOutput::number_of_connections): <p>The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.</p>
+    ///   - [`lag_id(Option<String>)`](crate::output::UpdateLagOutput::lag_id): <p>The ID of the LAG.</p>
+    ///   - [`owner_account(Option<String>)`](crate::output::UpdateLagOutput::owner_account): <p>The ID of the Amazon Web Services account that owns the LAG.</p>
+    ///   - [`lag_name(Option<String>)`](crate::output::UpdateLagOutput::lag_name): <p>The name of the LAG.</p>
+    ///   - [`lag_state(Option<LagState>)`](crate::output::UpdateLagOutput::lag_state): <p>The state of the LAG. The following are the possible values:</p>  <ul>   <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li>   <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li>   <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li>   <li> <p> <code>down</code>: The network link is down.</p> </li>   <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li>   <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li>   <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li>  </ul>
+    ///   - [`location(Option<String>)`](crate::output::UpdateLagOutput::location): <p>The location of the LAG.</p>
+    ///   - [`region(Option<String>)`](crate::output::UpdateLagOutput::region): <p>The Amazon Web Services Region where the connection is located.</p>
+    ///   - [`minimum_links(i32)`](crate::output::UpdateLagOutput::minimum_links): <p>The minimum number of physical dedicated connections that must be operational for the LAG itself to be operational.</p>
+    ///   - [`aws_device(Option<String>)`](crate::output::UpdateLagOutput::aws_device): <p>The Direct Connect endpoint that hosts the LAG.</p>
+    ///   - [`aws_device_v2(Option<String>)`](crate::output::UpdateLagOutput::aws_device_v2): <p>The Direct Connect endpoint that hosts the LAG.</p>
+    ///   - [`aws_logical_device_id(Option<String>)`](crate::output::UpdateLagOutput::aws_logical_device_id): <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
+    ///   - [`connections(Option<Vec<Connection>>)`](crate::output::UpdateLagOutput::connections): <p>The connections bundled by the LAG.</p>
+    ///   - [`allows_hosted_connections(bool)`](crate::output::UpdateLagOutput::allows_hosted_connections): <p>Indicates whether the LAG can host other connections.</p>
+    ///   - [`jumbo_frame_capable(Option<bool>)`](crate::output::UpdateLagOutput::jumbo_frame_capable): <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    ///   - [`has_logical_redundancy(Option<HasLogicalRedundancy>)`](crate::output::UpdateLagOutput::has_logical_redundancy): <p>Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::UpdateLagOutput::tags): <p>The tags associated with the LAG.</p>
+    ///   - [`provider_name(Option<String>)`](crate::output::UpdateLagOutput::provider_name): <p>The name of the service provider associated with the LAG.</p>
+    ///   - [`mac_sec_capable(Option<bool>)`](crate::output::UpdateLagOutput::mac_sec_capable): <p>Indicates whether the LAG supports MAC Security (MACsec).</p>
+    ///   - [`encryption_mode(Option<String>)`](crate::output::UpdateLagOutput::encryption_mode): <p>The LAG MAC Security (MACsec) encryption mode.</p>  <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
+    ///   - [`mac_sec_keys(Option<Vec<MacSecKey>>)`](crate::output::UpdateLagOutput::mac_sec_keys): <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
+    /// - On failure, responds with [`SdkError<UpdateLagError>`](crate::error::UpdateLagError)
     pub fn update_lag(&self) -> fluent_builders::UpdateLag<C, M, R> {
         fluent_builders::UpdateLag::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateVirtualInterfaceAttributes` operation.
+    /// Constructs a fluent builder for the [`UpdateVirtualInterfaceAttributes`](crate::client::fluent_builders::UpdateVirtualInterfaceAttributes) operation.
     ///
-    /// See [`UpdateVirtualInterfaceAttributes`](crate::client::fluent_builders::UpdateVirtualInterfaceAttributes) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateVirtualInterfaceAttributesInput`](crate::input::UpdateVirtualInterfaceAttributesInput) with field(s):
+    ///   - [`virtual_interface_id(Option<String>)`](crate::input::UpdateVirtualInterfaceAttributesInput::virtual_interface_id): <p>The ID of the virtual private interface.</p>
+    ///   - [`mtu(Option<i32>)`](crate::input::UpdateVirtualInterfaceAttributesInput::mtu): <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
+    ///   - [`enable_site_link(Option<bool>)`](crate::input::UpdateVirtualInterfaceAttributesInput::enable_site_link): <p>Indicates whether to enable or disable SiteLink.</p>
+    ///   - [`virtual_interface_name(Option<String>)`](crate::input::UpdateVirtualInterfaceAttributesInput::virtual_interface_name): <p>The name of the virtual private interface.</p>
+    /// - On success, responds with [`UpdateVirtualInterfaceAttributesOutput`](crate::output::UpdateVirtualInterfaceAttributesOutput) with field(s):
+    ///   - [`owner_account(Option<String>)`](crate::output::UpdateVirtualInterfaceAttributesOutput::owner_account): <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
+    ///   - [`virtual_interface_id(Option<String>)`](crate::output::UpdateVirtualInterfaceAttributesOutput::virtual_interface_id): <p>The ID of the virtual interface.</p>
+    ///   - [`location(Option<String>)`](crate::output::UpdateVirtualInterfaceAttributesOutput::location): <p>The location of the connection.</p>
+    ///   - [`connection_id(Option<String>)`](crate::output::UpdateVirtualInterfaceAttributesOutput::connection_id): <p>The ID of the connection.</p>
+    ///   - [`virtual_interface_type(Option<String>)`](crate::output::UpdateVirtualInterfaceAttributesOutput::virtual_interface_type): <p>The type of virtual interface. The possible values are <code>private</code> and <code>public</code>.</p>
+    ///   - [`virtual_interface_name(Option<String>)`](crate::output::UpdateVirtualInterfaceAttributesOutput::virtual_interface_name): <p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>
+    ///   - [`vlan(i32)`](crate::output::UpdateVirtualInterfaceAttributesOutput::vlan): <p>The ID of the VLAN.</p>
+    ///   - [`asn(i32)`](crate::output::UpdateVirtualInterfaceAttributesOutput::asn): <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>  <p>The valid values are 1-2147483647.</p>
+    ///   - [`amazon_side_asn(Option<i64>)`](crate::output::UpdateVirtualInterfaceAttributesOutput::amazon_side_asn): <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
+    ///   - [`auth_key(Option<String>)`](crate::output::UpdateVirtualInterfaceAttributesOutput::auth_key): <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
+    ///   - [`amazon_address(Option<String>)`](crate::output::UpdateVirtualInterfaceAttributesOutput::amazon_address): <p>The IP address assigned to the Amazon interface.</p>
+    ///   - [`customer_address(Option<String>)`](crate::output::UpdateVirtualInterfaceAttributesOutput::customer_address): <p>The IP address assigned to the customer interface.</p>
+    ///   - [`address_family(Option<AddressFamily>)`](crate::output::UpdateVirtualInterfaceAttributesOutput::address_family): <p>The address family for the BGP peer.</p>
+    ///   - [`virtual_interface_state(Option<VirtualInterfaceState>)`](crate::output::UpdateVirtualInterfaceAttributesOutput::virtual_interface_state): <p>The state of the virtual interface. The following are the possible values:</p>  <ul>   <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>   <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>   <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>   <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>   <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>   <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>   <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>   <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>   <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>  </ul>
+    ///   - [`customer_router_config(Option<String>)`](crate::output::UpdateVirtualInterfaceAttributesOutput::customer_router_config): <p>The customer router configuration.</p>
+    ///   - [`mtu(Option<i32>)`](crate::output::UpdateVirtualInterfaceAttributesOutput::mtu): <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
+    ///   - [`jumbo_frame_capable(Option<bool>)`](crate::output::UpdateVirtualInterfaceAttributesOutput::jumbo_frame_capable): <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+    ///   - [`virtual_gateway_id(Option<String>)`](crate::output::UpdateVirtualInterfaceAttributesOutput::virtual_gateway_id): <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
+    ///   - [`direct_connect_gateway_id(Option<String>)`](crate::output::UpdateVirtualInterfaceAttributesOutput::direct_connect_gateway_id): <p>The ID of the Direct Connect gateway.</p>
+    ///   - [`route_filter_prefixes(Option<Vec<RouteFilterPrefix>>)`](crate::output::UpdateVirtualInterfaceAttributesOutput::route_filter_prefixes): <p>The routes to be advertised to the Amazon Web Services network in this Region. Applies to public virtual interfaces.</p>
+    ///   - [`bgp_peers(Option<Vec<BgpPeer>>)`](crate::output::UpdateVirtualInterfaceAttributesOutput::bgp_peers): <p>The BGP peers configured on this virtual interface.</p>
+    ///   - [`region(Option<String>)`](crate::output::UpdateVirtualInterfaceAttributesOutput::region): <p>The Amazon Web Services Region where the virtual interface is located.</p>
+    ///   - [`aws_device_v2(Option<String>)`](crate::output::UpdateVirtualInterfaceAttributesOutput::aws_device_v2): <p>The Direct Connect endpoint that terminates the physical connection.</p>
+    ///   - [`aws_logical_device_id(Option<String>)`](crate::output::UpdateVirtualInterfaceAttributesOutput::aws_logical_device_id): <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::UpdateVirtualInterfaceAttributesOutput::tags): <p>The tags associated with the virtual interface.</p>
+    ///   - [`site_link_enabled(Option<bool>)`](crate::output::UpdateVirtualInterfaceAttributesOutput::site_link_enabled): <p>Indicates whether SiteLink is enabled.</p>
+    /// - On failure, responds with [`SdkError<UpdateVirtualInterfaceAttributesError>`](crate::error::UpdateVirtualInterfaceAttributesError)
     pub fn update_virtual_interface_attributes(
         &self,
     ) -> fluent_builders::UpdateVirtualInterfaceAttributes<C, M, R> {

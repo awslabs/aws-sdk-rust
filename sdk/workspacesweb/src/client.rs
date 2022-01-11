@@ -83,328 +83,536 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AssociateBrowserSettings` operation.
+    /// Constructs a fluent builder for the [`AssociateBrowserSettings`](crate::client::fluent_builders::AssociateBrowserSettings) operation.
     ///
-    /// See [`AssociateBrowserSettings`](crate::client::fluent_builders::AssociateBrowserSettings) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateBrowserSettingsInput`](crate::input::AssociateBrowserSettingsInput) with field(s):
+    ///   - [`portal_arn(Option<String>)`](crate::input::AssociateBrowserSettingsInput::portal_arn): <p>The ARN of the web portal.</p>
+    ///   - [`browser_settings_arn(Option<String>)`](crate::input::AssociateBrowserSettingsInput::browser_settings_arn): <p>The ARN of the browser settings.</p>
+    /// - On success, responds with [`AssociateBrowserSettingsOutput`](crate::output::AssociateBrowserSettingsOutput) with field(s):
+    ///   - [`portal_arn(Option<String>)`](crate::output::AssociateBrowserSettingsOutput::portal_arn): <p>The ARN of the web portal.</p>
+    ///   - [`browser_settings_arn(Option<String>)`](crate::output::AssociateBrowserSettingsOutput::browser_settings_arn): <p>The ARN of the browser settings.</p>
+    /// - On failure, responds with [`SdkError<AssociateBrowserSettingsError>`](crate::error::AssociateBrowserSettingsError)
     pub fn associate_browser_settings(&self) -> fluent_builders::AssociateBrowserSettings<C, M, R> {
         fluent_builders::AssociateBrowserSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateNetworkSettings` operation.
+    /// Constructs a fluent builder for the [`AssociateNetworkSettings`](crate::client::fluent_builders::AssociateNetworkSettings) operation.
     ///
-    /// See [`AssociateNetworkSettings`](crate::client::fluent_builders::AssociateNetworkSettings) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateNetworkSettingsInput`](crate::input::AssociateNetworkSettingsInput) with field(s):
+    ///   - [`portal_arn(Option<String>)`](crate::input::AssociateNetworkSettingsInput::portal_arn): <p>The ARN of the web portal.</p>
+    ///   - [`network_settings_arn(Option<String>)`](crate::input::AssociateNetworkSettingsInput::network_settings_arn): <p>The ARN of the network settings.</p>
+    /// - On success, responds with [`AssociateNetworkSettingsOutput`](crate::output::AssociateNetworkSettingsOutput) with field(s):
+    ///   - [`portal_arn(Option<String>)`](crate::output::AssociateNetworkSettingsOutput::portal_arn): <p>The ARN of the web portal.</p>
+    ///   - [`network_settings_arn(Option<String>)`](crate::output::AssociateNetworkSettingsOutput::network_settings_arn): <p>The ARN of the network settings.</p>
+    /// - On failure, responds with [`SdkError<AssociateNetworkSettingsError>`](crate::error::AssociateNetworkSettingsError)
     pub fn associate_network_settings(&self) -> fluent_builders::AssociateNetworkSettings<C, M, R> {
         fluent_builders::AssociateNetworkSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateTrustStore` operation.
+    /// Constructs a fluent builder for the [`AssociateTrustStore`](crate::client::fluent_builders::AssociateTrustStore) operation.
     ///
-    /// See [`AssociateTrustStore`](crate::client::fluent_builders::AssociateTrustStore) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateTrustStoreInput`](crate::input::AssociateTrustStoreInput) with field(s):
+    ///   - [`portal_arn(Option<String>)`](crate::input::AssociateTrustStoreInput::portal_arn): <p>The ARN of the web portal.</p>
+    ///   - [`trust_store_arn(Option<String>)`](crate::input::AssociateTrustStoreInput::trust_store_arn): <p>The ARN of the trust store.</p>
+    /// - On success, responds with [`AssociateTrustStoreOutput`](crate::output::AssociateTrustStoreOutput) with field(s):
+    ///   - [`portal_arn(Option<String>)`](crate::output::AssociateTrustStoreOutput::portal_arn): <p>The ARN of the web portal.</p>
+    ///   - [`trust_store_arn(Option<String>)`](crate::output::AssociateTrustStoreOutput::trust_store_arn): <p>The ARN of the trust store.</p>
+    /// - On failure, responds with [`SdkError<AssociateTrustStoreError>`](crate::error::AssociateTrustStoreError)
     pub fn associate_trust_store(&self) -> fluent_builders::AssociateTrustStore<C, M, R> {
         fluent_builders::AssociateTrustStore::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateUserSettings` operation.
+    /// Constructs a fluent builder for the [`AssociateUserSettings`](crate::client::fluent_builders::AssociateUserSettings) operation.
     ///
-    /// See [`AssociateUserSettings`](crate::client::fluent_builders::AssociateUserSettings) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateUserSettingsInput`](crate::input::AssociateUserSettingsInput) with field(s):
+    ///   - [`portal_arn(Option<String>)`](crate::input::AssociateUserSettingsInput::portal_arn): <p>The ARN of the web portal.</p>
+    ///   - [`user_settings_arn(Option<String>)`](crate::input::AssociateUserSettingsInput::user_settings_arn): <p>The ARN of the user settings.</p>
+    /// - On success, responds with [`AssociateUserSettingsOutput`](crate::output::AssociateUserSettingsOutput) with field(s):
+    ///   - [`portal_arn(Option<String>)`](crate::output::AssociateUserSettingsOutput::portal_arn): <p>The ARN of the web portal.</p>
+    ///   - [`user_settings_arn(Option<String>)`](crate::output::AssociateUserSettingsOutput::user_settings_arn): <p>The ARN of the user settings.</p>
+    /// - On failure, responds with [`SdkError<AssociateUserSettingsError>`](crate::error::AssociateUserSettingsError)
     pub fn associate_user_settings(&self) -> fluent_builders::AssociateUserSettings<C, M, R> {
         fluent_builders::AssociateUserSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateBrowserSettings` operation.
+    /// Constructs a fluent builder for the [`CreateBrowserSettings`](crate::client::fluent_builders::CreateBrowserSettings) operation.
     ///
-    /// See [`CreateBrowserSettings`](crate::client::fluent_builders::CreateBrowserSettings) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateBrowserSettingsInput`](crate::input::CreateBrowserSettingsInput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateBrowserSettingsInput::tags): <p>The tags to add to the browser settings resource. A tag is a key-value pair.</p>
+    ///   - [`customer_managed_key(Option<String>)`](crate::input::CreateBrowserSettingsInput::customer_managed_key): <p>The custom managed key of the browser settings.</p>
+    ///   - [`additional_encryption_context(Option<HashMap<String, String>>)`](crate::input::CreateBrowserSettingsInput::additional_encryption_context): <p>Additional encryption context of the browser settings.</p>
+    ///   - [`browser_policy(Option<String>)`](crate::input::CreateBrowserSettingsInput::browser_policy): <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateBrowserSettingsInput::client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request.</p>  <p>If you do not specify a client token, one is automatically generated by the AWS SDK. </p>
+    /// - On success, responds with [`CreateBrowserSettingsOutput`](crate::output::CreateBrowserSettingsOutput) with field(s):
+    ///   - [`browser_settings_arn(Option<String>)`](crate::output::CreateBrowserSettingsOutput::browser_settings_arn): <p>The ARN of the browser settings.</p>
+    /// - On failure, responds with [`SdkError<CreateBrowserSettingsError>`](crate::error::CreateBrowserSettingsError)
     pub fn create_browser_settings(&self) -> fluent_builders::CreateBrowserSettings<C, M, R> {
         fluent_builders::CreateBrowserSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateIdentityProvider` operation.
+    /// Constructs a fluent builder for the [`CreateIdentityProvider`](crate::client::fluent_builders::CreateIdentityProvider) operation.
     ///
-    /// See [`CreateIdentityProvider`](crate::client::fluent_builders::CreateIdentityProvider) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateIdentityProviderInput`](crate::input::CreateIdentityProviderInput) with field(s):
+    ///   - [`portal_arn(Option<String>)`](crate::input::CreateIdentityProviderInput::portal_arn): <p>The ARN of the web portal.</p>
+    ///   - [`identity_provider_name(Option<String>)`](crate::input::CreateIdentityProviderInput::identity_provider_name): <p>The identity provider name.</p>
+    ///   - [`identity_provider_type(Option<IdentityProviderType>)`](crate::input::CreateIdentityProviderInput::identity_provider_type): <p>The identity provider type.</p>
+    ///   - [`identity_provider_details(Option<HashMap<String, String>>)`](crate::input::CreateIdentityProviderInput::identity_provider_details): <p>The identity provider details. The following list describes the provider detail keys for each identity provider type. </p>  <ul>   <li> <p>For Google and Login with Amazon:</p>    <ul>     <li> <p> <code>client_id</code> </p> </li>     <li> <p> <code>client_secret</code> </p> </li>     <li> <p> <code>authorize_scopes</code> </p> </li>    </ul> </li>   <li> <p>For Facebook:</p>    <ul>     <li> <p> <code>client_id</code> </p> </li>     <li> <p> <code>client_secret</code> </p> </li>     <li> <p> <code>authorize_scopes</code> </p> </li>     <li> <p> <code>api_version</code> </p> </li>    </ul> </li>   <li> <p>For Sign in with Apple:</p>    <ul>     <li> <p> <code>client_id</code> </p> </li>     <li> <p> <code>team_id</code> </p> </li>     <li> <p> <code>key_id</code> </p> </li>     <li> <p> <code>private_key</code> </p> </li>     <li> <p> <code>authorize_scopes</code> </p> </li>    </ul> </li>   <li> <p>For OIDC providers:</p>    <ul>     <li> <p> <code>client_id</code> </p> </li>     <li> <p> <code>client_secret</code> </p> </li>     <li> <p> <code>attributes_request_method</code> </p> </li>     <li> <p> <code>oidc_issuer</code> </p> </li>     <li> <p> <code>authorize_scopes</code> </p> </li>     <li> <p> <code>authorize_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>     <li> <p> <code>token_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>     <li> <p> <code>attributes_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>     <li> <p> <code>jwks_uri</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code> key</i> </p> </li>    </ul> </li>   <li> <p>For SAML providers:</p>    <ul>     <li> <p> <code>MetadataFile</code> OR <code>MetadataURL</code> </p> </li>     <li> <p> <code>IDPSignout</code> <i>optional</i> </p> </li>    </ul> </li>  </ul>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateIdentityProviderInput::client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request.</p>  <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
+    /// - On success, responds with [`CreateIdentityProviderOutput`](crate::output::CreateIdentityProviderOutput) with field(s):
+    ///   - [`identity_provider_arn(Option<String>)`](crate::output::CreateIdentityProviderOutput::identity_provider_arn): <p>The ARN of the identity provider.</p>
+    /// - On failure, responds with [`SdkError<CreateIdentityProviderError>`](crate::error::CreateIdentityProviderError)
     pub fn create_identity_provider(&self) -> fluent_builders::CreateIdentityProvider<C, M, R> {
         fluent_builders::CreateIdentityProvider::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateNetworkSettings` operation.
+    /// Constructs a fluent builder for the [`CreateNetworkSettings`](crate::client::fluent_builders::CreateNetworkSettings) operation.
     ///
-    /// See [`CreateNetworkSettings`](crate::client::fluent_builders::CreateNetworkSettings) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateNetworkSettingsInput`](crate::input::CreateNetworkSettingsInput) with field(s):
+    ///   - [`vpc_id(Option<String>)`](crate::input::CreateNetworkSettingsInput::vpc_id): <p>The VPC that streaming instances will connect to.</p>
+    ///   - [`subnet_ids(Option<Vec<String>>)`](crate::input::CreateNetworkSettingsInput::subnet_ids): <p>The subnets in which network interfaces are created to connect streaming instances to your VPC. At least two of these subnets must be in different availability zones.</p>
+    ///   - [`security_group_ids(Option<Vec<String>>)`](crate::input::CreateNetworkSettingsInput::security_group_ids): <p>One or more security groups used to control access from streaming instances to your VPC.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateNetworkSettingsInput::tags): <p>The tags to add to the network settings resource. A tag is a key-value pair.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateNetworkSettingsInput::client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>  <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
+    /// - On success, responds with [`CreateNetworkSettingsOutput`](crate::output::CreateNetworkSettingsOutput) with field(s):
+    ///   - [`network_settings_arn(Option<String>)`](crate::output::CreateNetworkSettingsOutput::network_settings_arn): <p>The ARN of the network settings.</p>
+    /// - On failure, responds with [`SdkError<CreateNetworkSettingsError>`](crate::error::CreateNetworkSettingsError)
     pub fn create_network_settings(&self) -> fluent_builders::CreateNetworkSettings<C, M, R> {
         fluent_builders::CreateNetworkSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreatePortal` operation.
+    /// Constructs a fluent builder for the [`CreatePortal`](crate::client::fluent_builders::CreatePortal) operation.
     ///
-    /// See [`CreatePortal`](crate::client::fluent_builders::CreatePortal) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreatePortalInput`](crate::input::CreatePortalInput) with field(s):
+    ///   - [`display_name(Option<String>)`](crate::input::CreatePortalInput::display_name): <p>The name of the web portal. This is not visible to users who log into the web portal.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreatePortalInput::tags): <p>The tags to add to the web portal. A tag is a key-value pair.</p>
+    ///   - [`customer_managed_key(Option<String>)`](crate::input::CreatePortalInput::customer_managed_key): <p>The customer managed key of the web portal.</p>
+    ///   - [`additional_encryption_context(Option<HashMap<String, String>>)`](crate::input::CreatePortalInput::additional_encryption_context): <p>The additional encryption context of the portal.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreatePortalInput::client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>  <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
+    /// - On success, responds with [`CreatePortalOutput`](crate::output::CreatePortalOutput) with field(s):
+    ///   - [`portal_arn(Option<String>)`](crate::output::CreatePortalOutput::portal_arn): <p>The ARN of the web portal.</p>
+    ///   - [`portal_endpoint(Option<String>)`](crate::output::CreatePortalOutput::portal_endpoint): <p>The endpoint URL of the web portal that users access in order to start streaming sessions.</p>
+    /// - On failure, responds with [`SdkError<CreatePortalError>`](crate::error::CreatePortalError)
     pub fn create_portal(&self) -> fluent_builders::CreatePortal<C, M, R> {
         fluent_builders::CreatePortal::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateTrustStore` operation.
+    /// Constructs a fluent builder for the [`CreateTrustStore`](crate::client::fluent_builders::CreateTrustStore) operation.
     ///
-    /// See [`CreateTrustStore`](crate::client::fluent_builders::CreateTrustStore) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateTrustStoreInput`](crate::input::CreateTrustStoreInput) with field(s):
+    ///   - [`certificate_list(Option<Vec<Blob>>)`](crate::input::CreateTrustStoreInput::certificate_list): <p>A list of CA certificates to be added to the trust store.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateTrustStoreInput::tags): <p>The tags to add to the trust store. A tag is a key-value pair.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateTrustStoreInput::client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>  <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
+    /// - On success, responds with [`CreateTrustStoreOutput`](crate::output::CreateTrustStoreOutput) with field(s):
+    ///   - [`trust_store_arn(Option<String>)`](crate::output::CreateTrustStoreOutput::trust_store_arn): <p>The ARN of the trust store.</p>
+    /// - On failure, responds with [`SdkError<CreateTrustStoreError>`](crate::error::CreateTrustStoreError)
     pub fn create_trust_store(&self) -> fluent_builders::CreateTrustStore<C, M, R> {
         fluent_builders::CreateTrustStore::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateUserSettings` operation.
+    /// Constructs a fluent builder for the [`CreateUserSettings`](crate::client::fluent_builders::CreateUserSettings) operation.
     ///
-    /// See [`CreateUserSettings`](crate::client::fluent_builders::CreateUserSettings) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateUserSettingsInput`](crate::input::CreateUserSettingsInput) with field(s):
+    ///   - [`copy_allowed(Option<EnabledType>)`](crate::input::CreateUserSettingsInput::copy_allowed): <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
+    ///   - [`paste_allowed(Option<EnabledType>)`](crate::input::CreateUserSettingsInput::paste_allowed): <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
+    ///   - [`download_allowed(Option<EnabledType>)`](crate::input::CreateUserSettingsInput::download_allowed): <p>Specifies whether the user can download files from the streaming session to the local device.</p>
+    ///   - [`upload_allowed(Option<EnabledType>)`](crate::input::CreateUserSettingsInput::upload_allowed): <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
+    ///   - [`print_allowed(Option<EnabledType>)`](crate::input::CreateUserSettingsInput::print_allowed): <p>Specifies whether the user can print to the local device.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateUserSettingsInput::tags): <p>The tags to add to the user settings resource. A tag is a key-value pair.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateUserSettingsInput::client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>  <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
+    /// - On success, responds with [`CreateUserSettingsOutput`](crate::output::CreateUserSettingsOutput) with field(s):
+    ///   - [`user_settings_arn(Option<String>)`](crate::output::CreateUserSettingsOutput::user_settings_arn): <p>The ARN of the user settings.</p>
+    /// - On failure, responds with [`SdkError<CreateUserSettingsError>`](crate::error::CreateUserSettingsError)
     pub fn create_user_settings(&self) -> fluent_builders::CreateUserSettings<C, M, R> {
         fluent_builders::CreateUserSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteBrowserSettings` operation.
+    /// Constructs a fluent builder for the [`DeleteBrowserSettings`](crate::client::fluent_builders::DeleteBrowserSettings) operation.
     ///
-    /// See [`DeleteBrowserSettings`](crate::client::fluent_builders::DeleteBrowserSettings) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteBrowserSettingsInput`](crate::input::DeleteBrowserSettingsInput) with field(s):
+    ///   - [`browser_settings_arn(Option<String>)`](crate::input::DeleteBrowserSettingsInput::browser_settings_arn): <p>The ARN of the browser settings.</p>
+    /// - On success, responds with [`DeleteBrowserSettingsOutput`](crate::output::DeleteBrowserSettingsOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteBrowserSettingsError>`](crate::error::DeleteBrowserSettingsError)
     pub fn delete_browser_settings(&self) -> fluent_builders::DeleteBrowserSettings<C, M, R> {
         fluent_builders::DeleteBrowserSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteIdentityProvider` operation.
+    /// Constructs a fluent builder for the [`DeleteIdentityProvider`](crate::client::fluent_builders::DeleteIdentityProvider) operation.
     ///
-    /// See [`DeleteIdentityProvider`](crate::client::fluent_builders::DeleteIdentityProvider) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteIdentityProviderInput`](crate::input::DeleteIdentityProviderInput) with field(s):
+    ///   - [`identity_provider_arn(Option<String>)`](crate::input::DeleteIdentityProviderInput::identity_provider_arn): <p>The ARN of the identity provider.</p>
+    /// - On success, responds with [`DeleteIdentityProviderOutput`](crate::output::DeleteIdentityProviderOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteIdentityProviderError>`](crate::error::DeleteIdentityProviderError)
     pub fn delete_identity_provider(&self) -> fluent_builders::DeleteIdentityProvider<C, M, R> {
         fluent_builders::DeleteIdentityProvider::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteNetworkSettings` operation.
+    /// Constructs a fluent builder for the [`DeleteNetworkSettings`](crate::client::fluent_builders::DeleteNetworkSettings) operation.
     ///
-    /// See [`DeleteNetworkSettings`](crate::client::fluent_builders::DeleteNetworkSettings) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteNetworkSettingsInput`](crate::input::DeleteNetworkSettingsInput) with field(s):
+    ///   - [`network_settings_arn(Option<String>)`](crate::input::DeleteNetworkSettingsInput::network_settings_arn): <p>The ARN of the network settings.</p>
+    /// - On success, responds with [`DeleteNetworkSettingsOutput`](crate::output::DeleteNetworkSettingsOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteNetworkSettingsError>`](crate::error::DeleteNetworkSettingsError)
     pub fn delete_network_settings(&self) -> fluent_builders::DeleteNetworkSettings<C, M, R> {
         fluent_builders::DeleteNetworkSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeletePortal` operation.
+    /// Constructs a fluent builder for the [`DeletePortal`](crate::client::fluent_builders::DeletePortal) operation.
     ///
-    /// See [`DeletePortal`](crate::client::fluent_builders::DeletePortal) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeletePortalInput`](crate::input::DeletePortalInput) with field(s):
+    ///   - [`portal_arn(Option<String>)`](crate::input::DeletePortalInput::portal_arn): <p>The ARN of the web portal.</p>
+    /// - On success, responds with [`DeletePortalOutput`](crate::output::DeletePortalOutput)
+
+    /// - On failure, responds with [`SdkError<DeletePortalError>`](crate::error::DeletePortalError)
     pub fn delete_portal(&self) -> fluent_builders::DeletePortal<C, M, R> {
         fluent_builders::DeletePortal::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteTrustStore` operation.
+    /// Constructs a fluent builder for the [`DeleteTrustStore`](crate::client::fluent_builders::DeleteTrustStore) operation.
     ///
-    /// See [`DeleteTrustStore`](crate::client::fluent_builders::DeleteTrustStore) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteTrustStoreInput`](crate::input::DeleteTrustStoreInput) with field(s):
+    ///   - [`trust_store_arn(Option<String>)`](crate::input::DeleteTrustStoreInput::trust_store_arn): <p>The ARN of the trust store.</p>
+    /// - On success, responds with [`DeleteTrustStoreOutput`](crate::output::DeleteTrustStoreOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteTrustStoreError>`](crate::error::DeleteTrustStoreError)
     pub fn delete_trust_store(&self) -> fluent_builders::DeleteTrustStore<C, M, R> {
         fluent_builders::DeleteTrustStore::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteUserSettings` operation.
+    /// Constructs a fluent builder for the [`DeleteUserSettings`](crate::client::fluent_builders::DeleteUserSettings) operation.
     ///
-    /// See [`DeleteUserSettings`](crate::client::fluent_builders::DeleteUserSettings) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteUserSettingsInput`](crate::input::DeleteUserSettingsInput) with field(s):
+    ///   - [`user_settings_arn(Option<String>)`](crate::input::DeleteUserSettingsInput::user_settings_arn): <p>The ARN of the user settings.</p>
+    /// - On success, responds with [`DeleteUserSettingsOutput`](crate::output::DeleteUserSettingsOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteUserSettingsError>`](crate::error::DeleteUserSettingsError)
     pub fn delete_user_settings(&self) -> fluent_builders::DeleteUserSettings<C, M, R> {
         fluent_builders::DeleteUserSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateBrowserSettings` operation.
+    /// Constructs a fluent builder for the [`DisassociateBrowserSettings`](crate::client::fluent_builders::DisassociateBrowserSettings) operation.
     ///
-    /// See [`DisassociateBrowserSettings`](crate::client::fluent_builders::DisassociateBrowserSettings) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateBrowserSettingsInput`](crate::input::DisassociateBrowserSettingsInput) with field(s):
+    ///   - [`portal_arn(Option<String>)`](crate::input::DisassociateBrowserSettingsInput::portal_arn): <p>The ARN of the web portal.</p>
+    /// - On success, responds with [`DisassociateBrowserSettingsOutput`](crate::output::DisassociateBrowserSettingsOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateBrowserSettingsError>`](crate::error::DisassociateBrowserSettingsError)
     pub fn disassociate_browser_settings(
         &self,
     ) -> fluent_builders::DisassociateBrowserSettings<C, M, R> {
         fluent_builders::DisassociateBrowserSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateNetworkSettings` operation.
+    /// Constructs a fluent builder for the [`DisassociateNetworkSettings`](crate::client::fluent_builders::DisassociateNetworkSettings) operation.
     ///
-    /// See [`DisassociateNetworkSettings`](crate::client::fluent_builders::DisassociateNetworkSettings) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateNetworkSettingsInput`](crate::input::DisassociateNetworkSettingsInput) with field(s):
+    ///   - [`portal_arn(Option<String>)`](crate::input::DisassociateNetworkSettingsInput::portal_arn): <p>The ARN of the web portal.</p>
+    /// - On success, responds with [`DisassociateNetworkSettingsOutput`](crate::output::DisassociateNetworkSettingsOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateNetworkSettingsError>`](crate::error::DisassociateNetworkSettingsError)
     pub fn disassociate_network_settings(
         &self,
     ) -> fluent_builders::DisassociateNetworkSettings<C, M, R> {
         fluent_builders::DisassociateNetworkSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateTrustStore` operation.
+    /// Constructs a fluent builder for the [`DisassociateTrustStore`](crate::client::fluent_builders::DisassociateTrustStore) operation.
     ///
-    /// See [`DisassociateTrustStore`](crate::client::fluent_builders::DisassociateTrustStore) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateTrustStoreInput`](crate::input::DisassociateTrustStoreInput) with field(s):
+    ///   - [`portal_arn(Option<String>)`](crate::input::DisassociateTrustStoreInput::portal_arn): <p>The ARN of the web portal.</p>
+    /// - On success, responds with [`DisassociateTrustStoreOutput`](crate::output::DisassociateTrustStoreOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateTrustStoreError>`](crate::error::DisassociateTrustStoreError)
     pub fn disassociate_trust_store(&self) -> fluent_builders::DisassociateTrustStore<C, M, R> {
         fluent_builders::DisassociateTrustStore::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateUserSettings` operation.
+    /// Constructs a fluent builder for the [`DisassociateUserSettings`](crate::client::fluent_builders::DisassociateUserSettings) operation.
     ///
-    /// See [`DisassociateUserSettings`](crate::client::fluent_builders::DisassociateUserSettings) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateUserSettingsInput`](crate::input::DisassociateUserSettingsInput) with field(s):
+    ///   - [`portal_arn(Option<String>)`](crate::input::DisassociateUserSettingsInput::portal_arn): <p>The ARN of the web portal.</p>
+    /// - On success, responds with [`DisassociateUserSettingsOutput`](crate::output::DisassociateUserSettingsOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateUserSettingsError>`](crate::error::DisassociateUserSettingsError)
     pub fn disassociate_user_settings(&self) -> fluent_builders::DisassociateUserSettings<C, M, R> {
         fluent_builders::DisassociateUserSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBrowserSettings` operation.
+    /// Constructs a fluent builder for the [`GetBrowserSettings`](crate::client::fluent_builders::GetBrowserSettings) operation.
     ///
-    /// See [`GetBrowserSettings`](crate::client::fluent_builders::GetBrowserSettings) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetBrowserSettingsInput`](crate::input::GetBrowserSettingsInput) with field(s):
+    ///   - [`browser_settings_arn(Option<String>)`](crate::input::GetBrowserSettingsInput::browser_settings_arn): <p>The ARN of the browser settings.</p>
+    /// - On success, responds with [`GetBrowserSettingsOutput`](crate::output::GetBrowserSettingsOutput) with field(s):
+    ///   - [`browser_settings(Option<BrowserSettings>)`](crate::output::GetBrowserSettingsOutput::browser_settings): <p>The browser settings.</p>
+    /// - On failure, responds with [`SdkError<GetBrowserSettingsError>`](crate::error::GetBrowserSettingsError)
     pub fn get_browser_settings(&self) -> fluent_builders::GetBrowserSettings<C, M, R> {
         fluent_builders::GetBrowserSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetIdentityProvider` operation.
+    /// Constructs a fluent builder for the [`GetIdentityProvider`](crate::client::fluent_builders::GetIdentityProvider) operation.
     ///
-    /// See [`GetIdentityProvider`](crate::client::fluent_builders::GetIdentityProvider) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetIdentityProviderInput`](crate::input::GetIdentityProviderInput) with field(s):
+    ///   - [`identity_provider_arn(Option<String>)`](crate::input::GetIdentityProviderInput::identity_provider_arn): <p>The ARN of the identity provider.</p>
+    /// - On success, responds with [`GetIdentityProviderOutput`](crate::output::GetIdentityProviderOutput) with field(s):
+    ///   - [`identity_provider(Option<IdentityProvider>)`](crate::output::GetIdentityProviderOutput::identity_provider): <p>The identity provider.</p>
+    /// - On failure, responds with [`SdkError<GetIdentityProviderError>`](crate::error::GetIdentityProviderError)
     pub fn get_identity_provider(&self) -> fluent_builders::GetIdentityProvider<C, M, R> {
         fluent_builders::GetIdentityProvider::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetNetworkSettings` operation.
+    /// Constructs a fluent builder for the [`GetNetworkSettings`](crate::client::fluent_builders::GetNetworkSettings) operation.
     ///
-    /// See [`GetNetworkSettings`](crate::client::fluent_builders::GetNetworkSettings) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetNetworkSettingsInput`](crate::input::GetNetworkSettingsInput) with field(s):
+    ///   - [`network_settings_arn(Option<String>)`](crate::input::GetNetworkSettingsInput::network_settings_arn): <p>The ARN of the network settings.</p>
+    /// - On success, responds with [`GetNetworkSettingsOutput`](crate::output::GetNetworkSettingsOutput) with field(s):
+    ///   - [`network_settings(Option<NetworkSettings>)`](crate::output::GetNetworkSettingsOutput::network_settings): <p>The network settings.</p>
+    /// - On failure, responds with [`SdkError<GetNetworkSettingsError>`](crate::error::GetNetworkSettingsError)
     pub fn get_network_settings(&self) -> fluent_builders::GetNetworkSettings<C, M, R> {
         fluent_builders::GetNetworkSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetPortal` operation.
+    /// Constructs a fluent builder for the [`GetPortal`](crate::client::fluent_builders::GetPortal) operation.
     ///
-    /// See [`GetPortal`](crate::client::fluent_builders::GetPortal) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetPortalInput`](crate::input::GetPortalInput) with field(s):
+    ///   - [`portal_arn(Option<String>)`](crate::input::GetPortalInput::portal_arn): <p>The ARN of the web portal.</p>
+    /// - On success, responds with [`GetPortalOutput`](crate::output::GetPortalOutput) with field(s):
+    ///   - [`portal(Option<Portal>)`](crate::output::GetPortalOutput::portal): <p>The web portal.</p>
+    /// - On failure, responds with [`SdkError<GetPortalError>`](crate::error::GetPortalError)
     pub fn get_portal(&self) -> fluent_builders::GetPortal<C, M, R> {
         fluent_builders::GetPortal::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetPortalServiceProviderMetadata` operation.
+    /// Constructs a fluent builder for the [`GetPortalServiceProviderMetadata`](crate::client::fluent_builders::GetPortalServiceProviderMetadata) operation.
     ///
-    /// See [`GetPortalServiceProviderMetadata`](crate::client::fluent_builders::GetPortalServiceProviderMetadata) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetPortalServiceProviderMetadataInput`](crate::input::GetPortalServiceProviderMetadataInput) with field(s):
+    ///   - [`portal_arn(Option<String>)`](crate::input::GetPortalServiceProviderMetadataInput::portal_arn): <p>The ARN of the web portal.</p>
+    /// - On success, responds with [`GetPortalServiceProviderMetadataOutput`](crate::output::GetPortalServiceProviderMetadataOutput) with field(s):
+    ///   - [`portal_arn(Option<String>)`](crate::output::GetPortalServiceProviderMetadataOutput::portal_arn): <p>The ARN of the web portal.</p>
+    ///   - [`service_provider_saml_metadata(Option<String>)`](crate::output::GetPortalServiceProviderMetadataOutput::service_provider_saml_metadata): <p>The service provider SAML metadata.</p>
+    /// - On failure, responds with [`SdkError<GetPortalServiceProviderMetadataError>`](crate::error::GetPortalServiceProviderMetadataError)
     pub fn get_portal_service_provider_metadata(
         &self,
     ) -> fluent_builders::GetPortalServiceProviderMetadata<C, M, R> {
         fluent_builders::GetPortalServiceProviderMetadata::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetTrustStore` operation.
+    /// Constructs a fluent builder for the [`GetTrustStore`](crate::client::fluent_builders::GetTrustStore) operation.
     ///
-    /// See [`GetTrustStore`](crate::client::fluent_builders::GetTrustStore) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetTrustStoreInput`](crate::input::GetTrustStoreInput) with field(s):
+    ///   - [`trust_store_arn(Option<String>)`](crate::input::GetTrustStoreInput::trust_store_arn): <p>The ARN of the trust store.</p>
+    /// - On success, responds with [`GetTrustStoreOutput`](crate::output::GetTrustStoreOutput) with field(s):
+    ///   - [`trust_store(Option<TrustStore>)`](crate::output::GetTrustStoreOutput::trust_store): <p>The trust store.</p>
+    /// - On failure, responds with [`SdkError<GetTrustStoreError>`](crate::error::GetTrustStoreError)
     pub fn get_trust_store(&self) -> fluent_builders::GetTrustStore<C, M, R> {
         fluent_builders::GetTrustStore::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetTrustStoreCertificate` operation.
+    /// Constructs a fluent builder for the [`GetTrustStoreCertificate`](crate::client::fluent_builders::GetTrustStoreCertificate) operation.
     ///
-    /// See [`GetTrustStoreCertificate`](crate::client::fluent_builders::GetTrustStoreCertificate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetTrustStoreCertificateInput`](crate::input::GetTrustStoreCertificateInput) with field(s):
+    ///   - [`trust_store_arn(Option<String>)`](crate::input::GetTrustStoreCertificateInput::trust_store_arn): <p>The ARN of the trust store certificate.</p>
+    ///   - [`thumbprint(Option<String>)`](crate::input::GetTrustStoreCertificateInput::thumbprint): <p>The thumbprint of the trust store certificate.</p>
+    /// - On success, responds with [`GetTrustStoreCertificateOutput`](crate::output::GetTrustStoreCertificateOutput) with field(s):
+    ///   - [`trust_store_arn(Option<String>)`](crate::output::GetTrustStoreCertificateOutput::trust_store_arn): <p>The ARN of the trust store certificate.</p>
+    ///   - [`certificate(Option<Certificate>)`](crate::output::GetTrustStoreCertificateOutput::certificate): <p>The certificate of the trust store certificate.</p>
+    /// - On failure, responds with [`SdkError<GetTrustStoreCertificateError>`](crate::error::GetTrustStoreCertificateError)
     pub fn get_trust_store_certificate(
         &self,
     ) -> fluent_builders::GetTrustStoreCertificate<C, M, R> {
         fluent_builders::GetTrustStoreCertificate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetUserSettings` operation.
+    /// Constructs a fluent builder for the [`GetUserSettings`](crate::client::fluent_builders::GetUserSettings) operation.
     ///
-    /// See [`GetUserSettings`](crate::client::fluent_builders::GetUserSettings) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetUserSettingsInput`](crate::input::GetUserSettingsInput) with field(s):
+    ///   - [`user_settings_arn(Option<String>)`](crate::input::GetUserSettingsInput::user_settings_arn): <p>The ARN of the user settings.</p>
+    /// - On success, responds with [`GetUserSettingsOutput`](crate::output::GetUserSettingsOutput) with field(s):
+    ///   - [`user_settings(Option<UserSettings>)`](crate::output::GetUserSettingsOutput::user_settings): <p>The user settings.</p>
+    /// - On failure, responds with [`SdkError<GetUserSettingsError>`](crate::error::GetUserSettingsError)
     pub fn get_user_settings(&self) -> fluent_builders::GetUserSettings<C, M, R> {
         fluent_builders::GetUserSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListBrowserSettings` operation.
-    ///
-    /// See [`ListBrowserSettings`](crate::client::fluent_builders::ListBrowserSettings) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListBrowserSettings`](crate::client::fluent_builders::ListBrowserSettings) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBrowserSettings::into_paginator).
+    ///
+    /// - Takes [`ListBrowserSettingsInput`](crate::input::ListBrowserSettingsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListBrowserSettingsInput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListBrowserSettingsInput::max_results): <p>The maximum number of results to be included in the next page.</p>
+    /// - On success, responds with [`ListBrowserSettingsOutput`](crate::output::ListBrowserSettingsOutput) with field(s):
+    ///   - [`browser_settings(Option<Vec<BrowserSettingsSummary>>)`](crate::output::ListBrowserSettingsOutput::browser_settings): <p>The browser settings.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListBrowserSettingsOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    /// - On failure, responds with [`SdkError<ListBrowserSettingsError>`](crate::error::ListBrowserSettingsError)
     pub fn list_browser_settings(&self) -> fluent_builders::ListBrowserSettings<C, M, R> {
         fluent_builders::ListBrowserSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListIdentityProviders` operation.
-    ///
-    /// See [`ListIdentityProviders`](crate::client::fluent_builders::ListIdentityProviders) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListIdentityProviders`](crate::client::fluent_builders::ListIdentityProviders) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListIdentityProviders::into_paginator).
+    ///
+    /// - Takes [`ListIdentityProvidersInput`](crate::input::ListIdentityProvidersInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListIdentityProvidersInput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListIdentityProvidersInput::max_results): <p>The maximum number of results to be included in the next page.</p>
+    ///   - [`portal_arn(Option<String>)`](crate::input::ListIdentityProvidersInput::portal_arn): <p>The ARN of the web portal.</p>
+    /// - On success, responds with [`ListIdentityProvidersOutput`](crate::output::ListIdentityProvidersOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListIdentityProvidersOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    ///   - [`identity_providers(Option<Vec<IdentityProviderSummary>>)`](crate::output::ListIdentityProvidersOutput::identity_providers): <p>The identity providers.</p>
+    /// - On failure, responds with [`SdkError<ListIdentityProvidersError>`](crate::error::ListIdentityProvidersError)
     pub fn list_identity_providers(&self) -> fluent_builders::ListIdentityProviders<C, M, R> {
         fluent_builders::ListIdentityProviders::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListNetworkSettings` operation.
-    ///
-    /// See [`ListNetworkSettings`](crate::client::fluent_builders::ListNetworkSettings) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListNetworkSettings`](crate::client::fluent_builders::ListNetworkSettings) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListNetworkSettings::into_paginator).
+    ///
+    /// - Takes [`ListNetworkSettingsInput`](crate::input::ListNetworkSettingsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListNetworkSettingsInput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListNetworkSettingsInput::max_results): <p>The maximum number of results to be included in the next page.</p>
+    /// - On success, responds with [`ListNetworkSettingsOutput`](crate::output::ListNetworkSettingsOutput) with field(s):
+    ///   - [`network_settings(Option<Vec<NetworkSettingsSummary>>)`](crate::output::ListNetworkSettingsOutput::network_settings): <p>The network settings.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListNetworkSettingsOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    /// - On failure, responds with [`SdkError<ListNetworkSettingsError>`](crate::error::ListNetworkSettingsError)
     pub fn list_network_settings(&self) -> fluent_builders::ListNetworkSettings<C, M, R> {
         fluent_builders::ListNetworkSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPortals` operation.
-    ///
-    /// See [`ListPortals`](crate::client::fluent_builders::ListPortals) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListPortals`](crate::client::fluent_builders::ListPortals) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPortals::into_paginator).
+    ///
+    /// - Takes [`ListPortalsInput`](crate::input::ListPortalsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListPortalsInput::next_token): <p>The pagination token used to retrieve the next page of results for this operation. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListPortalsInput::max_results): <p>The maximum number of results to be included in the next page.</p>
+    /// - On success, responds with [`ListPortalsOutput`](crate::output::ListPortalsOutput) with field(s):
+    ///   - [`portals(Option<Vec<PortalSummary>>)`](crate::output::ListPortalsOutput::portals): <p>The portals in the list.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPortalsOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation. </p>
+    /// - On failure, responds with [`SdkError<ListPortalsError>`](crate::error::ListPortalsError)
     pub fn list_portals(&self) -> fluent_builders::ListPortals<C, M, R> {
         fluent_builders::ListPortals::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The ARN of the resource.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags of the resource.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTrustStoreCertificates` operation.
-    ///
-    /// See [`ListTrustStoreCertificates`](crate::client::fluent_builders::ListTrustStoreCertificates) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListTrustStoreCertificates`](crate::client::fluent_builders::ListTrustStoreCertificates) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTrustStoreCertificates::into_paginator).
+    ///
+    /// - Takes [`ListTrustStoreCertificatesInput`](crate::input::ListTrustStoreCertificatesInput) with field(s):
+    ///   - [`trust_store_arn(Option<String>)`](crate::input::ListTrustStoreCertificatesInput::trust_store_arn): <p>The ARN of the trust store</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListTrustStoreCertificatesInput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListTrustStoreCertificatesInput::max_results): <p>The maximum number of results to be included in the next page.</p>
+    /// - On success, responds with [`ListTrustStoreCertificatesOutput`](crate::output::ListTrustStoreCertificatesOutput) with field(s):
+    ///   - [`certificate_list(Option<Vec<CertificateSummary>>)`](crate::output::ListTrustStoreCertificatesOutput::certificate_list): <p>The certificate list.</p>
+    ///   - [`trust_store_arn(Option<String>)`](crate::output::ListTrustStoreCertificatesOutput::trust_store_arn): <p>The ARN of the trust store.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTrustStoreCertificatesOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.&gt;</p>
+    /// - On failure, responds with [`SdkError<ListTrustStoreCertificatesError>`](crate::error::ListTrustStoreCertificatesError)
     pub fn list_trust_store_certificates(
         &self,
     ) -> fluent_builders::ListTrustStoreCertificates<C, M, R> {
         fluent_builders::ListTrustStoreCertificates::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTrustStores` operation.
-    ///
-    /// See [`ListTrustStores`](crate::client::fluent_builders::ListTrustStores) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListTrustStores`](crate::client::fluent_builders::ListTrustStores) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTrustStores::into_paginator).
+    ///
+    /// - Takes [`ListTrustStoresInput`](crate::input::ListTrustStoresInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListTrustStoresInput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListTrustStoresInput::max_results): <p>The maximum number of results to be included in the next page.</p>
+    /// - On success, responds with [`ListTrustStoresOutput`](crate::output::ListTrustStoresOutput) with field(s):
+    ///   - [`trust_stores(Option<Vec<TrustStoreSummary>>)`](crate::output::ListTrustStoresOutput::trust_stores): <p>The trust stores.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTrustStoresOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    /// - On failure, responds with [`SdkError<ListTrustStoresError>`](crate::error::ListTrustStoresError)
     pub fn list_trust_stores(&self) -> fluent_builders::ListTrustStores<C, M, R> {
         fluent_builders::ListTrustStores::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListUserSettings` operation.
-    ///
-    /// See [`ListUserSettings`](crate::client::fluent_builders::ListUserSettings) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListUserSettings`](crate::client::fluent_builders::ListUserSettings) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListUserSettings::into_paginator).
+    ///
+    /// - Takes [`ListUserSettingsInput`](crate::input::ListUserSettingsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListUserSettingsInput::next_token): <p>The pagination token used to retrieve the next page of results for this operation. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListUserSettingsInput::max_results): <p>The maximum number of results to be included in the next page.</p>
+    /// - On success, responds with [`ListUserSettingsOutput`](crate::output::ListUserSettingsOutput) with field(s):
+    ///   - [`user_settings(Option<Vec<UserSettingsSummary>>)`](crate::output::ListUserSettingsOutput::user_settings): <p>The user settings.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListUserSettingsOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation. </p>
+    /// - On failure, responds with [`SdkError<ListUserSettingsError>`](crate::error::ListUserSettingsError)
     pub fn list_user_settings(&self) -> fluent_builders::ListUserSettings<C, M, R> {
         fluent_builders::ListUserSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The ARN of the resource.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>The tags of the resource.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::TagResourceInput::client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p>  <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The ARN of the resource.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The list of tag keys to remove from the resource.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateBrowserSettings` operation.
+    /// Constructs a fluent builder for the [`UpdateBrowserSettings`](crate::client::fluent_builders::UpdateBrowserSettings) operation.
     ///
-    /// See [`UpdateBrowserSettings`](crate::client::fluent_builders::UpdateBrowserSettings) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateBrowserSettingsInput`](crate::input::UpdateBrowserSettingsInput) with field(s):
+    ///   - [`browser_settings_arn(Option<String>)`](crate::input::UpdateBrowserSettingsInput::browser_settings_arn): <p>The ARN of the browser settings.</p>
+    ///   - [`browser_policy(Option<String>)`](crate::input::UpdateBrowserSettingsInput::browser_policy): <p>A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions. </p>
+    ///   - [`client_token(Option<String>)`](crate::input::UpdateBrowserSettingsInput::client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>  <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
+    /// - On success, responds with [`UpdateBrowserSettingsOutput`](crate::output::UpdateBrowserSettingsOutput) with field(s):
+    ///   - [`browser_settings(Option<BrowserSettings>)`](crate::output::UpdateBrowserSettingsOutput::browser_settings): <p>The browser settings.</p>
+    /// - On failure, responds with [`SdkError<UpdateBrowserSettingsError>`](crate::error::UpdateBrowserSettingsError)
     pub fn update_browser_settings(&self) -> fluent_builders::UpdateBrowserSettings<C, M, R> {
         fluent_builders::UpdateBrowserSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateIdentityProvider` operation.
+    /// Constructs a fluent builder for the [`UpdateIdentityProvider`](crate::client::fluent_builders::UpdateIdentityProvider) operation.
     ///
-    /// See [`UpdateIdentityProvider`](crate::client::fluent_builders::UpdateIdentityProvider) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateIdentityProviderInput`](crate::input::UpdateIdentityProviderInput) with field(s):
+    ///   - [`identity_provider_arn(Option<String>)`](crate::input::UpdateIdentityProviderInput::identity_provider_arn): <p>The ARN of the identity provider.</p>
+    ///   - [`identity_provider_name(Option<String>)`](crate::input::UpdateIdentityProviderInput::identity_provider_name): <p>The name of the identity provider.</p>
+    ///   - [`identity_provider_type(Option<IdentityProviderType>)`](crate::input::UpdateIdentityProviderInput::identity_provider_type): <p>The type of the identity provider.</p>
+    ///   - [`identity_provider_details(Option<HashMap<String, String>>)`](crate::input::UpdateIdentityProviderInput::identity_provider_details): <p>The details of the identity provider.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::UpdateIdentityProviderInput::client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>  <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
+    /// - On success, responds with [`UpdateIdentityProviderOutput`](crate::output::UpdateIdentityProviderOutput) with field(s):
+    ///   - [`identity_provider(Option<IdentityProvider>)`](crate::output::UpdateIdentityProviderOutput::identity_provider): <p>The identity provider.</p>
+    /// - On failure, responds with [`SdkError<UpdateIdentityProviderError>`](crate::error::UpdateIdentityProviderError)
     pub fn update_identity_provider(&self) -> fluent_builders::UpdateIdentityProvider<C, M, R> {
         fluent_builders::UpdateIdentityProvider::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateNetworkSettings` operation.
+    /// Constructs a fluent builder for the [`UpdateNetworkSettings`](crate::client::fluent_builders::UpdateNetworkSettings) operation.
     ///
-    /// See [`UpdateNetworkSettings`](crate::client::fluent_builders::UpdateNetworkSettings) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateNetworkSettingsInput`](crate::input::UpdateNetworkSettingsInput) with field(s):
+    ///   - [`network_settings_arn(Option<String>)`](crate::input::UpdateNetworkSettingsInput::network_settings_arn): <p>The ARN of the network settings.</p>
+    ///   - [`vpc_id(Option<String>)`](crate::input::UpdateNetworkSettingsInput::vpc_id): <p>The VPC that streaming instances will connect to.</p>
+    ///   - [`subnet_ids(Option<Vec<String>>)`](crate::input::UpdateNetworkSettingsInput::subnet_ids): <p>The subnets in which network interfaces are created to connect streaming instances to your VPC. At least two of these subnets must be in different availability zones.</p>
+    ///   - [`security_group_ids(Option<Vec<String>>)`](crate::input::UpdateNetworkSettingsInput::security_group_ids): <p>One or more security groups used to control access from streaming instances to your VPC.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::UpdateNetworkSettingsInput::client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>  <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
+    /// - On success, responds with [`UpdateNetworkSettingsOutput`](crate::output::UpdateNetworkSettingsOutput) with field(s):
+    ///   - [`network_settings(Option<NetworkSettings>)`](crate::output::UpdateNetworkSettingsOutput::network_settings): <p>The network settings.</p>
+    /// - On failure, responds with [`SdkError<UpdateNetworkSettingsError>`](crate::error::UpdateNetworkSettingsError)
     pub fn update_network_settings(&self) -> fluent_builders::UpdateNetworkSettings<C, M, R> {
         fluent_builders::UpdateNetworkSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdatePortal` operation.
+    /// Constructs a fluent builder for the [`UpdatePortal`](crate::client::fluent_builders::UpdatePortal) operation.
     ///
-    /// See [`UpdatePortal`](crate::client::fluent_builders::UpdatePortal) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdatePortalInput`](crate::input::UpdatePortalInput) with field(s):
+    ///   - [`portal_arn(Option<String>)`](crate::input::UpdatePortalInput::portal_arn): <p>The ARN of the web portal.</p>
+    ///   - [`display_name(Option<String>)`](crate::input::UpdatePortalInput::display_name): <p>The name of the web portal. This is not visible to users who log into the web portal.</p>
+    /// - On success, responds with [`UpdatePortalOutput`](crate::output::UpdatePortalOutput) with field(s):
+    ///   - [`portal(Option<Portal>)`](crate::output::UpdatePortalOutput::portal): <p>The web portal.</p>
+    /// - On failure, responds with [`SdkError<UpdatePortalError>`](crate::error::UpdatePortalError)
     pub fn update_portal(&self) -> fluent_builders::UpdatePortal<C, M, R> {
         fluent_builders::UpdatePortal::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateTrustStore` operation.
+    /// Constructs a fluent builder for the [`UpdateTrustStore`](crate::client::fluent_builders::UpdateTrustStore) operation.
     ///
-    /// See [`UpdateTrustStore`](crate::client::fluent_builders::UpdateTrustStore) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateTrustStoreInput`](crate::input::UpdateTrustStoreInput) with field(s):
+    ///   - [`trust_store_arn(Option<String>)`](crate::input::UpdateTrustStoreInput::trust_store_arn): <p>The ARN of the trust store.</p>
+    ///   - [`certificates_to_add(Option<Vec<Blob>>)`](crate::input::UpdateTrustStoreInput::certificates_to_add): <p>A list of CA certificates to add to the trust store.</p>
+    ///   - [`certificates_to_delete(Option<Vec<String>>)`](crate::input::UpdateTrustStoreInput::certificates_to_delete): <p>A list of CA certificates to delete from a trust store.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::UpdateTrustStoreInput::client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>  <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
+    /// - On success, responds with [`UpdateTrustStoreOutput`](crate::output::UpdateTrustStoreOutput) with field(s):
+    ///   - [`trust_store_arn(Option<String>)`](crate::output::UpdateTrustStoreOutput::trust_store_arn): <p>The ARN of the trust store.</p>
+    /// - On failure, responds with [`SdkError<UpdateTrustStoreError>`](crate::error::UpdateTrustStoreError)
     pub fn update_trust_store(&self) -> fluent_builders::UpdateTrustStore<C, M, R> {
         fluent_builders::UpdateTrustStore::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateUserSettings` operation.
+    /// Constructs a fluent builder for the [`UpdateUserSettings`](crate::client::fluent_builders::UpdateUserSettings) operation.
     ///
-    /// See [`UpdateUserSettings`](crate::client::fluent_builders::UpdateUserSettings) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateUserSettingsInput`](crate::input::UpdateUserSettingsInput) with field(s):
+    ///   - [`user_settings_arn(Option<String>)`](crate::input::UpdateUserSettingsInput::user_settings_arn): <p>The ARN of the user settings.</p>
+    ///   - [`copy_allowed(Option<EnabledType>)`](crate::input::UpdateUserSettingsInput::copy_allowed): <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
+    ///   - [`paste_allowed(Option<EnabledType>)`](crate::input::UpdateUserSettingsInput::paste_allowed): <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
+    ///   - [`download_allowed(Option<EnabledType>)`](crate::input::UpdateUserSettingsInput::download_allowed): <p>Specifies whether the user can download files from the streaming session to the local device.</p>
+    ///   - [`upload_allowed(Option<EnabledType>)`](crate::input::UpdateUserSettingsInput::upload_allowed): <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
+    ///   - [`print_allowed(Option<EnabledType>)`](crate::input::UpdateUserSettingsInput::print_allowed): <p>Specifies whether the user can print to the local device.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::UpdateUserSettingsInput::client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>  <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
+    /// - On success, responds with [`UpdateUserSettingsOutput`](crate::output::UpdateUserSettingsOutput) with field(s):
+    ///   - [`user_settings(Option<UserSettings>)`](crate::output::UpdateUserSettingsOutput::user_settings): <p>The user settings.</p>
+    /// - On failure, responds with [`SdkError<UpdateUserSettingsError>`](crate::error::UpdateUserSettingsError)
     pub fn update_user_settings(&self) -> fluent_builders::UpdateUserSettings<C, M, R> {
         fluent_builders::UpdateUserSettings::new(self.handle.clone())
     }

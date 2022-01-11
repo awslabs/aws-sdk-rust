@@ -83,71 +83,129 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `DeleteLexicon` operation.
+    /// Constructs a fluent builder for the [`DeleteLexicon`](crate::client::fluent_builders::DeleteLexicon) operation.
     ///
-    /// See [`DeleteLexicon`](crate::client::fluent_builders::DeleteLexicon) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteLexiconInput`](crate::input::DeleteLexiconInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteLexiconInput::name): <p>The name of the lexicon to delete. Must be an existing lexicon in the region.</p>
+    /// - On success, responds with [`DeleteLexiconOutput`](crate::output::DeleteLexiconOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteLexiconError>`](crate::error::DeleteLexiconError)
     pub fn delete_lexicon(&self) -> fluent_builders::DeleteLexicon<C, M, R> {
         fluent_builders::DeleteLexicon::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeVoices` operation.
+    /// Constructs a fluent builder for the [`DescribeVoices`](crate::client::fluent_builders::DescribeVoices) operation.
     ///
-    /// See [`DescribeVoices`](crate::client::fluent_builders::DescribeVoices) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeVoicesInput`](crate::input::DescribeVoicesInput) with field(s):
+    ///   - [`engine(Option<Engine>)`](crate::input::DescribeVoicesInput::engine): <p>Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing input text for speech synthesis. </p>
+    ///   - [`language_code(Option<LanguageCode>)`](crate::input::DescribeVoicesInput::language_code): <p> The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list of voices returned. If you don't specify this optional parameter, all available voices are returned. </p>
+    ///   - [`include_additional_language_codes(bool)`](crate::input::DescribeVoicesInput::include_additional_language_codes): <p>Boolean value indicating whether to return any bilingual voices that use the specified language as an additional language. For instance, if you request all languages that use US English (es-US), and there is an Italian voice that speaks both Italian (it-IT) and US English, that voice will be included if you specify <code>yes</code> but not if you specify <code>no</code>.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeVoicesInput::next_token): <p>An opaque pagination token returned from the previous <code>DescribeVoices</code> operation. If present, this indicates where to continue the listing.</p>
+    /// - On success, responds with [`DescribeVoicesOutput`](crate::output::DescribeVoicesOutput) with field(s):
+    ///   - [`voices(Option<Vec<Voice>>)`](crate::output::DescribeVoicesOutput::voices): <p>A list of voices with their properties.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeVoicesOutput::next_token): <p>The pagination token to use in the next request to continue the listing of voices. <code>NextToken</code> is returned only if the response is truncated.</p>
+    /// - On failure, responds with [`SdkError<DescribeVoicesError>`](crate::error::DescribeVoicesError)
     pub fn describe_voices(&self) -> fluent_builders::DescribeVoices<C, M, R> {
         fluent_builders::DescribeVoices::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetLexicon` operation.
+    /// Constructs a fluent builder for the [`GetLexicon`](crate::client::fluent_builders::GetLexicon) operation.
     ///
-    /// See [`GetLexicon`](crate::client::fluent_builders::GetLexicon) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetLexiconInput`](crate::input::GetLexiconInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::GetLexiconInput::name): <p>Name of the lexicon.</p>
+    /// - On success, responds with [`GetLexiconOutput`](crate::output::GetLexiconOutput) with field(s):
+    ///   - [`lexicon(Option<Lexicon>)`](crate::output::GetLexiconOutput::lexicon): <p>Lexicon object that provides name and the string content of the lexicon. </p>
+    ///   - [`lexicon_attributes(Option<LexiconAttributes>)`](crate::output::GetLexiconOutput::lexicon_attributes): <p>Metadata of the lexicon, including phonetic alphabetic used, language code, lexicon ARN, number of lexemes defined in the lexicon, and size of lexicon in bytes.</p>
+    /// - On failure, responds with [`SdkError<GetLexiconError>`](crate::error::GetLexiconError)
     pub fn get_lexicon(&self) -> fluent_builders::GetLexicon<C, M, R> {
         fluent_builders::GetLexicon::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSpeechSynthesisTask` operation.
+    /// Constructs a fluent builder for the [`GetSpeechSynthesisTask`](crate::client::fluent_builders::GetSpeechSynthesisTask) operation.
     ///
-    /// See [`GetSpeechSynthesisTask`](crate::client::fluent_builders::GetSpeechSynthesisTask) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetSpeechSynthesisTaskInput`](crate::input::GetSpeechSynthesisTaskInput) with field(s):
+    ///   - [`task_id(Option<String>)`](crate::input::GetSpeechSynthesisTaskInput::task_id): <p>The Amazon Polly generated identifier for a speech synthesis task.</p>
+    /// - On success, responds with [`GetSpeechSynthesisTaskOutput`](crate::output::GetSpeechSynthesisTaskOutput) with field(s):
+    ///   - [`synthesis_task(Option<SynthesisTask>)`](crate::output::GetSpeechSynthesisTaskOutput::synthesis_task): <p>SynthesisTask object that provides information from the requested task, including output format, creation time, task status, and so on.</p>
+    /// - On failure, responds with [`SdkError<GetSpeechSynthesisTaskError>`](crate::error::GetSpeechSynthesisTaskError)
     pub fn get_speech_synthesis_task(&self) -> fluent_builders::GetSpeechSynthesisTask<C, M, R> {
         fluent_builders::GetSpeechSynthesisTask::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListLexicons` operation.
+    /// Constructs a fluent builder for the [`ListLexicons`](crate::client::fluent_builders::ListLexicons) operation.
     ///
-    /// See [`ListLexicons`](crate::client::fluent_builders::ListLexicons) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListLexiconsInput`](crate::input::ListLexiconsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListLexiconsInput::next_token): <p>An opaque pagination token returned from previous <code>ListLexicons</code> operation. If present, indicates where to continue the list of lexicons.</p>
+    /// - On success, responds with [`ListLexiconsOutput`](crate::output::ListLexiconsOutput) with field(s):
+    ///   - [`lexicons(Option<Vec<LexiconDescription>>)`](crate::output::ListLexiconsOutput::lexicons): <p>A list of lexicon names and attributes.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListLexiconsOutput::next_token): <p>The pagination token to use in the next request to continue the listing of lexicons. <code>NextToken</code> is returned only if the response is truncated.</p>
+    /// - On failure, responds with [`SdkError<ListLexiconsError>`](crate::error::ListLexiconsError)
     pub fn list_lexicons(&self) -> fluent_builders::ListLexicons<C, M, R> {
         fluent_builders::ListLexicons::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSpeechSynthesisTasks` operation.
-    ///
-    /// See [`ListSpeechSynthesisTasks`](crate::client::fluent_builders::ListSpeechSynthesisTasks) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListSpeechSynthesisTasks`](crate::client::fluent_builders::ListSpeechSynthesisTasks) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSpeechSynthesisTasks::into_paginator).
+    ///
+    /// - Takes [`ListSpeechSynthesisTasksInput`](crate::input::ListSpeechSynthesisTasksInput) with field(s):
+    ///   - [`max_results(Option<i32>)`](crate::input::ListSpeechSynthesisTasksInput::max_results): <p>Maximum number of speech synthesis tasks returned in a List operation.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListSpeechSynthesisTasksInput::next_token): <p>The pagination token to use in the next request to continue the listing of speech synthesis tasks. </p>
+    ///   - [`status(Option<TaskStatus>)`](crate::input::ListSpeechSynthesisTasksInput::status): <p>Status of the speech synthesis tasks returned in a List operation</p>
+    /// - On success, responds with [`ListSpeechSynthesisTasksOutput`](crate::output::ListSpeechSynthesisTasksOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListSpeechSynthesisTasksOutput::next_token): <p>An opaque pagination token returned from the previous List operation in this request. If present, this indicates where to continue the listing.</p>
+    ///   - [`synthesis_tasks(Option<Vec<SynthesisTask>>)`](crate::output::ListSpeechSynthesisTasksOutput::synthesis_tasks): <p>List of SynthesisTask objects that provides information from the specified task in the list request, including output format, creation time, task status, and so on.</p>
+    /// - On failure, responds with [`SdkError<ListSpeechSynthesisTasksError>`](crate::error::ListSpeechSynthesisTasksError)
     pub fn list_speech_synthesis_tasks(
         &self,
     ) -> fluent_builders::ListSpeechSynthesisTasks<C, M, R> {
         fluent_builders::ListSpeechSynthesisTasks::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutLexicon` operation.
+    /// Constructs a fluent builder for the [`PutLexicon`](crate::client::fluent_builders::PutLexicon) operation.
     ///
-    /// See [`PutLexicon`](crate::client::fluent_builders::PutLexicon) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutLexiconInput`](crate::input::PutLexiconInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::PutLexiconInput::name): <p>Name of the lexicon. The name must follow the regular express format [0-9A-Za-z]{1,20}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long. </p>
+    ///   - [`content(Option<String>)`](crate::input::PutLexiconInput::content): <p>Content of the PLS lexicon as string data.</p>
+    /// - On success, responds with [`PutLexiconOutput`](crate::output::PutLexiconOutput)
+
+    /// - On failure, responds with [`SdkError<PutLexiconError>`](crate::error::PutLexiconError)
     pub fn put_lexicon(&self) -> fluent_builders::PutLexicon<C, M, R> {
         fluent_builders::PutLexicon::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartSpeechSynthesisTask` operation.
+    /// Constructs a fluent builder for the [`StartSpeechSynthesisTask`](crate::client::fluent_builders::StartSpeechSynthesisTask) operation.
     ///
-    /// See [`StartSpeechSynthesisTask`](crate::client::fluent_builders::StartSpeechSynthesisTask) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartSpeechSynthesisTaskInput`](crate::input::StartSpeechSynthesisTaskInput) with field(s):
+    ///   - [`engine(Option<Engine>)`](crate::input::StartSpeechSynthesisTaskInput::engine): <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>
+    ///   - [`language_code(Option<LanguageCode>)`](crate::input::StartSpeechSynthesisTaskInput::language_code): <p>Optional language code for the Speech Synthesis request. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p>  <p>If a bilingual voice is used and no language code is specified, Amazon Polly uses the default language of the bilingual voice. The default language for any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.</p>
+    ///   - [`lexicon_names(Option<Vec<String>>)`](crate::input::StartSpeechSynthesisTaskInput::lexicon_names): <p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. </p>
+    ///   - [`output_format(Option<OutputFormat>)`](crate::input::StartSpeechSynthesisTaskInput::output_format): <p>The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
+    ///   - [`output_s3_bucket_name(Option<String>)`](crate::input::StartSpeechSynthesisTaskInput::output_s3_bucket_name): <p>Amazon S3 bucket name to which the output file will be saved.</p>
+    ///   - [`output_s3_key_prefix(Option<String>)`](crate::input::StartSpeechSynthesisTaskInput::output_s3_key_prefix): <p>The Amazon S3 key prefix for the output speech file.</p>
+    ///   - [`sample_rate(Option<String>)`](crate::input::StartSpeechSynthesisTaskInput::sample_rate): <p>The audio frequency specified in Hz.</p>  <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000".</p>  <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p>
+    ///   - [`sns_topic_arn(Option<String>)`](crate::input::StartSpeechSynthesisTaskInput::sns_topic_arn): <p>ARN for the SNS topic optionally used for providing status notification for a speech synthesis task.</p>
+    ///   - [`speech_mark_types(Option<Vec<SpeechMarkType>>)`](crate::input::StartSpeechSynthesisTaskInput::speech_mark_types): <p>The type of speech marks returned for the input text.</p>
+    ///   - [`text(Option<String>)`](crate::input::StartSpeechSynthesisTaskInput::text): <p>The input text to synthesize. If you specify ssml as the TextType, follow the SSML format for the input text. </p>
+    ///   - [`text_type(Option<TextType>)`](crate::input::StartSpeechSynthesisTaskInput::text_type): <p>Specifies whether the input text is plain text or SSML. The default value is plain text. </p>
+    ///   - [`voice_id(Option<VoiceId>)`](crate::input::StartSpeechSynthesisTaskInput::voice_id): <p>Voice ID to use for the synthesis. </p>
+    /// - On success, responds with [`StartSpeechSynthesisTaskOutput`](crate::output::StartSpeechSynthesisTaskOutput) with field(s):
+    ///   - [`synthesis_task(Option<SynthesisTask>)`](crate::output::StartSpeechSynthesisTaskOutput::synthesis_task): <p>SynthesisTask object that provides information and attributes about a newly submitted speech synthesis task.</p>
+    /// - On failure, responds with [`SdkError<StartSpeechSynthesisTaskError>`](crate::error::StartSpeechSynthesisTaskError)
     pub fn start_speech_synthesis_task(
         &self,
     ) -> fluent_builders::StartSpeechSynthesisTask<C, M, R> {
         fluent_builders::StartSpeechSynthesisTask::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SynthesizeSpeech` operation.
+    /// Constructs a fluent builder for the [`SynthesizeSpeech`](crate::client::fluent_builders::SynthesizeSpeech) operation.
     ///
-    /// See [`SynthesizeSpeech`](crate::client::fluent_builders::SynthesizeSpeech) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`SynthesizeSpeechInput`](crate::input::SynthesizeSpeechInput) with field(s):
+    ///   - [`engine(Option<Engine>)`](crate::input::SynthesizeSpeechInput::engine): <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available in standard-only, NTTS-only, and both standard and NTTS formats, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available Voices</a>.</p>  <p> <b>NTTS-only voices</b> </p>  <p>When using NTTS-only voices such as Kevin (en-US), this parameter is required and must be set to <code>neural</code>. If the engine is not specified, or is set to <code>standard</code>, this will result in an error. </p>  <p>Type: String</p>  <p>Valid Values: <code>standard</code> | <code>neural</code> </p>  <p>Required: Yes</p>  <p> <b>Standard voices</b> </p>  <p>For standard voices, this is not required; the engine parameter defaults to <code>standard</code>. If the engine is not specified, or is set to <code>standard</code> and an NTTS-only voice is selected, this will result in an error. </p>
+    ///   - [`language_code(Option<LanguageCode>)`](crate::input::SynthesizeSpeechInput::language_code): <p>Optional language code for the Synthesize Speech request. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p>  <p>If a bilingual voice is used and no language code is specified, Amazon Polly uses the default language of the bilingual voice. The default language for any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.</p>
+    ///   - [`lexicon_names(Option<Vec<String>>)`](crate::input::SynthesizeSpeechInput::lexicon_names): <p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. For information about storing lexicons, see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html">PutLexicon</a>.</p>
+    ///   - [`output_format(Option<OutputFormat>)`](crate::input::SynthesizeSpeechInput::output_format): <p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>  <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p>
+    ///   - [`sample_rate(Option<String>)`](crate::input::SynthesizeSpeechInput::sample_rate): <p>The audio frequency specified in Hz.</p>  <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000".</p>  <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p>
+    ///   - [`speech_mark_types(Option<Vec<SpeechMarkType>>)`](crate::input::SynthesizeSpeechInput::speech_mark_types): <p>The type of speech marks returned for the input text.</p>
+    ///   - [`text(Option<String>)`](crate::input::SynthesizeSpeechInput::text): <p> Input text to synthesize. If you specify <code>ssml</code> as the <code>TextType</code>, follow the SSML format for the input text. </p>
+    ///   - [`text_type(Option<TextType>)`](crate::input::SynthesizeSpeechInput::text_type): <p> Specifies whether the input text is plain text or SSML. The default value is plain text. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/ssml.html">Using SSML</a>.</p>
+    ///   - [`voice_id(Option<VoiceId>)`](crate::input::SynthesizeSpeechInput::voice_id): <p> Voice ID to use for the synthesis. You can get a list of available voice IDs by calling the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation. </p>
+    /// - On success, responds with [`SynthesizeSpeechOutput`](crate::output::SynthesizeSpeechOutput) with field(s):
+    ///   - [`audio_stream(byte_stream::ByteStream)`](crate::output::SynthesizeSpeechOutput::audio_stream): <p> Stream containing the synthesized speech. </p>
+    ///   - [`content_type(Option<String>)`](crate::output::SynthesizeSpeechOutput::content_type): <p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p>  <ul>   <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li>   <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li>   <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li>   <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/json.</p> </li>  </ul>  <p> </p>
+    ///   - [`request_characters(i32)`](crate::output::SynthesizeSpeechOutput::request_characters): <p>Number of characters synthesized.</p>
+    /// - On failure, responds with [`SdkError<SynthesizeSpeechError>`](crate::error::SynthesizeSpeechError)
     pub fn synthesize_speech(&self) -> fluent_builders::SynthesizeSpeech<C, M, R> {
         fluent_builders::SynthesizeSpeech::new(self.handle.clone())
     }

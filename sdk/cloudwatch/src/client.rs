@@ -83,262 +83,506 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `DeleteAlarms` operation.
+    /// Constructs a fluent builder for the [`DeleteAlarms`](crate::client::fluent_builders::DeleteAlarms) operation.
     ///
-    /// See [`DeleteAlarms`](crate::client::fluent_builders::DeleteAlarms) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteAlarmsInput`](crate::input::DeleteAlarmsInput) with field(s):
+    ///   - [`alarm_names(Option<Vec<String>>)`](crate::input::DeleteAlarmsInput::alarm_names): <p>The alarms to be deleted.</p>
+    /// - On success, responds with [`DeleteAlarmsOutput`](crate::output::DeleteAlarmsOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAlarmsError>`](crate::error::DeleteAlarmsError)
     pub fn delete_alarms(&self) -> fluent_builders::DeleteAlarms<C, M, R> {
         fluent_builders::DeleteAlarms::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAnomalyDetector` operation.
+    /// Constructs a fluent builder for the [`DeleteAnomalyDetector`](crate::client::fluent_builders::DeleteAnomalyDetector) operation.
     ///
-    /// See [`DeleteAnomalyDetector`](crate::client::fluent_builders::DeleteAnomalyDetector) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteAnomalyDetectorInput`](crate::input::DeleteAnomalyDetectorInput) with field(s):
+    ///   - [`namespace(Option<String>)`](crate::input::DeleteAnomalyDetectorInput::namespace): <p>The namespace associated with the anomaly detection model to delete.</p>
+    ///   - [`metric_name(Option<String>)`](crate::input::DeleteAnomalyDetectorInput::metric_name): <p>The metric name associated with the anomaly detection model to delete.</p>
+    ///   - [`dimensions(Option<Vec<Dimension>>)`](crate::input::DeleteAnomalyDetectorInput::dimensions): <p>The metric dimensions associated with the anomaly detection model to delete.</p>
+    ///   - [`stat(Option<String>)`](crate::input::DeleteAnomalyDetectorInput::stat): <p>The statistic associated with the anomaly detection model to delete.</p>
+    ///   - [`single_metric_anomaly_detector(Option<SingleMetricAnomalyDetector>)`](crate::input::DeleteAnomalyDetectorInput::single_metric_anomaly_detector): <p>A single metric anomaly detector to be deleted.</p>  <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>  <ul>   <li> <p> <code>Dimensions</code>,</p> </li>   <li> <p> <code>MetricName</code> </p> </li>   <li> <p> <code>Namespace</code> </p> </li>   <li> <p> <code>Stat</code> </p> </li>   <li> <p>the <code>MetricMathAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code> </p> </li>  </ul>  <p>Instead, specify the single metric anomaly detector attributes as part of the <code>SingleMetricAnomalyDetector</code> property.</p>
+    ///   - [`metric_math_anomaly_detector(Option<MetricMathAnomalyDetector>)`](crate::input::DeleteAnomalyDetectorInput::metric_math_anomaly_detector): <p>The metric math anomaly detector to be deleted.</p>  <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include following parameters in the same operation:</p>  <ul>   <li> <p> <code>Dimensions</code>,</p> </li>   <li> <p> <code>MetricName</code> </p> </li>   <li> <p> <code>Namespace</code> </p> </li>   <li> <p> <code>Stat</code> </p> </li>   <li> <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code> </p> </li>  </ul>  <p>Instead, specify the metric math anomaly detector attributes as part of the <code>MetricMathAnomalyDetector</code> property.</p>
+    /// - On success, responds with [`DeleteAnomalyDetectorOutput`](crate::output::DeleteAnomalyDetectorOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAnomalyDetectorError>`](crate::error::DeleteAnomalyDetectorError)
     pub fn delete_anomaly_detector(&self) -> fluent_builders::DeleteAnomalyDetector<C, M, R> {
         fluent_builders::DeleteAnomalyDetector::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDashboards` operation.
+    /// Constructs a fluent builder for the [`DeleteDashboards`](crate::client::fluent_builders::DeleteDashboards) operation.
     ///
-    /// See [`DeleteDashboards`](crate::client::fluent_builders::DeleteDashboards) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteDashboardsInput`](crate::input::DeleteDashboardsInput) with field(s):
+    ///   - [`dashboard_names(Option<Vec<String>>)`](crate::input::DeleteDashboardsInput::dashboard_names): <p>The dashboards to be deleted. This parameter is required.</p>
+    /// - On success, responds with [`DeleteDashboardsOutput`](crate::output::DeleteDashboardsOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteDashboardsError>`](crate::error::DeleteDashboardsError)
     pub fn delete_dashboards(&self) -> fluent_builders::DeleteDashboards<C, M, R> {
         fluent_builders::DeleteDashboards::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteInsightRules` operation.
+    /// Constructs a fluent builder for the [`DeleteInsightRules`](crate::client::fluent_builders::DeleteInsightRules) operation.
     ///
-    /// See [`DeleteInsightRules`](crate::client::fluent_builders::DeleteInsightRules) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteInsightRulesInput`](crate::input::DeleteInsightRulesInput) with field(s):
+    ///   - [`rule_names(Option<Vec<String>>)`](crate::input::DeleteInsightRulesInput::rule_names): <p>An array of the rule names to delete. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
+    /// - On success, responds with [`DeleteInsightRulesOutput`](crate::output::DeleteInsightRulesOutput) with field(s):
+    ///   - [`failures(Option<Vec<PartialFailure>>)`](crate::output::DeleteInsightRulesOutput::failures): <p>An array listing the rules that could not be deleted. You cannot delete built-in rules.</p>
+    /// - On failure, responds with [`SdkError<DeleteInsightRulesError>`](crate::error::DeleteInsightRulesError)
     pub fn delete_insight_rules(&self) -> fluent_builders::DeleteInsightRules<C, M, R> {
         fluent_builders::DeleteInsightRules::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteMetricStream` operation.
+    /// Constructs a fluent builder for the [`DeleteMetricStream`](crate::client::fluent_builders::DeleteMetricStream) operation.
     ///
-    /// See [`DeleteMetricStream`](crate::client::fluent_builders::DeleteMetricStream) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteMetricStreamInput`](crate::input::DeleteMetricStreamInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteMetricStreamInput::name): <p>The name of the metric stream to delete.</p>
+    /// - On success, responds with [`DeleteMetricStreamOutput`](crate::output::DeleteMetricStreamOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteMetricStreamError>`](crate::error::DeleteMetricStreamError)
     pub fn delete_metric_stream(&self) -> fluent_builders::DeleteMetricStream<C, M, R> {
         fluent_builders::DeleteMetricStream::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAlarmHistory` operation.
-    ///
-    /// See [`DescribeAlarmHistory`](crate::client::fluent_builders::DescribeAlarmHistory) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeAlarmHistory`](crate::client::fluent_builders::DescribeAlarmHistory) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeAlarmHistory::into_paginator).
+    ///
+    /// - Takes [`DescribeAlarmHistoryInput`](crate::input::DescribeAlarmHistoryInput) with field(s):
+    ///   - [`alarm_name(Option<String>)`](crate::input::DescribeAlarmHistoryInput::alarm_name): <p>The name of the alarm.</p>
+    ///   - [`alarm_types(Option<Vec<AlarmType>>)`](crate::input::DescribeAlarmHistoryInput::alarm_types): <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p>
+    ///   - [`history_item_type(Option<HistoryItemType>)`](crate::input::DescribeAlarmHistoryInput::history_item_type): <p>The type of alarm histories to retrieve.</p>
+    ///   - [`start_date(Option<DateTime>)`](crate::input::DescribeAlarmHistoryInput::start_date): <p>The starting date to retrieve alarm history.</p>
+    ///   - [`end_date(Option<DateTime>)`](crate::input::DescribeAlarmHistoryInput::end_date): <p>The ending date to retrieve alarm history.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeAlarmHistoryInput::max_records): <p>The maximum number of alarm history records to retrieve.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeAlarmHistoryInput::next_token): <p>The token returned by a previous call to indicate that there is more data available.</p>
+    ///   - [`scan_by(Option<ScanBy>)`](crate::input::DescribeAlarmHistoryInput::scan_by): <p>Specified whether to return the newest or oldest alarm history first. Specify <code>TimestampDescending</code> to have the newest event history returned first, and specify <code>TimestampAscending</code> to have the oldest history returned first.</p>
+    /// - On success, responds with [`DescribeAlarmHistoryOutput`](crate::output::DescribeAlarmHistoryOutput) with field(s):
+    ///   - [`alarm_history_items(Option<Vec<AlarmHistoryItem>>)`](crate::output::DescribeAlarmHistoryOutput::alarm_history_items): <p>The alarm histories, in JSON format.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeAlarmHistoryOutput::next_token): <p>The token that marks the start of the next batch of returned results.</p>
+    /// - On failure, responds with [`SdkError<DescribeAlarmHistoryError>`](crate::error::DescribeAlarmHistoryError)
     pub fn describe_alarm_history(&self) -> fluent_builders::DescribeAlarmHistory<C, M, R> {
         fluent_builders::DescribeAlarmHistory::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAlarms` operation.
-    ///
-    /// See [`DescribeAlarms`](crate::client::fluent_builders::DescribeAlarms) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeAlarms`](crate::client::fluent_builders::DescribeAlarms) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeAlarms::into_paginator).
+    ///
+    /// - Takes [`DescribeAlarmsInput`](crate::input::DescribeAlarmsInput) with field(s):
+    ///   - [`alarm_names(Option<Vec<String>>)`](crate::input::DescribeAlarmsInput::alarm_names): <p>The names of the alarms to retrieve information about.</p>
+    ///   - [`alarm_name_prefix(Option<String>)`](crate::input::DescribeAlarmsInput::alarm_name_prefix): <p>An alarm name prefix. If you specify this parameter, you receive information about all alarms that have names that start with this prefix.</p>  <p>If this parameter is specified, you cannot specify <code>AlarmNames</code>.</p>
+    ///   - [`alarm_types(Option<Vec<AlarmType>>)`](crate::input::DescribeAlarmsInput::alarm_types): <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p>
+    ///   - [`children_of_alarm_name(Option<String>)`](crate::input::DescribeAlarmsInput::children_of_alarm_name): <p>If you use this parameter and specify the name of a composite alarm, the operation returns information about the "children" alarms of the alarm you specify. These are the metric alarms and composite alarms referenced in the <code>AlarmRule</code> field of the composite alarm that you specify in <code>ChildrenOfAlarmName</code>. Information about the composite alarm that you name in <code>ChildrenOfAlarmName</code> is not returned.</p>  <p>If you specify <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.</p> <note>   <p>Only the <code>Alarm Name</code>, <code>ARN</code>, <code>StateValue</code> (OK/ALARM/INSUFFICIENT_DATA), and <code>StateUpdatedTimestamp</code> information are returned by this operation when you use this parameter. To get complete information about these alarms, perform another <code>DescribeAlarms</code> operation and specify the parent alarm names in the <code>AlarmNames</code> parameter.</p>  </note>
+    ///   - [`parents_of_alarm_name(Option<String>)`](crate::input::DescribeAlarmsInput::parents_of_alarm_name): <p>If you use this parameter and specify the name of a metric or composite alarm, the operation returns information about the "parent" alarms of the alarm you specify. These are the composite alarms that have <code>AlarmRule</code> parameters that reference the alarm named in <code>ParentsOfAlarmName</code>. Information about the alarm that you specify in <code>ParentsOfAlarmName</code> is not returned.</p>  <p>If you specify <code>ParentsOfAlarmName</code>, you cannot specify any other parameters in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.</p> <note>   <p>Only the Alarm Name and ARN are returned by this operation when you use this parameter. To get complete information about these alarms, perform another <code>DescribeAlarms</code> operation and specify the parent alarm names in the <code>AlarmNames</code> parameter.</p>  </note>
+    ///   - [`state_value(Option<StateValue>)`](crate::input::DescribeAlarmsInput::state_value): <p>Specify this parameter to receive information only about alarms that are currently in the state that you specify.</p>
+    ///   - [`action_prefix(Option<String>)`](crate::input::DescribeAlarmsInput::action_prefix): <p>Use this parameter to filter the results of the operation to only those alarms that use a certain alarm action. For example, you could specify the ARN of an SNS topic to find all alarms that send notifications to that topic.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeAlarmsInput::max_records): <p>The maximum number of alarm descriptions to retrieve.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeAlarmsInput::next_token): <p>The token returned by a previous call to indicate that there is more data available.</p>
+    /// - On success, responds with [`DescribeAlarmsOutput`](crate::output::DescribeAlarmsOutput) with field(s):
+    ///   - [`composite_alarms(Option<Vec<CompositeAlarm>>)`](crate::output::DescribeAlarmsOutput::composite_alarms): <p>The information about any composite alarms returned by the operation.</p>
+    ///   - [`metric_alarms(Option<Vec<MetricAlarm>>)`](crate::output::DescribeAlarmsOutput::metric_alarms): <p>The information about any metric alarms returned by the operation.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeAlarmsOutput::next_token): <p>The token that marks the start of the next batch of returned results.</p>
+    /// - On failure, responds with [`SdkError<DescribeAlarmsError>`](crate::error::DescribeAlarmsError)
     pub fn describe_alarms(&self) -> fluent_builders::DescribeAlarms<C, M, R> {
         fluent_builders::DescribeAlarms::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAlarmsForMetric` operation.
+    /// Constructs a fluent builder for the [`DescribeAlarmsForMetric`](crate::client::fluent_builders::DescribeAlarmsForMetric) operation.
     ///
-    /// See [`DescribeAlarmsForMetric`](crate::client::fluent_builders::DescribeAlarmsForMetric) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeAlarmsForMetricInput`](crate::input::DescribeAlarmsForMetricInput) with field(s):
+    ///   - [`metric_name(Option<String>)`](crate::input::DescribeAlarmsForMetricInput::metric_name): <p>The name of the metric.</p>
+    ///   - [`namespace(Option<String>)`](crate::input::DescribeAlarmsForMetricInput::namespace): <p>The namespace of the metric.</p>
+    ///   - [`statistic(Option<Statistic>)`](crate::input::DescribeAlarmsForMetricInput::statistic): <p>The statistic for the metric, other than percentiles. For percentile statistics, use <code>ExtendedStatistics</code>.</p>
+    ///   - [`extended_statistic(Option<String>)`](crate::input::DescribeAlarmsForMetricInput::extended_statistic): <p>The percentile statistic for the metric. Specify a value between p0.0 and p100.</p>
+    ///   - [`dimensions(Option<Vec<Dimension>>)`](crate::input::DescribeAlarmsForMetricInput::dimensions): <p>The dimensions associated with the metric. If the metric has any associated dimensions, you must specify them in order for the call to succeed.</p>
+    ///   - [`period(Option<i32>)`](crate::input::DescribeAlarmsForMetricInput::period): <p>The period, in seconds, over which the statistic is applied.</p>
+    ///   - [`unit(Option<StandardUnit>)`](crate::input::DescribeAlarmsForMetricInput::unit): <p>The unit for the metric.</p>
+    /// - On success, responds with [`DescribeAlarmsForMetricOutput`](crate::output::DescribeAlarmsForMetricOutput) with field(s):
+    ///   - [`metric_alarms(Option<Vec<MetricAlarm>>)`](crate::output::DescribeAlarmsForMetricOutput::metric_alarms): <p>The information for each alarm with the specified metric.</p>
+    /// - On failure, responds with [`SdkError<DescribeAlarmsForMetricError>`](crate::error::DescribeAlarmsForMetricError)
     pub fn describe_alarms_for_metric(&self) -> fluent_builders::DescribeAlarmsForMetric<C, M, R> {
         fluent_builders::DescribeAlarmsForMetric::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAnomalyDetectors` operation.
+    /// Constructs a fluent builder for the [`DescribeAnomalyDetectors`](crate::client::fluent_builders::DescribeAnomalyDetectors) operation.
     ///
-    /// See [`DescribeAnomalyDetectors`](crate::client::fluent_builders::DescribeAnomalyDetectors) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeAnomalyDetectorsInput`](crate::input::DescribeAnomalyDetectorsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeAnomalyDetectorsInput::next_token): <p>Use the token returned by the previous operation to request the next page of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeAnomalyDetectorsInput::max_results): <p>The maximum number of results to return in one operation. The maximum value that you can specify is 100.</p>  <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
+    ///   - [`namespace(Option<String>)`](crate::input::DescribeAnomalyDetectorsInput::namespace): <p>Limits the results to only the anomaly detection models that are associated with the specified namespace.</p>
+    ///   - [`metric_name(Option<String>)`](crate::input::DescribeAnomalyDetectorsInput::metric_name): <p>Limits the results to only the anomaly detection models that are associated with the specified metric name. If there are multiple metrics with this name in different namespaces that have anomaly detection models, they're all returned.</p>
+    ///   - [`dimensions(Option<Vec<Dimension>>)`](crate::input::DescribeAnomalyDetectorsInput::dimensions): <p>Limits the results to only the anomaly detection models that are associated with the specified metric dimensions. If there are multiple metrics that have these dimensions and have anomaly detection models associated, they're all returned.</p>
+    ///   - [`anomaly_detector_types(Option<Vec<AnomalyDetectorType>>)`](crate::input::DescribeAnomalyDetectorsInput::anomaly_detector_types): <p>The anomaly detector types to request when using <code>DescribeAnomalyDetectorsInput</code>. If empty, defaults to <code>SINGLE_METRIC</code>.</p>
+    /// - On success, responds with [`DescribeAnomalyDetectorsOutput`](crate::output::DescribeAnomalyDetectorsOutput) with field(s):
+    ///   - [`anomaly_detectors(Option<Vec<AnomalyDetector>>)`](crate::output::DescribeAnomalyDetectorsOutput::anomaly_detectors): <p>The list of anomaly detection models returned by the operation.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeAnomalyDetectorsOutput::next_token): <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<DescribeAnomalyDetectorsError>`](crate::error::DescribeAnomalyDetectorsError)
     pub fn describe_anomaly_detectors(&self) -> fluent_builders::DescribeAnomalyDetectors<C, M, R> {
         fluent_builders::DescribeAnomalyDetectors::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeInsightRules` operation.
-    ///
-    /// See [`DescribeInsightRules`](crate::client::fluent_builders::DescribeInsightRules) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeInsightRules`](crate::client::fluent_builders::DescribeInsightRules) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeInsightRules::into_paginator).
+    ///
+    /// - Takes [`DescribeInsightRulesInput`](crate::input::DescribeInsightRulesInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeInsightRulesInput::next_token): <p>Include this value, if it was returned by the previous operation, to get the next set of rules.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeInsightRulesInput::max_results): <p>The maximum number of results to return in one operation. If you omit this parameter, the default of 500 is used.</p>
+    /// - On success, responds with [`DescribeInsightRulesOutput`](crate::output::DescribeInsightRulesOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeInsightRulesOutput::next_token): <p>If this parameter is present, it is a token that marks the start of the next batch of returned results. </p>
+    ///   - [`insight_rules(Option<Vec<InsightRule>>)`](crate::output::DescribeInsightRulesOutput::insight_rules): <p>The rules returned by the operation.</p>
+    /// - On failure, responds with [`SdkError<DescribeInsightRulesError>`](crate::error::DescribeInsightRulesError)
     pub fn describe_insight_rules(&self) -> fluent_builders::DescribeInsightRules<C, M, R> {
         fluent_builders::DescribeInsightRules::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisableAlarmActions` operation.
+    /// Constructs a fluent builder for the [`DisableAlarmActions`](crate::client::fluent_builders::DisableAlarmActions) operation.
     ///
-    /// See [`DisableAlarmActions`](crate::client::fluent_builders::DisableAlarmActions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisableAlarmActionsInput`](crate::input::DisableAlarmActionsInput) with field(s):
+    ///   - [`alarm_names(Option<Vec<String>>)`](crate::input::DisableAlarmActionsInput::alarm_names): <p>The names of the alarms.</p>
+    /// - On success, responds with [`DisableAlarmActionsOutput`](crate::output::DisableAlarmActionsOutput)
+
+    /// - On failure, responds with [`SdkError<DisableAlarmActionsError>`](crate::error::DisableAlarmActionsError)
     pub fn disable_alarm_actions(&self) -> fluent_builders::DisableAlarmActions<C, M, R> {
         fluent_builders::DisableAlarmActions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisableInsightRules` operation.
+    /// Constructs a fluent builder for the [`DisableInsightRules`](crate::client::fluent_builders::DisableInsightRules) operation.
     ///
-    /// See [`DisableInsightRules`](crate::client::fluent_builders::DisableInsightRules) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisableInsightRulesInput`](crate::input::DisableInsightRulesInput) with field(s):
+    ///   - [`rule_names(Option<Vec<String>>)`](crate::input::DisableInsightRulesInput::rule_names): <p>An array of the rule names to disable. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
+    /// - On success, responds with [`DisableInsightRulesOutput`](crate::output::DisableInsightRulesOutput) with field(s):
+    ///   - [`failures(Option<Vec<PartialFailure>>)`](crate::output::DisableInsightRulesOutput::failures): <p>An array listing the rules that could not be disabled. You cannot disable built-in rules.</p>
+    /// - On failure, responds with [`SdkError<DisableInsightRulesError>`](crate::error::DisableInsightRulesError)
     pub fn disable_insight_rules(&self) -> fluent_builders::DisableInsightRules<C, M, R> {
         fluent_builders::DisableInsightRules::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `EnableAlarmActions` operation.
+    /// Constructs a fluent builder for the [`EnableAlarmActions`](crate::client::fluent_builders::EnableAlarmActions) operation.
     ///
-    /// See [`EnableAlarmActions`](crate::client::fluent_builders::EnableAlarmActions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`EnableAlarmActionsInput`](crate::input::EnableAlarmActionsInput) with field(s):
+    ///   - [`alarm_names(Option<Vec<String>>)`](crate::input::EnableAlarmActionsInput::alarm_names): <p>The names of the alarms.</p>
+    /// - On success, responds with [`EnableAlarmActionsOutput`](crate::output::EnableAlarmActionsOutput)
+
+    /// - On failure, responds with [`SdkError<EnableAlarmActionsError>`](crate::error::EnableAlarmActionsError)
     pub fn enable_alarm_actions(&self) -> fluent_builders::EnableAlarmActions<C, M, R> {
         fluent_builders::EnableAlarmActions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `EnableInsightRules` operation.
+    /// Constructs a fluent builder for the [`EnableInsightRules`](crate::client::fluent_builders::EnableInsightRules) operation.
     ///
-    /// See [`EnableInsightRules`](crate::client::fluent_builders::EnableInsightRules) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`EnableInsightRulesInput`](crate::input::EnableInsightRulesInput) with field(s):
+    ///   - [`rule_names(Option<Vec<String>>)`](crate::input::EnableInsightRulesInput::rule_names): <p>An array of the rule names to enable. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
+    /// - On success, responds with [`EnableInsightRulesOutput`](crate::output::EnableInsightRulesOutput) with field(s):
+    ///   - [`failures(Option<Vec<PartialFailure>>)`](crate::output::EnableInsightRulesOutput::failures): <p>An array listing the rules that could not be enabled. You cannot disable or enable built-in rules.</p>
+    /// - On failure, responds with [`SdkError<EnableInsightRulesError>`](crate::error::EnableInsightRulesError)
     pub fn enable_insight_rules(&self) -> fluent_builders::EnableInsightRules<C, M, R> {
         fluent_builders::EnableInsightRules::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDashboard` operation.
+    /// Constructs a fluent builder for the [`GetDashboard`](crate::client::fluent_builders::GetDashboard) operation.
     ///
-    /// See [`GetDashboard`](crate::client::fluent_builders::GetDashboard) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetDashboardInput`](crate::input::GetDashboardInput) with field(s):
+    ///   - [`dashboard_name(Option<String>)`](crate::input::GetDashboardInput::dashboard_name): <p>The name of the dashboard to be described.</p>
+    /// - On success, responds with [`GetDashboardOutput`](crate::output::GetDashboardOutput) with field(s):
+    ///   - [`dashboard_arn(Option<String>)`](crate::output::GetDashboardOutput::dashboard_arn): <p>The Amazon Resource Name (ARN) of the dashboard.</p>
+    ///   - [`dashboard_body(Option<String>)`](crate::output::GetDashboardOutput::dashboard_body): <p>The detailed information about the dashboard, including what widgets are included and their location on the dashboard. For more information about the <code>DashboardBody</code> syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard Body Structure and Syntax</a>. </p>
+    ///   - [`dashboard_name(Option<String>)`](crate::output::GetDashboardOutput::dashboard_name): <p>The name of the dashboard.</p>
+    /// - On failure, responds with [`SdkError<GetDashboardError>`](crate::error::GetDashboardError)
     pub fn get_dashboard(&self) -> fluent_builders::GetDashboard<C, M, R> {
         fluent_builders::GetDashboard::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetInsightRuleReport` operation.
+    /// Constructs a fluent builder for the [`GetInsightRuleReport`](crate::client::fluent_builders::GetInsightRuleReport) operation.
     ///
-    /// See [`GetInsightRuleReport`](crate::client::fluent_builders::GetInsightRuleReport) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetInsightRuleReportInput`](crate::input::GetInsightRuleReportInput) with field(s):
+    ///   - [`rule_name(Option<String>)`](crate::input::GetInsightRuleReportInput::rule_name): <p>The name of the rule that you want to see data from.</p>
+    ///   - [`start_time(Option<DateTime>)`](crate::input::GetInsightRuleReportInput::start_time): <p>The start time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</p>
+    ///   - [`end_time(Option<DateTime>)`](crate::input::GetInsightRuleReportInput::end_time): <p>The end time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</p>
+    ///   - [`period(Option<i32>)`](crate::input::GetInsightRuleReportInput::period): <p>The period, in seconds, to use for the statistics in the <code>InsightRuleMetricDatapoint</code> results.</p>
+    ///   - [`max_contributor_count(Option<i32>)`](crate::input::GetInsightRuleReportInput::max_contributor_count): <p>The maximum number of contributors to include in the report. The range is 1 to 100. If you omit this, the default of 10 is used.</p>
+    ///   - [`metrics(Option<Vec<String>>)`](crate::input::GetInsightRuleReportInput::metrics): <p>Specifies which metrics to use for aggregation of contributor values for the report. You can specify one or more of the following metrics:</p>  <ul>   <li> <p> <code>UniqueContributors</code> -- the number of unique contributors for each data point.</p> </li>   <li> <p> <code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of the contributor might change for each data point in the graph.</p> <p>If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the most occurrences in that period. If the rule aggregates by SUM, the top contributor is the contributor with the highest sum in the log field specified by the rule's <code>Value</code>, during that period.</p> </li>   <li> <p> <code>SampleCount</code> -- the number of data points matched by the rule.</p> </li>   <li> <p> <code>Sum</code> -- the sum of the values from all contributors during the time period represented by that data point.</p> </li>   <li> <p> <code>Minimum</code> -- the minimum value from a single observation during the time period represented by that data point.</p> </li>   <li> <p> <code>Maximum</code> -- the maximum value from a single observation during the time period represented by that data point.</p> </li>   <li> <p> <code>Average</code> -- the average value from all contributors during the time period represented by that data point.</p> </li>  </ul>
+    ///   - [`order_by(Option<String>)`](crate::input::GetInsightRuleReportInput::order_by): <p>Determines what statistic to use to rank the contributors. Valid values are SUM and MAXIMUM.</p>
+    /// - On success, responds with [`GetInsightRuleReportOutput`](crate::output::GetInsightRuleReportOutput) with field(s):
+    ///   - [`key_labels(Option<Vec<String>>)`](crate::output::GetInsightRuleReportOutput::key_labels): <p>An array of the strings used as the keys for this rule. The keys are the dimensions used to classify contributors. If the rule contains more than one key, then each unique combination of values for the keys is counted as a unique contributor.</p>
+    ///   - [`aggregation_statistic(Option<String>)`](crate::output::GetInsightRuleReportOutput::aggregation_statistic): <p>Specifies whether this rule aggregates contributor data by COUNT or SUM.</p>
+    ///   - [`aggregate_value(Option<f64>)`](crate::output::GetInsightRuleReportOutput::aggregate_value): <p>The sum of the values from all individual contributors that match the rule.</p>
+    ///   - [`approximate_unique_count(Option<i64>)`](crate::output::GetInsightRuleReportOutput::approximate_unique_count): <p>An approximate count of the unique contributors found by this rule in this time period.</p>
+    ///   - [`contributors(Option<Vec<InsightRuleContributor>>)`](crate::output::GetInsightRuleReportOutput::contributors): <p>An array of the unique contributors found by this rule in this time period. If the rule contains multiple keys, each combination of values for the keys counts as a unique contributor.</p>
+    ///   - [`metric_datapoints(Option<Vec<InsightRuleMetricDatapoint>>)`](crate::output::GetInsightRuleReportOutput::metric_datapoints): <p>A time series of metric data points that matches the time period in the rule request.</p>
+    /// - On failure, responds with [`SdkError<GetInsightRuleReportError>`](crate::error::GetInsightRuleReportError)
     pub fn get_insight_rule_report(&self) -> fluent_builders::GetInsightRuleReport<C, M, R> {
         fluent_builders::GetInsightRuleReport::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMetricData` operation.
-    ///
-    /// See [`GetMetricData`](crate::client::fluent_builders::GetMetricData) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetMetricData`](crate::client::fluent_builders::GetMetricData) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetMetricData::into_paginator).
+    ///
+    /// - Takes [`GetMetricDataInput`](crate::input::GetMetricDataInput) with field(s):
+    ///   - [`metric_data_queries(Option<Vec<MetricDataQuery>>)`](crate::input::GetMetricDataInput::metric_data_queries): <p>The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 500 <code>MetricDataQuery</code> structures. Each of these structures can specify either a metric to retrieve, or a math expression to perform on retrieved data. </p>
+    ///   - [`start_time(Option<DateTime>)`](crate::input::GetMetricDataInput::start_time): <p>The time stamp indicating the earliest data to be returned.</p>  <p>The value specified is inclusive; results include data points with the specified time stamp. </p>  <p>CloudWatch rounds the specified time stamp as follows:</p>  <ul>   <li> <p>Start time less than 15 days ago - Round down to the nearest whole minute. For example, 12:32:34 is rounded down to 12:32:00.</p> </li>   <li> <p>Start time between 15 and 63 days ago - Round down to the nearest 5-minute clock interval. For example, 12:32:34 is rounded down to 12:30:00.</p> </li>   <li> <p>Start time greater than 63 days ago - Round down to the nearest 1-hour clock interval. For example, 12:32:34 is rounded down to 12:00:00.</p> </li>  </ul>  <p>If you set <code>Period</code> to 5, 10, or 30, the start time of your request is rounded down to the nearest time that corresponds to even 5-, 10-, or 30-second divisions of a minute. For example, if you make a query at (HH:mm:ss) 01:05:23 for the previous 10-second period, the start time of your request is rounded down and you receive data from 01:05:10 to 01:05:20. If you make a query at 15:07:17 for the previous 5 minutes of data, using a period of 5 seconds, you receive data timestamped between 15:02:15 and 15:07:15. </p>  <p>For better performance, specify <code>StartTime</code> and <code>EndTime</code> values that align with the value of the metric's <code>Period</code> and sync up with the beginning and end of an hour. For example, if the <code>Period</code> of a metric is 5 minutes, specifying 12:05 or 12:30 as <code>StartTime</code> can get a faster response from CloudWatch than setting 12:07 or 12:29 as the <code>StartTime</code>.</p>
+    ///   - [`end_time(Option<DateTime>)`](crate::input::GetMetricDataInput::end_time): <p>The time stamp indicating the latest data to be returned.</p>  <p>The value specified is exclusive; results include data points up to the specified time stamp.</p>  <p>For better performance, specify <code>StartTime</code> and <code>EndTime</code> values that align with the value of the metric's <code>Period</code> and sync up with the beginning and end of an hour. For example, if the <code>Period</code> of a metric is 5 minutes, specifying 12:05 or 12:30 as <code>EndTime</code> can get a faster response from CloudWatch than setting 12:07 or 12:29 as the <code>EndTime</code>.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetMetricDataInput::next_token): <p>Include this value, if it was returned by the previous <code>GetMetricData</code> operation, to get the next set of data points.</p>
+    ///   - [`scan_by(Option<ScanBy>)`](crate::input::GetMetricDataInput::scan_by): <p>The order in which data points should be returned. <code>TimestampDescending</code> returns the newest data first and paginates when the <code>MaxDatapoints</code> limit is reached. <code>TimestampAscending</code> returns the oldest data first and paginates when the <code>MaxDatapoints</code> limit is reached.</p>
+    ///   - [`max_datapoints(Option<i32>)`](crate::input::GetMetricDataInput::max_datapoints): <p>The maximum number of data points the request should return before paginating. If you omit this, the default of 100,800 is used.</p>
+    ///   - [`label_options(Option<LabelOptions>)`](crate::input::GetMetricDataInput::label_options): <p>This structure includes the <code>Timezone</code> parameter, which you can use to specify your time zone so that the labels of returned data display the correct time for your time zone. </p>
+    /// - On success, responds with [`GetMetricDataOutput`](crate::output::GetMetricDataOutput) with field(s):
+    ///   - [`metric_data_results(Option<Vec<MetricDataResult>>)`](crate::output::GetMetricDataOutput::metric_data_results): <p>The metrics that are returned, including the metric name, namespace, and dimensions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetMetricDataOutput::next_token): <p>A token that marks the next batch of returned results.</p>
+    ///   - [`messages(Option<Vec<MessageData>>)`](crate::output::GetMetricDataOutput::messages): <p>Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a message. An example of a message that might be returned is <code>Maximum number of allowed metrics exceeded</code>. If there is a message, as much of the operation as possible is still executed.</p>  <p>A message appears here only if it is related to the global <code>GetMetricData</code> operation. Any message about a specific metric returned by the operation appears in the <code>MetricDataResult</code> object returned for that metric.</p>
+    /// - On failure, responds with [`SdkError<GetMetricDataError>`](crate::error::GetMetricDataError)
     pub fn get_metric_data(&self) -> fluent_builders::GetMetricData<C, M, R> {
         fluent_builders::GetMetricData::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMetricStatistics` operation.
+    /// Constructs a fluent builder for the [`GetMetricStatistics`](crate::client::fluent_builders::GetMetricStatistics) operation.
     ///
-    /// See [`GetMetricStatistics`](crate::client::fluent_builders::GetMetricStatistics) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetMetricStatisticsInput`](crate::input::GetMetricStatisticsInput) with field(s):
+    ///   - [`namespace(Option<String>)`](crate::input::GetMetricStatisticsInput::namespace): <p>The namespace of the metric, with or without spaces.</p>
+    ///   - [`metric_name(Option<String>)`](crate::input::GetMetricStatisticsInput::metric_name): <p>The name of the metric, with or without spaces.</p>
+    ///   - [`dimensions(Option<Vec<Dimension>>)`](crate::input::GetMetricStatisticsInput::dimensions): <p>The dimensions. If the metric contains multiple dimensions, you must include a value for each dimension. CloudWatch treats each unique combination of dimensions as a separate metric. If a specific combination of dimensions was not published, you can't retrieve statistics for it. You must specify the same dimensions that were used when the metrics were created. For an example, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more information about specifying dimensions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    ///   - [`start_time(Option<DateTime>)`](crate::input::GetMetricStatisticsInput::start_time): <p>The time stamp that determines the first data point to return. Start times are evaluated relative to the time that CloudWatch receives the request.</p>  <p>The value specified is inclusive; results include data points with the specified time stamp. In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-03T23:00:00Z).</p>  <p>CloudWatch rounds the specified time stamp as follows:</p>  <ul>   <li> <p>Start time less than 15 days ago - Round down to the nearest whole minute. For example, 12:32:34 is rounded down to 12:32:00.</p> </li>   <li> <p>Start time between 15 and 63 days ago - Round down to the nearest 5-minute clock interval. For example, 12:32:34 is rounded down to 12:30:00.</p> </li>   <li> <p>Start time greater than 63 days ago - Round down to the nearest 1-hour clock interval. For example, 12:32:34 is rounded down to 12:00:00.</p> </li>  </ul>  <p>If you set <code>Period</code> to 5, 10, or 30, the start time of your request is rounded down to the nearest time that corresponds to even 5-, 10-, or 30-second divisions of a minute. For example, if you make a query at (HH:mm:ss) 01:05:23 for the previous 10-second period, the start time of your request is rounded down and you receive data from 01:05:10 to 01:05:20. If you make a query at 15:07:17 for the previous 5 minutes of data, using a period of 5 seconds, you receive data timestamped between 15:02:15 and 15:07:15. </p>
+    ///   - [`end_time(Option<DateTime>)`](crate::input::GetMetricStatisticsInput::end_time): <p>The time stamp that determines the last data point to return.</p>  <p>The value specified is exclusive; results include data points up to the specified time stamp. In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-10T23:00:00Z).</p>
+    ///   - [`period(Option<i32>)`](crate::input::GetMetricStatisticsInput::period): <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that are collected at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics are those metrics stored by a <code>PutMetricData</code> call that includes a <code>StorageResolution</code> of 1 second.</p>  <p>If the <code>StartTime</code> parameter specifies a time stamp that is greater than 3 hours ago, you must specify the period as follows or no data points in that time range is returned:</p>  <ul>   <li> <p>Start time between 3 hours and 15 days ago - Use a multiple of 60 seconds (1 minute).</p> </li>   <li> <p>Start time between 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).</p> </li>   <li> <p>Start time greater than 63 days ago - Use a multiple of 3600 seconds (1 hour).</p> </li>  </ul>
+    ///   - [`statistics(Option<Vec<Statistic>>)`](crate::input::GetMetricStatisticsInput::statistics): <p>The metric statistics, other than percentile. For percentile statistics, use <code>ExtendedStatistics</code>. When calling <code>GetMetricStatistics</code>, you must specify either <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.</p>
+    ///   - [`extended_statistics(Option<Vec<String>>)`](crate::input::GetMetricStatisticsInput::extended_statistics): <p>The percentile statistics. Specify values between p0.0 and p100. When calling <code>GetMetricStatistics</code>, you must specify either <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both. Percentile statistics are not available for metrics when any of the metric values are negative numbers.</p>
+    ///   - [`unit(Option<StandardUnit>)`](crate::input::GetMetricStatisticsInput::unit): <p>The unit for a given metric. If you omit <code>Unit</code>, all data that was collected with any unit is returned, along with the corresponding units that were specified when the data was reported to CloudWatch. If you specify a unit, the operation returns only data that was collected with that unit specified. If you specify a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform unit conversions.</p>
+    /// - On success, responds with [`GetMetricStatisticsOutput`](crate::output::GetMetricStatisticsOutput) with field(s):
+    ///   - [`label(Option<String>)`](crate::output::GetMetricStatisticsOutput::label): <p>A label for the specified metric.</p>
+    ///   - [`datapoints(Option<Vec<Datapoint>>)`](crate::output::GetMetricStatisticsOutput::datapoints): <p>The data points for the specified metric.</p>
+    /// - On failure, responds with [`SdkError<GetMetricStatisticsError>`](crate::error::GetMetricStatisticsError)
     pub fn get_metric_statistics(&self) -> fluent_builders::GetMetricStatistics<C, M, R> {
         fluent_builders::GetMetricStatistics::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMetricStream` operation.
+    /// Constructs a fluent builder for the [`GetMetricStream`](crate::client::fluent_builders::GetMetricStream) operation.
     ///
-    /// See [`GetMetricStream`](crate::client::fluent_builders::GetMetricStream) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetMetricStreamInput`](crate::input::GetMetricStreamInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::GetMetricStreamInput::name): <p>The name of the metric stream to retrieve information about.</p>
+    /// - On success, responds with [`GetMetricStreamOutput`](crate::output::GetMetricStreamOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::GetMetricStreamOutput::arn): <p>The ARN of the metric stream.</p>
+    ///   - [`name(Option<String>)`](crate::output::GetMetricStreamOutput::name): <p>The name of the metric stream.</p>
+    ///   - [`include_filters(Option<Vec<MetricStreamFilter>>)`](crate::output::GetMetricStreamOutput::include_filters): <p>If this array of metric namespaces is present, then these namespaces are the only metric namespaces that are streamed by this metric stream.</p>
+    ///   - [`exclude_filters(Option<Vec<MetricStreamFilter>>)`](crate::output::GetMetricStreamOutput::exclude_filters): <p>If this array of metric namespaces is present, then these namespaces are the only metric namespaces that are not streamed by this metric stream. In this case, all other metric namespaces in the account are streamed by this metric stream.</p>
+    ///   - [`firehose_arn(Option<String>)`](crate::output::GetMetricStreamOutput::firehose_arn): <p>The ARN of the Amazon Kinesis Firehose delivery stream that is used by this metric stream.</p>
+    ///   - [`role_arn(Option<String>)`](crate::output::GetMetricStreamOutput::role_arn): <p>The ARN of the IAM role that is used by this metric stream.</p>
+    ///   - [`state(Option<String>)`](crate::output::GetMetricStreamOutput::state): <p>The state of the metric stream. The possible values are <code>running</code> and <code>stopped</code>.</p>
+    ///   - [`creation_date(Option<DateTime>)`](crate::output::GetMetricStreamOutput::creation_date): <p>The date that the metric stream was created.</p>
+    ///   - [`last_update_date(Option<DateTime>)`](crate::output::GetMetricStreamOutput::last_update_date): <p>The date of the most recent update to the metric stream's configuration.</p>
+    ///   - [`output_format(Option<MetricStreamOutputFormat>)`](crate::output::GetMetricStreamOutput::output_format): <p></p>
+    /// - On failure, responds with [`SdkError<GetMetricStreamError>`](crate::error::GetMetricStreamError)
     pub fn get_metric_stream(&self) -> fluent_builders::GetMetricStream<C, M, R> {
         fluent_builders::GetMetricStream::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMetricWidgetImage` operation.
+    /// Constructs a fluent builder for the [`GetMetricWidgetImage`](crate::client::fluent_builders::GetMetricWidgetImage) operation.
     ///
-    /// See [`GetMetricWidgetImage`](crate::client::fluent_builders::GetMetricWidgetImage) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetMetricWidgetImageInput`](crate::input::GetMetricWidgetImageInput) with field(s):
+    ///   - [`metric_widget(Option<String>)`](crate::input::GetMetricWidgetImageInput::metric_widget): <p>A JSON string that defines the bitmap graph to be retrieved. The string includes the metrics to include in the graph, statistics, annotations, title, axis limits, and so on. You can include only one <code>MetricWidget</code> parameter in each <code>GetMetricWidgetImage</code> call.</p>  <p>For more information about the syntax of <code>MetricWidget</code> see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Metric-Widget-Structure.html">GetMetricWidgetImage: Metric Widget Structure and Syntax</a>.</p>  <p>If any metric on the graph could not load all the requested data points, an orange triangle with an exclamation point appears next to the graph legend.</p>
+    ///   - [`output_format(Option<String>)`](crate::input::GetMetricWidgetImageInput::output_format): <p>The format of the resulting image. Only PNG images are supported.</p>  <p>The default is <code>png</code>. If you specify <code>png</code>, the API returns an HTTP response with the content-type set to <code>text/xml</code>. The image data is in a <code>MetricWidgetImage</code> field. For example:</p>  <p> <code>    <getmetricwidgetimageresponse xmlns="<URLstring">    &gt;   </getmetricwidgetimageresponse></code> </p>  <p> <code>    <getmetricwidgetimageresult></getmetricwidgetimageresult></code> </p>  <p> <code>    <metricwidgetimage></metricwidgetimage></code> </p>  <p> <code> iVBORw0KGgoAAAANSUhEUgAAAlgAAAGQEAYAAAAip...</code> </p>  <p> <code> </code> </p>  <p> <code> </code> </p>  <p> <code>    <responsemetadata></responsemetadata></code> </p>  <p> <code>    <requestid>    6f0d4192-4d42-11e8-82c1-f539a07e0e3b   </requestid></code> </p>  <p> <code> </code> </p>  <p> <code></code> </p>  <p>The <code>image/png</code> setting is intended only for custom HTTP requests. For most use cases, and all actions using an Amazon Web Services SDK, you should use <code>png</code>. If you specify <code>image/png</code>, the HTTP response has a content-type set to <code>image/png</code>, and the body of the response is a PNG image. </p>
+    /// - On success, responds with [`GetMetricWidgetImageOutput`](crate::output::GetMetricWidgetImageOutput) with field(s):
+    ///   - [`metric_widget_image(Option<Blob>)`](crate::output::GetMetricWidgetImageOutput::metric_widget_image): <p>The image of the graph, in the output format specified. The output is base64-encoded.</p>
+    /// - On failure, responds with [`SdkError<GetMetricWidgetImageError>`](crate::error::GetMetricWidgetImageError)
     pub fn get_metric_widget_image(&self) -> fluent_builders::GetMetricWidgetImage<C, M, R> {
         fluent_builders::GetMetricWidgetImage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDashboards` operation.
-    ///
-    /// See [`ListDashboards`](crate::client::fluent_builders::ListDashboards) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListDashboards`](crate::client::fluent_builders::ListDashboards) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDashboards::into_paginator).
+    ///
+    /// - Takes [`ListDashboardsInput`](crate::input::ListDashboardsInput) with field(s):
+    ///   - [`dashboard_name_prefix(Option<String>)`](crate::input::ListDashboardsInput::dashboard_name_prefix): <p>If you specify this parameter, only the dashboards with names starting with the specified string are listed. The maximum length is 255, and valid characters are A-Z, a-z, 0-9, ".", "-", and "_". </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListDashboardsInput::next_token): <p>The token returned by a previous call to indicate that there is more data available.</p>
+    /// - On success, responds with [`ListDashboardsOutput`](crate::output::ListDashboardsOutput) with field(s):
+    ///   - [`dashboard_entries(Option<Vec<DashboardEntry>>)`](crate::output::ListDashboardsOutput::dashboard_entries): <p>The list of matching dashboards.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDashboardsOutput::next_token): <p>The token that marks the start of the next batch of returned results.</p>
+    /// - On failure, responds with [`SdkError<ListDashboardsError>`](crate::error::ListDashboardsError)
     pub fn list_dashboards(&self) -> fluent_builders::ListDashboards<C, M, R> {
         fluent_builders::ListDashboards::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListMetrics` operation.
-    ///
-    /// See [`ListMetrics`](crate::client::fluent_builders::ListMetrics) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListMetrics`](crate::client::fluent_builders::ListMetrics) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMetrics::into_paginator).
+    ///
+    /// - Takes [`ListMetricsInput`](crate::input::ListMetricsInput) with field(s):
+    ///   - [`namespace(Option<String>)`](crate::input::ListMetricsInput::namespace): <p>The metric namespace to filter against. Only the namespace that matches exactly will be returned.</p>
+    ///   - [`metric_name(Option<String>)`](crate::input::ListMetricsInput::metric_name): <p>The name of the metric to filter against. Only the metrics with names that match exactly will be returned.</p>
+    ///   - [`dimensions(Option<Vec<DimensionFilter>>)`](crate::input::ListMetricsInput::dimensions): <p>The dimensions to filter against. Only the dimensions that match exactly will be returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListMetricsInput::next_token): <p>The token returned by a previous call to indicate that there is more data available.</p>
+    ///   - [`recently_active(Option<RecentlyActive>)`](crate::input::ListMetricsInput::recently_active): <p>To filter the results to show only metrics that have had data points published in the past three hours, specify this parameter with a value of <code>PT3H</code>. This is the only valid value for this parameter.</p>  <p>The results that are returned are an approximation of the value you specify. There is a low probability that the returned results include metrics with last published data as much as 40 minutes more than the specified time interval.</p>
+    /// - On success, responds with [`ListMetricsOutput`](crate::output::ListMetricsOutput) with field(s):
+    ///   - [`metrics(Option<Vec<Metric>>)`](crate::output::ListMetricsOutput::metrics): <p>The metrics that match your request. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListMetricsOutput::next_token): <p>The token that marks the start of the next batch of returned results. </p>
+    /// - On failure, responds with [`SdkError<ListMetricsError>`](crate::error::ListMetricsError)
     pub fn list_metrics(&self) -> fluent_builders::ListMetrics<C, M, R> {
         fluent_builders::ListMetrics::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListMetricStreams` operation.
-    ///
-    /// See [`ListMetricStreams`](crate::client::fluent_builders::ListMetricStreams) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListMetricStreams`](crate::client::fluent_builders::ListMetricStreams) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMetricStreams::into_paginator).
+    ///
+    /// - Takes [`ListMetricStreamsInput`](crate::input::ListMetricStreamsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListMetricStreamsInput::next_token): <p>Include this value, if it was returned by the previous call, to get the next set of metric streams.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListMetricStreamsInput::max_results): <p>The maximum number of results to return in one operation.</p>
+    /// - On success, responds with [`ListMetricStreamsOutput`](crate::output::ListMetricStreamsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListMetricStreamsOutput::next_token): <p>The token that marks the start of the next batch of returned results. You can use this token in a subsequent operation to get the next batch of results.</p>
+    ///   - [`entries(Option<Vec<MetricStreamEntry>>)`](crate::output::ListMetricStreamsOutput::entries): <p>The array of metric stream information.</p>
+    /// - On failure, responds with [`SdkError<ListMetricStreamsError>`](crate::error::ListMetricStreamsError)
     pub fn list_metric_streams(&self) -> fluent_builders::ListMetricStreams<C, M, R> {
         fluent_builders::ListMetricStreams::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The ARN of the CloudWatch resource that you want to view tags for.</p>  <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p>  <p>The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code> </p>  <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"> Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The list of tag keys and values associated with the resource you specified.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutAnomalyDetector` operation.
+    /// Constructs a fluent builder for the [`PutAnomalyDetector`](crate::client::fluent_builders::PutAnomalyDetector) operation.
     ///
-    /// See [`PutAnomalyDetector`](crate::client::fluent_builders::PutAnomalyDetector) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutAnomalyDetectorInput`](crate::input::PutAnomalyDetectorInput) with field(s):
+    ///   - [`namespace(Option<String>)`](crate::input::PutAnomalyDetectorInput::namespace): <p>The namespace of the metric to create the anomaly detection model for.</p>
+    ///   - [`metric_name(Option<String>)`](crate::input::PutAnomalyDetectorInput::metric_name): <p>The name of the metric to create the anomaly detection model for.</p>
+    ///   - [`dimensions(Option<Vec<Dimension>>)`](crate::input::PutAnomalyDetectorInput::dimensions): <p>The metric dimensions to create the anomaly detection model for.</p>
+    ///   - [`stat(Option<String>)`](crate::input::PutAnomalyDetectorInput::stat): <p>The statistic to use for the metric and the anomaly detection model.</p>
+    ///   - [`configuration(Option<AnomalyDetectorConfiguration>)`](crate::input::PutAnomalyDetectorInput::configuration): <p>The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude when training and updating the model. You can specify as many as 10 time ranges.</p>  <p>The configuration can also include the time zone to use for the metric.</p>
+    ///   - [`single_metric_anomaly_detector(Option<SingleMetricAnomalyDetector>)`](crate::input::PutAnomalyDetectorInput::single_metric_anomaly_detector): <p>A single metric anomaly detector to be created.</p>  <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>  <ul>   <li> <p> <code>Dimensions</code> </p> </li>   <li> <p> <code>MetricName</code> </p> </li>   <li> <p> <code>Namespace</code> </p> </li>   <li> <p> <code>Stat</code> </p> </li>   <li> <p>the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code> </p> </li>  </ul>  <p>Instead, specify the single metric anomaly detector attributes as part of the property <code>SingleMetricAnomalyDetector</code>.</p>
+    ///   - [`metric_math_anomaly_detector(Option<MetricMathAnomalyDetector>)`](crate::input::PutAnomalyDetectorInput::metric_math_anomaly_detector): <p>The metric math anomaly detector to be created.</p>  <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>  <ul>   <li> <p> <code>Dimensions</code> </p> </li>   <li> <p> <code>MetricName</code> </p> </li>   <li> <p> <code>Namespace</code> </p> </li>   <li> <p> <code>Stat</code> </p> </li>   <li> <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code> </p> </li>  </ul>  <p>Instead, specify the metric math anomaly detector attributes as part of the property <code>MetricMathAnomalyDetector</code>.</p>
+    /// - On success, responds with [`PutAnomalyDetectorOutput`](crate::output::PutAnomalyDetectorOutput)
+
+    /// - On failure, responds with [`SdkError<PutAnomalyDetectorError>`](crate::error::PutAnomalyDetectorError)
     pub fn put_anomaly_detector(&self) -> fluent_builders::PutAnomalyDetector<C, M, R> {
         fluent_builders::PutAnomalyDetector::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutCompositeAlarm` operation.
+    /// Constructs a fluent builder for the [`PutCompositeAlarm`](crate::client::fluent_builders::PutCompositeAlarm) operation.
     ///
-    /// See [`PutCompositeAlarm`](crate::client::fluent_builders::PutCompositeAlarm) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutCompositeAlarmInput`](crate::input::PutCompositeAlarmInput) with field(s):
+    ///   - [`actions_enabled(Option<bool>)`](crate::input::PutCompositeAlarmInput::actions_enabled): <p>Indicates whether actions should be executed during any changes to the alarm state of the composite alarm. The default is <code>TRUE</code>.</p>
+    ///   - [`alarm_actions(Option<Vec<String>>)`](crate::input::PutCompositeAlarmInput::alarm_actions): <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>  <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code> </p>
+    ///   - [`alarm_description(Option<String>)`](crate::input::PutCompositeAlarmInput::alarm_description): <p>The description for the composite alarm.</p>
+    ///   - [`alarm_name(Option<String>)`](crate::input::PutCompositeAlarmInput::alarm_name): <p>The name for the composite alarm. This name must be unique within the Region.</p>
+    ///   - [`alarm_rule(Option<String>)`](crate::input::PutCompositeAlarmInput::alarm_rule): <p>An expression that specifies which other alarms are to be evaluated to determine this composite alarm's state. For each alarm that you reference, you designate a function that specifies whether that alarm needs to be in ALARM state, OK state, or INSUFFICIENT_DATA state. You can use operators (AND, OR and NOT) to combine multiple functions in a single expression. You can use parenthesis to logically group the functions in your expression.</p>  <p>You can use either alarm names or ARNs to reference the other alarms that are to be evaluated.</p>  <p>Functions can include the following:</p>  <ul>   <li> <p> <code>ALARM("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named alarm is in ALARM state.</p> </li>   <li> <p> <code>OK("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named alarm is in OK state.</p> </li>   <li> <p> <code>INSUFFICIENT_DATA("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named alarm is in INSUFFICIENT_DATA state.</p> </li>   <li> <p> <code>TRUE</code> always evaluates to TRUE.</p> </li>   <li> <p> <code>FALSE</code> always evaluates to FALSE.</p> </li>  </ul>  <p>TRUE and FALSE are useful for testing a complex <code>AlarmRule</code> structure, and for testing your alarm actions.</p>  <p>Alarm names specified in <code>AlarmRule</code> can be surrounded with double-quotes ("), but do not have to be.</p>  <p>The following are some examples of <code>AlarmRule</code>:</p>  <ul>   <li> <p> <code>ALARM(CPUUtilizationTooHigh) AND ALARM(DiskReadOpsTooHigh)</code> specifies that the composite alarm goes into ALARM state only if both CPUUtilizationTooHigh and DiskReadOpsTooHigh alarms are in ALARM state.</p> </li>   <li> <p> <code>ALARM(CPUUtilizationTooHigh) AND NOT ALARM(DeploymentInProgress)</code> specifies that the alarm goes to ALARM state if CPUUtilizationTooHigh is in ALARM state and DeploymentInProgress is not in ALARM state. This example reduces alarm noise during a known deployment window.</p> </li>   <li> <p> <code>(ALARM(CPUUtilizationTooHigh) OR ALARM(DiskReadOpsTooHigh)) AND OK(NetworkOutTooHigh)</code> goes into ALARM state if CPUUtilizationTooHigh OR DiskReadOpsTooHigh is in ALARM state, and if NetworkOutTooHigh is in OK state. This provides another example of using a composite alarm to prevent noise. This rule ensures that you are not notified with an alarm action on high CPU or disk usage if a known network problem is also occurring.</p> </li>  </ul>  <p>The <code>AlarmRule</code> can specify as many as 100 "children" alarms. The <code>AlarmRule</code> expression can have as many as 500 elements. Elements are child alarms, TRUE or FALSE statements, and parentheses.</p>
+    ///   - [`insufficient_data_actions(Option<Vec<String>>)`](crate::input::PutCompositeAlarmInput::insufficient_data_actions): <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>  <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> </p>
+    ///   - [`ok_actions(Option<Vec<String>>)`](crate::input::PutCompositeAlarmInput::ok_actions): <p>The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>  <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::PutCompositeAlarmInput::tags): <p>A list of key-value pairs to associate with the composite alarm. You can associate as many as 50 tags with an alarm.</p>  <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with certain tag values.</p>
+    /// - On success, responds with [`PutCompositeAlarmOutput`](crate::output::PutCompositeAlarmOutput)
+
+    /// - On failure, responds with [`SdkError<PutCompositeAlarmError>`](crate::error::PutCompositeAlarmError)
     pub fn put_composite_alarm(&self) -> fluent_builders::PutCompositeAlarm<C, M, R> {
         fluent_builders::PutCompositeAlarm::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutDashboard` operation.
+    /// Constructs a fluent builder for the [`PutDashboard`](crate::client::fluent_builders::PutDashboard) operation.
     ///
-    /// See [`PutDashboard`](crate::client::fluent_builders::PutDashboard) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutDashboardInput`](crate::input::PutDashboardInput) with field(s):
+    ///   - [`dashboard_name(Option<String>)`](crate::input::PutDashboardInput::dashboard_name): <p>The name of the dashboard. If a dashboard with this name already exists, this call modifies that dashboard, replacing its current contents. Otherwise, a new dashboard is created. The maximum length is 255, and valid characters are A-Z, a-z, 0-9, "-", and "_". This parameter is required.</p>
+    ///   - [`dashboard_body(Option<String>)`](crate::input::PutDashboardInput::dashboard_body): <p>The detailed information about the dashboard in JSON format, including the widgets to include and their location on the dashboard. This parameter is required.</p>  <p>For more information about the syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard Body Structure and Syntax</a>.</p>
+    /// - On success, responds with [`PutDashboardOutput`](crate::output::PutDashboardOutput) with field(s):
+    ///   - [`dashboard_validation_messages(Option<Vec<DashboardValidationMessage>>)`](crate::output::PutDashboardOutput::dashboard_validation_messages): <p>If the input for <code>PutDashboard</code> was correct and the dashboard was successfully created or modified, this result is empty.</p>  <p>If this result includes only warning messages, then the input was valid enough for the dashboard to be created or modified, but some elements of the dashboard might not render.</p>  <p>If this result includes error messages, the input was not valid and the operation failed.</p>
+    /// - On failure, responds with [`SdkError<PutDashboardError>`](crate::error::PutDashboardError)
     pub fn put_dashboard(&self) -> fluent_builders::PutDashboard<C, M, R> {
         fluent_builders::PutDashboard::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutInsightRule` operation.
+    /// Constructs a fluent builder for the [`PutInsightRule`](crate::client::fluent_builders::PutInsightRule) operation.
     ///
-    /// See [`PutInsightRule`](crate::client::fluent_builders::PutInsightRule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutInsightRuleInput`](crate::input::PutInsightRuleInput) with field(s):
+    ///   - [`rule_name(Option<String>)`](crate::input::PutInsightRuleInput::rule_name): <p>A unique name for the rule.</p>
+    ///   - [`rule_state(Option<String>)`](crate::input::PutInsightRuleInput::rule_state): <p>The state of the rule. Valid values are ENABLED and DISABLED.</p>
+    ///   - [`rule_definition(Option<String>)`](crate::input::PutInsightRuleInput::rule_definition): <p>The definition of the rule, as a JSON object. For details on the valid syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor Insights Rule Syntax</a>.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::PutInsightRuleInput::tags): <p>A list of key-value pairs to associate with the Contributor Insights rule. You can associate as many as 50 tags with a rule.</p>  <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>  <p>To be able to associate tags with a rule, you must have the <code>cloudwatch:TagResource</code> permission in addition to the <code>cloudwatch:PutInsightRule</code> permission.</p>  <p>If you are using this operation to update an existing Contributor Insights rule, any tags you specify in this parameter are ignored. To change the tags of an existing rule, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
+    /// - On success, responds with [`PutInsightRuleOutput`](crate::output::PutInsightRuleOutput)
+
+    /// - On failure, responds with [`SdkError<PutInsightRuleError>`](crate::error::PutInsightRuleError)
     pub fn put_insight_rule(&self) -> fluent_builders::PutInsightRule<C, M, R> {
         fluent_builders::PutInsightRule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutMetricAlarm` operation.
+    /// Constructs a fluent builder for the [`PutMetricAlarm`](crate::client::fluent_builders::PutMetricAlarm) operation.
     ///
-    /// See [`PutMetricAlarm`](crate::client::fluent_builders::PutMetricAlarm) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutMetricAlarmInput`](crate::input::PutMetricAlarmInput) with field(s):
+    ///   - [`alarm_name(Option<String>)`](crate::input::PutMetricAlarmInput::alarm_name): <p>The name for the alarm. This name must be unique within the Region.</p>
+    ///   - [`alarm_description(Option<String>)`](crate::input::PutMetricAlarmInput::alarm_description): <p>The description for the alarm.</p>
+    ///   - [`actions_enabled(Option<bool>)`](crate::input::PutMetricAlarmInput::actions_enabled): <p>Indicates whether actions should be executed during any changes to the alarm state. The default is <code>TRUE</code>.</p>
+    ///   - [`ok_actions(Option<Vec<String>>)`](crate::input::PutMetricAlarmInput::ok_actions): <p>The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>  <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p>  <p>Valid Values (for use with IAM roles): <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code> </p>
+    ///   - [`alarm_actions(Option<Vec<String>>)`](crate::input::PutMetricAlarmInput::alarm_actions): <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>  <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code> | <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i> </code> </p>  <p>Valid Values (for use with IAM roles): <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code> </p>
+    ///   - [`insufficient_data_actions(Option<Vec<String>>)`](crate::input::PutMetricAlarmInput::insufficient_data_actions): <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>  <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p>  <p>Valid Values (for use with IAM roles): <code>&gt;arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> </p>
+    ///   - [`metric_name(Option<String>)`](crate::input::PutMetricAlarmInput::metric_name): <p>The name for the metric associated with the alarm. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p>  <p>If you are creating an alarm based on a math expression, you cannot specify this parameter, or any of the <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters. Instead, you specify all this information in the <code>Metrics</code> array.</p>
+    ///   - [`namespace(Option<String>)`](crate::input::PutMetricAlarmInput::namespace): <p>The namespace for the metric associated specified in <code>MetricName</code>.</p>
+    ///   - [`statistic(Option<Statistic>)`](crate::input::PutMetricAlarmInput::statistic): <p>The statistic for the metric specified in <code>MetricName</code>, other than percentile. For percentile statistics, use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
+    ///   - [`extended_statistic(Option<String>)`](crate::input::PutMetricAlarmInput::extended_statistic): <p>The percentile statistic for the metric specified in <code>MetricName</code>. Specify a value between p0.0 and p100. When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
+    ///   - [`dimensions(Option<Vec<Dimension>>)`](crate::input::PutMetricAlarmInput::dimensions): <p>The dimensions for the metric specified in <code>MetricName</code>.</p>
+    ///   - [`period(Option<i32>)`](crate::input::PutMetricAlarmInput::period): <p>The length, in seconds, used each time the metric specified in <code>MetricName</code> is evaluated. Valid values are 10, 30, and any multiple of 60.</p>  <p> <code>Period</code> is required for alarms based on static thresholds. If you are creating an alarm based on a metric math expression, you specify the period for each metric within the objects in the <code>Metrics</code> array.</p>  <p>Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code> call with a <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In this case, it does not receive data for the attempts that do not correspond to a one-minute data resolution, and the alarm might often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution alarm, which has a higher charge than other alarms. For more information about pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p>  <p>An alarm's total current evaluation period can be no longer than one day, so <code>Period</code> multiplied by <code>EvaluationPeriods</code> cannot be more than 86,400 seconds.</p>
+    ///   - [`unit(Option<StandardUnit>)`](crate::input::PutMetricAlarmInput::unit): <p>The unit of measure for the statistic. For example, the units for the Amazon EC2 NetworkIn metric are Bytes because NetworkIn tracks the number of bytes that an instance receives on all network interfaces. You can also specify a unit when you create a custom metric. Units help provide conceptual meaning to your data. Metric data points that specify a unit of measure, such as Percent, are aggregated separately.</p>  <p>If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for the metric and attempts to evaluate the alarm. Usually, metrics are published with only one unit, so the alarm works as intended.</p>  <p>However, if the metric is published with multiple types of units and you don't specify a unit, the alarm's behavior is not defined and it behaves predictably.</p>  <p>We recommend omitting <code>Unit</code> so that you don't inadvertently specify an incorrect unit that is not published for this metric. Doing so causes the alarm to be stuck in the <code>INSUFFICIENT DATA</code> state.</p>
+    ///   - [`evaluation_periods(Option<i32>)`](crate::input::PutMetricAlarmInput::evaluation_periods): <p>The number of periods over which data is compared to the specified threshold. If you are setting an alarm that requires that a number of consecutive data points be breaching to trigger the alarm, this value specifies that number. If you are setting an "M out of N" alarm, this value is the N.</p>  <p>An alarm's total current evaluation period can be no longer than one day, so this number multiplied by <code>Period</code> cannot be more than 86,400 seconds.</p>
+    ///   - [`datapoints_to_alarm(Option<i32>)`](crate::input::PutMetricAlarmInput::datapoints_to_alarm): <p>The number of data points that must be breaching to trigger the alarm. This is used only if you are setting an "M out of N" alarm. In that case, this value is the M. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation">Evaluating an Alarm</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    ///   - [`threshold(Option<f64>)`](crate::input::PutMetricAlarmInput::threshold): <p>The value against which the specified statistic is compared.</p>  <p>This parameter is required for alarms based on static thresholds, but should not be used for alarms based on anomaly detection models.</p>
+    ///   - [`comparison_operator(Option<ComparisonOperator>)`](crate::input::PutMetricAlarmInput::comparison_operator): <p> The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand.</p>  <p>The values <code>LessThanLowerOrGreaterThanUpperThreshold</code>, <code>LessThanLowerThreshold</code>, and <code>GreaterThanUpperThreshold</code> are used only for alarms based on anomaly detection models.</p>
+    ///   - [`treat_missing_data(Option<String>)`](crate::input::PutMetricAlarmInput::treat_missing_data): <p> Sets how this alarm is to handle missing data points. If <code>TreatMissingData</code> is omitted, the default behavior of <code>missing</code> is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring How CloudWatch Alarms Treats Missing Data</a>.</p>  <p>Valid Values: <code>breaching | notBreaching | ignore | missing</code> </p>
+    ///   - [`evaluate_low_sample_count_percentile(Option<String>)`](crate::input::PutMetricAlarmInput::evaluate_low_sample_count_percentile): <p> Used only for alarms based on percentiles. If you specify <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If you specify <code>evaluate</code> or omit this parameter, the alarm is always evaluated and possibly changes state no matter how many data points are available. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based CloudWatch Alarms and Low Data Samples</a>.</p>  <p>Valid Values: <code>evaluate | ignore</code> </p>
+    ///   - [`metrics(Option<Vec<MetricDataQuery>>)`](crate::input::PutMetricAlarmInput::metrics): <p>An array of <code>MetricDataQuery</code> structures that enable you to create an alarm based on the result of a metric math expression. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p>  <p>Each item in the <code>Metrics</code> array either retrieves a metric or performs a math expression.</p>  <p>One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this expression by setting <code>ReturnData</code> to true for this object in the array. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>  <p>If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, you retrieve the metrics you are using in your math expression as part of the <code>Metrics</code> array.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::PutMetricAlarmInput::tags): <p>A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm.</p>  <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>  <p>If you are using this operation to update an existing alarm, any tags you specify in this parameter are ignored. To change the tags of an existing alarm, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
+    ///   - [`threshold_metric_id(Option<String>)`](crate::input::PutMetricAlarmInput::threshold_metric_id): <p>If this is an alarm based on an anomaly detection model, make this value match the ID of the <code>ANOMALY_DETECTION_BAND</code> function.</p>  <p>For an example of how to use this parameter, see the <b>Anomaly Detection Model Alarm</b> example on this page.</p>  <p>If your alarm uses this parameter, it cannot have Auto Scaling actions.</p>
+    /// - On success, responds with [`PutMetricAlarmOutput`](crate::output::PutMetricAlarmOutput)
+
+    /// - On failure, responds with [`SdkError<PutMetricAlarmError>`](crate::error::PutMetricAlarmError)
     pub fn put_metric_alarm(&self) -> fluent_builders::PutMetricAlarm<C, M, R> {
         fluent_builders::PutMetricAlarm::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutMetricData` operation.
+    /// Constructs a fluent builder for the [`PutMetricData`](crate::client::fluent_builders::PutMetricData) operation.
     ///
-    /// See [`PutMetricData`](crate::client::fluent_builders::PutMetricData) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutMetricDataInput`](crate::input::PutMetricDataInput) with field(s):
+    ///   - [`namespace(Option<String>)`](crate::input::PutMetricDataInput::namespace): <p>The namespace for the metric data.</p>  <p>To avoid conflicts with Amazon Web Services service namespaces, you should not specify a namespace that begins with <code>AWS/</code> </p>
+    ///   - [`metric_data(Option<Vec<MetricDatum>>)`](crate::input::PutMetricDataInput::metric_data): <p>The data for the metric. The array can include no more than 20 metrics per call.</p>
+    /// - On success, responds with [`PutMetricDataOutput`](crate::output::PutMetricDataOutput)
+
+    /// - On failure, responds with [`SdkError<PutMetricDataError>`](crate::error::PutMetricDataError)
     pub fn put_metric_data(&self) -> fluent_builders::PutMetricData<C, M, R> {
         fluent_builders::PutMetricData::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutMetricStream` operation.
+    /// Constructs a fluent builder for the [`PutMetricStream`](crate::client::fluent_builders::PutMetricStream) operation.
     ///
-    /// See [`PutMetricStream`](crate::client::fluent_builders::PutMetricStream) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutMetricStreamInput`](crate::input::PutMetricStreamInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::PutMetricStreamInput::name): <p>If you are creating a new metric stream, this is the name for the new stream. The name must be different than the names of other metric streams in this account and Region.</p>  <p>If you are updating a metric stream, specify the name of that stream here.</p>  <p>Valid characters are A-Z, a-z, 0-9, "-" and "_".</p>
+    ///   - [`include_filters(Option<Vec<MetricStreamFilter>>)`](crate::input::PutMetricStreamInput::include_filters): <p>If you specify this parameter, the stream sends only the metrics from the metric namespaces that you specify here.</p>  <p>You cannot include <code>IncludeFilters</code> and <code>ExcludeFilters</code> in the same operation.</p>
+    ///   - [`exclude_filters(Option<Vec<MetricStreamFilter>>)`](crate::input::PutMetricStreamInput::exclude_filters): <p>If you specify this parameter, the stream sends metrics from all metric namespaces except for the namespaces that you specify here.</p>  <p>You cannot include <code>ExcludeFilters</code> and <code>IncludeFilters</code> in the same operation.</p>
+    ///   - [`firehose_arn(Option<String>)`](crate::input::PutMetricStreamInput::firehose_arn): <p>The ARN of the Amazon Kinesis Firehose delivery stream to use for this metric stream. This Amazon Kinesis Firehose delivery stream must already exist and must be in the same account as the metric stream.</p>
+    ///   - [`role_arn(Option<String>)`](crate::input::PutMetricStreamInput::role_arn): <p>The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Firehose resources. This IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the following permissions:</p>  <ul>   <li> <p>firehose:PutRecord</p> </li>   <li> <p>firehose:PutRecordBatch</p> </li>  </ul>
+    ///   - [`output_format(Option<MetricStreamOutputFormat>)`](crate::input::PutMetricStreamInput::output_format): <p>The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html"> Metric streams output formats</a>.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::PutMetricStreamInput::tags): <p>A list of key-value pairs to associate with the metric stream. You can associate as many as 50 tags with a metric stream.</p>  <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>  <p>You can use this parameter only when you are creating a new metric stream. If you are using this operation to update an existing metric stream, any tags you specify in this parameter are ignored. To change the tags of an existing metric stream, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
+    /// - On success, responds with [`PutMetricStreamOutput`](crate::output::PutMetricStreamOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::PutMetricStreamOutput::arn): <p>The ARN of the metric stream.</p>
+    /// - On failure, responds with [`SdkError<PutMetricStreamError>`](crate::error::PutMetricStreamError)
     pub fn put_metric_stream(&self) -> fluent_builders::PutMetricStream<C, M, R> {
         fluent_builders::PutMetricStream::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SetAlarmState` operation.
+    /// Constructs a fluent builder for the [`SetAlarmState`](crate::client::fluent_builders::SetAlarmState) operation.
     ///
-    /// See [`SetAlarmState`](crate::client::fluent_builders::SetAlarmState) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`SetAlarmStateInput`](crate::input::SetAlarmStateInput) with field(s):
+    ///   - [`alarm_name(Option<String>)`](crate::input::SetAlarmStateInput::alarm_name): <p>The name of the alarm.</p>
+    ///   - [`state_value(Option<StateValue>)`](crate::input::SetAlarmStateInput::state_value): <p>The value of the state.</p>
+    ///   - [`state_reason(Option<String>)`](crate::input::SetAlarmStateInput::state_reason): <p>The reason that this alarm is set to this specific state, in text format.</p>
+    ///   - [`state_reason_data(Option<String>)`](crate::input::SetAlarmStateInput::state_reason_data): <p>The reason that this alarm is set to this specific state, in JSON format.</p>  <p>For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto Scaling or application Auto Scaling alarm actions, the Auto Scaling policy uses the information in this field to take the correct action.</p>
+    /// - On success, responds with [`SetAlarmStateOutput`](crate::output::SetAlarmStateOutput)
+
+    /// - On failure, responds with [`SdkError<SetAlarmStateError>`](crate::error::SetAlarmStateError)
     pub fn set_alarm_state(&self) -> fluent_builders::SetAlarmState<C, M, R> {
         fluent_builders::SetAlarmState::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartMetricStreams` operation.
+    /// Constructs a fluent builder for the [`StartMetricStreams`](crate::client::fluent_builders::StartMetricStreams) operation.
     ///
-    /// See [`StartMetricStreams`](crate::client::fluent_builders::StartMetricStreams) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartMetricStreamsInput`](crate::input::StartMetricStreamsInput) with field(s):
+    ///   - [`names(Option<Vec<String>>)`](crate::input::StartMetricStreamsInput::names): <p>The array of the names of metric streams to start streaming.</p>  <p>This is an "all or nothing" operation. If you do not have permission to access all of the metric streams that you list here, then none of the streams that you list in the operation will start streaming.</p>
+    /// - On success, responds with [`StartMetricStreamsOutput`](crate::output::StartMetricStreamsOutput)
+
+    /// - On failure, responds with [`SdkError<StartMetricStreamsError>`](crate::error::StartMetricStreamsError)
     pub fn start_metric_streams(&self) -> fluent_builders::StartMetricStreams<C, M, R> {
         fluent_builders::StartMetricStreams::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopMetricStreams` operation.
+    /// Constructs a fluent builder for the [`StopMetricStreams`](crate::client::fluent_builders::StopMetricStreams) operation.
     ///
-    /// See [`StopMetricStreams`](crate::client::fluent_builders::StopMetricStreams) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StopMetricStreamsInput`](crate::input::StopMetricStreamsInput) with field(s):
+    ///   - [`names(Option<Vec<String>>)`](crate::input::StopMetricStreamsInput::names): <p>The array of the names of metric streams to stop streaming.</p>  <p>This is an "all or nothing" operation. If you do not have permission to access all of the metric streams that you list here, then none of the streams that you list in the operation will stop streaming.</p>
+    /// - On success, responds with [`StopMetricStreamsOutput`](crate::output::StopMetricStreamsOutput)
+
+    /// - On failure, responds with [`SdkError<StopMetricStreamsError>`](crate::error::StopMetricStreamsError)
     pub fn stop_metric_streams(&self) -> fluent_builders::StopMetricStreams<C, M, R> {
         fluent_builders::StopMetricStreams::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The ARN of the CloudWatch resource that you're adding tags to.</p>  <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p>  <p>The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code> </p>  <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"> Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>The list of key-value pairs to associate with the alarm.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The ARN of the CloudWatch resource that you're removing tags from.</p>  <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p>  <p>The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code> </p>  <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"> Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The list of tag keys to remove from the resource.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }

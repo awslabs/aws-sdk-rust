@@ -83,509 +83,1026 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AddRoleToDBCluster` operation.
+    /// Constructs a fluent builder for the [`AddRoleToDBCluster`](crate::client::fluent_builders::AddRoleToDBCluster) operation.
     ///
-    /// See [`AddRoleToDBCluster`](crate::client::fluent_builders::AddRoleToDBCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AddRoleToDbClusterInput`](crate::input::AddRoleToDbClusterInput) with field(s):
+    ///   - [`db_cluster_identifier(Option<String>)`](crate::input::AddRoleToDbClusterInput::db_cluster_identifier): <p>The name of the DB cluster to associate the IAM role with.</p>
+    ///   - [`role_arn(Option<String>)`](crate::input::AddRoleToDbClusterInput::role_arn): <p>The Amazon Resource Name (ARN) of the IAM role to associate with the Neptune DB cluster, for example <code>arn:aws:iam::123456789012:role/NeptuneAccessRole</code>.</p>
+    ///   - [`feature_name(Option<String>)`](crate::input::AddRoleToDbClusterInput::feature_name): <p>The name of the feature for the Neptune DB cluster that the IAM role is to be associated with. For the list of supported feature names, see <a href="neptune/latest/userguide/api-other-apis.html#DBEngineVersion">DBEngineVersion</a>.</p>
+    /// - On success, responds with [`AddRoleToDbClusterOutput`](crate::output::AddRoleToDbClusterOutput)
+
+    /// - On failure, responds with [`SdkError<AddRoleToDBClusterError>`](crate::error::AddRoleToDBClusterError)
     pub fn add_role_to_db_cluster(&self) -> fluent_builders::AddRoleToDBCluster<C, M, R> {
         fluent_builders::AddRoleToDBCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AddSourceIdentifierToSubscription` operation.
+    /// Constructs a fluent builder for the [`AddSourceIdentifierToSubscription`](crate::client::fluent_builders::AddSourceIdentifierToSubscription) operation.
     ///
-    /// See [`AddSourceIdentifierToSubscription`](crate::client::fluent_builders::AddSourceIdentifierToSubscription) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AddSourceIdentifierToSubscriptionInput`](crate::input::AddSourceIdentifierToSubscriptionInput) with field(s):
+    ///   - [`subscription_name(Option<String>)`](crate::input::AddSourceIdentifierToSubscriptionInput::subscription_name): <p>The name of the event notification subscription you want to add a source identifier to.</p>
+    ///   - [`source_identifier(Option<String>)`](crate::input::AddSourceIdentifierToSubscriptionInput::source_identifier): <p>The identifier of the event source to be added.</p>  <p>Constraints:</p>  <ul>   <li> <p>If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be supplied.</p> </li>   <li> <p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be supplied.</p> </li>   <li> <p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.</p> </li>   <li> <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</p> </li>  </ul>
+    /// - On success, responds with [`AddSourceIdentifierToSubscriptionOutput`](crate::output::AddSourceIdentifierToSubscriptionOutput) with field(s):
+    ///   - [`event_subscription(Option<EventSubscription>)`](crate::output::AddSourceIdentifierToSubscriptionOutput::event_subscription): <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
+    /// - On failure, responds with [`SdkError<AddSourceIdentifierToSubscriptionError>`](crate::error::AddSourceIdentifierToSubscriptionError)
     pub fn add_source_identifier_to_subscription(
         &self,
     ) -> fluent_builders::AddSourceIdentifierToSubscription<C, M, R> {
         fluent_builders::AddSourceIdentifierToSubscription::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AddTagsToResource` operation.
+    /// Constructs a fluent builder for the [`AddTagsToResource`](crate::client::fluent_builders::AddTagsToResource) operation.
     ///
-    /// See [`AddTagsToResource`](crate::client::fluent_builders::AddTagsToResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AddTagsToResourceInput`](crate::input::AddTagsToResourceInput) with field(s):
+    ///   - [`resource_name(Option<String>)`](crate::input::AddTagsToResourceInput::resource_name): <p>The Amazon Neptune resource that the tags are added to. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing"> Constructing an Amazon Resource Name (ARN)</a>.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::AddTagsToResourceInput::tags): <p>The tags to be assigned to the Amazon Neptune resource.</p>
+    /// - On success, responds with [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput)
+
+    /// - On failure, responds with [`SdkError<AddTagsToResourceError>`](crate::error::AddTagsToResourceError)
     pub fn add_tags_to_resource(&self) -> fluent_builders::AddTagsToResource<C, M, R> {
         fluent_builders::AddTagsToResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ApplyPendingMaintenanceAction` operation.
+    /// Constructs a fluent builder for the [`ApplyPendingMaintenanceAction`](crate::client::fluent_builders::ApplyPendingMaintenanceAction) operation.
     ///
-    /// See [`ApplyPendingMaintenanceAction`](crate::client::fluent_builders::ApplyPendingMaintenanceAction) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ApplyPendingMaintenanceActionInput`](crate::input::ApplyPendingMaintenanceActionInput) with field(s):
+    ///   - [`resource_identifier(Option<String>)`](crate::input::ApplyPendingMaintenanceActionInput::resource_identifier): <p>The Amazon Resource Name (ARN) of the resource that the pending maintenance action applies to. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing"> Constructing an Amazon Resource Name (ARN)</a>.</p>
+    ///   - [`apply_action(Option<String>)`](crate::input::ApplyPendingMaintenanceActionInput::apply_action): <p>The pending maintenance action to apply to this resource.</p>  <p>Valid values: <code>system-update</code>, <code>db-upgrade</code> </p>
+    ///   - [`opt_in_type(Option<String>)`](crate::input::ApplyPendingMaintenanceActionInput::opt_in_type): <p>A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type <code>immediate</code> can't be undone.</p>  <p>Valid values:</p>  <ul>   <li> <p> <code>immediate</code> - Apply the maintenance action immediately.</p> </li>   <li> <p> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p> </li>   <li> <p> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p> </li>  </ul>
+    /// - On success, responds with [`ApplyPendingMaintenanceActionOutput`](crate::output::ApplyPendingMaintenanceActionOutput) with field(s):
+    ///   - [`resource_pending_maintenance_actions(Option<ResourcePendingMaintenanceActions>)`](crate::output::ApplyPendingMaintenanceActionOutput::resource_pending_maintenance_actions): <p>Describes the pending maintenance actions for a resource.</p>
+    /// - On failure, responds with [`SdkError<ApplyPendingMaintenanceActionError>`](crate::error::ApplyPendingMaintenanceActionError)
     pub fn apply_pending_maintenance_action(
         &self,
     ) -> fluent_builders::ApplyPendingMaintenanceAction<C, M, R> {
         fluent_builders::ApplyPendingMaintenanceAction::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CopyDBClusterParameterGroup` operation.
+    /// Constructs a fluent builder for the [`CopyDBClusterParameterGroup`](crate::client::fluent_builders::CopyDBClusterParameterGroup) operation.
     ///
-    /// See [`CopyDBClusterParameterGroup`](crate::client::fluent_builders::CopyDBClusterParameterGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CopyDbClusterParameterGroupInput`](crate::input::CopyDbClusterParameterGroupInput) with field(s):
+    ///   - [`source_db_cluster_parameter_group_identifier(Option<String>)`](crate::input::CopyDbClusterParameterGroupInput::source_db_cluster_parameter_group_identifier): <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing"> Constructing an Amazon Resource Name (ARN)</a>.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must specify a valid DB cluster parameter group.</p> </li>   <li> <p>If the source DB cluster parameter group is in the same Amazon Region as the copy, specify a valid DB parameter group identifier, for example <code>my-db-cluster-param-group</code>, or a valid ARN.</p> </li>   <li> <p>If the source DB parameter group is in a different Amazon Region than the copy, specify a valid DB cluster parameter group ARN, for example <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.</p> </li>  </ul>
+    ///   - [`target_db_cluster_parameter_group_identifier(Option<String>)`](crate::input::CopyDbClusterParameterGroupInput::target_db_cluster_parameter_group_identifier): <p>The identifier for the copied DB cluster parameter group.</p>  <p>Constraints:</p>  <ul>   <li> <p>Cannot be null, empty, or blank</p> </li>   <li> <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li>   <li> <p>First character must be a letter</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>  </ul>  <p>Example: <code>my-cluster-param-group1</code> </p>
+    ///   - [`target_db_cluster_parameter_group_description(Option<String>)`](crate::input::CopyDbClusterParameterGroupInput::target_db_cluster_parameter_group_description): <p>A description for the copied DB cluster parameter group.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CopyDbClusterParameterGroupInput::tags): <p>The tags to be assigned to the copied DB cluster parameter group.</p>
+    /// - On success, responds with [`CopyDbClusterParameterGroupOutput`](crate::output::CopyDbClusterParameterGroupOutput) with field(s):
+    ///   - [`db_cluster_parameter_group(Option<DbClusterParameterGroup>)`](crate::output::CopyDbClusterParameterGroupOutput::db_cluster_parameter_group): <p>Contains the details of an Amazon Neptune DB cluster parameter group.</p>  <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.</p>
+    /// - On failure, responds with [`SdkError<CopyDBClusterParameterGroupError>`](crate::error::CopyDBClusterParameterGroupError)
     pub fn copy_db_cluster_parameter_group(
         &self,
     ) -> fluent_builders::CopyDBClusterParameterGroup<C, M, R> {
         fluent_builders::CopyDBClusterParameterGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CopyDBClusterSnapshot` operation.
+    /// Constructs a fluent builder for the [`CopyDBClusterSnapshot`](crate::client::fluent_builders::CopyDBClusterSnapshot) operation.
     ///
-    /// See [`CopyDBClusterSnapshot`](crate::client::fluent_builders::CopyDBClusterSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CopyDbClusterSnapshotInput`](crate::input::CopyDbClusterSnapshotInput) with field(s):
+    ///   - [`source_db_cluster_snapshot_identifier(Option<String>)`](crate::input::CopyDbClusterSnapshotInput::source_db_cluster_snapshot_identifier): <p>The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must specify a valid system snapshot in the "available" state.</p> </li>   <li> <p>Specify a valid DB snapshot identifier.</p> </li>  </ul>  <p>Example: <code>my-cluster-snapshot1</code> </p>
+    ///   - [`target_db_cluster_snapshot_identifier(Option<String>)`](crate::input::CopyDbClusterSnapshotInput::target_db_cluster_snapshot_identifier): <p>The identifier of the new DB cluster snapshot to create from the source DB cluster snapshot. This parameter is not case-sensitive.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul>  <p>Example: <code>my-cluster-snapshot2</code> </p>
+    ///   - [`kms_key_id(Option<String>)`](crate::input::CopyDbClusterSnapshotInput::kms_key_id): <p>The Amazon Amazon KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>  <p>If you copy an encrypted DB cluster snapshot from your Amazon account, you can specify a value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted with the same KMS key as the source DB cluster snapshot.</p>  <p>If you copy an encrypted DB cluster snapshot that is shared from another Amazon account, then you must specify a value for <code>KmsKeyId</code>.</p>  <p> KMS encryption keys are specific to the Amazon Region that they are created in, and you can't use encryption keys from one Amazon Region in another Amazon Region.</p>  <p>You cannot encrypt an unencrypted DB cluster snapshot when you copy it. If you try to copy an unencrypted DB cluster snapshot and specify a value for the KmsKeyId parameter, an error is returned.</p>
+    ///   - [`pre_signed_url(Option<String>)`](crate::input::CopyDbClusterSnapshotInput::pre_signed_url): <p>Not currently supported.</p>
+    ///   - [`copy_tags(Option<bool>)`](crate::input::CopyDbClusterSnapshotInput::copy_tags): <p>True to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot, and otherwise false. The default is false.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CopyDbClusterSnapshotInput::tags): <p>The tags to assign to the new DB cluster snapshot copy.</p>
+    /// - On success, responds with [`CopyDbClusterSnapshotOutput`](crate::output::CopyDbClusterSnapshotOutput) with field(s):
+    ///   - [`db_cluster_snapshot(Option<DbClusterSnapshot>)`](crate::output::CopyDbClusterSnapshotOutput::db_cluster_snapshot): <p>Contains the details for an Amazon Neptune DB cluster snapshot</p>  <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
+    /// - On failure, responds with [`SdkError<CopyDBClusterSnapshotError>`](crate::error::CopyDBClusterSnapshotError)
     pub fn copy_db_cluster_snapshot(&self) -> fluent_builders::CopyDBClusterSnapshot<C, M, R> {
         fluent_builders::CopyDBClusterSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CopyDBParameterGroup` operation.
+    /// Constructs a fluent builder for the [`CopyDBParameterGroup`](crate::client::fluent_builders::CopyDBParameterGroup) operation.
     ///
-    /// See [`CopyDBParameterGroup`](crate::client::fluent_builders::CopyDBParameterGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CopyDbParameterGroupInput`](crate::input::CopyDbParameterGroupInput) with field(s):
+    ///   - [`source_db_parameter_group_identifier(Option<String>)`](crate::input::CopyDbParameterGroupInput::source_db_parameter_group_identifier): <p>The identifier or ARN for the source DB parameter group. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing"> Constructing an Amazon Resource Name (ARN)</a>.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must specify a valid DB parameter group.</p> </li>   <li> <p>Must specify a valid DB parameter group identifier, for example <code>my-db-param-group</code>, or a valid ARN.</p> </li>  </ul>
+    ///   - [`target_db_parameter_group_identifier(Option<String>)`](crate::input::CopyDbParameterGroupInput::target_db_parameter_group_identifier): <p>The identifier for the copied DB parameter group.</p>  <p>Constraints:</p>  <ul>   <li> <p>Cannot be null, empty, or blank.</p> </li>   <li> <p>Must contain from 1 to 255 letters, numbers, or hyphens.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul>  <p>Example: <code>my-db-parameter-group</code> </p>
+    ///   - [`target_db_parameter_group_description(Option<String>)`](crate::input::CopyDbParameterGroupInput::target_db_parameter_group_description): <p>A description for the copied DB parameter group.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CopyDbParameterGroupInput::tags): <p>The tags to be assigned to the copied DB parameter group.</p>
+    /// - On success, responds with [`CopyDbParameterGroupOutput`](crate::output::CopyDbParameterGroupOutput) with field(s):
+    ///   - [`db_parameter_group(Option<DbParameterGroup>)`](crate::output::CopyDbParameterGroupOutput::db_parameter_group): <p>Contains the details of an Amazon Neptune DB parameter group.</p>  <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.</p>
+    /// - On failure, responds with [`SdkError<CopyDBParameterGroupError>`](crate::error::CopyDBParameterGroupError)
     pub fn copy_db_parameter_group(&self) -> fluent_builders::CopyDBParameterGroup<C, M, R> {
         fluent_builders::CopyDBParameterGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDBCluster` operation.
+    /// Constructs a fluent builder for the [`CreateDBCluster`](crate::client::fluent_builders::CreateDBCluster) operation.
     ///
-    /// See [`CreateDBCluster`](crate::client::fluent_builders::CreateDBCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateDbClusterInput`](crate::input::CreateDbClusterInput) with field(s):
+    ///   - [`availability_zones(Option<Vec<String>>)`](crate::input::CreateDbClusterInput::availability_zones): <p>A list of EC2 Availability Zones that instances in the DB cluster can be created in.</p>
+    ///   - [`backup_retention_period(Option<i32>)`](crate::input::CreateDbClusterInput::backup_retention_period): <p>The number of days for which automated backups are retained. You must specify a minimum value of 1.</p>  <p>Default: 1</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be a value from 1 to 35</p> </li>  </ul>
+    ///   - [`character_set_name(Option<String>)`](crate::input::CreateDbClusterInput::character_set_name): <p> <i>(Not supported by Neptune)</i> </p>
+    ///   - [`copy_tags_to_snapshot(Option<bool>)`](crate::input::CreateDbClusterInput::copy_tags_to_snapshot): <p> <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i> </p>
+    ///   - [`database_name(Option<String>)`](crate::input::CreateDbClusterInput::database_name): <p>The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon Neptune will not create a database in the DB cluster you are creating.</p>
+    ///   - [`db_cluster_identifier(Option<String>)`](crate::input::CreateDbClusterInput::db_cluster_identifier): <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul>  <p>Example: <code>my-cluster1</code> </p>
+    ///   - [`db_cluster_parameter_group_name(Option<String>)`](crate::input::CreateDbClusterInput::db_cluster_parameter_group_name): <p> The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted, the default is used.</p>  <p>Constraints:</p>  <ul>   <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>  </ul>
+    ///   - [`vpc_security_group_ids(Option<Vec<String>>)`](crate::input::CreateDbClusterInput::vpc_security_group_ids): <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
+    ///   - [`db_subnet_group_name(Option<String>)`](crate::input::CreateDbClusterInput::db_subnet_group_name): <p>A DB subnet group to associate with this DB cluster.</p>  <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>  <p>Example: <code>mySubnetgroup</code> </p>
+    ///   - [`engine(Option<String>)`](crate::input::CreateDbClusterInput::engine): <p>The name of the database engine to be used for this DB cluster.</p>  <p>Valid Values: <code>neptune</code> </p>
+    ///   - [`engine_version(Option<String>)`](crate::input::CreateDbClusterInput::engine_version): <p>The version number of the database engine to use for the new DB cluster.</p>  <p>Example: <code>1.0.2.1</code> </p>
+    ///   - [`port(Option<i32>)`](crate::input::CreateDbClusterInput::port): <p>The port number on which the instances in the DB cluster accept connections.</p>  <p> Default: <code>8182</code> </p>
+    ///   - [`master_username(Option<String>)`](crate::input::CreateDbClusterInput::master_username): <p>Not supported by Neptune.</p>
+    ///   - [`master_user_password(Option<String>)`](crate::input::CreateDbClusterInput::master_user_password): <p>Not supported by Neptune.</p>
+    ///   - [`option_group_name(Option<String>)`](crate::input::CreateDbClusterInput::option_group_name): <p> <i>(Not supported by Neptune)</i> </p>
+    ///   - [`preferred_backup_window(Option<String>)`](crate::input::CreateDbClusterInput::preferred_backup_window): <p>The daily time range during which automated backups are created if automated backups are enabled using the <code>BackupRetentionPeriod</code> parameter.</p>  <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>  <p>Constraints:</p>  <ul>   <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>   <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>   <li> <p>Must not conflict with the preferred maintenance window.</p> </li>   <li> <p>Must be at least 30 minutes.</p> </li>  </ul>
+    ///   - [`preferred_maintenance_window(Option<String>)`](crate::input::CreateDbClusterInput::preferred_maintenance_window): <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>  <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>  <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region, occurring on a random day of the week. To see the time blocks available, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i> </p>  <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>  <p>Constraints: Minimum 30-minute window.</p>
+    ///   - [`replication_source_identifier(Option<String>)`](crate::input::CreateDbClusterInput::replication_source_identifier): <p>The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB cluster is created as a Read Replica.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateDbClusterInput::tags): <p>The tags to assign to the new DB cluster.</p>
+    ///   - [`storage_encrypted(Option<bool>)`](crate::input::CreateDbClusterInput::storage_encrypted): <p>Specifies whether the DB cluster is encrypted.</p>
+    ///   - [`kms_key_id(Option<String>)`](crate::input::CreateDbClusterInput::kms_key_id): <p>The Amazon KMS key identifier for an encrypted DB cluster.</p>  <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>  <p>If an encryption key is not specified in <code>KmsKeyId</code>:</p>  <ul>   <li> <p>If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon Neptune will use the encryption key used to encrypt the source. Otherwise, Amazon Neptune will use your default encryption key.</p> </li>   <li> <p>If the <code>StorageEncrypted</code> parameter is true and <code>ReplicationSourceIdentifier</code> is not specified, then Amazon Neptune will use your default encryption key.</p> </li>  </ul>  <p>Amazon KMS creates the default encryption key for your Amazon account. Your Amazon account has a different default encryption key for each Amazon Region.</p>  <p>If you create a Read Replica of an encrypted DB cluster in another Amazon Region, you must set <code>KmsKeyId</code> to a KMS key ID that is valid in the destination Amazon Region. This key is used to encrypt the Read Replica in that Amazon Region.</p>
+    ///   - [`pre_signed_url(Option<String>)`](crate::input::CreateDbClusterInput::pre_signed_url): <p>This parameter is not currently supported.</p>
+    ///   - [`enable_iam_database_authentication(Option<bool>)`](crate::input::CreateDbClusterInput::enable_iam_database_authentication): <p>If set to <code>true</code>, enables Amazon Identity and Access Management (IAM) authentication for the entire DB cluster (this cannot be set at an instance level).</p>  <p>Default: <code>false</code>.</p>
+    ///   - [`enable_cloudwatch_logs_exports(Option<Vec<String>>)`](crate::input::CreateDbClusterInput::enable_cloudwatch_logs_exports): <p>The list of log types that need to be enabled for exporting to CloudWatch Logs.</p>
+    ///   - [`deletion_protection(Option<bool>)`](crate::input::CreateDbClusterInput::deletion_protection): <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is enabled.</p>
+    /// - On success, responds with [`CreateDbClusterOutput`](crate::output::CreateDbClusterOutput) with field(s):
+    ///   - [`db_cluster(Option<DbCluster>)`](crate::output::CreateDbClusterOutput::db_cluster): <p>Contains the details of an Amazon Neptune DB cluster.</p>  <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
+    /// - On failure, responds with [`SdkError<CreateDBClusterError>`](crate::error::CreateDBClusterError)
     pub fn create_db_cluster(&self) -> fluent_builders::CreateDBCluster<C, M, R> {
         fluent_builders::CreateDBCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDBClusterEndpoint` operation.
+    /// Constructs a fluent builder for the [`CreateDBClusterEndpoint`](crate::client::fluent_builders::CreateDBClusterEndpoint) operation.
     ///
-    /// See [`CreateDBClusterEndpoint`](crate::client::fluent_builders::CreateDBClusterEndpoint) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateDbClusterEndpointInput`](crate::input::CreateDbClusterEndpointInput) with field(s):
+    ///   - [`db_cluster_identifier(Option<String>)`](crate::input::CreateDbClusterEndpointInput::db_cluster_identifier): <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
+    ///   - [`db_cluster_endpoint_identifier(Option<String>)`](crate::input::CreateDbClusterEndpointInput::db_cluster_endpoint_identifier): <p>The identifier to use for the new endpoint. This parameter is stored as a lowercase string.</p>
+    ///   - [`endpoint_type(Option<String>)`](crate::input::CreateDbClusterEndpointInput::endpoint_type): <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
+    ///   - [`static_members(Option<Vec<String>>)`](crate::input::CreateDbClusterEndpointInput::static_members): <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
+    ///   - [`excluded_members(Option<Vec<String>>)`](crate::input::CreateDbClusterEndpointInput::excluded_members): <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateDbClusterEndpointInput::tags): <p>The tags to be assigned to the Amazon Neptune resource.</p>
+    /// - On success, responds with [`CreateDbClusterEndpointOutput`](crate::output::CreateDbClusterEndpointOutput) with field(s):
+    ///   - [`db_cluster_endpoint_identifier(Option<String>)`](crate::output::CreateDbClusterEndpointOutput::db_cluster_endpoint_identifier): <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
+    ///   - [`db_cluster_identifier(Option<String>)`](crate::output::CreateDbClusterEndpointOutput::db_cluster_identifier): <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
+    ///   - [`db_cluster_endpoint_resource_identifier(Option<String>)`](crate::output::CreateDbClusterEndpointOutput::db_cluster_endpoint_resource_identifier): <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
+    ///   - [`endpoint(Option<String>)`](crate::output::CreateDbClusterEndpointOutput::endpoint): <p>The DNS address of the endpoint.</p>
+    ///   - [`status(Option<String>)`](crate::output::CreateDbClusterEndpointOutput::status): <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that cannot be used for a certain kind of cluster, such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
+    ///   - [`endpoint_type(Option<String>)`](crate::output::CreateDbClusterEndpointOutput::endpoint_type): <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>CUSTOM</code>.</p>
+    ///   - [`custom_endpoint_type(Option<String>)`](crate::output::CreateDbClusterEndpointOutput::custom_endpoint_type): <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
+    ///   - [`static_members(Option<Vec<String>>)`](crate::output::CreateDbClusterEndpointOutput::static_members): <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
+    ///   - [`excluded_members(Option<Vec<String>>)`](crate::output::CreateDbClusterEndpointOutput::excluded_members): <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
+    ///   - [`db_cluster_endpoint_arn(Option<String>)`](crate::output::CreateDbClusterEndpointOutput::db_cluster_endpoint_arn): <p>The Amazon Resource Name (ARN) for the endpoint.</p>
+    /// - On failure, responds with [`SdkError<CreateDBClusterEndpointError>`](crate::error::CreateDBClusterEndpointError)
     pub fn create_db_cluster_endpoint(&self) -> fluent_builders::CreateDBClusterEndpoint<C, M, R> {
         fluent_builders::CreateDBClusterEndpoint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDBClusterParameterGroup` operation.
+    /// Constructs a fluent builder for the [`CreateDBClusterParameterGroup`](crate::client::fluent_builders::CreateDBClusterParameterGroup) operation.
     ///
-    /// See [`CreateDBClusterParameterGroup`](crate::client::fluent_builders::CreateDBClusterParameterGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateDbClusterParameterGroupInput`](crate::input::CreateDbClusterParameterGroupInput) with field(s):
+    ///   - [`db_cluster_parameter_group_name(Option<String>)`](crate::input::CreateDbClusterParameterGroupInput::db_cluster_parameter_group_name): <p>The name of the DB cluster parameter group.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must match the name of an existing DBClusterParameterGroup.</p> </li>  </ul> <note>   <p>This value is stored as a lowercase string.</p>  </note>
+    ///   - [`db_parameter_group_family(Option<String>)`](crate::input::CreateDbClusterParameterGroupInput::db_parameter_group_family): <p>The DB cluster parameter group family name. A DB cluster parameter group can be associated with one and only one DB cluster parameter group family, and can be applied only to a DB cluster running a database engine and engine version compatible with that DB cluster parameter group family.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateDbClusterParameterGroupInput::description): <p>The description for the DB cluster parameter group.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateDbClusterParameterGroupInput::tags): <p>The tags to be assigned to the new DB cluster parameter group.</p>
+    /// - On success, responds with [`CreateDbClusterParameterGroupOutput`](crate::output::CreateDbClusterParameterGroupOutput) with field(s):
+    ///   - [`db_cluster_parameter_group(Option<DbClusterParameterGroup>)`](crate::output::CreateDbClusterParameterGroupOutput::db_cluster_parameter_group): <p>Contains the details of an Amazon Neptune DB cluster parameter group.</p>  <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.</p>
+    /// - On failure, responds with [`SdkError<CreateDBClusterParameterGroupError>`](crate::error::CreateDBClusterParameterGroupError)
     pub fn create_db_cluster_parameter_group(
         &self,
     ) -> fluent_builders::CreateDBClusterParameterGroup<C, M, R> {
         fluent_builders::CreateDBClusterParameterGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDBClusterSnapshot` operation.
+    /// Constructs a fluent builder for the [`CreateDBClusterSnapshot`](crate::client::fluent_builders::CreateDBClusterSnapshot) operation.
     ///
-    /// See [`CreateDBClusterSnapshot`](crate::client::fluent_builders::CreateDBClusterSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateDbClusterSnapshotInput`](crate::input::CreateDbClusterSnapshotInput) with field(s):
+    ///   - [`db_cluster_snapshot_identifier(Option<String>)`](crate::input::CreateDbClusterSnapshotInput::db_cluster_snapshot_identifier): <p>The identifier of the DB cluster snapshot. This parameter is stored as a lowercase string.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul>  <p>Example: <code>my-cluster1-snapshot1</code> </p>
+    ///   - [`db_cluster_identifier(Option<String>)`](crate::input::CreateDbClusterSnapshotInput::db_cluster_identifier): <p>The identifier of the DB cluster to create a snapshot for. This parameter is not case-sensitive.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must match the identifier of an existing DBCluster.</p> </li>  </ul>  <p>Example: <code>my-cluster1</code> </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateDbClusterSnapshotInput::tags): <p>The tags to be assigned to the DB cluster snapshot.</p>
+    /// - On success, responds with [`CreateDbClusterSnapshotOutput`](crate::output::CreateDbClusterSnapshotOutput) with field(s):
+    ///   - [`db_cluster_snapshot(Option<DbClusterSnapshot>)`](crate::output::CreateDbClusterSnapshotOutput::db_cluster_snapshot): <p>Contains the details for an Amazon Neptune DB cluster snapshot</p>  <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
+    /// - On failure, responds with [`SdkError<CreateDBClusterSnapshotError>`](crate::error::CreateDBClusterSnapshotError)
     pub fn create_db_cluster_snapshot(&self) -> fluent_builders::CreateDBClusterSnapshot<C, M, R> {
         fluent_builders::CreateDBClusterSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDBInstance` operation.
+    /// Constructs a fluent builder for the [`CreateDBInstance`](crate::client::fluent_builders::CreateDBInstance) operation.
     ///
-    /// See [`CreateDBInstance`](crate::client::fluent_builders::CreateDBInstance) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateDbInstanceInput`](crate::input::CreateDbInstanceInput) with field(s):
+    ///   - [`db_name(Option<String>)`](crate::input::CreateDbInstanceInput::db_name): <p>Not supported.</p>
+    ///   - [`db_instance_identifier(Option<String>)`](crate::input::CreateDbInstanceInput::db_instance_identifier): <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul>  <p>Example: <code>mydbinstance</code> </p>
+    ///   - [`allocated_storage(Option<i32>)`](crate::input::CreateDbInstanceInput::allocated_storage): <p>Not supported by Neptune.</p>
+    ///   - [`db_instance_class(Option<String>)`](crate::input::CreateDbInstanceInput::db_instance_class): <p>The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance classes are available in all Amazon Regions.</p>
+    ///   - [`engine(Option<String>)`](crate::input::CreateDbInstanceInput::engine): <p>The name of the database engine to be used for this instance.</p>  <p>Valid Values: <code>neptune</code> </p>
+    ///   - [`master_username(Option<String>)`](crate::input::CreateDbInstanceInput::master_username): <p>Not supported by Neptune.</p>
+    ///   - [`master_user_password(Option<String>)`](crate::input::CreateDbInstanceInput::master_user_password): <p>Not supported by Neptune.</p>
+    ///   - [`db_security_groups(Option<Vec<String>>)`](crate::input::CreateDbInstanceInput::db_security_groups): <p>A list of DB security groups to associate with this DB instance.</p>  <p>Default: The default DB security group for the database engine.</p>
+    ///   - [`vpc_security_group_ids(Option<Vec<String>>)`](crate::input::CreateDbInstanceInput::vpc_security_group_ids): <p>A list of EC2 VPC security groups to associate with this DB instance.</p>  <p>Not applicable. The associated list of EC2 VPC security groups is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>  <p>Default: The default EC2 VPC security group for the DB subnet group's VPC.</p>
+    ///   - [`availability_zone(Option<String>)`](crate::input::CreateDbInstanceInput::availability_zone): <p> The EC2 Availability Zone that the DB instance is created in</p>  <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon Region.</p>  <p> Example: <code>us-east-1d</code> </p>  <p> Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to <code>true</code>. The specified Availability Zone must be in the same Amazon Region as the current endpoint.</p>
+    ///   - [`db_subnet_group_name(Option<String>)`](crate::input::CreateDbInstanceInput::db_subnet_group_name): <p>A DB subnet group to associate with this DB instance.</p>  <p>If there is no DB subnet group, then it is a non-VPC DB instance.</p>
+    ///   - [`preferred_maintenance_window(Option<String>)`](crate::input::CreateDbInstanceInput::preferred_maintenance_window): <p>The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>  <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>  <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region, occurring on a random day of the week.</p>  <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>  <p>Constraints: Minimum 30-minute window.</p>
+    ///   - [`db_parameter_group_name(Option<String>)`](crate::input::CreateDbInstanceInput::db_parameter_group_name): <p>The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the default DBParameterGroup for the specified engine is used.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>   <li> <p>First character must be a letter</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>  </ul>
+    ///   - [`backup_retention_period(Option<i32>)`](crate::input::CreateDbInstanceInput::backup_retention_period): <p>The number of days for which automated backups are retained.</p>  <p>Not applicable. The retention period for automated backups is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>  <p>Default: 1</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be a value from 0 to 35</p> </li>   <li> <p>Cannot be set to 0 if the DB instance is a source to Read Replicas</p> </li>  </ul>
+    ///   - [`preferred_backup_window(Option<String>)`](crate::input::CreateDbInstanceInput::preferred_backup_window): <p> The daily time range during which automated backups are created.</p>  <p>Not applicable. The daily time range for creating automated backups is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
+    ///   - [`port(Option<i32>)`](crate::input::CreateDbInstanceInput::port): <p>The port number on which the database accepts connections.</p>  <p>Not applicable. The port is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>  <p> Default: <code>8182</code> </p>  <p>Type: Integer</p>
+    ///   - [`multi_az(Option<bool>)`](crate::input::CreateDbInstanceInput::multi_az): <p>Specifies if the DB instance is a Multi-AZ deployment. You can't set the AvailabilityZone parameter if the MultiAZ parameter is set to true.</p>
+    ///   - [`engine_version(Option<String>)`](crate::input::CreateDbInstanceInput::engine_version): <p>The version number of the database engine to use. Currently, setting this parameter has no effect.</p>
+    ///   - [`auto_minor_version_upgrade(Option<bool>)`](crate::input::CreateDbInstanceInput::auto_minor_version_upgrade): <p>Indicates that minor engine upgrades are applied automatically to the DB instance during the maintenance window.</p>  <p>Default: <code>true</code> </p>
+    ///   - [`license_model(Option<String>)`](crate::input::CreateDbInstanceInput::license_model): <p>License model information for this DB instance.</p>  <p> Valid values: <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code> </p>
+    ///   - [`iops(Option<i32>)`](crate::input::CreateDbInstanceInput::iops): <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance.</p>
+    ///   - [`option_group_name(Option<String>)`](crate::input::CreateDbInstanceInput::option_group_name): <p> <i>(Not supported by Neptune)</i> </p>
+    ///   - [`character_set_name(Option<String>)`](crate::input::CreateDbInstanceInput::character_set_name): <p> <i>(Not supported by Neptune)</i> </p>
+    ///   - [`publicly_accessible(Option<bool>)`](crate::input::CreateDbInstanceInput::publicly_accessible): <p>This flag should no longer be used.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateDbInstanceInput::tags): <p>The tags to assign to the new instance.</p>
+    ///   - [`db_cluster_identifier(Option<String>)`](crate::input::CreateDbInstanceInput::db_cluster_identifier): <p>The identifier of the DB cluster that the instance will belong to.</p>  <p>For information on creating a DB cluster, see <code>CreateDBCluster</code>.</p>  <p>Type: String</p>
+    ///   - [`storage_type(Option<String>)`](crate::input::CreateDbInstanceInput::storage_type): <p>Specifies the storage type to be associated with the DB instance.</p>  <p>Not applicable. Storage is managed by the DB Cluster.</p>
+    ///   - [`tde_credential_arn(Option<String>)`](crate::input::CreateDbInstanceInput::tde_credential_arn): <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
+    ///   - [`tde_credential_password(Option<String>)`](crate::input::CreateDbInstanceInput::tde_credential_password): <p>The password for the given ARN from the key store in order to access the device.</p>
+    ///   - [`storage_encrypted(Option<bool>)`](crate::input::CreateDbInstanceInput::storage_encrypted): <p>Specifies whether the DB instance is encrypted.</p>  <p>Not applicable. The encryption for DB instances is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>  <p>Default: false</p>
+    ///   - [`kms_key_id(Option<String>)`](crate::input::CreateDbInstanceInput::kms_key_id): <p>The Amazon KMS key identifier for an encrypted DB instance.</p>  <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB instance with the same Amazon account that owns the KMS encryption key used to encrypt the new DB instance, then you can use the KMS key alias instead of the ARN for the KM encryption key.</p>  <p>Not applicable. The KMS key identifier is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>  <p>If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the <code>KmsKeyId</code> parameter, then Amazon Neptune will use your default encryption key. Amazon KMS creates the default encryption key for your Amazon account. Your Amazon account has a different default encryption key for each Amazon Region.</p>
+    ///   - [`domain(Option<String>)`](crate::input::CreateDbInstanceInput::domain): <p>Specify the Active Directory Domain to create the instance in.</p>
+    ///   - [`copy_tags_to_snapshot(Option<bool>)`](crate::input::CreateDbInstanceInput::copy_tags_to_snapshot): <p>True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise false. The default is false.</p>
+    ///   - [`monitoring_interval(Option<i32>)`](crate::input::CreateDbInstanceInput::monitoring_interval): <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>  <p>If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code> to a value other than 0.</p>  <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
+    ///   - [`monitoring_role_arn(Option<String>)`](crate::input::CreateDbInstanceInput::monitoring_role_arn): <p>The ARN for the IAM role that permits Neptune to send enhanced monitoring metrics to Amazon CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>.</p>  <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
+    ///   - [`domain_iam_role_name(Option<String>)`](crate::input::CreateDbInstanceInput::domain_iam_role_name): <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+    ///   - [`promotion_tier(Option<i32>)`](crate::input::CreateDbInstanceInput::promotion_tier): <p>A value that specifies the order in which an Read Replica is promoted to the primary instance after a failure of the existing primary instance. </p>  <p>Default: 1</p>  <p>Valid Values: 0 - 15</p>
+    ///   - [`timezone(Option<String>)`](crate::input::CreateDbInstanceInput::timezone): <p>The time zone of the DB instance.</p>
+    ///   - [`enable_iam_database_authentication(Option<bool>)`](crate::input::CreateDbInstanceInput::enable_iam_database_authentication): <p>Not supported by Neptune (ignored).</p>
+    ///   - [`enable_performance_insights(Option<bool>)`](crate::input::CreateDbInstanceInput::enable_performance_insights): <p> <i>(Not supported by Neptune)</i> </p>
+    ///   - [`performance_insights_kms_key_id(Option<String>)`](crate::input::CreateDbInstanceInput::performance_insights_kms_key_id): <p> <i>(Not supported by Neptune)</i> </p>
+    ///   - [`enable_cloudwatch_logs_exports(Option<Vec<String>>)`](crate::input::CreateDbInstanceInput::enable_cloudwatch_logs_exports): <p>The list of log types that need to be enabled for exporting to CloudWatch Logs.</p>
+    ///   - [`deletion_protection(Option<bool>)`](crate::input::CreateDbInstanceInput::deletion_protection): <p>A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB Instance</a>.</p>  <p>DB instances in a DB cluster can be deleted even when deletion protection is enabled in their parent DB cluster.</p>
+    /// - On success, responds with [`CreateDbInstanceOutput`](crate::output::CreateDbInstanceOutput) with field(s):
+    ///   - [`db_instance(Option<DbInstance>)`](crate::output::CreateDbInstanceOutput::db_instance): <p>Contains the details of an Amazon Neptune DB instance.</p>  <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
+    /// - On failure, responds with [`SdkError<CreateDBInstanceError>`](crate::error::CreateDBInstanceError)
     pub fn create_db_instance(&self) -> fluent_builders::CreateDBInstance<C, M, R> {
         fluent_builders::CreateDBInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDBParameterGroup` operation.
+    /// Constructs a fluent builder for the [`CreateDBParameterGroup`](crate::client::fluent_builders::CreateDBParameterGroup) operation.
     ///
-    /// See [`CreateDBParameterGroup`](crate::client::fluent_builders::CreateDBParameterGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateDbParameterGroupInput`](crate::input::CreateDbParameterGroupInput) with field(s):
+    ///   - [`db_parameter_group_name(Option<String>)`](crate::input::CreateDbParameterGroupInput::db_parameter_group_name): <p>The name of the DB parameter group.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>   <li> <p>First character must be a letter</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>  </ul> <note>   <p>This value is stored as a lowercase string.</p>  </note>
+    ///   - [`db_parameter_group_family(Option<String>)`](crate::input::CreateDbParameterGroupInput::db_parameter_group_family): <p>The DB parameter group family name. A DB parameter group can be associated with one and only one DB parameter group family, and can be applied only to a DB instance running a database engine and engine version compatible with that DB parameter group family.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateDbParameterGroupInput::description): <p>The description for the DB parameter group.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateDbParameterGroupInput::tags): <p>The tags to be assigned to the new DB parameter group.</p>
+    /// - On success, responds with [`CreateDbParameterGroupOutput`](crate::output::CreateDbParameterGroupOutput) with field(s):
+    ///   - [`db_parameter_group(Option<DbParameterGroup>)`](crate::output::CreateDbParameterGroupOutput::db_parameter_group): <p>Contains the details of an Amazon Neptune DB parameter group.</p>  <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.</p>
+    /// - On failure, responds with [`SdkError<CreateDBParameterGroupError>`](crate::error::CreateDBParameterGroupError)
     pub fn create_db_parameter_group(&self) -> fluent_builders::CreateDBParameterGroup<C, M, R> {
         fluent_builders::CreateDBParameterGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDBSubnetGroup` operation.
+    /// Constructs a fluent builder for the [`CreateDBSubnetGroup`](crate::client::fluent_builders::CreateDBSubnetGroup) operation.
     ///
-    /// See [`CreateDBSubnetGroup`](crate::client::fluent_builders::CreateDBSubnetGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateDbSubnetGroupInput`](crate::input::CreateDbSubnetGroupInput) with field(s):
+    ///   - [`db_subnet_group_name(Option<String>)`](crate::input::CreateDbSubnetGroupInput::db_subnet_group_name): <p>The name for the DB subnet group. This value is stored as a lowercase string.</p>  <p>Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens. Must not be default.</p>  <p>Example: <code>mySubnetgroup</code> </p>
+    ///   - [`db_subnet_group_description(Option<String>)`](crate::input::CreateDbSubnetGroupInput::db_subnet_group_description): <p>The description for the DB subnet group.</p>
+    ///   - [`subnet_ids(Option<Vec<String>>)`](crate::input::CreateDbSubnetGroupInput::subnet_ids): <p>The EC2 Subnet IDs for the DB subnet group.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateDbSubnetGroupInput::tags): <p>The tags to be assigned to the new DB subnet group.</p>
+    /// - On success, responds with [`CreateDbSubnetGroupOutput`](crate::output::CreateDbSubnetGroupOutput) with field(s):
+    ///   - [`db_subnet_group(Option<DbSubnetGroup>)`](crate::output::CreateDbSubnetGroupOutput::db_subnet_group): <p>Contains the details of an Amazon Neptune DB subnet group.</p>  <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.</p>
+    /// - On failure, responds with [`SdkError<CreateDBSubnetGroupError>`](crate::error::CreateDBSubnetGroupError)
     pub fn create_db_subnet_group(&self) -> fluent_builders::CreateDBSubnetGroup<C, M, R> {
         fluent_builders::CreateDBSubnetGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateEventSubscription` operation.
+    /// Constructs a fluent builder for the [`CreateEventSubscription`](crate::client::fluent_builders::CreateEventSubscription) operation.
     ///
-    /// See [`CreateEventSubscription`](crate::client::fluent_builders::CreateEventSubscription) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateEventSubscriptionInput`](crate::input::CreateEventSubscriptionInput) with field(s):
+    ///   - [`subscription_name(Option<String>)`](crate::input::CreateEventSubscriptionInput::subscription_name): <p>The name of the subscription.</p>  <p>Constraints: The name must be less than 255 characters.</p>
+    ///   - [`sns_topic_arn(Option<String>)`](crate::input::CreateEventSubscriptionInput::sns_topic_arn): <p>The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
+    ///   - [`source_type(Option<String>)`](crate::input::CreateEventSubscriptionInput::source_type): <p>The type of source that is generating the events. For example, if you want to be notified of events generated by a DB instance, you would set this parameter to db-instance. if this value is not specified, all events are returned.</p>  <p>Valid values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> | <code>db-security-group</code> | <code>db-snapshot</code> | <code>db-cluster-snapshot</code> </p>
+    ///   - [`event_categories(Option<Vec<String>>)`](crate::input::CreateEventSubscriptionInput::event_categories): <p> A list of event categories for a SourceType that you want to subscribe to. You can see a list of the categories for a given SourceType by using the <b>DescribeEventCategories</b> action.</p>
+    ///   - [`source_ids(Option<Vec<String>>)`](crate::input::CreateEventSubscriptionInput::source_ids): <p>The list of identifiers of the event sources for which events are returned. If not specified, then all sources are included in the response. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>  <p>Constraints:</p>  <ul>   <li> <p>If SourceIds are supplied, SourceType must also be provided.</p> </li>   <li> <p>If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be supplied.</p> </li>   <li> <p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be supplied.</p> </li>   <li> <p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.</p> </li>   <li> <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</p> </li>  </ul>
+    ///   - [`enabled(Option<bool>)`](crate::input::CreateEventSubscriptionInput::enabled): <p> A Boolean value; set to <b>true</b> to activate the subscription, set to <b>false</b> to create the subscription but not active it.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateEventSubscriptionInput::tags): <p>The tags to be applied to the new event subscription.</p>
+    /// - On success, responds with [`CreateEventSubscriptionOutput`](crate::output::CreateEventSubscriptionOutput) with field(s):
+    ///   - [`event_subscription(Option<EventSubscription>)`](crate::output::CreateEventSubscriptionOutput::event_subscription): <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
+    /// - On failure, responds with [`SdkError<CreateEventSubscriptionError>`](crate::error::CreateEventSubscriptionError)
     pub fn create_event_subscription(&self) -> fluent_builders::CreateEventSubscription<C, M, R> {
         fluent_builders::CreateEventSubscription::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDBCluster` operation.
+    /// Constructs a fluent builder for the [`DeleteDBCluster`](crate::client::fluent_builders::DeleteDBCluster) operation.
     ///
-    /// See [`DeleteDBCluster`](crate::client::fluent_builders::DeleteDBCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteDbClusterInput`](crate::input::DeleteDbClusterInput) with field(s):
+    ///   - [`db_cluster_identifier(Option<String>)`](crate::input::DeleteDbClusterInput::db_cluster_identifier): <p>The DB cluster identifier for the DB cluster to be deleted. This parameter isn't case-sensitive.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must match an existing DBClusterIdentifier.</p> </li>  </ul>
+    ///   - [`skip_final_snapshot(bool)`](crate::input::DeleteDbClusterInput::skip_final_snapshot): <p> Determines whether a final DB cluster snapshot is created before the DB cluster is deleted. If <code>true</code> is specified, no DB cluster snapshot is created. If <code>false</code> is specified, a DB cluster snapshot is created before the DB cluster is deleted.</p> <note>   <p>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if <code>SkipFinalSnapshot</code> is <code>false</code>.</p>  </note>  <p>Default: <code>false</code> </p>
+    ///   - [`final_db_snapshot_identifier(Option<String>)`](crate::input::DeleteDbClusterInput::final_db_snapshot_identifier): <p> The DB cluster snapshot identifier of the new DB cluster snapshot created when <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p> <note>   <p> Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter to true results in an error.</p>  </note>  <p>Constraints:</p>  <ul>   <li> <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li>   <li> <p>First character must be a letter</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>  </ul>
+    /// - On success, responds with [`DeleteDbClusterOutput`](crate::output::DeleteDbClusterOutput) with field(s):
+    ///   - [`db_cluster(Option<DbCluster>)`](crate::output::DeleteDbClusterOutput::db_cluster): <p>Contains the details of an Amazon Neptune DB cluster.</p>  <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
+    /// - On failure, responds with [`SdkError<DeleteDBClusterError>`](crate::error::DeleteDBClusterError)
     pub fn delete_db_cluster(&self) -> fluent_builders::DeleteDBCluster<C, M, R> {
         fluent_builders::DeleteDBCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDBClusterEndpoint` operation.
+    /// Constructs a fluent builder for the [`DeleteDBClusterEndpoint`](crate::client::fluent_builders::DeleteDBClusterEndpoint) operation.
     ///
-    /// See [`DeleteDBClusterEndpoint`](crate::client::fluent_builders::DeleteDBClusterEndpoint) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteDbClusterEndpointInput`](crate::input::DeleteDbClusterEndpointInput) with field(s):
+    ///   - [`db_cluster_endpoint_identifier(Option<String>)`](crate::input::DeleteDbClusterEndpointInput::db_cluster_endpoint_identifier): <p>The identifier associated with the custom endpoint. This parameter is stored as a lowercase string.</p>
+    /// - On success, responds with [`DeleteDbClusterEndpointOutput`](crate::output::DeleteDbClusterEndpointOutput) with field(s):
+    ///   - [`db_cluster_endpoint_identifier(Option<String>)`](crate::output::DeleteDbClusterEndpointOutput::db_cluster_endpoint_identifier): <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
+    ///   - [`db_cluster_identifier(Option<String>)`](crate::output::DeleteDbClusterEndpointOutput::db_cluster_identifier): <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
+    ///   - [`db_cluster_endpoint_resource_identifier(Option<String>)`](crate::output::DeleteDbClusterEndpointOutput::db_cluster_endpoint_resource_identifier): <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
+    ///   - [`endpoint(Option<String>)`](crate::output::DeleteDbClusterEndpointOutput::endpoint): <p>The DNS address of the endpoint.</p>
+    ///   - [`status(Option<String>)`](crate::output::DeleteDbClusterEndpointOutput::status): <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that cannot be used for a certain kind of cluster, such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
+    ///   - [`endpoint_type(Option<String>)`](crate::output::DeleteDbClusterEndpointOutput::endpoint_type): <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>CUSTOM</code>.</p>
+    ///   - [`custom_endpoint_type(Option<String>)`](crate::output::DeleteDbClusterEndpointOutput::custom_endpoint_type): <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
+    ///   - [`static_members(Option<Vec<String>>)`](crate::output::DeleteDbClusterEndpointOutput::static_members): <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
+    ///   - [`excluded_members(Option<Vec<String>>)`](crate::output::DeleteDbClusterEndpointOutput::excluded_members): <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
+    ///   - [`db_cluster_endpoint_arn(Option<String>)`](crate::output::DeleteDbClusterEndpointOutput::db_cluster_endpoint_arn): <p>The Amazon Resource Name (ARN) for the endpoint.</p>
+    /// - On failure, responds with [`SdkError<DeleteDBClusterEndpointError>`](crate::error::DeleteDBClusterEndpointError)
     pub fn delete_db_cluster_endpoint(&self) -> fluent_builders::DeleteDBClusterEndpoint<C, M, R> {
         fluent_builders::DeleteDBClusterEndpoint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDBClusterParameterGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteDBClusterParameterGroup`](crate::client::fluent_builders::DeleteDBClusterParameterGroup) operation.
     ///
-    /// See [`DeleteDBClusterParameterGroup`](crate::client::fluent_builders::DeleteDBClusterParameterGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteDbClusterParameterGroupInput`](crate::input::DeleteDbClusterParameterGroupInput) with field(s):
+    ///   - [`db_cluster_parameter_group_name(Option<String>)`](crate::input::DeleteDbClusterParameterGroupInput::db_cluster_parameter_group_name): <p>The name of the DB cluster parameter group.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be the name of an existing DB cluster parameter group.</p> </li>   <li> <p>You can't delete a default DB cluster parameter group.</p> </li>   <li> <p>Cannot be associated with any DB clusters.</p> </li>  </ul>
+    /// - On success, responds with [`DeleteDbClusterParameterGroupOutput`](crate::output::DeleteDbClusterParameterGroupOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteDBClusterParameterGroupError>`](crate::error::DeleteDBClusterParameterGroupError)
     pub fn delete_db_cluster_parameter_group(
         &self,
     ) -> fluent_builders::DeleteDBClusterParameterGroup<C, M, R> {
         fluent_builders::DeleteDBClusterParameterGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDBClusterSnapshot` operation.
+    /// Constructs a fluent builder for the [`DeleteDBClusterSnapshot`](crate::client::fluent_builders::DeleteDBClusterSnapshot) operation.
     ///
-    /// See [`DeleteDBClusterSnapshot`](crate::client::fluent_builders::DeleteDBClusterSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteDbClusterSnapshotInput`](crate::input::DeleteDbClusterSnapshotInput) with field(s):
+    ///   - [`db_cluster_snapshot_identifier(Option<String>)`](crate::input::DeleteDbClusterSnapshotInput::db_cluster_snapshot_identifier): <p>The identifier of the DB cluster snapshot to delete.</p>  <p>Constraints: Must be the name of an existing DB cluster snapshot in the <code>available</code> state.</p>
+    /// - On success, responds with [`DeleteDbClusterSnapshotOutput`](crate::output::DeleteDbClusterSnapshotOutput) with field(s):
+    ///   - [`db_cluster_snapshot(Option<DbClusterSnapshot>)`](crate::output::DeleteDbClusterSnapshotOutput::db_cluster_snapshot): <p>Contains the details for an Amazon Neptune DB cluster snapshot</p>  <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
+    /// - On failure, responds with [`SdkError<DeleteDBClusterSnapshotError>`](crate::error::DeleteDBClusterSnapshotError)
     pub fn delete_db_cluster_snapshot(&self) -> fluent_builders::DeleteDBClusterSnapshot<C, M, R> {
         fluent_builders::DeleteDBClusterSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDBInstance` operation.
+    /// Constructs a fluent builder for the [`DeleteDBInstance`](crate::client::fluent_builders::DeleteDBInstance) operation.
     ///
-    /// See [`DeleteDBInstance`](crate::client::fluent_builders::DeleteDBInstance) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteDbInstanceInput`](crate::input::DeleteDbInstanceInput) with field(s):
+    ///   - [`db_instance_identifier(Option<String>)`](crate::input::DeleteDbInstanceInput::db_instance_identifier): <p>The DB instance identifier for the DB instance to be deleted. This parameter isn't case-sensitive.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must match the name of an existing DB instance.</p> </li>  </ul>
+    ///   - [`skip_final_snapshot(bool)`](crate::input::DeleteDbInstanceInput::skip_final_snapshot): <p> Determines whether a final DB snapshot is created before the DB instance is deleted. If <code>true</code> is specified, no DBSnapshot is created. If <code>false</code> is specified, a DB snapshot is created before the DB instance is deleted.</p>  <p>Note that when a DB instance is in a failure state and has a status of 'failed', 'incompatible-restore', or 'incompatible-network', it can only be deleted when the SkipFinalSnapshot parameter is set to "true".</p>  <p>Specify <code>true</code> when deleting a Read Replica.</p> <note>   <p>The FinalDBSnapshotIdentifier parameter must be specified if SkipFinalSnapshot is <code>false</code>.</p>  </note>  <p>Default: <code>false</code> </p>
+    ///   - [`final_db_snapshot_identifier(Option<String>)`](crate::input::DeleteDbInstanceInput::final_db_snapshot_identifier): <p> The DBSnapshotIdentifier of the new DBSnapshot created when SkipFinalSnapshot is set to <code>false</code>.</p> <note>   <p>Specifying this parameter and also setting the SkipFinalShapshot parameter to true results in an error.</p>  </note>  <p>Constraints:</p>  <ul>   <li> <p>Must be 1 to 255 letters or numbers.</p> </li>   <li> <p>First character must be a letter</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>   <li> <p>Cannot be specified when deleting a Read Replica.</p> </li>  </ul>
+    /// - On success, responds with [`DeleteDbInstanceOutput`](crate::output::DeleteDbInstanceOutput) with field(s):
+    ///   - [`db_instance(Option<DbInstance>)`](crate::output::DeleteDbInstanceOutput::db_instance): <p>Contains the details of an Amazon Neptune DB instance.</p>  <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
+    /// - On failure, responds with [`SdkError<DeleteDBInstanceError>`](crate::error::DeleteDBInstanceError)
     pub fn delete_db_instance(&self) -> fluent_builders::DeleteDBInstance<C, M, R> {
         fluent_builders::DeleteDBInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDBParameterGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteDBParameterGroup`](crate::client::fluent_builders::DeleteDBParameterGroup) operation.
     ///
-    /// See [`DeleteDBParameterGroup`](crate::client::fluent_builders::DeleteDBParameterGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteDbParameterGroupInput`](crate::input::DeleteDbParameterGroupInput) with field(s):
+    ///   - [`db_parameter_group_name(Option<String>)`](crate::input::DeleteDbParameterGroupInput::db_parameter_group_name): <p>The name of the DB parameter group.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be the name of an existing DB parameter group</p> </li>   <li> <p>You can't delete a default DB parameter group</p> </li>   <li> <p>Cannot be associated with any DB instances</p> </li>  </ul>
+    /// - On success, responds with [`DeleteDbParameterGroupOutput`](crate::output::DeleteDbParameterGroupOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteDBParameterGroupError>`](crate::error::DeleteDBParameterGroupError)
     pub fn delete_db_parameter_group(&self) -> fluent_builders::DeleteDBParameterGroup<C, M, R> {
         fluent_builders::DeleteDBParameterGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDBSubnetGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteDBSubnetGroup`](crate::client::fluent_builders::DeleteDBSubnetGroup) operation.
     ///
-    /// See [`DeleteDBSubnetGroup`](crate::client::fluent_builders::DeleteDBSubnetGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteDbSubnetGroupInput`](crate::input::DeleteDbSubnetGroupInput) with field(s):
+    ///   - [`db_subnet_group_name(Option<String>)`](crate::input::DeleteDbSubnetGroupInput::db_subnet_group_name): <p>The name of the database subnet group to delete.</p> <note>   <p>You can't delete the default subnet group.</p>  </note>  <p>Constraints:</p>  <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>  <p>Example: <code>mySubnetgroup</code> </p>
+    /// - On success, responds with [`DeleteDbSubnetGroupOutput`](crate::output::DeleteDbSubnetGroupOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteDBSubnetGroupError>`](crate::error::DeleteDBSubnetGroupError)
     pub fn delete_db_subnet_group(&self) -> fluent_builders::DeleteDBSubnetGroup<C, M, R> {
         fluent_builders::DeleteDBSubnetGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteEventSubscription` operation.
+    /// Constructs a fluent builder for the [`DeleteEventSubscription`](crate::client::fluent_builders::DeleteEventSubscription) operation.
     ///
-    /// See [`DeleteEventSubscription`](crate::client::fluent_builders::DeleteEventSubscription) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteEventSubscriptionInput`](crate::input::DeleteEventSubscriptionInput) with field(s):
+    ///   - [`subscription_name(Option<String>)`](crate::input::DeleteEventSubscriptionInput::subscription_name): <p>The name of the event notification subscription you want to delete.</p>
+    /// - On success, responds with [`DeleteEventSubscriptionOutput`](crate::output::DeleteEventSubscriptionOutput) with field(s):
+    ///   - [`event_subscription(Option<EventSubscription>)`](crate::output::DeleteEventSubscriptionOutput::event_subscription): <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
+    /// - On failure, responds with [`SdkError<DeleteEventSubscriptionError>`](crate::error::DeleteEventSubscriptionError)
     pub fn delete_event_subscription(&self) -> fluent_builders::DeleteEventSubscription<C, M, R> {
         fluent_builders::DeleteEventSubscription::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDBClusterEndpoints` operation.
-    ///
-    /// See [`DescribeDBClusterEndpoints`](crate::client::fluent_builders::DescribeDBClusterEndpoints) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeDBClusterEndpoints`](crate::client::fluent_builders::DescribeDBClusterEndpoints) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeDBClusterEndpoints::into_paginator).
+    ///
+    /// - Takes [`DescribeDbClusterEndpointsInput`](crate::input::DescribeDbClusterEndpointsInput) with field(s):
+    ///   - [`db_cluster_identifier(Option<String>)`](crate::input::DescribeDbClusterEndpointsInput::db_cluster_identifier): <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
+    ///   - [`db_cluster_endpoint_identifier(Option<String>)`](crate::input::DescribeDbClusterEndpointsInput::db_cluster_endpoint_identifier): <p>The identifier of the endpoint to describe. This parameter is stored as a lowercase string.</p>
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::DescribeDbClusterEndpointsInput::filters): <p>A set of name-value pairs that define which endpoints to include in the output. The filters are specified as name-value pairs, in the format <code>Name=<i>endpoint_type</i>,Values=<i>endpoint_type1</i>,<i>endpoint_type2</i>,...</code>. <code>Name</code> can be one of: <code>db-cluster-endpoint-type</code>, <code>db-cluster-endpoint-custom-type</code>, <code>db-cluster-endpoint-id</code>, <code>db-cluster-endpoint-status</code>. <code>Values</code> for the <code> db-cluster-endpoint-type</code> filter can be one or more of: <code>reader</code>, <code>writer</code>, <code>custom</code>. <code>Values</code> for the <code>db-cluster-endpoint-custom-type</code> filter can be one or more of: <code>reader</code>, <code>any</code>. <code>Values</code> for the <code>db-cluster-endpoint-status</code> filter can be one or more of: <code>available</code>, <code>creating</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. </p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeDbClusterEndpointsInput::max_records): <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results. </p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeDbClusterEndpointsInput::marker): <p> An optional pagination token provided by a previous <code>DescribeDBClusterEndpoints</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    /// - On success, responds with [`DescribeDbClusterEndpointsOutput`](crate::output::DescribeDbClusterEndpointsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeDbClusterEndpointsOutput::marker): <p> An optional pagination token provided by a previous <code>DescribeDBClusterEndpoints</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    ///   - [`db_cluster_endpoints(Option<Vec<DbClusterEndpoint>>)`](crate::output::DescribeDbClusterEndpointsOutput::db_cluster_endpoints): <p>Contains the details of the endpoints associated with the cluster and matching any filter conditions.</p>
+    /// - On failure, responds with [`SdkError<DescribeDBClusterEndpointsError>`](crate::error::DescribeDBClusterEndpointsError)
     pub fn describe_db_cluster_endpoints(
         &self,
     ) -> fluent_builders::DescribeDBClusterEndpoints<C, M, R> {
         fluent_builders::DescribeDBClusterEndpoints::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDBClusterParameterGroups` operation.
-    ///
-    /// See [`DescribeDBClusterParameterGroups`](crate::client::fluent_builders::DescribeDBClusterParameterGroups) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeDBClusterParameterGroups`](crate::client::fluent_builders::DescribeDBClusterParameterGroups) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeDBClusterParameterGroups::into_paginator).
+    ///
+    /// - Takes [`DescribeDbClusterParameterGroupsInput`](crate::input::DescribeDbClusterParameterGroupsInput) with field(s):
+    ///   - [`db_cluster_parameter_group_name(Option<String>)`](crate::input::DescribeDbClusterParameterGroupsInput::db_cluster_parameter_group_name): <p>The name of a specific DB cluster parameter group to return details for.</p>  <p>Constraints:</p>  <ul>   <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>  </ul>
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::DescribeDbClusterParameterGroupsInput::filters): <p>This parameter is not currently supported.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeDbClusterParameterGroupsInput::max_records): <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeDbClusterParameterGroupsInput::marker): <p> An optional pagination token provided by a previous <code>DescribeDBClusterParameterGroups</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// - On success, responds with [`DescribeDbClusterParameterGroupsOutput`](crate::output::DescribeDbClusterParameterGroupsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeDbClusterParameterGroupsOutput::marker): <p> An optional pagination token provided by a previous <code>DescribeDBClusterParameterGroups</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    ///   - [`db_cluster_parameter_groups(Option<Vec<DbClusterParameterGroup>>)`](crate::output::DescribeDbClusterParameterGroupsOutput::db_cluster_parameter_groups): <p>A list of DB cluster parameter groups.</p>
+    /// - On failure, responds with [`SdkError<DescribeDBClusterParameterGroupsError>`](crate::error::DescribeDBClusterParameterGroupsError)
     pub fn describe_db_cluster_parameter_groups(
         &self,
     ) -> fluent_builders::DescribeDBClusterParameterGroups<C, M, R> {
         fluent_builders::DescribeDBClusterParameterGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDBClusterParameters` operation.
-    ///
-    /// See [`DescribeDBClusterParameters`](crate::client::fluent_builders::DescribeDBClusterParameters) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeDBClusterParameters`](crate::client::fluent_builders::DescribeDBClusterParameters) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeDBClusterParameters::into_paginator).
+    ///
+    /// - Takes [`DescribeDbClusterParametersInput`](crate::input::DescribeDbClusterParametersInput) with field(s):
+    ///   - [`db_cluster_parameter_group_name(Option<String>)`](crate::input::DescribeDbClusterParametersInput::db_cluster_parameter_group_name): <p>The name of a specific DB cluster parameter group to return parameter details for.</p>  <p>Constraints:</p>  <ul>   <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>  </ul>
+    ///   - [`source(Option<String>)`](crate::input::DescribeDbClusterParametersInput::source): <p> A value that indicates to return only parameters for a specific source. Parameter sources can be <code>engine</code>, <code>service</code>, or <code>customer</code>.</p>
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::DescribeDbClusterParametersInput::filters): <p>This parameter is not currently supported.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeDbClusterParametersInput::max_records): <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeDbClusterParametersInput::marker): <p> An optional pagination token provided by a previous <code>DescribeDBClusterParameters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    /// - On success, responds with [`DescribeDbClusterParametersOutput`](crate::output::DescribeDbClusterParametersOutput) with field(s):
+    ///   - [`parameters(Option<Vec<Parameter>>)`](crate::output::DescribeDbClusterParametersOutput::parameters): <p>Provides a list of parameters for the DB cluster parameter group.</p>
+    ///   - [`marker(Option<String>)`](crate::output::DescribeDbClusterParametersOutput::marker): <p> An optional pagination token provided by a previous DescribeDBClusterParameters request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
+    /// - On failure, responds with [`SdkError<DescribeDBClusterParametersError>`](crate::error::DescribeDBClusterParametersError)
     pub fn describe_db_cluster_parameters(
         &self,
     ) -> fluent_builders::DescribeDBClusterParameters<C, M, R> {
         fluent_builders::DescribeDBClusterParameters::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDBClusters` operation.
-    ///
-    /// See [`DescribeDBClusters`](crate::client::fluent_builders::DescribeDBClusters) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeDBClusters`](crate::client::fluent_builders::DescribeDBClusters) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeDBClusters::into_paginator).
+    ///
+    /// - Takes [`DescribeDbClustersInput`](crate::input::DescribeDbClustersInput) with field(s):
+    ///   - [`db_cluster_identifier(Option<String>)`](crate::input::DescribeDbClustersInput::db_cluster_identifier): <p>The user-supplied DB cluster identifier. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>  <p>Constraints:</p>  <ul>   <li> <p>If supplied, must match an existing DBClusterIdentifier.</p> </li>  </ul>
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::DescribeDbClustersInput::filters): <p>A filter that specifies one or more DB clusters to describe.</p>  <p>Supported filters:</p>  <ul>   <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include information about the DB clusters identified by these ARNs.</p> </li>   <li> <p> <code>engine</code> - Accepts an engine name (such as <code>neptune</code>), and restricts the results list to DB clusters created by that engine.</p> </li>  </ul>  <p>For example, to invoke this API from the Amazon CLI and filter so that only Neptune DB clusters are returned, you could use the following command:</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeDbClustersInput::max_records): <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeDbClustersInput::marker): <p>An optional pagination token provided by a previous <code>DescribeDBClusters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// - On success, responds with [`DescribeDbClustersOutput`](crate::output::DescribeDbClustersOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeDbClustersOutput::marker): <p>A pagination token that can be used in a subsequent DescribeDBClusters request.</p>
+    ///   - [`db_clusters(Option<Vec<DbCluster>>)`](crate::output::DescribeDbClustersOutput::db_clusters): <p>Contains a list of DB clusters for the user.</p>
+    /// - On failure, responds with [`SdkError<DescribeDBClustersError>`](crate::error::DescribeDBClustersError)
     pub fn describe_db_clusters(&self) -> fluent_builders::DescribeDBClusters<C, M, R> {
         fluent_builders::DescribeDBClusters::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDBClusterSnapshotAttributes` operation.
+    /// Constructs a fluent builder for the [`DescribeDBClusterSnapshotAttributes`](crate::client::fluent_builders::DescribeDBClusterSnapshotAttributes) operation.
     ///
-    /// See [`DescribeDBClusterSnapshotAttributes`](crate::client::fluent_builders::DescribeDBClusterSnapshotAttributes) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeDbClusterSnapshotAttributesInput`](crate::input::DescribeDbClusterSnapshotAttributesInput) with field(s):
+    ///   - [`db_cluster_snapshot_identifier(Option<String>)`](crate::input::DescribeDbClusterSnapshotAttributesInput::db_cluster_snapshot_identifier): <p>The identifier for the DB cluster snapshot to describe the attributes for.</p>
+    /// - On success, responds with [`DescribeDbClusterSnapshotAttributesOutput`](crate::output::DescribeDbClusterSnapshotAttributesOutput) with field(s):
+    ///   - [`db_cluster_snapshot_attributes_result(Option<DbClusterSnapshotAttributesResult>)`](crate::output::DescribeDbClusterSnapshotAttributesOutput::db_cluster_snapshot_attributes_result): <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p>  <p>Manual DB cluster snapshot attributes are used to authorize other Amazon accounts to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
+    /// - On failure, responds with [`SdkError<DescribeDBClusterSnapshotAttributesError>`](crate::error::DescribeDBClusterSnapshotAttributesError)
     pub fn describe_db_cluster_snapshot_attributes(
         &self,
     ) -> fluent_builders::DescribeDBClusterSnapshotAttributes<C, M, R> {
         fluent_builders::DescribeDBClusterSnapshotAttributes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDBClusterSnapshots` operation.
-    ///
-    /// See [`DescribeDBClusterSnapshots`](crate::client::fluent_builders::DescribeDBClusterSnapshots) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeDBClusterSnapshots`](crate::client::fluent_builders::DescribeDBClusterSnapshots) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeDBClusterSnapshots::into_paginator).
+    ///
+    /// - Takes [`DescribeDbClusterSnapshotsInput`](crate::input::DescribeDbClusterSnapshotsInput) with field(s):
+    ///   - [`db_cluster_identifier(Option<String>)`](crate::input::DescribeDbClusterSnapshotsInput::db_cluster_identifier): <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for. This parameter can't be used in conjunction with the <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not case-sensitive.</p>  <p>Constraints:</p>  <ul>   <li> <p>If supplied, must match the identifier of an existing DBCluster.</p> </li>  </ul>
+    ///   - [`db_cluster_snapshot_identifier(Option<String>)`](crate::input::DescribeDbClusterSnapshotsInput::db_cluster_snapshot_identifier): <p>A specific DB cluster snapshot identifier to describe. This parameter can't be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This value is stored as a lowercase string.</p>  <p>Constraints:</p>  <ul>   <li> <p>If supplied, must match the identifier of an existing DBClusterSnapshot.</p> </li>   <li> <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p> </li>  </ul>
+    ///   - [`snapshot_type(Option<String>)`](crate::input::DescribeDbClusterSnapshotsInput::snapshot_type): <p>The type of DB cluster snapshots to be returned. You can specify one of the following values:</p>  <ul>   <li> <p> <code>automated</code> - Return all DB cluster snapshots that have been automatically taken by Amazon Neptune for my Amazon account.</p> </li>   <li> <p> <code>manual</code> - Return all DB cluster snapshots that have been taken by my Amazon account.</p> </li>   <li> <p> <code>shared</code> - Return all manual DB cluster snapshots that have been shared to my Amazon account.</p> </li>   <li> <p> <code>public</code> - Return all DB cluster snapshots that have been marked as public.</p> </li>  </ul>  <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual DB cluster snapshots are returned. You can include shared DB cluster snapshots with these results by setting the <code>IncludeShared</code> parameter to <code>true</code>. You can include public DB cluster snapshots with these results by setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>  <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.</p>
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::DescribeDbClusterSnapshotsInput::filters): <p>This parameter is not currently supported.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeDbClusterSnapshotsInput::max_records): <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeDbClusterSnapshotsInput::marker): <p>An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    ///   - [`include_shared(bool)`](crate::input::DescribeDbClusterSnapshotsInput::include_shared): <p>True to include shared manual DB cluster snapshots from other Amazon accounts that this Amazon account has been given permission to copy or restore, and otherwise false. The default is <code>false</code>.</p>  <p>You can give an Amazon account permission to restore a manual DB cluster snapshot from another Amazon account by the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
+    ///   - [`include_public(bool)`](crate::input::DescribeDbClusterSnapshotsInput::include_public): <p>True to include manual DB cluster snapshots that are public and can be copied or restored by any Amazon account, and otherwise false. The default is <code>false</code>. The default is false.</p>  <p>You can share a manual DB cluster snapshot as public by using the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
+    /// - On success, responds with [`DescribeDbClusterSnapshotsOutput`](crate::output::DescribeDbClusterSnapshotsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeDbClusterSnapshotsOutput::marker): <p> An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    ///   - [`db_cluster_snapshots(Option<Vec<DbClusterSnapshot>>)`](crate::output::DescribeDbClusterSnapshotsOutput::db_cluster_snapshots): <p>Provides a list of DB cluster snapshots for the user.</p>
+    /// - On failure, responds with [`SdkError<DescribeDBClusterSnapshotsError>`](crate::error::DescribeDBClusterSnapshotsError)
     pub fn describe_db_cluster_snapshots(
         &self,
     ) -> fluent_builders::DescribeDBClusterSnapshots<C, M, R> {
         fluent_builders::DescribeDBClusterSnapshots::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDBEngineVersions` operation.
-    ///
-    /// See [`DescribeDBEngineVersions`](crate::client::fluent_builders::DescribeDBEngineVersions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeDBEngineVersions`](crate::client::fluent_builders::DescribeDBEngineVersions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeDBEngineVersions::into_paginator).
+    ///
+    /// - Takes [`DescribeDbEngineVersionsInput`](crate::input::DescribeDbEngineVersionsInput) with field(s):
+    ///   - [`engine(Option<String>)`](crate::input::DescribeDbEngineVersionsInput::engine): <p>The database engine to return.</p>
+    ///   - [`engine_version(Option<String>)`](crate::input::DescribeDbEngineVersionsInput::engine_version): <p>The database engine version to return.</p>  <p>Example: <code>5.1.49</code> </p>
+    ///   - [`db_parameter_group_family(Option<String>)`](crate::input::DescribeDbEngineVersionsInput::db_parameter_group_family): <p>The name of a specific DB parameter group family to return details for.</p>  <p>Constraints:</p>  <ul>   <li> <p>If supplied, must match an existing DBParameterGroupFamily.</p> </li>  </ul>
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::DescribeDbEngineVersionsInput::filters): <p>Not currently supported.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeDbEngineVersionsInput::max_records): <p> The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is available, a pagination token called a marker is included in the response so that the following results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeDbEngineVersionsInput::marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    ///   - [`default_only(bool)`](crate::input::DescribeDbEngineVersionsInput::default_only): <p>Indicates that only the default version of the specified engine or engine and major version combination is returned.</p>
+    ///   - [`list_supported_character_sets(Option<bool>)`](crate::input::DescribeDbEngineVersionsInput::list_supported_character_sets): <p>If this parameter is specified and the requested engine supports the <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported character sets for each engine version.</p>
+    ///   - [`list_supported_timezones(Option<bool>)`](crate::input::DescribeDbEngineVersionsInput::list_supported_timezones): <p>If this parameter is specified and the requested engine supports the <code>TimeZone</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported time zones for each engine version.</p>
+    /// - On success, responds with [`DescribeDbEngineVersionsOutput`](crate::output::DescribeDbEngineVersionsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeDbEngineVersionsOutput::marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    ///   - [`db_engine_versions(Option<Vec<DbEngineVersion>>)`](crate::output::DescribeDbEngineVersionsOutput::db_engine_versions): <p> A list of <code>DBEngineVersion</code> elements.</p>
+    /// - On failure, responds with [`SdkError<DescribeDBEngineVersionsError>`](crate::error::DescribeDBEngineVersionsError)
     pub fn describe_db_engine_versions(
         &self,
     ) -> fluent_builders::DescribeDBEngineVersions<C, M, R> {
         fluent_builders::DescribeDBEngineVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDBInstances` operation.
-    ///
-    /// See [`DescribeDBInstances`](crate::client::fluent_builders::DescribeDBInstances) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeDBInstances`](crate::client::fluent_builders::DescribeDBInstances) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeDBInstances::into_paginator).
+    ///
+    /// - Takes [`DescribeDbInstancesInput`](crate::input::DescribeDbInstancesInput) with field(s):
+    ///   - [`db_instance_identifier(Option<String>)`](crate::input::DescribeDbInstancesInput::db_instance_identifier): <p>The user-supplied instance identifier. If this parameter is specified, information from only the specific DB instance is returned. This parameter isn't case-sensitive.</p>  <p>Constraints:</p>  <ul>   <li> <p>If supplied, must match the identifier of an existing DBInstance.</p> </li>  </ul>
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::DescribeDbInstancesInput::filters): <p>A filter that specifies one or more DB instances to describe.</p>  <p>Supported filters:</p>  <ul>   <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include information about the DB instances associated with the DB clusters identified by these ARNs.</p> </li>   <li> <p> <code>engine</code> - Accepts an engine name (such as <code>neptune</code>), and restricts the results list to DB instances created by that engine.</p> </li>  </ul>  <p>For example, to invoke this API from the Amazon CLI and filter so that only Neptune DB instances are returned, you could use the following command:</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeDbInstancesInput::max_records): <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeDbInstancesInput::marker): <p> An optional pagination token provided by a previous <code>DescribeDBInstances</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// - On success, responds with [`DescribeDbInstancesOutput`](crate::output::DescribeDbInstancesOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeDbInstancesOutput::marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
+    ///   - [`db_instances(Option<Vec<DbInstance>>)`](crate::output::DescribeDbInstancesOutput::db_instances): <p> A list of <code>DBInstance</code> instances.</p>
+    /// - On failure, responds with [`SdkError<DescribeDBInstancesError>`](crate::error::DescribeDBInstancesError)
     pub fn describe_db_instances(&self) -> fluent_builders::DescribeDBInstances<C, M, R> {
         fluent_builders::DescribeDBInstances::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDBParameterGroups` operation.
-    ///
-    /// See [`DescribeDBParameterGroups`](crate::client::fluent_builders::DescribeDBParameterGroups) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeDBParameterGroups`](crate::client::fluent_builders::DescribeDBParameterGroups) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeDBParameterGroups::into_paginator).
+    ///
+    /// - Takes [`DescribeDbParameterGroupsInput`](crate::input::DescribeDbParameterGroupsInput) with field(s):
+    ///   - [`db_parameter_group_name(Option<String>)`](crate::input::DescribeDbParameterGroupsInput::db_parameter_group_name): <p>The name of a specific DB parameter group to return details for.</p>  <p>Constraints:</p>  <ul>   <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>  </ul>
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::DescribeDbParameterGroupsInput::filters): <p>This parameter is not currently supported.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeDbParameterGroupsInput::max_records): <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeDbParameterGroupsInput::marker): <p>An optional pagination token provided by a previous <code>DescribeDBParameterGroups</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// - On success, responds with [`DescribeDbParameterGroupsOutput`](crate::output::DescribeDbParameterGroupsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeDbParameterGroupsOutput::marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    ///   - [`db_parameter_groups(Option<Vec<DbParameterGroup>>)`](crate::output::DescribeDbParameterGroupsOutput::db_parameter_groups): <p>A list of <code>DBParameterGroup</code> instances.</p>
+    /// - On failure, responds with [`SdkError<DescribeDBParameterGroupsError>`](crate::error::DescribeDBParameterGroupsError)
     pub fn describe_db_parameter_groups(
         &self,
     ) -> fluent_builders::DescribeDBParameterGroups<C, M, R> {
         fluent_builders::DescribeDBParameterGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDBParameters` operation.
-    ///
-    /// See [`DescribeDBParameters`](crate::client::fluent_builders::DescribeDBParameters) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeDBParameters`](crate::client::fluent_builders::DescribeDBParameters) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeDBParameters::into_paginator).
+    ///
+    /// - Takes [`DescribeDbParametersInput`](crate::input::DescribeDbParametersInput) with field(s):
+    ///   - [`db_parameter_group_name(Option<String>)`](crate::input::DescribeDbParametersInput::db_parameter_group_name): <p>The name of a specific DB parameter group to return details for.</p>  <p>Constraints:</p>  <ul>   <li> <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>  </ul>
+    ///   - [`source(Option<String>)`](crate::input::DescribeDbParametersInput::source): <p>The parameter types to return.</p>  <p>Default: All parameter types returned</p>  <p>Valid Values: <code>user | system | engine-default</code> </p>
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::DescribeDbParametersInput::filters): <p>This parameter is not currently supported.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeDbParametersInput::max_records): <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeDbParametersInput::marker): <p>An optional pagination token provided by a previous <code>DescribeDBParameters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// - On success, responds with [`DescribeDbParametersOutput`](crate::output::DescribeDbParametersOutput) with field(s):
+    ///   - [`parameters(Option<Vec<Parameter>>)`](crate::output::DescribeDbParametersOutput::parameters): <p>A list of <code>Parameter</code> values.</p>
+    ///   - [`marker(Option<String>)`](crate::output::DescribeDbParametersOutput::marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// - On failure, responds with [`SdkError<DescribeDBParametersError>`](crate::error::DescribeDBParametersError)
     pub fn describe_db_parameters(&self) -> fluent_builders::DescribeDBParameters<C, M, R> {
         fluent_builders::DescribeDBParameters::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDBSubnetGroups` operation.
-    ///
-    /// See [`DescribeDBSubnetGroups`](crate::client::fluent_builders::DescribeDBSubnetGroups) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeDBSubnetGroups`](crate::client::fluent_builders::DescribeDBSubnetGroups) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeDBSubnetGroups::into_paginator).
+    ///
+    /// - Takes [`DescribeDbSubnetGroupsInput`](crate::input::DescribeDbSubnetGroupsInput) with field(s):
+    ///   - [`db_subnet_group_name(Option<String>)`](crate::input::DescribeDbSubnetGroupsInput::db_subnet_group_name): <p>The name of the DB subnet group to return details for.</p>
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::DescribeDbSubnetGroupsInput::filters): <p>This parameter is not currently supported.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeDbSubnetGroupsInput::max_records): <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeDbSubnetGroupsInput::marker): <p> An optional pagination token provided by a previous DescribeDBSubnetGroups request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// - On success, responds with [`DescribeDbSubnetGroupsOutput`](crate::output::DescribeDbSubnetGroupsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeDbSubnetGroupsOutput::marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    ///   - [`db_subnet_groups(Option<Vec<DbSubnetGroup>>)`](crate::output::DescribeDbSubnetGroupsOutput::db_subnet_groups): <p> A list of <code>DBSubnetGroup</code> instances.</p>
+    /// - On failure, responds with [`SdkError<DescribeDBSubnetGroupsError>`](crate::error::DescribeDBSubnetGroupsError)
     pub fn describe_db_subnet_groups(&self) -> fluent_builders::DescribeDBSubnetGroups<C, M, R> {
         fluent_builders::DescribeDBSubnetGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEngineDefaultClusterParameters` operation.
+    /// Constructs a fluent builder for the [`DescribeEngineDefaultClusterParameters`](crate::client::fluent_builders::DescribeEngineDefaultClusterParameters) operation.
     ///
-    /// See [`DescribeEngineDefaultClusterParameters`](crate::client::fluent_builders::DescribeEngineDefaultClusterParameters) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeEngineDefaultClusterParametersInput`](crate::input::DescribeEngineDefaultClusterParametersInput) with field(s):
+    ///   - [`db_parameter_group_family(Option<String>)`](crate::input::DescribeEngineDefaultClusterParametersInput::db_parameter_group_family): <p>The name of the DB cluster parameter group family to return engine parameter information for.</p>
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::DescribeEngineDefaultClusterParametersInput::filters): <p>This parameter is not currently supported.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeEngineDefaultClusterParametersInput::max_records): <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeEngineDefaultClusterParametersInput::marker): <p> An optional pagination token provided by a previous <code>DescribeEngineDefaultClusterParameters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// - On success, responds with [`DescribeEngineDefaultClusterParametersOutput`](crate::output::DescribeEngineDefaultClusterParametersOutput) with field(s):
+    ///   - [`engine_defaults(Option<EngineDefaults>)`](crate::output::DescribeEngineDefaultClusterParametersOutput::engine_defaults): <p> Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
+    /// - On failure, responds with [`SdkError<DescribeEngineDefaultClusterParametersError>`](crate::error::DescribeEngineDefaultClusterParametersError)
     pub fn describe_engine_default_cluster_parameters(
         &self,
     ) -> fluent_builders::DescribeEngineDefaultClusterParameters<C, M, R> {
         fluent_builders::DescribeEngineDefaultClusterParameters::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEngineDefaultParameters` operation.
-    ///
-    /// See [`DescribeEngineDefaultParameters`](crate::client::fluent_builders::DescribeEngineDefaultParameters) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeEngineDefaultParameters`](crate::client::fluent_builders::DescribeEngineDefaultParameters) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeEngineDefaultParameters::into_paginator).
+    ///
+    /// - Takes [`DescribeEngineDefaultParametersInput`](crate::input::DescribeEngineDefaultParametersInput) with field(s):
+    ///   - [`db_parameter_group_family(Option<String>)`](crate::input::DescribeEngineDefaultParametersInput::db_parameter_group_family): <p>The name of the DB parameter group family.</p>
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::DescribeEngineDefaultParametersInput::filters): <p>Not currently supported.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeEngineDefaultParametersInput::max_records): <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeEngineDefaultParametersInput::marker): <p> An optional pagination token provided by a previous <code>DescribeEngineDefaultParameters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// - On success, responds with [`DescribeEngineDefaultParametersOutput`](crate::output::DescribeEngineDefaultParametersOutput) with field(s):
+    ///   - [`engine_defaults(Option<EngineDefaults>)`](crate::output::DescribeEngineDefaultParametersOutput::engine_defaults): <p> Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
+    /// - On failure, responds with [`SdkError<DescribeEngineDefaultParametersError>`](crate::error::DescribeEngineDefaultParametersError)
     pub fn describe_engine_default_parameters(
         &self,
     ) -> fluent_builders::DescribeEngineDefaultParameters<C, M, R> {
         fluent_builders::DescribeEngineDefaultParameters::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEventCategories` operation.
+    /// Constructs a fluent builder for the [`DescribeEventCategories`](crate::client::fluent_builders::DescribeEventCategories) operation.
     ///
-    /// See [`DescribeEventCategories`](crate::client::fluent_builders::DescribeEventCategories) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeEventCategoriesInput`](crate::input::DescribeEventCategoriesInput) with field(s):
+    ///   - [`source_type(Option<String>)`](crate::input::DescribeEventCategoriesInput::source_type): <p>The type of source that is generating the events.</p>  <p>Valid values: db-instance | db-parameter-group | db-security-group | db-snapshot</p>
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::DescribeEventCategoriesInput::filters): <p>This parameter is not currently supported.</p>
+    /// - On success, responds with [`DescribeEventCategoriesOutput`](crate::output::DescribeEventCategoriesOutput) with field(s):
+    ///   - [`event_categories_map_list(Option<Vec<EventCategoriesMap>>)`](crate::output::DescribeEventCategoriesOutput::event_categories_map_list): <p>A list of EventCategoriesMap data types.</p>
+    /// - On failure, responds with [`SdkError<DescribeEventCategoriesError>`](crate::error::DescribeEventCategoriesError)
     pub fn describe_event_categories(&self) -> fluent_builders::DescribeEventCategories<C, M, R> {
         fluent_builders::DescribeEventCategories::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEvents` operation.
-    ///
-    /// See [`DescribeEvents`](crate::client::fluent_builders::DescribeEvents) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeEvents`](crate::client::fluent_builders::DescribeEvents) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeEvents::into_paginator).
+    ///
+    /// - Takes [`DescribeEventsInput`](crate::input::DescribeEventsInput) with field(s):
+    ///   - [`source_identifier(Option<String>)`](crate::input::DescribeEventsInput::source_identifier): <p>The identifier of the event source for which events are returned. If not specified, then all sources are included in the response.</p>  <p>Constraints:</p>  <ul>   <li> <p>If SourceIdentifier is supplied, SourceType must also be provided.</p> </li>   <li> <p>If the source type is <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code> must be supplied.</p> </li>   <li> <p>If the source type is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must be supplied.</p> </li>   <li> <p>If the source type is <code>DBParameterGroup</code>, a <code>DBParameterGroupName</code> must be supplied.</p> </li>   <li> <p>If the source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be supplied.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul>
+    ///   - [`source_type(Option<SourceType>)`](crate::input::DescribeEventsInput::source_type): <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
+    ///   - [`start_time(Option<DateTime>)`](crate::input::DescribeEventsInput::start_time): <p> The beginning of the time interval to retrieve events for, specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>  <p>Example: 2009-07-08T18:00Z</p>
+    ///   - [`end_time(Option<DateTime>)`](crate::input::DescribeEventsInput::end_time): <p> The end of the time interval for which to retrieve events, specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>  <p>Example: 2009-07-08T18:00Z</p>
+    ///   - [`duration(Option<i32>)`](crate::input::DescribeEventsInput::duration): <p>The number of minutes to retrieve events for.</p>  <p>Default: 60</p>
+    ///   - [`event_categories(Option<Vec<String>>)`](crate::input::DescribeEventsInput::event_categories): <p>A list of event categories that trigger notifications for a event notification subscription.</p>
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::DescribeEventsInput::filters): <p>This parameter is not currently supported.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeEventsInput::max_records): <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeEventsInput::marker): <p> An optional pagination token provided by a previous DescribeEvents request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// - On success, responds with [`DescribeEventsOutput`](crate::output::DescribeEventsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeEventsOutput::marker): <p> An optional pagination token provided by a previous Events request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
+    ///   - [`events(Option<Vec<Event>>)`](crate::output::DescribeEventsOutput::events): <p> A list of <code>Event</code> instances.</p>
+    /// - On failure, responds with [`SdkError<DescribeEventsError>`](crate::error::DescribeEventsError)
     pub fn describe_events(&self) -> fluent_builders::DescribeEvents<C, M, R> {
         fluent_builders::DescribeEvents::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEventSubscriptions` operation.
-    ///
-    /// See [`DescribeEventSubscriptions`](crate::client::fluent_builders::DescribeEventSubscriptions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeEventSubscriptions`](crate::client::fluent_builders::DescribeEventSubscriptions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeEventSubscriptions::into_paginator).
+    ///
+    /// - Takes [`DescribeEventSubscriptionsInput`](crate::input::DescribeEventSubscriptionsInput) with field(s):
+    ///   - [`subscription_name(Option<String>)`](crate::input::DescribeEventSubscriptionsInput::subscription_name): <p>The name of the event notification subscription you want to describe.</p>
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::DescribeEventSubscriptionsInput::filters): <p>This parameter is not currently supported.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeEventSubscriptionsInput::max_records): <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeEventSubscriptionsInput::marker): <p> An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
+    /// - On success, responds with [`DescribeEventSubscriptionsOutput`](crate::output::DescribeEventSubscriptionsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeEventSubscriptionsOutput::marker): <p> An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    ///   - [`event_subscriptions_list(Option<Vec<EventSubscription>>)`](crate::output::DescribeEventSubscriptionsOutput::event_subscriptions_list): <p>A list of EventSubscriptions data types.</p>
+    /// - On failure, responds with [`SdkError<DescribeEventSubscriptionsError>`](crate::error::DescribeEventSubscriptionsError)
     pub fn describe_event_subscriptions(
         &self,
     ) -> fluent_builders::DescribeEventSubscriptions<C, M, R> {
         fluent_builders::DescribeEventSubscriptions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeOrderableDBInstanceOptions` operation.
-    ///
-    /// See [`DescribeOrderableDBInstanceOptions`](crate::client::fluent_builders::DescribeOrderableDBInstanceOptions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeOrderableDBInstanceOptions`](crate::client::fluent_builders::DescribeOrderableDBInstanceOptions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeOrderableDBInstanceOptions::into_paginator).
+    ///
+    /// - Takes [`DescribeOrderableDbInstanceOptionsInput`](crate::input::DescribeOrderableDbInstanceOptionsInput) with field(s):
+    ///   - [`engine(Option<String>)`](crate::input::DescribeOrderableDbInstanceOptionsInput::engine): <p>The name of the engine to retrieve DB instance options for.</p>
+    ///   - [`engine_version(Option<String>)`](crate::input::DescribeOrderableDbInstanceOptionsInput::engine_version): <p>The engine version filter value. Specify this parameter to show only the available offerings matching the specified engine version.</p>
+    ///   - [`db_instance_class(Option<String>)`](crate::input::DescribeOrderableDbInstanceOptionsInput::db_instance_class): <p>The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.</p>
+    ///   - [`license_model(Option<String>)`](crate::input::DescribeOrderableDbInstanceOptionsInput::license_model): <p>The license model filter value. Specify this parameter to show only the available offerings matching the specified license model.</p>
+    ///   - [`vpc(Option<bool>)`](crate::input::DescribeOrderableDbInstanceOptionsInput::vpc): <p>The VPC filter value. Specify this parameter to show only the available VPC or non-VPC offerings.</p>
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::DescribeOrderableDbInstanceOptionsInput::filters): <p>This parameter is not currently supported.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeOrderableDbInstanceOptionsInput::max_records): <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeOrderableDbInstanceOptionsInput::marker): <p> An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
+    /// - On success, responds with [`DescribeOrderableDbInstanceOptionsOutput`](crate::output::DescribeOrderableDbInstanceOptionsOutput) with field(s):
+    ///   - [`orderable_db_instance_options(Option<Vec<OrderableDbInstanceOption>>)`](crate::output::DescribeOrderableDbInstanceOptionsOutput::orderable_db_instance_options): <p>An <code>OrderableDBInstanceOption</code> structure containing information about orderable options for the DB instance.</p>
+    ///   - [`marker(Option<String>)`](crate::output::DescribeOrderableDbInstanceOptionsOutput::marker): <p> An optional pagination token provided by a previous OrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
+    /// - On failure, responds with [`SdkError<DescribeOrderableDBInstanceOptionsError>`](crate::error::DescribeOrderableDBInstanceOptionsError)
     pub fn describe_orderable_db_instance_options(
         &self,
     ) -> fluent_builders::DescribeOrderableDBInstanceOptions<C, M, R> {
         fluent_builders::DescribeOrderableDBInstanceOptions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribePendingMaintenanceActions` operation.
-    ///
-    /// See [`DescribePendingMaintenanceActions`](crate::client::fluent_builders::DescribePendingMaintenanceActions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribePendingMaintenanceActions`](crate::client::fluent_builders::DescribePendingMaintenanceActions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribePendingMaintenanceActions::into_paginator).
+    ///
+    /// - Takes [`DescribePendingMaintenanceActionsInput`](crate::input::DescribePendingMaintenanceActionsInput) with field(s):
+    ///   - [`resource_identifier(Option<String>)`](crate::input::DescribePendingMaintenanceActionsInput::resource_identifier): <p>The ARN of a resource to return pending maintenance actions for.</p>
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::DescribePendingMaintenanceActionsInput::filters): <p>A filter that specifies one or more resources to return pending maintenance actions for.</p>  <p>Supported filters:</p>  <ul>   <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include pending maintenance actions for the DB clusters identified by these ARNs.</p> </li>   <li> <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs. The results list will only include pending maintenance actions for the DB instances identified by these ARNs.</p> </li>  </ul>
+    ///   - [`marker(Option<String>)`](crate::input::DescribePendingMaintenanceActionsInput::marker): <p> An optional pagination token provided by a previous <code>DescribePendingMaintenanceActions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to a number of records specified by <code>MaxRecords</code>.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribePendingMaintenanceActionsInput::max_records): <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
+    /// - On success, responds with [`DescribePendingMaintenanceActionsOutput`](crate::output::DescribePendingMaintenanceActionsOutput) with field(s):
+    ///   - [`pending_maintenance_actions(Option<Vec<ResourcePendingMaintenanceActions>>)`](crate::output::DescribePendingMaintenanceActionsOutput::pending_maintenance_actions): <p>A list of the pending maintenance actions for the resource.</p>
+    ///   - [`marker(Option<String>)`](crate::output::DescribePendingMaintenanceActionsOutput::marker): <p> An optional pagination token provided by a previous <code>DescribePendingMaintenanceActions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to a number of records specified by <code>MaxRecords</code>.</p>
+    /// - On failure, responds with [`SdkError<DescribePendingMaintenanceActionsError>`](crate::error::DescribePendingMaintenanceActionsError)
     pub fn describe_pending_maintenance_actions(
         &self,
     ) -> fluent_builders::DescribePendingMaintenanceActions<C, M, R> {
         fluent_builders::DescribePendingMaintenanceActions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeValidDBInstanceModifications` operation.
+    /// Constructs a fluent builder for the [`DescribeValidDBInstanceModifications`](crate::client::fluent_builders::DescribeValidDBInstanceModifications) operation.
     ///
-    /// See [`DescribeValidDBInstanceModifications`](crate::client::fluent_builders::DescribeValidDBInstanceModifications) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeValidDbInstanceModificationsInput`](crate::input::DescribeValidDbInstanceModificationsInput) with field(s):
+    ///   - [`db_instance_identifier(Option<String>)`](crate::input::DescribeValidDbInstanceModificationsInput::db_instance_identifier): <p>The customer identifier or the ARN of your DB instance.</p>
+    /// - On success, responds with [`DescribeValidDbInstanceModificationsOutput`](crate::output::DescribeValidDbInstanceModificationsOutput) with field(s):
+    ///   - [`valid_db_instance_modifications_message(Option<ValidDbInstanceModificationsMessage>)`](crate::output::DescribeValidDbInstanceModificationsOutput::valid_db_instance_modifications_message): <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>. </p>
+    /// - On failure, responds with [`SdkError<DescribeValidDBInstanceModificationsError>`](crate::error::DescribeValidDBInstanceModificationsError)
     pub fn describe_valid_db_instance_modifications(
         &self,
     ) -> fluent_builders::DescribeValidDBInstanceModifications<C, M, R> {
         fluent_builders::DescribeValidDBInstanceModifications::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `FailoverDBCluster` operation.
+    /// Constructs a fluent builder for the [`FailoverDBCluster`](crate::client::fluent_builders::FailoverDBCluster) operation.
     ///
-    /// See [`FailoverDBCluster`](crate::client::fluent_builders::FailoverDBCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`FailoverDbClusterInput`](crate::input::FailoverDbClusterInput) with field(s):
+    ///   - [`db_cluster_identifier(Option<String>)`](crate::input::FailoverDbClusterInput::db_cluster_identifier): <p>A DB cluster identifier to force a failover for. This parameter is not case-sensitive.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must match the identifier of an existing DBCluster.</p> </li>  </ul>
+    ///   - [`target_db_instance_identifier(Option<String>)`](crate::input::FailoverDbClusterInput::target_db_instance_identifier): <p>The name of the instance to promote to the primary instance.</p>  <p>You must specify the instance identifier for an Read Replica in the DB cluster. For example, <code>mydbcluster-replica1</code>.</p>
+    /// - On success, responds with [`FailoverDbClusterOutput`](crate::output::FailoverDbClusterOutput) with field(s):
+    ///   - [`db_cluster(Option<DbCluster>)`](crate::output::FailoverDbClusterOutput::db_cluster): <p>Contains the details of an Amazon Neptune DB cluster.</p>  <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
+    /// - On failure, responds with [`SdkError<FailoverDBClusterError>`](crate::error::FailoverDBClusterError)
     pub fn failover_db_cluster(&self) -> fluent_builders::FailoverDBCluster<C, M, R> {
         fluent_builders::FailoverDBCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_name(Option<String>)`](crate::input::ListTagsForResourceInput::resource_name): <p>The Amazon Neptune resource with tags to be listed. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing"> Constructing an Amazon Resource Name (ARN)</a>.</p>
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::ListTagsForResourceInput::filters): <p>This parameter is not currently supported.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tag_list(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tag_list): <p>List of tags returned by the ListTagsForResource operation.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyDBCluster` operation.
+    /// Constructs a fluent builder for the [`ModifyDBCluster`](crate::client::fluent_builders::ModifyDBCluster) operation.
     ///
-    /// See [`ModifyDBCluster`](crate::client::fluent_builders::ModifyDBCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyDbClusterInput`](crate::input::ModifyDbClusterInput) with field(s):
+    ///   - [`db_cluster_identifier(Option<String>)`](crate::input::ModifyDbClusterInput::db_cluster_identifier): <p>The DB cluster identifier for the cluster being modified. This parameter is not case-sensitive.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must match the identifier of an existing DBCluster.</p> </li>  </ul>
+    ///   - [`new_db_cluster_identifier(Option<String>)`](crate::input::ModifyDbClusterInput::new_db_cluster_identifier): <p>The new DB cluster identifier for the DB cluster when renaming a DB cluster. This value is stored as a lowercase string.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>   <li> <p>The first character must be a letter</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>  </ul>  <p>Example: <code>my-cluster2</code> </p>
+    ///   - [`apply_immediately(bool)`](crate::input::ModifyDbClusterInput::apply_immediately): <p>A value that specifies whether the modifications in this request and any pending modifications are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB cluster. If this parameter is set to <code>false</code>, changes to the DB cluster are applied during the next maintenance window.</p>  <p>The <code>ApplyImmediately</code> parameter only affects <code>NewDBClusterIdentifier</code> values. If you set the <code>ApplyImmediately</code> parameter value to false, then changes to <code>NewDBClusterIdentifier</code> values are applied during the next maintenance window. All other changes are applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.</p>  <p>Default: <code>false</code> </p>
+    ///   - [`backup_retention_period(Option<i32>)`](crate::input::ModifyDbClusterInput::backup_retention_period): <p>The number of days for which automated backups are retained. You must specify a minimum value of 1.</p>  <p>Default: 1</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be a value from 1 to 35</p> </li>  </ul>
+    ///   - [`db_cluster_parameter_group_name(Option<String>)`](crate::input::ModifyDbClusterInput::db_cluster_parameter_group_name): <p>The name of the DB cluster parameter group to use for the DB cluster.</p>
+    ///   - [`vpc_security_group_ids(Option<Vec<String>>)`](crate::input::ModifyDbClusterInput::vpc_security_group_ids): <p>A list of VPC security groups that the DB cluster will belong to.</p>
+    ///   - [`port(Option<i32>)`](crate::input::ModifyDbClusterInput::port): <p>The port number on which the DB cluster accepts connections.</p>  <p>Constraints: Value must be <code>1150-65535</code> </p>  <p>Default: The same port as the original DB cluster.</p>
+    ///   - [`master_user_password(Option<String>)`](crate::input::ModifyDbClusterInput::master_user_password): <p>Not supported by Neptune.</p>
+    ///   - [`option_group_name(Option<String>)`](crate::input::ModifyDbClusterInput::option_group_name): <p> <i>Not supported by Neptune.</i> </p>
+    ///   - [`preferred_backup_window(Option<String>)`](crate::input::ModifyDbClusterInput::preferred_backup_window): <p>The daily time range during which automated backups are created if automated backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.</p>  <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li>   <li> <p>Must be in Universal Coordinated Time (UTC).</p> </li>   <li> <p>Must not conflict with the preferred maintenance window.</p> </li>   <li> <p>Must be at least 30 minutes.</p> </li>  </ul>
+    ///   - [`preferred_maintenance_window(Option<String>)`](crate::input::ModifyDbClusterInput::preferred_maintenance_window): <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>  <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>  <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region, occurring on a random day of the week.</p>  <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>  <p>Constraints: Minimum 30-minute window.</p>
+    ///   - [`enable_iam_database_authentication(Option<bool>)`](crate::input::ModifyDbClusterInput::enable_iam_database_authentication): <p>True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and otherwise false.</p>  <p>Default: <code>false</code> </p>
+    ///   - [`cloudwatch_logs_export_configuration(Option<CloudwatchLogsExportConfiguration>)`](crate::input::ModifyDbClusterInput::cloudwatch_logs_export_configuration): <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB cluster.</p>
+    ///   - [`engine_version(Option<String>)`](crate::input::ModifyDbClusterInput::engine_version): <p>The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to true.</p>  <p>For a list of valid engine versions, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine Releases for Amazon Neptune</a>, or call <a href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
+    ///   - [`allow_major_version_upgrade(bool)`](crate::input::ModifyDbClusterInput::allow_major_version_upgrade): <p>A value that indicates whether upgrades between different major versions are allowed.</p>  <p>Constraints: You must set the allow-major-version-upgrade flag when providing an <code>EngineVersion</code> parameter that uses a different major version than the DB cluster's current version.</p>
+    ///   - [`db_instance_parameter_group_name(Option<String>)`](crate::input::ModifyDbClusterInput::db_instance_parameter_group_name): <p>The name of the DB parameter group to apply to all instances of the DB cluster. </p> <note>   <p>When you apply a parameter group using <code>DBInstanceParameterGroupName</code>, parameter changes aren't applied during the next maintenance window but instead are applied immediately.</p>  </note>  <p>Default: The existing name setting</p>  <p>Constraints:</p>  <ul>   <li> <p>The DB parameter group must be in the same DB parameter group family as the target DB cluster version.</p> </li>   <li> <p>The <code>DBInstanceParameterGroupName</code> parameter is only valid in combination with the <code>AllowMajorVersionUpgrade</code> parameter.</p> </li>  </ul>
+    ///   - [`deletion_protection(Option<bool>)`](crate::input::ModifyDbClusterInput::deletion_protection): <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled.</p>
+    ///   - [`copy_tags_to_snapshot(Option<bool>)`](crate::input::ModifyDbClusterInput::copy_tags_to_snapshot): <p> <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i> </p>
+    /// - On success, responds with [`ModifyDbClusterOutput`](crate::output::ModifyDbClusterOutput) with field(s):
+    ///   - [`db_cluster(Option<DbCluster>)`](crate::output::ModifyDbClusterOutput::db_cluster): <p>Contains the details of an Amazon Neptune DB cluster.</p>  <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
+    /// - On failure, responds with [`SdkError<ModifyDBClusterError>`](crate::error::ModifyDBClusterError)
     pub fn modify_db_cluster(&self) -> fluent_builders::ModifyDBCluster<C, M, R> {
         fluent_builders::ModifyDBCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyDBClusterEndpoint` operation.
+    /// Constructs a fluent builder for the [`ModifyDBClusterEndpoint`](crate::client::fluent_builders::ModifyDBClusterEndpoint) operation.
     ///
-    /// See [`ModifyDBClusterEndpoint`](crate::client::fluent_builders::ModifyDBClusterEndpoint) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyDbClusterEndpointInput`](crate::input::ModifyDbClusterEndpointInput) with field(s):
+    ///   - [`db_cluster_endpoint_identifier(Option<String>)`](crate::input::ModifyDbClusterEndpointInput::db_cluster_endpoint_identifier): <p>The identifier of the endpoint to modify. This parameter is stored as a lowercase string.</p>
+    ///   - [`endpoint_type(Option<String>)`](crate::input::ModifyDbClusterEndpointInput::endpoint_type): <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
+    ///   - [`static_members(Option<Vec<String>>)`](crate::input::ModifyDbClusterEndpointInput::static_members): <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
+    ///   - [`excluded_members(Option<Vec<String>>)`](crate::input::ModifyDbClusterEndpointInput::excluded_members): <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
+    /// - On success, responds with [`ModifyDbClusterEndpointOutput`](crate::output::ModifyDbClusterEndpointOutput) with field(s):
+    ///   - [`db_cluster_endpoint_identifier(Option<String>)`](crate::output::ModifyDbClusterEndpointOutput::db_cluster_endpoint_identifier): <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
+    ///   - [`db_cluster_identifier(Option<String>)`](crate::output::ModifyDbClusterEndpointOutput::db_cluster_identifier): <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
+    ///   - [`db_cluster_endpoint_resource_identifier(Option<String>)`](crate::output::ModifyDbClusterEndpointOutput::db_cluster_endpoint_resource_identifier): <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
+    ///   - [`endpoint(Option<String>)`](crate::output::ModifyDbClusterEndpointOutput::endpoint): <p>The DNS address of the endpoint.</p>
+    ///   - [`status(Option<String>)`](crate::output::ModifyDbClusterEndpointOutput::status): <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that cannot be used for a certain kind of cluster, such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
+    ///   - [`endpoint_type(Option<String>)`](crate::output::ModifyDbClusterEndpointOutput::endpoint_type): <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>CUSTOM</code>.</p>
+    ///   - [`custom_endpoint_type(Option<String>)`](crate::output::ModifyDbClusterEndpointOutput::custom_endpoint_type): <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
+    ///   - [`static_members(Option<Vec<String>>)`](crate::output::ModifyDbClusterEndpointOutput::static_members): <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
+    ///   - [`excluded_members(Option<Vec<String>>)`](crate::output::ModifyDbClusterEndpointOutput::excluded_members): <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
+    ///   - [`db_cluster_endpoint_arn(Option<String>)`](crate::output::ModifyDbClusterEndpointOutput::db_cluster_endpoint_arn): <p>The Amazon Resource Name (ARN) for the endpoint.</p>
+    /// - On failure, responds with [`SdkError<ModifyDBClusterEndpointError>`](crate::error::ModifyDBClusterEndpointError)
     pub fn modify_db_cluster_endpoint(&self) -> fluent_builders::ModifyDBClusterEndpoint<C, M, R> {
         fluent_builders::ModifyDBClusterEndpoint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyDBClusterParameterGroup` operation.
+    /// Constructs a fluent builder for the [`ModifyDBClusterParameterGroup`](crate::client::fluent_builders::ModifyDBClusterParameterGroup) operation.
     ///
-    /// See [`ModifyDBClusterParameterGroup`](crate::client::fluent_builders::ModifyDBClusterParameterGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyDbClusterParameterGroupInput`](crate::input::ModifyDbClusterParameterGroupInput) with field(s):
+    ///   - [`db_cluster_parameter_group_name(Option<String>)`](crate::input::ModifyDbClusterParameterGroupInput::db_cluster_parameter_group_name): <p>The name of the DB cluster parameter group to modify.</p>
+    ///   - [`parameters(Option<Vec<Parameter>>)`](crate::input::ModifyDbClusterParameterGroupInput::parameters): <p>A list of parameters in the DB cluster parameter group to modify.</p>
+    /// - On success, responds with [`ModifyDbClusterParameterGroupOutput`](crate::output::ModifyDbClusterParameterGroupOutput) with field(s):
+    ///   - [`db_cluster_parameter_group_name(Option<String>)`](crate::output::ModifyDbClusterParameterGroupOutput::db_cluster_parameter_group_name): <p>The name of the DB cluster parameter group.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be 1 to 255 letters or numbers.</p> </li>   <li> <p>First character must be a letter</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>  </ul> <note>   <p>This value is stored as a lowercase string.</p>  </note>
+    /// - On failure, responds with [`SdkError<ModifyDBClusterParameterGroupError>`](crate::error::ModifyDBClusterParameterGroupError)
     pub fn modify_db_cluster_parameter_group(
         &self,
     ) -> fluent_builders::ModifyDBClusterParameterGroup<C, M, R> {
         fluent_builders::ModifyDBClusterParameterGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyDBClusterSnapshotAttribute` operation.
+    /// Constructs a fluent builder for the [`ModifyDBClusterSnapshotAttribute`](crate::client::fluent_builders::ModifyDBClusterSnapshotAttribute) operation.
     ///
-    /// See [`ModifyDBClusterSnapshotAttribute`](crate::client::fluent_builders::ModifyDBClusterSnapshotAttribute) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyDbClusterSnapshotAttributeInput`](crate::input::ModifyDbClusterSnapshotAttributeInput) with field(s):
+    ///   - [`db_cluster_snapshot_identifier(Option<String>)`](crate::input::ModifyDbClusterSnapshotAttributeInput::db_cluster_snapshot_identifier): <p>The identifier for the DB cluster snapshot to modify the attributes for.</p>
+    ///   - [`attribute_name(Option<String>)`](crate::input::ModifyDbClusterSnapshotAttributeInput::attribute_name): <p>The name of the DB cluster snapshot attribute to modify.</p>  <p>To manage authorization for other Amazon accounts to copy or restore a manual DB cluster snapshot, set this value to <code>restore</code>.</p>
+    ///   - [`values_to_add(Option<Vec<String>>)`](crate::input::ModifyDbClusterSnapshotAttributeInput::values_to_add): <p>A list of DB cluster snapshot attributes to add to the attribute specified by <code>AttributeName</code>.</p>  <p>To authorize other Amazon accounts to copy or restore a manual DB cluster snapshot, set this list to include one or more Amazon account IDs, or <code>all</code> to make the manual DB cluster snapshot restorable by any Amazon account. Do not add the <code>all</code> value for any manual DB cluster snapshots that contain private information that you don't want available to all Amazon accounts.</p>
+    ///   - [`values_to_remove(Option<Vec<String>>)`](crate::input::ModifyDbClusterSnapshotAttributeInput::values_to_remove): <p>A list of DB cluster snapshot attributes to remove from the attribute specified by <code>AttributeName</code>.</p>  <p>To remove authorization for other Amazon accounts to copy or restore a manual DB cluster snapshot, set this list to include one or more Amazon account identifiers, or <code>all</code> to remove authorization for any Amazon account to copy or restore the DB cluster snapshot. If you specify <code>all</code>, an Amazon account whose account ID is explicitly added to the <code>restore</code> attribute can still copy or restore a manual DB cluster snapshot.</p>
+    /// - On success, responds with [`ModifyDbClusterSnapshotAttributeOutput`](crate::output::ModifyDbClusterSnapshotAttributeOutput) with field(s):
+    ///   - [`db_cluster_snapshot_attributes_result(Option<DbClusterSnapshotAttributesResult>)`](crate::output::ModifyDbClusterSnapshotAttributeOutput::db_cluster_snapshot_attributes_result): <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p>  <p>Manual DB cluster snapshot attributes are used to authorize other Amazon accounts to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
+    /// - On failure, responds with [`SdkError<ModifyDBClusterSnapshotAttributeError>`](crate::error::ModifyDBClusterSnapshotAttributeError)
     pub fn modify_db_cluster_snapshot_attribute(
         &self,
     ) -> fluent_builders::ModifyDBClusterSnapshotAttribute<C, M, R> {
         fluent_builders::ModifyDBClusterSnapshotAttribute::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyDBInstance` operation.
+    /// Constructs a fluent builder for the [`ModifyDBInstance`](crate::client::fluent_builders::ModifyDBInstance) operation.
     ///
-    /// See [`ModifyDBInstance`](crate::client::fluent_builders::ModifyDBInstance) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyDbInstanceInput`](crate::input::ModifyDbInstanceInput) with field(s):
+    ///   - [`db_instance_identifier(Option<String>)`](crate::input::ModifyDbInstanceInput::db_instance_identifier): <p>The DB instance identifier. This value is stored as a lowercase string.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must match the identifier of an existing DBInstance.</p> </li>  </ul>
+    ///   - [`allocated_storage(Option<i32>)`](crate::input::ModifyDbInstanceInput::allocated_storage): <p>Not supported by Neptune.</p>
+    ///   - [`db_instance_class(Option<String>)`](crate::input::ModifyDbInstanceInput::db_instance_class): <p>The new compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance classes are available in all Amazon Regions.</p>  <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is specified as <code>true</code> for this request.</p>  <p>Default: Uses existing setting</p>
+    ///   - [`db_subnet_group_name(Option<String>)`](crate::input::ModifyDbInstanceInput::db_subnet_group_name): <p>The new DB subnet group for the DB instance. You can use this parameter to move your DB instance to a different VPC.</p>  <p>Changing the subnet group causes an outage during the change. The change is applied during the next maintenance window, unless you specify <code>true</code> for the <code>ApplyImmediately</code> parameter.</p>  <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>  <p>Example: <code>mySubnetGroup</code> </p>
+    ///   - [`db_security_groups(Option<Vec<String>>)`](crate::input::ModifyDbInstanceInput::db_security_groups): <p>A list of DB security groups to authorize on this DB instance. Changing this setting doesn't result in an outage and the change is asynchronously applied as soon as possible.</p>  <p>Constraints:</p>  <ul>   <li> <p>If supplied, must match existing DBSecurityGroups.</p> </li>  </ul>
+    ///   - [`vpc_security_group_ids(Option<Vec<String>>)`](crate::input::ModifyDbInstanceInput::vpc_security_group_ids): <p>A list of EC2 VPC security groups to authorize on this DB instance. This change is asynchronously applied as soon as possible.</p>  <p>Not applicable. The associated list of EC2 VPC security groups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>  <p>Constraints:</p>  <ul>   <li> <p>If supplied, must match existing VpcSecurityGroupIds.</p> </li>  </ul>
+    ///   - [`apply_immediately(bool)`](crate::input::ModifyDbInstanceInput::apply_immediately): <p>Specifies whether the modifications in this request and any pending modifications are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB instance.</p>  <p> If this parameter is set to <code>false</code>, changes to the DB instance are applied during the next maintenance window. Some parameter changes can cause an outage and are applied on the next call to <code>RebootDBInstance</code>, or the next failure reboot.</p>  <p>Default: <code>false</code> </p>
+    ///   - [`master_user_password(Option<String>)`](crate::input::ModifyDbInstanceInput::master_user_password): <p>Not supported by Neptune.</p>
+    ///   - [`db_parameter_group_name(Option<String>)`](crate::input::ModifyDbInstanceInput::db_parameter_group_name): <p>The name of the DB parameter group to apply to the DB instance. Changing this setting doesn't result in an outage. The parameter group name itself is changed immediately, but the actual parameter changes are not applied until you reboot the instance without failover. The db instance will NOT be rebooted automatically and the parameter changes will NOT be applied during the next maintenance window.</p>  <p>Default: Uses existing setting</p>  <p>Constraints: The DB parameter group must be in the same DB parameter group family as this DB instance.</p>
+    ///   - [`backup_retention_period(Option<i32>)`](crate::input::ModifyDbInstanceInput::backup_retention_period): <p>Not applicable. The retention period for automated backups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>  <p>Default: Uses existing setting</p>
+    ///   - [`preferred_backup_window(Option<String>)`](crate::input::ModifyDbInstanceInput::preferred_backup_window): <p> The daily time range during which automated backups are created if automated backups are enabled.</p>  <p>Not applicable. The daily time range for creating automated backups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be in the format hh24:mi-hh24:mi</p> </li>   <li> <p>Must be in Universal Time Coordinated (UTC)</p> </li>   <li> <p>Must not conflict with the preferred maintenance window</p> </li>   <li> <p>Must be at least 30 minutes</p> </li>  </ul>
+    ///   - [`preferred_maintenance_window(Option<String>)`](crate::input::ModifyDbInstanceInput::preferred_maintenance_window): <p>The weekly time range (in UTC) during which system maintenance can occur, which might result in an outage. Changing this parameter doesn't result in an outage, except in the following situation, and the change is asynchronously applied as soon as possible. If there are pending actions that cause a reboot, and the maintenance window is changed to include the current time, then changing this parameter will cause a reboot of the DB instance. If moving this window to the current time, there must be at least 30 minutes between the current time and end of the window to ensure pending changes are applied.</p>  <p>Default: Uses existing setting</p>  <p>Format: ddd:hh24:mi-ddd:hh24:mi</p>  <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>  <p>Constraints: Must be at least 30 minutes</p>
+    ///   - [`multi_az(Option<bool>)`](crate::input::ModifyDbInstanceInput::multi_az): <p>Specifies if the DB instance is a Multi-AZ deployment. Changing this parameter doesn't result in an outage and the change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for this request.</p>
+    ///   - [`engine_version(Option<String>)`](crate::input::ModifyDbInstanceInput::engine_version): <p>The version number of the database engine to upgrade to. Currently, setting this parameter has no effect. To upgrade your database engine to the most recent release, use the <code>ApplyPendingMaintenanceAction</code> API.</p>
+    ///   - [`allow_major_version_upgrade(bool)`](crate::input::ModifyDbInstanceInput::allow_major_version_upgrade): <p>Indicates that major version upgrades are allowed. Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible.</p>
+    ///   - [`auto_minor_version_upgrade(Option<bool>)`](crate::input::ModifyDbInstanceInput::auto_minor_version_upgrade): <p> Indicates that minor version upgrades are applied automatically to the DB instance during the maintenance window. Changing this parameter doesn't result in an outage except in the following case and the change is asynchronously applied as soon as possible. An outage will result if this parameter is set to <code>true</code> during the maintenance window, and a newer minor version is available, and Neptune has enabled auto patching for that engine version.</p>
+    ///   - [`license_model(Option<String>)`](crate::input::ModifyDbInstanceInput::license_model): <p>Not supported by Neptune.</p>
+    ///   - [`iops(Option<i32>)`](crate::input::ModifyDbInstanceInput::iops): <p>The new Provisioned IOPS (I/O operations per second) value for the instance.</p>  <p>Changing this setting doesn't result in an outage and the change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for this request.</p>  <p>Default: Uses existing setting</p>
+    ///   - [`option_group_name(Option<String>)`](crate::input::ModifyDbInstanceInput::option_group_name): <p> <i>(Not supported by Neptune)</i> </p>
+    ///   - [`new_db_instance_identifier(Option<String>)`](crate::input::ModifyDbInstanceInput::new_db_instance_identifier): <p> The new DB instance identifier for the DB instance when renaming a DB instance. When you change the DB instance identifier, an instance reboot will occur immediately if you set <code>Apply Immediately</code> to true, or will occur during the next maintenance window if <code>Apply Immediately</code> to false. This value is stored as a lowercase string.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>   <li> <p>The first character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul>  <p>Example: <code>mydbinstance</code> </p>
+    ///   - [`storage_type(Option<String>)`](crate::input::ModifyDbInstanceInput::storage_type): <p>Not supported.</p>
+    ///   - [`tde_credential_arn(Option<String>)`](crate::input::ModifyDbInstanceInput::tde_credential_arn): <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
+    ///   - [`tde_credential_password(Option<String>)`](crate::input::ModifyDbInstanceInput::tde_credential_password): <p>The password for the given ARN from the key store in order to access the device.</p>
+    ///   - [`ca_certificate_identifier(Option<String>)`](crate::input::ModifyDbInstanceInput::ca_certificate_identifier): <p>Indicates the certificate that needs to be associated with the instance.</p>
+    ///   - [`domain(Option<String>)`](crate::input::ModifyDbInstanceInput::domain): <p>Not supported.</p>
+    ///   - [`copy_tags_to_snapshot(Option<bool>)`](crate::input::ModifyDbInstanceInput::copy_tags_to_snapshot): <p>True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise false. The default is false.</p>
+    ///   - [`monitoring_interval(Option<i32>)`](crate::input::ModifyDbInstanceInput::monitoring_interval): <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>  <p>If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code> to a value other than 0.</p>  <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
+    ///   - [`db_port_number(Option<i32>)`](crate::input::ModifyDbInstanceInput::db_port_number): <p>The port number on which the database accepts connections.</p>  <p>The value of the <code>DBPortNumber</code> parameter must not match any of the port values specified for options in the option group for the DB instance.</p>  <p>Your database will restart when you change the <code>DBPortNumber</code> value regardless of the value of the <code>ApplyImmediately</code> parameter.</p>  <p> Default: <code>8182</code> </p>
+    ///   - [`publicly_accessible(Option<bool>)`](crate::input::ModifyDbInstanceInput::publicly_accessible): <p>This flag should no longer be used.</p>
+    ///   - [`monitoring_role_arn(Option<String>)`](crate::input::ModifyDbInstanceInput::monitoring_role_arn): <p>The ARN for the IAM role that permits Neptune to send enhanced monitoring metrics to Amazon CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>.</p>  <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
+    ///   - [`domain_iam_role_name(Option<String>)`](crate::input::ModifyDbInstanceInput::domain_iam_role_name): <p>Not supported</p>
+    ///   - [`promotion_tier(Option<i32>)`](crate::input::ModifyDbInstanceInput::promotion_tier): <p>A value that specifies the order in which a Read Replica is promoted to the primary instance after a failure of the existing primary instance.</p>  <p>Default: 1</p>  <p>Valid Values: 0 - 15</p>
+    ///   - [`enable_iam_database_authentication(Option<bool>)`](crate::input::ModifyDbInstanceInput::enable_iam_database_authentication): <p>True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and otherwise false.</p>  <p>You can enable IAM database authentication for the following database engines</p>  <p>Not applicable. Mapping Amazon IAM accounts to database accounts is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>  <p>Default: <code>false</code> </p>
+    ///   - [`enable_performance_insights(Option<bool>)`](crate::input::ModifyDbInstanceInput::enable_performance_insights): <p> <i>(Not supported by Neptune)</i> </p>
+    ///   - [`performance_insights_kms_key_id(Option<String>)`](crate::input::ModifyDbInstanceInput::performance_insights_kms_key_id): <p> <i>(Not supported by Neptune)</i> </p>
+    ///   - [`cloudwatch_logs_export_configuration(Option<CloudwatchLogsExportConfiguration>)`](crate::input::ModifyDbInstanceInput::cloudwatch_logs_export_configuration): <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance or DB cluster.</p>
+    ///   - [`deletion_protection(Option<bool>)`](crate::input::ModifyDbInstanceInput::deletion_protection): <p>A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB Instance</a>.</p>
+    /// - On success, responds with [`ModifyDbInstanceOutput`](crate::output::ModifyDbInstanceOutput) with field(s):
+    ///   - [`db_instance(Option<DbInstance>)`](crate::output::ModifyDbInstanceOutput::db_instance): <p>Contains the details of an Amazon Neptune DB instance.</p>  <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
+    /// - On failure, responds with [`SdkError<ModifyDBInstanceError>`](crate::error::ModifyDBInstanceError)
     pub fn modify_db_instance(&self) -> fluent_builders::ModifyDBInstance<C, M, R> {
         fluent_builders::ModifyDBInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyDBParameterGroup` operation.
+    /// Constructs a fluent builder for the [`ModifyDBParameterGroup`](crate::client::fluent_builders::ModifyDBParameterGroup) operation.
     ///
-    /// See [`ModifyDBParameterGroup`](crate::client::fluent_builders::ModifyDBParameterGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyDbParameterGroupInput`](crate::input::ModifyDbParameterGroupInput) with field(s):
+    ///   - [`db_parameter_group_name(Option<String>)`](crate::input::ModifyDbParameterGroupInput::db_parameter_group_name): <p>The name of the DB parameter group.</p>  <p>Constraints:</p>  <ul>   <li> <p>If supplied, must match the name of an existing DBParameterGroup.</p> </li>  </ul>
+    ///   - [`parameters(Option<Vec<Parameter>>)`](crate::input::ModifyDbParameterGroupInput::parameters): <p>An array of parameter names, values, and the apply method for the parameter update. At least one parameter name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters can be modified in a single request.</p>  <p>Valid Values (for the application method): <code>immediate | pending-reboot</code> </p> <note>   <p>You can use the immediate value with dynamic parameters only. You can use the pending-reboot value for both dynamic and static parameters, and changes are applied when you reboot the DB instance without failover.</p>  </note>
+    /// - On success, responds with [`ModifyDbParameterGroupOutput`](crate::output::ModifyDbParameterGroupOutput) with field(s):
+    ///   - [`db_parameter_group_name(Option<String>)`](crate::output::ModifyDbParameterGroupOutput::db_parameter_group_name): <p>Provides the name of the DB parameter group.</p>
+    /// - On failure, responds with [`SdkError<ModifyDBParameterGroupError>`](crate::error::ModifyDBParameterGroupError)
     pub fn modify_db_parameter_group(&self) -> fluent_builders::ModifyDBParameterGroup<C, M, R> {
         fluent_builders::ModifyDBParameterGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyDBSubnetGroup` operation.
+    /// Constructs a fluent builder for the [`ModifyDBSubnetGroup`](crate::client::fluent_builders::ModifyDBSubnetGroup) operation.
     ///
-    /// See [`ModifyDBSubnetGroup`](crate::client::fluent_builders::ModifyDBSubnetGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyDbSubnetGroupInput`](crate::input::ModifyDbSubnetGroupInput) with field(s):
+    ///   - [`db_subnet_group_name(Option<String>)`](crate::input::ModifyDbSubnetGroupInput::db_subnet_group_name): <p>The name for the DB subnet group. This value is stored as a lowercase string. You can't modify the default subnet group.</p>  <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>  <p>Example: <code>mySubnetgroup</code> </p>
+    ///   - [`db_subnet_group_description(Option<String>)`](crate::input::ModifyDbSubnetGroupInput::db_subnet_group_description): <p>The description for the DB subnet group.</p>
+    ///   - [`subnet_ids(Option<Vec<String>>)`](crate::input::ModifyDbSubnetGroupInput::subnet_ids): <p>The EC2 subnet IDs for the DB subnet group.</p>
+    /// - On success, responds with [`ModifyDbSubnetGroupOutput`](crate::output::ModifyDbSubnetGroupOutput) with field(s):
+    ///   - [`db_subnet_group(Option<DbSubnetGroup>)`](crate::output::ModifyDbSubnetGroupOutput::db_subnet_group): <p>Contains the details of an Amazon Neptune DB subnet group.</p>  <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.</p>
+    /// - On failure, responds with [`SdkError<ModifyDBSubnetGroupError>`](crate::error::ModifyDBSubnetGroupError)
     pub fn modify_db_subnet_group(&self) -> fluent_builders::ModifyDBSubnetGroup<C, M, R> {
         fluent_builders::ModifyDBSubnetGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyEventSubscription` operation.
+    /// Constructs a fluent builder for the [`ModifyEventSubscription`](crate::client::fluent_builders::ModifyEventSubscription) operation.
     ///
-    /// See [`ModifyEventSubscription`](crate::client::fluent_builders::ModifyEventSubscription) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyEventSubscriptionInput`](crate::input::ModifyEventSubscriptionInput) with field(s):
+    ///   - [`subscription_name(Option<String>)`](crate::input::ModifyEventSubscriptionInput::subscription_name): <p>The name of the event notification subscription.</p>
+    ///   - [`sns_topic_arn(Option<String>)`](crate::input::ModifyEventSubscriptionInput::sns_topic_arn): <p>The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
+    ///   - [`source_type(Option<String>)`](crate::input::ModifyEventSubscriptionInput::source_type): <p>The type of source that is generating the events. For example, if you want to be notified of events generated by a DB instance, you would set this parameter to db-instance. if this value is not specified, all events are returned.</p>  <p>Valid values: db-instance | db-parameter-group | db-security-group | db-snapshot</p>
+    ///   - [`event_categories(Option<Vec<String>>)`](crate::input::ModifyEventSubscriptionInput::event_categories): <p> A list of event categories for a SourceType that you want to subscribe to. You can see a list of the categories for a given SourceType by using the <b>DescribeEventCategories</b> action.</p>
+    ///   - [`enabled(Option<bool>)`](crate::input::ModifyEventSubscriptionInput::enabled): <p> A Boolean value; set to <b>true</b> to activate the subscription.</p>
+    /// - On success, responds with [`ModifyEventSubscriptionOutput`](crate::output::ModifyEventSubscriptionOutput) with field(s):
+    ///   - [`event_subscription(Option<EventSubscription>)`](crate::output::ModifyEventSubscriptionOutput::event_subscription): <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
+    /// - On failure, responds with [`SdkError<ModifyEventSubscriptionError>`](crate::error::ModifyEventSubscriptionError)
     pub fn modify_event_subscription(&self) -> fluent_builders::ModifyEventSubscription<C, M, R> {
         fluent_builders::ModifyEventSubscription::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PromoteReadReplicaDBCluster` operation.
+    /// Constructs a fluent builder for the [`PromoteReadReplicaDBCluster`](crate::client::fluent_builders::PromoteReadReplicaDBCluster) operation.
     ///
-    /// See [`PromoteReadReplicaDBCluster`](crate::client::fluent_builders::PromoteReadReplicaDBCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PromoteReadReplicaDbClusterInput`](crate::input::PromoteReadReplicaDbClusterInput) with field(s):
+    ///   - [`db_cluster_identifier(Option<String>)`](crate::input::PromoteReadReplicaDbClusterInput::db_cluster_identifier): <p>Not supported.</p>
+    /// - On success, responds with [`PromoteReadReplicaDbClusterOutput`](crate::output::PromoteReadReplicaDbClusterOutput) with field(s):
+    ///   - [`db_cluster(Option<DbCluster>)`](crate::output::PromoteReadReplicaDbClusterOutput::db_cluster): <p>Contains the details of an Amazon Neptune DB cluster.</p>  <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
+    /// - On failure, responds with [`SdkError<PromoteReadReplicaDBClusterError>`](crate::error::PromoteReadReplicaDBClusterError)
     pub fn promote_read_replica_db_cluster(
         &self,
     ) -> fluent_builders::PromoteReadReplicaDBCluster<C, M, R> {
         fluent_builders::PromoteReadReplicaDBCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RebootDBInstance` operation.
+    /// Constructs a fluent builder for the [`RebootDBInstance`](crate::client::fluent_builders::RebootDBInstance) operation.
     ///
-    /// See [`RebootDBInstance`](crate::client::fluent_builders::RebootDBInstance) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RebootDbInstanceInput`](crate::input::RebootDbInstanceInput) with field(s):
+    ///   - [`db_instance_identifier(Option<String>)`](crate::input::RebootDbInstanceInput::db_instance_identifier): <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must match the identifier of an existing DBInstance.</p> </li>  </ul>
+    ///   - [`force_failover(Option<bool>)`](crate::input::RebootDbInstanceInput::force_failover): <p> When <code>true</code>, the reboot is conducted through a MultiAZ failover.</p>  <p>Constraint: You can't specify <code>true</code> if the instance is not configured for MultiAZ.</p>
+    /// - On success, responds with [`RebootDbInstanceOutput`](crate::output::RebootDbInstanceOutput) with field(s):
+    ///   - [`db_instance(Option<DbInstance>)`](crate::output::RebootDbInstanceOutput::db_instance): <p>Contains the details of an Amazon Neptune DB instance.</p>  <p>This data type is used as a response element in the <code>DescribeDBInstances</code> action.</p>
+    /// - On failure, responds with [`SdkError<RebootDBInstanceError>`](crate::error::RebootDBInstanceError)
     pub fn reboot_db_instance(&self) -> fluent_builders::RebootDBInstance<C, M, R> {
         fluent_builders::RebootDBInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RemoveRoleFromDBCluster` operation.
+    /// Constructs a fluent builder for the [`RemoveRoleFromDBCluster`](crate::client::fluent_builders::RemoveRoleFromDBCluster) operation.
     ///
-    /// See [`RemoveRoleFromDBCluster`](crate::client::fluent_builders::RemoveRoleFromDBCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RemoveRoleFromDbClusterInput`](crate::input::RemoveRoleFromDbClusterInput) with field(s):
+    ///   - [`db_cluster_identifier(Option<String>)`](crate::input::RemoveRoleFromDbClusterInput::db_cluster_identifier): <p>The name of the DB cluster to disassociate the IAM role from.</p>
+    ///   - [`role_arn(Option<String>)`](crate::input::RemoveRoleFromDbClusterInput::role_arn): <p>The Amazon Resource Name (ARN) of the IAM role to disassociate from the DB cluster, for example <code>arn:aws:iam::123456789012:role/NeptuneAccessRole</code>.</p>
+    ///   - [`feature_name(Option<String>)`](crate::input::RemoveRoleFromDbClusterInput::feature_name): <p>The name of the feature for the DB cluster that the IAM role is to be disassociated from. For the list of supported feature names, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.</p>
+    /// - On success, responds with [`RemoveRoleFromDbClusterOutput`](crate::output::RemoveRoleFromDbClusterOutput)
+
+    /// - On failure, responds with [`SdkError<RemoveRoleFromDBClusterError>`](crate::error::RemoveRoleFromDBClusterError)
     pub fn remove_role_from_db_cluster(&self) -> fluent_builders::RemoveRoleFromDBCluster<C, M, R> {
         fluent_builders::RemoveRoleFromDBCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RemoveSourceIdentifierFromSubscription` operation.
+    /// Constructs a fluent builder for the [`RemoveSourceIdentifierFromSubscription`](crate::client::fluent_builders::RemoveSourceIdentifierFromSubscription) operation.
     ///
-    /// See [`RemoveSourceIdentifierFromSubscription`](crate::client::fluent_builders::RemoveSourceIdentifierFromSubscription) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RemoveSourceIdentifierFromSubscriptionInput`](crate::input::RemoveSourceIdentifierFromSubscriptionInput) with field(s):
+    ///   - [`subscription_name(Option<String>)`](crate::input::RemoveSourceIdentifierFromSubscriptionInput::subscription_name): <p>The name of the event notification subscription you want to remove a source identifier from.</p>
+    ///   - [`source_identifier(Option<String>)`](crate::input::RemoveSourceIdentifierFromSubscriptionInput::source_identifier): <p> The source identifier to be removed from the subscription, such as the <b>DB instance identifier</b> for a DB instance or the name of a security group.</p>
+    /// - On success, responds with [`RemoveSourceIdentifierFromSubscriptionOutput`](crate::output::RemoveSourceIdentifierFromSubscriptionOutput) with field(s):
+    ///   - [`event_subscription(Option<EventSubscription>)`](crate::output::RemoveSourceIdentifierFromSubscriptionOutput::event_subscription): <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
+    /// - On failure, responds with [`SdkError<RemoveSourceIdentifierFromSubscriptionError>`](crate::error::RemoveSourceIdentifierFromSubscriptionError)
     pub fn remove_source_identifier_from_subscription(
         &self,
     ) -> fluent_builders::RemoveSourceIdentifierFromSubscription<C, M, R> {
         fluent_builders::RemoveSourceIdentifierFromSubscription::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RemoveTagsFromResource` operation.
+    /// Constructs a fluent builder for the [`RemoveTagsFromResource`](crate::client::fluent_builders::RemoveTagsFromResource) operation.
     ///
-    /// See [`RemoveTagsFromResource`](crate::client::fluent_builders::RemoveTagsFromResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RemoveTagsFromResourceInput`](crate::input::RemoveTagsFromResourceInput) with field(s):
+    ///   - [`resource_name(Option<String>)`](crate::input::RemoveTagsFromResourceInput::resource_name): <p>The Amazon Neptune resource that the tags are removed from. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing"> Constructing an Amazon Resource Name (ARN)</a>.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::RemoveTagsFromResourceInput::tag_keys): <p>The tag key (name) of the tag to be removed.</p>
+    /// - On success, responds with [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput)
+
+    /// - On failure, responds with [`SdkError<RemoveTagsFromResourceError>`](crate::error::RemoveTagsFromResourceError)
     pub fn remove_tags_from_resource(&self) -> fluent_builders::RemoveTagsFromResource<C, M, R> {
         fluent_builders::RemoveTagsFromResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ResetDBClusterParameterGroup` operation.
+    /// Constructs a fluent builder for the [`ResetDBClusterParameterGroup`](crate::client::fluent_builders::ResetDBClusterParameterGroup) operation.
     ///
-    /// See [`ResetDBClusterParameterGroup`](crate::client::fluent_builders::ResetDBClusterParameterGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ResetDbClusterParameterGroupInput`](crate::input::ResetDbClusterParameterGroupInput) with field(s):
+    ///   - [`db_cluster_parameter_group_name(Option<String>)`](crate::input::ResetDbClusterParameterGroupInput::db_cluster_parameter_group_name): <p>The name of the DB cluster parameter group to reset.</p>
+    ///   - [`reset_all_parameters(bool)`](crate::input::ResetDbClusterParameterGroupInput::reset_all_parameters): <p>A value that is set to <code>true</code> to reset all parameters in the DB cluster parameter group to their default values, and <code>false</code> otherwise. You can't use this parameter if there is a list of parameter names specified for the <code>Parameters</code> parameter.</p>
+    ///   - [`parameters(Option<Vec<Parameter>>)`](crate::input::ResetDbClusterParameterGroupInput::parameters): <p>A list of parameter names in the DB cluster parameter group to reset to the default values. You can't use this parameter if the <code>ResetAllParameters</code> parameter is set to <code>true</code>.</p>
+    /// - On success, responds with [`ResetDbClusterParameterGroupOutput`](crate::output::ResetDbClusterParameterGroupOutput) with field(s):
+    ///   - [`db_cluster_parameter_group_name(Option<String>)`](crate::output::ResetDbClusterParameterGroupOutput::db_cluster_parameter_group_name): <p>The name of the DB cluster parameter group.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be 1 to 255 letters or numbers.</p> </li>   <li> <p>First character must be a letter</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>  </ul> <note>   <p>This value is stored as a lowercase string.</p>  </note>
+    /// - On failure, responds with [`SdkError<ResetDBClusterParameterGroupError>`](crate::error::ResetDBClusterParameterGroupError)
     pub fn reset_db_cluster_parameter_group(
         &self,
     ) -> fluent_builders::ResetDBClusterParameterGroup<C, M, R> {
         fluent_builders::ResetDBClusterParameterGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ResetDBParameterGroup` operation.
+    /// Constructs a fluent builder for the [`ResetDBParameterGroup`](crate::client::fluent_builders::ResetDBParameterGroup) operation.
     ///
-    /// See [`ResetDBParameterGroup`](crate::client::fluent_builders::ResetDBParameterGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ResetDbParameterGroupInput`](crate::input::ResetDbParameterGroupInput) with field(s):
+    ///   - [`db_parameter_group_name(Option<String>)`](crate::input::ResetDbParameterGroupInput::db_parameter_group_name): <p>The name of the DB parameter group.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must match the name of an existing DBParameterGroup.</p> </li>  </ul>
+    ///   - [`reset_all_parameters(bool)`](crate::input::ResetDbParameterGroupInput::reset_all_parameters): <p>Specifies whether (<code>true</code>) or not (<code>false</code>) to reset all parameters in the DB parameter group to default values.</p>  <p>Default: <code>true</code> </p>
+    ///   - [`parameters(Option<Vec<Parameter>>)`](crate::input::ResetDbParameterGroupInput::parameters): <p>To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters. To reset specific parameters, provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single request.</p>  <p>Valid Values (for Apply method): <code>pending-reboot</code> </p>
+    /// - On success, responds with [`ResetDbParameterGroupOutput`](crate::output::ResetDbParameterGroupOutput) with field(s):
+    ///   - [`db_parameter_group_name(Option<String>)`](crate::output::ResetDbParameterGroupOutput::db_parameter_group_name): <p>Provides the name of the DB parameter group.</p>
+    /// - On failure, responds with [`SdkError<ResetDBParameterGroupError>`](crate::error::ResetDBParameterGroupError)
     pub fn reset_db_parameter_group(&self) -> fluent_builders::ResetDBParameterGroup<C, M, R> {
         fluent_builders::ResetDBParameterGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RestoreDBClusterFromSnapshot` operation.
+    /// Constructs a fluent builder for the [`RestoreDBClusterFromSnapshot`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot) operation.
     ///
-    /// See [`RestoreDBClusterFromSnapshot`](crate::client::fluent_builders::RestoreDBClusterFromSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RestoreDbClusterFromSnapshotInput`](crate::input::RestoreDbClusterFromSnapshotInput) with field(s):
+    ///   - [`availability_zones(Option<Vec<String>>)`](crate::input::RestoreDbClusterFromSnapshotInput::availability_zones): <p>Provides the list of EC2 Availability Zones that instances in the restored DB cluster can be created in.</p>
+    ///   - [`db_cluster_identifier(Option<String>)`](crate::input::RestoreDbClusterFromSnapshotInput::db_cluster_identifier): <p>The name of the DB cluster to create from the DB snapshot or DB cluster snapshot. This parameter isn't case-sensitive.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>   <li> <p>First character must be a letter</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>  </ul>  <p>Example: <code>my-snapshot-id</code> </p>
+    ///   - [`snapshot_identifier(Option<String>)`](crate::input::RestoreDbClusterFromSnapshotInput::snapshot_identifier): <p>The identifier for the DB snapshot or DB cluster snapshot to restore from.</p>  <p>You can use either the name or the Amazon Resource Name (ARN) to specify a DB cluster snapshot. However, you can use only the ARN to specify a DB snapshot.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must match the identifier of an existing Snapshot.</p> </li>  </ul>
+    ///   - [`engine(Option<String>)`](crate::input::RestoreDbClusterFromSnapshotInput::engine): <p>The database engine to use for the new DB cluster.</p>  <p>Default: The same as source</p>  <p>Constraint: Must be compatible with the engine of the source</p>
+    ///   - [`engine_version(Option<String>)`](crate::input::RestoreDbClusterFromSnapshotInput::engine_version): <p>The version of the database engine to use for the new DB cluster.</p>
+    ///   - [`port(Option<i32>)`](crate::input::RestoreDbClusterFromSnapshotInput::port): <p>The port number on which the new DB cluster accepts connections.</p>  <p>Constraints: Value must be <code>1150-65535</code> </p>  <p>Default: The same port as the original DB cluster.</p>
+    ///   - [`db_subnet_group_name(Option<String>)`](crate::input::RestoreDbClusterFromSnapshotInput::db_subnet_group_name): <p>The name of the DB subnet group to use for the new DB cluster.</p>  <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>  <p>Example: <code>mySubnetgroup</code> </p>
+    ///   - [`database_name(Option<String>)`](crate::input::RestoreDbClusterFromSnapshotInput::database_name): <p>Not supported.</p>
+    ///   - [`option_group_name(Option<String>)`](crate::input::RestoreDbClusterFromSnapshotInput::option_group_name): <p> <i>(Not supported by Neptune)</i> </p>
+    ///   - [`vpc_security_group_ids(Option<Vec<String>>)`](crate::input::RestoreDbClusterFromSnapshotInput::vpc_security_group_ids): <p>A list of VPC security groups that the new DB cluster will belong to.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::RestoreDbClusterFromSnapshotInput::tags): <p>The tags to be assigned to the restored DB cluster.</p>
+    ///   - [`kms_key_id(Option<String>)`](crate::input::RestoreDbClusterFromSnapshotInput::kms_key_id): <p>The Amazon KMS key identifier to use when restoring an encrypted DB cluster from a DB snapshot or DB cluster snapshot.</p>  <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>  <p>If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following will occur:</p>  <ul>   <li> <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the DB snapshot or DB cluster snapshot.</p> </li>   <li> <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the restored DB cluster is not encrypted.</p> </li>  </ul>
+    ///   - [`enable_iam_database_authentication(Option<bool>)`](crate::input::RestoreDbClusterFromSnapshotInput::enable_iam_database_authentication): <p>True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and otherwise false.</p>  <p>Default: <code>false</code> </p>
+    ///   - [`enable_cloudwatch_logs_exports(Option<Vec<String>>)`](crate::input::RestoreDbClusterFromSnapshotInput::enable_cloudwatch_logs_exports): <p>The list of logs that the restored DB cluster is to export to Amazon CloudWatch Logs.</p>
+    ///   - [`db_cluster_parameter_group_name(Option<String>)`](crate::input::RestoreDbClusterFromSnapshotInput::db_cluster_parameter_group_name): <p>The name of the DB cluster parameter group to associate with the new DB cluster.</p>  <p>Constraints:</p>  <ul>   <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>  </ul>
+    ///   - [`deletion_protection(Option<bool>)`](crate::input::RestoreDbClusterFromSnapshotInput::deletion_protection): <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled. </p>
+    ///   - [`copy_tags_to_snapshot(Option<bool>)`](crate::input::RestoreDbClusterFromSnapshotInput::copy_tags_to_snapshot): <p> <i>If set to <code>true</code>, tags are copied to any snapshot of the restored DB cluster that is created.</i> </p>
+    /// - On success, responds with [`RestoreDbClusterFromSnapshotOutput`](crate::output::RestoreDbClusterFromSnapshotOutput) with field(s):
+    ///   - [`db_cluster(Option<DbCluster>)`](crate::output::RestoreDbClusterFromSnapshotOutput::db_cluster): <p>Contains the details of an Amazon Neptune DB cluster.</p>  <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
+    /// - On failure, responds with [`SdkError<RestoreDBClusterFromSnapshotError>`](crate::error::RestoreDBClusterFromSnapshotError)
     pub fn restore_db_cluster_from_snapshot(
         &self,
     ) -> fluent_builders::RestoreDBClusterFromSnapshot<C, M, R> {
         fluent_builders::RestoreDBClusterFromSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RestoreDBClusterToPointInTime` operation.
+    /// Constructs a fluent builder for the [`RestoreDBClusterToPointInTime`](crate::client::fluent_builders::RestoreDBClusterToPointInTime) operation.
     ///
-    /// See [`RestoreDBClusterToPointInTime`](crate::client::fluent_builders::RestoreDBClusterToPointInTime) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RestoreDbClusterToPointInTimeInput`](crate::input::RestoreDbClusterToPointInTimeInput) with field(s):
+    ///   - [`db_cluster_identifier(Option<String>)`](crate::input::RestoreDbClusterToPointInTimeInput::db_cluster_identifier): <p>The name of the new DB cluster to be created.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>   <li> <p>First character must be a letter</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>  </ul>
+    ///   - [`restore_type(Option<String>)`](crate::input::RestoreDbClusterToPointInTimeInput::restore_type): <p>The type of restore to be performed. You can specify one of the following values:</p>  <ul>   <li> <p> <code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.</p> </li>   <li> <p> <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.</p> </li>  </ul>  <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the source DB cluster.</p>
+    ///   - [`source_db_cluster_identifier(Option<String>)`](crate::input::RestoreDbClusterToPointInTimeInput::source_db_cluster_identifier): <p>The identifier of the source DB cluster from which to restore.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must match the identifier of an existing DBCluster.</p> </li>  </ul>
+    ///   - [`restore_to_time(Option<DateTime>)`](crate::input::RestoreDbClusterToPointInTimeInput::restore_to_time): <p>The date and time to restore the DB cluster to.</p>  <p>Valid Values: Value must be a time in Universal Coordinated Time (UTC) format</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be before the latest restorable time for the DB instance</p> </li>   <li> <p>Must be specified if <code>UseLatestRestorableTime</code> parameter is not provided</p> </li>   <li> <p>Cannot be specified if <code>UseLatestRestorableTime</code> parameter is true</p> </li>   <li> <p>Cannot be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code> </p> </li>  </ul>  <p>Example: <code>2015-03-07T23:45:00Z</code> </p>
+    ///   - [`use_latest_restorable_time(bool)`](crate::input::RestoreDbClusterToPointInTimeInput::use_latest_restorable_time): <p>A value that is set to <code>true</code> to restore the DB cluster to the latest restorable backup time, and <code>false</code> otherwise.</p>  <p>Default: <code>false</code> </p>  <p>Constraints: Cannot be specified if <code>RestoreToTime</code> parameter is provided.</p>
+    ///   - [`port(Option<i32>)`](crate::input::RestoreDbClusterToPointInTimeInput::port): <p>The port number on which the new DB cluster accepts connections.</p>  <p>Constraints: Value must be <code>1150-65535</code> </p>  <p>Default: The same port as the original DB cluster.</p>
+    ///   - [`db_subnet_group_name(Option<String>)`](crate::input::RestoreDbClusterToPointInTimeInput::db_subnet_group_name): <p>The DB subnet group name to use for the new DB cluster.</p>  <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>  <p>Example: <code>mySubnetgroup</code> </p>
+    ///   - [`option_group_name(Option<String>)`](crate::input::RestoreDbClusterToPointInTimeInput::option_group_name): <p> <i>(Not supported by Neptune)</i> </p>
+    ///   - [`vpc_security_group_ids(Option<Vec<String>>)`](crate::input::RestoreDbClusterToPointInTimeInput::vpc_security_group_ids): <p>A list of VPC security groups that the new DB cluster belongs to.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::RestoreDbClusterToPointInTimeInput::tags): <p>The tags to be applied to the restored DB cluster.</p>
+    ///   - [`kms_key_id(Option<String>)`](crate::input::RestoreDbClusterToPointInTimeInput::kms_key_id): <p>The Amazon KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.</p>  <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>  <p>You can restore to a new DB cluster and encrypt the new DB cluster with a KMS key that is different than the KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the KMS key identified by the <code>KmsKeyId</code> parameter.</p>  <p>If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following will occur:</p>  <ul>   <li> <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the source DB cluster.</p> </li>   <li> <p>If the DB cluster is not encrypted, then the restored DB cluster is not encrypted.</p> </li>  </ul>  <p>If <code>DBClusterIdentifier</code> refers to a DB cluster that is not encrypted, then the restore request is rejected.</p>
+    ///   - [`enable_iam_database_authentication(Option<bool>)`](crate::input::RestoreDbClusterToPointInTimeInput::enable_iam_database_authentication): <p>True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and otherwise false.</p>  <p>Default: <code>false</code> </p>
+    ///   - [`enable_cloudwatch_logs_exports(Option<Vec<String>>)`](crate::input::RestoreDbClusterToPointInTimeInput::enable_cloudwatch_logs_exports): <p>The list of logs that the restored DB cluster is to export to CloudWatch Logs.</p>
+    ///   - [`db_cluster_parameter_group_name(Option<String>)`](crate::input::RestoreDbClusterToPointInTimeInput::db_cluster_parameter_group_name): <p>The name of the DB cluster parameter group to associate with the new DB cluster.</p>  <p>Constraints:</p>  <ul>   <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>  </ul>
+    ///   - [`deletion_protection(Option<bool>)`](crate::input::RestoreDbClusterToPointInTimeInput::deletion_protection): <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled. </p>
+    /// - On success, responds with [`RestoreDbClusterToPointInTimeOutput`](crate::output::RestoreDbClusterToPointInTimeOutput) with field(s):
+    ///   - [`db_cluster(Option<DbCluster>)`](crate::output::RestoreDbClusterToPointInTimeOutput::db_cluster): <p>Contains the details of an Amazon Neptune DB cluster.</p>  <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
+    /// - On failure, responds with [`SdkError<RestoreDBClusterToPointInTimeError>`](crate::error::RestoreDBClusterToPointInTimeError)
     pub fn restore_db_cluster_to_point_in_time(
         &self,
     ) -> fluent_builders::RestoreDBClusterToPointInTime<C, M, R> {
         fluent_builders::RestoreDBClusterToPointInTime::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartDBCluster` operation.
+    /// Constructs a fluent builder for the [`StartDBCluster`](crate::client::fluent_builders::StartDBCluster) operation.
     ///
-    /// See [`StartDBCluster`](crate::client::fluent_builders::StartDBCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartDbClusterInput`](crate::input::StartDbClusterInput) with field(s):
+    ///   - [`db_cluster_identifier(Option<String>)`](crate::input::StartDbClusterInput::db_cluster_identifier): <p>The DB cluster identifier of the Neptune DB cluster to be started. This parameter is stored as a lowercase string.</p>
+    /// - On success, responds with [`StartDbClusterOutput`](crate::output::StartDbClusterOutput) with field(s):
+    ///   - [`db_cluster(Option<DbCluster>)`](crate::output::StartDbClusterOutput::db_cluster): <p>Contains the details of an Amazon Neptune DB cluster.</p>  <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
+    /// - On failure, responds with [`SdkError<StartDBClusterError>`](crate::error::StartDBClusterError)
     pub fn start_db_cluster(&self) -> fluent_builders::StartDBCluster<C, M, R> {
         fluent_builders::StartDBCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopDBCluster` operation.
+    /// Constructs a fluent builder for the [`StopDBCluster`](crate::client::fluent_builders::StopDBCluster) operation.
     ///
-    /// See [`StopDBCluster`](crate::client::fluent_builders::StopDBCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StopDbClusterInput`](crate::input::StopDbClusterInput) with field(s):
+    ///   - [`db_cluster_identifier(Option<String>)`](crate::input::StopDbClusterInput::db_cluster_identifier): <p>The DB cluster identifier of the Neptune DB cluster to be stopped. This parameter is stored as a lowercase string.</p>
+    /// - On success, responds with [`StopDbClusterOutput`](crate::output::StopDbClusterOutput) with field(s):
+    ///   - [`db_cluster(Option<DbCluster>)`](crate::output::StopDbClusterOutput::db_cluster): <p>Contains the details of an Amazon Neptune DB cluster.</p>  <p>This data type is used as a response element in the <code>DescribeDBClusters</code> action.</p>
+    /// - On failure, responds with [`SdkError<StopDBClusterError>`](crate::error::StopDBClusterError)
     pub fn stop_db_cluster(&self) -> fluent_builders::StopDBCluster<C, M, R> {
         fluent_builders::StopDBCluster::new(self.handle.clone())
     }

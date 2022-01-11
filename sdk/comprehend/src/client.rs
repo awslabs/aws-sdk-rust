@@ -83,517 +83,878 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `BatchDetectDominantLanguage` operation.
+    /// Constructs a fluent builder for the [`BatchDetectDominantLanguage`](crate::client::fluent_builders::BatchDetectDominantLanguage) operation.
     ///
-    /// See [`BatchDetectDominantLanguage`](crate::client::fluent_builders::BatchDetectDominantLanguage) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchDetectDominantLanguageInput`](crate::input::BatchDetectDominantLanguageInput) with field(s):
+    ///   - [`text_list(Option<Vec<String>>)`](crate::input::BatchDetectDominantLanguageInput::text_list): <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document should contain at least 20 characters and must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
+    /// - On success, responds with [`BatchDetectDominantLanguageOutput`](crate::output::BatchDetectDominantLanguageOutput) with field(s):
+    ///   - [`result_list(Option<Vec<BatchDetectDominantLanguageItemResult>>)`](crate::output::BatchDetectDominantLanguageOutput::result_list): <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
+    ///   - [`error_list(Option<Vec<BatchItemError>>)`](crate::output::BatchDetectDominantLanguageOutput::error_list): <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
+    /// - On failure, responds with [`SdkError<BatchDetectDominantLanguageError>`](crate::error::BatchDetectDominantLanguageError)
     pub fn batch_detect_dominant_language(
         &self,
     ) -> fluent_builders::BatchDetectDominantLanguage<C, M, R> {
         fluent_builders::BatchDetectDominantLanguage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchDetectEntities` operation.
+    /// Constructs a fluent builder for the [`BatchDetectEntities`](crate::client::fluent_builders::BatchDetectEntities) operation.
     ///
-    /// See [`BatchDetectEntities`](crate::client::fluent_builders::BatchDetectEntities) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchDetectEntitiesInput`](crate::input::BatchDetectEntitiesInput) with field(s):
+    ///   - [`text_list(Option<Vec<String>>)`](crate::input::BatchDetectEntitiesInput::text_list): <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
+    ///   - [`language_code(Option<LanguageCode>)`](crate::input::BatchDetectEntitiesInput::language_code): <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
+    /// - On success, responds with [`BatchDetectEntitiesOutput`](crate::output::BatchDetectEntitiesOutput) with field(s):
+    ///   - [`result_list(Option<Vec<BatchDetectEntitiesItemResult>>)`](crate::output::BatchDetectEntitiesOutput::result_list): <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
+    ///   - [`error_list(Option<Vec<BatchItemError>>)`](crate::output::BatchDetectEntitiesOutput::error_list): <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
+    /// - On failure, responds with [`SdkError<BatchDetectEntitiesError>`](crate::error::BatchDetectEntitiesError)
     pub fn batch_detect_entities(&self) -> fluent_builders::BatchDetectEntities<C, M, R> {
         fluent_builders::BatchDetectEntities::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchDetectKeyPhrases` operation.
+    /// Constructs a fluent builder for the [`BatchDetectKeyPhrases`](crate::client::fluent_builders::BatchDetectKeyPhrases) operation.
     ///
-    /// See [`BatchDetectKeyPhrases`](crate::client::fluent_builders::BatchDetectKeyPhrases) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchDetectKeyPhrasesInput`](crate::input::BatchDetectKeyPhrasesInput) with field(s):
+    ///   - [`text_list(Option<Vec<String>>)`](crate::input::BatchDetectKeyPhrasesInput::text_list): <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+    ///   - [`language_code(Option<LanguageCode>)`](crate::input::BatchDetectKeyPhrasesInput::language_code): <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
+    /// - On success, responds with [`BatchDetectKeyPhrasesOutput`](crate::output::BatchDetectKeyPhrasesOutput) with field(s):
+    ///   - [`result_list(Option<Vec<BatchDetectKeyPhrasesItemResult>>)`](crate::output::BatchDetectKeyPhrasesOutput::result_list): <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
+    ///   - [`error_list(Option<Vec<BatchItemError>>)`](crate::output::BatchDetectKeyPhrasesOutput::error_list): <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
+    /// - On failure, responds with [`SdkError<BatchDetectKeyPhrasesError>`](crate::error::BatchDetectKeyPhrasesError)
     pub fn batch_detect_key_phrases(&self) -> fluent_builders::BatchDetectKeyPhrases<C, M, R> {
         fluent_builders::BatchDetectKeyPhrases::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchDetectSentiment` operation.
+    /// Constructs a fluent builder for the [`BatchDetectSentiment`](crate::client::fluent_builders::BatchDetectSentiment) operation.
     ///
-    /// See [`BatchDetectSentiment`](crate::client::fluent_builders::BatchDetectSentiment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchDetectSentimentInput`](crate::input::BatchDetectSentimentInput) with field(s):
+    ///   - [`text_list(Option<Vec<String>>)`](crate::input::BatchDetectSentimentInput::text_list): <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+    ///   - [`language_code(Option<LanguageCode>)`](crate::input::BatchDetectSentimentInput::language_code): <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
+    /// - On success, responds with [`BatchDetectSentimentOutput`](crate::output::BatchDetectSentimentOutput) with field(s):
+    ///   - [`result_list(Option<Vec<BatchDetectSentimentItemResult>>)`](crate::output::BatchDetectSentimentOutput::result_list): <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
+    ///   - [`error_list(Option<Vec<BatchItemError>>)`](crate::output::BatchDetectSentimentOutput::error_list): <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
+    /// - On failure, responds with [`SdkError<BatchDetectSentimentError>`](crate::error::BatchDetectSentimentError)
     pub fn batch_detect_sentiment(&self) -> fluent_builders::BatchDetectSentiment<C, M, R> {
         fluent_builders::BatchDetectSentiment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchDetectSyntax` operation.
+    /// Constructs a fluent builder for the [`BatchDetectSyntax`](crate::client::fluent_builders::BatchDetectSyntax) operation.
     ///
-    /// See [`BatchDetectSyntax`](crate::client::fluent_builders::BatchDetectSyntax) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchDetectSyntaxInput`](crate::input::BatchDetectSyntaxInput) with field(s):
+    ///   - [`text_list(Option<Vec<String>>)`](crate::input::BatchDetectSyntaxInput::text_list): <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+    ///   - [`language_code(Option<SyntaxLanguageCode>)`](crate::input::BatchDetectSyntaxInput::language_code): <p>The language of the input documents. You can specify any of the following languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt"). All documents must be in the same language.</p>
+    /// - On success, responds with [`BatchDetectSyntaxOutput`](crate::output::BatchDetectSyntaxOutput) with field(s):
+    ///   - [`result_list(Option<Vec<BatchDetectSyntaxItemResult>>)`](crate::output::BatchDetectSyntaxOutput::result_list): <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
+    ///   - [`error_list(Option<Vec<BatchItemError>>)`](crate::output::BatchDetectSyntaxOutput::error_list): <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
+    /// - On failure, responds with [`SdkError<BatchDetectSyntaxError>`](crate::error::BatchDetectSyntaxError)
     pub fn batch_detect_syntax(&self) -> fluent_builders::BatchDetectSyntax<C, M, R> {
         fluent_builders::BatchDetectSyntax::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ClassifyDocument` operation.
+    /// Constructs a fluent builder for the [`ClassifyDocument`](crate::client::fluent_builders::ClassifyDocument) operation.
     ///
-    /// See [`ClassifyDocument`](crate::client::fluent_builders::ClassifyDocument) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ClassifyDocumentInput`](crate::input::ClassifyDocumentInput) with field(s):
+    ///   - [`text(Option<String>)`](crate::input::ClassifyDocumentInput::text): <p>The document text to be analyzed.</p>
+    ///   - [`endpoint_arn(Option<String>)`](crate::input::ClassifyDocumentInput::endpoint_arn): <p>The Amazon Resource Number (ARN) of the endpoint.</p>
+    /// - On success, responds with [`ClassifyDocumentOutput`](crate::output::ClassifyDocumentOutput) with field(s):
+    ///   - [`classes(Option<Vec<DocumentClass>>)`](crate::output::ClassifyDocumentOutput::classes): <p>The classes used by the document being analyzed. These are used for multi-class trained models. Individual classes are mutually exclusive and each document is expected to have only a single class assigned to it. For example, an animal can be a dog or a cat, but not both at the same time. </p>
+    ///   - [`labels(Option<Vec<DocumentLabel>>)`](crate::output::ClassifyDocumentOutput::labels): <p>The labels used the document being analyzed. These are used for multi-label trained models. Individual labels represent different categories that are related in some manner and are not mutually exclusive. For example, a movie can be just an action movie, or it can be an action movie, a science fiction movie, and a comedy, all at the same time. </p>
+    /// - On failure, responds with [`SdkError<ClassifyDocumentError>`](crate::error::ClassifyDocumentError)
     pub fn classify_document(&self) -> fluent_builders::ClassifyDocument<C, M, R> {
         fluent_builders::ClassifyDocument::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ContainsPiiEntities` operation.
+    /// Constructs a fluent builder for the [`ContainsPiiEntities`](crate::client::fluent_builders::ContainsPiiEntities) operation.
     ///
-    /// See [`ContainsPiiEntities`](crate::client::fluent_builders::ContainsPiiEntities) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ContainsPiiEntitiesInput`](crate::input::ContainsPiiEntitiesInput) with field(s):
+    ///   - [`text(Option<String>)`](crate::input::ContainsPiiEntitiesInput::text): <p>Creates a new document classification request to analyze a single document in real-time, returning personally identifiable information (PII) entity labels.</p>
+    ///   - [`language_code(Option<LanguageCode>)`](crate::input::ContainsPiiEntitiesInput::language_code): <p>The language of the input documents.</p>
+    /// - On success, responds with [`ContainsPiiEntitiesOutput`](crate::output::ContainsPiiEntitiesOutput) with field(s):
+    ///   - [`labels(Option<Vec<EntityLabel>>)`](crate::output::ContainsPiiEntitiesOutput::labels): <p>The labels used in the document being analyzed. Individual labels represent personally identifiable information (PII) entity types.</p>
+    /// - On failure, responds with [`SdkError<ContainsPiiEntitiesError>`](crate::error::ContainsPiiEntitiesError)
     pub fn contains_pii_entities(&self) -> fluent_builders::ContainsPiiEntities<C, M, R> {
         fluent_builders::ContainsPiiEntities::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDocumentClassifier` operation.
+    /// Constructs a fluent builder for the [`CreateDocumentClassifier`](crate::client::fluent_builders::CreateDocumentClassifier) operation.
     ///
-    /// See [`CreateDocumentClassifier`](crate::client::fluent_builders::CreateDocumentClassifier) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateDocumentClassifierInput`](crate::input::CreateDocumentClassifierInput) with field(s):
+    ///   - [`document_classifier_name(Option<String>)`](crate::input::CreateDocumentClassifierInput::document_classifier_name): <p>The name of the document classifier.</p>
+    ///   - [`version_name(Option<String>)`](crate::input::CreateDocumentClassifierInput::version_name): <p>The version name given to the newly created classifier. Version names can have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be unique among all models with the same classifier name in the account/AWS Region.</p>
+    ///   - [`data_access_role_arn(Option<String>)`](crate::input::CreateDocumentClassifierInput::data_access_role_arn): <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateDocumentClassifierInput::tags): <p>Tags to be associated with the document classifier being created. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. </p>
+    ///   - [`input_data_config(Option<DocumentClassifierInputDataConfig>)`](crate::input::CreateDocumentClassifierInput::input_data_config): <p>Specifies the format and location of the input data for the job.</p>
+    ///   - [`output_data_config(Option<DocumentClassifierOutputDataConfig>)`](crate::input::CreateDocumentClassifierInput::output_data_config): <p>Enables the addition of output results configuration parameters for custom classifier jobs.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::CreateDocumentClassifierInput::client_request_token): <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
+    ///   - [`language_code(Option<LanguageCode>)`](crate::input::CreateDocumentClassifierInput::language_code): <p>The language of the input documents. You can specify any of the following languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt"). All documents must be in the same language.</p>
+    ///   - [`volume_kms_key_id(Option<String>)`](crate::input::CreateDocumentClassifierInput::volume_kms_key_id): <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>  <ul>   <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>   <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>  </ul>
+    ///   - [`vpc_config(Option<VpcConfig>)`](crate::input::CreateDocumentClassifierInput::vpc_config): <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your custom classifier. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
+    ///   - [`mode(Option<DocumentClassifierMode>)`](crate::input::CreateDocumentClassifierInput::mode): <p>Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class mode, which identifies one and only one class for each document, or multi-label mode, which identifies one or more labels for each document. In multi-label mode, multiple labels for an individual document are separated by a delimiter. The default delimiter between labels is a pipe (|).</p>
+    ///   - [`model_kms_key_id(Option<String>)`](crate::input::CreateDocumentClassifierInput::model_kms_key_id): <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>  <ul>   <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>   <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>  </ul>
+    /// - On success, responds with [`CreateDocumentClassifierOutput`](crate::output::CreateDocumentClassifierOutput) with field(s):
+    ///   - [`document_classifier_arn(Option<String>)`](crate::output::CreateDocumentClassifierOutput::document_classifier_arn): <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
+    /// - On failure, responds with [`SdkError<CreateDocumentClassifierError>`](crate::error::CreateDocumentClassifierError)
     pub fn create_document_classifier(&self) -> fluent_builders::CreateDocumentClassifier<C, M, R> {
         fluent_builders::CreateDocumentClassifier::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateEndpoint` operation.
+    /// Constructs a fluent builder for the [`CreateEndpoint`](crate::client::fluent_builders::CreateEndpoint) operation.
     ///
-    /// See [`CreateEndpoint`](crate::client::fluent_builders::CreateEndpoint) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateEndpointInput`](crate::input::CreateEndpointInput) with field(s):
+    ///   - [`endpoint_name(Option<String>)`](crate::input::CreateEndpointInput::endpoint_name): <p>This is the descriptive suffix that becomes part of the <code>EndpointArn</code> used for all subsequent requests to this resource. </p>
+    ///   - [`model_arn(Option<String>)`](crate::input::CreateEndpointInput::model_arn): <p>The Amazon Resource Number (ARN) of the model to which the endpoint will be attached.</p>
+    ///   - [`desired_inference_units(Option<i32>)`](crate::input::CreateEndpointInput::desired_inference_units): <p> The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::CreateEndpointInput::client_request_token): <p>An idempotency token provided by the customer. If this token matches a previous endpoint creation request, Amazon Comprehend will not return a <code>ResourceInUseException</code>. </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateEndpointInput::tags): <p>Tags associated with the endpoint being created. A tag is a key-value pair that adds metadata to the endpoint. For example, a tag with "Sales" as the key might be added to an endpoint to indicate its use by the sales department. </p>
+    ///   - [`data_access_role_arn(Option<String>)`](crate::input::CreateEndpointInput::data_access_role_arn): <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).</p>
+    /// - On success, responds with [`CreateEndpointOutput`](crate::output::CreateEndpointOutput) with field(s):
+    ///   - [`endpoint_arn(Option<String>)`](crate::output::CreateEndpointOutput::endpoint_arn): <p>The Amazon Resource Number (ARN) of the endpoint being created.</p>
+    /// - On failure, responds with [`SdkError<CreateEndpointError>`](crate::error::CreateEndpointError)
     pub fn create_endpoint(&self) -> fluent_builders::CreateEndpoint<C, M, R> {
         fluent_builders::CreateEndpoint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateEntityRecognizer` operation.
+    /// Constructs a fluent builder for the [`CreateEntityRecognizer`](crate::client::fluent_builders::CreateEntityRecognizer) operation.
     ///
-    /// See [`CreateEntityRecognizer`](crate::client::fluent_builders::CreateEntityRecognizer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateEntityRecognizerInput`](crate::input::CreateEntityRecognizerInput) with field(s):
+    ///   - [`recognizer_name(Option<String>)`](crate::input::CreateEntityRecognizerInput::recognizer_name): <p>The name given to the newly created recognizer. Recognizer names can be a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The name must be unique in the account/region.</p>
+    ///   - [`version_name(Option<String>)`](crate::input::CreateEntityRecognizerInput::version_name): <p>The version name given to the newly created recognizer. Version names can be a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be unique among all models with the same recognizer name in the account/ AWS Region.</p>
+    ///   - [`data_access_role_arn(Option<String>)`](crate::input::CreateEntityRecognizerInput::data_access_role_arn): <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateEntityRecognizerInput::tags): <p>Tags to be associated with the entity recognizer being created. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. </p>
+    ///   - [`input_data_config(Option<EntityRecognizerInputDataConfig>)`](crate::input::CreateEntityRecognizerInput::input_data_config): <p>Specifies the format and location of the input data. The S3 bucket containing the input data must be located in the same region as the entity recognizer being created. </p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::CreateEntityRecognizerInput::client_request_token): <p> A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
+    ///   - [`language_code(Option<LanguageCode>)`](crate::input::CreateEntityRecognizerInput::language_code): <p> You can specify any of the following languages supported by Amazon Comprehend: English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). All documents must be in the same language.</p>
+    ///   - [`volume_kms_key_id(Option<String>)`](crate::input::CreateEntityRecognizerInput::volume_kms_key_id): <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>  <ul>   <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>   <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>  </ul>
+    ///   - [`vpc_config(Option<VpcConfig>)`](crate::input::CreateEntityRecognizerInput::vpc_config): <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your custom entity recognizer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
+    ///   - [`model_kms_key_id(Option<String>)`](crate::input::CreateEntityRecognizerInput::model_kms_key_id): <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats</p>  <ul>   <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>   <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>  </ul>
+    /// - On success, responds with [`CreateEntityRecognizerOutput`](crate::output::CreateEntityRecognizerOutput) with field(s):
+    ///   - [`entity_recognizer_arn(Option<String>)`](crate::output::CreateEntityRecognizerOutput::entity_recognizer_arn): <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
+    /// - On failure, responds with [`SdkError<CreateEntityRecognizerError>`](crate::error::CreateEntityRecognizerError)
     pub fn create_entity_recognizer(&self) -> fluent_builders::CreateEntityRecognizer<C, M, R> {
         fluent_builders::CreateEntityRecognizer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDocumentClassifier` operation.
+    /// Constructs a fluent builder for the [`DeleteDocumentClassifier`](crate::client::fluent_builders::DeleteDocumentClassifier) operation.
     ///
-    /// See [`DeleteDocumentClassifier`](crate::client::fluent_builders::DeleteDocumentClassifier) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteDocumentClassifierInput`](crate::input::DeleteDocumentClassifierInput) with field(s):
+    ///   - [`document_classifier_arn(Option<String>)`](crate::input::DeleteDocumentClassifierInput::document_classifier_arn): <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
+    /// - On success, responds with [`DeleteDocumentClassifierOutput`](crate::output::DeleteDocumentClassifierOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteDocumentClassifierError>`](crate::error::DeleteDocumentClassifierError)
     pub fn delete_document_classifier(&self) -> fluent_builders::DeleteDocumentClassifier<C, M, R> {
         fluent_builders::DeleteDocumentClassifier::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteEndpoint` operation.
+    /// Constructs a fluent builder for the [`DeleteEndpoint`](crate::client::fluent_builders::DeleteEndpoint) operation.
     ///
-    /// See [`DeleteEndpoint`](crate::client::fluent_builders::DeleteEndpoint) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteEndpointInput`](crate::input::DeleteEndpointInput) with field(s):
+    ///   - [`endpoint_arn(Option<String>)`](crate::input::DeleteEndpointInput::endpoint_arn): <p>The Amazon Resource Number (ARN) of the endpoint being deleted.</p>
+    /// - On success, responds with [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteEndpointError>`](crate::error::DeleteEndpointError)
     pub fn delete_endpoint(&self) -> fluent_builders::DeleteEndpoint<C, M, R> {
         fluent_builders::DeleteEndpoint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteEntityRecognizer` operation.
+    /// Constructs a fluent builder for the [`DeleteEntityRecognizer`](crate::client::fluent_builders::DeleteEntityRecognizer) operation.
     ///
-    /// See [`DeleteEntityRecognizer`](crate::client::fluent_builders::DeleteEntityRecognizer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteEntityRecognizerInput`](crate::input::DeleteEntityRecognizerInput) with field(s):
+    ///   - [`entity_recognizer_arn(Option<String>)`](crate::input::DeleteEntityRecognizerInput::entity_recognizer_arn): <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
+    /// - On success, responds with [`DeleteEntityRecognizerOutput`](crate::output::DeleteEntityRecognizerOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteEntityRecognizerError>`](crate::error::DeleteEntityRecognizerError)
     pub fn delete_entity_recognizer(&self) -> fluent_builders::DeleteEntityRecognizer<C, M, R> {
         fluent_builders::DeleteEntityRecognizer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDocumentClassificationJob` operation.
+    /// Constructs a fluent builder for the [`DescribeDocumentClassificationJob`](crate::client::fluent_builders::DescribeDocumentClassificationJob) operation.
     ///
-    /// See [`DescribeDocumentClassificationJob`](crate::client::fluent_builders::DescribeDocumentClassificationJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeDocumentClassificationJobInput`](crate::input::DescribeDocumentClassificationJobInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::DescribeDocumentClassificationJobInput::job_id): <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
+    /// - On success, responds with [`DescribeDocumentClassificationJobOutput`](crate::output::DescribeDocumentClassificationJobOutput) with field(s):
+    ///   - [`document_classification_job_properties(Option<DocumentClassificationJobProperties>)`](crate::output::DescribeDocumentClassificationJobOutput::document_classification_job_properties): <p>An object that describes the properties associated with the document classification job.</p>
+    /// - On failure, responds with [`SdkError<DescribeDocumentClassificationJobError>`](crate::error::DescribeDocumentClassificationJobError)
     pub fn describe_document_classification_job(
         &self,
     ) -> fluent_builders::DescribeDocumentClassificationJob<C, M, R> {
         fluent_builders::DescribeDocumentClassificationJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDocumentClassifier` operation.
+    /// Constructs a fluent builder for the [`DescribeDocumentClassifier`](crate::client::fluent_builders::DescribeDocumentClassifier) operation.
     ///
-    /// See [`DescribeDocumentClassifier`](crate::client::fluent_builders::DescribeDocumentClassifier) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeDocumentClassifierInput`](crate::input::DescribeDocumentClassifierInput) with field(s):
+    ///   - [`document_classifier_arn(Option<String>)`](crate::input::DescribeDocumentClassifierInput::document_classifier_arn): <p>The Amazon Resource Name (ARN) that identifies the document classifier. The operation returns this identifier in its response.</p>
+    /// - On success, responds with [`DescribeDocumentClassifierOutput`](crate::output::DescribeDocumentClassifierOutput) with field(s):
+    ///   - [`document_classifier_properties(Option<DocumentClassifierProperties>)`](crate::output::DescribeDocumentClassifierOutput::document_classifier_properties): <p>An object that contains the properties associated with a document classifier.</p>
+    /// - On failure, responds with [`SdkError<DescribeDocumentClassifierError>`](crate::error::DescribeDocumentClassifierError)
     pub fn describe_document_classifier(
         &self,
     ) -> fluent_builders::DescribeDocumentClassifier<C, M, R> {
         fluent_builders::DescribeDocumentClassifier::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDominantLanguageDetectionJob` operation.
+    /// Constructs a fluent builder for the [`DescribeDominantLanguageDetectionJob`](crate::client::fluent_builders::DescribeDominantLanguageDetectionJob) operation.
     ///
-    /// See [`DescribeDominantLanguageDetectionJob`](crate::client::fluent_builders::DescribeDominantLanguageDetectionJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeDominantLanguageDetectionJobInput`](crate::input::DescribeDominantLanguageDetectionJobInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::DescribeDominantLanguageDetectionJobInput::job_id): <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
+    /// - On success, responds with [`DescribeDominantLanguageDetectionJobOutput`](crate::output::DescribeDominantLanguageDetectionJobOutput) with field(s):
+    ///   - [`dominant_language_detection_job_properties(Option<DominantLanguageDetectionJobProperties>)`](crate::output::DescribeDominantLanguageDetectionJobOutput::dominant_language_detection_job_properties): <p>An object that contains the properties associated with a dominant language detection job.</p>
+    /// - On failure, responds with [`SdkError<DescribeDominantLanguageDetectionJobError>`](crate::error::DescribeDominantLanguageDetectionJobError)
     pub fn describe_dominant_language_detection_job(
         &self,
     ) -> fluent_builders::DescribeDominantLanguageDetectionJob<C, M, R> {
         fluent_builders::DescribeDominantLanguageDetectionJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEndpoint` operation.
+    /// Constructs a fluent builder for the [`DescribeEndpoint`](crate::client::fluent_builders::DescribeEndpoint) operation.
     ///
-    /// See [`DescribeEndpoint`](crate::client::fluent_builders::DescribeEndpoint) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeEndpointInput`](crate::input::DescribeEndpointInput) with field(s):
+    ///   - [`endpoint_arn(Option<String>)`](crate::input::DescribeEndpointInput::endpoint_arn): <p>The Amazon Resource Number (ARN) of the endpoint being described.</p>
+    /// - On success, responds with [`DescribeEndpointOutput`](crate::output::DescribeEndpointOutput) with field(s):
+    ///   - [`endpoint_properties(Option<EndpointProperties>)`](crate::output::DescribeEndpointOutput::endpoint_properties): <p>Describes information associated with the specific endpoint.</p>
+    /// - On failure, responds with [`SdkError<DescribeEndpointError>`](crate::error::DescribeEndpointError)
     pub fn describe_endpoint(&self) -> fluent_builders::DescribeEndpoint<C, M, R> {
         fluent_builders::DescribeEndpoint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEntitiesDetectionJob` operation.
+    /// Constructs a fluent builder for the [`DescribeEntitiesDetectionJob`](crate::client::fluent_builders::DescribeEntitiesDetectionJob) operation.
     ///
-    /// See [`DescribeEntitiesDetectionJob`](crate::client::fluent_builders::DescribeEntitiesDetectionJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeEntitiesDetectionJobInput`](crate::input::DescribeEntitiesDetectionJobInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::DescribeEntitiesDetectionJobInput::job_id): <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
+    /// - On success, responds with [`DescribeEntitiesDetectionJobOutput`](crate::output::DescribeEntitiesDetectionJobOutput) with field(s):
+    ///   - [`entities_detection_job_properties(Option<EntitiesDetectionJobProperties>)`](crate::output::DescribeEntitiesDetectionJobOutput::entities_detection_job_properties): <p>An object that contains the properties associated with an entities detection job.</p>
+    /// - On failure, responds with [`SdkError<DescribeEntitiesDetectionJobError>`](crate::error::DescribeEntitiesDetectionJobError)
     pub fn describe_entities_detection_job(
         &self,
     ) -> fluent_builders::DescribeEntitiesDetectionJob<C, M, R> {
         fluent_builders::DescribeEntitiesDetectionJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEntityRecognizer` operation.
+    /// Constructs a fluent builder for the [`DescribeEntityRecognizer`](crate::client::fluent_builders::DescribeEntityRecognizer) operation.
     ///
-    /// See [`DescribeEntityRecognizer`](crate::client::fluent_builders::DescribeEntityRecognizer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeEntityRecognizerInput`](crate::input::DescribeEntityRecognizerInput) with field(s):
+    ///   - [`entity_recognizer_arn(Option<String>)`](crate::input::DescribeEntityRecognizerInput::entity_recognizer_arn): <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
+    /// - On success, responds with [`DescribeEntityRecognizerOutput`](crate::output::DescribeEntityRecognizerOutput) with field(s):
+    ///   - [`entity_recognizer_properties(Option<EntityRecognizerProperties>)`](crate::output::DescribeEntityRecognizerOutput::entity_recognizer_properties): <p>Describes information associated with an entity recognizer.</p>
+    /// - On failure, responds with [`SdkError<DescribeEntityRecognizerError>`](crate::error::DescribeEntityRecognizerError)
     pub fn describe_entity_recognizer(&self) -> fluent_builders::DescribeEntityRecognizer<C, M, R> {
         fluent_builders::DescribeEntityRecognizer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEventsDetectionJob` operation.
+    /// Constructs a fluent builder for the [`DescribeEventsDetectionJob`](crate::client::fluent_builders::DescribeEventsDetectionJob) operation.
     ///
-    /// See [`DescribeEventsDetectionJob`](crate::client::fluent_builders::DescribeEventsDetectionJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeEventsDetectionJobInput`](crate::input::DescribeEventsDetectionJobInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::DescribeEventsDetectionJobInput::job_id): <p>The identifier of the events detection job.</p>
+    /// - On success, responds with [`DescribeEventsDetectionJobOutput`](crate::output::DescribeEventsDetectionJobOutput) with field(s):
+    ///   - [`events_detection_job_properties(Option<EventsDetectionJobProperties>)`](crate::output::DescribeEventsDetectionJobOutput::events_detection_job_properties): <p>An object that contains the properties associated with an event detection job.</p>
+    /// - On failure, responds with [`SdkError<DescribeEventsDetectionJobError>`](crate::error::DescribeEventsDetectionJobError)
     pub fn describe_events_detection_job(
         &self,
     ) -> fluent_builders::DescribeEventsDetectionJob<C, M, R> {
         fluent_builders::DescribeEventsDetectionJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeKeyPhrasesDetectionJob` operation.
+    /// Constructs a fluent builder for the [`DescribeKeyPhrasesDetectionJob`](crate::client::fluent_builders::DescribeKeyPhrasesDetectionJob) operation.
     ///
-    /// See [`DescribeKeyPhrasesDetectionJob`](crate::client::fluent_builders::DescribeKeyPhrasesDetectionJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeKeyPhrasesDetectionJobInput`](crate::input::DescribeKeyPhrasesDetectionJobInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::DescribeKeyPhrasesDetectionJobInput::job_id): <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
+    /// - On success, responds with [`DescribeKeyPhrasesDetectionJobOutput`](crate::output::DescribeKeyPhrasesDetectionJobOutput) with field(s):
+    ///   - [`key_phrases_detection_job_properties(Option<KeyPhrasesDetectionJobProperties>)`](crate::output::DescribeKeyPhrasesDetectionJobOutput::key_phrases_detection_job_properties): <p>An object that contains the properties associated with a key phrases detection job. </p>
+    /// - On failure, responds with [`SdkError<DescribeKeyPhrasesDetectionJobError>`](crate::error::DescribeKeyPhrasesDetectionJobError)
     pub fn describe_key_phrases_detection_job(
         &self,
     ) -> fluent_builders::DescribeKeyPhrasesDetectionJob<C, M, R> {
         fluent_builders::DescribeKeyPhrasesDetectionJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribePiiEntitiesDetectionJob` operation.
+    /// Constructs a fluent builder for the [`DescribePiiEntitiesDetectionJob`](crate::client::fluent_builders::DescribePiiEntitiesDetectionJob) operation.
     ///
-    /// See [`DescribePiiEntitiesDetectionJob`](crate::client::fluent_builders::DescribePiiEntitiesDetectionJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribePiiEntitiesDetectionJobInput`](crate::input::DescribePiiEntitiesDetectionJobInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::DescribePiiEntitiesDetectionJobInput::job_id): <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
+    /// - On success, responds with [`DescribePiiEntitiesDetectionJobOutput`](crate::output::DescribePiiEntitiesDetectionJobOutput) with field(s):
+    ///   - [`pii_entities_detection_job_properties(Option<PiiEntitiesDetectionJobProperties>)`](crate::output::DescribePiiEntitiesDetectionJobOutput::pii_entities_detection_job_properties): <p>Provides information about a PII entities detection job.</p>
+    /// - On failure, responds with [`SdkError<DescribePiiEntitiesDetectionJobError>`](crate::error::DescribePiiEntitiesDetectionJobError)
     pub fn describe_pii_entities_detection_job(
         &self,
     ) -> fluent_builders::DescribePiiEntitiesDetectionJob<C, M, R> {
         fluent_builders::DescribePiiEntitiesDetectionJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeSentimentDetectionJob` operation.
+    /// Constructs a fluent builder for the [`DescribeSentimentDetectionJob`](crate::client::fluent_builders::DescribeSentimentDetectionJob) operation.
     ///
-    /// See [`DescribeSentimentDetectionJob`](crate::client::fluent_builders::DescribeSentimentDetectionJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeSentimentDetectionJobInput`](crate::input::DescribeSentimentDetectionJobInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::DescribeSentimentDetectionJobInput::job_id): <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
+    /// - On success, responds with [`DescribeSentimentDetectionJobOutput`](crate::output::DescribeSentimentDetectionJobOutput) with field(s):
+    ///   - [`sentiment_detection_job_properties(Option<SentimentDetectionJobProperties>)`](crate::output::DescribeSentimentDetectionJobOutput::sentiment_detection_job_properties): <p>An object that contains the properties associated with a sentiment detection job.</p>
+    /// - On failure, responds with [`SdkError<DescribeSentimentDetectionJobError>`](crate::error::DescribeSentimentDetectionJobError)
     pub fn describe_sentiment_detection_job(
         &self,
     ) -> fluent_builders::DescribeSentimentDetectionJob<C, M, R> {
         fluent_builders::DescribeSentimentDetectionJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeTopicsDetectionJob` operation.
+    /// Constructs a fluent builder for the [`DescribeTopicsDetectionJob`](crate::client::fluent_builders::DescribeTopicsDetectionJob) operation.
     ///
-    /// See [`DescribeTopicsDetectionJob`](crate::client::fluent_builders::DescribeTopicsDetectionJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeTopicsDetectionJobInput`](crate::input::DescribeTopicsDetectionJobInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::DescribeTopicsDetectionJobInput::job_id): <p>The identifier assigned by the user to the detection job.</p>
+    /// - On success, responds with [`DescribeTopicsDetectionJobOutput`](crate::output::DescribeTopicsDetectionJobOutput) with field(s):
+    ///   - [`topics_detection_job_properties(Option<TopicsDetectionJobProperties>)`](crate::output::DescribeTopicsDetectionJobOutput::topics_detection_job_properties): <p>The list of properties for the requested job.</p>
+    /// - On failure, responds with [`SdkError<DescribeTopicsDetectionJobError>`](crate::error::DescribeTopicsDetectionJobError)
     pub fn describe_topics_detection_job(
         &self,
     ) -> fluent_builders::DescribeTopicsDetectionJob<C, M, R> {
         fluent_builders::DescribeTopicsDetectionJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DetectDominantLanguage` operation.
+    /// Constructs a fluent builder for the [`DetectDominantLanguage`](crate::client::fluent_builders::DetectDominantLanguage) operation.
     ///
-    /// See [`DetectDominantLanguage`](crate::client::fluent_builders::DetectDominantLanguage) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DetectDominantLanguageInput`](crate::input::DetectDominantLanguageInput) with field(s):
+    ///   - [`text(Option<String>)`](crate::input::DetectDominantLanguageInput::text): <p>A UTF-8 text string. Each string should contain at least 20 characters and must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+    /// - On success, responds with [`DetectDominantLanguageOutput`](crate::output::DetectDominantLanguageOutput) with field(s):
+    ///   - [`languages(Option<Vec<DominantLanguage>>)`](crate::output::DetectDominantLanguageOutput::languages): <p>The languages that Amazon Comprehend detected in the input text. For each language, the response returns the RFC 5646 language code and the level of confidence that Amazon Comprehend has in the accuracy of its inference. For more information about RFC 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for Identifying Languages</a> on the <i>IETF Tools</i> web site.</p>
+    /// - On failure, responds with [`SdkError<DetectDominantLanguageError>`](crate::error::DetectDominantLanguageError)
     pub fn detect_dominant_language(&self) -> fluent_builders::DetectDominantLanguage<C, M, R> {
         fluent_builders::DetectDominantLanguage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DetectEntities` operation.
+    /// Constructs a fluent builder for the [`DetectEntities`](crate::client::fluent_builders::DetectEntities) operation.
     ///
-    /// See [`DetectEntities`](crate::client::fluent_builders::DetectEntities) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DetectEntitiesInput`](crate::input::DetectEntitiesInput) with field(s):
+    ///   - [`text(Option<String>)`](crate::input::DetectEntitiesInput::text): <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+    ///   - [`language_code(Option<LanguageCode>)`](crate::input::DetectEntitiesInput::language_code): <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>  <p>If your request includes the endpoint for a custom entity recognition model, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you specify here.</p>
+    ///   - [`endpoint_arn(Option<String>)`](crate::input::DetectEntitiesInput::endpoint_arn): <p>The Amazon Resource Name of an endpoint that is associated with a custom entity recognition model. Provide an endpoint if you want to detect entities by using your own custom model instead of the default model that is used by Amazon Comprehend.</p>  <p>If you specify an endpoint, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you provide in your request.</p>
+    /// - On success, responds with [`DetectEntitiesOutput`](crate::output::DetectEntitiesOutput) with field(s):
+    ///   - [`entities(Option<Vec<Entity>>)`](crate::output::DetectEntitiesOutput::entities): <p>A collection of entities identified in the input text. For each entity, the response provides the entity text, entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection. </p>  <p>If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see <code>how-entities</code>.</p>
+    /// - On failure, responds with [`SdkError<DetectEntitiesError>`](crate::error::DetectEntitiesError)
     pub fn detect_entities(&self) -> fluent_builders::DetectEntities<C, M, R> {
         fluent_builders::DetectEntities::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DetectKeyPhrases` operation.
+    /// Constructs a fluent builder for the [`DetectKeyPhrases`](crate::client::fluent_builders::DetectKeyPhrases) operation.
     ///
-    /// See [`DetectKeyPhrases`](crate::client::fluent_builders::DetectKeyPhrases) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DetectKeyPhrasesInput`](crate::input::DetectKeyPhrasesInput) with field(s):
+    ///   - [`text(Option<String>)`](crate::input::DetectKeyPhrasesInput::text): <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+    ///   - [`language_code(Option<LanguageCode>)`](crate::input::DetectKeyPhrasesInput::language_code): <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
+    /// - On success, responds with [`DetectKeyPhrasesOutput`](crate::output::DetectKeyPhrasesOutput) with field(s):
+    ///   - [`key_phrases(Option<Vec<KeyPhrase>>)`](crate::output::DetectKeyPhrasesOutput::key_phrases): <p>A collection of key phrases that Amazon Comprehend identified in the input text. For each key phrase, the response provides the text of the key phrase, where the key phrase begins and ends, and the level of confidence that Amazon Comprehend has in the accuracy of the detection. </p>
+    /// - On failure, responds with [`SdkError<DetectKeyPhrasesError>`](crate::error::DetectKeyPhrasesError)
     pub fn detect_key_phrases(&self) -> fluent_builders::DetectKeyPhrases<C, M, R> {
         fluent_builders::DetectKeyPhrases::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DetectPiiEntities` operation.
+    /// Constructs a fluent builder for the [`DetectPiiEntities`](crate::client::fluent_builders::DetectPiiEntities) operation.
     ///
-    /// See [`DetectPiiEntities`](crate::client::fluent_builders::DetectPiiEntities) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DetectPiiEntitiesInput`](crate::input::DetectPiiEntitiesInput) with field(s):
+    ///   - [`text(Option<String>)`](crate::input::DetectPiiEntitiesInput::text): <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+    ///   - [`language_code(Option<LanguageCode>)`](crate::input::DetectPiiEntitiesInput::language_code): <p>The language of the input documents.</p>
+    /// - On success, responds with [`DetectPiiEntitiesOutput`](crate::output::DetectPiiEntitiesOutput) with field(s):
+    ///   - [`entities(Option<Vec<PiiEntity>>)`](crate::output::DetectPiiEntitiesOutput::entities): <p>A collection of PII entities identified in the input text. For each entity, the response provides the entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection.</p>
+    /// - On failure, responds with [`SdkError<DetectPiiEntitiesError>`](crate::error::DetectPiiEntitiesError)
     pub fn detect_pii_entities(&self) -> fluent_builders::DetectPiiEntities<C, M, R> {
         fluent_builders::DetectPiiEntities::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DetectSentiment` operation.
+    /// Constructs a fluent builder for the [`DetectSentiment`](crate::client::fluent_builders::DetectSentiment) operation.
     ///
-    /// See [`DetectSentiment`](crate::client::fluent_builders::DetectSentiment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DetectSentimentInput`](crate::input::DetectSentimentInput) with field(s):
+    ///   - [`text(Option<String>)`](crate::input::DetectSentimentInput::text): <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+    ///   - [`language_code(Option<LanguageCode>)`](crate::input::DetectSentimentInput::language_code): <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
+    /// - On success, responds with [`DetectSentimentOutput`](crate::output::DetectSentimentOutput) with field(s):
+    ///   - [`sentiment(Option<SentimentType>)`](crate::output::DetectSentimentOutput::sentiment): <p>The inferred sentiment that Amazon Comprehend has the highest level of confidence in.</p>
+    ///   - [`sentiment_score(Option<SentimentScore>)`](crate::output::DetectSentimentOutput::sentiment_score): <p>An object that lists the sentiments, and their corresponding confidence levels.</p>
+    /// - On failure, responds with [`SdkError<DetectSentimentError>`](crate::error::DetectSentimentError)
     pub fn detect_sentiment(&self) -> fluent_builders::DetectSentiment<C, M, R> {
         fluent_builders::DetectSentiment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DetectSyntax` operation.
+    /// Constructs a fluent builder for the [`DetectSyntax`](crate::client::fluent_builders::DetectSyntax) operation.
     ///
-    /// See [`DetectSyntax`](crate::client::fluent_builders::DetectSyntax) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DetectSyntaxInput`](crate::input::DetectSyntaxInput) with field(s):
+    ///   - [`text(Option<String>)`](crate::input::DetectSyntaxInput::text): <p>A UTF-8 string. Each string must contain fewer that 5,000 bytes of UTF encoded characters.</p>
+    ///   - [`language_code(Option<SyntaxLanguageCode>)`](crate::input::DetectSyntaxInput::language_code): <p>The language code of the input documents. You can specify any of the following languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").</p>
+    /// - On success, responds with [`DetectSyntaxOutput`](crate::output::DetectSyntaxOutput) with field(s):
+    ///   - [`syntax_tokens(Option<Vec<SyntaxToken>>)`](crate::output::DetectSyntaxOutput::syntax_tokens): <p>A collection of syntax tokens describing the text. For each token, the response provides the text, the token type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is correct. For a list of token types, see <code>how-syntax</code>.</p>
+    /// - On failure, responds with [`SdkError<DetectSyntaxError>`](crate::error::DetectSyntaxError)
     pub fn detect_syntax(&self) -> fluent_builders::DetectSyntax<C, M, R> {
         fluent_builders::DetectSyntax::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDocumentClassificationJobs` operation.
-    ///
-    /// See [`ListDocumentClassificationJobs`](crate::client::fluent_builders::ListDocumentClassificationJobs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListDocumentClassificationJobs`](crate::client::fluent_builders::ListDocumentClassificationJobs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDocumentClassificationJobs::into_paginator).
+    ///
+    /// - Takes [`ListDocumentClassificationJobsInput`](crate::input::ListDocumentClassificationJobsInput) with field(s):
+    ///   - [`filter(Option<DocumentClassificationJobFilter>)`](crate::input::ListDocumentClassificationJobsInput::filter): <p>Filters the jobs that are returned. You can filter jobs on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListDocumentClassificationJobsInput::next_token): <p>Identifies the next page of results to return.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListDocumentClassificationJobsInput::max_results): <p>The maximum number of results to return in each page. The default is 100.</p>
+    /// - On success, responds with [`ListDocumentClassificationJobsOutput`](crate::output::ListDocumentClassificationJobsOutput) with field(s):
+    ///   - [`document_classification_job_properties_list(Option<Vec<DocumentClassificationJobProperties>>)`](crate::output::ListDocumentClassificationJobsOutput::document_classification_job_properties_list): <p>A list containing the properties of each job returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDocumentClassificationJobsOutput::next_token): <p>Identifies the next page of results to return.</p>
+    /// - On failure, responds with [`SdkError<ListDocumentClassificationJobsError>`](crate::error::ListDocumentClassificationJobsError)
     pub fn list_document_classification_jobs(
         &self,
     ) -> fluent_builders::ListDocumentClassificationJobs<C, M, R> {
         fluent_builders::ListDocumentClassificationJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDocumentClassifiers` operation.
-    ///
-    /// See [`ListDocumentClassifiers`](crate::client::fluent_builders::ListDocumentClassifiers) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListDocumentClassifiers`](crate::client::fluent_builders::ListDocumentClassifiers) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDocumentClassifiers::into_paginator).
+    ///
+    /// - Takes [`ListDocumentClassifiersInput`](crate::input::ListDocumentClassifiersInput) with field(s):
+    ///   - [`filter(Option<DocumentClassifierFilter>)`](crate::input::ListDocumentClassifiersInput::filter): <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListDocumentClassifiersInput::next_token): <p>Identifies the next page of results to return.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListDocumentClassifiersInput::max_results): <p>The maximum number of results to return in each page. The default is 100.</p>
+    /// - On success, responds with [`ListDocumentClassifiersOutput`](crate::output::ListDocumentClassifiersOutput) with field(s):
+    ///   - [`document_classifier_properties_list(Option<Vec<DocumentClassifierProperties>>)`](crate::output::ListDocumentClassifiersOutput::document_classifier_properties_list): <p>A list containing the properties of each job returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDocumentClassifiersOutput::next_token): <p>Identifies the next page of results to return.</p>
+    /// - On failure, responds with [`SdkError<ListDocumentClassifiersError>`](crate::error::ListDocumentClassifiersError)
     pub fn list_document_classifiers(&self) -> fluent_builders::ListDocumentClassifiers<C, M, R> {
         fluent_builders::ListDocumentClassifiers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDocumentClassifierSummaries` operation.
-    ///
-    /// See [`ListDocumentClassifierSummaries`](crate::client::fluent_builders::ListDocumentClassifierSummaries) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListDocumentClassifierSummaries`](crate::client::fluent_builders::ListDocumentClassifierSummaries) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDocumentClassifierSummaries::into_paginator).
+    ///
+    /// - Takes [`ListDocumentClassifierSummariesInput`](crate::input::ListDocumentClassifierSummariesInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListDocumentClassifierSummariesInput::next_token): <p>Identifies the next page of results to return.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListDocumentClassifierSummariesInput::max_results): <p>The maximum number of results to return on each page. The default is 100.</p>
+    /// - On success, responds with [`ListDocumentClassifierSummariesOutput`](crate::output::ListDocumentClassifierSummariesOutput) with field(s):
+    ///   - [`document_classifier_summaries_list(Option<Vec<DocumentClassifierSummary>>)`](crate::output::ListDocumentClassifierSummariesOutput::document_classifier_summaries_list): <p>The list of summaries of document classifiers.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDocumentClassifierSummariesOutput::next_token): <p>Identifies the next page of results to return.</p>
+    /// - On failure, responds with [`SdkError<ListDocumentClassifierSummariesError>`](crate::error::ListDocumentClassifierSummariesError)
     pub fn list_document_classifier_summaries(
         &self,
     ) -> fluent_builders::ListDocumentClassifierSummaries<C, M, R> {
         fluent_builders::ListDocumentClassifierSummaries::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDominantLanguageDetectionJobs` operation.
-    ///
-    /// See [`ListDominantLanguageDetectionJobs`](crate::client::fluent_builders::ListDominantLanguageDetectionJobs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListDominantLanguageDetectionJobs`](crate::client::fluent_builders::ListDominantLanguageDetectionJobs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDominantLanguageDetectionJobs::into_paginator).
+    ///
+    /// - Takes [`ListDominantLanguageDetectionJobsInput`](crate::input::ListDominantLanguageDetectionJobsInput) with field(s):
+    ///   - [`filter(Option<DominantLanguageDetectionJobFilter>)`](crate::input::ListDominantLanguageDetectionJobsInput::filter): <p>Filters that jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListDominantLanguageDetectionJobsInput::next_token): <p>Identifies the next page of results to return.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListDominantLanguageDetectionJobsInput::max_results): <p>The maximum number of results to return in each page. The default is 100.</p>
+    /// - On success, responds with [`ListDominantLanguageDetectionJobsOutput`](crate::output::ListDominantLanguageDetectionJobsOutput) with field(s):
+    ///   - [`dominant_language_detection_job_properties_list(Option<Vec<DominantLanguageDetectionJobProperties>>)`](crate::output::ListDominantLanguageDetectionJobsOutput::dominant_language_detection_job_properties_list): <p>A list containing the properties of each job that is returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDominantLanguageDetectionJobsOutput::next_token): <p>Identifies the next page of results to return.</p>
+    /// - On failure, responds with [`SdkError<ListDominantLanguageDetectionJobsError>`](crate::error::ListDominantLanguageDetectionJobsError)
     pub fn list_dominant_language_detection_jobs(
         &self,
     ) -> fluent_builders::ListDominantLanguageDetectionJobs<C, M, R> {
         fluent_builders::ListDominantLanguageDetectionJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListEndpoints` operation.
+    /// Constructs a fluent builder for the [`ListEndpoints`](crate::client::fluent_builders::ListEndpoints) operation.
     ///
-    /// See [`ListEndpoints`](crate::client::fluent_builders::ListEndpoints) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListEndpointsInput`](crate::input::ListEndpointsInput) with field(s):
+    ///   - [`filter(Option<EndpointFilter>)`](crate::input::ListEndpointsInput::filter): <p>Filters the endpoints that are returned. You can filter endpoints on their name, model, status, or the date and time that they were created. You can only set one filter at a time. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListEndpointsInput::next_token): <p>Identifies the next page of results to return.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListEndpointsInput::max_results): <p>The maximum number of results to return in each page. The default is 100.</p>
+    /// - On success, responds with [`ListEndpointsOutput`](crate::output::ListEndpointsOutput) with field(s):
+    ///   - [`endpoint_properties_list(Option<Vec<EndpointProperties>>)`](crate::output::ListEndpointsOutput::endpoint_properties_list): <p>Displays a list of endpoint properties being retrieved by the service in response to the request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListEndpointsOutput::next_token): <p>Identifies the next page of results to return.</p>
+    /// - On failure, responds with [`SdkError<ListEndpointsError>`](crate::error::ListEndpointsError)
     pub fn list_endpoints(&self) -> fluent_builders::ListEndpoints<C, M, R> {
         fluent_builders::ListEndpoints::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListEntitiesDetectionJobs` operation.
-    ///
-    /// See [`ListEntitiesDetectionJobs`](crate::client::fluent_builders::ListEntitiesDetectionJobs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListEntitiesDetectionJobs`](crate::client::fluent_builders::ListEntitiesDetectionJobs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEntitiesDetectionJobs::into_paginator).
+    ///
+    /// - Takes [`ListEntitiesDetectionJobsInput`](crate::input::ListEntitiesDetectionJobsInput) with field(s):
+    ///   - [`filter(Option<EntitiesDetectionJobFilter>)`](crate::input::ListEntitiesDetectionJobsInput::filter): <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListEntitiesDetectionJobsInput::next_token): <p>Identifies the next page of results to return.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListEntitiesDetectionJobsInput::max_results): <p>The maximum number of results to return in each page. The default is 100.</p>
+    /// - On success, responds with [`ListEntitiesDetectionJobsOutput`](crate::output::ListEntitiesDetectionJobsOutput) with field(s):
+    ///   - [`entities_detection_job_properties_list(Option<Vec<EntitiesDetectionJobProperties>>)`](crate::output::ListEntitiesDetectionJobsOutput::entities_detection_job_properties_list): <p>A list containing the properties of each job that is returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListEntitiesDetectionJobsOutput::next_token): <p>Identifies the next page of results to return.</p>
+    /// - On failure, responds with [`SdkError<ListEntitiesDetectionJobsError>`](crate::error::ListEntitiesDetectionJobsError)
     pub fn list_entities_detection_jobs(
         &self,
     ) -> fluent_builders::ListEntitiesDetectionJobs<C, M, R> {
         fluent_builders::ListEntitiesDetectionJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListEntityRecognizers` operation.
-    ///
-    /// See [`ListEntityRecognizers`](crate::client::fluent_builders::ListEntityRecognizers) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListEntityRecognizers`](crate::client::fluent_builders::ListEntityRecognizers) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEntityRecognizers::into_paginator).
+    ///
+    /// - Takes [`ListEntityRecognizersInput`](crate::input::ListEntityRecognizersInput) with field(s):
+    ///   - [`filter(Option<EntityRecognizerFilter>)`](crate::input::ListEntityRecognizersInput::filter): <p>Filters the list of entities returned. You can filter on <code>Status</code>, <code>SubmitTimeBefore</code>, or <code>SubmitTimeAfter</code>. You can only set one filter at a time.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListEntityRecognizersInput::next_token): <p>Identifies the next page of results to return.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListEntityRecognizersInput::max_results): <p> The maximum number of results to return on each page. The default is 100.</p>
+    /// - On success, responds with [`ListEntityRecognizersOutput`](crate::output::ListEntityRecognizersOutput) with field(s):
+    ///   - [`entity_recognizer_properties_list(Option<Vec<EntityRecognizerProperties>>)`](crate::output::ListEntityRecognizersOutput::entity_recognizer_properties_list): <p>The list of properties of an entity recognizer.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListEntityRecognizersOutput::next_token): <p>Identifies the next page of results to return.</p>
+    /// - On failure, responds with [`SdkError<ListEntityRecognizersError>`](crate::error::ListEntityRecognizersError)
     pub fn list_entity_recognizers(&self) -> fluent_builders::ListEntityRecognizers<C, M, R> {
         fluent_builders::ListEntityRecognizers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListEntityRecognizerSummaries` operation.
-    ///
-    /// See [`ListEntityRecognizerSummaries`](crate::client::fluent_builders::ListEntityRecognizerSummaries) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListEntityRecognizerSummaries`](crate::client::fluent_builders::ListEntityRecognizerSummaries) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEntityRecognizerSummaries::into_paginator).
+    ///
+    /// - Takes [`ListEntityRecognizerSummariesInput`](crate::input::ListEntityRecognizerSummariesInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListEntityRecognizerSummariesInput::next_token): <p>Identifies the next page of results to return.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListEntityRecognizerSummariesInput::max_results): <p>The maximum number of results to return on each page. The default is 100.</p>
+    /// - On success, responds with [`ListEntityRecognizerSummariesOutput`](crate::output::ListEntityRecognizerSummariesOutput) with field(s):
+    ///   - [`entity_recognizer_summaries_list(Option<Vec<EntityRecognizerSummary>>)`](crate::output::ListEntityRecognizerSummariesOutput::entity_recognizer_summaries_list): <p>The list entity recognizer summaries.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListEntityRecognizerSummariesOutput::next_token): <p>The list entity recognizer summaries.</p>
+    /// - On failure, responds with [`SdkError<ListEntityRecognizerSummariesError>`](crate::error::ListEntityRecognizerSummariesError)
     pub fn list_entity_recognizer_summaries(
         &self,
     ) -> fluent_builders::ListEntityRecognizerSummaries<C, M, R> {
         fluent_builders::ListEntityRecognizerSummaries::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListEventsDetectionJobs` operation.
-    ///
-    /// See [`ListEventsDetectionJobs`](crate::client::fluent_builders::ListEventsDetectionJobs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListEventsDetectionJobs`](crate::client::fluent_builders::ListEventsDetectionJobs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEventsDetectionJobs::into_paginator).
+    ///
+    /// - Takes [`ListEventsDetectionJobsInput`](crate::input::ListEventsDetectionJobsInput) with field(s):
+    ///   - [`filter(Option<EventsDetectionJobFilter>)`](crate::input::ListEventsDetectionJobsInput::filter): <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListEventsDetectionJobsInput::next_token): <p>Identifies the next page of results to return.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListEventsDetectionJobsInput::max_results): <p>The maximum number of results to return in each page.</p>
+    /// - On success, responds with [`ListEventsDetectionJobsOutput`](crate::output::ListEventsDetectionJobsOutput) with field(s):
+    ///   - [`events_detection_job_properties_list(Option<Vec<EventsDetectionJobProperties>>)`](crate::output::ListEventsDetectionJobsOutput::events_detection_job_properties_list): <p>A list containing the properties of each job that is returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListEventsDetectionJobsOutput::next_token): <p>Identifies the next page of results to return.</p>
+    /// - On failure, responds with [`SdkError<ListEventsDetectionJobsError>`](crate::error::ListEventsDetectionJobsError)
     pub fn list_events_detection_jobs(&self) -> fluent_builders::ListEventsDetectionJobs<C, M, R> {
         fluent_builders::ListEventsDetectionJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListKeyPhrasesDetectionJobs` operation.
-    ///
-    /// See [`ListKeyPhrasesDetectionJobs`](crate::client::fluent_builders::ListKeyPhrasesDetectionJobs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListKeyPhrasesDetectionJobs`](crate::client::fluent_builders::ListKeyPhrasesDetectionJobs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListKeyPhrasesDetectionJobs::into_paginator).
+    ///
+    /// - Takes [`ListKeyPhrasesDetectionJobsInput`](crate::input::ListKeyPhrasesDetectionJobsInput) with field(s):
+    ///   - [`filter(Option<KeyPhrasesDetectionJobFilter>)`](crate::input::ListKeyPhrasesDetectionJobsInput::filter): <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListKeyPhrasesDetectionJobsInput::next_token): <p>Identifies the next page of results to return.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListKeyPhrasesDetectionJobsInput::max_results): <p>The maximum number of results to return in each page. The default is 100.</p>
+    /// - On success, responds with [`ListKeyPhrasesDetectionJobsOutput`](crate::output::ListKeyPhrasesDetectionJobsOutput) with field(s):
+    ///   - [`key_phrases_detection_job_properties_list(Option<Vec<KeyPhrasesDetectionJobProperties>>)`](crate::output::ListKeyPhrasesDetectionJobsOutput::key_phrases_detection_job_properties_list): <p>A list containing the properties of each job that is returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListKeyPhrasesDetectionJobsOutput::next_token): <p>Identifies the next page of results to return.</p>
+    /// - On failure, responds with [`SdkError<ListKeyPhrasesDetectionJobsError>`](crate::error::ListKeyPhrasesDetectionJobsError)
     pub fn list_key_phrases_detection_jobs(
         &self,
     ) -> fluent_builders::ListKeyPhrasesDetectionJobs<C, M, R> {
         fluent_builders::ListKeyPhrasesDetectionJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPiiEntitiesDetectionJobs` operation.
+    /// Constructs a fluent builder for the [`ListPiiEntitiesDetectionJobs`](crate::client::fluent_builders::ListPiiEntitiesDetectionJobs) operation.
     ///
-    /// See [`ListPiiEntitiesDetectionJobs`](crate::client::fluent_builders::ListPiiEntitiesDetectionJobs) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListPiiEntitiesDetectionJobsInput`](crate::input::ListPiiEntitiesDetectionJobsInput) with field(s):
+    ///   - [`filter(Option<PiiEntitiesDetectionJobFilter>)`](crate::input::ListPiiEntitiesDetectionJobsInput::filter): <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListPiiEntitiesDetectionJobsInput::next_token): <p>Identifies the next page of results to return.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListPiiEntitiesDetectionJobsInput::max_results): <p>The maximum number of results to return in each page.</p>
+    /// - On success, responds with [`ListPiiEntitiesDetectionJobsOutput`](crate::output::ListPiiEntitiesDetectionJobsOutput) with field(s):
+    ///   - [`pii_entities_detection_job_properties_list(Option<Vec<PiiEntitiesDetectionJobProperties>>)`](crate::output::ListPiiEntitiesDetectionJobsOutput::pii_entities_detection_job_properties_list): <p>A list containing the properties of each job that is returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPiiEntitiesDetectionJobsOutput::next_token): <p>Identifies the next page of results to return.</p>
+    /// - On failure, responds with [`SdkError<ListPiiEntitiesDetectionJobsError>`](crate::error::ListPiiEntitiesDetectionJobsError)
     pub fn list_pii_entities_detection_jobs(
         &self,
     ) -> fluent_builders::ListPiiEntitiesDetectionJobs<C, M, R> {
         fluent_builders::ListPiiEntitiesDetectionJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSentimentDetectionJobs` operation.
-    ///
-    /// See [`ListSentimentDetectionJobs`](crate::client::fluent_builders::ListSentimentDetectionJobs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListSentimentDetectionJobs`](crate::client::fluent_builders::ListSentimentDetectionJobs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSentimentDetectionJobs::into_paginator).
+    ///
+    /// - Takes [`ListSentimentDetectionJobsInput`](crate::input::ListSentimentDetectionJobsInput) with field(s):
+    ///   - [`filter(Option<SentimentDetectionJobFilter>)`](crate::input::ListSentimentDetectionJobsInput::filter): <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListSentimentDetectionJobsInput::next_token): <p>Identifies the next page of results to return.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListSentimentDetectionJobsInput::max_results): <p>The maximum number of results to return in each page. The default is 100.</p>
+    /// - On success, responds with [`ListSentimentDetectionJobsOutput`](crate::output::ListSentimentDetectionJobsOutput) with field(s):
+    ///   - [`sentiment_detection_job_properties_list(Option<Vec<SentimentDetectionJobProperties>>)`](crate::output::ListSentimentDetectionJobsOutput::sentiment_detection_job_properties_list): <p>A list containing the properties of each job that is returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSentimentDetectionJobsOutput::next_token): <p>Identifies the next page of results to return.</p>
+    /// - On failure, responds with [`SdkError<ListSentimentDetectionJobsError>`](crate::error::ListSentimentDetectionJobsError)
     pub fn list_sentiment_detection_jobs(
         &self,
     ) -> fluent_builders::ListSentimentDetectionJobs<C, M, R> {
         fluent_builders::ListSentimentDetectionJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource you are querying. </p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::output::ListTagsForResourceOutput::resource_arn): <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource you are querying.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>Tags associated with the Amazon Comprehend resource being queried. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. </p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTopicsDetectionJobs` operation.
-    ///
-    /// See [`ListTopicsDetectionJobs`](crate::client::fluent_builders::ListTopicsDetectionJobs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListTopicsDetectionJobs`](crate::client::fluent_builders::ListTopicsDetectionJobs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTopicsDetectionJobs::into_paginator).
+    ///
+    /// - Takes [`ListTopicsDetectionJobsInput`](crate::input::ListTopicsDetectionJobsInput) with field(s):
+    ///   - [`filter(Option<TopicsDetectionJobFilter>)`](crate::input::ListTopicsDetectionJobsInput::filter): <p>Filters the jobs that are returned. Jobs can be filtered on their name, status, or the date and time that they were submitted. You can set only one filter at a time.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListTopicsDetectionJobsInput::next_token): <p>Identifies the next page of results to return.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListTopicsDetectionJobsInput::max_results): <p>The maximum number of results to return in each page. The default is 100.</p>
+    /// - On success, responds with [`ListTopicsDetectionJobsOutput`](crate::output::ListTopicsDetectionJobsOutput) with field(s):
+    ///   - [`topics_detection_job_properties_list(Option<Vec<TopicsDetectionJobProperties>>)`](crate::output::ListTopicsDetectionJobsOutput::topics_detection_job_properties_list): <p>A list containing the properties of each job that is returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTopicsDetectionJobsOutput::next_token): <p>Identifies the next page of results to return.</p>
+    /// - On failure, responds with [`SdkError<ListTopicsDetectionJobsError>`](crate::error::ListTopicsDetectionJobsError)
     pub fn list_topics_detection_jobs(&self) -> fluent_builders::ListTopicsDetectionJobs<C, M, R> {
         fluent_builders::ListTopicsDetectionJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartDocumentClassificationJob` operation.
+    /// Constructs a fluent builder for the [`StartDocumentClassificationJob`](crate::client::fluent_builders::StartDocumentClassificationJob) operation.
     ///
-    /// See [`StartDocumentClassificationJob`](crate::client::fluent_builders::StartDocumentClassificationJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartDocumentClassificationJobInput`](crate::input::StartDocumentClassificationJobInput) with field(s):
+    ///   - [`job_name(Option<String>)`](crate::input::StartDocumentClassificationJobInput::job_name): <p>The identifier of the job.</p>
+    ///   - [`document_classifier_arn(Option<String>)`](crate::input::StartDocumentClassificationJobInput::document_classifier_arn): <p>The Amazon Resource Name (ARN) of the document classifier to use to process the job.</p>
+    ///   - [`input_data_config(Option<InputDataConfig>)`](crate::input::StartDocumentClassificationJobInput::input_data_config): <p>Specifies the format and location of the input data for the job.</p>
+    ///   - [`output_data_config(Option<OutputDataConfig>)`](crate::input::StartDocumentClassificationJobInput::output_data_config): <p>Specifies where to send the output files.</p>
+    ///   - [`data_access_role_arn(Option<String>)`](crate::input::StartDocumentClassificationJobInput::data_access_role_arn): <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::StartDocumentClassificationJobInput::client_request_token): <p>A unique identifier for the request. If you do not set the client request token, Amazon Comprehend generates one.</p>
+    ///   - [`volume_kms_key_id(Option<String>)`](crate::input::StartDocumentClassificationJobInput::volume_kms_key_id): <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>  <ul>   <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>   <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>  </ul>
+    ///   - [`vpc_config(Option<VpcConfig>)`](crate::input::StartDocumentClassificationJobInput::vpc_config): <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your document classification job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::StartDocumentClassificationJobInput::tags): <p>Tags to be associated with the document classification job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
+    /// - On success, responds with [`StartDocumentClassificationJobOutput`](crate::output::StartDocumentClassificationJobOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::StartDocumentClassificationJobOutput::job_id): <p>The identifier generated for the job. To get the status of the job, use this identifier with the operation.</p>
+    ///   - [`job_arn(Option<String>)`](crate::output::StartDocumentClassificationJobOutput::job_arn): <p>The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>  <p> <code>arn:   <partition>    :comprehend:    <region>     :     <account-id>      :document-classification-job/      <job-id></job-id>     </account-id>    </region>   </partition></code> </p>  <p>The following is an example job ARN:</p>  <p> <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
+    ///   - [`job_status(Option<JobStatus>)`](crate::output::StartDocumentClassificationJobOutput::job_status): <p>The status of the job:</p>  <ul>   <li> <p>SUBMITTED - The job has been received and queued for processing.</p> </li>   <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>   <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>   <li> <p>FAILED - The job did not complete. For details, use the operation.</p> </li>   <li> <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.</p> </li>   <li> <p>STOPPED - The job was successfully stopped without completing.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<StartDocumentClassificationJobError>`](crate::error::StartDocumentClassificationJobError)
     pub fn start_document_classification_job(
         &self,
     ) -> fluent_builders::StartDocumentClassificationJob<C, M, R> {
         fluent_builders::StartDocumentClassificationJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartDominantLanguageDetectionJob` operation.
+    /// Constructs a fluent builder for the [`StartDominantLanguageDetectionJob`](crate::client::fluent_builders::StartDominantLanguageDetectionJob) operation.
     ///
-    /// See [`StartDominantLanguageDetectionJob`](crate::client::fluent_builders::StartDominantLanguageDetectionJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartDominantLanguageDetectionJobInput`](crate::input::StartDominantLanguageDetectionJobInput) with field(s):
+    ///   - [`input_data_config(Option<InputDataConfig>)`](crate::input::StartDominantLanguageDetectionJobInput::input_data_config): <p>Specifies the format and location of the input data for the job.</p>
+    ///   - [`output_data_config(Option<OutputDataConfig>)`](crate::input::StartDominantLanguageDetectionJobInput::output_data_config): <p>Specifies where to send the output files.</p>
+    ///   - [`data_access_role_arn(Option<String>)`](crate::input::StartDominantLanguageDetectionJobInput::data_access_role_arn): <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+    ///   - [`job_name(Option<String>)`](crate::input::StartDominantLanguageDetectionJobInput::job_name): <p>An identifier for the job.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::StartDominantLanguageDetectionJobInput::client_request_token): <p>A unique identifier for the request. If you do not set the client request token, Amazon Comprehend generates one.</p>
+    ///   - [`volume_kms_key_id(Option<String>)`](crate::input::StartDominantLanguageDetectionJobInput::volume_kms_key_id): <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>  <ul>   <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>   <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>  </ul>
+    ///   - [`vpc_config(Option<VpcConfig>)`](crate::input::StartDominantLanguageDetectionJobInput::vpc_config): <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your dominant language detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::StartDominantLanguageDetectionJobInput::tags): <p>Tags to be associated with the dominant language detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
+    /// - On success, responds with [`StartDominantLanguageDetectionJobOutput`](crate::output::StartDominantLanguageDetectionJobOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::StartDominantLanguageDetectionJobOutput::job_id): <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
+    ///   - [`job_arn(Option<String>)`](crate::output::StartDominantLanguageDetectionJobOutput::job_arn): <p>The Amazon Resource Name (ARN) of the dominant language detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>  <p> <code>arn:   <partition>    :comprehend:    <region>     :     <account-id>      :dominant-language-detection-job/      <job-id></job-id>     </account-id>    </region>   </partition></code> </p>  <p>The following is an example job ARN:</p>  <p> <code>arn:aws:comprehend:us-west-2:111122223333:dominant-language-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
+    ///   - [`job_status(Option<JobStatus>)`](crate::output::StartDominantLanguageDetectionJobOutput::job_status): <p>The status of the job. </p>  <ul>   <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>   <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>   <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>   <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<StartDominantLanguageDetectionJobError>`](crate::error::StartDominantLanguageDetectionJobError)
     pub fn start_dominant_language_detection_job(
         &self,
     ) -> fluent_builders::StartDominantLanguageDetectionJob<C, M, R> {
         fluent_builders::StartDominantLanguageDetectionJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartEntitiesDetectionJob` operation.
+    /// Constructs a fluent builder for the [`StartEntitiesDetectionJob`](crate::client::fluent_builders::StartEntitiesDetectionJob) operation.
     ///
-    /// See [`StartEntitiesDetectionJob`](crate::client::fluent_builders::StartEntitiesDetectionJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartEntitiesDetectionJobInput`](crate::input::StartEntitiesDetectionJobInput) with field(s):
+    ///   - [`input_data_config(Option<InputDataConfig>)`](crate::input::StartEntitiesDetectionJobInput::input_data_config): <p>Specifies the format and location of the input data for the job.</p>
+    ///   - [`output_data_config(Option<OutputDataConfig>)`](crate::input::StartEntitiesDetectionJobInput::output_data_config): <p>Specifies where to send the output files.</p>
+    ///   - [`data_access_role_arn(Option<String>)`](crate::input::StartEntitiesDetectionJobInput::data_access_role_arn): <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+    ///   - [`job_name(Option<String>)`](crate::input::StartEntitiesDetectionJobInput::job_name): <p>The identifier of the job.</p>
+    ///   - [`entity_recognizer_arn(Option<String>)`](crate::input::StartEntitiesDetectionJobInput::entity_recognizer_arn): <p>The Amazon Resource Name (ARN) that identifies the specific entity recognizer to be used by the <code>StartEntitiesDetectionJob</code>. This ARN is optional and is only used for a custom entity recognition job.</p>
+    ///   - [`language_code(Option<LanguageCode>)`](crate::input::StartEntitiesDetectionJobInput::language_code): <p>The language of the input documents. All documents must be in the same language. You can specify any of the languages supported by Amazon Comprehend. If custom entities recognition is used, this parameter is ignored and the language used for training the model is used instead.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::StartEntitiesDetectionJobInput::client_request_token): <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
+    ///   - [`volume_kms_key_id(Option<String>)`](crate::input::StartEntitiesDetectionJobInput::volume_kms_key_id): <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>  <ul>   <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>   <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>  </ul>
+    ///   - [`vpc_config(Option<VpcConfig>)`](crate::input::StartEntitiesDetectionJobInput::vpc_config): <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your entity detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::StartEntitiesDetectionJobInput::tags): <p>Tags to be associated with the entities detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
+    /// - On success, responds with [`StartEntitiesDetectionJobOutput`](crate::output::StartEntitiesDetectionJobOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::StartEntitiesDetectionJobOutput::job_id): <p>The identifier generated for the job. To get the status of job, use this identifier with the operation.</p>
+    ///   - [`job_arn(Option<String>)`](crate::output::StartEntitiesDetectionJobOutput::job_arn): <p>The Amazon Resource Name (ARN) of the entities detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>  <p> <code>arn:   <partition>    :comprehend:    <region>     :     <account-id>      :entities-detection-job/      <job-id></job-id>     </account-id>    </region>   </partition></code> </p>  <p>The following is an example job ARN:</p>  <p> <code>arn:aws:comprehend:us-west-2:111122223333:entities-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
+    ///   - [`job_status(Option<JobStatus>)`](crate::output::StartEntitiesDetectionJobOutput::job_status): <p>The status of the job. </p>  <ul>   <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>   <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>   <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>   <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>   <li> <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.</p> </li>   <li> <p>STOPPED - The job was successfully stopped without completing.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<StartEntitiesDetectionJobError>`](crate::error::StartEntitiesDetectionJobError)
     pub fn start_entities_detection_job(
         &self,
     ) -> fluent_builders::StartEntitiesDetectionJob<C, M, R> {
         fluent_builders::StartEntitiesDetectionJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartEventsDetectionJob` operation.
+    /// Constructs a fluent builder for the [`StartEventsDetectionJob`](crate::client::fluent_builders::StartEventsDetectionJob) operation.
     ///
-    /// See [`StartEventsDetectionJob`](crate::client::fluent_builders::StartEventsDetectionJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartEventsDetectionJobInput`](crate::input::StartEventsDetectionJobInput) with field(s):
+    ///   - [`input_data_config(Option<InputDataConfig>)`](crate::input::StartEventsDetectionJobInput::input_data_config): <p>Specifies the format and location of the input data for the job.</p>
+    ///   - [`output_data_config(Option<OutputDataConfig>)`](crate::input::StartEventsDetectionJobInput::output_data_config): <p>Specifies where to send the output files.</p>
+    ///   - [`data_access_role_arn(Option<String>)`](crate::input::StartEventsDetectionJobInput::data_access_role_arn): <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
+    ///   - [`job_name(Option<String>)`](crate::input::StartEventsDetectionJobInput::job_name): <p>The identifier of the events detection job.</p>
+    ///   - [`language_code(Option<LanguageCode>)`](crate::input::StartEventsDetectionJobInput::language_code): <p>The language code of the input documents.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::StartEventsDetectionJobInput::client_request_token): <p>An unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
+    ///   - [`target_event_types(Option<Vec<String>>)`](crate::input::StartEventsDetectionJobInput::target_event_types): <p>The types of events to detect in the input documents.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::StartEventsDetectionJobInput::tags): <p>Tags to be associated with the events detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
+    /// - On success, responds with [`StartEventsDetectionJobOutput`](crate::output::StartEventsDetectionJobOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::StartEventsDetectionJobOutput::job_id): <p>An unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
+    ///   - [`job_arn(Option<String>)`](crate::output::StartEventsDetectionJobOutput::job_arn): <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>  <p> <code>arn:   <partition>    :comprehend:    <region>     :     <account-id>      :events-detection-job/      <job-id></job-id>     </account-id>    </region>   </partition></code> </p>  <p>The following is an example job ARN:</p>  <p> <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
+    ///   - [`job_status(Option<JobStatus>)`](crate::output::StartEventsDetectionJobOutput::job_status): <p>The status of the events detection job.</p>
+    /// - On failure, responds with [`SdkError<StartEventsDetectionJobError>`](crate::error::StartEventsDetectionJobError)
     pub fn start_events_detection_job(&self) -> fluent_builders::StartEventsDetectionJob<C, M, R> {
         fluent_builders::StartEventsDetectionJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartKeyPhrasesDetectionJob` operation.
+    /// Constructs a fluent builder for the [`StartKeyPhrasesDetectionJob`](crate::client::fluent_builders::StartKeyPhrasesDetectionJob) operation.
     ///
-    /// See [`StartKeyPhrasesDetectionJob`](crate::client::fluent_builders::StartKeyPhrasesDetectionJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartKeyPhrasesDetectionJobInput`](crate::input::StartKeyPhrasesDetectionJobInput) with field(s):
+    ///   - [`input_data_config(Option<InputDataConfig>)`](crate::input::StartKeyPhrasesDetectionJobInput::input_data_config): <p>Specifies the format and location of the input data for the job.</p>
+    ///   - [`output_data_config(Option<OutputDataConfig>)`](crate::input::StartKeyPhrasesDetectionJobInput::output_data_config): <p>Specifies where to send the output files.</p>
+    ///   - [`data_access_role_arn(Option<String>)`](crate::input::StartKeyPhrasesDetectionJobInput::data_access_role_arn): <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+    ///   - [`job_name(Option<String>)`](crate::input::StartKeyPhrasesDetectionJobInput::job_name): <p>The identifier of the job.</p>
+    ///   - [`language_code(Option<LanguageCode>)`](crate::input::StartKeyPhrasesDetectionJobInput::language_code): <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::StartKeyPhrasesDetectionJobInput::client_request_token): <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
+    ///   - [`volume_kms_key_id(Option<String>)`](crate::input::StartKeyPhrasesDetectionJobInput::volume_kms_key_id): <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>  <ul>   <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>   <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>  </ul>
+    ///   - [`vpc_config(Option<VpcConfig>)`](crate::input::StartKeyPhrasesDetectionJobInput::vpc_config): <p> Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your key phrases detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::StartKeyPhrasesDetectionJobInput::tags): <p>Tags to be associated with the key phrases detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
+    /// - On success, responds with [`StartKeyPhrasesDetectionJobOutput`](crate::output::StartKeyPhrasesDetectionJobOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::StartKeyPhrasesDetectionJobOutput::job_id): <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
+    ///   - [`job_arn(Option<String>)`](crate::output::StartKeyPhrasesDetectionJobOutput::job_arn): <p>The Amazon Resource Name (ARN) of the key phrase detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>  <p> <code>arn:   <partition>    :comprehend:    <region>     :     <account-id>      :key-phrases-detection-job/      <job-id></job-id>     </account-id>    </region>   </partition></code> </p>  <p>The following is an example job ARN:</p>  <p> <code>arn:aws:comprehend:us-west-2:111122223333:key-phrases-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
+    ///   - [`job_status(Option<JobStatus>)`](crate::output::StartKeyPhrasesDetectionJobOutput::job_status): <p>The status of the job. </p>  <ul>   <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>   <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>   <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>   <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<StartKeyPhrasesDetectionJobError>`](crate::error::StartKeyPhrasesDetectionJobError)
     pub fn start_key_phrases_detection_job(
         &self,
     ) -> fluent_builders::StartKeyPhrasesDetectionJob<C, M, R> {
         fluent_builders::StartKeyPhrasesDetectionJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartPiiEntitiesDetectionJob` operation.
+    /// Constructs a fluent builder for the [`StartPiiEntitiesDetectionJob`](crate::client::fluent_builders::StartPiiEntitiesDetectionJob) operation.
     ///
-    /// See [`StartPiiEntitiesDetectionJob`](crate::client::fluent_builders::StartPiiEntitiesDetectionJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartPiiEntitiesDetectionJobInput`](crate::input::StartPiiEntitiesDetectionJobInput) with field(s):
+    ///   - [`input_data_config(Option<InputDataConfig>)`](crate::input::StartPiiEntitiesDetectionJobInput::input_data_config): <p>The input properties for a PII entities detection job.</p>
+    ///   - [`output_data_config(Option<OutputDataConfig>)`](crate::input::StartPiiEntitiesDetectionJobInput::output_data_config): <p>Provides conﬁguration parameters for the output of PII entity detection jobs.</p>
+    ///   - [`mode(Option<PiiEntitiesDetectionMode>)`](crate::input::StartPiiEntitiesDetectionJobInput::mode): <p>Specifies whether the output provides the locations (offsets) of PII entities or a file in which PII entities are redacted.</p>
+    ///   - [`redaction_config(Option<RedactionConfig>)`](crate::input::StartPiiEntitiesDetectionJobInput::redaction_config): <p>Provides configuration parameters for PII entity redaction.</p>  <p>This parameter is required if you set the <code>Mode</code> parameter to <code>ONLY_REDACTION</code>. In that case, you must provide a <code>RedactionConfig</code> definition that includes the <code>PiiEntityTypes</code> parameter.</p>
+    ///   - [`data_access_role_arn(Option<String>)`](crate::input::StartPiiEntitiesDetectionJobInput::data_access_role_arn): <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
+    ///   - [`job_name(Option<String>)`](crate::input::StartPiiEntitiesDetectionJobInput::job_name): <p>The identifier of the job.</p>
+    ///   - [`language_code(Option<LanguageCode>)`](crate::input::StartPiiEntitiesDetectionJobInput::language_code): <p>The language of the input documents.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::StartPiiEntitiesDetectionJobInput::client_request_token): <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::StartPiiEntitiesDetectionJobInput::tags): <p>Tags to be associated with the PII entities detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
+    /// - On success, responds with [`StartPiiEntitiesDetectionJobOutput`](crate::output::StartPiiEntitiesDetectionJobOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::StartPiiEntitiesDetectionJobOutput::job_id): <p>The identifier generated for the job.</p>
+    ///   - [`job_arn(Option<String>)`](crate::output::StartPiiEntitiesDetectionJobOutput::job_arn): <p>The Amazon Resource Name (ARN) of the PII entity detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>  <p> <code>arn:   <partition>    :comprehend:    <region>     :     <account-id>      :pii-entities-detection-job/      <job-id></job-id>     </account-id>    </region>   </partition></code> </p>  <p>The following is an example job ARN:</p>  <p> <code>arn:aws:comprehend:us-west-2:111122223333:pii-entities-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
+    ///   - [`job_status(Option<JobStatus>)`](crate::output::StartPiiEntitiesDetectionJobOutput::job_status): <p>The status of the job.</p>
+    /// - On failure, responds with [`SdkError<StartPiiEntitiesDetectionJobError>`](crate::error::StartPiiEntitiesDetectionJobError)
     pub fn start_pii_entities_detection_job(
         &self,
     ) -> fluent_builders::StartPiiEntitiesDetectionJob<C, M, R> {
         fluent_builders::StartPiiEntitiesDetectionJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartSentimentDetectionJob` operation.
+    /// Constructs a fluent builder for the [`StartSentimentDetectionJob`](crate::client::fluent_builders::StartSentimentDetectionJob) operation.
     ///
-    /// See [`StartSentimentDetectionJob`](crate::client::fluent_builders::StartSentimentDetectionJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartSentimentDetectionJobInput`](crate::input::StartSentimentDetectionJobInput) with field(s):
+    ///   - [`input_data_config(Option<InputDataConfig>)`](crate::input::StartSentimentDetectionJobInput::input_data_config): <p>Specifies the format and location of the input data for the job.</p>
+    ///   - [`output_data_config(Option<OutputDataConfig>)`](crate::input::StartSentimentDetectionJobInput::output_data_config): <p>Specifies where to send the output files. </p>
+    ///   - [`data_access_role_arn(Option<String>)`](crate::input::StartSentimentDetectionJobInput::data_access_role_arn): <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+    ///   - [`job_name(Option<String>)`](crate::input::StartSentimentDetectionJobInput::job_name): <p>The identifier of the job.</p>
+    ///   - [`language_code(Option<LanguageCode>)`](crate::input::StartSentimentDetectionJobInput::language_code): <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::StartSentimentDetectionJobInput::client_request_token): <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
+    ///   - [`volume_kms_key_id(Option<String>)`](crate::input::StartSentimentDetectionJobInput::volume_kms_key_id): <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>  <ul>   <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>   <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>  </ul>
+    ///   - [`vpc_config(Option<VpcConfig>)`](crate::input::StartSentimentDetectionJobInput::vpc_config): <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your sentiment detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::StartSentimentDetectionJobInput::tags): <p>Tags to be associated with the sentiment detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
+    /// - On success, responds with [`StartSentimentDetectionJobOutput`](crate::output::StartSentimentDetectionJobOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::StartSentimentDetectionJobOutput::job_id): <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
+    ///   - [`job_arn(Option<String>)`](crate::output::StartSentimentDetectionJobOutput::job_arn): <p>The Amazon Resource Name (ARN) of the sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>  <p> <code>arn:   <partition>    :comprehend:    <region>     :     <account-id>      :sentiment-detection-job/      <job-id></job-id>     </account-id>    </region>   </partition></code> </p>  <p>The following is an example job ARN:</p>  <p> <code>arn:aws:comprehend:us-west-2:111122223333:sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
+    ///   - [`job_status(Option<JobStatus>)`](crate::output::StartSentimentDetectionJobOutput::job_status): <p>The status of the job. </p>  <ul>   <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>   <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>   <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>   <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<StartSentimentDetectionJobError>`](crate::error::StartSentimentDetectionJobError)
     pub fn start_sentiment_detection_job(
         &self,
     ) -> fluent_builders::StartSentimentDetectionJob<C, M, R> {
         fluent_builders::StartSentimentDetectionJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartTopicsDetectionJob` operation.
+    /// Constructs a fluent builder for the [`StartTopicsDetectionJob`](crate::client::fluent_builders::StartTopicsDetectionJob) operation.
     ///
-    /// See [`StartTopicsDetectionJob`](crate::client::fluent_builders::StartTopicsDetectionJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartTopicsDetectionJobInput`](crate::input::StartTopicsDetectionJobInput) with field(s):
+    ///   - [`input_data_config(Option<InputDataConfig>)`](crate::input::StartTopicsDetectionJobInput::input_data_config): <p>Specifies the format and location of the input data for the job.</p>
+    ///   - [`output_data_config(Option<OutputDataConfig>)`](crate::input::StartTopicsDetectionJobInput::output_data_config): <p>Specifies where to send the output files. The output is a compressed archive with two files, <code>topic-terms.csv</code> that lists the terms associated with each topic, and <code>doc-topics.csv</code> that lists the documents associated with each topic</p>
+    ///   - [`data_access_role_arn(Option<String>)`](crate::input::StartTopicsDetectionJobInput::data_access_role_arn): <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+    ///   - [`job_name(Option<String>)`](crate::input::StartTopicsDetectionJobInput::job_name): <p>The identifier of the job.</p>
+    ///   - [`number_of_topics(Option<i32>)`](crate::input::StartTopicsDetectionJobInput::number_of_topics): <p>The number of topics to detect.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::StartTopicsDetectionJobInput::client_request_token): <p>A unique identifier for the request. If you do not set the client request token, Amazon Comprehend generates one.</p>
+    ///   - [`volume_kms_key_id(Option<String>)`](crate::input::StartTopicsDetectionJobInput::volume_kms_key_id): <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>  <ul>   <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>   <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>  </ul>
+    ///   - [`vpc_config(Option<VpcConfig>)`](crate::input::StartTopicsDetectionJobInput::vpc_config): <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your topic detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::StartTopicsDetectionJobInput::tags): <p>Tags to be associated with the topics detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
+    /// - On success, responds with [`StartTopicsDetectionJobOutput`](crate::output::StartTopicsDetectionJobOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::StartTopicsDetectionJobOutput::job_id): <p>The identifier generated for the job. To get the status of the job, use this identifier with the <code>DescribeTopicDetectionJob</code> operation.</p>
+    ///   - [`job_arn(Option<String>)`](crate::output::StartTopicsDetectionJobOutput::job_arn): <p>The Amazon Resource Name (ARN) of the topics detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>  <p> <code>arn:   <partition>    :comprehend:    <region>     :     <account-id>      :topics-detection-job/      <job-id></job-id>     </account-id>    </region>   </partition></code> </p>  <p>The following is an example job ARN:</p>  <p> <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
+    ///   - [`job_status(Option<JobStatus>)`](crate::output::StartTopicsDetectionJobOutput::job_status): <p>The status of the job: </p>  <ul>   <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>   <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>   <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>   <li> <p>FAILED - The job did not complete. To get details, use the <code>DescribeTopicDetectionJob</code> operation.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<StartTopicsDetectionJobError>`](crate::error::StartTopicsDetectionJobError)
     pub fn start_topics_detection_job(&self) -> fluent_builders::StartTopicsDetectionJob<C, M, R> {
         fluent_builders::StartTopicsDetectionJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopDominantLanguageDetectionJob` operation.
+    /// Constructs a fluent builder for the [`StopDominantLanguageDetectionJob`](crate::client::fluent_builders::StopDominantLanguageDetectionJob) operation.
     ///
-    /// See [`StopDominantLanguageDetectionJob`](crate::client::fluent_builders::StopDominantLanguageDetectionJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StopDominantLanguageDetectionJobInput`](crate::input::StopDominantLanguageDetectionJobInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::StopDominantLanguageDetectionJobInput::job_id): <p>The identifier of the dominant language detection job to stop.</p>
+    /// - On success, responds with [`StopDominantLanguageDetectionJobOutput`](crate::output::StopDominantLanguageDetectionJobOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::StopDominantLanguageDetectionJobOutput::job_id): <p>The identifier of the dominant language detection job to stop.</p>
+    ///   - [`job_status(Option<JobStatus>)`](crate::output::StopDominantLanguageDetectionJobOutput::job_status): <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopDominantLanguageDetectionJob</code> operation.</p>
+    /// - On failure, responds with [`SdkError<StopDominantLanguageDetectionJobError>`](crate::error::StopDominantLanguageDetectionJobError)
     pub fn stop_dominant_language_detection_job(
         &self,
     ) -> fluent_builders::StopDominantLanguageDetectionJob<C, M, R> {
         fluent_builders::StopDominantLanguageDetectionJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopEntitiesDetectionJob` operation.
+    /// Constructs a fluent builder for the [`StopEntitiesDetectionJob`](crate::client::fluent_builders::StopEntitiesDetectionJob) operation.
     ///
-    /// See [`StopEntitiesDetectionJob`](crate::client::fluent_builders::StopEntitiesDetectionJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StopEntitiesDetectionJobInput`](crate::input::StopEntitiesDetectionJobInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::StopEntitiesDetectionJobInput::job_id): <p>The identifier of the entities detection job to stop.</p>
+    /// - On success, responds with [`StopEntitiesDetectionJobOutput`](crate::output::StopEntitiesDetectionJobOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::StopEntitiesDetectionJobOutput::job_id): <p>The identifier of the entities detection job to stop.</p>
+    ///   - [`job_status(Option<JobStatus>)`](crate::output::StopEntitiesDetectionJobOutput::job_status): <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopEntitiesDetectionJob</code> operation.</p>
+    /// - On failure, responds with [`SdkError<StopEntitiesDetectionJobError>`](crate::error::StopEntitiesDetectionJobError)
     pub fn stop_entities_detection_job(
         &self,
     ) -> fluent_builders::StopEntitiesDetectionJob<C, M, R> {
         fluent_builders::StopEntitiesDetectionJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopEventsDetectionJob` operation.
+    /// Constructs a fluent builder for the [`StopEventsDetectionJob`](crate::client::fluent_builders::StopEventsDetectionJob) operation.
     ///
-    /// See [`StopEventsDetectionJob`](crate::client::fluent_builders::StopEventsDetectionJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StopEventsDetectionJobInput`](crate::input::StopEventsDetectionJobInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::StopEventsDetectionJobInput::job_id): <p>The identifier of the events detection job to stop.</p>
+    /// - On success, responds with [`StopEventsDetectionJobOutput`](crate::output::StopEventsDetectionJobOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::StopEventsDetectionJobOutput::job_id): <p>The identifier of the events detection job to stop.</p>
+    ///   - [`job_status(Option<JobStatus>)`](crate::output::StopEventsDetectionJobOutput::job_status): <p>The status of the events detection job.</p>
+    /// - On failure, responds with [`SdkError<StopEventsDetectionJobError>`](crate::error::StopEventsDetectionJobError)
     pub fn stop_events_detection_job(&self) -> fluent_builders::StopEventsDetectionJob<C, M, R> {
         fluent_builders::StopEventsDetectionJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopKeyPhrasesDetectionJob` operation.
+    /// Constructs a fluent builder for the [`StopKeyPhrasesDetectionJob`](crate::client::fluent_builders::StopKeyPhrasesDetectionJob) operation.
     ///
-    /// See [`StopKeyPhrasesDetectionJob`](crate::client::fluent_builders::StopKeyPhrasesDetectionJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StopKeyPhrasesDetectionJobInput`](crate::input::StopKeyPhrasesDetectionJobInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::StopKeyPhrasesDetectionJobInput::job_id): <p>The identifier of the key phrases detection job to stop.</p>
+    /// - On success, responds with [`StopKeyPhrasesDetectionJobOutput`](crate::output::StopKeyPhrasesDetectionJobOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::StopKeyPhrasesDetectionJobOutput::job_id): <p>The identifier of the key phrases detection job to stop.</p>
+    ///   - [`job_status(Option<JobStatus>)`](crate::output::StopKeyPhrasesDetectionJobOutput::job_status): <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopKeyPhrasesDetectionJob</code> operation.</p>
+    /// - On failure, responds with [`SdkError<StopKeyPhrasesDetectionJobError>`](crate::error::StopKeyPhrasesDetectionJobError)
     pub fn stop_key_phrases_detection_job(
         &self,
     ) -> fluent_builders::StopKeyPhrasesDetectionJob<C, M, R> {
         fluent_builders::StopKeyPhrasesDetectionJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopPiiEntitiesDetectionJob` operation.
+    /// Constructs a fluent builder for the [`StopPiiEntitiesDetectionJob`](crate::client::fluent_builders::StopPiiEntitiesDetectionJob) operation.
     ///
-    /// See [`StopPiiEntitiesDetectionJob`](crate::client::fluent_builders::StopPiiEntitiesDetectionJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StopPiiEntitiesDetectionJobInput`](crate::input::StopPiiEntitiesDetectionJobInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::StopPiiEntitiesDetectionJobInput::job_id): <p>The identifier of the PII entities detection job to stop.</p>
+    /// - On success, responds with [`StopPiiEntitiesDetectionJobOutput`](crate::output::StopPiiEntitiesDetectionJobOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::StopPiiEntitiesDetectionJobOutput::job_id): <p>The identifier of the PII entities detection job to stop.</p>
+    ///   - [`job_status(Option<JobStatus>)`](crate::output::StopPiiEntitiesDetectionJobOutput::job_status): <p>The status of the PII entities detection job.</p>
+    /// - On failure, responds with [`SdkError<StopPiiEntitiesDetectionJobError>`](crate::error::StopPiiEntitiesDetectionJobError)
     pub fn stop_pii_entities_detection_job(
         &self,
     ) -> fluent_builders::StopPiiEntitiesDetectionJob<C, M, R> {
         fluent_builders::StopPiiEntitiesDetectionJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopSentimentDetectionJob` operation.
+    /// Constructs a fluent builder for the [`StopSentimentDetectionJob`](crate::client::fluent_builders::StopSentimentDetectionJob) operation.
     ///
-    /// See [`StopSentimentDetectionJob`](crate::client::fluent_builders::StopSentimentDetectionJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StopSentimentDetectionJobInput`](crate::input::StopSentimentDetectionJobInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::StopSentimentDetectionJobInput::job_id): <p>The identifier of the sentiment detection job to stop.</p>
+    /// - On success, responds with [`StopSentimentDetectionJobOutput`](crate::output::StopSentimentDetectionJobOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::StopSentimentDetectionJobOutput::job_id): <p>The identifier of the sentiment detection job to stop.</p>
+    ///   - [`job_status(Option<JobStatus>)`](crate::output::StopSentimentDetectionJobOutput::job_status): <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopSentimentDetectionJob</code> operation.</p>
+    /// - On failure, responds with [`SdkError<StopSentimentDetectionJobError>`](crate::error::StopSentimentDetectionJobError)
     pub fn stop_sentiment_detection_job(
         &self,
     ) -> fluent_builders::StopSentimentDetectionJob<C, M, R> {
         fluent_builders::StopSentimentDetectionJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopTrainingDocumentClassifier` operation.
+    /// Constructs a fluent builder for the [`StopTrainingDocumentClassifier`](crate::client::fluent_builders::StopTrainingDocumentClassifier) operation.
     ///
-    /// See [`StopTrainingDocumentClassifier`](crate::client::fluent_builders::StopTrainingDocumentClassifier) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StopTrainingDocumentClassifierInput`](crate::input::StopTrainingDocumentClassifierInput) with field(s):
+    ///   - [`document_classifier_arn(Option<String>)`](crate::input::StopTrainingDocumentClassifierInput::document_classifier_arn): <p>The Amazon Resource Name (ARN) that identifies the document classifier currently being trained.</p>
+    /// - On success, responds with [`StopTrainingDocumentClassifierOutput`](crate::output::StopTrainingDocumentClassifierOutput)
+
+    /// - On failure, responds with [`SdkError<StopTrainingDocumentClassifierError>`](crate::error::StopTrainingDocumentClassifierError)
     pub fn stop_training_document_classifier(
         &self,
     ) -> fluent_builders::StopTrainingDocumentClassifier<C, M, R> {
         fluent_builders::StopTrainingDocumentClassifier::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopTrainingEntityRecognizer` operation.
+    /// Constructs a fluent builder for the [`StopTrainingEntityRecognizer`](crate::client::fluent_builders::StopTrainingEntityRecognizer) operation.
     ///
-    /// See [`StopTrainingEntityRecognizer`](crate::client::fluent_builders::StopTrainingEntityRecognizer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StopTrainingEntityRecognizerInput`](crate::input::StopTrainingEntityRecognizerInput) with field(s):
+    ///   - [`entity_recognizer_arn(Option<String>)`](crate::input::StopTrainingEntityRecognizerInput::entity_recognizer_arn): <p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.</p>
+    /// - On success, responds with [`StopTrainingEntityRecognizerOutput`](crate::output::StopTrainingEntityRecognizerOutput)
+
+    /// - On failure, responds with [`SdkError<StopTrainingEntityRecognizerError>`](crate::error::StopTrainingEntityRecognizerError)
     pub fn stop_training_entity_recognizer(
         &self,
     ) -> fluent_builders::StopTrainingEntityRecognizer<C, M, R> {
         fluent_builders::StopTrainingEntityRecognizer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource to which you want to associate the tags. </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>Tags being associated with a specific Amazon Comprehend resource. There can be a maximum of 50 tags (both existing and pending) associated with a specific resource. </p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p> The Amazon Resource Name (ARN) of the given Amazon Comprehend resource from which you want to remove the tags. </p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The initial part of a key-value pair that forms a tag being removed from a given resource. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. Keys must be unique and cannot be duplicated for a particular resource. </p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateEndpoint` operation.
+    /// Constructs a fluent builder for the [`UpdateEndpoint`](crate::client::fluent_builders::UpdateEndpoint) operation.
     ///
-    /// See [`UpdateEndpoint`](crate::client::fluent_builders::UpdateEndpoint) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateEndpointInput`](crate::input::UpdateEndpointInput) with field(s):
+    ///   - [`endpoint_arn(Option<String>)`](crate::input::UpdateEndpointInput::endpoint_arn): <p>The Amazon Resource Number (ARN) of the endpoint being updated.</p>
+    ///   - [`desired_model_arn(Option<String>)`](crate::input::UpdateEndpointInput::desired_model_arn): <p>The ARN of the new model to use when updating an existing endpoint.</p>
+    ///   - [`desired_inference_units(Option<i32>)`](crate::input::UpdateEndpointInput::desired_inference_units): <p> The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
+    ///   - [`desired_data_access_role_arn(Option<String>)`](crate::input::UpdateEndpointInput::desired_data_access_role_arn): <p>Data access role ARN to use in case the new model is encrypted with a customer CMK.</p>
+    /// - On success, responds with [`UpdateEndpointOutput`](crate::output::UpdateEndpointOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateEndpointError>`](crate::error::UpdateEndpointError)
     pub fn update_endpoint(&self) -> fluent_builders::UpdateEndpoint<C, M, R> {
         fluent_builders::UpdateEndpoint::new(self.handle.clone())
     }
