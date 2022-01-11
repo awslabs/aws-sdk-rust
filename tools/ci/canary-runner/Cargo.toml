@@ -12,6 +12,7 @@ publish = false
 [dependencies]
 anyhow = "1"
 aws-config = "0.3"
+aws-sdk-cloudwatch = "0.3"
 aws-sdk-lambda = "0.3"
 aws-sdk-s3 = "0.3"
 base64 = "0.13"
