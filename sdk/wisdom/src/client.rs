@@ -83,237 +83,405 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateAssistant` operation.
+    /// Constructs a fluent builder for the [`CreateAssistant`](crate::client::fluent_builders::CreateAssistant) operation.
     ///
-    /// See [`CreateAssistant`](crate::client::fluent_builders::CreateAssistant) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateAssistantInput`](crate::input::CreateAssistantInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::CreateAssistantInput::client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`name(Option<String>)`](crate::input::CreateAssistantInput::name): <p>The name of the assistant.</p>
+    ///   - [`r#type(Option<AssistantType>)`](crate::input::CreateAssistantInput::r#type): <p>The type of assistant.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateAssistantInput::description): <p>The description of the assistant.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateAssistantInput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    ///   - [`server_side_encryption_configuration(Option<ServerSideEncryptionConfiguration>)`](crate::input::CreateAssistantInput::server_side_encryption_configuration): <p>The KMS key used for encryption.</p>
+    /// - On success, responds with [`CreateAssistantOutput`](crate::output::CreateAssistantOutput) with field(s):
+    ///   - [`assistant(Option<AssistantData>)`](crate::output::CreateAssistantOutput::assistant): <p>Information about the assistant.</p>
+    /// - On failure, responds with [`SdkError<CreateAssistantError>`](crate::error::CreateAssistantError)
     pub fn create_assistant(&self) -> fluent_builders::CreateAssistant<C, M, R> {
         fluent_builders::CreateAssistant::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateAssistantAssociation` operation.
+    /// Constructs a fluent builder for the [`CreateAssistantAssociation`](crate::client::fluent_builders::CreateAssistantAssociation) operation.
     ///
-    /// See [`CreateAssistantAssociation`](crate::client::fluent_builders::CreateAssistantAssociation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateAssistantAssociationInput`](crate::input::CreateAssistantAssociationInput) with field(s):
+    ///   - [`assistant_id(Option<String>)`](crate::input::CreateAssistantAssociationInput::assistant_id): <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    ///   - [`association_type(Option<AssociationType>)`](crate::input::CreateAssistantAssociationInput::association_type): <p>The type of association.</p>
+    ///   - [`association(Option<AssistantAssociationInputData>)`](crate::input::CreateAssistantAssociationInput::association): <p>The identifier of the associated resource.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateAssistantAssociationInput::client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateAssistantAssociationInput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    /// - On success, responds with [`CreateAssistantAssociationOutput`](crate::output::CreateAssistantAssociationOutput) with field(s):
+    ///   - [`assistant_association(Option<AssistantAssociationData>)`](crate::output::CreateAssistantAssociationOutput::assistant_association): <p>The assistant association.</p>
+    /// - On failure, responds with [`SdkError<CreateAssistantAssociationError>`](crate::error::CreateAssistantAssociationError)
     pub fn create_assistant_association(
         &self,
     ) -> fluent_builders::CreateAssistantAssociation<C, M, R> {
         fluent_builders::CreateAssistantAssociation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateContent` operation.
+    /// Constructs a fluent builder for the [`CreateContent`](crate::client::fluent_builders::CreateContent) operation.
     ///
-    /// See [`CreateContent`](crate::client::fluent_builders::CreateContent) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateContentInput`](crate::input::CreateContentInput) with field(s):
+    ///   - [`knowledge_base_id(Option<String>)`](crate::input::CreateContentInput::knowledge_base_id): <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    ///   - [`name(Option<String>)`](crate::input::CreateContentInput::name): <p>The name of the content. Each piece of content in a knowledge base must have a unique name. You can retrieve a piece of content using only its knowledge base and its name with the <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchContent.html">SearchContent</a> API.</p>
+    ///   - [`title(Option<String>)`](crate::input::CreateContentInput::title): <p>The title of the content. If not set, the title is equal to the name.</p>
+    ///   - [`override_link_out_uri(Option<String>)`](crate::input::CreateContentInput::override_link_out_uri): <p>The URI you want to use for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content.</p>
+    ///   - [`metadata(Option<HashMap<String, String>>)`](crate::input::CreateContentInput::metadata): <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
+    ///   - [`upload_id(Option<String>)`](crate::input::CreateContentInput::upload_id): <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateContentInput::client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateContentInput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    /// - On success, responds with [`CreateContentOutput`](crate::output::CreateContentOutput) with field(s):
+    ///   - [`content(Option<ContentData>)`](crate::output::CreateContentOutput::content): <p>The content.</p>
+    /// - On failure, responds with [`SdkError<CreateContentError>`](crate::error::CreateContentError)
     pub fn create_content(&self) -> fluent_builders::CreateContent<C, M, R> {
         fluent_builders::CreateContent::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateKnowledgeBase` operation.
+    /// Constructs a fluent builder for the [`CreateKnowledgeBase`](crate::client::fluent_builders::CreateKnowledgeBase) operation.
     ///
-    /// See [`CreateKnowledgeBase`](crate::client::fluent_builders::CreateKnowledgeBase) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateKnowledgeBaseInput`](crate::input::CreateKnowledgeBaseInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::CreateKnowledgeBaseInput::client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`name(Option<String>)`](crate::input::CreateKnowledgeBaseInput::name): <p>The name of the knowledge base.</p>
+    ///   - [`knowledge_base_type(Option<KnowledgeBaseType>)`](crate::input::CreateKnowledgeBaseInput::knowledge_base_type): <p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content. EXTERNAL knowledge bases support integrations with third-party systems whose content is synchronized automatically. </p>
+    ///   - [`source_configuration(Option<SourceConfiguration>)`](crate::input::CreateKnowledgeBaseInput::source_configuration): <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge bases.</p>
+    ///   - [`rendering_configuration(Option<RenderingConfiguration>)`](crate::input::CreateKnowledgeBaseInput::rendering_configuration): <p>Information about how to render the content.</p>
+    ///   - [`server_side_encryption_configuration(Option<ServerSideEncryptionConfiguration>)`](crate::input::CreateKnowledgeBaseInput::server_side_encryption_configuration): <p>The KMS key used for encryption.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateKnowledgeBaseInput::description): <p>The description.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateKnowledgeBaseInput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    /// - On success, responds with [`CreateKnowledgeBaseOutput`](crate::output::CreateKnowledgeBaseOutput) with field(s):
+    ///   - [`knowledge_base(Option<KnowledgeBaseData>)`](crate::output::CreateKnowledgeBaseOutput::knowledge_base): <p>The knowledge base.</p>
+    /// - On failure, responds with [`SdkError<CreateKnowledgeBaseError>`](crate::error::CreateKnowledgeBaseError)
     pub fn create_knowledge_base(&self) -> fluent_builders::CreateKnowledgeBase<C, M, R> {
         fluent_builders::CreateKnowledgeBase::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateSession` operation.
+    /// Constructs a fluent builder for the [`CreateSession`](crate::client::fluent_builders::CreateSession) operation.
     ///
-    /// See [`CreateSession`](crate::client::fluent_builders::CreateSession) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateSessionInput`](crate::input::CreateSessionInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::CreateSessionInput::client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    ///   - [`assistant_id(Option<String>)`](crate::input::CreateSessionInput::assistant_id): <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    ///   - [`name(Option<String>)`](crate::input::CreateSessionInput::name): <p>The name of the session.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateSessionInput::description): <p>The description.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateSessionInput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    /// - On success, responds with [`CreateSessionOutput`](crate::output::CreateSessionOutput) with field(s):
+    ///   - [`session(Option<SessionData>)`](crate::output::CreateSessionOutput::session): <p>The session.</p>
+    /// - On failure, responds with [`SdkError<CreateSessionError>`](crate::error::CreateSessionError)
     pub fn create_session(&self) -> fluent_builders::CreateSession<C, M, R> {
         fluent_builders::CreateSession::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAssistant` operation.
+    /// Constructs a fluent builder for the [`DeleteAssistant`](crate::client::fluent_builders::DeleteAssistant) operation.
     ///
-    /// See [`DeleteAssistant`](crate::client::fluent_builders::DeleteAssistant) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteAssistantInput`](crate::input::DeleteAssistantInput) with field(s):
+    ///   - [`assistant_id(Option<String>)`](crate::input::DeleteAssistantInput::assistant_id): <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// - On success, responds with [`DeleteAssistantOutput`](crate::output::DeleteAssistantOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAssistantError>`](crate::error::DeleteAssistantError)
     pub fn delete_assistant(&self) -> fluent_builders::DeleteAssistant<C, M, R> {
         fluent_builders::DeleteAssistant::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAssistantAssociation` operation.
+    /// Constructs a fluent builder for the [`DeleteAssistantAssociation`](crate::client::fluent_builders::DeleteAssistantAssociation) operation.
     ///
-    /// See [`DeleteAssistantAssociation`](crate::client::fluent_builders::DeleteAssistantAssociation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteAssistantAssociationInput`](crate::input::DeleteAssistantAssociationInput) with field(s):
+    ///   - [`assistant_association_id(Option<String>)`](crate::input::DeleteAssistantAssociationInput::assistant_association_id): <p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    ///   - [`assistant_id(Option<String>)`](crate::input::DeleteAssistantAssociationInput::assistant_id): <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// - On success, responds with [`DeleteAssistantAssociationOutput`](crate::output::DeleteAssistantAssociationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAssistantAssociationError>`](crate::error::DeleteAssistantAssociationError)
     pub fn delete_assistant_association(
         &self,
     ) -> fluent_builders::DeleteAssistantAssociation<C, M, R> {
         fluent_builders::DeleteAssistantAssociation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteContent` operation.
+    /// Constructs a fluent builder for the [`DeleteContent`](crate::client::fluent_builders::DeleteContent) operation.
     ///
-    /// See [`DeleteContent`](crate::client::fluent_builders::DeleteContent) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteContentInput`](crate::input::DeleteContentInput) with field(s):
+    ///   - [`knowledge_base_id(Option<String>)`](crate::input::DeleteContentInput::knowledge_base_id): <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    ///   - [`content_id(Option<String>)`](crate::input::DeleteContentInput::content_id): <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// - On success, responds with [`DeleteContentOutput`](crate::output::DeleteContentOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteContentError>`](crate::error::DeleteContentError)
     pub fn delete_content(&self) -> fluent_builders::DeleteContent<C, M, R> {
         fluent_builders::DeleteContent::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteKnowledgeBase` operation.
+    /// Constructs a fluent builder for the [`DeleteKnowledgeBase`](crate::client::fluent_builders::DeleteKnowledgeBase) operation.
     ///
-    /// See [`DeleteKnowledgeBase`](crate::client::fluent_builders::DeleteKnowledgeBase) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteKnowledgeBaseInput`](crate::input::DeleteKnowledgeBaseInput) with field(s):
+    ///   - [`knowledge_base_id(Option<String>)`](crate::input::DeleteKnowledgeBaseInput::knowledge_base_id): <p>The knowledge base to delete content from. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// - On success, responds with [`DeleteKnowledgeBaseOutput`](crate::output::DeleteKnowledgeBaseOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteKnowledgeBaseError>`](crate::error::DeleteKnowledgeBaseError)
     pub fn delete_knowledge_base(&self) -> fluent_builders::DeleteKnowledgeBase<C, M, R> {
         fluent_builders::DeleteKnowledgeBase::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAssistant` operation.
+    /// Constructs a fluent builder for the [`GetAssistant`](crate::client::fluent_builders::GetAssistant) operation.
     ///
-    /// See [`GetAssistant`](crate::client::fluent_builders::GetAssistant) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetAssistantInput`](crate::input::GetAssistantInput) with field(s):
+    ///   - [`assistant_id(Option<String>)`](crate::input::GetAssistantInput::assistant_id): <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// - On success, responds with [`GetAssistantOutput`](crate::output::GetAssistantOutput) with field(s):
+    ///   - [`assistant(Option<AssistantData>)`](crate::output::GetAssistantOutput::assistant): <p>Information about the assistant.</p>
+    /// - On failure, responds with [`SdkError<GetAssistantError>`](crate::error::GetAssistantError)
     pub fn get_assistant(&self) -> fluent_builders::GetAssistant<C, M, R> {
         fluent_builders::GetAssistant::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAssistantAssociation` operation.
+    /// Constructs a fluent builder for the [`GetAssistantAssociation`](crate::client::fluent_builders::GetAssistantAssociation) operation.
     ///
-    /// See [`GetAssistantAssociation`](crate::client::fluent_builders::GetAssistantAssociation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetAssistantAssociationInput`](crate::input::GetAssistantAssociationInput) with field(s):
+    ///   - [`assistant_association_id(Option<String>)`](crate::input::GetAssistantAssociationInput::assistant_association_id): <p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    ///   - [`assistant_id(Option<String>)`](crate::input::GetAssistantAssociationInput::assistant_id): <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// - On success, responds with [`GetAssistantAssociationOutput`](crate::output::GetAssistantAssociationOutput) with field(s):
+    ///   - [`assistant_association(Option<AssistantAssociationData>)`](crate::output::GetAssistantAssociationOutput::assistant_association): <p>The assistant association.</p>
+    /// - On failure, responds with [`SdkError<GetAssistantAssociationError>`](crate::error::GetAssistantAssociationError)
     pub fn get_assistant_association(&self) -> fluent_builders::GetAssistantAssociation<C, M, R> {
         fluent_builders::GetAssistantAssociation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetContent` operation.
+    /// Constructs a fluent builder for the [`GetContent`](crate::client::fluent_builders::GetContent) operation.
     ///
-    /// See [`GetContent`](crate::client::fluent_builders::GetContent) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetContentInput`](crate::input::GetContentInput) with field(s):
+    ///   - [`content_id(Option<String>)`](crate::input::GetContentInput::content_id): <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    ///   - [`knowledge_base_id(Option<String>)`](crate::input::GetContentInput::knowledge_base_id): <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// - On success, responds with [`GetContentOutput`](crate::output::GetContentOutput) with field(s):
+    ///   - [`content(Option<ContentData>)`](crate::output::GetContentOutput::content): <p>The content.</p>
+    /// - On failure, responds with [`SdkError<GetContentError>`](crate::error::GetContentError)
     pub fn get_content(&self) -> fluent_builders::GetContent<C, M, R> {
         fluent_builders::GetContent::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetContentSummary` operation.
+    /// Constructs a fluent builder for the [`GetContentSummary`](crate::client::fluent_builders::GetContentSummary) operation.
     ///
-    /// See [`GetContentSummary`](crate::client::fluent_builders::GetContentSummary) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetContentSummaryInput`](crate::input::GetContentSummaryInput) with field(s):
+    ///   - [`content_id(Option<String>)`](crate::input::GetContentSummaryInput::content_id): <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    ///   - [`knowledge_base_id(Option<String>)`](crate::input::GetContentSummaryInput::knowledge_base_id): <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// - On success, responds with [`GetContentSummaryOutput`](crate::output::GetContentSummaryOutput) with field(s):
+    ///   - [`content_summary(Option<ContentSummary>)`](crate::output::GetContentSummaryOutput::content_summary): <p>The content summary.</p>
+    /// - On failure, responds with [`SdkError<GetContentSummaryError>`](crate::error::GetContentSummaryError)
     pub fn get_content_summary(&self) -> fluent_builders::GetContentSummary<C, M, R> {
         fluent_builders::GetContentSummary::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetKnowledgeBase` operation.
+    /// Constructs a fluent builder for the [`GetKnowledgeBase`](crate::client::fluent_builders::GetKnowledgeBase) operation.
     ///
-    /// See [`GetKnowledgeBase`](crate::client::fluent_builders::GetKnowledgeBase) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetKnowledgeBaseInput`](crate::input::GetKnowledgeBaseInput) with field(s):
+    ///   - [`knowledge_base_id(Option<String>)`](crate::input::GetKnowledgeBaseInput::knowledge_base_id): <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// - On success, responds with [`GetKnowledgeBaseOutput`](crate::output::GetKnowledgeBaseOutput) with field(s):
+    ///   - [`knowledge_base(Option<KnowledgeBaseData>)`](crate::output::GetKnowledgeBaseOutput::knowledge_base): <p>The knowledge base.</p>
+    /// - On failure, responds with [`SdkError<GetKnowledgeBaseError>`](crate::error::GetKnowledgeBaseError)
     pub fn get_knowledge_base(&self) -> fluent_builders::GetKnowledgeBase<C, M, R> {
         fluent_builders::GetKnowledgeBase::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRecommendations` operation.
+    /// Constructs a fluent builder for the [`GetRecommendations`](crate::client::fluent_builders::GetRecommendations) operation.
     ///
-    /// See [`GetRecommendations`](crate::client::fluent_builders::GetRecommendations) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetRecommendationsInput`](crate::input::GetRecommendationsInput) with field(s):
+    ///   - [`assistant_id(Option<String>)`](crate::input::GetRecommendationsInput::assistant_id): <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    ///   - [`session_id(Option<String>)`](crate::input::GetRecommendationsInput::session_id): <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetRecommendationsInput::max_results): <p>The maximum number of results to return per page.</p>
+    ///   - [`wait_time_seconds(i32)`](crate::input::GetRecommendationsInput::wait_time_seconds): <p>The duration (in seconds) for which the call waits for a recommendation to be made available before returning. If a recommendation is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list.</p>
+    /// - On success, responds with [`GetRecommendationsOutput`](crate::output::GetRecommendationsOutput) with field(s):
+    ///   - [`recommendations(Option<Vec<RecommendationData>>)`](crate::output::GetRecommendationsOutput::recommendations): <p>The recommendations.</p>
+    /// - On failure, responds with [`SdkError<GetRecommendationsError>`](crate::error::GetRecommendationsError)
     pub fn get_recommendations(&self) -> fluent_builders::GetRecommendations<C, M, R> {
         fluent_builders::GetRecommendations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSession` operation.
+    /// Constructs a fluent builder for the [`GetSession`](crate::client::fluent_builders::GetSession) operation.
     ///
-    /// See [`GetSession`](crate::client::fluent_builders::GetSession) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetSessionInput`](crate::input::GetSessionInput) with field(s):
+    ///   - [`assistant_id(Option<String>)`](crate::input::GetSessionInput::assistant_id): <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    ///   - [`session_id(Option<String>)`](crate::input::GetSessionInput::session_id): <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// - On success, responds with [`GetSessionOutput`](crate::output::GetSessionOutput) with field(s):
+    ///   - [`session(Option<SessionData>)`](crate::output::GetSessionOutput::session): <p>The session.</p>
+    /// - On failure, responds with [`SdkError<GetSessionError>`](crate::error::GetSessionError)
     pub fn get_session(&self) -> fluent_builders::GetSession<C, M, R> {
         fluent_builders::GetSession::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAssistantAssociations` operation.
-    ///
-    /// See [`ListAssistantAssociations`](crate::client::fluent_builders::ListAssistantAssociations) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListAssistantAssociations`](crate::client::fluent_builders::ListAssistantAssociations) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssistantAssociations::into_paginator).
+    ///
+    /// - Takes [`ListAssistantAssociationsInput`](crate::input::ListAssistantAssociationsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListAssistantAssociationsInput::next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListAssistantAssociationsInput::max_results): <p>The maximum number of results to return per page.</p>
+    ///   - [`assistant_id(Option<String>)`](crate::input::ListAssistantAssociationsInput::assistant_id): <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// - On success, responds with [`ListAssistantAssociationsOutput`](crate::output::ListAssistantAssociationsOutput) with field(s):
+    ///   - [`assistant_association_summaries(Option<Vec<AssistantAssociationSummary>>)`](crate::output::ListAssistantAssociationsOutput::assistant_association_summaries): <p>Summary information about assistant associations.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAssistantAssociationsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListAssistantAssociationsError>`](crate::error::ListAssistantAssociationsError)
     pub fn list_assistant_associations(
         &self,
     ) -> fluent_builders::ListAssistantAssociations<C, M, R> {
         fluent_builders::ListAssistantAssociations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAssistants` operation.
-    ///
-    /// See [`ListAssistants`](crate::client::fluent_builders::ListAssistants) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListAssistants`](crate::client::fluent_builders::ListAssistants) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssistants::into_paginator).
+    ///
+    /// - Takes [`ListAssistantsInput`](crate::input::ListAssistantsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListAssistantsInput::next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListAssistantsInput::max_results): <p>The maximum number of results to return per page.</p>
+    /// - On success, responds with [`ListAssistantsOutput`](crate::output::ListAssistantsOutput) with field(s):
+    ///   - [`assistant_summaries(Option<Vec<AssistantSummary>>)`](crate::output::ListAssistantsOutput::assistant_summaries): <p>Information about the assistants.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAssistantsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListAssistantsError>`](crate::error::ListAssistantsError)
     pub fn list_assistants(&self) -> fluent_builders::ListAssistants<C, M, R> {
         fluent_builders::ListAssistants::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListContents` operation.
-    ///
-    /// See [`ListContents`](crate::client::fluent_builders::ListContents) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListContents`](crate::client::fluent_builders::ListContents) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListContents::into_paginator).
+    ///
+    /// - Takes [`ListContentsInput`](crate::input::ListContentsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListContentsInput::next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListContentsInput::max_results): <p>The maximum number of results to return per page.</p>
+    ///   - [`knowledge_base_id(Option<String>)`](crate::input::ListContentsInput::knowledge_base_id): <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// - On success, responds with [`ListContentsOutput`](crate::output::ListContentsOutput) with field(s):
+    ///   - [`content_summaries(Option<Vec<ContentSummary>>)`](crate::output::ListContentsOutput::content_summaries): <p>Information about the content.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListContentsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListContentsError>`](crate::error::ListContentsError)
     pub fn list_contents(&self) -> fluent_builders::ListContents<C, M, R> {
         fluent_builders::ListContents::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListKnowledgeBases` operation.
-    ///
-    /// See [`ListKnowledgeBases`](crate::client::fluent_builders::ListKnowledgeBases) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListKnowledgeBases`](crate::client::fluent_builders::ListKnowledgeBases) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListKnowledgeBases::into_paginator).
+    ///
+    /// - Takes [`ListKnowledgeBasesInput`](crate::input::ListKnowledgeBasesInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListKnowledgeBasesInput::next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListKnowledgeBasesInput::max_results): <p>The maximum number of results to return per page.</p>
+    /// - On success, responds with [`ListKnowledgeBasesOutput`](crate::output::ListKnowledgeBasesOutput) with field(s):
+    ///   - [`knowledge_base_summaries(Option<Vec<KnowledgeBaseSummary>>)`](crate::output::ListKnowledgeBasesOutput::knowledge_base_summaries): <p>Information about the knowledge bases.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListKnowledgeBasesOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListKnowledgeBasesError>`](crate::error::ListKnowledgeBasesError)
     pub fn list_knowledge_bases(&self) -> fluent_builders::ListKnowledgeBases<C, M, R> {
         fluent_builders::ListKnowledgeBases::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `NotifyRecommendationsReceived` operation.
+    /// Constructs a fluent builder for the [`NotifyRecommendationsReceived`](crate::client::fluent_builders::NotifyRecommendationsReceived) operation.
     ///
-    /// See [`NotifyRecommendationsReceived`](crate::client::fluent_builders::NotifyRecommendationsReceived) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`NotifyRecommendationsReceivedInput`](crate::input::NotifyRecommendationsReceivedInput) with field(s):
+    ///   - [`assistant_id(Option<String>)`](crate::input::NotifyRecommendationsReceivedInput::assistant_id): <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    ///   - [`session_id(Option<String>)`](crate::input::NotifyRecommendationsReceivedInput::session_id): <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    ///   - [`recommendation_ids(Option<Vec<String>>)`](crate::input::NotifyRecommendationsReceivedInput::recommendation_ids): <p>The identifiers of the recommendations.</p>
+    /// - On success, responds with [`NotifyRecommendationsReceivedOutput`](crate::output::NotifyRecommendationsReceivedOutput) with field(s):
+    ///   - [`recommendation_ids(Option<Vec<String>>)`](crate::output::NotifyRecommendationsReceivedOutput::recommendation_ids): <p>The identifiers of the recommendations.</p>
+    ///   - [`errors(Option<Vec<NotifyRecommendationsReceivedError>>)`](crate::output::NotifyRecommendationsReceivedOutput::errors): <p>The identifiers of recommendations that are causing errors.</p>
+    /// - On failure, responds with [`SdkError<NotifyRecommendationsReceivedError>`](crate::error::NotifyRecommendationsReceivedError)
     pub fn notify_recommendations_received(
         &self,
     ) -> fluent_builders::NotifyRecommendationsReceived<C, M, R> {
         fluent_builders::NotifyRecommendationsReceived::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `QueryAssistant` operation.
-    ///
-    /// See [`QueryAssistant`](crate::client::fluent_builders::QueryAssistant) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`QueryAssistant`](crate::client::fluent_builders::QueryAssistant) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::QueryAssistant::into_paginator).
+    ///
+    /// - Takes [`QueryAssistantInput`](crate::input::QueryAssistantInput) with field(s):
+    ///   - [`assistant_id(Option<String>)`](crate::input::QueryAssistantInput::assistant_id): <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    ///   - [`query_text(Option<String>)`](crate::input::QueryAssistantInput::query_text): <p>The text to search for.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::QueryAssistantInput::next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::QueryAssistantInput::max_results): <p>The maximum number of results to return per page.</p>
+    /// - On success, responds with [`QueryAssistantOutput`](crate::output::QueryAssistantOutput) with field(s):
+    ///   - [`results(Option<Vec<ResultData>>)`](crate::output::QueryAssistantOutput::results): <p>The results of the query.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::QueryAssistantOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<QueryAssistantError>`](crate::error::QueryAssistantError)
     pub fn query_assistant(&self) -> fluent_builders::QueryAssistant<C, M, R> {
         fluent_builders::QueryAssistant::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RemoveKnowledgeBaseTemplateUri` operation.
+    /// Constructs a fluent builder for the [`RemoveKnowledgeBaseTemplateUri`](crate::client::fluent_builders::RemoveKnowledgeBaseTemplateUri) operation.
     ///
-    /// See [`RemoveKnowledgeBaseTemplateUri`](crate::client::fluent_builders::RemoveKnowledgeBaseTemplateUri) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RemoveKnowledgeBaseTemplateUriInput`](crate::input::RemoveKnowledgeBaseTemplateUriInput) with field(s):
+    ///   - [`knowledge_base_id(Option<String>)`](crate::input::RemoveKnowledgeBaseTemplateUriInput::knowledge_base_id): <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    /// - On success, responds with [`RemoveKnowledgeBaseTemplateUriOutput`](crate::output::RemoveKnowledgeBaseTemplateUriOutput)
+
+    /// - On failure, responds with [`SdkError<RemoveKnowledgeBaseTemplateUriError>`](crate::error::RemoveKnowledgeBaseTemplateUriError)
     pub fn remove_knowledge_base_template_uri(
         &self,
     ) -> fluent_builders::RemoveKnowledgeBaseTemplateUri<C, M, R> {
         fluent_builders::RemoveKnowledgeBaseTemplateUri::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SearchContent` operation.
-    ///
-    /// See [`SearchContent`](crate::client::fluent_builders::SearchContent) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`SearchContent`](crate::client::fluent_builders::SearchContent) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchContent::into_paginator).
+    ///
+    /// - Takes [`SearchContentInput`](crate::input::SearchContentInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::SearchContentInput::next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::SearchContentInput::max_results): <p>The maximum number of results to return per page.</p>
+    ///   - [`knowledge_base_id(Option<String>)`](crate::input::SearchContentInput::knowledge_base_id): <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    ///   - [`search_expression(Option<SearchExpression>)`](crate::input::SearchContentInput::search_expression): <p>The search expression to filter results.</p>
+    /// - On success, responds with [`SearchContentOutput`](crate::output::SearchContentOutput) with field(s):
+    ///   - [`content_summaries(Option<Vec<ContentSummary>>)`](crate::output::SearchContentOutput::content_summaries): <p>Summary information about the content.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::SearchContentOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<SearchContentError>`](crate::error::SearchContentError)
     pub fn search_content(&self) -> fluent_builders::SearchContent<C, M, R> {
         fluent_builders::SearchContent::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SearchSessions` operation.
-    ///
-    /// See [`SearchSessions`](crate::client::fluent_builders::SearchSessions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`SearchSessions`](crate::client::fluent_builders::SearchSessions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::SearchSessions::into_paginator).
+    ///
+    /// - Takes [`SearchSessionsInput`](crate::input::SearchSessionsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::SearchSessionsInput::next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::SearchSessionsInput::max_results): <p>The maximum number of results to return per page.</p>
+    ///   - [`assistant_id(Option<String>)`](crate::input::SearchSessionsInput::assistant_id): <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    ///   - [`search_expression(Option<SearchExpression>)`](crate::input::SearchSessionsInput::search_expression): <p>The search expression to filter results.</p>
+    /// - On success, responds with [`SearchSessionsOutput`](crate::output::SearchSessionsOutput) with field(s):
+    ///   - [`session_summaries(Option<Vec<SessionSummary>>)`](crate::output::SearchSessionsOutput::session_summaries): <p>Summary information about the sessions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::SearchSessionsOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
+    /// - On failure, responds with [`SdkError<SearchSessionsError>`](crate::error::SearchSessionsError)
     pub fn search_sessions(&self) -> fluent_builders::SearchSessions<C, M, R> {
         fluent_builders::SearchSessions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartContentUpload` operation.
+    /// Constructs a fluent builder for the [`StartContentUpload`](crate::client::fluent_builders::StartContentUpload) operation.
     ///
-    /// See [`StartContentUpload`](crate::client::fluent_builders::StartContentUpload) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartContentUploadInput`](crate::input::StartContentUploadInput) with field(s):
+    ///   - [`knowledge_base_id(Option<String>)`](crate::input::StartContentUploadInput::knowledge_base_id): <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    ///   - [`content_type(Option<String>)`](crate::input::StartContentUploadInput::content_type): <p>The type of content to upload.</p>
+    /// - On success, responds with [`StartContentUploadOutput`](crate::output::StartContentUploadOutput) with field(s):
+    ///   - [`upload_id(Option<String>)`](crate::output::StartContentUploadOutput::upload_id): <p>The identifier of the upload.</p>
+    ///   - [`url(Option<String>)`](crate::output::StartContentUploadOutput::url): <p>The URL of the upload.</p>
+    ///   - [`url_expiry(Option<DateTime>)`](crate::output::StartContentUploadOutput::url_expiry): <p>The expiration time of the URL as an epoch timestamp.</p>
+    ///   - [`headers_to_include(Option<HashMap<String, String>>)`](crate::output::StartContentUploadOutput::headers_to_include): <p>The headers to include in the upload.</p>
+    /// - On failure, responds with [`SdkError<StartContentUploadError>`](crate::error::StartContentUploadError)
     pub fn start_content_upload(&self) -> fluent_builders::StartContentUpload<C, M, R> {
         fluent_builders::StartContentUpload::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>The tags used to organize, track, or control access for this resource.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The tag keys.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateContent` operation.
+    /// Constructs a fluent builder for the [`UpdateContent`](crate::client::fluent_builders::UpdateContent) operation.
     ///
-    /// See [`UpdateContent`](crate::client::fluent_builders::UpdateContent) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateContentInput`](crate::input::UpdateContentInput) with field(s):
+    ///   - [`knowledge_base_id(Option<String>)`](crate::input::UpdateContentInput::knowledge_base_id): <p>The the identifier of the knowledge base. Can be either the ID or the ARN</p>
+    ///   - [`content_id(Option<String>)`](crate::input::UpdateContentInput::content_id): <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    ///   - [`revision_id(Option<String>)`](crate::input::UpdateContentInput::revision_id): <p>The <code>revisionId</code> of the content resource to update, taken from an earlier call to <code>GetContent</code>, <code>GetContentSummary</code>, <code>SearchContent</code>, or <code>ListContents</code>. If included, this argument acts as an optimistic lock to ensure content was not modified since it was last read. If it has been modified, this API throws a <code>PreconditionFailedException</code>.</p>
+    ///   - [`title(Option<String>)`](crate::input::UpdateContentInput::title): <p>The title of the content.</p>
+    ///   - [`override_link_out_uri(Option<String>)`](crate::input::UpdateContentInput::override_link_out_uri): <p>The URI for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content. To remove an existing <code>overrideLinkOurUri</code>, exclude this argument and set <code>removeOverrideLinkOutUri</code> to true.</p>
+    ///   - [`remove_override_link_out_uri(Option<bool>)`](crate::input::UpdateContentInput::remove_override_link_out_uri): <p>Unset the existing <code>overrideLinkOutUri</code> if it exists.</p>
+    ///   - [`metadata(Option<HashMap<String, String>>)`](crate::input::UpdateContentInput::metadata): <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
+    ///   - [`upload_id(Option<String>)`](crate::input::UpdateContentInput::upload_id): <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>. </p>
+    /// - On success, responds with [`UpdateContentOutput`](crate::output::UpdateContentOutput) with field(s):
+    ///   - [`content(Option<ContentData>)`](crate::output::UpdateContentOutput::content): <p>The content.</p>
+    /// - On failure, responds with [`SdkError<UpdateContentError>`](crate::error::UpdateContentError)
     pub fn update_content(&self) -> fluent_builders::UpdateContent<C, M, R> {
         fluent_builders::UpdateContent::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateKnowledgeBaseTemplateUri` operation.
+    /// Constructs a fluent builder for the [`UpdateKnowledgeBaseTemplateUri`](crate::client::fluent_builders::UpdateKnowledgeBaseTemplateUri) operation.
     ///
-    /// See [`UpdateKnowledgeBaseTemplateUri`](crate::client::fluent_builders::UpdateKnowledgeBaseTemplateUri) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateKnowledgeBaseTemplateUriInput`](crate::input::UpdateKnowledgeBaseTemplateUriInput) with field(s):
+    ///   - [`knowledge_base_id(Option<String>)`](crate::input::UpdateKnowledgeBaseTemplateUriInput::knowledge_base_id): <p>The the identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    ///   - [`template_uri(Option<String>)`](crate::input::UpdateKnowledgeBaseTemplateUriInput::template_uri): <p>The template URI to update.</p>
+    /// - On success, responds with [`UpdateKnowledgeBaseTemplateUriOutput`](crate::output::UpdateKnowledgeBaseTemplateUriOutput) with field(s):
+    ///   - [`knowledge_base(Option<KnowledgeBaseData>)`](crate::output::UpdateKnowledgeBaseTemplateUriOutput::knowledge_base): <p>The knowledge base to update.</p>
+    /// - On failure, responds with [`SdkError<UpdateKnowledgeBaseTemplateUriError>`](crate::error::UpdateKnowledgeBaseTemplateUriError)
     pub fn update_knowledge_base_template_uri(
         &self,
     ) -> fluent_builders::UpdateKnowledgeBaseTemplateUri<C, M, R> {

@@ -83,33 +83,57 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `DescribeGroup` operation.
+    /// Constructs a fluent builder for the [`DescribeGroup`](crate::client::fluent_builders::DescribeGroup) operation.
     ///
-    /// See [`DescribeGroup`](crate::client::fluent_builders::DescribeGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeGroupInput`](crate::input::DescribeGroupInput) with field(s):
+    ///   - [`identity_store_id(Option<String>)`](crate::input::DescribeGroupInput::identity_store_id): <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
+    ///   - [`group_id(Option<String>)`](crate::input::DescribeGroupInput::group_id): <p>The identifier for a group in the identity store.</p>
+    /// - On success, responds with [`DescribeGroupOutput`](crate::output::DescribeGroupOutput) with field(s):
+    ///   - [`group_id(Option<String>)`](crate::output::DescribeGroupOutput::group_id): <p>The identifier for a group in the identity store.</p>
+    ///   - [`display_name(Option<String>)`](crate::output::DescribeGroupOutput::display_name): <p>Contains the group’s display name value. The length limit is 1,024 characters. This value can consist of letters, accented characters, symbols, numbers, punctuation, tab, new line, carriage return, space, and nonbreaking space in this attribute. The characters <code>&lt;&gt;;:%</code> are excluded. This value is specified at the time that the group is created and stored as an attribute of the group object in the identity store.</p>
+    /// - On failure, responds with [`SdkError<DescribeGroupError>`](crate::error::DescribeGroupError)
     pub fn describe_group(&self) -> fluent_builders::DescribeGroup<C, M, R> {
         fluent_builders::DescribeGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeUser` operation.
+    /// Constructs a fluent builder for the [`DescribeUser`](crate::client::fluent_builders::DescribeUser) operation.
     ///
-    /// See [`DescribeUser`](crate::client::fluent_builders::DescribeUser) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeUserInput`](crate::input::DescribeUserInput) with field(s):
+    ///   - [`identity_store_id(Option<String>)`](crate::input::DescribeUserInput::identity_store_id): <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
+    ///   - [`user_id(Option<String>)`](crate::input::DescribeUserInput::user_id): <p>The identifier for a user in the identity store.</p>
+    /// - On success, responds with [`DescribeUserOutput`](crate::output::DescribeUserOutput) with field(s):
+    ///   - [`user_name(Option<String>)`](crate::output::DescribeUserOutput::user_name): <p>Contains the user’s user name value. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. The characters <code>&lt;&gt;;:%</code> are excluded. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
+    ///   - [`user_id(Option<String>)`](crate::output::DescribeUserOutput::user_id): <p>The identifier for a user in the identity store.</p>
+    /// - On failure, responds with [`SdkError<DescribeUserError>`](crate::error::DescribeUserError)
     pub fn describe_user(&self) -> fluent_builders::DescribeUser<C, M, R> {
         fluent_builders::DescribeUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListGroups` operation.
-    ///
-    /// See [`ListGroups`](crate::client::fluent_builders::ListGroups) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListGroups`](crate::client::fluent_builders::ListGroups) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListGroups::into_paginator).
+    ///
+    /// - Takes [`ListGroupsInput`](crate::input::ListGroupsInput) with field(s):
+    ///   - [`identity_store_id(Option<String>)`](crate::input::ListGroupsInput::identity_store_id): <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListGroupsInput::max_results): <p>The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results to return in one page. The length limit is 50 characters.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListGroupsInput::next_token): <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.</p>
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::ListGroupsInput::filters): <p>A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> request. </p>
+    /// - On success, responds with [`ListGroupsOutput`](crate::output::ListGroupsOutput) with field(s):
+    ///   - [`groups(Option<Vec<Group>>)`](crate::output::ListGroupsOutput::groups): <p>A list of <code>Group</code> objects in the identity store.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListGroupsOutput::next_token): <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it1 is used in the API request to search for the next page.</p>
+    /// - On failure, responds with [`SdkError<ListGroupsError>`](crate::error::ListGroupsError)
     pub fn list_groups(&self) -> fluent_builders::ListGroups<C, M, R> {
         fluent_builders::ListGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListUsers` operation.
-    ///
-    /// See [`ListUsers`](crate::client::fluent_builders::ListUsers) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListUsers`](crate::client::fluent_builders::ListUsers) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListUsers::into_paginator).
+    ///
+    /// - Takes [`ListUsersInput`](crate::input::ListUsersInput) with field(s):
+    ///   - [`identity_store_id(Option<String>)`](crate::input::ListUsersInput::identity_store_id): <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListUsersInput::max_results): <p>The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results to return in one page. The length limit is 50 characters.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListUsersInput::next_token): <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.</p>
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::ListUsersInput::filters): <p>A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> request. </p>
+    /// - On success, responds with [`ListUsersOutput`](crate::output::ListUsersOutput) with field(s):
+    ///   - [`users(Option<Vec<User>>)`](crate::output::ListUsersOutput::users): <p>A list of <code>User</code> objects in the identity store.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListUsersOutput::next_token): <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.</p>
+    /// - On failure, responds with [`SdkError<ListUsersError>`](crate::error::ListUsersError)
     pub fn list_users(&self) -> fluent_builders::ListUsers<C, M, R> {
         fluent_builders::ListUsers::new(self.handle.clone())
     }

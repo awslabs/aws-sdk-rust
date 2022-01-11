@@ -83,47 +83,112 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CompleteSnapshot` operation.
+    /// Constructs a fluent builder for the [`CompleteSnapshot`](crate::client::fluent_builders::CompleteSnapshot) operation.
     ///
-    /// See [`CompleteSnapshot`](crate::client::fluent_builders::CompleteSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CompleteSnapshotInput`](crate::input::CompleteSnapshotInput) with field(s):
+    ///   - [`snapshot_id(Option<String>)`](crate::input::CompleteSnapshotInput::snapshot_id): <p>The ID of the snapshot.</p>
+    ///   - [`changed_blocks_count(Option<i32>)`](crate::input::CompleteSnapshotInput::changed_blocks_count): <p>The number of blocks that were written to the snapshot.</p>
+    ///   - [`checksum(Option<String>)`](crate::input::CompleteSnapshotInput::checksum): <p>An aggregated Base-64 SHA256 checksum based on the checksums of each written block.</p>  <p>To generate the aggregated checksum using the linear aggregation method, arrange the checksums for each written block in ascending order of their block index, concatenate them to form a single string, and then generate the checksum on the entire string using the SHA256 algorithm.</p>
+    ///   - [`checksum_algorithm(Option<ChecksumAlgorithm>)`](crate::input::CompleteSnapshotInput::checksum_algorithm): <p>The algorithm used to generate the checksum. Currently, the only supported algorithm is <code>SHA256</code>.</p>
+    ///   - [`checksum_aggregation_method(Option<ChecksumAggregationMethod>)`](crate::input::CompleteSnapshotInput::checksum_aggregation_method): <p>The aggregation method used to generate the checksum. Currently, the only supported aggregation method is <code>LINEAR</code>.</p>
+    /// - On success, responds with [`CompleteSnapshotOutput`](crate::output::CompleteSnapshotOutput) with field(s):
+    ///   - [`status(Option<Status>)`](crate::output::CompleteSnapshotOutput::status): <p>The status of the snapshot.</p>
+    /// - On failure, responds with [`SdkError<CompleteSnapshotError>`](crate::error::CompleteSnapshotError)
     pub fn complete_snapshot(&self) -> fluent_builders::CompleteSnapshot<C, M, R> {
         fluent_builders::CompleteSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSnapshotBlock` operation.
+    /// Constructs a fluent builder for the [`GetSnapshotBlock`](crate::client::fluent_builders::GetSnapshotBlock) operation.
     ///
-    /// See [`GetSnapshotBlock`](crate::client::fluent_builders::GetSnapshotBlock) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetSnapshotBlockInput`](crate::input::GetSnapshotBlockInput) with field(s):
+    ///   - [`snapshot_id(Option<String>)`](crate::input::GetSnapshotBlockInput::snapshot_id): <p>The ID of the snapshot containing the block from which to get data.</p>
+    ///   - [`block_index(Option<i32>)`](crate::input::GetSnapshotBlockInput::block_index): <p>The block index of the block from which to get data.</p>  <p>Obtain the <code>BlockIndex</code> by running the <code>ListChangedBlocks</code> or <code>ListSnapshotBlocks</code> operations.</p>
+    ///   - [`block_token(Option<String>)`](crate::input::GetSnapshotBlockInput::block_token): <p>The block token of the block from which to get data.</p>  <p>Obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or <code>ListSnapshotBlocks</code> operations.</p>
+    /// - On success, responds with [`GetSnapshotBlockOutput`](crate::output::GetSnapshotBlockOutput) with field(s):
+    ///   - [`data_length(Option<i32>)`](crate::output::GetSnapshotBlockOutput::data_length): <p>The size of the data in the block.</p>
+    ///   - [`block_data(byte_stream::ByteStream)`](crate::output::GetSnapshotBlockOutput::block_data): <p>The data content of the block.</p>
+    ///   - [`checksum(Option<String>)`](crate::output::GetSnapshotBlockOutput::checksum): <p>The checksum generated for the block, which is Base64 encoded.</p>
+    ///   - [`checksum_algorithm(Option<ChecksumAlgorithm>)`](crate::output::GetSnapshotBlockOutput::checksum_algorithm): <p>The algorithm used to generate the checksum for the block, such as SHA256.</p>
+    /// - On failure, responds with [`SdkError<GetSnapshotBlockError>`](crate::error::GetSnapshotBlockError)
     pub fn get_snapshot_block(&self) -> fluent_builders::GetSnapshotBlock<C, M, R> {
         fluent_builders::GetSnapshotBlock::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListChangedBlocks` operation.
-    ///
-    /// See [`ListChangedBlocks`](crate::client::fluent_builders::ListChangedBlocks) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListChangedBlocks`](crate::client::fluent_builders::ListChangedBlocks) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChangedBlocks::into_paginator).
+    ///
+    /// - Takes [`ListChangedBlocksInput`](crate::input::ListChangedBlocksInput) with field(s):
+    ///   - [`first_snapshot_id(Option<String>)`](crate::input::ListChangedBlocksInput::first_snapshot_id): <p>The ID of the first snapshot to use for the comparison.</p> <important>   <p>The <code>FirstSnapshotID</code> parameter must be specified with a <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>  </important>
+    ///   - [`second_snapshot_id(Option<String>)`](crate::input::ListChangedBlocksInput::second_snapshot_id): <p>The ID of the second snapshot to use for the comparison.</p> <important>   <p>The <code>SecondSnapshotId</code> parameter must be specified with a <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>  </important>
+    ///   - [`next_token(Option<String>)`](crate::input::ListChangedBlocksInput::next_token): <p>The token to request the next page of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListChangedBlocksInput::max_results): <p>The number of results to return.</p>
+    ///   - [`starting_block_index(Option<i32>)`](crate::input::ListChangedBlocksInput::starting_block_index): <p>The block index from which the comparison should start.</p>  <p>The list in the response will start from this block index or the next valid block index in the snapshots.</p>
+    /// - On success, responds with [`ListChangedBlocksOutput`](crate::output::ListChangedBlocksOutput) with field(s):
+    ///   - [`changed_blocks(Option<Vec<ChangedBlock>>)`](crate::output::ListChangedBlocksOutput::changed_blocks): <p>An array of objects containing information about the changed blocks.</p>
+    ///   - [`expiry_time(Option<DateTime>)`](crate::output::ListChangedBlocksOutput::expiry_time): <p>The time when the <code>BlockToken</code> expires.</p>
+    ///   - [`volume_size(Option<i64>)`](crate::output::ListChangedBlocksOutput::volume_size): <p>The size of the volume in GB.</p>
+    ///   - [`block_size(Option<i32>)`](crate::output::ListChangedBlocksOutput::block_size): <p>The size of the blocks in the snapshot, in bytes.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListChangedBlocksOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<ListChangedBlocksError>`](crate::error::ListChangedBlocksError)
     pub fn list_changed_blocks(&self) -> fluent_builders::ListChangedBlocks<C, M, R> {
         fluent_builders::ListChangedBlocks::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSnapshotBlocks` operation.
-    ///
-    /// See [`ListSnapshotBlocks`](crate::client::fluent_builders::ListSnapshotBlocks) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListSnapshotBlocks`](crate::client::fluent_builders::ListSnapshotBlocks) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSnapshotBlocks::into_paginator).
+    ///
+    /// - Takes [`ListSnapshotBlocksInput`](crate::input::ListSnapshotBlocksInput) with field(s):
+    ///   - [`snapshot_id(Option<String>)`](crate::input::ListSnapshotBlocksInput::snapshot_id): <p>The ID of the snapshot from which to get block indexes and block tokens.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListSnapshotBlocksInput::next_token): <p>The token to request the next page of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListSnapshotBlocksInput::max_results): <p>The number of results to return.</p>
+    ///   - [`starting_block_index(Option<i32>)`](crate::input::ListSnapshotBlocksInput::starting_block_index): <p>The block index from which the list should start. The list in the response will start from this block index or the next valid block index in the snapshot.</p>
+    /// - On success, responds with [`ListSnapshotBlocksOutput`](crate::output::ListSnapshotBlocksOutput) with field(s):
+    ///   - [`blocks(Option<Vec<Block>>)`](crate::output::ListSnapshotBlocksOutput::blocks): <p>An array of objects containing information about the blocks.</p>
+    ///   - [`expiry_time(Option<DateTime>)`](crate::output::ListSnapshotBlocksOutput::expiry_time): <p>The time when the <code>BlockToken</code> expires.</p>
+    ///   - [`volume_size(Option<i64>)`](crate::output::ListSnapshotBlocksOutput::volume_size): <p>The size of the volume in GB.</p>
+    ///   - [`block_size(Option<i32>)`](crate::output::ListSnapshotBlocksOutput::block_size): <p>The size of the blocks in the snapshot, in bytes.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSnapshotBlocksOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<ListSnapshotBlocksError>`](crate::error::ListSnapshotBlocksError)
     pub fn list_snapshot_blocks(&self) -> fluent_builders::ListSnapshotBlocks<C, M, R> {
         fluent_builders::ListSnapshotBlocks::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutSnapshotBlock` operation.
+    /// Constructs a fluent builder for the [`PutSnapshotBlock`](crate::client::fluent_builders::PutSnapshotBlock) operation.
     ///
-    /// See [`PutSnapshotBlock`](crate::client::fluent_builders::PutSnapshotBlock) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutSnapshotBlockInput`](crate::input::PutSnapshotBlockInput) with field(s):
+    ///   - [`snapshot_id(Option<String>)`](crate::input::PutSnapshotBlockInput::snapshot_id): <p>The ID of the snapshot.</p>
+    ///   - [`block_index(Option<i32>)`](crate::input::PutSnapshotBlockInput::block_index): <p>The block index of the block in which to write the data. A block index is a logical index in units of <code>512</code> KiB blocks. To identify the block index, divide the logical offset of the data in the logical volume by the block size (logical offset of data/<code>524288</code>). The logical offset of the data must be <code>512</code> KiB aligned.</p>
+    ///   - [`block_data(byte_stream::ByteStream)`](crate::input::PutSnapshotBlockInput::block_data): <p>The data to write to the block.</p>  <p>The block data is not signed as part of the Signature Version 4 signing process. As a result, you must generate and provide a Base64-encoded SHA256 checksum for the block data using the <b>x-amz-Checksum</b> header. Also, you must specify the checksum algorithm using the <b>x-amz-Checksum-Algorithm</b> header. The checksum that you provide is part of the Signature Version 4 signing process. It is validated against a checksum generated by Amazon EBS to ensure the validity and authenticity of the data. If the checksums do not correspond, the request fails. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-checksums"> Using checksums with the EBS direct APIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    ///   - [`data_length(Option<i32>)`](crate::input::PutSnapshotBlockInput::data_length): <p>The size of the data to write to the block, in bytes. Currently, the only supported size is <code>524288</code> bytes.</p>  <p>Valid values: <code>524288</code> </p>
+    ///   - [`progress(Option<i32>)`](crate::input::PutSnapshotBlockInput::progress): <p>The progress of the write process, as a percentage.</p>
+    ///   - [`checksum(Option<String>)`](crate::input::PutSnapshotBlockInput::checksum): <p>A Base64-encoded SHA256 checksum of the data. Only SHA256 checksums are supported.</p>
+    ///   - [`checksum_algorithm(Option<ChecksumAlgorithm>)`](crate::input::PutSnapshotBlockInput::checksum_algorithm): <p>The algorithm used to generate the checksum. Currently, the only supported algorithm is <code>SHA256</code>.</p>
+    /// - On success, responds with [`PutSnapshotBlockOutput`](crate::output::PutSnapshotBlockOutput) with field(s):
+    ///   - [`checksum(Option<String>)`](crate::output::PutSnapshotBlockOutput::checksum): <p>The SHA256 checksum generated for the block data by Amazon EBS.</p>
+    ///   - [`checksum_algorithm(Option<ChecksumAlgorithm>)`](crate::output::PutSnapshotBlockOutput::checksum_algorithm): <p>The algorithm used by Amazon EBS to generate the checksum.</p>
+    /// - On failure, responds with [`SdkError<PutSnapshotBlockError>`](crate::error::PutSnapshotBlockError)
     pub fn put_snapshot_block(&self) -> fluent_builders::PutSnapshotBlock<C, M, R> {
         fluent_builders::PutSnapshotBlock::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartSnapshot` operation.
+    /// Constructs a fluent builder for the [`StartSnapshot`](crate::client::fluent_builders::StartSnapshot) operation.
     ///
-    /// See [`StartSnapshot`](crate::client::fluent_builders::StartSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartSnapshotInput`](crate::input::StartSnapshotInput) with field(s):
+    ///   - [`volume_size(Option<i64>)`](crate::input::StartSnapshotInput::volume_size): <p>The size of the volume, in GiB. The maximum size is <code>65536</code> GiB (64 TiB).</p>
+    ///   - [`parent_snapshot_id(Option<String>)`](crate::input::StartSnapshotInput::parent_snapshot_id): <p>The ID of the parent snapshot. If there is no parent snapshot, or if you are creating the first snapshot for an on-premises volume, omit this parameter.</p>  <p>If your account is enabled for encryption by default, you cannot use an unencrypted snapshot as a parent snapshot. You must first create an encrypted copy of the parent snapshot using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopySnapshot.html">CopySnapshot</a>.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::StartSnapshotInput::tags): <p>The tags to apply to the snapshot.</p>
+    ///   - [`description(Option<String>)`](crate::input::StartSnapshotInput::description): <p>A description for the snapshot.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::StartSnapshotInput::client_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully. The subsequent retries with the same client token return the result from the original successful request and they have no additional effect.</p>  <p>If you do not specify a client token, one is automatically generated by the Amazon Web Services SDK.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-direct-api-idempotency.html"> Idempotency for StartSnapshot API</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    ///   - [`encrypted(Option<bool>)`](crate::input::StartSnapshotInput::encrypted): <p>Indicates whether to encrypt the snapshot. To create an encrypted snapshot, specify <code>true</code>. To create an unencrypted snapshot, omit this parameter.</p>  <p>If you specify a value for <b>ParentSnapshotId</b>, omit this parameter.</p>  <p>If you specify <code>true</code>, the snapshot is encrypted using the KMS key specified using the <b>KmsKeyArn</b> parameter. If no value is specified for <b>KmsKeyArn</b>, the default KMS key for your account is used. If no default KMS key has been specified for your account, the Amazon Web Services managed KMS key is used. To set a default KMS key for your account, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyEbsDefaultKmsKeyId.html"> ModifyEbsDefaultKmsKeyId</a>.</p>  <p>If your account is enabled for encryption by default, you cannot set this parameter to <code>false</code>. In this case, you can omit this parameter.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-encryption"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    ///   - [`kms_key_arn(Option<String>)`](crate::input::StartSnapshotInput::kms_key_arn): <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key to be used to encrypt the snapshot. If you do not specify a KMS key, the default Amazon Web Services managed KMS key is used.</p>  <p>If you specify a <b>ParentSnapshotId</b>, omit this parameter; the snapshot will be encrypted using the same KMS key that was used to encrypt the parent snapshot.</p>  <p>If <b>Encrypted</b> is set to <code>true</code>, you must specify a KMS key ARN. </p>
+    ///   - [`timeout(Option<i32>)`](crate::input::StartSnapshotInput::timeout): <p>The amount of time (in minutes) after which the snapshot is automatically cancelled if:</p>  <ul>   <li> <p>No blocks are written to the snapshot.</p> </li>   <li> <p>The snapshot is not completed after writing the last block of data.</p> </li>  </ul>  <p>If no value is specified, the timeout defaults to <code>60</code> minutes.</p>
+    /// - On success, responds with [`StartSnapshotOutput`](crate::output::StartSnapshotOutput) with field(s):
+    ///   - [`description(Option<String>)`](crate::output::StartSnapshotOutput::description): <p>The description of the snapshot.</p>
+    ///   - [`snapshot_id(Option<String>)`](crate::output::StartSnapshotOutput::snapshot_id): <p>The ID of the snapshot.</p>
+    ///   - [`owner_id(Option<String>)`](crate::output::StartSnapshotOutput::owner_id): <p>The Amazon Web Services account ID of the snapshot owner.</p>
+    ///   - [`status(Option<Status>)`](crate::output::StartSnapshotOutput::status): <p>The status of the snapshot.</p>
+    ///   - [`start_time(Option<DateTime>)`](crate::output::StartSnapshotOutput::start_time): <p>The timestamp when the snapshot was created.</p>
+    ///   - [`volume_size(Option<i64>)`](crate::output::StartSnapshotOutput::volume_size): <p>The size of the volume, in GiB.</p>
+    ///   - [`block_size(Option<i32>)`](crate::output::StartSnapshotOutput::block_size): <p>The size of the blocks in the snapshot, in bytes.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::StartSnapshotOutput::tags): <p>The tags applied to the snapshot. You can specify up to 50 tags per snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"> Tagging your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    ///   - [`parent_snapshot_id(Option<String>)`](crate::output::StartSnapshotOutput::parent_snapshot_id): <p>The ID of the parent snapshot.</p>
+    ///   - [`kms_key_arn(Option<String>)`](crate::output::StartSnapshotOutput::kms_key_arn): <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the snapshot.</p>
+    /// - On failure, responds with [`SdkError<StartSnapshotError>`](crate::error::StartSnapshotError)
     pub fn start_snapshot(&self) -> fluent_builders::StartSnapshot<C, M, R> {
         fluent_builders::StartSnapshot::new(self.handle.clone())
     }

@@ -83,97 +83,173 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateNotificationRule` operation.
+    /// Constructs a fluent builder for the [`CreateNotificationRule`](crate::client::fluent_builders::CreateNotificationRule) operation.
     ///
-    /// See [`CreateNotificationRule`](crate::client::fluent_builders::CreateNotificationRule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateNotificationRuleInput`](crate::input::CreateNotificationRuleInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateNotificationRuleInput::name): <p>The name for the notification rule. Notifictaion rule names must be unique in your AWS account.</p>
+    ///   - [`event_type_ids(Option<Vec<String>>)`](crate::input::CreateNotificationRuleInput::event_type_ids): <p>A list of event types associated with this notification rule. For a list of allowed events, see <code>EventTypeSummary</code>.</p>
+    ///   - [`resource(Option<String>)`](crate::input::CreateNotificationRuleInput::resource): <p>The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported resources include pipelines in AWS CodePipeline, repositories in AWS CodeCommit, and build projects in AWS CodeBuild.</p>
+    ///   - [`targets(Option<Vec<Target>>)`](crate::input::CreateNotificationRuleInput::targets): <p>A list of Amazon Resource Names (ARNs) of SNS topics to associate with the notification rule.</p>
+    ///   - [`detail_type(Option<DetailType>)`](crate::input::CreateNotificationRuleInput::detail_type): <p>The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::CreateNotificationRuleInput::client_request_token): <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request with the same parameters is received and a token is included, the request returns information about the initial request that used that token.</p> <note>   <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for you.</p>  </note>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateNotificationRuleInput::tags): <p>A list of tags to apply to this notification rule. Key names cannot start with "aws". </p>
+    ///   - [`status(Option<NotificationRuleStatus>)`](crate::input::CreateNotificationRuleInput::status): <p>The status of the notification rule. The default value is ENABLED. If the status is set to DISABLED, notifications aren't sent for the notification rule.</p>
+    /// - On success, responds with [`CreateNotificationRuleOutput`](crate::output::CreateNotificationRuleOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateNotificationRuleOutput::arn): <p>The Amazon Resource Name (ARN) of the notification rule.</p>
+    /// - On failure, responds with [`SdkError<CreateNotificationRuleError>`](crate::error::CreateNotificationRuleError)
     pub fn create_notification_rule(&self) -> fluent_builders::CreateNotificationRule<C, M, R> {
         fluent_builders::CreateNotificationRule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteNotificationRule` operation.
+    /// Constructs a fluent builder for the [`DeleteNotificationRule`](crate::client::fluent_builders::DeleteNotificationRule) operation.
     ///
-    /// See [`DeleteNotificationRule`](crate::client::fluent_builders::DeleteNotificationRule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteNotificationRuleInput`](crate::input::DeleteNotificationRuleInput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::input::DeleteNotificationRuleInput::arn): <p>The Amazon Resource Name (ARN) of the notification rule you want to delete.</p>
+    /// - On success, responds with [`DeleteNotificationRuleOutput`](crate::output::DeleteNotificationRuleOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::DeleteNotificationRuleOutput::arn): <p>The Amazon Resource Name (ARN) of the deleted notification rule.</p>
+    /// - On failure, responds with [`SdkError<DeleteNotificationRuleError>`](crate::error::DeleteNotificationRuleError)
     pub fn delete_notification_rule(&self) -> fluent_builders::DeleteNotificationRule<C, M, R> {
         fluent_builders::DeleteNotificationRule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteTarget` operation.
+    /// Constructs a fluent builder for the [`DeleteTarget`](crate::client::fluent_builders::DeleteTarget) operation.
     ///
-    /// See [`DeleteTarget`](crate::client::fluent_builders::DeleteTarget) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteTargetInput`](crate::input::DeleteTargetInput) with field(s):
+    ///   - [`target_address(Option<String>)`](crate::input::DeleteTargetInput::target_address): <p>The Amazon Resource Name (ARN) of the SNS topic to delete.</p>
+    ///   - [`force_unsubscribe_all(bool)`](crate::input::DeleteTargetInput::force_unsubscribe_all): <p>A Boolean value that can be used to delete all associations with this SNS topic. The default value is FALSE. If set to TRUE, all associations between that target and every notification rule in your AWS account are deleted.</p>
+    /// - On success, responds with [`DeleteTargetOutput`](crate::output::DeleteTargetOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteTargetError>`](crate::error::DeleteTargetError)
     pub fn delete_target(&self) -> fluent_builders::DeleteTarget<C, M, R> {
         fluent_builders::DeleteTarget::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeNotificationRule` operation.
+    /// Constructs a fluent builder for the [`DescribeNotificationRule`](crate::client::fluent_builders::DescribeNotificationRule) operation.
     ///
-    /// See [`DescribeNotificationRule`](crate::client::fluent_builders::DescribeNotificationRule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeNotificationRuleInput`](crate::input::DescribeNotificationRuleInput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::input::DescribeNotificationRuleInput::arn): <p>The Amazon Resource Name (ARN) of the notification rule.</p>
+    /// - On success, responds with [`DescribeNotificationRuleOutput`](crate::output::DescribeNotificationRuleOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::DescribeNotificationRuleOutput::arn): <p>The Amazon Resource Name (ARN) of the notification rule.</p>
+    ///   - [`name(Option<String>)`](crate::output::DescribeNotificationRuleOutput::name): <p>The name of the notification rule.</p>
+    ///   - [`event_types(Option<Vec<EventTypeSummary>>)`](crate::output::DescribeNotificationRuleOutput::event_types): <p>A list of the event types associated with the notification rule.</p>
+    ///   - [`resource(Option<String>)`](crate::output::DescribeNotificationRuleOutput::resource): <p>The Amazon Resource Name (ARN) of the resource associated with the notification rule.</p>
+    ///   - [`targets(Option<Vec<TargetSummary>>)`](crate::output::DescribeNotificationRuleOutput::targets): <p>A list of the SNS topics associated with the notification rule.</p>
+    ///   - [`detail_type(Option<DetailType>)`](crate::output::DescribeNotificationRuleOutput::detail_type): <p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+    ///   - [`created_by(Option<String>)`](crate::output::DescribeNotificationRuleOutput::created_by): <p>The name or email alias of the person who created the notification rule.</p>
+    ///   - [`status(Option<NotificationRuleStatus>)`](crate::output::DescribeNotificationRuleOutput::status): <p>The status of the notification rule. Valid statuses are on (sending notifications) or off (not sending notifications).</p>
+    ///   - [`created_timestamp(Option<DateTime>)`](crate::output::DescribeNotificationRuleOutput::created_timestamp): <p>The date and time the notification rule was created, in timestamp format.</p>
+    ///   - [`last_modified_timestamp(Option<DateTime>)`](crate::output::DescribeNotificationRuleOutput::last_modified_timestamp): <p>The date and time the notification rule was most recently updated, in timestamp format.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeNotificationRuleOutput::tags): <p>The tags associated with the notification rule.</p>
+    /// - On failure, responds with [`SdkError<DescribeNotificationRuleError>`](crate::error::DescribeNotificationRuleError)
     pub fn describe_notification_rule(&self) -> fluent_builders::DescribeNotificationRule<C, M, R> {
         fluent_builders::DescribeNotificationRule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListEventTypes` operation.
-    ///
-    /// See [`ListEventTypes`](crate::client::fluent_builders::ListEventTypes) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListEventTypes`](crate::client::fluent_builders::ListEventTypes) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEventTypes::into_paginator).
+    ///
+    /// - Takes [`ListEventTypesInput`](crate::input::ListEventTypesInput) with field(s):
+    ///   - [`filters(Option<Vec<ListEventTypesFilter>>)`](crate::input::ListEventTypesInput::filters): <p>The filters to use to return information by service or resource type.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListEventTypesInput::next_token): <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListEventTypesInput::max_results): <p>A non-negative integer used to limit the number of returned results. The default number is 50. The maximum number of results that can be returned is 100.</p>
+    /// - On success, responds with [`ListEventTypesOutput`](crate::output::ListEventTypesOutput) with field(s):
+    ///   - [`event_types(Option<Vec<EventTypeSummary>>)`](crate::output::ListEventTypesOutput::event_types): <p>Information about each event, including service name, resource type, event ID, and event name.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListEventTypesOutput::next_token): <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
+    /// - On failure, responds with [`SdkError<ListEventTypesError>`](crate::error::ListEventTypesError)
     pub fn list_event_types(&self) -> fluent_builders::ListEventTypes<C, M, R> {
         fluent_builders::ListEventTypes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListNotificationRules` operation.
-    ///
-    /// See [`ListNotificationRules`](crate::client::fluent_builders::ListNotificationRules) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListNotificationRules`](crate::client::fluent_builders::ListNotificationRules) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListNotificationRules::into_paginator).
+    ///
+    /// - Takes [`ListNotificationRulesInput`](crate::input::ListNotificationRulesInput) with field(s):
+    ///   - [`filters(Option<Vec<ListNotificationRulesFilter>>)`](crate::input::ListNotificationRulesInput::filters): <p>The filters to use to return information by service or resource type. For valid values, see <code>ListNotificationRulesFilter</code>.</p> <note>   <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>  </note>
+    ///   - [`next_token(Option<String>)`](crate::input::ListNotificationRulesInput::next_token): <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListNotificationRulesInput::max_results): <p>A non-negative integer used to limit the number of returned results. The maximum number of results that can be returned is 100.</p>
+    /// - On success, responds with [`ListNotificationRulesOutput`](crate::output::ListNotificationRulesOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListNotificationRulesOutput::next_token): <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
+    ///   - [`notification_rules(Option<Vec<NotificationRuleSummary>>)`](crate::output::ListNotificationRulesOutput::notification_rules): <p>The list of notification rules for the AWS account, by Amazon Resource Name (ARN) and ID. </p>
+    /// - On failure, responds with [`SdkError<ListNotificationRulesError>`](crate::error::ListNotificationRulesError)
     pub fn list_notification_rules(&self) -> fluent_builders::ListNotificationRules<C, M, R> {
         fluent_builders::ListNotificationRules::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::input::ListTagsForResourceInput::arn): <p>The Amazon Resource Name (ARN) for the notification rule.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags associated with the notification rule.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTargets` operation.
-    ///
-    /// See [`ListTargets`](crate::client::fluent_builders::ListTargets) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListTargets`](crate::client::fluent_builders::ListTargets) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTargets::into_paginator).
+    ///
+    /// - Takes [`ListTargetsInput`](crate::input::ListTargetsInput) with field(s):
+    ///   - [`filters(Option<Vec<ListTargetsFilter>>)`](crate::input::ListTargetsInput::filters): <p>The filters to use to return information by service or resource type. Valid filters include target type, target address, and target status.</p> <note>   <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>  </note>
+    ///   - [`next_token(Option<String>)`](crate::input::ListTargetsInput::next_token): <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListTargetsInput::max_results): <p>A non-negative integer used to limit the number of returned results. The maximum number of results that can be returned is 100.</p>
+    /// - On success, responds with [`ListTargetsOutput`](crate::output::ListTargetsOutput) with field(s):
+    ///   - [`targets(Option<Vec<TargetSummary>>)`](crate::output::ListTargetsOutput::targets): <p>The list of notification rule targets. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTargetsOutput::next_token): <p>An enumeration token that can be used in a request to return the next batch of results.</p>
+    /// - On failure, responds with [`SdkError<ListTargetsError>`](crate::error::ListTargetsError)
     pub fn list_targets(&self) -> fluent_builders::ListTargets<C, M, R> {
         fluent_builders::ListTargets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `Subscribe` operation.
+    /// Constructs a fluent builder for the [`Subscribe`](crate::client::fluent_builders::Subscribe) operation.
     ///
-    /// See [`Subscribe`](crate::client::fluent_builders::Subscribe) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`SubscribeInput`](crate::input::SubscribeInput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::input::SubscribeInput::arn): <p>The Amazon Resource Name (ARN) of the notification rule for which you want to create the association.</p>
+    ///   - [`target(Option<Target>)`](crate::input::SubscribeInput::target): <p>Information about the SNS topics associated with a notification rule.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::SubscribeInput::client_request_token): <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
+    /// - On success, responds with [`SubscribeOutput`](crate::output::SubscribeOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::SubscribeOutput::arn): <p>The Amazon Resource Name (ARN) of the notification rule for which you have created assocations.</p>
+    /// - On failure, responds with [`SdkError<SubscribeError>`](crate::error::SubscribeError)
     pub fn subscribe(&self) -> fluent_builders::Subscribe<C, M, R> {
         fluent_builders::Subscribe::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::input::TagResourceInput::arn): <p>The Amazon Resource Name (ARN) of the notification rule to tag.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>The list of tags to associate with the resource. Tag key names cannot start with "aws".</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::TagResourceOutput::tags): <p>The list of tags associated with the resource.</p>
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `Unsubscribe` operation.
+    /// Constructs a fluent builder for the [`Unsubscribe`](crate::client::fluent_builders::Unsubscribe) operation.
     ///
-    /// See [`Unsubscribe`](crate::client::fluent_builders::Unsubscribe) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UnsubscribeInput`](crate::input::UnsubscribeInput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::input::UnsubscribeInput::arn): <p>The Amazon Resource Name (ARN) of the notification rule.</p>
+    ///   - [`target_address(Option<String>)`](crate::input::UnsubscribeInput::target_address): <p>The ARN of the SNS topic to unsubscribe from the notification rule.</p>
+    /// - On success, responds with [`UnsubscribeOutput`](crate::output::UnsubscribeOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::UnsubscribeOutput::arn): <p>The Amazon Resource Name (ARN) of the the notification rule from which you have removed a subscription.</p>
+    /// - On failure, responds with [`SdkError<UnsubscribeError>`](crate::error::UnsubscribeError)
     pub fn unsubscribe(&self) -> fluent_builders::Unsubscribe<C, M, R> {
         fluent_builders::Unsubscribe::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::input::UntagResourceInput::arn): <p>The Amazon Resource Name (ARN) of the notification rule from which to remove the tags.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The key names of the tags to remove.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateNotificationRule` operation.
+    /// Constructs a fluent builder for the [`UpdateNotificationRule`](crate::client::fluent_builders::UpdateNotificationRule) operation.
     ///
-    /// See [`UpdateNotificationRule`](crate::client::fluent_builders::UpdateNotificationRule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateNotificationRuleInput`](crate::input::UpdateNotificationRuleInput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::input::UpdateNotificationRuleInput::arn): <p>The Amazon Resource Name (ARN) of the notification rule.</p>
+    ///   - [`name(Option<String>)`](crate::input::UpdateNotificationRuleInput::name): <p>The name of the notification rule.</p>
+    ///   - [`status(Option<NotificationRuleStatus>)`](crate::input::UpdateNotificationRuleInput::status): <p>The status of the notification rule. Valid statuses include enabled (sending notifications) or disabled (not sending notifications).</p>
+    ///   - [`event_type_ids(Option<Vec<String>>)`](crate::input::UpdateNotificationRuleInput::event_type_ids): <p>A list of event types associated with this notification rule.</p>
+    ///   - [`targets(Option<Vec<Target>>)`](crate::input::UpdateNotificationRuleInput::targets): <p>The address and type of the targets to receive notifications from this notification rule.</p>
+    ///   - [`detail_type(Option<DetailType>)`](crate::input::UpdateNotificationRuleInput::detail_type): <p>The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+    /// - On success, responds with [`UpdateNotificationRuleOutput`](crate::output::UpdateNotificationRuleOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateNotificationRuleError>`](crate::error::UpdateNotificationRuleError)
     pub fn update_notification_rule(&self) -> fluent_builders::UpdateNotificationRule<C, M, R> {
         fluent_builders::UpdateNotificationRule::new(self.handle.clone())
     }

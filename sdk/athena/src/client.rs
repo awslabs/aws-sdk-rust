@@ -83,250 +83,420 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `BatchGetNamedQuery` operation.
+    /// Constructs a fluent builder for the [`BatchGetNamedQuery`](crate::client::fluent_builders::BatchGetNamedQuery) operation.
     ///
-    /// See [`BatchGetNamedQuery`](crate::client::fluent_builders::BatchGetNamedQuery) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchGetNamedQueryInput`](crate::input::BatchGetNamedQueryInput) with field(s):
+    ///   - [`named_query_ids(Option<Vec<String>>)`](crate::input::BatchGetNamedQueryInput::named_query_ids): <p>An array of query IDs.</p>
+    /// - On success, responds with [`BatchGetNamedQueryOutput`](crate::output::BatchGetNamedQueryOutput) with field(s):
+    ///   - [`named_queries(Option<Vec<NamedQuery>>)`](crate::output::BatchGetNamedQueryOutput::named_queries): <p>Information about the named query IDs submitted.</p>
+    ///   - [`unprocessed_named_query_ids(Option<Vec<UnprocessedNamedQueryId>>)`](crate::output::BatchGetNamedQueryOutput::unprocessed_named_query_ids): <p>Information about provided query IDs.</p>
+    /// - On failure, responds with [`SdkError<BatchGetNamedQueryError>`](crate::error::BatchGetNamedQueryError)
     pub fn batch_get_named_query(&self) -> fluent_builders::BatchGetNamedQuery<C, M, R> {
         fluent_builders::BatchGetNamedQuery::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchGetQueryExecution` operation.
+    /// Constructs a fluent builder for the [`BatchGetQueryExecution`](crate::client::fluent_builders::BatchGetQueryExecution) operation.
     ///
-    /// See [`BatchGetQueryExecution`](crate::client::fluent_builders::BatchGetQueryExecution) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchGetQueryExecutionInput`](crate::input::BatchGetQueryExecutionInput) with field(s):
+    ///   - [`query_execution_ids(Option<Vec<String>>)`](crate::input::BatchGetQueryExecutionInput::query_execution_ids): <p>An array of query execution IDs.</p>
+    /// - On success, responds with [`BatchGetQueryExecutionOutput`](crate::output::BatchGetQueryExecutionOutput) with field(s):
+    ///   - [`query_executions(Option<Vec<QueryExecution>>)`](crate::output::BatchGetQueryExecutionOutput::query_executions): <p>Information about a query execution.</p>
+    ///   - [`unprocessed_query_execution_ids(Option<Vec<UnprocessedQueryExecutionId>>)`](crate::output::BatchGetQueryExecutionOutput::unprocessed_query_execution_ids): <p>Information about the query executions that failed to run.</p>
+    /// - On failure, responds with [`SdkError<BatchGetQueryExecutionError>`](crate::error::BatchGetQueryExecutionError)
     pub fn batch_get_query_execution(&self) -> fluent_builders::BatchGetQueryExecution<C, M, R> {
         fluent_builders::BatchGetQueryExecution::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDataCatalog` operation.
+    /// Constructs a fluent builder for the [`CreateDataCatalog`](crate::client::fluent_builders::CreateDataCatalog) operation.
     ///
-    /// See [`CreateDataCatalog`](crate::client::fluent_builders::CreateDataCatalog) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateDataCatalogInput`](crate::input::CreateDataCatalogInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateDataCatalogInput::name): <p>The name of the data catalog to create. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.</p>
+    ///   - [`r#type(Option<DataCatalogType>)`](crate::input::CreateDataCatalogInput::r#type): <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateDataCatalogInput::description): <p>A description of the data catalog to be created.</p>
+    ///   - [`parameters(Option<HashMap<String, String>>)`](crate::input::CreateDataCatalogInput::parameters): <p>Specifies the Lambda function or functions to use for creating the data catalog. This is a mapping whose values depend on the catalog type. </p>  <ul>   <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li>   <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>    <ul>     <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li>     <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>    </ul> </li>   <li> <p>The <code>GLUE</code> type takes a catalog ID parameter and is required. The <code> <i>catalog_id</i> </code> is the account ID of the Amazon Web Services account to which the Glue Data Catalog belongs.</p> <p> <code>catalog-id=<i>catalog_id</i> </code> </p>    <ul>     <li> <p>The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code> that already exists in your account, of which you can have only one and cannot modify.</p> </li>     <li> <p>Queries that specify a Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run on Athena engine version 2.</p> </li>     <li> <p>In Regions where Athena engine version 2 is not available, creating new Glue data catalogs results in an <code>INVALID_INPUT</code> error.</p> </li>    </ul> </li>  </ul>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateDataCatalogInput::tags): <p>A list of comma separated tags to add to the data catalog that is created.</p>
+    /// - On success, responds with [`CreateDataCatalogOutput`](crate::output::CreateDataCatalogOutput)
+
+    /// - On failure, responds with [`SdkError<CreateDataCatalogError>`](crate::error::CreateDataCatalogError)
     pub fn create_data_catalog(&self) -> fluent_builders::CreateDataCatalog<C, M, R> {
         fluent_builders::CreateDataCatalog::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateNamedQuery` operation.
+    /// Constructs a fluent builder for the [`CreateNamedQuery`](crate::client::fluent_builders::CreateNamedQuery) operation.
     ///
-    /// See [`CreateNamedQuery`](crate::client::fluent_builders::CreateNamedQuery) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateNamedQueryInput`](crate::input::CreateNamedQueryInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateNamedQueryInput::name): <p>The query name.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateNamedQueryInput::description): <p>The query description.</p>
+    ///   - [`database(Option<String>)`](crate::input::CreateNamedQueryInput::database): <p>The database to which the query belongs.</p>
+    ///   - [`query_string(Option<String>)`](crate::input::CreateNamedQueryInput::query_string): <p>The contents of the query with all query statements.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::CreateNamedQueryInput::client_request_token): <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>CreateNamedQuery</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>   <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>  </important>
+    ///   - [`work_group(Option<String>)`](crate::input::CreateNamedQueryInput::work_group): <p>The name of the workgroup in which the named query is being created.</p>
+    /// - On success, responds with [`CreateNamedQueryOutput`](crate::output::CreateNamedQueryOutput) with field(s):
+    ///   - [`named_query_id(Option<String>)`](crate::output::CreateNamedQueryOutput::named_query_id): <p>The unique ID of the query.</p>
+    /// - On failure, responds with [`SdkError<CreateNamedQueryError>`](crate::error::CreateNamedQueryError)
     pub fn create_named_query(&self) -> fluent_builders::CreateNamedQuery<C, M, R> {
         fluent_builders::CreateNamedQuery::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreatePreparedStatement` operation.
+    /// Constructs a fluent builder for the [`CreatePreparedStatement`](crate::client::fluent_builders::CreatePreparedStatement) operation.
     ///
-    /// See [`CreatePreparedStatement`](crate::client::fluent_builders::CreatePreparedStatement) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreatePreparedStatementInput`](crate::input::CreatePreparedStatementInput) with field(s):
+    ///   - [`statement_name(Option<String>)`](crate::input::CreatePreparedStatementInput::statement_name): <p>The name of the prepared statement.</p>
+    ///   - [`work_group(Option<String>)`](crate::input::CreatePreparedStatementInput::work_group): <p>The name of the workgroup to which the prepared statement belongs.</p>
+    ///   - [`query_statement(Option<String>)`](crate::input::CreatePreparedStatementInput::query_statement): <p>The query string for the prepared statement.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreatePreparedStatementInput::description): <p>The description of the prepared statement.</p>
+    /// - On success, responds with [`CreatePreparedStatementOutput`](crate::output::CreatePreparedStatementOutput)
+
+    /// - On failure, responds with [`SdkError<CreatePreparedStatementError>`](crate::error::CreatePreparedStatementError)
     pub fn create_prepared_statement(&self) -> fluent_builders::CreatePreparedStatement<C, M, R> {
         fluent_builders::CreatePreparedStatement::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateWorkGroup` operation.
+    /// Constructs a fluent builder for the [`CreateWorkGroup`](crate::client::fluent_builders::CreateWorkGroup) operation.
     ///
-    /// See [`CreateWorkGroup`](crate::client::fluent_builders::CreateWorkGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateWorkGroupInput`](crate::input::CreateWorkGroupInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateWorkGroupInput::name): <p>The workgroup name.</p>
+    ///   - [`configuration(Option<WorkGroupConfiguration>)`](crate::input::CreateWorkGroupInput::configuration): <p>The configuration for the workgroup, which includes the location in Amazon S3 where query results are stored, the encryption configuration, if any, used for encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>) in the <code>WorkGroupConfiguration</code> override client-side settings. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateWorkGroupInput::description): <p>The workgroup description.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateWorkGroupInput::tags): <p>A list of comma separated tags to add to the workgroup that is created.</p>
+    /// - On success, responds with [`CreateWorkGroupOutput`](crate::output::CreateWorkGroupOutput)
+
+    /// - On failure, responds with [`SdkError<CreateWorkGroupError>`](crate::error::CreateWorkGroupError)
     pub fn create_work_group(&self) -> fluent_builders::CreateWorkGroup<C, M, R> {
         fluent_builders::CreateWorkGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDataCatalog` operation.
+    /// Constructs a fluent builder for the [`DeleteDataCatalog`](crate::client::fluent_builders::DeleteDataCatalog) operation.
     ///
-    /// See [`DeleteDataCatalog`](crate::client::fluent_builders::DeleteDataCatalog) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteDataCatalogInput`](crate::input::DeleteDataCatalogInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteDataCatalogInput::name): <p>The name of the data catalog to delete.</p>
+    /// - On success, responds with [`DeleteDataCatalogOutput`](crate::output::DeleteDataCatalogOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteDataCatalogError>`](crate::error::DeleteDataCatalogError)
     pub fn delete_data_catalog(&self) -> fluent_builders::DeleteDataCatalog<C, M, R> {
         fluent_builders::DeleteDataCatalog::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteNamedQuery` operation.
+    /// Constructs a fluent builder for the [`DeleteNamedQuery`](crate::client::fluent_builders::DeleteNamedQuery) operation.
     ///
-    /// See [`DeleteNamedQuery`](crate::client::fluent_builders::DeleteNamedQuery) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteNamedQueryInput`](crate::input::DeleteNamedQueryInput) with field(s):
+    ///   - [`named_query_id(Option<String>)`](crate::input::DeleteNamedQueryInput::named_query_id): <p>The unique ID of the query to delete.</p>
+    /// - On success, responds with [`DeleteNamedQueryOutput`](crate::output::DeleteNamedQueryOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteNamedQueryError>`](crate::error::DeleteNamedQueryError)
     pub fn delete_named_query(&self) -> fluent_builders::DeleteNamedQuery<C, M, R> {
         fluent_builders::DeleteNamedQuery::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeletePreparedStatement` operation.
+    /// Constructs a fluent builder for the [`DeletePreparedStatement`](crate::client::fluent_builders::DeletePreparedStatement) operation.
     ///
-    /// See [`DeletePreparedStatement`](crate::client::fluent_builders::DeletePreparedStatement) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeletePreparedStatementInput`](crate::input::DeletePreparedStatementInput) with field(s):
+    ///   - [`statement_name(Option<String>)`](crate::input::DeletePreparedStatementInput::statement_name): <p>The name of the prepared statement to delete.</p>
+    ///   - [`work_group(Option<String>)`](crate::input::DeletePreparedStatementInput::work_group): <p>The workgroup to which the statement to be deleted belongs.</p>
+    /// - On success, responds with [`DeletePreparedStatementOutput`](crate::output::DeletePreparedStatementOutput)
+
+    /// - On failure, responds with [`SdkError<DeletePreparedStatementError>`](crate::error::DeletePreparedStatementError)
     pub fn delete_prepared_statement(&self) -> fluent_builders::DeletePreparedStatement<C, M, R> {
         fluent_builders::DeletePreparedStatement::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteWorkGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteWorkGroup`](crate::client::fluent_builders::DeleteWorkGroup) operation.
     ///
-    /// See [`DeleteWorkGroup`](crate::client::fluent_builders::DeleteWorkGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteWorkGroupInput`](crate::input::DeleteWorkGroupInput) with field(s):
+    ///   - [`work_group(Option<String>)`](crate::input::DeleteWorkGroupInput::work_group): <p>The unique name of the workgroup to delete.</p>
+    ///   - [`recursive_delete_option(Option<bool>)`](crate::input::DeleteWorkGroupInput::recursive_delete_option): <p>The option to delete the workgroup and its contents even if the workgroup contains any named queries or query executions.</p>
+    /// - On success, responds with [`DeleteWorkGroupOutput`](crate::output::DeleteWorkGroupOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteWorkGroupError>`](crate::error::DeleteWorkGroupError)
     pub fn delete_work_group(&self) -> fluent_builders::DeleteWorkGroup<C, M, R> {
         fluent_builders::DeleteWorkGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDatabase` operation.
+    /// Constructs a fluent builder for the [`GetDatabase`](crate::client::fluent_builders::GetDatabase) operation.
     ///
-    /// See [`GetDatabase`](crate::client::fluent_builders::GetDatabase) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetDatabaseInput`](crate::input::GetDatabaseInput) with field(s):
+    ///   - [`catalog_name(Option<String>)`](crate::input::GetDatabaseInput::catalog_name): <p>The name of the data catalog that contains the database to return.</p>
+    ///   - [`database_name(Option<String>)`](crate::input::GetDatabaseInput::database_name): <p>The name of the database to return.</p>
+    /// - On success, responds with [`GetDatabaseOutput`](crate::output::GetDatabaseOutput) with field(s):
+    ///   - [`database(Option<Database>)`](crate::output::GetDatabaseOutput::database): <p>The database returned.</p>
+    /// - On failure, responds with [`SdkError<GetDatabaseError>`](crate::error::GetDatabaseError)
     pub fn get_database(&self) -> fluent_builders::GetDatabase<C, M, R> {
         fluent_builders::GetDatabase::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDataCatalog` operation.
+    /// Constructs a fluent builder for the [`GetDataCatalog`](crate::client::fluent_builders::GetDataCatalog) operation.
     ///
-    /// See [`GetDataCatalog`](crate::client::fluent_builders::GetDataCatalog) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetDataCatalogInput`](crate::input::GetDataCatalogInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::GetDataCatalogInput::name): <p>The name of the data catalog to return.</p>
+    /// - On success, responds with [`GetDataCatalogOutput`](crate::output::GetDataCatalogOutput) with field(s):
+    ///   - [`data_catalog(Option<DataCatalog>)`](crate::output::GetDataCatalogOutput::data_catalog): <p>The data catalog returned.</p>
+    /// - On failure, responds with [`SdkError<GetDataCatalogError>`](crate::error::GetDataCatalogError)
     pub fn get_data_catalog(&self) -> fluent_builders::GetDataCatalog<C, M, R> {
         fluent_builders::GetDataCatalog::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetNamedQuery` operation.
+    /// Constructs a fluent builder for the [`GetNamedQuery`](crate::client::fluent_builders::GetNamedQuery) operation.
     ///
-    /// See [`GetNamedQuery`](crate::client::fluent_builders::GetNamedQuery) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetNamedQueryInput`](crate::input::GetNamedQueryInput) with field(s):
+    ///   - [`named_query_id(Option<String>)`](crate::input::GetNamedQueryInput::named_query_id): <p>The unique ID of the query. Use <code>ListNamedQueries</code> to get query IDs.</p>
+    /// - On success, responds with [`GetNamedQueryOutput`](crate::output::GetNamedQueryOutput) with field(s):
+    ///   - [`named_query(Option<NamedQuery>)`](crate::output::GetNamedQueryOutput::named_query): <p>Information about the query.</p>
+    /// - On failure, responds with [`SdkError<GetNamedQueryError>`](crate::error::GetNamedQueryError)
     pub fn get_named_query(&self) -> fluent_builders::GetNamedQuery<C, M, R> {
         fluent_builders::GetNamedQuery::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetPreparedStatement` operation.
+    /// Constructs a fluent builder for the [`GetPreparedStatement`](crate::client::fluent_builders::GetPreparedStatement) operation.
     ///
-    /// See [`GetPreparedStatement`](crate::client::fluent_builders::GetPreparedStatement) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetPreparedStatementInput`](crate::input::GetPreparedStatementInput) with field(s):
+    ///   - [`statement_name(Option<String>)`](crate::input::GetPreparedStatementInput::statement_name): <p>The name of the prepared statement to retrieve.</p>
+    ///   - [`work_group(Option<String>)`](crate::input::GetPreparedStatementInput::work_group): <p>The workgroup to which the statement to be retrieved belongs.</p>
+    /// - On success, responds with [`GetPreparedStatementOutput`](crate::output::GetPreparedStatementOutput) with field(s):
+    ///   - [`prepared_statement(Option<PreparedStatement>)`](crate::output::GetPreparedStatementOutput::prepared_statement): <p>The name of the prepared statement that was retrieved.</p>
+    /// - On failure, responds with [`SdkError<GetPreparedStatementError>`](crate::error::GetPreparedStatementError)
     pub fn get_prepared_statement(&self) -> fluent_builders::GetPreparedStatement<C, M, R> {
         fluent_builders::GetPreparedStatement::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetQueryExecution` operation.
+    /// Constructs a fluent builder for the [`GetQueryExecution`](crate::client::fluent_builders::GetQueryExecution) operation.
     ///
-    /// See [`GetQueryExecution`](crate::client::fluent_builders::GetQueryExecution) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetQueryExecutionInput`](crate::input::GetQueryExecutionInput) with field(s):
+    ///   - [`query_execution_id(Option<String>)`](crate::input::GetQueryExecutionInput::query_execution_id): <p>The unique ID of the query execution.</p>
+    /// - On success, responds with [`GetQueryExecutionOutput`](crate::output::GetQueryExecutionOutput) with field(s):
+    ///   - [`query_execution(Option<QueryExecution>)`](crate::output::GetQueryExecutionOutput::query_execution): <p>Information about the query execution.</p>
+    /// - On failure, responds with [`SdkError<GetQueryExecutionError>`](crate::error::GetQueryExecutionError)
     pub fn get_query_execution(&self) -> fluent_builders::GetQueryExecution<C, M, R> {
         fluent_builders::GetQueryExecution::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetQueryResults` operation.
-    ///
-    /// See [`GetQueryResults`](crate::client::fluent_builders::GetQueryResults) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetQueryResults`](crate::client::fluent_builders::GetQueryResults) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetQueryResults::into_paginator).
+    ///
+    /// - Takes [`GetQueryResultsInput`](crate::input::GetQueryResultsInput) with field(s):
+    ///   - [`query_execution_id(Option<String>)`](crate::input::GetQueryResultsInput::query_execution_id): <p>The unique ID of the query execution.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetQueryResultsInput::next_token): <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetQueryResultsInput::max_results): <p>The maximum number of results (rows) to return in this request.</p>
+    /// - On success, responds with [`GetQueryResultsOutput`](crate::output::GetQueryResultsOutput) with field(s):
+    ///   - [`update_count(Option<i64>)`](crate::output::GetQueryResultsOutput::update_count): <p>The number of rows inserted with a <code>CREATE TABLE AS SELECT</code> statement. </p>
+    ///   - [`result_set(Option<ResultSet>)`](crate::output::GetQueryResultsOutput::result_set): <p>The results of the query execution.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetQueryResultsOutput::next_token): <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// - On failure, responds with [`SdkError<GetQueryResultsError>`](crate::error::GetQueryResultsError)
     pub fn get_query_results(&self) -> fluent_builders::GetQueryResults<C, M, R> {
         fluent_builders::GetQueryResults::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetTableMetadata` operation.
+    /// Constructs a fluent builder for the [`GetTableMetadata`](crate::client::fluent_builders::GetTableMetadata) operation.
     ///
-    /// See [`GetTableMetadata`](crate::client::fluent_builders::GetTableMetadata) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetTableMetadataInput`](crate::input::GetTableMetadataInput) with field(s):
+    ///   - [`catalog_name(Option<String>)`](crate::input::GetTableMetadataInput::catalog_name): <p>The name of the data catalog that contains the database and table metadata to return.</p>
+    ///   - [`database_name(Option<String>)`](crate::input::GetTableMetadataInput::database_name): <p>The name of the database that contains the table metadata to return.</p>
+    ///   - [`table_name(Option<String>)`](crate::input::GetTableMetadataInput::table_name): <p>The name of the table for which metadata is returned.</p>
+    /// - On success, responds with [`GetTableMetadataOutput`](crate::output::GetTableMetadataOutput) with field(s):
+    ///   - [`table_metadata(Option<TableMetadata>)`](crate::output::GetTableMetadataOutput::table_metadata): <p>An object that contains table metadata.</p>
+    /// - On failure, responds with [`SdkError<GetTableMetadataError>`](crate::error::GetTableMetadataError)
     pub fn get_table_metadata(&self) -> fluent_builders::GetTableMetadata<C, M, R> {
         fluent_builders::GetTableMetadata::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetWorkGroup` operation.
+    /// Constructs a fluent builder for the [`GetWorkGroup`](crate::client::fluent_builders::GetWorkGroup) operation.
     ///
-    /// See [`GetWorkGroup`](crate::client::fluent_builders::GetWorkGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetWorkGroupInput`](crate::input::GetWorkGroupInput) with field(s):
+    ///   - [`work_group(Option<String>)`](crate::input::GetWorkGroupInput::work_group): <p>The name of the workgroup.</p>
+    /// - On success, responds with [`GetWorkGroupOutput`](crate::output::GetWorkGroupOutput) with field(s):
+    ///   - [`work_group(Option<WorkGroup>)`](crate::output::GetWorkGroupOutput::work_group): <p>Information about the workgroup.</p>
+    /// - On failure, responds with [`SdkError<GetWorkGroupError>`](crate::error::GetWorkGroupError)
     pub fn get_work_group(&self) -> fluent_builders::GetWorkGroup<C, M, R> {
         fluent_builders::GetWorkGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDatabases` operation.
-    ///
-    /// See [`ListDatabases`](crate::client::fluent_builders::ListDatabases) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListDatabases`](crate::client::fluent_builders::ListDatabases) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDatabases::into_paginator).
+    ///
+    /// - Takes [`ListDatabasesInput`](crate::input::ListDatabasesInput) with field(s):
+    ///   - [`catalog_name(Option<String>)`](crate::input::ListDatabasesInput::catalog_name): <p>The name of the data catalog that contains the databases to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListDatabasesInput::next_token): <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListDatabasesInput::max_results): <p>Specifies the maximum number of results to return.</p>
+    /// - On success, responds with [`ListDatabasesOutput`](crate::output::ListDatabasesOutput) with field(s):
+    ///   - [`database_list(Option<Vec<Database>>)`](crate::output::ListDatabasesOutput::database_list): <p>A list of databases from a data catalog.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDatabasesOutput::next_token): <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call.</p>
+    /// - On failure, responds with [`SdkError<ListDatabasesError>`](crate::error::ListDatabasesError)
     pub fn list_databases(&self) -> fluent_builders::ListDatabases<C, M, R> {
         fluent_builders::ListDatabases::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDataCatalogs` operation.
-    ///
-    /// See [`ListDataCatalogs`](crate::client::fluent_builders::ListDataCatalogs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListDataCatalogs`](crate::client::fluent_builders::ListDataCatalogs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDataCatalogs::into_paginator).
+    ///
+    /// - Takes [`ListDataCatalogsInput`](crate::input::ListDataCatalogsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListDataCatalogsInput::next_token): <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListDataCatalogsInput::max_results): <p>Specifies the maximum number of data catalogs to return.</p>
+    /// - On success, responds with [`ListDataCatalogsOutput`](crate::output::ListDataCatalogsOutput) with field(s):
+    ///   - [`data_catalogs_summary(Option<Vec<DataCatalogSummary>>)`](crate::output::ListDataCatalogsOutput::data_catalogs_summary): <p>A summary list of data catalogs.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDataCatalogsOutput::next_token): <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call.</p>
+    /// - On failure, responds with [`SdkError<ListDataCatalogsError>`](crate::error::ListDataCatalogsError)
     pub fn list_data_catalogs(&self) -> fluent_builders::ListDataCatalogs<C, M, R> {
         fluent_builders::ListDataCatalogs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListEngineVersions` operation.
+    /// Constructs a fluent builder for the [`ListEngineVersions`](crate::client::fluent_builders::ListEngineVersions) operation.
     ///
-    /// See [`ListEngineVersions`](crate::client::fluent_builders::ListEngineVersions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListEngineVersionsInput`](crate::input::ListEngineVersionsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListEngineVersionsInput::next_token): <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListEngineVersionsInput::max_results): <p>The maximum number of engine versions to return in this request.</p>
+    /// - On success, responds with [`ListEngineVersionsOutput`](crate::output::ListEngineVersionsOutput) with field(s):
+    ///   - [`engine_versions(Option<Vec<EngineVersion>>)`](crate::output::ListEngineVersionsOutput::engine_versions): <p>A list of engine versions that are available to choose from.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListEngineVersionsOutput::next_token): <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// - On failure, responds with [`SdkError<ListEngineVersionsError>`](crate::error::ListEngineVersionsError)
     pub fn list_engine_versions(&self) -> fluent_builders::ListEngineVersions<C, M, R> {
         fluent_builders::ListEngineVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListNamedQueries` operation.
-    ///
-    /// See [`ListNamedQueries`](crate::client::fluent_builders::ListNamedQueries) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListNamedQueries`](crate::client::fluent_builders::ListNamedQueries) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListNamedQueries::into_paginator).
+    ///
+    /// - Takes [`ListNamedQueriesInput`](crate::input::ListNamedQueriesInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListNamedQueriesInput::next_token): <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListNamedQueriesInput::max_results): <p>The maximum number of queries to return in this request.</p>
+    ///   - [`work_group(Option<String>)`](crate::input::ListNamedQueriesInput::work_group): <p>The name of the workgroup from which the named queries are being returned. If a workgroup is not specified, the saved queries for the primary workgroup are returned.</p>
+    /// - On success, responds with [`ListNamedQueriesOutput`](crate::output::ListNamedQueriesOutput) with field(s):
+    ///   - [`named_query_ids(Option<Vec<String>>)`](crate::output::ListNamedQueriesOutput::named_query_ids): <p>The list of unique query IDs.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListNamedQueriesOutput::next_token): <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// - On failure, responds with [`SdkError<ListNamedQueriesError>`](crate::error::ListNamedQueriesError)
     pub fn list_named_queries(&self) -> fluent_builders::ListNamedQueries<C, M, R> {
         fluent_builders::ListNamedQueries::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPreparedStatements` operation.
-    ///
-    /// See [`ListPreparedStatements`](crate::client::fluent_builders::ListPreparedStatements) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListPreparedStatements`](crate::client::fluent_builders::ListPreparedStatements) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPreparedStatements::into_paginator).
+    ///
+    /// - Takes [`ListPreparedStatementsInput`](crate::input::ListPreparedStatementsInput) with field(s):
+    ///   - [`work_group(Option<String>)`](crate::input::ListPreparedStatementsInput::work_group): <p>The workgroup to list the prepared statements for.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListPreparedStatementsInput::next_token): <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListPreparedStatementsInput::max_results): <p>The maximum number of results to return in this request.</p>
+    /// - On success, responds with [`ListPreparedStatementsOutput`](crate::output::ListPreparedStatementsOutput) with field(s):
+    ///   - [`prepared_statements(Option<Vec<PreparedStatementSummary>>)`](crate::output::ListPreparedStatementsOutput::prepared_statements): <p>The list of prepared statements for the workgroup.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPreparedStatementsOutput::next_token): <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// - On failure, responds with [`SdkError<ListPreparedStatementsError>`](crate::error::ListPreparedStatementsError)
     pub fn list_prepared_statements(&self) -> fluent_builders::ListPreparedStatements<C, M, R> {
         fluent_builders::ListPreparedStatements::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListQueryExecutions` operation.
-    ///
-    /// See [`ListQueryExecutions`](crate::client::fluent_builders::ListQueryExecutions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListQueryExecutions`](crate::client::fluent_builders::ListQueryExecutions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListQueryExecutions::into_paginator).
+    ///
+    /// - Takes [`ListQueryExecutionsInput`](crate::input::ListQueryExecutionsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListQueryExecutionsInput::next_token): <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListQueryExecutionsInput::max_results): <p>The maximum number of query executions to return in this request.</p>
+    ///   - [`work_group(Option<String>)`](crate::input::ListQueryExecutionsInput::work_group): <p>The name of the workgroup from which queries are being returned. If a workgroup is not specified, a list of available query execution IDs for the queries in the primary workgroup is returned.</p>
+    /// - On success, responds with [`ListQueryExecutionsOutput`](crate::output::ListQueryExecutionsOutput) with field(s):
+    ///   - [`query_execution_ids(Option<Vec<String>>)`](crate::output::ListQueryExecutionsOutput::query_execution_ids): <p>The unique IDs of each query execution as an array of strings.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListQueryExecutionsOutput::next_token): <p>A token to be used by the next request if this request is truncated.</p>
+    /// - On failure, responds with [`SdkError<ListQueryExecutionsError>`](crate::error::ListQueryExecutionsError)
     pub fn list_query_executions(&self) -> fluent_builders::ListQueryExecutions<C, M, R> {
         fluent_builders::ListQueryExecutions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTableMetadata` operation.
-    ///
-    /// See [`ListTableMetadata`](crate::client::fluent_builders::ListTableMetadata) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListTableMetadata`](crate::client::fluent_builders::ListTableMetadata) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTableMetadata::into_paginator).
+    ///
+    /// - Takes [`ListTableMetadataInput`](crate::input::ListTableMetadataInput) with field(s):
+    ///   - [`catalog_name(Option<String>)`](crate::input::ListTableMetadataInput::catalog_name): <p>The name of the data catalog for which table metadata should be returned.</p>
+    ///   - [`database_name(Option<String>)`](crate::input::ListTableMetadataInput::database_name): <p>The name of the database for which table metadata should be returned.</p>
+    ///   - [`expression(Option<String>)`](crate::input::ListTableMetadataInput::expression): <p>A regex filter that pattern-matches table names. If no expression is supplied, metadata for all tables are listed.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListTableMetadataInput::next_token): <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListTableMetadataInput::max_results): <p>Specifies the maximum number of results to return.</p>
+    /// - On success, responds with [`ListTableMetadataOutput`](crate::output::ListTableMetadataOutput) with field(s):
+    ///   - [`table_metadata_list(Option<Vec<TableMetadata>>)`](crate::output::ListTableMetadataOutput::table_metadata_list): <p>A list of table metadata.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTableMetadataOutput::next_token): <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the NextToken from the response object of the previous page call.</p>
+    /// - On failure, responds with [`SdkError<ListTableMetadataError>`](crate::error::ListTableMetadataError)
     pub fn list_table_metadata(&self) -> fluent_builders::ListTableMetadata<C, M, R> {
         fluent_builders::ListTableMetadata::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
-    ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
+    ///
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>Lists the tags for the resource with the specified ARN.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListTagsForResourceInput::next_token): <p>The token for the next set of results, or null if there are no additional results for this request, where the request lists the tags for the resource with the specified ARN.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListTagsForResourceInput::max_results): <p>The maximum number of results to be returned per request that lists the tags for the resource.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The list of tags associated with the specified resource.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTagsForResourceOutput::next_token): <p>A token to be used by the next request if this request is truncated.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListWorkGroups` operation.
-    ///
-    /// See [`ListWorkGroups`](crate::client::fluent_builders::ListWorkGroups) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListWorkGroups`](crate::client::fluent_builders::ListWorkGroups) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWorkGroups::into_paginator).
+    ///
+    /// - Takes [`ListWorkGroupsInput`](crate::input::ListWorkGroupsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListWorkGroupsInput::next_token): <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListWorkGroupsInput::max_results): <p>The maximum number of workgroups to return in this request.</p>
+    /// - On success, responds with [`ListWorkGroupsOutput`](crate::output::ListWorkGroupsOutput) with field(s):
+    ///   - [`work_groups(Option<Vec<WorkGroupSummary>>)`](crate::output::ListWorkGroupsOutput::work_groups): <p>A list of <code>WorkGroupSummary</code> objects that include the names, descriptions, creation times, and states for each workgroup.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListWorkGroupsOutput::next_token): <p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>
+    /// - On failure, responds with [`SdkError<ListWorkGroupsError>`](crate::error::ListWorkGroupsError)
     pub fn list_work_groups(&self) -> fluent_builders::ListWorkGroups<C, M, R> {
         fluent_builders::ListWorkGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartQueryExecution` operation.
+    /// Constructs a fluent builder for the [`StartQueryExecution`](crate::client::fluent_builders::StartQueryExecution) operation.
     ///
-    /// See [`StartQueryExecution`](crate::client::fluent_builders::StartQueryExecution) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartQueryExecutionInput`](crate::input::StartQueryExecutionInput) with field(s):
+    ///   - [`query_string(Option<String>)`](crate::input::StartQueryExecutionInput::query_string): <p>The SQL query statements to be executed.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::StartQueryExecutionInput::client_request_token): <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>StartQueryExecution</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>   <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>  </important>
+    ///   - [`query_execution_context(Option<QueryExecutionContext>)`](crate::input::StartQueryExecutionInput::query_execution_context): <p>The database within which the query executes.</p>
+    ///   - [`result_configuration(Option<ResultConfiguration>)`](crate::input::StartQueryExecutionInput::result_configuration): <p>Specifies information about where and how to save the results of the query execution. If the query runs in a workgroup, then workgroup's settings may override query settings. This affects the query results location. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
+    ///   - [`work_group(Option<String>)`](crate::input::StartQueryExecutionInput::work_group): <p>The name of the workgroup in which the query is being started.</p>
+    /// - On success, responds with [`StartQueryExecutionOutput`](crate::output::StartQueryExecutionOutput) with field(s):
+    ///   - [`query_execution_id(Option<String>)`](crate::output::StartQueryExecutionOutput::query_execution_id): <p>The unique ID of the query that ran as a result of this request.</p>
+    /// - On failure, responds with [`SdkError<StartQueryExecutionError>`](crate::error::StartQueryExecutionError)
     pub fn start_query_execution(&self) -> fluent_builders::StartQueryExecution<C, M, R> {
         fluent_builders::StartQueryExecution::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopQueryExecution` operation.
+    /// Constructs a fluent builder for the [`StopQueryExecution`](crate::client::fluent_builders::StopQueryExecution) operation.
     ///
-    /// See [`StopQueryExecution`](crate::client::fluent_builders::StopQueryExecution) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StopQueryExecutionInput`](crate::input::StopQueryExecutionInput) with field(s):
+    ///   - [`query_execution_id(Option<String>)`](crate::input::StopQueryExecutionInput::query_execution_id): <p>The unique ID of the query execution to stop.</p>
+    /// - On success, responds with [`StopQueryExecutionOutput`](crate::output::StopQueryExecutionOutput)
+
+    /// - On failure, responds with [`SdkError<StopQueryExecutionError>`](crate::error::StopQueryExecutionError)
     pub fn stop_query_execution(&self) -> fluent_builders::StopQueryExecution<C, M, R> {
         fluent_builders::StopQueryExecution::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>Specifies the ARN of the Athena resource (workgroup or data catalog) to which tags are to be added.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>A collection of one or more tags, separated by commas, to be added to an Athena workgroup or data catalog resource.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>Specifies the ARN of the resource from which tags are to be removed.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>A comma-separated list of one or more tag keys whose tags are to be removed from the specified resource.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDataCatalog` operation.
+    /// Constructs a fluent builder for the [`UpdateDataCatalog`](crate::client::fluent_builders::UpdateDataCatalog) operation.
     ///
-    /// See [`UpdateDataCatalog`](crate::client::fluent_builders::UpdateDataCatalog) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateDataCatalogInput`](crate::input::UpdateDataCatalogInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::UpdateDataCatalogInput::name): <p>The name of the data catalog to update. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.</p>
+    ///   - [`r#type(Option<DataCatalogType>)`](crate::input::UpdateDataCatalogInput::r#type): <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateDataCatalogInput::description): <p>New or modified text that describes the data catalog.</p>
+    ///   - [`parameters(Option<HashMap<String, String>>)`](crate::input::UpdateDataCatalogInput::parameters): <p>Specifies the Lambda function or functions to use for updating the data catalog. This is a mapping whose values depend on the catalog type. </p>  <ul>   <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li>   <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p>    <ul>     <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li>     <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li>    </ul> </li>  </ul>
+    /// - On success, responds with [`UpdateDataCatalogOutput`](crate::output::UpdateDataCatalogOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateDataCatalogError>`](crate::error::UpdateDataCatalogError)
     pub fn update_data_catalog(&self) -> fluent_builders::UpdateDataCatalog<C, M, R> {
         fluent_builders::UpdateDataCatalog::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdatePreparedStatement` operation.
+    /// Constructs a fluent builder for the [`UpdatePreparedStatement`](crate::client::fluent_builders::UpdatePreparedStatement) operation.
     ///
-    /// See [`UpdatePreparedStatement`](crate::client::fluent_builders::UpdatePreparedStatement) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdatePreparedStatementInput`](crate::input::UpdatePreparedStatementInput) with field(s):
+    ///   - [`statement_name(Option<String>)`](crate::input::UpdatePreparedStatementInput::statement_name): <p>The name of the prepared statement.</p>
+    ///   - [`work_group(Option<String>)`](crate::input::UpdatePreparedStatementInput::work_group): <p>The workgroup for the prepared statement.</p>
+    ///   - [`query_statement(Option<String>)`](crate::input::UpdatePreparedStatementInput::query_statement): <p>The query string for the prepared statement.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdatePreparedStatementInput::description): <p>The description of the prepared statement.</p>
+    /// - On success, responds with [`UpdatePreparedStatementOutput`](crate::output::UpdatePreparedStatementOutput)
+
+    /// - On failure, responds with [`SdkError<UpdatePreparedStatementError>`](crate::error::UpdatePreparedStatementError)
     pub fn update_prepared_statement(&self) -> fluent_builders::UpdatePreparedStatement<C, M, R> {
         fluent_builders::UpdatePreparedStatement::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateWorkGroup` operation.
+    /// Constructs a fluent builder for the [`UpdateWorkGroup`](crate::client::fluent_builders::UpdateWorkGroup) operation.
     ///
-    /// See [`UpdateWorkGroup`](crate::client::fluent_builders::UpdateWorkGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateWorkGroupInput`](crate::input::UpdateWorkGroupInput) with field(s):
+    ///   - [`work_group(Option<String>)`](crate::input::UpdateWorkGroupInput::work_group): <p>The specified workgroup that will be updated.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateWorkGroupInput::description): <p>The workgroup description.</p>
+    ///   - [`configuration_updates(Option<WorkGroupConfigurationUpdates>)`](crate::input::UpdateWorkGroupInput::configuration_updates): <p>The workgroup configuration that will be updated for the given workgroup.</p>
+    ///   - [`state(Option<WorkGroupState>)`](crate::input::UpdateWorkGroupInput::state): <p>The workgroup state that will be updated for the given workgroup.</p>
+    /// - On success, responds with [`UpdateWorkGroupOutput`](crate::output::UpdateWorkGroupOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateWorkGroupError>`](crate::error::UpdateWorkGroupError)
     pub fn update_work_group(&self) -> fluent_builders::UpdateWorkGroup<C, M, R> {
         fluent_builders::UpdateWorkGroup::new(self.handle.clone())
     }

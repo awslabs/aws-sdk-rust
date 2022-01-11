@@ -83,38 +83,103 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `DeleteSession` operation.
+    /// Constructs a fluent builder for the [`DeleteSession`](crate::client::fluent_builders::DeleteSession) operation.
     ///
-    /// See [`DeleteSession`](crate::client::fluent_builders::DeleteSession) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteSessionInput`](crate::input::DeleteSessionInput) with field(s):
+    ///   - [`bot_id(Option<String>)`](crate::input::DeleteSessionInput::bot_id): <p>The identifier of the bot that contains the session data.</p>
+    ///   - [`bot_alias_id(Option<String>)`](crate::input::DeleteSessionInput::bot_alias_id): <p>The alias identifier in use for the bot that contains the session data.</p>
+    ///   - [`locale_id(Option<String>)`](crate::input::DeleteSessionInput::locale_id): <p>The locale where the session is in use.</p>
+    ///   - [`session_id(Option<String>)`](crate::input::DeleteSessionInput::session_id): <p>The identifier of the session to delete.</p>
+    /// - On success, responds with [`DeleteSessionOutput`](crate::output::DeleteSessionOutput) with field(s):
+    ///   - [`bot_id(Option<String>)`](crate::output::DeleteSessionOutput::bot_id): <p>The identifier of the bot that contained the session data.</p>
+    ///   - [`bot_alias_id(Option<String>)`](crate::output::DeleteSessionOutput::bot_alias_id): <p>The alias identifier in use for the bot that contained the session data.</p>
+    ///   - [`locale_id(Option<String>)`](crate::output::DeleteSessionOutput::locale_id): <p>The locale where the session was used.</p>
+    ///   - [`session_id(Option<String>)`](crate::output::DeleteSessionOutput::session_id): <p>The identifier of the deleted session.</p>
+    /// - On failure, responds with [`SdkError<DeleteSessionError>`](crate::error::DeleteSessionError)
     pub fn delete_session(&self) -> fluent_builders::DeleteSession<C, M, R> {
         fluent_builders::DeleteSession::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSession` operation.
+    /// Constructs a fluent builder for the [`GetSession`](crate::client::fluent_builders::GetSession) operation.
     ///
-    /// See [`GetSession`](crate::client::fluent_builders::GetSession) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetSessionInput`](crate::input::GetSessionInput) with field(s):
+    ///   - [`bot_id(Option<String>)`](crate::input::GetSessionInput::bot_id): <p>The identifier of the bot that contains the session data.</p>
+    ///   - [`bot_alias_id(Option<String>)`](crate::input::GetSessionInput::bot_alias_id): <p>The alias identifier in use for the bot that contains the session data.</p>
+    ///   - [`locale_id(Option<String>)`](crate::input::GetSessionInput::locale_id): <p>The locale where the session is in use.</p>
+    ///   - [`session_id(Option<String>)`](crate::input::GetSessionInput::session_id): <p>The identifier of the session to return.</p>
+    /// - On success, responds with [`GetSessionOutput`](crate::output::GetSessionOutput) with field(s):
+    ///   - [`session_id(Option<String>)`](crate::output::GetSessionOutput::session_id): <p>The identifier of the returned session.</p>
+    ///   - [`messages(Option<Vec<Message>>)`](crate::output::GetSessionOutput::messages): <p>A list of messages that were last sent to the user. The messages are ordered based on the order that your returned the messages from your Lambda function or the order that messages are defined in the bot. </p>
+    ///   - [`interpretations(Option<Vec<Interpretation>>)`](crate::output::GetSessionOutput::interpretations): <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>  <p>Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
+    ///   - [`session_state(Option<SessionState>)`](crate::output::GetSessionOutput::session_state): <p>Represents the current state of the dialog between the user and the bot.</p>  <p>You can use this to determine the progress of the conversation and what the next action might be.</p>
+    /// - On failure, responds with [`SdkError<GetSessionError>`](crate::error::GetSessionError)
     pub fn get_session(&self) -> fluent_builders::GetSession<C, M, R> {
         fluent_builders::GetSession::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutSession` operation.
+    /// Constructs a fluent builder for the [`PutSession`](crate::client::fluent_builders::PutSession) operation.
     ///
-    /// See [`PutSession`](crate::client::fluent_builders::PutSession) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutSessionInput`](crate::input::PutSessionInput) with field(s):
+    ///   - [`bot_id(Option<String>)`](crate::input::PutSessionInput::bot_id): <p>The identifier of the bot that receives the session data.</p>
+    ///   - [`bot_alias_id(Option<String>)`](crate::input::PutSessionInput::bot_alias_id): <p>The alias identifier of the bot that receives the session data.</p>
+    ///   - [`locale_id(Option<String>)`](crate::input::PutSessionInput::locale_id): <p>The locale where the session is in use.</p>
+    ///   - [`session_id(Option<String>)`](crate::input::PutSessionInput::session_id): <p>The identifier of the session that receives the session data.</p>
+    ///   - [`messages(Option<Vec<Message>>)`](crate::input::PutSessionInput::messages): <p>A list of messages to send to the user. Messages are sent in the order that they are defined in the list.</p>
+    ///   - [`session_state(Option<SessionState>)`](crate::input::PutSessionInput::session_state): <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
+    ///   - [`request_attributes(Option<HashMap<String, String>>)`](crate::input::PutSessionInput::request_attributes): <p>Request-specific information passed between Amazon Lex V2 and the client application.</p>  <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
+    ///   - [`response_content_type(Option<String>)`](crate::input::PutSessionInput::response_content_type): <p>The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value of this parameter. </p>  <ul>   <li> <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p> </li>  </ul>
+    /// - On success, responds with [`PutSessionOutput`](crate::output::PutSessionOutput) with field(s):
+    ///   - [`content_type(Option<String>)`](crate::output::PutSessionOutput::content_type): <p>The type of response. Same as the type specified in the <code>responseContentType</code> field in the request.</p>
+    ///   - [`messages(Option<String>)`](crate::output::PutSessionOutput::messages): <p>A list of messages that were last sent to the user. The messages are ordered based on how you return the messages from you Lambda function or the order that the messages are defined in the bot.</p>
+    ///   - [`session_state(Option<String>)`](crate::output::PutSessionOutput::session_state): <p>Represents the current state of the dialog between the user and the bot.</p>  <p>Use this to determine the progress of the conversation and what the next action may be.</p>
+    ///   - [`request_attributes(Option<String>)`](crate::output::PutSessionOutput::request_attributes): <p>Request-specific information passed between the client application and Amazon Lex V2. These are the same as the <code>requestAttribute</code> parameter in the call to the <code>PutSession</code> operation.</p>
+    ///   - [`session_id(Option<String>)`](crate::output::PutSessionOutput::session_id): <p>The identifier of the session that received the data.</p>
+    ///   - [`audio_stream(byte_stream::ByteStream)`](crate::output::PutSessionOutput::audio_stream): <p>If the requested content type was audio, the audio version of the message to convey to the user.</p>
+    /// - On failure, responds with [`SdkError<PutSessionError>`](crate::error::PutSessionError)
     pub fn put_session(&self) -> fluent_builders::PutSession<C, M, R> {
         fluent_builders::PutSession::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RecognizeText` operation.
+    /// Constructs a fluent builder for the [`RecognizeText`](crate::client::fluent_builders::RecognizeText) operation.
     ///
-    /// See [`RecognizeText`](crate::client::fluent_builders::RecognizeText) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RecognizeTextInput`](crate::input::RecognizeTextInput) with field(s):
+    ///   - [`bot_id(Option<String>)`](crate::input::RecognizeTextInput::bot_id): <p>The identifier of the bot that processes the request.</p>
+    ///   - [`bot_alias_id(Option<String>)`](crate::input::RecognizeTextInput::bot_alias_id): <p>The alias identifier in use for the bot that processes the request.</p>
+    ///   - [`locale_id(Option<String>)`](crate::input::RecognizeTextInput::locale_id): <p>The locale where the session is in use.</p>
+    ///   - [`session_id(Option<String>)`](crate::input::RecognizeTextInput::session_id): <p>The identifier of the user session that is having the conversation.</p>
+    ///   - [`text(Option<String>)`](crate::input::RecognizeTextInput::text): <p>The text that the user entered. Amazon Lex V2 interprets this text.</p>
+    ///   - [`session_state(Option<SessionState>)`](crate::input::RecognizeTextInput::session_state): <p>The current state of the dialog between the user and the bot.</p>
+    ///   - [`request_attributes(Option<HashMap<String, String>>)`](crate::input::RecognizeTextInput::request_attributes): <p>Request-specific information passed between the client application and Amazon Lex V2 </p>  <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
+    /// - On success, responds with [`RecognizeTextOutput`](crate::output::RecognizeTextOutput) with field(s):
+    ///   - [`messages(Option<Vec<Message>>)`](crate::output::RecognizeTextOutput::messages): <p>A list of messages last sent to the user. The messages are ordered based on the order that you returned the messages from your Lambda function or the order that the messages are defined in the bot.</p>
+    ///   - [`session_state(Option<SessionState>)`](crate::output::RecognizeTextOutput::session_state): <p>Represents the current state of the dialog between the user and the bot. </p>  <p>Use this to determine the progress of the conversation and what the next action may be.</p>
+    ///   - [`interpretations(Option<Vec<Interpretation>>)`](crate::output::RecognizeTextOutput::interpretations): <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>  <p>Each interpretation includes the intent, a score that indicates now confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
+    ///   - [`request_attributes(Option<HashMap<String, String>>)`](crate::output::RecognizeTextOutput::request_attributes): <p>The attributes sent in the request.</p>
+    ///   - [`session_id(Option<String>)`](crate::output::RecognizeTextOutput::session_id): <p>The identifier of the session in use.</p>
+    /// - On failure, responds with [`SdkError<RecognizeTextError>`](crate::error::RecognizeTextError)
     pub fn recognize_text(&self) -> fluent_builders::RecognizeText<C, M, R> {
         fluent_builders::RecognizeText::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RecognizeUtterance` operation.
+    /// Constructs a fluent builder for the [`RecognizeUtterance`](crate::client::fluent_builders::RecognizeUtterance) operation.
     ///
-    /// See [`RecognizeUtterance`](crate::client::fluent_builders::RecognizeUtterance) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RecognizeUtteranceInput`](crate::input::RecognizeUtteranceInput) with field(s):
+    ///   - [`bot_id(Option<String>)`](crate::input::RecognizeUtteranceInput::bot_id): <p>The identifier of the bot that should receive the request.</p>
+    ///   - [`bot_alias_id(Option<String>)`](crate::input::RecognizeUtteranceInput::bot_alias_id): <p>The alias identifier in use for the bot that should receive the request.</p>
+    ///   - [`locale_id(Option<String>)`](crate::input::RecognizeUtteranceInput::locale_id): <p>The locale where the session is in use.</p>
+    ///   - [`session_id(Option<String>)`](crate::input::RecognizeUtteranceInput::session_id): <p>The identifier of the session in use.</p>
+    ///   - [`session_state(Option<String>)`](crate::input::RecognizeUtteranceInput::session_state): <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>  <p>The <code>sessionState</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
+    ///   - [`request_attributes(Option<String>)`](crate::input::RecognizeUtteranceInput::request_attributes): <p>Request-specific information passed between the client application and Amazon Lex V2 </p>  <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes for prefix <code>x-amz-lex:</code>.</p>  <p>The <code>requestAttributes</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
+    ///   - [`request_content_type(Option<String>)`](crate::input::RecognizeUtteranceInput::request_content_type): <p>Indicates the format for audio input or that the content is text. The header must start with one of the following prefixes:</p>  <ul>   <li> <p>PCM format, audio data must be in little-endian byte order.</p>    <ul>     <li> <p>audio/l16; rate=16000; channels=1</p> </li>     <li> <p>audio/x-l16; sample-rate=16000; channel-count=1</p> </li>     <li> <p>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</p> </li>    </ul> </li>   <li> <p>Opus format</p>    <ul>     <li> <p>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</p> </li>    </ul> </li>   <li> <p>Text format</p>    <ul>     <li> <p>text/plain; charset=utf-8</p> </li>    </ul> </li>  </ul>
+    ///   - [`response_content_type(Option<String>)`](crate::input::RecognizeUtteranceInput::response_content_type): <p>The message that Amazon Lex V2 returns in the response can be either text or speech based on the <code>responseContentType</code> value.</p>  <ul>   <li> <p>If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p> </li>   <li> <p>If the value begins with <code>audio/</code>, Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses Amazon Polly to generate the speech using the configuration that you specified in the <code>requestContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex V2 returns speech in the MPEG format.</p> </li>   <li> <p>If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> at 16 KHz in 16-bit, little-endian format.</p> </li>   <li> <p>The following are the accepted values:</p>    <ul>     <li> <p>audio/mpeg</p> </li>     <li> <p>audio/ogg</p> </li>     <li> <p>audio/pcm (16 KHz)</p> </li>     <li> <p>audio/* (defaults to mpeg)</p> </li>     <li> <p>text/plain; charset=utf-8</p> </li>    </ul> </li>  </ul>
+    ///   - [`input_stream(byte_stream::ByteStream)`](crate::input::RecognizeUtteranceInput::input_stream): <p>User input in PCM or Opus audio format or text format as described in the <code>requestContentType</code> parameter.</p>
+    /// - On success, responds with [`RecognizeUtteranceOutput`](crate::output::RecognizeUtteranceOutput) with field(s):
+    ///   - [`input_mode(Option<String>)`](crate::output::RecognizeUtteranceOutput::input_mode): <p>Indicates whether the input mode to the operation was text or speech. </p>
+    ///   - [`content_type(Option<String>)`](crate::output::RecognizeUtteranceOutput::content_type): <p>Content type as specified in the <code>responseContentType</code> in the request.</p>
+    ///   - [`messages(Option<String>)`](crate::output::RecognizeUtteranceOutput::messages): <p>A list of messages that were last sent to the user. The messages are ordered based on the order that you returned the messages from your Lambda function or the order that the messages are defined in the bot.</p>  <p>The <code>messages</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents. See the example for a simple function to decode and decompress the contents.</p>
+    ///   - [`interpretations(Option<String>)`](crate::output::RecognizeUtteranceOutput::interpretations): <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance.</p>  <p>Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>  <p>The <code>interpretations</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents. See the example for a simple function to decode and decompress the contents.</p>
+    ///   - [`session_state(Option<String>)`](crate::output::RecognizeUtteranceOutput::session_state): <p>Represents the current state of the dialog between the user and the bot.</p>  <p>Use this to determine the progress of the conversation and what the next action might be.</p>  <p>The <code>sessionState</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents. See the example for a simple function to decode and decompress the contents.</p>
+    ///   - [`request_attributes(Option<String>)`](crate::output::RecognizeUtteranceOutput::request_attributes): <p>The attributes sent in the request.</p>  <p>The <code>requestAttributes</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents.</p>
+    ///   - [`session_id(Option<String>)`](crate::output::RecognizeUtteranceOutput::session_id): <p>The identifier of the session in use.</p>
+    ///   - [`input_transcript(Option<String>)`](crate::output::RecognizeUtteranceOutput::input_transcript): <p>The text used to process the request.</p>  <p>If the input was an audio stream, the <code>inputTranscript</code> field contains the text extracted from the audio stream. This is the text that is actually processed to recognize intents and slot values. You can use this information to determine if Amazon Lex V2 is correctly processing the audio that you send.</p>  <p>The <code>inputTranscript</code> field is compressed with gzip and then base64 encoded. Before you can use the contents of the field, you must decode and decompress the contents. See the example for a simple function to decode and decompress the contents.</p>
+    ///   - [`audio_stream(byte_stream::ByteStream)`](crate::output::RecognizeUtteranceOutput::audio_stream): <p>The prompt or statement to send to the user. This is based on the bot configuration and context. For example, if Amazon Lex V2 did not understand the user intent, it sends the <code>clarificationPrompt</code> configured for the bot. If the intent requires confirmation before taking the fulfillment action, it sends the <code>confirmationPrompt</code>. Another example: Suppose that the Lambda function successfully fulfilled the intent, and sent a message to convey to the user. Then Amazon Lex V2 sends that message in the response.</p>
+    /// - On failure, responds with [`SdkError<RecognizeUtteranceError>`](crate::error::RecognizeUtteranceError)
     pub fn recognize_utterance(&self) -> fluent_builders::RecognizeUtterance<C, M, R> {
         fluent_builders::RecognizeUtterance::new(self.handle.clone())
     }

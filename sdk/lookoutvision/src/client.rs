@@ -83,163 +83,281 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateDataset` operation.
+    /// Constructs a fluent builder for the [`CreateDataset`](crate::client::fluent_builders::CreateDataset) operation.
     ///
-    /// See [`CreateDataset`](crate::client::fluent_builders::CreateDataset) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateDatasetInput`](crate::input::CreateDatasetInput) with field(s):
+    ///   - [`project_name(Option<String>)`](crate::input::CreateDatasetInput::project_name): <p>The name of the project in which you want to create a dataset.</p>
+    ///   - [`dataset_type(Option<String>)`](crate::input::CreateDatasetInput::dataset_type): <p>The type of the dataset. Specify <code>train</code> for a training dataset. Specify <code>test</code> for a test dataset.</p>
+    ///   - [`dataset_source(Option<DatasetSource>)`](crate::input::CreateDatasetInput::dataset_source): <p>The location of the manifest file that Amazon Lookout for Vision uses to create the dataset.</p>  <p>If you don't specify <code>DatasetSource</code>, an empty dataset is created and the operation synchronously returns. Later, you can add JSON Lines by calling <code>UpdateDatasetEntries</code>. </p>  <p>If you specify a value for <code>DataSource</code>, the manifest at the S3 location is validated and used to create the dataset. The call to <code>CreateDataset</code> is asynchronous and might take a while to complete. To find out the current status, Check the value of <code>Status</code> returned in a call to <code>DescribeDataset</code>.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateDatasetInput::client_token): <p>ClientToken is an idempotency token that ensures a call to <code>CreateDataset</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>CreateDataset</code>. In this case, safely retry your call to <code>CreateDataset</code> by using the same <code>ClientToken</code> parameter value.</p>  <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple dataset creation requests. You'll need to provide your own value for other use cases. </p>  <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>CreateDataset</code>. An idempotency token is active for 8 hours. </p>
+    /// - On success, responds with [`CreateDatasetOutput`](crate::output::CreateDatasetOutput) with field(s):
+    ///   - [`dataset_metadata(Option<DatasetMetadata>)`](crate::output::CreateDatasetOutput::dataset_metadata): <p>Information about the dataset.</p>
+    /// - On failure, responds with [`SdkError<CreateDatasetError>`](crate::error::CreateDatasetError)
     pub fn create_dataset(&self) -> fluent_builders::CreateDataset<C, M, R> {
         fluent_builders::CreateDataset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateModel` operation.
+    /// Constructs a fluent builder for the [`CreateModel`](crate::client::fluent_builders::CreateModel) operation.
     ///
-    /// See [`CreateModel`](crate::client::fluent_builders::CreateModel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateModelInput`](crate::input::CreateModelInput) with field(s):
+    ///   - [`project_name(Option<String>)`](crate::input::CreateModelInput::project_name): <p>The name of the project in which you want to create a model version.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateModelInput::description): <p>A description for the version of the model.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateModelInput::client_token): <p>ClientToken is an idempotency token that ensures a call to <code>CreateModel</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>CreateModel</code>. In this case, safely retry your call to <code>CreateModel</code> by using the same <code>ClientToken</code> parameter value. </p>  <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from starting multiple training jobs. You'll need to provide your own value for other use cases. </p>  <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>CreateModel</code>. An idempotency token is active for 8 hours.</p>
+    ///   - [`output_config(Option<OutputConfig>)`](crate::input::CreateModelInput::output_config): <p>The location where Amazon Lookout for Vision saves the training results.</p>
+    ///   - [`kms_key_id(Option<String>)`](crate::input::CreateModelInput::kms_key_id): <p>The identifier for your AWS KMS key. The key is used to encrypt training and test images copied into the service for model training. Your source images are unaffected. If this parameter is not specified, the copied images are encrypted by a key that AWS owns and manages.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateModelInput::tags): <p>A set of tags (key-value pairs) that you want to attach to the model.</p>
+    /// - On success, responds with [`CreateModelOutput`](crate::output::CreateModelOutput) with field(s):
+    ///   - [`model_metadata(Option<ModelMetadata>)`](crate::output::CreateModelOutput::model_metadata): <p>The response from a call to <code>CreateModel</code>.</p>
+    /// - On failure, responds with [`SdkError<CreateModelError>`](crate::error::CreateModelError)
     pub fn create_model(&self) -> fluent_builders::CreateModel<C, M, R> {
         fluent_builders::CreateModel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateProject` operation.
+    /// Constructs a fluent builder for the [`CreateProject`](crate::client::fluent_builders::CreateProject) operation.
     ///
-    /// See [`CreateProject`](crate::client::fluent_builders::CreateProject) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateProjectInput`](crate::input::CreateProjectInput) with field(s):
+    ///   - [`project_name(Option<String>)`](crate::input::CreateProjectInput::project_name): <p>The name for the project.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateProjectInput::client_token): <p>ClientToken is an idempotency token that ensures a call to <code>CreateProject</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>CreateProject</code>. In this case, safely retry your call to <code>CreateProject</code> by using the same <code>ClientToken</code> parameter value. </p>  <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple project creation requests. You'll need to provide your own value for other use cases. </p>  <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>CreateProject</code>. An idempotency token is active for 8 hours.</p>
+    /// - On success, responds with [`CreateProjectOutput`](crate::output::CreateProjectOutput) with field(s):
+    ///   - [`project_metadata(Option<ProjectMetadata>)`](crate::output::CreateProjectOutput::project_metadata): <p>Information about the project.</p>
+    /// - On failure, responds with [`SdkError<CreateProjectError>`](crate::error::CreateProjectError)
     pub fn create_project(&self) -> fluent_builders::CreateProject<C, M, R> {
         fluent_builders::CreateProject::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDataset` operation.
+    /// Constructs a fluent builder for the [`DeleteDataset`](crate::client::fluent_builders::DeleteDataset) operation.
     ///
-    /// See [`DeleteDataset`](crate::client::fluent_builders::DeleteDataset) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteDatasetInput`](crate::input::DeleteDatasetInput) with field(s):
+    ///   - [`project_name(Option<String>)`](crate::input::DeleteDatasetInput::project_name): <p>The name of the project that contains the dataset that you want to delete.</p>
+    ///   - [`dataset_type(Option<String>)`](crate::input::DeleteDatasetInput::dataset_type): <p>The type of the dataset to delete. Specify <code>train</code> to delete the training dataset. Specify <code>test</code> to delete the test dataset. To delete the dataset in a single dataset project, specify <code>train</code>.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::DeleteDatasetInput::client_token): <p>ClientToken is an idempotency token that ensures a call to <code>DeleteDataset</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>DeleteDataset</code>. In this case, safely retry your call to <code>DeleteDataset</code> by using the same <code>ClientToken</code> parameter value. </p>  <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple deletetion requests. You'll need to provide your own value for other use cases. </p>  <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>DeleteDataset</code>. An idempotency token is active for 8 hours.</p>
+    /// - On success, responds with [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteDatasetError>`](crate::error::DeleteDatasetError)
     pub fn delete_dataset(&self) -> fluent_builders::DeleteDataset<C, M, R> {
         fluent_builders::DeleteDataset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteModel` operation.
+    /// Constructs a fluent builder for the [`DeleteModel`](crate::client::fluent_builders::DeleteModel) operation.
     ///
-    /// See [`DeleteModel`](crate::client::fluent_builders::DeleteModel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteModelInput`](crate::input::DeleteModelInput) with field(s):
+    ///   - [`project_name(Option<String>)`](crate::input::DeleteModelInput::project_name): <p>The name of the project that contains the model that you want to delete.</p>
+    ///   - [`model_version(Option<String>)`](crate::input::DeleteModelInput::model_version): <p>The version of the model that you want to delete.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::DeleteModelInput::client_token): <p>ClientToken is an idempotency token that ensures a call to <code>DeleteModel</code> completes only once. You choose the value to pass. For example, an issue might prevent you from getting a response from <code>DeleteModel</code>. In this case, safely retry your call to <code>DeleteModel</code> by using the same <code>ClientToken</code> parameter value.</p>  <p>If you don't supply a value for ClientToken, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple model deletion requests. You'll need to provide your own value for other use cases. </p>  <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>DeleteModel</code>. An idempotency token is active for 8 hours.</p>
+    /// - On success, responds with [`DeleteModelOutput`](crate::output::DeleteModelOutput) with field(s):
+    ///   - [`model_arn(Option<String>)`](crate::output::DeleteModelOutput::model_arn): <p>The Amazon Resource Name (ARN) of the model that was deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteModelError>`](crate::error::DeleteModelError)
     pub fn delete_model(&self) -> fluent_builders::DeleteModel<C, M, R> {
         fluent_builders::DeleteModel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteProject` operation.
+    /// Constructs a fluent builder for the [`DeleteProject`](crate::client::fluent_builders::DeleteProject) operation.
     ///
-    /// See [`DeleteProject`](crate::client::fluent_builders::DeleteProject) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteProjectInput`](crate::input::DeleteProjectInput) with field(s):
+    ///   - [`project_name(Option<String>)`](crate::input::DeleteProjectInput::project_name): <p>The name of the project to delete.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::DeleteProjectInput::client_token): <p>ClientToken is an idempotency token that ensures a call to <code>DeleteProject</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>DeleteProject</code>. In this case, safely retry your call to <code>DeleteProject</code> by using the same <code>ClientToken</code> parameter value. </p>  <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple project deletion requests. You'll need to provide your own value for other use cases. </p>  <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>DeleteProject</code>. An idempotency token is active for 8 hours.</p>
+    /// - On success, responds with [`DeleteProjectOutput`](crate::output::DeleteProjectOutput) with field(s):
+    ///   - [`project_arn(Option<String>)`](crate::output::DeleteProjectOutput::project_arn): <p>The Amazon Resource Name (ARN) of the project that was deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteProjectError>`](crate::error::DeleteProjectError)
     pub fn delete_project(&self) -> fluent_builders::DeleteProject<C, M, R> {
         fluent_builders::DeleteProject::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDataset` operation.
+    /// Constructs a fluent builder for the [`DescribeDataset`](crate::client::fluent_builders::DescribeDataset) operation.
     ///
-    /// See [`DescribeDataset`](crate::client::fluent_builders::DescribeDataset) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeDatasetInput`](crate::input::DescribeDatasetInput) with field(s):
+    ///   - [`project_name(Option<String>)`](crate::input::DescribeDatasetInput::project_name): <p>The name of the project that contains the dataset that you want to describe.</p>
+    ///   - [`dataset_type(Option<String>)`](crate::input::DescribeDatasetInput::dataset_type): <p>The type of the dataset to describe. Specify <code>train</code> to describe the training dataset. Specify <code>test</code> to describe the test dataset. If you have a single dataset project, specify <code>train</code> </p>
+    /// - On success, responds with [`DescribeDatasetOutput`](crate::output::DescribeDatasetOutput) with field(s):
+    ///   - [`dataset_description(Option<DatasetDescription>)`](crate::output::DescribeDatasetOutput::dataset_description): <p>The description of the requested dataset. </p>
+    /// - On failure, responds with [`SdkError<DescribeDatasetError>`](crate::error::DescribeDatasetError)
     pub fn describe_dataset(&self) -> fluent_builders::DescribeDataset<C, M, R> {
         fluent_builders::DescribeDataset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeModel` operation.
+    /// Constructs a fluent builder for the [`DescribeModel`](crate::client::fluent_builders::DescribeModel) operation.
     ///
-    /// See [`DescribeModel`](crate::client::fluent_builders::DescribeModel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeModelInput`](crate::input::DescribeModelInput) with field(s):
+    ///   - [`project_name(Option<String>)`](crate::input::DescribeModelInput::project_name): <p>The project that contains the version of a model that you want to describe.</p>
+    ///   - [`model_version(Option<String>)`](crate::input::DescribeModelInput::model_version): <p>The version of the model that you want to describe.</p>
+    /// - On success, responds with [`DescribeModelOutput`](crate::output::DescribeModelOutput) with field(s):
+    ///   - [`model_description(Option<ModelDescription>)`](crate::output::DescribeModelOutput::model_description): <p>Contains the description of the model.</p>
+    /// - On failure, responds with [`SdkError<DescribeModelError>`](crate::error::DescribeModelError)
     pub fn describe_model(&self) -> fluent_builders::DescribeModel<C, M, R> {
         fluent_builders::DescribeModel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeModelPackagingJob` operation.
+    /// Constructs a fluent builder for the [`DescribeModelPackagingJob`](crate::client::fluent_builders::DescribeModelPackagingJob) operation.
     ///
-    /// See [`DescribeModelPackagingJob`](crate::client::fluent_builders::DescribeModelPackagingJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeModelPackagingJobInput`](crate::input::DescribeModelPackagingJobInput) with field(s):
+    ///   - [`project_name(Option<String>)`](crate::input::DescribeModelPackagingJobInput::project_name): <p>The name of the project that contains the model packaging job that you want to describe. </p>
+    ///   - [`job_name(Option<String>)`](crate::input::DescribeModelPackagingJobInput::job_name): <p>The job name for the model packaging job. </p>
+    /// - On success, responds with [`DescribeModelPackagingJobOutput`](crate::output::DescribeModelPackagingJobOutput) with field(s):
+    ///   - [`model_packaging_description(Option<ModelPackagingDescription>)`](crate::output::DescribeModelPackagingJobOutput::model_packaging_description): <p>The description of the model packaging job. </p>
+    /// - On failure, responds with [`SdkError<DescribeModelPackagingJobError>`](crate::error::DescribeModelPackagingJobError)
     pub fn describe_model_packaging_job(
         &self,
     ) -> fluent_builders::DescribeModelPackagingJob<C, M, R> {
         fluent_builders::DescribeModelPackagingJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeProject` operation.
+    /// Constructs a fluent builder for the [`DescribeProject`](crate::client::fluent_builders::DescribeProject) operation.
     ///
-    /// See [`DescribeProject`](crate::client::fluent_builders::DescribeProject) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeProjectInput`](crate::input::DescribeProjectInput) with field(s):
+    ///   - [`project_name(Option<String>)`](crate::input::DescribeProjectInput::project_name): <p>The name of the project that you want to describe.</p>
+    /// - On success, responds with [`DescribeProjectOutput`](crate::output::DescribeProjectOutput) with field(s):
+    ///   - [`project_description(Option<ProjectDescription>)`](crate::output::DescribeProjectOutput::project_description): <p>The description of the project.</p>
+    /// - On failure, responds with [`SdkError<DescribeProjectError>`](crate::error::DescribeProjectError)
     pub fn describe_project(&self) -> fluent_builders::DescribeProject<C, M, R> {
         fluent_builders::DescribeProject::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DetectAnomalies` operation.
+    /// Constructs a fluent builder for the [`DetectAnomalies`](crate::client::fluent_builders::DetectAnomalies) operation.
     ///
-    /// See [`DetectAnomalies`](crate::client::fluent_builders::DetectAnomalies) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DetectAnomaliesInput`](crate::input::DetectAnomaliesInput) with field(s):
+    ///   - [`project_name(Option<String>)`](crate::input::DetectAnomaliesInput::project_name): <p>The name of the project that contains the model version that you want to use.</p>
+    ///   - [`model_version(Option<String>)`](crate::input::DetectAnomaliesInput::model_version): <p>The version of the model that you want to use.</p>
+    ///   - [`body(byte_stream::ByteStream)`](crate::input::DetectAnomaliesInput::body): <p>The unencrypted image bytes that you want to analyze. </p>
+    ///   - [`content_type(Option<String>)`](crate::input::DetectAnomaliesInput::content_type): <p>The type of the image passed in <code>Body</code>. Valid values are <code>image/png</code> (PNG format images) and <code>image/jpeg</code> (JPG format images). </p>
+    /// - On success, responds with [`DetectAnomaliesOutput`](crate::output::DetectAnomaliesOutput) with field(s):
+    ///   - [`detect_anomaly_result(Option<DetectAnomalyResult>)`](crate::output::DetectAnomaliesOutput::detect_anomaly_result): <p>The results of the <code>DetectAnomalies</code> operation.</p>
+    /// - On failure, responds with [`SdkError<DetectAnomaliesError>`](crate::error::DetectAnomaliesError)
     pub fn detect_anomalies(&self) -> fluent_builders::DetectAnomalies<C, M, R> {
         fluent_builders::DetectAnomalies::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDatasetEntries` operation.
-    ///
-    /// See [`ListDatasetEntries`](crate::client::fluent_builders::ListDatasetEntries) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListDatasetEntries`](crate::client::fluent_builders::ListDatasetEntries) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDatasetEntries::into_paginator).
+    ///
+    /// - Takes [`ListDatasetEntriesInput`](crate::input::ListDatasetEntriesInput) with field(s):
+    ///   - [`project_name(Option<String>)`](crate::input::ListDatasetEntriesInput::project_name): <p>The name of the project that contains the dataset that you want to list.</p>
+    ///   - [`dataset_type(Option<String>)`](crate::input::ListDatasetEntriesInput::dataset_type): <p>The type of the dataset that you want to list. Specify <code>train</code> to list the training dataset. Specify <code>test</code> to list the test dataset. If you have a single dataset project, specify <code>train</code>.</p>
+    ///   - [`labeled(Option<bool>)`](crate::input::ListDatasetEntriesInput::labeled): <p>Specify <code>true</code> to include labeled entries, otherwise specify <code>false</code>. If you don't specify a value, Lookout for Vision returns all entries.</p>
+    ///   - [`anomaly_class(Option<String>)`](crate::input::ListDatasetEntriesInput::anomaly_class): <p>Specify <code>normal</code> to include only normal images. Specify <code>anomaly</code> to only include anomalous entries. If you don't specify a value, Amazon Lookout for Vision returns normal and anomalous images.</p>
+    ///   - [`before_creation_date(Option<DateTime>)`](crate::input::ListDatasetEntriesInput::before_creation_date): <p>Only includes entries before the specified date in the response. For example, <code>2020-06-23T00:00:00</code>.</p>
+    ///   - [`after_creation_date(Option<DateTime>)`](crate::input::ListDatasetEntriesInput::after_creation_date): <p>Only includes entries after the specified date in the response. For example, <code>2020-06-23T00:00:00</code>.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListDatasetEntriesInput::next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of dataset entries.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListDatasetEntriesInput::max_results): <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100.</p>
+    ///   - [`source_ref_contains(Option<String>)`](crate::input::ListDatasetEntriesInput::source_ref_contains): <p>Perform a "contains" search on the values of the <code>source-ref</code> key within the dataset. For example a value of "IMG_17" returns all JSON Lines where the <code>source-ref</code> key value matches <i>*IMG_17*</i>.</p>
+    /// - On success, responds with [`ListDatasetEntriesOutput`](crate::output::ListDatasetEntriesOutput) with field(s):
+    ///   - [`dataset_entries(Option<Vec<String>>)`](crate::output::ListDatasetEntriesOutput::dataset_entries): <p>A list of the entries (JSON Lines) within the dataset.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDatasetEntriesOutput::next_token): <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set ofdataset entries.</p>
+    /// - On failure, responds with [`SdkError<ListDatasetEntriesError>`](crate::error::ListDatasetEntriesError)
     pub fn list_dataset_entries(&self) -> fluent_builders::ListDatasetEntries<C, M, R> {
         fluent_builders::ListDatasetEntries::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListModelPackagingJobs` operation.
-    ///
-    /// See [`ListModelPackagingJobs`](crate::client::fluent_builders::ListModelPackagingJobs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListModelPackagingJobs`](crate::client::fluent_builders::ListModelPackagingJobs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListModelPackagingJobs::into_paginator).
+    ///
+    /// - Takes [`ListModelPackagingJobsInput`](crate::input::ListModelPackagingJobsInput) with field(s):
+    ///   - [`project_name(Option<String>)`](crate::input::ListModelPackagingJobsInput::project_name): <p> The name of the project for which you want to list the model packaging jobs. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListModelPackagingJobsInput::next_token): <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListModelPackagingJobsInput::max_results): <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100. </p>
+    /// - On success, responds with [`ListModelPackagingJobsOutput`](crate::output::ListModelPackagingJobsOutput) with field(s):
+    ///   - [`model_packaging_jobs(Option<Vec<ModelPackagingJobMetadata>>)`](crate::output::ListModelPackagingJobsOutput::model_packaging_jobs): <p> A list of the model packaging jobs created for the specified Amazon Lookout for Vision project. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListModelPackagingJobsOutput::next_token): <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    /// - On failure, responds with [`SdkError<ListModelPackagingJobsError>`](crate::error::ListModelPackagingJobsError)
     pub fn list_model_packaging_jobs(&self) -> fluent_builders::ListModelPackagingJobs<C, M, R> {
         fluent_builders::ListModelPackagingJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListModels` operation.
-    ///
-    /// See [`ListModels`](crate::client::fluent_builders::ListModels) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListModels`](crate::client::fluent_builders::ListModels) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListModels::into_paginator).
+    ///
+    /// - Takes [`ListModelsInput`](crate::input::ListModelsInput) with field(s):
+    ///   - [`project_name(Option<String>)`](crate::input::ListModelsInput::project_name): <p>The name of the project that contains the model versions that you want to list.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListModelsInput::next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of models.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListModelsInput::max_results): <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100.</p>
+    /// - On success, responds with [`ListModelsOutput`](crate::output::ListModelsOutput) with field(s):
+    ///   - [`models(Option<Vec<ModelMetadata>>)`](crate::output::ListModelsOutput::models): <p>A list of model versions in the specified project. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListModelsOutput::next_token): <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set of models. </p>
+    /// - On failure, responds with [`SdkError<ListModelsError>`](crate::error::ListModelsError)
     pub fn list_models(&self) -> fluent_builders::ListModels<C, M, R> {
         fluent_builders::ListModels::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListProjects` operation.
-    ///
-    /// See [`ListProjects`](crate::client::fluent_builders::ListProjects) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListProjects`](crate::client::fluent_builders::ListProjects) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProjects::into_paginator).
+    ///
+    /// - Takes [`ListProjectsInput`](crate::input::ListProjectsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListProjectsInput::next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of projects.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListProjectsInput::max_results): <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100.</p>
+    /// - On success, responds with [`ListProjectsOutput`](crate::output::ListProjectsOutput) with field(s):
+    ///   - [`projects(Option<Vec<ProjectMetadata>>)`](crate::output::ListProjectsOutput::projects): <p>A list of projects in your AWS account.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListProjectsOutput::next_token): <p>If the response is truncated, Amazon Lookout for Vision returns this token that you can use in the subsequent request to retrieve the next set of projects.</p>
+    /// - On failure, responds with [`SdkError<ListProjectsError>`](crate::error::ListProjectsError)
     pub fn list_projects(&self) -> fluent_builders::ListProjects<C, M, R> {
         fluent_builders::ListProjects::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the model for which you want to list tags. </p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A map of tag keys and values attached to the specified model.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartModel` operation.
+    /// Constructs a fluent builder for the [`StartModel`](crate::client::fluent_builders::StartModel) operation.
     ///
-    /// See [`StartModel`](crate::client::fluent_builders::StartModel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartModelInput`](crate::input::StartModelInput) with field(s):
+    ///   - [`project_name(Option<String>)`](crate::input::StartModelInput::project_name): <p>The name of the project that contains the model that you want to start.</p>
+    ///   - [`model_version(Option<String>)`](crate::input::StartModelInput::model_version): <p>The version of the model that you want to start.</p>
+    ///   - [`min_inference_units(Option<i32>)`](crate::input::StartModelInput::min_inference_units): <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing. Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use. </p>
+    ///   - [`client_token(Option<String>)`](crate::input::StartModelInput::client_token): <p>ClientToken is an idempotency token that ensures a call to <code>StartModel</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>StartModel</code>. In this case, safely retry your call to <code>StartModel</code> by using the same <code>ClientToken</code> parameter value. </p>  <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple start requests. You'll need to provide your own value for other use cases. </p>  <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>StartModel</code>. An idempotency token is active for 8 hours. </p>
+    /// - On success, responds with [`StartModelOutput`](crate::output::StartModelOutput) with field(s):
+    ///   - [`status(Option<ModelHostingStatus>)`](crate::output::StartModelOutput::status): <p>The current running status of the model.</p>
+    /// - On failure, responds with [`SdkError<StartModelError>`](crate::error::StartModelError)
     pub fn start_model(&self) -> fluent_builders::StartModel<C, M, R> {
         fluent_builders::StartModel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartModelPackagingJob` operation.
+    /// Constructs a fluent builder for the [`StartModelPackagingJob`](crate::client::fluent_builders::StartModelPackagingJob) operation.
     ///
-    /// See [`StartModelPackagingJob`](crate::client::fluent_builders::StartModelPackagingJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartModelPackagingJobInput`](crate::input::StartModelPackagingJobInput) with field(s):
+    ///   - [`project_name(Option<String>)`](crate::input::StartModelPackagingJobInput::project_name): <p> The name of the project which contains the version of the model that you want to package. </p>
+    ///   - [`model_version(Option<String>)`](crate::input::StartModelPackagingJobInput::model_version): <p> The version of the model within the project that you want to package. </p>
+    ///   - [`job_name(Option<String>)`](crate::input::StartModelPackagingJobInput::job_name): <p>A name for the model packaging job. If you don't supply a value, the service creates a job name for you. </p>
+    ///   - [`configuration(Option<ModelPackagingConfiguration>)`](crate::input::StartModelPackagingJobInput::configuration): <p>The configuration for the model packaging job. </p>
+    ///   - [`description(Option<String>)`](crate::input::StartModelPackagingJobInput::description): <p>A description for the model packaging job. </p>
+    ///   - [`client_token(Option<String>)`](crate::input::StartModelPackagingJobInput::client_token): <p>ClientToken is an idempotency token that ensures a call to <code>StartModelPackagingJob</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>StartModelPackagingJob</code>. In this case, safely retry your call to <code>StartModelPackagingJob</code> by using the same <code>ClientToken</code> parameter value.</p>  <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple dataset creation requests. You'll need to provide your own value for other use cases. </p>  <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>StartModelPackagingJob</code>. An idempotency token is active for 8 hours. </p>
+    /// - On success, responds with [`StartModelPackagingJobOutput`](crate::output::StartModelPackagingJobOutput) with field(s):
+    ///   - [`job_name(Option<String>)`](crate::output::StartModelPackagingJobOutput::job_name): <p>The job name for the model packaging job. If you don't supply a job name in the <code>JobName</code> input parameter, the service creates a job name for you. </p>
+    /// - On failure, responds with [`SdkError<StartModelPackagingJobError>`](crate::error::StartModelPackagingJobError)
     pub fn start_model_packaging_job(&self) -> fluent_builders::StartModelPackagingJob<C, M, R> {
         fluent_builders::StartModelPackagingJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopModel` operation.
+    /// Constructs a fluent builder for the [`StopModel`](crate::client::fluent_builders::StopModel) operation.
     ///
-    /// See [`StopModel`](crate::client::fluent_builders::StopModel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StopModelInput`](crate::input::StopModelInput) with field(s):
+    ///   - [`project_name(Option<String>)`](crate::input::StopModelInput::project_name): <p>The name of the project that contains the model that you want to stop.</p>
+    ///   - [`model_version(Option<String>)`](crate::input::StopModelInput::model_version): <p>The version of the model that you want to stop.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::StopModelInput::client_token): <p>ClientToken is an idempotency token that ensures a call to <code>StopModel</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>StopModel</code>. In this case, safely retry your call to <code>StopModel</code> by using the same <code>ClientToken</code> parameter value.</p>  <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple stop requests. You'll need to provide your own value for other use cases. </p>  <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>StopModel</code>. An idempotency token is active for 8 hours. </p>
+    /// - On success, responds with [`StopModelOutput`](crate::output::StopModelOutput) with field(s):
+    ///   - [`status(Option<ModelHostingStatus>)`](crate::output::StopModelOutput::status): <p>The status of the model.</p>
+    /// - On failure, responds with [`SdkError<StopModelError>`](crate::error::StopModelError)
     pub fn stop_model(&self) -> fluent_builders::StopModel<C, M, R> {
         fluent_builders::StopModel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the model to assign the tags.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>The key-value tags to assign to the model.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the model from which you want to remove tags. </p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>A list of the keys of the tags that you want to remove.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDatasetEntries` operation.
+    /// Constructs a fluent builder for the [`UpdateDatasetEntries`](crate::client::fluent_builders::UpdateDatasetEntries) operation.
     ///
-    /// See [`UpdateDatasetEntries`](crate::client::fluent_builders::UpdateDatasetEntries) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateDatasetEntriesInput`](crate::input::UpdateDatasetEntriesInput) with field(s):
+    ///   - [`project_name(Option<String>)`](crate::input::UpdateDatasetEntriesInput::project_name): <p>The name of the project that contains the dataset that you want to update.</p>
+    ///   - [`dataset_type(Option<String>)`](crate::input::UpdateDatasetEntriesInput::dataset_type): <p>The type of the dataset that you want to update. Specify <code>train</code> to update the training dataset. Specify <code>test</code> to update the test dataset. If you have a single dataset project, specify <code>train</code>.</p>
+    ///   - [`changes(Option<Blob>)`](crate::input::UpdateDatasetEntriesInput::changes): <p>The entries to add to the dataset.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::UpdateDatasetEntriesInput::client_token): <p>ClientToken is an idempotency token that ensures a call to <code>UpdateDatasetEntries</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>UpdateDatasetEntries</code>. In this case, safely retry your call to <code>UpdateDatasetEntries</code> by using the same <code>ClientToken</code> parameter value.</p>  <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple updates with the same dataset entries. You'll need to provide your own value for other use cases. </p>  <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>UpdateDatasetEntries</code>. An idempotency token is active for 8 hours. </p>
+    /// - On success, responds with [`UpdateDatasetEntriesOutput`](crate::output::UpdateDatasetEntriesOutput) with field(s):
+    ///   - [`status(Option<DatasetStatus>)`](crate::output::UpdateDatasetEntriesOutput::status): <p>The status of the dataset update.</p>
+    /// - On failure, responds with [`SdkError<UpdateDatasetEntriesError>`](crate::error::UpdateDatasetEntriesError)
     pub fn update_dataset_entries(&self) -> fluent_builders::UpdateDatasetEntries<C, M, R> {
         fluent_builders::UpdateDatasetEntries::new(self.handle.clone())
     }

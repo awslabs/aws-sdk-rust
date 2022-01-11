@@ -83,202 +83,337 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateHttpNamespace` operation.
+    /// Constructs a fluent builder for the [`CreateHttpNamespace`](crate::client::fluent_builders::CreateHttpNamespace) operation.
     ///
-    /// See [`CreateHttpNamespace`](crate::client::fluent_builders::CreateHttpNamespace) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateHttpNamespaceInput`](crate::input::CreateHttpNamespaceInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateHttpNamespaceInput::name): <p>The name that you want to assign to this namespace.</p>
+    ///   - [`creator_request_id(Option<String>)`](crate::input::CreateHttpNamespaceInput::creator_request_id): <p>A unique string that identifies the request and that allows failed <code>CreateHttpNamespace</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/time stamp).</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateHttpNamespaceInput::description): <p>A description for the namespace.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateHttpNamespaceInput::tags): <p>The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.</p>
+    /// - On success, responds with [`CreateHttpNamespaceOutput`](crate::output::CreateHttpNamespaceOutput) with field(s):
+    ///   - [`operation_id(Option<String>)`](crate::output::CreateHttpNamespaceOutput::operation_id): <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    /// - On failure, responds with [`SdkError<CreateHttpNamespaceError>`](crate::error::CreateHttpNamespaceError)
     pub fn create_http_namespace(&self) -> fluent_builders::CreateHttpNamespace<C, M, R> {
         fluent_builders::CreateHttpNamespace::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreatePrivateDnsNamespace` operation.
+    /// Constructs a fluent builder for the [`CreatePrivateDnsNamespace`](crate::client::fluent_builders::CreatePrivateDnsNamespace) operation.
     ///
-    /// See [`CreatePrivateDnsNamespace`](crate::client::fluent_builders::CreatePrivateDnsNamespace) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreatePrivateDnsNamespaceInput`](crate::input::CreatePrivateDnsNamespaceInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreatePrivateDnsNamespaceInput::name): <p>The name that you want to assign to this namespace. When you create a private DNS namespace, Cloud Map automatically creates an Amazon Route 53 private hosted zone that has the same name as the namespace.</p>
+    ///   - [`creator_request_id(Option<String>)`](crate::input::CreatePrivateDnsNamespaceInput::creator_request_id): <p>A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
+    ///   - [`description(Option<String>)`](crate::input::CreatePrivateDnsNamespaceInput::description): <p>A description for the namespace.</p>
+    ///   - [`vpc(Option<String>)`](crate::input::CreatePrivateDnsNamespaceInput::vpc): <p>The ID of the Amazon VPC that you want to associate the namespace with.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreatePrivateDnsNamespaceInput::tags): <p>The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.</p>
+    ///   - [`properties(Option<PrivateDnsNamespaceProperties>)`](crate::input::CreatePrivateDnsNamespaceInput::properties): <p>Properties for the private DNS namespace.</p>
+    /// - On success, responds with [`CreatePrivateDnsNamespaceOutput`](crate::output::CreatePrivateDnsNamespaceOutput) with field(s):
+    ///   - [`operation_id(Option<String>)`](crate::output::CreatePrivateDnsNamespaceOutput::operation_id): <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    /// - On failure, responds with [`SdkError<CreatePrivateDnsNamespaceError>`](crate::error::CreatePrivateDnsNamespaceError)
     pub fn create_private_dns_namespace(
         &self,
     ) -> fluent_builders::CreatePrivateDnsNamespace<C, M, R> {
         fluent_builders::CreatePrivateDnsNamespace::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreatePublicDnsNamespace` operation.
+    /// Constructs a fluent builder for the [`CreatePublicDnsNamespace`](crate::client::fluent_builders::CreatePublicDnsNamespace) operation.
     ///
-    /// See [`CreatePublicDnsNamespace`](crate::client::fluent_builders::CreatePublicDnsNamespace) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreatePublicDnsNamespaceInput`](crate::input::CreatePublicDnsNamespaceInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreatePublicDnsNamespaceInput::name): <p>The name that you want to assign to this namespace.</p>
+    ///   - [`creator_request_id(Option<String>)`](crate::input::CreatePublicDnsNamespaceInput::creator_request_id): <p>A unique string that identifies the request and that allows failed <code>CreatePublicDnsNamespace</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
+    ///   - [`description(Option<String>)`](crate::input::CreatePublicDnsNamespaceInput::description): <p>A description for the namespace.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreatePublicDnsNamespaceInput::tags): <p>The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.</p>
+    ///   - [`properties(Option<PublicDnsNamespaceProperties>)`](crate::input::CreatePublicDnsNamespaceInput::properties): <p>Properties for the public DNS namespace.</p>
+    /// - On success, responds with [`CreatePublicDnsNamespaceOutput`](crate::output::CreatePublicDnsNamespaceOutput) with field(s):
+    ///   - [`operation_id(Option<String>)`](crate::output::CreatePublicDnsNamespaceOutput::operation_id): <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    /// - On failure, responds with [`SdkError<CreatePublicDnsNamespaceError>`](crate::error::CreatePublicDnsNamespaceError)
     pub fn create_public_dns_namespace(
         &self,
     ) -> fluent_builders::CreatePublicDnsNamespace<C, M, R> {
         fluent_builders::CreatePublicDnsNamespace::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateService` operation.
+    /// Constructs a fluent builder for the [`CreateService`](crate::client::fluent_builders::CreateService) operation.
     ///
-    /// See [`CreateService`](crate::client::fluent_builders::CreateService) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateServiceInput`](crate::input::CreateServiceInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateServiceInput::name): <p>The name that you want to assign to the service.</p>  <p>If you want Cloud Map to create an <code>SRV</code> record when you register an instance and you're using a system that requires a specific <code>SRV</code> format, such as <a href="http://www.haproxy.org/">HAProxy</a>, specify the following for <code>Name</code>:</p>  <ul>   <li> <p>Start the name with an underscore (_), such as <code>_exampleservice</code>.</p> </li>   <li> <p>End the name with <i>._protocol</i>, such as <code>._tcp</code>.</p> </li>  </ul>  <p>When you register an instance, Cloud Map creates an <code>SRV</code> record and assigns a name to the record by concatenating the service name and the namespace name (for example,</p>  <p> <code>_exampleservice._tcp.example.com</code>).</p> <note>   <p>For services that are accessible by DNS queries, you can't create multiple services with names that differ only by case (such as EXAMPLE and example). Otherwise, these services have the same DNS name and can't be distinguished. However, if you use a namespace that's only accessible by API calls, then you can create services that with names that differ only by case.</p>  </note>
+    ///   - [`namespace_id(Option<String>)`](crate::input::CreateServiceInput::namespace_id): <p>The ID of the namespace that you want to use to create the service. The namespace ID must be specified, but it can be specified either here or in the <code>DnsConfig</code> object.</p>
+    ///   - [`creator_request_id(Option<String>)`](crate::input::CreateServiceInput::creator_request_id): <p>A unique string that identifies the request and that allows failed <code>CreateService</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateServiceInput::description): <p>A description for the service.</p>
+    ///   - [`dns_config(Option<DnsConfig>)`](crate::input::CreateServiceInput::dns_config): <p>A complex type that contains information about the Amazon Route 53 records that you want Cloud Map to create when you register an instance. </p>
+    ///   - [`health_check_config(Option<HealthCheckConfig>)`](crate::input::CreateServiceInput::health_check_config): <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional Route 53 health check. If you specify settings for a health check, Cloud Map associates the health check with all the Route 53 DNS records that you specify in <code>DnsConfig</code>.</p> <important>   <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>  </important>  <p>For information about the charges for health checks, see <a href="http://aws.amazon.com/cloud-map/pricing/">Cloud Map Pricing</a>.</p>
+    ///   - [`health_check_custom_config(Option<HealthCheckCustomConfig>)`](crate::input::CreateServiceInput::health_check_custom_config): <p>A complex type that contains information about an optional custom health check.</p> <important>   <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>  </important>  <p>You can't add, update, or delete a <code>HealthCheckCustomConfig</code> configuration from an existing service.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateServiceInput::tags): <p>The tags to add to the service. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.</p>
+    ///   - [`r#type(Option<ServiceTypeOption>)`](crate::input::CreateServiceInput::r#type): <p>If present, specifies that the service instances are only discoverable using the <code>DiscoverInstances</code> API operation. No DNS records is registered for the service instances. The only valid value is <code>HTTP</code>.</p>
+    /// - On success, responds with [`CreateServiceOutput`](crate::output::CreateServiceOutput) with field(s):
+    ///   - [`service(Option<Service>)`](crate::output::CreateServiceOutput::service): <p>A complex type that contains information about the new service.</p>
+    /// - On failure, responds with [`SdkError<CreateServiceError>`](crate::error::CreateServiceError)
     pub fn create_service(&self) -> fluent_builders::CreateService<C, M, R> {
         fluent_builders::CreateService::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteNamespace` operation.
+    /// Constructs a fluent builder for the [`DeleteNamespace`](crate::client::fluent_builders::DeleteNamespace) operation.
     ///
-    /// See [`DeleteNamespace`](crate::client::fluent_builders::DeleteNamespace) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteNamespaceInput`](crate::input::DeleteNamespaceInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::DeleteNamespaceInput::id): <p>The ID of the namespace that you want to delete.</p>
+    /// - On success, responds with [`DeleteNamespaceOutput`](crate::output::DeleteNamespaceOutput) with field(s):
+    ///   - [`operation_id(Option<String>)`](crate::output::DeleteNamespaceOutput::operation_id): <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    /// - On failure, responds with [`SdkError<DeleteNamespaceError>`](crate::error::DeleteNamespaceError)
     pub fn delete_namespace(&self) -> fluent_builders::DeleteNamespace<C, M, R> {
         fluent_builders::DeleteNamespace::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteService` operation.
+    /// Constructs a fluent builder for the [`DeleteService`](crate::client::fluent_builders::DeleteService) operation.
     ///
-    /// See [`DeleteService`](crate::client::fluent_builders::DeleteService) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteServiceInput`](crate::input::DeleteServiceInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::DeleteServiceInput::id): <p>The ID of the service that you want to delete.</p>
+    /// - On success, responds with [`DeleteServiceOutput`](crate::output::DeleteServiceOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteServiceError>`](crate::error::DeleteServiceError)
     pub fn delete_service(&self) -> fluent_builders::DeleteService<C, M, R> {
         fluent_builders::DeleteService::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeregisterInstance` operation.
+    /// Constructs a fluent builder for the [`DeregisterInstance`](crate::client::fluent_builders::DeregisterInstance) operation.
     ///
-    /// See [`DeregisterInstance`](crate::client::fluent_builders::DeregisterInstance) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeregisterInstanceInput`](crate::input::DeregisterInstanceInput) with field(s):
+    ///   - [`service_id(Option<String>)`](crate::input::DeregisterInstanceInput::service_id): <p>The ID of the service that the instance is associated with.</p>
+    ///   - [`instance_id(Option<String>)`](crate::input::DeregisterInstanceInput::instance_id): <p>The value that you specified for <code>Id</code> in the <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request.</p>
+    /// - On success, responds with [`DeregisterInstanceOutput`](crate::output::DeregisterInstanceOutput) with field(s):
+    ///   - [`operation_id(Option<String>)`](crate::output::DeregisterInstanceOutput::operation_id): <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    /// - On failure, responds with [`SdkError<DeregisterInstanceError>`](crate::error::DeregisterInstanceError)
     pub fn deregister_instance(&self) -> fluent_builders::DeregisterInstance<C, M, R> {
         fluent_builders::DeregisterInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DiscoverInstances` operation.
+    /// Constructs a fluent builder for the [`DiscoverInstances`](crate::client::fluent_builders::DiscoverInstances) operation.
     ///
-    /// See [`DiscoverInstances`](crate::client::fluent_builders::DiscoverInstances) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DiscoverInstancesInput`](crate::input::DiscoverInstancesInput) with field(s):
+    ///   - [`namespace_name(Option<String>)`](crate::input::DiscoverInstancesInput::namespace_name): <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.</p>
+    ///   - [`service_name(Option<String>)`](crate::input::DiscoverInstancesInput::service_name): <p>The name of the service that you specified when you registered the instance.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DiscoverInstancesInput::max_results): <p>The maximum number of instances that you want Cloud Map to return in the response to a <code>DiscoverInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 instances.</p>
+    ///   - [`query_parameters(Option<HashMap<String, String>>)`](crate::input::DiscoverInstancesInput::query_parameters): <p>Filters to scope the results based on custom attributes for the instance (for example, <code>{version=v1, az=1a}</code>). Only instances that match all the specified key-value pairs are returned.</p>
+    ///   - [`optional_parameters(Option<HashMap<String, String>>)`](crate::input::DiscoverInstancesInput::optional_parameters): <p>Opportunistic filters to scope the results based on custom attributes. If there are instances that match both the filters specified in both the <code>QueryParameters</code> parameter and this parameter, all of these instances are returned. Otherwise, the filters are ignored, and only instances that match the filters that are specified in the <code>QueryParameters</code> parameter are returned.</p>
+    ///   - [`health_status(Option<HealthStatusFilter>)`](crate::input::DiscoverInstancesInput::health_status): <p>The health status of the instances that you want to discover. This parameter is ignored for services that don't have a health check configured, and all instances are returned.</p>  <dl>   <dt>   HEALTHY  </dt>   <dd>    <p>Returns healthy instances.</p>   </dd>   <dt>   UNHEALTHY  </dt>   <dd>    <p>Returns unhealthy instances.</p>   </dd>   <dt>   ALL  </dt>   <dd>    <p>Returns all instances.</p>   </dd>   <dt>   HEALTHY_OR_ELSE_ALL  </dt>   <dd>    <p>Returns healthy instances, unless none are reporting a healthy state. In that case, return all instances. This is also called failing open.</p>   </dd>  </dl>
+    /// - On success, responds with [`DiscoverInstancesOutput`](crate::output::DiscoverInstancesOutput) with field(s):
+    ///   - [`instances(Option<Vec<HttpInstanceSummary>>)`](crate::output::DiscoverInstancesOutput::instances): <p>A complex type that contains one <code>HttpInstanceSummary</code> for each registered instance.</p>
+    /// - On failure, responds with [`SdkError<DiscoverInstancesError>`](crate::error::DiscoverInstancesError)
     pub fn discover_instances(&self) -> fluent_builders::DiscoverInstances<C, M, R> {
         fluent_builders::DiscoverInstances::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetInstance` operation.
+    /// Constructs a fluent builder for the [`GetInstance`](crate::client::fluent_builders::GetInstance) operation.
     ///
-    /// See [`GetInstance`](crate::client::fluent_builders::GetInstance) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetInstanceInput`](crate::input::GetInstanceInput) with field(s):
+    ///   - [`service_id(Option<String>)`](crate::input::GetInstanceInput::service_id): <p>The ID of the service that the instance is associated with.</p>
+    ///   - [`instance_id(Option<String>)`](crate::input::GetInstanceInput::instance_id): <p>The ID of the instance that you want to get information about.</p>
+    /// - On success, responds with [`GetInstanceOutput`](crate::output::GetInstanceOutput) with field(s):
+    ///   - [`instance(Option<Instance>)`](crate::output::GetInstanceOutput::instance): <p>A complex type that contains information about a specified instance.</p>
+    /// - On failure, responds with [`SdkError<GetInstanceError>`](crate::error::GetInstanceError)
     pub fn get_instance(&self) -> fluent_builders::GetInstance<C, M, R> {
         fluent_builders::GetInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetInstancesHealthStatus` operation.
-    ///
-    /// See [`GetInstancesHealthStatus`](crate::client::fluent_builders::GetInstancesHealthStatus) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetInstancesHealthStatus`](crate::client::fluent_builders::GetInstancesHealthStatus) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetInstancesHealthStatus::into_paginator).
+    ///
+    /// - Takes [`GetInstancesHealthStatusInput`](crate::input::GetInstancesHealthStatusInput) with field(s):
+    ///   - [`service_id(Option<String>)`](crate::input::GetInstancesHealthStatusInput::service_id): <p>The ID of the service that the instance is associated with.</p>
+    ///   - [`instances(Option<Vec<String>>)`](crate::input::GetInstancesHealthStatusInput::instances): <p>An array that contains the IDs of all the instances that you want to get the health status for.</p>  <p>If you omit <code>Instances</code>, Cloud Map returns the health status for all the instances that are associated with the specified service.</p> <note>   <p>To get the IDs for the instances that you've registered by using a specified service, submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a> request.</p>  </note>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetInstancesHealthStatusInput::max_results): <p>The maximum number of instances that you want Cloud Map to return in the response to a <code>GetInstancesHealthStatus</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 instances.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetInstancesHealthStatusInput::next_token): <p>For the first <code>GetInstancesHealthStatus</code> request, omit this value.</p>  <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>GetInstancesHealthStatus</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
+    /// - On success, responds with [`GetInstancesHealthStatusOutput`](crate::output::GetInstancesHealthStatusOutput) with field(s):
+    ///   - [`status(Option<HashMap<String, HealthStatus>>)`](crate::output::GetInstancesHealthStatusOutput::status): <p>A complex type that contains the IDs and the health status of the instances that you specified in the <code>GetInstancesHealthStatus</code> request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetInstancesHealthStatusOutput::next_token): <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>GetInstancesHealthStatus</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
+    /// - On failure, responds with [`SdkError<GetInstancesHealthStatusError>`](crate::error::GetInstancesHealthStatusError)
     pub fn get_instances_health_status(
         &self,
     ) -> fluent_builders::GetInstancesHealthStatus<C, M, R> {
         fluent_builders::GetInstancesHealthStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetNamespace` operation.
+    /// Constructs a fluent builder for the [`GetNamespace`](crate::client::fluent_builders::GetNamespace) operation.
     ///
-    /// See [`GetNamespace`](crate::client::fluent_builders::GetNamespace) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetNamespaceInput`](crate::input::GetNamespaceInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::GetNamespaceInput::id): <p>The ID of the namespace that you want to get information about.</p>
+    /// - On success, responds with [`GetNamespaceOutput`](crate::output::GetNamespaceOutput) with field(s):
+    ///   - [`namespace(Option<Namespace>)`](crate::output::GetNamespaceOutput::namespace): <p>A complex type that contains information about the specified namespace.</p>
+    /// - On failure, responds with [`SdkError<GetNamespaceError>`](crate::error::GetNamespaceError)
     pub fn get_namespace(&self) -> fluent_builders::GetNamespace<C, M, R> {
         fluent_builders::GetNamespace::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetOperation` operation.
+    /// Constructs a fluent builder for the [`GetOperation`](crate::client::fluent_builders::GetOperation) operation.
     ///
-    /// See [`GetOperation`](crate::client::fluent_builders::GetOperation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetOperationInput`](crate::input::GetOperationInput) with field(s):
+    ///   - [`operation_id(Option<String>)`](crate::input::GetOperationInput::operation_id): <p>The ID of the operation that you want to get more information about.</p>
+    /// - On success, responds with [`GetOperationOutput`](crate::output::GetOperationOutput) with field(s):
+    ///   - [`operation(Option<Operation>)`](crate::output::GetOperationOutput::operation): <p>A complex type that contains information about the operation.</p>
+    /// - On failure, responds with [`SdkError<GetOperationError>`](crate::error::GetOperationError)
     pub fn get_operation(&self) -> fluent_builders::GetOperation<C, M, R> {
         fluent_builders::GetOperation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetService` operation.
+    /// Constructs a fluent builder for the [`GetService`](crate::client::fluent_builders::GetService) operation.
     ///
-    /// See [`GetService`](crate::client::fluent_builders::GetService) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetServiceInput`](crate::input::GetServiceInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::GetServiceInput::id): <p>The ID of the service that you want to get settings for.</p>
+    /// - On success, responds with [`GetServiceOutput`](crate::output::GetServiceOutput) with field(s):
+    ///   - [`service(Option<Service>)`](crate::output::GetServiceOutput::service): <p>A complex type that contains information about the service.</p>
+    /// - On failure, responds with [`SdkError<GetServiceError>`](crate::error::GetServiceError)
     pub fn get_service(&self) -> fluent_builders::GetService<C, M, R> {
         fluent_builders::GetService::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListInstances` operation.
-    ///
-    /// See [`ListInstances`](crate::client::fluent_builders::ListInstances) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListInstances`](crate::client::fluent_builders::ListInstances) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInstances::into_paginator).
+    ///
+    /// - Takes [`ListInstancesInput`](crate::input::ListInstancesInput) with field(s):
+    ///   - [`service_id(Option<String>)`](crate::input::ListInstancesInput::service_id): <p>The ID of the service that you want to list instances for.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListInstancesInput::next_token): <p>For the first <code>ListInstances</code> request, omit this value.</p>  <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>ListInstances</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListInstancesInput::max_results): <p>The maximum number of instances that you want Cloud Map to return in the response to a <code>ListInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 instances.</p>
+    /// - On success, responds with [`ListInstancesOutput`](crate::output::ListInstancesOutput) with field(s):
+    ///   - [`instances(Option<Vec<InstanceSummary>>)`](crate::output::ListInstancesOutput::instances): <p>Summary information about the instances that are associated with the specified service.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListInstancesOutput::next_token): <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>ListInstances</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
+    /// - On failure, responds with [`SdkError<ListInstancesError>`](crate::error::ListInstancesError)
     pub fn list_instances(&self) -> fluent_builders::ListInstances<C, M, R> {
         fluent_builders::ListInstances::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListNamespaces` operation.
-    ///
-    /// See [`ListNamespaces`](crate::client::fluent_builders::ListNamespaces) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListNamespaces`](crate::client::fluent_builders::ListNamespaces) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListNamespaces::into_paginator).
+    ///
+    /// - Takes [`ListNamespacesInput`](crate::input::ListNamespacesInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListNamespacesInput::next_token): <p>For the first <code>ListNamespaces</code> request, omit this value.</p>  <p>If the response contains <code>NextToken</code>, submit another <code>ListNamespaces</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>   <p>Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified criteria but that subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match the criteria.</p>  </note>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListNamespacesInput::max_results): <p>The maximum number of namespaces that you want Cloud Map to return in the response to a <code>ListNamespaces</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 namespaces.</p>
+    ///   - [`filters(Option<Vec<NamespaceFilter>>)`](crate::input::ListNamespacesInput::filters): <p>A complex type that contains specifications for the namespaces that you want to list.</p>  <p>If you specify more than one filter, a namespace must match all filters to be returned by <code>ListNamespaces</code>.</p>
+    /// - On success, responds with [`ListNamespacesOutput`](crate::output::ListNamespacesOutput) with field(s):
+    ///   - [`namespaces(Option<Vec<NamespaceSummary>>)`](crate::output::ListNamespacesOutput::namespaces): <p>An array that contains one <code>NamespaceSummary</code> object for each namespace that matches the specified filter criteria.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListNamespacesOutput::next_token): <p>If the response contains <code>NextToken</code>, submit another <code>ListNamespaces</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>   <p>Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified criteria but that subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match the criteria.</p>  </note>
+    /// - On failure, responds with [`SdkError<ListNamespacesError>`](crate::error::ListNamespacesError)
     pub fn list_namespaces(&self) -> fluent_builders::ListNamespaces<C, M, R> {
         fluent_builders::ListNamespaces::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListOperations` operation.
-    ///
-    /// See [`ListOperations`](crate::client::fluent_builders::ListOperations) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListOperations`](crate::client::fluent_builders::ListOperations) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListOperations::into_paginator).
+    ///
+    /// - Takes [`ListOperationsInput`](crate::input::ListOperationsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListOperationsInput::next_token): <p>For the first <code>ListOperations</code> request, omit this value.</p>  <p>If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>   <p>Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but that subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.</p>  </note>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListOperationsInput::max_results): <p>The maximum number of items that you want Cloud Map to return in the response to a <code>ListOperations</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 operations.</p>
+    ///   - [`filters(Option<Vec<OperationFilter>>)`](crate::input::ListOperationsInput::filters): <p>A complex type that contains specifications for the operations that you want to list, for example, operations that you started between a specified start date and end date.</p>  <p>If you specify more than one filter, an operation must match all filters to be returned by <code>ListOperations</code>.</p>
+    /// - On success, responds with [`ListOperationsOutput`](crate::output::ListOperationsOutput) with field(s):
+    ///   - [`operations(Option<Vec<OperationSummary>>)`](crate::output::ListOperationsOutput::operations): <p>Summary information about the operations that match the specified criteria.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListOperationsOutput::next_token): <p>If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>   <p>Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but that subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.</p>  </note>
+    /// - On failure, responds with [`SdkError<ListOperationsError>`](crate::error::ListOperationsError)
     pub fn list_operations(&self) -> fluent_builders::ListOperations<C, M, R> {
         fluent_builders::ListOperations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListServices` operation.
-    ///
-    /// See [`ListServices`](crate::client::fluent_builders::ListServices) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListServices`](crate::client::fluent_builders::ListServices) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListServices::into_paginator).
+    ///
+    /// - Takes [`ListServicesInput`](crate::input::ListServicesInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListServicesInput::next_token): <p>For the first <code>ListServices</code> request, omit this value.</p>  <p>If the response contains <code>NextToken</code>, submit another <code>ListServices</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>   <p>Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's possible that no services in the first <code>MaxResults</code> services matched the specified criteria but that subsequent groups of <code>MaxResults</code> services do contain services that match the criteria.</p>  </note>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListServicesInput::max_results): <p>The maximum number of services that you want Cloud Map to return in the response to a <code>ListServices</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 services.</p>
+    ///   - [`filters(Option<Vec<ServiceFilter>>)`](crate::input::ListServicesInput::filters): <p>A complex type that contains specifications for the namespaces that you want to list services for. </p>  <p>If you specify more than one filter, an operation must match all filters to be returned by <code>ListServices</code>.</p>
+    /// - On success, responds with [`ListServicesOutput`](crate::output::ListServicesOutput) with field(s):
+    ///   - [`services(Option<Vec<ServiceSummary>>)`](crate::output::ListServicesOutput::services): <p>An array that contains one <code>ServiceSummary</code> object for each service that matches the specified filter criteria.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListServicesOutput::next_token): <p>If the response contains <code>NextToken</code>, submit another <code>ListServices</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>   <p>Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's possible that no services in the first <code>MaxResults</code> services matched the specified criteria but that subsequent groups of <code>MaxResults</code> services do contain services that match the criteria.</p>  </note>
+    /// - On failure, responds with [`SdkError<ListServicesError>`](crate::error::ListServicesError)
     pub fn list_services(&self) -> fluent_builders::ListServices<C, M, R> {
         fluent_builders::ListServices::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tags for.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags that are assigned to the resource.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RegisterInstance` operation.
+    /// Constructs a fluent builder for the [`RegisterInstance`](crate::client::fluent_builders::RegisterInstance) operation.
     ///
-    /// See [`RegisterInstance`](crate::client::fluent_builders::RegisterInstance) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RegisterInstanceInput`](crate::input::RegisterInstanceInput) with field(s):
+    ///   - [`service_id(Option<String>)`](crate::input::RegisterInstanceInput::service_id): <p>The ID of the service that you want to use for settings for the instance.</p>
+    ///   - [`instance_id(Option<String>)`](crate::input::RegisterInstanceInput::instance_id): <p>An identifier that you want to associate with the instance. Note the following:</p>  <ul>   <li> <p>If the service that's specified by <code>ServiceId</code> includes settings for an <code>SRV</code> record, the value of <code>InstanceId</code> is automatically included as part of the value for the <code>SRV</code> record. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord &gt; Type</a>.</p> </li>   <li> <p>You can use this value to update an existing instance.</p> </li>   <li> <p>To register a new instance, you must specify a value that's unique among instances that you register by using the same service. </p> </li>   <li> <p>If you specify an existing <code>InstanceId</code> and <code>ServiceId</code>, Cloud Map updates the existing DNS records, if any. If there's also an existing health check, Cloud Map deletes the old health check and creates a new one. </p> <note>     <p>The health check isn't deleted immediately, so it will still appear for a while if you submit a <code>ListHealthChecks</code> request, for example.</p>    </note> </li>  </ul>
+    ///   - [`creator_request_id(Option<String>)`](crate::input::RegisterInstanceInput::creator_request_id): <p>A unique string that identifies the request and that allows failed <code>RegisterInstance</code> requests to be retried without the risk of executing the operation twice. You must use a unique <code>CreatorRequestId</code> string every time you submit a <code>RegisterInstance</code> request if you're registering additional instances for the same namespace and service. <code>CreatorRequestId</code> can be any unique string (for example, a date/time stamp).</p>
+    ///   - [`attributes(Option<HashMap<String, String>>)`](crate::input::RegisterInstanceInput::attributes): <p>A string map that contains the following information for the service that you specify in <code>ServiceId</code>:</p>  <ul>   <li> <p>The attributes that apply to the records that are defined in the service. </p> </li>   <li> <p>For each attribute, the applicable value.</p> </li>  </ul>  <p>Supported attribute keys include the following:</p>  <dl>   <dt>   AWS_ALIAS_DNS_NAME  </dt>   <dd>    <p>If you want Cloud Map to create an Amazon Route 53 alias record that routes traffic to an Elastic Load Balancing load balancer, specify the DNS name that's associated with the load balancer. For information about how to get the DNS name, see "DNSName" in the topic <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a> in the <i>Route 53 API Reference</i>.</p>    <p>Note the following:</p>    <ul>     <li> <p>The configuration for the service that's specified by <code>ServiceId</code> must include settings for an <code>A</code> record, an <code>AAAA</code> record, or both.</p> </li>     <li> <p>In the service that's specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must be <code>WEIGHTED</code>.</p> </li>     <li> <p>If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings, Cloud Map will create the Route 53 health check, but it doesn't associate the health check with the alias record.</p> </li>     <li> <p>Auto naming currently doesn't support creating alias records that route traffic to Amazon Web Services resources other than Elastic Load Balancing load balancers.</p> </li>     <li> <p>If you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values for any of the <code>AWS_INSTANCE</code> attributes.</p> </li>    </ul>   </dd>   <dt>   AWS_EC2_INSTANCE_ID  </dt>   <dd>    <p> <i>HTTP namespaces only.</i> The Amazon EC2 instance ID for the instance. If the <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the only other attribute that can be specified is <code>AWS_INIT_HEALTH_STATUS</code>. When the <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the <code>AWS_INSTANCE_IPV4</code> attribute will be filled out with the primary private IPv4 address.</p>   </dd>   <dt>   AWS_INIT_HEALTH_STATUS  </dt>   <dd>    <p>If the service configuration includes <code>HealthCheckCustomConfig</code>, you can optionally use <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is <code>HEALTHY</code>.</p>   </dd>   <dt>   AWS_INSTANCE_CNAME  </dt>   <dd>    <p>If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route 53 to return in response to DNS queries (for example, <code>example.com</code>).</p>    <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>CNAME</code> record.</p>   </dd>   <dt>   AWS_INSTANCE_IPV4  </dt>   <dd>    <p>If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route 53 to return in response to DNS queries (for example, <code>192.0.2.44</code>).</p>    <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>A</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>   </dd>   <dt>   AWS_INSTANCE_IPV6  </dt>   <dd>    <p>If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to return in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p>    <p>This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>AAAA</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.</p>   </dd>   <dt>   AWS_INSTANCE_PORT  </dt>   <dd>    <p>If the service includes an <code>SRV</code> record, the value that you want Route 53 to return for the port.</p>    <p>If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53 to send requests to. </p>    <p>This value is required if you specified settings for an <code>SRV</code> record or a Route 53 health check when you created the service.</p>   </dd>   <dt>   Custom attributes  </dt>   <dd>    <p>You can add up to 30 custom attributes. For each key-value pair, the maximum length of the attribute name is 255 characters, and the maximum length of the attribute value is 1,024 characters. The total size of all provided attributes (sum of all keys and values) must not exceed 5,000 characters.</p>   </dd>  </dl>
+    /// - On success, responds with [`RegisterInstanceOutput`](crate::output::RegisterInstanceOutput) with field(s):
+    ///   - [`operation_id(Option<String>)`](crate::output::RegisterInstanceOutput::operation_id): <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    /// - On failure, responds with [`SdkError<RegisterInstanceError>`](crate::error::RegisterInstanceError)
     pub fn register_instance(&self) -> fluent_builders::RegisterInstance<C, M, R> {
         fluent_builders::RegisterInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tags for.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>The tags to add to the specified resource. Specifying the tag key is required. You can set the value of a tag to an empty string, but you can't set the value of a tag to null.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tags for.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The tag keys to remove from the specified resource.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateHttpNamespace` operation.
+    /// Constructs a fluent builder for the [`UpdateHttpNamespace`](crate::client::fluent_builders::UpdateHttpNamespace) operation.
     ///
-    /// See [`UpdateHttpNamespace`](crate::client::fluent_builders::UpdateHttpNamespace) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateHttpNamespaceInput`](crate::input::UpdateHttpNamespaceInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::UpdateHttpNamespaceInput::id): <p>The ID of the namespace that you want to update.</p>
+    ///   - [`updater_request_id(Option<String>)`](crate::input::UpdateHttpNamespaceInput::updater_request_id): <p>A unique string that identifies the request and that allows failed <code>UpdateHttpNamespace</code> requests to be retried without the risk of running the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a date/timestamp).</p>
+    ///   - [`namespace(Option<HttpNamespaceChange>)`](crate::input::UpdateHttpNamespaceInput::namespace): <p>Updated properties for the the HTTP namespace.</p>
+    /// - On success, responds with [`UpdateHttpNamespaceOutput`](crate::output::UpdateHttpNamespaceOutput) with field(s):
+    ///   - [`operation_id(Option<String>)`](crate::output::UpdateHttpNamespaceOutput::operation_id): <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    /// - On failure, responds with [`SdkError<UpdateHttpNamespaceError>`](crate::error::UpdateHttpNamespaceError)
     pub fn update_http_namespace(&self) -> fluent_builders::UpdateHttpNamespace<C, M, R> {
         fluent_builders::UpdateHttpNamespace::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateInstanceCustomHealthStatus` operation.
+    /// Constructs a fluent builder for the [`UpdateInstanceCustomHealthStatus`](crate::client::fluent_builders::UpdateInstanceCustomHealthStatus) operation.
     ///
-    /// See [`UpdateInstanceCustomHealthStatus`](crate::client::fluent_builders::UpdateInstanceCustomHealthStatus) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateInstanceCustomHealthStatusInput`](crate::input::UpdateInstanceCustomHealthStatusInput) with field(s):
+    ///   - [`service_id(Option<String>)`](crate::input::UpdateInstanceCustomHealthStatusInput::service_id): <p>The ID of the service that includes the configuration for the custom health check that you want to change the status for.</p>
+    ///   - [`instance_id(Option<String>)`](crate::input::UpdateInstanceCustomHealthStatusInput::instance_id): <p>The ID of the instance that you want to change the health status for.</p>
+    ///   - [`status(Option<CustomHealthStatus>)`](crate::input::UpdateInstanceCustomHealthStatusInput::status): <p>The new status of the instance, <code>HEALTHY</code> or <code>UNHEALTHY</code>.</p>
+    /// - On success, responds with [`UpdateInstanceCustomHealthStatusOutput`](crate::output::UpdateInstanceCustomHealthStatusOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateInstanceCustomHealthStatusError>`](crate::error::UpdateInstanceCustomHealthStatusError)
     pub fn update_instance_custom_health_status(
         &self,
     ) -> fluent_builders::UpdateInstanceCustomHealthStatus<C, M, R> {
         fluent_builders::UpdateInstanceCustomHealthStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdatePrivateDnsNamespace` operation.
+    /// Constructs a fluent builder for the [`UpdatePrivateDnsNamespace`](crate::client::fluent_builders::UpdatePrivateDnsNamespace) operation.
     ///
-    /// See [`UpdatePrivateDnsNamespace`](crate::client::fluent_builders::UpdatePrivateDnsNamespace) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdatePrivateDnsNamespaceInput`](crate::input::UpdatePrivateDnsNamespaceInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::UpdatePrivateDnsNamespaceInput::id): <p>The ID of the namespace that you want to update.</p>
+    ///   - [`updater_request_id(Option<String>)`](crate::input::UpdatePrivateDnsNamespaceInput::updater_request_id): <p>A unique string that identifies the request and that allows failed <code>UpdatePrivateDnsNamespace</code> requests to be retried without the risk of running the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a date/timestamp).</p>
+    ///   - [`namespace(Option<PrivateDnsNamespaceChange>)`](crate::input::UpdatePrivateDnsNamespaceInput::namespace): <p>Updated properties for the private DNS namespace.</p>
+    /// - On success, responds with [`UpdatePrivateDnsNamespaceOutput`](crate::output::UpdatePrivateDnsNamespaceOutput) with field(s):
+    ///   - [`operation_id(Option<String>)`](crate::output::UpdatePrivateDnsNamespaceOutput::operation_id): <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    /// - On failure, responds with [`SdkError<UpdatePrivateDnsNamespaceError>`](crate::error::UpdatePrivateDnsNamespaceError)
     pub fn update_private_dns_namespace(
         &self,
     ) -> fluent_builders::UpdatePrivateDnsNamespace<C, M, R> {
         fluent_builders::UpdatePrivateDnsNamespace::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdatePublicDnsNamespace` operation.
+    /// Constructs a fluent builder for the [`UpdatePublicDnsNamespace`](crate::client::fluent_builders::UpdatePublicDnsNamespace) operation.
     ///
-    /// See [`UpdatePublicDnsNamespace`](crate::client::fluent_builders::UpdatePublicDnsNamespace) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdatePublicDnsNamespaceInput`](crate::input::UpdatePublicDnsNamespaceInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::UpdatePublicDnsNamespaceInput::id): <p>The ID of the namespace being updated.</p>
+    ///   - [`updater_request_id(Option<String>)`](crate::input::UpdatePublicDnsNamespaceInput::updater_request_id): <p>A unique string that identifies the request and that allows failed <code>UpdatePublicDnsNamespace</code> requests to be retried without the risk of running the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a date/timestamp).</p>
+    ///   - [`namespace(Option<PublicDnsNamespaceChange>)`](crate::input::UpdatePublicDnsNamespaceInput::namespace): <p>Updated properties for the public DNS namespace.</p>
+    /// - On success, responds with [`UpdatePublicDnsNamespaceOutput`](crate::output::UpdatePublicDnsNamespaceOutput) with field(s):
+    ///   - [`operation_id(Option<String>)`](crate::output::UpdatePublicDnsNamespaceOutput::operation_id): <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    /// - On failure, responds with [`SdkError<UpdatePublicDnsNamespaceError>`](crate::error::UpdatePublicDnsNamespaceError)
     pub fn update_public_dns_namespace(
         &self,
     ) -> fluent_builders::UpdatePublicDnsNamespace<C, M, R> {
         fluent_builders::UpdatePublicDnsNamespace::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateService` operation.
+    /// Constructs a fluent builder for the [`UpdateService`](crate::client::fluent_builders::UpdateService) operation.
     ///
-    /// See [`UpdateService`](crate::client::fluent_builders::UpdateService) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateServiceInput`](crate::input::UpdateServiceInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::UpdateServiceInput::id): <p>The ID of the service that you want to update.</p>
+    ///   - [`service(Option<ServiceChange>)`](crate::input::UpdateServiceInput::service): <p>A complex type that contains the new settings for the service.</p>
+    /// - On success, responds with [`UpdateServiceOutput`](crate::output::UpdateServiceOutput) with field(s):
+    ///   - [`operation_id(Option<String>)`](crate::output::UpdateServiceOutput::operation_id): <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    /// - On failure, responds with [`SdkError<UpdateServiceError>`](crate::error::UpdateServiceError)
     pub fn update_service(&self) -> fluent_builders::UpdateService<C, M, R> {
         fluent_builders::UpdateService::new(self.handle.clone())
     }

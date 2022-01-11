@@ -83,727 +83,1332 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AssociateRoleToGroup` operation.
+    /// Constructs a fluent builder for the [`AssociateRoleToGroup`](crate::client::fluent_builders::AssociateRoleToGroup) operation.
     ///
-    /// See [`AssociateRoleToGroup`](crate::client::fluent_builders::AssociateRoleToGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateRoleToGroupInput`](crate::input::AssociateRoleToGroupInput) with field(s):
+    ///   - [`group_id(Option<String>)`](crate::input::AssociateRoleToGroupInput::group_id): The ID of the Greengrass group.
+    ///   - [`role_arn(Option<String>)`](crate::input::AssociateRoleToGroupInput::role_arn): The ARN of the role you wish to associate with this group. The existence of the role is not validated.
+    /// - On success, responds with [`AssociateRoleToGroupOutput`](crate::output::AssociateRoleToGroupOutput) with field(s):
+    ///   - [`associated_at(Option<String>)`](crate::output::AssociateRoleToGroupOutput::associated_at): The time, in milliseconds since the epoch, when the role ARN was associated with the group.
+    /// - On failure, responds with [`SdkError<AssociateRoleToGroupError>`](crate::error::AssociateRoleToGroupError)
     pub fn associate_role_to_group(&self) -> fluent_builders::AssociateRoleToGroup<C, M, R> {
         fluent_builders::AssociateRoleToGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateServiceRoleToAccount` operation.
+    /// Constructs a fluent builder for the [`AssociateServiceRoleToAccount`](crate::client::fluent_builders::AssociateServiceRoleToAccount) operation.
     ///
-    /// See [`AssociateServiceRoleToAccount`](crate::client::fluent_builders::AssociateServiceRoleToAccount) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateServiceRoleToAccountInput`](crate::input::AssociateServiceRoleToAccountInput) with field(s):
+    ///   - [`role_arn(Option<String>)`](crate::input::AssociateServiceRoleToAccountInput::role_arn): The ARN of the service role you wish to associate with your account.
+    /// - On success, responds with [`AssociateServiceRoleToAccountOutput`](crate::output::AssociateServiceRoleToAccountOutput) with field(s):
+    ///   - [`associated_at(Option<String>)`](crate::output::AssociateServiceRoleToAccountOutput::associated_at): The time when the service role was associated with the account.
+    /// - On failure, responds with [`SdkError<AssociateServiceRoleToAccountError>`](crate::error::AssociateServiceRoleToAccountError)
     pub fn associate_service_role_to_account(
         &self,
     ) -> fluent_builders::AssociateServiceRoleToAccount<C, M, R> {
         fluent_builders::AssociateServiceRoleToAccount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateConnectorDefinition` operation.
+    /// Constructs a fluent builder for the [`CreateConnectorDefinition`](crate::client::fluent_builders::CreateConnectorDefinition) operation.
     ///
-    /// See [`CreateConnectorDefinition`](crate::client::fluent_builders::CreateConnectorDefinition) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateConnectorDefinitionInput`](crate::input::CreateConnectorDefinitionInput) with field(s):
+    ///   - [`amzn_client_token(Option<String>)`](crate::input::CreateConnectorDefinitionInput::amzn_client_token): A client token used to correlate requests and responses.
+    ///   - [`initial_version(Option<ConnectorDefinitionVersion>)`](crate::input::CreateConnectorDefinitionInput::initial_version): Information about the initial version of the connector definition.
+    ///   - [`name(Option<String>)`](crate::input::CreateConnectorDefinitionInput::name): The name of the connector definition.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateConnectorDefinitionInput::tags): Tag(s) to add to the new resource.
+    /// - On success, responds with [`CreateConnectorDefinitionOutput`](crate::output::CreateConnectorDefinitionOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateConnectorDefinitionOutput::arn): The ARN of the definition.
+    ///   - [`creation_timestamp(Option<String>)`](crate::output::CreateConnectorDefinitionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the definition was created.
+    ///   - [`id(Option<String>)`](crate::output::CreateConnectorDefinitionOutput::id): The ID of the definition.
+    ///   - [`last_updated_timestamp(Option<String>)`](crate::output::CreateConnectorDefinitionOutput::last_updated_timestamp): The time, in milliseconds since the epoch, when the definition was last updated.
+    ///   - [`latest_version(Option<String>)`](crate::output::CreateConnectorDefinitionOutput::latest_version): The ID of the latest version associated with the definition.
+    ///   - [`latest_version_arn(Option<String>)`](crate::output::CreateConnectorDefinitionOutput::latest_version_arn): The ARN of the latest version associated with the definition.
+    ///   - [`name(Option<String>)`](crate::output::CreateConnectorDefinitionOutput::name): The name of the definition.
+    /// - On failure, responds with [`SdkError<CreateConnectorDefinitionError>`](crate::error::CreateConnectorDefinitionError)
     pub fn create_connector_definition(
         &self,
     ) -> fluent_builders::CreateConnectorDefinition<C, M, R> {
         fluent_builders::CreateConnectorDefinition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateConnectorDefinitionVersion` operation.
+    /// Constructs a fluent builder for the [`CreateConnectorDefinitionVersion`](crate::client::fluent_builders::CreateConnectorDefinitionVersion) operation.
     ///
-    /// See [`CreateConnectorDefinitionVersion`](crate::client::fluent_builders::CreateConnectorDefinitionVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateConnectorDefinitionVersionInput`](crate::input::CreateConnectorDefinitionVersionInput) with field(s):
+    ///   - [`amzn_client_token(Option<String>)`](crate::input::CreateConnectorDefinitionVersionInput::amzn_client_token): A client token used to correlate requests and responses.
+    ///   - [`connector_definition_id(Option<String>)`](crate::input::CreateConnectorDefinitionVersionInput::connector_definition_id): The ID of the connector definition.
+    ///   - [`connectors(Option<Vec<Connector>>)`](crate::input::CreateConnectorDefinitionVersionInput::connectors): A list of references to connectors in this version, with their corresponding configuration settings.
+    /// - On success, responds with [`CreateConnectorDefinitionVersionOutput`](crate::output::CreateConnectorDefinitionVersionOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateConnectorDefinitionVersionOutput::arn): The ARN of the version.
+    ///   - [`creation_timestamp(Option<String>)`](crate::output::CreateConnectorDefinitionVersionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the version was created.
+    ///   - [`id(Option<String>)`](crate::output::CreateConnectorDefinitionVersionOutput::id): The ID of the parent definition that the version is associated with.
+    ///   - [`version(Option<String>)`](crate::output::CreateConnectorDefinitionVersionOutput::version): The ID of the version.
+    /// - On failure, responds with [`SdkError<CreateConnectorDefinitionVersionError>`](crate::error::CreateConnectorDefinitionVersionError)
     pub fn create_connector_definition_version(
         &self,
     ) -> fluent_builders::CreateConnectorDefinitionVersion<C, M, R> {
         fluent_builders::CreateConnectorDefinitionVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateCoreDefinition` operation.
+    /// Constructs a fluent builder for the [`CreateCoreDefinition`](crate::client::fluent_builders::CreateCoreDefinition) operation.
     ///
-    /// See [`CreateCoreDefinition`](crate::client::fluent_builders::CreateCoreDefinition) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateCoreDefinitionInput`](crate::input::CreateCoreDefinitionInput) with field(s):
+    ///   - [`amzn_client_token(Option<String>)`](crate::input::CreateCoreDefinitionInput::amzn_client_token): A client token used to correlate requests and responses.
+    ///   - [`initial_version(Option<CoreDefinitionVersion>)`](crate::input::CreateCoreDefinitionInput::initial_version): Information about the initial version of the core definition.
+    ///   - [`name(Option<String>)`](crate::input::CreateCoreDefinitionInput::name): The name of the core definition.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateCoreDefinitionInput::tags): Tag(s) to add to the new resource.
+    /// - On success, responds with [`CreateCoreDefinitionOutput`](crate::output::CreateCoreDefinitionOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateCoreDefinitionOutput::arn): The ARN of the definition.
+    ///   - [`creation_timestamp(Option<String>)`](crate::output::CreateCoreDefinitionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the definition was created.
+    ///   - [`id(Option<String>)`](crate::output::CreateCoreDefinitionOutput::id): The ID of the definition.
+    ///   - [`last_updated_timestamp(Option<String>)`](crate::output::CreateCoreDefinitionOutput::last_updated_timestamp): The time, in milliseconds since the epoch, when the definition was last updated.
+    ///   - [`latest_version(Option<String>)`](crate::output::CreateCoreDefinitionOutput::latest_version): The ID of the latest version associated with the definition.
+    ///   - [`latest_version_arn(Option<String>)`](crate::output::CreateCoreDefinitionOutput::latest_version_arn): The ARN of the latest version associated with the definition.
+    ///   - [`name(Option<String>)`](crate::output::CreateCoreDefinitionOutput::name): The name of the definition.
+    /// - On failure, responds with [`SdkError<CreateCoreDefinitionError>`](crate::error::CreateCoreDefinitionError)
     pub fn create_core_definition(&self) -> fluent_builders::CreateCoreDefinition<C, M, R> {
         fluent_builders::CreateCoreDefinition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateCoreDefinitionVersion` operation.
+    /// Constructs a fluent builder for the [`CreateCoreDefinitionVersion`](crate::client::fluent_builders::CreateCoreDefinitionVersion) operation.
     ///
-    /// See [`CreateCoreDefinitionVersion`](crate::client::fluent_builders::CreateCoreDefinitionVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateCoreDefinitionVersionInput`](crate::input::CreateCoreDefinitionVersionInput) with field(s):
+    ///   - [`amzn_client_token(Option<String>)`](crate::input::CreateCoreDefinitionVersionInput::amzn_client_token): A client token used to correlate requests and responses.
+    ///   - [`core_definition_id(Option<String>)`](crate::input::CreateCoreDefinitionVersionInput::core_definition_id): The ID of the core definition.
+    ///   - [`cores(Option<Vec<Core>>)`](crate::input::CreateCoreDefinitionVersionInput::cores): A list of cores in the core definition version.
+    /// - On success, responds with [`CreateCoreDefinitionVersionOutput`](crate::output::CreateCoreDefinitionVersionOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateCoreDefinitionVersionOutput::arn): The ARN of the version.
+    ///   - [`creation_timestamp(Option<String>)`](crate::output::CreateCoreDefinitionVersionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the version was created.
+    ///   - [`id(Option<String>)`](crate::output::CreateCoreDefinitionVersionOutput::id): The ID of the parent definition that the version is associated with.
+    ///   - [`version(Option<String>)`](crate::output::CreateCoreDefinitionVersionOutput::version): The ID of the version.
+    /// - On failure, responds with [`SdkError<CreateCoreDefinitionVersionError>`](crate::error::CreateCoreDefinitionVersionError)
     pub fn create_core_definition_version(
         &self,
     ) -> fluent_builders::CreateCoreDefinitionVersion<C, M, R> {
         fluent_builders::CreateCoreDefinitionVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDeployment` operation.
+    /// Constructs a fluent builder for the [`CreateDeployment`](crate::client::fluent_builders::CreateDeployment) operation.
     ///
-    /// See [`CreateDeployment`](crate::client::fluent_builders::CreateDeployment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateDeploymentInput`](crate::input::CreateDeploymentInput) with field(s):
+    ///   - [`amzn_client_token(Option<String>)`](crate::input::CreateDeploymentInput::amzn_client_token): A client token used to correlate requests and responses.
+    ///   - [`deployment_id(Option<String>)`](crate::input::CreateDeploymentInput::deployment_id): The ID of the deployment if you wish to redeploy a previous deployment.
+    ///   - [`deployment_type(Option<DeploymentType>)`](crate::input::CreateDeploymentInput::deployment_type): The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid.
+    ///   - [`group_id(Option<String>)`](crate::input::CreateDeploymentInput::group_id): The ID of the Greengrass group.
+    ///   - [`group_version_id(Option<String>)`](crate::input::CreateDeploymentInput::group_version_id): The ID of the group version to be deployed.
+    /// - On success, responds with [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput) with field(s):
+    ///   - [`deployment_arn(Option<String>)`](crate::output::CreateDeploymentOutput::deployment_arn): The ARN of the deployment.
+    ///   - [`deployment_id(Option<String>)`](crate::output::CreateDeploymentOutput::deployment_id): The ID of the deployment.
+    /// - On failure, responds with [`SdkError<CreateDeploymentError>`](crate::error::CreateDeploymentError)
     pub fn create_deployment(&self) -> fluent_builders::CreateDeployment<C, M, R> {
         fluent_builders::CreateDeployment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDeviceDefinition` operation.
+    /// Constructs a fluent builder for the [`CreateDeviceDefinition`](crate::client::fluent_builders::CreateDeviceDefinition) operation.
     ///
-    /// See [`CreateDeviceDefinition`](crate::client::fluent_builders::CreateDeviceDefinition) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateDeviceDefinitionInput`](crate::input::CreateDeviceDefinitionInput) with field(s):
+    ///   - [`amzn_client_token(Option<String>)`](crate::input::CreateDeviceDefinitionInput::amzn_client_token): A client token used to correlate requests and responses.
+    ///   - [`initial_version(Option<DeviceDefinitionVersion>)`](crate::input::CreateDeviceDefinitionInput::initial_version): Information about the initial version of the device definition.
+    ///   - [`name(Option<String>)`](crate::input::CreateDeviceDefinitionInput::name): The name of the device definition.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateDeviceDefinitionInput::tags): Tag(s) to add to the new resource.
+    /// - On success, responds with [`CreateDeviceDefinitionOutput`](crate::output::CreateDeviceDefinitionOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateDeviceDefinitionOutput::arn): The ARN of the definition.
+    ///   - [`creation_timestamp(Option<String>)`](crate::output::CreateDeviceDefinitionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the definition was created.
+    ///   - [`id(Option<String>)`](crate::output::CreateDeviceDefinitionOutput::id): The ID of the definition.
+    ///   - [`last_updated_timestamp(Option<String>)`](crate::output::CreateDeviceDefinitionOutput::last_updated_timestamp): The time, in milliseconds since the epoch, when the definition was last updated.
+    ///   - [`latest_version(Option<String>)`](crate::output::CreateDeviceDefinitionOutput::latest_version): The ID of the latest version associated with the definition.
+    ///   - [`latest_version_arn(Option<String>)`](crate::output::CreateDeviceDefinitionOutput::latest_version_arn): The ARN of the latest version associated with the definition.
+    ///   - [`name(Option<String>)`](crate::output::CreateDeviceDefinitionOutput::name): The name of the definition.
+    /// - On failure, responds with [`SdkError<CreateDeviceDefinitionError>`](crate::error::CreateDeviceDefinitionError)
     pub fn create_device_definition(&self) -> fluent_builders::CreateDeviceDefinition<C, M, R> {
         fluent_builders::CreateDeviceDefinition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDeviceDefinitionVersion` operation.
+    /// Constructs a fluent builder for the [`CreateDeviceDefinitionVersion`](crate::client::fluent_builders::CreateDeviceDefinitionVersion) operation.
     ///
-    /// See [`CreateDeviceDefinitionVersion`](crate::client::fluent_builders::CreateDeviceDefinitionVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateDeviceDefinitionVersionInput`](crate::input::CreateDeviceDefinitionVersionInput) with field(s):
+    ///   - [`amzn_client_token(Option<String>)`](crate::input::CreateDeviceDefinitionVersionInput::amzn_client_token): A client token used to correlate requests and responses.
+    ///   - [`device_definition_id(Option<String>)`](crate::input::CreateDeviceDefinitionVersionInput::device_definition_id): The ID of the device definition.
+    ///   - [`devices(Option<Vec<Device>>)`](crate::input::CreateDeviceDefinitionVersionInput::devices): A list of devices in the definition version.
+    /// - On success, responds with [`CreateDeviceDefinitionVersionOutput`](crate::output::CreateDeviceDefinitionVersionOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateDeviceDefinitionVersionOutput::arn): The ARN of the version.
+    ///   - [`creation_timestamp(Option<String>)`](crate::output::CreateDeviceDefinitionVersionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the version was created.
+    ///   - [`id(Option<String>)`](crate::output::CreateDeviceDefinitionVersionOutput::id): The ID of the parent definition that the version is associated with.
+    ///   - [`version(Option<String>)`](crate::output::CreateDeviceDefinitionVersionOutput::version): The ID of the version.
+    /// - On failure, responds with [`SdkError<CreateDeviceDefinitionVersionError>`](crate::error::CreateDeviceDefinitionVersionError)
     pub fn create_device_definition_version(
         &self,
     ) -> fluent_builders::CreateDeviceDefinitionVersion<C, M, R> {
         fluent_builders::CreateDeviceDefinitionVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateFunctionDefinition` operation.
+    /// Constructs a fluent builder for the [`CreateFunctionDefinition`](crate::client::fluent_builders::CreateFunctionDefinition) operation.
     ///
-    /// See [`CreateFunctionDefinition`](crate::client::fluent_builders::CreateFunctionDefinition) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateFunctionDefinitionInput`](crate::input::CreateFunctionDefinitionInput) with field(s):
+    ///   - [`amzn_client_token(Option<String>)`](crate::input::CreateFunctionDefinitionInput::amzn_client_token): A client token used to correlate requests and responses.
+    ///   - [`initial_version(Option<FunctionDefinitionVersion>)`](crate::input::CreateFunctionDefinitionInput::initial_version): Information about the initial version of the function definition.
+    ///   - [`name(Option<String>)`](crate::input::CreateFunctionDefinitionInput::name): The name of the function definition.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateFunctionDefinitionInput::tags): Tag(s) to add to the new resource.
+    /// - On success, responds with [`CreateFunctionDefinitionOutput`](crate::output::CreateFunctionDefinitionOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateFunctionDefinitionOutput::arn): The ARN of the definition.
+    ///   - [`creation_timestamp(Option<String>)`](crate::output::CreateFunctionDefinitionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the definition was created.
+    ///   - [`id(Option<String>)`](crate::output::CreateFunctionDefinitionOutput::id): The ID of the definition.
+    ///   - [`last_updated_timestamp(Option<String>)`](crate::output::CreateFunctionDefinitionOutput::last_updated_timestamp): The time, in milliseconds since the epoch, when the definition was last updated.
+    ///   - [`latest_version(Option<String>)`](crate::output::CreateFunctionDefinitionOutput::latest_version): The ID of the latest version associated with the definition.
+    ///   - [`latest_version_arn(Option<String>)`](crate::output::CreateFunctionDefinitionOutput::latest_version_arn): The ARN of the latest version associated with the definition.
+    ///   - [`name(Option<String>)`](crate::output::CreateFunctionDefinitionOutput::name): The name of the definition.
+    /// - On failure, responds with [`SdkError<CreateFunctionDefinitionError>`](crate::error::CreateFunctionDefinitionError)
     pub fn create_function_definition(&self) -> fluent_builders::CreateFunctionDefinition<C, M, R> {
         fluent_builders::CreateFunctionDefinition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateFunctionDefinitionVersion` operation.
+    /// Constructs a fluent builder for the [`CreateFunctionDefinitionVersion`](crate::client::fluent_builders::CreateFunctionDefinitionVersion) operation.
     ///
-    /// See [`CreateFunctionDefinitionVersion`](crate::client::fluent_builders::CreateFunctionDefinitionVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateFunctionDefinitionVersionInput`](crate::input::CreateFunctionDefinitionVersionInput) with field(s):
+    ///   - [`amzn_client_token(Option<String>)`](crate::input::CreateFunctionDefinitionVersionInput::amzn_client_token): A client token used to correlate requests and responses.
+    ///   - [`default_config(Option<FunctionDefaultConfig>)`](crate::input::CreateFunctionDefinitionVersionInput::default_config): The default configuration that applies to all Lambda functions in this function definition version. Individual Lambda functions can override these settings.
+    ///   - [`function_definition_id(Option<String>)`](crate::input::CreateFunctionDefinitionVersionInput::function_definition_id): The ID of the Lambda function definition.
+    ///   - [`functions(Option<Vec<Function>>)`](crate::input::CreateFunctionDefinitionVersionInput::functions): A list of Lambda functions in this function definition version.
+    /// - On success, responds with [`CreateFunctionDefinitionVersionOutput`](crate::output::CreateFunctionDefinitionVersionOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateFunctionDefinitionVersionOutput::arn): The ARN of the version.
+    ///   - [`creation_timestamp(Option<String>)`](crate::output::CreateFunctionDefinitionVersionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the version was created.
+    ///   - [`id(Option<String>)`](crate::output::CreateFunctionDefinitionVersionOutput::id): The ID of the parent definition that the version is associated with.
+    ///   - [`version(Option<String>)`](crate::output::CreateFunctionDefinitionVersionOutput::version): The ID of the version.
+    /// - On failure, responds with [`SdkError<CreateFunctionDefinitionVersionError>`](crate::error::CreateFunctionDefinitionVersionError)
     pub fn create_function_definition_version(
         &self,
     ) -> fluent_builders::CreateFunctionDefinitionVersion<C, M, R> {
         fluent_builders::CreateFunctionDefinitionVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateGroup` operation.
+    /// Constructs a fluent builder for the [`CreateGroup`](crate::client::fluent_builders::CreateGroup) operation.
     ///
-    /// See [`CreateGroup`](crate::client::fluent_builders::CreateGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateGroupInput`](crate::input::CreateGroupInput) with field(s):
+    ///   - [`amzn_client_token(Option<String>)`](crate::input::CreateGroupInput::amzn_client_token): A client token used to correlate requests and responses.
+    ///   - [`initial_version(Option<GroupVersion>)`](crate::input::CreateGroupInput::initial_version): Information about the initial version of the group.
+    ///   - [`name(Option<String>)`](crate::input::CreateGroupInput::name): The name of the group.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateGroupInput::tags): Tag(s) to add to the new resource.
+    /// - On success, responds with [`CreateGroupOutput`](crate::output::CreateGroupOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateGroupOutput::arn): The ARN of the definition.
+    ///   - [`creation_timestamp(Option<String>)`](crate::output::CreateGroupOutput::creation_timestamp): The time, in milliseconds since the epoch, when the definition was created.
+    ///   - [`id(Option<String>)`](crate::output::CreateGroupOutput::id): The ID of the definition.
+    ///   - [`last_updated_timestamp(Option<String>)`](crate::output::CreateGroupOutput::last_updated_timestamp): The time, in milliseconds since the epoch, when the definition was last updated.
+    ///   - [`latest_version(Option<String>)`](crate::output::CreateGroupOutput::latest_version): The ID of the latest version associated with the definition.
+    ///   - [`latest_version_arn(Option<String>)`](crate::output::CreateGroupOutput::latest_version_arn): The ARN of the latest version associated with the definition.
+    ///   - [`name(Option<String>)`](crate::output::CreateGroupOutput::name): The name of the definition.
+    /// - On failure, responds with [`SdkError<CreateGroupError>`](crate::error::CreateGroupError)
     pub fn create_group(&self) -> fluent_builders::CreateGroup<C, M, R> {
         fluent_builders::CreateGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateGroupCertificateAuthority` operation.
+    /// Constructs a fluent builder for the [`CreateGroupCertificateAuthority`](crate::client::fluent_builders::CreateGroupCertificateAuthority) operation.
     ///
-    /// See [`CreateGroupCertificateAuthority`](crate::client::fluent_builders::CreateGroupCertificateAuthority) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateGroupCertificateAuthorityInput`](crate::input::CreateGroupCertificateAuthorityInput) with field(s):
+    ///   - [`amzn_client_token(Option<String>)`](crate::input::CreateGroupCertificateAuthorityInput::amzn_client_token): A client token used to correlate requests and responses.
+    ///   - [`group_id(Option<String>)`](crate::input::CreateGroupCertificateAuthorityInput::group_id): The ID of the Greengrass group.
+    /// - On success, responds with [`CreateGroupCertificateAuthorityOutput`](crate::output::CreateGroupCertificateAuthorityOutput) with field(s):
+    ///   - [`group_certificate_authority_arn(Option<String>)`](crate::output::CreateGroupCertificateAuthorityOutput::group_certificate_authority_arn): The ARN of the group certificate authority.
+    /// - On failure, responds with [`SdkError<CreateGroupCertificateAuthorityError>`](crate::error::CreateGroupCertificateAuthorityError)
     pub fn create_group_certificate_authority(
         &self,
     ) -> fluent_builders::CreateGroupCertificateAuthority<C, M, R> {
         fluent_builders::CreateGroupCertificateAuthority::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateGroupVersion` operation.
+    /// Constructs a fluent builder for the [`CreateGroupVersion`](crate::client::fluent_builders::CreateGroupVersion) operation.
     ///
-    /// See [`CreateGroupVersion`](crate::client::fluent_builders::CreateGroupVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateGroupVersionInput`](crate::input::CreateGroupVersionInput) with field(s):
+    ///   - [`amzn_client_token(Option<String>)`](crate::input::CreateGroupVersionInput::amzn_client_token): A client token used to correlate requests and responses.
+    ///   - [`connector_definition_version_arn(Option<String>)`](crate::input::CreateGroupVersionInput::connector_definition_version_arn): The ARN of the connector definition version for this group.
+    ///   - [`core_definition_version_arn(Option<String>)`](crate::input::CreateGroupVersionInput::core_definition_version_arn): The ARN of the core definition version for this group.
+    ///   - [`device_definition_version_arn(Option<String>)`](crate::input::CreateGroupVersionInput::device_definition_version_arn): The ARN of the device definition version for this group.
+    ///   - [`function_definition_version_arn(Option<String>)`](crate::input::CreateGroupVersionInput::function_definition_version_arn): The ARN of the function definition version for this group.
+    ///   - [`group_id(Option<String>)`](crate::input::CreateGroupVersionInput::group_id): The ID of the Greengrass group.
+    ///   - [`logger_definition_version_arn(Option<String>)`](crate::input::CreateGroupVersionInput::logger_definition_version_arn): The ARN of the logger definition version for this group.
+    ///   - [`resource_definition_version_arn(Option<String>)`](crate::input::CreateGroupVersionInput::resource_definition_version_arn): The ARN of the resource definition version for this group.
+    ///   - [`subscription_definition_version_arn(Option<String>)`](crate::input::CreateGroupVersionInput::subscription_definition_version_arn): The ARN of the subscription definition version for this group.
+    /// - On success, responds with [`CreateGroupVersionOutput`](crate::output::CreateGroupVersionOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateGroupVersionOutput::arn): The ARN of the version.
+    ///   - [`creation_timestamp(Option<String>)`](crate::output::CreateGroupVersionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the version was created.
+    ///   - [`id(Option<String>)`](crate::output::CreateGroupVersionOutput::id): The ID of the parent definition that the version is associated with.
+    ///   - [`version(Option<String>)`](crate::output::CreateGroupVersionOutput::version): The ID of the version.
+    /// - On failure, responds with [`SdkError<CreateGroupVersionError>`](crate::error::CreateGroupVersionError)
     pub fn create_group_version(&self) -> fluent_builders::CreateGroupVersion<C, M, R> {
         fluent_builders::CreateGroupVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateLoggerDefinition` operation.
+    /// Constructs a fluent builder for the [`CreateLoggerDefinition`](crate::client::fluent_builders::CreateLoggerDefinition) operation.
     ///
-    /// See [`CreateLoggerDefinition`](crate::client::fluent_builders::CreateLoggerDefinition) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateLoggerDefinitionInput`](crate::input::CreateLoggerDefinitionInput) with field(s):
+    ///   - [`amzn_client_token(Option<String>)`](crate::input::CreateLoggerDefinitionInput::amzn_client_token): A client token used to correlate requests and responses.
+    ///   - [`initial_version(Option<LoggerDefinitionVersion>)`](crate::input::CreateLoggerDefinitionInput::initial_version): Information about the initial version of the logger definition.
+    ///   - [`name(Option<String>)`](crate::input::CreateLoggerDefinitionInput::name): The name of the logger definition.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateLoggerDefinitionInput::tags): Tag(s) to add to the new resource.
+    /// - On success, responds with [`CreateLoggerDefinitionOutput`](crate::output::CreateLoggerDefinitionOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateLoggerDefinitionOutput::arn): The ARN of the definition.
+    ///   - [`creation_timestamp(Option<String>)`](crate::output::CreateLoggerDefinitionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the definition was created.
+    ///   - [`id(Option<String>)`](crate::output::CreateLoggerDefinitionOutput::id): The ID of the definition.
+    ///   - [`last_updated_timestamp(Option<String>)`](crate::output::CreateLoggerDefinitionOutput::last_updated_timestamp): The time, in milliseconds since the epoch, when the definition was last updated.
+    ///   - [`latest_version(Option<String>)`](crate::output::CreateLoggerDefinitionOutput::latest_version): The ID of the latest version associated with the definition.
+    ///   - [`latest_version_arn(Option<String>)`](crate::output::CreateLoggerDefinitionOutput::latest_version_arn): The ARN of the latest version associated with the definition.
+    ///   - [`name(Option<String>)`](crate::output::CreateLoggerDefinitionOutput::name): The name of the definition.
+    /// - On failure, responds with [`SdkError<CreateLoggerDefinitionError>`](crate::error::CreateLoggerDefinitionError)
     pub fn create_logger_definition(&self) -> fluent_builders::CreateLoggerDefinition<C, M, R> {
         fluent_builders::CreateLoggerDefinition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateLoggerDefinitionVersion` operation.
+    /// Constructs a fluent builder for the [`CreateLoggerDefinitionVersion`](crate::client::fluent_builders::CreateLoggerDefinitionVersion) operation.
     ///
-    /// See [`CreateLoggerDefinitionVersion`](crate::client::fluent_builders::CreateLoggerDefinitionVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateLoggerDefinitionVersionInput`](crate::input::CreateLoggerDefinitionVersionInput) with field(s):
+    ///   - [`amzn_client_token(Option<String>)`](crate::input::CreateLoggerDefinitionVersionInput::amzn_client_token): A client token used to correlate requests and responses.
+    ///   - [`logger_definition_id(Option<String>)`](crate::input::CreateLoggerDefinitionVersionInput::logger_definition_id): The ID of the logger definition.
+    ///   - [`loggers(Option<Vec<Logger>>)`](crate::input::CreateLoggerDefinitionVersionInput::loggers): A list of loggers.
+    /// - On success, responds with [`CreateLoggerDefinitionVersionOutput`](crate::output::CreateLoggerDefinitionVersionOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateLoggerDefinitionVersionOutput::arn): The ARN of the version.
+    ///   - [`creation_timestamp(Option<String>)`](crate::output::CreateLoggerDefinitionVersionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the version was created.
+    ///   - [`id(Option<String>)`](crate::output::CreateLoggerDefinitionVersionOutput::id): The ID of the parent definition that the version is associated with.
+    ///   - [`version(Option<String>)`](crate::output::CreateLoggerDefinitionVersionOutput::version): The ID of the version.
+    /// - On failure, responds with [`SdkError<CreateLoggerDefinitionVersionError>`](crate::error::CreateLoggerDefinitionVersionError)
     pub fn create_logger_definition_version(
         &self,
     ) -> fluent_builders::CreateLoggerDefinitionVersion<C, M, R> {
         fluent_builders::CreateLoggerDefinitionVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateResourceDefinition` operation.
+    /// Constructs a fluent builder for the [`CreateResourceDefinition`](crate::client::fluent_builders::CreateResourceDefinition) operation.
     ///
-    /// See [`CreateResourceDefinition`](crate::client::fluent_builders::CreateResourceDefinition) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateResourceDefinitionInput`](crate::input::CreateResourceDefinitionInput) with field(s):
+    ///   - [`amzn_client_token(Option<String>)`](crate::input::CreateResourceDefinitionInput::amzn_client_token): A client token used to correlate requests and responses.
+    ///   - [`initial_version(Option<ResourceDefinitionVersion>)`](crate::input::CreateResourceDefinitionInput::initial_version): Information about the initial version of the resource definition.
+    ///   - [`name(Option<String>)`](crate::input::CreateResourceDefinitionInput::name): The name of the resource definition.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateResourceDefinitionInput::tags): Tag(s) to add to the new resource.
+    /// - On success, responds with [`CreateResourceDefinitionOutput`](crate::output::CreateResourceDefinitionOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateResourceDefinitionOutput::arn): The ARN of the definition.
+    ///   - [`creation_timestamp(Option<String>)`](crate::output::CreateResourceDefinitionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the definition was created.
+    ///   - [`id(Option<String>)`](crate::output::CreateResourceDefinitionOutput::id): The ID of the definition.
+    ///   - [`last_updated_timestamp(Option<String>)`](crate::output::CreateResourceDefinitionOutput::last_updated_timestamp): The time, in milliseconds since the epoch, when the definition was last updated.
+    ///   - [`latest_version(Option<String>)`](crate::output::CreateResourceDefinitionOutput::latest_version): The ID of the latest version associated with the definition.
+    ///   - [`latest_version_arn(Option<String>)`](crate::output::CreateResourceDefinitionOutput::latest_version_arn): The ARN of the latest version associated with the definition.
+    ///   - [`name(Option<String>)`](crate::output::CreateResourceDefinitionOutput::name): The name of the definition.
+    /// - On failure, responds with [`SdkError<CreateResourceDefinitionError>`](crate::error::CreateResourceDefinitionError)
     pub fn create_resource_definition(&self) -> fluent_builders::CreateResourceDefinition<C, M, R> {
         fluent_builders::CreateResourceDefinition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateResourceDefinitionVersion` operation.
+    /// Constructs a fluent builder for the [`CreateResourceDefinitionVersion`](crate::client::fluent_builders::CreateResourceDefinitionVersion) operation.
     ///
-    /// See [`CreateResourceDefinitionVersion`](crate::client::fluent_builders::CreateResourceDefinitionVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateResourceDefinitionVersionInput`](crate::input::CreateResourceDefinitionVersionInput) with field(s):
+    ///   - [`amzn_client_token(Option<String>)`](crate::input::CreateResourceDefinitionVersionInput::amzn_client_token): A client token used to correlate requests and responses.
+    ///   - [`resource_definition_id(Option<String>)`](crate::input::CreateResourceDefinitionVersionInput::resource_definition_id): The ID of the resource definition.
+    ///   - [`resources(Option<Vec<Resource>>)`](crate::input::CreateResourceDefinitionVersionInput::resources): A list of resources.
+    /// - On success, responds with [`CreateResourceDefinitionVersionOutput`](crate::output::CreateResourceDefinitionVersionOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateResourceDefinitionVersionOutput::arn): The ARN of the version.
+    ///   - [`creation_timestamp(Option<String>)`](crate::output::CreateResourceDefinitionVersionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the version was created.
+    ///   - [`id(Option<String>)`](crate::output::CreateResourceDefinitionVersionOutput::id): The ID of the parent definition that the version is associated with.
+    ///   - [`version(Option<String>)`](crate::output::CreateResourceDefinitionVersionOutput::version): The ID of the version.
+    /// - On failure, responds with [`SdkError<CreateResourceDefinitionVersionError>`](crate::error::CreateResourceDefinitionVersionError)
     pub fn create_resource_definition_version(
         &self,
     ) -> fluent_builders::CreateResourceDefinitionVersion<C, M, R> {
         fluent_builders::CreateResourceDefinitionVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateSoftwareUpdateJob` operation.
+    /// Constructs a fluent builder for the [`CreateSoftwareUpdateJob`](crate::client::fluent_builders::CreateSoftwareUpdateJob) operation.
     ///
-    /// See [`CreateSoftwareUpdateJob`](crate::client::fluent_builders::CreateSoftwareUpdateJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateSoftwareUpdateJobInput`](crate::input::CreateSoftwareUpdateJobInput) with field(s):
+    ///   - [`amzn_client_token(Option<String>)`](crate::input::CreateSoftwareUpdateJobInput::amzn_client_token): A client token used to correlate requests and responses.
+    ///   - [`s3_url_signer_role(Option<String>)`](crate::input::CreateSoftwareUpdateJobInput::s3_url_signer_role): The IAM Role that Greengrass will use to create pre-signed URLs pointing towards the update artifact.
+    ///   - [`software_to_update(Option<SoftwareToUpdate>)`](crate::input::CreateSoftwareUpdateJobInput::software_to_update): The piece of software on the Greengrass core that will be updated.
+    ///   - [`update_agent_log_level(Option<UpdateAgentLogLevel>)`](crate::input::CreateSoftwareUpdateJobInput::update_agent_log_level): The minimum level of log statements that should be logged by the OTA Agent during an update.
+    ///   - [`update_targets(Option<Vec<String>>)`](crate::input::CreateSoftwareUpdateJobInput::update_targets): The ARNs of the targets (IoT things or IoT thing groups) that this update will be applied to.
+    ///   - [`update_targets_architecture(Option<UpdateTargetsArchitecture>)`](crate::input::CreateSoftwareUpdateJobInput::update_targets_architecture): The architecture of the cores which are the targets of an update.
+    ///   - [`update_targets_operating_system(Option<UpdateTargetsOperatingSystem>)`](crate::input::CreateSoftwareUpdateJobInput::update_targets_operating_system): The operating system of the cores which are the targets of an update.
+    /// - On success, responds with [`CreateSoftwareUpdateJobOutput`](crate::output::CreateSoftwareUpdateJobOutput) with field(s):
+    ///   - [`iot_job_arn(Option<String>)`](crate::output::CreateSoftwareUpdateJobOutput::iot_job_arn): The IoT Job ARN corresponding to this update.
+    ///   - [`iot_job_id(Option<String>)`](crate::output::CreateSoftwareUpdateJobOutput::iot_job_id): The IoT Job Id corresponding to this update.
+    ///   - [`platform_software_version(Option<String>)`](crate::output::CreateSoftwareUpdateJobOutput::platform_software_version): The software version installed on the device or devices after the update.
+    /// - On failure, responds with [`SdkError<CreateSoftwareUpdateJobError>`](crate::error::CreateSoftwareUpdateJobError)
     pub fn create_software_update_job(&self) -> fluent_builders::CreateSoftwareUpdateJob<C, M, R> {
         fluent_builders::CreateSoftwareUpdateJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateSubscriptionDefinition` operation.
+    /// Constructs a fluent builder for the [`CreateSubscriptionDefinition`](crate::client::fluent_builders::CreateSubscriptionDefinition) operation.
     ///
-    /// See [`CreateSubscriptionDefinition`](crate::client::fluent_builders::CreateSubscriptionDefinition) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateSubscriptionDefinitionInput`](crate::input::CreateSubscriptionDefinitionInput) with field(s):
+    ///   - [`amzn_client_token(Option<String>)`](crate::input::CreateSubscriptionDefinitionInput::amzn_client_token): A client token used to correlate requests and responses.
+    ///   - [`initial_version(Option<SubscriptionDefinitionVersion>)`](crate::input::CreateSubscriptionDefinitionInput::initial_version): Information about the initial version of the subscription definition.
+    ///   - [`name(Option<String>)`](crate::input::CreateSubscriptionDefinitionInput::name): The name of the subscription definition.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateSubscriptionDefinitionInput::tags): Tag(s) to add to the new resource.
+    /// - On success, responds with [`CreateSubscriptionDefinitionOutput`](crate::output::CreateSubscriptionDefinitionOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateSubscriptionDefinitionOutput::arn): The ARN of the definition.
+    ///   - [`creation_timestamp(Option<String>)`](crate::output::CreateSubscriptionDefinitionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the definition was created.
+    ///   - [`id(Option<String>)`](crate::output::CreateSubscriptionDefinitionOutput::id): The ID of the definition.
+    ///   - [`last_updated_timestamp(Option<String>)`](crate::output::CreateSubscriptionDefinitionOutput::last_updated_timestamp): The time, in milliseconds since the epoch, when the definition was last updated.
+    ///   - [`latest_version(Option<String>)`](crate::output::CreateSubscriptionDefinitionOutput::latest_version): The ID of the latest version associated with the definition.
+    ///   - [`latest_version_arn(Option<String>)`](crate::output::CreateSubscriptionDefinitionOutput::latest_version_arn): The ARN of the latest version associated with the definition.
+    ///   - [`name(Option<String>)`](crate::output::CreateSubscriptionDefinitionOutput::name): The name of the definition.
+    /// - On failure, responds with [`SdkError<CreateSubscriptionDefinitionError>`](crate::error::CreateSubscriptionDefinitionError)
     pub fn create_subscription_definition(
         &self,
     ) -> fluent_builders::CreateSubscriptionDefinition<C, M, R> {
         fluent_builders::CreateSubscriptionDefinition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateSubscriptionDefinitionVersion` operation.
+    /// Constructs a fluent builder for the [`CreateSubscriptionDefinitionVersion`](crate::client::fluent_builders::CreateSubscriptionDefinitionVersion) operation.
     ///
-    /// See [`CreateSubscriptionDefinitionVersion`](crate::client::fluent_builders::CreateSubscriptionDefinitionVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateSubscriptionDefinitionVersionInput`](crate::input::CreateSubscriptionDefinitionVersionInput) with field(s):
+    ///   - [`amzn_client_token(Option<String>)`](crate::input::CreateSubscriptionDefinitionVersionInput::amzn_client_token): A client token used to correlate requests and responses.
+    ///   - [`subscription_definition_id(Option<String>)`](crate::input::CreateSubscriptionDefinitionVersionInput::subscription_definition_id): The ID of the subscription definition.
+    ///   - [`subscriptions(Option<Vec<Subscription>>)`](crate::input::CreateSubscriptionDefinitionVersionInput::subscriptions): A list of subscriptions.
+    /// - On success, responds with [`CreateSubscriptionDefinitionVersionOutput`](crate::output::CreateSubscriptionDefinitionVersionOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateSubscriptionDefinitionVersionOutput::arn): The ARN of the version.
+    ///   - [`creation_timestamp(Option<String>)`](crate::output::CreateSubscriptionDefinitionVersionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the version was created.
+    ///   - [`id(Option<String>)`](crate::output::CreateSubscriptionDefinitionVersionOutput::id): The ID of the parent definition that the version is associated with.
+    ///   - [`version(Option<String>)`](crate::output::CreateSubscriptionDefinitionVersionOutput::version): The ID of the version.
+    /// - On failure, responds with [`SdkError<CreateSubscriptionDefinitionVersionError>`](crate::error::CreateSubscriptionDefinitionVersionError)
     pub fn create_subscription_definition_version(
         &self,
     ) -> fluent_builders::CreateSubscriptionDefinitionVersion<C, M, R> {
         fluent_builders::CreateSubscriptionDefinitionVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteConnectorDefinition` operation.
+    /// Constructs a fluent builder for the [`DeleteConnectorDefinition`](crate::client::fluent_builders::DeleteConnectorDefinition) operation.
     ///
-    /// See [`DeleteConnectorDefinition`](crate::client::fluent_builders::DeleteConnectorDefinition) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteConnectorDefinitionInput`](crate::input::DeleteConnectorDefinitionInput) with field(s):
+    ///   - [`connector_definition_id(Option<String>)`](crate::input::DeleteConnectorDefinitionInput::connector_definition_id): The ID of the connector definition.
+    /// - On success, responds with [`DeleteConnectorDefinitionOutput`](crate::output::DeleteConnectorDefinitionOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteConnectorDefinitionError>`](crate::error::DeleteConnectorDefinitionError)
     pub fn delete_connector_definition(
         &self,
     ) -> fluent_builders::DeleteConnectorDefinition<C, M, R> {
         fluent_builders::DeleteConnectorDefinition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteCoreDefinition` operation.
+    /// Constructs a fluent builder for the [`DeleteCoreDefinition`](crate::client::fluent_builders::DeleteCoreDefinition) operation.
     ///
-    /// See [`DeleteCoreDefinition`](crate::client::fluent_builders::DeleteCoreDefinition) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteCoreDefinitionInput`](crate::input::DeleteCoreDefinitionInput) with field(s):
+    ///   - [`core_definition_id(Option<String>)`](crate::input::DeleteCoreDefinitionInput::core_definition_id): The ID of the core definition.
+    /// - On success, responds with [`DeleteCoreDefinitionOutput`](crate::output::DeleteCoreDefinitionOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteCoreDefinitionError>`](crate::error::DeleteCoreDefinitionError)
     pub fn delete_core_definition(&self) -> fluent_builders::DeleteCoreDefinition<C, M, R> {
         fluent_builders::DeleteCoreDefinition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDeviceDefinition` operation.
+    /// Constructs a fluent builder for the [`DeleteDeviceDefinition`](crate::client::fluent_builders::DeleteDeviceDefinition) operation.
     ///
-    /// See [`DeleteDeviceDefinition`](crate::client::fluent_builders::DeleteDeviceDefinition) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteDeviceDefinitionInput`](crate::input::DeleteDeviceDefinitionInput) with field(s):
+    ///   - [`device_definition_id(Option<String>)`](crate::input::DeleteDeviceDefinitionInput::device_definition_id): The ID of the device definition.
+    /// - On success, responds with [`DeleteDeviceDefinitionOutput`](crate::output::DeleteDeviceDefinitionOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteDeviceDefinitionError>`](crate::error::DeleteDeviceDefinitionError)
     pub fn delete_device_definition(&self) -> fluent_builders::DeleteDeviceDefinition<C, M, R> {
         fluent_builders::DeleteDeviceDefinition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteFunctionDefinition` operation.
+    /// Constructs a fluent builder for the [`DeleteFunctionDefinition`](crate::client::fluent_builders::DeleteFunctionDefinition) operation.
     ///
-    /// See [`DeleteFunctionDefinition`](crate::client::fluent_builders::DeleteFunctionDefinition) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteFunctionDefinitionInput`](crate::input::DeleteFunctionDefinitionInput) with field(s):
+    ///   - [`function_definition_id(Option<String>)`](crate::input::DeleteFunctionDefinitionInput::function_definition_id): The ID of the Lambda function definition.
+    /// - On success, responds with [`DeleteFunctionDefinitionOutput`](crate::output::DeleteFunctionDefinitionOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteFunctionDefinitionError>`](crate::error::DeleteFunctionDefinitionError)
     pub fn delete_function_definition(&self) -> fluent_builders::DeleteFunctionDefinition<C, M, R> {
         fluent_builders::DeleteFunctionDefinition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteGroup`](crate::client::fluent_builders::DeleteGroup) operation.
     ///
-    /// See [`DeleteGroup`](crate::client::fluent_builders::DeleteGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteGroupInput`](crate::input::DeleteGroupInput) with field(s):
+    ///   - [`group_id(Option<String>)`](crate::input::DeleteGroupInput::group_id): The ID of the Greengrass group.
+    /// - On success, responds with [`DeleteGroupOutput`](crate::output::DeleteGroupOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteGroupError>`](crate::error::DeleteGroupError)
     pub fn delete_group(&self) -> fluent_builders::DeleteGroup<C, M, R> {
         fluent_builders::DeleteGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteLoggerDefinition` operation.
+    /// Constructs a fluent builder for the [`DeleteLoggerDefinition`](crate::client::fluent_builders::DeleteLoggerDefinition) operation.
     ///
-    /// See [`DeleteLoggerDefinition`](crate::client::fluent_builders::DeleteLoggerDefinition) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteLoggerDefinitionInput`](crate::input::DeleteLoggerDefinitionInput) with field(s):
+    ///   - [`logger_definition_id(Option<String>)`](crate::input::DeleteLoggerDefinitionInput::logger_definition_id): The ID of the logger definition.
+    /// - On success, responds with [`DeleteLoggerDefinitionOutput`](crate::output::DeleteLoggerDefinitionOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteLoggerDefinitionError>`](crate::error::DeleteLoggerDefinitionError)
     pub fn delete_logger_definition(&self) -> fluent_builders::DeleteLoggerDefinition<C, M, R> {
         fluent_builders::DeleteLoggerDefinition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteResourceDefinition` operation.
+    /// Constructs a fluent builder for the [`DeleteResourceDefinition`](crate::client::fluent_builders::DeleteResourceDefinition) operation.
     ///
-    /// See [`DeleteResourceDefinition`](crate::client::fluent_builders::DeleteResourceDefinition) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteResourceDefinitionInput`](crate::input::DeleteResourceDefinitionInput) with field(s):
+    ///   - [`resource_definition_id(Option<String>)`](crate::input::DeleteResourceDefinitionInput::resource_definition_id): The ID of the resource definition.
+    /// - On success, responds with [`DeleteResourceDefinitionOutput`](crate::output::DeleteResourceDefinitionOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteResourceDefinitionError>`](crate::error::DeleteResourceDefinitionError)
     pub fn delete_resource_definition(&self) -> fluent_builders::DeleteResourceDefinition<C, M, R> {
         fluent_builders::DeleteResourceDefinition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteSubscriptionDefinition` operation.
+    /// Constructs a fluent builder for the [`DeleteSubscriptionDefinition`](crate::client::fluent_builders::DeleteSubscriptionDefinition) operation.
     ///
-    /// See [`DeleteSubscriptionDefinition`](crate::client::fluent_builders::DeleteSubscriptionDefinition) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteSubscriptionDefinitionInput`](crate::input::DeleteSubscriptionDefinitionInput) with field(s):
+    ///   - [`subscription_definition_id(Option<String>)`](crate::input::DeleteSubscriptionDefinitionInput::subscription_definition_id): The ID of the subscription definition.
+    /// - On success, responds with [`DeleteSubscriptionDefinitionOutput`](crate::output::DeleteSubscriptionDefinitionOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteSubscriptionDefinitionError>`](crate::error::DeleteSubscriptionDefinitionError)
     pub fn delete_subscription_definition(
         &self,
     ) -> fluent_builders::DeleteSubscriptionDefinition<C, M, R> {
         fluent_builders::DeleteSubscriptionDefinition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateRoleFromGroup` operation.
+    /// Constructs a fluent builder for the [`DisassociateRoleFromGroup`](crate::client::fluent_builders::DisassociateRoleFromGroup) operation.
     ///
-    /// See [`DisassociateRoleFromGroup`](crate::client::fluent_builders::DisassociateRoleFromGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateRoleFromGroupInput`](crate::input::DisassociateRoleFromGroupInput) with field(s):
+    ///   - [`group_id(Option<String>)`](crate::input::DisassociateRoleFromGroupInput::group_id): The ID of the Greengrass group.
+    /// - On success, responds with [`DisassociateRoleFromGroupOutput`](crate::output::DisassociateRoleFromGroupOutput) with field(s):
+    ///   - [`disassociated_at(Option<String>)`](crate::output::DisassociateRoleFromGroupOutput::disassociated_at): The time, in milliseconds since the epoch, when the role was disassociated from the group.
+    /// - On failure, responds with [`SdkError<DisassociateRoleFromGroupError>`](crate::error::DisassociateRoleFromGroupError)
     pub fn disassociate_role_from_group(
         &self,
     ) -> fluent_builders::DisassociateRoleFromGroup<C, M, R> {
         fluent_builders::DisassociateRoleFromGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateServiceRoleFromAccount` operation.
+    /// Constructs a fluent builder for the [`DisassociateServiceRoleFromAccount`](crate::client::fluent_builders::DisassociateServiceRoleFromAccount) operation.
     ///
-    /// See [`DisassociateServiceRoleFromAccount`](crate::client::fluent_builders::DisassociateServiceRoleFromAccount) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateServiceRoleFromAccountInput`](crate::input::DisassociateServiceRoleFromAccountInput)
+
+    /// - On success, responds with [`DisassociateServiceRoleFromAccountOutput`](crate::output::DisassociateServiceRoleFromAccountOutput) with field(s):
+    ///   - [`disassociated_at(Option<String>)`](crate::output::DisassociateServiceRoleFromAccountOutput::disassociated_at): The time when the service role was disassociated from the account.
+    /// - On failure, responds with [`SdkError<DisassociateServiceRoleFromAccountError>`](crate::error::DisassociateServiceRoleFromAccountError)
     pub fn disassociate_service_role_from_account(
         &self,
     ) -> fluent_builders::DisassociateServiceRoleFromAccount<C, M, R> {
         fluent_builders::DisassociateServiceRoleFromAccount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAssociatedRole` operation.
+    /// Constructs a fluent builder for the [`GetAssociatedRole`](crate::client::fluent_builders::GetAssociatedRole) operation.
     ///
-    /// See [`GetAssociatedRole`](crate::client::fluent_builders::GetAssociatedRole) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetAssociatedRoleInput`](crate::input::GetAssociatedRoleInput) with field(s):
+    ///   - [`group_id(Option<String>)`](crate::input::GetAssociatedRoleInput::group_id): The ID of the Greengrass group.
+    /// - On success, responds with [`GetAssociatedRoleOutput`](crate::output::GetAssociatedRoleOutput) with field(s):
+    ///   - [`associated_at(Option<String>)`](crate::output::GetAssociatedRoleOutput::associated_at): The time when the role was associated with the group.
+    ///   - [`role_arn(Option<String>)`](crate::output::GetAssociatedRoleOutput::role_arn): The ARN of the role that is associated with the group.
+    /// - On failure, responds with [`SdkError<GetAssociatedRoleError>`](crate::error::GetAssociatedRoleError)
     pub fn get_associated_role(&self) -> fluent_builders::GetAssociatedRole<C, M, R> {
         fluent_builders::GetAssociatedRole::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBulkDeploymentStatus` operation.
+    /// Constructs a fluent builder for the [`GetBulkDeploymentStatus`](crate::client::fluent_builders::GetBulkDeploymentStatus) operation.
     ///
-    /// See [`GetBulkDeploymentStatus`](crate::client::fluent_builders::GetBulkDeploymentStatus) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetBulkDeploymentStatusInput`](crate::input::GetBulkDeploymentStatusInput) with field(s):
+    ///   - [`bulk_deployment_id(Option<String>)`](crate::input::GetBulkDeploymentStatusInput::bulk_deployment_id): The ID of the bulk deployment.
+    /// - On success, responds with [`GetBulkDeploymentStatusOutput`](crate::output::GetBulkDeploymentStatusOutput) with field(s):
+    ///   - [`bulk_deployment_metrics(Option<BulkDeploymentMetrics>)`](crate::output::GetBulkDeploymentStatusOutput::bulk_deployment_metrics): Relevant metrics on input records processed during bulk deployment.
+    ///   - [`bulk_deployment_status(Option<BulkDeploymentStatus>)`](crate::output::GetBulkDeploymentStatusOutput::bulk_deployment_status): The status of the bulk deployment.
+    ///   - [`created_at(Option<String>)`](crate::output::GetBulkDeploymentStatusOutput::created_at): The time, in ISO format, when the deployment was created.
+    ///   - [`error_details(Option<Vec<ErrorDetail>>)`](crate::output::GetBulkDeploymentStatusOutput::error_details): Error details
+    ///   - [`error_message(Option<String>)`](crate::output::GetBulkDeploymentStatusOutput::error_message): Error message
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetBulkDeploymentStatusOutput::tags): Tag(s) attached to the resource arn.
+    /// - On failure, responds with [`SdkError<GetBulkDeploymentStatusError>`](crate::error::GetBulkDeploymentStatusError)
     pub fn get_bulk_deployment_status(&self) -> fluent_builders::GetBulkDeploymentStatus<C, M, R> {
         fluent_builders::GetBulkDeploymentStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetConnectivityInfo` operation.
+    /// Constructs a fluent builder for the [`GetConnectivityInfo`](crate::client::fluent_builders::GetConnectivityInfo) operation.
     ///
-    /// See [`GetConnectivityInfo`](crate::client::fluent_builders::GetConnectivityInfo) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetConnectivityInfoInput`](crate::input::GetConnectivityInfoInput) with field(s):
+    ///   - [`thing_name(Option<String>)`](crate::input::GetConnectivityInfoInput::thing_name): The thing name.
+    /// - On success, responds with [`GetConnectivityInfoOutput`](crate::output::GetConnectivityInfoOutput) with field(s):
+    ///   - [`connectivity_info(Option<Vec<ConnectivityInfo>>)`](crate::output::GetConnectivityInfoOutput::connectivity_info): Connectivity info list.
+    ///   - [`message(Option<String>)`](crate::output::GetConnectivityInfoOutput::message): A message about the connectivity info request.
+    /// - On failure, responds with [`SdkError<GetConnectivityInfoError>`](crate::error::GetConnectivityInfoError)
     pub fn get_connectivity_info(&self) -> fluent_builders::GetConnectivityInfo<C, M, R> {
         fluent_builders::GetConnectivityInfo::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetConnectorDefinition` operation.
+    /// Constructs a fluent builder for the [`GetConnectorDefinition`](crate::client::fluent_builders::GetConnectorDefinition) operation.
     ///
-    /// See [`GetConnectorDefinition`](crate::client::fluent_builders::GetConnectorDefinition) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetConnectorDefinitionInput`](crate::input::GetConnectorDefinitionInput) with field(s):
+    ///   - [`connector_definition_id(Option<String>)`](crate::input::GetConnectorDefinitionInput::connector_definition_id): The ID of the connector definition.
+    /// - On success, responds with [`GetConnectorDefinitionOutput`](crate::output::GetConnectorDefinitionOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::GetConnectorDefinitionOutput::arn): The ARN of the definition.
+    ///   - [`creation_timestamp(Option<String>)`](crate::output::GetConnectorDefinitionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the definition was created.
+    ///   - [`id(Option<String>)`](crate::output::GetConnectorDefinitionOutput::id): The ID of the definition.
+    ///   - [`last_updated_timestamp(Option<String>)`](crate::output::GetConnectorDefinitionOutput::last_updated_timestamp): The time, in milliseconds since the epoch, when the definition was last updated.
+    ///   - [`latest_version(Option<String>)`](crate::output::GetConnectorDefinitionOutput::latest_version): The ID of the latest version associated with the definition.
+    ///   - [`latest_version_arn(Option<String>)`](crate::output::GetConnectorDefinitionOutput::latest_version_arn): The ARN of the latest version associated with the definition.
+    ///   - [`name(Option<String>)`](crate::output::GetConnectorDefinitionOutput::name): The name of the definition.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetConnectorDefinitionOutput::tags): Tag(s) attached to the resource arn.
+    /// - On failure, responds with [`SdkError<GetConnectorDefinitionError>`](crate::error::GetConnectorDefinitionError)
     pub fn get_connector_definition(&self) -> fluent_builders::GetConnectorDefinition<C, M, R> {
         fluent_builders::GetConnectorDefinition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetConnectorDefinitionVersion` operation.
+    /// Constructs a fluent builder for the [`GetConnectorDefinitionVersion`](crate::client::fluent_builders::GetConnectorDefinitionVersion) operation.
     ///
-    /// See [`GetConnectorDefinitionVersion`](crate::client::fluent_builders::GetConnectorDefinitionVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetConnectorDefinitionVersionInput`](crate::input::GetConnectorDefinitionVersionInput) with field(s):
+    ///   - [`connector_definition_id(Option<String>)`](crate::input::GetConnectorDefinitionVersionInput::connector_definition_id): The ID of the connector definition.
+    ///   - [`connector_definition_version_id(Option<String>)`](crate::input::GetConnectorDefinitionVersionInput::connector_definition_version_id): The ID of the connector definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListConnectorDefinitionVersions'' requests. If the version is the last one that was associated with a connector definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
+    ///   - [`next_token(Option<String>)`](crate::input::GetConnectorDefinitionVersionInput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    /// - On success, responds with [`GetConnectorDefinitionVersionOutput`](crate::output::GetConnectorDefinitionVersionOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::GetConnectorDefinitionVersionOutput::arn): The ARN of the connector definition version.
+    ///   - [`creation_timestamp(Option<String>)`](crate::output::GetConnectorDefinitionVersionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the connector definition version was created.
+    ///   - [`definition(Option<ConnectorDefinitionVersion>)`](crate::output::GetConnectorDefinitionVersionOutput::definition): Information about the connector definition version.
+    ///   - [`id(Option<String>)`](crate::output::GetConnectorDefinitionVersionOutput::id): The ID of the connector definition version.
+    ///   - [`next_token(Option<String>)`](crate::output::GetConnectorDefinitionVersionOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    ///   - [`version(Option<String>)`](crate::output::GetConnectorDefinitionVersionOutput::version): The version of the connector definition version.
+    /// - On failure, responds with [`SdkError<GetConnectorDefinitionVersionError>`](crate::error::GetConnectorDefinitionVersionError)
     pub fn get_connector_definition_version(
         &self,
     ) -> fluent_builders::GetConnectorDefinitionVersion<C, M, R> {
         fluent_builders::GetConnectorDefinitionVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCoreDefinition` operation.
+    /// Constructs a fluent builder for the [`GetCoreDefinition`](crate::client::fluent_builders::GetCoreDefinition) operation.
     ///
-    /// See [`GetCoreDefinition`](crate::client::fluent_builders::GetCoreDefinition) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetCoreDefinitionInput`](crate::input::GetCoreDefinitionInput) with field(s):
+    ///   - [`core_definition_id(Option<String>)`](crate::input::GetCoreDefinitionInput::core_definition_id): The ID of the core definition.
+    /// - On success, responds with [`GetCoreDefinitionOutput`](crate::output::GetCoreDefinitionOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::GetCoreDefinitionOutput::arn): The ARN of the definition.
+    ///   - [`creation_timestamp(Option<String>)`](crate::output::GetCoreDefinitionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the definition was created.
+    ///   - [`id(Option<String>)`](crate::output::GetCoreDefinitionOutput::id): The ID of the definition.
+    ///   - [`last_updated_timestamp(Option<String>)`](crate::output::GetCoreDefinitionOutput::last_updated_timestamp): The time, in milliseconds since the epoch, when the definition was last updated.
+    ///   - [`latest_version(Option<String>)`](crate::output::GetCoreDefinitionOutput::latest_version): The ID of the latest version associated with the definition.
+    ///   - [`latest_version_arn(Option<String>)`](crate::output::GetCoreDefinitionOutput::latest_version_arn): The ARN of the latest version associated with the definition.
+    ///   - [`name(Option<String>)`](crate::output::GetCoreDefinitionOutput::name): The name of the definition.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetCoreDefinitionOutput::tags): Tag(s) attached to the resource arn.
+    /// - On failure, responds with [`SdkError<GetCoreDefinitionError>`](crate::error::GetCoreDefinitionError)
     pub fn get_core_definition(&self) -> fluent_builders::GetCoreDefinition<C, M, R> {
         fluent_builders::GetCoreDefinition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCoreDefinitionVersion` operation.
+    /// Constructs a fluent builder for the [`GetCoreDefinitionVersion`](crate::client::fluent_builders::GetCoreDefinitionVersion) operation.
     ///
-    /// See [`GetCoreDefinitionVersion`](crate::client::fluent_builders::GetCoreDefinitionVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetCoreDefinitionVersionInput`](crate::input::GetCoreDefinitionVersionInput) with field(s):
+    ///   - [`core_definition_id(Option<String>)`](crate::input::GetCoreDefinitionVersionInput::core_definition_id): The ID of the core definition.
+    ///   - [`core_definition_version_id(Option<String>)`](crate::input::GetCoreDefinitionVersionInput::core_definition_version_id): The ID of the core definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListCoreDefinitionVersions'' requests. If the version is the last one that was associated with a core definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
+    /// - On success, responds with [`GetCoreDefinitionVersionOutput`](crate::output::GetCoreDefinitionVersionOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::GetCoreDefinitionVersionOutput::arn): The ARN of the core definition version.
+    ///   - [`creation_timestamp(Option<String>)`](crate::output::GetCoreDefinitionVersionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the core definition version was created.
+    ///   - [`definition(Option<CoreDefinitionVersion>)`](crate::output::GetCoreDefinitionVersionOutput::definition): Information about the core definition version.
+    ///   - [`id(Option<String>)`](crate::output::GetCoreDefinitionVersionOutput::id): The ID of the core definition version.
+    ///   - [`next_token(Option<String>)`](crate::output::GetCoreDefinitionVersionOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    ///   - [`version(Option<String>)`](crate::output::GetCoreDefinitionVersionOutput::version): The version of the core definition version.
+    /// - On failure, responds with [`SdkError<GetCoreDefinitionVersionError>`](crate::error::GetCoreDefinitionVersionError)
     pub fn get_core_definition_version(
         &self,
     ) -> fluent_builders::GetCoreDefinitionVersion<C, M, R> {
         fluent_builders::GetCoreDefinitionVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDeploymentStatus` operation.
+    /// Constructs a fluent builder for the [`GetDeploymentStatus`](crate::client::fluent_builders::GetDeploymentStatus) operation.
     ///
-    /// See [`GetDeploymentStatus`](crate::client::fluent_builders::GetDeploymentStatus) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetDeploymentStatusInput`](crate::input::GetDeploymentStatusInput) with field(s):
+    ///   - [`deployment_id(Option<String>)`](crate::input::GetDeploymentStatusInput::deployment_id): The ID of the deployment.
+    ///   - [`group_id(Option<String>)`](crate::input::GetDeploymentStatusInput::group_id): The ID of the Greengrass group.
+    /// - On success, responds with [`GetDeploymentStatusOutput`](crate::output::GetDeploymentStatusOutput) with field(s):
+    ///   - [`deployment_status(Option<String>)`](crate::output::GetDeploymentStatusOutput::deployment_status): The status of the deployment: ''InProgress'', ''Building'', ''Success'', or ''Failure''.
+    ///   - [`deployment_type(Option<DeploymentType>)`](crate::output::GetDeploymentStatusOutput::deployment_type): The type of the deployment.
+    ///   - [`error_details(Option<Vec<ErrorDetail>>)`](crate::output::GetDeploymentStatusOutput::error_details): Error details
+    ///   - [`error_message(Option<String>)`](crate::output::GetDeploymentStatusOutput::error_message): Error message
+    ///   - [`updated_at(Option<String>)`](crate::output::GetDeploymentStatusOutput::updated_at): The time, in milliseconds since the epoch, when the deployment status was updated.
+    /// - On failure, responds with [`SdkError<GetDeploymentStatusError>`](crate::error::GetDeploymentStatusError)
     pub fn get_deployment_status(&self) -> fluent_builders::GetDeploymentStatus<C, M, R> {
         fluent_builders::GetDeploymentStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDeviceDefinition` operation.
+    /// Constructs a fluent builder for the [`GetDeviceDefinition`](crate::client::fluent_builders::GetDeviceDefinition) operation.
     ///
-    /// See [`GetDeviceDefinition`](crate::client::fluent_builders::GetDeviceDefinition) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetDeviceDefinitionInput`](crate::input::GetDeviceDefinitionInput) with field(s):
+    ///   - [`device_definition_id(Option<String>)`](crate::input::GetDeviceDefinitionInput::device_definition_id): The ID of the device definition.
+    /// - On success, responds with [`GetDeviceDefinitionOutput`](crate::output::GetDeviceDefinitionOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::GetDeviceDefinitionOutput::arn): The ARN of the definition.
+    ///   - [`creation_timestamp(Option<String>)`](crate::output::GetDeviceDefinitionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the definition was created.
+    ///   - [`id(Option<String>)`](crate::output::GetDeviceDefinitionOutput::id): The ID of the definition.
+    ///   - [`last_updated_timestamp(Option<String>)`](crate::output::GetDeviceDefinitionOutput::last_updated_timestamp): The time, in milliseconds since the epoch, when the definition was last updated.
+    ///   - [`latest_version(Option<String>)`](crate::output::GetDeviceDefinitionOutput::latest_version): The ID of the latest version associated with the definition.
+    ///   - [`latest_version_arn(Option<String>)`](crate::output::GetDeviceDefinitionOutput::latest_version_arn): The ARN of the latest version associated with the definition.
+    ///   - [`name(Option<String>)`](crate::output::GetDeviceDefinitionOutput::name): The name of the definition.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetDeviceDefinitionOutput::tags): Tag(s) attached to the resource arn.
+    /// - On failure, responds with [`SdkError<GetDeviceDefinitionError>`](crate::error::GetDeviceDefinitionError)
     pub fn get_device_definition(&self) -> fluent_builders::GetDeviceDefinition<C, M, R> {
         fluent_builders::GetDeviceDefinition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDeviceDefinitionVersion` operation.
+    /// Constructs a fluent builder for the [`GetDeviceDefinitionVersion`](crate::client::fluent_builders::GetDeviceDefinitionVersion) operation.
     ///
-    /// See [`GetDeviceDefinitionVersion`](crate::client::fluent_builders::GetDeviceDefinitionVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetDeviceDefinitionVersionInput`](crate::input::GetDeviceDefinitionVersionInput) with field(s):
+    ///   - [`device_definition_id(Option<String>)`](crate::input::GetDeviceDefinitionVersionInput::device_definition_id): The ID of the device definition.
+    ///   - [`device_definition_version_id(Option<String>)`](crate::input::GetDeviceDefinitionVersionInput::device_definition_version_id): The ID of the device definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListDeviceDefinitionVersions'' requests. If the version is the last one that was associated with a device definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
+    ///   - [`next_token(Option<String>)`](crate::input::GetDeviceDefinitionVersionInput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    /// - On success, responds with [`GetDeviceDefinitionVersionOutput`](crate::output::GetDeviceDefinitionVersionOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::GetDeviceDefinitionVersionOutput::arn): The ARN of the device definition version.
+    ///   - [`creation_timestamp(Option<String>)`](crate::output::GetDeviceDefinitionVersionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the device definition version was created.
+    ///   - [`definition(Option<DeviceDefinitionVersion>)`](crate::output::GetDeviceDefinitionVersionOutput::definition): Information about the device definition version.
+    ///   - [`id(Option<String>)`](crate::output::GetDeviceDefinitionVersionOutput::id): The ID of the device definition version.
+    ///   - [`next_token(Option<String>)`](crate::output::GetDeviceDefinitionVersionOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    ///   - [`version(Option<String>)`](crate::output::GetDeviceDefinitionVersionOutput::version): The version of the device definition version.
+    /// - On failure, responds with [`SdkError<GetDeviceDefinitionVersionError>`](crate::error::GetDeviceDefinitionVersionError)
     pub fn get_device_definition_version(
         &self,
     ) -> fluent_builders::GetDeviceDefinitionVersion<C, M, R> {
         fluent_builders::GetDeviceDefinitionVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetFunctionDefinition` operation.
+    /// Constructs a fluent builder for the [`GetFunctionDefinition`](crate::client::fluent_builders::GetFunctionDefinition) operation.
     ///
-    /// See [`GetFunctionDefinition`](crate::client::fluent_builders::GetFunctionDefinition) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetFunctionDefinitionInput`](crate::input::GetFunctionDefinitionInput) with field(s):
+    ///   - [`function_definition_id(Option<String>)`](crate::input::GetFunctionDefinitionInput::function_definition_id): The ID of the Lambda function definition.
+    /// - On success, responds with [`GetFunctionDefinitionOutput`](crate::output::GetFunctionDefinitionOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::GetFunctionDefinitionOutput::arn): The ARN of the definition.
+    ///   - [`creation_timestamp(Option<String>)`](crate::output::GetFunctionDefinitionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the definition was created.
+    ///   - [`id(Option<String>)`](crate::output::GetFunctionDefinitionOutput::id): The ID of the definition.
+    ///   - [`last_updated_timestamp(Option<String>)`](crate::output::GetFunctionDefinitionOutput::last_updated_timestamp): The time, in milliseconds since the epoch, when the definition was last updated.
+    ///   - [`latest_version(Option<String>)`](crate::output::GetFunctionDefinitionOutput::latest_version): The ID of the latest version associated with the definition.
+    ///   - [`latest_version_arn(Option<String>)`](crate::output::GetFunctionDefinitionOutput::latest_version_arn): The ARN of the latest version associated with the definition.
+    ///   - [`name(Option<String>)`](crate::output::GetFunctionDefinitionOutput::name): The name of the definition.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetFunctionDefinitionOutput::tags): Tag(s) attached to the resource arn.
+    /// - On failure, responds with [`SdkError<GetFunctionDefinitionError>`](crate::error::GetFunctionDefinitionError)
     pub fn get_function_definition(&self) -> fluent_builders::GetFunctionDefinition<C, M, R> {
         fluent_builders::GetFunctionDefinition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetFunctionDefinitionVersion` operation.
+    /// Constructs a fluent builder for the [`GetFunctionDefinitionVersion`](crate::client::fluent_builders::GetFunctionDefinitionVersion) operation.
     ///
-    /// See [`GetFunctionDefinitionVersion`](crate::client::fluent_builders::GetFunctionDefinitionVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetFunctionDefinitionVersionInput`](crate::input::GetFunctionDefinitionVersionInput) with field(s):
+    ///   - [`function_definition_id(Option<String>)`](crate::input::GetFunctionDefinitionVersionInput::function_definition_id): The ID of the Lambda function definition.
+    ///   - [`function_definition_version_id(Option<String>)`](crate::input::GetFunctionDefinitionVersionInput::function_definition_version_id): The ID of the function definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListFunctionDefinitionVersions'' requests. If the version is the last one that was associated with a function definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
+    ///   - [`next_token(Option<String>)`](crate::input::GetFunctionDefinitionVersionInput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    /// - On success, responds with [`GetFunctionDefinitionVersionOutput`](crate::output::GetFunctionDefinitionVersionOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::GetFunctionDefinitionVersionOutput::arn): The ARN of the function definition version.
+    ///   - [`creation_timestamp(Option<String>)`](crate::output::GetFunctionDefinitionVersionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the function definition version was created.
+    ///   - [`definition(Option<FunctionDefinitionVersion>)`](crate::output::GetFunctionDefinitionVersionOutput::definition): Information on the definition.
+    ///   - [`id(Option<String>)`](crate::output::GetFunctionDefinitionVersionOutput::id): The ID of the function definition version.
+    ///   - [`next_token(Option<String>)`](crate::output::GetFunctionDefinitionVersionOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    ///   - [`version(Option<String>)`](crate::output::GetFunctionDefinitionVersionOutput::version): The version of the function definition version.
+    /// - On failure, responds with [`SdkError<GetFunctionDefinitionVersionError>`](crate::error::GetFunctionDefinitionVersionError)
     pub fn get_function_definition_version(
         &self,
     ) -> fluent_builders::GetFunctionDefinitionVersion<C, M, R> {
         fluent_builders::GetFunctionDefinitionVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetGroup` operation.
+    /// Constructs a fluent builder for the [`GetGroup`](crate::client::fluent_builders::GetGroup) operation.
     ///
-    /// See [`GetGroup`](crate::client::fluent_builders::GetGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetGroupInput`](crate::input::GetGroupInput) with field(s):
+    ///   - [`group_id(Option<String>)`](crate::input::GetGroupInput::group_id): The ID of the Greengrass group.
+    /// - On success, responds with [`GetGroupOutput`](crate::output::GetGroupOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::GetGroupOutput::arn): The ARN of the definition.
+    ///   - [`creation_timestamp(Option<String>)`](crate::output::GetGroupOutput::creation_timestamp): The time, in milliseconds since the epoch, when the definition was created.
+    ///   - [`id(Option<String>)`](crate::output::GetGroupOutput::id): The ID of the definition.
+    ///   - [`last_updated_timestamp(Option<String>)`](crate::output::GetGroupOutput::last_updated_timestamp): The time, in milliseconds since the epoch, when the definition was last updated.
+    ///   - [`latest_version(Option<String>)`](crate::output::GetGroupOutput::latest_version): The ID of the latest version associated with the definition.
+    ///   - [`latest_version_arn(Option<String>)`](crate::output::GetGroupOutput::latest_version_arn): The ARN of the latest version associated with the definition.
+    ///   - [`name(Option<String>)`](crate::output::GetGroupOutput::name): The name of the definition.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetGroupOutput::tags): Tag(s) attached to the resource arn.
+    /// - On failure, responds with [`SdkError<GetGroupError>`](crate::error::GetGroupError)
     pub fn get_group(&self) -> fluent_builders::GetGroup<C, M, R> {
         fluent_builders::GetGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetGroupCertificateAuthority` operation.
+    /// Constructs a fluent builder for the [`GetGroupCertificateAuthority`](crate::client::fluent_builders::GetGroupCertificateAuthority) operation.
     ///
-    /// See [`GetGroupCertificateAuthority`](crate::client::fluent_builders::GetGroupCertificateAuthority) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetGroupCertificateAuthorityInput`](crate::input::GetGroupCertificateAuthorityInput) with field(s):
+    ///   - [`certificate_authority_id(Option<String>)`](crate::input::GetGroupCertificateAuthorityInput::certificate_authority_id): The ID of the certificate authority.
+    ///   - [`group_id(Option<String>)`](crate::input::GetGroupCertificateAuthorityInput::group_id): The ID of the Greengrass group.
+    /// - On success, responds with [`GetGroupCertificateAuthorityOutput`](crate::output::GetGroupCertificateAuthorityOutput) with field(s):
+    ///   - [`group_certificate_authority_arn(Option<String>)`](crate::output::GetGroupCertificateAuthorityOutput::group_certificate_authority_arn): The ARN of the certificate authority for the group.
+    ///   - [`group_certificate_authority_id(Option<String>)`](crate::output::GetGroupCertificateAuthorityOutput::group_certificate_authority_id): The ID of the certificate authority for the group.
+    ///   - [`pem_encoded_certificate(Option<String>)`](crate::output::GetGroupCertificateAuthorityOutput::pem_encoded_certificate): The PEM encoded certificate for the group.
+    /// - On failure, responds with [`SdkError<GetGroupCertificateAuthorityError>`](crate::error::GetGroupCertificateAuthorityError)
     pub fn get_group_certificate_authority(
         &self,
     ) -> fluent_builders::GetGroupCertificateAuthority<C, M, R> {
         fluent_builders::GetGroupCertificateAuthority::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetGroupCertificateConfiguration` operation.
+    /// Constructs a fluent builder for the [`GetGroupCertificateConfiguration`](crate::client::fluent_builders::GetGroupCertificateConfiguration) operation.
     ///
-    /// See [`GetGroupCertificateConfiguration`](crate::client::fluent_builders::GetGroupCertificateConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetGroupCertificateConfigurationInput`](crate::input::GetGroupCertificateConfigurationInput) with field(s):
+    ///   - [`group_id(Option<String>)`](crate::input::GetGroupCertificateConfigurationInput::group_id): The ID of the Greengrass group.
+    /// - On success, responds with [`GetGroupCertificateConfigurationOutput`](crate::output::GetGroupCertificateConfigurationOutput) with field(s):
+    ///   - [`certificate_authority_expiry_in_milliseconds(Option<String>)`](crate::output::GetGroupCertificateConfigurationOutput::certificate_authority_expiry_in_milliseconds): The amount of time remaining before the certificate authority expires, in milliseconds.
+    ///   - [`certificate_expiry_in_milliseconds(Option<String>)`](crate::output::GetGroupCertificateConfigurationOutput::certificate_expiry_in_milliseconds): The amount of time remaining before the certificate expires, in milliseconds.
+    ///   - [`group_id(Option<String>)`](crate::output::GetGroupCertificateConfigurationOutput::group_id): The ID of the group certificate configuration.
+    /// - On failure, responds with [`SdkError<GetGroupCertificateConfigurationError>`](crate::error::GetGroupCertificateConfigurationError)
     pub fn get_group_certificate_configuration(
         &self,
     ) -> fluent_builders::GetGroupCertificateConfiguration<C, M, R> {
         fluent_builders::GetGroupCertificateConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetGroupVersion` operation.
+    /// Constructs a fluent builder for the [`GetGroupVersion`](crate::client::fluent_builders::GetGroupVersion) operation.
     ///
-    /// See [`GetGroupVersion`](crate::client::fluent_builders::GetGroupVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetGroupVersionInput`](crate::input::GetGroupVersionInput) with field(s):
+    ///   - [`group_id(Option<String>)`](crate::input::GetGroupVersionInput::group_id): The ID of the Greengrass group.
+    ///   - [`group_version_id(Option<String>)`](crate::input::GetGroupVersionInput::group_version_id): The ID of the group version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListGroupVersions'' requests. If the version is the last one that was associated with a group, the value also maps to the ''LatestVersion'' property of the corresponding ''GroupInformation'' object.
+    /// - On success, responds with [`GetGroupVersionOutput`](crate::output::GetGroupVersionOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::GetGroupVersionOutput::arn): The ARN of the group version.
+    ///   - [`creation_timestamp(Option<String>)`](crate::output::GetGroupVersionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the group version was created.
+    ///   - [`definition(Option<GroupVersion>)`](crate::output::GetGroupVersionOutput::definition): Information about the group version definition.
+    ///   - [`id(Option<String>)`](crate::output::GetGroupVersionOutput::id): The ID of the group that the version is associated with.
+    ///   - [`version(Option<String>)`](crate::output::GetGroupVersionOutput::version): The ID of the group version.
+    /// - On failure, responds with [`SdkError<GetGroupVersionError>`](crate::error::GetGroupVersionError)
     pub fn get_group_version(&self) -> fluent_builders::GetGroupVersion<C, M, R> {
         fluent_builders::GetGroupVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetLoggerDefinition` operation.
+    /// Constructs a fluent builder for the [`GetLoggerDefinition`](crate::client::fluent_builders::GetLoggerDefinition) operation.
     ///
-    /// See [`GetLoggerDefinition`](crate::client::fluent_builders::GetLoggerDefinition) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetLoggerDefinitionInput`](crate::input::GetLoggerDefinitionInput) with field(s):
+    ///   - [`logger_definition_id(Option<String>)`](crate::input::GetLoggerDefinitionInput::logger_definition_id): The ID of the logger definition.
+    /// - On success, responds with [`GetLoggerDefinitionOutput`](crate::output::GetLoggerDefinitionOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::GetLoggerDefinitionOutput::arn): The ARN of the definition.
+    ///   - [`creation_timestamp(Option<String>)`](crate::output::GetLoggerDefinitionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the definition was created.
+    ///   - [`id(Option<String>)`](crate::output::GetLoggerDefinitionOutput::id): The ID of the definition.
+    ///   - [`last_updated_timestamp(Option<String>)`](crate::output::GetLoggerDefinitionOutput::last_updated_timestamp): The time, in milliseconds since the epoch, when the definition was last updated.
+    ///   - [`latest_version(Option<String>)`](crate::output::GetLoggerDefinitionOutput::latest_version): The ID of the latest version associated with the definition.
+    ///   - [`latest_version_arn(Option<String>)`](crate::output::GetLoggerDefinitionOutput::latest_version_arn): The ARN of the latest version associated with the definition.
+    ///   - [`name(Option<String>)`](crate::output::GetLoggerDefinitionOutput::name): The name of the definition.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetLoggerDefinitionOutput::tags): Tag(s) attached to the resource arn.
+    /// - On failure, responds with [`SdkError<GetLoggerDefinitionError>`](crate::error::GetLoggerDefinitionError)
     pub fn get_logger_definition(&self) -> fluent_builders::GetLoggerDefinition<C, M, R> {
         fluent_builders::GetLoggerDefinition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetLoggerDefinitionVersion` operation.
+    /// Constructs a fluent builder for the [`GetLoggerDefinitionVersion`](crate::client::fluent_builders::GetLoggerDefinitionVersion) operation.
     ///
-    /// See [`GetLoggerDefinitionVersion`](crate::client::fluent_builders::GetLoggerDefinitionVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetLoggerDefinitionVersionInput`](crate::input::GetLoggerDefinitionVersionInput) with field(s):
+    ///   - [`logger_definition_id(Option<String>)`](crate::input::GetLoggerDefinitionVersionInput::logger_definition_id): The ID of the logger definition.
+    ///   - [`logger_definition_version_id(Option<String>)`](crate::input::GetLoggerDefinitionVersionInput::logger_definition_version_id): The ID of the logger definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListLoggerDefinitionVersions'' requests. If the version is the last one that was associated with a logger definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
+    ///   - [`next_token(Option<String>)`](crate::input::GetLoggerDefinitionVersionInput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    /// - On success, responds with [`GetLoggerDefinitionVersionOutput`](crate::output::GetLoggerDefinitionVersionOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::GetLoggerDefinitionVersionOutput::arn): The ARN of the logger definition version.
+    ///   - [`creation_timestamp(Option<String>)`](crate::output::GetLoggerDefinitionVersionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the logger definition version was created.
+    ///   - [`definition(Option<LoggerDefinitionVersion>)`](crate::output::GetLoggerDefinitionVersionOutput::definition): Information about the logger definition version.
+    ///   - [`id(Option<String>)`](crate::output::GetLoggerDefinitionVersionOutput::id): The ID of the logger definition version.
+    ///   - [`version(Option<String>)`](crate::output::GetLoggerDefinitionVersionOutput::version): The version of the logger definition version.
+    /// - On failure, responds with [`SdkError<GetLoggerDefinitionVersionError>`](crate::error::GetLoggerDefinitionVersionError)
     pub fn get_logger_definition_version(
         &self,
     ) -> fluent_builders::GetLoggerDefinitionVersion<C, M, R> {
         fluent_builders::GetLoggerDefinitionVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetResourceDefinition` operation.
+    /// Constructs a fluent builder for the [`GetResourceDefinition`](crate::client::fluent_builders::GetResourceDefinition) operation.
     ///
-    /// See [`GetResourceDefinition`](crate::client::fluent_builders::GetResourceDefinition) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetResourceDefinitionInput`](crate::input::GetResourceDefinitionInput) with field(s):
+    ///   - [`resource_definition_id(Option<String>)`](crate::input::GetResourceDefinitionInput::resource_definition_id): The ID of the resource definition.
+    /// - On success, responds with [`GetResourceDefinitionOutput`](crate::output::GetResourceDefinitionOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::GetResourceDefinitionOutput::arn): The ARN of the definition.
+    ///   - [`creation_timestamp(Option<String>)`](crate::output::GetResourceDefinitionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the definition was created.
+    ///   - [`id(Option<String>)`](crate::output::GetResourceDefinitionOutput::id): The ID of the definition.
+    ///   - [`last_updated_timestamp(Option<String>)`](crate::output::GetResourceDefinitionOutput::last_updated_timestamp): The time, in milliseconds since the epoch, when the definition was last updated.
+    ///   - [`latest_version(Option<String>)`](crate::output::GetResourceDefinitionOutput::latest_version): The ID of the latest version associated with the definition.
+    ///   - [`latest_version_arn(Option<String>)`](crate::output::GetResourceDefinitionOutput::latest_version_arn): The ARN of the latest version associated with the definition.
+    ///   - [`name(Option<String>)`](crate::output::GetResourceDefinitionOutput::name): The name of the definition.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetResourceDefinitionOutput::tags): Tag(s) attached to the resource arn.
+    /// - On failure, responds with [`SdkError<GetResourceDefinitionError>`](crate::error::GetResourceDefinitionError)
     pub fn get_resource_definition(&self) -> fluent_builders::GetResourceDefinition<C, M, R> {
         fluent_builders::GetResourceDefinition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetResourceDefinitionVersion` operation.
+    /// Constructs a fluent builder for the [`GetResourceDefinitionVersion`](crate::client::fluent_builders::GetResourceDefinitionVersion) operation.
     ///
-    /// See [`GetResourceDefinitionVersion`](crate::client::fluent_builders::GetResourceDefinitionVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetResourceDefinitionVersionInput`](crate::input::GetResourceDefinitionVersionInput) with field(s):
+    ///   - [`resource_definition_id(Option<String>)`](crate::input::GetResourceDefinitionVersionInput::resource_definition_id): The ID of the resource definition.
+    ///   - [`resource_definition_version_id(Option<String>)`](crate::input::GetResourceDefinitionVersionInput::resource_definition_version_id): The ID of the resource definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListResourceDefinitionVersions'' requests. If the version is the last one that was associated with a resource definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
+    /// - On success, responds with [`GetResourceDefinitionVersionOutput`](crate::output::GetResourceDefinitionVersionOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::GetResourceDefinitionVersionOutput::arn): Arn of the resource definition version.
+    ///   - [`creation_timestamp(Option<String>)`](crate::output::GetResourceDefinitionVersionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the resource definition version was created.
+    ///   - [`definition(Option<ResourceDefinitionVersion>)`](crate::output::GetResourceDefinitionVersionOutput::definition): Information about the definition.
+    ///   - [`id(Option<String>)`](crate::output::GetResourceDefinitionVersionOutput::id): The ID of the resource definition version.
+    ///   - [`version(Option<String>)`](crate::output::GetResourceDefinitionVersionOutput::version): The version of the resource definition version.
+    /// - On failure, responds with [`SdkError<GetResourceDefinitionVersionError>`](crate::error::GetResourceDefinitionVersionError)
     pub fn get_resource_definition_version(
         &self,
     ) -> fluent_builders::GetResourceDefinitionVersion<C, M, R> {
         fluent_builders::GetResourceDefinitionVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetServiceRoleForAccount` operation.
+    /// Constructs a fluent builder for the [`GetServiceRoleForAccount`](crate::client::fluent_builders::GetServiceRoleForAccount) operation.
     ///
-    /// See [`GetServiceRoleForAccount`](crate::client::fluent_builders::GetServiceRoleForAccount) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetServiceRoleForAccountInput`](crate::input::GetServiceRoleForAccountInput)
+
+    /// - On success, responds with [`GetServiceRoleForAccountOutput`](crate::output::GetServiceRoleForAccountOutput) with field(s):
+    ///   - [`associated_at(Option<String>)`](crate::output::GetServiceRoleForAccountOutput::associated_at): The time when the service role was associated with the account.
+    ///   - [`role_arn(Option<String>)`](crate::output::GetServiceRoleForAccountOutput::role_arn): The ARN of the role which is associated with the account.
+    /// - On failure, responds with [`SdkError<GetServiceRoleForAccountError>`](crate::error::GetServiceRoleForAccountError)
     pub fn get_service_role_for_account(
         &self,
     ) -> fluent_builders::GetServiceRoleForAccount<C, M, R> {
         fluent_builders::GetServiceRoleForAccount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSubscriptionDefinition` operation.
+    /// Constructs a fluent builder for the [`GetSubscriptionDefinition`](crate::client::fluent_builders::GetSubscriptionDefinition) operation.
     ///
-    /// See [`GetSubscriptionDefinition`](crate::client::fluent_builders::GetSubscriptionDefinition) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetSubscriptionDefinitionInput`](crate::input::GetSubscriptionDefinitionInput) with field(s):
+    ///   - [`subscription_definition_id(Option<String>)`](crate::input::GetSubscriptionDefinitionInput::subscription_definition_id): The ID of the subscription definition.
+    /// - On success, responds with [`GetSubscriptionDefinitionOutput`](crate::output::GetSubscriptionDefinitionOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::GetSubscriptionDefinitionOutput::arn): The ARN of the definition.
+    ///   - [`creation_timestamp(Option<String>)`](crate::output::GetSubscriptionDefinitionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the definition was created.
+    ///   - [`id(Option<String>)`](crate::output::GetSubscriptionDefinitionOutput::id): The ID of the definition.
+    ///   - [`last_updated_timestamp(Option<String>)`](crate::output::GetSubscriptionDefinitionOutput::last_updated_timestamp): The time, in milliseconds since the epoch, when the definition was last updated.
+    ///   - [`latest_version(Option<String>)`](crate::output::GetSubscriptionDefinitionOutput::latest_version): The ID of the latest version associated with the definition.
+    ///   - [`latest_version_arn(Option<String>)`](crate::output::GetSubscriptionDefinitionOutput::latest_version_arn): The ARN of the latest version associated with the definition.
+    ///   - [`name(Option<String>)`](crate::output::GetSubscriptionDefinitionOutput::name): The name of the definition.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetSubscriptionDefinitionOutput::tags): Tag(s) attached to the resource arn.
+    /// - On failure, responds with [`SdkError<GetSubscriptionDefinitionError>`](crate::error::GetSubscriptionDefinitionError)
     pub fn get_subscription_definition(
         &self,
     ) -> fluent_builders::GetSubscriptionDefinition<C, M, R> {
         fluent_builders::GetSubscriptionDefinition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSubscriptionDefinitionVersion` operation.
+    /// Constructs a fluent builder for the [`GetSubscriptionDefinitionVersion`](crate::client::fluent_builders::GetSubscriptionDefinitionVersion) operation.
     ///
-    /// See [`GetSubscriptionDefinitionVersion`](crate::client::fluent_builders::GetSubscriptionDefinitionVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetSubscriptionDefinitionVersionInput`](crate::input::GetSubscriptionDefinitionVersionInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::GetSubscriptionDefinitionVersionInput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    ///   - [`subscription_definition_id(Option<String>)`](crate::input::GetSubscriptionDefinitionVersionInput::subscription_definition_id): The ID of the subscription definition.
+    ///   - [`subscription_definition_version_id(Option<String>)`](crate::input::GetSubscriptionDefinitionVersionInput::subscription_definition_version_id): The ID of the subscription definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListSubscriptionDefinitionVersions'' requests. If the version is the last one that was associated with a subscription definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
+    /// - On success, responds with [`GetSubscriptionDefinitionVersionOutput`](crate::output::GetSubscriptionDefinitionVersionOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::GetSubscriptionDefinitionVersionOutput::arn): The ARN of the subscription definition version.
+    ///   - [`creation_timestamp(Option<String>)`](crate::output::GetSubscriptionDefinitionVersionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the subscription definition version was created.
+    ///   - [`definition(Option<SubscriptionDefinitionVersion>)`](crate::output::GetSubscriptionDefinitionVersionOutput::definition): Information about the subscription definition version.
+    ///   - [`id(Option<String>)`](crate::output::GetSubscriptionDefinitionVersionOutput::id): The ID of the subscription definition version.
+    ///   - [`next_token(Option<String>)`](crate::output::GetSubscriptionDefinitionVersionOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    ///   - [`version(Option<String>)`](crate::output::GetSubscriptionDefinitionVersionOutput::version): The version of the subscription definition version.
+    /// - On failure, responds with [`SdkError<GetSubscriptionDefinitionVersionError>`](crate::error::GetSubscriptionDefinitionVersionError)
     pub fn get_subscription_definition_version(
         &self,
     ) -> fluent_builders::GetSubscriptionDefinitionVersion<C, M, R> {
         fluent_builders::GetSubscriptionDefinitionVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetThingRuntimeConfiguration` operation.
+    /// Constructs a fluent builder for the [`GetThingRuntimeConfiguration`](crate::client::fluent_builders::GetThingRuntimeConfiguration) operation.
     ///
-    /// See [`GetThingRuntimeConfiguration`](crate::client::fluent_builders::GetThingRuntimeConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetThingRuntimeConfigurationInput`](crate::input::GetThingRuntimeConfigurationInput) with field(s):
+    ///   - [`thing_name(Option<String>)`](crate::input::GetThingRuntimeConfigurationInput::thing_name): The thing name.
+    /// - On success, responds with [`GetThingRuntimeConfigurationOutput`](crate::output::GetThingRuntimeConfigurationOutput) with field(s):
+    ///   - [`runtime_configuration(Option<RuntimeConfiguration>)`](crate::output::GetThingRuntimeConfigurationOutput::runtime_configuration): Runtime configuration for a thing.
+    /// - On failure, responds with [`SdkError<GetThingRuntimeConfigurationError>`](crate::error::GetThingRuntimeConfigurationError)
     pub fn get_thing_runtime_configuration(
         &self,
     ) -> fluent_builders::GetThingRuntimeConfiguration<C, M, R> {
         fluent_builders::GetThingRuntimeConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListBulkDeploymentDetailedReports` operation.
+    /// Constructs a fluent builder for the [`ListBulkDeploymentDetailedReports`](crate::client::fluent_builders::ListBulkDeploymentDetailedReports) operation.
     ///
-    /// See [`ListBulkDeploymentDetailedReports`](crate::client::fluent_builders::ListBulkDeploymentDetailedReports) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListBulkDeploymentDetailedReportsInput`](crate::input::ListBulkDeploymentDetailedReportsInput) with field(s):
+    ///   - [`bulk_deployment_id(Option<String>)`](crate::input::ListBulkDeploymentDetailedReportsInput::bulk_deployment_id): The ID of the bulk deployment.
+    ///   - [`max_results(Option<String>)`](crate::input::ListBulkDeploymentDetailedReportsInput::max_results): The maximum number of results to be returned per request.
+    ///   - [`next_token(Option<String>)`](crate::input::ListBulkDeploymentDetailedReportsInput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    /// - On success, responds with [`ListBulkDeploymentDetailedReportsOutput`](crate::output::ListBulkDeploymentDetailedReportsOutput) with field(s):
+    ///   - [`deployments(Option<Vec<BulkDeploymentResult>>)`](crate::output::ListBulkDeploymentDetailedReportsOutput::deployments): A list of the individual group deployments in the bulk deployment operation.
+    ///   - [`next_token(Option<String>)`](crate::output::ListBulkDeploymentDetailedReportsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    /// - On failure, responds with [`SdkError<ListBulkDeploymentDetailedReportsError>`](crate::error::ListBulkDeploymentDetailedReportsError)
     pub fn list_bulk_deployment_detailed_reports(
         &self,
     ) -> fluent_builders::ListBulkDeploymentDetailedReports<C, M, R> {
         fluent_builders::ListBulkDeploymentDetailedReports::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListBulkDeployments` operation.
+    /// Constructs a fluent builder for the [`ListBulkDeployments`](crate::client::fluent_builders::ListBulkDeployments) operation.
     ///
-    /// See [`ListBulkDeployments`](crate::client::fluent_builders::ListBulkDeployments) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListBulkDeploymentsInput`](crate::input::ListBulkDeploymentsInput) with field(s):
+    ///   - [`max_results(Option<String>)`](crate::input::ListBulkDeploymentsInput::max_results): The maximum number of results to be returned per request.
+    ///   - [`next_token(Option<String>)`](crate::input::ListBulkDeploymentsInput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    /// - On success, responds with [`ListBulkDeploymentsOutput`](crate::output::ListBulkDeploymentsOutput) with field(s):
+    ///   - [`bulk_deployments(Option<Vec<BulkDeployment>>)`](crate::output::ListBulkDeploymentsOutput::bulk_deployments): A list of bulk deployments.
+    ///   - [`next_token(Option<String>)`](crate::output::ListBulkDeploymentsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    /// - On failure, responds with [`SdkError<ListBulkDeploymentsError>`](crate::error::ListBulkDeploymentsError)
     pub fn list_bulk_deployments(&self) -> fluent_builders::ListBulkDeployments<C, M, R> {
         fluent_builders::ListBulkDeployments::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListConnectorDefinitions` operation.
+    /// Constructs a fluent builder for the [`ListConnectorDefinitions`](crate::client::fluent_builders::ListConnectorDefinitions) operation.
     ///
-    /// See [`ListConnectorDefinitions`](crate::client::fluent_builders::ListConnectorDefinitions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListConnectorDefinitionsInput`](crate::input::ListConnectorDefinitionsInput) with field(s):
+    ///   - [`max_results(Option<String>)`](crate::input::ListConnectorDefinitionsInput::max_results): The maximum number of results to be returned per request.
+    ///   - [`next_token(Option<String>)`](crate::input::ListConnectorDefinitionsInput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    /// - On success, responds with [`ListConnectorDefinitionsOutput`](crate::output::ListConnectorDefinitionsOutput) with field(s):
+    ///   - [`definitions(Option<Vec<DefinitionInformation>>)`](crate::output::ListConnectorDefinitionsOutput::definitions): Information about a definition.
+    ///   - [`next_token(Option<String>)`](crate::output::ListConnectorDefinitionsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    /// - On failure, responds with [`SdkError<ListConnectorDefinitionsError>`](crate::error::ListConnectorDefinitionsError)
     pub fn list_connector_definitions(&self) -> fluent_builders::ListConnectorDefinitions<C, M, R> {
         fluent_builders::ListConnectorDefinitions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListConnectorDefinitionVersions` operation.
+    /// Constructs a fluent builder for the [`ListConnectorDefinitionVersions`](crate::client::fluent_builders::ListConnectorDefinitionVersions) operation.
     ///
-    /// See [`ListConnectorDefinitionVersions`](crate::client::fluent_builders::ListConnectorDefinitionVersions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListConnectorDefinitionVersionsInput`](crate::input::ListConnectorDefinitionVersionsInput) with field(s):
+    ///   - [`connector_definition_id(Option<String>)`](crate::input::ListConnectorDefinitionVersionsInput::connector_definition_id): The ID of the connector definition.
+    ///   - [`max_results(Option<String>)`](crate::input::ListConnectorDefinitionVersionsInput::max_results): The maximum number of results to be returned per request.
+    ///   - [`next_token(Option<String>)`](crate::input::ListConnectorDefinitionVersionsInput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    /// - On success, responds with [`ListConnectorDefinitionVersionsOutput`](crate::output::ListConnectorDefinitionVersionsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListConnectorDefinitionVersionsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    ///   - [`versions(Option<Vec<VersionInformation>>)`](crate::output::ListConnectorDefinitionVersionsOutput::versions): Information about a version.
+    /// - On failure, responds with [`SdkError<ListConnectorDefinitionVersionsError>`](crate::error::ListConnectorDefinitionVersionsError)
     pub fn list_connector_definition_versions(
         &self,
     ) -> fluent_builders::ListConnectorDefinitionVersions<C, M, R> {
         fluent_builders::ListConnectorDefinitionVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListCoreDefinitions` operation.
+    /// Constructs a fluent builder for the [`ListCoreDefinitions`](crate::client::fluent_builders::ListCoreDefinitions) operation.
     ///
-    /// See [`ListCoreDefinitions`](crate::client::fluent_builders::ListCoreDefinitions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListCoreDefinitionsInput`](crate::input::ListCoreDefinitionsInput) with field(s):
+    ///   - [`max_results(Option<String>)`](crate::input::ListCoreDefinitionsInput::max_results): The maximum number of results to be returned per request.
+    ///   - [`next_token(Option<String>)`](crate::input::ListCoreDefinitionsInput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    /// - On success, responds with [`ListCoreDefinitionsOutput`](crate::output::ListCoreDefinitionsOutput) with field(s):
+    ///   - [`definitions(Option<Vec<DefinitionInformation>>)`](crate::output::ListCoreDefinitionsOutput::definitions): Information about a definition.
+    ///   - [`next_token(Option<String>)`](crate::output::ListCoreDefinitionsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    /// - On failure, responds with [`SdkError<ListCoreDefinitionsError>`](crate::error::ListCoreDefinitionsError)
     pub fn list_core_definitions(&self) -> fluent_builders::ListCoreDefinitions<C, M, R> {
         fluent_builders::ListCoreDefinitions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListCoreDefinitionVersions` operation.
+    /// Constructs a fluent builder for the [`ListCoreDefinitionVersions`](crate::client::fluent_builders::ListCoreDefinitionVersions) operation.
     ///
-    /// See [`ListCoreDefinitionVersions`](crate::client::fluent_builders::ListCoreDefinitionVersions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListCoreDefinitionVersionsInput`](crate::input::ListCoreDefinitionVersionsInput) with field(s):
+    ///   - [`core_definition_id(Option<String>)`](crate::input::ListCoreDefinitionVersionsInput::core_definition_id): The ID of the core definition.
+    ///   - [`max_results(Option<String>)`](crate::input::ListCoreDefinitionVersionsInput::max_results): The maximum number of results to be returned per request.
+    ///   - [`next_token(Option<String>)`](crate::input::ListCoreDefinitionVersionsInput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    /// - On success, responds with [`ListCoreDefinitionVersionsOutput`](crate::output::ListCoreDefinitionVersionsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListCoreDefinitionVersionsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    ///   - [`versions(Option<Vec<VersionInformation>>)`](crate::output::ListCoreDefinitionVersionsOutput::versions): Information about a version.
+    /// - On failure, responds with [`SdkError<ListCoreDefinitionVersionsError>`](crate::error::ListCoreDefinitionVersionsError)
     pub fn list_core_definition_versions(
         &self,
     ) -> fluent_builders::ListCoreDefinitionVersions<C, M, R> {
         fluent_builders::ListCoreDefinitionVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDeployments` operation.
+    /// Constructs a fluent builder for the [`ListDeployments`](crate::client::fluent_builders::ListDeployments) operation.
     ///
-    /// See [`ListDeployments`](crate::client::fluent_builders::ListDeployments) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListDeploymentsInput`](crate::input::ListDeploymentsInput) with field(s):
+    ///   - [`group_id(Option<String>)`](crate::input::ListDeploymentsInput::group_id): The ID of the Greengrass group.
+    ///   - [`max_results(Option<String>)`](crate::input::ListDeploymentsInput::max_results): The maximum number of results to be returned per request.
+    ///   - [`next_token(Option<String>)`](crate::input::ListDeploymentsInput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    /// - On success, responds with [`ListDeploymentsOutput`](crate::output::ListDeploymentsOutput) with field(s):
+    ///   - [`deployments(Option<Vec<Deployment>>)`](crate::output::ListDeploymentsOutput::deployments): A list of deployments for the requested groups.
+    ///   - [`next_token(Option<String>)`](crate::output::ListDeploymentsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    /// - On failure, responds with [`SdkError<ListDeploymentsError>`](crate::error::ListDeploymentsError)
     pub fn list_deployments(&self) -> fluent_builders::ListDeployments<C, M, R> {
         fluent_builders::ListDeployments::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDeviceDefinitions` operation.
+    /// Constructs a fluent builder for the [`ListDeviceDefinitions`](crate::client::fluent_builders::ListDeviceDefinitions) operation.
     ///
-    /// See [`ListDeviceDefinitions`](crate::client::fluent_builders::ListDeviceDefinitions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListDeviceDefinitionsInput`](crate::input::ListDeviceDefinitionsInput) with field(s):
+    ///   - [`max_results(Option<String>)`](crate::input::ListDeviceDefinitionsInput::max_results): The maximum number of results to be returned per request.
+    ///   - [`next_token(Option<String>)`](crate::input::ListDeviceDefinitionsInput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    /// - On success, responds with [`ListDeviceDefinitionsOutput`](crate::output::ListDeviceDefinitionsOutput) with field(s):
+    ///   - [`definitions(Option<Vec<DefinitionInformation>>)`](crate::output::ListDeviceDefinitionsOutput::definitions): Information about a definition.
+    ///   - [`next_token(Option<String>)`](crate::output::ListDeviceDefinitionsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    /// - On failure, responds with [`SdkError<ListDeviceDefinitionsError>`](crate::error::ListDeviceDefinitionsError)
     pub fn list_device_definitions(&self) -> fluent_builders::ListDeviceDefinitions<C, M, R> {
         fluent_builders::ListDeviceDefinitions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDeviceDefinitionVersions` operation.
+    /// Constructs a fluent builder for the [`ListDeviceDefinitionVersions`](crate::client::fluent_builders::ListDeviceDefinitionVersions) operation.
     ///
-    /// See [`ListDeviceDefinitionVersions`](crate::client::fluent_builders::ListDeviceDefinitionVersions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListDeviceDefinitionVersionsInput`](crate::input::ListDeviceDefinitionVersionsInput) with field(s):
+    ///   - [`device_definition_id(Option<String>)`](crate::input::ListDeviceDefinitionVersionsInput::device_definition_id): The ID of the device definition.
+    ///   - [`max_results(Option<String>)`](crate::input::ListDeviceDefinitionVersionsInput::max_results): The maximum number of results to be returned per request.
+    ///   - [`next_token(Option<String>)`](crate::input::ListDeviceDefinitionVersionsInput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    /// - On success, responds with [`ListDeviceDefinitionVersionsOutput`](crate::output::ListDeviceDefinitionVersionsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListDeviceDefinitionVersionsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    ///   - [`versions(Option<Vec<VersionInformation>>)`](crate::output::ListDeviceDefinitionVersionsOutput::versions): Information about a version.
+    /// - On failure, responds with [`SdkError<ListDeviceDefinitionVersionsError>`](crate::error::ListDeviceDefinitionVersionsError)
     pub fn list_device_definition_versions(
         &self,
     ) -> fluent_builders::ListDeviceDefinitionVersions<C, M, R> {
         fluent_builders::ListDeviceDefinitionVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListFunctionDefinitions` operation.
+    /// Constructs a fluent builder for the [`ListFunctionDefinitions`](crate::client::fluent_builders::ListFunctionDefinitions) operation.
     ///
-    /// See [`ListFunctionDefinitions`](crate::client::fluent_builders::ListFunctionDefinitions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListFunctionDefinitionsInput`](crate::input::ListFunctionDefinitionsInput) with field(s):
+    ///   - [`max_results(Option<String>)`](crate::input::ListFunctionDefinitionsInput::max_results): The maximum number of results to be returned per request.
+    ///   - [`next_token(Option<String>)`](crate::input::ListFunctionDefinitionsInput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    /// - On success, responds with [`ListFunctionDefinitionsOutput`](crate::output::ListFunctionDefinitionsOutput) with field(s):
+    ///   - [`definitions(Option<Vec<DefinitionInformation>>)`](crate::output::ListFunctionDefinitionsOutput::definitions): Information about a definition.
+    ///   - [`next_token(Option<String>)`](crate::output::ListFunctionDefinitionsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    /// - On failure, responds with [`SdkError<ListFunctionDefinitionsError>`](crate::error::ListFunctionDefinitionsError)
     pub fn list_function_definitions(&self) -> fluent_builders::ListFunctionDefinitions<C, M, R> {
         fluent_builders::ListFunctionDefinitions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListFunctionDefinitionVersions` operation.
+    /// Constructs a fluent builder for the [`ListFunctionDefinitionVersions`](crate::client::fluent_builders::ListFunctionDefinitionVersions) operation.
     ///
-    /// See [`ListFunctionDefinitionVersions`](crate::client::fluent_builders::ListFunctionDefinitionVersions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListFunctionDefinitionVersionsInput`](crate::input::ListFunctionDefinitionVersionsInput) with field(s):
+    ///   - [`function_definition_id(Option<String>)`](crate::input::ListFunctionDefinitionVersionsInput::function_definition_id): The ID of the Lambda function definition.
+    ///   - [`max_results(Option<String>)`](crate::input::ListFunctionDefinitionVersionsInput::max_results): The maximum number of results to be returned per request.
+    ///   - [`next_token(Option<String>)`](crate::input::ListFunctionDefinitionVersionsInput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    /// - On success, responds with [`ListFunctionDefinitionVersionsOutput`](crate::output::ListFunctionDefinitionVersionsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListFunctionDefinitionVersionsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    ///   - [`versions(Option<Vec<VersionInformation>>)`](crate::output::ListFunctionDefinitionVersionsOutput::versions): Information about a version.
+    /// - On failure, responds with [`SdkError<ListFunctionDefinitionVersionsError>`](crate::error::ListFunctionDefinitionVersionsError)
     pub fn list_function_definition_versions(
         &self,
     ) -> fluent_builders::ListFunctionDefinitionVersions<C, M, R> {
         fluent_builders::ListFunctionDefinitionVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListGroupCertificateAuthorities` operation.
+    /// Constructs a fluent builder for the [`ListGroupCertificateAuthorities`](crate::client::fluent_builders::ListGroupCertificateAuthorities) operation.
     ///
-    /// See [`ListGroupCertificateAuthorities`](crate::client::fluent_builders::ListGroupCertificateAuthorities) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListGroupCertificateAuthoritiesInput`](crate::input::ListGroupCertificateAuthoritiesInput) with field(s):
+    ///   - [`group_id(Option<String>)`](crate::input::ListGroupCertificateAuthoritiesInput::group_id): The ID of the Greengrass group.
+    /// - On success, responds with [`ListGroupCertificateAuthoritiesOutput`](crate::output::ListGroupCertificateAuthoritiesOutput) with field(s):
+    ///   - [`group_certificate_authorities(Option<Vec<GroupCertificateAuthorityProperties>>)`](crate::output::ListGroupCertificateAuthoritiesOutput::group_certificate_authorities): A list of certificate authorities associated with the group.
+    /// - On failure, responds with [`SdkError<ListGroupCertificateAuthoritiesError>`](crate::error::ListGroupCertificateAuthoritiesError)
     pub fn list_group_certificate_authorities(
         &self,
     ) -> fluent_builders::ListGroupCertificateAuthorities<C, M, R> {
         fluent_builders::ListGroupCertificateAuthorities::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListGroups` operation.
+    /// Constructs a fluent builder for the [`ListGroups`](crate::client::fluent_builders::ListGroups) operation.
     ///
-    /// See [`ListGroups`](crate::client::fluent_builders::ListGroups) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListGroupsInput`](crate::input::ListGroupsInput) with field(s):
+    ///   - [`max_results(Option<String>)`](crate::input::ListGroupsInput::max_results): The maximum number of results to be returned per request.
+    ///   - [`next_token(Option<String>)`](crate::input::ListGroupsInput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    /// - On success, responds with [`ListGroupsOutput`](crate::output::ListGroupsOutput) with field(s):
+    ///   - [`groups(Option<Vec<GroupInformation>>)`](crate::output::ListGroupsOutput::groups): Information about a group.
+    ///   - [`next_token(Option<String>)`](crate::output::ListGroupsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    /// - On failure, responds with [`SdkError<ListGroupsError>`](crate::error::ListGroupsError)
     pub fn list_groups(&self) -> fluent_builders::ListGroups<C, M, R> {
         fluent_builders::ListGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListGroupVersions` operation.
+    /// Constructs a fluent builder for the [`ListGroupVersions`](crate::client::fluent_builders::ListGroupVersions) operation.
     ///
-    /// See [`ListGroupVersions`](crate::client::fluent_builders::ListGroupVersions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListGroupVersionsInput`](crate::input::ListGroupVersionsInput) with field(s):
+    ///   - [`group_id(Option<String>)`](crate::input::ListGroupVersionsInput::group_id): The ID of the Greengrass group.
+    ///   - [`max_results(Option<String>)`](crate::input::ListGroupVersionsInput::max_results): The maximum number of results to be returned per request.
+    ///   - [`next_token(Option<String>)`](crate::input::ListGroupVersionsInput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    /// - On success, responds with [`ListGroupVersionsOutput`](crate::output::ListGroupVersionsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListGroupVersionsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    ///   - [`versions(Option<Vec<VersionInformation>>)`](crate::output::ListGroupVersionsOutput::versions): Information about a version.
+    /// - On failure, responds with [`SdkError<ListGroupVersionsError>`](crate::error::ListGroupVersionsError)
     pub fn list_group_versions(&self) -> fluent_builders::ListGroupVersions<C, M, R> {
         fluent_builders::ListGroupVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListLoggerDefinitions` operation.
+    /// Constructs a fluent builder for the [`ListLoggerDefinitions`](crate::client::fluent_builders::ListLoggerDefinitions) operation.
     ///
-    /// See [`ListLoggerDefinitions`](crate::client::fluent_builders::ListLoggerDefinitions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListLoggerDefinitionsInput`](crate::input::ListLoggerDefinitionsInput) with field(s):
+    ///   - [`max_results(Option<String>)`](crate::input::ListLoggerDefinitionsInput::max_results): The maximum number of results to be returned per request.
+    ///   - [`next_token(Option<String>)`](crate::input::ListLoggerDefinitionsInput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    /// - On success, responds with [`ListLoggerDefinitionsOutput`](crate::output::ListLoggerDefinitionsOutput) with field(s):
+    ///   - [`definitions(Option<Vec<DefinitionInformation>>)`](crate::output::ListLoggerDefinitionsOutput::definitions): Information about a definition.
+    ///   - [`next_token(Option<String>)`](crate::output::ListLoggerDefinitionsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    /// - On failure, responds with [`SdkError<ListLoggerDefinitionsError>`](crate::error::ListLoggerDefinitionsError)
     pub fn list_logger_definitions(&self) -> fluent_builders::ListLoggerDefinitions<C, M, R> {
         fluent_builders::ListLoggerDefinitions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListLoggerDefinitionVersions` operation.
+    /// Constructs a fluent builder for the [`ListLoggerDefinitionVersions`](crate::client::fluent_builders::ListLoggerDefinitionVersions) operation.
     ///
-    /// See [`ListLoggerDefinitionVersions`](crate::client::fluent_builders::ListLoggerDefinitionVersions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListLoggerDefinitionVersionsInput`](crate::input::ListLoggerDefinitionVersionsInput) with field(s):
+    ///   - [`logger_definition_id(Option<String>)`](crate::input::ListLoggerDefinitionVersionsInput::logger_definition_id): The ID of the logger definition.
+    ///   - [`max_results(Option<String>)`](crate::input::ListLoggerDefinitionVersionsInput::max_results): The maximum number of results to be returned per request.
+    ///   - [`next_token(Option<String>)`](crate::input::ListLoggerDefinitionVersionsInput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    /// - On success, responds with [`ListLoggerDefinitionVersionsOutput`](crate::output::ListLoggerDefinitionVersionsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListLoggerDefinitionVersionsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    ///   - [`versions(Option<Vec<VersionInformation>>)`](crate::output::ListLoggerDefinitionVersionsOutput::versions): Information about a version.
+    /// - On failure, responds with [`SdkError<ListLoggerDefinitionVersionsError>`](crate::error::ListLoggerDefinitionVersionsError)
     pub fn list_logger_definition_versions(
         &self,
     ) -> fluent_builders::ListLoggerDefinitionVersions<C, M, R> {
         fluent_builders::ListLoggerDefinitionVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListResourceDefinitions` operation.
+    /// Constructs a fluent builder for the [`ListResourceDefinitions`](crate::client::fluent_builders::ListResourceDefinitions) operation.
     ///
-    /// See [`ListResourceDefinitions`](crate::client::fluent_builders::ListResourceDefinitions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListResourceDefinitionsInput`](crate::input::ListResourceDefinitionsInput) with field(s):
+    ///   - [`max_results(Option<String>)`](crate::input::ListResourceDefinitionsInput::max_results): The maximum number of results to be returned per request.
+    ///   - [`next_token(Option<String>)`](crate::input::ListResourceDefinitionsInput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    /// - On success, responds with [`ListResourceDefinitionsOutput`](crate::output::ListResourceDefinitionsOutput) with field(s):
+    ///   - [`definitions(Option<Vec<DefinitionInformation>>)`](crate::output::ListResourceDefinitionsOutput::definitions): Information about a definition.
+    ///   - [`next_token(Option<String>)`](crate::output::ListResourceDefinitionsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    /// - On failure, responds with [`SdkError<ListResourceDefinitionsError>`](crate::error::ListResourceDefinitionsError)
     pub fn list_resource_definitions(&self) -> fluent_builders::ListResourceDefinitions<C, M, R> {
         fluent_builders::ListResourceDefinitions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListResourceDefinitionVersions` operation.
+    /// Constructs a fluent builder for the [`ListResourceDefinitionVersions`](crate::client::fluent_builders::ListResourceDefinitionVersions) operation.
     ///
-    /// See [`ListResourceDefinitionVersions`](crate::client::fluent_builders::ListResourceDefinitionVersions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListResourceDefinitionVersionsInput`](crate::input::ListResourceDefinitionVersionsInput) with field(s):
+    ///   - [`max_results(Option<String>)`](crate::input::ListResourceDefinitionVersionsInput::max_results): The maximum number of results to be returned per request.
+    ///   - [`next_token(Option<String>)`](crate::input::ListResourceDefinitionVersionsInput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    ///   - [`resource_definition_id(Option<String>)`](crate::input::ListResourceDefinitionVersionsInput::resource_definition_id): The ID of the resource definition.
+    /// - On success, responds with [`ListResourceDefinitionVersionsOutput`](crate::output::ListResourceDefinitionVersionsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListResourceDefinitionVersionsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    ///   - [`versions(Option<Vec<VersionInformation>>)`](crate::output::ListResourceDefinitionVersionsOutput::versions): Information about a version.
+    /// - On failure, responds with [`SdkError<ListResourceDefinitionVersionsError>`](crate::error::ListResourceDefinitionVersionsError)
     pub fn list_resource_definition_versions(
         &self,
     ) -> fluent_builders::ListResourceDefinitionVersions<C, M, R> {
         fluent_builders::ListResourceDefinitionVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSubscriptionDefinitions` operation.
+    /// Constructs a fluent builder for the [`ListSubscriptionDefinitions`](crate::client::fluent_builders::ListSubscriptionDefinitions) operation.
     ///
-    /// See [`ListSubscriptionDefinitions`](crate::client::fluent_builders::ListSubscriptionDefinitions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListSubscriptionDefinitionsInput`](crate::input::ListSubscriptionDefinitionsInput) with field(s):
+    ///   - [`max_results(Option<String>)`](crate::input::ListSubscriptionDefinitionsInput::max_results): The maximum number of results to be returned per request.
+    ///   - [`next_token(Option<String>)`](crate::input::ListSubscriptionDefinitionsInput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    /// - On success, responds with [`ListSubscriptionDefinitionsOutput`](crate::output::ListSubscriptionDefinitionsOutput) with field(s):
+    ///   - [`definitions(Option<Vec<DefinitionInformation>>)`](crate::output::ListSubscriptionDefinitionsOutput::definitions): Information about a definition.
+    ///   - [`next_token(Option<String>)`](crate::output::ListSubscriptionDefinitionsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    /// - On failure, responds with [`SdkError<ListSubscriptionDefinitionsError>`](crate::error::ListSubscriptionDefinitionsError)
     pub fn list_subscription_definitions(
         &self,
     ) -> fluent_builders::ListSubscriptionDefinitions<C, M, R> {
         fluent_builders::ListSubscriptionDefinitions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSubscriptionDefinitionVersions` operation.
+    /// Constructs a fluent builder for the [`ListSubscriptionDefinitionVersions`](crate::client::fluent_builders::ListSubscriptionDefinitionVersions) operation.
     ///
-    /// See [`ListSubscriptionDefinitionVersions`](crate::client::fluent_builders::ListSubscriptionDefinitionVersions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListSubscriptionDefinitionVersionsInput`](crate::input::ListSubscriptionDefinitionVersionsInput) with field(s):
+    ///   - [`max_results(Option<String>)`](crate::input::ListSubscriptionDefinitionVersionsInput::max_results): The maximum number of results to be returned per request.
+    ///   - [`next_token(Option<String>)`](crate::input::ListSubscriptionDefinitionVersionsInput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    ///   - [`subscription_definition_id(Option<String>)`](crate::input::ListSubscriptionDefinitionVersionsInput::subscription_definition_id): The ID of the subscription definition.
+    /// - On success, responds with [`ListSubscriptionDefinitionVersionsOutput`](crate::output::ListSubscriptionDefinitionVersionsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListSubscriptionDefinitionVersionsOutput::next_token): The token for the next set of results, or ''null'' if there are no additional results.
+    ///   - [`versions(Option<Vec<VersionInformation>>)`](crate::output::ListSubscriptionDefinitionVersionsOutput::versions): Information about a version.
+    /// - On failure, responds with [`SdkError<ListSubscriptionDefinitionVersionsError>`](crate::error::ListSubscriptionDefinitionVersionsError)
     pub fn list_subscription_definition_versions(
         &self,
     ) -> fluent_builders::ListSubscriptionDefinitionVersions<C, M, R> {
         fluent_builders::ListSubscriptionDefinitionVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): The Amazon Resource Name (ARN) of the resource.
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): The key-value pair for the resource tag.
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ResetDeployments` operation.
+    /// Constructs a fluent builder for the [`ResetDeployments`](crate::client::fluent_builders::ResetDeployments) operation.
     ///
-    /// See [`ResetDeployments`](crate::client::fluent_builders::ResetDeployments) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ResetDeploymentsInput`](crate::input::ResetDeploymentsInput) with field(s):
+    ///   - [`amzn_client_token(Option<String>)`](crate::input::ResetDeploymentsInput::amzn_client_token): A client token used to correlate requests and responses.
+    ///   - [`force(bool)`](crate::input::ResetDeploymentsInput::force): If true, performs a best-effort only core reset.
+    ///   - [`group_id(Option<String>)`](crate::input::ResetDeploymentsInput::group_id): The ID of the Greengrass group.
+    /// - On success, responds with [`ResetDeploymentsOutput`](crate::output::ResetDeploymentsOutput) with field(s):
+    ///   - [`deployment_arn(Option<String>)`](crate::output::ResetDeploymentsOutput::deployment_arn): The ARN of the deployment.
+    ///   - [`deployment_id(Option<String>)`](crate::output::ResetDeploymentsOutput::deployment_id): The ID of the deployment.
+    /// - On failure, responds with [`SdkError<ResetDeploymentsError>`](crate::error::ResetDeploymentsError)
     pub fn reset_deployments(&self) -> fluent_builders::ResetDeployments<C, M, R> {
         fluent_builders::ResetDeployments::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartBulkDeployment` operation.
+    /// Constructs a fluent builder for the [`StartBulkDeployment`](crate::client::fluent_builders::StartBulkDeployment) operation.
     ///
-    /// See [`StartBulkDeployment`](crate::client::fluent_builders::StartBulkDeployment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartBulkDeploymentInput`](crate::input::StartBulkDeploymentInput) with field(s):
+    ///   - [`amzn_client_token(Option<String>)`](crate::input::StartBulkDeploymentInput::amzn_client_token): A client token used to correlate requests and responses.
+    ///   - [`execution_role_arn(Option<String>)`](crate::input::StartBulkDeploymentInput::execution_role_arn): The ARN of the execution role to associate with the bulk deployment operation. This IAM role must allow the ''greengrass:CreateDeployment'' action for all group versions that are listed in the input file. This IAM role must have access to the S3 bucket containing the input file.
+    ///   - [`input_file_uri(Option<String>)`](crate::input::StartBulkDeploymentInput::input_file_uri): The URI of the input file contained in the S3 bucket. The execution role must have ''getObject'' permissions on this bucket to access the input file. The input file is a JSON-serialized, line delimited file with UTF-8 encoding that provides a list of group and version IDs and the deployment type. This file must be less than 100 MB. Currently, AWS IoT Greengrass supports only ''NewDeployment'' deployment types.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::StartBulkDeploymentInput::tags): Tag(s) to add to the new resource.
+    /// - On success, responds with [`StartBulkDeploymentOutput`](crate::output::StartBulkDeploymentOutput) with field(s):
+    ///   - [`bulk_deployment_arn(Option<String>)`](crate::output::StartBulkDeploymentOutput::bulk_deployment_arn): The ARN of the bulk deployment.
+    ///   - [`bulk_deployment_id(Option<String>)`](crate::output::StartBulkDeploymentOutput::bulk_deployment_id): The ID of the bulk deployment.
+    /// - On failure, responds with [`SdkError<StartBulkDeploymentError>`](crate::error::StartBulkDeploymentError)
     pub fn start_bulk_deployment(&self) -> fluent_builders::StartBulkDeployment<C, M, R> {
         fluent_builders::StartBulkDeployment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopBulkDeployment` operation.
+    /// Constructs a fluent builder for the [`StopBulkDeployment`](crate::client::fluent_builders::StopBulkDeployment) operation.
     ///
-    /// See [`StopBulkDeployment`](crate::client::fluent_builders::StopBulkDeployment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StopBulkDeploymentInput`](crate::input::StopBulkDeploymentInput) with field(s):
+    ///   - [`bulk_deployment_id(Option<String>)`](crate::input::StopBulkDeploymentInput::bulk_deployment_id): The ID of the bulk deployment.
+    /// - On success, responds with [`StopBulkDeploymentOutput`](crate::output::StopBulkDeploymentOutput)
+
+    /// - On failure, responds with [`SdkError<StopBulkDeploymentError>`](crate::error::StopBulkDeploymentError)
     pub fn stop_bulk_deployment(&self) -> fluent_builders::StopBulkDeployment<C, M, R> {
         fluent_builders::StopBulkDeployment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): The Amazon Resource Name (ARN) of the resource.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): The key-value pair for the resource tag.
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): The Amazon Resource Name (ARN) of the resource.
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): An array of tag keys to delete
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateConnectivityInfo` operation.
+    /// Constructs a fluent builder for the [`UpdateConnectivityInfo`](crate::client::fluent_builders::UpdateConnectivityInfo) operation.
     ///
-    /// See [`UpdateConnectivityInfo`](crate::client::fluent_builders::UpdateConnectivityInfo) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateConnectivityInfoInput`](crate::input::UpdateConnectivityInfoInput) with field(s):
+    ///   - [`connectivity_info(Option<Vec<ConnectivityInfo>>)`](crate::input::UpdateConnectivityInfoInput::connectivity_info): A list of connectivity info.
+    ///   - [`thing_name(Option<String>)`](crate::input::UpdateConnectivityInfoInput::thing_name): The thing name.
+    /// - On success, responds with [`UpdateConnectivityInfoOutput`](crate::output::UpdateConnectivityInfoOutput) with field(s):
+    ///   - [`message(Option<String>)`](crate::output::UpdateConnectivityInfoOutput::message): A message about the connectivity info update request.
+    ///   - [`version(Option<String>)`](crate::output::UpdateConnectivityInfoOutput::version): The new version of the connectivity info.
+    /// - On failure, responds with [`SdkError<UpdateConnectivityInfoError>`](crate::error::UpdateConnectivityInfoError)
     pub fn update_connectivity_info(&self) -> fluent_builders::UpdateConnectivityInfo<C, M, R> {
         fluent_builders::UpdateConnectivityInfo::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateConnectorDefinition` operation.
+    /// Constructs a fluent builder for the [`UpdateConnectorDefinition`](crate::client::fluent_builders::UpdateConnectorDefinition) operation.
     ///
-    /// See [`UpdateConnectorDefinition`](crate::client::fluent_builders::UpdateConnectorDefinition) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateConnectorDefinitionInput`](crate::input::UpdateConnectorDefinitionInput) with field(s):
+    ///   - [`connector_definition_id(Option<String>)`](crate::input::UpdateConnectorDefinitionInput::connector_definition_id): The ID of the connector definition.
+    ///   - [`name(Option<String>)`](crate::input::UpdateConnectorDefinitionInput::name): The name of the definition.
+    /// - On success, responds with [`UpdateConnectorDefinitionOutput`](crate::output::UpdateConnectorDefinitionOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateConnectorDefinitionError>`](crate::error::UpdateConnectorDefinitionError)
     pub fn update_connector_definition(
         &self,
     ) -> fluent_builders::UpdateConnectorDefinition<C, M, R> {
         fluent_builders::UpdateConnectorDefinition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateCoreDefinition` operation.
+    /// Constructs a fluent builder for the [`UpdateCoreDefinition`](crate::client::fluent_builders::UpdateCoreDefinition) operation.
     ///
-    /// See [`UpdateCoreDefinition`](crate::client::fluent_builders::UpdateCoreDefinition) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateCoreDefinitionInput`](crate::input::UpdateCoreDefinitionInput) with field(s):
+    ///   - [`core_definition_id(Option<String>)`](crate::input::UpdateCoreDefinitionInput::core_definition_id): The ID of the core definition.
+    ///   - [`name(Option<String>)`](crate::input::UpdateCoreDefinitionInput::name): The name of the definition.
+    /// - On success, responds with [`UpdateCoreDefinitionOutput`](crate::output::UpdateCoreDefinitionOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateCoreDefinitionError>`](crate::error::UpdateCoreDefinitionError)
     pub fn update_core_definition(&self) -> fluent_builders::UpdateCoreDefinition<C, M, R> {
         fluent_builders::UpdateCoreDefinition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDeviceDefinition` operation.
+    /// Constructs a fluent builder for the [`UpdateDeviceDefinition`](crate::client::fluent_builders::UpdateDeviceDefinition) operation.
     ///
-    /// See [`UpdateDeviceDefinition`](crate::client::fluent_builders::UpdateDeviceDefinition) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateDeviceDefinitionInput`](crate::input::UpdateDeviceDefinitionInput) with field(s):
+    ///   - [`device_definition_id(Option<String>)`](crate::input::UpdateDeviceDefinitionInput::device_definition_id): The ID of the device definition.
+    ///   - [`name(Option<String>)`](crate::input::UpdateDeviceDefinitionInput::name): The name of the definition.
+    /// - On success, responds with [`UpdateDeviceDefinitionOutput`](crate::output::UpdateDeviceDefinitionOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateDeviceDefinitionError>`](crate::error::UpdateDeviceDefinitionError)
     pub fn update_device_definition(&self) -> fluent_builders::UpdateDeviceDefinition<C, M, R> {
         fluent_builders::UpdateDeviceDefinition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateFunctionDefinition` operation.
+    /// Constructs a fluent builder for the [`UpdateFunctionDefinition`](crate::client::fluent_builders::UpdateFunctionDefinition) operation.
     ///
-    /// See [`UpdateFunctionDefinition`](crate::client::fluent_builders::UpdateFunctionDefinition) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateFunctionDefinitionInput`](crate::input::UpdateFunctionDefinitionInput) with field(s):
+    ///   - [`function_definition_id(Option<String>)`](crate::input::UpdateFunctionDefinitionInput::function_definition_id): The ID of the Lambda function definition.
+    ///   - [`name(Option<String>)`](crate::input::UpdateFunctionDefinitionInput::name): The name of the definition.
+    /// - On success, responds with [`UpdateFunctionDefinitionOutput`](crate::output::UpdateFunctionDefinitionOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateFunctionDefinitionError>`](crate::error::UpdateFunctionDefinitionError)
     pub fn update_function_definition(&self) -> fluent_builders::UpdateFunctionDefinition<C, M, R> {
         fluent_builders::UpdateFunctionDefinition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateGroup` operation.
+    /// Constructs a fluent builder for the [`UpdateGroup`](crate::client::fluent_builders::UpdateGroup) operation.
     ///
-    /// See [`UpdateGroup`](crate::client::fluent_builders::UpdateGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateGroupInput`](crate::input::UpdateGroupInput) with field(s):
+    ///   - [`group_id(Option<String>)`](crate::input::UpdateGroupInput::group_id): The ID of the Greengrass group.
+    ///   - [`name(Option<String>)`](crate::input::UpdateGroupInput::name): The name of the definition.
+    /// - On success, responds with [`UpdateGroupOutput`](crate::output::UpdateGroupOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateGroupError>`](crate::error::UpdateGroupError)
     pub fn update_group(&self) -> fluent_builders::UpdateGroup<C, M, R> {
         fluent_builders::UpdateGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateGroupCertificateConfiguration` operation.
+    /// Constructs a fluent builder for the [`UpdateGroupCertificateConfiguration`](crate::client::fluent_builders::UpdateGroupCertificateConfiguration) operation.
     ///
-    /// See [`UpdateGroupCertificateConfiguration`](crate::client::fluent_builders::UpdateGroupCertificateConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateGroupCertificateConfigurationInput`](crate::input::UpdateGroupCertificateConfigurationInput) with field(s):
+    ///   - [`certificate_expiry_in_milliseconds(Option<String>)`](crate::input::UpdateGroupCertificateConfigurationInput::certificate_expiry_in_milliseconds): The amount of time remaining before the certificate expires, in milliseconds.
+    ///   - [`group_id(Option<String>)`](crate::input::UpdateGroupCertificateConfigurationInput::group_id): The ID of the Greengrass group.
+    /// - On success, responds with [`UpdateGroupCertificateConfigurationOutput`](crate::output::UpdateGroupCertificateConfigurationOutput) with field(s):
+    ///   - [`certificate_authority_expiry_in_milliseconds(Option<String>)`](crate::output::UpdateGroupCertificateConfigurationOutput::certificate_authority_expiry_in_milliseconds): The amount of time remaining before the certificate authority expires, in milliseconds.
+    ///   - [`certificate_expiry_in_milliseconds(Option<String>)`](crate::output::UpdateGroupCertificateConfigurationOutput::certificate_expiry_in_milliseconds): The amount of time remaining before the certificate expires, in milliseconds.
+    ///   - [`group_id(Option<String>)`](crate::output::UpdateGroupCertificateConfigurationOutput::group_id): The ID of the group certificate configuration.
+    /// - On failure, responds with [`SdkError<UpdateGroupCertificateConfigurationError>`](crate::error::UpdateGroupCertificateConfigurationError)
     pub fn update_group_certificate_configuration(
         &self,
     ) -> fluent_builders::UpdateGroupCertificateConfiguration<C, M, R> {
         fluent_builders::UpdateGroupCertificateConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateLoggerDefinition` operation.
+    /// Constructs a fluent builder for the [`UpdateLoggerDefinition`](crate::client::fluent_builders::UpdateLoggerDefinition) operation.
     ///
-    /// See [`UpdateLoggerDefinition`](crate::client::fluent_builders::UpdateLoggerDefinition) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateLoggerDefinitionInput`](crate::input::UpdateLoggerDefinitionInput) with field(s):
+    ///   - [`logger_definition_id(Option<String>)`](crate::input::UpdateLoggerDefinitionInput::logger_definition_id): The ID of the logger definition.
+    ///   - [`name(Option<String>)`](crate::input::UpdateLoggerDefinitionInput::name): The name of the definition.
+    /// - On success, responds with [`UpdateLoggerDefinitionOutput`](crate::output::UpdateLoggerDefinitionOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateLoggerDefinitionError>`](crate::error::UpdateLoggerDefinitionError)
     pub fn update_logger_definition(&self) -> fluent_builders::UpdateLoggerDefinition<C, M, R> {
         fluent_builders::UpdateLoggerDefinition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateResourceDefinition` operation.
+    /// Constructs a fluent builder for the [`UpdateResourceDefinition`](crate::client::fluent_builders::UpdateResourceDefinition) operation.
     ///
-    /// See [`UpdateResourceDefinition`](crate::client::fluent_builders::UpdateResourceDefinition) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateResourceDefinitionInput`](crate::input::UpdateResourceDefinitionInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::UpdateResourceDefinitionInput::name): The name of the definition.
+    ///   - [`resource_definition_id(Option<String>)`](crate::input::UpdateResourceDefinitionInput::resource_definition_id): The ID of the resource definition.
+    /// - On success, responds with [`UpdateResourceDefinitionOutput`](crate::output::UpdateResourceDefinitionOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateResourceDefinitionError>`](crate::error::UpdateResourceDefinitionError)
     pub fn update_resource_definition(&self) -> fluent_builders::UpdateResourceDefinition<C, M, R> {
         fluent_builders::UpdateResourceDefinition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateSubscriptionDefinition` operation.
+    /// Constructs a fluent builder for the [`UpdateSubscriptionDefinition`](crate::client::fluent_builders::UpdateSubscriptionDefinition) operation.
     ///
-    /// See [`UpdateSubscriptionDefinition`](crate::client::fluent_builders::UpdateSubscriptionDefinition) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateSubscriptionDefinitionInput`](crate::input::UpdateSubscriptionDefinitionInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::UpdateSubscriptionDefinitionInput::name): The name of the definition.
+    ///   - [`subscription_definition_id(Option<String>)`](crate::input::UpdateSubscriptionDefinitionInput::subscription_definition_id): The ID of the subscription definition.
+    /// - On success, responds with [`UpdateSubscriptionDefinitionOutput`](crate::output::UpdateSubscriptionDefinitionOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateSubscriptionDefinitionError>`](crate::error::UpdateSubscriptionDefinitionError)
     pub fn update_subscription_definition(
         &self,
     ) -> fluent_builders::UpdateSubscriptionDefinition<C, M, R> {
         fluent_builders::UpdateSubscriptionDefinition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateThingRuntimeConfiguration` operation.
+    /// Constructs a fluent builder for the [`UpdateThingRuntimeConfiguration`](crate::client::fluent_builders::UpdateThingRuntimeConfiguration) operation.
     ///
-    /// See [`UpdateThingRuntimeConfiguration`](crate::client::fluent_builders::UpdateThingRuntimeConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateThingRuntimeConfigurationInput`](crate::input::UpdateThingRuntimeConfigurationInput) with field(s):
+    ///   - [`telemetry_configuration(Option<TelemetryConfigurationUpdate>)`](crate::input::UpdateThingRuntimeConfigurationInput::telemetry_configuration): Configuration for telemetry service.
+    ///   - [`thing_name(Option<String>)`](crate::input::UpdateThingRuntimeConfigurationInput::thing_name): The thing name.
+    /// - On success, responds with [`UpdateThingRuntimeConfigurationOutput`](crate::output::UpdateThingRuntimeConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateThingRuntimeConfigurationError>`](crate::error::UpdateThingRuntimeConfigurationError)
     pub fn update_thing_runtime_configuration(
         &self,
     ) -> fluent_builders::UpdateThingRuntimeConfiguration<C, M, R> {

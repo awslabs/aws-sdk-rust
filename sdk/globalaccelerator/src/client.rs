@@ -83,389 +83,623 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AddCustomRoutingEndpoints` operation.
+    /// Constructs a fluent builder for the [`AddCustomRoutingEndpoints`](crate::client::fluent_builders::AddCustomRoutingEndpoints) operation.
     ///
-    /// See [`AddCustomRoutingEndpoints`](crate::client::fluent_builders::AddCustomRoutingEndpoints) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AddCustomRoutingEndpointsInput`](crate::input::AddCustomRoutingEndpointsInput) with field(s):
+    ///   - [`endpoint_configurations(Option<Vec<CustomRoutingEndpointConfiguration>>)`](crate::input::AddCustomRoutingEndpointsInput::endpoint_configurations): <p>The list of endpoint objects to add to a custom routing accelerator.</p>
+    ///   - [`endpoint_group_arn(Option<String>)`](crate::input::AddCustomRoutingEndpointsInput::endpoint_group_arn): <p>The Amazon Resource Name (ARN) of the endpoint group for the custom routing endpoint.</p>
+    /// - On success, responds with [`AddCustomRoutingEndpointsOutput`](crate::output::AddCustomRoutingEndpointsOutput) with field(s):
+    ///   - [`endpoint_descriptions(Option<Vec<CustomRoutingEndpointDescription>>)`](crate::output::AddCustomRoutingEndpointsOutput::endpoint_descriptions): <p>The endpoint objects added to the custom routing accelerator.</p>
+    ///   - [`endpoint_group_arn(Option<String>)`](crate::output::AddCustomRoutingEndpointsOutput::endpoint_group_arn): <p>The Amazon Resource Name (ARN) of the endpoint group for the custom routing endpoint.</p>
+    /// - On failure, responds with [`SdkError<AddCustomRoutingEndpointsError>`](crate::error::AddCustomRoutingEndpointsError)
     pub fn add_custom_routing_endpoints(
         &self,
     ) -> fluent_builders::AddCustomRoutingEndpoints<C, M, R> {
         fluent_builders::AddCustomRoutingEndpoints::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AdvertiseByoipCidr` operation.
+    /// Constructs a fluent builder for the [`AdvertiseByoipCidr`](crate::client::fluent_builders::AdvertiseByoipCidr) operation.
     ///
-    /// See [`AdvertiseByoipCidr`](crate::client::fluent_builders::AdvertiseByoipCidr) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AdvertiseByoipCidrInput`](crate::input::AdvertiseByoipCidrInput) with field(s):
+    ///   - [`cidr(Option<String>)`](crate::input::AdvertiseByoipCidrInput::cidr): <p>The address range, in CIDR notation. This must be the exact range that you provisioned. You can't advertise only a portion of the provisioned range.</p>
+    /// - On success, responds with [`AdvertiseByoipCidrOutput`](crate::output::AdvertiseByoipCidrOutput) with field(s):
+    ///   - [`byoip_cidr(Option<ByoipCidr>)`](crate::output::AdvertiseByoipCidrOutput::byoip_cidr): <p>Information about the address range.</p>
+    /// - On failure, responds with [`SdkError<AdvertiseByoipCidrError>`](crate::error::AdvertiseByoipCidrError)
     pub fn advertise_byoip_cidr(&self) -> fluent_builders::AdvertiseByoipCidr<C, M, R> {
         fluent_builders::AdvertiseByoipCidr::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AllowCustomRoutingTraffic` operation.
+    /// Constructs a fluent builder for the [`AllowCustomRoutingTraffic`](crate::client::fluent_builders::AllowCustomRoutingTraffic) operation.
     ///
-    /// See [`AllowCustomRoutingTraffic`](crate::client::fluent_builders::AllowCustomRoutingTraffic) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AllowCustomRoutingTrafficInput`](crate::input::AllowCustomRoutingTrafficInput) with field(s):
+    ///   - [`endpoint_group_arn(Option<String>)`](crate::input::AllowCustomRoutingTrafficInput::endpoint_group_arn): <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+    ///   - [`endpoint_id(Option<String>)`](crate::input::AllowCustomRoutingTrafficInput::endpoint_id): <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID.</p>
+    ///   - [`destination_addresses(Option<Vec<String>>)`](crate::input::AllowCustomRoutingTrafficInput::destination_addresses): <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to allow to receive traffic. The IP addresses must be a subset of the IP addresses that you specified for the endpoint group.</p>  <p> <code>DestinationAddresses</code> is required if <code>AllowAllTrafficToEndpoint</code> is <code>FALSE</code> or is not specified.</p>
+    ///   - [`destination_ports(Option<Vec<i32>>)`](crate::input::AllowCustomRoutingTrafficInput::destination_ports): <p>A list of specific Amazon EC2 instance ports (destination ports) that you want to allow to receive traffic.</p>
+    ///   - [`allow_all_traffic_to_endpoint(Option<bool>)`](crate::input::AllowCustomRoutingTrafficInput::allow_all_traffic_to_endpoint): <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint can receive traffic from a custom routing accelerator. The value is TRUE or FALSE. </p>  <p>When set to TRUE, <i>all</i> destinations in the custom routing VPC subnet can receive traffic. Note that you cannot specify destination IP addresses and ports when the value is set to TRUE.</p>  <p>When set to FALSE (or not specified), you <i>must</i> specify a list of destination IP addresses that are allowed to receive traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is the same as the ports configured for the endpoint group.</p>  <p>The default value is FALSE.</p>
+    /// - On success, responds with [`AllowCustomRoutingTrafficOutput`](crate::output::AllowCustomRoutingTrafficOutput)
+
+    /// - On failure, responds with [`SdkError<AllowCustomRoutingTrafficError>`](crate::error::AllowCustomRoutingTrafficError)
     pub fn allow_custom_routing_traffic(
         &self,
     ) -> fluent_builders::AllowCustomRoutingTraffic<C, M, R> {
         fluent_builders::AllowCustomRoutingTraffic::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateAccelerator` operation.
+    /// Constructs a fluent builder for the [`CreateAccelerator`](crate::client::fluent_builders::CreateAccelerator) operation.
     ///
-    /// See [`CreateAccelerator`](crate::client::fluent_builders::CreateAccelerator) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateAcceleratorInput`](crate::input::CreateAcceleratorInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateAcceleratorInput::name): <p>The name of an accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
+    ///   - [`ip_address_type(Option<IpAddressType>)`](crate::input::CreateAcceleratorInput::ip_address_type): <p>The value for the address type must be IPv4.</p>
+    ///   - [`ip_addresses(Option<Vec<String>>)`](crate::input::CreateAcceleratorInput::ip_addresses): <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>  <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only one IP address from your IP address range, Global Accelerator assigns a second static IP address for the accelerator from the AWS IP address pool.</p>  <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    ///   - [`enabled(Option<bool>)`](crate::input::CreateAcceleratorInput::enabled): <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>  <p>If the value is set to true, an accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
+    ///   - [`idempotency_token(Option<String>)`](crate::input::CreateAcceleratorInput::idempotency_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of an accelerator.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateAcceleratorInput::tags): <p>Create tags for an accelerator.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    /// - On success, responds with [`CreateAcceleratorOutput`](crate::output::CreateAcceleratorOutput) with field(s):
+    ///   - [`accelerator(Option<Accelerator>)`](crate::output::CreateAcceleratorOutput::accelerator): <p>The accelerator that is created by specifying a listener and the supported IP address types.</p>
+    /// - On failure, responds with [`SdkError<CreateAcceleratorError>`](crate::error::CreateAcceleratorError)
     pub fn create_accelerator(&self) -> fluent_builders::CreateAccelerator<C, M, R> {
         fluent_builders::CreateAccelerator::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateCustomRoutingAccelerator` operation.
+    /// Constructs a fluent builder for the [`CreateCustomRoutingAccelerator`](crate::client::fluent_builders::CreateCustomRoutingAccelerator) operation.
     ///
-    /// See [`CreateCustomRoutingAccelerator`](crate::client::fluent_builders::CreateCustomRoutingAccelerator) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateCustomRoutingAcceleratorInput`](crate::input::CreateCustomRoutingAcceleratorInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateCustomRoutingAcceleratorInput::name): <p>The name of a custom routing accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
+    ///   - [`ip_address_type(Option<IpAddressType>)`](crate::input::CreateCustomRoutingAcceleratorInput::ip_address_type): <p>The value for the address type must be IPv4.</p>
+    ///   - [`ip_addresses(Option<Vec<String>>)`](crate::input::CreateCustomRoutingAcceleratorInput::ip_addresses): <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>  <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only one IP address from your IP address range, Global Accelerator assigns a second static IP address for the accelerator from the AWS IP address pool.</p>  <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    ///   - [`enabled(Option<bool>)`](crate::input::CreateCustomRoutingAcceleratorInput::enabled): <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>  <p>If the value is set to true, an accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
+    ///   - [`idempotency_token(Option<String>)`](crate::input::CreateCustomRoutingAcceleratorInput::idempotency_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateCustomRoutingAcceleratorInput::tags): <p>Create tags for an accelerator.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    /// - On success, responds with [`CreateCustomRoutingAcceleratorOutput`](crate::output::CreateCustomRoutingAcceleratorOutput) with field(s):
+    ///   - [`accelerator(Option<CustomRoutingAccelerator>)`](crate::output::CreateCustomRoutingAcceleratorOutput::accelerator): <p>The accelerator that is created.</p>
+    /// - On failure, responds with [`SdkError<CreateCustomRoutingAcceleratorError>`](crate::error::CreateCustomRoutingAcceleratorError)
     pub fn create_custom_routing_accelerator(
         &self,
     ) -> fluent_builders::CreateCustomRoutingAccelerator<C, M, R> {
         fluent_builders::CreateCustomRoutingAccelerator::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateCustomRoutingEndpointGroup` operation.
+    /// Constructs a fluent builder for the [`CreateCustomRoutingEndpointGroup`](crate::client::fluent_builders::CreateCustomRoutingEndpointGroup) operation.
     ///
-    /// See [`CreateCustomRoutingEndpointGroup`](crate::client::fluent_builders::CreateCustomRoutingEndpointGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateCustomRoutingEndpointGroupInput`](crate::input::CreateCustomRoutingEndpointGroupInput) with field(s):
+    ///   - [`listener_arn(Option<String>)`](crate::input::CreateCustomRoutingEndpointGroupInput::listener_arn): <p>The Amazon Resource Name (ARN) of the listener for a custom routing endpoint.</p>
+    ///   - [`endpoint_group_region(Option<String>)`](crate::input::CreateCustomRoutingEndpointGroupInput::endpoint_group_region): <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
+    ///   - [`destination_configurations(Option<Vec<CustomRoutingDestinationConfiguration>>)`](crate::input::CreateCustomRoutingEndpointGroupInput::destination_configurations): <p>Sets the port range and protocol for all endpoints (virtual private cloud subnets) in a custom routing endpoint group to accept client traffic on.</p>
+    ///   - [`idempotency_token(Option<String>)`](crate::input::CreateCustomRoutingEndpointGroupInput::idempotency_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
+    /// - On success, responds with [`CreateCustomRoutingEndpointGroupOutput`](crate::output::CreateCustomRoutingEndpointGroupOutput) with field(s):
+    ///   - [`endpoint_group(Option<CustomRoutingEndpointGroup>)`](crate::output::CreateCustomRoutingEndpointGroupOutput::endpoint_group): <p>The information about the endpoint group created for a custom routing accelerator.</p>
+    /// - On failure, responds with [`SdkError<CreateCustomRoutingEndpointGroupError>`](crate::error::CreateCustomRoutingEndpointGroupError)
     pub fn create_custom_routing_endpoint_group(
         &self,
     ) -> fluent_builders::CreateCustomRoutingEndpointGroup<C, M, R> {
         fluent_builders::CreateCustomRoutingEndpointGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateCustomRoutingListener` operation.
+    /// Constructs a fluent builder for the [`CreateCustomRoutingListener`](crate::client::fluent_builders::CreateCustomRoutingListener) operation.
     ///
-    /// See [`CreateCustomRoutingListener`](crate::client::fluent_builders::CreateCustomRoutingListener) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateCustomRoutingListenerInput`](crate::input::CreateCustomRoutingListenerInput) with field(s):
+    ///   - [`accelerator_arn(Option<String>)`](crate::input::CreateCustomRoutingListenerInput::accelerator_arn): <p>The Amazon Resource Name (ARN) of the accelerator for a custom routing listener.</p>
+    ///   - [`port_ranges(Option<Vec<PortRange>>)`](crate::input::CreateCustomRoutingListenerInput::port_ranges): <p>The port range to support for connections from clients to your accelerator.</p>  <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
+    ///   - [`idempotency_token(Option<String>)`](crate::input::CreateCustomRoutingListenerInput::idempotency_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
+    /// - On success, responds with [`CreateCustomRoutingListenerOutput`](crate::output::CreateCustomRoutingListenerOutput) with field(s):
+    ///   - [`listener(Option<CustomRoutingListener>)`](crate::output::CreateCustomRoutingListenerOutput::listener): <p>The listener that you've created for a custom routing accelerator.</p>
+    /// - On failure, responds with [`SdkError<CreateCustomRoutingListenerError>`](crate::error::CreateCustomRoutingListenerError)
     pub fn create_custom_routing_listener(
         &self,
     ) -> fluent_builders::CreateCustomRoutingListener<C, M, R> {
         fluent_builders::CreateCustomRoutingListener::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateEndpointGroup` operation.
+    /// Constructs a fluent builder for the [`CreateEndpointGroup`](crate::client::fluent_builders::CreateEndpointGroup) operation.
     ///
-    /// See [`CreateEndpointGroup`](crate::client::fluent_builders::CreateEndpointGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateEndpointGroupInput`](crate::input::CreateEndpointGroupInput) with field(s):
+    ///   - [`listener_arn(Option<String>)`](crate::input::CreateEndpointGroupInput::listener_arn): <p>The Amazon Resource Name (ARN) of the listener.</p>
+    ///   - [`endpoint_group_region(Option<String>)`](crate::input::CreateEndpointGroupInput::endpoint_group_region): <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.</p>
+    ///   - [`endpoint_configurations(Option<Vec<EndpointConfiguration>>)`](crate::input::CreateEndpointGroupInput::endpoint_configurations): <p>The list of endpoint objects.</p>
+    ///   - [`traffic_dial_percentage(Option<f32>)`](crate::input::CreateEndpointGroupInput::traffic_dial_percentage): <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for this listener. </p>  <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>  <p>The default value is 100.</p>
+    ///   - [`health_check_port(Option<i32>)`](crate::input::CreateEndpointGroupInput::health_check_port): <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If listener port is a list of ports, Global Accelerator uses the first port in the list.</p>
+    ///   - [`health_check_protocol(Option<HealthCheckProtocol>)`](crate::input::CreateEndpointGroupInput::health_check_protocol): <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>
+    ///   - [`health_check_path(Option<String>)`](crate::input::CreateEndpointGroupInput::health_check_path): <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).</p>
+    ///   - [`health_check_interval_seconds(Option<i32>)`](crate::input::CreateEndpointGroupInput::health_check_interval_seconds): <p>The time—10 seconds or 30 seconds—between each health check for an endpoint. The default value is 30.</p>
+    ///   - [`threshold_count(Option<i32>)`](crate::input::CreateEndpointGroupInput::threshold_count): <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.</p>
+    ///   - [`idempotency_token(Option<String>)`](crate::input::CreateEndpointGroupInput::idempotency_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
+    ///   - [`port_overrides(Option<Vec<PortOverride>>)`](crate::input::CreateEndpointGroupInput::port_overrides): <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    /// - On success, responds with [`CreateEndpointGroupOutput`](crate::output::CreateEndpointGroupOutput) with field(s):
+    ///   - [`endpoint_group(Option<EndpointGroup>)`](crate::output::CreateEndpointGroupOutput::endpoint_group): <p>The information about the endpoint group that was created.</p>
+    /// - On failure, responds with [`SdkError<CreateEndpointGroupError>`](crate::error::CreateEndpointGroupError)
     pub fn create_endpoint_group(&self) -> fluent_builders::CreateEndpointGroup<C, M, R> {
         fluent_builders::CreateEndpointGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateListener` operation.
+    /// Constructs a fluent builder for the [`CreateListener`](crate::client::fluent_builders::CreateListener) operation.
     ///
-    /// See [`CreateListener`](crate::client::fluent_builders::CreateListener) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateListenerInput`](crate::input::CreateListenerInput) with field(s):
+    ///   - [`accelerator_arn(Option<String>)`](crate::input::CreateListenerInput::accelerator_arn): <p>The Amazon Resource Name (ARN) of your accelerator.</p>
+    ///   - [`port_ranges(Option<Vec<PortRange>>)`](crate::input::CreateListenerInput::port_ranges): <p>The list of port ranges to support for connections from clients to your accelerator.</p>
+    ///   - [`protocol(Option<Protocol>)`](crate::input::CreateListenerInput::protocol): <p>The protocol for connections from clients to your accelerator.</p>
+    ///   - [`client_affinity(Option<ClientAffinity>)`](crate::input::CreateListenerInput::client_affinity): <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications, regardless of the port and protocol of the client request. Client affinity gives you control over whether to always route each client to the same specific endpoint.</p>  <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes. </p>  <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP address and destination IP address—to select the hash value.</p>  <p>The default value is <code>NONE</code>.</p>
+    ///   - [`idempotency_token(Option<String>)`](crate::input::CreateListenerInput::idempotency_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
+    /// - On success, responds with [`CreateListenerOutput`](crate::output::CreateListenerOutput) with field(s):
+    ///   - [`listener(Option<Listener>)`](crate::output::CreateListenerOutput::listener): <p>The listener that you've created.</p>
+    /// - On failure, responds with [`SdkError<CreateListenerError>`](crate::error::CreateListenerError)
     pub fn create_listener(&self) -> fluent_builders::CreateListener<C, M, R> {
         fluent_builders::CreateListener::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAccelerator` operation.
+    /// Constructs a fluent builder for the [`DeleteAccelerator`](crate::client::fluent_builders::DeleteAccelerator) operation.
     ///
-    /// See [`DeleteAccelerator`](crate::client::fluent_builders::DeleteAccelerator) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteAcceleratorInput`](crate::input::DeleteAcceleratorInput) with field(s):
+    ///   - [`accelerator_arn(Option<String>)`](crate::input::DeleteAcceleratorInput::accelerator_arn): <p>The Amazon Resource Name (ARN) of an accelerator.</p>
+    /// - On success, responds with [`DeleteAcceleratorOutput`](crate::output::DeleteAcceleratorOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAcceleratorError>`](crate::error::DeleteAcceleratorError)
     pub fn delete_accelerator(&self) -> fluent_builders::DeleteAccelerator<C, M, R> {
         fluent_builders::DeleteAccelerator::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteCustomRoutingAccelerator` operation.
+    /// Constructs a fluent builder for the [`DeleteCustomRoutingAccelerator`](crate::client::fluent_builders::DeleteCustomRoutingAccelerator) operation.
     ///
-    /// See [`DeleteCustomRoutingAccelerator`](crate::client::fluent_builders::DeleteCustomRoutingAccelerator) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteCustomRoutingAcceleratorInput`](crate::input::DeleteCustomRoutingAcceleratorInput) with field(s):
+    ///   - [`accelerator_arn(Option<String>)`](crate::input::DeleteCustomRoutingAcceleratorInput::accelerator_arn): <p>The Amazon Resource Name (ARN) of the custom routing accelerator to delete.</p>
+    /// - On success, responds with [`DeleteCustomRoutingAcceleratorOutput`](crate::output::DeleteCustomRoutingAcceleratorOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteCustomRoutingAcceleratorError>`](crate::error::DeleteCustomRoutingAcceleratorError)
     pub fn delete_custom_routing_accelerator(
         &self,
     ) -> fluent_builders::DeleteCustomRoutingAccelerator<C, M, R> {
         fluent_builders::DeleteCustomRoutingAccelerator::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteCustomRoutingEndpointGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteCustomRoutingEndpointGroup`](crate::client::fluent_builders::DeleteCustomRoutingEndpointGroup) operation.
     ///
-    /// See [`DeleteCustomRoutingEndpointGroup`](crate::client::fluent_builders::DeleteCustomRoutingEndpointGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteCustomRoutingEndpointGroupInput`](crate::input::DeleteCustomRoutingEndpointGroupInput) with field(s):
+    ///   - [`endpoint_group_arn(Option<String>)`](crate::input::DeleteCustomRoutingEndpointGroupInput::endpoint_group_arn): <p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p>
+    /// - On success, responds with [`DeleteCustomRoutingEndpointGroupOutput`](crate::output::DeleteCustomRoutingEndpointGroupOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteCustomRoutingEndpointGroupError>`](crate::error::DeleteCustomRoutingEndpointGroupError)
     pub fn delete_custom_routing_endpoint_group(
         &self,
     ) -> fluent_builders::DeleteCustomRoutingEndpointGroup<C, M, R> {
         fluent_builders::DeleteCustomRoutingEndpointGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteCustomRoutingListener` operation.
+    /// Constructs a fluent builder for the [`DeleteCustomRoutingListener`](crate::client::fluent_builders::DeleteCustomRoutingListener) operation.
     ///
-    /// See [`DeleteCustomRoutingListener`](crate::client::fluent_builders::DeleteCustomRoutingListener) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteCustomRoutingListenerInput`](crate::input::DeleteCustomRoutingListenerInput) with field(s):
+    ///   - [`listener_arn(Option<String>)`](crate::input::DeleteCustomRoutingListenerInput::listener_arn): <p>The Amazon Resource Name (ARN) of the listener to delete.</p>
+    /// - On success, responds with [`DeleteCustomRoutingListenerOutput`](crate::output::DeleteCustomRoutingListenerOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteCustomRoutingListenerError>`](crate::error::DeleteCustomRoutingListenerError)
     pub fn delete_custom_routing_listener(
         &self,
     ) -> fluent_builders::DeleteCustomRoutingListener<C, M, R> {
         fluent_builders::DeleteCustomRoutingListener::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteEndpointGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteEndpointGroup`](crate::client::fluent_builders::DeleteEndpointGroup) operation.
     ///
-    /// See [`DeleteEndpointGroup`](crate::client::fluent_builders::DeleteEndpointGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteEndpointGroupInput`](crate::input::DeleteEndpointGroupInput) with field(s):
+    ///   - [`endpoint_group_arn(Option<String>)`](crate::input::DeleteEndpointGroupInput::endpoint_group_arn): <p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p>
+    /// - On success, responds with [`DeleteEndpointGroupOutput`](crate::output::DeleteEndpointGroupOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteEndpointGroupError>`](crate::error::DeleteEndpointGroupError)
     pub fn delete_endpoint_group(&self) -> fluent_builders::DeleteEndpointGroup<C, M, R> {
         fluent_builders::DeleteEndpointGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteListener` operation.
+    /// Constructs a fluent builder for the [`DeleteListener`](crate::client::fluent_builders::DeleteListener) operation.
     ///
-    /// See [`DeleteListener`](crate::client::fluent_builders::DeleteListener) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteListenerInput`](crate::input::DeleteListenerInput) with field(s):
+    ///   - [`listener_arn(Option<String>)`](crate::input::DeleteListenerInput::listener_arn): <p>The Amazon Resource Name (ARN) of the listener.</p>
+    /// - On success, responds with [`DeleteListenerOutput`](crate::output::DeleteListenerOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteListenerError>`](crate::error::DeleteListenerError)
     pub fn delete_listener(&self) -> fluent_builders::DeleteListener<C, M, R> {
         fluent_builders::DeleteListener::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DenyCustomRoutingTraffic` operation.
+    /// Constructs a fluent builder for the [`DenyCustomRoutingTraffic`](crate::client::fluent_builders::DenyCustomRoutingTraffic) operation.
     ///
-    /// See [`DenyCustomRoutingTraffic`](crate::client::fluent_builders::DenyCustomRoutingTraffic) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DenyCustomRoutingTrafficInput`](crate::input::DenyCustomRoutingTrafficInput) with field(s):
+    ///   - [`endpoint_group_arn(Option<String>)`](crate::input::DenyCustomRoutingTrafficInput::endpoint_group_arn): <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+    ///   - [`endpoint_id(Option<String>)`](crate::input::DenyCustomRoutingTrafficInput::endpoint_id): <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID.</p>
+    ///   - [`destination_addresses(Option<Vec<String>>)`](crate::input::DenyCustomRoutingTrafficInput::destination_addresses): <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to prevent from receiving traffic. The IP addresses must be a subset of the IP addresses allowed for the VPC subnet associated with the endpoint group.</p>
+    ///   - [`destination_ports(Option<Vec<i32>>)`](crate::input::DenyCustomRoutingTrafficInput::destination_ports): <p>A list of specific Amazon EC2 instance ports (destination ports) in a subnet endpoint that you want to prevent from receiving traffic.</p>
+    ///   - [`deny_all_traffic_to_endpoint(Option<bool>)`](crate::input::DenyCustomRoutingTrafficInput::deny_all_traffic_to_endpoint): <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint <i>cannot</i> receive traffic from a custom routing accelerator. The value is TRUE or FALSE. </p>  <p>When set to TRUE, <i>no</i> destinations in the custom routing VPC subnet can receive traffic. Note that you cannot specify destination IP addresses and ports when the value is set to TRUE.</p>  <p>When set to FALSE (or not specified), you <i>must</i> specify a list of destination IP addresses that cannot receive traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is the same as the ports configured for the endpoint group.</p>  <p>The default value is FALSE.</p>
+    /// - On success, responds with [`DenyCustomRoutingTrafficOutput`](crate::output::DenyCustomRoutingTrafficOutput)
+
+    /// - On failure, responds with [`SdkError<DenyCustomRoutingTrafficError>`](crate::error::DenyCustomRoutingTrafficError)
     pub fn deny_custom_routing_traffic(
         &self,
     ) -> fluent_builders::DenyCustomRoutingTraffic<C, M, R> {
         fluent_builders::DenyCustomRoutingTraffic::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeprovisionByoipCidr` operation.
+    /// Constructs a fluent builder for the [`DeprovisionByoipCidr`](crate::client::fluent_builders::DeprovisionByoipCidr) operation.
     ///
-    /// See [`DeprovisionByoipCidr`](crate::client::fluent_builders::DeprovisionByoipCidr) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeprovisionByoipCidrInput`](crate::input::DeprovisionByoipCidrInput) with field(s):
+    ///   - [`cidr(Option<String>)`](crate::input::DeprovisionByoipCidrInput::cidr): <p>The address range, in CIDR notation. The prefix must be the same prefix that you specified when you provisioned the address range.</p>
+    /// - On success, responds with [`DeprovisionByoipCidrOutput`](crate::output::DeprovisionByoipCidrOutput) with field(s):
+    ///   - [`byoip_cidr(Option<ByoipCidr>)`](crate::output::DeprovisionByoipCidrOutput::byoip_cidr): <p>Information about the address range.</p>
+    /// - On failure, responds with [`SdkError<DeprovisionByoipCidrError>`](crate::error::DeprovisionByoipCidrError)
     pub fn deprovision_byoip_cidr(&self) -> fluent_builders::DeprovisionByoipCidr<C, M, R> {
         fluent_builders::DeprovisionByoipCidr::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAccelerator` operation.
+    /// Constructs a fluent builder for the [`DescribeAccelerator`](crate::client::fluent_builders::DescribeAccelerator) operation.
     ///
-    /// See [`DescribeAccelerator`](crate::client::fluent_builders::DescribeAccelerator) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeAcceleratorInput`](crate::input::DescribeAcceleratorInput) with field(s):
+    ///   - [`accelerator_arn(Option<String>)`](crate::input::DescribeAcceleratorInput::accelerator_arn): <p>The Amazon Resource Name (ARN) of the accelerator to describe.</p>
+    /// - On success, responds with [`DescribeAcceleratorOutput`](crate::output::DescribeAcceleratorOutput) with field(s):
+    ///   - [`accelerator(Option<Accelerator>)`](crate::output::DescribeAcceleratorOutput::accelerator): <p>The description of the accelerator.</p>
+    /// - On failure, responds with [`SdkError<DescribeAcceleratorError>`](crate::error::DescribeAcceleratorError)
     pub fn describe_accelerator(&self) -> fluent_builders::DescribeAccelerator<C, M, R> {
         fluent_builders::DescribeAccelerator::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAcceleratorAttributes` operation.
+    /// Constructs a fluent builder for the [`DescribeAcceleratorAttributes`](crate::client::fluent_builders::DescribeAcceleratorAttributes) operation.
     ///
-    /// See [`DescribeAcceleratorAttributes`](crate::client::fluent_builders::DescribeAcceleratorAttributes) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeAcceleratorAttributesInput`](crate::input::DescribeAcceleratorAttributesInput) with field(s):
+    ///   - [`accelerator_arn(Option<String>)`](crate::input::DescribeAcceleratorAttributesInput::accelerator_arn): <p>The Amazon Resource Name (ARN) of the accelerator with the attributes that you want to describe.</p>
+    /// - On success, responds with [`DescribeAcceleratorAttributesOutput`](crate::output::DescribeAcceleratorAttributesOutput) with field(s):
+    ///   - [`accelerator_attributes(Option<AcceleratorAttributes>)`](crate::output::DescribeAcceleratorAttributesOutput::accelerator_attributes): <p>The attributes of the accelerator.</p>
+    /// - On failure, responds with [`SdkError<DescribeAcceleratorAttributesError>`](crate::error::DescribeAcceleratorAttributesError)
     pub fn describe_accelerator_attributes(
         &self,
     ) -> fluent_builders::DescribeAcceleratorAttributes<C, M, R> {
         fluent_builders::DescribeAcceleratorAttributes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeCustomRoutingAccelerator` operation.
+    /// Constructs a fluent builder for the [`DescribeCustomRoutingAccelerator`](crate::client::fluent_builders::DescribeCustomRoutingAccelerator) operation.
     ///
-    /// See [`DescribeCustomRoutingAccelerator`](crate::client::fluent_builders::DescribeCustomRoutingAccelerator) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeCustomRoutingAcceleratorInput`](crate::input::DescribeCustomRoutingAcceleratorInput) with field(s):
+    ///   - [`accelerator_arn(Option<String>)`](crate::input::DescribeCustomRoutingAcceleratorInput::accelerator_arn): <p>The Amazon Resource Name (ARN) of the accelerator to describe.</p>
+    /// - On success, responds with [`DescribeCustomRoutingAcceleratorOutput`](crate::output::DescribeCustomRoutingAcceleratorOutput) with field(s):
+    ///   - [`accelerator(Option<CustomRoutingAccelerator>)`](crate::output::DescribeCustomRoutingAcceleratorOutput::accelerator): <p>The description of the custom routing accelerator.</p>
+    /// - On failure, responds with [`SdkError<DescribeCustomRoutingAcceleratorError>`](crate::error::DescribeCustomRoutingAcceleratorError)
     pub fn describe_custom_routing_accelerator(
         &self,
     ) -> fluent_builders::DescribeCustomRoutingAccelerator<C, M, R> {
         fluent_builders::DescribeCustomRoutingAccelerator::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeCustomRoutingAcceleratorAttributes` operation.
+    /// Constructs a fluent builder for the [`DescribeCustomRoutingAcceleratorAttributes`](crate::client::fluent_builders::DescribeCustomRoutingAcceleratorAttributes) operation.
     ///
-    /// See [`DescribeCustomRoutingAcceleratorAttributes`](crate::client::fluent_builders::DescribeCustomRoutingAcceleratorAttributes) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeCustomRoutingAcceleratorAttributesInput`](crate::input::DescribeCustomRoutingAcceleratorAttributesInput) with field(s):
+    ///   - [`accelerator_arn(Option<String>)`](crate::input::DescribeCustomRoutingAcceleratorAttributesInput::accelerator_arn): <p>The Amazon Resource Name (ARN) of the custom routing accelerator to describe the attributes for.</p>
+    /// - On success, responds with [`DescribeCustomRoutingAcceleratorAttributesOutput`](crate::output::DescribeCustomRoutingAcceleratorAttributesOutput) with field(s):
+    ///   - [`accelerator_attributes(Option<CustomRoutingAcceleratorAttributes>)`](crate::output::DescribeCustomRoutingAcceleratorAttributesOutput::accelerator_attributes): <p>The attributes of the custom routing accelerator.</p>
+    /// - On failure, responds with [`SdkError<DescribeCustomRoutingAcceleratorAttributesError>`](crate::error::DescribeCustomRoutingAcceleratorAttributesError)
     pub fn describe_custom_routing_accelerator_attributes(
         &self,
     ) -> fluent_builders::DescribeCustomRoutingAcceleratorAttributes<C, M, R> {
         fluent_builders::DescribeCustomRoutingAcceleratorAttributes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeCustomRoutingEndpointGroup` operation.
+    /// Constructs a fluent builder for the [`DescribeCustomRoutingEndpointGroup`](crate::client::fluent_builders::DescribeCustomRoutingEndpointGroup) operation.
     ///
-    /// See [`DescribeCustomRoutingEndpointGroup`](crate::client::fluent_builders::DescribeCustomRoutingEndpointGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeCustomRoutingEndpointGroupInput`](crate::input::DescribeCustomRoutingEndpointGroupInput) with field(s):
+    ///   - [`endpoint_group_arn(Option<String>)`](crate::input::DescribeCustomRoutingEndpointGroupInput::endpoint_group_arn): <p>The Amazon Resource Name (ARN) of the endpoint group to describe.</p>
+    /// - On success, responds with [`DescribeCustomRoutingEndpointGroupOutput`](crate::output::DescribeCustomRoutingEndpointGroupOutput) with field(s):
+    ///   - [`endpoint_group(Option<CustomRoutingEndpointGroup>)`](crate::output::DescribeCustomRoutingEndpointGroupOutput::endpoint_group): <p>The description of an endpoint group for a custom routing accelerator.</p>
+    /// - On failure, responds with [`SdkError<DescribeCustomRoutingEndpointGroupError>`](crate::error::DescribeCustomRoutingEndpointGroupError)
     pub fn describe_custom_routing_endpoint_group(
         &self,
     ) -> fluent_builders::DescribeCustomRoutingEndpointGroup<C, M, R> {
         fluent_builders::DescribeCustomRoutingEndpointGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeCustomRoutingListener` operation.
+    /// Constructs a fluent builder for the [`DescribeCustomRoutingListener`](crate::client::fluent_builders::DescribeCustomRoutingListener) operation.
     ///
-    /// See [`DescribeCustomRoutingListener`](crate::client::fluent_builders::DescribeCustomRoutingListener) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeCustomRoutingListenerInput`](crate::input::DescribeCustomRoutingListenerInput) with field(s):
+    ///   - [`listener_arn(Option<String>)`](crate::input::DescribeCustomRoutingListenerInput::listener_arn): <p>The Amazon Resource Name (ARN) of the listener to describe.</p>
+    /// - On success, responds with [`DescribeCustomRoutingListenerOutput`](crate::output::DescribeCustomRoutingListenerOutput) with field(s):
+    ///   - [`listener(Option<CustomRoutingListener>)`](crate::output::DescribeCustomRoutingListenerOutput::listener): <p>The description of a listener for a custom routing accelerator.</p>
+    /// - On failure, responds with [`SdkError<DescribeCustomRoutingListenerError>`](crate::error::DescribeCustomRoutingListenerError)
     pub fn describe_custom_routing_listener(
         &self,
     ) -> fluent_builders::DescribeCustomRoutingListener<C, M, R> {
         fluent_builders::DescribeCustomRoutingListener::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEndpointGroup` operation.
+    /// Constructs a fluent builder for the [`DescribeEndpointGroup`](crate::client::fluent_builders::DescribeEndpointGroup) operation.
     ///
-    /// See [`DescribeEndpointGroup`](crate::client::fluent_builders::DescribeEndpointGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeEndpointGroupInput`](crate::input::DescribeEndpointGroupInput) with field(s):
+    ///   - [`endpoint_group_arn(Option<String>)`](crate::input::DescribeEndpointGroupInput::endpoint_group_arn): <p>The Amazon Resource Name (ARN) of the endpoint group to describe.</p>
+    /// - On success, responds with [`DescribeEndpointGroupOutput`](crate::output::DescribeEndpointGroupOutput) with field(s):
+    ///   - [`endpoint_group(Option<EndpointGroup>)`](crate::output::DescribeEndpointGroupOutput::endpoint_group): <p>The description of an endpoint group.</p>
+    /// - On failure, responds with [`SdkError<DescribeEndpointGroupError>`](crate::error::DescribeEndpointGroupError)
     pub fn describe_endpoint_group(&self) -> fluent_builders::DescribeEndpointGroup<C, M, R> {
         fluent_builders::DescribeEndpointGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeListener` operation.
+    /// Constructs a fluent builder for the [`DescribeListener`](crate::client::fluent_builders::DescribeListener) operation.
     ///
-    /// See [`DescribeListener`](crate::client::fluent_builders::DescribeListener) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeListenerInput`](crate::input::DescribeListenerInput) with field(s):
+    ///   - [`listener_arn(Option<String>)`](crate::input::DescribeListenerInput::listener_arn): <p>The Amazon Resource Name (ARN) of the listener to describe.</p>
+    /// - On success, responds with [`DescribeListenerOutput`](crate::output::DescribeListenerOutput) with field(s):
+    ///   - [`listener(Option<Listener>)`](crate::output::DescribeListenerOutput::listener): <p>The description of a listener.</p>
+    /// - On failure, responds with [`SdkError<DescribeListenerError>`](crate::error::DescribeListenerError)
     pub fn describe_listener(&self) -> fluent_builders::DescribeListener<C, M, R> {
         fluent_builders::DescribeListener::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAccelerators` operation.
-    ///
-    /// See [`ListAccelerators`](crate::client::fluent_builders::ListAccelerators) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListAccelerators`](crate::client::fluent_builders::ListAccelerators) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAccelerators::into_paginator).
+    ///
+    /// - Takes [`ListAcceleratorsInput`](crate::input::ListAcceleratorsInput) with field(s):
+    ///   - [`max_results(Option<i32>)`](crate::input::ListAcceleratorsInput::max_results): <p>The number of Global Accelerator objects that you want to return with this call. The default value is 10.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListAcceleratorsInput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
+    /// - On success, responds with [`ListAcceleratorsOutput`](crate::output::ListAcceleratorsOutput) with field(s):
+    ///   - [`accelerators(Option<Vec<Accelerator>>)`](crate::output::ListAcceleratorsOutput::accelerators): <p>The list of accelerators for a customer account.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAcceleratorsOutput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
+    /// - On failure, responds with [`SdkError<ListAcceleratorsError>`](crate::error::ListAcceleratorsError)
     pub fn list_accelerators(&self) -> fluent_builders::ListAccelerators<C, M, R> {
         fluent_builders::ListAccelerators::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListByoipCidrs` operation.
-    ///
-    /// See [`ListByoipCidrs`](crate::client::fluent_builders::ListByoipCidrs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListByoipCidrs`](crate::client::fluent_builders::ListByoipCidrs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListByoipCidrs::into_paginator).
+    ///
+    /// - Takes [`ListByoipCidrsInput`](crate::input::ListByoipCidrsInput) with field(s):
+    ///   - [`max_results(Option<i32>)`](crate::input::ListByoipCidrsInput::max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListByoipCidrsInput::next_token): <p>The token for the next page of results.</p>
+    /// - On success, responds with [`ListByoipCidrsOutput`](crate::output::ListByoipCidrsOutput) with field(s):
+    ///   - [`byoip_cidrs(Option<Vec<ByoipCidr>>)`](crate::output::ListByoipCidrsOutput::byoip_cidrs): <p>Information about your address ranges.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListByoipCidrsOutput::next_token): <p>The token for the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ListByoipCidrsError>`](crate::error::ListByoipCidrsError)
     pub fn list_byoip_cidrs(&self) -> fluent_builders::ListByoipCidrs<C, M, R> {
         fluent_builders::ListByoipCidrs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListCustomRoutingAccelerators` operation.
-    ///
-    /// See [`ListCustomRoutingAccelerators`](crate::client::fluent_builders::ListCustomRoutingAccelerators) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListCustomRoutingAccelerators`](crate::client::fluent_builders::ListCustomRoutingAccelerators) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCustomRoutingAccelerators::into_paginator).
+    ///
+    /// - Takes [`ListCustomRoutingAcceleratorsInput`](crate::input::ListCustomRoutingAcceleratorsInput) with field(s):
+    ///   - [`max_results(Option<i32>)`](crate::input::ListCustomRoutingAcceleratorsInput::max_results): <p>The number of custom routing Global Accelerator objects that you want to return with this call. The default value is 10.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListCustomRoutingAcceleratorsInput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
+    /// - On success, responds with [`ListCustomRoutingAcceleratorsOutput`](crate::output::ListCustomRoutingAcceleratorsOutput) with field(s):
+    ///   - [`accelerators(Option<Vec<CustomRoutingAccelerator>>)`](crate::output::ListCustomRoutingAcceleratorsOutput::accelerators): <p>The list of custom routing accelerators for a customer account.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListCustomRoutingAcceleratorsOutput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
+    /// - On failure, responds with [`SdkError<ListCustomRoutingAcceleratorsError>`](crate::error::ListCustomRoutingAcceleratorsError)
     pub fn list_custom_routing_accelerators(
         &self,
     ) -> fluent_builders::ListCustomRoutingAccelerators<C, M, R> {
         fluent_builders::ListCustomRoutingAccelerators::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListCustomRoutingEndpointGroups` operation.
-    ///
-    /// See [`ListCustomRoutingEndpointGroups`](crate::client::fluent_builders::ListCustomRoutingEndpointGroups) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListCustomRoutingEndpointGroups`](crate::client::fluent_builders::ListCustomRoutingEndpointGroups) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCustomRoutingEndpointGroups::into_paginator).
+    ///
+    /// - Takes [`ListCustomRoutingEndpointGroupsInput`](crate::input::ListCustomRoutingEndpointGroupsInput) with field(s):
+    ///   - [`listener_arn(Option<String>)`](crate::input::ListCustomRoutingEndpointGroupsInput::listener_arn): <p>The Amazon Resource Name (ARN) of the listener to list endpoint groups for.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListCustomRoutingEndpointGroupsInput::max_results): <p>The number of endpoint group objects that you want to return with this call. The default value is 10.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListCustomRoutingEndpointGroupsInput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
+    /// - On success, responds with [`ListCustomRoutingEndpointGroupsOutput`](crate::output::ListCustomRoutingEndpointGroupsOutput) with field(s):
+    ///   - [`endpoint_groups(Option<Vec<CustomRoutingEndpointGroup>>)`](crate::output::ListCustomRoutingEndpointGroupsOutput::endpoint_groups): <p>The list of the endpoint groups associated with a listener for a custom routing accelerator.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListCustomRoutingEndpointGroupsOutput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
+    /// - On failure, responds with [`SdkError<ListCustomRoutingEndpointGroupsError>`](crate::error::ListCustomRoutingEndpointGroupsError)
     pub fn list_custom_routing_endpoint_groups(
         &self,
     ) -> fluent_builders::ListCustomRoutingEndpointGroups<C, M, R> {
         fluent_builders::ListCustomRoutingEndpointGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListCustomRoutingListeners` operation.
-    ///
-    /// See [`ListCustomRoutingListeners`](crate::client::fluent_builders::ListCustomRoutingListeners) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListCustomRoutingListeners`](crate::client::fluent_builders::ListCustomRoutingListeners) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCustomRoutingListeners::into_paginator).
+    ///
+    /// - Takes [`ListCustomRoutingListenersInput`](crate::input::ListCustomRoutingListenersInput) with field(s):
+    ///   - [`accelerator_arn(Option<String>)`](crate::input::ListCustomRoutingListenersInput::accelerator_arn): <p>The Amazon Resource Name (ARN) of the accelerator to list listeners for.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListCustomRoutingListenersInput::max_results): <p>The number of listener objects that you want to return with this call. The default value is 10.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListCustomRoutingListenersInput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
+    /// - On success, responds with [`ListCustomRoutingListenersOutput`](crate::output::ListCustomRoutingListenersOutput) with field(s):
+    ///   - [`listeners(Option<Vec<CustomRoutingListener>>)`](crate::output::ListCustomRoutingListenersOutput::listeners): <p>The list of listeners for a custom routing accelerator.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListCustomRoutingListenersOutput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
+    /// - On failure, responds with [`SdkError<ListCustomRoutingListenersError>`](crate::error::ListCustomRoutingListenersError)
     pub fn list_custom_routing_listeners(
         &self,
     ) -> fluent_builders::ListCustomRoutingListeners<C, M, R> {
         fluent_builders::ListCustomRoutingListeners::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListCustomRoutingPortMappings` operation.
-    ///
-    /// See [`ListCustomRoutingPortMappings`](crate::client::fluent_builders::ListCustomRoutingPortMappings) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListCustomRoutingPortMappings`](crate::client::fluent_builders::ListCustomRoutingPortMappings) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCustomRoutingPortMappings::into_paginator).
+    ///
+    /// - Takes [`ListCustomRoutingPortMappingsInput`](crate::input::ListCustomRoutingPortMappingsInput) with field(s):
+    ///   - [`accelerator_arn(Option<String>)`](crate::input::ListCustomRoutingPortMappingsInput::accelerator_arn): <p>The Amazon Resource Name (ARN) of the accelerator to list the custom routing port mappings for.</p>
+    ///   - [`endpoint_group_arn(Option<String>)`](crate::input::ListCustomRoutingPortMappingsInput::endpoint_group_arn): <p>The Amazon Resource Name (ARN) of the endpoint group to list the custom routing port mappings for.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListCustomRoutingPortMappingsInput::max_results): <p>The number of destination port mappings that you want to return with this call. The default value is 10.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListCustomRoutingPortMappingsInput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
+    /// - On success, responds with [`ListCustomRoutingPortMappingsOutput`](crate::output::ListCustomRoutingPortMappingsOutput) with field(s):
+    ///   - [`port_mappings(Option<Vec<PortMapping>>)`](crate::output::ListCustomRoutingPortMappingsOutput::port_mappings): <p>The port mappings for a custom routing accelerator.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListCustomRoutingPortMappingsOutput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
+    /// - On failure, responds with [`SdkError<ListCustomRoutingPortMappingsError>`](crate::error::ListCustomRoutingPortMappingsError)
     pub fn list_custom_routing_port_mappings(
         &self,
     ) -> fluent_builders::ListCustomRoutingPortMappings<C, M, R> {
         fluent_builders::ListCustomRoutingPortMappings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListCustomRoutingPortMappingsByDestination` operation.
-    ///
-    /// See [`ListCustomRoutingPortMappingsByDestination`](crate::client::fluent_builders::ListCustomRoutingPortMappingsByDestination) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListCustomRoutingPortMappingsByDestination`](crate::client::fluent_builders::ListCustomRoutingPortMappingsByDestination) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCustomRoutingPortMappingsByDestination::into_paginator).
+    ///
+    /// - Takes [`ListCustomRoutingPortMappingsByDestinationInput`](crate::input::ListCustomRoutingPortMappingsByDestinationInput) with field(s):
+    ///   - [`endpoint_id(Option<String>)`](crate::input::ListCustomRoutingPortMappingsByDestinationInput::endpoint_id): <p>The ID for the virtual private cloud (VPC) subnet.</p>
+    ///   - [`destination_address(Option<String>)`](crate::input::ListCustomRoutingPortMappingsByDestinationInput::destination_address): <p>The endpoint IP address in a virtual private cloud (VPC) subnet for which you want to receive back port mappings.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListCustomRoutingPortMappingsByDestinationInput::max_results): <p>The number of destination port mappings that you want to return with this call. The default value is 10.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListCustomRoutingPortMappingsByDestinationInput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
+    /// - On success, responds with [`ListCustomRoutingPortMappingsByDestinationOutput`](crate::output::ListCustomRoutingPortMappingsByDestinationOutput) with field(s):
+    ///   - [`destination_port_mappings(Option<Vec<DestinationPortMapping>>)`](crate::output::ListCustomRoutingPortMappingsByDestinationOutput::destination_port_mappings): <p>The port mappings for the endpoint IP address that you specified in the request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListCustomRoutingPortMappingsByDestinationOutput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
+    /// - On failure, responds with [`SdkError<ListCustomRoutingPortMappingsByDestinationError>`](crate::error::ListCustomRoutingPortMappingsByDestinationError)
     pub fn list_custom_routing_port_mappings_by_destination(
         &self,
     ) -> fluent_builders::ListCustomRoutingPortMappingsByDestination<C, M, R> {
         fluent_builders::ListCustomRoutingPortMappingsByDestination::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListEndpointGroups` operation.
-    ///
-    /// See [`ListEndpointGroups`](crate::client::fluent_builders::ListEndpointGroups) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListEndpointGroups`](crate::client::fluent_builders::ListEndpointGroups) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEndpointGroups::into_paginator).
+    ///
+    /// - Takes [`ListEndpointGroupsInput`](crate::input::ListEndpointGroupsInput) with field(s):
+    ///   - [`listener_arn(Option<String>)`](crate::input::ListEndpointGroupsInput::listener_arn): <p>The Amazon Resource Name (ARN) of the listener.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListEndpointGroupsInput::max_results): <p>The number of endpoint group objects that you want to return with this call. The default value is 10.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListEndpointGroupsInput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
+    /// - On success, responds with [`ListEndpointGroupsOutput`](crate::output::ListEndpointGroupsOutput) with field(s):
+    ///   - [`endpoint_groups(Option<Vec<EndpointGroup>>)`](crate::output::ListEndpointGroupsOutput::endpoint_groups): <p>The list of the endpoint groups associated with a listener.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListEndpointGroupsOutput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
+    /// - On failure, responds with [`SdkError<ListEndpointGroupsError>`](crate::error::ListEndpointGroupsError)
     pub fn list_endpoint_groups(&self) -> fluent_builders::ListEndpointGroups<C, M, R> {
         fluent_builders::ListEndpointGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListListeners` operation.
-    ///
-    /// See [`ListListeners`](crate::client::fluent_builders::ListListeners) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListListeners`](crate::client::fluent_builders::ListListeners) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListListeners::into_paginator).
+    ///
+    /// - Takes [`ListListenersInput`](crate::input::ListListenersInput) with field(s):
+    ///   - [`accelerator_arn(Option<String>)`](crate::input::ListListenersInput::accelerator_arn): <p>The Amazon Resource Name (ARN) of the accelerator for which you want to list listener objects.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListListenersInput::max_results): <p>The number of listener objects that you want to return with this call. The default value is 10.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListListenersInput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
+    /// - On success, responds with [`ListListenersOutput`](crate::output::ListListenersOutput) with field(s):
+    ///   - [`listeners(Option<Vec<Listener>>)`](crate::output::ListListenersOutput::listeners): <p>The list of listeners for an accelerator.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListListenersOutput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
+    /// - On failure, responds with [`SdkError<ListListenersError>`](crate::error::ListListenersError)
     pub fn list_listeners(&self) -> fluent_builders::ListListeners<C, M, R> {
         fluent_builders::ListListeners::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the accelerator to list tags for. An ARN uniquely identifies an accelerator.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>Root level tag for the Tags parameters.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ProvisionByoipCidr` operation.
+    /// Constructs a fluent builder for the [`ProvisionByoipCidr`](crate::client::fluent_builders::ProvisionByoipCidr) operation.
     ///
-    /// See [`ProvisionByoipCidr`](crate::client::fluent_builders::ProvisionByoipCidr) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ProvisionByoipCidrInput`](crate::input::ProvisionByoipCidrInput) with field(s):
+    ///   - [`cidr(Option<String>)`](crate::input::ProvisionByoipCidrInput::cidr): <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can specify is /24. The address range cannot overlap with another address range that you've brought to this or another Region.</p>
+    ///   - [`cidr_authorization_context(Option<CidrAuthorizationContext>)`](crate::input::ProvisionByoipCidrInput::cidr_authorization_context): <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP. </p>
+    /// - On success, responds with [`ProvisionByoipCidrOutput`](crate::output::ProvisionByoipCidrOutput) with field(s):
+    ///   - [`byoip_cidr(Option<ByoipCidr>)`](crate::output::ProvisionByoipCidrOutput::byoip_cidr): <p>Information about the address range.</p>
+    /// - On failure, responds with [`SdkError<ProvisionByoipCidrError>`](crate::error::ProvisionByoipCidrError)
     pub fn provision_byoip_cidr(&self) -> fluent_builders::ProvisionByoipCidr<C, M, R> {
         fluent_builders::ProvisionByoipCidr::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RemoveCustomRoutingEndpoints` operation.
+    /// Constructs a fluent builder for the [`RemoveCustomRoutingEndpoints`](crate::client::fluent_builders::RemoveCustomRoutingEndpoints) operation.
     ///
-    /// See [`RemoveCustomRoutingEndpoints`](crate::client::fluent_builders::RemoveCustomRoutingEndpoints) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RemoveCustomRoutingEndpointsInput`](crate::input::RemoveCustomRoutingEndpointsInput) with field(s):
+    ///   - [`endpoint_ids(Option<Vec<String>>)`](crate::input::RemoveCustomRoutingEndpointsInput::endpoint_ids): <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC) subnet IDs. </p>
+    ///   - [`endpoint_group_arn(Option<String>)`](crate::input::RemoveCustomRoutingEndpointsInput::endpoint_group_arn): <p>The Amazon Resource Name (ARN) of the endpoint group to remove endpoints from.</p>
+    /// - On success, responds with [`RemoveCustomRoutingEndpointsOutput`](crate::output::RemoveCustomRoutingEndpointsOutput)
+
+    /// - On failure, responds with [`SdkError<RemoveCustomRoutingEndpointsError>`](crate::error::RemoveCustomRoutingEndpointsError)
     pub fn remove_custom_routing_endpoints(
         &self,
     ) -> fluent_builders::RemoveCustomRoutingEndpoints<C, M, R> {
         fluent_builders::RemoveCustomRoutingEndpoints::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the Global Accelerator resource to add tags to. An ARN uniquely identifies a resource.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>The tags to add to a resource. A tag consists of a key and a value that you define.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the Global Accelerator resource to remove tags from. An ARN uniquely identifies a resource.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The tag key pairs that you want to remove from the specified resources.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateAccelerator` operation.
+    /// Constructs a fluent builder for the [`UpdateAccelerator`](crate::client::fluent_builders::UpdateAccelerator) operation.
     ///
-    /// See [`UpdateAccelerator`](crate::client::fluent_builders::UpdateAccelerator) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateAcceleratorInput`](crate::input::UpdateAcceleratorInput) with field(s):
+    ///   - [`accelerator_arn(Option<String>)`](crate::input::UpdateAcceleratorInput::accelerator_arn): <p>The Amazon Resource Name (ARN) of the accelerator to update.</p>
+    ///   - [`name(Option<String>)`](crate::input::UpdateAcceleratorInput::name): <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
+    ///   - [`ip_address_type(Option<IpAddressType>)`](crate::input::UpdateAcceleratorInput::ip_address_type): <p>The IP address type, which must be IPv4.</p>
+    ///   - [`enabled(Option<bool>)`](crate::input::UpdateAcceleratorInput::enabled): <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>  <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
+    /// - On success, responds with [`UpdateAcceleratorOutput`](crate::output::UpdateAcceleratorOutput) with field(s):
+    ///   - [`accelerator(Option<Accelerator>)`](crate::output::UpdateAcceleratorOutput::accelerator): <p>Information about the updated accelerator.</p>
+    /// - On failure, responds with [`SdkError<UpdateAcceleratorError>`](crate::error::UpdateAcceleratorError)
     pub fn update_accelerator(&self) -> fluent_builders::UpdateAccelerator<C, M, R> {
         fluent_builders::UpdateAccelerator::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateAcceleratorAttributes` operation.
+    /// Constructs a fluent builder for the [`UpdateAcceleratorAttributes`](crate::client::fluent_builders::UpdateAcceleratorAttributes) operation.
     ///
-    /// See [`UpdateAcceleratorAttributes`](crate::client::fluent_builders::UpdateAcceleratorAttributes) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateAcceleratorAttributesInput`](crate::input::UpdateAcceleratorAttributesInput) with field(s):
+    ///   - [`accelerator_arn(Option<String>)`](crate::input::UpdateAcceleratorAttributesInput::accelerator_arn): <p>The Amazon Resource Name (ARN) of the accelerator that you want to update.</p>
+    ///   - [`flow_logs_enabled(Option<bool>)`](crate::input::UpdateAcceleratorAttributesInput::flow_logs_enabled): <p>Update whether flow logs are enabled. The default value is false. If the value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    ///   - [`flow_logs_s3_bucket(Option<String>)`](crate::input::UpdateAcceleratorAttributesInput::flow_logs_s3_bucket): <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the bucket.</p>
+    ///   - [`flow_logs_s3_prefix(Option<String>)`](crate::input::UpdateAcceleratorAttributesInput::flow_logs_s3_prefix): <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>  <p>If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>  <p>s3-bucket_name//AWSLogs/aws_account_id</p>
+    /// - On success, responds with [`UpdateAcceleratorAttributesOutput`](crate::output::UpdateAcceleratorAttributesOutput) with field(s):
+    ///   - [`accelerator_attributes(Option<AcceleratorAttributes>)`](crate::output::UpdateAcceleratorAttributesOutput::accelerator_attributes): <p>Updated attributes for the accelerator.</p>
+    /// - On failure, responds with [`SdkError<UpdateAcceleratorAttributesError>`](crate::error::UpdateAcceleratorAttributesError)
     pub fn update_accelerator_attributes(
         &self,
     ) -> fluent_builders::UpdateAcceleratorAttributes<C, M, R> {
         fluent_builders::UpdateAcceleratorAttributes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateCustomRoutingAccelerator` operation.
+    /// Constructs a fluent builder for the [`UpdateCustomRoutingAccelerator`](crate::client::fluent_builders::UpdateCustomRoutingAccelerator) operation.
     ///
-    /// See [`UpdateCustomRoutingAccelerator`](crate::client::fluent_builders::UpdateCustomRoutingAccelerator) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateCustomRoutingAcceleratorInput`](crate::input::UpdateCustomRoutingAcceleratorInput) with field(s):
+    ///   - [`accelerator_arn(Option<String>)`](crate::input::UpdateCustomRoutingAcceleratorInput::accelerator_arn): <p>The Amazon Resource Name (ARN) of the accelerator to update.</p>
+    ///   - [`name(Option<String>)`](crate::input::UpdateCustomRoutingAcceleratorInput::name): <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
+    ///   - [`ip_address_type(Option<IpAddressType>)`](crate::input::UpdateCustomRoutingAcceleratorInput::ip_address_type): <p>The value for the address type must be IPv4.</p>
+    ///   - [`enabled(Option<bool>)`](crate::input::UpdateCustomRoutingAcceleratorInput::enabled): <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>  <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
+    /// - On success, responds with [`UpdateCustomRoutingAcceleratorOutput`](crate::output::UpdateCustomRoutingAcceleratorOutput) with field(s):
+    ///   - [`accelerator(Option<CustomRoutingAccelerator>)`](crate::output::UpdateCustomRoutingAcceleratorOutput::accelerator): <p>Information about the updated custom routing accelerator.</p>
+    /// - On failure, responds with [`SdkError<UpdateCustomRoutingAcceleratorError>`](crate::error::UpdateCustomRoutingAcceleratorError)
     pub fn update_custom_routing_accelerator(
         &self,
     ) -> fluent_builders::UpdateCustomRoutingAccelerator<C, M, R> {
         fluent_builders::UpdateCustomRoutingAccelerator::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateCustomRoutingAcceleratorAttributes` operation.
+    /// Constructs a fluent builder for the [`UpdateCustomRoutingAcceleratorAttributes`](crate::client::fluent_builders::UpdateCustomRoutingAcceleratorAttributes) operation.
     ///
-    /// See [`UpdateCustomRoutingAcceleratorAttributes`](crate::client::fluent_builders::UpdateCustomRoutingAcceleratorAttributes) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateCustomRoutingAcceleratorAttributesInput`](crate::input::UpdateCustomRoutingAcceleratorAttributesInput) with field(s):
+    ///   - [`accelerator_arn(Option<String>)`](crate::input::UpdateCustomRoutingAcceleratorAttributesInput::accelerator_arn): <p>The Amazon Resource Name (ARN) of the custom routing accelerator to update attributes for.</p>
+    ///   - [`flow_logs_enabled(Option<bool>)`](crate::input::UpdateCustomRoutingAcceleratorAttributesInput::flow_logs_enabled): <p>Update whether flow logs are enabled. The default value is false. If the value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    ///   - [`flow_logs_s3_bucket(Option<String>)`](crate::input::UpdateCustomRoutingAcceleratorAttributesInput::flow_logs_s3_bucket): <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the bucket.</p>
+    ///   - [`flow_logs_s3_prefix(Option<String>)`](crate::input::UpdateCustomRoutingAcceleratorAttributesInput::flow_logs_s3_prefix): <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. </p>  <p>If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>  <p>DOC-EXAMPLE-BUCKET//AWSLogs/aws_account_id</p>
+    /// - On success, responds with [`UpdateCustomRoutingAcceleratorAttributesOutput`](crate::output::UpdateCustomRoutingAcceleratorAttributesOutput) with field(s):
+    ///   - [`accelerator_attributes(Option<CustomRoutingAcceleratorAttributes>)`](crate::output::UpdateCustomRoutingAcceleratorAttributesOutput::accelerator_attributes): <p>Updated custom routing accelerator.</p>
+    /// - On failure, responds with [`SdkError<UpdateCustomRoutingAcceleratorAttributesError>`](crate::error::UpdateCustomRoutingAcceleratorAttributesError)
     pub fn update_custom_routing_accelerator_attributes(
         &self,
     ) -> fluent_builders::UpdateCustomRoutingAcceleratorAttributes<C, M, R> {
         fluent_builders::UpdateCustomRoutingAcceleratorAttributes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateCustomRoutingListener` operation.
+    /// Constructs a fluent builder for the [`UpdateCustomRoutingListener`](crate::client::fluent_builders::UpdateCustomRoutingListener) operation.
     ///
-    /// See [`UpdateCustomRoutingListener`](crate::client::fluent_builders::UpdateCustomRoutingListener) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateCustomRoutingListenerInput`](crate::input::UpdateCustomRoutingListenerInput) with field(s):
+    ///   - [`listener_arn(Option<String>)`](crate::input::UpdateCustomRoutingListenerInput::listener_arn): <p>The Amazon Resource Name (ARN) of the listener to update.</p>
+    ///   - [`port_ranges(Option<Vec<PortRange>>)`](crate::input::UpdateCustomRoutingListenerInput::port_ranges): <p>The updated port range to support for connections from clients to your accelerator. If you remove ports that are currently being used by a subnet endpoint, the call fails.</p>  <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
+    /// - On success, responds with [`UpdateCustomRoutingListenerOutput`](crate::output::UpdateCustomRoutingListenerOutput) with field(s):
+    ///   - [`listener(Option<CustomRoutingListener>)`](crate::output::UpdateCustomRoutingListenerOutput::listener): <p>Information for the updated listener for a custom routing accelerator.</p>
+    /// - On failure, responds with [`SdkError<UpdateCustomRoutingListenerError>`](crate::error::UpdateCustomRoutingListenerError)
     pub fn update_custom_routing_listener(
         &self,
     ) -> fluent_builders::UpdateCustomRoutingListener<C, M, R> {
         fluent_builders::UpdateCustomRoutingListener::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateEndpointGroup` operation.
+    /// Constructs a fluent builder for the [`UpdateEndpointGroup`](crate::client::fluent_builders::UpdateEndpointGroup) operation.
     ///
-    /// See [`UpdateEndpointGroup`](crate::client::fluent_builders::UpdateEndpointGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateEndpointGroupInput`](crate::input::UpdateEndpointGroupInput) with field(s):
+    ///   - [`endpoint_group_arn(Option<String>)`](crate::input::UpdateEndpointGroupInput::endpoint_group_arn): <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+    ///   - [`endpoint_configurations(Option<Vec<EndpointConfiguration>>)`](crate::input::UpdateEndpointGroupInput::endpoint_configurations): <p>The list of endpoint objects. A resource must be valid and active when you add it as an endpoint.</p>
+    ///   - [`traffic_dial_percentage(Option<f32>)`](crate::input::UpdateEndpointGroupInput::traffic_dial_percentage): <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for this listener. </p>  <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>  <p>The default value is 100.</p>
+    ///   - [`health_check_port(Option<i32>)`](crate::input::UpdateEndpointGroupInput::health_check_port): <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If the listener port is a list of ports, Global Accelerator uses the first port in the list.</p>
+    ///   - [`health_check_protocol(Option<HealthCheckProtocol>)`](crate::input::UpdateEndpointGroupInput::health_check_protocol): <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>
+    ///   - [`health_check_path(Option<String>)`](crate::input::UpdateEndpointGroupInput::health_check_path): <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).</p>
+    ///   - [`health_check_interval_seconds(Option<i32>)`](crate::input::UpdateEndpointGroupInput::health_check_interval_seconds): <p>The time—10 seconds or 30 seconds—between each health check for an endpoint. The default value is 30.</p>
+    ///   - [`threshold_count(Option<i32>)`](crate::input::UpdateEndpointGroupInput::threshold_count): <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.</p>
+    ///   - [`port_overrides(Option<Vec<PortOverride>>)`](crate::input::UpdateEndpointGroupInput::port_overrides): <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+    /// - On success, responds with [`UpdateEndpointGroupOutput`](crate::output::UpdateEndpointGroupOutput) with field(s):
+    ///   - [`endpoint_group(Option<EndpointGroup>)`](crate::output::UpdateEndpointGroupOutput::endpoint_group): <p>The information about the endpoint group that was updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateEndpointGroupError>`](crate::error::UpdateEndpointGroupError)
     pub fn update_endpoint_group(&self) -> fluent_builders::UpdateEndpointGroup<C, M, R> {
         fluent_builders::UpdateEndpointGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateListener` operation.
+    /// Constructs a fluent builder for the [`UpdateListener`](crate::client::fluent_builders::UpdateListener) operation.
     ///
-    /// See [`UpdateListener`](crate::client::fluent_builders::UpdateListener) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateListenerInput`](crate::input::UpdateListenerInput) with field(s):
+    ///   - [`listener_arn(Option<String>)`](crate::input::UpdateListenerInput::listener_arn): <p>The Amazon Resource Name (ARN) of the listener to update.</p>
+    ///   - [`port_ranges(Option<Vec<PortRange>>)`](crate::input::UpdateListenerInput::port_ranges): <p>The updated list of port ranges for the connections from clients to the accelerator.</p>
+    ///   - [`protocol(Option<Protocol>)`](crate::input::UpdateListenerInput::protocol): <p>The updated protocol for the connections from clients to the accelerator.</p>
+    ///   - [`client_affinity(Option<ClientAffinity>)`](crate::input::UpdateListenerInput::client_affinity): <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications, regardless of the port and protocol of the client request. Client affinity gives you control over whether to always route each client to the same specific endpoint.</p>  <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes. </p>  <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP address and destination IP address—to select the hash value.</p>  <p>The default value is <code>NONE</code>.</p>
+    /// - On success, responds with [`UpdateListenerOutput`](crate::output::UpdateListenerOutput) with field(s):
+    ///   - [`listener(Option<Listener>)`](crate::output::UpdateListenerOutput::listener): <p>Information for the updated listener.</p>
+    /// - On failure, responds with [`SdkError<UpdateListenerError>`](crate::error::UpdateListenerError)
     pub fn update_listener(&self) -> fluent_builders::UpdateListener<C, M, R> {
         fluent_builders::UpdateListener::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `WithdrawByoipCidr` operation.
+    /// Constructs a fluent builder for the [`WithdrawByoipCidr`](crate::client::fluent_builders::WithdrawByoipCidr) operation.
     ///
-    /// See [`WithdrawByoipCidr`](crate::client::fluent_builders::WithdrawByoipCidr) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`WithdrawByoipCidrInput`](crate::input::WithdrawByoipCidrInput) with field(s):
+    ///   - [`cidr(Option<String>)`](crate::input::WithdrawByoipCidrInput::cidr): <p>The address range, in CIDR notation.</p>
+    /// - On success, responds with [`WithdrawByoipCidrOutput`](crate::output::WithdrawByoipCidrOutput) with field(s):
+    ///   - [`byoip_cidr(Option<ByoipCidr>)`](crate::output::WithdrawByoipCidrOutput::byoip_cidr): <p>Information about the address pool.</p>
+    /// - On failure, responds with [`SdkError<WithdrawByoipCidrError>`](crate::error::WithdrawByoipCidrError)
     pub fn withdraw_byoip_cidr(&self) -> fluent_builders::WithdrawByoipCidr<C, M, R> {
         fluent_builders::WithdrawByoipCidr::new(self.handle.clone())
     }

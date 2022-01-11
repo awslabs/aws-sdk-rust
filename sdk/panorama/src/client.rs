@@ -83,263 +83,526 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateApplicationInstance` operation.
+    /// Constructs a fluent builder for the [`CreateApplicationInstance`](crate::client::fluent_builders::CreateApplicationInstance) operation.
     ///
-    /// See [`CreateApplicationInstance`](crate::client::fluent_builders::CreateApplicationInstance) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateApplicationInstanceInput`](crate::input::CreateApplicationInstanceInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateApplicationInstanceInput::name): <p>A name for the application instance.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateApplicationInstanceInput::description): <p>A description for the application instance.</p>
+    ///   - [`manifest_payload(Option<ManifestPayload>)`](crate::input::CreateApplicationInstanceInput::manifest_payload): <p>The application's manifest document.</p>
+    ///   - [`manifest_overrides_payload(Option<ManifestOverridesPayload>)`](crate::input::CreateApplicationInstanceInput::manifest_overrides_payload): <p>Setting overrides for the application manifest.</p>
+    ///   - [`application_instance_id_to_replace(Option<String>)`](crate::input::CreateApplicationInstanceInput::application_instance_id_to_replace): <p>The ID of an application instance to replace with the new instance.</p>
+    ///   - [`runtime_role_arn(Option<String>)`](crate::input::CreateApplicationInstanceInput::runtime_role_arn): <p>The ARN of a runtime role for the application instance.</p>
+    ///   - [`default_runtime_context_device(Option<String>)`](crate::input::CreateApplicationInstanceInput::default_runtime_context_device): <p>A device's ID.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateApplicationInstanceInput::tags): <p>Tags for the application instance.</p>
+    /// - On success, responds with [`CreateApplicationInstanceOutput`](crate::output::CreateApplicationInstanceOutput) with field(s):
+    ///   - [`application_instance_id(Option<String>)`](crate::output::CreateApplicationInstanceOutput::application_instance_id): <p>The application instance's ID.</p>
+    /// - On failure, responds with [`SdkError<CreateApplicationInstanceError>`](crate::error::CreateApplicationInstanceError)
     pub fn create_application_instance(
         &self,
     ) -> fluent_builders::CreateApplicationInstance<C, M, R> {
         fluent_builders::CreateApplicationInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateJobForDevices` operation.
+    /// Constructs a fluent builder for the [`CreateJobForDevices`](crate::client::fluent_builders::CreateJobForDevices) operation.
     ///
-    /// See [`CreateJobForDevices`](crate::client::fluent_builders::CreateJobForDevices) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateJobForDevicesInput`](crate::input::CreateJobForDevicesInput) with field(s):
+    ///   - [`device_ids(Option<Vec<String>>)`](crate::input::CreateJobForDevicesInput::device_ids): <p>IDs of target devices.</p>
+    ///   - [`device_job_config(Option<DeviceJobConfig>)`](crate::input::CreateJobForDevicesInput::device_job_config): <p>Configuration settings for the job.</p>
+    ///   - [`job_type(Option<JobType>)`](crate::input::CreateJobForDevicesInput::job_type): <p>The type of job to run.</p>
+    /// - On success, responds with [`CreateJobForDevicesOutput`](crate::output::CreateJobForDevicesOutput) with field(s):
+    ///   - [`jobs(Option<Vec<Job>>)`](crate::output::CreateJobForDevicesOutput::jobs): <p>A list of jobs.</p>
+    /// - On failure, responds with [`SdkError<CreateJobForDevicesError>`](crate::error::CreateJobForDevicesError)
     pub fn create_job_for_devices(&self) -> fluent_builders::CreateJobForDevices<C, M, R> {
         fluent_builders::CreateJobForDevices::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateNodeFromTemplateJob` operation.
+    /// Constructs a fluent builder for the [`CreateNodeFromTemplateJob`](crate::client::fluent_builders::CreateNodeFromTemplateJob) operation.
     ///
-    /// See [`CreateNodeFromTemplateJob`](crate::client::fluent_builders::CreateNodeFromTemplateJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateNodeFromTemplateJobInput`](crate::input::CreateNodeFromTemplateJobInput) with field(s):
+    ///   - [`template_type(Option<TemplateType>)`](crate::input::CreateNodeFromTemplateJobInput::template_type): <p>The type of node.</p>
+    ///   - [`output_package_name(Option<String>)`](crate::input::CreateNodeFromTemplateJobInput::output_package_name): <p>An output package name for the node.</p>
+    ///   - [`output_package_version(Option<String>)`](crate::input::CreateNodeFromTemplateJobInput::output_package_version): <p>An output package version for the node.</p>
+    ///   - [`node_name(Option<String>)`](crate::input::CreateNodeFromTemplateJobInput::node_name): <p>A name for the node.</p>
+    ///   - [`node_description(Option<String>)`](crate::input::CreateNodeFromTemplateJobInput::node_description): <p>A description for the node.</p>
+    ///   - [`template_parameters(Option<HashMap<String, String>>)`](crate::input::CreateNodeFromTemplateJobInput::template_parameters): <p>Template parameters for the node.</p>
+    ///   - [`job_tags(Option<Vec<JobResourceTags>>)`](crate::input::CreateNodeFromTemplateJobInput::job_tags): <p>Tags for the job.</p>
+    /// - On success, responds with [`CreateNodeFromTemplateJobOutput`](crate::output::CreateNodeFromTemplateJobOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::CreateNodeFromTemplateJobOutput::job_id): <p>The job's ID.</p>
+    /// - On failure, responds with [`SdkError<CreateNodeFromTemplateJobError>`](crate::error::CreateNodeFromTemplateJobError)
     pub fn create_node_from_template_job(
         &self,
     ) -> fluent_builders::CreateNodeFromTemplateJob<C, M, R> {
         fluent_builders::CreateNodeFromTemplateJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreatePackage` operation.
+    /// Constructs a fluent builder for the [`CreatePackage`](crate::client::fluent_builders::CreatePackage) operation.
     ///
-    /// See [`CreatePackage`](crate::client::fluent_builders::CreatePackage) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreatePackageInput`](crate::input::CreatePackageInput) with field(s):
+    ///   - [`package_name(Option<String>)`](crate::input::CreatePackageInput::package_name): <p>A name for the package.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreatePackageInput::tags): <p>Tags for the package.</p>
+    /// - On success, responds with [`CreatePackageOutput`](crate::output::CreatePackageOutput) with field(s):
+    ///   - [`package_id(Option<String>)`](crate::output::CreatePackageOutput::package_id): <p>The package's ID.</p>
+    ///   - [`arn(Option<String>)`](crate::output::CreatePackageOutput::arn): <p>The package's ARN.</p>
+    ///   - [`storage_location(Option<StorageLocation>)`](crate::output::CreatePackageOutput::storage_location): <p>The package's storage location.</p>
+    /// - On failure, responds with [`SdkError<CreatePackageError>`](crate::error::CreatePackageError)
     pub fn create_package(&self) -> fluent_builders::CreatePackage<C, M, R> {
         fluent_builders::CreatePackage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreatePackageImportJob` operation.
+    /// Constructs a fluent builder for the [`CreatePackageImportJob`](crate::client::fluent_builders::CreatePackageImportJob) operation.
     ///
-    /// See [`CreatePackageImportJob`](crate::client::fluent_builders::CreatePackageImportJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreatePackageImportJobInput`](crate::input::CreatePackageImportJobInput) with field(s):
+    ///   - [`job_type(Option<PackageImportJobType>)`](crate::input::CreatePackageImportJobInput::job_type): <p>A job type for the package import job.</p>
+    ///   - [`input_config(Option<PackageImportJobInputConfig>)`](crate::input::CreatePackageImportJobInput::input_config): <p>An input config for the package import job.</p>
+    ///   - [`output_config(Option<PackageImportJobOutputConfig>)`](crate::input::CreatePackageImportJobInput::output_config): <p>An output config for the package import job.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreatePackageImportJobInput::client_token): <p>A client token for the package import job.</p>
+    ///   - [`job_tags(Option<Vec<JobResourceTags>>)`](crate::input::CreatePackageImportJobInput::job_tags): <p>Tags for the package import job.</p>
+    /// - On success, responds with [`CreatePackageImportJobOutput`](crate::output::CreatePackageImportJobOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::CreatePackageImportJobOutput::job_id): <p>The job's ID.</p>
+    /// - On failure, responds with [`SdkError<CreatePackageImportJobError>`](crate::error::CreatePackageImportJobError)
     pub fn create_package_import_job(&self) -> fluent_builders::CreatePackageImportJob<C, M, R> {
         fluent_builders::CreatePackageImportJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDevice` operation.
+    /// Constructs a fluent builder for the [`DeleteDevice`](crate::client::fluent_builders::DeleteDevice) operation.
     ///
-    /// See [`DeleteDevice`](crate::client::fluent_builders::DeleteDevice) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteDeviceInput`](crate::input::DeleteDeviceInput) with field(s):
+    ///   - [`device_id(Option<String>)`](crate::input::DeleteDeviceInput::device_id): <p>The device's ID.</p>
+    /// - On success, responds with [`DeleteDeviceOutput`](crate::output::DeleteDeviceOutput) with field(s):
+    ///   - [`device_id(Option<String>)`](crate::output::DeleteDeviceOutput::device_id): <p>The device's ID.</p>
+    /// - On failure, responds with [`SdkError<DeleteDeviceError>`](crate::error::DeleteDeviceError)
     pub fn delete_device(&self) -> fluent_builders::DeleteDevice<C, M, R> {
         fluent_builders::DeleteDevice::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeletePackage` operation.
+    /// Constructs a fluent builder for the [`DeletePackage`](crate::client::fluent_builders::DeletePackage) operation.
     ///
-    /// See [`DeletePackage`](crate::client::fluent_builders::DeletePackage) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeletePackageInput`](crate::input::DeletePackageInput) with field(s):
+    ///   - [`package_id(Option<String>)`](crate::input::DeletePackageInput::package_id): <p>The package's ID.</p>
+    ///   - [`force_delete(Option<bool>)`](crate::input::DeletePackageInput::force_delete): <p>Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.</p>
+    /// - On success, responds with [`DeletePackageOutput`](crate::output::DeletePackageOutput)
+
+    /// - On failure, responds with [`SdkError<DeletePackageError>`](crate::error::DeletePackageError)
     pub fn delete_package(&self) -> fluent_builders::DeletePackage<C, M, R> {
         fluent_builders::DeletePackage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeregisterPackageVersion` operation.
+    /// Constructs a fluent builder for the [`DeregisterPackageVersion`](crate::client::fluent_builders::DeregisterPackageVersion) operation.
     ///
-    /// See [`DeregisterPackageVersion`](crate::client::fluent_builders::DeregisterPackageVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeregisterPackageVersionInput`](crate::input::DeregisterPackageVersionInput) with field(s):
+    ///   - [`owner_account(Option<String>)`](crate::input::DeregisterPackageVersionInput::owner_account): <p>An owner account.</p>
+    ///   - [`package_id(Option<String>)`](crate::input::DeregisterPackageVersionInput::package_id): <p>A package ID.</p>
+    ///   - [`package_version(Option<String>)`](crate::input::DeregisterPackageVersionInput::package_version): <p>A package version.</p>
+    ///   - [`patch_version(Option<String>)`](crate::input::DeregisterPackageVersionInput::patch_version): <p>A patch version.</p>
+    ///   - [`updated_latest_patch_version(Option<String>)`](crate::input::DeregisterPackageVersionInput::updated_latest_patch_version): <p>If the version was marked latest, the new version to maker as latest.</p>
+    /// - On success, responds with [`DeregisterPackageVersionOutput`](crate::output::DeregisterPackageVersionOutput)
+
+    /// - On failure, responds with [`SdkError<DeregisterPackageVersionError>`](crate::error::DeregisterPackageVersionError)
     pub fn deregister_package_version(&self) -> fluent_builders::DeregisterPackageVersion<C, M, R> {
         fluent_builders::DeregisterPackageVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeApplicationInstance` operation.
+    /// Constructs a fluent builder for the [`DescribeApplicationInstance`](crate::client::fluent_builders::DescribeApplicationInstance) operation.
     ///
-    /// See [`DescribeApplicationInstance`](crate::client::fluent_builders::DescribeApplicationInstance) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeApplicationInstanceInput`](crate::input::DescribeApplicationInstanceInput) with field(s):
+    ///   - [`application_instance_id(Option<String>)`](crate::input::DescribeApplicationInstanceInput::application_instance_id): <p>The application instance's ID.</p>
+    /// - On success, responds with [`DescribeApplicationInstanceOutput`](crate::output::DescribeApplicationInstanceOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::DescribeApplicationInstanceOutput::name): <p>The application instance's name.</p>
+    ///   - [`description(Option<String>)`](crate::output::DescribeApplicationInstanceOutput::description): <p>The application instance's description.</p>
+    ///   - [`default_runtime_context_device(Option<String>)`](crate::output::DescribeApplicationInstanceOutput::default_runtime_context_device): <p>The device's ID.</p>
+    ///   - [`default_runtime_context_device_name(Option<String>)`](crate::output::DescribeApplicationInstanceOutput::default_runtime_context_device_name): <p>The device's bane.</p>
+    ///   - [`application_instance_id_to_replace(Option<String>)`](crate::output::DescribeApplicationInstanceOutput::application_instance_id_to_replace): <p>The ID of the application instance that this instance replaced.</p>
+    ///   - [`runtime_role_arn(Option<String>)`](crate::output::DescribeApplicationInstanceOutput::runtime_role_arn): <p>The application instance's runtime role ARN.</p>
+    ///   - [`status(Option<ApplicationInstanceStatus>)`](crate::output::DescribeApplicationInstanceOutput::status): <p>The application instance's status.</p>
+    ///   - [`health_status(Option<ApplicationInstanceHealthStatus>)`](crate::output::DescribeApplicationInstanceOutput::health_status): <p>The application instance's health status.</p>
+    ///   - [`status_description(Option<String>)`](crate::output::DescribeApplicationInstanceOutput::status_description): <p>The application instance's status description.</p>
+    ///   - [`created_time(Option<DateTime>)`](crate::output::DescribeApplicationInstanceOutput::created_time): <p>When the application instance was created.</p>
+    ///   - [`last_updated_time(Option<DateTime>)`](crate::output::DescribeApplicationInstanceOutput::last_updated_time): <p>The application instance was updated.</p>
+    ///   - [`application_instance_id(Option<String>)`](crate::output::DescribeApplicationInstanceOutput::application_instance_id): <p>The application instance's ID.</p>
+    ///   - [`arn(Option<String>)`](crate::output::DescribeApplicationInstanceOutput::arn): <p>The application instance's ARN.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeApplicationInstanceOutput::tags): <p>The application instance's tags.</p>
+    /// - On failure, responds with [`SdkError<DescribeApplicationInstanceError>`](crate::error::DescribeApplicationInstanceError)
     pub fn describe_application_instance(
         &self,
     ) -> fluent_builders::DescribeApplicationInstance<C, M, R> {
         fluent_builders::DescribeApplicationInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeApplicationInstanceDetails` operation.
+    /// Constructs a fluent builder for the [`DescribeApplicationInstanceDetails`](crate::client::fluent_builders::DescribeApplicationInstanceDetails) operation.
     ///
-    /// See [`DescribeApplicationInstanceDetails`](crate::client::fluent_builders::DescribeApplicationInstanceDetails) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeApplicationInstanceDetailsInput`](crate::input::DescribeApplicationInstanceDetailsInput) with field(s):
+    ///   - [`application_instance_id(Option<String>)`](crate::input::DescribeApplicationInstanceDetailsInput::application_instance_id): <p>The application instance's ID.</p>
+    /// - On success, responds with [`DescribeApplicationInstanceDetailsOutput`](crate::output::DescribeApplicationInstanceDetailsOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::DescribeApplicationInstanceDetailsOutput::name): <p>The application instance's name.</p>
+    ///   - [`description(Option<String>)`](crate::output::DescribeApplicationInstanceDetailsOutput::description): <p>The application instance's description.</p>
+    ///   - [`default_runtime_context_device(Option<String>)`](crate::output::DescribeApplicationInstanceDetailsOutput::default_runtime_context_device): <p>The application instance's default runtime context device.</p>
+    ///   - [`manifest_payload(Option<ManifestPayload>)`](crate::output::DescribeApplicationInstanceDetailsOutput::manifest_payload): <p>The application instance's configuration manifest.</p>
+    ///   - [`manifest_overrides_payload(Option<ManifestOverridesPayload>)`](crate::output::DescribeApplicationInstanceDetailsOutput::manifest_overrides_payload): <p>Parameter overrides for the configuration manifest.</p>
+    ///   - [`application_instance_id_to_replace(Option<String>)`](crate::output::DescribeApplicationInstanceDetailsOutput::application_instance_id_to_replace): <p>The ID of the application instance that this instance replaced.</p>
+    ///   - [`created_time(Option<DateTime>)`](crate::output::DescribeApplicationInstanceDetailsOutput::created_time): <p>When the application instance was created.</p>
+    ///   - [`application_instance_id(Option<String>)`](crate::output::DescribeApplicationInstanceDetailsOutput::application_instance_id): <p>The application instance's ID.</p>
+    /// - On failure, responds with [`SdkError<DescribeApplicationInstanceDetailsError>`](crate::error::DescribeApplicationInstanceDetailsError)
     pub fn describe_application_instance_details(
         &self,
     ) -> fluent_builders::DescribeApplicationInstanceDetails<C, M, R> {
         fluent_builders::DescribeApplicationInstanceDetails::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDevice` operation.
+    /// Constructs a fluent builder for the [`DescribeDevice`](crate::client::fluent_builders::DescribeDevice) operation.
     ///
-    /// See [`DescribeDevice`](crate::client::fluent_builders::DescribeDevice) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeDeviceInput`](crate::input::DescribeDeviceInput) with field(s):
+    ///   - [`device_id(Option<String>)`](crate::input::DescribeDeviceInput::device_id): <p>The device's ID.</p>
+    /// - On success, responds with [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput) with field(s):
+    ///   - [`device_id(Option<String>)`](crate::output::DescribeDeviceOutput::device_id): <p>The device's ID.</p>
+    ///   - [`name(Option<String>)`](crate::output::DescribeDeviceOutput::name): <p>The device's name.</p>
+    ///   - [`arn(Option<String>)`](crate::output::DescribeDeviceOutput::arn): <p>The device's ARN.</p>
+    ///   - [`description(Option<String>)`](crate::output::DescribeDeviceOutput::description): <p>The device's description.</p>
+    ///   - [`r#type(Option<DeviceType>)`](crate::output::DescribeDeviceOutput::r#type): <p>The device's type.</p>
+    ///   - [`device_connection_status(Option<DeviceConnectionStatus>)`](crate::output::DescribeDeviceOutput::device_connection_status): <p>The device's connection status.</p>
+    ///   - [`created_time(Option<DateTime>)`](crate::output::DescribeDeviceOutput::created_time): <p>When the device was created.</p>
+    ///   - [`provisioning_status(Option<DeviceStatus>)`](crate::output::DescribeDeviceOutput::provisioning_status): <p>The device's provisioning status.</p>
+    ///   - [`latest_software(Option<String>)`](crate::output::DescribeDeviceOutput::latest_software): <p>The latest software version available for the device.</p>
+    ///   - [`current_software(Option<String>)`](crate::output::DescribeDeviceOutput::current_software): <p>The device's current software version.</p>
+    ///   - [`serial_number(Option<String>)`](crate::output::DescribeDeviceOutput::serial_number): <p>The device's serial number.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeDeviceOutput::tags): <p>The device's tags.</p>
+    ///   - [`networking_configuration(Option<NetworkPayload>)`](crate::output::DescribeDeviceOutput::networking_configuration): <p>The device's networking configuration.</p>
+    ///   - [`current_networking_status(Option<NetworkStatus>)`](crate::output::DescribeDeviceOutput::current_networking_status): <p>The device's networking status.</p>
+    ///   - [`lease_expiration_time(Option<DateTime>)`](crate::output::DescribeDeviceOutput::lease_expiration_time): <p>The device's lease expiration time.</p>
+    /// - On failure, responds with [`SdkError<DescribeDeviceError>`](crate::error::DescribeDeviceError)
     pub fn describe_device(&self) -> fluent_builders::DescribeDevice<C, M, R> {
         fluent_builders::DescribeDevice::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDeviceJob` operation.
+    /// Constructs a fluent builder for the [`DescribeDeviceJob`](crate::client::fluent_builders::DescribeDeviceJob) operation.
     ///
-    /// See [`DescribeDeviceJob`](crate::client::fluent_builders::DescribeDeviceJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeDeviceJobInput`](crate::input::DescribeDeviceJobInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::DescribeDeviceJobInput::job_id): <p>The job's ID.</p>
+    /// - On success, responds with [`DescribeDeviceJobOutput`](crate::output::DescribeDeviceJobOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::DescribeDeviceJobOutput::job_id): <p>The job's ID.</p>
+    ///   - [`device_id(Option<String>)`](crate::output::DescribeDeviceJobOutput::device_id): <p>The device's ID.</p>
+    ///   - [`device_arn(Option<String>)`](crate::output::DescribeDeviceJobOutput::device_arn): <p>The device's ARN.</p>
+    ///   - [`device_name(Option<String>)`](crate::output::DescribeDeviceJobOutput::device_name): <p>The device's name.</p>
+    ///   - [`device_type(Option<DeviceType>)`](crate::output::DescribeDeviceJobOutput::device_type): <p>The device's type.</p>
+    ///   - [`image_version(Option<String>)`](crate::output::DescribeDeviceJobOutput::image_version): <p>For an OTA job, the target version of the device software.</p>
+    ///   - [`status(Option<UpdateProgress>)`](crate::output::DescribeDeviceJobOutput::status): <p>The job's status.</p>
+    ///   - [`created_time(Option<DateTime>)`](crate::output::DescribeDeviceJobOutput::created_time): <p>When the job was created.</p>
+    /// - On failure, responds with [`SdkError<DescribeDeviceJobError>`](crate::error::DescribeDeviceJobError)
     pub fn describe_device_job(&self) -> fluent_builders::DescribeDeviceJob<C, M, R> {
         fluent_builders::DescribeDeviceJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeNode` operation.
+    /// Constructs a fluent builder for the [`DescribeNode`](crate::client::fluent_builders::DescribeNode) operation.
     ///
-    /// See [`DescribeNode`](crate::client::fluent_builders::DescribeNode) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeNodeInput`](crate::input::DescribeNodeInput) with field(s):
+    ///   - [`node_id(Option<String>)`](crate::input::DescribeNodeInput::node_id): <p>The node's ID.</p>
+    ///   - [`owner_account(Option<String>)`](crate::input::DescribeNodeInput::owner_account): <p>The account ID of the node's owner.</p>
+    /// - On success, responds with [`DescribeNodeOutput`](crate::output::DescribeNodeOutput) with field(s):
+    ///   - [`node_id(Option<String>)`](crate::output::DescribeNodeOutput::node_id): <p>The node's ID.</p>
+    ///   - [`name(Option<String>)`](crate::output::DescribeNodeOutput::name): <p>The node's name.</p>
+    ///   - [`category(Option<NodeCategory>)`](crate::output::DescribeNodeOutput::category): <p>The node's category.</p>
+    ///   - [`owner_account(Option<String>)`](crate::output::DescribeNodeOutput::owner_account): <p>The account ID of the node's owner.</p>
+    ///   - [`package_name(Option<String>)`](crate::output::DescribeNodeOutput::package_name): <p>The node's package name.</p>
+    ///   - [`package_id(Option<String>)`](crate::output::DescribeNodeOutput::package_id): <p>The node's package ID.</p>
+    ///   - [`package_arn(Option<String>)`](crate::output::DescribeNodeOutput::package_arn): <p>The node's ARN.</p>
+    ///   - [`package_version(Option<String>)`](crate::output::DescribeNodeOutput::package_version): <p>The node's package version.</p>
+    ///   - [`patch_version(Option<String>)`](crate::output::DescribeNodeOutput::patch_version): <p>The node's patch version.</p>
+    ///   - [`node_interface(Option<NodeInterface>)`](crate::output::DescribeNodeOutput::node_interface): <p>The node's interface.</p>
+    ///   - [`asset_name(Option<String>)`](crate::output::DescribeNodeOutput::asset_name): <p>The node's asset name.</p>
+    ///   - [`description(Option<String>)`](crate::output::DescribeNodeOutput::description): <p>The node's description.</p>
+    ///   - [`created_time(Option<DateTime>)`](crate::output::DescribeNodeOutput::created_time): <p>When the node was created.</p>
+    ///   - [`last_updated_time(Option<DateTime>)`](crate::output::DescribeNodeOutput::last_updated_time): <p>When the node was updated.</p>
+    /// - On failure, responds with [`SdkError<DescribeNodeError>`](crate::error::DescribeNodeError)
     pub fn describe_node(&self) -> fluent_builders::DescribeNode<C, M, R> {
         fluent_builders::DescribeNode::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeNodeFromTemplateJob` operation.
+    /// Constructs a fluent builder for the [`DescribeNodeFromTemplateJob`](crate::client::fluent_builders::DescribeNodeFromTemplateJob) operation.
     ///
-    /// See [`DescribeNodeFromTemplateJob`](crate::client::fluent_builders::DescribeNodeFromTemplateJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeNodeFromTemplateJobInput`](crate::input::DescribeNodeFromTemplateJobInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::DescribeNodeFromTemplateJobInput::job_id): <p>The job's ID.</p>
+    /// - On success, responds with [`DescribeNodeFromTemplateJobOutput`](crate::output::DescribeNodeFromTemplateJobOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::DescribeNodeFromTemplateJobOutput::job_id): <p>The job's ID.</p>
+    ///   - [`status(Option<NodeFromTemplateJobStatus>)`](crate::output::DescribeNodeFromTemplateJobOutput::status): <p>The job's status.</p>
+    ///   - [`status_message(Option<String>)`](crate::output::DescribeNodeFromTemplateJobOutput::status_message): <p>The job's status message.</p>
+    ///   - [`created_time(Option<DateTime>)`](crate::output::DescribeNodeFromTemplateJobOutput::created_time): <p>When the job was created.</p>
+    ///   - [`last_updated_time(Option<DateTime>)`](crate::output::DescribeNodeFromTemplateJobOutput::last_updated_time): <p>When the job was updated.</p>
+    ///   - [`output_package_name(Option<String>)`](crate::output::DescribeNodeFromTemplateJobOutput::output_package_name): <p>The job's output package name.</p>
+    ///   - [`output_package_version(Option<String>)`](crate::output::DescribeNodeFromTemplateJobOutput::output_package_version): <p>The job's output package version.</p>
+    ///   - [`node_name(Option<String>)`](crate::output::DescribeNodeFromTemplateJobOutput::node_name): <p>The node's name.</p>
+    ///   - [`node_description(Option<String>)`](crate::output::DescribeNodeFromTemplateJobOutput::node_description): <p>The node's description.</p>
+    ///   - [`template_type(Option<TemplateType>)`](crate::output::DescribeNodeFromTemplateJobOutput::template_type): <p>The job's template type.</p>
+    ///   - [`template_parameters(Option<HashMap<String, String>>)`](crate::output::DescribeNodeFromTemplateJobOutput::template_parameters): <p>The job's template parameters.</p>
+    ///   - [`job_tags(Option<Vec<JobResourceTags>>)`](crate::output::DescribeNodeFromTemplateJobOutput::job_tags): <p>The job's tags.</p>
+    /// - On failure, responds with [`SdkError<DescribeNodeFromTemplateJobError>`](crate::error::DescribeNodeFromTemplateJobError)
     pub fn describe_node_from_template_job(
         &self,
     ) -> fluent_builders::DescribeNodeFromTemplateJob<C, M, R> {
         fluent_builders::DescribeNodeFromTemplateJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribePackage` operation.
+    /// Constructs a fluent builder for the [`DescribePackage`](crate::client::fluent_builders::DescribePackage) operation.
     ///
-    /// See [`DescribePackage`](crate::client::fluent_builders::DescribePackage) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribePackageInput`](crate::input::DescribePackageInput) with field(s):
+    ///   - [`package_id(Option<String>)`](crate::input::DescribePackageInput::package_id): <p>The package's ID.</p>
+    /// - On success, responds with [`DescribePackageOutput`](crate::output::DescribePackageOutput) with field(s):
+    ///   - [`package_id(Option<String>)`](crate::output::DescribePackageOutput::package_id): <p>The package's ID.</p>
+    ///   - [`package_name(Option<String>)`](crate::output::DescribePackageOutput::package_name): <p>The package's name.</p>
+    ///   - [`arn(Option<String>)`](crate::output::DescribePackageOutput::arn): <p>The package's ARN.</p>
+    ///   - [`storage_location(Option<StorageLocation>)`](crate::output::DescribePackageOutput::storage_location): <p>The package's storage location.</p>
+    ///   - [`read_access_principal_arns(Option<Vec<String>>)`](crate::output::DescribePackageOutput::read_access_principal_arns): <p>ARNs of accounts that have read access to the package.</p>
+    ///   - [`write_access_principal_arns(Option<Vec<String>>)`](crate::output::DescribePackageOutput::write_access_principal_arns): <p>ARNs of accounts that have write access to the package.</p>
+    ///   - [`created_time(Option<DateTime>)`](crate::output::DescribePackageOutput::created_time): <p>When the package was created.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribePackageOutput::tags): <p>The package's tags.</p>
+    /// - On failure, responds with [`SdkError<DescribePackageError>`](crate::error::DescribePackageError)
     pub fn describe_package(&self) -> fluent_builders::DescribePackage<C, M, R> {
         fluent_builders::DescribePackage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribePackageImportJob` operation.
+    /// Constructs a fluent builder for the [`DescribePackageImportJob`](crate::client::fluent_builders::DescribePackageImportJob) operation.
     ///
-    /// See [`DescribePackageImportJob`](crate::client::fluent_builders::DescribePackageImportJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribePackageImportJobInput`](crate::input::DescribePackageImportJobInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::DescribePackageImportJobInput::job_id): <p>The job's ID.</p>
+    /// - On success, responds with [`DescribePackageImportJobOutput`](crate::output::DescribePackageImportJobOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::DescribePackageImportJobOutput::job_id): <p>The job's ID.</p>
+    ///   - [`client_token(Option<String>)`](crate::output::DescribePackageImportJobOutput::client_token): <p>The job's client token.</p>
+    ///   - [`job_type(Option<PackageImportJobType>)`](crate::output::DescribePackageImportJobOutput::job_type): <p>The job's type.</p>
+    ///   - [`input_config(Option<PackageImportJobInputConfig>)`](crate::output::DescribePackageImportJobOutput::input_config): <p>The job's input config.</p>
+    ///   - [`output_config(Option<PackageImportJobOutputConfig>)`](crate::output::DescribePackageImportJobOutput::output_config): <p>The job's output config.</p>
+    ///   - [`output(Option<PackageImportJobOutput>)`](crate::output::DescribePackageImportJobOutput::output): <p>The job's output.</p>
+    ///   - [`created_time(Option<DateTime>)`](crate::output::DescribePackageImportJobOutput::created_time): <p>When the job was created.</p>
+    ///   - [`last_updated_time(Option<DateTime>)`](crate::output::DescribePackageImportJobOutput::last_updated_time): <p>When the job was updated.</p>
+    ///   - [`status(Option<PackageImportJobStatus>)`](crate::output::DescribePackageImportJobOutput::status): <p>The job's status.</p>
+    ///   - [`status_message(Option<String>)`](crate::output::DescribePackageImportJobOutput::status_message): <p>The job's status message.</p>
+    ///   - [`job_tags(Option<Vec<JobResourceTags>>)`](crate::output::DescribePackageImportJobOutput::job_tags): <p>The job's tags.</p>
+    /// - On failure, responds with [`SdkError<DescribePackageImportJobError>`](crate::error::DescribePackageImportJobError)
     pub fn describe_package_import_job(
         &self,
     ) -> fluent_builders::DescribePackageImportJob<C, M, R> {
         fluent_builders::DescribePackageImportJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribePackageVersion` operation.
+    /// Constructs a fluent builder for the [`DescribePackageVersion`](crate::client::fluent_builders::DescribePackageVersion) operation.
     ///
-    /// See [`DescribePackageVersion`](crate::client::fluent_builders::DescribePackageVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribePackageVersionInput`](crate::input::DescribePackageVersionInput) with field(s):
+    ///   - [`owner_account(Option<String>)`](crate::input::DescribePackageVersionInput::owner_account): <p>The version's owner account.</p>
+    ///   - [`package_id(Option<String>)`](crate::input::DescribePackageVersionInput::package_id): <p>The version's ID.</p>
+    ///   - [`package_version(Option<String>)`](crate::input::DescribePackageVersionInput::package_version): <p>The version's version.</p>
+    ///   - [`patch_version(Option<String>)`](crate::input::DescribePackageVersionInput::patch_version): <p>The version's patch version.</p>
+    /// - On success, responds with [`DescribePackageVersionOutput`](crate::output::DescribePackageVersionOutput) with field(s):
+    ///   - [`owner_account(Option<String>)`](crate::output::DescribePackageVersionOutput::owner_account): <p>The account ID of the version's owner.</p>
+    ///   - [`package_id(Option<String>)`](crate::output::DescribePackageVersionOutput::package_id): <p>The version's ID.</p>
+    ///   - [`package_arn(Option<String>)`](crate::output::DescribePackageVersionOutput::package_arn): <p>The ARN of the package.</p>
+    ///   - [`package_name(Option<String>)`](crate::output::DescribePackageVersionOutput::package_name): <p>The version's name.</p>
+    ///   - [`package_version(Option<String>)`](crate::output::DescribePackageVersionOutput::package_version): <p>The version's version.</p>
+    ///   - [`patch_version(Option<String>)`](crate::output::DescribePackageVersionOutput::patch_version): <p>The version's patch version.</p>
+    ///   - [`is_latest_patch(Option<bool>)`](crate::output::DescribePackageVersionOutput::is_latest_patch): <p>Whether the version is the latest available.</p>
+    ///   - [`status(Option<PackageVersionStatus>)`](crate::output::DescribePackageVersionOutput::status): <p>The version's status.</p>
+    ///   - [`status_description(Option<String>)`](crate::output::DescribePackageVersionOutput::status_description): <p>The version's status description.</p>
+    ///   - [`registered_time(Option<DateTime>)`](crate::output::DescribePackageVersionOutput::registered_time): <p>The version's registered time.</p>
+    /// - On failure, responds with [`SdkError<DescribePackageVersionError>`](crate::error::DescribePackageVersionError)
     pub fn describe_package_version(&self) -> fluent_builders::DescribePackageVersion<C, M, R> {
         fluent_builders::DescribePackageVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListApplicationInstanceDependencies` operation.
-    ///
-    /// See [`ListApplicationInstanceDependencies`](crate::client::fluent_builders::ListApplicationInstanceDependencies) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListApplicationInstanceDependencies`](crate::client::fluent_builders::ListApplicationInstanceDependencies) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListApplicationInstanceDependencies::into_paginator).
+    ///
+    /// - Takes [`ListApplicationInstanceDependenciesInput`](crate::input::ListApplicationInstanceDependenciesInput) with field(s):
+    ///   - [`application_instance_id(Option<String>)`](crate::input::ListApplicationInstanceDependenciesInput::application_instance_id): <p>The application instance's ID.</p>
+    ///   - [`max_results(i32)`](crate::input::ListApplicationInstanceDependenciesInput::max_results): <p>The maximum number of application instance dependencies to return in one page of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListApplicationInstanceDependenciesInput::next_token): <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    /// - On success, responds with [`ListApplicationInstanceDependenciesOutput`](crate::output::ListApplicationInstanceDependenciesOutput) with field(s):
+    ///   - [`package_objects(Option<Vec<PackageObject>>)`](crate::output::ListApplicationInstanceDependenciesOutput::package_objects): <p>A list of package objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListApplicationInstanceDependenciesOutput::next_token): <p>A pagination token that's included if more results are available.</p>
+    /// - On failure, responds with [`SdkError<ListApplicationInstanceDependenciesError>`](crate::error::ListApplicationInstanceDependenciesError)
     pub fn list_application_instance_dependencies(
         &self,
     ) -> fluent_builders::ListApplicationInstanceDependencies<C, M, R> {
         fluent_builders::ListApplicationInstanceDependencies::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListApplicationInstanceNodeInstances` operation.
-    ///
-    /// See [`ListApplicationInstanceNodeInstances`](crate::client::fluent_builders::ListApplicationInstanceNodeInstances) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListApplicationInstanceNodeInstances`](crate::client::fluent_builders::ListApplicationInstanceNodeInstances) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListApplicationInstanceNodeInstances::into_paginator).
+    ///
+    /// - Takes [`ListApplicationInstanceNodeInstancesInput`](crate::input::ListApplicationInstanceNodeInstancesInput) with field(s):
+    ///   - [`application_instance_id(Option<String>)`](crate::input::ListApplicationInstanceNodeInstancesInput::application_instance_id): <p>The node instances' application instance ID.</p>
+    ///   - [`max_results(i32)`](crate::input::ListApplicationInstanceNodeInstancesInput::max_results): <p>The maximum number of node instances to return in one page of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListApplicationInstanceNodeInstancesInput::next_token): <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    /// - On success, responds with [`ListApplicationInstanceNodeInstancesOutput`](crate::output::ListApplicationInstanceNodeInstancesOutput) with field(s):
+    ///   - [`node_instances(Option<Vec<NodeInstance>>)`](crate::output::ListApplicationInstanceNodeInstancesOutput::node_instances): <p>A list of node instances.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListApplicationInstanceNodeInstancesOutput::next_token): <p>A pagination token that's included if more results are available.</p>
+    /// - On failure, responds with [`SdkError<ListApplicationInstanceNodeInstancesError>`](crate::error::ListApplicationInstanceNodeInstancesError)
     pub fn list_application_instance_node_instances(
         &self,
     ) -> fluent_builders::ListApplicationInstanceNodeInstances<C, M, R> {
         fluent_builders::ListApplicationInstanceNodeInstances::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListApplicationInstances` operation.
-    ///
-    /// See [`ListApplicationInstances`](crate::client::fluent_builders::ListApplicationInstances) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListApplicationInstances`](crate::client::fluent_builders::ListApplicationInstances) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListApplicationInstances::into_paginator).
+    ///
+    /// - Takes [`ListApplicationInstancesInput`](crate::input::ListApplicationInstancesInput) with field(s):
+    ///   - [`device_id(Option<String>)`](crate::input::ListApplicationInstancesInput::device_id): <p>The application instances' device ID.</p>
+    ///   - [`status_filter(Option<StatusFilter>)`](crate::input::ListApplicationInstancesInput::status_filter): <p>Only include instances with a specific status.</p>
+    ///   - [`max_results(i32)`](crate::input::ListApplicationInstancesInput::max_results): <p>The maximum number of application instances to return in one page of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListApplicationInstancesInput::next_token): <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    /// - On success, responds with [`ListApplicationInstancesOutput`](crate::output::ListApplicationInstancesOutput) with field(s):
+    ///   - [`application_instances(Option<Vec<ApplicationInstance>>)`](crate::output::ListApplicationInstancesOutput::application_instances): <p>A list of application instances.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListApplicationInstancesOutput::next_token): <p>A pagination token that's included if more results are available.</p>
+    /// - On failure, responds with [`SdkError<ListApplicationInstancesError>`](crate::error::ListApplicationInstancesError)
     pub fn list_application_instances(&self) -> fluent_builders::ListApplicationInstances<C, M, R> {
         fluent_builders::ListApplicationInstances::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDevices` operation.
-    ///
-    /// See [`ListDevices`](crate::client::fluent_builders::ListDevices) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListDevices`](crate::client::fluent_builders::ListDevices) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDevices::into_paginator).
+    ///
+    /// - Takes [`ListDevicesInput`](crate::input::ListDevicesInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListDevicesInput::next_token): <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::input::ListDevicesInput::max_results): <p>The maximum number of devices to return in one page of results.</p>
+    /// - On success, responds with [`ListDevicesOutput`](crate::output::ListDevicesOutput) with field(s):
+    ///   - [`devices(Option<Vec<Device>>)`](crate::output::ListDevicesOutput::devices): <p>A list of devices.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDevicesOutput::next_token): <p>A pagination token that's included if more results are available.</p>
+    /// - On failure, responds with [`SdkError<ListDevicesError>`](crate::error::ListDevicesError)
     pub fn list_devices(&self) -> fluent_builders::ListDevices<C, M, R> {
         fluent_builders::ListDevices::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDevicesJobs` operation.
-    ///
-    /// See [`ListDevicesJobs`](crate::client::fluent_builders::ListDevicesJobs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListDevicesJobs`](crate::client::fluent_builders::ListDevicesJobs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDevicesJobs::into_paginator).
+    ///
+    /// - Takes [`ListDevicesJobsInput`](crate::input::ListDevicesJobsInput) with field(s):
+    ///   - [`device_id(Option<String>)`](crate::input::ListDevicesJobsInput::device_id): <p>Filter results by the job's target device ID.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListDevicesJobsInput::next_token): <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::input::ListDevicesJobsInput::max_results): <p>The maximum number of device jobs to return in one page of results.</p>
+    /// - On success, responds with [`ListDevicesJobsOutput`](crate::output::ListDevicesJobsOutput) with field(s):
+    ///   - [`device_jobs(Option<Vec<DeviceJob>>)`](crate::output::ListDevicesJobsOutput::device_jobs): <p>A list of jobs.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDevicesJobsOutput::next_token): <p>A pagination token that's included if more results are available.</p>
+    /// - On failure, responds with [`SdkError<ListDevicesJobsError>`](crate::error::ListDevicesJobsError)
     pub fn list_devices_jobs(&self) -> fluent_builders::ListDevicesJobs<C, M, R> {
         fluent_builders::ListDevicesJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListNodeFromTemplateJobs` operation.
-    ///
-    /// See [`ListNodeFromTemplateJobs`](crate::client::fluent_builders::ListNodeFromTemplateJobs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListNodeFromTemplateJobs`](crate::client::fluent_builders::ListNodeFromTemplateJobs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListNodeFromTemplateJobs::into_paginator).
+    ///
+    /// - Takes [`ListNodeFromTemplateJobsInput`](crate::input::ListNodeFromTemplateJobsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListNodeFromTemplateJobsInput::next_token): <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::input::ListNodeFromTemplateJobsInput::max_results): <p>The maximum number of node from template jobs to return in one page of results.</p>
+    /// - On success, responds with [`ListNodeFromTemplateJobsOutput`](crate::output::ListNodeFromTemplateJobsOutput) with field(s):
+    ///   - [`node_from_template_jobs(Option<Vec<NodeFromTemplateJob>>)`](crate::output::ListNodeFromTemplateJobsOutput::node_from_template_jobs): <p>A list of jobs.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListNodeFromTemplateJobsOutput::next_token): <p>A pagination token that's included if more results are available.</p>
+    /// - On failure, responds with [`SdkError<ListNodeFromTemplateJobsError>`](crate::error::ListNodeFromTemplateJobsError)
     pub fn list_node_from_template_jobs(
         &self,
     ) -> fluent_builders::ListNodeFromTemplateJobs<C, M, R> {
         fluent_builders::ListNodeFromTemplateJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListNodes` operation.
-    ///
-    /// See [`ListNodes`](crate::client::fluent_builders::ListNodes) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListNodes`](crate::client::fluent_builders::ListNodes) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListNodes::into_paginator).
+    ///
+    /// - Takes [`ListNodesInput`](crate::input::ListNodesInput) with field(s):
+    ///   - [`category(Option<NodeCategory>)`](crate::input::ListNodesInput::category): <p>Search for nodes by category.</p>
+    ///   - [`owner_account(Option<String>)`](crate::input::ListNodesInput::owner_account): <p>Search for nodes by the account ID of the nodes' owner.</p>
+    ///   - [`package_name(Option<String>)`](crate::input::ListNodesInput::package_name): <p>Search for nodes by name.</p>
+    ///   - [`package_version(Option<String>)`](crate::input::ListNodesInput::package_version): <p>Search for nodes by version.</p>
+    ///   - [`patch_version(Option<String>)`](crate::input::ListNodesInput::patch_version): <p>Search for nodes by patch version.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListNodesInput::next_token): <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::input::ListNodesInput::max_results): <p>The maximum number of nodes to return in one page of results.</p>
+    /// - On success, responds with [`ListNodesOutput`](crate::output::ListNodesOutput) with field(s):
+    ///   - [`nodes(Option<Vec<Node>>)`](crate::output::ListNodesOutput::nodes): <p>A list of nodes.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListNodesOutput::next_token): <p>A pagination token that's included if more results are available.</p>
+    /// - On failure, responds with [`SdkError<ListNodesError>`](crate::error::ListNodesError)
     pub fn list_nodes(&self) -> fluent_builders::ListNodes<C, M, R> {
         fluent_builders::ListNodes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPackageImportJobs` operation.
-    ///
-    /// See [`ListPackageImportJobs`](crate::client::fluent_builders::ListPackageImportJobs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListPackageImportJobs`](crate::client::fluent_builders::ListPackageImportJobs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPackageImportJobs::into_paginator).
+    ///
+    /// - Takes [`ListPackageImportJobsInput`](crate::input::ListPackageImportJobsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListPackageImportJobsInput::next_token): <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    ///   - [`max_results(i32)`](crate::input::ListPackageImportJobsInput::max_results): <p>The maximum number of package import jobs to return in one page of results.</p>
+    /// - On success, responds with [`ListPackageImportJobsOutput`](crate::output::ListPackageImportJobsOutput) with field(s):
+    ///   - [`package_import_jobs(Option<Vec<PackageImportJob>>)`](crate::output::ListPackageImportJobsOutput::package_import_jobs): <p>A list of package import jobs.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPackageImportJobsOutput::next_token): <p>A pagination token that's included if more results are available.</p>
+    /// - On failure, responds with [`SdkError<ListPackageImportJobsError>`](crate::error::ListPackageImportJobsError)
     pub fn list_package_import_jobs(&self) -> fluent_builders::ListPackageImportJobs<C, M, R> {
         fluent_builders::ListPackageImportJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPackages` operation.
-    ///
-    /// See [`ListPackages`](crate::client::fluent_builders::ListPackages) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListPackages`](crate::client::fluent_builders::ListPackages) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPackages::into_paginator).
+    ///
+    /// - Takes [`ListPackagesInput`](crate::input::ListPackagesInput) with field(s):
+    ///   - [`max_results(i32)`](crate::input::ListPackagesInput::max_results): <p>The maximum number of packages to return in one page of results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListPackagesInput::next_token): <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    /// - On success, responds with [`ListPackagesOutput`](crate::output::ListPackagesOutput) with field(s):
+    ///   - [`packages(Option<Vec<PackageListItem>>)`](crate::output::ListPackagesOutput::packages): <p>A list of packages.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPackagesOutput::next_token): <p>A pagination token that's included if more results are available.</p>
+    /// - On failure, responds with [`SdkError<ListPackagesError>`](crate::error::ListPackagesError)
     pub fn list_packages(&self) -> fluent_builders::ListPackages<C, M, R> {
         fluent_builders::ListPackages::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The resource's ARN.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A list of tags.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ProvisionDevice` operation.
+    /// Constructs a fluent builder for the [`ProvisionDevice`](crate::client::fluent_builders::ProvisionDevice) operation.
     ///
-    /// See [`ProvisionDevice`](crate::client::fluent_builders::ProvisionDevice) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ProvisionDeviceInput`](crate::input::ProvisionDeviceInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::ProvisionDeviceInput::name): <p>A name for the device.</p>
+    ///   - [`description(Option<String>)`](crate::input::ProvisionDeviceInput::description): <p>A description for the device.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::ProvisionDeviceInput::tags): <p>Tags for the device.</p>
+    ///   - [`networking_configuration(Option<NetworkPayload>)`](crate::input::ProvisionDeviceInput::networking_configuration): <p>A networking configuration for the device.</p>
+    /// - On success, responds with [`ProvisionDeviceOutput`](crate::output::ProvisionDeviceOutput) with field(s):
+    ///   - [`device_id(Option<String>)`](crate::output::ProvisionDeviceOutput::device_id): <p>The device's ID.</p>
+    ///   - [`arn(Option<String>)`](crate::output::ProvisionDeviceOutput::arn): <p>The device's ARN.</p>
+    ///   - [`status(Option<DeviceStatus>)`](crate::output::ProvisionDeviceOutput::status): <p>The device's status.</p>
+    ///   - [`certificates(Option<Blob>)`](crate::output::ProvisionDeviceOutput::certificates): <p>The device's configuration bundle.</p>
+    ///   - [`iot_thing_name(Option<String>)`](crate::output::ProvisionDeviceOutput::iot_thing_name): <p>The device's IoT thing name.</p>
+    /// - On failure, responds with [`SdkError<ProvisionDeviceError>`](crate::error::ProvisionDeviceError)
     pub fn provision_device(&self) -> fluent_builders::ProvisionDevice<C, M, R> {
         fluent_builders::ProvisionDevice::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RegisterPackageVersion` operation.
+    /// Constructs a fluent builder for the [`RegisterPackageVersion`](crate::client::fluent_builders::RegisterPackageVersion) operation.
     ///
-    /// See [`RegisterPackageVersion`](crate::client::fluent_builders::RegisterPackageVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RegisterPackageVersionInput`](crate::input::RegisterPackageVersionInput) with field(s):
+    ///   - [`owner_account(Option<String>)`](crate::input::RegisterPackageVersionInput::owner_account): <p>An owner account.</p>
+    ///   - [`package_id(Option<String>)`](crate::input::RegisterPackageVersionInput::package_id): <p>A package ID.</p>
+    ///   - [`package_version(Option<String>)`](crate::input::RegisterPackageVersionInput::package_version): <p>A package version.</p>
+    ///   - [`patch_version(Option<String>)`](crate::input::RegisterPackageVersionInput::patch_version): <p>A patch version.</p>
+    ///   - [`mark_latest(Option<bool>)`](crate::input::RegisterPackageVersionInput::mark_latest): <p>Whether to mark the new version as the latest version.</p>
+    /// - On success, responds with [`RegisterPackageVersionOutput`](crate::output::RegisterPackageVersionOutput)
+
+    /// - On failure, responds with [`SdkError<RegisterPackageVersionError>`](crate::error::RegisterPackageVersionError)
     pub fn register_package_version(&self) -> fluent_builders::RegisterPackageVersion<C, M, R> {
         fluent_builders::RegisterPackageVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RemoveApplicationInstance` operation.
+    /// Constructs a fluent builder for the [`RemoveApplicationInstance`](crate::client::fluent_builders::RemoveApplicationInstance) operation.
     ///
-    /// See [`RemoveApplicationInstance`](crate::client::fluent_builders::RemoveApplicationInstance) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RemoveApplicationInstanceInput`](crate::input::RemoveApplicationInstanceInput) with field(s):
+    ///   - [`application_instance_id(Option<String>)`](crate::input::RemoveApplicationInstanceInput::application_instance_id): <p>An application instance ID.</p>
+    /// - On success, responds with [`RemoveApplicationInstanceOutput`](crate::output::RemoveApplicationInstanceOutput)
+
+    /// - On failure, responds with [`SdkError<RemoveApplicationInstanceError>`](crate::error::RemoveApplicationInstanceError)
     pub fn remove_application_instance(
         &self,
     ) -> fluent_builders::RemoveApplicationInstance<C, M, R> {
         fluent_builders::RemoveApplicationInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The resource's ARN.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>Tags for the resource.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The resource's ARN.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>Tag keys to remove.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDeviceMetadata` operation.
+    /// Constructs a fluent builder for the [`UpdateDeviceMetadata`](crate::client::fluent_builders::UpdateDeviceMetadata) operation.
     ///
-    /// See [`UpdateDeviceMetadata`](crate::client::fluent_builders::UpdateDeviceMetadata) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateDeviceMetadataInput`](crate::input::UpdateDeviceMetadataInput) with field(s):
+    ///   - [`device_id(Option<String>)`](crate::input::UpdateDeviceMetadataInput::device_id): <p>The device's ID.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateDeviceMetadataInput::description): <p>A description for the device.</p>
+    /// - On success, responds with [`UpdateDeviceMetadataOutput`](crate::output::UpdateDeviceMetadataOutput) with field(s):
+    ///   - [`device_id(Option<String>)`](crate::output::UpdateDeviceMetadataOutput::device_id): <p>The device's ID.</p>
+    /// - On failure, responds with [`SdkError<UpdateDeviceMetadataError>`](crate::error::UpdateDeviceMetadataError)
     pub fn update_device_metadata(&self) -> fluent_builders::UpdateDeviceMetadata<C, M, R> {
         fluent_builders::UpdateDeviceMetadata::new(self.handle.clone())
     }

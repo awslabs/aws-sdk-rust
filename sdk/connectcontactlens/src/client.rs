@@ -83,11 +83,18 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `ListRealtimeContactAnalysisSegments` operation.
-    ///
-    /// See [`ListRealtimeContactAnalysisSegments`](crate::client::fluent_builders::ListRealtimeContactAnalysisSegments) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListRealtimeContactAnalysisSegments`](crate::client::fluent_builders::ListRealtimeContactAnalysisSegments) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRealtimeContactAnalysisSegments::into_paginator).
+    ///
+    /// - Takes [`ListRealtimeContactAnalysisSegmentsInput`](crate::input::ListRealtimeContactAnalysisSegmentsInput) with field(s):
+    ///   - [`instance_id(Option<String>)`](crate::input::ListRealtimeContactAnalysisSegmentsInput::instance_id): <p>The identifier of the Amazon Connect instance.</p>
+    ///   - [`contact_id(Option<String>)`](crate::input::ListRealtimeContactAnalysisSegmentsInput::contact_id): <p>The identifier of the contact.</p>
+    ///   - [`max_results(i32)`](crate::input::ListRealtimeContactAnalysisSegmentsInput::max_results): <p>The maximimum number of results to return per page.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListRealtimeContactAnalysisSegmentsInput::next_token): <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
+    /// - On success, responds with [`ListRealtimeContactAnalysisSegmentsOutput`](crate::output::ListRealtimeContactAnalysisSegmentsOutput) with field(s):
+    ///   - [`segments(Option<Vec<RealtimeContactAnalysisSegment>>)`](crate::output::ListRealtimeContactAnalysisSegmentsOutput::segments): <p>An analyzed transcript or category.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListRealtimeContactAnalysisSegmentsOutput::next_token): <p>If there are additional results, this is the token for the next set of results. If response includes <code>nextToken</code> there are two possible scenarios:</p>  <ul>   <li> <p>There are more segments so another call is required to get them.</p> </li>   <li> <p>There are no more segments at this time, but more may be available later (real-time analysis is in progress) so the client should call the operation again to get new segments.</p> </li>  </ul>  <p>If response does not include <code>nextToken</code>, the analysis is completed (successfully or failed) and there are no more segments to retrieve.</p>
+    /// - On failure, responds with [`SdkError<ListRealtimeContactAnalysisSegmentsError>`](crate::error::ListRealtimeContactAnalysisSegmentsError)
     pub fn list_realtime_contact_analysis_segments(
         &self,
     ) -> fluent_builders::ListRealtimeContactAnalysisSegments<C, M, R> {

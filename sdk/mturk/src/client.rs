@@ -83,308 +83,552 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AcceptQualificationRequest` operation.
+    /// Constructs a fluent builder for the [`AcceptQualificationRequest`](crate::client::fluent_builders::AcceptQualificationRequest) operation.
     ///
-    /// See [`AcceptQualificationRequest`](crate::client::fluent_builders::AcceptQualificationRequest) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AcceptQualificationRequestInput`](crate::input::AcceptQualificationRequestInput) with field(s):
+    ///   - [`qualification_request_id(Option<String>)`](crate::input::AcceptQualificationRequestInput::qualification_request_id): <p>The ID of the Qualification request, as returned by the <code>GetQualificationRequests</code> operation.</p>
+    ///   - [`integer_value(Option<i32>)`](crate::input::AcceptQualificationRequestInput::integer_value): <p> The value of the Qualification. You can omit this value if you are using the presence or absence of the Qualification as the basis for a HIT requirement. </p>
+    /// - On success, responds with [`AcceptQualificationRequestOutput`](crate::output::AcceptQualificationRequestOutput)
+
+    /// - On failure, responds with [`SdkError<AcceptQualificationRequestError>`](crate::error::AcceptQualificationRequestError)
     pub fn accept_qualification_request(
         &self,
     ) -> fluent_builders::AcceptQualificationRequest<C, M, R> {
         fluent_builders::AcceptQualificationRequest::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ApproveAssignment` operation.
+    /// Constructs a fluent builder for the [`ApproveAssignment`](crate::client::fluent_builders::ApproveAssignment) operation.
     ///
-    /// See [`ApproveAssignment`](crate::client::fluent_builders::ApproveAssignment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ApproveAssignmentInput`](crate::input::ApproveAssignmentInput) with field(s):
+    ///   - [`assignment_id(Option<String>)`](crate::input::ApproveAssignmentInput::assignment_id): <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
+    ///   - [`requester_feedback(Option<String>)`](crate::input::ApproveAssignmentInput::requester_feedback): <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
+    ///   - [`override_rejection(Option<bool>)`](crate::input::ApproveAssignmentInput::override_rejection): <p> A flag indicating that an assignment should be approved even if it was previously rejected. Defaults to <code>False</code>. </p>
+    /// - On success, responds with [`ApproveAssignmentOutput`](crate::output::ApproveAssignmentOutput)
+
+    /// - On failure, responds with [`SdkError<ApproveAssignmentError>`](crate::error::ApproveAssignmentError)
     pub fn approve_assignment(&self) -> fluent_builders::ApproveAssignment<C, M, R> {
         fluent_builders::ApproveAssignment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateQualificationWithWorker` operation.
+    /// Constructs a fluent builder for the [`AssociateQualificationWithWorker`](crate::client::fluent_builders::AssociateQualificationWithWorker) operation.
     ///
-    /// See [`AssociateQualificationWithWorker`](crate::client::fluent_builders::AssociateQualificationWithWorker) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateQualificationWithWorkerInput`](crate::input::AssociateQualificationWithWorkerInput) with field(s):
+    ///   - [`qualification_type_id(Option<String>)`](crate::input::AssociateQualificationWithWorkerInput::qualification_type_id): <p>The ID of the Qualification type to use for the assigned Qualification.</p>
+    ///   - [`worker_id(Option<String>)`](crate::input::AssociateQualificationWithWorkerInput::worker_id): <p> The ID of the Worker to whom the Qualification is being assigned. Worker IDs are included with submitted HIT assignments and Qualification requests. </p>
+    ///   - [`integer_value(Option<i32>)`](crate::input::AssociateQualificationWithWorkerInput::integer_value): <p>The value of the Qualification to assign.</p>
+    ///   - [`send_notification(Option<bool>)`](crate::input::AssociateQualificationWithWorkerInput::send_notification): <p> Specifies whether to send a notification email message to the Worker saying that the qualification was assigned to the Worker. Note: this is true by default. </p>
+    /// - On success, responds with [`AssociateQualificationWithWorkerOutput`](crate::output::AssociateQualificationWithWorkerOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateQualificationWithWorkerError>`](crate::error::AssociateQualificationWithWorkerError)
     pub fn associate_qualification_with_worker(
         &self,
     ) -> fluent_builders::AssociateQualificationWithWorker<C, M, R> {
         fluent_builders::AssociateQualificationWithWorker::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateAdditionalAssignmentsForHIT` operation.
+    /// Constructs a fluent builder for the [`CreateAdditionalAssignmentsForHIT`](crate::client::fluent_builders::CreateAdditionalAssignmentsForHIT) operation.
     ///
-    /// See [`CreateAdditionalAssignmentsForHIT`](crate::client::fluent_builders::CreateAdditionalAssignmentsForHIT) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateAdditionalAssignmentsForHitInput`](crate::input::CreateAdditionalAssignmentsForHitInput) with field(s):
+    ///   - [`hit_id(Option<String>)`](crate::input::CreateAdditionalAssignmentsForHitInput::hit_id): <p>The ID of the HIT to extend.</p>
+    ///   - [`number_of_additional_assignments(Option<i32>)`](crate::input::CreateAdditionalAssignmentsForHitInput::number_of_additional_assignments): <p>The number of additional assignments to request for this HIT.</p>
+    ///   - [`unique_request_token(Option<String>)`](crate::input::CreateAdditionalAssignmentsForHitInput::unique_request_token): <p> A unique identifier for this request, which allows you to retry the call on error without extending the HIT multiple times. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the extend HIT already exists in the system from a previous call using the same <code>UniqueRequestToken</code>, subsequent calls will return an error with a message containing the request ID. </p>
+    /// - On success, responds with [`CreateAdditionalAssignmentsForHitOutput`](crate::output::CreateAdditionalAssignmentsForHitOutput)
+
+    /// - On failure, responds with [`SdkError<CreateAdditionalAssignmentsForHITError>`](crate::error::CreateAdditionalAssignmentsForHITError)
     pub fn create_additional_assignments_for_hit(
         &self,
     ) -> fluent_builders::CreateAdditionalAssignmentsForHIT<C, M, R> {
         fluent_builders::CreateAdditionalAssignmentsForHIT::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateHIT` operation.
+    /// Constructs a fluent builder for the [`CreateHIT`](crate::client::fluent_builders::CreateHIT) operation.
     ///
-    /// See [`CreateHIT`](crate::client::fluent_builders::CreateHIT) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateHitInput`](crate::input::CreateHitInput) with field(s):
+    ///   - [`max_assignments(Option<i32>)`](crate::input::CreateHitInput::max_assignments): <p> The number of times the HIT can be accepted and completed before the HIT becomes unavailable. </p>
+    ///   - [`auto_approval_delay_in_seconds(Option<i64>)`](crate::input::CreateHitInput::auto_approval_delay_in_seconds): <p> The number of seconds after an assignment for the HIT has been submitted, after which the assignment is considered Approved automatically unless the Requester explicitly rejects it. </p>
+    ///   - [`lifetime_in_seconds(Option<i64>)`](crate::input::CreateHitInput::lifetime_in_seconds): <p> An amount of time, in seconds, after which the HIT is no longer available for users to accept. After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches, even if not all of the assignments for the HIT have been accepted. </p>
+    ///   - [`assignment_duration_in_seconds(Option<i64>)`](crate::input::CreateHitInput::assignment_duration_in_seconds): <p> The amount of time, in seconds, that a Worker has to complete the HIT after accepting it. If a Worker does not complete the assignment within the specified duration, the assignment is considered abandoned. If the HIT is still active (that is, its lifetime has not elapsed), the assignment becomes available for other users to find and accept. </p>
+    ///   - [`reward(Option<String>)`](crate::input::CreateHitInput::reward): <p> The amount of money the Requester will pay a Worker for successfully completing the HIT. </p>
+    ///   - [`title(Option<String>)`](crate::input::CreateHitInput::title): <p> The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title appears in search results, and everywhere the HIT is mentioned. </p>
+    ///   - [`keywords(Option<String>)`](crate::input::CreateHitInput::keywords): <p> One or more words or phrases that describe the HIT, separated by commas. These words are used in searches to find HITs. </p>
+    ///   - [`description(Option<String>)`](crate::input::CreateHitInput::description): <p> A general description of the HIT. A description includes detailed information about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded view of search results, and in the HIT and assignment screens. A good description gives the user enough information to evaluate the HIT before accepting it. </p>
+    ///   - [`question(Option<String>)`](crate::input::CreateHitInput::question): <p> The data the person completing the HIT uses to produce the results. </p>  <p> Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure, or an HTMLQuestion data structure. The XML question data must not be larger than 64 kilobytes (65,535 bytes) in size, including whitespace. </p>  <p>Either a Question parameter or a HITLayoutId parameter must be provided.</p>
+    ///   - [`requester_annotation(Option<String>)`](crate::input::CreateHitInput::requester_annotation): <p> An arbitrary data field. The RequesterAnnotation parameter lets your application attach arbitrary data to the HIT for tracking purposes. For example, this parameter could be an identifier internal to the Requester's application that corresponds with the HIT. </p>  <p> The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT. It is not shown to the Worker, or any other Requester. </p>  <p> The RequesterAnnotation parameter may be different for each HIT you submit. It does not affect how your HITs are grouped. </p>
+    ///   - [`qualification_requirements(Option<Vec<QualificationRequirement>>)`](crate::input::CreateHitInput::qualification_requirements): <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
+    ///   - [`unique_request_token(Option<String>)`](crate::input::CreateHitInput::unique_request_token): <p> A unique identifier for this request which allows you to retry the call on error without creating duplicate HITs. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the HIT already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId. </p> <note>   <p> Note: It is your responsibility to ensure uniqueness of the token. The unique token expires after 24 hours. Subsequent calls using the same UniqueRequestToken made after the 24 hour limit could create duplicate HITs. </p>  </note>
+    ///   - [`assignment_review_policy(Option<ReviewPolicy>)`](crate::input::CreateHitInput::assignment_review_policy): <p> The Assignment-level Review Policy applies to the assignments under the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
+    ///   - [`hit_review_policy(Option<ReviewPolicy>)`](crate::input::CreateHitInput::hit_review_policy): <p> The HIT-level Review Policy applies to the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
+    ///   - [`hit_layout_id(Option<String>)`](crate::input::CreateHitInput::hit_layout_id): <p> The HITLayoutId allows you to use a pre-existing HIT design with placeholder values and create an additional HIT by providing those values as HITLayoutParameters. </p>  <p> Constraints: Either a Question parameter or a HITLayoutId parameter must be provided. </p>
+    ///   - [`hit_layout_parameters(Option<Vec<HitLayoutParameter>>)`](crate::input::CreateHitInput::hit_layout_parameters): <p> If the HITLayoutId is provided, any placeholder values must be filled in with values using the HITLayoutParameter structure. For more information, see HITLayout. </p>
+    /// - On success, responds with [`CreateHitOutput`](crate::output::CreateHitOutput) with field(s):
+    ///   - [`hit(Option<Hit>)`](crate::output::CreateHitOutput::hit): <p> Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation. </p>
+    /// - On failure, responds with [`SdkError<CreateHITError>`](crate::error::CreateHITError)
     pub fn create_hit(&self) -> fluent_builders::CreateHIT<C, M, R> {
         fluent_builders::CreateHIT::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateHITType` operation.
+    /// Constructs a fluent builder for the [`CreateHITType`](crate::client::fluent_builders::CreateHITType) operation.
     ///
-    /// See [`CreateHITType`](crate::client::fluent_builders::CreateHITType) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateHitTypeInput`](crate::input::CreateHitTypeInput) with field(s):
+    ///   - [`auto_approval_delay_in_seconds(Option<i64>)`](crate::input::CreateHitTypeInput::auto_approval_delay_in_seconds): <p> The number of seconds after an assignment for the HIT has been submitted, after which the assignment is considered Approved automatically unless the Requester explicitly rejects it. </p>
+    ///   - [`assignment_duration_in_seconds(Option<i64>)`](crate::input::CreateHitTypeInput::assignment_duration_in_seconds): <p> The amount of time, in seconds, that a Worker has to complete the HIT after accepting it. If a Worker does not complete the assignment within the specified duration, the assignment is considered abandoned. If the HIT is still active (that is, its lifetime has not elapsed), the assignment becomes available for other users to find and accept. </p>
+    ///   - [`reward(Option<String>)`](crate::input::CreateHitTypeInput::reward): <p> The amount of money the Requester will pay a Worker for successfully completing the HIT. </p>
+    ///   - [`title(Option<String>)`](crate::input::CreateHitTypeInput::title): <p> The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title appears in search results, and everywhere the HIT is mentioned. </p>
+    ///   - [`keywords(Option<String>)`](crate::input::CreateHitTypeInput::keywords): <p> One or more words or phrases that describe the HIT, separated by commas. These words are used in searches to find HITs. </p>
+    ///   - [`description(Option<String>)`](crate::input::CreateHitTypeInput::description): <p> A general description of the HIT. A description includes detailed information about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded view of search results, and in the HIT and assignment screens. A good description gives the user enough information to evaluate the HIT before accepting it. </p>
+    ///   - [`qualification_requirements(Option<Vec<QualificationRequirement>>)`](crate::input::CreateHitTypeInput::qualification_requirements): <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
+    /// - On success, responds with [`CreateHitTypeOutput`](crate::output::CreateHitTypeOutput) with field(s):
+    ///   - [`hit_type_id(Option<String>)`](crate::output::CreateHitTypeOutput::hit_type_id): <p> The ID of the newly registered HIT type.</p>
+    /// - On failure, responds with [`SdkError<CreateHITTypeError>`](crate::error::CreateHITTypeError)
     pub fn create_hit_type(&self) -> fluent_builders::CreateHITType<C, M, R> {
         fluent_builders::CreateHITType::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateHITWithHITType` operation.
+    /// Constructs a fluent builder for the [`CreateHITWithHITType`](crate::client::fluent_builders::CreateHITWithHITType) operation.
     ///
-    /// See [`CreateHITWithHITType`](crate::client::fluent_builders::CreateHITWithHITType) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateHitWithHitTypeInput`](crate::input::CreateHitWithHitTypeInput) with field(s):
+    ///   - [`hit_type_id(Option<String>)`](crate::input::CreateHitWithHitTypeInput::hit_type_id): <p>The HIT type ID you want to create this HIT with.</p>
+    ///   - [`max_assignments(Option<i32>)`](crate::input::CreateHitWithHitTypeInput::max_assignments): <p> The number of times the HIT can be accepted and completed before the HIT becomes unavailable. </p>
+    ///   - [`lifetime_in_seconds(Option<i64>)`](crate::input::CreateHitWithHitTypeInput::lifetime_in_seconds): <p> An amount of time, in seconds, after which the HIT is no longer available for users to accept. After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches, even if not all of the assignments for the HIT have been accepted. </p>
+    ///   - [`question(Option<String>)`](crate::input::CreateHitWithHitTypeInput::question): <p> The data the person completing the HIT uses to produce the results. </p>  <p> Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure, or an HTMLQuestion data structure. The XML question data must not be larger than 64 kilobytes (65,535 bytes) in size, including whitespace. </p>  <p>Either a Question parameter or a HITLayoutId parameter must be provided.</p>
+    ///   - [`requester_annotation(Option<String>)`](crate::input::CreateHitWithHitTypeInput::requester_annotation): <p> An arbitrary data field. The RequesterAnnotation parameter lets your application attach arbitrary data to the HIT for tracking purposes. For example, this parameter could be an identifier internal to the Requester's application that corresponds with the HIT. </p>  <p> The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT. It is not shown to the Worker, or any other Requester. </p>  <p> The RequesterAnnotation parameter may be different for each HIT you submit. It does not affect how your HITs are grouped. </p>
+    ///   - [`unique_request_token(Option<String>)`](crate::input::CreateHitWithHitTypeInput::unique_request_token): <p> A unique identifier for this request which allows you to retry the call on error without creating duplicate HITs. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the HIT already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId. </p> <note>   <p> Note: It is your responsibility to ensure uniqueness of the token. The unique token expires after 24 hours. Subsequent calls using the same UniqueRequestToken made after the 24 hour limit could create duplicate HITs. </p>  </note>
+    ///   - [`assignment_review_policy(Option<ReviewPolicy>)`](crate::input::CreateHitWithHitTypeInput::assignment_review_policy): <p> The Assignment-level Review Policy applies to the assignments under the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
+    ///   - [`hit_review_policy(Option<ReviewPolicy>)`](crate::input::CreateHitWithHitTypeInput::hit_review_policy): <p> The HIT-level Review Policy applies to the HIT. You can specify for Mechanical Turk to take various actions based on the policy. </p>
+    ///   - [`hit_layout_id(Option<String>)`](crate::input::CreateHitWithHitTypeInput::hit_layout_id): <p> The HITLayoutId allows you to use a pre-existing HIT design with placeholder values and create an additional HIT by providing those values as HITLayoutParameters. </p>  <p> Constraints: Either a Question parameter or a HITLayoutId parameter must be provided. </p>
+    ///   - [`hit_layout_parameters(Option<Vec<HitLayoutParameter>>)`](crate::input::CreateHitWithHitTypeInput::hit_layout_parameters): <p> If the HITLayoutId is provided, any placeholder values must be filled in with values using the HITLayoutParameter structure. For more information, see HITLayout. </p>
+    /// - On success, responds with [`CreateHitWithHitTypeOutput`](crate::output::CreateHitWithHitTypeOutput) with field(s):
+    ///   - [`hit(Option<Hit>)`](crate::output::CreateHitWithHitTypeOutput::hit): <p> Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation. </p>
+    /// - On failure, responds with [`SdkError<CreateHITWithHITTypeError>`](crate::error::CreateHITWithHITTypeError)
     pub fn create_hit_with_hit_type(&self) -> fluent_builders::CreateHITWithHITType<C, M, R> {
         fluent_builders::CreateHITWithHITType::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateQualificationType` operation.
+    /// Constructs a fluent builder for the [`CreateQualificationType`](crate::client::fluent_builders::CreateQualificationType) operation.
     ///
-    /// See [`CreateQualificationType`](crate::client::fluent_builders::CreateQualificationType) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateQualificationTypeInput`](crate::input::CreateQualificationTypeInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateQualificationTypeInput::name): <p> The name you give to the Qualification type. The type name is used to represent the Qualification to Workers, and to find the type using a Qualification type search. It must be unique across all of your Qualification types.</p>
+    ///   - [`keywords(Option<String>)`](crate::input::CreateQualificationTypeInput::keywords): <p>One or more words or phrases that describe the Qualification type, separated by commas. The keywords of a type make the type easier to find during a search.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateQualificationTypeInput::description): <p>A long description for the Qualification type. On the Amazon Mechanical Turk website, the long description is displayed when a Worker examines a Qualification type.</p>
+    ///   - [`qualification_type_status(Option<QualificationTypeStatus>)`](crate::input::CreateQualificationTypeInput::qualification_type_status): <p>The initial status of the Qualification type.</p>  <p>Constraints: Valid values are: Active | Inactive</p>
+    ///   - [`retry_delay_in_seconds(Option<i64>)`](crate::input::CreateQualificationTypeInput::retry_delay_in_seconds): <p>The number of seconds that a Worker must wait after requesting a Qualification of the Qualification type before the worker can retry the Qualification request.</p>  <p>Constraints: None. If not specified, retries are disabled and Workers can request a Qualification of this type only once, even if the Worker has not been granted the Qualification. It is not possible to disable retries for a Qualification type after it has been created with retries enabled. If you want to disable retries, you must delete existing retry-enabled Qualification type and then create a new Qualification type with retries disabled.</p>
+    ///   - [`test(Option<String>)`](crate::input::CreateQualificationTypeInput::test): <p> The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified. </p>  <p>Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm data structure. This parameter cannot be specified if AutoGranted is true.</p>  <p>Constraints: None. If not specified, the Worker may request the Qualification without answering any questions.</p>
+    ///   - [`answer_key(Option<String>)`](crate::input::CreateQualificationTypeInput::answer_key): <p>The answers to the Qualification test specified in the Test parameter, in the form of an AnswerKey data structure.</p>  <p>Constraints: Must not be longer than 65535 bytes.</p>  <p>Constraints: None. If not specified, you must process Qualification requests manually.</p>
+    ///   - [`test_duration_in_seconds(Option<i64>)`](crate::input::CreateQualificationTypeInput::test_duration_in_seconds): <p>The number of seconds the Worker has to complete the Qualification test, starting from the time the Worker requests the Qualification.</p>
+    ///   - [`auto_granted(Option<bool>)`](crate::input::CreateQualificationTypeInput::auto_granted): <p>Specifies whether requests for the Qualification type are granted immediately, without prompting the Worker with a Qualification test.</p>  <p>Constraints: If the Test parameter is specified, this parameter cannot be true.</p>
+    ///   - [`auto_granted_value(Option<i32>)`](crate::input::CreateQualificationTypeInput::auto_granted_value): <p>The Qualification value to use for automatically granted Qualifications. This parameter is used only if the AutoGranted parameter is true.</p>
+    /// - On success, responds with [`CreateQualificationTypeOutput`](crate::output::CreateQualificationTypeOutput) with field(s):
+    ///   - [`qualification_type(Option<QualificationType>)`](crate::output::CreateQualificationTypeOutput::qualification_type): <p>The created Qualification type, returned as a QualificationType data structure.</p>
+    /// - On failure, responds with [`SdkError<CreateQualificationTypeError>`](crate::error::CreateQualificationTypeError)
     pub fn create_qualification_type(&self) -> fluent_builders::CreateQualificationType<C, M, R> {
         fluent_builders::CreateQualificationType::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateWorkerBlock` operation.
+    /// Constructs a fluent builder for the [`CreateWorkerBlock`](crate::client::fluent_builders::CreateWorkerBlock) operation.
     ///
-    /// See [`CreateWorkerBlock`](crate::client::fluent_builders::CreateWorkerBlock) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateWorkerBlockInput`](crate::input::CreateWorkerBlockInput) with field(s):
+    ///   - [`worker_id(Option<String>)`](crate::input::CreateWorkerBlockInput::worker_id): <p>The ID of the Worker to block.</p>
+    ///   - [`reason(Option<String>)`](crate::input::CreateWorkerBlockInput::reason): <p>A message explaining the reason for blocking the Worker. This parameter enables you to keep track of your Workers. The Worker does not see this message.</p>
+    /// - On success, responds with [`CreateWorkerBlockOutput`](crate::output::CreateWorkerBlockOutput)
+
+    /// - On failure, responds with [`SdkError<CreateWorkerBlockError>`](crate::error::CreateWorkerBlockError)
     pub fn create_worker_block(&self) -> fluent_builders::CreateWorkerBlock<C, M, R> {
         fluent_builders::CreateWorkerBlock::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteHIT` operation.
+    /// Constructs a fluent builder for the [`DeleteHIT`](crate::client::fluent_builders::DeleteHIT) operation.
     ///
-    /// See [`DeleteHIT`](crate::client::fluent_builders::DeleteHIT) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteHitInput`](crate::input::DeleteHitInput) with field(s):
+    ///   - [`hit_id(Option<String>)`](crate::input::DeleteHitInput::hit_id): <p>The ID of the HIT to be deleted.</p>
+    /// - On success, responds with [`DeleteHitOutput`](crate::output::DeleteHitOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteHITError>`](crate::error::DeleteHITError)
     pub fn delete_hit(&self) -> fluent_builders::DeleteHIT<C, M, R> {
         fluent_builders::DeleteHIT::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteQualificationType` operation.
+    /// Constructs a fluent builder for the [`DeleteQualificationType`](crate::client::fluent_builders::DeleteQualificationType) operation.
     ///
-    /// See [`DeleteQualificationType`](crate::client::fluent_builders::DeleteQualificationType) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteQualificationTypeInput`](crate::input::DeleteQualificationTypeInput) with field(s):
+    ///   - [`qualification_type_id(Option<String>)`](crate::input::DeleteQualificationTypeInput::qualification_type_id): <p>The ID of the QualificationType to dispose.</p>
+    /// - On success, responds with [`DeleteQualificationTypeOutput`](crate::output::DeleteQualificationTypeOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteQualificationTypeError>`](crate::error::DeleteQualificationTypeError)
     pub fn delete_qualification_type(&self) -> fluent_builders::DeleteQualificationType<C, M, R> {
         fluent_builders::DeleteQualificationType::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteWorkerBlock` operation.
+    /// Constructs a fluent builder for the [`DeleteWorkerBlock`](crate::client::fluent_builders::DeleteWorkerBlock) operation.
     ///
-    /// See [`DeleteWorkerBlock`](crate::client::fluent_builders::DeleteWorkerBlock) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteWorkerBlockInput`](crate::input::DeleteWorkerBlockInput) with field(s):
+    ///   - [`worker_id(Option<String>)`](crate::input::DeleteWorkerBlockInput::worker_id): <p>The ID of the Worker to unblock.</p>
+    ///   - [`reason(Option<String>)`](crate::input::DeleteWorkerBlockInput::reason): <p>A message that explains the reason for unblocking the Worker. The Worker does not see this message.</p>
+    /// - On success, responds with [`DeleteWorkerBlockOutput`](crate::output::DeleteWorkerBlockOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteWorkerBlockError>`](crate::error::DeleteWorkerBlockError)
     pub fn delete_worker_block(&self) -> fluent_builders::DeleteWorkerBlock<C, M, R> {
         fluent_builders::DeleteWorkerBlock::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateQualificationFromWorker` operation.
+    /// Constructs a fluent builder for the [`DisassociateQualificationFromWorker`](crate::client::fluent_builders::DisassociateQualificationFromWorker) operation.
     ///
-    /// See [`DisassociateQualificationFromWorker`](crate::client::fluent_builders::DisassociateQualificationFromWorker) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateQualificationFromWorkerInput`](crate::input::DisassociateQualificationFromWorkerInput) with field(s):
+    ///   - [`worker_id(Option<String>)`](crate::input::DisassociateQualificationFromWorkerInput::worker_id): <p>The ID of the Worker who possesses the Qualification to be revoked.</p>
+    ///   - [`qualification_type_id(Option<String>)`](crate::input::DisassociateQualificationFromWorkerInput::qualification_type_id): <p>The ID of the Qualification type of the Qualification to be revoked.</p>
+    ///   - [`reason(Option<String>)`](crate::input::DisassociateQualificationFromWorkerInput::reason): <p>A text message that explains why the Qualification was revoked. The user who had the Qualification sees this message.</p>
+    /// - On success, responds with [`DisassociateQualificationFromWorkerOutput`](crate::output::DisassociateQualificationFromWorkerOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateQualificationFromWorkerError>`](crate::error::DisassociateQualificationFromWorkerError)
     pub fn disassociate_qualification_from_worker(
         &self,
     ) -> fluent_builders::DisassociateQualificationFromWorker<C, M, R> {
         fluent_builders::DisassociateQualificationFromWorker::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAccountBalance` operation.
+    /// Constructs a fluent builder for the [`GetAccountBalance`](crate::client::fluent_builders::GetAccountBalance) operation.
     ///
-    /// See [`GetAccountBalance`](crate::client::fluent_builders::GetAccountBalance) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetAccountBalanceInput`](crate::input::GetAccountBalanceInput)
+
+    /// - On success, responds with [`GetAccountBalanceOutput`](crate::output::GetAccountBalanceOutput) with field(s):
+    ///   - [`available_balance(Option<String>)`](crate::output::GetAccountBalanceOutput::available_balance): <p>A string representing a currency amount.</p>
+    ///   - [`on_hold_balance(Option<String>)`](crate::output::GetAccountBalanceOutput::on_hold_balance): <p>A string representing a currency amount.</p>
+    /// - On failure, responds with [`SdkError<GetAccountBalanceError>`](crate::error::GetAccountBalanceError)
     pub fn get_account_balance(&self) -> fluent_builders::GetAccountBalance<C, M, R> {
         fluent_builders::GetAccountBalance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAssignment` operation.
+    /// Constructs a fluent builder for the [`GetAssignment`](crate::client::fluent_builders::GetAssignment) operation.
     ///
-    /// See [`GetAssignment`](crate::client::fluent_builders::GetAssignment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetAssignmentInput`](crate::input::GetAssignmentInput) with field(s):
+    ///   - [`assignment_id(Option<String>)`](crate::input::GetAssignmentInput::assignment_id): <p>The ID of the Assignment to be retrieved.</p>
+    /// - On success, responds with [`GetAssignmentOutput`](crate::output::GetAssignmentOutput) with field(s):
+    ///   - [`assignment(Option<Assignment>)`](crate::output::GetAssignmentOutput::assignment): <p> The assignment. The response includes one Assignment element. </p>
+    ///   - [`hit(Option<Hit>)`](crate::output::GetAssignmentOutput::hit): <p> The HIT associated with this assignment. The response includes one HIT element.</p>
+    /// - On failure, responds with [`SdkError<GetAssignmentError>`](crate::error::GetAssignmentError)
     pub fn get_assignment(&self) -> fluent_builders::GetAssignment<C, M, R> {
         fluent_builders::GetAssignment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetFileUploadURL` operation.
+    /// Constructs a fluent builder for the [`GetFileUploadURL`](crate::client::fluent_builders::GetFileUploadURL) operation.
     ///
-    /// See [`GetFileUploadURL`](crate::client::fluent_builders::GetFileUploadURL) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetFileUploadUrlInput`](crate::input::GetFileUploadUrlInput) with field(s):
+    ///   - [`assignment_id(Option<String>)`](crate::input::GetFileUploadUrlInput::assignment_id): <p>The ID of the assignment that contains the question with a FileUploadAnswer.</p>
+    ///   - [`question_identifier(Option<String>)`](crate::input::GetFileUploadUrlInput::question_identifier): <p>The identifier of the question with a FileUploadAnswer, as specified in the QuestionForm of the HIT.</p>
+    /// - On success, responds with [`GetFileUploadUrlOutput`](crate::output::GetFileUploadUrlOutput) with field(s):
+    ///   - [`file_upload_url(Option<String>)`](crate::output::GetFileUploadUrlOutput::file_upload_url): <p> A temporary URL for the file that the Worker uploaded for the answer. </p>
+    /// - On failure, responds with [`SdkError<GetFileUploadURLError>`](crate::error::GetFileUploadURLError)
     pub fn get_file_upload_url(&self) -> fluent_builders::GetFileUploadURL<C, M, R> {
         fluent_builders::GetFileUploadURL::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetHIT` operation.
+    /// Constructs a fluent builder for the [`GetHIT`](crate::client::fluent_builders::GetHIT) operation.
     ///
-    /// See [`GetHIT`](crate::client::fluent_builders::GetHIT) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetHitInput`](crate::input::GetHitInput) with field(s):
+    ///   - [`hit_id(Option<String>)`](crate::input::GetHitInput::hit_id): <p>The ID of the HIT to be retrieved.</p>
+    /// - On success, responds with [`GetHitOutput`](crate::output::GetHitOutput) with field(s):
+    ///   - [`hit(Option<Hit>)`](crate::output::GetHitOutput::hit): <p> Contains the requested HIT data.</p>
+    /// - On failure, responds with [`SdkError<GetHITError>`](crate::error::GetHITError)
     pub fn get_hit(&self) -> fluent_builders::GetHIT<C, M, R> {
         fluent_builders::GetHIT::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetQualificationScore` operation.
+    /// Constructs a fluent builder for the [`GetQualificationScore`](crate::client::fluent_builders::GetQualificationScore) operation.
     ///
-    /// See [`GetQualificationScore`](crate::client::fluent_builders::GetQualificationScore) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetQualificationScoreInput`](crate::input::GetQualificationScoreInput) with field(s):
+    ///   - [`qualification_type_id(Option<String>)`](crate::input::GetQualificationScoreInput::qualification_type_id): <p>The ID of the QualificationType.</p>
+    ///   - [`worker_id(Option<String>)`](crate::input::GetQualificationScoreInput::worker_id): <p>The ID of the Worker whose Qualification is being updated.</p>
+    /// - On success, responds with [`GetQualificationScoreOutput`](crate::output::GetQualificationScoreOutput) with field(s):
+    ///   - [`qualification(Option<Qualification>)`](crate::output::GetQualificationScoreOutput::qualification): <p> The Qualification data structure of the Qualification assigned to a user, including the Qualification type and the value (score). </p>
+    /// - On failure, responds with [`SdkError<GetQualificationScoreError>`](crate::error::GetQualificationScoreError)
     pub fn get_qualification_score(&self) -> fluent_builders::GetQualificationScore<C, M, R> {
         fluent_builders::GetQualificationScore::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetQualificationType` operation.
+    /// Constructs a fluent builder for the [`GetQualificationType`](crate::client::fluent_builders::GetQualificationType) operation.
     ///
-    /// See [`GetQualificationType`](crate::client::fluent_builders::GetQualificationType) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetQualificationTypeInput`](crate::input::GetQualificationTypeInput) with field(s):
+    ///   - [`qualification_type_id(Option<String>)`](crate::input::GetQualificationTypeInput::qualification_type_id): <p>The ID of the QualificationType.</p>
+    /// - On success, responds with [`GetQualificationTypeOutput`](crate::output::GetQualificationTypeOutput) with field(s):
+    ///   - [`qualification_type(Option<QualificationType>)`](crate::output::GetQualificationTypeOutput::qualification_type): <p> The returned Qualification Type</p>
+    /// - On failure, responds with [`SdkError<GetQualificationTypeError>`](crate::error::GetQualificationTypeError)
     pub fn get_qualification_type(&self) -> fluent_builders::GetQualificationType<C, M, R> {
         fluent_builders::GetQualificationType::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAssignmentsForHIT` operation.
-    ///
-    /// See [`ListAssignmentsForHIT`](crate::client::fluent_builders::ListAssignmentsForHIT) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListAssignmentsForHIT`](crate::client::fluent_builders::ListAssignmentsForHIT) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssignmentsForHIT::into_paginator).
+    ///
+    /// - Takes [`ListAssignmentsForHitInput`](crate::input::ListAssignmentsForHitInput) with field(s):
+    ///   - [`hit_id(Option<String>)`](crate::input::ListAssignmentsForHitInput::hit_id): <p>The ID of the HIT.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListAssignmentsForHitInput::next_token): <p>Pagination token</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListAssignmentsForHitInput::max_results): (undocumented)
+    ///   - [`assignment_statuses(Option<Vec<AssignmentStatus>>)`](crate::input::ListAssignmentsForHitInput::assignment_statuses): <p>The status of the assignments to return: Submitted | Approved | Rejected</p>
+    /// - On success, responds with [`ListAssignmentsForHitOutput`](crate::output::ListAssignmentsForHitOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListAssignmentsForHitOutput::next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    ///   - [`num_results(Option<i32>)`](crate::output::ListAssignmentsForHitOutput::num_results): <p> The number of assignments on the page in the filtered results list, equivalent to the number of assignments returned by this call.</p>
+    ///   - [`assignments(Option<Vec<Assignment>>)`](crate::output::ListAssignmentsForHitOutput::assignments): <p> The collection of Assignment data structures returned by this call.</p>
+    /// - On failure, responds with [`SdkError<ListAssignmentsForHITError>`](crate::error::ListAssignmentsForHITError)
     pub fn list_assignments_for_hit(&self) -> fluent_builders::ListAssignmentsForHIT<C, M, R> {
         fluent_builders::ListAssignmentsForHIT::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListBonusPayments` operation.
-    ///
-    /// See [`ListBonusPayments`](crate::client::fluent_builders::ListBonusPayments) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListBonusPayments`](crate::client::fluent_builders::ListBonusPayments) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListBonusPayments::into_paginator).
+    ///
+    /// - Takes [`ListBonusPaymentsInput`](crate::input::ListBonusPaymentsInput) with field(s):
+    ///   - [`hit_id(Option<String>)`](crate::input::ListBonusPaymentsInput::hit_id): <p>The ID of the HIT associated with the bonus payments to retrieve. If not specified, all bonus payments for all assignments for the given HIT are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p>
+    ///   - [`assignment_id(Option<String>)`](crate::input::ListBonusPaymentsInput::assignment_id): <p>The ID of the assignment associated with the bonus payments to retrieve. If specified, only bonus payments for the given assignment are returned. Either the HITId parameter or the AssignmentId parameter must be specified</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListBonusPaymentsInput::next_token): <p>Pagination token</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListBonusPaymentsInput::max_results): (undocumented)
+    /// - On success, responds with [`ListBonusPaymentsOutput`](crate::output::ListBonusPaymentsOutput) with field(s):
+    ///   - [`num_results(Option<i32>)`](crate::output::ListBonusPaymentsOutput::num_results): <p>The number of bonus payments on this page in the filtered results list, equivalent to the number of bonus payments being returned by this call. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListBonusPaymentsOutput::next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    ///   - [`bonus_payments(Option<Vec<BonusPayment>>)`](crate::output::ListBonusPaymentsOutput::bonus_payments): <p>A successful request to the ListBonusPayments operation returns a list of BonusPayment objects. </p>
+    /// - On failure, responds with [`SdkError<ListBonusPaymentsError>`](crate::error::ListBonusPaymentsError)
     pub fn list_bonus_payments(&self) -> fluent_builders::ListBonusPayments<C, M, R> {
         fluent_builders::ListBonusPayments::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListHITs` operation.
-    ///
-    /// See [`ListHITs`](crate::client::fluent_builders::ListHITs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListHITs`](crate::client::fluent_builders::ListHITs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListHITs::into_paginator).
+    ///
+    /// - Takes [`ListHiTsInput`](crate::input::ListHiTsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListHiTsInput::next_token): <p>Pagination token</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListHiTsInput::max_results): (undocumented)
+    /// - On success, responds with [`ListHiTsOutput`](crate::output::ListHiTsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListHiTsOutput::next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    ///   - [`num_results(Option<i32>)`](crate::output::ListHiTsOutput::num_results): <p>The number of HITs on this page in the filtered results list, equivalent to the number of HITs being returned by this call.</p>
+    ///   - [`hi_ts(Option<Vec<Hit>>)`](crate::output::ListHiTsOutput::hi_ts): <p> The list of HIT elements returned by the query.</p>
+    /// - On failure, responds with [`SdkError<ListHITsError>`](crate::error::ListHITsError)
     pub fn list_hi_ts(&self) -> fluent_builders::ListHITs<C, M, R> {
         fluent_builders::ListHITs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListHITsForQualificationType` operation.
-    ///
-    /// See [`ListHITsForQualificationType`](crate::client::fluent_builders::ListHITsForQualificationType) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListHITsForQualificationType`](crate::client::fluent_builders::ListHITsForQualificationType) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListHITsForQualificationType::into_paginator).
+    ///
+    /// - Takes [`ListHiTsForQualificationTypeInput`](crate::input::ListHiTsForQualificationTypeInput) with field(s):
+    ///   - [`qualification_type_id(Option<String>)`](crate::input::ListHiTsForQualificationTypeInput::qualification_type_id): <p> The ID of the Qualification type to use when querying HITs. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListHiTsForQualificationTypeInput::next_token): <p>Pagination Token</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListHiTsForQualificationTypeInput::max_results): <p> Limit the number of results returned. </p>
+    /// - On success, responds with [`ListHiTsForQualificationTypeOutput`](crate::output::ListHiTsForQualificationTypeOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListHiTsForQualificationTypeOutput::next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    ///   - [`num_results(Option<i32>)`](crate::output::ListHiTsForQualificationTypeOutput::num_results): <p> The number of HITs on this page in the filtered results list, equivalent to the number of HITs being returned by this call. </p>
+    ///   - [`hi_ts(Option<Vec<Hit>>)`](crate::output::ListHiTsForQualificationTypeOutput::hi_ts): <p> The list of HIT elements returned by the query.</p>
+    /// - On failure, responds with [`SdkError<ListHITsForQualificationTypeError>`](crate::error::ListHITsForQualificationTypeError)
     pub fn list_hi_ts_for_qualification_type(
         &self,
     ) -> fluent_builders::ListHITsForQualificationType<C, M, R> {
         fluent_builders::ListHITsForQualificationType::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListQualificationRequests` operation.
-    ///
-    /// See [`ListQualificationRequests`](crate::client::fluent_builders::ListQualificationRequests) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListQualificationRequests`](crate::client::fluent_builders::ListQualificationRequests) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListQualificationRequests::into_paginator).
+    ///
+    /// - Takes [`ListQualificationRequestsInput`](crate::input::ListQualificationRequestsInput) with field(s):
+    ///   - [`qualification_type_id(Option<String>)`](crate::input::ListQualificationRequestsInput::qualification_type_id): <p>The ID of the QualificationType.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListQualificationRequestsInput::next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListQualificationRequestsInput::max_results): <p> The maximum number of results to return in a single call. </p>
+    /// - On success, responds with [`ListQualificationRequestsOutput`](crate::output::ListQualificationRequestsOutput) with field(s):
+    ///   - [`num_results(Option<i32>)`](crate::output::ListQualificationRequestsOutput::num_results): <p>The number of Qualification requests on this page in the filtered results list, equivalent to the number of Qualification requests being returned by this call.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListQualificationRequestsOutput::next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    ///   - [`qualification_requests(Option<Vec<QualificationRequest>>)`](crate::output::ListQualificationRequestsOutput::qualification_requests): <p>The Qualification request. The response includes one QualificationRequest element for each Qualification request returned by the query.</p>
+    /// - On failure, responds with [`SdkError<ListQualificationRequestsError>`](crate::error::ListQualificationRequestsError)
     pub fn list_qualification_requests(
         &self,
     ) -> fluent_builders::ListQualificationRequests<C, M, R> {
         fluent_builders::ListQualificationRequests::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListQualificationTypes` operation.
-    ///
-    /// See [`ListQualificationTypes`](crate::client::fluent_builders::ListQualificationTypes) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListQualificationTypes`](crate::client::fluent_builders::ListQualificationTypes) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListQualificationTypes::into_paginator).
+    ///
+    /// - Takes [`ListQualificationTypesInput`](crate::input::ListQualificationTypesInput) with field(s):
+    ///   - [`query(Option<String>)`](crate::input::ListQualificationTypesInput::query): <p> A text query against all of the searchable attributes of Qualification types. </p>
+    ///   - [`must_be_requestable(Option<bool>)`](crate::input::ListQualificationTypesInput::must_be_requestable): <p>Specifies that only Qualification types that a user can request through the Amazon Mechanical Turk web site, such as by taking a Qualification test, are returned as results of the search. Some Qualification types, such as those assigned automatically by the system, cannot be requested directly by users. If false, all Qualification types, including those managed by the system, are considered. Valid values are True | False. </p>
+    ///   - [`must_be_owned_by_caller(Option<bool>)`](crate::input::ListQualificationTypesInput::must_be_owned_by_caller): <p> Specifies that only Qualification types that the Requester created are returned. If false, the operation returns all Qualification types. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListQualificationTypesInput::next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListQualificationTypesInput::max_results): <p> The maximum number of results to return in a single call. </p>
+    /// - On success, responds with [`ListQualificationTypesOutput`](crate::output::ListQualificationTypesOutput) with field(s):
+    ///   - [`num_results(Option<i32>)`](crate::output::ListQualificationTypesOutput::num_results): <p> The number of Qualification types on this page in the filtered results list, equivalent to the number of types this operation returns. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListQualificationTypesOutput::next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    ///   - [`qualification_types(Option<Vec<QualificationType>>)`](crate::output::ListQualificationTypesOutput::qualification_types): <p> The list of QualificationType elements returned by the query. </p>
+    /// - On failure, responds with [`SdkError<ListQualificationTypesError>`](crate::error::ListQualificationTypesError)
     pub fn list_qualification_types(&self) -> fluent_builders::ListQualificationTypes<C, M, R> {
         fluent_builders::ListQualificationTypes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListReviewableHITs` operation.
-    ///
-    /// See [`ListReviewableHITs`](crate::client::fluent_builders::ListReviewableHITs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListReviewableHITs`](crate::client::fluent_builders::ListReviewableHITs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListReviewableHITs::into_paginator).
+    ///
+    /// - Takes [`ListReviewableHiTsInput`](crate::input::ListReviewableHiTsInput) with field(s):
+    ///   - [`hit_type_id(Option<String>)`](crate::input::ListReviewableHiTsInput::hit_type_id): <p> The ID of the HIT type of the HITs to consider for the query. If not specified, all HITs for the Reviewer are considered </p>
+    ///   - [`status(Option<ReviewableHitStatus>)`](crate::input::ListReviewableHiTsInput::status): <p> Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable is the default value. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListReviewableHiTsInput::next_token): <p>Pagination Token</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListReviewableHiTsInput::max_results): <p> Limit the number of results returned. </p>
+    /// - On success, responds with [`ListReviewableHiTsOutput`](crate::output::ListReviewableHiTsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListReviewableHiTsOutput::next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    ///   - [`num_results(Option<i32>)`](crate::output::ListReviewableHiTsOutput::num_results): <p> The number of HITs on this page in the filtered results list, equivalent to the number of HITs being returned by this call. </p>
+    ///   - [`hi_ts(Option<Vec<Hit>>)`](crate::output::ListReviewableHiTsOutput::hi_ts): <p> The list of HIT elements returned by the query.</p>
+    /// - On failure, responds with [`SdkError<ListReviewableHITsError>`](crate::error::ListReviewableHITsError)
     pub fn list_reviewable_hi_ts(&self) -> fluent_builders::ListReviewableHITs<C, M, R> {
         fluent_builders::ListReviewableHITs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListReviewPolicyResultsForHIT` operation.
-    ///
-    /// See [`ListReviewPolicyResultsForHIT`](crate::client::fluent_builders::ListReviewPolicyResultsForHIT) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListReviewPolicyResultsForHIT`](crate::client::fluent_builders::ListReviewPolicyResultsForHIT) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListReviewPolicyResultsForHIT::into_paginator).
+    ///
+    /// - Takes [`ListReviewPolicyResultsForHitInput`](crate::input::ListReviewPolicyResultsForHitInput) with field(s):
+    ///   - [`hit_id(Option<String>)`](crate::input::ListReviewPolicyResultsForHitInput::hit_id): <p>The unique identifier of the HIT to retrieve review results for.</p>
+    ///   - [`policy_levels(Option<Vec<ReviewPolicyLevel>>)`](crate::input::ListReviewPolicyResultsForHitInput::policy_levels): <p> The Policy Level(s) to retrieve review results for - HIT or Assignment. If omitted, the default behavior is to retrieve all data for both policy levels. For a list of all the described policies, see Review Policies. </p>
+    ///   - [`retrieve_actions(Option<bool>)`](crate::input::ListReviewPolicyResultsForHitInput::retrieve_actions): <p> Specify if the operation should retrieve a list of the actions taken executing the Review Policies and their outcomes. </p>
+    ///   - [`retrieve_results(Option<bool>)`](crate::input::ListReviewPolicyResultsForHitInput::retrieve_results): <p> Specify if the operation should retrieve a list of the results computed by the Review Policies. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListReviewPolicyResultsForHitInput::next_token): <p>Pagination token</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListReviewPolicyResultsForHitInput::max_results): <p>Limit the number of results returned.</p>
+    /// - On success, responds with [`ListReviewPolicyResultsForHitOutput`](crate::output::ListReviewPolicyResultsForHitOutput) with field(s):
+    ///   - [`hit_id(Option<String>)`](crate::output::ListReviewPolicyResultsForHitOutput::hit_id): <p>The HITId of the HIT for which results have been returned.</p>
+    ///   - [`assignment_review_policy(Option<ReviewPolicy>)`](crate::output::ListReviewPolicyResultsForHitOutput::assignment_review_policy): <p> The name of the Assignment-level Review Policy. This contains only the PolicyName element. </p>
+    ///   - [`hit_review_policy(Option<ReviewPolicy>)`](crate::output::ListReviewPolicyResultsForHitOutput::hit_review_policy): <p>The name of the HIT-level Review Policy. This contains only the PolicyName element.</p>
+    ///   - [`assignment_review_report(Option<ReviewReport>)`](crate::output::ListReviewPolicyResultsForHitOutput::assignment_review_report): <p> Contains both ReviewResult and ReviewAction elements for an Assignment. </p>
+    ///   - [`hit_review_report(Option<ReviewReport>)`](crate::output::ListReviewPolicyResultsForHitOutput::hit_review_report): <p>Contains both ReviewResult and ReviewAction elements for a particular HIT. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListReviewPolicyResultsForHitOutput::next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    /// - On failure, responds with [`SdkError<ListReviewPolicyResultsForHITError>`](crate::error::ListReviewPolicyResultsForHITError)
     pub fn list_review_policy_results_for_hit(
         &self,
     ) -> fluent_builders::ListReviewPolicyResultsForHIT<C, M, R> {
         fluent_builders::ListReviewPolicyResultsForHIT::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListWorkerBlocks` operation.
-    ///
-    /// See [`ListWorkerBlocks`](crate::client::fluent_builders::ListWorkerBlocks) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListWorkerBlocks`](crate::client::fluent_builders::ListWorkerBlocks) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWorkerBlocks::into_paginator).
+    ///
+    /// - Takes [`ListWorkerBlocksInput`](crate::input::ListWorkerBlocksInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListWorkerBlocksInput::next_token): <p>Pagination token</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListWorkerBlocksInput::max_results): (undocumented)
+    /// - On success, responds with [`ListWorkerBlocksOutput`](crate::output::ListWorkerBlocksOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListWorkerBlocksOutput::next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    ///   - [`num_results(Option<i32>)`](crate::output::ListWorkerBlocksOutput::num_results): <p> The number of assignments on the page in the filtered results list, equivalent to the number of assignments returned by this call.</p>
+    ///   - [`worker_blocks(Option<Vec<WorkerBlock>>)`](crate::output::ListWorkerBlocksOutput::worker_blocks): <p> The list of WorkerBlocks, containing the collection of Worker IDs and reasons for blocking.</p>
+    /// - On failure, responds with [`SdkError<ListWorkerBlocksError>`](crate::error::ListWorkerBlocksError)
     pub fn list_worker_blocks(&self) -> fluent_builders::ListWorkerBlocks<C, M, R> {
         fluent_builders::ListWorkerBlocks::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListWorkersWithQualificationType` operation.
-    ///
-    /// See [`ListWorkersWithQualificationType`](crate::client::fluent_builders::ListWorkersWithQualificationType) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListWorkersWithQualificationType`](crate::client::fluent_builders::ListWorkersWithQualificationType) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWorkersWithQualificationType::into_paginator).
+    ///
+    /// - Takes [`ListWorkersWithQualificationTypeInput`](crate::input::ListWorkersWithQualificationTypeInput) with field(s):
+    ///   - [`qualification_type_id(Option<String>)`](crate::input::ListWorkersWithQualificationTypeInput::qualification_type_id): <p>The ID of the Qualification type of the Qualifications to return.</p>
+    ///   - [`status(Option<QualificationStatus>)`](crate::input::ListWorkersWithQualificationTypeInput::status): <p> The status of the Qualifications to return. Can be <code>Granted | Revoked</code>. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListWorkersWithQualificationTypeInput::next_token): <p>Pagination Token</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListWorkersWithQualificationTypeInput::max_results): <p> Limit the number of results returned. </p>
+    /// - On success, responds with [`ListWorkersWithQualificationTypeOutput`](crate::output::ListWorkersWithQualificationTypeOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListWorkersWithQualificationTypeOutput::next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    ///   - [`num_results(Option<i32>)`](crate::output::ListWorkersWithQualificationTypeOutput::num_results): <p> The number of Qualifications on this page in the filtered results list, equivalent to the number of Qualifications being returned by this call.</p>
+    ///   - [`qualifications(Option<Vec<Qualification>>)`](crate::output::ListWorkersWithQualificationTypeOutput::qualifications): <p> The list of Qualification elements returned by this call. </p>
+    /// - On failure, responds with [`SdkError<ListWorkersWithQualificationTypeError>`](crate::error::ListWorkersWithQualificationTypeError)
     pub fn list_workers_with_qualification_type(
         &self,
     ) -> fluent_builders::ListWorkersWithQualificationType<C, M, R> {
         fluent_builders::ListWorkersWithQualificationType::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `NotifyWorkers` operation.
+    /// Constructs a fluent builder for the [`NotifyWorkers`](crate::client::fluent_builders::NotifyWorkers) operation.
     ///
-    /// See [`NotifyWorkers`](crate::client::fluent_builders::NotifyWorkers) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`NotifyWorkersInput`](crate::input::NotifyWorkersInput) with field(s):
+    ///   - [`subject(Option<String>)`](crate::input::NotifyWorkersInput::subject): <p>The subject line of the email message to send. Can include up to 200 characters.</p>
+    ///   - [`message_text(Option<String>)`](crate::input::NotifyWorkersInput::message_text): <p>The text of the email message to send. Can include up to 4,096 characters</p>
+    ///   - [`worker_ids(Option<Vec<String>>)`](crate::input::NotifyWorkersInput::worker_ids): <p>A list of Worker IDs you wish to notify. You can notify upto 100 Workers at a time.</p>
+    /// - On success, responds with [`NotifyWorkersOutput`](crate::output::NotifyWorkersOutput) with field(s):
+    ///   - [`notify_workers_failure_statuses(Option<Vec<NotifyWorkersFailureStatus>>)`](crate::output::NotifyWorkersOutput::notify_workers_failure_statuses): <p> When MTurk sends notifications to the list of Workers, it returns back any failures it encounters in this list of NotifyWorkersFailureStatus objects. </p>
+    /// - On failure, responds with [`SdkError<NotifyWorkersError>`](crate::error::NotifyWorkersError)
     pub fn notify_workers(&self) -> fluent_builders::NotifyWorkers<C, M, R> {
         fluent_builders::NotifyWorkers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RejectAssignment` operation.
+    /// Constructs a fluent builder for the [`RejectAssignment`](crate::client::fluent_builders::RejectAssignment) operation.
     ///
-    /// See [`RejectAssignment`](crate::client::fluent_builders::RejectAssignment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RejectAssignmentInput`](crate::input::RejectAssignmentInput) with field(s):
+    ///   - [`assignment_id(Option<String>)`](crate::input::RejectAssignmentInput::assignment_id): <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
+    ///   - [`requester_feedback(Option<String>)`](crate::input::RejectAssignmentInput::requester_feedback): <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
+    /// - On success, responds with [`RejectAssignmentOutput`](crate::output::RejectAssignmentOutput)
+
+    /// - On failure, responds with [`SdkError<RejectAssignmentError>`](crate::error::RejectAssignmentError)
     pub fn reject_assignment(&self) -> fluent_builders::RejectAssignment<C, M, R> {
         fluent_builders::RejectAssignment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RejectQualificationRequest` operation.
+    /// Constructs a fluent builder for the [`RejectQualificationRequest`](crate::client::fluent_builders::RejectQualificationRequest) operation.
     ///
-    /// See [`RejectQualificationRequest`](crate::client::fluent_builders::RejectQualificationRequest) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RejectQualificationRequestInput`](crate::input::RejectQualificationRequestInput) with field(s):
+    ///   - [`qualification_request_id(Option<String>)`](crate::input::RejectQualificationRequestInput::qualification_request_id): <p> The ID of the Qualification request, as returned by the <code>ListQualificationRequests</code> operation. </p>
+    ///   - [`reason(Option<String>)`](crate::input::RejectQualificationRequestInput::reason): <p>A text message explaining why the request was rejected, to be shown to the Worker who made the request.</p>
+    /// - On success, responds with [`RejectQualificationRequestOutput`](crate::output::RejectQualificationRequestOutput)
+
+    /// - On failure, responds with [`SdkError<RejectQualificationRequestError>`](crate::error::RejectQualificationRequestError)
     pub fn reject_qualification_request(
         &self,
     ) -> fluent_builders::RejectQualificationRequest<C, M, R> {
         fluent_builders::RejectQualificationRequest::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SendBonus` operation.
+    /// Constructs a fluent builder for the [`SendBonus`](crate::client::fluent_builders::SendBonus) operation.
     ///
-    /// See [`SendBonus`](crate::client::fluent_builders::SendBonus) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`SendBonusInput`](crate::input::SendBonusInput) with field(s):
+    ///   - [`worker_id(Option<String>)`](crate::input::SendBonusInput::worker_id): <p>The ID of the Worker being paid the bonus.</p>
+    ///   - [`bonus_amount(Option<String>)`](crate::input::SendBonusInput::bonus_amount): <p> The Bonus amount is a US Dollar amount specified using a string (for example, "5" represents $5.00 USD and "101.42" represents $101.42 USD). Do not include currency symbols or currency codes. </p>
+    ///   - [`assignment_id(Option<String>)`](crate::input::SendBonusInput::assignment_id): <p>The ID of the assignment for which this bonus is paid.</p>
+    ///   - [`reason(Option<String>)`](crate::input::SendBonusInput::reason): <p>A message that explains the reason for the bonus payment. The Worker receiving the bonus can see this message.</p>
+    ///   - [`unique_request_token(Option<String>)`](crate::input::SendBonusInput::unique_request_token): <p>A unique identifier for this request, which allows you to retry the call on error without granting multiple bonuses. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the bonus already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return an error with a message containing the request ID.</p>
+    /// - On success, responds with [`SendBonusOutput`](crate::output::SendBonusOutput)
+
+    /// - On failure, responds with [`SdkError<SendBonusError>`](crate::error::SendBonusError)
     pub fn send_bonus(&self) -> fluent_builders::SendBonus<C, M, R> {
         fluent_builders::SendBonus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SendTestEventNotification` operation.
+    /// Constructs a fluent builder for the [`SendTestEventNotification`](crate::client::fluent_builders::SendTestEventNotification) operation.
     ///
-    /// See [`SendTestEventNotification`](crate::client::fluent_builders::SendTestEventNotification) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`SendTestEventNotificationInput`](crate::input::SendTestEventNotificationInput) with field(s):
+    ///   - [`notification(Option<NotificationSpecification>)`](crate::input::SendTestEventNotificationInput::notification): <p> The notification specification to test. This value is identical to the value you would provide to the UpdateNotificationSettings operation when you establish the notification specification for a HIT type. </p>
+    ///   - [`test_event_type(Option<EventType>)`](crate::input::SendTestEventNotificationInput::test_event_type): <p> The event to simulate to test the notification specification. This event is included in the test message even if the notification specification does not include the event type. The notification specification does not filter out the test event. </p>
+    /// - On success, responds with [`SendTestEventNotificationOutput`](crate::output::SendTestEventNotificationOutput)
+
+    /// - On failure, responds with [`SdkError<SendTestEventNotificationError>`](crate::error::SendTestEventNotificationError)
     pub fn send_test_event_notification(
         &self,
     ) -> fluent_builders::SendTestEventNotification<C, M, R> {
         fluent_builders::SendTestEventNotification::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateExpirationForHIT` operation.
+    /// Constructs a fluent builder for the [`UpdateExpirationForHIT`](crate::client::fluent_builders::UpdateExpirationForHIT) operation.
     ///
-    /// See [`UpdateExpirationForHIT`](crate::client::fluent_builders::UpdateExpirationForHIT) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateExpirationForHitInput`](crate::input::UpdateExpirationForHitInput) with field(s):
+    ///   - [`hit_id(Option<String>)`](crate::input::UpdateExpirationForHitInput::hit_id): <p> The HIT to update. </p>
+    ///   - [`expire_at(Option<DateTime>)`](crate::input::UpdateExpirationForHitInput::expire_at): <p> The date and time at which you want the HIT to expire </p>
+    /// - On success, responds with [`UpdateExpirationForHitOutput`](crate::output::UpdateExpirationForHitOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateExpirationForHITError>`](crate::error::UpdateExpirationForHITError)
     pub fn update_expiration_for_hit(&self) -> fluent_builders::UpdateExpirationForHIT<C, M, R> {
         fluent_builders::UpdateExpirationForHIT::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateHITReviewStatus` operation.
+    /// Constructs a fluent builder for the [`UpdateHITReviewStatus`](crate::client::fluent_builders::UpdateHITReviewStatus) operation.
     ///
-    /// See [`UpdateHITReviewStatus`](crate::client::fluent_builders::UpdateHITReviewStatus) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateHitReviewStatusInput`](crate::input::UpdateHitReviewStatusInput) with field(s):
+    ///   - [`hit_id(Option<String>)`](crate::input::UpdateHitReviewStatusInput::hit_id): <p> The ID of the HIT to update. </p>
+    ///   - [`revert(Option<bool>)`](crate::input::UpdateHitReviewStatusInput::revert): <p> Specifies how to update the HIT status. Default is <code>False</code>. </p>  <ul>   <li> <p> Setting this to false will only transition a HIT from <code>Reviewable</code> to <code>Reviewing</code> </p> </li>   <li> <p> Setting this to true will only transition a HIT from <code>Reviewing</code> to <code>Reviewable</code> </p> </li>  </ul>
+    /// - On success, responds with [`UpdateHitReviewStatusOutput`](crate::output::UpdateHitReviewStatusOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateHITReviewStatusError>`](crate::error::UpdateHITReviewStatusError)
     pub fn update_hit_review_status(&self) -> fluent_builders::UpdateHITReviewStatus<C, M, R> {
         fluent_builders::UpdateHITReviewStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateHITTypeOfHIT` operation.
+    /// Constructs a fluent builder for the [`UpdateHITTypeOfHIT`](crate::client::fluent_builders::UpdateHITTypeOfHIT) operation.
     ///
-    /// See [`UpdateHITTypeOfHIT`](crate::client::fluent_builders::UpdateHITTypeOfHIT) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateHitTypeOfHitInput`](crate::input::UpdateHitTypeOfHitInput) with field(s):
+    ///   - [`hit_id(Option<String>)`](crate::input::UpdateHitTypeOfHitInput::hit_id): <p>The HIT to update.</p>
+    ///   - [`hit_type_id(Option<String>)`](crate::input::UpdateHitTypeOfHitInput::hit_type_id): <p>The ID of the new HIT type.</p>
+    /// - On success, responds with [`UpdateHitTypeOfHitOutput`](crate::output::UpdateHitTypeOfHitOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateHITTypeOfHITError>`](crate::error::UpdateHITTypeOfHITError)
     pub fn update_hit_type_of_hit(&self) -> fluent_builders::UpdateHITTypeOfHIT<C, M, R> {
         fluent_builders::UpdateHITTypeOfHIT::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateNotificationSettings` operation.
+    /// Constructs a fluent builder for the [`UpdateNotificationSettings`](crate::client::fluent_builders::UpdateNotificationSettings) operation.
     ///
-    /// See [`UpdateNotificationSettings`](crate::client::fluent_builders::UpdateNotificationSettings) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateNotificationSettingsInput`](crate::input::UpdateNotificationSettingsInput) with field(s):
+    ///   - [`hit_type_id(Option<String>)`](crate::input::UpdateNotificationSettingsInput::hit_type_id): <p> The ID of the HIT type whose notification specification is being updated. </p>
+    ///   - [`notification(Option<NotificationSpecification>)`](crate::input::UpdateNotificationSettingsInput::notification): <p> The notification specification for the HIT type. </p>
+    ///   - [`active(Option<bool>)`](crate::input::UpdateNotificationSettingsInput::active): <p> Specifies whether notifications are sent for HITs of this HIT type, according to the notification specification. You must specify either the Notification parameter or the Active parameter for the call to UpdateNotificationSettings to succeed. </p>
+    /// - On success, responds with [`UpdateNotificationSettingsOutput`](crate::output::UpdateNotificationSettingsOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateNotificationSettingsError>`](crate::error::UpdateNotificationSettingsError)
     pub fn update_notification_settings(
         &self,
     ) -> fluent_builders::UpdateNotificationSettings<C, M, R> {
         fluent_builders::UpdateNotificationSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateQualificationType` operation.
+    /// Constructs a fluent builder for the [`UpdateQualificationType`](crate::client::fluent_builders::UpdateQualificationType) operation.
     ///
-    /// See [`UpdateQualificationType`](crate::client::fluent_builders::UpdateQualificationType) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateQualificationTypeInput`](crate::input::UpdateQualificationTypeInput) with field(s):
+    ///   - [`qualification_type_id(Option<String>)`](crate::input::UpdateQualificationTypeInput::qualification_type_id): <p>The ID of the Qualification type to update.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateQualificationTypeInput::description): <p>The new description of the Qualification type.</p>
+    ///   - [`qualification_type_status(Option<QualificationTypeStatus>)`](crate::input::UpdateQualificationTypeInput::qualification_type_status): <p>The new status of the Qualification type - Active | Inactive</p>
+    ///   - [`test(Option<String>)`](crate::input::UpdateQualificationTypeInput::test): <p>The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code> must also be specified.</p>  <p>Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm data structure. This parameter cannot be specified if AutoGranted is true.</p>  <p>Constraints: None. If not specified, the Worker may request the Qualification without answering any questions.</p>
+    ///   - [`answer_key(Option<String>)`](crate::input::UpdateQualificationTypeInput::answer_key): <p>The answers to the Qualification test specified in the Test parameter, in the form of an AnswerKey data structure.</p>
+    ///   - [`test_duration_in_seconds(Option<i64>)`](crate::input::UpdateQualificationTypeInput::test_duration_in_seconds): <p>The number of seconds the Worker has to complete the Qualification test, starting from the time the Worker requests the Qualification.</p>
+    ///   - [`retry_delay_in_seconds(Option<i64>)`](crate::input::UpdateQualificationTypeInput::retry_delay_in_seconds): <p>The amount of time, in seconds, that Workers must wait after requesting a Qualification of the specified Qualification type before they can retry the Qualification request. It is not possible to disable retries for a Qualification type after it has been created with retries enabled. If you want to disable retries, you must dispose of the existing retry-enabled Qualification type using DisposeQualificationType and then create a new Qualification type with retries disabled using CreateQualificationType.</p>
+    ///   - [`auto_granted(Option<bool>)`](crate::input::UpdateQualificationTypeInput::auto_granted): <p>Specifies whether requests for the Qualification type are granted immediately, without prompting the Worker with a Qualification test.</p>  <p>Constraints: If the Test parameter is specified, this parameter cannot be true.</p>
+    ///   - [`auto_granted_value(Option<i32>)`](crate::input::UpdateQualificationTypeInput::auto_granted_value): <p>The Qualification value to use for automatically granted Qualifications. This parameter is used only if the AutoGranted parameter is true.</p>
+    /// - On success, responds with [`UpdateQualificationTypeOutput`](crate::output::UpdateQualificationTypeOutput) with field(s):
+    ///   - [`qualification_type(Option<QualificationType>)`](crate::output::UpdateQualificationTypeOutput::qualification_type): <p> Contains a QualificationType data structure.</p>
+    /// - On failure, responds with [`SdkError<UpdateQualificationTypeError>`](crate::error::UpdateQualificationTypeError)
     pub fn update_qualification_type(&self) -> fluent_builders::UpdateQualificationType<C, M, R> {
         fluent_builders::UpdateQualificationType::new(self.handle.clone())
     }

@@ -83,184 +83,327 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CancelCluster` operation.
+    /// Constructs a fluent builder for the [`CancelCluster`](crate::client::fluent_builders::CancelCluster) operation.
     ///
-    /// See [`CancelCluster`](crate::client::fluent_builders::CancelCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CancelClusterInput`](crate::input::CancelClusterInput) with field(s):
+    ///   - [`cluster_id(Option<String>)`](crate::input::CancelClusterInput::cluster_id): <p>The 39-character ID for the cluster that you want to cancel, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// - On success, responds with [`CancelClusterOutput`](crate::output::CancelClusterOutput)
+
+    /// - On failure, responds with [`SdkError<CancelClusterError>`](crate::error::CancelClusterError)
     pub fn cancel_cluster(&self) -> fluent_builders::CancelCluster<C, M, R> {
         fluent_builders::CancelCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CancelJob` operation.
+    /// Constructs a fluent builder for the [`CancelJob`](crate::client::fluent_builders::CancelJob) operation.
     ///
-    /// See [`CancelJob`](crate::client::fluent_builders::CancelJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CancelJobInput`](crate::input::CancelJobInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::CancelJobInput::job_id): <p>The 39-character job ID for the job that you want to cancel, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// - On success, responds with [`CancelJobOutput`](crate::output::CancelJobOutput)
+
+    /// - On failure, responds with [`SdkError<CancelJobError>`](crate::error::CancelJobError)
     pub fn cancel_job(&self) -> fluent_builders::CancelJob<C, M, R> {
         fluent_builders::CancelJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateAddress` operation.
+    /// Constructs a fluent builder for the [`CreateAddress`](crate::client::fluent_builders::CreateAddress) operation.
     ///
-    /// See [`CreateAddress`](crate::client::fluent_builders::CreateAddress) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateAddressInput`](crate::input::CreateAddressInput) with field(s):
+    ///   - [`address(Option<Address>)`](crate::input::CreateAddressInput::address): <p>The address that you want the Snow device shipped to.</p>
+    /// - On success, responds with [`CreateAddressOutput`](crate::output::CreateAddressOutput) with field(s):
+    ///   - [`address_id(Option<String>)`](crate::output::CreateAddressOutput::address_id): <p>The automatically generated ID for a specific address. You'll use this ID when you create a job to specify which address you want the Snow device for that job shipped to.</p>
+    /// - On failure, responds with [`SdkError<CreateAddressError>`](crate::error::CreateAddressError)
     pub fn create_address(&self) -> fluent_builders::CreateAddress<C, M, R> {
         fluent_builders::CreateAddress::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateCluster` operation.
+    /// Constructs a fluent builder for the [`CreateCluster`](crate::client::fluent_builders::CreateCluster) operation.
     ///
-    /// See [`CreateCluster`](crate::client::fluent_builders::CreateCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateClusterInput`](crate::input::CreateClusterInput) with field(s):
+    ///   - [`job_type(Option<JobType>)`](crate::input::CreateClusterInput::job_type): <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p>  <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+    ///   - [`resources(Option<JobResource>)`](crate::input::CreateClusterInput::resources): <p>The resources associated with the cluster job. These resources include Amazon S3 buckets and optional Lambda functions written in the Python language. </p>
+    ///   - [`on_device_service_configuration(Option<OnDeviceServiceConfiguration>)`](crate::input::CreateClusterInput::on_device_service_configuration): <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateClusterInput::description): <p>An optional description of this specific cluster, for example <code>Environmental Data Cluster-01</code>.</p>
+    ///   - [`address_id(Option<String>)`](crate::input::CreateClusterInput::address_id): <p>The ID for the address that you want the cluster shipped to.</p>
+    ///   - [`kms_key_arn(Option<String>)`](crate::input::CreateClusterInput::kms_key_arn): <p>The <code>KmsKeyARN</code> value that you want to associate with this cluster. <code>KmsKeyARN</code> values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS). </p>
+    ///   - [`role_arn(Option<String>)`](crate::input::CreateClusterInput::role_arn): <p>The <code>RoleARN</code> that you want to associate with this cluster. <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
+    ///   - [`snowball_type(Option<SnowballType>)`](crate::input::CreateClusterInput::snowball_type): <p>The type of Snow Family Devices to use for this cluster. </p> <note>   <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>  </note>  <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+    ///   - [`shipping_option(Option<ShippingOption>)`](crate::input::CreateClusterInput::shipping_option): <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball Edge device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows: </p>  <ul>   <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li>   <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>   <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>   <li> <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p> </li>  </ul>  <ul>   <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li>   <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>   <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>   <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>  </ul>
+    ///   - [`notification(Option<Notification>)`](crate::input::CreateClusterInput::notification): <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this cluster.</p>
+    ///   - [`forwarding_address_id(Option<String>)`](crate::input::CreateClusterInput::forwarding_address_id): <p>The forwarding address ID for a cluster. This field is not supported in most regions.</p>
+    ///   - [`tax_documents(Option<TaxDocuments>)`](crate::input::CreateClusterInput::tax_documents): <p>The tax documents required in your Amazon Web Services Region.</p>
+    ///   - [`remote_management(Option<RemoteManagement>)`](crate::input::CreateClusterInput::remote_management): <p>Allows you to securely operate and manage Snow devices in a cluster remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.</p>
+    /// - On success, responds with [`CreateClusterOutput`](crate::output::CreateClusterOutput) with field(s):
+    ///   - [`cluster_id(Option<String>)`](crate::output::CreateClusterOutput::cluster_id): <p>The automatically generated ID for a cluster.</p>
+    /// - On failure, responds with [`SdkError<CreateClusterError>`](crate::error::CreateClusterError)
     pub fn create_cluster(&self) -> fluent_builders::CreateCluster<C, M, R> {
         fluent_builders::CreateCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateJob` operation.
+    /// Constructs a fluent builder for the [`CreateJob`](crate::client::fluent_builders::CreateJob) operation.
     ///
-    /// See [`CreateJob`](crate::client::fluent_builders::CreateJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateJobInput`](crate::input::CreateJobInput) with field(s):
+    ///   - [`job_type(Option<JobType>)`](crate::input::CreateJobInput::job_type): <p>Defines the type of job that you're creating. </p>
+    ///   - [`resources(Option<JobResource>)`](crate::input::CreateJobInput::resources): <p>Defines the Amazon S3 buckets associated with this job.</p>  <p>With <code>IMPORT</code> jobs, you specify the bucket or buckets that your transferred data will be imported into.</p>  <p>With <code>EXPORT</code> jobs, you specify the bucket or buckets that your transferred data will be exported from. Optionally, you can also specify a <code>KeyRange</code> value. If you choose to export a range, you define the length of the range by providing either an inclusive <code>BeginMarker</code> value, an inclusive <code>EndMarker</code> value, or both. Ranges are UTF-8 binary sorted.</p>
+    ///   - [`on_device_service_configuration(Option<OnDeviceServiceConfiguration>)`](crate::input::CreateJobInput::on_device_service_configuration): <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateJobInput::description): <p>Defines an optional description of this specific job, for example <code>Important Photos 2016-08-11</code>.</p>
+    ///   - [`address_id(Option<String>)`](crate::input::CreateJobInput::address_id): <p>The ID for the address that you want the Snow device shipped to.</p>
+    ///   - [`kms_key_arn(Option<String>)`](crate::input::CreateJobInput::kms_key_arn): <p>The <code>KmsKeyARN</code> that you want to associate with this job. <code>KmsKeyARN</code>s are created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> Key Management Service (KMS) API action.</p>
+    ///   - [`role_arn(Option<String>)`](crate::input::CreateJobInput::role_arn): <p>The <code>RoleARN</code> that you want to associate with this job. <code>RoleArn</code>s are created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> Identity and Access Management (IAM) API action.</p>
+    ///   - [`snowball_capacity_preference(Option<SnowballCapacity>)`](crate::input::CreateJobInput::snowball_capacity_preference): <p>If your job is being created in one of the US regions, you have the option of specifying what size Snow device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p>  <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+    ///   - [`shipping_option(Option<ShippingOption>)`](crate::input::CreateJobInput::shipping_option): <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as follows:</p>  <ul>   <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li>   <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>   <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>   <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>  </ul>
+    ///   - [`notification(Option<Notification>)`](crate::input::CreateJobInput::notification): <p>Defines the Amazon Simple Notification Service (Amazon SNS) notification settings for this job.</p>
+    ///   - [`cluster_id(Option<String>)`](crate::input::CreateJobInput::cluster_id): <p>The ID of a cluster. If you're creating a job for a node in a cluster, you need to provide only this <code>clusterId</code> value. The other job attributes are inherited from the cluster.</p>
+    ///   - [`snowball_type(Option<SnowballType>)`](crate::input::CreateJobInput::snowball_type): <p>The type of Snow Family Devices to use for this job. </p> <note>   <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>  </note>  <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only supported device type for cluster jobs is <code>EDGE</code>.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device Options</a> in the Snowball Edge Developer Guide.</p>  <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+    ///   - [`forwarding_address_id(Option<String>)`](crate::input::CreateJobInput::forwarding_address_id): <p>The forwarding address ID for a job. This field is not supported in most Regions.</p>
+    ///   - [`tax_documents(Option<TaxDocuments>)`](crate::input::CreateJobInput::tax_documents): <p>The tax documents required in your Amazon Web Services Region.</p>
+    ///   - [`device_configuration(Option<DeviceConfiguration>)`](crate::input::CreateJobInput::device_configuration): <p>Defines the device configuration for an Snowcone job.</p>  <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+    ///   - [`remote_management(Option<RemoteManagement>)`](crate::input::CreateJobInput::remote_management): <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.</p>
+    ///   - [`long_term_pricing_id(Option<String>)`](crate::input::CreateJobInput::long_term_pricing_id): <p>The ID of the long-term pricing type for the device.</p>
+    /// - On success, responds with [`CreateJobOutput`](crate::output::CreateJobOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::CreateJobOutput::job_id): <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// - On failure, responds with [`SdkError<CreateJobError>`](crate::error::CreateJobError)
     pub fn create_job(&self) -> fluent_builders::CreateJob<C, M, R> {
         fluent_builders::CreateJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateLongTermPricing` operation.
+    /// Constructs a fluent builder for the [`CreateLongTermPricing`](crate::client::fluent_builders::CreateLongTermPricing) operation.
     ///
-    /// See [`CreateLongTermPricing`](crate::client::fluent_builders::CreateLongTermPricing) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateLongTermPricingInput`](crate::input::CreateLongTermPricingInput) with field(s):
+    ///   - [`long_term_pricing_type(Option<LongTermPricingType>)`](crate::input::CreateLongTermPricingInput::long_term_pricing_type): <p>The type of long-term pricing option you want for the device, either 1-year or 3-year long-term pricing.</p>
+    ///   - [`is_long_term_pricing_auto_renew(Option<bool>)`](crate::input::CreateLongTermPricingInput::is_long_term_pricing_auto_renew): <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
+    ///   - [`snowball_type(Option<SnowballType>)`](crate::input::CreateLongTermPricingInput::snowball_type): <p>The type of Snow Family Devices to use for the long-term pricing job.</p>
+    /// - On success, responds with [`CreateLongTermPricingOutput`](crate::output::CreateLongTermPricingOutput) with field(s):
+    ///   - [`long_term_pricing_id(Option<String>)`](crate::output::CreateLongTermPricingOutput::long_term_pricing_id): <p>The ID of the long-term pricing type for the device.</p>
+    /// - On failure, responds with [`SdkError<CreateLongTermPricingError>`](crate::error::CreateLongTermPricingError)
     pub fn create_long_term_pricing(&self) -> fluent_builders::CreateLongTermPricing<C, M, R> {
         fluent_builders::CreateLongTermPricing::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateReturnShippingLabel` operation.
+    /// Constructs a fluent builder for the [`CreateReturnShippingLabel`](crate::client::fluent_builders::CreateReturnShippingLabel) operation.
     ///
-    /// See [`CreateReturnShippingLabel`](crate::client::fluent_builders::CreateReturnShippingLabel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateReturnShippingLabelInput`](crate::input::CreateReturnShippingLabelInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::CreateReturnShippingLabelInput::job_id): <p>The ID for a job that you want to create the return shipping label for; for example, <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    ///   - [`shipping_option(Option<ShippingOption>)`](crate::input::CreateReturnShippingLabelInput::shipping_option): <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device is returned to Amazon Web Services. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:</p>
+    /// - On success, responds with [`CreateReturnShippingLabelOutput`](crate::output::CreateReturnShippingLabelOutput) with field(s):
+    ///   - [`status(Option<ShippingLabelStatus>)`](crate::output::CreateReturnShippingLabelOutput::status): <p>The status information of the task on a Snow device that is being returned to Amazon Web Services.</p>
+    /// - On failure, responds with [`SdkError<CreateReturnShippingLabelError>`](crate::error::CreateReturnShippingLabelError)
     pub fn create_return_shipping_label(
         &self,
     ) -> fluent_builders::CreateReturnShippingLabel<C, M, R> {
         fluent_builders::CreateReturnShippingLabel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAddress` operation.
+    /// Constructs a fluent builder for the [`DescribeAddress`](crate::client::fluent_builders::DescribeAddress) operation.
     ///
-    /// See [`DescribeAddress`](crate::client::fluent_builders::DescribeAddress) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeAddressInput`](crate::input::DescribeAddressInput) with field(s):
+    ///   - [`address_id(Option<String>)`](crate::input::DescribeAddressInput::address_id): <p>The automatically generated ID for a specific address.</p>
+    /// - On success, responds with [`DescribeAddressOutput`](crate::output::DescribeAddressOutput) with field(s):
+    ///   - [`address(Option<Address>)`](crate::output::DescribeAddressOutput::address): <p>The address that you want the Snow device(s) associated with a specific job to be shipped to.</p>
+    /// - On failure, responds with [`SdkError<DescribeAddressError>`](crate::error::DescribeAddressError)
     pub fn describe_address(&self) -> fluent_builders::DescribeAddress<C, M, R> {
         fluent_builders::DescribeAddress::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAddresses` operation.
-    ///
-    /// See [`DescribeAddresses`](crate::client::fluent_builders::DescribeAddresses) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeAddresses`](crate::client::fluent_builders::DescribeAddresses) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeAddresses::into_paginator).
+    ///
+    /// - Takes [`DescribeAddressesInput`](crate::input::DescribeAddressesInput) with field(s):
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeAddressesInput::max_results): <p>The number of <code>ADDRESS</code> objects to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeAddressesInput::next_token): <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>ADDRESS</code> objects, you have the option of specifying a value for <code>NextToken</code> as the starting point for your list of returned addresses.</p>
+    /// - On success, responds with [`DescribeAddressesOutput`](crate::output::DescribeAddressesOutput) with field(s):
+    ///   - [`addresses(Option<Vec<Address>>)`](crate::output::DescribeAddressesOutput::addresses): <p>The Snow device shipping addresses that were created for this account.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeAddressesOutput::next_token): <p>HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>DescribeAddresses</code> call, your list of returned addresses will start from this point in the array.</p>
+    /// - On failure, responds with [`SdkError<DescribeAddressesError>`](crate::error::DescribeAddressesError)
     pub fn describe_addresses(&self) -> fluent_builders::DescribeAddresses<C, M, R> {
         fluent_builders::DescribeAddresses::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeCluster` operation.
+    /// Constructs a fluent builder for the [`DescribeCluster`](crate::client::fluent_builders::DescribeCluster) operation.
     ///
-    /// See [`DescribeCluster`](crate::client::fluent_builders::DescribeCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeClusterInput`](crate::input::DescribeClusterInput) with field(s):
+    ///   - [`cluster_id(Option<String>)`](crate::input::DescribeClusterInput::cluster_id): <p>The automatically generated ID for a cluster.</p>
+    /// - On success, responds with [`DescribeClusterOutput`](crate::output::DescribeClusterOutput) with field(s):
+    ///   - [`cluster_metadata(Option<ClusterMetadata>)`](crate::output::DescribeClusterOutput::cluster_metadata): <p>Information about a specific cluster, including shipping information, cluster status, and other important metadata.</p>
+    /// - On failure, responds with [`SdkError<DescribeClusterError>`](crate::error::DescribeClusterError)
     pub fn describe_cluster(&self) -> fluent_builders::DescribeCluster<C, M, R> {
         fluent_builders::DescribeCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeJob` operation.
+    /// Constructs a fluent builder for the [`DescribeJob`](crate::client::fluent_builders::DescribeJob) operation.
     ///
-    /// See [`DescribeJob`](crate::client::fluent_builders::DescribeJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeJobInput`](crate::input::DescribeJobInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::DescribeJobInput::job_id): <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// - On success, responds with [`DescribeJobOutput`](crate::output::DescribeJobOutput) with field(s):
+    ///   - [`job_metadata(Option<JobMetadata>)`](crate::output::DescribeJobOutput::job_metadata): <p>Information about a specific job, including shipping information, job status, and other important metadata.</p>
+    ///   - [`sub_job_metadata(Option<Vec<JobMetadata>>)`](crate::output::DescribeJobOutput::sub_job_metadata): <p>Information about a specific job part (in the case of an export job), including shipping information, job status, and other important metadata.</p>
+    /// - On failure, responds with [`SdkError<DescribeJobError>`](crate::error::DescribeJobError)
     pub fn describe_job(&self) -> fluent_builders::DescribeJob<C, M, R> {
         fluent_builders::DescribeJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeReturnShippingLabel` operation.
+    /// Constructs a fluent builder for the [`DescribeReturnShippingLabel`](crate::client::fluent_builders::DescribeReturnShippingLabel) operation.
     ///
-    /// See [`DescribeReturnShippingLabel`](crate::client::fluent_builders::DescribeReturnShippingLabel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeReturnShippingLabelInput`](crate::input::DescribeReturnShippingLabelInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::DescribeReturnShippingLabelInput::job_id): <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// - On success, responds with [`DescribeReturnShippingLabelOutput`](crate::output::DescribeReturnShippingLabelOutput) with field(s):
+    ///   - [`status(Option<ShippingLabelStatus>)`](crate::output::DescribeReturnShippingLabelOutput::status): <p>The status information of the task on a Snow device that is being returned to Amazon Web Services.</p>
+    ///   - [`expiration_date(Option<DateTime>)`](crate::output::DescribeReturnShippingLabelOutput::expiration_date): <p>The expiration date of the current return shipping label.</p>
+    ///   - [`return_shipping_label_uri(Option<String>)`](crate::output::DescribeReturnShippingLabelOutput::return_shipping_label_uri): <p>The pre-signed Amazon S3 URI used to download the return shipping label.</p>
+    /// - On failure, responds with [`SdkError<DescribeReturnShippingLabelError>`](crate::error::DescribeReturnShippingLabelError)
     pub fn describe_return_shipping_label(
         &self,
     ) -> fluent_builders::DescribeReturnShippingLabel<C, M, R> {
         fluent_builders::DescribeReturnShippingLabel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetJobManifest` operation.
+    /// Constructs a fluent builder for the [`GetJobManifest`](crate::client::fluent_builders::GetJobManifest) operation.
     ///
-    /// See [`GetJobManifest`](crate::client::fluent_builders::GetJobManifest) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetJobManifestInput`](crate::input::GetJobManifestInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::GetJobManifestInput::job_id): <p>The ID for a job that you want to get the manifest file for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// - On success, responds with [`GetJobManifestOutput`](crate::output::GetJobManifestOutput) with field(s):
+    ///   - [`manifest_uri(Option<String>)`](crate::output::GetJobManifestOutput::manifest_uri): <p>The Amazon S3 presigned URL for the manifest file associated with the specified <code>JobId</code> value.</p>
+    /// - On failure, responds with [`SdkError<GetJobManifestError>`](crate::error::GetJobManifestError)
     pub fn get_job_manifest(&self) -> fluent_builders::GetJobManifest<C, M, R> {
         fluent_builders::GetJobManifest::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetJobUnlockCode` operation.
+    /// Constructs a fluent builder for the [`GetJobUnlockCode`](crate::client::fluent_builders::GetJobUnlockCode) operation.
     ///
-    /// See [`GetJobUnlockCode`](crate::client::fluent_builders::GetJobUnlockCode) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetJobUnlockCodeInput`](crate::input::GetJobUnlockCodeInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::GetJobUnlockCodeInput::job_id): <p>The ID for the job that you want to get the <code>UnlockCode</code> value for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// - On success, responds with [`GetJobUnlockCodeOutput`](crate::output::GetJobUnlockCodeOutput) with field(s):
+    ///   - [`unlock_code(Option<String>)`](crate::output::GetJobUnlockCodeOutput::unlock_code): <p>The <code>UnlockCode</code> value for the specified job. The <code>UnlockCode</code> value can be accessed for up to 360 days after the job has been created.</p>
+    /// - On failure, responds with [`SdkError<GetJobUnlockCodeError>`](crate::error::GetJobUnlockCodeError)
     pub fn get_job_unlock_code(&self) -> fluent_builders::GetJobUnlockCode<C, M, R> {
         fluent_builders::GetJobUnlockCode::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSnowballUsage` operation.
+    /// Constructs a fluent builder for the [`GetSnowballUsage`](crate::client::fluent_builders::GetSnowballUsage) operation.
     ///
-    /// See [`GetSnowballUsage`](crate::client::fluent_builders::GetSnowballUsage) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetSnowballUsageInput`](crate::input::GetSnowballUsageInput)
+
+    /// - On success, responds with [`GetSnowballUsageOutput`](crate::output::GetSnowballUsageOutput) with field(s):
+    ///   - [`snowball_limit(Option<i32>)`](crate::output::GetSnowballUsageOutput::snowball_limit): <p>The service limit for number of Snow devices this account can have at once. The default service limit is 1 (one).</p>
+    ///   - [`snowballs_in_use(Option<i32>)`](crate::output::GetSnowballUsageOutput::snowballs_in_use): <p>The number of Snow devices that this account is currently using.</p>
+    /// - On failure, responds with [`SdkError<GetSnowballUsageError>`](crate::error::GetSnowballUsageError)
     pub fn get_snowball_usage(&self) -> fluent_builders::GetSnowballUsage<C, M, R> {
         fluent_builders::GetSnowballUsage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSoftwareUpdates` operation.
+    /// Constructs a fluent builder for the [`GetSoftwareUpdates`](crate::client::fluent_builders::GetSoftwareUpdates) operation.
     ///
-    /// See [`GetSoftwareUpdates`](crate::client::fluent_builders::GetSoftwareUpdates) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetSoftwareUpdatesInput`](crate::input::GetSoftwareUpdatesInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::GetSoftwareUpdatesInput::job_id): <p>The ID for a job that you want to get the software update file for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// - On success, responds with [`GetSoftwareUpdatesOutput`](crate::output::GetSoftwareUpdatesOutput) with field(s):
+    ///   - [`updates_uri(Option<String>)`](crate::output::GetSoftwareUpdatesOutput::updates_uri): <p>The Amazon S3 presigned URL for the update file associated with the specified <code>JobId</code> value. The software update will be available for 2 days after this request is made. To access an update after the 2 days have passed, you'll have to make another call to <code>GetSoftwareUpdates</code>.</p>
+    /// - On failure, responds with [`SdkError<GetSoftwareUpdatesError>`](crate::error::GetSoftwareUpdatesError)
     pub fn get_software_updates(&self) -> fluent_builders::GetSoftwareUpdates<C, M, R> {
         fluent_builders::GetSoftwareUpdates::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListClusterJobs` operation.
+    /// Constructs a fluent builder for the [`ListClusterJobs`](crate::client::fluent_builders::ListClusterJobs) operation.
     ///
-    /// See [`ListClusterJobs`](crate::client::fluent_builders::ListClusterJobs) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListClusterJobsInput`](crate::input::ListClusterJobsInput) with field(s):
+    ///   - [`cluster_id(Option<String>)`](crate::input::ListClusterJobsInput::cluster_id): <p>The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListClusterJobsInput::max_results): <p>The number of <code>JobListEntry</code> objects to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListClusterJobsInput::next_token): <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.</p>
+    /// - On success, responds with [`ListClusterJobsOutput`](crate::output::ListClusterJobsOutput) with field(s):
+    ///   - [`job_list_entries(Option<Vec<JobListEntry>>)`](crate::output::ListClusterJobsOutput::job_list_entries): <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListClusterJobsOutput::next_token): <p>HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>ListClusterJobsResult</code> call, your list of returned jobs will start from this point in the array.</p>
+    /// - On failure, responds with [`SdkError<ListClusterJobsError>`](crate::error::ListClusterJobsError)
     pub fn list_cluster_jobs(&self) -> fluent_builders::ListClusterJobs<C, M, R> {
         fluent_builders::ListClusterJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListClusters` operation.
+    /// Constructs a fluent builder for the [`ListClusters`](crate::client::fluent_builders::ListClusters) operation.
     ///
-    /// See [`ListClusters`](crate::client::fluent_builders::ListClusters) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListClustersInput`](crate::input::ListClustersInput) with field(s):
+    ///   - [`max_results(Option<i32>)`](crate::input::ListClustersInput::max_results): <p>The number of <code>ClusterListEntry</code> objects to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListClustersInput::next_token): <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>ClusterListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.</p>
+    /// - On success, responds with [`ListClustersOutput`](crate::output::ListClustersOutput) with field(s):
+    ///   - [`cluster_list_entries(Option<Vec<ClusterListEntry>>)`](crate::output::ListClustersOutput::cluster_list_entries): <p>Each <code>ClusterListEntry</code> object contains a cluster's state, a cluster's ID, and other important status information.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListClustersOutput::next_token): <p>HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>ClusterListEntry</code> call, your list of returned clusters will start from this point in the array.</p>
+    /// - On failure, responds with [`SdkError<ListClustersError>`](crate::error::ListClustersError)
     pub fn list_clusters(&self) -> fluent_builders::ListClusters<C, M, R> {
         fluent_builders::ListClusters::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListCompatibleImages` operation.
+    /// Constructs a fluent builder for the [`ListCompatibleImages`](crate::client::fluent_builders::ListCompatibleImages) operation.
     ///
-    /// See [`ListCompatibleImages`](crate::client::fluent_builders::ListCompatibleImages) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListCompatibleImagesInput`](crate::input::ListCompatibleImagesInput) with field(s):
+    ///   - [`max_results(Option<i32>)`](crate::input::ListCompatibleImagesInput::max_results): <p>The maximum number of results for the list of compatible images. Currently, a Snowball Edge device can store 10 AMIs.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListCompatibleImagesInput::next_token): <p>HTTP requests are stateless. To identify what object comes "next" in the list of compatible images, you can specify a value for <code>NextToken</code> as the starting point for your list of returned images.</p>
+    /// - On success, responds with [`ListCompatibleImagesOutput`](crate::output::ListCompatibleImagesOutput) with field(s):
+    ///   - [`compatible_images(Option<Vec<CompatibleImage>>)`](crate::output::ListCompatibleImagesOutput::compatible_images): <p>A JSON-formatted object that describes a compatible AMI, including the ID and name for a Snow device AMI.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListCompatibleImagesOutput::next_token): <p>Because HTTP requests are stateless, this is the starting point for your next list of returned images.</p>
+    /// - On failure, responds with [`SdkError<ListCompatibleImagesError>`](crate::error::ListCompatibleImagesError)
     pub fn list_compatible_images(&self) -> fluent_builders::ListCompatibleImages<C, M, R> {
         fluent_builders::ListCompatibleImages::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListJobs` operation.
-    ///
-    /// See [`ListJobs`](crate::client::fluent_builders::ListJobs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListJobs`](crate::client::fluent_builders::ListJobs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListJobs::into_paginator).
+    ///
+    /// - Takes [`ListJobsInput`](crate::input::ListJobsInput) with field(s):
+    ///   - [`max_results(Option<i32>)`](crate::input::ListJobsInput::max_results): <p>The number of <code>JobListEntry</code> objects to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListJobsInput::next_token): <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.</p>
+    /// - On success, responds with [`ListJobsOutput`](crate::output::ListJobsOutput) with field(s):
+    ///   - [`job_list_entries(Option<Vec<JobListEntry>>)`](crate::output::ListJobsOutput::job_list_entries): <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListJobsOutput::next_token): <p>HTTP requests are stateless. If you use this automatically generated <code>NextToken</code> value in your next <code>ListJobs</code> call, your returned <code>JobListEntry</code> objects will start from this point in the array.</p>
+    /// - On failure, responds with [`SdkError<ListJobsError>`](crate::error::ListJobsError)
     pub fn list_jobs(&self) -> fluent_builders::ListJobs<C, M, R> {
         fluent_builders::ListJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListLongTermPricing` operation.
+    /// Constructs a fluent builder for the [`ListLongTermPricing`](crate::client::fluent_builders::ListLongTermPricing) operation.
     ///
-    /// See [`ListLongTermPricing`](crate::client::fluent_builders::ListLongTermPricing) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListLongTermPricingInput`](crate::input::ListLongTermPricingInput) with field(s):
+    ///   - [`max_results(Option<i32>)`](crate::input::ListLongTermPricingInput::max_results): <p>The maximum number of <code>ListLongTermPricing</code> objects to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListLongTermPricingInput::next_token): <p>Because HTTP requests are stateless, this is the starting point for your next list of <code>ListLongTermPricing</code> to return.</p>
+    /// - On success, responds with [`ListLongTermPricingOutput`](crate::output::ListLongTermPricingOutput) with field(s):
+    ///   - [`long_term_pricing_entries(Option<Vec<LongTermPricingListEntry>>)`](crate::output::ListLongTermPricingOutput::long_term_pricing_entries): <p>Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information about the <code>LongTermPricing</code> type. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListLongTermPricingOutput::next_token): <p>Because HTTP requests are stateless, this is the starting point for your next list of returned <code>ListLongTermPricing</code> list.</p>
+    /// - On failure, responds with [`SdkError<ListLongTermPricingError>`](crate::error::ListLongTermPricingError)
     pub fn list_long_term_pricing(&self) -> fluent_builders::ListLongTermPricing<C, M, R> {
         fluent_builders::ListLongTermPricing::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateCluster` operation.
+    /// Constructs a fluent builder for the [`UpdateCluster`](crate::client::fluent_builders::UpdateCluster) operation.
     ///
-    /// See [`UpdateCluster`](crate::client::fluent_builders::UpdateCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateClusterInput`](crate::input::UpdateClusterInput) with field(s):
+    ///   - [`cluster_id(Option<String>)`](crate::input::UpdateClusterInput::cluster_id): <p>The cluster ID of the cluster that you want to update, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    ///   - [`role_arn(Option<String>)`](crate::input::UpdateClusterInput::role_arn): <p>The new role Amazon Resource Name (ARN) that you want to associate with this cluster. To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateClusterInput::description): <p>The updated description of this cluster.</p>
+    ///   - [`resources(Option<JobResource>)`](crate::input::UpdateClusterInput::resources): <p>The updated arrays of <code>JobResource</code> objects that can include updated <code>S3Resource</code> objects or <code>LambdaResource</code> objects.</p>
+    ///   - [`on_device_service_configuration(Option<OnDeviceServiceConfiguration>)`](crate::input::UpdateClusterInput::on_device_service_configuration): <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
+    ///   - [`address_id(Option<String>)`](crate::input::UpdateClusterInput::address_id): <p>The ID of the updated <code>Address</code> object.</p>
+    ///   - [`shipping_option(Option<ShippingOption>)`](crate::input::UpdateClusterInput::shipping_option): <p>The updated shipping option value of this cluster's <code>ShippingDetails</code> object.</p>
+    ///   - [`notification(Option<Notification>)`](crate::input::UpdateClusterInput::notification): <p>The new or updated <code>Notification</code> object.</p>
+    ///   - [`forwarding_address_id(Option<String>)`](crate::input::UpdateClusterInput::forwarding_address_id): <p>The updated ID for the forwarding address for a cluster. This field is not supported in most regions.</p>
+    /// - On success, responds with [`UpdateClusterOutput`](crate::output::UpdateClusterOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateClusterError>`](crate::error::UpdateClusterError)
     pub fn update_cluster(&self) -> fluent_builders::UpdateCluster<C, M, R> {
         fluent_builders::UpdateCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateJob` operation.
+    /// Constructs a fluent builder for the [`UpdateJob`](crate::client::fluent_builders::UpdateJob) operation.
     ///
-    /// See [`UpdateJob`](crate::client::fluent_builders::UpdateJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateJobInput`](crate::input::UpdateJobInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::UpdateJobInput::job_id): <p>The job ID of the job that you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    ///   - [`role_arn(Option<String>)`](crate::input::UpdateJobInput::role_arn): <p>The new role Amazon Resource Name (ARN) that you want to associate with this job. To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>Identity and Access Management (IAM) API action.</p>
+    ///   - [`notification(Option<Notification>)`](crate::input::UpdateJobInput::notification): <p>The new or updated <code>Notification</code> object.</p>
+    ///   - [`resources(Option<JobResource>)`](crate::input::UpdateJobInput::resources): <p>The updated <code>JobResource</code> object, or the updated <code>JobResource</code> object. </p>
+    ///   - [`on_device_service_configuration(Option<OnDeviceServiceConfiguration>)`](crate::input::UpdateJobInput::on_device_service_configuration): <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
+    ///   - [`address_id(Option<String>)`](crate::input::UpdateJobInput::address_id): <p>The ID of the updated <code>Address</code> object.</p>
+    ///   - [`shipping_option(Option<ShippingOption>)`](crate::input::UpdateJobInput::shipping_option): <p>The updated shipping option value of this job's <code>ShippingDetails</code> object.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateJobInput::description): <p>The updated description of this job's <code>JobMetadata</code> object.</p>
+    ///   - [`snowball_capacity_preference(Option<SnowballCapacity>)`](crate::input::UpdateJobInput::snowball_capacity_preference): <p>The updated <code>SnowballCapacityPreference</code> of this job's <code>JobMetadata</code> object. The 50 TB Snowballs are only available in the US regions.</p>  <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+    ///   - [`forwarding_address_id(Option<String>)`](crate::input::UpdateJobInput::forwarding_address_id): <p>The updated ID for the forwarding address for a job. This field is not supported in most regions.</p>
+    /// - On success, responds with [`UpdateJobOutput`](crate::output::UpdateJobOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateJobError>`](crate::error::UpdateJobError)
     pub fn update_job(&self) -> fluent_builders::UpdateJob<C, M, R> {
         fluent_builders::UpdateJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateJobShipmentState` operation.
+    /// Constructs a fluent builder for the [`UpdateJobShipmentState`](crate::client::fluent_builders::UpdateJobShipmentState) operation.
     ///
-    /// See [`UpdateJobShipmentState`](crate::client::fluent_builders::UpdateJobShipmentState) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateJobShipmentStateInput`](crate::input::UpdateJobShipmentStateInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::UpdateJobShipmentStateInput::job_id): <p>The job ID of the job whose shipment date you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    ///   - [`shipment_state(Option<ShipmentState>)`](crate::input::UpdateJobShipmentStateInput::shipment_state): <p>The state of a device when it is being shipped. </p>  <p>Set to <code>RECEIVED</code> when the device arrives at your location.</p>  <p>Set to <code>RETURNED</code> when you have returned the device to Amazon Web Services.</p>
+    /// - On success, responds with [`UpdateJobShipmentStateOutput`](crate::output::UpdateJobShipmentStateOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateJobShipmentStateError>`](crate::error::UpdateJobShipmentStateError)
     pub fn update_job_shipment_state(&self) -> fluent_builders::UpdateJobShipmentState<C, M, R> {
         fluent_builders::UpdateJobShipmentState::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateLongTermPricing` operation.
+    /// Constructs a fluent builder for the [`UpdateLongTermPricing`](crate::client::fluent_builders::UpdateLongTermPricing) operation.
     ///
-    /// See [`UpdateLongTermPricing`](crate::client::fluent_builders::UpdateLongTermPricing) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateLongTermPricingInput`](crate::input::UpdateLongTermPricingInput) with field(s):
+    ///   - [`long_term_pricing_id(Option<String>)`](crate::input::UpdateLongTermPricingInput::long_term_pricing_id): <p>The ID of the long-term pricing type for the device.</p>
+    ///   - [`replacement_job(Option<String>)`](crate::input::UpdateLongTermPricingInput::replacement_job): <p>Specifies that a device that is ordered with long-term pricing should be replaced with a new device.</p>
+    ///   - [`is_long_term_pricing_auto_renew(Option<bool>)`](crate::input::UpdateLongTermPricingInput::is_long_term_pricing_auto_renew): <p>If set to <code>true</code>, specifies that the current long-term pricing type for the device should be automatically renewed before the long-term pricing contract expires.</p>
+    /// - On success, responds with [`UpdateLongTermPricingOutput`](crate::output::UpdateLongTermPricingOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateLongTermPricingError>`](crate::error::UpdateLongTermPricingError)
     pub fn update_long_term_pricing(&self) -> fluent_builders::UpdateLongTermPricing<C, M, R> {
         fluent_builders::UpdateLongTermPricing::new(self.handle.clone())
     }

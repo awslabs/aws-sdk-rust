@@ -83,168 +83,295 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CancelOrder` operation.
+    /// Constructs a fluent builder for the [`CancelOrder`](crate::client::fluent_builders::CancelOrder) operation.
     ///
-    /// See [`CancelOrder`](crate::client::fluent_builders::CancelOrder) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CancelOrderInput`](crate::input::CancelOrderInput) with field(s):
+    ///   - [`order_id(Option<String>)`](crate::input::CancelOrderInput::order_id): <p> The ID of the order to cancel. </p>
+    /// - On success, responds with [`CancelOrderOutput`](crate::output::CancelOrderOutput)
+
+    /// - On failure, responds with [`SdkError<CancelOrderError>`](crate::error::CancelOrderError)
     pub fn cancel_order(&self) -> fluent_builders::CancelOrder<C, M, R> {
         fluent_builders::CancelOrder::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateOrder` operation.
+    /// Constructs a fluent builder for the [`CreateOrder`](crate::client::fluent_builders::CreateOrder) operation.
     ///
-    /// See [`CreateOrder`](crate::client::fluent_builders::CreateOrder) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateOrderInput`](crate::input::CreateOrderInput) with field(s):
+    ///   - [`outpost_identifier(Option<String>)`](crate::input::CreateOrderInput::outpost_identifier): <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+    ///   - [`line_items(Option<Vec<LineItemRequest>>)`](crate::input::CreateOrderInput::line_items): <p>The line items that make up the order.</p>
+    ///   - [`payment_option(Option<PaymentOption>)`](crate::input::CreateOrderInput::payment_option): <p>The payment option for the order.</p>
+    ///   - [`payment_term(Option<PaymentTerm>)`](crate::input::CreateOrderInput::payment_term): <p>The payment terms for the order.</p>
+    /// - On success, responds with [`CreateOrderOutput`](crate::output::CreateOrderOutput) with field(s):
+    ///   - [`order(Option<Order>)`](crate::output::CreateOrderOutput::order): <p>Information about this order.</p>
+    /// - On failure, responds with [`SdkError<CreateOrderError>`](crate::error::CreateOrderError)
     pub fn create_order(&self) -> fluent_builders::CreateOrder<C, M, R> {
         fluent_builders::CreateOrder::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateOutpost` operation.
+    /// Constructs a fluent builder for the [`CreateOutpost`](crate::client::fluent_builders::CreateOutpost) operation.
     ///
-    /// See [`CreateOutpost`](crate::client::fluent_builders::CreateOutpost) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateOutpostInput`](crate::input::CreateOutpostInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateOutpostInput::name): <p>The name of the Outpost.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateOutpostInput::description): <p>The description of the Outpost.</p>
+    ///   - [`site_id(Option<String>)`](crate::input::CreateOutpostInput::site_id): <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
+    ///   - [`availability_zone(Option<String>)`](crate::input::CreateOutpostInput::availability_zone): <p>The Availability Zone.</p>
+    ///   - [`availability_zone_id(Option<String>)`](crate::input::CreateOutpostInput::availability_zone_id): <p>The ID of the Availability Zone.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateOutpostInput::tags): <p>The tags to apply to the Outpost.</p>
+    ///   - [`supported_hardware_type(Option<SupportedHardwareType>)`](crate::input::CreateOutpostInput::supported_hardware_type): <p> The type of hardware for this Outpost. </p>
+    /// - On success, responds with [`CreateOutpostOutput`](crate::output::CreateOutpostOutput) with field(s):
+    ///   - [`outpost(Option<Outpost>)`](crate::output::CreateOutpostOutput::outpost): <p>Information about an Outpost.</p>
+    /// - On failure, responds with [`SdkError<CreateOutpostError>`](crate::error::CreateOutpostError)
     pub fn create_outpost(&self) -> fluent_builders::CreateOutpost<C, M, R> {
         fluent_builders::CreateOutpost::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateSite` operation.
+    /// Constructs a fluent builder for the [`CreateSite`](crate::client::fluent_builders::CreateSite) operation.
     ///
-    /// See [`CreateSite`](crate::client::fluent_builders::CreateSite) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateSiteInput`](crate::input::CreateSiteInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateSiteInput::name): <p>The name of the site.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateSiteInput::description): <p>The description of the site.</p>
+    ///   - [`notes(Option<String>)`](crate::input::CreateSiteInput::notes): <p>Additional information that you provide about site access requirements, electrician scheduling, personal protective equipment, or regulation of equipment materials that could affect your installation process. </p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateSiteInput::tags): <p> The tags to apply to a site. </p>
+    ///   - [`operating_address(Option<Address>)`](crate::input::CreateSiteInput::operating_address): <p> The location to install and power on the hardware. This address might be different from the shipping address. </p>
+    ///   - [`shipping_address(Option<Address>)`](crate::input::CreateSiteInput::shipping_address): <p> The location to ship the hardware. This address might be different from the operating address. </p>
+    ///   - [`rack_physical_properties(Option<RackPhysicalProperties>)`](crate::input::CreateSiteInput::rack_physical_properties): <p> Information about the physical and logistical details for the rack at this site. For more information about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network readiness checklist</a> in the Amazon Web Services Outposts User Guide. </p>
+    /// - On success, responds with [`CreateSiteOutput`](crate::output::CreateSiteOutput) with field(s):
+    ///   - [`site(Option<Site>)`](crate::output::CreateSiteOutput::site): <p>Information about a site.</p>
+    /// - On failure, responds with [`SdkError<CreateSiteError>`](crate::error::CreateSiteError)
     pub fn create_site(&self) -> fluent_builders::CreateSite<C, M, R> {
         fluent_builders::CreateSite::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteOutpost` operation.
+    /// Constructs a fluent builder for the [`DeleteOutpost`](crate::client::fluent_builders::DeleteOutpost) operation.
     ///
-    /// See [`DeleteOutpost`](crate::client::fluent_builders::DeleteOutpost) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteOutpostInput`](crate::input::DeleteOutpostInput) with field(s):
+    ///   - [`outpost_id(Option<String>)`](crate::input::DeleteOutpostInput::outpost_id): <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+    /// - On success, responds with [`DeleteOutpostOutput`](crate::output::DeleteOutpostOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteOutpostError>`](crate::error::DeleteOutpostError)
     pub fn delete_outpost(&self) -> fluent_builders::DeleteOutpost<C, M, R> {
         fluent_builders::DeleteOutpost::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteSite` operation.
+    /// Constructs a fluent builder for the [`DeleteSite`](crate::client::fluent_builders::DeleteSite) operation.
     ///
-    /// See [`DeleteSite`](crate::client::fluent_builders::DeleteSite) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteSiteInput`](crate::input::DeleteSiteInput) with field(s):
+    ///   - [`site_id(Option<String>)`](crate::input::DeleteSiteInput::site_id): <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
+    /// - On success, responds with [`DeleteSiteOutput`](crate::output::DeleteSiteOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteSiteError>`](crate::error::DeleteSiteError)
     pub fn delete_site(&self) -> fluent_builders::DeleteSite<C, M, R> {
         fluent_builders::DeleteSite::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCatalogItem` operation.
+    /// Constructs a fluent builder for the [`GetCatalogItem`](crate::client::fluent_builders::GetCatalogItem) operation.
     ///
-    /// See [`GetCatalogItem`](crate::client::fluent_builders::GetCatalogItem) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetCatalogItemInput`](crate::input::GetCatalogItemInput) with field(s):
+    ///   - [`catalog_item_id(Option<String>)`](crate::input::GetCatalogItemInput::catalog_item_id): <p>The ID of the catalog item.</p>
+    /// - On success, responds with [`GetCatalogItemOutput`](crate::output::GetCatalogItemOutput) with field(s):
+    ///   - [`catalog_item(Option<CatalogItem>)`](crate::output::GetCatalogItemOutput::catalog_item): <p>Information about this catalog item.</p>
+    /// - On failure, responds with [`SdkError<GetCatalogItemError>`](crate::error::GetCatalogItemError)
     pub fn get_catalog_item(&self) -> fluent_builders::GetCatalogItem<C, M, R> {
         fluent_builders::GetCatalogItem::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetOrder` operation.
+    /// Constructs a fluent builder for the [`GetOrder`](crate::client::fluent_builders::GetOrder) operation.
     ///
-    /// See [`GetOrder`](crate::client::fluent_builders::GetOrder) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetOrderInput`](crate::input::GetOrderInput) with field(s):
+    ///   - [`order_id(Option<String>)`](crate::input::GetOrderInput::order_id): <p>The ID of the order.</p>
+    /// - On success, responds with [`GetOrderOutput`](crate::output::GetOrderOutput) with field(s):
+    ///   - [`order(Option<Order>)`](crate::output::GetOrderOutput::order): <p>Information about an order.</p>
+    /// - On failure, responds with [`SdkError<GetOrderError>`](crate::error::GetOrderError)
     pub fn get_order(&self) -> fluent_builders::GetOrder<C, M, R> {
         fluent_builders::GetOrder::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetOutpost` operation.
+    /// Constructs a fluent builder for the [`GetOutpost`](crate::client::fluent_builders::GetOutpost) operation.
     ///
-    /// See [`GetOutpost`](crate::client::fluent_builders::GetOutpost) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetOutpostInput`](crate::input::GetOutpostInput) with field(s):
+    ///   - [`outpost_id(Option<String>)`](crate::input::GetOutpostInput::outpost_id): <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+    /// - On success, responds with [`GetOutpostOutput`](crate::output::GetOutpostOutput) with field(s):
+    ///   - [`outpost(Option<Outpost>)`](crate::output::GetOutpostOutput::outpost): <p>Information about an Outpost.</p>
+    /// - On failure, responds with [`SdkError<GetOutpostError>`](crate::error::GetOutpostError)
     pub fn get_outpost(&self) -> fluent_builders::GetOutpost<C, M, R> {
         fluent_builders::GetOutpost::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetOutpostInstanceTypes` operation.
+    /// Constructs a fluent builder for the [`GetOutpostInstanceTypes`](crate::client::fluent_builders::GetOutpostInstanceTypes) operation.
     ///
-    /// See [`GetOutpostInstanceTypes`](crate::client::fluent_builders::GetOutpostInstanceTypes) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetOutpostInstanceTypesInput`](crate::input::GetOutpostInstanceTypesInput) with field(s):
+    ///   - [`outpost_id(Option<String>)`](crate::input::GetOutpostInstanceTypesInput::outpost_id): <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetOutpostInstanceTypesInput::next_token): <p>The pagination token.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetOutpostInstanceTypesInput::max_results): <p>The maximum page size.</p>
+    /// - On success, responds with [`GetOutpostInstanceTypesOutput`](crate::output::GetOutpostInstanceTypesOutput) with field(s):
+    ///   - [`instance_types(Option<Vec<InstanceTypeItem>>)`](crate::output::GetOutpostInstanceTypesOutput::instance_types): <p>Information about the instance types.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetOutpostInstanceTypesOutput::next_token): <p>The pagination token.</p>
+    ///   - [`outpost_id(Option<String>)`](crate::output::GetOutpostInstanceTypesOutput::outpost_id): <p> The ID of the Outpost. </p>
+    ///   - [`outpost_arn(Option<String>)`](crate::output::GetOutpostInstanceTypesOutput::outpost_arn): <p>The Amazon Resource Name (ARN) of the Outpost.</p>
+    /// - On failure, responds with [`SdkError<GetOutpostInstanceTypesError>`](crate::error::GetOutpostInstanceTypesError)
     pub fn get_outpost_instance_types(&self) -> fluent_builders::GetOutpostInstanceTypes<C, M, R> {
         fluent_builders::GetOutpostInstanceTypes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSite` operation.
+    /// Constructs a fluent builder for the [`GetSite`](crate::client::fluent_builders::GetSite) operation.
     ///
-    /// See [`GetSite`](crate::client::fluent_builders::GetSite) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetSiteInput`](crate::input::GetSiteInput) with field(s):
+    ///   - [`site_id(Option<String>)`](crate::input::GetSiteInput::site_id): <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
+    /// - On success, responds with [`GetSiteOutput`](crate::output::GetSiteOutput) with field(s):
+    ///   - [`site(Option<Site>)`](crate::output::GetSiteOutput::site): <p>Information about a site.</p>
+    /// - On failure, responds with [`SdkError<GetSiteError>`](crate::error::GetSiteError)
     pub fn get_site(&self) -> fluent_builders::GetSite<C, M, R> {
         fluent_builders::GetSite::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSiteAddress` operation.
+    /// Constructs a fluent builder for the [`GetSiteAddress`](crate::client::fluent_builders::GetSiteAddress) operation.
     ///
-    /// See [`GetSiteAddress`](crate::client::fluent_builders::GetSiteAddress) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetSiteAddressInput`](crate::input::GetSiteAddressInput) with field(s):
+    ///   - [`site_id(Option<String>)`](crate::input::GetSiteAddressInput::site_id): <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
+    ///   - [`address_type(Option<AddressType>)`](crate::input::GetSiteAddressInput::address_type): <p> The type of the address you request. </p>
+    /// - On success, responds with [`GetSiteAddressOutput`](crate::output::GetSiteAddressOutput) with field(s):
+    ///   - [`site_id(Option<String>)`](crate::output::GetSiteAddressOutput::site_id): <p> The ID of the site. </p>
+    ///   - [`address_type(Option<AddressType>)`](crate::output::GetSiteAddressOutput::address_type): <p> The type of the address you receive. </p>
+    ///   - [`address(Option<Address>)`](crate::output::GetSiteAddressOutput::address): <p> Information about the address. </p>
+    /// - On failure, responds with [`SdkError<GetSiteAddressError>`](crate::error::GetSiteAddressError)
     pub fn get_site_address(&self) -> fluent_builders::GetSiteAddress<C, M, R> {
         fluent_builders::GetSiteAddress::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListCatalogItems` operation.
-    ///
-    /// See [`ListCatalogItems`](crate::client::fluent_builders::ListCatalogItems) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListCatalogItems`](crate::client::fluent_builders::ListCatalogItems) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCatalogItems::into_paginator).
+    ///
+    /// - Takes [`ListCatalogItemsInput`](crate::input::ListCatalogItemsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListCatalogItemsInput::next_token): <p>The pagination token.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListCatalogItemsInput::max_results): <p>The maximum page size.</p>
+    ///   - [`item_class_filter(Option<Vec<CatalogItemClass>>)`](crate::input::ListCatalogItemsInput::item_class_filter): <p> A filter for the class of items in the catalog. </p>  <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    ///   - [`supported_storage_filter(Option<Vec<SupportedStorageEnum>>)`](crate::input::ListCatalogItemsInput::supported_storage_filter): <p> A filter for the storage options of items in the catalog. </p>  <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    ///   - [`ec2_family_filter(Option<Vec<String>>)`](crate::input::ListCatalogItemsInput::ec2_family_filter): <p> A filter for EC2 family options for items in the catalog. </p>  <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    /// - On success, responds with [`ListCatalogItemsOutput`](crate::output::ListCatalogItemsOutput) with field(s):
+    ///   - [`catalog_items(Option<Vec<CatalogItem>>)`](crate::output::ListCatalogItemsOutput::catalog_items): <p>Information about the catalog items.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListCatalogItemsOutput::next_token): <p>The pagination token.</p>
+    /// - On failure, responds with [`SdkError<ListCatalogItemsError>`](crate::error::ListCatalogItemsError)
     pub fn list_catalog_items(&self) -> fluent_builders::ListCatalogItems<C, M, R> {
         fluent_builders::ListCatalogItems::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListOrders` operation.
-    ///
-    /// See [`ListOrders`](crate::client::fluent_builders::ListOrders) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListOrders`](crate::client::fluent_builders::ListOrders) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListOrders::into_paginator).
+    ///
+    /// - Takes [`ListOrdersInput`](crate::input::ListOrdersInput) with field(s):
+    ///   - [`outpost_identifier_filter(Option<String>)`](crate::input::ListOrdersInput::outpost_identifier_filter): <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListOrdersInput::next_token): <p>The pagination token.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListOrdersInput::max_results): <p>The maximum page size.</p>
+    /// - On success, responds with [`ListOrdersOutput`](crate::output::ListOrdersOutput) with field(s):
+    ///   - [`orders(Option<Vec<OrderSummary>>)`](crate::output::ListOrdersOutput::orders): <p> Information about the orders. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListOrdersOutput::next_token): <p>The pagination token.</p>
+    /// - On failure, responds with [`SdkError<ListOrdersError>`](crate::error::ListOrdersError)
     pub fn list_orders(&self) -> fluent_builders::ListOrders<C, M, R> {
         fluent_builders::ListOrders::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListOutposts` operation.
-    ///
-    /// See [`ListOutposts`](crate::client::fluent_builders::ListOutposts) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListOutposts`](crate::client::fluent_builders::ListOutposts) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListOutposts::into_paginator).
+    ///
+    /// - Takes [`ListOutpostsInput`](crate::input::ListOutpostsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListOutpostsInput::next_token): <p>The pagination token.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListOutpostsInput::max_results): <p>The maximum page size.</p>
+    ///   - [`life_cycle_status_filter(Option<Vec<String>>)`](crate::input::ListOutpostsInput::life_cycle_status_filter): <p> A filter for the lifecycle status of the Outpost. </p>  <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    ///   - [`availability_zone_filter(Option<Vec<String>>)`](crate::input::ListOutpostsInput::availability_zone_filter): <p> A filter for the Availability Zone (<code>us-east-1a</code>) of the Outpost. </p>  <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    ///   - [`availability_zone_id_filter(Option<Vec<String>>)`](crate::input::ListOutpostsInput::availability_zone_id_filter): <p> A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost. </p>  <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
+    /// - On success, responds with [`ListOutpostsOutput`](crate::output::ListOutpostsOutput) with field(s):
+    ///   - [`outposts(Option<Vec<Outpost>>)`](crate::output::ListOutpostsOutput::outposts): <p>Information about the Outposts.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListOutpostsOutput::next_token): <p>The pagination token.</p>
+    /// - On failure, responds with [`SdkError<ListOutpostsError>`](crate::error::ListOutpostsError)
     pub fn list_outposts(&self) -> fluent_builders::ListOutposts<C, M, R> {
         fluent_builders::ListOutposts::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSites` operation.
-    ///
-    /// See [`ListSites`](crate::client::fluent_builders::ListSites) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListSites`](crate::client::fluent_builders::ListSites) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSites::into_paginator).
+    ///
+    /// - Takes [`ListSitesInput`](crate::input::ListSitesInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListSitesInput::next_token): <p>The pagination token.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListSitesInput::max_results): <p>The maximum page size.</p>
+    /// - On success, responds with [`ListSitesOutput`](crate::output::ListSitesOutput) with field(s):
+    ///   - [`sites(Option<Vec<Site>>)`](crate::output::ListSitesOutput::sites): <p>Information about the sites.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSitesOutput::next_token): <p>The pagination token.</p>
+    /// - On failure, responds with [`SdkError<ListSitesError>`](crate::error::ListSitesError)
     pub fn list_sites(&self) -> fluent_builders::ListSites<C, M, R> {
         fluent_builders::ListSites::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The resource tags.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>The tags to add to the resource.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The tag keys.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateOutpost` operation.
+    /// Constructs a fluent builder for the [`UpdateOutpost`](crate::client::fluent_builders::UpdateOutpost) operation.
     ///
-    /// See [`UpdateOutpost`](crate::client::fluent_builders::UpdateOutpost) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateOutpostInput`](crate::input::UpdateOutpostInput) with field(s):
+    ///   - [`outpost_id(Option<String>)`](crate::input::UpdateOutpostInput::outpost_id): <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
+    ///   - [`name(Option<String>)`](crate::input::UpdateOutpostInput::name): <p>The name of the Outpost.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateOutpostInput::description): <p>The description of the Outpost.</p>
+    ///   - [`supported_hardware_type(Option<SupportedHardwareType>)`](crate::input::UpdateOutpostInput::supported_hardware_type): <p> The type of hardware for this Outpost. </p>
+    /// - On success, responds with [`UpdateOutpostOutput`](crate::output::UpdateOutpostOutput) with field(s):
+    ///   - [`outpost(Option<Outpost>)`](crate::output::UpdateOutpostOutput::outpost): <p>Information about an Outpost.</p>
+    /// - On failure, responds with [`SdkError<UpdateOutpostError>`](crate::error::UpdateOutpostError)
     pub fn update_outpost(&self) -> fluent_builders::UpdateOutpost<C, M, R> {
         fluent_builders::UpdateOutpost::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateSite` operation.
+    /// Constructs a fluent builder for the [`UpdateSite`](crate::client::fluent_builders::UpdateSite) operation.
     ///
-    /// See [`UpdateSite`](crate::client::fluent_builders::UpdateSite) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateSiteInput`](crate::input::UpdateSiteInput) with field(s):
+    ///   - [`site_id(Option<String>)`](crate::input::UpdateSiteInput::site_id): <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
+    ///   - [`name(Option<String>)`](crate::input::UpdateSiteInput::name): <p>The name of the site.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateSiteInput::description): <p>The description of the site.</p>
+    ///   - [`notes(Option<String>)`](crate::input::UpdateSiteInput::notes): <p> Notes about a site. </p>
+    /// - On success, responds with [`UpdateSiteOutput`](crate::output::UpdateSiteOutput) with field(s):
+    ///   - [`site(Option<Site>)`](crate::output::UpdateSiteOutput::site): <p>Information about a site.</p>
+    /// - On failure, responds with [`SdkError<UpdateSiteError>`](crate::error::UpdateSiteError)
     pub fn update_site(&self) -> fluent_builders::UpdateSite<C, M, R> {
         fluent_builders::UpdateSite::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateSiteAddress` operation.
+    /// Constructs a fluent builder for the [`UpdateSiteAddress`](crate::client::fluent_builders::UpdateSiteAddress) operation.
     ///
-    /// See [`UpdateSiteAddress`](crate::client::fluent_builders::UpdateSiteAddress) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateSiteAddressInput`](crate::input::UpdateSiteAddressInput) with field(s):
+    ///   - [`site_id(Option<String>)`](crate::input::UpdateSiteAddressInput::site_id): <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
+    ///   - [`address_type(Option<AddressType>)`](crate::input::UpdateSiteAddressInput::address_type): <p> The type of the address. </p>
+    ///   - [`address(Option<Address>)`](crate::input::UpdateSiteAddressInput::address): <p> The address for the site. </p>
+    /// - On success, responds with [`UpdateSiteAddressOutput`](crate::output::UpdateSiteAddressOutput) with field(s):
+    ///   - [`address_type(Option<AddressType>)`](crate::output::UpdateSiteAddressOutput::address_type): <p> The type of the address. </p>
+    ///   - [`address(Option<Address>)`](crate::output::UpdateSiteAddressOutput::address): <p> Information about an address. </p>
+    /// - On failure, responds with [`SdkError<UpdateSiteAddressError>`](crate::error::UpdateSiteAddressError)
     pub fn update_site_address(&self) -> fluent_builders::UpdateSiteAddress<C, M, R> {
         fluent_builders::UpdateSiteAddress::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateSiteRackPhysicalProperties` operation.
+    /// Constructs a fluent builder for the [`UpdateSiteRackPhysicalProperties`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties) operation.
     ///
-    /// See [`UpdateSiteRackPhysicalProperties`](crate::client::fluent_builders::UpdateSiteRackPhysicalProperties) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateSiteRackPhysicalPropertiesInput`](crate::input::UpdateSiteRackPhysicalPropertiesInput) with field(s):
+    ///   - [`site_id(Option<String>)`](crate::input::UpdateSiteRackPhysicalPropertiesInput::site_id): <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
+    ///   - [`power_draw_kva(Option<PowerDrawKva>)`](crate::input::UpdateSiteRackPhysicalPropertiesInput::power_draw_kva): <p>Specify in kVA the power draw available at the hardware placement position for the rack.</p>
+    ///   - [`power_phase(Option<PowerPhase>)`](crate::input::UpdateSiteRackPhysicalPropertiesInput::power_phase): <p> Specify the power option that you can provide for hardware. </p>  <ul>   <li> <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p> </li>   <li> <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p> </li>  </ul>
+    ///   - [`power_connector(Option<PowerConnector>)`](crate::input::UpdateSiteRackPhysicalPropertiesInput::power_connector): <p> Specify the power connector that Amazon Web Services should plan to provide for connections to the hardware. Note the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>. </p>  <ul>   <li> <p>Single-phase AC feed</p>    <ul>     <li> <p> <b>L6-30P</b> – (common in US); 30A; single phase</p> </li>     <li> <p> <b>IEC309 (blue)</b> – P+N+E, 6hr; 32 A; single phase</p> </li>    </ul> </li>   <li> <p>Three-phase AC feed</p>    <ul>     <li> <p> <b>AH530P7W (red)</b> – 3P+N+E, 7hr; 30A; three phase</p> </li>     <li> <p> <b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three phase</p> </li>    </ul> </li>  </ul>
+    ///   - [`power_feed_drop(Option<PowerFeedDrop>)`](crate::input::UpdateSiteRackPhysicalPropertiesInput::power_feed_drop): <p> Specify whether the power feed comes above or below the rack. </p>
+    ///   - [`uplink_gbps(Option<UplinkGbps>)`](crate::input::UpdateSiteRackPhysicalPropertiesInput::uplink_gbps): <p> Specify the uplink speed the rack should support for the connection to the Region. </p>
+    ///   - [`uplink_count(Option<UplinkCount>)`](crate::input::UpdateSiteRackPhysicalPropertiesInput::uplink_count): <p>Racks come with two Outpost network devices. Depending on the supported uplink speed at the site, the Outpost network devices provide a variable number of uplinks. Specify the number of uplinks for each Outpost network device that you intend to use to connect the rack to your network. Note the correlation between <code>UplinkGbps</code> and <code>UplinkCount</code>. </p>  <ul>   <li> <p>1Gbps - Uplinks available: 1, 2, 4, 6, 8</p> </li>   <li> <p>10Gbps - Uplinks available: 1, 2, 4, 8, 12, 16</p> </li>   <li> <p>40 and 100 Gbps- Uplinks available: 1, 2, 4</p> </li>  </ul>
+    ///   - [`fiber_optic_cable_type(Option<FiberOpticCableType>)`](crate::input::UpdateSiteRackPhysicalPropertiesInput::fiber_optic_cable_type): <p> Specify the type of fiber that you will use to attach the Outpost to your network. </p>
+    ///   - [`optical_standard(Option<OpticalStandard>)`](crate::input::UpdateSiteRackPhysicalPropertiesInput::optical_standard): <p>Specify the type of optical standard that you will use to attach the Outpost to your network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>  <ul>   <li> <p> <code>OPTIC_10GBASE_SR</code>: 10GBASE-SR</p> </li>   <li> <p> <code>OPTIC_10GBASE_IR</code>: 10GBASE-IR</p> </li>   <li> <p> <code>OPTIC_10GBASE_LR</code>: 10GBASE-LR</p> </li>   <li> <p> <code>OPTIC_40GBASE_SR</code>: 40GBASE-SR</p> </li>   <li> <p> <code>OPTIC_40GBASE_ESR</code>: 40GBASE-ESR</p> </li>   <li> <p> <code>OPTIC_40GBASE_IR4_LR4L</code>: 40GBASE-IR (LR4L)</p> </li>   <li> <p> <code>OPTIC_40GBASE_LR4</code>: 40GBASE-LR4</p> </li>   <li> <p> <code>OPTIC_100GBASE_SR4</code>: 100GBASE-SR4</p> </li>   <li> <p> <code>OPTIC_100GBASE_CWDM4</code>: 100GBASE-CWDM4</p> </li>   <li> <p> <code>OPTIC_100GBASE_LR4</code>: 100GBASE-LR4</p> </li>   <li> <p> <code>OPTIC_100G_PSM4_MSA</code>: 100G PSM4 MSA</p> </li>   <li> <p> <code>OPTIC_1000BASE_LX</code>: 1000Base-LX</p> </li>   <li> <p> <code>OPTIC_1000BASE_SX</code> : 1000Base-SX</p> </li>  </ul>
+    ///   - [`maximum_supported_weight_lbs(Option<MaximumSupportedWeightLbs>)`](crate::input::UpdateSiteRackPhysicalPropertiesInput::maximum_supported_weight_lbs): <p> Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs. </p>
+    /// - On success, responds with [`UpdateSiteRackPhysicalPropertiesOutput`](crate::output::UpdateSiteRackPhysicalPropertiesOutput) with field(s):
+    ///   - [`site(Option<Site>)`](crate::output::UpdateSiteRackPhysicalPropertiesOutput::site): <p>Information about a site.</p>
+    /// - On failure, responds with [`SdkError<UpdateSiteRackPhysicalPropertiesError>`](crate::error::UpdateSiteRackPhysicalPropertiesError)
     pub fn update_site_rack_physical_properties(
         &self,
     ) -> fluent_builders::UpdateSiteRackPhysicalProperties<C, M, R> {

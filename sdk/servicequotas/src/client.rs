@@ -83,168 +83,259 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AssociateServiceQuotaTemplate` operation.
+    /// Constructs a fluent builder for the [`AssociateServiceQuotaTemplate`](crate::client::fluent_builders::AssociateServiceQuotaTemplate) operation.
     ///
-    /// See [`AssociateServiceQuotaTemplate`](crate::client::fluent_builders::AssociateServiceQuotaTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateServiceQuotaTemplateInput`](crate::input::AssociateServiceQuotaTemplateInput)
+
+    /// - On success, responds with [`AssociateServiceQuotaTemplateOutput`](crate::output::AssociateServiceQuotaTemplateOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateServiceQuotaTemplateError>`](crate::error::AssociateServiceQuotaTemplateError)
     pub fn associate_service_quota_template(
         &self,
     ) -> fluent_builders::AssociateServiceQuotaTemplate<C, M, R> {
         fluent_builders::AssociateServiceQuotaTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteServiceQuotaIncreaseRequestFromTemplate` operation.
+    /// Constructs a fluent builder for the [`DeleteServiceQuotaIncreaseRequestFromTemplate`](crate::client::fluent_builders::DeleteServiceQuotaIncreaseRequestFromTemplate) operation.
     ///
-    /// See [`DeleteServiceQuotaIncreaseRequestFromTemplate`](crate::client::fluent_builders::DeleteServiceQuotaIncreaseRequestFromTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteServiceQuotaIncreaseRequestFromTemplateInput`](crate::input::DeleteServiceQuotaIncreaseRequestFromTemplateInput) with field(s):
+    ///   - [`service_code(Option<String>)`](crate::input::DeleteServiceQuotaIncreaseRequestFromTemplateInput::service_code): <p>The service identifier.</p>
+    ///   - [`quota_code(Option<String>)`](crate::input::DeleteServiceQuotaIncreaseRequestFromTemplateInput::quota_code): <p>The quota identifier.</p>
+    ///   - [`aws_region(Option<String>)`](crate::input::DeleteServiceQuotaIncreaseRequestFromTemplateInput::aws_region): <p>The AWS Region.</p>
+    /// - On success, responds with [`DeleteServiceQuotaIncreaseRequestFromTemplateOutput`](crate::output::DeleteServiceQuotaIncreaseRequestFromTemplateOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteServiceQuotaIncreaseRequestFromTemplateError>`](crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError)
     pub fn delete_service_quota_increase_request_from_template(
         &self,
     ) -> fluent_builders::DeleteServiceQuotaIncreaseRequestFromTemplate<C, M, R> {
         fluent_builders::DeleteServiceQuotaIncreaseRequestFromTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateServiceQuotaTemplate` operation.
+    /// Constructs a fluent builder for the [`DisassociateServiceQuotaTemplate`](crate::client::fluent_builders::DisassociateServiceQuotaTemplate) operation.
     ///
-    /// See [`DisassociateServiceQuotaTemplate`](crate::client::fluent_builders::DisassociateServiceQuotaTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateServiceQuotaTemplateInput`](crate::input::DisassociateServiceQuotaTemplateInput)
+
+    /// - On success, responds with [`DisassociateServiceQuotaTemplateOutput`](crate::output::DisassociateServiceQuotaTemplateOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateServiceQuotaTemplateError>`](crate::error::DisassociateServiceQuotaTemplateError)
     pub fn disassociate_service_quota_template(
         &self,
     ) -> fluent_builders::DisassociateServiceQuotaTemplate<C, M, R> {
         fluent_builders::DisassociateServiceQuotaTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAssociationForServiceQuotaTemplate` operation.
+    /// Constructs a fluent builder for the [`GetAssociationForServiceQuotaTemplate`](crate::client::fluent_builders::GetAssociationForServiceQuotaTemplate) operation.
     ///
-    /// See [`GetAssociationForServiceQuotaTemplate`](crate::client::fluent_builders::GetAssociationForServiceQuotaTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetAssociationForServiceQuotaTemplateInput`](crate::input::GetAssociationForServiceQuotaTemplateInput)
+
+    /// - On success, responds with [`GetAssociationForServiceQuotaTemplateOutput`](crate::output::GetAssociationForServiceQuotaTemplateOutput) with field(s):
+    ///   - [`service_quota_template_association_status(Option<ServiceQuotaTemplateAssociationStatus>)`](crate::output::GetAssociationForServiceQuotaTemplateOutput::service_quota_template_association_status): <p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are automatically applied to new accounts in your organization.</p>
+    /// - On failure, responds with [`SdkError<GetAssociationForServiceQuotaTemplateError>`](crate::error::GetAssociationForServiceQuotaTemplateError)
     pub fn get_association_for_service_quota_template(
         &self,
     ) -> fluent_builders::GetAssociationForServiceQuotaTemplate<C, M, R> {
         fluent_builders::GetAssociationForServiceQuotaTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAWSDefaultServiceQuota` operation.
+    /// Constructs a fluent builder for the [`GetAWSDefaultServiceQuota`](crate::client::fluent_builders::GetAWSDefaultServiceQuota) operation.
     ///
-    /// See [`GetAWSDefaultServiceQuota`](crate::client::fluent_builders::GetAWSDefaultServiceQuota) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetAwsDefaultServiceQuotaInput`](crate::input::GetAwsDefaultServiceQuotaInput) with field(s):
+    ///   - [`service_code(Option<String>)`](crate::input::GetAwsDefaultServiceQuotaInput::service_code): <p>The service identifier.</p>
+    ///   - [`quota_code(Option<String>)`](crate::input::GetAwsDefaultServiceQuotaInput::quota_code): <p>The quota identifier.</p>
+    /// - On success, responds with [`GetAwsDefaultServiceQuotaOutput`](crate::output::GetAwsDefaultServiceQuotaOutput) with field(s):
+    ///   - [`quota(Option<ServiceQuota>)`](crate::output::GetAwsDefaultServiceQuotaOutput::quota): <p>Information about the quota.</p>
+    /// - On failure, responds with [`SdkError<GetAWSDefaultServiceQuotaError>`](crate::error::GetAWSDefaultServiceQuotaError)
     pub fn get_aws_default_service_quota(
         &self,
     ) -> fluent_builders::GetAWSDefaultServiceQuota<C, M, R> {
         fluent_builders::GetAWSDefaultServiceQuota::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRequestedServiceQuotaChange` operation.
+    /// Constructs a fluent builder for the [`GetRequestedServiceQuotaChange`](crate::client::fluent_builders::GetRequestedServiceQuotaChange) operation.
     ///
-    /// See [`GetRequestedServiceQuotaChange`](crate::client::fluent_builders::GetRequestedServiceQuotaChange) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetRequestedServiceQuotaChangeInput`](crate::input::GetRequestedServiceQuotaChangeInput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::input::GetRequestedServiceQuotaChangeInput::request_id): <p>The ID of the quota increase request.</p>
+    /// - On success, responds with [`GetRequestedServiceQuotaChangeOutput`](crate::output::GetRequestedServiceQuotaChangeOutput) with field(s):
+    ///   - [`requested_quota(Option<RequestedServiceQuotaChange>)`](crate::output::GetRequestedServiceQuotaChangeOutput::requested_quota): <p>Information about the quota increase request.</p>
+    /// - On failure, responds with [`SdkError<GetRequestedServiceQuotaChangeError>`](crate::error::GetRequestedServiceQuotaChangeError)
     pub fn get_requested_service_quota_change(
         &self,
     ) -> fluent_builders::GetRequestedServiceQuotaChange<C, M, R> {
         fluent_builders::GetRequestedServiceQuotaChange::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetServiceQuota` operation.
+    /// Constructs a fluent builder for the [`GetServiceQuota`](crate::client::fluent_builders::GetServiceQuota) operation.
     ///
-    /// See [`GetServiceQuota`](crate::client::fluent_builders::GetServiceQuota) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetServiceQuotaInput`](crate::input::GetServiceQuotaInput) with field(s):
+    ///   - [`service_code(Option<String>)`](crate::input::GetServiceQuotaInput::service_code): <p>The service identifier.</p>
+    ///   - [`quota_code(Option<String>)`](crate::input::GetServiceQuotaInput::quota_code): <p>The quota identifier.</p>
+    /// - On success, responds with [`GetServiceQuotaOutput`](crate::output::GetServiceQuotaOutput) with field(s):
+    ///   - [`quota(Option<ServiceQuota>)`](crate::output::GetServiceQuotaOutput::quota): <p>Information about the quota.</p>
+    /// - On failure, responds with [`SdkError<GetServiceQuotaError>`](crate::error::GetServiceQuotaError)
     pub fn get_service_quota(&self) -> fluent_builders::GetServiceQuota<C, M, R> {
         fluent_builders::GetServiceQuota::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetServiceQuotaIncreaseRequestFromTemplate` operation.
+    /// Constructs a fluent builder for the [`GetServiceQuotaIncreaseRequestFromTemplate`](crate::client::fluent_builders::GetServiceQuotaIncreaseRequestFromTemplate) operation.
     ///
-    /// See [`GetServiceQuotaIncreaseRequestFromTemplate`](crate::client::fluent_builders::GetServiceQuotaIncreaseRequestFromTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetServiceQuotaIncreaseRequestFromTemplateInput`](crate::input::GetServiceQuotaIncreaseRequestFromTemplateInput) with field(s):
+    ///   - [`service_code(Option<String>)`](crate::input::GetServiceQuotaIncreaseRequestFromTemplateInput::service_code): <p>The service identifier.</p>
+    ///   - [`quota_code(Option<String>)`](crate::input::GetServiceQuotaIncreaseRequestFromTemplateInput::quota_code): <p>The quota identifier.</p>
+    ///   - [`aws_region(Option<String>)`](crate::input::GetServiceQuotaIncreaseRequestFromTemplateInput::aws_region): <p>The AWS Region.</p>
+    /// - On success, responds with [`GetServiceQuotaIncreaseRequestFromTemplateOutput`](crate::output::GetServiceQuotaIncreaseRequestFromTemplateOutput) with field(s):
+    ///   - [`service_quota_increase_request_in_template(Option<ServiceQuotaIncreaseRequestInTemplate>)`](crate::output::GetServiceQuotaIncreaseRequestFromTemplateOutput::service_quota_increase_request_in_template): <p>Information about the quota increase request.</p>
+    /// - On failure, responds with [`SdkError<GetServiceQuotaIncreaseRequestFromTemplateError>`](crate::error::GetServiceQuotaIncreaseRequestFromTemplateError)
     pub fn get_service_quota_increase_request_from_template(
         &self,
     ) -> fluent_builders::GetServiceQuotaIncreaseRequestFromTemplate<C, M, R> {
         fluent_builders::GetServiceQuotaIncreaseRequestFromTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAWSDefaultServiceQuotas` operation.
-    ///
-    /// See [`ListAWSDefaultServiceQuotas`](crate::client::fluent_builders::ListAWSDefaultServiceQuotas) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListAWSDefaultServiceQuotas`](crate::client::fluent_builders::ListAWSDefaultServiceQuotas) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAWSDefaultServiceQuotas::into_paginator).
+    ///
+    /// - Takes [`ListAwsDefaultServiceQuotasInput`](crate::input::ListAwsDefaultServiceQuotasInput) with field(s):
+    ///   - [`service_code(Option<String>)`](crate::input::ListAwsDefaultServiceQuotasInput::service_code): <p>The service identifier.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListAwsDefaultServiceQuotasInput::next_token): <p>The token for the next page of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListAwsDefaultServiceQuotasInput::max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
+    /// - On success, responds with [`ListAwsDefaultServiceQuotasOutput`](crate::output::ListAwsDefaultServiceQuotasOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListAwsDefaultServiceQuotasOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    ///   - [`quotas(Option<Vec<ServiceQuota>>)`](crate::output::ListAwsDefaultServiceQuotasOutput::quotas): <p>Information about the quotas.</p>
+    /// - On failure, responds with [`SdkError<ListAWSDefaultServiceQuotasError>`](crate::error::ListAWSDefaultServiceQuotasError)
     pub fn list_aws_default_service_quotas(
         &self,
     ) -> fluent_builders::ListAWSDefaultServiceQuotas<C, M, R> {
         fluent_builders::ListAWSDefaultServiceQuotas::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRequestedServiceQuotaChangeHistory` operation.
-    ///
-    /// See [`ListRequestedServiceQuotaChangeHistory`](crate::client::fluent_builders::ListRequestedServiceQuotaChangeHistory) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListRequestedServiceQuotaChangeHistory`](crate::client::fluent_builders::ListRequestedServiceQuotaChangeHistory) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRequestedServiceQuotaChangeHistory::into_paginator).
+    ///
+    /// - Takes [`ListRequestedServiceQuotaChangeHistoryInput`](crate::input::ListRequestedServiceQuotaChangeHistoryInput) with field(s):
+    ///   - [`service_code(Option<String>)`](crate::input::ListRequestedServiceQuotaChangeHistoryInput::service_code): <p>The service identifier.</p>
+    ///   - [`status(Option<RequestStatus>)`](crate::input::ListRequestedServiceQuotaChangeHistoryInput::status): <p>The status of the quota increase request.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListRequestedServiceQuotaChangeHistoryInput::next_token): <p>The token for the next page of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListRequestedServiceQuotaChangeHistoryInput::max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
+    /// - On success, responds with [`ListRequestedServiceQuotaChangeHistoryOutput`](crate::output::ListRequestedServiceQuotaChangeHistoryOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListRequestedServiceQuotaChangeHistoryOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    ///   - [`requested_quotas(Option<Vec<RequestedServiceQuotaChange>>)`](crate::output::ListRequestedServiceQuotaChangeHistoryOutput::requested_quotas): <p>Information about the quota increase requests.</p>
+    /// - On failure, responds with [`SdkError<ListRequestedServiceQuotaChangeHistoryError>`](crate::error::ListRequestedServiceQuotaChangeHistoryError)
     pub fn list_requested_service_quota_change_history(
         &self,
     ) -> fluent_builders::ListRequestedServiceQuotaChangeHistory<C, M, R> {
         fluent_builders::ListRequestedServiceQuotaChangeHistory::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRequestedServiceQuotaChangeHistoryByQuota` operation.
-    ///
-    /// See [`ListRequestedServiceQuotaChangeHistoryByQuota`](crate::client::fluent_builders::ListRequestedServiceQuotaChangeHistoryByQuota) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListRequestedServiceQuotaChangeHistoryByQuota`](crate::client::fluent_builders::ListRequestedServiceQuotaChangeHistoryByQuota) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRequestedServiceQuotaChangeHistoryByQuota::into_paginator).
+    ///
+    /// - Takes [`ListRequestedServiceQuotaChangeHistoryByQuotaInput`](crate::input::ListRequestedServiceQuotaChangeHistoryByQuotaInput) with field(s):
+    ///   - [`service_code(Option<String>)`](crate::input::ListRequestedServiceQuotaChangeHistoryByQuotaInput::service_code): <p>The service identifier.</p>
+    ///   - [`quota_code(Option<String>)`](crate::input::ListRequestedServiceQuotaChangeHistoryByQuotaInput::quota_code): <p>The quota identifier.</p>
+    ///   - [`status(Option<RequestStatus>)`](crate::input::ListRequestedServiceQuotaChangeHistoryByQuotaInput::status): <p>The status value of the quota increase request.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListRequestedServiceQuotaChangeHistoryByQuotaInput::next_token): <p>The token for the next page of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListRequestedServiceQuotaChangeHistoryByQuotaInput::max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
+    /// - On success, responds with [`ListRequestedServiceQuotaChangeHistoryByQuotaOutput`](crate::output::ListRequestedServiceQuotaChangeHistoryByQuotaOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListRequestedServiceQuotaChangeHistoryByQuotaOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    ///   - [`requested_quotas(Option<Vec<RequestedServiceQuotaChange>>)`](crate::output::ListRequestedServiceQuotaChangeHistoryByQuotaOutput::requested_quotas): <p>Information about the quota increase requests.</p>
+    /// - On failure, responds with [`SdkError<ListRequestedServiceQuotaChangeHistoryByQuotaError>`](crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaError)
     pub fn list_requested_service_quota_change_history_by_quota(
         &self,
     ) -> fluent_builders::ListRequestedServiceQuotaChangeHistoryByQuota<C, M, R> {
         fluent_builders::ListRequestedServiceQuotaChangeHistoryByQuota::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListServiceQuotaIncreaseRequestsInTemplate` operation.
-    ///
-    /// See [`ListServiceQuotaIncreaseRequestsInTemplate`](crate::client::fluent_builders::ListServiceQuotaIncreaseRequestsInTemplate) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListServiceQuotaIncreaseRequestsInTemplate`](crate::client::fluent_builders::ListServiceQuotaIncreaseRequestsInTemplate) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListServiceQuotaIncreaseRequestsInTemplate::into_paginator).
+    ///
+    /// - Takes [`ListServiceQuotaIncreaseRequestsInTemplateInput`](crate::input::ListServiceQuotaIncreaseRequestsInTemplateInput) with field(s):
+    ///   - [`service_code(Option<String>)`](crate::input::ListServiceQuotaIncreaseRequestsInTemplateInput::service_code): <p>The service identifier.</p>
+    ///   - [`aws_region(Option<String>)`](crate::input::ListServiceQuotaIncreaseRequestsInTemplateInput::aws_region): <p>The AWS Region.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListServiceQuotaIncreaseRequestsInTemplateInput::next_token): <p>The token for the next page of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListServiceQuotaIncreaseRequestsInTemplateInput::max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
+    /// - On success, responds with [`ListServiceQuotaIncreaseRequestsInTemplateOutput`](crate::output::ListServiceQuotaIncreaseRequestsInTemplateOutput) with field(s):
+    ///   - [`service_quota_increase_request_in_template_list(Option<Vec<ServiceQuotaIncreaseRequestInTemplate>>)`](crate::output::ListServiceQuotaIncreaseRequestsInTemplateOutput::service_quota_increase_request_in_template_list): <p>Information about the quota increase requests.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListServiceQuotaIncreaseRequestsInTemplateOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    /// - On failure, responds with [`SdkError<ListServiceQuotaIncreaseRequestsInTemplateError>`](crate::error::ListServiceQuotaIncreaseRequestsInTemplateError)
     pub fn list_service_quota_increase_requests_in_template(
         &self,
     ) -> fluent_builders::ListServiceQuotaIncreaseRequestsInTemplate<C, M, R> {
         fluent_builders::ListServiceQuotaIncreaseRequestsInTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListServiceQuotas` operation.
-    ///
-    /// See [`ListServiceQuotas`](crate::client::fluent_builders::ListServiceQuotas) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListServiceQuotas`](crate::client::fluent_builders::ListServiceQuotas) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListServiceQuotas::into_paginator).
+    ///
+    /// - Takes [`ListServiceQuotasInput`](crate::input::ListServiceQuotasInput) with field(s):
+    ///   - [`service_code(Option<String>)`](crate::input::ListServiceQuotasInput::service_code): <p>The service identifier.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListServiceQuotasInput::next_token): <p>The token for the next page of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListServiceQuotasInput::max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
+    /// - On success, responds with [`ListServiceQuotasOutput`](crate::output::ListServiceQuotasOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListServiceQuotasOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    ///   - [`quotas(Option<Vec<ServiceQuota>>)`](crate::output::ListServiceQuotasOutput::quotas): <p>Information about the quotas.</p>
+    /// - On failure, responds with [`SdkError<ListServiceQuotasError>`](crate::error::ListServiceQuotasError)
     pub fn list_service_quotas(&self) -> fluent_builders::ListServiceQuotas<C, M, R> {
         fluent_builders::ListServiceQuotas::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListServices` operation.
-    ///
-    /// See [`ListServices`](crate::client::fluent_builders::ListServices) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListServices`](crate::client::fluent_builders::ListServices) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListServices::into_paginator).
+    ///
+    /// - Takes [`ListServicesInput`](crate::input::ListServicesInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListServicesInput::next_token): <p>The token for the next page of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListServicesInput::max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
+    /// - On success, responds with [`ListServicesOutput`](crate::output::ListServicesOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListServicesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
+    ///   - [`services(Option<Vec<ServiceInfo>>)`](crate::output::ListServicesOutput::services): <p>Information about the services.</p>
+    /// - On failure, responds with [`SdkError<ListServicesError>`](crate::error::ListServicesError)
     pub fn list_services(&self) -> fluent_builders::ListServices<C, M, R> {
         fluent_builders::ListServices::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) for the applied quota for which you want to list tags. You can get this information by using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A complex data type that contains zero or more tag elements.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutServiceQuotaIncreaseRequestIntoTemplate` operation.
+    /// Constructs a fluent builder for the [`PutServiceQuotaIncreaseRequestIntoTemplate`](crate::client::fluent_builders::PutServiceQuotaIncreaseRequestIntoTemplate) operation.
     ///
-    /// See [`PutServiceQuotaIncreaseRequestIntoTemplate`](crate::client::fluent_builders::PutServiceQuotaIncreaseRequestIntoTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutServiceQuotaIncreaseRequestIntoTemplateInput`](crate::input::PutServiceQuotaIncreaseRequestIntoTemplateInput) with field(s):
+    ///   - [`quota_code(Option<String>)`](crate::input::PutServiceQuotaIncreaseRequestIntoTemplateInput::quota_code): <p>The quota identifier.</p>
+    ///   - [`service_code(Option<String>)`](crate::input::PutServiceQuotaIncreaseRequestIntoTemplateInput::service_code): <p>The service identifier.</p>
+    ///   - [`aws_region(Option<String>)`](crate::input::PutServiceQuotaIncreaseRequestIntoTemplateInput::aws_region): <p>The AWS Region.</p>
+    ///   - [`desired_value(Option<f64>)`](crate::input::PutServiceQuotaIncreaseRequestIntoTemplateInput::desired_value): <p>The new, increased value for the quota.</p>
+    /// - On success, responds with [`PutServiceQuotaIncreaseRequestIntoTemplateOutput`](crate::output::PutServiceQuotaIncreaseRequestIntoTemplateOutput) with field(s):
+    ///   - [`service_quota_increase_request_in_template(Option<ServiceQuotaIncreaseRequestInTemplate>)`](crate::output::PutServiceQuotaIncreaseRequestIntoTemplateOutput::service_quota_increase_request_in_template): <p>Information about the quota increase request.</p>
+    /// - On failure, responds with [`SdkError<PutServiceQuotaIncreaseRequestIntoTemplateError>`](crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError)
     pub fn put_service_quota_increase_request_into_template(
         &self,
     ) -> fluent_builders::PutServiceQuotaIncreaseRequestIntoTemplate<C, M, R> {
         fluent_builders::PutServiceQuotaIncreaseRequestIntoTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RequestServiceQuotaIncrease` operation.
+    /// Constructs a fluent builder for the [`RequestServiceQuotaIncrease`](crate::client::fluent_builders::RequestServiceQuotaIncrease) operation.
     ///
-    /// See [`RequestServiceQuotaIncrease`](crate::client::fluent_builders::RequestServiceQuotaIncrease) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RequestServiceQuotaIncreaseInput`](crate::input::RequestServiceQuotaIncreaseInput) with field(s):
+    ///   - [`service_code(Option<String>)`](crate::input::RequestServiceQuotaIncreaseInput::service_code): <p>The service identifier.</p>
+    ///   - [`quota_code(Option<String>)`](crate::input::RequestServiceQuotaIncreaseInput::quota_code): <p>The quota identifier.</p>
+    ///   - [`desired_value(Option<f64>)`](crate::input::RequestServiceQuotaIncreaseInput::desired_value): <p>The new, increased value for the quota.</p>
+    /// - On success, responds with [`RequestServiceQuotaIncreaseOutput`](crate::output::RequestServiceQuotaIncreaseOutput) with field(s):
+    ///   - [`requested_quota(Option<RequestedServiceQuotaChange>)`](crate::output::RequestServiceQuotaIncreaseOutput::requested_quota): <p>Information about the quota increase request.</p>
+    /// - On failure, responds with [`SdkError<RequestServiceQuotaIncreaseError>`](crate::error::RequestServiceQuotaIncreaseError)
     pub fn request_service_quota_increase(
         &self,
     ) -> fluent_builders::RequestServiceQuotaIncrease<C, M, R> {
         fluent_builders::RequestServiceQuotaIncrease::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) for the applied quota. You can get this information by using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>The tags that you want to add to the resource.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) for the applied quota that you want to untag. You can get this information by using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The keys of the tags that you want to remove from the resource.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }

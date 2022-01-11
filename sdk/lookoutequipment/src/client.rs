@@ -83,166 +83,349 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateDataset` operation.
+    /// Constructs a fluent builder for the [`CreateDataset`](crate::client::fluent_builders::CreateDataset) operation.
     ///
-    /// See [`CreateDataset`](crate::client::fluent_builders::CreateDataset) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateDatasetInput`](crate::input::CreateDatasetInput) with field(s):
+    ///   - [`dataset_name(Option<String>)`](crate::input::CreateDatasetInput::dataset_name): <p>The name of the dataset being created. </p>
+    ///   - [`dataset_schema(Option<DatasetSchema>)`](crate::input::CreateDatasetInput::dataset_schema): <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types. </p>
+    ///   - [`server_side_kms_key_id(Option<String>)`](crate::input::CreateDatasetInput::server_side_kms_key_id): <p>Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment. </p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateDatasetInput::client_token): <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateDatasetInput::tags): <p>Any tags associated with the ingested data described in the dataset. </p>
+    /// - On success, responds with [`CreateDatasetOutput`](crate::output::CreateDatasetOutput) with field(s):
+    ///   - [`dataset_name(Option<String>)`](crate::output::CreateDatasetOutput::dataset_name): <p>The name of the dataset being created. </p>
+    ///   - [`dataset_arn(Option<String>)`](crate::output::CreateDatasetOutput::dataset_arn): <p> The Amazon Resource Name (ARN) of the dataset being created. </p>
+    ///   - [`status(Option<DatasetStatus>)`](crate::output::CreateDatasetOutput::status): <p>Indicates the status of the <code>CreateDataset</code> operation. </p>
+    /// - On failure, responds with [`SdkError<CreateDatasetError>`](crate::error::CreateDatasetError)
     pub fn create_dataset(&self) -> fluent_builders::CreateDataset<C, M, R> {
         fluent_builders::CreateDataset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateInferenceScheduler` operation.
+    /// Constructs a fluent builder for the [`CreateInferenceScheduler`](crate::client::fluent_builders::CreateInferenceScheduler) operation.
     ///
-    /// See [`CreateInferenceScheduler`](crate::client::fluent_builders::CreateInferenceScheduler) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateInferenceSchedulerInput`](crate::input::CreateInferenceSchedulerInput) with field(s):
+    ///   - [`model_name(Option<String>)`](crate::input::CreateInferenceSchedulerInput::model_name): <p>The name of the previously trained ML model being used to create the inference scheduler. </p>
+    ///   - [`inference_scheduler_name(Option<String>)`](crate::input::CreateInferenceSchedulerInput::inference_scheduler_name): <p>The name of the inference scheduler being created. </p>
+    ///   - [`data_delay_offset_in_minutes(Option<i64>)`](crate::input::CreateInferenceSchedulerInput::data_delay_offset_in_minutes): <p>A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if you select an offset delay time of five minutes, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data. </p>
+    ///   - [`data_upload_frequency(Option<DataUploadFrequency>)`](crate::input::CreateInferenceSchedulerInput::data_upload_frequency): <p> How often data is uploaded to the source S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
+    ///   - [`data_input_configuration(Option<InferenceInputConfiguration>)`](crate::input::CreateInferenceSchedulerInput::data_input_configuration): <p>Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
+    ///   - [`data_output_configuration(Option<InferenceOutputConfiguration>)`](crate::input::CreateInferenceSchedulerInput::data_output_configuration): <p>Specifies configuration information for the output results for the inference scheduler, including the S3 location for the output. </p>
+    ///   - [`role_arn(Option<String>)`](crate::input::CreateInferenceSchedulerInput::role_arn): <p>The Amazon Resource Name (ARN) of a role with permission to access the data source being used for the inference. </p>
+    ///   - [`server_side_kms_key_id(Option<String>)`](crate::input::CreateInferenceSchedulerInput::server_side_kms_key_id): <p>Provides the identifier of the KMS key used to encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateInferenceSchedulerInput::client_token): <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateInferenceSchedulerInput::tags): <p>Any tags associated with the inference scheduler. </p>
+    /// - On success, responds with [`CreateInferenceSchedulerOutput`](crate::output::CreateInferenceSchedulerOutput) with field(s):
+    ///   - [`inference_scheduler_arn(Option<String>)`](crate::output::CreateInferenceSchedulerOutput::inference_scheduler_arn): <p>The Amazon Resource Name (ARN) of the inference scheduler being created. </p>
+    ///   - [`inference_scheduler_name(Option<String>)`](crate::output::CreateInferenceSchedulerOutput::inference_scheduler_name): <p>The name of inference scheduler being created. </p>
+    ///   - [`status(Option<InferenceSchedulerStatus>)`](crate::output::CreateInferenceSchedulerOutput::status): <p>Indicates the status of the <code>CreateInferenceScheduler</code> operation. </p>
+    /// - On failure, responds with [`SdkError<CreateInferenceSchedulerError>`](crate::error::CreateInferenceSchedulerError)
     pub fn create_inference_scheduler(&self) -> fluent_builders::CreateInferenceScheduler<C, M, R> {
         fluent_builders::CreateInferenceScheduler::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateModel` operation.
+    /// Constructs a fluent builder for the [`CreateModel`](crate::client::fluent_builders::CreateModel) operation.
     ///
-    /// See [`CreateModel`](crate::client::fluent_builders::CreateModel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateModelInput`](crate::input::CreateModelInput) with field(s):
+    ///   - [`model_name(Option<String>)`](crate::input::CreateModelInput::model_name): <p>The name for the ML model to be created.</p>
+    ///   - [`dataset_name(Option<String>)`](crate::input::CreateModelInput::dataset_name): <p>The name of the dataset for the ML model being created. </p>
+    ///   - [`dataset_schema(Option<DatasetSchema>)`](crate::input::CreateModelInput::dataset_schema): <p>The data schema for the ML model being created. </p>
+    ///   - [`labels_input_configuration(Option<LabelsInputConfiguration>)`](crate::input::CreateModelInput::labels_input_configuration): <p>The input configuration for the labels being used for the ML model that's being created. </p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateModelInput::client_token): <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
+    ///   - [`training_data_start_time(Option<DateTime>)`](crate::input::CreateModelInput::training_data_start_time): <p>Indicates the time reference in the dataset that should be used to begin the subset of training data for the ML model. </p>
+    ///   - [`training_data_end_time(Option<DateTime>)`](crate::input::CreateModelInput::training_data_end_time): <p>Indicates the time reference in the dataset that should be used to end the subset of training data for the ML model. </p>
+    ///   - [`evaluation_data_start_time(Option<DateTime>)`](crate::input::CreateModelInput::evaluation_data_start_time): <p>Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the ML model. </p>
+    ///   - [`evaluation_data_end_time(Option<DateTime>)`](crate::input::CreateModelInput::evaluation_data_end_time): <p> Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the ML model. </p>
+    ///   - [`role_arn(Option<String>)`](crate::input::CreateModelInput::role_arn): <p> The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the ML model. </p>
+    ///   - [`data_pre_processing_configuration(Option<DataPreProcessingConfiguration>)`](crate::input::CreateModelInput::data_pre_processing_configuration): <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>  <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
+    ///   - [`server_side_kms_key_id(Option<String>)`](crate::input::CreateModelInput::server_side_kms_key_id): <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment. </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateModelInput::tags): <p> Any tags associated with the ML model being created. </p>
+    ///   - [`off_condition(Option<String>)`](crate::input::CreateModelInput::off_condition): <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
+    /// - On success, responds with [`CreateModelOutput`](crate::output::CreateModelOutput) with field(s):
+    ///   - [`model_arn(Option<String>)`](crate::output::CreateModelOutput::model_arn): <p>The Amazon Resource Name (ARN) of the model being created. </p>
+    ///   - [`status(Option<ModelStatus>)`](crate::output::CreateModelOutput::status): <p>Indicates the status of the <code>CreateModel</code> operation. </p>
+    /// - On failure, responds with [`SdkError<CreateModelError>`](crate::error::CreateModelError)
     pub fn create_model(&self) -> fluent_builders::CreateModel<C, M, R> {
         fluent_builders::CreateModel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDataset` operation.
+    /// Constructs a fluent builder for the [`DeleteDataset`](crate::client::fluent_builders::DeleteDataset) operation.
     ///
-    /// See [`DeleteDataset`](crate::client::fluent_builders::DeleteDataset) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteDatasetInput`](crate::input::DeleteDatasetInput) with field(s):
+    ///   - [`dataset_name(Option<String>)`](crate::input::DeleteDatasetInput::dataset_name): <p>The name of the dataset to be deleted. </p>
+    /// - On success, responds with [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteDatasetError>`](crate::error::DeleteDatasetError)
     pub fn delete_dataset(&self) -> fluent_builders::DeleteDataset<C, M, R> {
         fluent_builders::DeleteDataset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteInferenceScheduler` operation.
+    /// Constructs a fluent builder for the [`DeleteInferenceScheduler`](crate::client::fluent_builders::DeleteInferenceScheduler) operation.
     ///
-    /// See [`DeleteInferenceScheduler`](crate::client::fluent_builders::DeleteInferenceScheduler) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteInferenceSchedulerInput`](crate::input::DeleteInferenceSchedulerInput) with field(s):
+    ///   - [`inference_scheduler_name(Option<String>)`](crate::input::DeleteInferenceSchedulerInput::inference_scheduler_name): <p>The name of the inference scheduler to be deleted. </p>
+    /// - On success, responds with [`DeleteInferenceSchedulerOutput`](crate::output::DeleteInferenceSchedulerOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteInferenceSchedulerError>`](crate::error::DeleteInferenceSchedulerError)
     pub fn delete_inference_scheduler(&self) -> fluent_builders::DeleteInferenceScheduler<C, M, R> {
         fluent_builders::DeleteInferenceScheduler::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteModel` operation.
+    /// Constructs a fluent builder for the [`DeleteModel`](crate::client::fluent_builders::DeleteModel) operation.
     ///
-    /// See [`DeleteModel`](crate::client::fluent_builders::DeleteModel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteModelInput`](crate::input::DeleteModelInput) with field(s):
+    ///   - [`model_name(Option<String>)`](crate::input::DeleteModelInput::model_name): <p>The name of the ML model to be deleted. </p>
+    /// - On success, responds with [`DeleteModelOutput`](crate::output::DeleteModelOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteModelError>`](crate::error::DeleteModelError)
     pub fn delete_model(&self) -> fluent_builders::DeleteModel<C, M, R> {
         fluent_builders::DeleteModel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDataIngestionJob` operation.
+    /// Constructs a fluent builder for the [`DescribeDataIngestionJob`](crate::client::fluent_builders::DescribeDataIngestionJob) operation.
     ///
-    /// See [`DescribeDataIngestionJob`](crate::client::fluent_builders::DescribeDataIngestionJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeDataIngestionJobInput`](crate::input::DescribeDataIngestionJobInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::DescribeDataIngestionJobInput::job_id): <p>The job ID of the data ingestion job. </p>
+    /// - On success, responds with [`DescribeDataIngestionJobOutput`](crate::output::DescribeDataIngestionJobOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::DescribeDataIngestionJobOutput::job_id): <p>Indicates the job ID of the data ingestion job. </p>
+    ///   - [`dataset_arn(Option<String>)`](crate::output::DescribeDataIngestionJobOutput::dataset_arn): <p>The Amazon Resource Name (ARN) of the dataset being used in the data ingestion job. </p>
+    ///   - [`ingestion_input_configuration(Option<IngestionInputConfiguration>)`](crate::output::DescribeDataIngestionJobOutput::ingestion_input_configuration): <p>Specifies the S3 location configuration for the data input for the data ingestion job. </p>
+    ///   - [`role_arn(Option<String>)`](crate::output::DescribeDataIngestionJobOutput::role_arn): <p>The Amazon Resource Name (ARN) of an IAM role with permission to access the data source being ingested. </p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeDataIngestionJobOutput::created_at): <p>The time at which the data ingestion job was created. </p>
+    ///   - [`status(Option<IngestionJobStatus>)`](crate::output::DescribeDataIngestionJobOutput::status): <p>Indicates the status of the <code>DataIngestionJob</code> operation. </p>
+    ///   - [`failed_reason(Option<String>)`](crate::output::DescribeDataIngestionJobOutput::failed_reason): <p>Specifies the reason for failure when a data ingestion job has failed. </p>
+    /// - On failure, responds with [`SdkError<DescribeDataIngestionJobError>`](crate::error::DescribeDataIngestionJobError)
     pub fn describe_data_ingestion_job(
         &self,
     ) -> fluent_builders::DescribeDataIngestionJob<C, M, R> {
         fluent_builders::DescribeDataIngestionJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDataset` operation.
+    /// Constructs a fluent builder for the [`DescribeDataset`](crate::client::fluent_builders::DescribeDataset) operation.
     ///
-    /// See [`DescribeDataset`](crate::client::fluent_builders::DescribeDataset) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeDatasetInput`](crate::input::DescribeDatasetInput) with field(s):
+    ///   - [`dataset_name(Option<String>)`](crate::input::DescribeDatasetInput::dataset_name): <p>The name of the dataset to be described. </p>
+    /// - On success, responds with [`DescribeDatasetOutput`](crate::output::DescribeDatasetOutput) with field(s):
+    ///   - [`dataset_name(Option<String>)`](crate::output::DescribeDatasetOutput::dataset_name): <p>The name of the dataset being described. </p>
+    ///   - [`dataset_arn(Option<String>)`](crate::output::DescribeDatasetOutput::dataset_arn): <p>The Amazon Resource Name (ARN) of the dataset being described. </p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeDatasetOutput::created_at): <p>Specifies the time the dataset was created in Amazon Lookout for Equipment. </p>
+    ///   - [`last_updated_at(Option<DateTime>)`](crate::output::DescribeDatasetOutput::last_updated_at): <p>Specifies the time the dataset was last updated, if it was. </p>
+    ///   - [`status(Option<DatasetStatus>)`](crate::output::DescribeDatasetOutput::status): <p>Indicates the status of the dataset. </p>
+    ///   - [`schema(Option<String>)`](crate::output::DescribeDatasetOutput::schema): <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types. </p>
+    ///   - [`server_side_kms_key_id(Option<String>)`](crate::output::DescribeDatasetOutput::server_side_kms_key_id): <p>Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment. </p>
+    ///   - [`ingestion_input_configuration(Option<IngestionInputConfiguration>)`](crate::output::DescribeDatasetOutput::ingestion_input_configuration): <p>Specifies the S3 location configuration for the data input for the data ingestion job. </p>
+    /// - On failure, responds with [`SdkError<DescribeDatasetError>`](crate::error::DescribeDatasetError)
     pub fn describe_dataset(&self) -> fluent_builders::DescribeDataset<C, M, R> {
         fluent_builders::DescribeDataset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeInferenceScheduler` operation.
+    /// Constructs a fluent builder for the [`DescribeInferenceScheduler`](crate::client::fluent_builders::DescribeInferenceScheduler) operation.
     ///
-    /// See [`DescribeInferenceScheduler`](crate::client::fluent_builders::DescribeInferenceScheduler) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeInferenceSchedulerInput`](crate::input::DescribeInferenceSchedulerInput) with field(s):
+    ///   - [`inference_scheduler_name(Option<String>)`](crate::input::DescribeInferenceSchedulerInput::inference_scheduler_name): <p>The name of the inference scheduler being described. </p>
+    /// - On success, responds with [`DescribeInferenceSchedulerOutput`](crate::output::DescribeInferenceSchedulerOutput) with field(s):
+    ///   - [`model_arn(Option<String>)`](crate::output::DescribeInferenceSchedulerOutput::model_arn): <p>The Amazon Resource Name (ARN) of the ML model of the inference scheduler being described. </p>
+    ///   - [`model_name(Option<String>)`](crate::output::DescribeInferenceSchedulerOutput::model_name): <p>The name of the ML model of the inference scheduler being described. </p>
+    ///   - [`inference_scheduler_name(Option<String>)`](crate::output::DescribeInferenceSchedulerOutput::inference_scheduler_name): <p>The name of the inference scheduler being described. </p>
+    ///   - [`inference_scheduler_arn(Option<String>)`](crate::output::DescribeInferenceSchedulerOutput::inference_scheduler_arn): <p>The Amazon Resource Name (ARN) of the inference scheduler being described. </p>
+    ///   - [`status(Option<InferenceSchedulerStatus>)`](crate::output::DescribeInferenceSchedulerOutput::status): <p>Indicates the status of the inference scheduler. </p>
+    ///   - [`data_delay_offset_in_minutes(Option<i64>)`](crate::output::DescribeInferenceSchedulerOutput::data_delay_offset_in_minutes): <p> A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if you select an offset delay time of five minutes, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data.</p>
+    ///   - [`data_upload_frequency(Option<DataUploadFrequency>)`](crate::output::DescribeInferenceSchedulerOutput::data_upload_frequency): <p>Specifies how often data is uploaded to the source S3 bucket for the input data. This value is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeInferenceSchedulerOutput::created_at): <p>Specifies the time at which the inference scheduler was created. </p>
+    ///   - [`updated_at(Option<DateTime>)`](crate::output::DescribeInferenceSchedulerOutput::updated_at): <p>Specifies the time at which the inference scheduler was last updated, if it was. </p>
+    ///   - [`data_input_configuration(Option<InferenceInputConfiguration>)`](crate::output::DescribeInferenceSchedulerOutput::data_input_configuration): <p> Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
+    ///   - [`data_output_configuration(Option<InferenceOutputConfiguration>)`](crate::output::DescribeInferenceSchedulerOutput::data_output_configuration): <p> Specifies information for the output results for the inference scheduler, including the output S3 location. </p>
+    ///   - [`role_arn(Option<String>)`](crate::output::DescribeInferenceSchedulerOutput::role_arn): <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the inference scheduler being described. </p>
+    ///   - [`server_side_kms_key_id(Option<String>)`](crate::output::DescribeInferenceSchedulerOutput::server_side_kms_key_id): <p>Provides the identifier of the KMS key used to encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
+    /// - On failure, responds with [`SdkError<DescribeInferenceSchedulerError>`](crate::error::DescribeInferenceSchedulerError)
     pub fn describe_inference_scheduler(
         &self,
     ) -> fluent_builders::DescribeInferenceScheduler<C, M, R> {
         fluent_builders::DescribeInferenceScheduler::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeModel` operation.
+    /// Constructs a fluent builder for the [`DescribeModel`](crate::client::fluent_builders::DescribeModel) operation.
     ///
-    /// See [`DescribeModel`](crate::client::fluent_builders::DescribeModel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeModelInput`](crate::input::DescribeModelInput) with field(s):
+    ///   - [`model_name(Option<String>)`](crate::input::DescribeModelInput::model_name): <p>The name of the ML model to be described. </p>
+    /// - On success, responds with [`DescribeModelOutput`](crate::output::DescribeModelOutput) with field(s):
+    ///   - [`model_name(Option<String>)`](crate::output::DescribeModelOutput::model_name): <p>The name of the ML model being described. </p>
+    ///   - [`model_arn(Option<String>)`](crate::output::DescribeModelOutput::model_arn): <p>The Amazon Resource Name (ARN) of the ML model being described. </p>
+    ///   - [`dataset_name(Option<String>)`](crate::output::DescribeModelOutput::dataset_name): <p>The name of the dataset being used by the ML being described. </p>
+    ///   - [`dataset_arn(Option<String>)`](crate::output::DescribeModelOutput::dataset_arn): <p>The Amazon Resouce Name (ARN) of the dataset used to create the ML model being described. </p>
+    ///   - [`schema(Option<String>)`](crate::output::DescribeModelOutput::schema): <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types. </p>
+    ///   - [`labels_input_configuration(Option<LabelsInputConfiguration>)`](crate::output::DescribeModelOutput::labels_input_configuration): <p>Specifies configuration information about the labels input, including its S3 location. </p>
+    ///   - [`training_data_start_time(Option<DateTime>)`](crate::output::DescribeModelOutput::training_data_start_time): <p> Indicates the time reference in the dataset that was used to begin the subset of training data for the ML model. </p>
+    ///   - [`training_data_end_time(Option<DateTime>)`](crate::output::DescribeModelOutput::training_data_end_time): <p> Indicates the time reference in the dataset that was used to end the subset of training data for the ML model. </p>
+    ///   - [`evaluation_data_start_time(Option<DateTime>)`](crate::output::DescribeModelOutput::evaluation_data_start_time): <p> Indicates the time reference in the dataset that was used to begin the subset of evaluation data for the ML model. </p>
+    ///   - [`evaluation_data_end_time(Option<DateTime>)`](crate::output::DescribeModelOutput::evaluation_data_end_time): <p> Indicates the time reference in the dataset that was used to end the subset of evaluation data for the ML model. </p>
+    ///   - [`role_arn(Option<String>)`](crate::output::DescribeModelOutput::role_arn): <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the ML model being described. </p>
+    ///   - [`data_pre_processing_configuration(Option<DataPreProcessingConfiguration>)`](crate::output::DescribeModelOutput::data_pre_processing_configuration): <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>  <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
+    ///   - [`status(Option<ModelStatus>)`](crate::output::DescribeModelOutput::status): <p>Specifies the current status of the model being described. Status describes the status of the most recent action of the model. </p>
+    ///   - [`training_execution_start_time(Option<DateTime>)`](crate::output::DescribeModelOutput::training_execution_start_time): <p>Indicates the time at which the training of the ML model began. </p>
+    ///   - [`training_execution_end_time(Option<DateTime>)`](crate::output::DescribeModelOutput::training_execution_end_time): <p>Indicates the time at which the training of the ML model was completed. </p>
+    ///   - [`failed_reason(Option<String>)`](crate::output::DescribeModelOutput::failed_reason): <p>If the training of the ML model failed, this indicates the reason for that failure. </p>
+    ///   - [`model_metrics(Option<String>)`](crate::output::DescribeModelOutput::model_metrics): <p>The Model Metrics show an aggregated summary of the model's performance within the evaluation time range. This is the JSON content of the metrics created when evaluating the model. </p>
+    ///   - [`last_updated_time(Option<DateTime>)`](crate::output::DescribeModelOutput::last_updated_time): <p>Indicates the last time the ML model was updated. The type of update is not specified. </p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeModelOutput::created_at): <p>Indicates the time and date at which the ML model was created. </p>
+    ///   - [`server_side_kms_key_id(Option<String>)`](crate::output::DescribeModelOutput::server_side_kms_key_id): <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment. </p>
+    ///   - [`off_condition(Option<String>)`](crate::output::DescribeModelOutput::off_condition): <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
+    /// - On failure, responds with [`SdkError<DescribeModelError>`](crate::error::DescribeModelError)
     pub fn describe_model(&self) -> fluent_builders::DescribeModel<C, M, R> {
         fluent_builders::DescribeModel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDataIngestionJobs` operation.
-    ///
-    /// See [`ListDataIngestionJobs`](crate::client::fluent_builders::ListDataIngestionJobs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListDataIngestionJobs`](crate::client::fluent_builders::ListDataIngestionJobs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDataIngestionJobs::into_paginator).
+    ///
+    /// - Takes [`ListDataIngestionJobsInput`](crate::input::ListDataIngestionJobsInput) with field(s):
+    ///   - [`dataset_name(Option<String>)`](crate::input::ListDataIngestionJobsInput::dataset_name): <p>The name of the dataset being used for the data ingestion job. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListDataIngestionJobsInput::next_token): <p> An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListDataIngestionJobsInput::max_results): <p> Specifies the maximum number of data ingestion jobs to list. </p>
+    ///   - [`status(Option<IngestionJobStatus>)`](crate::input::ListDataIngestionJobsInput::status): <p>Indicates the status of the data ingestion job. </p>
+    /// - On success, responds with [`ListDataIngestionJobsOutput`](crate::output::ListDataIngestionJobsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListDataIngestionJobsOutput::next_token): <p> An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
+    ///   - [`data_ingestion_job_summaries(Option<Vec<DataIngestionJobSummary>>)`](crate::output::ListDataIngestionJobsOutput::data_ingestion_job_summaries): <p>Specifies information about the specific data ingestion job, including dataset name and status. </p>
+    /// - On failure, responds with [`SdkError<ListDataIngestionJobsError>`](crate::error::ListDataIngestionJobsError)
     pub fn list_data_ingestion_jobs(&self) -> fluent_builders::ListDataIngestionJobs<C, M, R> {
         fluent_builders::ListDataIngestionJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDatasets` operation.
-    ///
-    /// See [`ListDatasets`](crate::client::fluent_builders::ListDatasets) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListDatasets`](crate::client::fluent_builders::ListDatasets) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDatasets::into_paginator).
+    ///
+    /// - Takes [`ListDatasetsInput`](crate::input::ListDatasetsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListDatasetsInput::next_token): <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListDatasetsInput::max_results): <p> Specifies the maximum number of datasets to list. </p>
+    ///   - [`dataset_name_begins_with(Option<String>)`](crate::input::ListDatasetsInput::dataset_name_begins_with): <p>The beginning of the name of the datasets to be listed. </p>
+    /// - On success, responds with [`ListDatasetsOutput`](crate::output::ListDatasetsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListDatasetsOutput::next_token): <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
+    ///   - [`dataset_summaries(Option<Vec<DatasetSummary>>)`](crate::output::ListDatasetsOutput::dataset_summaries): <p>Provides information about the specified dataset, including creation time, dataset ARN, and status. </p>
+    /// - On failure, responds with [`SdkError<ListDatasetsError>`](crate::error::ListDatasetsError)
     pub fn list_datasets(&self) -> fluent_builders::ListDatasets<C, M, R> {
         fluent_builders::ListDatasets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListInferenceExecutions` operation.
-    ///
-    /// See [`ListInferenceExecutions`](crate::client::fluent_builders::ListInferenceExecutions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListInferenceExecutions`](crate::client::fluent_builders::ListInferenceExecutions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInferenceExecutions::into_paginator).
+    ///
+    /// - Takes [`ListInferenceExecutionsInput`](crate::input::ListInferenceExecutionsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListInferenceExecutionsInput::next_token): <p>An opaque pagination token indicating where to continue the listing of inference executions.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListInferenceExecutionsInput::max_results): <p>Specifies the maximum number of inference executions to list. </p>
+    ///   - [`inference_scheduler_name(Option<String>)`](crate::input::ListInferenceExecutionsInput::inference_scheduler_name): <p>The name of the inference scheduler for the inference execution listed. </p>
+    ///   - [`data_start_time_after(Option<DateTime>)`](crate::input::ListInferenceExecutionsInput::data_start_time_after): <p>The time reference in the inferenced dataset after which Amazon Lookout for Equipment started the inference execution. </p>
+    ///   - [`data_end_time_before(Option<DateTime>)`](crate::input::ListInferenceExecutionsInput::data_end_time_before): <p>The time reference in the inferenced dataset before which Amazon Lookout for Equipment stopped the inference execution. </p>
+    ///   - [`status(Option<InferenceExecutionStatus>)`](crate::input::ListInferenceExecutionsInput::status): <p>The status of the inference execution. </p>
+    /// - On success, responds with [`ListInferenceExecutionsOutput`](crate::output::ListInferenceExecutionsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListInferenceExecutionsOutput::next_token): <p> An opaque pagination token indicating where to continue the listing of inference executions. </p>
+    ///   - [`inference_execution_summaries(Option<Vec<InferenceExecutionSummary>>)`](crate::output::ListInferenceExecutionsOutput::inference_execution_summaries): <p>Provides an array of information about the individual inference executions returned from the <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration, and so on. </p>
+    /// - On failure, responds with [`SdkError<ListInferenceExecutionsError>`](crate::error::ListInferenceExecutionsError)
     pub fn list_inference_executions(&self) -> fluent_builders::ListInferenceExecutions<C, M, R> {
         fluent_builders::ListInferenceExecutions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListInferenceSchedulers` operation.
-    ///
-    /// See [`ListInferenceSchedulers`](crate::client::fluent_builders::ListInferenceSchedulers) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListInferenceSchedulers`](crate::client::fluent_builders::ListInferenceSchedulers) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInferenceSchedulers::into_paginator).
+    ///
+    /// - Takes [`ListInferenceSchedulersInput`](crate::input::ListInferenceSchedulersInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListInferenceSchedulersInput::next_token): <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListInferenceSchedulersInput::max_results): <p> Specifies the maximum number of inference schedulers to list. </p>
+    ///   - [`inference_scheduler_name_begins_with(Option<String>)`](crate::input::ListInferenceSchedulersInput::inference_scheduler_name_begins_with): <p>The beginning of the name of the inference schedulers to be listed. </p>
+    ///   - [`model_name(Option<String>)`](crate::input::ListInferenceSchedulersInput::model_name): <p>The name of the ML model used by the inference scheduler to be listed. </p>
+    /// - On success, responds with [`ListInferenceSchedulersOutput`](crate::output::ListInferenceSchedulersOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListInferenceSchedulersOutput::next_token): <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
+    ///   - [`inference_scheduler_summaries(Option<Vec<InferenceSchedulerSummary>>)`](crate::output::ListInferenceSchedulersOutput::inference_scheduler_summaries): <p>Provides information about the specified inference scheduler, including data upload frequency, model name and ARN, and status. </p>
+    /// - On failure, responds with [`SdkError<ListInferenceSchedulersError>`](crate::error::ListInferenceSchedulersError)
     pub fn list_inference_schedulers(&self) -> fluent_builders::ListInferenceSchedulers<C, M, R> {
         fluent_builders::ListInferenceSchedulers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListModels` operation.
-    ///
-    /// See [`ListModels`](crate::client::fluent_builders::ListModels) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListModels`](crate::client::fluent_builders::ListModels) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListModels::into_paginator).
+    ///
+    /// - Takes [`ListModelsInput`](crate::input::ListModelsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListModelsInput::next_token): <p> An opaque pagination token indicating where to continue the listing of ML models. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListModelsInput::max_results): <p> Specifies the maximum number of ML models to list. </p>
+    ///   - [`status(Option<ModelStatus>)`](crate::input::ListModelsInput::status): <p>The status of the ML model. </p>
+    ///   - [`model_name_begins_with(Option<String>)`](crate::input::ListModelsInput::model_name_begins_with): <p>The beginning of the name of the ML models being listed. </p>
+    ///   - [`dataset_name_begins_with(Option<String>)`](crate::input::ListModelsInput::dataset_name_begins_with): <p>The beginning of the name of the dataset of the ML models to be listed. </p>
+    /// - On success, responds with [`ListModelsOutput`](crate::output::ListModelsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListModelsOutput::next_token): <p> An opaque pagination token indicating where to continue the listing of ML models. </p>
+    ///   - [`model_summaries(Option<Vec<ModelSummary>>)`](crate::output::ListModelsOutput::model_summaries): <p>Provides information on the specified model, including created time, model and dataset ARNs, and status. </p>
+    /// - On failure, responds with [`SdkError<ListModelsError>`](crate::error::ListModelsError)
     pub fn list_models(&self) -> fluent_builders::ListModels<C, M, R> {
         fluent_builders::ListModels::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource (such as the dataset or model) that is the focus of the <code>ListTagsForResource</code> operation. </p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p> Any tags associated with the resource. </p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartDataIngestionJob` operation.
+    /// Constructs a fluent builder for the [`StartDataIngestionJob`](crate::client::fluent_builders::StartDataIngestionJob) operation.
     ///
-    /// See [`StartDataIngestionJob`](crate::client::fluent_builders::StartDataIngestionJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartDataIngestionJobInput`](crate::input::StartDataIngestionJobInput) with field(s):
+    ///   - [`dataset_name(Option<String>)`](crate::input::StartDataIngestionJobInput::dataset_name): <p>The name of the dataset being used by the data ingestion job. </p>
+    ///   - [`ingestion_input_configuration(Option<IngestionInputConfiguration>)`](crate::input::StartDataIngestionJobInput::ingestion_input_configuration): <p> Specifies information for the input data for the data ingestion job, including dataset S3 location. </p>
+    ///   - [`role_arn(Option<String>)`](crate::input::StartDataIngestionJobInput::role_arn): <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the data ingestion job. </p>
+    ///   - [`client_token(Option<String>)`](crate::input::StartDataIngestionJobInput::client_token): <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
+    /// - On success, responds with [`StartDataIngestionJobOutput`](crate::output::StartDataIngestionJobOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::StartDataIngestionJobOutput::job_id): <p>Indicates the job ID of the data ingestion job. </p>
+    ///   - [`status(Option<IngestionJobStatus>)`](crate::output::StartDataIngestionJobOutput::status): <p>Indicates the status of the <code>StartDataIngestionJob</code> operation. </p>
+    /// - On failure, responds with [`SdkError<StartDataIngestionJobError>`](crate::error::StartDataIngestionJobError)
     pub fn start_data_ingestion_job(&self) -> fluent_builders::StartDataIngestionJob<C, M, R> {
         fluent_builders::StartDataIngestionJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartInferenceScheduler` operation.
+    /// Constructs a fluent builder for the [`StartInferenceScheduler`](crate::client::fluent_builders::StartInferenceScheduler) operation.
     ///
-    /// See [`StartInferenceScheduler`](crate::client::fluent_builders::StartInferenceScheduler) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartInferenceSchedulerInput`](crate::input::StartInferenceSchedulerInput) with field(s):
+    ///   - [`inference_scheduler_name(Option<String>)`](crate::input::StartInferenceSchedulerInput::inference_scheduler_name): <p>The name of the inference scheduler to be started. </p>
+    /// - On success, responds with [`StartInferenceSchedulerOutput`](crate::output::StartInferenceSchedulerOutput) with field(s):
+    ///   - [`model_arn(Option<String>)`](crate::output::StartInferenceSchedulerOutput::model_arn): <p>The Amazon Resource Name (ARN) of the ML model being used by the inference scheduler. </p>
+    ///   - [`model_name(Option<String>)`](crate::output::StartInferenceSchedulerOutput::model_name): <p>The name of the ML model being used by the inference scheduler. </p>
+    ///   - [`inference_scheduler_name(Option<String>)`](crate::output::StartInferenceSchedulerOutput::inference_scheduler_name): <p>The name of the inference scheduler being started. </p>
+    ///   - [`inference_scheduler_arn(Option<String>)`](crate::output::StartInferenceSchedulerOutput::inference_scheduler_arn): <p>The Amazon Resource Name (ARN) of the inference scheduler being started. </p>
+    ///   - [`status(Option<InferenceSchedulerStatus>)`](crate::output::StartInferenceSchedulerOutput::status): <p>Indicates the status of the inference scheduler. </p>
+    /// - On failure, responds with [`SdkError<StartInferenceSchedulerError>`](crate::error::StartInferenceSchedulerError)
     pub fn start_inference_scheduler(&self) -> fluent_builders::StartInferenceScheduler<C, M, R> {
         fluent_builders::StartInferenceScheduler::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopInferenceScheduler` operation.
+    /// Constructs a fluent builder for the [`StopInferenceScheduler`](crate::client::fluent_builders::StopInferenceScheduler) operation.
     ///
-    /// See [`StopInferenceScheduler`](crate::client::fluent_builders::StopInferenceScheduler) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StopInferenceSchedulerInput`](crate::input::StopInferenceSchedulerInput) with field(s):
+    ///   - [`inference_scheduler_name(Option<String>)`](crate::input::StopInferenceSchedulerInput::inference_scheduler_name): <p>The name of the inference scheduler to be stopped. </p>
+    /// - On success, responds with [`StopInferenceSchedulerOutput`](crate::output::StopInferenceSchedulerOutput) with field(s):
+    ///   - [`model_arn(Option<String>)`](crate::output::StopInferenceSchedulerOutput::model_arn): <p>The Amazon Resource Name (ARN) of the ML model used by the inference scheduler being stopped. </p>
+    ///   - [`model_name(Option<String>)`](crate::output::StopInferenceSchedulerOutput::model_name): <p>The name of the ML model used by the inference scheduler being stopped. </p>
+    ///   - [`inference_scheduler_name(Option<String>)`](crate::output::StopInferenceSchedulerOutput::inference_scheduler_name): <p>The name of the inference scheduler being stopped. </p>
+    ///   - [`inference_scheduler_arn(Option<String>)`](crate::output::StopInferenceSchedulerOutput::inference_scheduler_arn): <p>The Amazon Resource Name (ARN) of the inference schedule being stopped. </p>
+    ///   - [`status(Option<InferenceSchedulerStatus>)`](crate::output::StopInferenceSchedulerOutput::status): <p>Indicates the status of the inference scheduler. </p>
+    /// - On failure, responds with [`SdkError<StopInferenceSchedulerError>`](crate::error::StopInferenceSchedulerError)
     pub fn stop_inference_scheduler(&self) -> fluent_builders::StopInferenceScheduler<C, M, R> {
         fluent_builders::StopInferenceScheduler::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the specific resource to which the tag should be associated. </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>The tag or tags to be associated with a specific resource. Both the tag key and value are specified. </p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource to which the tag is currently associated. </p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>Specifies the key of the tag to be removed from a specified resource. </p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateInferenceScheduler` operation.
+    /// Constructs a fluent builder for the [`UpdateInferenceScheduler`](crate::client::fluent_builders::UpdateInferenceScheduler) operation.
     ///
-    /// See [`UpdateInferenceScheduler`](crate::client::fluent_builders::UpdateInferenceScheduler) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateInferenceSchedulerInput`](crate::input::UpdateInferenceSchedulerInput) with field(s):
+    ///   - [`inference_scheduler_name(Option<String>)`](crate::input::UpdateInferenceSchedulerInput::inference_scheduler_name): <p>The name of the inference scheduler to be updated. </p>
+    ///   - [`data_delay_offset_in_minutes(Option<i64>)`](crate::input::UpdateInferenceSchedulerInput::data_delay_offset_in_minutes): <p> A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if you select an offset delay time of five minutes, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data.</p>
+    ///   - [`data_upload_frequency(Option<DataUploadFrequency>)`](crate::input::UpdateInferenceSchedulerInput::data_upload_frequency): <p>How often data is uploaded to the source S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
+    ///   - [`data_input_configuration(Option<InferenceInputConfiguration>)`](crate::input::UpdateInferenceSchedulerInput::data_input_configuration): <p> Specifies information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
+    ///   - [`data_output_configuration(Option<InferenceOutputConfiguration>)`](crate::input::UpdateInferenceSchedulerInput::data_output_configuration): <p> Specifies information for the output results from the inference scheduler, including the output S3 location. </p>
+    ///   - [`role_arn(Option<String>)`](crate::input::UpdateInferenceSchedulerInput::role_arn): <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the inference scheduler. </p>
+    /// - On success, responds with [`UpdateInferenceSchedulerOutput`](crate::output::UpdateInferenceSchedulerOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateInferenceSchedulerError>`](crate::error::UpdateInferenceSchedulerError)
     pub fn update_inference_scheduler(&self) -> fluent_builders::UpdateInferenceScheduler<C, M, R> {
         fluent_builders::UpdateInferenceScheduler::new(self.handle.clone())
     }

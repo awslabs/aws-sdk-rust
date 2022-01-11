@@ -83,279 +83,419 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AssociateDRTLogBucket` operation.
+    /// Constructs a fluent builder for the [`AssociateDRTLogBucket`](crate::client::fluent_builders::AssociateDRTLogBucket) operation.
     ///
-    /// See [`AssociateDRTLogBucket`](crate::client::fluent_builders::AssociateDRTLogBucket) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateDrtLogBucketInput`](crate::input::AssociateDrtLogBucketInput) with field(s):
+    ///   - [`log_bucket(Option<String>)`](crate::input::AssociateDrtLogBucketInput::log_bucket): <p>The Amazon S3 bucket that contains the logs that you want to share.</p>
+    /// - On success, responds with [`AssociateDrtLogBucketOutput`](crate::output::AssociateDrtLogBucketOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateDRTLogBucketError>`](crate::error::AssociateDRTLogBucketError)
     pub fn associate_drt_log_bucket(&self) -> fluent_builders::AssociateDRTLogBucket<C, M, R> {
         fluent_builders::AssociateDRTLogBucket::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateDRTRole` operation.
+    /// Constructs a fluent builder for the [`AssociateDRTRole`](crate::client::fluent_builders::AssociateDRTRole) operation.
     ///
-    /// See [`AssociateDRTRole`](crate::client::fluent_builders::AssociateDRTRole) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateDrtRoleInput`](crate::input::AssociateDrtRoleInput) with field(s):
+    ///   - [`role_arn(Option<String>)`](crate::input::AssociateDrtRoleInput::role_arn): <p>The Amazon Resource Name (ARN) of the role the SRT will use to access your Amazon Web Services account.</p>  <p>Prior to making the <code>AssociateDRTRole</code> request, you must attach the <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy">AWSShieldDRTAccessPolicy</a> managed policy to this role. For more information see <a href=" https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html">Attaching and Detaching IAM Policies</a>.</p>
+    /// - On success, responds with [`AssociateDrtRoleOutput`](crate::output::AssociateDrtRoleOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateDRTRoleError>`](crate::error::AssociateDRTRoleError)
     pub fn associate_drt_role(&self) -> fluent_builders::AssociateDRTRole<C, M, R> {
         fluent_builders::AssociateDRTRole::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateHealthCheck` operation.
+    /// Constructs a fluent builder for the [`AssociateHealthCheck`](crate::client::fluent_builders::AssociateHealthCheck) operation.
     ///
-    /// See [`AssociateHealthCheck`](crate::client::fluent_builders::AssociateHealthCheck) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateHealthCheckInput`](crate::input::AssociateHealthCheckInput) with field(s):
+    ///   - [`protection_id(Option<String>)`](crate::input::AssociateHealthCheckInput::protection_id): <p>The unique identifier (ID) for the <code>Protection</code> object to add the health check association to. </p>
+    ///   - [`health_check_arn(Option<String>)`](crate::input::AssociateHealthCheckInput::health_check_arn): <p>The Amazon Resource Name (ARN) of the health check to associate with the protection.</p>
+    /// - On success, responds with [`AssociateHealthCheckOutput`](crate::output::AssociateHealthCheckOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateHealthCheckError>`](crate::error::AssociateHealthCheckError)
     pub fn associate_health_check(&self) -> fluent_builders::AssociateHealthCheck<C, M, R> {
         fluent_builders::AssociateHealthCheck::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateProactiveEngagementDetails` operation.
+    /// Constructs a fluent builder for the [`AssociateProactiveEngagementDetails`](crate::client::fluent_builders::AssociateProactiveEngagementDetails) operation.
     ///
-    /// See [`AssociateProactiveEngagementDetails`](crate::client::fluent_builders::AssociateProactiveEngagementDetails) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateProactiveEngagementDetailsInput`](crate::input::AssociateProactiveEngagementDetailsInput) with field(s):
+    ///   - [`emergency_contact_list(Option<Vec<EmergencyContact>>)`](crate::input::AssociateProactiveEngagementDetailsInput::emergency_contact_list): <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you for escalations to the SRT and to initiate proactive customer support. </p>  <p>To enable proactive engagement, the contact list must include at least one phone number.</p> <note>   <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here. </p>  </note>
+    /// - On success, responds with [`AssociateProactiveEngagementDetailsOutput`](crate::output::AssociateProactiveEngagementDetailsOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateProactiveEngagementDetailsError>`](crate::error::AssociateProactiveEngagementDetailsError)
     pub fn associate_proactive_engagement_details(
         &self,
     ) -> fluent_builders::AssociateProactiveEngagementDetails<C, M, R> {
         fluent_builders::AssociateProactiveEngagementDetails::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateProtection` operation.
+    /// Constructs a fluent builder for the [`CreateProtection`](crate::client::fluent_builders::CreateProtection) operation.
     ///
-    /// See [`CreateProtection`](crate::client::fluent_builders::CreateProtection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateProtectionInput`](crate::input::CreateProtectionInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateProtectionInput::name): <p>Friendly name for the <code>Protection</code> you are creating.</p>
+    ///   - [`resource_arn(Option<String>)`](crate::input::CreateProtectionInput::resource_arn): <p>The ARN (Amazon Resource Name) of the resource to be protected.</p>  <p>The ARN should be in one of the following formats:</p>  <ul>   <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>   <li> <p>For an Elastic Load Balancer (Classic Load Balancer): <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i> </code> </p> </li>   <li> <p>For an Amazon CloudFront distribution: <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code> </p> </li>   <li> <p>For an Global Accelerator accelerator: <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code> </p> </li>   <li> <p>For Amazon Route&nbsp;53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li>   <li> <p>For an Elastic IP address: <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i> </code> </p> </li>  </ul>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateProtectionInput::tags): <p>One or more tag key-value pairs for the <code>Protection</code> object that is created.</p>
+    /// - On success, responds with [`CreateProtectionOutput`](crate::output::CreateProtectionOutput) with field(s):
+    ///   - [`protection_id(Option<String>)`](crate::output::CreateProtectionOutput::protection_id): <p>The unique identifier (ID) for the <code>Protection</code> object that is created.</p>
+    /// - On failure, responds with [`SdkError<CreateProtectionError>`](crate::error::CreateProtectionError)
     pub fn create_protection(&self) -> fluent_builders::CreateProtection<C, M, R> {
         fluent_builders::CreateProtection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateProtectionGroup` operation.
+    /// Constructs a fluent builder for the [`CreateProtectionGroup`](crate::client::fluent_builders::CreateProtectionGroup) operation.
     ///
-    /// See [`CreateProtectionGroup`](crate::client::fluent_builders::CreateProtectionGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateProtectionGroupInput`](crate::input::CreateProtectionGroupInput) with field(s):
+    ///   - [`protection_group_id(Option<String>)`](crate::input::CreateProtectionGroupInput::protection_group_id): <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
+    ///   - [`aggregation(Option<ProtectionGroupAggregation>)`](crate::input::CreateProtectionGroupInput::aggregation): <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p>  <ul>   <li> <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p> </li>   <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li>   <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront and origin resources for CloudFront distributions.</p> </li>  </ul>
+    ///   - [`pattern(Option<ProtectionGroupPattern>)`](crate::input::CreateProtectionGroupInput::pattern): <p>The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource Amazon Resource Names (ARNs), or include all resources of a specified resource type. </p>
+    ///   - [`resource_type(Option<ProtectedResourceType>)`](crate::input::CreateProtectionGroupInput::resource_type): <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group. Newly protected resources of this type are automatically added to the group. You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
+    ///   - [`members(Option<Vec<String>>)`](crate::input::CreateProtectionGroupInput::members): <p>The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting. </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateProtectionGroupInput::tags): <p>One or more tag key-value pairs for the protection group.</p>
+    /// - On success, responds with [`CreateProtectionGroupOutput`](crate::output::CreateProtectionGroupOutput)
+
+    /// - On failure, responds with [`SdkError<CreateProtectionGroupError>`](crate::error::CreateProtectionGroupError)
     pub fn create_protection_group(&self) -> fluent_builders::CreateProtectionGroup<C, M, R> {
         fluent_builders::CreateProtectionGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateSubscription` operation.
+    /// Constructs a fluent builder for the [`CreateSubscription`](crate::client::fluent_builders::CreateSubscription) operation.
     ///
-    /// See [`CreateSubscription`](crate::client::fluent_builders::CreateSubscription) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateSubscriptionInput`](crate::input::CreateSubscriptionInput)
+
+    /// - On success, responds with [`CreateSubscriptionOutput`](crate::output::CreateSubscriptionOutput)
+
+    /// - On failure, responds with [`SdkError<CreateSubscriptionError>`](crate::error::CreateSubscriptionError)
     pub fn create_subscription(&self) -> fluent_builders::CreateSubscription<C, M, R> {
         fluent_builders::CreateSubscription::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteProtection` operation.
+    /// Constructs a fluent builder for the [`DeleteProtection`](crate::client::fluent_builders::DeleteProtection) operation.
     ///
-    /// See [`DeleteProtection`](crate::client::fluent_builders::DeleteProtection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteProtectionInput`](crate::input::DeleteProtectionInput) with field(s):
+    ///   - [`protection_id(Option<String>)`](crate::input::DeleteProtectionInput::protection_id): <p>The unique identifier (ID) for the <code>Protection</code> object to be deleted.</p>
+    /// - On success, responds with [`DeleteProtectionOutput`](crate::output::DeleteProtectionOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteProtectionError>`](crate::error::DeleteProtectionError)
     pub fn delete_protection(&self) -> fluent_builders::DeleteProtection<C, M, R> {
         fluent_builders::DeleteProtection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteProtectionGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteProtectionGroup`](crate::client::fluent_builders::DeleteProtectionGroup) operation.
     ///
-    /// See [`DeleteProtectionGroup`](crate::client::fluent_builders::DeleteProtectionGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteProtectionGroupInput`](crate::input::DeleteProtectionGroupInput) with field(s):
+    ///   - [`protection_group_id(Option<String>)`](crate::input::DeleteProtectionGroupInput::protection_group_id): <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
+    /// - On success, responds with [`DeleteProtectionGroupOutput`](crate::output::DeleteProtectionGroupOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteProtectionGroupError>`](crate::error::DeleteProtectionGroupError)
     pub fn delete_protection_group(&self) -> fluent_builders::DeleteProtectionGroup<C, M, R> {
         fluent_builders::DeleteProtectionGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteSubscription` operation.
+    /// Constructs a fluent builder for the [`DeleteSubscription`](crate::client::fluent_builders::DeleteSubscription) operation.
     ///
-    /// See [`DeleteSubscription`](crate::client::fluent_builders::DeleteSubscription) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteSubscriptionInput`](crate::input::DeleteSubscriptionInput)
+
+    /// - On success, responds with [`DeleteSubscriptionOutput`](crate::output::DeleteSubscriptionOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteSubscriptionError>`](crate::error::DeleteSubscriptionError)
     pub fn delete_subscription(&self) -> fluent_builders::DeleteSubscription<C, M, R> {
         fluent_builders::DeleteSubscription::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAttack` operation.
+    /// Constructs a fluent builder for the [`DescribeAttack`](crate::client::fluent_builders::DescribeAttack) operation.
     ///
-    /// See [`DescribeAttack`](crate::client::fluent_builders::DescribeAttack) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeAttackInput`](crate::input::DescribeAttackInput) with field(s):
+    ///   - [`attack_id(Option<String>)`](crate::input::DescribeAttackInput::attack_id): <p>The unique identifier (ID) for the attack.</p>
+    /// - On success, responds with [`DescribeAttackOutput`](crate::output::DescribeAttackOutput) with field(s):
+    ///   - [`attack(Option<AttackDetail>)`](crate::output::DescribeAttackOutput::attack): <p>The attack that is described.</p>
+    /// - On failure, responds with [`SdkError<DescribeAttackError>`](crate::error::DescribeAttackError)
     pub fn describe_attack(&self) -> fluent_builders::DescribeAttack<C, M, R> {
         fluent_builders::DescribeAttack::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAttackStatistics` operation.
+    /// Constructs a fluent builder for the [`DescribeAttackStatistics`](crate::client::fluent_builders::DescribeAttackStatistics) operation.
     ///
-    /// See [`DescribeAttackStatistics`](crate::client::fluent_builders::DescribeAttackStatistics) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeAttackStatisticsInput`](crate::input::DescribeAttackStatisticsInput)
+
+    /// - On success, responds with [`DescribeAttackStatisticsOutput`](crate::output::DescribeAttackStatisticsOutput) with field(s):
+    ///   - [`time_range(Option<TimeRange>)`](crate::output::DescribeAttackStatisticsOutput::time_range): <p>The time range. </p>
+    ///   - [`data_items(Option<Vec<AttackStatisticsDataItem>>)`](crate::output::DescribeAttackStatisticsOutput::data_items): <p>The data that describes the attacks detected during the time period.</p>
+    /// - On failure, responds with [`SdkError<DescribeAttackStatisticsError>`](crate::error::DescribeAttackStatisticsError)
     pub fn describe_attack_statistics(&self) -> fluent_builders::DescribeAttackStatistics<C, M, R> {
         fluent_builders::DescribeAttackStatistics::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDRTAccess` operation.
+    /// Constructs a fluent builder for the [`DescribeDRTAccess`](crate::client::fluent_builders::DescribeDRTAccess) operation.
     ///
-    /// See [`DescribeDRTAccess`](crate::client::fluent_builders::DescribeDRTAccess) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeDrtAccessInput`](crate::input::DescribeDrtAccessInput)
+
+    /// - On success, responds with [`DescribeDrtAccessOutput`](crate::output::DescribeDrtAccessOutput) with field(s):
+    ///   - [`role_arn(Option<String>)`](crate::output::DescribeDrtAccessOutput::role_arn): <p>The Amazon Resource Name (ARN) of the role the SRT used to access your Amazon Web Services account.</p>
+    ///   - [`log_bucket_list(Option<Vec<String>>)`](crate::output::DescribeDrtAccessOutput::log_bucket_list): <p>The list of Amazon S3 buckets accessed by the SRT.</p>
+    /// - On failure, responds with [`SdkError<DescribeDRTAccessError>`](crate::error::DescribeDRTAccessError)
     pub fn describe_drt_access(&self) -> fluent_builders::DescribeDRTAccess<C, M, R> {
         fluent_builders::DescribeDRTAccess::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEmergencyContactSettings` operation.
+    /// Constructs a fluent builder for the [`DescribeEmergencyContactSettings`](crate::client::fluent_builders::DescribeEmergencyContactSettings) operation.
     ///
-    /// See [`DescribeEmergencyContactSettings`](crate::client::fluent_builders::DescribeEmergencyContactSettings) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeEmergencyContactSettingsInput`](crate::input::DescribeEmergencyContactSettingsInput)
+
+    /// - On success, responds with [`DescribeEmergencyContactSettingsOutput`](crate::output::DescribeEmergencyContactSettingsOutput) with field(s):
+    ///   - [`emergency_contact_list(Option<Vec<EmergencyContact>>)`](crate::output::DescribeEmergencyContactSettingsOutput::emergency_contact_list): <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.</p>
+    /// - On failure, responds with [`SdkError<DescribeEmergencyContactSettingsError>`](crate::error::DescribeEmergencyContactSettingsError)
     pub fn describe_emergency_contact_settings(
         &self,
     ) -> fluent_builders::DescribeEmergencyContactSettings<C, M, R> {
         fluent_builders::DescribeEmergencyContactSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeProtection` operation.
+    /// Constructs a fluent builder for the [`DescribeProtection`](crate::client::fluent_builders::DescribeProtection) operation.
     ///
-    /// See [`DescribeProtection`](crate::client::fluent_builders::DescribeProtection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeProtectionInput`](crate::input::DescribeProtectionInput) with field(s):
+    ///   - [`protection_id(Option<String>)`](crate::input::DescribeProtectionInput::protection_id): <p>The unique identifier (ID) for the <code>Protection</code> object that is described. When submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.</p>
+    ///   - [`resource_arn(Option<String>)`](crate::input::DescribeProtectionInput::resource_arn): <p>The ARN (Amazon Resource Name) of the Amazon Web Services resource for the <code>Protection</code> object that is described. When submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.</p>
+    /// - On success, responds with [`DescribeProtectionOutput`](crate::output::DescribeProtectionOutput) with field(s):
+    ///   - [`protection(Option<Protection>)`](crate::output::DescribeProtectionOutput::protection): <p>The <code>Protection</code> object that is described.</p>
+    /// - On failure, responds with [`SdkError<DescribeProtectionError>`](crate::error::DescribeProtectionError)
     pub fn describe_protection(&self) -> fluent_builders::DescribeProtection<C, M, R> {
         fluent_builders::DescribeProtection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeProtectionGroup` operation.
+    /// Constructs a fluent builder for the [`DescribeProtectionGroup`](crate::client::fluent_builders::DescribeProtectionGroup) operation.
     ///
-    /// See [`DescribeProtectionGroup`](crate::client::fluent_builders::DescribeProtectionGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeProtectionGroupInput`](crate::input::DescribeProtectionGroupInput) with field(s):
+    ///   - [`protection_group_id(Option<String>)`](crate::input::DescribeProtectionGroupInput::protection_group_id): <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
+    /// - On success, responds with [`DescribeProtectionGroupOutput`](crate::output::DescribeProtectionGroupOutput) with field(s):
+    ///   - [`protection_group(Option<ProtectionGroup>)`](crate::output::DescribeProtectionGroupOutput::protection_group): <p>A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource grouping improves the accuracy of detection and reduces false positives. </p>
+    /// - On failure, responds with [`SdkError<DescribeProtectionGroupError>`](crate::error::DescribeProtectionGroupError)
     pub fn describe_protection_group(&self) -> fluent_builders::DescribeProtectionGroup<C, M, R> {
         fluent_builders::DescribeProtectionGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeSubscription` operation.
+    /// Constructs a fluent builder for the [`DescribeSubscription`](crate::client::fluent_builders::DescribeSubscription) operation.
     ///
-    /// See [`DescribeSubscription`](crate::client::fluent_builders::DescribeSubscription) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeSubscriptionInput`](crate::input::DescribeSubscriptionInput)
+
+    /// - On success, responds with [`DescribeSubscriptionOutput`](crate::output::DescribeSubscriptionOutput) with field(s):
+    ///   - [`subscription(Option<Subscription>)`](crate::output::DescribeSubscriptionOutput::subscription): <p>The Shield Advanced subscription details for an account.</p>
+    /// - On failure, responds with [`SdkError<DescribeSubscriptionError>`](crate::error::DescribeSubscriptionError)
     pub fn describe_subscription(&self) -> fluent_builders::DescribeSubscription<C, M, R> {
         fluent_builders::DescribeSubscription::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisableApplicationLayerAutomaticResponse` operation.
+    /// Constructs a fluent builder for the [`DisableApplicationLayerAutomaticResponse`](crate::client::fluent_builders::DisableApplicationLayerAutomaticResponse) operation.
     ///
-    /// See [`DisableApplicationLayerAutomaticResponse`](crate::client::fluent_builders::DisableApplicationLayerAutomaticResponse) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisableApplicationLayerAutomaticResponseInput`](crate::input::DisableApplicationLayerAutomaticResponseInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::DisableApplicationLayerAutomaticResponseInput::resource_arn): <p>The ARN (Amazon Resource Name) of the resource.</p>
+    /// - On success, responds with [`DisableApplicationLayerAutomaticResponseOutput`](crate::output::DisableApplicationLayerAutomaticResponseOutput)
+
+    /// - On failure, responds with [`SdkError<DisableApplicationLayerAutomaticResponseError>`](crate::error::DisableApplicationLayerAutomaticResponseError)
     pub fn disable_application_layer_automatic_response(
         &self,
     ) -> fluent_builders::DisableApplicationLayerAutomaticResponse<C, M, R> {
         fluent_builders::DisableApplicationLayerAutomaticResponse::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisableProactiveEngagement` operation.
+    /// Constructs a fluent builder for the [`DisableProactiveEngagement`](crate::client::fluent_builders::DisableProactiveEngagement) operation.
     ///
-    /// See [`DisableProactiveEngagement`](crate::client::fluent_builders::DisableProactiveEngagement) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisableProactiveEngagementInput`](crate::input::DisableProactiveEngagementInput)
+
+    /// - On success, responds with [`DisableProactiveEngagementOutput`](crate::output::DisableProactiveEngagementOutput)
+
+    /// - On failure, responds with [`SdkError<DisableProactiveEngagementError>`](crate::error::DisableProactiveEngagementError)
     pub fn disable_proactive_engagement(
         &self,
     ) -> fluent_builders::DisableProactiveEngagement<C, M, R> {
         fluent_builders::DisableProactiveEngagement::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateDRTLogBucket` operation.
+    /// Constructs a fluent builder for the [`DisassociateDRTLogBucket`](crate::client::fluent_builders::DisassociateDRTLogBucket) operation.
     ///
-    /// See [`DisassociateDRTLogBucket`](crate::client::fluent_builders::DisassociateDRTLogBucket) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateDrtLogBucketInput`](crate::input::DisassociateDrtLogBucketInput) with field(s):
+    ///   - [`log_bucket(Option<String>)`](crate::input::DisassociateDrtLogBucketInput::log_bucket): <p>The Amazon S3 bucket that contains the logs that you want to share.</p>
+    /// - On success, responds with [`DisassociateDrtLogBucketOutput`](crate::output::DisassociateDrtLogBucketOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateDRTLogBucketError>`](crate::error::DisassociateDRTLogBucketError)
     pub fn disassociate_drt_log_bucket(
         &self,
     ) -> fluent_builders::DisassociateDRTLogBucket<C, M, R> {
         fluent_builders::DisassociateDRTLogBucket::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateDRTRole` operation.
+    /// Constructs a fluent builder for the [`DisassociateDRTRole`](crate::client::fluent_builders::DisassociateDRTRole) operation.
     ///
-    /// See [`DisassociateDRTRole`](crate::client::fluent_builders::DisassociateDRTRole) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateDrtRoleInput`](crate::input::DisassociateDrtRoleInput)
+
+    /// - On success, responds with [`DisassociateDrtRoleOutput`](crate::output::DisassociateDrtRoleOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateDRTRoleError>`](crate::error::DisassociateDRTRoleError)
     pub fn disassociate_drt_role(&self) -> fluent_builders::DisassociateDRTRole<C, M, R> {
         fluent_builders::DisassociateDRTRole::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateHealthCheck` operation.
+    /// Constructs a fluent builder for the [`DisassociateHealthCheck`](crate::client::fluent_builders::DisassociateHealthCheck) operation.
     ///
-    /// See [`DisassociateHealthCheck`](crate::client::fluent_builders::DisassociateHealthCheck) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateHealthCheckInput`](crate::input::DisassociateHealthCheckInput) with field(s):
+    ///   - [`protection_id(Option<String>)`](crate::input::DisassociateHealthCheckInput::protection_id): <p>The unique identifier (ID) for the <code>Protection</code> object to remove the health check association from. </p>
+    ///   - [`health_check_arn(Option<String>)`](crate::input::DisassociateHealthCheckInput::health_check_arn): <p>The Amazon Resource Name (ARN) of the health check that is associated with the protection.</p>
+    /// - On success, responds with [`DisassociateHealthCheckOutput`](crate::output::DisassociateHealthCheckOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateHealthCheckError>`](crate::error::DisassociateHealthCheckError)
     pub fn disassociate_health_check(&self) -> fluent_builders::DisassociateHealthCheck<C, M, R> {
         fluent_builders::DisassociateHealthCheck::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `EnableApplicationLayerAutomaticResponse` operation.
+    /// Constructs a fluent builder for the [`EnableApplicationLayerAutomaticResponse`](crate::client::fluent_builders::EnableApplicationLayerAutomaticResponse) operation.
     ///
-    /// See [`EnableApplicationLayerAutomaticResponse`](crate::client::fluent_builders::EnableApplicationLayerAutomaticResponse) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`EnableApplicationLayerAutomaticResponseInput`](crate::input::EnableApplicationLayerAutomaticResponseInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::EnableApplicationLayerAutomaticResponseInput::resource_arn): <p>The ARN (Amazon Resource Name) of the resource.</p>
+    ///   - [`action(Option<ResponseAction>)`](crate::input::EnableApplicationLayerAutomaticResponseInput::action): <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
+    /// - On success, responds with [`EnableApplicationLayerAutomaticResponseOutput`](crate::output::EnableApplicationLayerAutomaticResponseOutput)
+
+    /// - On failure, responds with [`SdkError<EnableApplicationLayerAutomaticResponseError>`](crate::error::EnableApplicationLayerAutomaticResponseError)
     pub fn enable_application_layer_automatic_response(
         &self,
     ) -> fluent_builders::EnableApplicationLayerAutomaticResponse<C, M, R> {
         fluent_builders::EnableApplicationLayerAutomaticResponse::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `EnableProactiveEngagement` operation.
+    /// Constructs a fluent builder for the [`EnableProactiveEngagement`](crate::client::fluent_builders::EnableProactiveEngagement) operation.
     ///
-    /// See [`EnableProactiveEngagement`](crate::client::fluent_builders::EnableProactiveEngagement) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`EnableProactiveEngagementInput`](crate::input::EnableProactiveEngagementInput)
+
+    /// - On success, responds with [`EnableProactiveEngagementOutput`](crate::output::EnableProactiveEngagementOutput)
+
+    /// - On failure, responds with [`SdkError<EnableProactiveEngagementError>`](crate::error::EnableProactiveEngagementError)
     pub fn enable_proactive_engagement(
         &self,
     ) -> fluent_builders::EnableProactiveEngagement<C, M, R> {
         fluent_builders::EnableProactiveEngagement::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSubscriptionState` operation.
+    /// Constructs a fluent builder for the [`GetSubscriptionState`](crate::client::fluent_builders::GetSubscriptionState) operation.
     ///
-    /// See [`GetSubscriptionState`](crate::client::fluent_builders::GetSubscriptionState) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetSubscriptionStateInput`](crate::input::GetSubscriptionStateInput)
+
+    /// - On success, responds with [`GetSubscriptionStateOutput`](crate::output::GetSubscriptionStateOutput) with field(s):
+    ///   - [`subscription_state(Option<SubscriptionState>)`](crate::output::GetSubscriptionStateOutput::subscription_state): <p>The status of the subscription.</p>
+    /// - On failure, responds with [`SdkError<GetSubscriptionStateError>`](crate::error::GetSubscriptionStateError)
     pub fn get_subscription_state(&self) -> fluent_builders::GetSubscriptionState<C, M, R> {
         fluent_builders::GetSubscriptionState::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAttacks` operation.
-    ///
-    /// See [`ListAttacks`](crate::client::fluent_builders::ListAttacks) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListAttacks`](crate::client::fluent_builders::ListAttacks) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAttacks::into_paginator).
+    ///
+    /// - Takes [`ListAttacksInput`](crate::input::ListAttacksInput) with field(s):
+    ///   - [`resource_arns(Option<Vec<String>>)`](crate::input::ListAttacksInput::resource_arns): <p>The ARNs (Amazon Resource Names) of the resources that were attacked. If you leave this blank, all applicable resources for this account will be included.</p>
+    ///   - [`start_time(Option<TimeRange>)`](crate::input::ListAttacksInput::start_time): <p>The start of the time period for the attacks. This is a <code>timestamp</code> type. The request syntax listing for this call indicates a <code>number</code> type, but you can provide the time in any valid <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">timestamp format</a> setting. </p>
+    ///   - [`end_time(Option<TimeRange>)`](crate::input::ListAttacksInput::end_time): <p>The end of the time period for the attacks. This is a <code>timestamp</code> type. The request syntax listing for this call indicates a <code>number</code> type, but you can provide the time in any valid <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">timestamp format</a> setting. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListAttacksInput::next_token): <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>  <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>  <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>  <p>On your first call to a list operation, leave this setting empty.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListAttacksInput::max_results): <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value in the response.</p>  <p>The default setting is 20.</p>
+    /// - On success, responds with [`ListAttacksOutput`](crate::output::ListAttacksOutput) with field(s):
+    ///   - [`attack_summaries(Option<Vec<AttackSummary>>)`](crate::output::ListAttacksOutput::attack_summaries): <p>The attack information for the specified time range.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAttacksOutput::next_token): <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>  <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>  <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
+    /// - On failure, responds with [`SdkError<ListAttacksError>`](crate::error::ListAttacksError)
     pub fn list_attacks(&self) -> fluent_builders::ListAttacks<C, M, R> {
         fluent_builders::ListAttacks::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListProtectionGroups` operation.
-    ///
-    /// See [`ListProtectionGroups`](crate::client::fluent_builders::ListProtectionGroups) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListProtectionGroups`](crate::client::fluent_builders::ListProtectionGroups) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProtectionGroups::into_paginator).
+    ///
+    /// - Takes [`ListProtectionGroupsInput`](crate::input::ListProtectionGroupsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListProtectionGroupsInput::next_token): <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>  <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>  <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>  <p>On your first call to a list operation, leave this setting empty.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListProtectionGroupsInput::max_results): <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value in the response.</p>  <p>The default setting is 20.</p>
+    /// - On success, responds with [`ListProtectionGroupsOutput`](crate::output::ListProtectionGroupsOutput) with field(s):
+    ///   - [`protection_groups(Option<Vec<ProtectionGroup>>)`](crate::output::ListProtectionGroupsOutput::protection_groups): <p></p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListProtectionGroupsOutput::next_token): <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>  <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>  <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
+    /// - On failure, responds with [`SdkError<ListProtectionGroupsError>`](crate::error::ListProtectionGroupsError)
     pub fn list_protection_groups(&self) -> fluent_builders::ListProtectionGroups<C, M, R> {
         fluent_builders::ListProtectionGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListProtections` operation.
-    ///
-    /// See [`ListProtections`](crate::client::fluent_builders::ListProtections) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListProtections`](crate::client::fluent_builders::ListProtections) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProtections::into_paginator).
+    ///
+    /// - Takes [`ListProtectionsInput`](crate::input::ListProtectionsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListProtectionsInput::next_token): <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>  <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>  <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>  <p>On your first call to a list operation, leave this setting empty.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListProtectionsInput::max_results): <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value in the response.</p>  <p>The default setting is 20.</p>
+    /// - On success, responds with [`ListProtectionsOutput`](crate::output::ListProtectionsOutput) with field(s):
+    ///   - [`protections(Option<Vec<Protection>>)`](crate::output::ListProtectionsOutput::protections): <p>The array of enabled <code>Protection</code> objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListProtectionsOutput::next_token): <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>  <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>  <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
+    /// - On failure, responds with [`SdkError<ListProtectionsError>`](crate::error::ListProtectionsError)
     pub fn list_protections(&self) -> fluent_builders::ListProtections<C, M, R> {
         fluent_builders::ListProtections::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListResourcesInProtectionGroup` operation.
-    ///
-    /// See [`ListResourcesInProtectionGroup`](crate::client::fluent_builders::ListResourcesInProtectionGroup) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListResourcesInProtectionGroup`](crate::client::fluent_builders::ListResourcesInProtectionGroup) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListResourcesInProtectionGroup::into_paginator).
+    ///
+    /// - Takes [`ListResourcesInProtectionGroupInput`](crate::input::ListResourcesInProtectionGroupInput) with field(s):
+    ///   - [`protection_group_id(Option<String>)`](crate::input::ListResourcesInProtectionGroupInput::protection_group_id): <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListResourcesInProtectionGroupInput::next_token): <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>  <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>  <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>  <p>On your first call to a list operation, leave this setting empty.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListResourcesInProtectionGroupInput::max_results): <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value in the response.</p>  <p>The default setting is 20.</p>
+    /// - On success, responds with [`ListResourcesInProtectionGroupOutput`](crate::output::ListResourcesInProtectionGroupOutput) with field(s):
+    ///   - [`resource_arns(Option<Vec<String>>)`](crate::output::ListResourcesInProtectionGroupOutput::resource_arns): <p>The Amazon Resource Names (ARNs) of the resources that are included in the protection group.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListResourcesInProtectionGroupOutput::next_token): <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>  <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>  <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
+    /// - On failure, responds with [`SdkError<ListResourcesInProtectionGroupError>`](crate::error::ListResourcesInProtectionGroupError)
     pub fn list_resources_in_protection_group(
         &self,
     ) -> fluent_builders::ListResourcesInProtectionGroup<C, M, R> {
         fluent_builders::ListResourcesInProtectionGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource to get tags for.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A list of tag key and value pairs associated with the specified resource.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to add or update tags for.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>The tags that you want to modify or add to the resource.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to remove tags from.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The tag key for each tag that you want to remove from the resource.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateApplicationLayerAutomaticResponse` operation.
+    /// Constructs a fluent builder for the [`UpdateApplicationLayerAutomaticResponse`](crate::client::fluent_builders::UpdateApplicationLayerAutomaticResponse) operation.
     ///
-    /// See [`UpdateApplicationLayerAutomaticResponse`](crate::client::fluent_builders::UpdateApplicationLayerAutomaticResponse) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateApplicationLayerAutomaticResponseInput`](crate::input::UpdateApplicationLayerAutomaticResponseInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UpdateApplicationLayerAutomaticResponseInput::resource_arn): <p>The ARN (Amazon Resource Name) of the resource.</p>
+    ///   - [`action(Option<ResponseAction>)`](crate::input::UpdateApplicationLayerAutomaticResponseInput::action): <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
+    /// - On success, responds with [`UpdateApplicationLayerAutomaticResponseOutput`](crate::output::UpdateApplicationLayerAutomaticResponseOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateApplicationLayerAutomaticResponseError>`](crate::error::UpdateApplicationLayerAutomaticResponseError)
     pub fn update_application_layer_automatic_response(
         &self,
     ) -> fluent_builders::UpdateApplicationLayerAutomaticResponse<C, M, R> {
         fluent_builders::UpdateApplicationLayerAutomaticResponse::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateEmergencyContactSettings` operation.
+    /// Constructs a fluent builder for the [`UpdateEmergencyContactSettings`](crate::client::fluent_builders::UpdateEmergencyContactSettings) operation.
     ///
-    /// See [`UpdateEmergencyContactSettings`](crate::client::fluent_builders::UpdateEmergencyContactSettings) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateEmergencyContactSettingsInput`](crate::input::UpdateEmergencyContactSettingsInput) with field(s):
+    ///   - [`emergency_contact_list(Option<Vec<EmergencyContact>>)`](crate::input::UpdateEmergencyContactSettingsInput::emergency_contact_list): <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.</p>  <p>If you have proactive engagement enabled, the contact list must include at least one phone number.</p>
+    /// - On success, responds with [`UpdateEmergencyContactSettingsOutput`](crate::output::UpdateEmergencyContactSettingsOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateEmergencyContactSettingsError>`](crate::error::UpdateEmergencyContactSettingsError)
     pub fn update_emergency_contact_settings(
         &self,
     ) -> fluent_builders::UpdateEmergencyContactSettings<C, M, R> {
         fluent_builders::UpdateEmergencyContactSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateProtectionGroup` operation.
+    /// Constructs a fluent builder for the [`UpdateProtectionGroup`](crate::client::fluent_builders::UpdateProtectionGroup) operation.
     ///
-    /// See [`UpdateProtectionGroup`](crate::client::fluent_builders::UpdateProtectionGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateProtectionGroupInput`](crate::input::UpdateProtectionGroupInput) with field(s):
+    ///   - [`protection_group_id(Option<String>)`](crate::input::UpdateProtectionGroupInput::protection_group_id): <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
+    ///   - [`aggregation(Option<ProtectionGroupAggregation>)`](crate::input::UpdateProtectionGroupInput::aggregation): <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p>  <ul>   <li> <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p> </li>   <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li>   <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p> </li>  </ul>
+    ///   - [`pattern(Option<ProtectionGroupPattern>)`](crate::input::UpdateProtectionGroupInput::pattern): <p>The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource Amazon Resource Names (ARNs), or include all resources of a specified resource type.</p>
+    ///   - [`resource_type(Option<ProtectedResourceType>)`](crate::input::UpdateProtectionGroupInput::resource_type): <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group. You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
+    ///   - [`members(Option<Vec<String>>)`](crate::input::UpdateProtectionGroupInput::members): <p>The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting. </p>
+    /// - On success, responds with [`UpdateProtectionGroupOutput`](crate::output::UpdateProtectionGroupOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateProtectionGroupError>`](crate::error::UpdateProtectionGroupError)
     pub fn update_protection_group(&self) -> fluent_builders::UpdateProtectionGroup<C, M, R> {
         fluent_builders::UpdateProtectionGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateSubscription` operation.
+    /// Constructs a fluent builder for the [`UpdateSubscription`](crate::client::fluent_builders::UpdateSubscription) operation.
     ///
-    /// See [`UpdateSubscription`](crate::client::fluent_builders::UpdateSubscription) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateSubscriptionInput`](crate::input::UpdateSubscriptionInput) with field(s):
+    ///   - [`auto_renew(Option<AutoRenew>)`](crate::input::UpdateSubscriptionInput::auto_renew): <p>When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. If <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription period. You can change this by submitting an <code>UpdateSubscription</code> request. If the <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing value for <code>AutoRenew</code> remains unchanged.</p>
+    /// - On success, responds with [`UpdateSubscriptionOutput`](crate::output::UpdateSubscriptionOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateSubscriptionError>`](crate::error::UpdateSubscriptionError)
     pub fn update_subscription(&self) -> fluent_builders::UpdateSubscription<C, M, R> {
         fluent_builders::UpdateSubscription::new(self.handle.clone())
     }

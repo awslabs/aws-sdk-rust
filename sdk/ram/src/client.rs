@@ -83,203 +83,362 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AcceptResourceShareInvitation` operation.
+    /// Constructs a fluent builder for the [`AcceptResourceShareInvitation`](crate::client::fluent_builders::AcceptResourceShareInvitation) operation.
     ///
-    /// See [`AcceptResourceShareInvitation`](crate::client::fluent_builders::AcceptResourceShareInvitation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AcceptResourceShareInvitationInput`](crate::input::AcceptResourceShareInvitationInput) with field(s):
+    ///   - [`resource_share_invitation_arn(Option<String>)`](crate::input::AcceptResourceShareInvitationInput::resource_share_invitation_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the invitation that you want to accept.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::AcceptResourceShareInvitationInput::client_token): <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>  <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
+    /// - On success, responds with [`AcceptResourceShareInvitationOutput`](crate::output::AcceptResourceShareInvitationOutput) with field(s):
+    ///   - [`resource_share_invitation(Option<ResourceShareInvitation>)`](crate::output::AcceptResourceShareInvitationOutput::resource_share_invitation): <p>An object that contains information about the specified invitation.</p>
+    ///   - [`client_token(Option<String>)`](crate::output::AcceptResourceShareInvitationOutput::client_token): <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
+    /// - On failure, responds with [`SdkError<AcceptResourceShareInvitationError>`](crate::error::AcceptResourceShareInvitationError)
     pub fn accept_resource_share_invitation(
         &self,
     ) -> fluent_builders::AcceptResourceShareInvitation<C, M, R> {
         fluent_builders::AcceptResourceShareInvitation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateResourceShare` operation.
+    /// Constructs a fluent builder for the [`AssociateResourceShare`](crate::client::fluent_builders::AssociateResourceShare) operation.
     ///
-    /// See [`AssociateResourceShare`](crate::client::fluent_builders::AssociateResourceShare) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateResourceShareInput`](crate::input::AssociateResourceShareInput) with field(s):
+    ///   - [`resource_share_arn(Option<String>)`](crate::input::AssociateResourceShareInput::resource_share_arn): <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to add principals or resources to.</p>
+    ///   - [`resource_arns(Option<Vec<String>>)`](crate::input::AssociateResourceShareInput::resource_arns): <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resources that you want to share. This can be <code>null</code> if you want to add only principals.</p>
+    ///   - [`principals(Option<Vec<String>>)`](crate::input::AssociateResourceShareInput::principals): <p>Specifies a list of principals to whom you want to the resource share. This can be <code>null</code> if you want to add only resources.</p>  <p>What the principals can do with the resources in the share is determined by the RAM permissions that you associate with the resource share. See <code>AssociateResourceSharePermission</code>.</p>  <p>You can include the following values:</p>  <ul>   <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>   <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>   <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>   <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>   <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>  </ul> <note>   <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>  </note>
+    ///   - [`client_token(Option<String>)`](crate::input::AssociateResourceShareInput::client_token): <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>  <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
+    /// - On success, responds with [`AssociateResourceShareOutput`](crate::output::AssociateResourceShareOutput) with field(s):
+    ///   - [`resource_share_associations(Option<Vec<ResourceShareAssociation>>)`](crate::output::AssociateResourceShareOutput::resource_share_associations): <p>An array of objects that contain information about the associations.</p>
+    ///   - [`client_token(Option<String>)`](crate::output::AssociateResourceShareOutput::client_token): <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
+    /// - On failure, responds with [`SdkError<AssociateResourceShareError>`](crate::error::AssociateResourceShareError)
     pub fn associate_resource_share(&self) -> fluent_builders::AssociateResourceShare<C, M, R> {
         fluent_builders::AssociateResourceShare::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateResourceSharePermission` operation.
+    /// Constructs a fluent builder for the [`AssociateResourceSharePermission`](crate::client::fluent_builders::AssociateResourceSharePermission) operation.
     ///
-    /// See [`AssociateResourceSharePermission`](crate::client::fluent_builders::AssociateResourceSharePermission) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateResourceSharePermissionInput`](crate::input::AssociateResourceSharePermissionInput) with field(s):
+    ///   - [`resource_share_arn(Option<String>)`](crate::input::AssociateResourceSharePermissionInput::resource_share_arn): <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share to which you want to add or replace permissions.</p>
+    ///   - [`permission_arn(Option<String>)`](crate::input::AssociateResourceSharePermissionInput::permission_arn): <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the RAM permission to associate with the resource share. To find the ARN for a permission, use either the <code>ListPermissions</code> operation or go to the <a href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM console and then choose the name of the permission. The ARN is displayed on the detail page.</p>
+    ///   - [`replace(Option<bool>)`](crate::input::AssociateResourceSharePermissionInput::replace): <p>Specifies whether the specified permission should replace or add to the existing permission associated with the resource share. Use <code>true</code> to replace the current permissions. Use <code>false</code> to add the permission to the current permission. The default value is <code>false</code>.</p> <note>   <p>A resource share can have only one permission per resource type. If a resource share already has a permission for the specified resource type and you don't set <code>replace</code> to <code>true</code> then the operation returns an error. This helps prevent accidental overwriting of a permission.</p>  </note>
+    ///   - [`client_token(Option<String>)`](crate::input::AssociateResourceSharePermissionInput::client_token): <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>  <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
+    ///   - [`permission_version(Option<i32>)`](crate::input::AssociateResourceSharePermissionInput::permission_version): <p>Specifies the version of the RAM permission to associate with the resource share. If you don't specify this parameter, the operation uses the version designated as the default.</p>
+    /// - On success, responds with [`AssociateResourceSharePermissionOutput`](crate::output::AssociateResourceSharePermissionOutput) with field(s):
+    ///   - [`return_value(Option<bool>)`](crate::output::AssociateResourceSharePermissionOutput::return_value): <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
+    ///   - [`client_token(Option<String>)`](crate::output::AssociateResourceSharePermissionOutput::client_token): <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
+    /// - On failure, responds with [`SdkError<AssociateResourceSharePermissionError>`](crate::error::AssociateResourceSharePermissionError)
     pub fn associate_resource_share_permission(
         &self,
     ) -> fluent_builders::AssociateResourceSharePermission<C, M, R> {
         fluent_builders::AssociateResourceSharePermission::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateResourceShare` operation.
+    /// Constructs a fluent builder for the [`CreateResourceShare`](crate::client::fluent_builders::CreateResourceShare) operation.
     ///
-    /// See [`CreateResourceShare`](crate::client::fluent_builders::CreateResourceShare) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateResourceShareInput`](crate::input::CreateResourceShareInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateResourceShareInput::name): <p>Specifies the name of the resource share.</p>
+    ///   - [`resource_arns(Option<Vec<String>>)`](crate::input::CreateResourceShareInput::resource_arns): <p>Specifies a list of one or more ARNs of the resources to associate with the resource share.</p>
+    ///   - [`principals(Option<Vec<String>>)`](crate::input::CreateResourceShareInput::principals): <p>Specifies a list of one or more principals to associate with the resource share.</p>  <p>You can include the following values:</p>  <ul>   <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>   <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>   <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>   <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>   <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>  </ul> <note>   <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>  </note>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateResourceShareInput::tags): <p>Specifies one or more tags to attach to the resource share itself. It doesn't attach the tags to the resources associated with the resource share.</p>
+    ///   - [`allow_external_principals(Option<bool>)`](crate::input::CreateResourceShareInput::allow_external_principals): <p>Specifies whether principals outside your organization in Organizations can be associated with a resource share. A value of <code>true</code> lets you share with individual Amazon Web Services accounts that are <i>not</i> in your organization. A value of <code>false</code> only has meaning if your account is a member of an Amazon Web Services Organization. The default value is <code>true</code>.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateResourceShareInput::client_token): <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>  <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
+    ///   - [`permission_arns(Option<Vec<String>>)`](crate::input::CreateResourceShareInput::permission_arns): <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the RAM permission to associate with the resource share. If you do not specify an ARN for the permission, RAM automatically attaches the default version of the permission for each resource type. You can associate only one permission with each resource type included in the resource share.</p>
+    /// - On success, responds with [`CreateResourceShareOutput`](crate::output::CreateResourceShareOutput) with field(s):
+    ///   - [`resource_share(Option<ResourceShare>)`](crate::output::CreateResourceShareOutput::resource_share): <p>An object with information about the new resource share.</p>
+    ///   - [`client_token(Option<String>)`](crate::output::CreateResourceShareOutput::client_token): <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
+    /// - On failure, responds with [`SdkError<CreateResourceShareError>`](crate::error::CreateResourceShareError)
     pub fn create_resource_share(&self) -> fluent_builders::CreateResourceShare<C, M, R> {
         fluent_builders::CreateResourceShare::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteResourceShare` operation.
+    /// Constructs a fluent builder for the [`DeleteResourceShare`](crate::client::fluent_builders::DeleteResourceShare) operation.
     ///
-    /// See [`DeleteResourceShare`](crate::client::fluent_builders::DeleteResourceShare) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteResourceShareInput`](crate::input::DeleteResourceShareInput) with field(s):
+    ///   - [`resource_share_arn(Option<String>)`](crate::input::DeleteResourceShareInput::resource_share_arn): <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share to delete.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::DeleteResourceShareInput::client_token): <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>  <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
+    /// - On success, responds with [`DeleteResourceShareOutput`](crate::output::DeleteResourceShareOutput) with field(s):
+    ///   - [`return_value(Option<bool>)`](crate::output::DeleteResourceShareOutput::return_value): <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
+    ///   - [`client_token(Option<String>)`](crate::output::DeleteResourceShareOutput::client_token): <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
+    /// - On failure, responds with [`SdkError<DeleteResourceShareError>`](crate::error::DeleteResourceShareError)
     pub fn delete_resource_share(&self) -> fluent_builders::DeleteResourceShare<C, M, R> {
         fluent_builders::DeleteResourceShare::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateResourceShare` operation.
+    /// Constructs a fluent builder for the [`DisassociateResourceShare`](crate::client::fluent_builders::DisassociateResourceShare) operation.
     ///
-    /// See [`DisassociateResourceShare`](crate::client::fluent_builders::DisassociateResourceShare) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateResourceShareInput`](crate::input::DisassociateResourceShareInput) with field(s):
+    ///   - [`resource_share_arn(Option<String>)`](crate::input::DisassociateResourceShareInput::resource_share_arn): <p>Specifies <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to remove resources from.</p>
+    ///   - [`resource_arns(Option<Vec<String>>)`](crate::input::DisassociateResourceShareInput::resource_arns): <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> for one or more resources that you want to remove from the resource share. After the operation runs, these resources are no longer shared with principals outside of the Amazon Web Services account that created the resources.</p>
+    ///   - [`principals(Option<Vec<String>>)`](crate::input::DisassociateResourceShareInput::principals): <p>Specifies a list of one or more principals that no longer are to have access to the resources in this resource share.</p>  <p>You can include the following values:</p>  <ul>   <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>   <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>   <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>   <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>   <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>  </ul> <note>   <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>  </note>
+    ///   - [`client_token(Option<String>)`](crate::input::DisassociateResourceShareInput::client_token): <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>  <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
+    /// - On success, responds with [`DisassociateResourceShareOutput`](crate::output::DisassociateResourceShareOutput) with field(s):
+    ///   - [`resource_share_associations(Option<Vec<ResourceShareAssociation>>)`](crate::output::DisassociateResourceShareOutput::resource_share_associations): <p>An array of objects that contain information about the updated associations for this resource share.</p>
+    ///   - [`client_token(Option<String>)`](crate::output::DisassociateResourceShareOutput::client_token): <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
+    /// - On failure, responds with [`SdkError<DisassociateResourceShareError>`](crate::error::DisassociateResourceShareError)
     pub fn disassociate_resource_share(
         &self,
     ) -> fluent_builders::DisassociateResourceShare<C, M, R> {
         fluent_builders::DisassociateResourceShare::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateResourceSharePermission` operation.
+    /// Constructs a fluent builder for the [`DisassociateResourceSharePermission`](crate::client::fluent_builders::DisassociateResourceSharePermission) operation.
     ///
-    /// See [`DisassociateResourceSharePermission`](crate::client::fluent_builders::DisassociateResourceSharePermission) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateResourceSharePermissionInput`](crate::input::DisassociateResourceSharePermissionInput) with field(s):
+    ///   - [`resource_share_arn(Option<String>)`](crate::input::DisassociateResourceSharePermissionInput::resource_share_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share from which you want to disassociate a permission.</p>
+    ///   - [`permission_arn(Option<String>)`](crate::input::DisassociateResourceSharePermissionInput::permission_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the permission to disassociate from the resource share. Changes to permissions take effect immediately.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::DisassociateResourceSharePermissionInput::client_token): <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>  <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
+    /// - On success, responds with [`DisassociateResourceSharePermissionOutput`](crate::output::DisassociateResourceSharePermissionOutput) with field(s):
+    ///   - [`return_value(Option<bool>)`](crate::output::DisassociateResourceSharePermissionOutput::return_value): <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
+    ///   - [`client_token(Option<String>)`](crate::output::DisassociateResourceSharePermissionOutput::client_token): <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
+    /// - On failure, responds with [`SdkError<DisassociateResourceSharePermissionError>`](crate::error::DisassociateResourceSharePermissionError)
     pub fn disassociate_resource_share_permission(
         &self,
     ) -> fluent_builders::DisassociateResourceSharePermission<C, M, R> {
         fluent_builders::DisassociateResourceSharePermission::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `EnableSharingWithAwsOrganization` operation.
+    /// Constructs a fluent builder for the [`EnableSharingWithAwsOrganization`](crate::client::fluent_builders::EnableSharingWithAwsOrganization) operation.
     ///
-    /// See [`EnableSharingWithAwsOrganization`](crate::client::fluent_builders::EnableSharingWithAwsOrganization) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`EnableSharingWithAwsOrganizationInput`](crate::input::EnableSharingWithAwsOrganizationInput)
+
+    /// - On success, responds with [`EnableSharingWithAwsOrganizationOutput`](crate::output::EnableSharingWithAwsOrganizationOutput) with field(s):
+    ///   - [`return_value(Option<bool>)`](crate::output::EnableSharingWithAwsOrganizationOutput::return_value): <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
+    /// - On failure, responds with [`SdkError<EnableSharingWithAwsOrganizationError>`](crate::error::EnableSharingWithAwsOrganizationError)
     pub fn enable_sharing_with_aws_organization(
         &self,
     ) -> fluent_builders::EnableSharingWithAwsOrganization<C, M, R> {
         fluent_builders::EnableSharingWithAwsOrganization::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetPermission` operation.
+    /// Constructs a fluent builder for the [`GetPermission`](crate::client::fluent_builders::GetPermission) operation.
     ///
-    /// See [`GetPermission`](crate::client::fluent_builders::GetPermission) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetPermissionInput`](crate::input::GetPermissionInput) with field(s):
+    ///   - [`permission_arn(Option<String>)`](crate::input::GetPermissionInput::permission_arn): <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the permission whose contents you want to retrieve. To find the ARN for a permission, use either the <code>ListPermissions</code> operation or go to the <a href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM console and then choose the name of the permission. The ARN is displayed on the detail page.</p>
+    ///   - [`permission_version(Option<i32>)`](crate::input::GetPermissionInput::permission_version): <p>Specifies identifier for the version of the RAM permission to retrieve. If you don't specify this parameter, the operation retrieves the default version.</p>
+    /// - On success, responds with [`GetPermissionOutput`](crate::output::GetPermissionOutput) with field(s):
+    ///   - [`permission(Option<ResourceSharePermissionDetail>)`](crate::output::GetPermissionOutput::permission): <p>An object that contains information about the permission.</p>
+    /// - On failure, responds with [`SdkError<GetPermissionError>`](crate::error::GetPermissionError)
     pub fn get_permission(&self) -> fluent_builders::GetPermission<C, M, R> {
         fluent_builders::GetPermission::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetResourcePolicies` operation.
-    ///
-    /// See [`GetResourcePolicies`](crate::client::fluent_builders::GetResourcePolicies) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetResourcePolicies`](crate::client::fluent_builders::GetResourcePolicies) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetResourcePolicies::into_paginator).
+    ///
+    /// - Takes [`GetResourcePoliciesInput`](crate::input::GetResourcePoliciesInput) with field(s):
+    ///   - [`resource_arns(Option<Vec<String>>)`](crate::input::GetResourcePoliciesInput::resource_arns): <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resources whose policies you want to retrieve.</p>
+    ///   - [`principal(Option<String>)`](crate::input::GetResourcePoliciesInput::principal): <p>Specifies the principal.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetResourcePoliciesInput::next_token): <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetResourcePoliciesInput::max_results): <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+    /// - On success, responds with [`GetResourcePoliciesOutput`](crate::output::GetResourcePoliciesOutput) with field(s):
+    ///   - [`policies(Option<Vec<String>>)`](crate::output::GetResourcePoliciesOutput::policies): <p>An array of resource policy documents in JSON format.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetResourcePoliciesOutput::next_token): <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
+    /// - On failure, responds with [`SdkError<GetResourcePoliciesError>`](crate::error::GetResourcePoliciesError)
     pub fn get_resource_policies(&self) -> fluent_builders::GetResourcePolicies<C, M, R> {
         fluent_builders::GetResourcePolicies::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetResourceShareAssociations` operation.
-    ///
-    /// See [`GetResourceShareAssociations`](crate::client::fluent_builders::GetResourceShareAssociations) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetResourceShareAssociations`](crate::client::fluent_builders::GetResourceShareAssociations) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetResourceShareAssociations::into_paginator).
+    ///
+    /// - Takes [`GetResourceShareAssociationsInput`](crate::input::GetResourceShareAssociationsInput) with field(s):
+    ///   - [`association_type(Option<ResourceShareAssociationType>)`](crate::input::GetResourceShareAssociationsInput::association_type): <p>Specifies whether you want to retrieve the associations that involve a specified resource or principal.</p>  <ul>   <li> <p> <code>PRINCIPAL</code> – list the principals that are associated with the specified resource share.</p> </li>   <li> <p> <code>RESOURCE</code> – list the resources that are associated with the specified resource share.</p> </li>  </ul>
+    ///   - [`resource_share_arns(Option<Vec<String>>)`](crate::input::GetResourceShareAssociationsInput::resource_share_arns): <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resource share whose associations you want to retrieve.</p>
+    ///   - [`resource_arn(Option<String>)`](crate::input::GetResourceShareAssociationsInput::resource_arn): <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource whose resource shares you want to retrieve.</p>  <p>You cannot specify this parameter if the association type is <code>PRINCIPAL</code>.</p>
+    ///   - [`principal(Option<String>)`](crate::input::GetResourceShareAssociationsInput::principal): <p>Specifies the ID of the principal whose resource shares you want to retrieve. This can be an Amazon Web Services account ID, an organization ID, an organizational unit ID, or the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an individual IAM user or role.</p>  <p>You cannot specify this parameter if the association type is <code>RESOURCE</code>.</p>
+    ///   - [`association_status(Option<ResourceShareAssociationStatus>)`](crate::input::GetResourceShareAssociationsInput::association_status): <p>Specifies that you want to retrieve only associations with this status.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetResourceShareAssociationsInput::next_token): <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetResourceShareAssociationsInput::max_results): <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+    /// - On success, responds with [`GetResourceShareAssociationsOutput`](crate::output::GetResourceShareAssociationsOutput) with field(s):
+    ///   - [`resource_share_associations(Option<Vec<ResourceShareAssociation>>)`](crate::output::GetResourceShareAssociationsOutput::resource_share_associations): <p>An array of objects that contain the details about the associations.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetResourceShareAssociationsOutput::next_token): <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
+    /// - On failure, responds with [`SdkError<GetResourceShareAssociationsError>`](crate::error::GetResourceShareAssociationsError)
     pub fn get_resource_share_associations(
         &self,
     ) -> fluent_builders::GetResourceShareAssociations<C, M, R> {
         fluent_builders::GetResourceShareAssociations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetResourceShareInvitations` operation.
-    ///
-    /// See [`GetResourceShareInvitations`](crate::client::fluent_builders::GetResourceShareInvitations) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetResourceShareInvitations`](crate::client::fluent_builders::GetResourceShareInvitations) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetResourceShareInvitations::into_paginator).
+    ///
+    /// - Takes [`GetResourceShareInvitationsInput`](crate::input::GetResourceShareInvitationsInput) with field(s):
+    ///   - [`resource_share_invitation_arns(Option<Vec<String>>)`](crate::input::GetResourceShareInvitationsInput::resource_share_invitation_arns): <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of the resource share invitations you want information about.</p>
+    ///   - [`resource_share_arns(Option<Vec<String>>)`](crate::input::GetResourceShareInvitationsInput::resource_share_arns): <p>Specifies that you want details about invitations only for the resource shares described by this list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> </p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetResourceShareInvitationsInput::next_token): <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetResourceShareInvitationsInput::max_results): <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+    /// - On success, responds with [`GetResourceShareInvitationsOutput`](crate::output::GetResourceShareInvitationsOutput) with field(s):
+    ///   - [`resource_share_invitations(Option<Vec<ResourceShareInvitation>>)`](crate::output::GetResourceShareInvitationsOutput::resource_share_invitations): <p>An array of objects that contain the details about the invitations.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetResourceShareInvitationsOutput::next_token): <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
+    /// - On failure, responds with [`SdkError<GetResourceShareInvitationsError>`](crate::error::GetResourceShareInvitationsError)
     pub fn get_resource_share_invitations(
         &self,
     ) -> fluent_builders::GetResourceShareInvitations<C, M, R> {
         fluent_builders::GetResourceShareInvitations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetResourceShares` operation.
-    ///
-    /// See [`GetResourceShares`](crate::client::fluent_builders::GetResourceShares) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetResourceShares`](crate::client::fluent_builders::GetResourceShares) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetResourceShares::into_paginator).
+    ///
+    /// - Takes [`GetResourceSharesInput`](crate::input::GetResourceSharesInput) with field(s):
+    ///   - [`resource_share_arns(Option<Vec<String>>)`](crate::input::GetResourceSharesInput::resource_share_arns): <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of individual resource shares that you want information about.</p>
+    ///   - [`resource_share_status(Option<ResourceShareStatus>)`](crate::input::GetResourceSharesInput::resource_share_status): <p>Specifies that you want to retrieve details of only those resource shares that have this status.</p>
+    ///   - [`resource_owner(Option<ResourceOwner>)`](crate::input::GetResourceSharesInput::resource_owner): <p>Specifies that you want to retrieve details of only those resource shares that match the following:</p>  <ul>   <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>   <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>  </ul>
+    ///   - [`name(Option<String>)`](crate::input::GetResourceSharesInput::name): <p>Specifies the name of an individual resource share that you want to retrieve details about.</p>
+    ///   - [`tag_filters(Option<Vec<TagFilter>>)`](crate::input::GetResourceSharesInput::tag_filters): <p>Specifies that you want to retrieve details of only those resource shares that match the specified tag keys and values.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetResourceSharesInput::next_token): <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetResourceSharesInput::max_results): <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+    ///   - [`permission_arn(Option<String>)`](crate::input::GetResourceSharesInput::permission_arn): <p>Specifies that you want to retrieve details of only those resource shares that use the RAM permission with this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>.</p>
+    /// - On success, responds with [`GetResourceSharesOutput`](crate::output::GetResourceSharesOutput) with field(s):
+    ///   - [`resource_shares(Option<Vec<ResourceShare>>)`](crate::output::GetResourceSharesOutput::resource_shares): <p>An array of objects that contain the information about the resource shares.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetResourceSharesOutput::next_token): <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
+    /// - On failure, responds with [`SdkError<GetResourceSharesError>`](crate::error::GetResourceSharesError)
     pub fn get_resource_shares(&self) -> fluent_builders::GetResourceShares<C, M, R> {
         fluent_builders::GetResourceShares::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPendingInvitationResources` operation.
-    ///
-    /// See [`ListPendingInvitationResources`](crate::client::fluent_builders::ListPendingInvitationResources) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListPendingInvitationResources`](crate::client::fluent_builders::ListPendingInvitationResources) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPendingInvitationResources::into_paginator).
+    ///
+    /// - Takes [`ListPendingInvitationResourcesInput`](crate::input::ListPendingInvitationResourcesInput) with field(s):
+    ///   - [`resource_share_invitation_arn(Option<String>)`](crate::input::ListPendingInvitationResourcesInput::resource_share_invitation_arn): <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the invitation. You can use <code>GetResourceShareInvitations</code> to find the ARN of the invitation.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListPendingInvitationResourcesInput::next_token): <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListPendingInvitationResourcesInput::max_results): <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+    ///   - [`resource_region_scope(Option<ResourceRegionScopeFilter>)`](crate::input::ListPendingInvitationResourcesInput::resource_region_scope): <p>Specifies that you want the results to include only resources that have the specified scope.</p>  <ul>   <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>   <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>   <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>  </ul>  <p>The default value is <code>ALL</code>.</p>
+    /// - On success, responds with [`ListPendingInvitationResourcesOutput`](crate::output::ListPendingInvitationResourcesOutput) with field(s):
+    ///   - [`resources(Option<Vec<Resource>>)`](crate::output::ListPendingInvitationResourcesOutput::resources): <p>An array of objects that contain the information about the resources included the specified resource share.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPendingInvitationResourcesOutput::next_token): <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
+    /// - On failure, responds with [`SdkError<ListPendingInvitationResourcesError>`](crate::error::ListPendingInvitationResourcesError)
     pub fn list_pending_invitation_resources(
         &self,
     ) -> fluent_builders::ListPendingInvitationResources<C, M, R> {
         fluent_builders::ListPendingInvitationResources::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPermissions` operation.
-    ///
-    /// See [`ListPermissions`](crate::client::fluent_builders::ListPermissions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListPermissions`](crate::client::fluent_builders::ListPermissions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPermissions::into_paginator).
+    ///
+    /// - Takes [`ListPermissionsInput`](crate::input::ListPermissionsInput) with field(s):
+    ///   - [`resource_type(Option<String>)`](crate::input::ListPermissionsInput::resource_type): <p>Specifies that you want to list permissions for only the specified resource type. For example, to list only permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>. You can use the <code>ListResourceTypes</code> operation to get the specific string required.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListPermissionsInput::next_token): <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListPermissionsInput::max_results): <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+    /// - On success, responds with [`ListPermissionsOutput`](crate::output::ListPermissionsOutput) with field(s):
+    ///   - [`permissions(Option<Vec<ResourceSharePermissionSummary>>)`](crate::output::ListPermissionsOutput::permissions): <p>An array of objects with information about the permissions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPermissionsOutput::next_token): <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
+    /// - On failure, responds with [`SdkError<ListPermissionsError>`](crate::error::ListPermissionsError)
     pub fn list_permissions(&self) -> fluent_builders::ListPermissions<C, M, R> {
         fluent_builders::ListPermissions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPrincipals` operation.
-    ///
-    /// See [`ListPrincipals`](crate::client::fluent_builders::ListPrincipals) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListPrincipals`](crate::client::fluent_builders::ListPrincipals) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPrincipals::into_paginator).
+    ///
+    /// - Takes [`ListPrincipalsInput`](crate::input::ListPrincipalsInput) with field(s):
+    ///   - [`resource_owner(Option<ResourceOwner>)`](crate::input::ListPrincipalsInput::resource_owner): <p>Specifies that you want to list information for only resource shares that match the following:</p>  <ul>   <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>   <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>  </ul>
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListPrincipalsInput::resource_arn): <p>Specifies that you want to list principal information for the resource share with the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>.</p>
+    ///   - [`principals(Option<Vec<String>>)`](crate::input::ListPrincipalsInput::principals): <p>Specifies that you want to list information for only the listed principals.</p>  <p>You can include the following values:</p>  <ul>   <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>   <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>   <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>   <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>   <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>  </ul> <note>   <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>  </note>
+    ///   - [`resource_type(Option<String>)`](crate::input::ListPrincipalsInput::resource_type): <p>Specifies that you want to list information for only principals associated with resource shares that include the specified resource type.</p>  <p>For a list of valid values, query the <code>ListResourceTypes</code> operation.</p>
+    ///   - [`resource_share_arns(Option<Vec<String>>)`](crate::input::ListPrincipalsInput::resource_share_arns): <p>Specifies that you want to list information for only principals associated with the resource shares specified by a list the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListPrincipalsInput::next_token): <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListPrincipalsInput::max_results): <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+    /// - On success, responds with [`ListPrincipalsOutput`](crate::output::ListPrincipalsOutput) with field(s):
+    ///   - [`principals(Option<Vec<Principal>>)`](crate::output::ListPrincipalsOutput::principals): <p>An array of objects that contain the details about the principals.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPrincipalsOutput::next_token): <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
+    /// - On failure, responds with [`SdkError<ListPrincipalsError>`](crate::error::ListPrincipalsError)
     pub fn list_principals(&self) -> fluent_builders::ListPrincipals<C, M, R> {
         fluent_builders::ListPrincipals::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListResources` operation.
-    ///
-    /// See [`ListResources`](crate::client::fluent_builders::ListResources) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListResources`](crate::client::fluent_builders::ListResources) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListResources::into_paginator).
+    ///
+    /// - Takes [`ListResourcesInput`](crate::input::ListResourcesInput) with field(s):
+    ///   - [`resource_owner(Option<ResourceOwner>)`](crate::input::ListResourcesInput::resource_owner): <p>Specifies that you want to list only the resource shares that match the following:</p>  <ul>   <li> <p> <b> <code>SELF</code> </b> – resources that you are sharing</p> </li>   <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resources that other accounts share with you</p> </li>  </ul>
+    ///   - [`principal(Option<String>)`](crate::input::ListResourcesInput::principal): <p>Specifies that you want to list only the resource shares that are associated with the specified principal.</p>
+    ///   - [`resource_type(Option<String>)`](crate::input::ListResourcesInput::resource_type): <p>Specifies that you want to list only the resource shares that include resources of the specified resource type.</p>  <p>For valid values, query the <code>ListResourceTypes</code> operation.</p>
+    ///   - [`resource_arns(Option<Vec<String>>)`](crate::input::ListResourcesInput::resource_arns): <p>Specifies that you want to list only the resource shares that include resources with the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
+    ///   - [`resource_share_arns(Option<Vec<String>>)`](crate::input::ListResourcesInput::resource_share_arns): <p>Specifies that you want to list only resources in the resource shares identified by the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListResourcesInput::next_token): <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListResourcesInput::max_results): <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+    ///   - [`resource_region_scope(Option<ResourceRegionScopeFilter>)`](crate::input::ListResourcesInput::resource_region_scope): <p>Specifies that you want the results to include only resources that have the specified scope.</p>  <ul>   <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>   <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>   <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>  </ul>  <p>The default value is <code>ALL</code>.</p>
+    /// - On success, responds with [`ListResourcesOutput`](crate::output::ListResourcesOutput) with field(s):
+    ///   - [`resources(Option<Vec<Resource>>)`](crate::output::ListResourcesOutput::resources): <p>An array of objects that contain information about the resources.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListResourcesOutput::next_token): <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
+    /// - On failure, responds with [`SdkError<ListResourcesError>`](crate::error::ListResourcesError)
     pub fn list_resources(&self) -> fluent_builders::ListResources<C, M, R> {
         fluent_builders::ListResources::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListResourceSharePermissions` operation.
-    ///
-    /// See [`ListResourceSharePermissions`](crate::client::fluent_builders::ListResourceSharePermissions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListResourceSharePermissions`](crate::client::fluent_builders::ListResourceSharePermissions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListResourceSharePermissions::into_paginator).
+    ///
+    /// - Takes [`ListResourceSharePermissionsInput`](crate::input::ListResourceSharePermissionsInput) with field(s):
+    ///   - [`resource_share_arn(Option<String>)`](crate::input::ListResourceSharePermissionsInput::resource_share_arn): <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share for which you want to retrieve the associated permissions.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListResourceSharePermissionsInput::next_token): <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListResourceSharePermissionsInput::max_results): <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+    /// - On success, responds with [`ListResourceSharePermissionsOutput`](crate::output::ListResourceSharePermissionsOutput) with field(s):
+    ///   - [`permissions(Option<Vec<ResourceSharePermissionSummary>>)`](crate::output::ListResourceSharePermissionsOutput::permissions): <p>An array of objects that describe the permissions associated with the resource share.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListResourceSharePermissionsOutput::next_token): <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
+    /// - On failure, responds with [`SdkError<ListResourceSharePermissionsError>`](crate::error::ListResourceSharePermissionsError)
     pub fn list_resource_share_permissions(
         &self,
     ) -> fluent_builders::ListResourceSharePermissions<C, M, R> {
         fluent_builders::ListResourceSharePermissions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListResourceTypes` operation.
-    ///
-    /// See [`ListResourceTypes`](crate::client::fluent_builders::ListResourceTypes) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListResourceTypes`](crate::client::fluent_builders::ListResourceTypes) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListResourceTypes::into_paginator).
+    ///
+    /// - Takes [`ListResourceTypesInput`](crate::input::ListResourceTypesInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListResourceTypesInput::next_token): <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListResourceTypesInput::max_results): <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
+    ///   - [`resource_region_scope(Option<ResourceRegionScopeFilter>)`](crate::input::ListResourceTypesInput::resource_region_scope): <p>Specifies that you want the results to include only resources that have the specified scope.</p>  <ul>   <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>   <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>   <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>  </ul>  <p>The default value is <code>ALL</code>.</p>
+    /// - On success, responds with [`ListResourceTypesOutput`](crate::output::ListResourceTypesOutput) with field(s):
+    ///   - [`resource_types(Option<Vec<ServiceNameAndResourceType>>)`](crate::output::ListResourceTypesOutput::resource_types): <p>An array of objects that contain information about the resource types that can be shared using RAM.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListResourceTypesOutput::next_token): <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
+    /// - On failure, responds with [`SdkError<ListResourceTypesError>`](crate::error::ListResourceTypesError)
     pub fn list_resource_types(&self) -> fluent_builders::ListResourceTypes<C, M, R> {
         fluent_builders::ListResourceTypes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PromoteResourceShareCreatedFromPolicy` operation.
+    /// Constructs a fluent builder for the [`PromoteResourceShareCreatedFromPolicy`](crate::client::fluent_builders::PromoteResourceShareCreatedFromPolicy) operation.
     ///
-    /// See [`PromoteResourceShareCreatedFromPolicy`](crate::client::fluent_builders::PromoteResourceShareCreatedFromPolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PromoteResourceShareCreatedFromPolicyInput`](crate::input::PromoteResourceShareCreatedFromPolicyInput) with field(s):
+    ///   - [`resource_share_arn(Option<String>)`](crate::input::PromoteResourceShareCreatedFromPolicyInput::resource_share_arn): <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share to promote.</p>
+    /// - On success, responds with [`PromoteResourceShareCreatedFromPolicyOutput`](crate::output::PromoteResourceShareCreatedFromPolicyOutput) with field(s):
+    ///   - [`return_value(Option<bool>)`](crate::output::PromoteResourceShareCreatedFromPolicyOutput::return_value): <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
+    /// - On failure, responds with [`SdkError<PromoteResourceShareCreatedFromPolicyError>`](crate::error::PromoteResourceShareCreatedFromPolicyError)
     pub fn promote_resource_share_created_from_policy(
         &self,
     ) -> fluent_builders::PromoteResourceShareCreatedFromPolicy<C, M, R> {
         fluent_builders::PromoteResourceShareCreatedFromPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RejectResourceShareInvitation` operation.
+    /// Constructs a fluent builder for the [`RejectResourceShareInvitation`](crate::client::fluent_builders::RejectResourceShareInvitation) operation.
     ///
-    /// See [`RejectResourceShareInvitation`](crate::client::fluent_builders::RejectResourceShareInvitation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RejectResourceShareInvitationInput`](crate::input::RejectResourceShareInvitationInput) with field(s):
+    ///   - [`resource_share_invitation_arn(Option<String>)`](crate::input::RejectResourceShareInvitationInput::resource_share_invitation_arn): <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the invitation that you want to reject.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::RejectResourceShareInvitationInput::client_token): <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>  <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
+    /// - On success, responds with [`RejectResourceShareInvitationOutput`](crate::output::RejectResourceShareInvitationOutput) with field(s):
+    ///   - [`resource_share_invitation(Option<ResourceShareInvitation>)`](crate::output::RejectResourceShareInvitationOutput::resource_share_invitation): <p>An object that contains the details about the rejected invitation.</p>
+    ///   - [`client_token(Option<String>)`](crate::output::RejectResourceShareInvitationOutput::client_token): <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
+    /// - On failure, responds with [`SdkError<RejectResourceShareInvitationError>`](crate::error::RejectResourceShareInvitationError)
     pub fn reject_resource_share_invitation(
         &self,
     ) -> fluent_builders::RejectResourceShareInvitation<C, M, R> {
         fluent_builders::RejectResourceShareInvitation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_share_arn(Option<String>)`](crate::input::TagResourceInput::resource_share_arn): <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to add tags to.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>A list of one or more tag key and value pairs. The tag key must be present and not be an empty string. The tag value must be present but can be an empty string.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_share_arn(Option<String>)`](crate::input::UntagResourceInput::resource_share_arn): <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to remove tags from. The tags are removed from the resource share, not the resources in the resource share.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>Specifies a list of one or more tag keys that you want to remove.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateResourceShare` operation.
+    /// Constructs a fluent builder for the [`UpdateResourceShare`](crate::client::fluent_builders::UpdateResourceShare) operation.
     ///
-    /// See [`UpdateResourceShare`](crate::client::fluent_builders::UpdateResourceShare) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateResourceShareInput`](crate::input::UpdateResourceShareInput) with field(s):
+    ///   - [`resource_share_arn(Option<String>)`](crate::input::UpdateResourceShareInput::resource_share_arn): <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a> of the resource share that you want to modify.</p>
+    ///   - [`name(Option<String>)`](crate::input::UpdateResourceShareInput::name): <p>If specified, the new name that you want to attach to the resource share.</p>
+    ///   - [`allow_external_principals(Option<bool>)`](crate::input::UpdateResourceShareInput::allow_external_principals): <p>Specifies whether principals outside your organization in Organizations can be associated with a resource share.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::UpdateResourceShareInput::client_token): <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>  <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
+    /// - On success, responds with [`UpdateResourceShareOutput`](crate::output::UpdateResourceShareOutput) with field(s):
+    ///   - [`resource_share(Option<ResourceShare>)`](crate::output::UpdateResourceShareOutput::resource_share): <p>Information about the resource share.</p>
+    ///   - [`client_token(Option<String>)`](crate::output::UpdateResourceShareOutput::client_token): <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
+    /// - On failure, responds with [`SdkError<UpdateResourceShareError>`](crate::error::UpdateResourceShareError)
     pub fn update_resource_share(&self) -> fluent_builders::UpdateResourceShare<C, M, R> {
         fluent_builders::UpdateResourceShare::new(self.handle.clone())
     }

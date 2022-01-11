@@ -83,390 +83,763 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CancelImageCreation` operation.
+    /// Constructs a fluent builder for the [`CancelImageCreation`](crate::client::fluent_builders::CancelImageCreation) operation.
     ///
-    /// See [`CancelImageCreation`](crate::client::fluent_builders::CancelImageCreation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CancelImageCreationInput`](crate::input::CancelImageCreationInput) with field(s):
+    ///   - [`image_build_version_arn(Option<String>)`](crate::input::CancelImageCreationInput::image_build_version_arn): <p>The Amazon Resource Name (ARN) of the image whose creation you want to cancel.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CancelImageCreationInput::client_token): <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// - On success, responds with [`CancelImageCreationOutput`](crate::output::CancelImageCreationOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::CancelImageCreationOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`client_token(Option<String>)`](crate::output::CancelImageCreationOutput::client_token): <p>The idempotency token that was used for this request.</p>
+    ///   - [`image_build_version_arn(Option<String>)`](crate::output::CancelImageCreationOutput::image_build_version_arn): <p>The Amazon Resource Name (ARN) of the image whose creation has been cancelled.</p>
+    /// - On failure, responds with [`SdkError<CancelImageCreationError>`](crate::error::CancelImageCreationError)
     pub fn cancel_image_creation(&self) -> fluent_builders::CancelImageCreation<C, M, R> {
         fluent_builders::CancelImageCreation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateComponent` operation.
+    /// Constructs a fluent builder for the [`CreateComponent`](crate::client::fluent_builders::CreateComponent) operation.
     ///
-    /// See [`CreateComponent`](crate::client::fluent_builders::CreateComponent) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateComponentInput`](crate::input::CreateComponentInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateComponentInput::name): <p>The name of the component.</p>
+    ///   - [`semantic_version(Option<String>)`](crate::input::CreateComponentInput::semantic_version): <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>   <p>The semantic version has four nodes: <major>    .    <minor>     .     <patch>      /      <build>       . You can assign values for the first three, and can filter on all of them.      </build>     </patch>    </minor>   </major></p>   <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>   <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>  </note>
+    ///   - [`description(Option<String>)`](crate::input::CreateComponentInput::description): <p>The description of the component. Describes the contents of the component.</p>
+    ///   - [`change_description(Option<String>)`](crate::input::CreateComponentInput::change_description): <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
+    ///   - [`platform(Option<Platform>)`](crate::input::CreateComponentInput::platform): <p>The platform of the component.</p>
+    ///   - [`supported_os_versions(Option<Vec<String>>)`](crate::input::CreateComponentInput::supported_os_versions): <p> The operating system (OS) version supported by the component. If the OS information is available, a prefix match is performed against the base image OS version during image recipe creation.</p>
+    ///   - [`data(Option<String>)`](crate::input::CreateComponentInput::data): <p>The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
+    ///   - [`uri(Option<String>)`](crate::input::CreateComponentInput::uri): <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
+    ///   - [`kms_key_id(Option<String>)`](crate::input::CreateComponentInput::kms_key_id): <p>The ID of the KMS key that should be used to encrypt this component.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateComponentInput::tags): <p>The tags of the component.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateComponentInput::client_token): <p>The idempotency token of the component.</p>
+    /// - On success, responds with [`CreateComponentOutput`](crate::output::CreateComponentOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::CreateComponentOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`client_token(Option<String>)`](crate::output::CreateComponentOutput::client_token): <p>The idempotency token used to make this request idempotent.</p>
+    ///   - [`component_build_version_arn(Option<String>)`](crate::output::CreateComponentOutput::component_build_version_arn): <p>The Amazon Resource Name (ARN) of the component that was created by this request.</p>
+    /// - On failure, responds with [`SdkError<CreateComponentError>`](crate::error::CreateComponentError)
     pub fn create_component(&self) -> fluent_builders::CreateComponent<C, M, R> {
         fluent_builders::CreateComponent::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateContainerRecipe` operation.
+    /// Constructs a fluent builder for the [`CreateContainerRecipe`](crate::client::fluent_builders::CreateContainerRecipe) operation.
     ///
-    /// See [`CreateContainerRecipe`](crate::client::fluent_builders::CreateContainerRecipe) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateContainerRecipeInput`](crate::input::CreateContainerRecipeInput) with field(s):
+    ///   - [`container_type(Option<ContainerType>)`](crate::input::CreateContainerRecipeInput::container_type): <p>The type of container to create.</p>
+    ///   - [`name(Option<String>)`](crate::input::CreateContainerRecipeInput::name): <p>The name of the container recipe.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateContainerRecipeInput::description): <p>The description of the container recipe.</p>
+    ///   - [`semantic_version(Option<String>)`](crate::input::CreateContainerRecipeInput::semantic_version): <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p> <note>   <p>The semantic version has four nodes: <major>    .    <minor>     .     <patch>      /      <build>       . You can assign values for the first three, and can filter on all of them.      </build>     </patch>    </minor>   </major></p>   <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>   <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>  </note>
+    ///   - [`components(Option<Vec<ComponentConfiguration>>)`](crate::input::CreateContainerRecipeInput::components): <p>Components for build and test that are included in the container recipe.</p>
+    ///   - [`instance_configuration(Option<InstanceConfiguration>)`](crate::input::CreateContainerRecipeInput::instance_configuration): <p>A group of options that can be used to configure an instance for building and testing container images.</p>
+    ///   - [`dockerfile_template_data(Option<String>)`](crate::input::CreateContainerRecipeInput::dockerfile_template_data): <p>The Dockerfile template used to build your image as an inline data blob.</p>
+    ///   - [`dockerfile_template_uri(Option<String>)`](crate::input::CreateContainerRecipeInput::dockerfile_template_uri): <p>The Amazon S3 URI for the Dockerfile that will be used to build your container image.</p>
+    ///   - [`platform_override(Option<Platform>)`](crate::input::CreateContainerRecipeInput::platform_override): <p>Specifies the operating system platform when you use a custom base image.</p>
+    ///   - [`image_os_version_override(Option<String>)`](crate::input::CreateContainerRecipeInput::image_os_version_override): <p>Specifies the operating system version for the base image.</p>
+    ///   - [`parent_image(Option<String>)`](crate::input::CreateContainerRecipeInput::parent_image): <p>The base image for the container recipe.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateContainerRecipeInput::tags): <p>Tags that are attached to the container recipe.</p>
+    ///   - [`working_directory(Option<String>)`](crate::input::CreateContainerRecipeInput::working_directory): <p>The working directory for use during build and test workflows.</p>
+    ///   - [`target_repository(Option<TargetContainerRepository>)`](crate::input::CreateContainerRecipeInput::target_repository): <p>The destination repository for the container image.</p>
+    ///   - [`kms_key_id(Option<String>)`](crate::input::CreateContainerRecipeInput::kms_key_id): <p>Identifies which KMS key is used to encrypt the container image.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateContainerRecipeInput::client_token): <p>The client token used to make this request idempotent.</p>
+    /// - On success, responds with [`CreateContainerRecipeOutput`](crate::output::CreateContainerRecipeOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::CreateContainerRecipeOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`client_token(Option<String>)`](crate::output::CreateContainerRecipeOutput::client_token): <p>The client token used to make this request idempotent.</p>
+    ///   - [`container_recipe_arn(Option<String>)`](crate::output::CreateContainerRecipeOutput::container_recipe_arn): <p>Returns the Amazon Resource Name (ARN) of the container recipe that the request created.</p>
+    /// - On failure, responds with [`SdkError<CreateContainerRecipeError>`](crate::error::CreateContainerRecipeError)
     pub fn create_container_recipe(&self) -> fluent_builders::CreateContainerRecipe<C, M, R> {
         fluent_builders::CreateContainerRecipe::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDistributionConfiguration` operation.
+    /// Constructs a fluent builder for the [`CreateDistributionConfiguration`](crate::client::fluent_builders::CreateDistributionConfiguration) operation.
     ///
-    /// See [`CreateDistributionConfiguration`](crate::client::fluent_builders::CreateDistributionConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateDistributionConfigurationInput`](crate::input::CreateDistributionConfigurationInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateDistributionConfigurationInput::name): <p> The name of the distribution configuration.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateDistributionConfigurationInput::description): <p> The description of the distribution configuration.</p>
+    ///   - [`distributions(Option<Vec<Distribution>>)`](crate::input::CreateDistributionConfigurationInput::distributions): <p> The distributions of the distribution configuration.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateDistributionConfigurationInput::tags): <p> The tags of the distribution configuration.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateDistributionConfigurationInput::client_token): <p> The idempotency token of the distribution configuration.</p>
+    /// - On success, responds with [`CreateDistributionConfigurationOutput`](crate::output::CreateDistributionConfigurationOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::CreateDistributionConfigurationOutput::request_id): <p> The request ID that uniquely identifies this request.</p>
+    ///   - [`client_token(Option<String>)`](crate::output::CreateDistributionConfigurationOutput::client_token): <p> The idempotency token used to make this request idempotent.</p>
+    ///   - [`distribution_configuration_arn(Option<String>)`](crate::output::CreateDistributionConfigurationOutput::distribution_configuration_arn): <p> The Amazon Resource Name (ARN) of the distribution configuration that was created by this request.</p>
+    /// - On failure, responds with [`SdkError<CreateDistributionConfigurationError>`](crate::error::CreateDistributionConfigurationError)
     pub fn create_distribution_configuration(
         &self,
     ) -> fluent_builders::CreateDistributionConfiguration<C, M, R> {
         fluent_builders::CreateDistributionConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateImage` operation.
+    /// Constructs a fluent builder for the [`CreateImage`](crate::client::fluent_builders::CreateImage) operation.
     ///
-    /// See [`CreateImage`](crate::client::fluent_builders::CreateImage) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateImageInput`](crate::input::CreateImageInput) with field(s):
+    ///   - [`image_recipe_arn(Option<String>)`](crate::input::CreateImageInput::image_recipe_arn): <p> The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed.</p>
+    ///   - [`container_recipe_arn(Option<String>)`](crate::input::CreateImageInput::container_recipe_arn): <p>The Amazon Resource Name (ARN) of the container recipe that defines how images are configured and tested.</p>
+    ///   - [`distribution_configuration_arn(Option<String>)`](crate::input::CreateImageInput::distribution_configuration_arn): <p> The Amazon Resource Name (ARN) of the distribution configuration that defines and configures the outputs of your pipeline.</p>
+    ///   - [`infrastructure_configuration_arn(Option<String>)`](crate::input::CreateImageInput::infrastructure_configuration_arn): <p> The Amazon Resource Name (ARN) of the infrastructure configuration that defines the environment in which your image will be built and tested.</p>
+    ///   - [`image_tests_configuration(Option<ImageTestsConfiguration>)`](crate::input::CreateImageInput::image_tests_configuration): <p> The image tests configuration of the image.</p>
+    ///   - [`enhanced_image_metadata_enabled(Option<bool>)`](crate::input::CreateImageInput::enhanced_image_metadata_enabled): <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateImageInput::tags): <p> The tags of the image.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateImageInput::client_token): <p> The idempotency token used to make this request idempotent.</p>
+    /// - On success, responds with [`CreateImageOutput`](crate::output::CreateImageOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::CreateImageOutput::request_id): <p> The request ID that uniquely identifies this request.</p>
+    ///   - [`client_token(Option<String>)`](crate::output::CreateImageOutput::client_token): <p> The idempotency token used to make this request idempotent.</p>
+    ///   - [`image_build_version_arn(Option<String>)`](crate::output::CreateImageOutput::image_build_version_arn): <p> The Amazon Resource Name (ARN) of the image that was created by this request.</p>
+    /// - On failure, responds with [`SdkError<CreateImageError>`](crate::error::CreateImageError)
     pub fn create_image(&self) -> fluent_builders::CreateImage<C, M, R> {
         fluent_builders::CreateImage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateImagePipeline` operation.
+    /// Constructs a fluent builder for the [`CreateImagePipeline`](crate::client::fluent_builders::CreateImagePipeline) operation.
     ///
-    /// See [`CreateImagePipeline`](crate::client::fluent_builders::CreateImagePipeline) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateImagePipelineInput`](crate::input::CreateImagePipelineInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateImagePipelineInput::name): <p> The name of the image pipeline.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateImagePipelineInput::description): <p> The description of the image pipeline.</p>
+    ///   - [`image_recipe_arn(Option<String>)`](crate::input::CreateImagePipelineInput::image_recipe_arn): <p> The Amazon Resource Name (ARN) of the image recipe that will be used to configure images created by this image pipeline.</p>
+    ///   - [`container_recipe_arn(Option<String>)`](crate::input::CreateImagePipelineInput::container_recipe_arn): <p>The Amazon Resource Name (ARN) of the container recipe that is used to configure images created by this container pipeline.</p>
+    ///   - [`infrastructure_configuration_arn(Option<String>)`](crate::input::CreateImagePipelineInput::infrastructure_configuration_arn): <p> The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images created by this image pipeline.</p>
+    ///   - [`distribution_configuration_arn(Option<String>)`](crate::input::CreateImagePipelineInput::distribution_configuration_arn): <p> The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images created by this image pipeline.</p>
+    ///   - [`image_tests_configuration(Option<ImageTestsConfiguration>)`](crate::input::CreateImagePipelineInput::image_tests_configuration): <p> The image test configuration of the image pipeline.</p>
+    ///   - [`enhanced_image_metadata_enabled(Option<bool>)`](crate::input::CreateImagePipelineInput::enhanced_image_metadata_enabled): <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
+    ///   - [`schedule(Option<Schedule>)`](crate::input::CreateImagePipelineInput::schedule): <p> The schedule of the image pipeline.</p>
+    ///   - [`status(Option<PipelineStatus>)`](crate::input::CreateImagePipelineInput::status): <p> The status of the image pipeline.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateImagePipelineInput::tags): <p> The tags of the image pipeline.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateImagePipelineInput::client_token): <p> The idempotency token used to make this request idempotent.</p>
+    /// - On success, responds with [`CreateImagePipelineOutput`](crate::output::CreateImagePipelineOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::CreateImagePipelineOutput::request_id): <p> The request ID that uniquely identifies this request.</p>
+    ///   - [`client_token(Option<String>)`](crate::output::CreateImagePipelineOutput::client_token): <p> The idempotency token used to make this request idempotent.</p>
+    ///   - [`image_pipeline_arn(Option<String>)`](crate::output::CreateImagePipelineOutput::image_pipeline_arn): <p> The Amazon Resource Name (ARN) of the image pipeline that was created by this request.</p>
+    /// - On failure, responds with [`SdkError<CreateImagePipelineError>`](crate::error::CreateImagePipelineError)
     pub fn create_image_pipeline(&self) -> fluent_builders::CreateImagePipeline<C, M, R> {
         fluent_builders::CreateImagePipeline::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateImageRecipe` operation.
+    /// Constructs a fluent builder for the [`CreateImageRecipe`](crate::client::fluent_builders::CreateImageRecipe) operation.
     ///
-    /// See [`CreateImageRecipe`](crate::client::fluent_builders::CreateImageRecipe) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateImageRecipeInput`](crate::input::CreateImageRecipeInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateImageRecipeInput::name): <p> The name of the image recipe.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateImageRecipeInput::description): <p> The description of the image recipe.</p>
+    ///   - [`semantic_version(Option<String>)`](crate::input::CreateImageRecipeInput::semantic_version): <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p> <note>   <p>The semantic version has four nodes: <major>    .    <minor>     .     <patch>      /      <build>       . You can assign values for the first three, and can filter on all of them.      </build>     </patch>    </minor>   </major></p>   <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>   <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>  </note>
+    ///   - [`components(Option<Vec<ComponentConfiguration>>)`](crate::input::CreateImageRecipeInput::components): <p>The components of the image recipe.</p>
+    ///   - [`parent_image(Option<String>)`](crate::input::CreateImageRecipeInput::parent_image): <p>The base image of the image recipe. The value of the string can be the ARN of the base image or an AMI ID. The format for the ARN follows this example: <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>. You can provide the specific version that you want to use, or you can use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same Region in which you are using Image Builder.</p>
+    ///   - [`block_device_mappings(Option<Vec<InstanceBlockDeviceMapping>>)`](crate::input::CreateImageRecipeInput::block_device_mappings): <p>The block device mappings of the image recipe.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateImageRecipeInput::tags): <p> The tags of the image recipe.</p>
+    ///   - [`working_directory(Option<String>)`](crate::input::CreateImageRecipeInput::working_directory): <p>The working directory used during build and test workflows.</p>
+    ///   - [`additional_instance_configuration(Option<AdditionalInstanceConfiguration>)`](crate::input::CreateImageRecipeInput::additional_instance_configuration): <p>Specify additional settings and launch scripts for your build instances.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateImageRecipeInput::client_token): <p>The idempotency token used to make this request idempotent.</p>
+    /// - On success, responds with [`CreateImageRecipeOutput`](crate::output::CreateImageRecipeOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::CreateImageRecipeOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`client_token(Option<String>)`](crate::output::CreateImageRecipeOutput::client_token): <p>The idempotency token used to make this request idempotent.</p>
+    ///   - [`image_recipe_arn(Option<String>)`](crate::output::CreateImageRecipeOutput::image_recipe_arn): <p>The Amazon Resource Name (ARN) of the image recipe that was created by this request.</p>
+    /// - On failure, responds with [`SdkError<CreateImageRecipeError>`](crate::error::CreateImageRecipeError)
     pub fn create_image_recipe(&self) -> fluent_builders::CreateImageRecipe<C, M, R> {
         fluent_builders::CreateImageRecipe::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateInfrastructureConfiguration` operation.
+    /// Constructs a fluent builder for the [`CreateInfrastructureConfiguration`](crate::client::fluent_builders::CreateInfrastructureConfiguration) operation.
     ///
-    /// See [`CreateInfrastructureConfiguration`](crate::client::fluent_builders::CreateInfrastructureConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateInfrastructureConfigurationInput`](crate::input::CreateInfrastructureConfigurationInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateInfrastructureConfigurationInput::name): <p>The name of the infrastructure configuration.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateInfrastructureConfigurationInput::description): <p>The description of the infrastructure configuration.</p>
+    ///   - [`instance_types(Option<Vec<String>>)`](crate::input::CreateInfrastructureConfigurationInput::instance_types): <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability.</p>
+    ///   - [`instance_profile_name(Option<String>)`](crate::input::CreateInfrastructureConfigurationInput::instance_profile_name): <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
+    ///   - [`security_group_ids(Option<Vec<String>>)`](crate::input::CreateInfrastructureConfigurationInput::security_group_ids): <p>The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.</p>
+    ///   - [`subnet_id(Option<String>)`](crate::input::CreateInfrastructureConfigurationInput::subnet_id): <p>The subnet ID in which to place the instance used to customize your Amazon EC2 AMI.</p>
+    ///   - [`logging(Option<Logging>)`](crate::input::CreateInfrastructureConfigurationInput::logging): <p>The logging configuration of the infrastructure configuration.</p>
+    ///   - [`key_pair(Option<String>)`](crate::input::CreateInfrastructureConfigurationInput::key_pair): <p>The key pair of the infrastructure configuration. You can use this to log on to and debug the instance used to create your image.</p>
+    ///   - [`terminate_instance_on_failure(Option<bool>)`](crate::input::CreateInfrastructureConfigurationInput::terminate_instance_on_failure): <p>The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.</p>
+    ///   - [`sns_topic_arn(Option<String>)`](crate::input::CreateInfrastructureConfigurationInput::sns_topic_arn): <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>   <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>  </note>
+    ///   - [`resource_tags(Option<HashMap<String, String>>)`](crate::input::CreateInfrastructureConfigurationInput::resource_tags): <p>The tags attached to the resource created by Image Builder.</p>
+    ///   - [`instance_metadata_options(Option<InstanceMetadataOptions>)`](crate::input::CreateInfrastructureConfigurationInput::instance_metadata_options): <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateInfrastructureConfigurationInput::tags): <p>The tags of the infrastructure configuration.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateInfrastructureConfigurationInput::client_token): <p>The idempotency token used to make this request idempotent.</p>
+    /// - On success, responds with [`CreateInfrastructureConfigurationOutput`](crate::output::CreateInfrastructureConfigurationOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::CreateInfrastructureConfigurationOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`client_token(Option<String>)`](crate::output::CreateInfrastructureConfigurationOutput::client_token): <p>The idempotency token used to make this request idempotent.</p>
+    ///   - [`infrastructure_configuration_arn(Option<String>)`](crate::output::CreateInfrastructureConfigurationOutput::infrastructure_configuration_arn): <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was created by this request.</p>
+    /// - On failure, responds with [`SdkError<CreateInfrastructureConfigurationError>`](crate::error::CreateInfrastructureConfigurationError)
     pub fn create_infrastructure_configuration(
         &self,
     ) -> fluent_builders::CreateInfrastructureConfiguration<C, M, R> {
         fluent_builders::CreateInfrastructureConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteComponent` operation.
+    /// Constructs a fluent builder for the [`DeleteComponent`](crate::client::fluent_builders::DeleteComponent) operation.
     ///
-    /// See [`DeleteComponent`](crate::client::fluent_builders::DeleteComponent) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteComponentInput`](crate::input::DeleteComponentInput) with field(s):
+    ///   - [`component_build_version_arn(Option<String>)`](crate::input::DeleteComponentInput::component_build_version_arn): <p>The Amazon Resource Name (ARN) of the component build version to delete.</p>
+    /// - On success, responds with [`DeleteComponentOutput`](crate::output::DeleteComponentOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::DeleteComponentOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`component_build_version_arn(Option<String>)`](crate::output::DeleteComponentOutput::component_build_version_arn): <p>The Amazon Resource Name (ARN) of the component build version that was deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteComponentError>`](crate::error::DeleteComponentError)
     pub fn delete_component(&self) -> fluent_builders::DeleteComponent<C, M, R> {
         fluent_builders::DeleteComponent::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteContainerRecipe` operation.
+    /// Constructs a fluent builder for the [`DeleteContainerRecipe`](crate::client::fluent_builders::DeleteContainerRecipe) operation.
     ///
-    /// See [`DeleteContainerRecipe`](crate::client::fluent_builders::DeleteContainerRecipe) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteContainerRecipeInput`](crate::input::DeleteContainerRecipeInput) with field(s):
+    ///   - [`container_recipe_arn(Option<String>)`](crate::input::DeleteContainerRecipeInput::container_recipe_arn): <p>The Amazon Resource Name (ARN) of the container recipe to delete.</p>
+    /// - On success, responds with [`DeleteContainerRecipeOutput`](crate::output::DeleteContainerRecipeOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::DeleteContainerRecipeOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`container_recipe_arn(Option<String>)`](crate::output::DeleteContainerRecipeOutput::container_recipe_arn): <p>The Amazon Resource Name (ARN) of the container recipe that was deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteContainerRecipeError>`](crate::error::DeleteContainerRecipeError)
     pub fn delete_container_recipe(&self) -> fluent_builders::DeleteContainerRecipe<C, M, R> {
         fluent_builders::DeleteContainerRecipe::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDistributionConfiguration` operation.
+    /// Constructs a fluent builder for the [`DeleteDistributionConfiguration`](crate::client::fluent_builders::DeleteDistributionConfiguration) operation.
     ///
-    /// See [`DeleteDistributionConfiguration`](crate::client::fluent_builders::DeleteDistributionConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteDistributionConfigurationInput`](crate::input::DeleteDistributionConfigurationInput) with field(s):
+    ///   - [`distribution_configuration_arn(Option<String>)`](crate::input::DeleteDistributionConfigurationInput::distribution_configuration_arn): <p>The Amazon Resource Name (ARN) of the distribution configuration to delete.</p>
+    /// - On success, responds with [`DeleteDistributionConfigurationOutput`](crate::output::DeleteDistributionConfigurationOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::DeleteDistributionConfigurationOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`distribution_configuration_arn(Option<String>)`](crate::output::DeleteDistributionConfigurationOutput::distribution_configuration_arn): <p>The Amazon Resource Name (ARN) of the distribution configuration that was deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteDistributionConfigurationError>`](crate::error::DeleteDistributionConfigurationError)
     pub fn delete_distribution_configuration(
         &self,
     ) -> fluent_builders::DeleteDistributionConfiguration<C, M, R> {
         fluent_builders::DeleteDistributionConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteImage` operation.
+    /// Constructs a fluent builder for the [`DeleteImage`](crate::client::fluent_builders::DeleteImage) operation.
     ///
-    /// See [`DeleteImage`](crate::client::fluent_builders::DeleteImage) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteImageInput`](crate::input::DeleteImageInput) with field(s):
+    ///   - [`image_build_version_arn(Option<String>)`](crate::input::DeleteImageInput::image_build_version_arn): <p>The Amazon Resource Name (ARN) of the Image Builder image resource to delete.</p>
+    /// - On success, responds with [`DeleteImageOutput`](crate::output::DeleteImageOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::DeleteImageOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`image_build_version_arn(Option<String>)`](crate::output::DeleteImageOutput::image_build_version_arn): <p>The Amazon Resource Name (ARN) of the Image Builder image resource that was deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteImageError>`](crate::error::DeleteImageError)
     pub fn delete_image(&self) -> fluent_builders::DeleteImage<C, M, R> {
         fluent_builders::DeleteImage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteImagePipeline` operation.
+    /// Constructs a fluent builder for the [`DeleteImagePipeline`](crate::client::fluent_builders::DeleteImagePipeline) operation.
     ///
-    /// See [`DeleteImagePipeline`](crate::client::fluent_builders::DeleteImagePipeline) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteImagePipelineInput`](crate::input::DeleteImagePipelineInput) with field(s):
+    ///   - [`image_pipeline_arn(Option<String>)`](crate::input::DeleteImagePipelineInput::image_pipeline_arn): <p>The Amazon Resource Name (ARN) of the image pipeline to delete.</p>
+    /// - On success, responds with [`DeleteImagePipelineOutput`](crate::output::DeleteImagePipelineOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::DeleteImagePipelineOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`image_pipeline_arn(Option<String>)`](crate::output::DeleteImagePipelineOutput::image_pipeline_arn): <p>The Amazon Resource Name (ARN) of the image pipeline that was deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteImagePipelineError>`](crate::error::DeleteImagePipelineError)
     pub fn delete_image_pipeline(&self) -> fluent_builders::DeleteImagePipeline<C, M, R> {
         fluent_builders::DeleteImagePipeline::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteImageRecipe` operation.
+    /// Constructs a fluent builder for the [`DeleteImageRecipe`](crate::client::fluent_builders::DeleteImageRecipe) operation.
     ///
-    /// See [`DeleteImageRecipe`](crate::client::fluent_builders::DeleteImageRecipe) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteImageRecipeInput`](crate::input::DeleteImageRecipeInput) with field(s):
+    ///   - [`image_recipe_arn(Option<String>)`](crate::input::DeleteImageRecipeInput::image_recipe_arn): <p>The Amazon Resource Name (ARN) of the image recipe to delete.</p>
+    /// - On success, responds with [`DeleteImageRecipeOutput`](crate::output::DeleteImageRecipeOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::DeleteImageRecipeOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`image_recipe_arn(Option<String>)`](crate::output::DeleteImageRecipeOutput::image_recipe_arn): <p>The Amazon Resource Name (ARN) of the image recipe that was deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteImageRecipeError>`](crate::error::DeleteImageRecipeError)
     pub fn delete_image_recipe(&self) -> fluent_builders::DeleteImageRecipe<C, M, R> {
         fluent_builders::DeleteImageRecipe::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteInfrastructureConfiguration` operation.
+    /// Constructs a fluent builder for the [`DeleteInfrastructureConfiguration`](crate::client::fluent_builders::DeleteInfrastructureConfiguration) operation.
     ///
-    /// See [`DeleteInfrastructureConfiguration`](crate::client::fluent_builders::DeleteInfrastructureConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteInfrastructureConfigurationInput`](crate::input::DeleteInfrastructureConfigurationInput) with field(s):
+    ///   - [`infrastructure_configuration_arn(Option<String>)`](crate::input::DeleteInfrastructureConfigurationInput::infrastructure_configuration_arn): <p>The Amazon Resource Name (ARN) of the infrastructure configuration to delete.</p>
+    /// - On success, responds with [`DeleteInfrastructureConfigurationOutput`](crate::output::DeleteInfrastructureConfigurationOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::DeleteInfrastructureConfigurationOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`infrastructure_configuration_arn(Option<String>)`](crate::output::DeleteInfrastructureConfigurationOutput::infrastructure_configuration_arn): <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteInfrastructureConfigurationError>`](crate::error::DeleteInfrastructureConfigurationError)
     pub fn delete_infrastructure_configuration(
         &self,
     ) -> fluent_builders::DeleteInfrastructureConfiguration<C, M, R> {
         fluent_builders::DeleteInfrastructureConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetComponent` operation.
+    /// Constructs a fluent builder for the [`GetComponent`](crate::client::fluent_builders::GetComponent) operation.
     ///
-    /// See [`GetComponent`](crate::client::fluent_builders::GetComponent) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetComponentInput`](crate::input::GetComponentInput) with field(s):
+    ///   - [`component_build_version_arn(Option<String>)`](crate::input::GetComponentInput::component_build_version_arn): <p>The Amazon Resource Name (ARN) of the component that you want to retrieve. Regex requires "/\d+$" suffix.</p>
+    /// - On success, responds with [`GetComponentOutput`](crate::output::GetComponentOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::GetComponentOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`component(Option<Component>)`](crate::output::GetComponentOutput::component): <p>The component object associated with the specified ARN.</p>
+    /// - On failure, responds with [`SdkError<GetComponentError>`](crate::error::GetComponentError)
     pub fn get_component(&self) -> fluent_builders::GetComponent<C, M, R> {
         fluent_builders::GetComponent::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetComponentPolicy` operation.
+    /// Constructs a fluent builder for the [`GetComponentPolicy`](crate::client::fluent_builders::GetComponentPolicy) operation.
     ///
-    /// See [`GetComponentPolicy`](crate::client::fluent_builders::GetComponentPolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetComponentPolicyInput`](crate::input::GetComponentPolicyInput) with field(s):
+    ///   - [`component_arn(Option<String>)`](crate::input::GetComponentPolicyInput::component_arn): <p>The Amazon Resource Name (ARN) of the component whose policy you want to retrieve.</p>
+    /// - On success, responds with [`GetComponentPolicyOutput`](crate::output::GetComponentPolicyOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::GetComponentPolicyOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`policy(Option<String>)`](crate::output::GetComponentPolicyOutput::policy): <p>The component policy.</p>
+    /// - On failure, responds with [`SdkError<GetComponentPolicyError>`](crate::error::GetComponentPolicyError)
     pub fn get_component_policy(&self) -> fluent_builders::GetComponentPolicy<C, M, R> {
         fluent_builders::GetComponentPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetContainerRecipe` operation.
+    /// Constructs a fluent builder for the [`GetContainerRecipe`](crate::client::fluent_builders::GetContainerRecipe) operation.
     ///
-    /// See [`GetContainerRecipe`](crate::client::fluent_builders::GetContainerRecipe) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetContainerRecipeInput`](crate::input::GetContainerRecipeInput) with field(s):
+    ///   - [`container_recipe_arn(Option<String>)`](crate::input::GetContainerRecipeInput::container_recipe_arn): <p>The Amazon Resource Name (ARN) of the container recipe to retrieve.</p>
+    /// - On success, responds with [`GetContainerRecipeOutput`](crate::output::GetContainerRecipeOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::GetContainerRecipeOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`container_recipe(Option<ContainerRecipe>)`](crate::output::GetContainerRecipeOutput::container_recipe): <p>The container recipe object that is returned.</p>
+    /// - On failure, responds with [`SdkError<GetContainerRecipeError>`](crate::error::GetContainerRecipeError)
     pub fn get_container_recipe(&self) -> fluent_builders::GetContainerRecipe<C, M, R> {
         fluent_builders::GetContainerRecipe::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetContainerRecipePolicy` operation.
+    /// Constructs a fluent builder for the [`GetContainerRecipePolicy`](crate::client::fluent_builders::GetContainerRecipePolicy) operation.
     ///
-    /// See [`GetContainerRecipePolicy`](crate::client::fluent_builders::GetContainerRecipePolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetContainerRecipePolicyInput`](crate::input::GetContainerRecipePolicyInput) with field(s):
+    ///   - [`container_recipe_arn(Option<String>)`](crate::input::GetContainerRecipePolicyInput::container_recipe_arn): <p>The Amazon Resource Name (ARN) of the container recipe for the policy being requested.</p>
+    /// - On success, responds with [`GetContainerRecipePolicyOutput`](crate::output::GetContainerRecipePolicyOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::GetContainerRecipePolicyOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`policy(Option<String>)`](crate::output::GetContainerRecipePolicyOutput::policy): <p>The container recipe policy object that is returned.</p>
+    /// - On failure, responds with [`SdkError<GetContainerRecipePolicyError>`](crate::error::GetContainerRecipePolicyError)
     pub fn get_container_recipe_policy(
         &self,
     ) -> fluent_builders::GetContainerRecipePolicy<C, M, R> {
         fluent_builders::GetContainerRecipePolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDistributionConfiguration` operation.
+    /// Constructs a fluent builder for the [`GetDistributionConfiguration`](crate::client::fluent_builders::GetDistributionConfiguration) operation.
     ///
-    /// See [`GetDistributionConfiguration`](crate::client::fluent_builders::GetDistributionConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetDistributionConfigurationInput`](crate::input::GetDistributionConfigurationInput) with field(s):
+    ///   - [`distribution_configuration_arn(Option<String>)`](crate::input::GetDistributionConfigurationInput::distribution_configuration_arn): <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to retrieve.</p>
+    /// - On success, responds with [`GetDistributionConfigurationOutput`](crate::output::GetDistributionConfigurationOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::GetDistributionConfigurationOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`distribution_configuration(Option<DistributionConfiguration>)`](crate::output::GetDistributionConfigurationOutput::distribution_configuration): <p>The distribution configuration object.</p>
+    /// - On failure, responds with [`SdkError<GetDistributionConfigurationError>`](crate::error::GetDistributionConfigurationError)
     pub fn get_distribution_configuration(
         &self,
     ) -> fluent_builders::GetDistributionConfiguration<C, M, R> {
         fluent_builders::GetDistributionConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetImage` operation.
+    /// Constructs a fluent builder for the [`GetImage`](crate::client::fluent_builders::GetImage) operation.
     ///
-    /// See [`GetImage`](crate::client::fluent_builders::GetImage) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetImageInput`](crate::input::GetImageInput) with field(s):
+    ///   - [`image_build_version_arn(Option<String>)`](crate::input::GetImageInput::image_build_version_arn): <p>The Amazon Resource Name (ARN) of the image that you want to retrieve.</p>
+    /// - On success, responds with [`GetImageOutput`](crate::output::GetImageOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::GetImageOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`image(Option<Image>)`](crate::output::GetImageOutput::image): <p>The image object.</p>
+    /// - On failure, responds with [`SdkError<GetImageError>`](crate::error::GetImageError)
     pub fn get_image(&self) -> fluent_builders::GetImage<C, M, R> {
         fluent_builders::GetImage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetImagePipeline` operation.
+    /// Constructs a fluent builder for the [`GetImagePipeline`](crate::client::fluent_builders::GetImagePipeline) operation.
     ///
-    /// See [`GetImagePipeline`](crate::client::fluent_builders::GetImagePipeline) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetImagePipelineInput`](crate::input::GetImagePipelineInput) with field(s):
+    ///   - [`image_pipeline_arn(Option<String>)`](crate::input::GetImagePipelineInput::image_pipeline_arn): <p>The Amazon Resource Name (ARN) of the image pipeline that you want to retrieve.</p>
+    /// - On success, responds with [`GetImagePipelineOutput`](crate::output::GetImagePipelineOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::GetImagePipelineOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`image_pipeline(Option<ImagePipeline>)`](crate::output::GetImagePipelineOutput::image_pipeline): <p>The image pipeline object.</p>
+    /// - On failure, responds with [`SdkError<GetImagePipelineError>`](crate::error::GetImagePipelineError)
     pub fn get_image_pipeline(&self) -> fluent_builders::GetImagePipeline<C, M, R> {
         fluent_builders::GetImagePipeline::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetImagePolicy` operation.
+    /// Constructs a fluent builder for the [`GetImagePolicy`](crate::client::fluent_builders::GetImagePolicy) operation.
     ///
-    /// See [`GetImagePolicy`](crate::client::fluent_builders::GetImagePolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetImagePolicyInput`](crate::input::GetImagePolicyInput) with field(s):
+    ///   - [`image_arn(Option<String>)`](crate::input::GetImagePolicyInput::image_arn): <p>The Amazon Resource Name (ARN) of the image whose policy you want to retrieve.</p>
+    /// - On success, responds with [`GetImagePolicyOutput`](crate::output::GetImagePolicyOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::GetImagePolicyOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`policy(Option<String>)`](crate::output::GetImagePolicyOutput::policy): <p>The image policy object.</p>
+    /// - On failure, responds with [`SdkError<GetImagePolicyError>`](crate::error::GetImagePolicyError)
     pub fn get_image_policy(&self) -> fluent_builders::GetImagePolicy<C, M, R> {
         fluent_builders::GetImagePolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetImageRecipe` operation.
+    /// Constructs a fluent builder for the [`GetImageRecipe`](crate::client::fluent_builders::GetImageRecipe) operation.
     ///
-    /// See [`GetImageRecipe`](crate::client::fluent_builders::GetImageRecipe) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetImageRecipeInput`](crate::input::GetImageRecipeInput) with field(s):
+    ///   - [`image_recipe_arn(Option<String>)`](crate::input::GetImageRecipeInput::image_recipe_arn): <p>The Amazon Resource Name (ARN) of the image recipe that you want to retrieve.</p>
+    /// - On success, responds with [`GetImageRecipeOutput`](crate::output::GetImageRecipeOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::GetImageRecipeOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`image_recipe(Option<ImageRecipe>)`](crate::output::GetImageRecipeOutput::image_recipe): <p>The image recipe object.</p>
+    /// - On failure, responds with [`SdkError<GetImageRecipeError>`](crate::error::GetImageRecipeError)
     pub fn get_image_recipe(&self) -> fluent_builders::GetImageRecipe<C, M, R> {
         fluent_builders::GetImageRecipe::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetImageRecipePolicy` operation.
+    /// Constructs a fluent builder for the [`GetImageRecipePolicy`](crate::client::fluent_builders::GetImageRecipePolicy) operation.
     ///
-    /// See [`GetImageRecipePolicy`](crate::client::fluent_builders::GetImageRecipePolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetImageRecipePolicyInput`](crate::input::GetImageRecipePolicyInput) with field(s):
+    ///   - [`image_recipe_arn(Option<String>)`](crate::input::GetImageRecipePolicyInput::image_recipe_arn): <p>The Amazon Resource Name (ARN) of the image recipe whose policy you want to retrieve.</p>
+    /// - On success, responds with [`GetImageRecipePolicyOutput`](crate::output::GetImageRecipePolicyOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::GetImageRecipePolicyOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`policy(Option<String>)`](crate::output::GetImageRecipePolicyOutput::policy): <p>The image recipe policy object.</p>
+    /// - On failure, responds with [`SdkError<GetImageRecipePolicyError>`](crate::error::GetImageRecipePolicyError)
     pub fn get_image_recipe_policy(&self) -> fluent_builders::GetImageRecipePolicy<C, M, R> {
         fluent_builders::GetImageRecipePolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetInfrastructureConfiguration` operation.
+    /// Constructs a fluent builder for the [`GetInfrastructureConfiguration`](crate::client::fluent_builders::GetInfrastructureConfiguration) operation.
     ///
-    /// See [`GetInfrastructureConfiguration`](crate::client::fluent_builders::GetInfrastructureConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetInfrastructureConfigurationInput`](crate::input::GetInfrastructureConfigurationInput) with field(s):
+    ///   - [`infrastructure_configuration_arn(Option<String>)`](crate::input::GetInfrastructureConfigurationInput::infrastructure_configuration_arn): <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to retrieve.</p>
+    /// - On success, responds with [`GetInfrastructureConfigurationOutput`](crate::output::GetInfrastructureConfigurationOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::GetInfrastructureConfigurationOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`infrastructure_configuration(Option<InfrastructureConfiguration>)`](crate::output::GetInfrastructureConfigurationOutput::infrastructure_configuration): <p>The infrastructure configuration object.</p>
+    /// - On failure, responds with [`SdkError<GetInfrastructureConfigurationError>`](crate::error::GetInfrastructureConfigurationError)
     pub fn get_infrastructure_configuration(
         &self,
     ) -> fluent_builders::GetInfrastructureConfiguration<C, M, R> {
         fluent_builders::GetInfrastructureConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ImportComponent` operation.
+    /// Constructs a fluent builder for the [`ImportComponent`](crate::client::fluent_builders::ImportComponent) operation.
     ///
-    /// See [`ImportComponent`](crate::client::fluent_builders::ImportComponent) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ImportComponentInput`](crate::input::ImportComponentInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::ImportComponentInput::name): <p> The name of the component.</p>
+    ///   - [`semantic_version(Option<String>)`](crate::input::ImportComponentInput::semantic_version): <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>   <p>The semantic version has four nodes: <major>    .    <minor>     .     <patch>      /      <build>       . You can assign values for the first three, and can filter on all of them.      </build>     </patch>    </minor>   </major></p>   <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>  </note>
+    ///   - [`description(Option<String>)`](crate::input::ImportComponentInput::description): <p>The description of the component. Describes the contents of the component.</p>
+    ///   - [`change_description(Option<String>)`](crate::input::ImportComponentInput::change_description): <p>The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.</p>
+    ///   - [`r#type(Option<ComponentType>)`](crate::input::ImportComponentInput::r#type): <p>The type of the component denotes whether the component is used to build the image, or only to test it.</p>
+    ///   - [`format(Option<ComponentFormat>)`](crate::input::ImportComponentInput::format): <p>The format of the resource that you want to import as a component.</p>
+    ///   - [`platform(Option<Platform>)`](crate::input::ImportComponentInput::platform): <p>The platform of the component.</p>
+    ///   - [`data(Option<String>)`](crate::input::ImportComponentInput::data): <p>The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
+    ///   - [`uri(Option<String>)`](crate::input::ImportComponentInput::uri): <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
+    ///   - [`kms_key_id(Option<String>)`](crate::input::ImportComponentInput::kms_key_id): <p>The ID of the KMS key that should be used to encrypt this component.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::ImportComponentInput::tags): <p>The tags of the component.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::ImportComponentInput::client_token): <p>The idempotency token of the component.</p>
+    /// - On success, responds with [`ImportComponentOutput`](crate::output::ImportComponentOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::ImportComponentOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`client_token(Option<String>)`](crate::output::ImportComponentOutput::client_token): <p>The idempotency token used to make this request idempotent.</p>
+    ///   - [`component_build_version_arn(Option<String>)`](crate::output::ImportComponentOutput::component_build_version_arn): <p>The Amazon Resource Name (ARN) of the imported component.</p>
+    /// - On failure, responds with [`SdkError<ImportComponentError>`](crate::error::ImportComponentError)
     pub fn import_component(&self) -> fluent_builders::ImportComponent<C, M, R> {
         fluent_builders::ImportComponent::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ImportVmImage` operation.
+    /// Constructs a fluent builder for the [`ImportVmImage`](crate::client::fluent_builders::ImportVmImage) operation.
     ///
-    /// See [`ImportVmImage`](crate::client::fluent_builders::ImportVmImage) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ImportVmImageInput`](crate::input::ImportVmImageInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::ImportVmImageInput::name): <p>The name of the base image that is created by the import process.</p>
+    ///   - [`semantic_version(Option<String>)`](crate::input::ImportVmImageInput::semantic_version): <p>The semantic version to attach to the base image that was created during the import process. This version follows the semantic version syntax.</p> <note>   <p>The semantic version has four nodes: <major>    .    <minor>     .     <patch>      /      <build>       . You can assign values for the first three, and can filter on all of them.      </build>     </patch>    </minor>   </major></p>   <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>   <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>  </note>
+    ///   - [`description(Option<String>)`](crate::input::ImportVmImageInput::description): <p>The description for the base image that is created by the import process.</p>
+    ///   - [`platform(Option<Platform>)`](crate::input::ImportVmImageInput::platform): <p>The operating system platform for the imported VM.</p>
+    ///   - [`os_version(Option<String>)`](crate::input::ImportVmImageInput::os_version): <p>The operating system version for the imported VM.</p>
+    ///   - [`vm_import_task_id(Option<String>)`](crate::input::ImportVmImageInput::vm_import_task_id): <p>The <code>importTaskId</code> (API) or <code>ImportTaskId</code> (CLI) from the Amazon EC2 VM import process. Image Builder retrieves information from the import process to pull in the AMI that is created from the VM source as the base image for your recipe.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::ImportVmImageInput::tags): <p>Tags that are attached to the import resources.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::ImportVmImageInput::client_token): <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// - On success, responds with [`ImportVmImageOutput`](crate::output::ImportVmImageOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::ImportVmImageOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`image_arn(Option<String>)`](crate::output::ImportVmImageOutput::image_arn): <p>The Amazon Resource Name (ARN) of the AMI that was created during the VM import process. This AMI is used as the base image for the recipe that imported the VM.</p>
+    ///   - [`client_token(Option<String>)`](crate::output::ImportVmImageOutput::client_token): <p>The idempotency token that was used for this request.</p>
+    /// - On failure, responds with [`SdkError<ImportVmImageError>`](crate::error::ImportVmImageError)
     pub fn import_vm_image(&self) -> fluent_builders::ImportVmImage<C, M, R> {
         fluent_builders::ImportVmImage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListComponentBuildVersions` operation.
-    ///
-    /// See [`ListComponentBuildVersions`](crate::client::fluent_builders::ListComponentBuildVersions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListComponentBuildVersions`](crate::client::fluent_builders::ListComponentBuildVersions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListComponentBuildVersions::into_paginator).
+    ///
+    /// - Takes [`ListComponentBuildVersionsInput`](crate::input::ListComponentBuildVersionsInput) with field(s):
+    ///   - [`component_version_arn(Option<String>)`](crate::input::ListComponentBuildVersionsInput::component_version_arn): <p>The component version Amazon Resource Name (ARN) whose versions you want to list.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListComponentBuildVersionsInput::max_results): <p>The maximum items to return in a request.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListComponentBuildVersionsInput::next_token): <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    /// - On success, responds with [`ListComponentBuildVersionsOutput`](crate::output::ListComponentBuildVersionsOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::ListComponentBuildVersionsOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`component_summary_list(Option<Vec<ComponentSummary>>)`](crate::output::ListComponentBuildVersionsOutput::component_summary_list): <p>The list of component summaries for the specified semantic version.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListComponentBuildVersionsOutput::next_token): <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
+    /// - On failure, responds with [`SdkError<ListComponentBuildVersionsError>`](crate::error::ListComponentBuildVersionsError)
     pub fn list_component_build_versions(
         &self,
     ) -> fluent_builders::ListComponentBuildVersions<C, M, R> {
         fluent_builders::ListComponentBuildVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListComponents` operation.
-    ///
-    /// See [`ListComponents`](crate::client::fluent_builders::ListComponents) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListComponents`](crate::client::fluent_builders::ListComponents) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListComponents::into_paginator).
+    ///
+    /// - Takes [`ListComponentsInput`](crate::input::ListComponentsInput) with field(s):
+    ///   - [`owner(Option<Ownership>)`](crate::input::ListComponentsInput::owner): <p>The owner defines which components you want to list. By default, this request will only show components owned by your account. You can use this field to specify if you want to view components owned by yourself, by Amazon, or those components that have been shared with you by other customers.</p>
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::ListComponentsInput::filters): <p>Use the following filters to streamline results:</p>  <ul>   <li> <p> <code>description</code> </p> </li>   <li> <p> <code>name</code> </p> </li>   <li> <p> <code>platform</code> </p> </li>   <li> <p> <code>supportedOsVersion</code> </p> </li>   <li> <p> <code>type</code> </p> </li>   <li> <p> <code>version</code> </p> </li>  </ul>
+    ///   - [`by_name(bool)`](crate::input::ListComponentsInput::by_name): <p>Returns the list of component build versions for the specified name.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListComponentsInput::max_results): <p>The maximum items to return in a request.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListComponentsInput::next_token): <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    /// - On success, responds with [`ListComponentsOutput`](crate::output::ListComponentsOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::ListComponentsOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`component_version_list(Option<Vec<ComponentVersion>>)`](crate::output::ListComponentsOutput::component_version_list): <p>The list of component semantic versions.</p> <note>   <p>The semantic version has four nodes: <major>    .    <minor>     .     <patch>      /      <build>       . You can assign values for the first three, and can filter on all of them.      </build>     </patch>    </minor>   </major></p>  </note>
+    ///   - [`next_token(Option<String>)`](crate::output::ListComponentsOutput::next_token): <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
+    /// - On failure, responds with [`SdkError<ListComponentsError>`](crate::error::ListComponentsError)
     pub fn list_components(&self) -> fluent_builders::ListComponents<C, M, R> {
         fluent_builders::ListComponents::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListContainerRecipes` operation.
-    ///
-    /// See [`ListContainerRecipes`](crate::client::fluent_builders::ListContainerRecipes) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListContainerRecipes`](crate::client::fluent_builders::ListContainerRecipes) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListContainerRecipes::into_paginator).
+    ///
+    /// - Takes [`ListContainerRecipesInput`](crate::input::ListContainerRecipesInput) with field(s):
+    ///   - [`owner(Option<Ownership>)`](crate::input::ListContainerRecipesInput::owner): <p>Returns container recipes belonging to the specified owner, that have been shared with you. You can omit this field to return container recipes belonging to your account.</p>
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::ListContainerRecipesInput::filters): <p>Use the following filters to streamline results:</p>  <ul>   <li> <p> <code>containerType</code> </p> </li>   <li> <p> <code>name</code> </p> </li>   <li> <p> <code>parentImage</code> </p> </li>   <li> <p> <code>platform</code> </p> </li>  </ul>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListContainerRecipesInput::max_results): <p>The maximum number of results to return in the list.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListContainerRecipesInput::next_token): <p>Provides a token for pagination, which determines where to begin the next set of results when the current set reaches the maximum for one request.</p>
+    /// - On success, responds with [`ListContainerRecipesOutput`](crate::output::ListContainerRecipesOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::ListContainerRecipesOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`container_recipe_summary_list(Option<Vec<ContainerRecipeSummary>>)`](crate::output::ListContainerRecipesOutput::container_recipe_summary_list): <p>The list of container recipes returned for the request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListContainerRecipesOutput::next_token): <p>The next token field is used for paginated responses. When this is not empty, there are additional container recipes that the service has not included in this response. Use this token with the next request to retrieve additional list items.</p>
+    /// - On failure, responds with [`SdkError<ListContainerRecipesError>`](crate::error::ListContainerRecipesError)
     pub fn list_container_recipes(&self) -> fluent_builders::ListContainerRecipes<C, M, R> {
         fluent_builders::ListContainerRecipes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDistributionConfigurations` operation.
-    ///
-    /// See [`ListDistributionConfigurations`](crate::client::fluent_builders::ListDistributionConfigurations) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListDistributionConfigurations`](crate::client::fluent_builders::ListDistributionConfigurations) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDistributionConfigurations::into_paginator).
+    ///
+    /// - Takes [`ListDistributionConfigurationsInput`](crate::input::ListDistributionConfigurationsInput) with field(s):
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::ListDistributionConfigurationsInput::filters): <p>You can filter on <code>name</code> to streamline results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListDistributionConfigurationsInput::max_results): <p>The maximum items to return in a request.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListDistributionConfigurationsInput::next_token): <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    /// - On success, responds with [`ListDistributionConfigurationsOutput`](crate::output::ListDistributionConfigurationsOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::ListDistributionConfigurationsOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`distribution_configuration_summary_list(Option<Vec<DistributionConfigurationSummary>>)`](crate::output::ListDistributionConfigurationsOutput::distribution_configuration_summary_list): <p>The list of distributions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDistributionConfigurationsOutput::next_token): <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
+    /// - On failure, responds with [`SdkError<ListDistributionConfigurationsError>`](crate::error::ListDistributionConfigurationsError)
     pub fn list_distribution_configurations(
         &self,
     ) -> fluent_builders::ListDistributionConfigurations<C, M, R> {
         fluent_builders::ListDistributionConfigurations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListImageBuildVersions` operation.
-    ///
-    /// See [`ListImageBuildVersions`](crate::client::fluent_builders::ListImageBuildVersions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListImageBuildVersions`](crate::client::fluent_builders::ListImageBuildVersions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListImageBuildVersions::into_paginator).
+    ///
+    /// - Takes [`ListImageBuildVersionsInput`](crate::input::ListImageBuildVersionsInput) with field(s):
+    ///   - [`image_version_arn(Option<String>)`](crate::input::ListImageBuildVersionsInput::image_version_arn): <p>The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.</p>
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::ListImageBuildVersionsInput::filters): <p>Use the following filters to streamline results:</p>  <ul>   <li> <p> <code>name</code> </p> </li>   <li> <p> <code>osVersion</code> </p> </li>   <li> <p> <code>platform</code> </p> </li>   <li> <p> <code>type</code> </p> </li>   <li> <p> <code>version</code> </p> </li>  </ul>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListImageBuildVersionsInput::max_results): <p>The maximum items to return in a request.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListImageBuildVersionsInput::next_token): <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    /// - On success, responds with [`ListImageBuildVersionsOutput`](crate::output::ListImageBuildVersionsOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::ListImageBuildVersionsOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`image_summary_list(Option<Vec<ImageSummary>>)`](crate::output::ListImageBuildVersionsOutput::image_summary_list): <p>The list of image build versions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListImageBuildVersionsOutput::next_token): <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
+    /// - On failure, responds with [`SdkError<ListImageBuildVersionsError>`](crate::error::ListImageBuildVersionsError)
     pub fn list_image_build_versions(&self) -> fluent_builders::ListImageBuildVersions<C, M, R> {
         fluent_builders::ListImageBuildVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListImagePackages` operation.
-    ///
-    /// See [`ListImagePackages`](crate::client::fluent_builders::ListImagePackages) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListImagePackages`](crate::client::fluent_builders::ListImagePackages) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListImagePackages::into_paginator).
+    ///
+    /// - Takes [`ListImagePackagesInput`](crate::input::ListImagePackagesInput) with field(s):
+    ///   - [`image_build_version_arn(Option<String>)`](crate::input::ListImagePackagesInput::image_build_version_arn): <p>Filter results for the ListImagePackages request by the Image Build Version ARN</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListImagePackagesInput::max_results): <p>The maxiumum number of results to return from the ListImagePackages request.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListImagePackagesInput::next_token): <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    /// - On success, responds with [`ListImagePackagesOutput`](crate::output::ListImagePackagesOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::ListImagePackagesOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`image_package_list(Option<Vec<ImagePackage>>)`](crate::output::ListImagePackagesOutput::image_package_list): <p>The list of Image Packages returned in the response.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListImagePackagesOutput::next_token): <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    /// - On failure, responds with [`SdkError<ListImagePackagesError>`](crate::error::ListImagePackagesError)
     pub fn list_image_packages(&self) -> fluent_builders::ListImagePackages<C, M, R> {
         fluent_builders::ListImagePackages::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListImagePipelineImages` operation.
-    ///
-    /// See [`ListImagePipelineImages`](crate::client::fluent_builders::ListImagePipelineImages) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListImagePipelineImages`](crate::client::fluent_builders::ListImagePipelineImages) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListImagePipelineImages::into_paginator).
+    ///
+    /// - Takes [`ListImagePipelineImagesInput`](crate::input::ListImagePipelineImagesInput) with field(s):
+    ///   - [`image_pipeline_arn(Option<String>)`](crate::input::ListImagePipelineImagesInput::image_pipeline_arn): <p>The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.</p>
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::ListImagePipelineImagesInput::filters): <p>Use the following filters to streamline results:</p>  <ul>   <li> <p> <code>name</code> </p> </li>   <li> <p> <code>version</code> </p> </li>  </ul>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListImagePipelineImagesInput::max_results): <p>The maximum items to return in a request.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListImagePipelineImagesInput::next_token): <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    /// - On success, responds with [`ListImagePipelineImagesOutput`](crate::output::ListImagePipelineImagesOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::ListImagePipelineImagesOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`image_summary_list(Option<Vec<ImageSummary>>)`](crate::output::ListImagePipelineImagesOutput::image_summary_list): <p>The list of images built by this pipeline.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListImagePipelineImagesOutput::next_token): <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
+    /// - On failure, responds with [`SdkError<ListImagePipelineImagesError>`](crate::error::ListImagePipelineImagesError)
     pub fn list_image_pipeline_images(&self) -> fluent_builders::ListImagePipelineImages<C, M, R> {
         fluent_builders::ListImagePipelineImages::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListImagePipelines` operation.
-    ///
-    /// See [`ListImagePipelines`](crate::client::fluent_builders::ListImagePipelines) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListImagePipelines`](crate::client::fluent_builders::ListImagePipelines) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListImagePipelines::into_paginator).
+    ///
+    /// - Takes [`ListImagePipelinesInput`](crate::input::ListImagePipelinesInput) with field(s):
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::ListImagePipelinesInput::filters): <p>Use the following filters to streamline results:</p>  <ul>   <li> <p> <code>description</code> </p> </li>   <li> <p> <code>distributionConfigurationArn</code> </p> </li>   <li> <p> <code>imageRecipeArn</code> </p> </li>   <li> <p> <code>infrastructureConfigurationArn</code> </p> </li>   <li> <p> <code>name</code> </p> </li>   <li> <p> <code>status</code> </p> </li>  </ul>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListImagePipelinesInput::max_results): <p>The maximum items to return in a request.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListImagePipelinesInput::next_token): <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    /// - On success, responds with [`ListImagePipelinesOutput`](crate::output::ListImagePipelinesOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::ListImagePipelinesOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`image_pipeline_list(Option<Vec<ImagePipeline>>)`](crate::output::ListImagePipelinesOutput::image_pipeline_list): <p>The list of image pipelines.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListImagePipelinesOutput::next_token): <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
+    /// - On failure, responds with [`SdkError<ListImagePipelinesError>`](crate::error::ListImagePipelinesError)
     pub fn list_image_pipelines(&self) -> fluent_builders::ListImagePipelines<C, M, R> {
         fluent_builders::ListImagePipelines::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListImageRecipes` operation.
-    ///
-    /// See [`ListImageRecipes`](crate::client::fluent_builders::ListImageRecipes) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListImageRecipes`](crate::client::fluent_builders::ListImageRecipes) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListImageRecipes::into_paginator).
+    ///
+    /// - Takes [`ListImageRecipesInput`](crate::input::ListImageRecipesInput) with field(s):
+    ///   - [`owner(Option<Ownership>)`](crate::input::ListImageRecipesInput::owner): <p>The owner defines which image recipes you want to list. By default, this request will only show image recipes owned by your account. You can use this field to specify if you want to view image recipes owned by yourself, by Amazon, or those image recipes that have been shared with you by other customers.</p>
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::ListImageRecipesInput::filters): <p>Use the following filters to streamline results:</p>  <ul>   <li> <p> <code>name</code> </p> </li>   <li> <p> <code>parentImage</code> </p> </li>   <li> <p> <code>platform</code> </p> </li>  </ul>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListImageRecipesInput::max_results): <p>The maximum items to return in a request.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListImageRecipesInput::next_token): <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    /// - On success, responds with [`ListImageRecipesOutput`](crate::output::ListImageRecipesOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::ListImageRecipesOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`image_recipe_summary_list(Option<Vec<ImageRecipeSummary>>)`](crate::output::ListImageRecipesOutput::image_recipe_summary_list): <p>The list of image pipelines.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListImageRecipesOutput::next_token): <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
+    /// - On failure, responds with [`SdkError<ListImageRecipesError>`](crate::error::ListImageRecipesError)
     pub fn list_image_recipes(&self) -> fluent_builders::ListImageRecipes<C, M, R> {
         fluent_builders::ListImageRecipes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListImages` operation.
-    ///
-    /// See [`ListImages`](crate::client::fluent_builders::ListImages) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListImages`](crate::client::fluent_builders::ListImages) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListImages::into_paginator).
+    ///
+    /// - Takes [`ListImagesInput`](crate::input::ListImagesInput) with field(s):
+    ///   - [`owner(Option<Ownership>)`](crate::input::ListImagesInput::owner): <p>The owner defines which images you want to list. By default, this request will only show images owned by your account. You can use this field to specify if you want to view images owned by yourself, by Amazon, or those images that have been shared with you by other customers.</p>
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::ListImagesInput::filters): <p>Use the following filters to streamline results:</p>  <ul>   <li> <p> <code>name</code> </p> </li>   <li> <p> <code>osVersion</code> </p> </li>   <li> <p> <code>platform</code> </p> </li>   <li> <p> <code>type</code> </p> </li>   <li> <p> <code>version</code> </p> </li>  </ul>
+    ///   - [`by_name(bool)`](crate::input::ListImagesInput::by_name): <p>Requests a list of images with a specific recipe name.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListImagesInput::max_results): <p>The maximum items to return in a request.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListImagesInput::next_token): <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    ///   - [`include_deprecated(Option<bool>)`](crate::input::ListImagesInput::include_deprecated): <p>Includes deprecated images in the response list.</p>
+    /// - On success, responds with [`ListImagesOutput`](crate::output::ListImagesOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::ListImagesOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`image_version_list(Option<Vec<ImageVersion>>)`](crate::output::ListImagesOutput::image_version_list): <p>The list of image semantic versions.</p> <note>   <p>The semantic version has four nodes: <major>    .    <minor>     .     <patch>      /      <build>       . You can assign values for the first three, and can filter on all of them.      </build>     </patch>    </minor>   </major></p>   <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>  </note>
+    ///   - [`next_token(Option<String>)`](crate::output::ListImagesOutput::next_token): <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
+    /// - On failure, responds with [`SdkError<ListImagesError>`](crate::error::ListImagesError)
     pub fn list_images(&self) -> fluent_builders::ListImages<C, M, R> {
         fluent_builders::ListImages::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListInfrastructureConfigurations` operation.
-    ///
-    /// See [`ListInfrastructureConfigurations`](crate::client::fluent_builders::ListInfrastructureConfigurations) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListInfrastructureConfigurations`](crate::client::fluent_builders::ListInfrastructureConfigurations) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInfrastructureConfigurations::into_paginator).
+    ///
+    /// - Takes [`ListInfrastructureConfigurationsInput`](crate::input::ListInfrastructureConfigurationsInput) with field(s):
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::ListInfrastructureConfigurationsInput::filters): <p>You can filter on <code>name</code> to streamline results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListInfrastructureConfigurationsInput::max_results): <p>The maximum items to return in a request.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListInfrastructureConfigurationsInput::next_token): <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
+    /// - On success, responds with [`ListInfrastructureConfigurationsOutput`](crate::output::ListInfrastructureConfigurationsOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::ListInfrastructureConfigurationsOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`infrastructure_configuration_summary_list(Option<Vec<InfrastructureConfigurationSummary>>)`](crate::output::ListInfrastructureConfigurationsOutput::infrastructure_configuration_summary_list): <p>The list of infrastructure configurations.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListInfrastructureConfigurationsOutput::next_token): <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
+    /// - On failure, responds with [`SdkError<ListInfrastructureConfigurationsError>`](crate::error::ListInfrastructureConfigurationsError)
     pub fn list_infrastructure_configurations(
         &self,
     ) -> fluent_builders::ListInfrastructureConfigurations<C, M, R> {
         fluent_builders::ListInfrastructureConfigurations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags for the specified resource.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutComponentPolicy` operation.
+    /// Constructs a fluent builder for the [`PutComponentPolicy`](crate::client::fluent_builders::PutComponentPolicy) operation.
     ///
-    /// See [`PutComponentPolicy`](crate::client::fluent_builders::PutComponentPolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutComponentPolicyInput`](crate::input::PutComponentPolicyInput) with field(s):
+    ///   - [`component_arn(Option<String>)`](crate::input::PutComponentPolicyInput::component_arn): <p>The Amazon Resource Name (ARN) of the component that this policy should be applied to.</p>
+    ///   - [`policy(Option<String>)`](crate::input::PutComponentPolicyInput::policy): <p>The policy to apply.</p>
+    /// - On success, responds with [`PutComponentPolicyOutput`](crate::output::PutComponentPolicyOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::PutComponentPolicyOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`component_arn(Option<String>)`](crate::output::PutComponentPolicyOutput::component_arn): <p>The Amazon Resource Name (ARN) of the component that this policy was applied to.</p>
+    /// - On failure, responds with [`SdkError<PutComponentPolicyError>`](crate::error::PutComponentPolicyError)
     pub fn put_component_policy(&self) -> fluent_builders::PutComponentPolicy<C, M, R> {
         fluent_builders::PutComponentPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutContainerRecipePolicy` operation.
+    /// Constructs a fluent builder for the [`PutContainerRecipePolicy`](crate::client::fluent_builders::PutContainerRecipePolicy) operation.
     ///
-    /// See [`PutContainerRecipePolicy`](crate::client::fluent_builders::PutContainerRecipePolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutContainerRecipePolicyInput`](crate::input::PutContainerRecipePolicyInput) with field(s):
+    ///   - [`container_recipe_arn(Option<String>)`](crate::input::PutContainerRecipePolicyInput::container_recipe_arn): <p>The Amazon Resource Name (ARN) of the container recipe that this policy should be applied to.</p>
+    ///   - [`policy(Option<String>)`](crate::input::PutContainerRecipePolicyInput::policy): <p>The policy to apply to the container recipe.</p>
+    /// - On success, responds with [`PutContainerRecipePolicyOutput`](crate::output::PutContainerRecipePolicyOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::PutContainerRecipePolicyOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`container_recipe_arn(Option<String>)`](crate::output::PutContainerRecipePolicyOutput::container_recipe_arn): <p>The Amazon Resource Name (ARN) of the container recipe that this policy was applied to.</p>
+    /// - On failure, responds with [`SdkError<PutContainerRecipePolicyError>`](crate::error::PutContainerRecipePolicyError)
     pub fn put_container_recipe_policy(
         &self,
     ) -> fluent_builders::PutContainerRecipePolicy<C, M, R> {
         fluent_builders::PutContainerRecipePolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutImagePolicy` operation.
+    /// Constructs a fluent builder for the [`PutImagePolicy`](crate::client::fluent_builders::PutImagePolicy) operation.
     ///
-    /// See [`PutImagePolicy`](crate::client::fluent_builders::PutImagePolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutImagePolicyInput`](crate::input::PutImagePolicyInput) with field(s):
+    ///   - [`image_arn(Option<String>)`](crate::input::PutImagePolicyInput::image_arn): <p>The Amazon Resource Name (ARN) of the image that this policy should be applied to.</p>
+    ///   - [`policy(Option<String>)`](crate::input::PutImagePolicyInput::policy): <p>The policy to apply.</p>
+    /// - On success, responds with [`PutImagePolicyOutput`](crate::output::PutImagePolicyOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::PutImagePolicyOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`image_arn(Option<String>)`](crate::output::PutImagePolicyOutput::image_arn): <p>The Amazon Resource Name (ARN) of the image that this policy was applied to.</p>
+    /// - On failure, responds with [`SdkError<PutImagePolicyError>`](crate::error::PutImagePolicyError)
     pub fn put_image_policy(&self) -> fluent_builders::PutImagePolicy<C, M, R> {
         fluent_builders::PutImagePolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutImageRecipePolicy` operation.
+    /// Constructs a fluent builder for the [`PutImageRecipePolicy`](crate::client::fluent_builders::PutImageRecipePolicy) operation.
     ///
-    /// See [`PutImageRecipePolicy`](crate::client::fluent_builders::PutImageRecipePolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutImageRecipePolicyInput`](crate::input::PutImageRecipePolicyInput) with field(s):
+    ///   - [`image_recipe_arn(Option<String>)`](crate::input::PutImageRecipePolicyInput::image_recipe_arn): <p>The Amazon Resource Name (ARN) of the image recipe that this policy should be applied to.</p>
+    ///   - [`policy(Option<String>)`](crate::input::PutImageRecipePolicyInput::policy): <p>The policy to apply.</p>
+    /// - On success, responds with [`PutImageRecipePolicyOutput`](crate::output::PutImageRecipePolicyOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::PutImageRecipePolicyOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`image_recipe_arn(Option<String>)`](crate::output::PutImageRecipePolicyOutput::image_recipe_arn): <p>The Amazon Resource Name (ARN) of the image recipe that this policy was applied to.</p>
+    /// - On failure, responds with [`SdkError<PutImageRecipePolicyError>`](crate::error::PutImageRecipePolicyError)
     pub fn put_image_recipe_policy(&self) -> fluent_builders::PutImageRecipePolicy<C, M, R> {
         fluent_builders::PutImageRecipePolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartImagePipelineExecution` operation.
+    /// Constructs a fluent builder for the [`StartImagePipelineExecution`](crate::client::fluent_builders::StartImagePipelineExecution) operation.
     ///
-    /// See [`StartImagePipelineExecution`](crate::client::fluent_builders::StartImagePipelineExecution) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartImagePipelineExecutionInput`](crate::input::StartImagePipelineExecutionInput) with field(s):
+    ///   - [`image_pipeline_arn(Option<String>)`](crate::input::StartImagePipelineExecutionInput::image_pipeline_arn): <p>The Amazon Resource Name (ARN) of the image pipeline that you want to manually invoke.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::StartImagePipelineExecutionInput::client_token): <p>The idempotency token used to make this request idempotent.</p>
+    /// - On success, responds with [`StartImagePipelineExecutionOutput`](crate::output::StartImagePipelineExecutionOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::StartImagePipelineExecutionOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`client_token(Option<String>)`](crate::output::StartImagePipelineExecutionOutput::client_token): <p>The idempotency token used to make this request idempotent.</p>
+    ///   - [`image_build_version_arn(Option<String>)`](crate::output::StartImagePipelineExecutionOutput::image_build_version_arn): <p>The Amazon Resource Name (ARN) of the image that was created by this request.</p>
+    /// - On failure, responds with [`SdkError<StartImagePipelineExecutionError>`](crate::error::StartImagePipelineExecutionError)
     pub fn start_image_pipeline_execution(
         &self,
     ) -> fluent_builders::StartImagePipelineExecution<C, M, R> {
         fluent_builders::StartImagePipelineExecution::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to tag.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>The tags to apply to the resource.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to untag.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The tag keys to remove from the resource.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDistributionConfiguration` operation.
+    /// Constructs a fluent builder for the [`UpdateDistributionConfiguration`](crate::client::fluent_builders::UpdateDistributionConfiguration) operation.
     ///
-    /// See [`UpdateDistributionConfiguration`](crate::client::fluent_builders::UpdateDistributionConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateDistributionConfigurationInput`](crate::input::UpdateDistributionConfigurationInput) with field(s):
+    ///   - [`distribution_configuration_arn(Option<String>)`](crate::input::UpdateDistributionConfigurationInput::distribution_configuration_arn): <p>The Amazon Resource Name (ARN) of the distribution configuration that you want to update.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateDistributionConfigurationInput::description): <p>The description of the distribution configuration.</p>
+    ///   - [`distributions(Option<Vec<Distribution>>)`](crate::input::UpdateDistributionConfigurationInput::distributions): <p>The distributions of the distribution configuration.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::UpdateDistributionConfigurationInput::client_token): <p>The idempotency token of the distribution configuration.</p>
+    /// - On success, responds with [`UpdateDistributionConfigurationOutput`](crate::output::UpdateDistributionConfigurationOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::UpdateDistributionConfigurationOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`client_token(Option<String>)`](crate::output::UpdateDistributionConfigurationOutput::client_token): <p>The idempotency token used to make this request idempotent.</p>
+    ///   - [`distribution_configuration_arn(Option<String>)`](crate::output::UpdateDistributionConfigurationOutput::distribution_configuration_arn): <p>The Amazon Resource Name (ARN) of the distribution configuration that was updated by this request.</p>
+    /// - On failure, responds with [`SdkError<UpdateDistributionConfigurationError>`](crate::error::UpdateDistributionConfigurationError)
     pub fn update_distribution_configuration(
         &self,
     ) -> fluent_builders::UpdateDistributionConfiguration<C, M, R> {
         fluent_builders::UpdateDistributionConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateImagePipeline` operation.
+    /// Constructs a fluent builder for the [`UpdateImagePipeline`](crate::client::fluent_builders::UpdateImagePipeline) operation.
     ///
-    /// See [`UpdateImagePipeline`](crate::client::fluent_builders::UpdateImagePipeline) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateImagePipelineInput`](crate::input::UpdateImagePipelineInput) with field(s):
+    ///   - [`image_pipeline_arn(Option<String>)`](crate::input::UpdateImagePipelineInput::image_pipeline_arn): <p>The Amazon Resource Name (ARN) of the image pipeline that you want to update.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateImagePipelineInput::description): <p>The description of the image pipeline.</p>
+    ///   - [`image_recipe_arn(Option<String>)`](crate::input::UpdateImagePipelineInput::image_recipe_arn): <p>The Amazon Resource Name (ARN) of the image recipe that will be used to configure images updated by this image pipeline.</p>
+    ///   - [`container_recipe_arn(Option<String>)`](crate::input::UpdateImagePipelineInput::container_recipe_arn): <p>The Amazon Resource Name (ARN) of the container pipeline to update.</p>
+    ///   - [`infrastructure_configuration_arn(Option<String>)`](crate::input::UpdateImagePipelineInput::infrastructure_configuration_arn): <p>The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images updated by this image pipeline.</p>
+    ///   - [`distribution_configuration_arn(Option<String>)`](crate::input::UpdateImagePipelineInput::distribution_configuration_arn): <p>The Amazon Resource Name (ARN) of the distribution configuration that will be used to configure and distribute images updated by this image pipeline.</p>
+    ///   - [`image_tests_configuration(Option<ImageTestsConfiguration>)`](crate::input::UpdateImagePipelineInput::image_tests_configuration): <p>The image test configuration of the image pipeline.</p>
+    ///   - [`enhanced_image_metadata_enabled(Option<bool>)`](crate::input::UpdateImagePipelineInput::enhanced_image_metadata_enabled): <p> Collects additional information about the image being created, including the operating system (OS) version and package list. This information is used to enhance the overall experience of using EC2 Image Builder. Enabled by default.</p>
+    ///   - [`schedule(Option<Schedule>)`](crate::input::UpdateImagePipelineInput::schedule): <p>The schedule of the image pipeline.</p>
+    ///   - [`status(Option<PipelineStatus>)`](crate::input::UpdateImagePipelineInput::status): <p>The status of the image pipeline.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::UpdateImagePipelineInput::client_token): <p>The idempotency token used to make this request idempotent.</p>
+    /// - On success, responds with [`UpdateImagePipelineOutput`](crate::output::UpdateImagePipelineOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::UpdateImagePipelineOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`client_token(Option<String>)`](crate::output::UpdateImagePipelineOutput::client_token): <p>The idempotency token used to make this request idempotent.</p>
+    ///   - [`image_pipeline_arn(Option<String>)`](crate::output::UpdateImagePipelineOutput::image_pipeline_arn): <p>The Amazon Resource Name (ARN) of the image pipeline that was updated by this request.</p>
+    /// - On failure, responds with [`SdkError<UpdateImagePipelineError>`](crate::error::UpdateImagePipelineError)
     pub fn update_image_pipeline(&self) -> fluent_builders::UpdateImagePipeline<C, M, R> {
         fluent_builders::UpdateImagePipeline::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateInfrastructureConfiguration` operation.
+    /// Constructs a fluent builder for the [`UpdateInfrastructureConfiguration`](crate::client::fluent_builders::UpdateInfrastructureConfiguration) operation.
     ///
-    /// See [`UpdateInfrastructureConfiguration`](crate::client::fluent_builders::UpdateInfrastructureConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateInfrastructureConfigurationInput`](crate::input::UpdateInfrastructureConfigurationInput) with field(s):
+    ///   - [`infrastructure_configuration_arn(Option<String>)`](crate::input::UpdateInfrastructureConfigurationInput::infrastructure_configuration_arn): <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you want to update.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateInfrastructureConfigurationInput::description): <p>The description of the infrastructure configuration.</p>
+    ///   - [`instance_types(Option<Vec<String>>)`](crate::input::UpdateInfrastructureConfigurationInput::instance_types): <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. The service will pick one of these instance types based on availability.</p>
+    ///   - [`instance_profile_name(Option<String>)`](crate::input::UpdateInfrastructureConfigurationInput::instance_profile_name): <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
+    ///   - [`security_group_ids(Option<Vec<String>>)`](crate::input::UpdateInfrastructureConfigurationInput::security_group_ids): <p>The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.</p>
+    ///   - [`subnet_id(Option<String>)`](crate::input::UpdateInfrastructureConfigurationInput::subnet_id): <p>The subnet ID to place the instance used to customize your Amazon EC2 AMI in.</p>
+    ///   - [`logging(Option<Logging>)`](crate::input::UpdateInfrastructureConfigurationInput::logging): <p>The logging configuration of the infrastructure configuration.</p>
+    ///   - [`key_pair(Option<String>)`](crate::input::UpdateInfrastructureConfigurationInput::key_pair): <p>The key pair of the infrastructure configuration. You can use this to log on to and debug the instance used to create your image.</p>
+    ///   - [`terminate_instance_on_failure(Option<bool>)`](crate::input::UpdateInfrastructureConfigurationInput::terminate_instance_on_failure): <p>The terminate instance on failure setting of the infrastructure configuration. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails.</p>
+    ///   - [`sns_topic_arn(Option<String>)`](crate::input::UpdateInfrastructureConfigurationInput::sns_topic_arn): <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p> <note>   <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>  </note>
+    ///   - [`client_token(Option<String>)`](crate::input::UpdateInfrastructureConfigurationInput::client_token): <p>The idempotency token used to make this request idempotent.</p>
+    ///   - [`resource_tags(Option<HashMap<String, String>>)`](crate::input::UpdateInfrastructureConfigurationInput::resource_tags): <p>The tags attached to the resource created by Image Builder.</p>
+    ///   - [`instance_metadata_options(Option<InstanceMetadataOptions>)`](crate::input::UpdateInfrastructureConfigurationInput::instance_metadata_options): <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see one of the following links:</p>  <ul>   <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances.</p> </li>   <li> <p> <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i> for Windows instances.</p> </li>  </ul>
+    /// - On success, responds with [`UpdateInfrastructureConfigurationOutput`](crate::output::UpdateInfrastructureConfigurationOutput) with field(s):
+    ///   - [`request_id(Option<String>)`](crate::output::UpdateInfrastructureConfigurationOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
+    ///   - [`client_token(Option<String>)`](crate::output::UpdateInfrastructureConfigurationOutput::client_token): <p>The idempotency token used to make this request idempotent.</p>
+    ///   - [`infrastructure_configuration_arn(Option<String>)`](crate::output::UpdateInfrastructureConfigurationOutput::infrastructure_configuration_arn): <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was updated by this request.</p>
+    /// - On failure, responds with [`SdkError<UpdateInfrastructureConfigurationError>`](crate::error::UpdateInfrastructureConfigurationError)
     pub fn update_infrastructure_configuration(
         &self,
     ) -> fluent_builders::UpdateInfrastructureConfiguration<C, M, R> {

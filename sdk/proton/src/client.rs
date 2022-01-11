@@ -83,553 +83,919 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AcceptEnvironmentAccountConnection` operation.
+    /// Constructs a fluent builder for the [`AcceptEnvironmentAccountConnection`](crate::client::fluent_builders::AcceptEnvironmentAccountConnection) operation.
     ///
-    /// See [`AcceptEnvironmentAccountConnection`](crate::client::fluent_builders::AcceptEnvironmentAccountConnection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AcceptEnvironmentAccountConnectionInput`](crate::input::AcceptEnvironmentAccountConnectionInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::AcceptEnvironmentAccountConnectionInput::id): <p>The ID of the environment account connection.</p>
+    /// - On success, responds with [`AcceptEnvironmentAccountConnectionOutput`](crate::output::AcceptEnvironmentAccountConnectionOutput) with field(s):
+    ///   - [`environment_account_connection(Option<EnvironmentAccountConnection>)`](crate::output::AcceptEnvironmentAccountConnectionOutput::environment_account_connection): <p>The environment account connection data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<AcceptEnvironmentAccountConnectionError>`](crate::error::AcceptEnvironmentAccountConnectionError)
     pub fn accept_environment_account_connection(
         &self,
     ) -> fluent_builders::AcceptEnvironmentAccountConnection<C, M, R> {
         fluent_builders::AcceptEnvironmentAccountConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CancelEnvironmentDeployment` operation.
+    /// Constructs a fluent builder for the [`CancelEnvironmentDeployment`](crate::client::fluent_builders::CancelEnvironmentDeployment) operation.
     ///
-    /// See [`CancelEnvironmentDeployment`](crate::client::fluent_builders::CancelEnvironmentDeployment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CancelEnvironmentDeploymentInput`](crate::input::CancelEnvironmentDeploymentInput) with field(s):
+    ///   - [`environment_name(Option<String>)`](crate::input::CancelEnvironmentDeploymentInput::environment_name): <p>The name of the environment with the deployment to cancel.</p>
+    /// - On success, responds with [`CancelEnvironmentDeploymentOutput`](crate::output::CancelEnvironmentDeploymentOutput) with field(s):
+    ///   - [`environment(Option<Environment>)`](crate::output::CancelEnvironmentDeploymentOutput::environment): <p>The environment summary data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<CancelEnvironmentDeploymentError>`](crate::error::CancelEnvironmentDeploymentError)
     pub fn cancel_environment_deployment(
         &self,
     ) -> fluent_builders::CancelEnvironmentDeployment<C, M, R> {
         fluent_builders::CancelEnvironmentDeployment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CancelServiceInstanceDeployment` operation.
+    /// Constructs a fluent builder for the [`CancelServiceInstanceDeployment`](crate::client::fluent_builders::CancelServiceInstanceDeployment) operation.
     ///
-    /// See [`CancelServiceInstanceDeployment`](crate::client::fluent_builders::CancelServiceInstanceDeployment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CancelServiceInstanceDeploymentInput`](crate::input::CancelServiceInstanceDeploymentInput) with field(s):
+    ///   - [`service_instance_name(Option<String>)`](crate::input::CancelServiceInstanceDeploymentInput::service_instance_name): <p>The name of the service instance with the deployment to cancel.</p>
+    ///   - [`service_name(Option<String>)`](crate::input::CancelServiceInstanceDeploymentInput::service_name): <p>The name of the service with the service instance deployment to cancel.</p>
+    /// - On success, responds with [`CancelServiceInstanceDeploymentOutput`](crate::output::CancelServiceInstanceDeploymentOutput) with field(s):
+    ///   - [`service_instance(Option<ServiceInstance>)`](crate::output::CancelServiceInstanceDeploymentOutput::service_instance): <p>The service instance summary data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<CancelServiceInstanceDeploymentError>`](crate::error::CancelServiceInstanceDeploymentError)
     pub fn cancel_service_instance_deployment(
         &self,
     ) -> fluent_builders::CancelServiceInstanceDeployment<C, M, R> {
         fluent_builders::CancelServiceInstanceDeployment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CancelServicePipelineDeployment` operation.
+    /// Constructs a fluent builder for the [`CancelServicePipelineDeployment`](crate::client::fluent_builders::CancelServicePipelineDeployment) operation.
     ///
-    /// See [`CancelServicePipelineDeployment`](crate::client::fluent_builders::CancelServicePipelineDeployment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CancelServicePipelineDeploymentInput`](crate::input::CancelServicePipelineDeploymentInput) with field(s):
+    ///   - [`service_name(Option<String>)`](crate::input::CancelServicePipelineDeploymentInput::service_name): <p>The name of the service with the service pipeline deployment to cancel.</p>
+    /// - On success, responds with [`CancelServicePipelineDeploymentOutput`](crate::output::CancelServicePipelineDeploymentOutput) with field(s):
+    ///   - [`pipeline(Option<ServicePipeline>)`](crate::output::CancelServicePipelineDeploymentOutput::pipeline): <p>The service pipeline detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<CancelServicePipelineDeploymentError>`](crate::error::CancelServicePipelineDeploymentError)
     pub fn cancel_service_pipeline_deployment(
         &self,
     ) -> fluent_builders::CancelServicePipelineDeployment<C, M, R> {
         fluent_builders::CancelServicePipelineDeployment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateEnvironment` operation.
+    /// Constructs a fluent builder for the [`CreateEnvironment`](crate::client::fluent_builders::CreateEnvironment) operation.
     ///
-    /// See [`CreateEnvironment`](crate::client::fluent_builders::CreateEnvironment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateEnvironmentInput`](crate::input::CreateEnvironmentInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateEnvironmentInput::name): <p>The name of the environment.</p>
+    ///   - [`template_name(Option<String>)`](crate::input::CreateEnvironmentInput::template_name): <p>The name of the environment template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment Templates</a> in the <i>Proton Administrator Guide</i>.</p>
+    ///   - [`template_major_version(Option<String>)`](crate::input::CreateEnvironmentInput::template_major_version): <p>The major version of the environment template.</p>
+    ///   - [`template_minor_version(Option<String>)`](crate::input::CreateEnvironmentInput::template_minor_version): <p>The minor version of the environment template.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateEnvironmentInput::description): <p>A description of the environment that's being created and deployed.</p>
+    ///   - [`spec(Option<String>)`](crate::input::CreateEnvironmentInput::spec): <p>A link to a YAML formatted spec file that provides inputs as defined in the environment template bundle schema file. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> in the <i>Proton Administrator Guide</i>.</p>
+    ///   - [`proton_service_role_arn(Option<String>)`](crate::input::CreateEnvironmentInput::proton_service_role_arn): <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf. You must include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value and omit the <code>provisioningRepository</code> parameter when you use standard provisioning.</p>
+    ///   - [`environment_account_connection_id(Option<String>)`](crate::input::CreateEnvironmentInput::environment_account_connection_id): <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an environment account. You must include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value and omit the <code>provisioningRepository</code> parameter and values. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator guide</i>.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateEnvironmentInput::tags): <p>Create tags for your environment. For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    ///   - [`provisioning_repository(Option<RepositoryBranchInput>)`](crate::input::CreateEnvironmentInput::provisioning_repository): <p>The repository that you provide with pull request provisioning. If you provide this parameter, you must omit the <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p> <important>   <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>  </important>
+    /// - On success, responds with [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput) with field(s):
+    ///   - [`environment(Option<Environment>)`](crate::output::CreateEnvironmentOutput::environment): <p>The environment detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<CreateEnvironmentError>`](crate::error::CreateEnvironmentError)
     pub fn create_environment(&self) -> fluent_builders::CreateEnvironment<C, M, R> {
         fluent_builders::CreateEnvironment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateEnvironmentAccountConnection` operation.
+    /// Constructs a fluent builder for the [`CreateEnvironmentAccountConnection`](crate::client::fluent_builders::CreateEnvironmentAccountConnection) operation.
     ///
-    /// See [`CreateEnvironmentAccountConnection`](crate::client::fluent_builders::CreateEnvironmentAccountConnection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateEnvironmentAccountConnectionInput`](crate::input::CreateEnvironmentAccountConnectionInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::CreateEnvironmentAccountConnectionInput::client_token): <p>When included, if two identical requests are made with the same client token, Proton returns the environment account connection that the first request created.</p>
+    ///   - [`management_account_id(Option<String>)`](crate::input::CreateEnvironmentAccountConnectionInput::management_account_id): <p>The ID of the management account that accepts or rejects the environment account connection. You create an manage the Proton environment in this account. If the management account accepts the environment account connection, Proton can use the associated IAM role to provision environment infrastructure resources in the associated environment account.</p>
+    ///   - [`role_arn(Option<String>)`](crate::input::CreateEnvironmentAccountConnectionInput::role_arn): <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the environment account. Proton uses this role to provision infrastructure resources in the associated environment account.</p>
+    ///   - [`environment_name(Option<String>)`](crate::input::CreateEnvironmentAccountConnectionInput::environment_name): <p>The name of the Proton environment that's created in the associated management account.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateEnvironmentAccountConnectionInput::tags): <p>Tags for your environment account connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton resources and tagging</a> in the <i>Proton Administrator Guide</i>.</p>
+    /// - On success, responds with [`CreateEnvironmentAccountConnectionOutput`](crate::output::CreateEnvironmentAccountConnectionOutput) with field(s):
+    ///   - [`environment_account_connection(Option<EnvironmentAccountConnection>)`](crate::output::CreateEnvironmentAccountConnectionOutput::environment_account_connection): <p>The environment account connection detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<CreateEnvironmentAccountConnectionError>`](crate::error::CreateEnvironmentAccountConnectionError)
     pub fn create_environment_account_connection(
         &self,
     ) -> fluent_builders::CreateEnvironmentAccountConnection<C, M, R> {
         fluent_builders::CreateEnvironmentAccountConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateEnvironmentTemplate` operation.
+    /// Constructs a fluent builder for the [`CreateEnvironmentTemplate`](crate::client::fluent_builders::CreateEnvironmentTemplate) operation.
     ///
-    /// See [`CreateEnvironmentTemplate`](crate::client::fluent_builders::CreateEnvironmentTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateEnvironmentTemplateInput`](crate::input::CreateEnvironmentTemplateInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateEnvironmentTemplateInput::name): <p>The name of the environment template.</p>
+    ///   - [`display_name(Option<String>)`](crate::input::CreateEnvironmentTemplateInput::display_name): <p>The environment template name as displayed in the developer interface.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateEnvironmentTemplateInput::description): <p>A description of the environment template.</p>
+    ///   - [`encryption_key(Option<String>)`](crate::input::CreateEnvironmentTemplateInput::encryption_key): <p>A customer provided encryption key that Proton uses to encrypt data.</p>
+    ///   - [`provisioning(Option<Provisioning>)`](crate::input::CreateEnvironmentTemplateInput::provisioning): <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateEnvironmentTemplateInput::tags): <p>Create tags for your environment template. For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    /// - On success, responds with [`CreateEnvironmentTemplateOutput`](crate::output::CreateEnvironmentTemplateOutput) with field(s):
+    ///   - [`environment_template(Option<EnvironmentTemplate>)`](crate::output::CreateEnvironmentTemplateOutput::environment_template): <p>The environment template detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<CreateEnvironmentTemplateError>`](crate::error::CreateEnvironmentTemplateError)
     pub fn create_environment_template(
         &self,
     ) -> fluent_builders::CreateEnvironmentTemplate<C, M, R> {
         fluent_builders::CreateEnvironmentTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateEnvironmentTemplateVersion` operation.
+    /// Constructs a fluent builder for the [`CreateEnvironmentTemplateVersion`](crate::client::fluent_builders::CreateEnvironmentTemplateVersion) operation.
     ///
-    /// See [`CreateEnvironmentTemplateVersion`](crate::client::fluent_builders::CreateEnvironmentTemplateVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateEnvironmentTemplateVersionInput`](crate::input::CreateEnvironmentTemplateVersionInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::CreateEnvironmentTemplateVersionInput::client_token): <p>When included, if two identical requests are made with the same client token, Proton returns the environment template version that the first request created.</p>
+    ///   - [`template_name(Option<String>)`](crate::input::CreateEnvironmentTemplateVersionInput::template_name): <p>The name of the environment template.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateEnvironmentTemplateVersionInput::description): <p>A description of the new version of an environment template.</p>
+    ///   - [`major_version(Option<String>)`](crate::input::CreateEnvironmentTemplateVersionInput::major_version): <p>To create a new minor version of the environment template, include a <code>major Version</code>.</p>  <p>To create a new major and minor version of the environment template, <i>exclude</i> <code>major Version</code>.</p>
+    ///   - [`source(Option<TemplateVersionSourceInput>)`](crate::input::CreateEnvironmentTemplateVersionInput::source): <p>An object that includes the template bundle S3 bucket path and name for the new version of an template.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateEnvironmentTemplateVersionInput::tags): <p>Create tags for a new version of an environment template.</p>
+    /// - On success, responds with [`CreateEnvironmentTemplateVersionOutput`](crate::output::CreateEnvironmentTemplateVersionOutput) with field(s):
+    ///   - [`environment_template_version(Option<EnvironmentTemplateVersion>)`](crate::output::CreateEnvironmentTemplateVersionOutput::environment_template_version): <p>The environment template detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<CreateEnvironmentTemplateVersionError>`](crate::error::CreateEnvironmentTemplateVersionError)
     pub fn create_environment_template_version(
         &self,
     ) -> fluent_builders::CreateEnvironmentTemplateVersion<C, M, R> {
         fluent_builders::CreateEnvironmentTemplateVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateRepository` operation.
+    /// Constructs a fluent builder for the [`CreateRepository`](crate::client::fluent_builders::CreateRepository) operation.
     ///
-    /// See [`CreateRepository`](crate::client::fluent_builders::CreateRepository) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateRepositoryInput`](crate::input::CreateRepositoryInput) with field(s):
+    ///   - [`provider(Option<RepositoryProvider>)`](crate::input::CreateRepositoryInput::provider): <p>The repository provider.</p>
+    ///   - [`name(Option<String>)`](crate::input::CreateRepositoryInput::name): <p>The repository name, for example <code>myrepos/myrepo</code>.</p>
+    ///   - [`connection_arn(Option<String>)`](crate::input::CreateRepositoryInput::connection_arn): <p>The Amazon Resource Name (ARN) of your Amazon Web Services CodeStar connection. For more information, see <a href="https://docs.aws.amazon.com/setting-up-for-service">Setting up for Proton</a> in the <i>Proton Administrator Guide</i>.</p>
+    ///   - [`encryption_key(Option<String>)`](crate::input::CreateRepositoryInput::encryption_key): <p>The ARN of your customer Amazon Web Services Key Management Service (Amazon Web Services KMS) key.</p>
+    /// - On success, responds with [`CreateRepositoryOutput`](crate::output::CreateRepositoryOutput) with field(s):
+    ///   - [`repository(Option<Repository>)`](crate::output::CreateRepositoryOutput::repository): <p>The repository detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<CreateRepositoryError>`](crate::error::CreateRepositoryError)
     pub fn create_repository(&self) -> fluent_builders::CreateRepository<C, M, R> {
         fluent_builders::CreateRepository::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateService` operation.
+    /// Constructs a fluent builder for the [`CreateService`](crate::client::fluent_builders::CreateService) operation.
     ///
-    /// See [`CreateService`](crate::client::fluent_builders::CreateService) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateServiceInput`](crate::input::CreateServiceInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateServiceInput::name): <p>The service name.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateServiceInput::description): <p>A description of the Proton service.</p>
+    ///   - [`template_name(Option<String>)`](crate::input::CreateServiceInput::template_name): <p>The name of the service template that's used to create the service.</p>
+    ///   - [`template_major_version(Option<String>)`](crate::input::CreateServiceInput::template_major_version): <p>The major version of the service template that was used to create the service.</p>
+    ///   - [`template_minor_version(Option<String>)`](crate::input::CreateServiceInput::template_minor_version): <p>The minor version of the service template that was used to create the service.</p>
+    ///   - [`spec(Option<String>)`](crate::input::CreateServiceInput::spec): <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. Don’t include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the <i>Proton User Guide</i>.</p>
+    ///   - [`repository_connection_arn(Option<String>)`](crate::input::CreateServiceInput::repository_connection_arn): <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up repository connection</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
+    ///   - [`repository_id(Option<String>)`](crate::input::CreateServiceInput::repository_id): <p>The ID of the code repository. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
+    ///   - [`branch_name(Option<String>)`](crate::input::CreateServiceInput::branch_name): <p>The name of the code repository branch that holds the code that's deployed in Proton. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateServiceInput::tags): <p>Create tags for your service. For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    /// - On success, responds with [`CreateServiceOutput`](crate::output::CreateServiceOutput) with field(s):
+    ///   - [`service(Option<Service>)`](crate::output::CreateServiceOutput::service): <p>The service detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<CreateServiceError>`](crate::error::CreateServiceError)
     pub fn create_service(&self) -> fluent_builders::CreateService<C, M, R> {
         fluent_builders::CreateService::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateServiceTemplate` operation.
+    /// Constructs a fluent builder for the [`CreateServiceTemplate`](crate::client::fluent_builders::CreateServiceTemplate) operation.
     ///
-    /// See [`CreateServiceTemplate`](crate::client::fluent_builders::CreateServiceTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateServiceTemplateInput`](crate::input::CreateServiceTemplateInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateServiceTemplateInput::name): <p>The name of the service template.</p>
+    ///   - [`display_name(Option<String>)`](crate::input::CreateServiceTemplateInput::display_name): <p>The name of the service template as displayed in the developer interface.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateServiceTemplateInput::description): <p>A description of the service template.</p>
+    ///   - [`encryption_key(Option<String>)`](crate::input::CreateServiceTemplateInput::encryption_key): <p>A customer provided encryption key that's used to encrypt data.</p>
+    ///   - [`pipeline_provisioning(Option<Provisioning>)`](crate::input::CreateServiceTemplateInput::pipeline_provisioning): <p>Proton includes a service pipeline for your service by default. When included, this parameter indicates that an Proton service pipeline <i>won't</i> be included for your service. Once specified, this parameter <i>can't</i> be changed. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service template bundles</a> in the <i>Proton Administrator Guide</i>.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateServiceTemplateInput::tags): <p>Create tags for your service template. For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
+    /// - On success, responds with [`CreateServiceTemplateOutput`](crate::output::CreateServiceTemplateOutput) with field(s):
+    ///   - [`service_template(Option<ServiceTemplate>)`](crate::output::CreateServiceTemplateOutput::service_template): <p>The service template detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<CreateServiceTemplateError>`](crate::error::CreateServiceTemplateError)
     pub fn create_service_template(&self) -> fluent_builders::CreateServiceTemplate<C, M, R> {
         fluent_builders::CreateServiceTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateServiceTemplateVersion` operation.
+    /// Constructs a fluent builder for the [`CreateServiceTemplateVersion`](crate::client::fluent_builders::CreateServiceTemplateVersion) operation.
     ///
-    /// See [`CreateServiceTemplateVersion`](crate::client::fluent_builders::CreateServiceTemplateVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateServiceTemplateVersionInput`](crate::input::CreateServiceTemplateVersionInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::CreateServiceTemplateVersionInput::client_token): <p>When included, if two identical requests are made with the same client token, Proton returns the service template version that the first request created.</p>
+    ///   - [`template_name(Option<String>)`](crate::input::CreateServiceTemplateVersionInput::template_name): <p>The name of the service template.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateServiceTemplateVersionInput::description): <p>A description of the new version of a service template.</p>
+    ///   - [`major_version(Option<String>)`](crate::input::CreateServiceTemplateVersionInput::major_version): <p>To create a new minor version of the service template, include a <code>major Version</code>.</p>  <p>To create a new major and minor version of the service template, <i>exclude</i> <code>major Version</code>.</p>
+    ///   - [`source(Option<TemplateVersionSourceInput>)`](crate::input::CreateServiceTemplateVersionInput::source): <p>An object that includes the template bundle S3 bucket path and name for the new version of a service template.</p>
+    ///   - [`compatible_environment_templates(Option<Vec<CompatibleEnvironmentTemplateInput>>)`](crate::input::CreateServiceTemplateVersionInput::compatible_environment_templates): <p>An array of compatible environment template objects for the new version of a service template.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateServiceTemplateVersionInput::tags): <p>Create tags for a new version of a service template.</p>
+    /// - On success, responds with [`CreateServiceTemplateVersionOutput`](crate::output::CreateServiceTemplateVersionOutput) with field(s):
+    ///   - [`service_template_version(Option<ServiceTemplateVersion>)`](crate::output::CreateServiceTemplateVersionOutput::service_template_version): <p>The service template version summary of detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<CreateServiceTemplateVersionError>`](crate::error::CreateServiceTemplateVersionError)
     pub fn create_service_template_version(
         &self,
     ) -> fluent_builders::CreateServiceTemplateVersion<C, M, R> {
         fluent_builders::CreateServiceTemplateVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateTemplateSyncConfig` operation.
+    /// Constructs a fluent builder for the [`CreateTemplateSyncConfig`](crate::client::fluent_builders::CreateTemplateSyncConfig) operation.
     ///
-    /// See [`CreateTemplateSyncConfig`](crate::client::fluent_builders::CreateTemplateSyncConfig) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateTemplateSyncConfigInput`](crate::input::CreateTemplateSyncConfigInput) with field(s):
+    ///   - [`template_name(Option<String>)`](crate::input::CreateTemplateSyncConfigInput::template_name): <p>The name of your registered template.</p>
+    ///   - [`template_type(Option<TemplateType>)`](crate::input::CreateTemplateSyncConfigInput::template_type): <p>The type of the registered template.</p>
+    ///   - [`repository_provider(Option<RepositoryProvider>)`](crate::input::CreateTemplateSyncConfigInput::repository_provider): <p>The provider type for your repository.</p>
+    ///   - [`repository_name(Option<String>)`](crate::input::CreateTemplateSyncConfigInput::repository_name): <p>The name of your repository, for example <code>myrepos/myrepo</code>.</p>
+    ///   - [`branch(Option<String>)`](crate::input::CreateTemplateSyncConfigInput::branch): <p>The branch of the registered repository for your template.</p>
+    ///   - [`subdirectory(Option<String>)`](crate::input::CreateTemplateSyncConfigInput::subdirectory): <p>A repository subdirectory path to your template bundle directory. When included, Proton limits the template bundle search to this repository directory.</p>
+    /// - On success, responds with [`CreateTemplateSyncConfigOutput`](crate::output::CreateTemplateSyncConfigOutput) with field(s):
+    ///   - [`template_sync_config(Option<TemplateSyncConfig>)`](crate::output::CreateTemplateSyncConfigOutput::template_sync_config): <p>The template sync configuration detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<CreateTemplateSyncConfigError>`](crate::error::CreateTemplateSyncConfigError)
     pub fn create_template_sync_config(
         &self,
     ) -> fluent_builders::CreateTemplateSyncConfig<C, M, R> {
         fluent_builders::CreateTemplateSyncConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteEnvironment` operation.
+    /// Constructs a fluent builder for the [`DeleteEnvironment`](crate::client::fluent_builders::DeleteEnvironment) operation.
     ///
-    /// See [`DeleteEnvironment`](crate::client::fluent_builders::DeleteEnvironment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteEnvironmentInput`](crate::input::DeleteEnvironmentInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteEnvironmentInput::name): <p>The name of the environment to delete.</p>
+    /// - On success, responds with [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput) with field(s):
+    ///   - [`environment(Option<Environment>)`](crate::output::DeleteEnvironmentOutput::environment): <p>The environment detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<DeleteEnvironmentError>`](crate::error::DeleteEnvironmentError)
     pub fn delete_environment(&self) -> fluent_builders::DeleteEnvironment<C, M, R> {
         fluent_builders::DeleteEnvironment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteEnvironmentAccountConnection` operation.
+    /// Constructs a fluent builder for the [`DeleteEnvironmentAccountConnection`](crate::client::fluent_builders::DeleteEnvironmentAccountConnection) operation.
     ///
-    /// See [`DeleteEnvironmentAccountConnection`](crate::client::fluent_builders::DeleteEnvironmentAccountConnection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteEnvironmentAccountConnectionInput`](crate::input::DeleteEnvironmentAccountConnectionInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::DeleteEnvironmentAccountConnectionInput::id): <p>The ID of the environment account connection to delete.</p>
+    /// - On success, responds with [`DeleteEnvironmentAccountConnectionOutput`](crate::output::DeleteEnvironmentAccountConnectionOutput) with field(s):
+    ///   - [`environment_account_connection(Option<EnvironmentAccountConnection>)`](crate::output::DeleteEnvironmentAccountConnectionOutput::environment_account_connection): <p>The environment account connection detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<DeleteEnvironmentAccountConnectionError>`](crate::error::DeleteEnvironmentAccountConnectionError)
     pub fn delete_environment_account_connection(
         &self,
     ) -> fluent_builders::DeleteEnvironmentAccountConnection<C, M, R> {
         fluent_builders::DeleteEnvironmentAccountConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteEnvironmentTemplate` operation.
+    /// Constructs a fluent builder for the [`DeleteEnvironmentTemplate`](crate::client::fluent_builders::DeleteEnvironmentTemplate) operation.
     ///
-    /// See [`DeleteEnvironmentTemplate`](crate::client::fluent_builders::DeleteEnvironmentTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteEnvironmentTemplateInput`](crate::input::DeleteEnvironmentTemplateInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteEnvironmentTemplateInput::name): <p>The name of the environment template to delete.</p>
+    /// - On success, responds with [`DeleteEnvironmentTemplateOutput`](crate::output::DeleteEnvironmentTemplateOutput) with field(s):
+    ///   - [`environment_template(Option<EnvironmentTemplate>)`](crate::output::DeleteEnvironmentTemplateOutput::environment_template): <p>The environment template detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<DeleteEnvironmentTemplateError>`](crate::error::DeleteEnvironmentTemplateError)
     pub fn delete_environment_template(
         &self,
     ) -> fluent_builders::DeleteEnvironmentTemplate<C, M, R> {
         fluent_builders::DeleteEnvironmentTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteEnvironmentTemplateVersion` operation.
+    /// Constructs a fluent builder for the [`DeleteEnvironmentTemplateVersion`](crate::client::fluent_builders::DeleteEnvironmentTemplateVersion) operation.
     ///
-    /// See [`DeleteEnvironmentTemplateVersion`](crate::client::fluent_builders::DeleteEnvironmentTemplateVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteEnvironmentTemplateVersionInput`](crate::input::DeleteEnvironmentTemplateVersionInput) with field(s):
+    ///   - [`template_name(Option<String>)`](crate::input::DeleteEnvironmentTemplateVersionInput::template_name): <p>The name of the environment template.</p>
+    ///   - [`major_version(Option<String>)`](crate::input::DeleteEnvironmentTemplateVersionInput::major_version): <p>The environment template major version to delete.</p>
+    ///   - [`minor_version(Option<String>)`](crate::input::DeleteEnvironmentTemplateVersionInput::minor_version): <p>The environment template minor version to delete.</p>
+    /// - On success, responds with [`DeleteEnvironmentTemplateVersionOutput`](crate::output::DeleteEnvironmentTemplateVersionOutput) with field(s):
+    ///   - [`environment_template_version(Option<EnvironmentTemplateVersion>)`](crate::output::DeleteEnvironmentTemplateVersionOutput::environment_template_version): <p>The environment template version detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<DeleteEnvironmentTemplateVersionError>`](crate::error::DeleteEnvironmentTemplateVersionError)
     pub fn delete_environment_template_version(
         &self,
     ) -> fluent_builders::DeleteEnvironmentTemplateVersion<C, M, R> {
         fluent_builders::DeleteEnvironmentTemplateVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteRepository` operation.
+    /// Constructs a fluent builder for the [`DeleteRepository`](crate::client::fluent_builders::DeleteRepository) operation.
     ///
-    /// See [`DeleteRepository`](crate::client::fluent_builders::DeleteRepository) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteRepositoryInput`](crate::input::DeleteRepositoryInput) with field(s):
+    ///   - [`provider(Option<RepositoryProvider>)`](crate::input::DeleteRepositoryInput::provider): <p>The repository provider.</p>
+    ///   - [`name(Option<String>)`](crate::input::DeleteRepositoryInput::name): <p>The name of the repository.</p>
+    /// - On success, responds with [`DeleteRepositoryOutput`](crate::output::DeleteRepositoryOutput) with field(s):
+    ///   - [`repository(Option<Repository>)`](crate::output::DeleteRepositoryOutput::repository): <p>The repository detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<DeleteRepositoryError>`](crate::error::DeleteRepositoryError)
     pub fn delete_repository(&self) -> fluent_builders::DeleteRepository<C, M, R> {
         fluent_builders::DeleteRepository::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteService` operation.
+    /// Constructs a fluent builder for the [`DeleteService`](crate::client::fluent_builders::DeleteService) operation.
     ///
-    /// See [`DeleteService`](crate::client::fluent_builders::DeleteService) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteServiceInput`](crate::input::DeleteServiceInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteServiceInput::name): <p>The name of the service to delete.</p>
+    /// - On success, responds with [`DeleteServiceOutput`](crate::output::DeleteServiceOutput) with field(s):
+    ///   - [`service(Option<Service>)`](crate::output::DeleteServiceOutput::service): <p>The service detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<DeleteServiceError>`](crate::error::DeleteServiceError)
     pub fn delete_service(&self) -> fluent_builders::DeleteService<C, M, R> {
         fluent_builders::DeleteService::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteServiceTemplate` operation.
+    /// Constructs a fluent builder for the [`DeleteServiceTemplate`](crate::client::fluent_builders::DeleteServiceTemplate) operation.
     ///
-    /// See [`DeleteServiceTemplate`](crate::client::fluent_builders::DeleteServiceTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteServiceTemplateInput`](crate::input::DeleteServiceTemplateInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteServiceTemplateInput::name): <p>The name of the service template to delete.</p>
+    /// - On success, responds with [`DeleteServiceTemplateOutput`](crate::output::DeleteServiceTemplateOutput) with field(s):
+    ///   - [`service_template(Option<ServiceTemplate>)`](crate::output::DeleteServiceTemplateOutput::service_template): <p>The service template detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<DeleteServiceTemplateError>`](crate::error::DeleteServiceTemplateError)
     pub fn delete_service_template(&self) -> fluent_builders::DeleteServiceTemplate<C, M, R> {
         fluent_builders::DeleteServiceTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteServiceTemplateVersion` operation.
+    /// Constructs a fluent builder for the [`DeleteServiceTemplateVersion`](crate::client::fluent_builders::DeleteServiceTemplateVersion) operation.
     ///
-    /// See [`DeleteServiceTemplateVersion`](crate::client::fluent_builders::DeleteServiceTemplateVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteServiceTemplateVersionInput`](crate::input::DeleteServiceTemplateVersionInput) with field(s):
+    ///   - [`template_name(Option<String>)`](crate::input::DeleteServiceTemplateVersionInput::template_name): <p>The name of the service template.</p>
+    ///   - [`major_version(Option<String>)`](crate::input::DeleteServiceTemplateVersionInput::major_version): <p>The service template major version to delete.</p>
+    ///   - [`minor_version(Option<String>)`](crate::input::DeleteServiceTemplateVersionInput::minor_version): <p>The service template minor version to delete.</p>
+    /// - On success, responds with [`DeleteServiceTemplateVersionOutput`](crate::output::DeleteServiceTemplateVersionOutput) with field(s):
+    ///   - [`service_template_version(Option<ServiceTemplateVersion>)`](crate::output::DeleteServiceTemplateVersionOutput::service_template_version): <p>The service template version detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<DeleteServiceTemplateVersionError>`](crate::error::DeleteServiceTemplateVersionError)
     pub fn delete_service_template_version(
         &self,
     ) -> fluent_builders::DeleteServiceTemplateVersion<C, M, R> {
         fluent_builders::DeleteServiceTemplateVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteTemplateSyncConfig` operation.
+    /// Constructs a fluent builder for the [`DeleteTemplateSyncConfig`](crate::client::fluent_builders::DeleteTemplateSyncConfig) operation.
     ///
-    /// See [`DeleteTemplateSyncConfig`](crate::client::fluent_builders::DeleteTemplateSyncConfig) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteTemplateSyncConfigInput`](crate::input::DeleteTemplateSyncConfigInput) with field(s):
+    ///   - [`template_name(Option<String>)`](crate::input::DeleteTemplateSyncConfigInput::template_name): <p>The template name.</p>
+    ///   - [`template_type(Option<TemplateType>)`](crate::input::DeleteTemplateSyncConfigInput::template_type): <p>The template type.</p>
+    /// - On success, responds with [`DeleteTemplateSyncConfigOutput`](crate::output::DeleteTemplateSyncConfigOutput) with field(s):
+    ///   - [`template_sync_config(Option<TemplateSyncConfig>)`](crate::output::DeleteTemplateSyncConfigOutput::template_sync_config): <p>The template sync configuration detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<DeleteTemplateSyncConfigError>`](crate::error::DeleteTemplateSyncConfigError)
     pub fn delete_template_sync_config(
         &self,
     ) -> fluent_builders::DeleteTemplateSyncConfig<C, M, R> {
         fluent_builders::DeleteTemplateSyncConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAccountSettings` operation.
+    /// Constructs a fluent builder for the [`GetAccountSettings`](crate::client::fluent_builders::GetAccountSettings) operation.
     ///
-    /// See [`GetAccountSettings`](crate::client::fluent_builders::GetAccountSettings) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetAccountSettingsInput`](crate::input::GetAccountSettingsInput)
+
+    /// - On success, responds with [`GetAccountSettingsOutput`](crate::output::GetAccountSettingsOutput) with field(s):
+    ///   - [`account_settings(Option<AccountSettings>)`](crate::output::GetAccountSettingsOutput::account_settings): <p>The Proton pipeline service role detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<GetAccountSettingsError>`](crate::error::GetAccountSettingsError)
     pub fn get_account_settings(&self) -> fluent_builders::GetAccountSettings<C, M, R> {
         fluent_builders::GetAccountSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetEnvironment` operation.
+    /// Constructs a fluent builder for the [`GetEnvironment`](crate::client::fluent_builders::GetEnvironment) operation.
     ///
-    /// See [`GetEnvironment`](crate::client::fluent_builders::GetEnvironment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetEnvironmentInput`](crate::input::GetEnvironmentInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::GetEnvironmentInput::name): <p>The name of the environment that you want to get the detail data for.</p>
+    /// - On success, responds with [`GetEnvironmentOutput`](crate::output::GetEnvironmentOutput) with field(s):
+    ///   - [`environment(Option<Environment>)`](crate::output::GetEnvironmentOutput::environment): <p>The environment detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<GetEnvironmentError>`](crate::error::GetEnvironmentError)
     pub fn get_environment(&self) -> fluent_builders::GetEnvironment<C, M, R> {
         fluent_builders::GetEnvironment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetEnvironmentAccountConnection` operation.
+    /// Constructs a fluent builder for the [`GetEnvironmentAccountConnection`](crate::client::fluent_builders::GetEnvironmentAccountConnection) operation.
     ///
-    /// See [`GetEnvironmentAccountConnection`](crate::client::fluent_builders::GetEnvironmentAccountConnection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetEnvironmentAccountConnectionInput`](crate::input::GetEnvironmentAccountConnectionInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::GetEnvironmentAccountConnectionInput::id): <p>The ID of the environment account connection.</p>
+    /// - On success, responds with [`GetEnvironmentAccountConnectionOutput`](crate::output::GetEnvironmentAccountConnectionOutput) with field(s):
+    ///   - [`environment_account_connection(Option<EnvironmentAccountConnection>)`](crate::output::GetEnvironmentAccountConnectionOutput::environment_account_connection): <p>The environment account connection detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<GetEnvironmentAccountConnectionError>`](crate::error::GetEnvironmentAccountConnectionError)
     pub fn get_environment_account_connection(
         &self,
     ) -> fluent_builders::GetEnvironmentAccountConnection<C, M, R> {
         fluent_builders::GetEnvironmentAccountConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetEnvironmentTemplate` operation.
+    /// Constructs a fluent builder for the [`GetEnvironmentTemplate`](crate::client::fluent_builders::GetEnvironmentTemplate) operation.
     ///
-    /// See [`GetEnvironmentTemplate`](crate::client::fluent_builders::GetEnvironmentTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetEnvironmentTemplateInput`](crate::input::GetEnvironmentTemplateInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::GetEnvironmentTemplateInput::name): <p>The name of the environment template that you want to get the detail data for.</p>
+    /// - On success, responds with [`GetEnvironmentTemplateOutput`](crate::output::GetEnvironmentTemplateOutput) with field(s):
+    ///   - [`environment_template(Option<EnvironmentTemplate>)`](crate::output::GetEnvironmentTemplateOutput::environment_template): <p>The environment template detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<GetEnvironmentTemplateError>`](crate::error::GetEnvironmentTemplateError)
     pub fn get_environment_template(&self) -> fluent_builders::GetEnvironmentTemplate<C, M, R> {
         fluent_builders::GetEnvironmentTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetEnvironmentTemplateVersion` operation.
+    /// Constructs a fluent builder for the [`GetEnvironmentTemplateVersion`](crate::client::fluent_builders::GetEnvironmentTemplateVersion) operation.
     ///
-    /// See [`GetEnvironmentTemplateVersion`](crate::client::fluent_builders::GetEnvironmentTemplateVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetEnvironmentTemplateVersionInput`](crate::input::GetEnvironmentTemplateVersionInput) with field(s):
+    ///   - [`template_name(Option<String>)`](crate::input::GetEnvironmentTemplateVersionInput::template_name): <p>The name of the environment template.</p>
+    ///   - [`major_version(Option<String>)`](crate::input::GetEnvironmentTemplateVersionInput::major_version): <p>To view environment template major version detail data, include <code>major Version</code>.</p>
+    ///   - [`minor_version(Option<String>)`](crate::input::GetEnvironmentTemplateVersionInput::minor_version): <p>To view environment template minor version detail data, include <code>minorVersion</code>.</p>
+    /// - On success, responds with [`GetEnvironmentTemplateVersionOutput`](crate::output::GetEnvironmentTemplateVersionOutput) with field(s):
+    ///   - [`environment_template_version(Option<EnvironmentTemplateVersion>)`](crate::output::GetEnvironmentTemplateVersionOutput::environment_template_version): <p>The environment template version detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<GetEnvironmentTemplateVersionError>`](crate::error::GetEnvironmentTemplateVersionError)
     pub fn get_environment_template_version(
         &self,
     ) -> fluent_builders::GetEnvironmentTemplateVersion<C, M, R> {
         fluent_builders::GetEnvironmentTemplateVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRepository` operation.
+    /// Constructs a fluent builder for the [`GetRepository`](crate::client::fluent_builders::GetRepository) operation.
     ///
-    /// See [`GetRepository`](crate::client::fluent_builders::GetRepository) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetRepositoryInput`](crate::input::GetRepositoryInput) with field(s):
+    ///   - [`provider(Option<RepositoryProvider>)`](crate::input::GetRepositoryInput::provider): <p>The repository provider.</p>
+    ///   - [`name(Option<String>)`](crate::input::GetRepositoryInput::name): <p>The repository name, for example <code>myrepos/myrepo</code>.</p>
+    /// - On success, responds with [`GetRepositoryOutput`](crate::output::GetRepositoryOutput) with field(s):
+    ///   - [`repository(Option<Repository>)`](crate::output::GetRepositoryOutput::repository): <p>The repository detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<GetRepositoryError>`](crate::error::GetRepositoryError)
     pub fn get_repository(&self) -> fluent_builders::GetRepository<C, M, R> {
         fluent_builders::GetRepository::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRepositorySyncStatus` operation.
+    /// Constructs a fluent builder for the [`GetRepositorySyncStatus`](crate::client::fluent_builders::GetRepositorySyncStatus) operation.
     ///
-    /// See [`GetRepositorySyncStatus`](crate::client::fluent_builders::GetRepositorySyncStatus) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetRepositorySyncStatusInput`](crate::input::GetRepositorySyncStatusInput) with field(s):
+    ///   - [`repository_name(Option<String>)`](crate::input::GetRepositorySyncStatusInput::repository_name): <p>The repository name.</p>
+    ///   - [`repository_provider(Option<RepositoryProvider>)`](crate::input::GetRepositorySyncStatusInput::repository_provider): <p>The repository provider.</p>
+    ///   - [`branch(Option<String>)`](crate::input::GetRepositorySyncStatusInput::branch): <p>The repository branch.</p>
+    ///   - [`sync_type(Option<SyncType>)`](crate::input::GetRepositorySyncStatusInput::sync_type): <p>The repository sync type.</p>
+    /// - On success, responds with [`GetRepositorySyncStatusOutput`](crate::output::GetRepositorySyncStatusOutput) with field(s):
+    ///   - [`latest_sync(Option<RepositorySyncAttempt>)`](crate::output::GetRepositorySyncStatusOutput::latest_sync): <p>The repository sync status detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<GetRepositorySyncStatusError>`](crate::error::GetRepositorySyncStatusError)
     pub fn get_repository_sync_status(&self) -> fluent_builders::GetRepositorySyncStatus<C, M, R> {
         fluent_builders::GetRepositorySyncStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetService` operation.
+    /// Constructs a fluent builder for the [`GetService`](crate::client::fluent_builders::GetService) operation.
     ///
-    /// See [`GetService`](crate::client::fluent_builders::GetService) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetServiceInput`](crate::input::GetServiceInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::GetServiceInput::name): <p>The name of the service that you want to get the detail data for.</p>
+    /// - On success, responds with [`GetServiceOutput`](crate::output::GetServiceOutput) with field(s):
+    ///   - [`service(Option<Service>)`](crate::output::GetServiceOutput::service): <p>The service detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<GetServiceError>`](crate::error::GetServiceError)
     pub fn get_service(&self) -> fluent_builders::GetService<C, M, R> {
         fluent_builders::GetService::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetServiceInstance` operation.
+    /// Constructs a fluent builder for the [`GetServiceInstance`](crate::client::fluent_builders::GetServiceInstance) operation.
     ///
-    /// See [`GetServiceInstance`](crate::client::fluent_builders::GetServiceInstance) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetServiceInstanceInput`](crate::input::GetServiceInstanceInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::GetServiceInstanceInput::name): <p>The name of a service instance that you want to get the detail data for.</p>
+    ///   - [`service_name(Option<String>)`](crate::input::GetServiceInstanceInput::service_name): <p>The name of the service that the service instance belongs to.</p>
+    /// - On success, responds with [`GetServiceInstanceOutput`](crate::output::GetServiceInstanceOutput) with field(s):
+    ///   - [`service_instance(Option<ServiceInstance>)`](crate::output::GetServiceInstanceOutput::service_instance): <p>The service instance detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<GetServiceInstanceError>`](crate::error::GetServiceInstanceError)
     pub fn get_service_instance(&self) -> fluent_builders::GetServiceInstance<C, M, R> {
         fluent_builders::GetServiceInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetServiceTemplate` operation.
+    /// Constructs a fluent builder for the [`GetServiceTemplate`](crate::client::fluent_builders::GetServiceTemplate) operation.
     ///
-    /// See [`GetServiceTemplate`](crate::client::fluent_builders::GetServiceTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetServiceTemplateInput`](crate::input::GetServiceTemplateInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::GetServiceTemplateInput::name): <p>The name of the service template that you want to get detail data for.</p>
+    /// - On success, responds with [`GetServiceTemplateOutput`](crate::output::GetServiceTemplateOutput) with field(s):
+    ///   - [`service_template(Option<ServiceTemplate>)`](crate::output::GetServiceTemplateOutput::service_template): <p>The service template detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<GetServiceTemplateError>`](crate::error::GetServiceTemplateError)
     pub fn get_service_template(&self) -> fluent_builders::GetServiceTemplate<C, M, R> {
         fluent_builders::GetServiceTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetServiceTemplateVersion` operation.
+    /// Constructs a fluent builder for the [`GetServiceTemplateVersion`](crate::client::fluent_builders::GetServiceTemplateVersion) operation.
     ///
-    /// See [`GetServiceTemplateVersion`](crate::client::fluent_builders::GetServiceTemplateVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetServiceTemplateVersionInput`](crate::input::GetServiceTemplateVersionInput) with field(s):
+    ///   - [`template_name(Option<String>)`](crate::input::GetServiceTemplateVersionInput::template_name): <p>The name of the service template.</p>
+    ///   - [`major_version(Option<String>)`](crate::input::GetServiceTemplateVersionInput::major_version): <p>To view service template major version detail data, include <code>major Version</code>.</p>
+    ///   - [`minor_version(Option<String>)`](crate::input::GetServiceTemplateVersionInput::minor_version): <p>To view service template minor version detail data, include <code>minorVersion</code>.</p>
+    /// - On success, responds with [`GetServiceTemplateVersionOutput`](crate::output::GetServiceTemplateVersionOutput) with field(s):
+    ///   - [`service_template_version(Option<ServiceTemplateVersion>)`](crate::output::GetServiceTemplateVersionOutput::service_template_version): <p>The service template version detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<GetServiceTemplateVersionError>`](crate::error::GetServiceTemplateVersionError)
     pub fn get_service_template_version(
         &self,
     ) -> fluent_builders::GetServiceTemplateVersion<C, M, R> {
         fluent_builders::GetServiceTemplateVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetTemplateSyncConfig` operation.
+    /// Constructs a fluent builder for the [`GetTemplateSyncConfig`](crate::client::fluent_builders::GetTemplateSyncConfig) operation.
     ///
-    /// See [`GetTemplateSyncConfig`](crate::client::fluent_builders::GetTemplateSyncConfig) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetTemplateSyncConfigInput`](crate::input::GetTemplateSyncConfigInput) with field(s):
+    ///   - [`template_name(Option<String>)`](crate::input::GetTemplateSyncConfigInput::template_name): <p>The template name.</p>
+    ///   - [`template_type(Option<TemplateType>)`](crate::input::GetTemplateSyncConfigInput::template_type): <p>The template type.</p>
+    /// - On success, responds with [`GetTemplateSyncConfigOutput`](crate::output::GetTemplateSyncConfigOutput) with field(s):
+    ///   - [`template_sync_config(Option<TemplateSyncConfig>)`](crate::output::GetTemplateSyncConfigOutput::template_sync_config): <p>The template sync configuration detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<GetTemplateSyncConfigError>`](crate::error::GetTemplateSyncConfigError)
     pub fn get_template_sync_config(&self) -> fluent_builders::GetTemplateSyncConfig<C, M, R> {
         fluent_builders::GetTemplateSyncConfig::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetTemplateSyncStatus` operation.
+    /// Constructs a fluent builder for the [`GetTemplateSyncStatus`](crate::client::fluent_builders::GetTemplateSyncStatus) operation.
     ///
-    /// See [`GetTemplateSyncStatus`](crate::client::fluent_builders::GetTemplateSyncStatus) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetTemplateSyncStatusInput`](crate::input::GetTemplateSyncStatusInput) with field(s):
+    ///   - [`template_name(Option<String>)`](crate::input::GetTemplateSyncStatusInput::template_name): <p>The template name.</p>
+    ///   - [`template_type(Option<TemplateType>)`](crate::input::GetTemplateSyncStatusInput::template_type): <p>The template type.</p>
+    ///   - [`template_version(Option<String>)`](crate::input::GetTemplateSyncStatusInput::template_version): <p>The template version.</p>
+    /// - On success, responds with [`GetTemplateSyncStatusOutput`](crate::output::GetTemplateSyncStatusOutput) with field(s):
+    ///   - [`latest_sync(Option<ResourceSyncAttempt>)`](crate::output::GetTemplateSyncStatusOutput::latest_sync): <p>The details of the last sync that's returned by Proton.</p>
+    ///   - [`latest_successful_sync(Option<ResourceSyncAttempt>)`](crate::output::GetTemplateSyncStatusOutput::latest_successful_sync): <p>The details of the last successful sync that's returned by Proton.</p>
+    ///   - [`desired_state(Option<Revision>)`](crate::output::GetTemplateSyncStatusOutput::desired_state): <p>The template sync desired state that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<GetTemplateSyncStatusError>`](crate::error::GetTemplateSyncStatusError)
     pub fn get_template_sync_status(&self) -> fluent_builders::GetTemplateSyncStatus<C, M, R> {
         fluent_builders::GetTemplateSyncStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListEnvironmentAccountConnections` operation.
-    ///
-    /// See [`ListEnvironmentAccountConnections`](crate::client::fluent_builders::ListEnvironmentAccountConnections) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListEnvironmentAccountConnections`](crate::client::fluent_builders::ListEnvironmentAccountConnections) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEnvironmentAccountConnections::into_paginator).
+    ///
+    /// - Takes [`ListEnvironmentAccountConnectionsInput`](crate::input::ListEnvironmentAccountConnectionsInput) with field(s):
+    ///   - [`requested_by(Option<EnvironmentAccountConnectionRequesterAccountType>)`](crate::input::ListEnvironmentAccountConnectionsInput::requested_by): <p>The type of account making the <code>ListEnvironmentAccountConnections</code> request.</p>
+    ///   - [`environment_name(Option<String>)`](crate::input::ListEnvironmentAccountConnectionsInput::environment_name): <p>The environment name that's associated with each listed environment account connection.</p>
+    ///   - [`statuses(Option<Vec<EnvironmentAccountConnectionStatus>>)`](crate::input::ListEnvironmentAccountConnectionsInput::statuses): <p>The status details for each listed environment account connection.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListEnvironmentAccountConnectionsInput::next_token): <p>A token to indicate the location of the next environment account connection in the array of environment account connections, after the list of environment account connections that was previously requested.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListEnvironmentAccountConnectionsInput::max_results): <p>The maximum number of environment account connections to list.</p>
+    /// - On success, responds with [`ListEnvironmentAccountConnectionsOutput`](crate::output::ListEnvironmentAccountConnectionsOutput) with field(s):
+    ///   - [`environment_account_connections(Option<Vec<EnvironmentAccountConnectionSummary>>)`](crate::output::ListEnvironmentAccountConnectionsOutput::environment_account_connections): <p>An array of environment account connections with details that's returned by Proton. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListEnvironmentAccountConnectionsOutput::next_token): <p>A token to indicate the location of the next environment account connection in the array of environment account connections, after the current requested list of environment account connections.</p>
+    /// - On failure, responds with [`SdkError<ListEnvironmentAccountConnectionsError>`](crate::error::ListEnvironmentAccountConnectionsError)
     pub fn list_environment_account_connections(
         &self,
     ) -> fluent_builders::ListEnvironmentAccountConnections<C, M, R> {
         fluent_builders::ListEnvironmentAccountConnections::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListEnvironmentOutputs` operation.
-    ///
-    /// See [`ListEnvironmentOutputs`](crate::client::fluent_builders::ListEnvironmentOutputs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListEnvironmentOutputs`](crate::client::fluent_builders::ListEnvironmentOutputs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEnvironmentOutputs::into_paginator).
+    ///
+    /// - Takes [`ListEnvironmentOutputsInput`](crate::input::ListEnvironmentOutputsInput) with field(s):
+    ///   - [`environment_name(Option<String>)`](crate::input::ListEnvironmentOutputsInput::environment_name): <p>The environment name.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListEnvironmentOutputsInput::next_token): <p>A token to indicate the location of the next environment output in the array of environment outputs, after the list of environment outputs that was previously requested.</p>
+    /// - On success, responds with [`ListEnvironmentOutputsOutput`](crate::output::ListEnvironmentOutputsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListEnvironmentOutputsOutput::next_token): <p>A token to indicate the location of the next environment output in the array of environment outputs, after the current requested list of environment outputs.</p>
+    ///   - [`outputs(Option<Vec<Output>>)`](crate::output::ListEnvironmentOutputsOutput::outputs): <p>An array of environment outputs with detail data.</p>
+    /// - On failure, responds with [`SdkError<ListEnvironmentOutputsError>`](crate::error::ListEnvironmentOutputsError)
     pub fn list_environment_outputs(&self) -> fluent_builders::ListEnvironmentOutputs<C, M, R> {
         fluent_builders::ListEnvironmentOutputs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListEnvironmentProvisionedResources` operation.
-    ///
-    /// See [`ListEnvironmentProvisionedResources`](crate::client::fluent_builders::ListEnvironmentProvisionedResources) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListEnvironmentProvisionedResources`](crate::client::fluent_builders::ListEnvironmentProvisionedResources) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEnvironmentProvisionedResources::into_paginator).
+    ///
+    /// - Takes [`ListEnvironmentProvisionedResourcesInput`](crate::input::ListEnvironmentProvisionedResourcesInput) with field(s):
+    ///   - [`environment_name(Option<String>)`](crate::input::ListEnvironmentProvisionedResourcesInput::environment_name): <p>The environment name.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListEnvironmentProvisionedResourcesInput::next_token): <p>A token to indicate the location of the next environment provisioned resource in the array of environment provisioned resources, after the list of environment provisioned resources that was previously requested.</p>
+    /// - On success, responds with [`ListEnvironmentProvisionedResourcesOutput`](crate::output::ListEnvironmentProvisionedResourcesOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListEnvironmentProvisionedResourcesOutput::next_token): <p>A token to indicate the location of the next environment provisioned resource in the array of provisioned resources, after the current requested list of environment provisioned resources.</p>
+    ///   - [`provisioned_resources(Option<Vec<ProvisionedResource>>)`](crate::output::ListEnvironmentProvisionedResourcesOutput::provisioned_resources): <p>An array of environment provisioned resources.</p>
+    /// - On failure, responds with [`SdkError<ListEnvironmentProvisionedResourcesError>`](crate::error::ListEnvironmentProvisionedResourcesError)
     pub fn list_environment_provisioned_resources(
         &self,
     ) -> fluent_builders::ListEnvironmentProvisionedResources<C, M, R> {
         fluent_builders::ListEnvironmentProvisionedResources::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListEnvironments` operation.
-    ///
-    /// See [`ListEnvironments`](crate::client::fluent_builders::ListEnvironments) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListEnvironments`](crate::client::fluent_builders::ListEnvironments) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEnvironments::into_paginator).
+    ///
+    /// - Takes [`ListEnvironmentsInput`](crate::input::ListEnvironmentsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListEnvironmentsInput::next_token): <p>A token to indicate the location of the next environment in the array of environments, after the list of environments that was previously requested.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListEnvironmentsInput::max_results): <p>The maximum number of environments to list.</p>
+    ///   - [`environment_templates(Option<Vec<EnvironmentTemplateFilter>>)`](crate::input::ListEnvironmentsInput::environment_templates): <p>An array of the versions of the environment template.</p>
+    /// - On success, responds with [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListEnvironmentsOutput::next_token): <p>A token to indicate the location of the next environment in the array of environments, after the current requested list of environments.</p>
+    ///   - [`environments(Option<Vec<EnvironmentSummary>>)`](crate::output::ListEnvironmentsOutput::environments): <p>An array of environment detail data summaries.</p>
+    /// - On failure, responds with [`SdkError<ListEnvironmentsError>`](crate::error::ListEnvironmentsError)
     pub fn list_environments(&self) -> fluent_builders::ListEnvironments<C, M, R> {
         fluent_builders::ListEnvironments::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListEnvironmentTemplates` operation.
-    ///
-    /// See [`ListEnvironmentTemplates`](crate::client::fluent_builders::ListEnvironmentTemplates) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListEnvironmentTemplates`](crate::client::fluent_builders::ListEnvironmentTemplates) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEnvironmentTemplates::into_paginator).
+    ///
+    /// - Takes [`ListEnvironmentTemplatesInput`](crate::input::ListEnvironmentTemplatesInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListEnvironmentTemplatesInput::next_token): <p>A token to indicate the location of the next environment template in the array of environment templates, after the list of environment templates that was previously requested.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListEnvironmentTemplatesInput::max_results): <p>The maximum number of environment templates to list.</p>
+    /// - On success, responds with [`ListEnvironmentTemplatesOutput`](crate::output::ListEnvironmentTemplatesOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListEnvironmentTemplatesOutput::next_token): <p>A token to indicate the location of the next environment template in the array of environment templates, after the current requested list of environment templates.</p>
+    ///   - [`templates(Option<Vec<EnvironmentTemplateSummary>>)`](crate::output::ListEnvironmentTemplatesOutput::templates): <p>An array of environment templates with detail data.</p>
+    /// - On failure, responds with [`SdkError<ListEnvironmentTemplatesError>`](crate::error::ListEnvironmentTemplatesError)
     pub fn list_environment_templates(&self) -> fluent_builders::ListEnvironmentTemplates<C, M, R> {
         fluent_builders::ListEnvironmentTemplates::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListEnvironmentTemplateVersions` operation.
-    ///
-    /// See [`ListEnvironmentTemplateVersions`](crate::client::fluent_builders::ListEnvironmentTemplateVersions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListEnvironmentTemplateVersions`](crate::client::fluent_builders::ListEnvironmentTemplateVersions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEnvironmentTemplateVersions::into_paginator).
+    ///
+    /// - Takes [`ListEnvironmentTemplateVersionsInput`](crate::input::ListEnvironmentTemplateVersionsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListEnvironmentTemplateVersionsInput::next_token): <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of an environment template, after the list of major or minor versions that was previously requested.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListEnvironmentTemplateVersionsInput::max_results): <p>The maximum number of major or minor versions of an environment template to list.</p>
+    ///   - [`template_name(Option<String>)`](crate::input::ListEnvironmentTemplateVersionsInput::template_name): <p>The name of the environment template.</p>
+    ///   - [`major_version(Option<String>)`](crate::input::ListEnvironmentTemplateVersionsInput::major_version): <p>To view a list of minor of versions under a major version of an environment template, include <code>major Version</code>.</p>  <p>To view a list of major versions of an environment template, <i>exclude</i> <code>major Version</code>.</p>
+    /// - On success, responds with [`ListEnvironmentTemplateVersionsOutput`](crate::output::ListEnvironmentTemplateVersionsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListEnvironmentTemplateVersionsOutput::next_token): <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of an environment template, after the list of major or minor versions that was previously requested.</p>
+    ///   - [`template_versions(Option<Vec<EnvironmentTemplateVersionSummary>>)`](crate::output::ListEnvironmentTemplateVersionsOutput::template_versions): <p>An array of major or minor versions of an environment template detail data.</p>
+    /// - On failure, responds with [`SdkError<ListEnvironmentTemplateVersionsError>`](crate::error::ListEnvironmentTemplateVersionsError)
     pub fn list_environment_template_versions(
         &self,
     ) -> fluent_builders::ListEnvironmentTemplateVersions<C, M, R> {
         fluent_builders::ListEnvironmentTemplateVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRepositories` operation.
-    ///
-    /// See [`ListRepositories`](crate::client::fluent_builders::ListRepositories) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListRepositories`](crate::client::fluent_builders::ListRepositories) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRepositories::into_paginator).
+    ///
+    /// - Takes [`ListRepositoriesInput`](crate::input::ListRepositoriesInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListRepositoriesInput::next_token): <p>A token to indicate the location of the next repository in the array of repositories, after the list of repositories previously requested.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListRepositoriesInput::max_results): <p>The maximum number of repositories to list.</p>
+    /// - On success, responds with [`ListRepositoriesOutput`](crate::output::ListRepositoriesOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListRepositoriesOutput::next_token): <p>A token to indicate the location of the next repository in the array of repositories, after the current requested list of repositories. </p>
+    ///   - [`repositories(Option<Vec<RepositorySummary>>)`](crate::output::ListRepositoriesOutput::repositories): <p>An array of repositories.</p>
+    /// - On failure, responds with [`SdkError<ListRepositoriesError>`](crate::error::ListRepositoriesError)
     pub fn list_repositories(&self) -> fluent_builders::ListRepositories<C, M, R> {
         fluent_builders::ListRepositories::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRepositorySyncDefinitions` operation.
-    ///
-    /// See [`ListRepositorySyncDefinitions`](crate::client::fluent_builders::ListRepositorySyncDefinitions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListRepositorySyncDefinitions`](crate::client::fluent_builders::ListRepositorySyncDefinitions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRepositorySyncDefinitions::into_paginator).
+    ///
+    /// - Takes [`ListRepositorySyncDefinitionsInput`](crate::input::ListRepositorySyncDefinitionsInput) with field(s):
+    ///   - [`repository_name(Option<String>)`](crate::input::ListRepositorySyncDefinitionsInput::repository_name): <p>The repository name.</p>
+    ///   - [`repository_provider(Option<RepositoryProvider>)`](crate::input::ListRepositorySyncDefinitionsInput::repository_provider): <p>The repository provider.</p>
+    ///   - [`sync_type(Option<SyncType>)`](crate::input::ListRepositorySyncDefinitionsInput::sync_type): <p>The sync type. The only supported value is <code>TEMPLATE_SYNC</code>.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListRepositorySyncDefinitionsInput::next_token): <p>A token to indicate the location of the next repository sync definition in the array of repository sync definitions, after the list of repository sync definitions previously requested.</p>
+    /// - On success, responds with [`ListRepositorySyncDefinitionsOutput`](crate::output::ListRepositorySyncDefinitionsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListRepositorySyncDefinitionsOutput::next_token): <p>A token to indicate the location of the next repository sync definition in the array of repository sync definitions, after the current requested list of repository sync definitions.</p>
+    ///   - [`sync_definitions(Option<Vec<RepositorySyncDefinition>>)`](crate::output::ListRepositorySyncDefinitionsOutput::sync_definitions): <p>An array of repository sync definitions.</p>
+    /// - On failure, responds with [`SdkError<ListRepositorySyncDefinitionsError>`](crate::error::ListRepositorySyncDefinitionsError)
     pub fn list_repository_sync_definitions(
         &self,
     ) -> fluent_builders::ListRepositorySyncDefinitions<C, M, R> {
         fluent_builders::ListRepositorySyncDefinitions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListServiceInstanceOutputs` operation.
-    ///
-    /// See [`ListServiceInstanceOutputs`](crate::client::fluent_builders::ListServiceInstanceOutputs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListServiceInstanceOutputs`](crate::client::fluent_builders::ListServiceInstanceOutputs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListServiceInstanceOutputs::into_paginator).
+    ///
+    /// - Takes [`ListServiceInstanceOutputsInput`](crate::input::ListServiceInstanceOutputsInput) with field(s):
+    ///   - [`service_instance_name(Option<String>)`](crate::input::ListServiceInstanceOutputsInput::service_instance_name): <p>The service instance name.</p>
+    ///   - [`service_name(Option<String>)`](crate::input::ListServiceInstanceOutputsInput::service_name): <p>The service name.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListServiceInstanceOutputsInput::next_token): <p>A token to indicate the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
+    /// - On success, responds with [`ListServiceInstanceOutputsOutput`](crate::output::ListServiceInstanceOutputsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListServiceInstanceOutputsOutput::next_token): <p>A token to indicate the location of the next output in the array of outputs, after the current requested list of outputs.</p>
+    ///   - [`outputs(Option<Vec<Output>>)`](crate::output::ListServiceInstanceOutputsOutput::outputs): <p>An array of service instance infrastructure as code outputs.</p>
+    /// - On failure, responds with [`SdkError<ListServiceInstanceOutputsError>`](crate::error::ListServiceInstanceOutputsError)
     pub fn list_service_instance_outputs(
         &self,
     ) -> fluent_builders::ListServiceInstanceOutputs<C, M, R> {
         fluent_builders::ListServiceInstanceOutputs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListServiceInstanceProvisionedResources` operation.
-    ///
-    /// See [`ListServiceInstanceProvisionedResources`](crate::client::fluent_builders::ListServiceInstanceProvisionedResources) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListServiceInstanceProvisionedResources`](crate::client::fluent_builders::ListServiceInstanceProvisionedResources) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListServiceInstanceProvisionedResources::into_paginator).
+    ///
+    /// - Takes [`ListServiceInstanceProvisionedResourcesInput`](crate::input::ListServiceInstanceProvisionedResourcesInput) with field(s):
+    ///   - [`service_name(Option<String>)`](crate::input::ListServiceInstanceProvisionedResourcesInput::service_name): <p>The service name.</p>
+    ///   - [`service_instance_name(Option<String>)`](crate::input::ListServiceInstanceProvisionedResourcesInput::service_instance_name): <p>The service instance name.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListServiceInstanceProvisionedResourcesInput::next_token): <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
+    /// - On success, responds with [`ListServiceInstanceProvisionedResourcesOutput`](crate::output::ListServiceInstanceProvisionedResourcesOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListServiceInstanceProvisionedResourcesOutput::next_token): <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the current requested list of provisioned resources.</p>
+    ///   - [`provisioned_resources(Option<Vec<ProvisionedResource>>)`](crate::output::ListServiceInstanceProvisionedResourcesOutput::provisioned_resources): <p>An array of provisioned resources for a service instance.</p>
+    /// - On failure, responds with [`SdkError<ListServiceInstanceProvisionedResourcesError>`](crate::error::ListServiceInstanceProvisionedResourcesError)
     pub fn list_service_instance_provisioned_resources(
         &self,
     ) -> fluent_builders::ListServiceInstanceProvisionedResources<C, M, R> {
         fluent_builders::ListServiceInstanceProvisionedResources::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListServiceInstances` operation.
-    ///
-    /// See [`ListServiceInstances`](crate::client::fluent_builders::ListServiceInstances) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListServiceInstances`](crate::client::fluent_builders::ListServiceInstances) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListServiceInstances::into_paginator).
+    ///
+    /// - Takes [`ListServiceInstancesInput`](crate::input::ListServiceInstancesInput) with field(s):
+    ///   - [`service_name(Option<String>)`](crate::input::ListServiceInstancesInput::service_name): <p>The name of the service that the service instance belongs to.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListServiceInstancesInput::next_token): <p>A token to indicate the location of the next service in the array of service instances, after the list of service instances that was previously requested.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListServiceInstancesInput::max_results): <p>The maximum number of service instances to list.</p>
+    /// - On success, responds with [`ListServiceInstancesOutput`](crate::output::ListServiceInstancesOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListServiceInstancesOutput::next_token): <p>A token to indicate the location of the next service instance in the array of service instances, after the current requested list of service instances.</p>
+    ///   - [`service_instances(Option<Vec<ServiceInstanceSummary>>)`](crate::output::ListServiceInstancesOutput::service_instances): <p>An array of service instances with summaries of detail data.</p>
+    /// - On failure, responds with [`SdkError<ListServiceInstancesError>`](crate::error::ListServiceInstancesError)
     pub fn list_service_instances(&self) -> fluent_builders::ListServiceInstances<C, M, R> {
         fluent_builders::ListServiceInstances::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListServicePipelineOutputs` operation.
-    ///
-    /// See [`ListServicePipelineOutputs`](crate::client::fluent_builders::ListServicePipelineOutputs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListServicePipelineOutputs`](crate::client::fluent_builders::ListServicePipelineOutputs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListServicePipelineOutputs::into_paginator).
+    ///
+    /// - Takes [`ListServicePipelineOutputsInput`](crate::input::ListServicePipelineOutputsInput) with field(s):
+    ///   - [`service_name(Option<String>)`](crate::input::ListServicePipelineOutputsInput::service_name): <p>The service name.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListServicePipelineOutputsInput::next_token): <p>A token to indicate the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
+    /// - On success, responds with [`ListServicePipelineOutputsOutput`](crate::output::ListServicePipelineOutputsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListServicePipelineOutputsOutput::next_token): <p>A token to indicate the location of the next output in the array of outputs, after the current requested list of outputs.</p>
+    ///   - [`outputs(Option<Vec<Output>>)`](crate::output::ListServicePipelineOutputsOutput::outputs): <p>An array of outputs.</p>
+    /// - On failure, responds with [`SdkError<ListServicePipelineOutputsError>`](crate::error::ListServicePipelineOutputsError)
     pub fn list_service_pipeline_outputs(
         &self,
     ) -> fluent_builders::ListServicePipelineOutputs<C, M, R> {
         fluent_builders::ListServicePipelineOutputs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListServicePipelineProvisionedResources` operation.
-    ///
-    /// See [`ListServicePipelineProvisionedResources`](crate::client::fluent_builders::ListServicePipelineProvisionedResources) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListServicePipelineProvisionedResources`](crate::client::fluent_builders::ListServicePipelineProvisionedResources) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListServicePipelineProvisionedResources::into_paginator).
+    ///
+    /// - Takes [`ListServicePipelineProvisionedResourcesInput`](crate::input::ListServicePipelineProvisionedResourcesInput) with field(s):
+    ///   - [`service_name(Option<String>)`](crate::input::ListServicePipelineProvisionedResourcesInput::service_name): <p>The service name.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListServicePipelineProvisionedResourcesInput::next_token): <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
+    /// - On success, responds with [`ListServicePipelineProvisionedResourcesOutput`](crate::output::ListServicePipelineProvisionedResourcesOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListServicePipelineProvisionedResourcesOutput::next_token): <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the current requested list of provisioned resources.</p>
+    ///   - [`provisioned_resources(Option<Vec<ProvisionedResource>>)`](crate::output::ListServicePipelineProvisionedResourcesOutput::provisioned_resources): <p>An array of provisioned resources for a service and pipeline.</p>
+    /// - On failure, responds with [`SdkError<ListServicePipelineProvisionedResourcesError>`](crate::error::ListServicePipelineProvisionedResourcesError)
     pub fn list_service_pipeline_provisioned_resources(
         &self,
     ) -> fluent_builders::ListServicePipelineProvisionedResources<C, M, R> {
         fluent_builders::ListServicePipelineProvisionedResources::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListServices` operation.
-    ///
-    /// See [`ListServices`](crate::client::fluent_builders::ListServices) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListServices`](crate::client::fluent_builders::ListServices) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListServices::into_paginator).
+    ///
+    /// - Takes [`ListServicesInput`](crate::input::ListServicesInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListServicesInput::next_token): <p>A token to indicate the location of the next service in the array of services, after the list of services that was previously requested.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListServicesInput::max_results): <p>The maximum number of services to list.</p>
+    /// - On success, responds with [`ListServicesOutput`](crate::output::ListServicesOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListServicesOutput::next_token): <p>A token to indicate the location of the next service in the array of services, after the current requested list of services.</p>
+    ///   - [`services(Option<Vec<ServiceSummary>>)`](crate::output::ListServicesOutput::services): <p>An array of services with summaries of detail data.</p>
+    /// - On failure, responds with [`SdkError<ListServicesError>`](crate::error::ListServicesError)
     pub fn list_services(&self) -> fluent_builders::ListServices<C, M, R> {
         fluent_builders::ListServices::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListServiceTemplates` operation.
-    ///
-    /// See [`ListServiceTemplates`](crate::client::fluent_builders::ListServiceTemplates) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListServiceTemplates`](crate::client::fluent_builders::ListServiceTemplates) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListServiceTemplates::into_paginator).
+    ///
+    /// - Takes [`ListServiceTemplatesInput`](crate::input::ListServiceTemplatesInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListServiceTemplatesInput::next_token): <p>A token to indicate the location of the next service template in the array of service templates, after the list of service templates previously requested.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListServiceTemplatesInput::max_results): <p>The maximum number of service templates to list.</p>
+    /// - On success, responds with [`ListServiceTemplatesOutput`](crate::output::ListServiceTemplatesOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListServiceTemplatesOutput::next_token): <p>A token to indicate the location of the next service template in the array of service templates, after the current requested list of service templates.</p>
+    ///   - [`templates(Option<Vec<ServiceTemplateSummary>>)`](crate::output::ListServiceTemplatesOutput::templates): <p>An array of service templates with detail data.</p>
+    /// - On failure, responds with [`SdkError<ListServiceTemplatesError>`](crate::error::ListServiceTemplatesError)
     pub fn list_service_templates(&self) -> fluent_builders::ListServiceTemplates<C, M, R> {
         fluent_builders::ListServiceTemplates::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListServiceTemplateVersions` operation.
-    ///
-    /// See [`ListServiceTemplateVersions`](crate::client::fluent_builders::ListServiceTemplateVersions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListServiceTemplateVersions`](crate::client::fluent_builders::ListServiceTemplateVersions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListServiceTemplateVersions::into_paginator).
+    ///
+    /// - Takes [`ListServiceTemplateVersionsInput`](crate::input::ListServiceTemplateVersionsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListServiceTemplateVersionsInput::next_token): <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of a service template, after the list of major or minor versions that was previously requested.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListServiceTemplateVersionsInput::max_results): <p>The maximum number of major or minor versions of a service template to list.</p>
+    ///   - [`template_name(Option<String>)`](crate::input::ListServiceTemplateVersionsInput::template_name): <p>The name of the service template.</p>
+    ///   - [`major_version(Option<String>)`](crate::input::ListServiceTemplateVersionsInput::major_version): <p>To view a list of minor of versions under a major version of a service template, include <code>major Version</code>.</p>  <p>To view a list of major versions of a service template, <i>exclude</i> <code>major Version</code>.</p>
+    /// - On success, responds with [`ListServiceTemplateVersionsOutput`](crate::output::ListServiceTemplateVersionsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListServiceTemplateVersionsOutput::next_token): <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of a service template, after the current requested list of service major or minor versions.</p>
+    ///   - [`template_versions(Option<Vec<ServiceTemplateVersionSummary>>)`](crate::output::ListServiceTemplateVersionsOutput::template_versions): <p>An array of major or minor versions of a service template with detail data.</p>
+    /// - On failure, responds with [`SdkError<ListServiceTemplateVersionsError>`](crate::error::ListServiceTemplateVersionsError)
     pub fn list_service_template_versions(
         &self,
     ) -> fluent_builders::ListServiceTemplateVersions<C, M, R> {
         fluent_builders::ListServiceTemplateVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
-    ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
+    ///
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource for the listed tags.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListTagsForResourceInput::next_token): <p>A token to indicate the location of the next resource tag in the array of resource tags, after the list of resource tags that was previously requested.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListTagsForResourceInput::max_results): <p>The maximum number of tags to list.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>An array of resource tags with detail data.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTagsForResourceOutput::next_token): <p>A token to indicate the location of the next resource tag in the array of resource tags, after the current requested list of resource tags.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `NotifyResourceDeploymentStatusChange` operation.
+    /// Constructs a fluent builder for the [`NotifyResourceDeploymentStatusChange`](crate::client::fluent_builders::NotifyResourceDeploymentStatusChange) operation.
     ///
-    /// See [`NotifyResourceDeploymentStatusChange`](crate::client::fluent_builders::NotifyResourceDeploymentStatusChange) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`NotifyResourceDeploymentStatusChangeInput`](crate::input::NotifyResourceDeploymentStatusChangeInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::NotifyResourceDeploymentStatusChangeInput::resource_arn): <p>The provisioned resource Amazon Resource Name (ARN).</p>
+    ///   - [`status(Option<ResourceDeploymentStatus>)`](crate::input::NotifyResourceDeploymentStatusChangeInput::status): <p>The status of your provisioned resource.</p>
+    ///   - [`outputs(Option<Vec<Output>>)`](crate::input::NotifyResourceDeploymentStatusChangeInput::outputs): <p>The provisioned resource state change detail data that's returned by Proton.</p>
+    ///   - [`deployment_id(Option<String>)`](crate::input::NotifyResourceDeploymentStatusChangeInput::deployment_id): <p>The deployment ID for your provisioned resource.</p>
+    ///   - [`status_message(Option<String>)`](crate::input::NotifyResourceDeploymentStatusChangeInput::status_message): <p>The deployment status message for your provisioned resource.</p>
+    /// - On success, responds with [`NotifyResourceDeploymentStatusChangeOutput`](crate::output::NotifyResourceDeploymentStatusChangeOutput)
+
+    /// - On failure, responds with [`SdkError<NotifyResourceDeploymentStatusChangeError>`](crate::error::NotifyResourceDeploymentStatusChangeError)
     pub fn notify_resource_deployment_status_change(
         &self,
     ) -> fluent_builders::NotifyResourceDeploymentStatusChange<C, M, R> {
         fluent_builders::NotifyResourceDeploymentStatusChange::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RejectEnvironmentAccountConnection` operation.
+    /// Constructs a fluent builder for the [`RejectEnvironmentAccountConnection`](crate::client::fluent_builders::RejectEnvironmentAccountConnection) operation.
     ///
-    /// See [`RejectEnvironmentAccountConnection`](crate::client::fluent_builders::RejectEnvironmentAccountConnection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RejectEnvironmentAccountConnectionInput`](crate::input::RejectEnvironmentAccountConnectionInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::RejectEnvironmentAccountConnectionInput::id): <p>The ID of the environment account connection to reject.</p>
+    /// - On success, responds with [`RejectEnvironmentAccountConnectionOutput`](crate::output::RejectEnvironmentAccountConnectionOutput) with field(s):
+    ///   - [`environment_account_connection(Option<EnvironmentAccountConnection>)`](crate::output::RejectEnvironmentAccountConnectionOutput::environment_account_connection): <p>The environment connection account detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<RejectEnvironmentAccountConnectionError>`](crate::error::RejectEnvironmentAccountConnectionError)
     pub fn reject_environment_account_connection(
         &self,
     ) -> fluent_builders::RejectEnvironmentAccountConnection<C, M, R> {
         fluent_builders::RejectEnvironmentAccountConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource that the resource tag is applied to.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>An array of resource tags to apply to a resource.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource that the tag is to be removed from.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>An array of tag keys indicating the resource tags to be removed from the resource.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateAccountSettings` operation.
+    /// Constructs a fluent builder for the [`UpdateAccountSettings`](crate::client::fluent_builders::UpdateAccountSettings) operation.
     ///
-    /// See [`UpdateAccountSettings`](crate::client::fluent_builders::UpdateAccountSettings) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateAccountSettingsInput`](crate::input::UpdateAccountSettingsInput) with field(s):
+    ///   - [`pipeline_service_role_arn(Option<String>)`](crate::input::UpdateAccountSettingsInput::pipeline_service_role_arn): <p>The Amazon Resource Name (ARN) of the Proton pipeline service role.</p> <important>   <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>  </important>
+    ///   - [`pipeline_provisioning_repository(Option<RepositoryBranchInput>)`](crate::input::UpdateAccountSettingsInput::pipeline_provisioning_repository): <p>The repository that you provide with pull request provisioning.</p> <important>   <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>  </important>
+    /// - On success, responds with [`UpdateAccountSettingsOutput`](crate::output::UpdateAccountSettingsOutput) with field(s):
+    ///   - [`account_settings(Option<AccountSettings>)`](crate::output::UpdateAccountSettingsOutput::account_settings): <p>The Proton pipeline service role repository detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<UpdateAccountSettingsError>`](crate::error::UpdateAccountSettingsError)
     pub fn update_account_settings(&self) -> fluent_builders::UpdateAccountSettings<C, M, R> {
         fluent_builders::UpdateAccountSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateEnvironment` operation.
+    /// Constructs a fluent builder for the [`UpdateEnvironment`](crate::client::fluent_builders::UpdateEnvironment) operation.
     ///
-    /// See [`UpdateEnvironment`](crate::client::fluent_builders::UpdateEnvironment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateEnvironmentInput`](crate::input::UpdateEnvironmentInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::UpdateEnvironmentInput::name): <p>The name of the environment to update.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateEnvironmentInput::description): <p>A description of the environment update.</p>
+    ///   - [`spec(Option<String>)`](crate::input::UpdateEnvironmentInput::spec): <p>The formatted specification that defines the update.</p>
+    ///   - [`template_major_version(Option<String>)`](crate::input::UpdateEnvironmentInput::template_major_version): <p>The major version of the environment to update.</p>
+    ///   - [`template_minor_version(Option<String>)`](crate::input::UpdateEnvironmentInput::template_minor_version): <p>The minor version of the environment to update.</p>
+    ///   - [`proton_service_role_arn(Option<String>)`](crate::input::UpdateEnvironmentInput::proton_service_role_arn): <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make API calls to other services your behalf.</p>
+    ///   - [`deployment_type(Option<DeploymentUpdateType>)`](crate::input::UpdateEnvironmentInput::deployment_type): <p>There are four modes for updating an environment as described in the following. The <code>deploymentType</code> field defines the mode.</p>  <dl>   <dt></dt>   <dd>    <p> <code>NONE</code> </p>    <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>   </dd>   <dt></dt>   <dd>    <p> <code>CURRENT_VERSION</code> </p>    <p>In this mode, the environment is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>   </dd>   <dt></dt>   <dd>    <p> <code>MINOR_VERSION</code> </p>    <p>In this mode, the environment is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>   </dd>   <dt></dt>   <dd>    <p> <code>MAJOR_VERSION</code> </p>    <p>In this mode, the environment is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>   </dd>  </dl>
+    ///   - [`environment_account_connection_id(Option<String>)`](crate::input::UpdateEnvironmentInput::environment_account_connection_id): <p>The ID of the environment account connection.</p>  <p>You can only update to a new environment account connection if it was created in the same environment account that the current environment account connection was created in and is associated with the current environment.</p>
+    ///   - [`provisioning_repository(Option<RepositoryBranchInput>)`](crate::input::UpdateEnvironmentInput::provisioning_repository): <p>The repository that you provide with pull request provisioning.</p> <important>   <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>  </important>
+    /// - On success, responds with [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput) with field(s):
+    ///   - [`environment(Option<Environment>)`](crate::output::UpdateEnvironmentOutput::environment): <p>The environment detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<UpdateEnvironmentError>`](crate::error::UpdateEnvironmentError)
     pub fn update_environment(&self) -> fluent_builders::UpdateEnvironment<C, M, R> {
         fluent_builders::UpdateEnvironment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateEnvironmentAccountConnection` operation.
+    /// Constructs a fluent builder for the [`UpdateEnvironmentAccountConnection`](crate::client::fluent_builders::UpdateEnvironmentAccountConnection) operation.
     ///
-    /// See [`UpdateEnvironmentAccountConnection`](crate::client::fluent_builders::UpdateEnvironmentAccountConnection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateEnvironmentAccountConnectionInput`](crate::input::UpdateEnvironmentAccountConnectionInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::UpdateEnvironmentAccountConnectionInput::id): <p>The ID of the environment account connection to update.</p>
+    ///   - [`role_arn(Option<String>)`](crate::input::UpdateEnvironmentAccountConnectionInput::role_arn): <p>The Amazon Resource Name (ARN) of the IAM service role that is associated with the environment account connection to update.</p>
+    /// - On success, responds with [`UpdateEnvironmentAccountConnectionOutput`](crate::output::UpdateEnvironmentAccountConnectionOutput) with field(s):
+    ///   - [`environment_account_connection(Option<EnvironmentAccountConnection>)`](crate::output::UpdateEnvironmentAccountConnectionOutput::environment_account_connection): <p>The environment account connection detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<UpdateEnvironmentAccountConnectionError>`](crate::error::UpdateEnvironmentAccountConnectionError)
     pub fn update_environment_account_connection(
         &self,
     ) -> fluent_builders::UpdateEnvironmentAccountConnection<C, M, R> {
         fluent_builders::UpdateEnvironmentAccountConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateEnvironmentTemplate` operation.
+    /// Constructs a fluent builder for the [`UpdateEnvironmentTemplate`](crate::client::fluent_builders::UpdateEnvironmentTemplate) operation.
     ///
-    /// See [`UpdateEnvironmentTemplate`](crate::client::fluent_builders::UpdateEnvironmentTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateEnvironmentTemplateInput`](crate::input::UpdateEnvironmentTemplateInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::UpdateEnvironmentTemplateInput::name): <p>The name of the environment template to update.</p>
+    ///   - [`display_name(Option<String>)`](crate::input::UpdateEnvironmentTemplateInput::display_name): <p>The name of the environment template to update as displayed in the developer interface.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateEnvironmentTemplateInput::description): <p>A description of the environment template update.</p>
+    /// - On success, responds with [`UpdateEnvironmentTemplateOutput`](crate::output::UpdateEnvironmentTemplateOutput) with field(s):
+    ///   - [`environment_template(Option<EnvironmentTemplate>)`](crate::output::UpdateEnvironmentTemplateOutput::environment_template): <p>The environment template detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<UpdateEnvironmentTemplateError>`](crate::error::UpdateEnvironmentTemplateError)
     pub fn update_environment_template(
         &self,
     ) -> fluent_builders::UpdateEnvironmentTemplate<C, M, R> {
         fluent_builders::UpdateEnvironmentTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateEnvironmentTemplateVersion` operation.
+    /// Constructs a fluent builder for the [`UpdateEnvironmentTemplateVersion`](crate::client::fluent_builders::UpdateEnvironmentTemplateVersion) operation.
     ///
-    /// See [`UpdateEnvironmentTemplateVersion`](crate::client::fluent_builders::UpdateEnvironmentTemplateVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateEnvironmentTemplateVersionInput`](crate::input::UpdateEnvironmentTemplateVersionInput) with field(s):
+    ///   - [`template_name(Option<String>)`](crate::input::UpdateEnvironmentTemplateVersionInput::template_name): <p>The name of the environment template.</p>
+    ///   - [`major_version(Option<String>)`](crate::input::UpdateEnvironmentTemplateVersionInput::major_version): <p>To update a major version of an environment template, include <code>major Version</code>.</p>
+    ///   - [`minor_version(Option<String>)`](crate::input::UpdateEnvironmentTemplateVersionInput::minor_version): <p>To update a minor version of an environment template, include <code>minorVersion</code>.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateEnvironmentTemplateVersionInput::description): <p>A description of environment template version to update.</p>
+    ///   - [`status(Option<TemplateVersionStatus>)`](crate::input::UpdateEnvironmentTemplateVersionInput::status): <p>The status of the environment template minor version to update.</p>
+    /// - On success, responds with [`UpdateEnvironmentTemplateVersionOutput`](crate::output::UpdateEnvironmentTemplateVersionOutput) with field(s):
+    ///   - [`environment_template_version(Option<EnvironmentTemplateVersion>)`](crate::output::UpdateEnvironmentTemplateVersionOutput::environment_template_version): <p>The environment template version detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<UpdateEnvironmentTemplateVersionError>`](crate::error::UpdateEnvironmentTemplateVersionError)
     pub fn update_environment_template_version(
         &self,
     ) -> fluent_builders::UpdateEnvironmentTemplateVersion<C, M, R> {
         fluent_builders::UpdateEnvironmentTemplateVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateService` operation.
+    /// Constructs a fluent builder for the [`UpdateService`](crate::client::fluent_builders::UpdateService) operation.
     ///
-    /// See [`UpdateService`](crate::client::fluent_builders::UpdateService) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateServiceInput`](crate::input::UpdateServiceInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::UpdateServiceInput::name): <p>The name of the service to edit.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateServiceInput::description): <p>The edited service description.</p>
+    ///   - [`spec(Option<String>)`](crate::input::UpdateServiceInput::spec): <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list. <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <i>Edit a service</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton Administrator Guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton User Guide</a>.</p>
+    /// - On success, responds with [`UpdateServiceOutput`](crate::output::UpdateServiceOutput) with field(s):
+    ///   - [`service(Option<Service>)`](crate::output::UpdateServiceOutput::service): <p>The service detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<UpdateServiceError>`](crate::error::UpdateServiceError)
     pub fn update_service(&self) -> fluent_builders::UpdateService<C, M, R> {
         fluent_builders::UpdateService::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateServiceInstance` operation.
+    /// Constructs a fluent builder for the [`UpdateServiceInstance`](crate::client::fluent_builders::UpdateServiceInstance) operation.
     ///
-    /// See [`UpdateServiceInstance`](crate::client::fluent_builders::UpdateServiceInstance) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateServiceInstanceInput`](crate::input::UpdateServiceInstanceInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::UpdateServiceInstanceInput::name): <p>The name of the service instance to update.</p>
+    ///   - [`service_name(Option<String>)`](crate::input::UpdateServiceInstanceInput::service_name): <p>The name of the service that the service instance belongs to.</p>
+    ///   - [`deployment_type(Option<DeploymentUpdateType>)`](crate::input::UpdateServiceInstanceInput::deployment_type): <p>The deployment type.</p>  <p>There are four modes for updating a service instance as described in the following. The <code>deploymentType</code> field defines the mode.</p>  <dl>   <dt></dt>   <dd>    <p> <code>NONE</code> </p>    <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>   </dd>   <dt></dt>   <dd>    <p> <code>CURRENT_VERSION</code> </p>    <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>   </dd>   <dt></dt>   <dd>    <p> <code>MINOR_VERSION</code> </p>    <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>   </dd>   <dt></dt>   <dd>    <p> <code>MAJOR_VERSION</code> </p>    <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>   </dd>  </dl>
+    ///   - [`spec(Option<String>)`](crate::input::UpdateServiceInstanceInput::spec): <p>The formatted specification that defines the service instance update.</p>
+    ///   - [`template_major_version(Option<String>)`](crate::input::UpdateServiceInstanceInput::template_major_version): <p>The major version of the service template to update.</p>
+    ///   - [`template_minor_version(Option<String>)`](crate::input::UpdateServiceInstanceInput::template_minor_version): <p>The minor version of the service template to update.</p>
+    /// - On success, responds with [`UpdateServiceInstanceOutput`](crate::output::UpdateServiceInstanceOutput) with field(s):
+    ///   - [`service_instance(Option<ServiceInstance>)`](crate::output::UpdateServiceInstanceOutput::service_instance): <p>The service instance summary data returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<UpdateServiceInstanceError>`](crate::error::UpdateServiceInstanceError)
     pub fn update_service_instance(&self) -> fluent_builders::UpdateServiceInstance<C, M, R> {
         fluent_builders::UpdateServiceInstance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateServicePipeline` operation.
+    /// Constructs a fluent builder for the [`UpdateServicePipeline`](crate::client::fluent_builders::UpdateServicePipeline) operation.
     ///
-    /// See [`UpdateServicePipeline`](crate::client::fluent_builders::UpdateServicePipeline) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateServicePipelineInput`](crate::input::UpdateServicePipelineInput) with field(s):
+    ///   - [`service_name(Option<String>)`](crate::input::UpdateServicePipelineInput::service_name): <p>The name of the service to that the pipeline is associated with.</p>
+    ///   - [`spec(Option<String>)`](crate::input::UpdateServicePipelineInput::spec): <p>The spec for the service pipeline to update.</p>
+    ///   - [`deployment_type(Option<DeploymentUpdateType>)`](crate::input::UpdateServicePipelineInput::deployment_type): <p>The deployment type.</p>  <p>There are four modes for updating a service pipeline as described in the following. The <code>deploymentType</code> field defines the mode.</p>  <dl>   <dt></dt>   <dd>    <p> <code>NONE</code> </p>    <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>   </dd>   <dt></dt>   <dd>    <p> <code>CURRENT_VERSION</code> </p>    <p>In this mode, the service pipeline is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>   </dd>   <dt></dt>   <dd>    <p> <code>MINOR_VERSION</code> </p>    <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>   </dd>   <dt></dt>   <dd>    <p> <code>MAJOR_VERSION</code> </p>    <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>   </dd>  </dl>
+    ///   - [`template_major_version(Option<String>)`](crate::input::UpdateServicePipelineInput::template_major_version): <p>The major version of the service template that was used to create the service that the pipeline is associated with.</p>
+    ///   - [`template_minor_version(Option<String>)`](crate::input::UpdateServicePipelineInput::template_minor_version): <p>The minor version of the service template that was used to create the service that the pipeline is associated with.</p>
+    /// - On success, responds with [`UpdateServicePipelineOutput`](crate::output::UpdateServicePipelineOutput) with field(s):
+    ///   - [`pipeline(Option<ServicePipeline>)`](crate::output::UpdateServicePipelineOutput::pipeline): <p>The pipeline details returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<UpdateServicePipelineError>`](crate::error::UpdateServicePipelineError)
     pub fn update_service_pipeline(&self) -> fluent_builders::UpdateServicePipeline<C, M, R> {
         fluent_builders::UpdateServicePipeline::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateServiceTemplate` operation.
+    /// Constructs a fluent builder for the [`UpdateServiceTemplate`](crate::client::fluent_builders::UpdateServiceTemplate) operation.
     ///
-    /// See [`UpdateServiceTemplate`](crate::client::fluent_builders::UpdateServiceTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateServiceTemplateInput`](crate::input::UpdateServiceTemplateInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::UpdateServiceTemplateInput::name): <p>The name of the service template to update.</p>
+    ///   - [`display_name(Option<String>)`](crate::input::UpdateServiceTemplateInput::display_name): <p>The name of the service template to update as displayed in the developer interface.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateServiceTemplateInput::description): <p>A description of the service template update.</p>
+    /// - On success, responds with [`UpdateServiceTemplateOutput`](crate::output::UpdateServiceTemplateOutput) with field(s):
+    ///   - [`service_template(Option<ServiceTemplate>)`](crate::output::UpdateServiceTemplateOutput::service_template): <p>The service template detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<UpdateServiceTemplateError>`](crate::error::UpdateServiceTemplateError)
     pub fn update_service_template(&self) -> fluent_builders::UpdateServiceTemplate<C, M, R> {
         fluent_builders::UpdateServiceTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateServiceTemplateVersion` operation.
+    /// Constructs a fluent builder for the [`UpdateServiceTemplateVersion`](crate::client::fluent_builders::UpdateServiceTemplateVersion) operation.
     ///
-    /// See [`UpdateServiceTemplateVersion`](crate::client::fluent_builders::UpdateServiceTemplateVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateServiceTemplateVersionInput`](crate::input::UpdateServiceTemplateVersionInput) with field(s):
+    ///   - [`template_name(Option<String>)`](crate::input::UpdateServiceTemplateVersionInput::template_name): <p>The name of the service template.</p>
+    ///   - [`major_version(Option<String>)`](crate::input::UpdateServiceTemplateVersionInput::major_version): <p>To update a major version of a service template, include <code>major Version</code>.</p>
+    ///   - [`minor_version(Option<String>)`](crate::input::UpdateServiceTemplateVersionInput::minor_version): <p>To update a minor version of a service template, include <code>minorVersion</code>.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateServiceTemplateVersionInput::description): <p>A description of a service template version to update.</p>
+    ///   - [`status(Option<TemplateVersionStatus>)`](crate::input::UpdateServiceTemplateVersionInput::status): <p>The status of the service template minor version to update.</p>
+    ///   - [`compatible_environment_templates(Option<Vec<CompatibleEnvironmentTemplateInput>>)`](crate::input::UpdateServiceTemplateVersionInput::compatible_environment_templates): <p>An array of compatible environment names for a service template major or minor version to update.</p>
+    /// - On success, responds with [`UpdateServiceTemplateVersionOutput`](crate::output::UpdateServiceTemplateVersionOutput) with field(s):
+    ///   - [`service_template_version(Option<ServiceTemplateVersion>)`](crate::output::UpdateServiceTemplateVersionOutput::service_template_version): <p>The service template version detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<UpdateServiceTemplateVersionError>`](crate::error::UpdateServiceTemplateVersionError)
     pub fn update_service_template_version(
         &self,
     ) -> fluent_builders::UpdateServiceTemplateVersion<C, M, R> {
         fluent_builders::UpdateServiceTemplateVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateTemplateSyncConfig` operation.
+    /// Constructs a fluent builder for the [`UpdateTemplateSyncConfig`](crate::client::fluent_builders::UpdateTemplateSyncConfig) operation.
     ///
-    /// See [`UpdateTemplateSyncConfig`](crate::client::fluent_builders::UpdateTemplateSyncConfig) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateTemplateSyncConfigInput`](crate::input::UpdateTemplateSyncConfigInput) with field(s):
+    ///   - [`template_name(Option<String>)`](crate::input::UpdateTemplateSyncConfigInput::template_name): <p>The synced template name.</p>
+    ///   - [`template_type(Option<TemplateType>)`](crate::input::UpdateTemplateSyncConfigInput::template_type): <p>The synced template type.</p>
+    ///   - [`repository_provider(Option<RepositoryProvider>)`](crate::input::UpdateTemplateSyncConfigInput::repository_provider): <p>The repository provider.</p>
+    ///   - [`repository_name(Option<String>)`](crate::input::UpdateTemplateSyncConfigInput::repository_name): <p>The name of the repository, for example <code>myrepos/myrepo</code>.</p>
+    ///   - [`branch(Option<String>)`](crate::input::UpdateTemplateSyncConfigInput::branch): <p>The repository branch.</p>
+    ///   - [`subdirectory(Option<String>)`](crate::input::UpdateTemplateSyncConfigInput::subdirectory): <p>A subdirectory path to your template bundle version. When included, limits the template bundle search to this repository directory.</p>
+    /// - On success, responds with [`UpdateTemplateSyncConfigOutput`](crate::output::UpdateTemplateSyncConfigOutput) with field(s):
+    ///   - [`template_sync_config(Option<TemplateSyncConfig>)`](crate::output::UpdateTemplateSyncConfigOutput::template_sync_config): <p>The template sync configuration detail data that's returned by Proton.</p>
+    /// - On failure, responds with [`SdkError<UpdateTemplateSyncConfigError>`](crate::error::UpdateTemplateSyncConfigError)
     pub fn update_template_sync_config(
         &self,
     ) -> fluent_builders::UpdateTemplateSyncConfig<C, M, R> {

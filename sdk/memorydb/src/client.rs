@@ -83,250 +83,465 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `BatchUpdateCluster` operation.
+    /// Constructs a fluent builder for the [`BatchUpdateCluster`](crate::client::fluent_builders::BatchUpdateCluster) operation.
     ///
-    /// See [`BatchUpdateCluster`](crate::client::fluent_builders::BatchUpdateCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchUpdateClusterInput`](crate::input::BatchUpdateClusterInput) with field(s):
+    ///   - [`cluster_names(Option<Vec<String>>)`](crate::input::BatchUpdateClusterInput::cluster_names): <p>The cluster names to apply the updates.</p>
+    ///   - [`service_update(Option<ServiceUpdateRequest>)`](crate::input::BatchUpdateClusterInput::service_update): <p>The unique ID of the service update</p>
+    /// - On success, responds with [`BatchUpdateClusterOutput`](crate::output::BatchUpdateClusterOutput) with field(s):
+    ///   - [`processed_clusters(Option<Vec<Cluster>>)`](crate::output::BatchUpdateClusterOutput::processed_clusters): <p>The list of clusters that have been updated.</p>
+    ///   - [`unprocessed_clusters(Option<Vec<UnprocessedCluster>>)`](crate::output::BatchUpdateClusterOutput::unprocessed_clusters): <p>The list of clusters where updates have not been applied.</p>
+    /// - On failure, responds with [`SdkError<BatchUpdateClusterError>`](crate::error::BatchUpdateClusterError)
     pub fn batch_update_cluster(&self) -> fluent_builders::BatchUpdateCluster<C, M, R> {
         fluent_builders::BatchUpdateCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CopySnapshot` operation.
+    /// Constructs a fluent builder for the [`CopySnapshot`](crate::client::fluent_builders::CopySnapshot) operation.
     ///
-    /// See [`CopySnapshot`](crate::client::fluent_builders::CopySnapshot) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CopySnapshotInput`](crate::input::CopySnapshotInput) with field(s):
+    ///   - [`source_snapshot_name(Option<String>)`](crate::input::CopySnapshotInput::source_snapshot_name): <p>The name of an existing snapshot from which to make a copy.</p>
+    ///   - [`target_snapshot_name(Option<String>)`](crate::input::CopySnapshotInput::target_snapshot_name): <p>A name for the snapshot copy. MemoryDB does not permit overwriting a snapshot, therefore this name must be unique within its context - MemoryDB or an Amazon S3 bucket if exporting.</p>
+    ///   - [`target_bucket(Option<String>)`](crate::input::CopySnapshotInput::target_bucket): <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is used only when exporting a snapshot for external access. When using this parameter to export a snapshot, be sure MemoryDB has the needed permissions to this S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/snapshots-exporting.html">Step 2: Grant MemoryDB Access to Your Amazon S3 Bucket</a>. </p>
+    ///   - [`kms_key_id(Option<String>)`](crate::input::CopySnapshotInput::kms_key_id): <p>The ID of the KMS key used to encrypt the target snapshot.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CopySnapshotInput::tags): <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    /// - On success, responds with [`CopySnapshotOutput`](crate::output::CopySnapshotOutput) with field(s):
+    ///   - [`snapshot(Option<Snapshot>)`](crate::output::CopySnapshotOutput::snapshot): <p>Represents a copy of an entire cluster as of the time when the snapshot was taken.</p>
+    /// - On failure, responds with [`SdkError<CopySnapshotError>`](crate::error::CopySnapshotError)
     pub fn copy_snapshot(&self) -> fluent_builders::CopySnapshot<C, M, R> {
         fluent_builders::CopySnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateACL` operation.
+    /// Constructs a fluent builder for the [`CreateACL`](crate::client::fluent_builders::CreateACL) operation.
     ///
-    /// See [`CreateACL`](crate::client::fluent_builders::CreateACL) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateAclInput`](crate::input::CreateAclInput) with field(s):
+    ///   - [`acl_name(Option<String>)`](crate::input::CreateAclInput::acl_name): <p>The name of the Access Control List.</p>
+    ///   - [`user_names(Option<Vec<String>>)`](crate::input::CreateAclInput::user_names): <p>The list of users that belong to the Access Control List.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateAclInput::tags): <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    /// - On success, responds with [`CreateAclOutput`](crate::output::CreateAclOutput) with field(s):
+    ///   - [`acl(Option<Acl>)`](crate::output::CreateAclOutput::acl): <p>The newly-created Access Control List.</p>
+    /// - On failure, responds with [`SdkError<CreateACLError>`](crate::error::CreateACLError)
     pub fn create_acl(&self) -> fluent_builders::CreateACL<C, M, R> {
         fluent_builders::CreateACL::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateCluster` operation.
+    /// Constructs a fluent builder for the [`CreateCluster`](crate::client::fluent_builders::CreateCluster) operation.
     ///
-    /// See [`CreateCluster`](crate::client::fluent_builders::CreateCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateClusterInput`](crate::input::CreateClusterInput) with field(s):
+    ///   - [`cluster_name(Option<String>)`](crate::input::CreateClusterInput::cluster_name): <p>The name of the cluster. This value must be unique as it also serves as the cluster identifier.</p>
+    ///   - [`node_type(Option<String>)`](crate::input::CreateClusterInput::node_type): <p>The compute and memory capacity of the nodes in the cluster.</p>
+    ///   - [`parameter_group_name(Option<String>)`](crate::input::CreateClusterInput::parameter_group_name): <p>The name of the parameter group associated with the cluster.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateClusterInput::description): <p>An optional description of the cluster.</p>
+    ///   - [`num_shards(Option<i32>)`](crate::input::CreateClusterInput::num_shards): <p>The number of shards the cluster will contain. The default value is 1. </p>
+    ///   - [`num_replicas_per_shard(Option<i32>)`](crate::input::CreateClusterInput::num_replicas_per_shard): <p>The number of replicas to apply to each shard. The default value is 1. The maximum is 5. </p>
+    ///   - [`subnet_group_name(Option<String>)`](crate::input::CreateClusterInput::subnet_group_name): <p>The name of the subnet group to be used for the cluster.</p>
+    ///   - [`security_group_ids(Option<Vec<String>>)`](crate::input::CreateClusterInput::security_group_ids): <p>A list of security group names to associate with this cluster.</p>
+    ///   - [`maintenance_window(Option<String>)`](crate::input::CreateClusterInput::maintenance_window): <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format <code>ddd:hh24:mi-ddd:hh24:mi</code> (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
+    ///   - [`port(Option<i32>)`](crate::input::CreateClusterInput::port): <p>The port number on which each of the nodes accepts connections.</p>
+    ///   - [`sns_topic_arn(Option<String>)`](crate::input::CreateClusterInput::sns_topic_arn): <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which notifications are sent.</p>
+    ///   - [`tls_enabled(Option<bool>)`](crate::input::CreateClusterInput::tls_enabled): <p>A flag to enable in-transit encryption on the cluster.</p>
+    ///   - [`kms_key_id(Option<String>)`](crate::input::CreateClusterInput::kms_key_id): <p>The ID of the KMS key used to encrypt the cluster.</p>
+    ///   - [`snapshot_arns(Option<Vec<String>>)`](crate::input::CreateClusterInput::snapshot_arns): <p>A list of Amazon Resource Names (ARN) that uniquely identify the RDB snapshot files stored in Amazon S3. The snapshot files are used to populate the new cluster. The Amazon S3 object name in the ARN cannot contain any commas.</p>
+    ///   - [`snapshot_name(Option<String>)`](crate::input::CreateClusterInput::snapshot_name): <p>The name of a snapshot from which to restore data into the new cluster. The snapshot status changes to restoring while the new cluster is being created.</p>
+    ///   - [`snapshot_retention_limit(Option<i32>)`](crate::input::CreateClusterInput::snapshot_retention_limit): <p>The number of days for which MemoryDB retains automatic snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateClusterInput::tags): <p>A list of tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=myKey, Value=myKeyValue. You can include multiple tags as shown following: Key=myKey, Value=myKeyValue Key=mySecondKey, Value=mySecondKeyValue.</p>
+    ///   - [`snapshot_window(Option<String>)`](crate::input::CreateClusterInput::snapshot_window): <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.</p>  <p> Example: 05:00-09:00</p>  <p> If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
+    ///   - [`acl_name(Option<String>)`](crate::input::CreateClusterInput::acl_name): <p>The name of the Access Control List to associate with the cluster.</p>
+    ///   - [`engine_version(Option<String>)`](crate::input::CreateClusterInput::engine_version): <p>The version number of the Redis engine to be used for the cluster.</p>
+    ///   - [`auto_minor_version_upgrade(Option<bool>)`](crate::input::CreateClusterInput::auto_minor_version_upgrade): <p>When set to true, the cluster will automatically receive minor engine version upgrades after launch.</p>
+    /// - On success, responds with [`CreateClusterOutput`](crate::output::CreateClusterOutput) with field(s):
+    ///   - [`cluster(Option<Cluster>)`](crate::output::CreateClusterOutput::cluster): <p>The newly-created cluster.</p>
+    /// - On failure, responds with [`SdkError<CreateClusterError>`](crate::error::CreateClusterError)
     pub fn create_cluster(&self) -> fluent_builders::CreateCluster<C, M, R> {
         fluent_builders::CreateCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateParameterGroup` operation.
+    /// Constructs a fluent builder for the [`CreateParameterGroup`](crate::client::fluent_builders::CreateParameterGroup) operation.
     ///
-    /// See [`CreateParameterGroup`](crate::client::fluent_builders::CreateParameterGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateParameterGroupInput`](crate::input::CreateParameterGroupInput) with field(s):
+    ///   - [`parameter_group_name(Option<String>)`](crate::input::CreateParameterGroupInput::parameter_group_name): <p>The name of the parameter group.</p>
+    ///   - [`family(Option<String>)`](crate::input::CreateParameterGroupInput::family): <p>The name of the parameter group family that the parameter group can be used with.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateParameterGroupInput::description): <p>An optional description of the parameter group.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateParameterGroupInput::tags): <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    /// - On success, responds with [`CreateParameterGroupOutput`](crate::output::CreateParameterGroupOutput) with field(s):
+    ///   - [`parameter_group(Option<ParameterGroup>)`](crate::output::CreateParameterGroupOutput::parameter_group): <p>The newly-created parameter group.</p>
+    /// - On failure, responds with [`SdkError<CreateParameterGroupError>`](crate::error::CreateParameterGroupError)
     pub fn create_parameter_group(&self) -> fluent_builders::CreateParameterGroup<C, M, R> {
         fluent_builders::CreateParameterGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateSnapshot` operation.
+    /// Constructs a fluent builder for the [`CreateSnapshot`](crate::client::fluent_builders::CreateSnapshot) operation.
     ///
-    /// See [`CreateSnapshot`](crate::client::fluent_builders::CreateSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateSnapshotInput`](crate::input::CreateSnapshotInput) with field(s):
+    ///   - [`cluster_name(Option<String>)`](crate::input::CreateSnapshotInput::cluster_name): <p>The snapshot is created from this cluster.</p>
+    ///   - [`snapshot_name(Option<String>)`](crate::input::CreateSnapshotInput::snapshot_name): <p>A name for the snapshot being created.</p>
+    ///   - [`kms_key_id(Option<String>)`](crate::input::CreateSnapshotInput::kms_key_id): <p>The ID of the KMS key used to encrypt the snapshot.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateSnapshotInput::tags): <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    /// - On success, responds with [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput) with field(s):
+    ///   - [`snapshot(Option<Snapshot>)`](crate::output::CreateSnapshotOutput::snapshot): <p>The newly-created snapshot.</p>
+    /// - On failure, responds with [`SdkError<CreateSnapshotError>`](crate::error::CreateSnapshotError)
     pub fn create_snapshot(&self) -> fluent_builders::CreateSnapshot<C, M, R> {
         fluent_builders::CreateSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateSubnetGroup` operation.
+    /// Constructs a fluent builder for the [`CreateSubnetGroup`](crate::client::fluent_builders::CreateSubnetGroup) operation.
     ///
-    /// See [`CreateSubnetGroup`](crate::client::fluent_builders::CreateSubnetGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateSubnetGroupInput`](crate::input::CreateSubnetGroupInput) with field(s):
+    ///   - [`subnet_group_name(Option<String>)`](crate::input::CreateSubnetGroupInput::subnet_group_name): <p>The name of the subnet group.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateSubnetGroupInput::description): <p>A description for the subnet group.</p>
+    ///   - [`subnet_ids(Option<Vec<String>>)`](crate::input::CreateSubnetGroupInput::subnet_ids): <p>A list of VPC subnet IDs for the subnet group.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateSubnetGroupInput::tags): <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    /// - On success, responds with [`CreateSubnetGroupOutput`](crate::output::CreateSubnetGroupOutput) with field(s):
+    ///   - [`subnet_group(Option<SubnetGroup>)`](crate::output::CreateSubnetGroupOutput::subnet_group): <p>The newly-created subnet group</p>
+    /// - On failure, responds with [`SdkError<CreateSubnetGroupError>`](crate::error::CreateSubnetGroupError)
     pub fn create_subnet_group(&self) -> fluent_builders::CreateSubnetGroup<C, M, R> {
         fluent_builders::CreateSubnetGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateUser` operation.
+    /// Constructs a fluent builder for the [`CreateUser`](crate::client::fluent_builders::CreateUser) operation.
     ///
-    /// See [`CreateUser`](crate::client::fluent_builders::CreateUser) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateUserInput`](crate::input::CreateUserInput) with field(s):
+    ///   - [`user_name(Option<String>)`](crate::input::CreateUserInput::user_name): <p>The name of the user. This value must be unique as it also serves as the user identifier.</p>
+    ///   - [`authentication_mode(Option<AuthenticationMode>)`](crate::input::CreateUserInput::authentication_mode): <p>Denotes the user's authentication properties, such as whether it requires a password to authenticate.</p>
+    ///   - [`access_string(Option<String>)`](crate::input::CreateUserInput::access_string): <p>Access permissions string used for this user.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateUserInput::tags): <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    /// - On success, responds with [`CreateUserOutput`](crate::output::CreateUserOutput) with field(s):
+    ///   - [`user(Option<User>)`](crate::output::CreateUserOutput::user): <p>The newly-created user.</p>
+    /// - On failure, responds with [`SdkError<CreateUserError>`](crate::error::CreateUserError)
     pub fn create_user(&self) -> fluent_builders::CreateUser<C, M, R> {
         fluent_builders::CreateUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteACL` operation.
+    /// Constructs a fluent builder for the [`DeleteACL`](crate::client::fluent_builders::DeleteACL) operation.
     ///
-    /// See [`DeleteACL`](crate::client::fluent_builders::DeleteACL) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteAclInput`](crate::input::DeleteAclInput) with field(s):
+    ///   - [`acl_name(Option<String>)`](crate::input::DeleteAclInput::acl_name): <p>The name of the Access Control List to delete</p>
+    /// - On success, responds with [`DeleteAclOutput`](crate::output::DeleteAclOutput) with field(s):
+    ///   - [`acl(Option<Acl>)`](crate::output::DeleteAclOutput::acl): <p>The Access Control List object that has been deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteACLError>`](crate::error::DeleteACLError)
     pub fn delete_acl(&self) -> fluent_builders::DeleteACL<C, M, R> {
         fluent_builders::DeleteACL::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteCluster` operation.
+    /// Constructs a fluent builder for the [`DeleteCluster`](crate::client::fluent_builders::DeleteCluster) operation.
     ///
-    /// See [`DeleteCluster`](crate::client::fluent_builders::DeleteCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteClusterInput`](crate::input::DeleteClusterInput) with field(s):
+    ///   - [`cluster_name(Option<String>)`](crate::input::DeleteClusterInput::cluster_name): <p>The name of the cluster to be deleted</p>
+    ///   - [`final_snapshot_name(Option<String>)`](crate::input::DeleteClusterInput::final_snapshot_name): <p>The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot. MemoryDB creates the snapshot, and then deletes the cluster immediately afterward.</p>
+    /// - On success, responds with [`DeleteClusterOutput`](crate::output::DeleteClusterOutput) with field(s):
+    ///   - [`cluster(Option<Cluster>)`](crate::output::DeleteClusterOutput::cluster): <p>The cluster object that has been deleted</p>
+    /// - On failure, responds with [`SdkError<DeleteClusterError>`](crate::error::DeleteClusterError)
     pub fn delete_cluster(&self) -> fluent_builders::DeleteCluster<C, M, R> {
         fluent_builders::DeleteCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteParameterGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteParameterGroup`](crate::client::fluent_builders::DeleteParameterGroup) operation.
     ///
-    /// See [`DeleteParameterGroup`](crate::client::fluent_builders::DeleteParameterGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteParameterGroupInput`](crate::input::DeleteParameterGroupInput) with field(s):
+    ///   - [`parameter_group_name(Option<String>)`](crate::input::DeleteParameterGroupInput::parameter_group_name): <p>The name of the parameter group to delete.</p>
+    /// - On success, responds with [`DeleteParameterGroupOutput`](crate::output::DeleteParameterGroupOutput) with field(s):
+    ///   - [`parameter_group(Option<ParameterGroup>)`](crate::output::DeleteParameterGroupOutput::parameter_group): <p>The parameter group that has been deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteParameterGroupError>`](crate::error::DeleteParameterGroupError)
     pub fn delete_parameter_group(&self) -> fluent_builders::DeleteParameterGroup<C, M, R> {
         fluent_builders::DeleteParameterGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteSnapshot` operation.
+    /// Constructs a fluent builder for the [`DeleteSnapshot`](crate::client::fluent_builders::DeleteSnapshot) operation.
     ///
-    /// See [`DeleteSnapshot`](crate::client::fluent_builders::DeleteSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteSnapshotInput`](crate::input::DeleteSnapshotInput) with field(s):
+    ///   - [`snapshot_name(Option<String>)`](crate::input::DeleteSnapshotInput::snapshot_name): <p>The name of the snapshot to delete</p>
+    /// - On success, responds with [`DeleteSnapshotOutput`](crate::output::DeleteSnapshotOutput) with field(s):
+    ///   - [`snapshot(Option<Snapshot>)`](crate::output::DeleteSnapshotOutput::snapshot): <p>The snapshot object that has been deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteSnapshotError>`](crate::error::DeleteSnapshotError)
     pub fn delete_snapshot(&self) -> fluent_builders::DeleteSnapshot<C, M, R> {
         fluent_builders::DeleteSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteSubnetGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteSubnetGroup`](crate::client::fluent_builders::DeleteSubnetGroup) operation.
     ///
-    /// See [`DeleteSubnetGroup`](crate::client::fluent_builders::DeleteSubnetGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteSubnetGroupInput`](crate::input::DeleteSubnetGroupInput) with field(s):
+    ///   - [`subnet_group_name(Option<String>)`](crate::input::DeleteSubnetGroupInput::subnet_group_name): <p>The name of the subnet group to delete</p>
+    /// - On success, responds with [`DeleteSubnetGroupOutput`](crate::output::DeleteSubnetGroupOutput) with field(s):
+    ///   - [`subnet_group(Option<SubnetGroup>)`](crate::output::DeleteSubnetGroupOutput::subnet_group): <p>The subnet group object that has been deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteSubnetGroupError>`](crate::error::DeleteSubnetGroupError)
     pub fn delete_subnet_group(&self) -> fluent_builders::DeleteSubnetGroup<C, M, R> {
         fluent_builders::DeleteSubnetGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteUser` operation.
+    /// Constructs a fluent builder for the [`DeleteUser`](crate::client::fluent_builders::DeleteUser) operation.
     ///
-    /// See [`DeleteUser`](crate::client::fluent_builders::DeleteUser) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteUserInput`](crate::input::DeleteUserInput) with field(s):
+    ///   - [`user_name(Option<String>)`](crate::input::DeleteUserInput::user_name): <p>The name of the user to delete</p>
+    /// - On success, responds with [`DeleteUserOutput`](crate::output::DeleteUserOutput) with field(s):
+    ///   - [`user(Option<User>)`](crate::output::DeleteUserOutput::user): <p>The user object that has been deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteUserError>`](crate::error::DeleteUserError)
     pub fn delete_user(&self) -> fluent_builders::DeleteUser<C, M, R> {
         fluent_builders::DeleteUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeACLs` operation.
+    /// Constructs a fluent builder for the [`DescribeACLs`](crate::client::fluent_builders::DescribeACLs) operation.
     ///
-    /// See [`DescribeACLs`](crate::client::fluent_builders::DescribeACLs) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeAcLsInput`](crate::input::DescribeAcLsInput) with field(s):
+    ///   - [`acl_name(Option<String>)`](crate::input::DescribeAcLsInput::acl_name): <p>The name of the ACL</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeAcLsInput::max_results): <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeAcLsInput::next_token): <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    /// - On success, responds with [`DescribeAcLsOutput`](crate::output::DescribeAcLsOutput) with field(s):
+    ///   - [`ac_ls(Option<Vec<Acl>>)`](crate::output::DescribeAcLsOutput::ac_ls): <p>The list of ACLs</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeAcLsOutput::next_token): <p>If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    /// - On failure, responds with [`SdkError<DescribeACLsError>`](crate::error::DescribeACLsError)
     pub fn describe_ac_ls(&self) -> fluent_builders::DescribeACLs<C, M, R> {
         fluent_builders::DescribeACLs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeClusters` operation.
+    /// Constructs a fluent builder for the [`DescribeClusters`](crate::client::fluent_builders::DescribeClusters) operation.
     ///
-    /// See [`DescribeClusters`](crate::client::fluent_builders::DescribeClusters) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeClustersInput`](crate::input::DescribeClustersInput) with field(s):
+    ///   - [`cluster_name(Option<String>)`](crate::input::DescribeClustersInput::cluster_name): <p>The name of the cluster</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeClustersInput::max_results): <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeClustersInput::next_token): <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    ///   - [`show_shard_details(Option<bool>)`](crate::input::DescribeClustersInput::show_shard_details): <p>An optional flag that can be included in the request to retrieve information about the individual shard(s).</p>
+    /// - On success, responds with [`DescribeClustersOutput`](crate::output::DescribeClustersOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeClustersOutput::next_token): <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    ///   - [`clusters(Option<Vec<Cluster>>)`](crate::output::DescribeClustersOutput::clusters): <p>A list of clusters</p>
+    /// - On failure, responds with [`SdkError<DescribeClustersError>`](crate::error::DescribeClustersError)
     pub fn describe_clusters(&self) -> fluent_builders::DescribeClusters<C, M, R> {
         fluent_builders::DescribeClusters::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEngineVersions` operation.
+    /// Constructs a fluent builder for the [`DescribeEngineVersions`](crate::client::fluent_builders::DescribeEngineVersions) operation.
     ///
-    /// See [`DescribeEngineVersions`](crate::client::fluent_builders::DescribeEngineVersions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeEngineVersionsInput`](crate::input::DescribeEngineVersionsInput) with field(s):
+    ///   - [`engine_version(Option<String>)`](crate::input::DescribeEngineVersionsInput::engine_version): <p>The Redis engine version</p>
+    ///   - [`parameter_group_family(Option<String>)`](crate::input::DescribeEngineVersionsInput::parameter_group_family): <p>The name of a specific parameter group family to return details for.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeEngineVersionsInput::max_results): <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeEngineVersionsInput::next_token): <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    ///   - [`default_only(bool)`](crate::input::DescribeEngineVersionsInput::default_only): <p>If true, specifies that only the default version of the specified engine or engine and major version combination is to be returned.</p>
+    /// - On success, responds with [`DescribeEngineVersionsOutput`](crate::output::DescribeEngineVersionsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeEngineVersionsOutput::next_token): <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    ///   - [`engine_versions(Option<Vec<EngineVersionInfo>>)`](crate::output::DescribeEngineVersionsOutput::engine_versions): <p>A list of engine version details. Each element in the list contains detailed information about one engine version.</p>
+    /// - On failure, responds with [`SdkError<DescribeEngineVersionsError>`](crate::error::DescribeEngineVersionsError)
     pub fn describe_engine_versions(&self) -> fluent_builders::DescribeEngineVersions<C, M, R> {
         fluent_builders::DescribeEngineVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEvents` operation.
+    /// Constructs a fluent builder for the [`DescribeEvents`](crate::client::fluent_builders::DescribeEvents) operation.
     ///
-    /// See [`DescribeEvents`](crate::client::fluent_builders::DescribeEvents) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeEventsInput`](crate::input::DescribeEventsInput) with field(s):
+    ///   - [`source_name(Option<String>)`](crate::input::DescribeEventsInput::source_name): <p>The identifier of the event source for which events are returned. If not specified, all sources are included in the response.</p>
+    ///   - [`source_type(Option<SourceType>)`](crate::input::DescribeEventsInput::source_type): <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
+    ///   - [`start_time(Option<DateTime>)`](crate::input::DescribeEventsInput::start_time): <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format. Example: 2017-03-30T07:03:49.555Z</p>
+    ///   - [`end_time(Option<DateTime>)`](crate::input::DescribeEventsInput::end_time): <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format. Example: 2017-03-30T07:03:49.555Z</p>
+    ///   - [`duration(Option<i32>)`](crate::input::DescribeEventsInput::duration): <p>The number of minutes worth of events to retrieve.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeEventsInput::max_results): <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeEventsInput::next_token): <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    /// - On success, responds with [`DescribeEventsOutput`](crate::output::DescribeEventsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeEventsOutput::next_token): <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    ///   - [`events(Option<Vec<Event>>)`](crate::output::DescribeEventsOutput::events): <p>A list of events. Each element in the list contains detailed information about one event.</p>
+    /// - On failure, responds with [`SdkError<DescribeEventsError>`](crate::error::DescribeEventsError)
     pub fn describe_events(&self) -> fluent_builders::DescribeEvents<C, M, R> {
         fluent_builders::DescribeEvents::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeParameterGroups` operation.
+    /// Constructs a fluent builder for the [`DescribeParameterGroups`](crate::client::fluent_builders::DescribeParameterGroups) operation.
     ///
-    /// See [`DescribeParameterGroups`](crate::client::fluent_builders::DescribeParameterGroups) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeParameterGroupsInput`](crate::input::DescribeParameterGroupsInput) with field(s):
+    ///   - [`parameter_group_name(Option<String>)`](crate::input::DescribeParameterGroupsInput::parameter_group_name): <p>The name of a specific parameter group to return details for.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeParameterGroupsInput::max_results): <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeParameterGroupsInput::next_token): <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    /// - On success, responds with [`DescribeParameterGroupsOutput`](crate::output::DescribeParameterGroupsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeParameterGroupsOutput::next_token): <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    ///   - [`parameter_groups(Option<Vec<ParameterGroup>>)`](crate::output::DescribeParameterGroupsOutput::parameter_groups): <p>A list of parameter groups. Each element in the list contains detailed information about one parameter group.</p>
+    /// - On failure, responds with [`SdkError<DescribeParameterGroupsError>`](crate::error::DescribeParameterGroupsError)
     pub fn describe_parameter_groups(&self) -> fluent_builders::DescribeParameterGroups<C, M, R> {
         fluent_builders::DescribeParameterGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeParameters` operation.
+    /// Constructs a fluent builder for the [`DescribeParameters`](crate::client::fluent_builders::DescribeParameters) operation.
     ///
-    /// See [`DescribeParameters`](crate::client::fluent_builders::DescribeParameters) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeParametersInput`](crate::input::DescribeParametersInput) with field(s):
+    ///   - [`parameter_group_name(Option<String>)`](crate::input::DescribeParametersInput::parameter_group_name): <p>he name of a specific parameter group to return details for.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeParametersInput::max_results): <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeParametersInput::next_token): <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    /// - On success, responds with [`DescribeParametersOutput`](crate::output::DescribeParametersOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeParametersOutput::next_token): <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    ///   - [`parameters(Option<Vec<Parameter>>)`](crate::output::DescribeParametersOutput::parameters): <p>A list of parameters specific to a particular parameter group. Each element in the list contains detailed information about one parameter.</p>
+    /// - On failure, responds with [`SdkError<DescribeParametersError>`](crate::error::DescribeParametersError)
     pub fn describe_parameters(&self) -> fluent_builders::DescribeParameters<C, M, R> {
         fluent_builders::DescribeParameters::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeServiceUpdates` operation.
+    /// Constructs a fluent builder for the [`DescribeServiceUpdates`](crate::client::fluent_builders::DescribeServiceUpdates) operation.
     ///
-    /// See [`DescribeServiceUpdates`](crate::client::fluent_builders::DescribeServiceUpdates) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeServiceUpdatesInput`](crate::input::DescribeServiceUpdatesInput) with field(s):
+    ///   - [`service_update_name(Option<String>)`](crate::input::DescribeServiceUpdatesInput::service_update_name): <p>The unique ID of the service update to describe.</p>
+    ///   - [`cluster_names(Option<Vec<String>>)`](crate::input::DescribeServiceUpdatesInput::cluster_names): <p>The list of cluster names to identify service updates to apply</p>
+    ///   - [`status(Option<Vec<ServiceUpdateStatus>>)`](crate::input::DescribeServiceUpdatesInput::status): <p>The status(es) of the service updates to filter on</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeServiceUpdatesInput::max_results): <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeServiceUpdatesInput::next_token): <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    /// - On success, responds with [`DescribeServiceUpdatesOutput`](crate::output::DescribeServiceUpdatesOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeServiceUpdatesOutput::next_token): <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    ///   - [`service_updates(Option<Vec<ServiceUpdate>>)`](crate::output::DescribeServiceUpdatesOutput::service_updates): <p>A list of service updates</p>
+    /// - On failure, responds with [`SdkError<DescribeServiceUpdatesError>`](crate::error::DescribeServiceUpdatesError)
     pub fn describe_service_updates(&self) -> fluent_builders::DescribeServiceUpdates<C, M, R> {
         fluent_builders::DescribeServiceUpdates::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeSnapshots` operation.
+    /// Constructs a fluent builder for the [`DescribeSnapshots`](crate::client::fluent_builders::DescribeSnapshots) operation.
     ///
-    /// See [`DescribeSnapshots`](crate::client::fluent_builders::DescribeSnapshots) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeSnapshotsInput`](crate::input::DescribeSnapshotsInput) with field(s):
+    ///   - [`cluster_name(Option<String>)`](crate::input::DescribeSnapshotsInput::cluster_name): <p>A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific cluster are described.</p>
+    ///   - [`snapshot_name(Option<String>)`](crate::input::DescribeSnapshotsInput::snapshot_name): <p>A user-supplied name of the snapshot. If this parameter is specified, only this named snapshot is described.</p>
+    ///   - [`source(Option<String>)`](crate::input::DescribeSnapshotsInput::source): <p>If set to system, the output shows snapshots that were automatically created by MemoryDB. If set to user the output shows snapshots that were manually created. If omitted, the output shows both automatically and manually created snapshots.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeSnapshotsInput::next_token): <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeSnapshotsInput::max_results): <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
+    ///   - [`show_detail(Option<bool>)`](crate::input::DescribeSnapshotsInput::show_detail): <p>A Boolean value which if true, the shard configuration is included in the snapshot description.</p>
+    /// - On success, responds with [`DescribeSnapshotsOutput`](crate::output::DescribeSnapshotsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeSnapshotsOutput::next_token): <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    ///   - [`snapshots(Option<Vec<Snapshot>>)`](crate::output::DescribeSnapshotsOutput::snapshots): <p>A list of snapshots. Each item in the list contains detailed information about one snapshot.</p>
+    /// - On failure, responds with [`SdkError<DescribeSnapshotsError>`](crate::error::DescribeSnapshotsError)
     pub fn describe_snapshots(&self) -> fluent_builders::DescribeSnapshots<C, M, R> {
         fluent_builders::DescribeSnapshots::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeSubnetGroups` operation.
+    /// Constructs a fluent builder for the [`DescribeSubnetGroups`](crate::client::fluent_builders::DescribeSubnetGroups) operation.
     ///
-    /// See [`DescribeSubnetGroups`](crate::client::fluent_builders::DescribeSubnetGroups) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeSubnetGroupsInput`](crate::input::DescribeSubnetGroupsInput) with field(s):
+    ///   - [`subnet_group_name(Option<String>)`](crate::input::DescribeSubnetGroupsInput::subnet_group_name): <p>The name of the subnet group to return details for.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeSubnetGroupsInput::max_results): <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeSubnetGroupsInput::next_token): <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    /// - On success, responds with [`DescribeSubnetGroupsOutput`](crate::output::DescribeSubnetGroupsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeSubnetGroupsOutput::next_token): <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    ///   - [`subnet_groups(Option<Vec<SubnetGroup>>)`](crate::output::DescribeSubnetGroupsOutput::subnet_groups): <p>A list of subnet groups. Each element in the list contains detailed information about one group.</p>
+    /// - On failure, responds with [`SdkError<DescribeSubnetGroupsError>`](crate::error::DescribeSubnetGroupsError)
     pub fn describe_subnet_groups(&self) -> fluent_builders::DescribeSubnetGroups<C, M, R> {
         fluent_builders::DescribeSubnetGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeUsers` operation.
+    /// Constructs a fluent builder for the [`DescribeUsers`](crate::client::fluent_builders::DescribeUsers) operation.
     ///
-    /// See [`DescribeUsers`](crate::client::fluent_builders::DescribeUsers) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeUsersInput`](crate::input::DescribeUsersInput) with field(s):
+    ///   - [`user_name(Option<String>)`](crate::input::DescribeUsersInput::user_name): <p>The name of the user</p>
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::DescribeUsersInput::filters): <p>Filter to determine the list of users to return.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeUsersInput::max_results): <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeUsersInput::next_token): <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    /// - On success, responds with [`DescribeUsersOutput`](crate::output::DescribeUsersOutput) with field(s):
+    ///   - [`users(Option<Vec<User>>)`](crate::output::DescribeUsersOutput::users): <p>A list of users.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeUsersOutput::next_token): <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    /// - On failure, responds with [`SdkError<DescribeUsersError>`](crate::error::DescribeUsersError)
     pub fn describe_users(&self) -> fluent_builders::DescribeUsers<C, M, R> {
         fluent_builders::DescribeUsers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `FailoverShard` operation.
+    /// Constructs a fluent builder for the [`FailoverShard`](crate::client::fluent_builders::FailoverShard) operation.
     ///
-    /// See [`FailoverShard`](crate::client::fluent_builders::FailoverShard) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`FailoverShardInput`](crate::input::FailoverShardInput) with field(s):
+    ///   - [`cluster_name(Option<String>)`](crate::input::FailoverShardInput::cluster_name): <p>The cluster being failed over</p>
+    ///   - [`shard_name(Option<String>)`](crate::input::FailoverShardInput::shard_name): <p>The name of the shard</p>
+    /// - On success, responds with [`FailoverShardOutput`](crate::output::FailoverShardOutput) with field(s):
+    ///   - [`cluster(Option<Cluster>)`](crate::output::FailoverShardOutput::cluster): <p>The cluster being failed over</p>
+    /// - On failure, responds with [`SdkError<FailoverShardError>`](crate::error::FailoverShardError)
     pub fn failover_shard(&self) -> fluent_builders::FailoverShard<C, M, R> {
         fluent_builders::FailoverShard::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAllowedNodeTypeUpdates` operation.
+    /// Constructs a fluent builder for the [`ListAllowedNodeTypeUpdates`](crate::client::fluent_builders::ListAllowedNodeTypeUpdates) operation.
     ///
-    /// See [`ListAllowedNodeTypeUpdates`](crate::client::fluent_builders::ListAllowedNodeTypeUpdates) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListAllowedNodeTypeUpdatesInput`](crate::input::ListAllowedNodeTypeUpdatesInput) with field(s):
+    ///   - [`cluster_name(Option<String>)`](crate::input::ListAllowedNodeTypeUpdatesInput::cluster_name): <p>The name of the cluster you want to scale. MemoryDB uses the cluster name to identify the current node type being used by this cluster, and from that to create a list of node types you can scale up to.</p>
+    /// - On success, responds with [`ListAllowedNodeTypeUpdatesOutput`](crate::output::ListAllowedNodeTypeUpdatesOutput) with field(s):
+    ///   - [`scale_up_node_types(Option<Vec<String>>)`](crate::output::ListAllowedNodeTypeUpdatesOutput::scale_up_node_types): <p>A list node types which you can use to scale up your cluster.</p>
+    ///   - [`scale_down_node_types(Option<Vec<String>>)`](crate::output::ListAllowedNodeTypeUpdatesOutput::scale_down_node_types): <p>A list node types which you can use to scale down your cluster.</p>
+    /// - On failure, responds with [`SdkError<ListAllowedNodeTypeUpdatesError>`](crate::error::ListAllowedNodeTypeUpdatesError)
     pub fn list_allowed_node_type_updates(
         &self,
     ) -> fluent_builders::ListAllowedNodeTypeUpdates<C, M, R> {
         fluent_builders::ListAllowedNodeTypeUpdates::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTags` operation.
+    /// Constructs a fluent builder for the [`ListTags`](crate::client::fluent_builders::ListTags) operation.
     ///
-    /// See [`ListTags`](crate::client::fluent_builders::ListTags) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsInput`](crate::input::ListTagsInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource for which you want the list of tags</p>
+    /// - On success, responds with [`ListTagsOutput`](crate::output::ListTagsOutput) with field(s):
+    ///   - [`tag_list(Option<Vec<Tag>>)`](crate::output::ListTagsOutput::tag_list): <p>A list of tags as key-value pairs.</p>
+    /// - On failure, responds with [`SdkError<ListTagsError>`](crate::error::ListTagsError)
     pub fn list_tags(&self) -> fluent_builders::ListTags<C, M, R> {
         fluent_builders::ListTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ResetParameterGroup` operation.
+    /// Constructs a fluent builder for the [`ResetParameterGroup`](crate::client::fluent_builders::ResetParameterGroup) operation.
     ///
-    /// See [`ResetParameterGroup`](crate::client::fluent_builders::ResetParameterGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ResetParameterGroupInput`](crate::input::ResetParameterGroupInput) with field(s):
+    ///   - [`parameter_group_name(Option<String>)`](crate::input::ResetParameterGroupInput::parameter_group_name): <p>The name of the parameter group to reset.</p>
+    ///   - [`all_parameters(bool)`](crate::input::ResetParameterGroupInput::all_parameters): <p>If true, all parameters in the parameter group are reset to their default values. If false, only the parameters listed by ParameterNames are reset to their default values.</p>
+    ///   - [`parameter_names(Option<Vec<String>>)`](crate::input::ResetParameterGroupInput::parameter_names): <p>An array of parameter names to reset to their default values. If AllParameters is true, do not use ParameterNames. If AllParameters is false, you must specify the name of at least one parameter to reset.</p>
+    /// - On success, responds with [`ResetParameterGroupOutput`](crate::output::ResetParameterGroupOutput) with field(s):
+    ///   - [`parameter_group(Option<ParameterGroup>)`](crate::output::ResetParameterGroupOutput::parameter_group): <p>The parameter group being reset.</p>
+    /// - On failure, responds with [`SdkError<ResetParameterGroupError>`](crate::error::ResetParameterGroupError)
     pub fn reset_parameter_group(&self) -> fluent_builders::ResetParameterGroup<C, M, R> {
         fluent_builders::ResetParameterGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource to which the tags are to be added</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput) with field(s):
+    ///   - [`tag_list(Option<Vec<Tag>>)`](crate::output::TagResourceOutput::tag_list): <p>A list of tags as key-value pairs.</p>
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource to which the tags are to be removed</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The list of keys of the tags that are to be removed</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput) with field(s):
+    ///   - [`tag_list(Option<Vec<Tag>>)`](crate::output::UntagResourceOutput::tag_list): <p>The list of tags removed</p>
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateACL` operation.
+    /// Constructs a fluent builder for the [`UpdateACL`](crate::client::fluent_builders::UpdateACL) operation.
     ///
-    /// See [`UpdateACL`](crate::client::fluent_builders::UpdateACL) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateAclInput`](crate::input::UpdateAclInput) with field(s):
+    ///   - [`acl_name(Option<String>)`](crate::input::UpdateAclInput::acl_name): <p>The name of the Access Control List</p>
+    ///   - [`user_names_to_add(Option<Vec<String>>)`](crate::input::UpdateAclInput::user_names_to_add): <p>The list of users to add to the Access Control List</p>
+    ///   - [`user_names_to_remove(Option<Vec<String>>)`](crate::input::UpdateAclInput::user_names_to_remove): <p>The list of users to remove from the Access Control List</p>
+    /// - On success, responds with [`UpdateAclOutput`](crate::output::UpdateAclOutput) with field(s):
+    ///   - [`acl(Option<Acl>)`](crate::output::UpdateAclOutput::acl): <p>The updated Access Control List</p>
+    /// - On failure, responds with [`SdkError<UpdateACLError>`](crate::error::UpdateACLError)
     pub fn update_acl(&self) -> fluent_builders::UpdateACL<C, M, R> {
         fluent_builders::UpdateACL::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateCluster` operation.
+    /// Constructs a fluent builder for the [`UpdateCluster`](crate::client::fluent_builders::UpdateCluster) operation.
     ///
-    /// See [`UpdateCluster`](crate::client::fluent_builders::UpdateCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateClusterInput`](crate::input::UpdateClusterInput) with field(s):
+    ///   - [`cluster_name(Option<String>)`](crate::input::UpdateClusterInput::cluster_name): <p>The name of the cluster to update</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateClusterInput::description): <p>The description of the cluster to update</p>
+    ///   - [`security_group_ids(Option<Vec<String>>)`](crate::input::UpdateClusterInput::security_group_ids): <p>The SecurityGroupIds to update</p>
+    ///   - [`maintenance_window(Option<String>)`](crate::input::UpdateClusterInput::maintenance_window): <p>The maintenance window to update</p>
+    ///   - [`sns_topic_arn(Option<String>)`](crate::input::UpdateClusterInput::sns_topic_arn): <p>The SNS topic ARN to update</p>
+    ///   - [`sns_topic_status(Option<String>)`](crate::input::UpdateClusterInput::sns_topic_status): <p>The status of the Amazon SNS notification topic. Notifications are sent only if the status is active.</p>
+    ///   - [`parameter_group_name(Option<String>)`](crate::input::UpdateClusterInput::parameter_group_name): <p>The name of the parameter group to update</p>
+    ///   - [`snapshot_window(Option<String>)`](crate::input::UpdateClusterInput::snapshot_window): <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your cluster.</p>
+    ///   - [`snapshot_retention_limit(Option<i32>)`](crate::input::UpdateClusterInput::snapshot_retention_limit): <p>The number of days for which MemoryDB retains automatic cluster snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
+    ///   - [`node_type(Option<String>)`](crate::input::UpdateClusterInput::node_type): <p>A valid node type that you want to scale this cluster up or down to.</p>
+    ///   - [`engine_version(Option<String>)`](crate::input::UpdateClusterInput::engine_version): <p>The upgraded version of the engine to be run on the nodes. You can upgrade to a newer engine version, but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version.</p>
+    ///   - [`replica_configuration(Option<ReplicaConfigurationRequest>)`](crate::input::UpdateClusterInput::replica_configuration): <p>The number of replicas that will reside in each shard</p>
+    ///   - [`shard_configuration(Option<ShardConfigurationRequest>)`](crate::input::UpdateClusterInput::shard_configuration): <p>The number of shards in the cluster</p>
+    ///   - [`acl_name(Option<String>)`](crate::input::UpdateClusterInput::acl_name): <p>The Access Control List that is associated with the cluster</p>
+    /// - On success, responds with [`UpdateClusterOutput`](crate::output::UpdateClusterOutput) with field(s):
+    ///   - [`cluster(Option<Cluster>)`](crate::output::UpdateClusterOutput::cluster): <p>The updated cluster</p>
+    /// - On failure, responds with [`SdkError<UpdateClusterError>`](crate::error::UpdateClusterError)
     pub fn update_cluster(&self) -> fluent_builders::UpdateCluster<C, M, R> {
         fluent_builders::UpdateCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateParameterGroup` operation.
+    /// Constructs a fluent builder for the [`UpdateParameterGroup`](crate::client::fluent_builders::UpdateParameterGroup) operation.
     ///
-    /// See [`UpdateParameterGroup`](crate::client::fluent_builders::UpdateParameterGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateParameterGroupInput`](crate::input::UpdateParameterGroupInput) with field(s):
+    ///   - [`parameter_group_name(Option<String>)`](crate::input::UpdateParameterGroupInput::parameter_group_name): <p>The name of the parameter group to update.</p>
+    ///   - [`parameter_name_values(Option<Vec<ParameterNameValue>>)`](crate::input::UpdateParameterGroupInput::parameter_name_values): <p>An array of parameter names and values for the parameter update. You must supply at least one parameter name and value; subsequent arguments are optional. A maximum of 20 parameters may be updated per request.</p>
+    /// - On success, responds with [`UpdateParameterGroupOutput`](crate::output::UpdateParameterGroupOutput) with field(s):
+    ///   - [`parameter_group(Option<ParameterGroup>)`](crate::output::UpdateParameterGroupOutput::parameter_group): <p>The updated parameter group</p>
+    /// - On failure, responds with [`SdkError<UpdateParameterGroupError>`](crate::error::UpdateParameterGroupError)
     pub fn update_parameter_group(&self) -> fluent_builders::UpdateParameterGroup<C, M, R> {
         fluent_builders::UpdateParameterGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateSubnetGroup` operation.
+    /// Constructs a fluent builder for the [`UpdateSubnetGroup`](crate::client::fluent_builders::UpdateSubnetGroup) operation.
     ///
-    /// See [`UpdateSubnetGroup`](crate::client::fluent_builders::UpdateSubnetGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateSubnetGroupInput`](crate::input::UpdateSubnetGroupInput) with field(s):
+    ///   - [`subnet_group_name(Option<String>)`](crate::input::UpdateSubnetGroupInput::subnet_group_name): <p>The name of the subnet group</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateSubnetGroupInput::description): <p>A description of the subnet group</p>
+    ///   - [`subnet_ids(Option<Vec<String>>)`](crate::input::UpdateSubnetGroupInput::subnet_ids): <p>The EC2 subnet IDs for the subnet group.</p>
+    /// - On success, responds with [`UpdateSubnetGroupOutput`](crate::output::UpdateSubnetGroupOutput) with field(s):
+    ///   - [`subnet_group(Option<SubnetGroup>)`](crate::output::UpdateSubnetGroupOutput::subnet_group): <p>The updated subnet group</p>
+    /// - On failure, responds with [`SdkError<UpdateSubnetGroupError>`](crate::error::UpdateSubnetGroupError)
     pub fn update_subnet_group(&self) -> fluent_builders::UpdateSubnetGroup<C, M, R> {
         fluent_builders::UpdateSubnetGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateUser` operation.
+    /// Constructs a fluent builder for the [`UpdateUser`](crate::client::fluent_builders::UpdateUser) operation.
     ///
-    /// See [`UpdateUser`](crate::client::fluent_builders::UpdateUser) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateUserInput`](crate::input::UpdateUserInput) with field(s):
+    ///   - [`user_name(Option<String>)`](crate::input::UpdateUserInput::user_name): <p>The name of the user</p>
+    ///   - [`authentication_mode(Option<AuthenticationMode>)`](crate::input::UpdateUserInput::authentication_mode): <p>Denotes the user's authentication properties, such as whether it requires a password to authenticate.</p>
+    ///   - [`access_string(Option<String>)`](crate::input::UpdateUserInput::access_string): <p>Access permissions string used for this user.</p>
+    /// - On success, responds with [`UpdateUserOutput`](crate::output::UpdateUserOutput) with field(s):
+    ///   - [`user(Option<User>)`](crate::output::UpdateUserOutput::user): <p>The updated user</p>
+    /// - On failure, responds with [`SdkError<UpdateUserError>`](crate::error::UpdateUserError)
     pub fn update_user(&self) -> fluent_builders::UpdateUser<C, M, R> {
         fluent_builders::UpdateUser::new(self.handle.clone())
     }

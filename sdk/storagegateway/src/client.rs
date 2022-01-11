@@ -83,694 +83,1265 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `ActivateGateway` operation.
+    /// Constructs a fluent builder for the [`ActivateGateway`](crate::client::fluent_builders::ActivateGateway) operation.
     ///
-    /// See [`ActivateGateway`](crate::client::fluent_builders::ActivateGateway) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ActivateGatewayInput`](crate::input::ActivateGatewayInput) with field(s):
+    ///   - [`activation_key(Option<String>)`](crate::input::ActivateGatewayInput::activation_key): <p>Your gateway activation key. You can obtain the activation key by sending an HTTP GET request with redirects enabled to the gateway IP address (port 80). The redirect URL returned in the response provides you the activation key for your gateway in the query string parameter <code>activationKey</code>. It may also include other activation-related parameters, however, these are merely defaults -- the arguments you pass to the <code>ActivateGateway</code> API call determine the actual configuration of your gateway.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html">Getting activation key</a> in the <i>Storage Gateway User Guide</i>.</p>
+    ///   - [`gateway_name(Option<String>)`](crate::input::ActivateGatewayInput::gateway_name): <p>The name you configured for your gateway.</p>
+    ///   - [`gateway_timezone(Option<String>)`](crate::input::ActivateGatewayInput::gateway_timezone): <p>A value that indicates the time zone you want to set for the gateway. The time zone is of the format "GMT-hr:mm" or "GMT+hr:mm". For example, GMT-4:00 indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours ahead of GMT. The time zone is used, for example, for scheduling snapshots and your gateway's maintenance schedule.</p>
+    ///   - [`gateway_region(Option<String>)`](crate::input::ActivateGatewayInput::gateway_region): <p>A value that indicates the Amazon Web Services Region where you want to store your data. The gateway Amazon Web Services Region specified must be the same Amazon Web Services Region as the Amazon Web Services Region in your <code>Host</code> header in the request. For more information about available Amazon Web Services Regions and endpoints for Storage Gateway, see <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>  <p>Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html"> Storage Gateway endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>. </p>
+    ///   - [`gateway_type(Option<String>)`](crate::input::ActivateGatewayInput::gateway_type): <p>A value that defines the type of gateway to activate. The type specified is critical to all later functions of the gateway and cannot be changed after activation. The default value is <code>CACHED</code>.</p>  <p>Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>VTL_SNOW</code> | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> </p>
+    ///   - [`tape_drive_type(Option<String>)`](crate::input::ActivateGatewayInput::tape_drive_type): <p>The value that indicates the type of tape drive to use for tape gateway. This field is optional.</p>  <p>Valid Values: <code>IBM-ULT3580-TD5</code> </p>
+    ///   - [`medium_changer_type(Option<String>)`](crate::input::ActivateGatewayInput::medium_changer_type): <p>The value that indicates the type of medium changer to use for tape gateway. This field is optional.</p>  <p>Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code> </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::ActivateGatewayInput::tags): <p>A list of up to 50 tags that you can assign to the gateway. Each tag is a key-value pair.</p> <note>   <p>Valid characters for key and value are letters, spaces, and numbers that can be represented in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256 characters.</p>  </note>
+    /// - On success, responds with [`ActivateGatewayOutput`](crate::output::ActivateGatewayOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::ActivateGatewayOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On failure, responds with [`SdkError<ActivateGatewayError>`](crate::error::ActivateGatewayError)
     pub fn activate_gateway(&self) -> fluent_builders::ActivateGateway<C, M, R> {
         fluent_builders::ActivateGateway::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AddCache` operation.
+    /// Constructs a fluent builder for the [`AddCache`](crate::client::fluent_builders::AddCache) operation.
     ///
-    /// See [`AddCache`](crate::client::fluent_builders::AddCache) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AddCacheInput`](crate::input::AddCacheInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::AddCacheInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`disk_ids(Option<Vec<String>>)`](crate::input::AddCacheInput::disk_ids): <p>An array of strings that identify disks that are to be configured as working storage. Each string has a minimum length of 1 and maximum length of 300. You can get the disk IDs from the <code>ListLocalDisks</code> API.</p>
+    /// - On success, responds with [`AddCacheOutput`](crate::output::AddCacheOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::AddCacheOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On failure, responds with [`SdkError<AddCacheError>`](crate::error::AddCacheError)
     pub fn add_cache(&self) -> fluent_builders::AddCache<C, M, R> {
         fluent_builders::AddCache::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AddTagsToResource` operation.
+    /// Constructs a fluent builder for the [`AddTagsToResource`](crate::client::fluent_builders::AddTagsToResource) operation.
     ///
-    /// See [`AddTagsToResource`](crate::client::fluent_builders::AddTagsToResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AddTagsToResourceInput`](crate::input::AddTagsToResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::AddTagsToResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource you want to add tags to.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::AddTagsToResourceInput::tags): <p>The key-value pair that represents the tag you want to add to the resource. The value can be an empty string.</p> <note>   <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>  </note>
+    /// - On success, responds with [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::output::AddTagsToResourceOutput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource you want to add tags to.</p>
+    /// - On failure, responds with [`SdkError<AddTagsToResourceError>`](crate::error::AddTagsToResourceError)
     pub fn add_tags_to_resource(&self) -> fluent_builders::AddTagsToResource<C, M, R> {
         fluent_builders::AddTagsToResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AddUploadBuffer` operation.
+    /// Constructs a fluent builder for the [`AddUploadBuffer`](crate::client::fluent_builders::AddUploadBuffer) operation.
     ///
-    /// See [`AddUploadBuffer`](crate::client::fluent_builders::AddUploadBuffer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AddUploadBufferInput`](crate::input::AddUploadBufferInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::AddUploadBufferInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`disk_ids(Option<Vec<String>>)`](crate::input::AddUploadBufferInput::disk_ids): <p>An array of strings that identify disks that are to be configured as working storage. Each string has a minimum length of 1 and maximum length of 300. You can get the disk IDs from the <code>ListLocalDisks</code> API.</p>
+    /// - On success, responds with [`AddUploadBufferOutput`](crate::output::AddUploadBufferOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::AddUploadBufferOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On failure, responds with [`SdkError<AddUploadBufferError>`](crate::error::AddUploadBufferError)
     pub fn add_upload_buffer(&self) -> fluent_builders::AddUploadBuffer<C, M, R> {
         fluent_builders::AddUploadBuffer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AddWorkingStorage` operation.
+    /// Constructs a fluent builder for the [`AddWorkingStorage`](crate::client::fluent_builders::AddWorkingStorage) operation.
     ///
-    /// See [`AddWorkingStorage`](crate::client::fluent_builders::AddWorkingStorage) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AddWorkingStorageInput`](crate::input::AddWorkingStorageInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::AddWorkingStorageInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`disk_ids(Option<Vec<String>>)`](crate::input::AddWorkingStorageInput::disk_ids): <p>An array of strings that identify disks that are to be configured as working storage. Each string has a minimum length of 1 and maximum length of 300. You can get the disk IDs from the <code>ListLocalDisks</code> API.</p>
+    /// - On success, responds with [`AddWorkingStorageOutput`](crate::output::AddWorkingStorageOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::AddWorkingStorageOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On failure, responds with [`SdkError<AddWorkingStorageError>`](crate::error::AddWorkingStorageError)
     pub fn add_working_storage(&self) -> fluent_builders::AddWorkingStorage<C, M, R> {
         fluent_builders::AddWorkingStorage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssignTapePool` operation.
+    /// Constructs a fluent builder for the [`AssignTapePool`](crate::client::fluent_builders::AssignTapePool) operation.
     ///
-    /// See [`AssignTapePool`](crate::client::fluent_builders::AssignTapePool) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssignTapePoolInput`](crate::input::AssignTapePoolInput) with field(s):
+    ///   - [`tape_arn(Option<String>)`](crate::input::AssignTapePoolInput::tape_arn): <p>The unique Amazon Resource Name (ARN) of the virtual tape that you want to add to the tape pool.</p>
+    ///   - [`pool_id(Option<String>)`](crate::input::AssignTapePoolInput::pool_id): <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>  <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> </p>
+    ///   - [`bypass_governance_retention(bool)`](crate::input::AssignTapePoolInput::bypass_governance_retention): <p>Set permissions to bypass governance retention. If the lock type of the archived tape is <code>Governance</code>, the tape's archived age is not older than <code>RetentionLockInDays</code>, and the user does not already have <code>BypassGovernanceRetention</code>, setting this to TRUE enables the user to bypass the retention lock. This parameter is set to true by default for calls from the console.</p>  <p>Valid values: <code>TRUE</code> | <code>FALSE</code> </p>
+    /// - On success, responds with [`AssignTapePoolOutput`](crate::output::AssignTapePoolOutput) with field(s):
+    ///   - [`tape_arn(Option<String>)`](crate::output::AssignTapePoolOutput::tape_arn): <p>The unique Amazon Resource Names (ARN) of the virtual tape that was added to the tape pool.</p>
+    /// - On failure, responds with [`SdkError<AssignTapePoolError>`](crate::error::AssignTapePoolError)
     pub fn assign_tape_pool(&self) -> fluent_builders::AssignTapePool<C, M, R> {
         fluent_builders::AssignTapePool::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateFileSystem` operation.
+    /// Constructs a fluent builder for the [`AssociateFileSystem`](crate::client::fluent_builders::AssociateFileSystem) operation.
     ///
-    /// See [`AssociateFileSystem`](crate::client::fluent_builders::AssociateFileSystem) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateFileSystemInput`](crate::input::AssociateFileSystemInput) with field(s):
+    ///   - [`user_name(Option<String>)`](crate::input::AssociateFileSystemInput::user_name): <p>The user name of the user credential that has permission to access the root share D$ of the Amazon FSx file system. The user account must belong to the Amazon FSx delegated admin user group.</p>
+    ///   - [`password(Option<String>)`](crate::input::AssociateFileSystemInput::password): <p>The password of the user credential.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::AssociateFileSystemInput::client_token): <p>A unique string value that you supply that is used by the FSx File Gateway to ensure idempotent file system association creation.</p>
+    ///   - [`gateway_arn(Option<String>)`](crate::input::AssociateFileSystemInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`location_arn(Option<String>)`](crate::input::AssociateFileSystemInput::location_arn): <p>The Amazon Resource Name (ARN) of the Amazon FSx file system to associate with the FSx File Gateway.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::AssociateFileSystemInput::tags): <p>A list of up to 50 tags that can be assigned to the file system association. Each tag is a key-value pair.</p>
+    ///   - [`audit_destination_arn(Option<String>)`](crate::input::AssociateFileSystemInput::audit_destination_arn): <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
+    ///   - [`cache_attributes(Option<CacheAttributes>)`](crate::input::AssociateFileSystemInput::cache_attributes): <p>The refresh cache information for the file share or FSx file systems.</p>
+    ///   - [`endpoint_network_configuration(Option<EndpointNetworkConfiguration>)`](crate::input::AssociateFileSystemInput::endpoint_network_configuration): <p>Specifies the network configuration information for the gateway associated with the Amazon FSx file system.</p> <note>   <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code> field is required.</p>  </note>
+    /// - On success, responds with [`AssociateFileSystemOutput`](crate::output::AssociateFileSystemOutput) with field(s):
+    ///   - [`file_system_association_arn(Option<String>)`](crate::output::AssociateFileSystemOutput::file_system_association_arn): <p>The ARN of the newly created file system association.</p>
+    /// - On failure, responds with [`SdkError<AssociateFileSystemError>`](crate::error::AssociateFileSystemError)
     pub fn associate_file_system(&self) -> fluent_builders::AssociateFileSystem<C, M, R> {
         fluent_builders::AssociateFileSystem::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AttachVolume` operation.
+    /// Constructs a fluent builder for the [`AttachVolume`](crate::client::fluent_builders::AttachVolume) operation.
     ///
-    /// See [`AttachVolume`](crate::client::fluent_builders::AttachVolume) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AttachVolumeInput`](crate::input::AttachVolumeInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::AttachVolumeInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway that you want to attach the volume to.</p>
+    ///   - [`target_name(Option<String>)`](crate::input::AttachVolumeInput::target_name): <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p>  <p>If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new target name.</p>
+    ///   - [`volume_arn(Option<String>)`](crate::input::AttachVolumeInput::volume_arn): <p>The Amazon Resource Name (ARN) of the volume to attach to the specified gateway.</p>
+    ///   - [`network_interface_id(Option<String>)`](crate::input::AttachVolumeInput::network_interface_id): <p>The network interface of the gateway on which to expose the iSCSI target. Only IPv4 addresses are accepted. Use <code>DescribeGatewayInformation</code> to get a list of the network interfaces available on a gateway.</p>  <p>Valid Values: A valid IP address.</p>
+    ///   - [`disk_id(Option<String>)`](crate::input::AttachVolumeInput::disk_id): <p>The unique device ID or other distinguishing data that identifies the local disk used to create the volume. This value is only required when you are attaching a stored volume.</p>
+    /// - On success, responds with [`AttachVolumeOutput`](crate::output::AttachVolumeOutput) with field(s):
+    ///   - [`volume_arn(Option<String>)`](crate::output::AttachVolumeOutput::volume_arn): <p>The Amazon Resource Name (ARN) of the volume that was attached to the gateway.</p>
+    ///   - [`target_arn(Option<String>)`](crate::output::AttachVolumeOutput::target_arn): <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI name for the initiator that was used to connect to the target.</p>
+    /// - On failure, responds with [`SdkError<AttachVolumeError>`](crate::error::AttachVolumeError)
     pub fn attach_volume(&self) -> fluent_builders::AttachVolume<C, M, R> {
         fluent_builders::AttachVolume::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CancelArchival` operation.
+    /// Constructs a fluent builder for the [`CancelArchival`](crate::client::fluent_builders::CancelArchival) operation.
     ///
-    /// See [`CancelArchival`](crate::client::fluent_builders::CancelArchival) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CancelArchivalInput`](crate::input::CancelArchivalInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::CancelArchivalInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`tape_arn(Option<String>)`](crate::input::CancelArchivalInput::tape_arn): <p>The Amazon Resource Name (ARN) of the virtual tape you want to cancel archiving for.</p>
+    /// - On success, responds with [`CancelArchivalOutput`](crate::output::CancelArchivalOutput) with field(s):
+    ///   - [`tape_arn(Option<String>)`](crate::output::CancelArchivalOutput::tape_arn): <p>The Amazon Resource Name (ARN) of the virtual tape for which archiving was canceled.</p>
+    /// - On failure, responds with [`SdkError<CancelArchivalError>`](crate::error::CancelArchivalError)
     pub fn cancel_archival(&self) -> fluent_builders::CancelArchival<C, M, R> {
         fluent_builders::CancelArchival::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CancelRetrieval` operation.
+    /// Constructs a fluent builder for the [`CancelRetrieval`](crate::client::fluent_builders::CancelRetrieval) operation.
     ///
-    /// See [`CancelRetrieval`](crate::client::fluent_builders::CancelRetrieval) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CancelRetrievalInput`](crate::input::CancelRetrievalInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::CancelRetrievalInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`tape_arn(Option<String>)`](crate::input::CancelRetrievalInput::tape_arn): <p>The Amazon Resource Name (ARN) of the virtual tape you want to cancel retrieval for.</p>
+    /// - On success, responds with [`CancelRetrievalOutput`](crate::output::CancelRetrievalOutput) with field(s):
+    ///   - [`tape_arn(Option<String>)`](crate::output::CancelRetrievalOutput::tape_arn): <p>The Amazon Resource Name (ARN) of the virtual tape for which retrieval was canceled.</p>
+    /// - On failure, responds with [`SdkError<CancelRetrievalError>`](crate::error::CancelRetrievalError)
     pub fn cancel_retrieval(&self) -> fluent_builders::CancelRetrieval<C, M, R> {
         fluent_builders::CancelRetrieval::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateCachediSCSIVolume` operation.
+    /// Constructs a fluent builder for the [`CreateCachediSCSIVolume`](crate::client::fluent_builders::CreateCachediSCSIVolume) operation.
     ///
-    /// See [`CreateCachediSCSIVolume`](crate::client::fluent_builders::CreateCachediSCSIVolume) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateCachediScsiVolumeInput`](crate::input::CreateCachediScsiVolumeInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::CreateCachediScsiVolumeInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`volume_size_in_bytes(i64)`](crate::input::CreateCachediScsiVolumeInput::volume_size_in_bytes): <p>The size of the volume in bytes.</p>
+    ///   - [`snapshot_id(Option<String>)`](crate::input::CreateCachediScsiVolumeInput::snapshot_id): <p>The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new cached volume. Specify this field if you want to create the iSCSI storage volume from a snapshot; otherwise, do not include this field. To list snapshots for your account use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
+    ///   - [`target_name(Option<String>)`](crate::input::CreateCachediScsiVolumeInput::target_name): <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p>  <p>If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new target name.</p>
+    ///   - [`source_volume_arn(Option<String>)`](crate::input::CreateCachediScsiVolumeInput::source_volume_arn): <p>The ARN for an existing volume. Specifying this ARN makes the new volume into an exact copy of the specified existing volume's latest recovery point. The <code>VolumeSizeInBytes</code> value for this new volume must be equal to or larger than the size of the existing volume, in bytes.</p>
+    ///   - [`network_interface_id(Option<String>)`](crate::input::CreateCachediScsiVolumeInput::network_interface_id): <p>The network interface of the gateway on which to expose the iSCSI target. Only IPv4 addresses are accepted. Use <code>DescribeGatewayInformation</code> to get a list of the network interfaces available on a gateway.</p>  <p>Valid Values: A valid IP address.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateCachediScsiVolumeInput::client_token): <p>A unique identifier that you use to retry a request. If you retry a request, use the same <code>ClientToken</code> you specified in the initial request.</p>
+    ///   - [`kms_encrypted(Option<bool>)`](crate::input::CreateCachediScsiVolumeInput::kms_encrypted): <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>  <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    ///   - [`kms_key(Option<String>)`](crate::input::CreateCachediScsiVolumeInput::kms_key): <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateCachediScsiVolumeInput::tags): <p>A list of up to 50 tags that you can assign to a cached volume. Each tag is a key-value pair.</p> <note>   <p>Valid characters for key and value are letters, spaces, and numbers that you can represent in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256 characters.</p>  </note>
+    /// - On success, responds with [`CreateCachediScsiVolumeOutput`](crate::output::CreateCachediScsiVolumeOutput) with field(s):
+    ///   - [`volume_arn(Option<String>)`](crate::output::CreateCachediScsiVolumeOutput::volume_arn): <p>The Amazon Resource Name (ARN) of the configured volume.</p>
+    ///   - [`target_arn(Option<String>)`](crate::output::CreateCachediScsiVolumeOutput::target_arn): <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI name that initiators can use to connect to the target.</p>
+    /// - On failure, responds with [`SdkError<CreateCachediSCSIVolumeError>`](crate::error::CreateCachediSCSIVolumeError)
     pub fn create_cachedi_scsi_volume(&self) -> fluent_builders::CreateCachediSCSIVolume<C, M, R> {
         fluent_builders::CreateCachediSCSIVolume::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateNFSFileShare` operation.
+    /// Constructs a fluent builder for the [`CreateNFSFileShare`](crate::client::fluent_builders::CreateNFSFileShare) operation.
     ///
-    /// See [`CreateNFSFileShare`](crate::client::fluent_builders::CreateNFSFileShare) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateNfsFileShareInput`](crate::input::CreateNfsFileShareInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::CreateNfsFileShareInput::client_token): <p>A unique string value that you supply that is used by S3 File Gateway to ensure idempotent file share creation.</p>
+    ///   - [`nfs_file_share_defaults(Option<NfsFileShareDefaults>)`](crate::input::CreateNfsFileShareInput::nfs_file_share_defaults): <p>File share default values. Optional.</p>
+    ///   - [`gateway_arn(Option<String>)`](crate::input::CreateNfsFileShareInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the S3 File Gateway on which you want to create a file share.</p>
+    ///   - [`kms_encrypted(Option<bool>)`](crate::input::CreateNfsFileShareInput::kms_encrypted): <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>  <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    ///   - [`kms_key(Option<String>)`](crate::input::CreateNfsFileShareInput::kms_key): <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
+    ///   - [`role(Option<String>)`](crate::input::CreateNfsFileShareInput::role): <p>The ARN of the Identity and Access Management (IAM) role that an S3 File Gateway assumes when it accesses the underlying storage.</p>
+    ///   - [`location_arn(Option<String>)`](crate::input::CreateNfsFileShareInput::location_arn): <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p> <note>   <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p>   <p>Bucket ARN:</p>   <p> <code>arn:aws:s3:::my-bucket/prefix/</code> </p>   <p>Access point ARN:</p>   <p> <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code> </p>   <p>If you specify an access point, the bucket policy must be configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>   <p>Access point alias:</p>   <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p>  </note>
+    ///   - [`default_storage_class(Option<String>)`](crate::input::CreateNfsFileShareInput::default_storage_class): <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>  <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
+    ///   - [`object_acl(Option<ObjectAcl>)`](crate::input::CreateNfsFileShareInput::object_acl): <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
+    ///   - [`client_list(Option<Vec<String>>)`](crate::input::CreateNfsFileShareInput::client_list): <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP addresses or valid CIDR blocks.</p>
+    ///   - [`squash(Option<String>)`](crate::input::CreateNfsFileShareInput::squash): <p>A value that maps a user to anonymous user.</p>  <p>Valid values are the following:</p>  <ul>   <li> <p> <code>RootSquash</code>: Only root is mapped to anonymous user.</p> </li>   <li> <p> <code>NoSquash</code>: No one is mapped to anonymous user.</p> </li>   <li> <p> <code>AllSquash</code>: Everyone is mapped to anonymous user.</p> </li>  </ul>
+    ///   - [`read_only(Option<bool>)`](crate::input::CreateNfsFileShareInput::read_only): <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status to read-only, otherwise set to <code>false</code>.</p>  <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    ///   - [`guess_mime_type_enabled(Option<bool>)`](crate::input::CreateNfsFileShareInput::guess_mime_type_enabled): <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p>  <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    ///   - [`requester_pays(Option<bool>)`](crate::input::CreateNfsFileShareInput::requester_pays): <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>   <p> <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>  </note>  <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateNfsFileShareInput::tags): <p>A list of up to 50 tags that can be assigned to the NFS file share. Each tag is a key-value pair.</p> <note>   <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>  </note>
+    ///   - [`file_share_name(Option<String>)`](crate::input::CreateNfsFileShareInput::file_share_name): <p>The name of the file share. Optional.</p> <note>   <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>  </note>
+    ///   - [`cache_attributes(Option<CacheAttributes>)`](crate::input::CreateNfsFileShareInput::cache_attributes): <p>Specifies refresh cache information for the file share.</p>
+    ///   - [`notification_policy(Option<String>)`](crate::input::CreateNfsFileShareInput::notification_policy): <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>   <p> <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>  </note>  <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p>  <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p>  <p>The following example sets <code>NotificationPolicy</code> off.</p>  <p> <code>{}</code> </p>
+    ///   - [`vpc_endpoint_dns_name(Option<String>)`](crate::input::CreateNfsFileShareInput::vpc_endpoint_dns_name): <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to connect to Amazon S3.</p> <note>   <p>This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>  </note>
+    ///   - [`bucket_region(Option<String>)`](crate::input::CreateNfsFileShareInput::bucket_region): <p>Specifies the Region of the S3 bucket where the NFS file share stores files.</p> <note>   <p>This parameter is required for NFS file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>  </note>
+    ///   - [`audit_destination_arn(Option<String>)`](crate::input::CreateNfsFileShareInput::audit_destination_arn): <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+    /// - On success, responds with [`CreateNfsFileShareOutput`](crate::output::CreateNfsFileShareOutput) with field(s):
+    ///   - [`file_share_arn(Option<String>)`](crate::output::CreateNfsFileShareOutput::file_share_arn): <p>The Amazon Resource Name (ARN) of the newly created file share.</p>
+    /// - On failure, responds with [`SdkError<CreateNFSFileShareError>`](crate::error::CreateNFSFileShareError)
     pub fn create_nfs_file_share(&self) -> fluent_builders::CreateNFSFileShare<C, M, R> {
         fluent_builders::CreateNFSFileShare::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateSMBFileShare` operation.
+    /// Constructs a fluent builder for the [`CreateSMBFileShare`](crate::client::fluent_builders::CreateSMBFileShare) operation.
     ///
-    /// See [`CreateSMBFileShare`](crate::client::fluent_builders::CreateSMBFileShare) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateSmbFileShareInput`](crate::input::CreateSmbFileShareInput) with field(s):
+    ///   - [`client_token(Option<String>)`](crate::input::CreateSmbFileShareInput::client_token): <p>A unique string value that you supply that is used by S3 File Gateway to ensure idempotent file share creation.</p>
+    ///   - [`gateway_arn(Option<String>)`](crate::input::CreateSmbFileShareInput::gateway_arn): <p>The ARN of the S3 File Gateway on which you want to create a file share.</p>
+    ///   - [`kms_encrypted(Option<bool>)`](crate::input::CreateSmbFileShareInput::kms_encrypted): <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>  <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    ///   - [`kms_key(Option<String>)`](crate::input::CreateSmbFileShareInput::kms_key): <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
+    ///   - [`role(Option<String>)`](crate::input::CreateSmbFileShareInput::role): <p>The ARN of the Identity and Access Management (IAM) role that an S3 File Gateway assumes when it accesses the underlying storage.</p>
+    ///   - [`location_arn(Option<String>)`](crate::input::CreateSmbFileShareInput::location_arn): <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p> <note>   <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p>   <p>Bucket ARN:</p>   <p> <code>arn:aws:s3:::my-bucket/prefix/</code> </p>   <p>Access point ARN:</p>   <p> <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code> </p>   <p>If you specify an access point, the bucket policy must be configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p>   <p>Access point alias:</p>   <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p>  </note>
+    ///   - [`default_storage_class(Option<String>)`](crate::input::CreateSmbFileShareInput::default_storage_class): <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>  <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
+    ///   - [`object_acl(Option<ObjectAcl>)`](crate::input::CreateSmbFileShareInput::object_acl): <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
+    ///   - [`read_only(Option<bool>)`](crate::input::CreateSmbFileShareInput::read_only): <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status to read-only, otherwise set to <code>false</code>.</p>  <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    ///   - [`guess_mime_type_enabled(Option<bool>)`](crate::input::CreateSmbFileShareInput::guess_mime_type_enabled): <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p>  <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    ///   - [`requester_pays(Option<bool>)`](crate::input::CreateSmbFileShareInput::requester_pays): <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>   <p> <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>  </note>  <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    ///   - [`smbacl_enabled(Option<bool>)`](crate::input::CreateSmbFileShareInput::smbacl_enabled): <p>Set this value to <code>true</code> to enable access control list (ACL) on the SMB file share. Set it to <code>false</code> to map file and directory permissions to the POSIX permissions.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using Microsoft Windows ACLs to control access to an SMB file share</a> in the <i>Storage Gateway User Guide</i>.</p>  <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    ///   - [`access_based_enumeration(Option<bool>)`](crate::input::CreateSmbFileShareInput::access_based_enumeration): <p>The files and folders on this share will only be visible to users with read access.</p>
+    ///   - [`admin_user_list(Option<Vec<String>>)`](crate::input::CreateSmbFileShareInput::admin_user_list): <p>A list of users or groups in the Active Directory that will be granted administrator privileges on the file share. These users can do all file operations as the super-user. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>.</p> <important>   <p>Use this option very carefully, because any user in this list can do anything they like on the file share, regardless of file permissions.</p>  </important>
+    ///   - [`valid_user_list(Option<Vec<String>>)`](crate::input::CreateSmbFileShareInput::valid_user_list): <p>A list of users or groups in the Active Directory that are allowed to access the file <code></code> share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
+    ///   - [`invalid_user_list(Option<Vec<String>>)`](crate::input::CreateSmbFileShareInput::invalid_user_list): <p>A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
+    ///   - [`audit_destination_arn(Option<String>)`](crate::input::CreateSmbFileShareInput::audit_destination_arn): <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+    ///   - [`authentication(Option<String>)`](crate::input::CreateSmbFileShareInput::authentication): <p>The authentication method that users use to access the file share. The default is <code>ActiveDirectory</code>.</p>  <p>Valid Values: <code>ActiveDirectory</code> | <code>GuestAccess</code> </p>
+    ///   - [`case_sensitivity(Option<CaseSensitivity>)`](crate::input::CreateSmbFileShareInput::case_sensitivity): <p>The case of an object name in an Amazon S3 bucket. For <code>ClientSpecified</code>, the client determines the case sensitivity. For <code>CaseSensitive</code>, the gateway determines the case sensitivity. The default value is <code>ClientSpecified</code>.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateSmbFileShareInput::tags): <p>A list of up to 50 tags that can be assigned to the NFS file share. Each tag is a key-value pair.</p> <note>   <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>  </note>
+    ///   - [`file_share_name(Option<String>)`](crate::input::CreateSmbFileShareInput::file_share_name): <p>The name of the file share. Optional.</p> <note>   <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>  </note>
+    ///   - [`cache_attributes(Option<CacheAttributes>)`](crate::input::CreateSmbFileShareInput::cache_attributes): <p>Specifies refresh cache information for the file share.</p>
+    ///   - [`notification_policy(Option<String>)`](crate::input::CreateSmbFileShareInput::notification_policy): <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>   <p> <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>  </note>  <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p>  <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p>  <p>The following example sets <code>NotificationPolicy</code> off.</p>  <p> <code>{}</code> </p>
+    ///   - [`vpc_endpoint_dns_name(Option<String>)`](crate::input::CreateSmbFileShareInput::vpc_endpoint_dns_name): <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to connect to Amazon S3.</p> <note>   <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>  </note>
+    ///   - [`bucket_region(Option<String>)`](crate::input::CreateSmbFileShareInput::bucket_region): <p>Specifies the Region of the S3 bucket where the SMB file share stores files.</p> <note>   <p>This parameter is required for SMB file shares that connect to Amazon S3 through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>  </note>
+    ///   - [`oplocks_enabled(Option<bool>)`](crate::input::CreateSmbFileShareInput::oplocks_enabled): <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p> <note>   <p>Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve access to files with the same name in different case.</p>  </note>  <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    /// - On success, responds with [`CreateSmbFileShareOutput`](crate::output::CreateSmbFileShareOutput) with field(s):
+    ///   - [`file_share_arn(Option<String>)`](crate::output::CreateSmbFileShareOutput::file_share_arn): <p>The Amazon Resource Name (ARN) of the newly created file share.</p>
+    /// - On failure, responds with [`SdkError<CreateSMBFileShareError>`](crate::error::CreateSMBFileShareError)
     pub fn create_smb_file_share(&self) -> fluent_builders::CreateSMBFileShare<C, M, R> {
         fluent_builders::CreateSMBFileShare::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateSnapshot` operation.
+    /// Constructs a fluent builder for the [`CreateSnapshot`](crate::client::fluent_builders::CreateSnapshot) operation.
     ///
-    /// See [`CreateSnapshot`](crate::client::fluent_builders::CreateSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateSnapshotInput`](crate::input::CreateSnapshotInput) with field(s):
+    ///   - [`volume_arn(Option<String>)`](crate::input::CreateSnapshotInput::volume_arn): <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
+    ///   - [`snapshot_description(Option<String>)`](crate::input::CreateSnapshotInput::snapshot_description): <p>Textual description of the snapshot that appears in the Amazon EC2 console, Elastic Block Store snapshots panel in the <b>Description</b> field, and in the Storage Gateway snapshot <b>Details</b> pane, <b>Description</b> field.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateSnapshotInput::tags): <p>A list of up to 50 tags that can be assigned to a snapshot. Each tag is a key-value pair.</p> <note>   <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>  </note>
+    /// - On success, responds with [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput) with field(s):
+    ///   - [`volume_arn(Option<String>)`](crate::output::CreateSnapshotOutput::volume_arn): <p>The Amazon Resource Name (ARN) of the volume of which the snapshot was taken.</p>
+    ///   - [`snapshot_id(Option<String>)`](crate::output::CreateSnapshotOutput::snapshot_id): <p>The snapshot ID that is used to refer to the snapshot in future operations such as describing snapshots (Amazon Elastic Compute Cloud API <code>DescribeSnapshots</code>) or creating a volume from a snapshot (<code>CreateStorediSCSIVolume</code>).</p>
+    /// - On failure, responds with [`SdkError<CreateSnapshotError>`](crate::error::CreateSnapshotError)
     pub fn create_snapshot(&self) -> fluent_builders::CreateSnapshot<C, M, R> {
         fluent_builders::CreateSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateSnapshotFromVolumeRecoveryPoint` operation.
+    /// Constructs a fluent builder for the [`CreateSnapshotFromVolumeRecoveryPoint`](crate::client::fluent_builders::CreateSnapshotFromVolumeRecoveryPoint) operation.
     ///
-    /// See [`CreateSnapshotFromVolumeRecoveryPoint`](crate::client::fluent_builders::CreateSnapshotFromVolumeRecoveryPoint) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateSnapshotFromVolumeRecoveryPointInput`](crate::input::CreateSnapshotFromVolumeRecoveryPointInput) with field(s):
+    ///   - [`volume_arn(Option<String>)`](crate::input::CreateSnapshotFromVolumeRecoveryPointInput::volume_arn): <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return to retrieve the TargetARN for specified VolumeARN.</p>
+    ///   - [`snapshot_description(Option<String>)`](crate::input::CreateSnapshotFromVolumeRecoveryPointInput::snapshot_description): <p>Textual description of the snapshot that appears in the Amazon EC2 console, Elastic Block Store snapshots panel in the <b>Description</b> field, and in the Storage Gateway snapshot <b>Details</b> pane, <b>Description</b> field.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateSnapshotFromVolumeRecoveryPointInput::tags): <p>A list of up to 50 tags that can be assigned to a snapshot. Each tag is a key-value pair.</p> <note>   <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>  </note>
+    /// - On success, responds with [`CreateSnapshotFromVolumeRecoveryPointOutput`](crate::output::CreateSnapshotFromVolumeRecoveryPointOutput) with field(s):
+    ///   - [`snapshot_id(Option<String>)`](crate::output::CreateSnapshotFromVolumeRecoveryPointOutput::snapshot_id): <p>The ID of the snapshot.</p>
+    ///   - [`volume_arn(Option<String>)`](crate::output::CreateSnapshotFromVolumeRecoveryPointOutput::volume_arn): <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return to retrieve the TargetARN for specified VolumeARN.</p>
+    ///   - [`volume_recovery_point_time(Option<String>)`](crate::output::CreateSnapshotFromVolumeRecoveryPointOutput::volume_recovery_point_time): <p>The time the volume was created from the recovery point.</p>
+    /// - On failure, responds with [`SdkError<CreateSnapshotFromVolumeRecoveryPointError>`](crate::error::CreateSnapshotFromVolumeRecoveryPointError)
     pub fn create_snapshot_from_volume_recovery_point(
         &self,
     ) -> fluent_builders::CreateSnapshotFromVolumeRecoveryPoint<C, M, R> {
         fluent_builders::CreateSnapshotFromVolumeRecoveryPoint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateStorediSCSIVolume` operation.
+    /// Constructs a fluent builder for the [`CreateStorediSCSIVolume`](crate::client::fluent_builders::CreateStorediSCSIVolume) operation.
     ///
-    /// See [`CreateStorediSCSIVolume`](crate::client::fluent_builders::CreateStorediSCSIVolume) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateStorediScsiVolumeInput`](crate::input::CreateStorediScsiVolumeInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::CreateStorediScsiVolumeInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`disk_id(Option<String>)`](crate::input::CreateStorediScsiVolumeInput::disk_id): <p>The unique identifier for the gateway local disk that is configured as a stored volume. Use <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a> to list disk IDs for a gateway.</p>
+    ///   - [`snapshot_id(Option<String>)`](crate::input::CreateStorediScsiVolumeInput::snapshot_id): <p>The snapshot ID (e.g., "snap-1122aabb") of the snapshot to restore as the new stored volume. Specify this field if you want to create the iSCSI storage volume from a snapshot; otherwise, do not include this field. To list snapshots for your account use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
+    ///   - [`preserve_existing_data(bool)`](crate::input::CreateStorediScsiVolumeInput::preserve_existing_data): <p>Set to <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to <code>false</code> to create an empty volume.</p>  <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    ///   - [`target_name(Option<String>)`](crate::input::CreateStorediScsiVolumeInput::target_name): <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>. The target name must be unique across all volumes on a gateway.</p>  <p>If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new target name.</p>
+    ///   - [`network_interface_id(Option<String>)`](crate::input::CreateStorediScsiVolumeInput::network_interface_id): <p>The network interface of the gateway on which to expose the iSCSI target. Only IPv4 addresses are accepted. Use <code>DescribeGatewayInformation</code> to get a list of the network interfaces available on a gateway.</p>  <p>Valid Values: A valid IP address.</p>
+    ///   - [`kms_encrypted(Option<bool>)`](crate::input::CreateStorediScsiVolumeInput::kms_encrypted): <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>  <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    ///   - [`kms_key(Option<String>)`](crate::input::CreateStorediScsiVolumeInput::kms_key): <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateStorediScsiVolumeInput::tags): <p>A list of up to 50 tags that can be assigned to a stored volume. Each tag is a key-value pair.</p> <note>   <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>  </note>
+    /// - On success, responds with [`CreateStorediScsiVolumeOutput`](crate::output::CreateStorediScsiVolumeOutput) with field(s):
+    ///   - [`volume_arn(Option<String>)`](crate::output::CreateStorediScsiVolumeOutput::volume_arn): <p>The Amazon Resource Name (ARN) of the configured volume.</p>
+    ///   - [`volume_size_in_bytes(i64)`](crate::output::CreateStorediScsiVolumeOutput::volume_size_in_bytes): <p>The size of the volume in bytes.</p>
+    ///   - [`target_arn(Option<String>)`](crate::output::CreateStorediScsiVolumeOutput::target_arn): <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI name that initiators can use to connect to the target.</p>
+    /// - On failure, responds with [`SdkError<CreateStorediSCSIVolumeError>`](crate::error::CreateStorediSCSIVolumeError)
     pub fn create_storedi_scsi_volume(&self) -> fluent_builders::CreateStorediSCSIVolume<C, M, R> {
         fluent_builders::CreateStorediSCSIVolume::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateTapePool` operation.
+    /// Constructs a fluent builder for the [`CreateTapePool`](crate::client::fluent_builders::CreateTapePool) operation.
     ///
-    /// See [`CreateTapePool`](crate::client::fluent_builders::CreateTapePool) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateTapePoolInput`](crate::input::CreateTapePoolInput) with field(s):
+    ///   - [`pool_name(Option<String>)`](crate::input::CreateTapePoolInput::pool_name): <p>The name of the new custom tape pool.</p>
+    ///   - [`storage_class(Option<TapeStorageClass>)`](crate::input::CreateTapePoolInput::storage_class): <p>The storage class that is associated with the new custom pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
+    ///   - [`retention_lock_type(Option<RetentionLockType>)`](crate::input::CreateTapePoolInput::retention_lock_type): <p>Tape retention lock can be configured in two modes. When configured in governance mode, Amazon Web Services accounts with specific IAM permissions are authorized to remove the tape retention lock from archived virtual tapes. When configured in compliance mode, the tape retention lock cannot be removed by any user, including the root Amazon Web Services account.</p>
+    ///   - [`retention_lock_time_in_days(Option<i32>)`](crate::input::CreateTapePoolInput::retention_lock_time_in_days): <p>Tape retention lock time is set in days. Tape retention lock can be enabled for up to 100 years (36,500 days).</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateTapePoolInput::tags): <p>A list of up to 50 tags that can be assigned to tape pool. Each tag is a key-value pair.</p> <note>   <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>  </note>
+    /// - On success, responds with [`CreateTapePoolOutput`](crate::output::CreateTapePoolOutput) with field(s):
+    ///   - [`pool_arn(Option<String>)`](crate::output::CreateTapePoolOutput::pool_arn): <p>The unique Amazon Resource Name (ARN) that represents the custom tape pool. Use the <code>ListTapePools</code> operation to return a list of tape pools for your account and Amazon Web Services Region.</p>
+    /// - On failure, responds with [`SdkError<CreateTapePoolError>`](crate::error::CreateTapePoolError)
     pub fn create_tape_pool(&self) -> fluent_builders::CreateTapePool<C, M, R> {
         fluent_builders::CreateTapePool::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateTapes` operation.
+    /// Constructs a fluent builder for the [`CreateTapes`](crate::client::fluent_builders::CreateTapes) operation.
     ///
-    /// See [`CreateTapes`](crate::client::fluent_builders::CreateTapes) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateTapesInput`](crate::input::CreateTapesInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::CreateTapesInput::gateway_arn): <p>The unique Amazon Resource Name (ARN) that represents the gateway to associate the virtual tapes with. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`tape_size_in_bytes(Option<i64>)`](crate::input::CreateTapesInput::tape_size_in_bytes): <p>The size, in bytes, of the virtual tapes that you want to create.</p> <note>   <p>The size must be aligned by gigabyte (1024*1024*1024 bytes).</p>  </note>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateTapesInput::client_token): <p>A unique identifier that you use to retry a request. If you retry a request, use the same <code>ClientToken</code> you specified in the initial request.</p> <note>   <p>Using the same <code>ClientToken</code> prevents creating the tape multiple times.</p>  </note>
+    ///   - [`num_tapes_to_create(Option<i32>)`](crate::input::CreateTapesInput::num_tapes_to_create): <p>The number of virtual tapes that you want to create.</p>
+    ///   - [`tape_barcode_prefix(Option<String>)`](crate::input::CreateTapesInput::tape_barcode_prefix): <p>A prefix that you append to the barcode of the virtual tape you are creating. This prefix makes the barcode unique.</p> <note>   <p>The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.</p>  </note>
+    ///   - [`kms_encrypted(Option<bool>)`](crate::input::CreateTapesInput::kms_encrypted): <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>  <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    ///   - [`kms_key(Option<String>)`](crate::input::CreateTapesInput::kms_key): <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
+    ///   - [`pool_id(Option<String>)`](crate::input::CreateTapesInput::pool_id): <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>  <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> </p>
+    ///   - [`worm(bool)`](crate::input::CreateTapesInput::worm): <p>Set to <code>TRUE</code> if the tape you are creating is to be configured as a write-once-read-many (WORM) tape.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateTapesInput::tags): <p>A list of up to 50 tags that can be assigned to a virtual tape. Each tag is a key-value pair.</p> <note>   <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>  </note>
+    /// - On success, responds with [`CreateTapesOutput`](crate::output::CreateTapesOutput) with field(s):
+    ///   - [`tape_ar_ns(Option<Vec<String>>)`](crate::output::CreateTapesOutput::tape_ar_ns): <p>A list of unique Amazon Resource Names (ARNs) that represents the virtual tapes that were created.</p>
+    /// - On failure, responds with [`SdkError<CreateTapesError>`](crate::error::CreateTapesError)
     pub fn create_tapes(&self) -> fluent_builders::CreateTapes<C, M, R> {
         fluent_builders::CreateTapes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateTapeWithBarcode` operation.
+    /// Constructs a fluent builder for the [`CreateTapeWithBarcode`](crate::client::fluent_builders::CreateTapeWithBarcode) operation.
     ///
-    /// See [`CreateTapeWithBarcode`](crate::client::fluent_builders::CreateTapeWithBarcode) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateTapeWithBarcodeInput`](crate::input::CreateTapeWithBarcodeInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::CreateTapeWithBarcodeInput::gateway_arn): <p>The unique Amazon Resource Name (ARN) that represents the gateway to associate the virtual tape with. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`tape_size_in_bytes(Option<i64>)`](crate::input::CreateTapeWithBarcodeInput::tape_size_in_bytes): <p>The size, in bytes, of the virtual tape that you want to create.</p> <note>   <p>The size must be aligned by gigabyte (1024*1024*1024 bytes).</p>  </note>
+    ///   - [`tape_barcode(Option<String>)`](crate::input::CreateTapeWithBarcodeInput::tape_barcode): <p>The barcode that you want to assign to the tape.</p> <note>   <p>Barcodes cannot be reused. This includes barcodes used for tapes that have been deleted.</p>  </note>
+    ///   - [`kms_encrypted(Option<bool>)`](crate::input::CreateTapeWithBarcodeInput::kms_encrypted): <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>  <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    ///   - [`kms_key(Option<String>)`](crate::input::CreateTapeWithBarcodeInput::kms_key): <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
+    ///   - [`pool_id(Option<String>)`](crate::input::CreateTapeWithBarcodeInput::pool_id): <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Deep Archive) that corresponds to the pool.</p>  <p>Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code> </p>
+    ///   - [`worm(bool)`](crate::input::CreateTapeWithBarcodeInput::worm): <p>Set to <code>TRUE</code> if the tape you are creating is to be configured as a write-once-read-many (WORM) tape.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateTapeWithBarcodeInput::tags): <p>A list of up to 50 tags that can be assigned to a virtual tape that has a barcode. Each tag is a key-value pair.</p> <note>   <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>  </note>
+    /// - On success, responds with [`CreateTapeWithBarcodeOutput`](crate::output::CreateTapeWithBarcodeOutput) with field(s):
+    ///   - [`tape_arn(Option<String>)`](crate::output::CreateTapeWithBarcodeOutput::tape_arn): <p>A unique Amazon Resource Name (ARN) that represents the virtual tape that was created.</p>
+    /// - On failure, responds with [`SdkError<CreateTapeWithBarcodeError>`](crate::error::CreateTapeWithBarcodeError)
     pub fn create_tape_with_barcode(&self) -> fluent_builders::CreateTapeWithBarcode<C, M, R> {
         fluent_builders::CreateTapeWithBarcode::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAutomaticTapeCreationPolicy` operation.
+    /// Constructs a fluent builder for the [`DeleteAutomaticTapeCreationPolicy`](crate::client::fluent_builders::DeleteAutomaticTapeCreationPolicy) operation.
     ///
-    /// See [`DeleteAutomaticTapeCreationPolicy`](crate::client::fluent_builders::DeleteAutomaticTapeCreationPolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteAutomaticTapeCreationPolicyInput`](crate::input::DeleteAutomaticTapeCreationPolicyInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::DeleteAutomaticTapeCreationPolicyInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On success, responds with [`DeleteAutomaticTapeCreationPolicyOutput`](crate::output::DeleteAutomaticTapeCreationPolicyOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::DeleteAutomaticTapeCreationPolicyOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On failure, responds with [`SdkError<DeleteAutomaticTapeCreationPolicyError>`](crate::error::DeleteAutomaticTapeCreationPolicyError)
     pub fn delete_automatic_tape_creation_policy(
         &self,
     ) -> fluent_builders::DeleteAutomaticTapeCreationPolicy<C, M, R> {
         fluent_builders::DeleteAutomaticTapeCreationPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteBandwidthRateLimit` operation.
+    /// Constructs a fluent builder for the [`DeleteBandwidthRateLimit`](crate::client::fluent_builders::DeleteBandwidthRateLimit) operation.
     ///
-    /// See [`DeleteBandwidthRateLimit`](crate::client::fluent_builders::DeleteBandwidthRateLimit) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteBandwidthRateLimitInput`](crate::input::DeleteBandwidthRateLimitInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::DeleteBandwidthRateLimitInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`bandwidth_type(Option<String>)`](crate::input::DeleteBandwidthRateLimitInput::bandwidth_type): <p>One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.</p>  <p>Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code> </p>
+    /// - On success, responds with [`DeleteBandwidthRateLimitOutput`](crate::output::DeleteBandwidthRateLimitOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::DeleteBandwidthRateLimitOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On failure, responds with [`SdkError<DeleteBandwidthRateLimitError>`](crate::error::DeleteBandwidthRateLimitError)
     pub fn delete_bandwidth_rate_limit(
         &self,
     ) -> fluent_builders::DeleteBandwidthRateLimit<C, M, R> {
         fluent_builders::DeleteBandwidthRateLimit::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteChapCredentials` operation.
+    /// Constructs a fluent builder for the [`DeleteChapCredentials`](crate::client::fluent_builders::DeleteChapCredentials) operation.
     ///
-    /// See [`DeleteChapCredentials`](crate::client::fluent_builders::DeleteChapCredentials) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteChapCredentialsInput`](crate::input::DeleteChapCredentialsInput) with field(s):
+    ///   - [`target_arn(Option<String>)`](crate::input::DeleteChapCredentialsInput::target_arn): <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return to retrieve the TargetARN for specified VolumeARN.</p>
+    ///   - [`initiator_name(Option<String>)`](crate::input::DeleteChapCredentialsInput::initiator_name): <p>The iSCSI initiator that connects to the target.</p>
+    /// - On success, responds with [`DeleteChapCredentialsOutput`](crate::output::DeleteChapCredentialsOutput) with field(s):
+    ///   - [`target_arn(Option<String>)`](crate::output::DeleteChapCredentialsOutput::target_arn): <p>The Amazon Resource Name (ARN) of the target.</p>
+    ///   - [`initiator_name(Option<String>)`](crate::output::DeleteChapCredentialsOutput::initiator_name): <p>The iSCSI initiator that connects to the target.</p>
+    /// - On failure, responds with [`SdkError<DeleteChapCredentialsError>`](crate::error::DeleteChapCredentialsError)
     pub fn delete_chap_credentials(&self) -> fluent_builders::DeleteChapCredentials<C, M, R> {
         fluent_builders::DeleteChapCredentials::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteFileShare` operation.
+    /// Constructs a fluent builder for the [`DeleteFileShare`](crate::client::fluent_builders::DeleteFileShare) operation.
     ///
-    /// See [`DeleteFileShare`](crate::client::fluent_builders::DeleteFileShare) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteFileShareInput`](crate::input::DeleteFileShareInput) with field(s):
+    ///   - [`file_share_arn(Option<String>)`](crate::input::DeleteFileShareInput::file_share_arn): <p>The Amazon Resource Name (ARN) of the file share to be deleted.</p>
+    ///   - [`force_delete(bool)`](crate::input::DeleteFileShareInput::force_delete): <p>If this value is set to <code>true</code>, the operation deletes a file share immediately and aborts all data uploads to Amazon Web Services. Otherwise, the file share is not deleted until all data is uploaded to Amazon Web Services. This process aborts the data upload process, and the file share enters the <code>FORCE_DELETING</code> status.</p>  <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    /// - On success, responds with [`DeleteFileShareOutput`](crate::output::DeleteFileShareOutput) with field(s):
+    ///   - [`file_share_arn(Option<String>)`](crate::output::DeleteFileShareOutput::file_share_arn): <p>The Amazon Resource Name (ARN) of the deleted file share.</p>
+    /// - On failure, responds with [`SdkError<DeleteFileShareError>`](crate::error::DeleteFileShareError)
     pub fn delete_file_share(&self) -> fluent_builders::DeleteFileShare<C, M, R> {
         fluent_builders::DeleteFileShare::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteGateway` operation.
+    /// Constructs a fluent builder for the [`DeleteGateway`](crate::client::fluent_builders::DeleteGateway) operation.
     ///
-    /// See [`DeleteGateway`](crate::client::fluent_builders::DeleteGateway) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteGatewayInput`](crate::input::DeleteGatewayInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::DeleteGatewayInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On success, responds with [`DeleteGatewayOutput`](crate::output::DeleteGatewayOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::DeleteGatewayOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On failure, responds with [`SdkError<DeleteGatewayError>`](crate::error::DeleteGatewayError)
     pub fn delete_gateway(&self) -> fluent_builders::DeleteGateway<C, M, R> {
         fluent_builders::DeleteGateway::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteSnapshotSchedule` operation.
+    /// Constructs a fluent builder for the [`DeleteSnapshotSchedule`](crate::client::fluent_builders::DeleteSnapshotSchedule) operation.
     ///
-    /// See [`DeleteSnapshotSchedule`](crate::client::fluent_builders::DeleteSnapshotSchedule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteSnapshotScheduleInput`](crate::input::DeleteSnapshotScheduleInput) with field(s):
+    ///   - [`volume_arn(Option<String>)`](crate::input::DeleteSnapshotScheduleInput::volume_arn): <p>The volume which snapshot schedule to delete.</p>
+    /// - On success, responds with [`DeleteSnapshotScheduleOutput`](crate::output::DeleteSnapshotScheduleOutput) with field(s):
+    ///   - [`volume_arn(Option<String>)`](crate::output::DeleteSnapshotScheduleOutput::volume_arn): <p>The volume which snapshot schedule was deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteSnapshotScheduleError>`](crate::error::DeleteSnapshotScheduleError)
     pub fn delete_snapshot_schedule(&self) -> fluent_builders::DeleteSnapshotSchedule<C, M, R> {
         fluent_builders::DeleteSnapshotSchedule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteTape` operation.
+    /// Constructs a fluent builder for the [`DeleteTape`](crate::client::fluent_builders::DeleteTape) operation.
     ///
-    /// See [`DeleteTape`](crate::client::fluent_builders::DeleteTape) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteTapeInput`](crate::input::DeleteTapeInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::DeleteTapeInput::gateway_arn): <p>The unique Amazon Resource Name (ARN) of the gateway that the virtual tape to delete is associated with. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`tape_arn(Option<String>)`](crate::input::DeleteTapeInput::tape_arn): <p>The Amazon Resource Name (ARN) of the virtual tape to delete.</p>
+    ///   - [`bypass_governance_retention(bool)`](crate::input::DeleteTapeInput::bypass_governance_retention): <p>Set to <code>TRUE</code> to delete an archived tape that belongs to a custom pool with tape retention lock. Only archived tapes with tape retention lock set to <code>governance</code> can be deleted. Archived tapes with tape retention lock set to <code>compliance</code> can't be deleted.</p>
+    /// - On success, responds with [`DeleteTapeOutput`](crate::output::DeleteTapeOutput) with field(s):
+    ///   - [`tape_arn(Option<String>)`](crate::output::DeleteTapeOutput::tape_arn): <p>The Amazon Resource Name (ARN) of the deleted virtual tape.</p>
+    /// - On failure, responds with [`SdkError<DeleteTapeError>`](crate::error::DeleteTapeError)
     pub fn delete_tape(&self) -> fluent_builders::DeleteTape<C, M, R> {
         fluent_builders::DeleteTape::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteTapeArchive` operation.
+    /// Constructs a fluent builder for the [`DeleteTapeArchive`](crate::client::fluent_builders::DeleteTapeArchive) operation.
     ///
-    /// See [`DeleteTapeArchive`](crate::client::fluent_builders::DeleteTapeArchive) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteTapeArchiveInput`](crate::input::DeleteTapeArchiveInput) with field(s):
+    ///   - [`tape_arn(Option<String>)`](crate::input::DeleteTapeArchiveInput::tape_arn): <p>The Amazon Resource Name (ARN) of the virtual tape to delete from the virtual tape shelf (VTS).</p>
+    ///   - [`bypass_governance_retention(bool)`](crate::input::DeleteTapeArchiveInput::bypass_governance_retention): <p>Set to <code>TRUE</code> to delete an archived tape that belongs to a custom pool with tape retention lock. Only archived tapes with tape retention lock set to <code>governance</code> can be deleted. Archived tapes with tape retention lock set to <code>compliance</code> can't be deleted.</p>
+    /// - On success, responds with [`DeleteTapeArchiveOutput`](crate::output::DeleteTapeArchiveOutput) with field(s):
+    ///   - [`tape_arn(Option<String>)`](crate::output::DeleteTapeArchiveOutput::tape_arn): <p>The Amazon Resource Name (ARN) of the virtual tape that was deleted from the virtual tape shelf (VTS).</p>
+    /// - On failure, responds with [`SdkError<DeleteTapeArchiveError>`](crate::error::DeleteTapeArchiveError)
     pub fn delete_tape_archive(&self) -> fluent_builders::DeleteTapeArchive<C, M, R> {
         fluent_builders::DeleteTapeArchive::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteTapePool` operation.
+    /// Constructs a fluent builder for the [`DeleteTapePool`](crate::client::fluent_builders::DeleteTapePool) operation.
     ///
-    /// See [`DeleteTapePool`](crate::client::fluent_builders::DeleteTapePool) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteTapePoolInput`](crate::input::DeleteTapePoolInput) with field(s):
+    ///   - [`pool_arn(Option<String>)`](crate::input::DeleteTapePoolInput::pool_arn): <p>The Amazon Resource Name (ARN) of the custom tape pool to delete.</p>
+    /// - On success, responds with [`DeleteTapePoolOutput`](crate::output::DeleteTapePoolOutput) with field(s):
+    ///   - [`pool_arn(Option<String>)`](crate::output::DeleteTapePoolOutput::pool_arn): <p>The Amazon Resource Name (ARN) of the custom tape pool being deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteTapePoolError>`](crate::error::DeleteTapePoolError)
     pub fn delete_tape_pool(&self) -> fluent_builders::DeleteTapePool<C, M, R> {
         fluent_builders::DeleteTapePool::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteVolume` operation.
+    /// Constructs a fluent builder for the [`DeleteVolume`](crate::client::fluent_builders::DeleteVolume) operation.
     ///
-    /// See [`DeleteVolume`](crate::client::fluent_builders::DeleteVolume) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteVolumeInput`](crate::input::DeleteVolumeInput) with field(s):
+    ///   - [`volume_arn(Option<String>)`](crate::input::DeleteVolumeInput::volume_arn): <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
+    /// - On success, responds with [`DeleteVolumeOutput`](crate::output::DeleteVolumeOutput) with field(s):
+    ///   - [`volume_arn(Option<String>)`](crate::output::DeleteVolumeOutput::volume_arn): <p>The Amazon Resource Name (ARN) of the storage volume that was deleted. It is the same ARN you provided in the request.</p>
+    /// - On failure, responds with [`SdkError<DeleteVolumeError>`](crate::error::DeleteVolumeError)
     pub fn delete_volume(&self) -> fluent_builders::DeleteVolume<C, M, R> {
         fluent_builders::DeleteVolume::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAvailabilityMonitorTest` operation.
+    /// Constructs a fluent builder for the [`DescribeAvailabilityMonitorTest`](crate::client::fluent_builders::DescribeAvailabilityMonitorTest) operation.
     ///
-    /// See [`DescribeAvailabilityMonitorTest`](crate::client::fluent_builders::DescribeAvailabilityMonitorTest) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeAvailabilityMonitorTestInput`](crate::input::DescribeAvailabilityMonitorTestInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::DescribeAvailabilityMonitorTestInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On success, responds with [`DescribeAvailabilityMonitorTestOutput`](crate::output::DescribeAvailabilityMonitorTestOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::DescribeAvailabilityMonitorTestOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`status(Option<AvailabilityMonitorTestStatus>)`](crate::output::DescribeAvailabilityMonitorTestOutput::status): <p>The status of the high availability monitoring test. If a test hasn't been performed, the value of this field is null.</p>
+    ///   - [`start_time(Option<DateTime>)`](crate::output::DescribeAvailabilityMonitorTestOutput::start_time): <p>The time the high availability monitoring test was started. If a test hasn't been performed, the value of this field is null.</p>
+    /// - On failure, responds with [`SdkError<DescribeAvailabilityMonitorTestError>`](crate::error::DescribeAvailabilityMonitorTestError)
     pub fn describe_availability_monitor_test(
         &self,
     ) -> fluent_builders::DescribeAvailabilityMonitorTest<C, M, R> {
         fluent_builders::DescribeAvailabilityMonitorTest::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeBandwidthRateLimit` operation.
+    /// Constructs a fluent builder for the [`DescribeBandwidthRateLimit`](crate::client::fluent_builders::DescribeBandwidthRateLimit) operation.
     ///
-    /// See [`DescribeBandwidthRateLimit`](crate::client::fluent_builders::DescribeBandwidthRateLimit) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeBandwidthRateLimitInput`](crate::input::DescribeBandwidthRateLimitInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::DescribeBandwidthRateLimitInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On success, responds with [`DescribeBandwidthRateLimitOutput`](crate::output::DescribeBandwidthRateLimitOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::DescribeBandwidthRateLimitOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`average_upload_rate_limit_in_bits_per_sec(Option<i64>)`](crate::output::DescribeBandwidthRateLimitOutput::average_upload_rate_limit_in_bits_per_sec): <p>The average upload bandwidth rate limit in bits per second. This field does not appear in the response if the upload rate limit is not set.</p>
+    ///   - [`average_download_rate_limit_in_bits_per_sec(Option<i64>)`](crate::output::DescribeBandwidthRateLimitOutput::average_download_rate_limit_in_bits_per_sec): <p>The average download bandwidth rate limit in bits per second. This field does not appear in the response if the download rate limit is not set.</p>
+    /// - On failure, responds with [`SdkError<DescribeBandwidthRateLimitError>`](crate::error::DescribeBandwidthRateLimitError)
     pub fn describe_bandwidth_rate_limit(
         &self,
     ) -> fluent_builders::DescribeBandwidthRateLimit<C, M, R> {
         fluent_builders::DescribeBandwidthRateLimit::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeBandwidthRateLimitSchedule` operation.
+    /// Constructs a fluent builder for the [`DescribeBandwidthRateLimitSchedule`](crate::client::fluent_builders::DescribeBandwidthRateLimitSchedule) operation.
     ///
-    /// See [`DescribeBandwidthRateLimitSchedule`](crate::client::fluent_builders::DescribeBandwidthRateLimitSchedule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeBandwidthRateLimitScheduleInput`](crate::input::DescribeBandwidthRateLimitScheduleInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::DescribeBandwidthRateLimitScheduleInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On success, responds with [`DescribeBandwidthRateLimitScheduleOutput`](crate::output::DescribeBandwidthRateLimitScheduleOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::DescribeBandwidthRateLimitScheduleOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`bandwidth_rate_limit_intervals(Option<Vec<BandwidthRateLimitInterval>>)`](crate::output::DescribeBandwidthRateLimitScheduleOutput::bandwidth_rate_limit_intervals): <p> An array that contains the bandwidth rate limit intervals for a tape or volume gateway. </p>
+    /// - On failure, responds with [`SdkError<DescribeBandwidthRateLimitScheduleError>`](crate::error::DescribeBandwidthRateLimitScheduleError)
     pub fn describe_bandwidth_rate_limit_schedule(
         &self,
     ) -> fluent_builders::DescribeBandwidthRateLimitSchedule<C, M, R> {
         fluent_builders::DescribeBandwidthRateLimitSchedule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeCache` operation.
+    /// Constructs a fluent builder for the [`DescribeCache`](crate::client::fluent_builders::DescribeCache) operation.
     ///
-    /// See [`DescribeCache`](crate::client::fluent_builders::DescribeCache) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeCacheInput`](crate::input::DescribeCacheInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::DescribeCacheInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On success, responds with [`DescribeCacheOutput`](crate::output::DescribeCacheOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::DescribeCacheOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`disk_ids(Option<Vec<String>>)`](crate::output::DescribeCacheOutput::disk_ids): <p>An array of strings that identify disks that are to be configured as working storage. Each string has a minimum length of 1 and maximum length of 300. You can get the disk IDs from the <code>ListLocalDisks</code> API.</p>
+    ///   - [`cache_allocated_in_bytes(i64)`](crate::output::DescribeCacheOutput::cache_allocated_in_bytes): <p>The amount of cache in bytes allocated to a gateway.</p>
+    ///   - [`cache_used_percentage(f64)`](crate::output::DescribeCacheOutput::cache_used_percentage): <p>Percent use of the gateway's cache storage. This metric applies only to the gateway-cached volume setup. The sample is taken at the end of the reporting period.</p>
+    ///   - [`cache_dirty_percentage(f64)`](crate::output::DescribeCacheOutput::cache_dirty_percentage): <p>The file share's contribution to the overall percentage of the gateway's cache that has not been persisted to Amazon Web Services. The sample is taken at the end of the reporting period.</p>
+    ///   - [`cache_hit_percentage(f64)`](crate::output::DescribeCacheOutput::cache_hit_percentage): <p>Percent of application read operations from the file shares that are served from cache. The sample is taken at the end of the reporting period.</p>
+    ///   - [`cache_miss_percentage(f64)`](crate::output::DescribeCacheOutput::cache_miss_percentage): <p>Percent of application read operations from the file shares that are not served from cache. The sample is taken at the end of the reporting period.</p>
+    /// - On failure, responds with [`SdkError<DescribeCacheError>`](crate::error::DescribeCacheError)
     pub fn describe_cache(&self) -> fluent_builders::DescribeCache<C, M, R> {
         fluent_builders::DescribeCache::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeCachediSCSIVolumes` operation.
+    /// Constructs a fluent builder for the [`DescribeCachediSCSIVolumes`](crate::client::fluent_builders::DescribeCachediSCSIVolumes) operation.
     ///
-    /// See [`DescribeCachediSCSIVolumes`](crate::client::fluent_builders::DescribeCachediSCSIVolumes) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeCachediScsiVolumesInput`](crate::input::DescribeCachediScsiVolumesInput) with field(s):
+    ///   - [`volume_ar_ns(Option<Vec<String>>)`](crate::input::DescribeCachediScsiVolumesInput::volume_ar_ns): <p>An array of strings where each string represents the Amazon Resource Name (ARN) of a cached volume. All of the specified cached volumes must be from the same gateway. Use <code>ListVolumes</code> to get volume ARNs for a gateway.</p>
+    /// - On success, responds with [`DescribeCachediScsiVolumesOutput`](crate::output::DescribeCachediScsiVolumesOutput) with field(s):
+    ///   - [`cachedi_scsi_volumes(Option<Vec<CachediScsiVolume>>)`](crate::output::DescribeCachediScsiVolumesOutput::cachedi_scsi_volumes): <p>An array of objects where each object contains metadata about one cached volume.</p>
+    /// - On failure, responds with [`SdkError<DescribeCachediSCSIVolumesError>`](crate::error::DescribeCachediSCSIVolumesError)
     pub fn describe_cachedi_scsi_volumes(
         &self,
     ) -> fluent_builders::DescribeCachediSCSIVolumes<C, M, R> {
         fluent_builders::DescribeCachediSCSIVolumes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeChapCredentials` operation.
+    /// Constructs a fluent builder for the [`DescribeChapCredentials`](crate::client::fluent_builders::DescribeChapCredentials) operation.
     ///
-    /// See [`DescribeChapCredentials`](crate::client::fluent_builders::DescribeChapCredentials) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeChapCredentialsInput`](crate::input::DescribeChapCredentialsInput) with field(s):
+    ///   - [`target_arn(Option<String>)`](crate::input::DescribeChapCredentialsInput::target_arn): <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return to retrieve the TargetARN for specified VolumeARN.</p>
+    /// - On success, responds with [`DescribeChapCredentialsOutput`](crate::output::DescribeChapCredentialsOutput) with field(s):
+    ///   - [`chap_credentials(Option<Vec<ChapInfo>>)`](crate::output::DescribeChapCredentialsOutput::chap_credentials): <p>An array of <code>ChapInfo</code> objects that represent CHAP credentials. Each object in the array contains CHAP credential information for one target-initiator pair. If no CHAP credentials are set, an empty array is returned. CHAP credential information is provided in a JSON object with the following fields:</p>  <ul>   <li> <p> <b>InitiatorName</b>: The iSCSI initiator that connects to the target.</p> </li>   <li> <p> <b>SecretToAuthenticateInitiator</b>: The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p> </li>   <li> <p> <b>SecretToAuthenticateTarget</b>: The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows client).</p> </li>   <li> <p> <b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage volume.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<DescribeChapCredentialsError>`](crate::error::DescribeChapCredentialsError)
     pub fn describe_chap_credentials(&self) -> fluent_builders::DescribeChapCredentials<C, M, R> {
         fluent_builders::DescribeChapCredentials::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeFileSystemAssociations` operation.
+    /// Constructs a fluent builder for the [`DescribeFileSystemAssociations`](crate::client::fluent_builders::DescribeFileSystemAssociations) operation.
     ///
-    /// See [`DescribeFileSystemAssociations`](crate::client::fluent_builders::DescribeFileSystemAssociations) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeFileSystemAssociationsInput`](crate::input::DescribeFileSystemAssociationsInput) with field(s):
+    ///   - [`file_system_association_arn_list(Option<Vec<String>>)`](crate::input::DescribeFileSystemAssociationsInput::file_system_association_arn_list): <p>An array containing the Amazon Resource Name (ARN) of each file system association to be described.</p>
+    /// - On success, responds with [`DescribeFileSystemAssociationsOutput`](crate::output::DescribeFileSystemAssociationsOutput) with field(s):
+    ///   - [`file_system_association_info_list(Option<Vec<FileSystemAssociationInfo>>)`](crate::output::DescribeFileSystemAssociationsOutput::file_system_association_info_list): <p>An array containing the <code>FileSystemAssociationInfo</code> data type of each file system association to be described. </p>
+    /// - On failure, responds with [`SdkError<DescribeFileSystemAssociationsError>`](crate::error::DescribeFileSystemAssociationsError)
     pub fn describe_file_system_associations(
         &self,
     ) -> fluent_builders::DescribeFileSystemAssociations<C, M, R> {
         fluent_builders::DescribeFileSystemAssociations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeGatewayInformation` operation.
+    /// Constructs a fluent builder for the [`DescribeGatewayInformation`](crate::client::fluent_builders::DescribeGatewayInformation) operation.
     ///
-    /// See [`DescribeGatewayInformation`](crate::client::fluent_builders::DescribeGatewayInformation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeGatewayInformationInput`](crate::input::DescribeGatewayInformationInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::DescribeGatewayInformationInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On success, responds with [`DescribeGatewayInformationOutput`](crate::output::DescribeGatewayInformationOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::DescribeGatewayInformationOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`gateway_id(Option<String>)`](crate::output::DescribeGatewayInformationOutput::gateway_id): <p>The unique identifier assigned to your gateway during activation. This ID becomes part of the gateway Amazon Resource Name (ARN), which you use as input for other operations.</p>
+    ///   - [`gateway_name(Option<String>)`](crate::output::DescribeGatewayInformationOutput::gateway_name): <p>The name you configured for your gateway.</p>
+    ///   - [`gateway_timezone(Option<String>)`](crate::output::DescribeGatewayInformationOutput::gateway_timezone): <p>A value that indicates the time zone configured for the gateway.</p>
+    ///   - [`gateway_state(Option<String>)`](crate::output::DescribeGatewayInformationOutput::gateway_state): <p>A value that indicates the operating state of the gateway.</p>
+    ///   - [`gateway_network_interfaces(Option<Vec<NetworkInterface>>)`](crate::output::DescribeGatewayInformationOutput::gateway_network_interfaces): <p>A <code>NetworkInterface</code> array that contains descriptions of the gateway network interfaces.</p>
+    ///   - [`gateway_type(Option<String>)`](crate::output::DescribeGatewayInformationOutput::gateway_type): <p>The type of the gateway.</p>
+    ///   - [`next_update_availability_date(Option<String>)`](crate::output::DescribeGatewayInformationOutput::next_update_availability_date): <p>The date on which an update to the gateway is available. This date is in the time zone of the gateway. If the gateway is not available for an update this field is not returned in the response.</p>
+    ///   - [`last_software_update(Option<String>)`](crate::output::DescribeGatewayInformationOutput::last_software_update): <p>The date on which the last software update was applied to the gateway. If the gateway has never been updated, this field does not return a value in the response.</p>
+    ///   - [`ec2_instance_id(Option<String>)`](crate::output::DescribeGatewayInformationOutput::ec2_instance_id): <p>The ID of the Amazon EC2 instance that was used to launch the gateway.</p>
+    ///   - [`ec2_instance_region(Option<String>)`](crate::output::DescribeGatewayInformationOutput::ec2_instance_region): <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::DescribeGatewayInformationOutput::tags): <p>A list of up to 50 tags assigned to the gateway, sorted alphabetically by key name. Each tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code> API operation.</p>
+    ///   - [`vpc_endpoint(Option<String>)`](crate::output::DescribeGatewayInformationOutput::vpc_endpoint): <p>The configuration settings for the virtual private cloud (VPC) endpoint for your gateway.</p>
+    ///   - [`cloud_watch_log_group_arn(Option<String>)`](crate::output::DescribeGatewayInformationOutput::cloud_watch_log_group_arn): <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor events in the gateway.</p>
+    ///   - [`host_environment(Option<HostEnvironment>)`](crate::output::DescribeGatewayInformationOutput::host_environment): <p>The type of hardware or software platform on which the gateway is running.</p>
+    ///   - [`endpoint_type(Option<String>)`](crate::output::DescribeGatewayInformationOutput::endpoint_type): <p>The type of endpoint for your gateway.</p>  <p>Valid Values: <code>STANDARD</code> | <code>FIPS</code> </p>
+    ///   - [`software_updates_end_date(Option<String>)`](crate::output::DescribeGatewayInformationOutput::software_updates_end_date): <p>Date after which this gateway will not receive software updates for new features.</p>
+    ///   - [`deprecation_date(Option<String>)`](crate::output::DescribeGatewayInformationOutput::deprecation_date): <p>Date after which this gateway will not receive software updates for new features and bug fixes.</p>
+    ///   - [`gateway_capacity(Option<GatewayCapacity>)`](crate::output::DescribeGatewayInformationOutput::gateway_capacity): <p>Specifies the size of the gateway's metadata cache.</p>
+    ///   - [`supported_gateway_capacities(Option<Vec<GatewayCapacity>>)`](crate::output::DescribeGatewayInformationOutput::supported_gateway_capacities): <p>A list of the metadata cache sizes that the gateway can support based on its current hardware specifications.</p>
+    ///   - [`host_environment_id(Option<String>)`](crate::output::DescribeGatewayInformationOutput::host_environment_id): <p>A unique identifier for the specific instance of the host platform running the gateway. This value is only available for certain host environments, and its format depends on the host environment type.</p>
+    /// - On failure, responds with [`SdkError<DescribeGatewayInformationError>`](crate::error::DescribeGatewayInformationError)
     pub fn describe_gateway_information(
         &self,
     ) -> fluent_builders::DescribeGatewayInformation<C, M, R> {
         fluent_builders::DescribeGatewayInformation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeMaintenanceStartTime` operation.
+    /// Constructs a fluent builder for the [`DescribeMaintenanceStartTime`](crate::client::fluent_builders::DescribeMaintenanceStartTime) operation.
     ///
-    /// See [`DescribeMaintenanceStartTime`](crate::client::fluent_builders::DescribeMaintenanceStartTime) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeMaintenanceStartTimeInput`](crate::input::DescribeMaintenanceStartTimeInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::DescribeMaintenanceStartTimeInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On success, responds with [`DescribeMaintenanceStartTimeOutput`](crate::output::DescribeMaintenanceStartTimeOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::DescribeMaintenanceStartTimeOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`hour_of_day(Option<i32>)`](crate::output::DescribeMaintenanceStartTimeOutput::hour_of_day): <p>The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone of the gateway.</p>
+    ///   - [`minute_of_hour(Option<i32>)`](crate::output::DescribeMaintenanceStartTimeOutput::minute_of_hour): <p>The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (0 to 59). The minute of the hour is in the time zone of the gateway.</p>
+    ///   - [`day_of_week(Option<i32>)`](crate::output::DescribeMaintenanceStartTimeOutput::day_of_week): <p>An ordinal number between 0 and 6 that represents the day of the week, where 0 represents Sunday and 6 represents Saturday. The day of week is in the time zone of the gateway.</p>
+    ///   - [`day_of_month(Option<i32>)`](crate::output::DescribeMaintenanceStartTimeOutput::day_of_month): <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month and 28 represents the last day of the month.</p>
+    ///   - [`timezone(Option<String>)`](crate::output::DescribeMaintenanceStartTimeOutput::timezone): <p>A value that indicates the time zone that is set for the gateway. The start time and day of week specified should be in the time zone of the gateway.</p>
+    /// - On failure, responds with [`SdkError<DescribeMaintenanceStartTimeError>`](crate::error::DescribeMaintenanceStartTimeError)
     pub fn describe_maintenance_start_time(
         &self,
     ) -> fluent_builders::DescribeMaintenanceStartTime<C, M, R> {
         fluent_builders::DescribeMaintenanceStartTime::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeNFSFileShares` operation.
+    /// Constructs a fluent builder for the [`DescribeNFSFileShares`](crate::client::fluent_builders::DescribeNFSFileShares) operation.
     ///
-    /// See [`DescribeNFSFileShares`](crate::client::fluent_builders::DescribeNFSFileShares) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeNfsFileSharesInput`](crate::input::DescribeNfsFileSharesInput) with field(s):
+    ///   - [`file_share_arn_list(Option<Vec<String>>)`](crate::input::DescribeNfsFileSharesInput::file_share_arn_list): <p>An array containing the Amazon Resource Name (ARN) of each file share to be described.</p>
+    /// - On success, responds with [`DescribeNfsFileSharesOutput`](crate::output::DescribeNfsFileSharesOutput) with field(s):
+    ///   - [`nfs_file_share_info_list(Option<Vec<NfsFileShareInfo>>)`](crate::output::DescribeNfsFileSharesOutput::nfs_file_share_info_list): <p>An array containing a description for each requested file share.</p>
+    /// - On failure, responds with [`SdkError<DescribeNFSFileSharesError>`](crate::error::DescribeNFSFileSharesError)
     pub fn describe_nfs_file_shares(&self) -> fluent_builders::DescribeNFSFileShares<C, M, R> {
         fluent_builders::DescribeNFSFileShares::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeSMBFileShares` operation.
+    /// Constructs a fluent builder for the [`DescribeSMBFileShares`](crate::client::fluent_builders::DescribeSMBFileShares) operation.
     ///
-    /// See [`DescribeSMBFileShares`](crate::client::fluent_builders::DescribeSMBFileShares) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeSmbFileSharesInput`](crate::input::DescribeSmbFileSharesInput) with field(s):
+    ///   - [`file_share_arn_list(Option<Vec<String>>)`](crate::input::DescribeSmbFileSharesInput::file_share_arn_list): <p>An array containing the Amazon Resource Name (ARN) of each file share to be described.</p>
+    /// - On success, responds with [`DescribeSmbFileSharesOutput`](crate::output::DescribeSmbFileSharesOutput) with field(s):
+    ///   - [`smb_file_share_info_list(Option<Vec<SmbFileShareInfo>>)`](crate::output::DescribeSmbFileSharesOutput::smb_file_share_info_list): <p>An array containing a description for each requested file share.</p>
+    /// - On failure, responds with [`SdkError<DescribeSMBFileSharesError>`](crate::error::DescribeSMBFileSharesError)
     pub fn describe_smb_file_shares(&self) -> fluent_builders::DescribeSMBFileShares<C, M, R> {
         fluent_builders::DescribeSMBFileShares::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeSMBSettings` operation.
+    /// Constructs a fluent builder for the [`DescribeSMBSettings`](crate::client::fluent_builders::DescribeSMBSettings) operation.
     ///
-    /// See [`DescribeSMBSettings`](crate::client::fluent_builders::DescribeSMBSettings) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeSmbSettingsInput`](crate::input::DescribeSmbSettingsInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::DescribeSmbSettingsInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On success, responds with [`DescribeSmbSettingsOutput`](crate::output::DescribeSmbSettingsOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::DescribeSmbSettingsOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`domain_name(Option<String>)`](crate::output::DescribeSmbSettingsOutput::domain_name): <p>The name of the domain that the gateway is joined to.</p>
+    ///   - [`active_directory_status(Option<ActiveDirectoryStatus>)`](crate::output::DescribeSmbSettingsOutput::active_directory_status): <p>Indicates the status of a gateway that is a member of the Active Directory domain.</p>  <ul>   <li> <p> <code>ACCESS_DENIED</code>: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.</p> </li>   <li> <p> <code>DETACHED</code>: Indicates that gateway is not joined to a domain.</p> </li>   <li> <p> <code>JOINED</code>: Indicates that the gateway has successfully joined a domain.</p> </li>   <li> <p> <code>JOINING</code>: Indicates that a <code>JoinDomain</code> operation is in progress.</p> </li>   <li> <p> <code>NETWORK_ERROR</code>: Indicates that <code>JoinDomain</code> operation failed due to a network or connectivity error.</p> </li>   <li> <p> <code>TIMEOUT</code>: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't complete within the allotted time.</p> </li>   <li> <p> <code>UNKNOWN_ERROR</code>: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.</p> </li>  </ul>
+    ///   - [`smb_guest_password_set(Option<bool>)`](crate::output::DescribeSmbSettingsOutput::smb_guest_password_set): <p>This value is <code>true</code> if a password for the guest user <code>smbguest</code> is set, otherwise <code>false</code>. Only supported for S3 File Gateways.</p>  <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    ///   - [`smb_security_strategy(Option<SmbSecurityStrategy>)`](crate::output::DescribeSmbSettingsOutput::smb_security_strategy): <p>The type of security strategy that was specified for file gateway.</p>  <ul>   <li> <p> <code>ClientSpecified</code>: If you use this option, requests are established based on what is negotiated by the client. This option is recommended when you want to maximize compatibility across different clients in your environment. Only supported for S3 File Gateways.</p> </li>   <li> <p> <code>MandatorySigning</code>: If you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or newer.</p> </li>   <li> <p> <code>MandatoryEncryption</code>: If you use this option, file gateway only allows connections from SMBv3 clients that have encryption enabled. This option is highly recommended for environments that handle sensitive data. This option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.</p> </li>  </ul>
+    ///   - [`file_shares_visible(Option<bool>)`](crate::output::DescribeSmbSettingsOutput::file_shares_visible): <p>The shares on this gateway appear when listing shares. Only supported for S3 File Gateways. </p>
+    ///   - [`smb_local_groups(Option<SmbLocalGroups>)`](crate::output::DescribeSmbSettingsOutput::smb_local_groups): <p>A list of Active Directory users and groups that have special permissions for SMB file shares on the gateway.</p>
+    /// - On failure, responds with [`SdkError<DescribeSMBSettingsError>`](crate::error::DescribeSMBSettingsError)
     pub fn describe_smb_settings(&self) -> fluent_builders::DescribeSMBSettings<C, M, R> {
         fluent_builders::DescribeSMBSettings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeSnapshotSchedule` operation.
+    /// Constructs a fluent builder for the [`DescribeSnapshotSchedule`](crate::client::fluent_builders::DescribeSnapshotSchedule) operation.
     ///
-    /// See [`DescribeSnapshotSchedule`](crate::client::fluent_builders::DescribeSnapshotSchedule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeSnapshotScheduleInput`](crate::input::DescribeSnapshotScheduleInput) with field(s):
+    ///   - [`volume_arn(Option<String>)`](crate::input::DescribeSnapshotScheduleInput::volume_arn): <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
+    /// - On success, responds with [`DescribeSnapshotScheduleOutput`](crate::output::DescribeSnapshotScheduleOutput) with field(s):
+    ///   - [`volume_arn(Option<String>)`](crate::output::DescribeSnapshotScheduleOutput::volume_arn): <p>The Amazon Resource Name (ARN) of the volume that was specified in the request.</p>
+    ///   - [`start_at(Option<i32>)`](crate::output::DescribeSnapshotScheduleOutput::start_at): <p>The hour of the day at which the snapshot schedule begins represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone of the gateway.</p>
+    ///   - [`recurrence_in_hours(Option<i32>)`](crate::output::DescribeSnapshotScheduleOutput::recurrence_in_hours): <p>The number of hours between snapshots.</p>
+    ///   - [`description(Option<String>)`](crate::output::DescribeSnapshotScheduleOutput::description): <p>The snapshot description.</p>
+    ///   - [`timezone(Option<String>)`](crate::output::DescribeSnapshotScheduleOutput::timezone): <p>A value that indicates the time zone of the gateway.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::DescribeSnapshotScheduleOutput::tags): <p>A list of up to 50 tags assigned to the snapshot schedule, sorted alphabetically by key name. Each tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code> API operation.</p>
+    /// - On failure, responds with [`SdkError<DescribeSnapshotScheduleError>`](crate::error::DescribeSnapshotScheduleError)
     pub fn describe_snapshot_schedule(&self) -> fluent_builders::DescribeSnapshotSchedule<C, M, R> {
         fluent_builders::DescribeSnapshotSchedule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeStorediSCSIVolumes` operation.
+    /// Constructs a fluent builder for the [`DescribeStorediSCSIVolumes`](crate::client::fluent_builders::DescribeStorediSCSIVolumes) operation.
     ///
-    /// See [`DescribeStorediSCSIVolumes`](crate::client::fluent_builders::DescribeStorediSCSIVolumes) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeStorediScsiVolumesInput`](crate::input::DescribeStorediScsiVolumesInput) with field(s):
+    ///   - [`volume_ar_ns(Option<Vec<String>>)`](crate::input::DescribeStorediScsiVolumesInput::volume_ar_ns): <p>An array of strings where each string represents the Amazon Resource Name (ARN) of a stored volume. All of the specified stored volumes must be from the same gateway. Use <code>ListVolumes</code> to get volume ARNs for a gateway.</p>
+    /// - On success, responds with [`DescribeStorediScsiVolumesOutput`](crate::output::DescribeStorediScsiVolumesOutput) with field(s):
+    ///   - [`storedi_scsi_volumes(Option<Vec<StorediScsiVolume>>)`](crate::output::DescribeStorediScsiVolumesOutput::storedi_scsi_volumes): <p>Describes a single unit of output from <code>DescribeStorediSCSIVolumes</code>. The following fields are returned:</p>  <ul>   <li> <p> <code>ChapEnabled</code>: Indicates whether mutual CHAP is enabled for the iSCSI target.</p> </li>   <li> <p> <code>LunNumber</code>: The logical disk number.</p> </li>   <li> <p> <code>NetworkInterfaceId</code>: The network interface ID of the stored volume that initiator use to map the stored volume as an iSCSI target.</p> </li>   <li> <p> <code>NetworkInterfacePort</code>: The port used to communicate with iSCSI targets.</p> </li>   <li> <p> <code>PreservedExistingData</code>: Indicates when the stored volume was created, existing data on the underlying local disk was preserved.</p> </li>   <li> <p> <code>SourceSnapshotId</code>: If the stored volume was created from a snapshot, this field contains the snapshot ID used, e.g. <code>snap-1122aabb</code>. Otherwise, this field is not included.</p> </li>   <li> <p> <code>StorediSCSIVolumes</code>: An array of StorediSCSIVolume objects where each object contains metadata about one stored volume.</p> </li>   <li> <p> <code>TargetARN</code>: The Amazon Resource Name (ARN) of the volume target.</p> </li>   <li> <p> <code>VolumeARN</code>: The Amazon Resource Name (ARN) of the stored volume.</p> </li>   <li> <p> <code>VolumeDiskId</code>: The disk ID of the local disk that was specified in the <code>CreateStorediSCSIVolume</code> operation.</p> </li>   <li> <p> <code>VolumeId</code>: The unique identifier of the storage volume, e.g. <code>vol-1122AABB</code>.</p> </li>   <li> <p> <code>VolumeiSCSIAttributes</code>: An <code>VolumeiSCSIAttributes</code> object that represents a collection of iSCSI attributes for one stored volume.</p> </li>   <li> <p> <code>VolumeProgress</code>: Represents the percentage complete if the volume is restoring or bootstrapping that represents the percent of data transferred. This field does not appear in the response if the stored volume is not restoring or bootstrapping.</p> </li>   <li> <p> <code>VolumeSizeInBytes</code>: The size of the volume in bytes.</p> </li>   <li> <p> <code>VolumeStatus</code>: One of the <code>VolumeStatus</code> values that indicates the state of the volume.</p> </li>   <li> <p> <code>VolumeType</code>: One of the enumeration values describing the type of the volume. Currently, only <code>STORED</code> volumes are supported.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<DescribeStorediSCSIVolumesError>`](crate::error::DescribeStorediSCSIVolumesError)
     pub fn describe_storedi_scsi_volumes(
         &self,
     ) -> fluent_builders::DescribeStorediSCSIVolumes<C, M, R> {
         fluent_builders::DescribeStorediSCSIVolumes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeTapeArchives` operation.
-    ///
-    /// See [`DescribeTapeArchives`](crate::client::fluent_builders::DescribeTapeArchives) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeTapeArchives`](crate::client::fluent_builders::DescribeTapeArchives) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeTapeArchives::into_paginator).
+    ///
+    /// - Takes [`DescribeTapeArchivesInput`](crate::input::DescribeTapeArchivesInput) with field(s):
+    ///   - [`tape_ar_ns(Option<Vec<String>>)`](crate::input::DescribeTapeArchivesInput::tape_ar_ns): <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeTapeArchivesInput::marker): <p>An opaque string that indicates the position at which to begin describing virtual tapes.</p>
+    ///   - [`limit(Option<i32>)`](crate::input::DescribeTapeArchivesInput::limit): <p>Specifies that the number of virtual tapes described be limited to the specified number.</p>
+    /// - On success, responds with [`DescribeTapeArchivesOutput`](crate::output::DescribeTapeArchivesOutput) with field(s):
+    ///   - [`tape_archives(Option<Vec<TapeArchive>>)`](crate::output::DescribeTapeArchivesOutput::tape_archives): <p>An array of virtual tape objects in the virtual tape shelf (VTS). The description includes of the Amazon Resource Name (ARN) of the virtual tapes. The information returned includes the Amazon Resource Names (ARNs) of the tapes, size of the tapes, status of the tapes, progress of the description, and tape barcode.</p>
+    ///   - [`marker(Option<String>)`](crate::output::DescribeTapeArchivesOutput::marker): <p>An opaque string that indicates the position at which the virtual tapes that were fetched for description ended. Use this marker in your next request to fetch the next set of virtual tapes in the virtual tape shelf (VTS). If there are no more virtual tapes to describe, this field does not appear in the response.</p>
+    /// - On failure, responds with [`SdkError<DescribeTapeArchivesError>`](crate::error::DescribeTapeArchivesError)
     pub fn describe_tape_archives(&self) -> fluent_builders::DescribeTapeArchives<C, M, R> {
         fluent_builders::DescribeTapeArchives::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeTapeRecoveryPoints` operation.
-    ///
-    /// See [`DescribeTapeRecoveryPoints`](crate::client::fluent_builders::DescribeTapeRecoveryPoints) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeTapeRecoveryPoints`](crate::client::fluent_builders::DescribeTapeRecoveryPoints) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeTapeRecoveryPoints::into_paginator).
+    ///
+    /// - Takes [`DescribeTapeRecoveryPointsInput`](crate::input::DescribeTapeRecoveryPointsInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::DescribeTapeRecoveryPointsInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeTapeRecoveryPointsInput::marker): <p>An opaque string that indicates the position at which to begin describing the virtual tape recovery points.</p>
+    ///   - [`limit(Option<i32>)`](crate::input::DescribeTapeRecoveryPointsInput::limit): <p>Specifies that the number of virtual tape recovery points that are described be limited to the specified number.</p>
+    /// - On success, responds with [`DescribeTapeRecoveryPointsOutput`](crate::output::DescribeTapeRecoveryPointsOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::DescribeTapeRecoveryPointsOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`tape_recovery_point_infos(Option<Vec<TapeRecoveryPointInfo>>)`](crate::output::DescribeTapeRecoveryPointsOutput::tape_recovery_point_infos): <p>An array of TapeRecoveryPointInfos that are available for the specified gateway.</p>
+    ///   - [`marker(Option<String>)`](crate::output::DescribeTapeRecoveryPointsOutput::marker): <p>An opaque string that indicates the position at which the virtual tape recovery points that were listed for description ended.</p>  <p>Use this marker in your next request to list the next set of virtual tape recovery points in the list. If there are no more recovery points to describe, this field does not appear in the response.</p>
+    /// - On failure, responds with [`SdkError<DescribeTapeRecoveryPointsError>`](crate::error::DescribeTapeRecoveryPointsError)
     pub fn describe_tape_recovery_points(
         &self,
     ) -> fluent_builders::DescribeTapeRecoveryPoints<C, M, R> {
         fluent_builders::DescribeTapeRecoveryPoints::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeTapes` operation.
-    ///
-    /// See [`DescribeTapes`](crate::client::fluent_builders::DescribeTapes) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeTapes`](crate::client::fluent_builders::DescribeTapes) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeTapes::into_paginator).
+    ///
+    /// - Takes [`DescribeTapesInput`](crate::input::DescribeTapesInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::DescribeTapesInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`tape_ar_ns(Option<Vec<String>>)`](crate::input::DescribeTapesInput::tape_ar_ns): <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe. If this parameter is not specified, Tape gateway returns a description of all virtual tapes associated with the specified gateway.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeTapesInput::marker): <p>A marker value, obtained in a previous call to <code>DescribeTapes</code>. This marker indicates which page of results to retrieve.</p>  <p>If not specified, the first page of results is retrieved.</p>
+    ///   - [`limit(Option<i32>)`](crate::input::DescribeTapesInput::limit): <p>Specifies that the number of virtual tapes described be limited to the specified number.</p> <note>   <p>Amazon Web Services may impose its own limit, if this field is not set.</p>  </note>
+    /// - On success, responds with [`DescribeTapesOutput`](crate::output::DescribeTapesOutput) with field(s):
+    ///   - [`tapes(Option<Vec<Tape>>)`](crate::output::DescribeTapesOutput::tapes): <p>An array of virtual tape descriptions.</p>
+    ///   - [`marker(Option<String>)`](crate::output::DescribeTapesOutput::marker): <p>An opaque string that can be used as part of a subsequent <code>DescribeTapes</code> call to retrieve the next page of results.</p>  <p>If a response does not contain a marker, then there are no more results to be retrieved.</p>
+    /// - On failure, responds with [`SdkError<DescribeTapesError>`](crate::error::DescribeTapesError)
     pub fn describe_tapes(&self) -> fluent_builders::DescribeTapes<C, M, R> {
         fluent_builders::DescribeTapes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeUploadBuffer` operation.
+    /// Constructs a fluent builder for the [`DescribeUploadBuffer`](crate::client::fluent_builders::DescribeUploadBuffer) operation.
     ///
-    /// See [`DescribeUploadBuffer`](crate::client::fluent_builders::DescribeUploadBuffer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeUploadBufferInput`](crate::input::DescribeUploadBufferInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::DescribeUploadBufferInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On success, responds with [`DescribeUploadBufferOutput`](crate::output::DescribeUploadBufferOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::DescribeUploadBufferOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`disk_ids(Option<Vec<String>>)`](crate::output::DescribeUploadBufferOutput::disk_ids): <p>An array of the gateway's local disk IDs that are configured as working storage. Each local disk ID is specified as a string (minimum length of 1 and maximum length of 300). If no local disks are configured as working storage, then the DiskIds array is empty.</p>
+    ///   - [`upload_buffer_used_in_bytes(i64)`](crate::output::DescribeUploadBufferOutput::upload_buffer_used_in_bytes): <p>The total number of bytes being used in the gateway's upload buffer.</p>
+    ///   - [`upload_buffer_allocated_in_bytes(i64)`](crate::output::DescribeUploadBufferOutput::upload_buffer_allocated_in_bytes): <p>The total number of bytes allocated in the gateway's as upload buffer.</p>
+    /// - On failure, responds with [`SdkError<DescribeUploadBufferError>`](crate::error::DescribeUploadBufferError)
     pub fn describe_upload_buffer(&self) -> fluent_builders::DescribeUploadBuffer<C, M, R> {
         fluent_builders::DescribeUploadBuffer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeVTLDevices` operation.
-    ///
-    /// See [`DescribeVTLDevices`](crate::client::fluent_builders::DescribeVTLDevices) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeVTLDevices`](crate::client::fluent_builders::DescribeVTLDevices) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeVTLDevices::into_paginator).
+    ///
+    /// - Takes [`DescribeVtlDevicesInput`](crate::input::DescribeVtlDevicesInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::DescribeVtlDevicesInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`vtl_device_ar_ns(Option<Vec<String>>)`](crate::input::DescribeVtlDevicesInput::vtl_device_ar_ns): <p>An array of strings, where each string represents the Amazon Resource Name (ARN) of a VTL device.</p> <note>   <p>All of the specified VTL devices must be from the same gateway. If no VTL devices are specified, the result will contain all devices on the specified gateway.</p>  </note>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeVtlDevicesInput::marker): <p>An opaque string that indicates the position at which to begin describing the VTL devices.</p>
+    ///   - [`limit(Option<i32>)`](crate::input::DescribeVtlDevicesInput::limit): <p>Specifies that the number of VTL devices described be limited to the specified number.</p>
+    /// - On success, responds with [`DescribeVtlDevicesOutput`](crate::output::DescribeVtlDevicesOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::DescribeVtlDevicesOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`vtl_devices(Option<Vec<VtlDevice>>)`](crate::output::DescribeVtlDevicesOutput::vtl_devices): <p>An array of VTL device objects composed of the Amazon Resource Name (ARN) of the VTL devices.</p>
+    ///   - [`marker(Option<String>)`](crate::output::DescribeVtlDevicesOutput::marker): <p>An opaque string that indicates the position at which the VTL devices that were fetched for description ended. Use the marker in your next request to fetch the next set of VTL devices in the list. If there are no more VTL devices to describe, this field does not appear in the response.</p>
+    /// - On failure, responds with [`SdkError<DescribeVTLDevicesError>`](crate::error::DescribeVTLDevicesError)
     pub fn describe_vtl_devices(&self) -> fluent_builders::DescribeVTLDevices<C, M, R> {
         fluent_builders::DescribeVTLDevices::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeWorkingStorage` operation.
+    /// Constructs a fluent builder for the [`DescribeWorkingStorage`](crate::client::fluent_builders::DescribeWorkingStorage) operation.
     ///
-    /// See [`DescribeWorkingStorage`](crate::client::fluent_builders::DescribeWorkingStorage) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeWorkingStorageInput`](crate::input::DescribeWorkingStorageInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::DescribeWorkingStorageInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On success, responds with [`DescribeWorkingStorageOutput`](crate::output::DescribeWorkingStorageOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::DescribeWorkingStorageOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`disk_ids(Option<Vec<String>>)`](crate::output::DescribeWorkingStorageOutput::disk_ids): <p>An array of the gateway's local disk IDs that are configured as working storage. Each local disk ID is specified as a string (minimum length of 1 and maximum length of 300). If no local disks are configured as working storage, then the DiskIds array is empty.</p>
+    ///   - [`working_storage_used_in_bytes(i64)`](crate::output::DescribeWorkingStorageOutput::working_storage_used_in_bytes): <p>The total working storage in bytes in use by the gateway. If no working storage is configured for the gateway, this field returns 0.</p>
+    ///   - [`working_storage_allocated_in_bytes(i64)`](crate::output::DescribeWorkingStorageOutput::working_storage_allocated_in_bytes): <p>The total working storage in bytes allocated for the gateway. If no working storage is configured for the gateway, this field returns 0.</p>
+    /// - On failure, responds with [`SdkError<DescribeWorkingStorageError>`](crate::error::DescribeWorkingStorageError)
     pub fn describe_working_storage(&self) -> fluent_builders::DescribeWorkingStorage<C, M, R> {
         fluent_builders::DescribeWorkingStorage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DetachVolume` operation.
+    /// Constructs a fluent builder for the [`DetachVolume`](crate::client::fluent_builders::DetachVolume) operation.
     ///
-    /// See [`DetachVolume`](crate::client::fluent_builders::DetachVolume) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DetachVolumeInput`](crate::input::DetachVolumeInput) with field(s):
+    ///   - [`volume_arn(Option<String>)`](crate::input::DetachVolumeInput::volume_arn): <p>The Amazon Resource Name (ARN) of the volume to detach from the gateway.</p>
+    ///   - [`force_detach(Option<bool>)`](crate::input::DetachVolumeInput::force_detach): <p>Set to <code>true</code> to forcibly remove the iSCSI connection of the target volume and detach the volume. The default is <code>false</code>. If this value is set to <code>false</code>, you must manually disconnect the iSCSI connection from the target volume.</p>  <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    /// - On success, responds with [`DetachVolumeOutput`](crate::output::DetachVolumeOutput) with field(s):
+    ///   - [`volume_arn(Option<String>)`](crate::output::DetachVolumeOutput::volume_arn): <p>The Amazon Resource Name (ARN) of the volume that was detached.</p>
+    /// - On failure, responds with [`SdkError<DetachVolumeError>`](crate::error::DetachVolumeError)
     pub fn detach_volume(&self) -> fluent_builders::DetachVolume<C, M, R> {
         fluent_builders::DetachVolume::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisableGateway` operation.
+    /// Constructs a fluent builder for the [`DisableGateway`](crate::client::fluent_builders::DisableGateway) operation.
     ///
-    /// See [`DisableGateway`](crate::client::fluent_builders::DisableGateway) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisableGatewayInput`](crate::input::DisableGatewayInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::DisableGatewayInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On success, responds with [`DisableGatewayOutput`](crate::output::DisableGatewayOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::DisableGatewayOutput::gateway_arn): <p>The unique Amazon Resource Name (ARN) of the disabled gateway.</p>
+    /// - On failure, responds with [`SdkError<DisableGatewayError>`](crate::error::DisableGatewayError)
     pub fn disable_gateway(&self) -> fluent_builders::DisableGateway<C, M, R> {
         fluent_builders::DisableGateway::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateFileSystem` operation.
+    /// Constructs a fluent builder for the [`DisassociateFileSystem`](crate::client::fluent_builders::DisassociateFileSystem) operation.
     ///
-    /// See [`DisassociateFileSystem`](crate::client::fluent_builders::DisassociateFileSystem) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateFileSystemInput`](crate::input::DisassociateFileSystemInput) with field(s):
+    ///   - [`file_system_association_arn(Option<String>)`](crate::input::DisassociateFileSystemInput::file_system_association_arn): <p>The Amazon Resource Name (ARN) of the file system association to be deleted.</p>
+    ///   - [`force_delete(bool)`](crate::input::DisassociateFileSystemInput::force_delete): <p>If this value is set to true, the operation disassociates an Amazon FSx file system immediately. It ends all data uploads to the file system, and the file system association enters the <code>FORCE_DELETING</code> status. If this value is set to false, the Amazon FSx file system does not disassociate until all data is uploaded.</p>
+    /// - On success, responds with [`DisassociateFileSystemOutput`](crate::output::DisassociateFileSystemOutput) with field(s):
+    ///   - [`file_system_association_arn(Option<String>)`](crate::output::DisassociateFileSystemOutput::file_system_association_arn): <p>The Amazon Resource Name (ARN) of the deleted file system association.</p>
+    /// - On failure, responds with [`SdkError<DisassociateFileSystemError>`](crate::error::DisassociateFileSystemError)
     pub fn disassociate_file_system(&self) -> fluent_builders::DisassociateFileSystem<C, M, R> {
         fluent_builders::DisassociateFileSystem::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `JoinDomain` operation.
+    /// Constructs a fluent builder for the [`JoinDomain`](crate::client::fluent_builders::JoinDomain) operation.
     ///
-    /// See [`JoinDomain`](crate::client::fluent_builders::JoinDomain) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`JoinDomainInput`](crate::input::JoinDomainInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::JoinDomainInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`domain_name(Option<String>)`](crate::input::JoinDomainInput::domain_name): <p>The name of the domain that you want the gateway to join.</p>
+    ///   - [`organizational_unit(Option<String>)`](crate::input::JoinDomainInput::organizational_unit): <p>The organizational unit (OU) is a container in an Active Directory that can hold users, groups, computers, and other OUs and this parameter specifies the OU that the gateway will join within the AD domain.</p>
+    ///   - [`domain_controllers(Option<Vec<String>>)`](crate::input::JoinDomainInput::domain_controllers): <p>List of IPv4 addresses, NetBIOS names, or host names of your domain server. If you need to specify the port number include it after the colon (“:”). For example, <code>mydc.mydomain.com:389</code>.</p>
+    ///   - [`timeout_in_seconds(Option<i32>)`](crate::input::JoinDomainInput::timeout_in_seconds): <p>Specifies the time in seconds, in which the <code>JoinDomain</code> operation must complete. The default is 20 seconds.</p>
+    ///   - [`user_name(Option<String>)`](crate::input::JoinDomainInput::user_name): <p>Sets the user name of user who has permission to add the gateway to the Active Directory domain. The domain user account should be enabled to join computers to the domain. For example, you can use the domain administrator account or an account with delegated permissions to join computers to the domain.</p>
+    ///   - [`password(Option<String>)`](crate::input::JoinDomainInput::password): <p>Sets the password of the user who has permission to add the gateway to the Active Directory domain.</p>
+    /// - On success, responds with [`JoinDomainOutput`](crate::output::JoinDomainOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::JoinDomainOutput::gateway_arn): <p>The unique Amazon Resource Name (ARN) of the gateway that joined the domain.</p>
+    ///   - [`active_directory_status(Option<ActiveDirectoryStatus>)`](crate::output::JoinDomainOutput::active_directory_status): <p>Indicates the status of the gateway as a member of the Active Directory domain.</p>  <ul>   <li> <p> <code>ACCESS_DENIED</code>: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.</p> </li>   <li> <p> <code>DETACHED</code>: Indicates that gateway is not joined to a domain.</p> </li>   <li> <p> <code>JOINED</code>: Indicates that the gateway has successfully joined a domain.</p> </li>   <li> <p> <code>JOINING</code>: Indicates that a <code>JoinDomain</code> operation is in progress.</p> </li>   <li> <p> <code>NETWORK_ERROR</code>: Indicates that <code>JoinDomain</code> operation failed due to a network or connectivity error.</p> </li>   <li> <p> <code>TIMEOUT</code>: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't complete within the allotted time.</p> </li>   <li> <p> <code>UNKNOWN_ERROR</code>: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<JoinDomainError>`](crate::error::JoinDomainError)
     pub fn join_domain(&self) -> fluent_builders::JoinDomain<C, M, R> {
         fluent_builders::JoinDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAutomaticTapeCreationPolicies` operation.
+    /// Constructs a fluent builder for the [`ListAutomaticTapeCreationPolicies`](crate::client::fluent_builders::ListAutomaticTapeCreationPolicies) operation.
     ///
-    /// See [`ListAutomaticTapeCreationPolicies`](crate::client::fluent_builders::ListAutomaticTapeCreationPolicies) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListAutomaticTapeCreationPoliciesInput`](crate::input::ListAutomaticTapeCreationPoliciesInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::ListAutomaticTapeCreationPoliciesInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On success, responds with [`ListAutomaticTapeCreationPoliciesOutput`](crate::output::ListAutomaticTapeCreationPoliciesOutput) with field(s):
+    ///   - [`automatic_tape_creation_policy_infos(Option<Vec<AutomaticTapeCreationPolicyInfo>>)`](crate::output::ListAutomaticTapeCreationPoliciesOutput::automatic_tape_creation_policy_infos): <p>Gets a listing of information about the gateway's automatic tape creation policies, including the automatic tape creation rules and the gateway that is using the policies.</p>
+    /// - On failure, responds with [`SdkError<ListAutomaticTapeCreationPoliciesError>`](crate::error::ListAutomaticTapeCreationPoliciesError)
     pub fn list_automatic_tape_creation_policies(
         &self,
     ) -> fluent_builders::ListAutomaticTapeCreationPolicies<C, M, R> {
         fluent_builders::ListAutomaticTapeCreationPolicies::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListFileShares` operation.
-    ///
-    /// See [`ListFileShares`](crate::client::fluent_builders::ListFileShares) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListFileShares`](crate::client::fluent_builders::ListFileShares) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFileShares::into_paginator).
+    ///
+    /// - Takes [`ListFileSharesInput`](crate::input::ListFileSharesInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::ListFileSharesInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway whose file shares you want to list. If this field is not present, all file shares under your account are listed.</p>
+    ///   - [`limit(Option<i32>)`](crate::input::ListFileSharesInput::limit): <p>The maximum number of file shares to return in the response. The value must be an integer with a value greater than zero. Optional.</p>
+    ///   - [`marker(Option<String>)`](crate::input::ListFileSharesInput::marker): <p>Opaque pagination token returned from a previous ListFileShares operation. If present, <code>Marker</code> specifies where to continue the list from after a previous call to ListFileShares. Optional.</p>
+    /// - On success, responds with [`ListFileSharesOutput`](crate::output::ListFileSharesOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::ListFileSharesOutput::marker): <p>If the request includes <code>Marker</code>, the response returns that value in this field.</p>
+    ///   - [`next_marker(Option<String>)`](crate::output::ListFileSharesOutput::next_marker): <p>If a value is present, there are more file shares to return. In a subsequent request, use <code>NextMarker</code> as the value for <code>Marker</code> to retrieve the next set of file shares.</p>
+    ///   - [`file_share_info_list(Option<Vec<FileShareInfo>>)`](crate::output::ListFileSharesOutput::file_share_info_list): <p>An array of information about the S3 File Gateway's file shares.</p>
+    /// - On failure, responds with [`SdkError<ListFileSharesError>`](crate::error::ListFileSharesError)
     pub fn list_file_shares(&self) -> fluent_builders::ListFileShares<C, M, R> {
         fluent_builders::ListFileShares::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListFileSystemAssociations` operation.
-    ///
-    /// See [`ListFileSystemAssociations`](crate::client::fluent_builders::ListFileSystemAssociations) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListFileSystemAssociations`](crate::client::fluent_builders::ListFileSystemAssociations) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFileSystemAssociations::into_paginator).
+    ///
+    /// - Takes [`ListFileSystemAssociationsInput`](crate::input::ListFileSystemAssociationsInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::ListFileSystemAssociationsInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`limit(Option<i32>)`](crate::input::ListFileSystemAssociationsInput::limit): <p>The maximum number of file system associations to return in the response. If present, <code>Limit</code> must be an integer with a value greater than zero. Optional.</p>
+    ///   - [`marker(Option<String>)`](crate::input::ListFileSystemAssociationsInput::marker): <p>Opaque pagination token returned from a previous <code>ListFileSystemAssociations</code> operation. If present, <code>Marker</code> specifies where to continue the list from after a previous call to <code>ListFileSystemAssociations</code>. Optional.</p>
+    /// - On success, responds with [`ListFileSystemAssociationsOutput`](crate::output::ListFileSystemAssociationsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::ListFileSystemAssociationsOutput::marker): <p>If the request includes <code>Marker</code>, the response returns that value in this field.</p>
+    ///   - [`next_marker(Option<String>)`](crate::output::ListFileSystemAssociationsOutput::next_marker): <p>If a value is present, there are more file system associations to return. In a subsequent request, use <code>NextMarker</code> as the value for <code>Marker</code> to retrieve the next set of file system associations.</p>
+    ///   - [`file_system_association_summary_list(Option<Vec<FileSystemAssociationSummary>>)`](crate::output::ListFileSystemAssociationsOutput::file_system_association_summary_list): <p>An array of information about the Amazon FSx gateway's file system associations.</p>
+    /// - On failure, responds with [`SdkError<ListFileSystemAssociationsError>`](crate::error::ListFileSystemAssociationsError)
     pub fn list_file_system_associations(
         &self,
     ) -> fluent_builders::ListFileSystemAssociations<C, M, R> {
         fluent_builders::ListFileSystemAssociations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListGateways` operation.
-    ///
-    /// See [`ListGateways`](crate::client::fluent_builders::ListGateways) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListGateways`](crate::client::fluent_builders::ListGateways) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListGateways::into_paginator).
+    ///
+    /// - Takes [`ListGatewaysInput`](crate::input::ListGatewaysInput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::input::ListGatewaysInput::marker): <p>An opaque string that indicates the position at which to begin the returned list of gateways.</p>
+    ///   - [`limit(Option<i32>)`](crate::input::ListGatewaysInput::limit): <p>Specifies that the list of gateways returned be limited to the specified number of items.</p>
+    /// - On success, responds with [`ListGatewaysOutput`](crate::output::ListGatewaysOutput) with field(s):
+    ///   - [`gateways(Option<Vec<GatewayInfo>>)`](crate::output::ListGatewaysOutput::gateways): <p>An array of <code>GatewayInfo</code> objects.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListGatewaysOutput::marker): <p>Use the marker in your next request to fetch the next set of gateways in the list. If there are no more gateways to list, this field does not appear in the response.</p>
+    /// - On failure, responds with [`SdkError<ListGatewaysError>`](crate::error::ListGatewaysError)
     pub fn list_gateways(&self) -> fluent_builders::ListGateways<C, M, R> {
         fluent_builders::ListGateways::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListLocalDisks` operation.
+    /// Constructs a fluent builder for the [`ListLocalDisks`](crate::client::fluent_builders::ListLocalDisks) operation.
     ///
-    /// See [`ListLocalDisks`](crate::client::fluent_builders::ListLocalDisks) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListLocalDisksInput`](crate::input::ListLocalDisksInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::ListLocalDisksInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On success, responds with [`ListLocalDisksOutput`](crate::output::ListLocalDisksOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::ListLocalDisksOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`disks(Option<Vec<Disk>>)`](crate::output::ListLocalDisksOutput::disks): <p>A JSON object containing the following fields:</p>  <ul>   <li> <p> <code>ListLocalDisksOutput$Disks</code> </p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<ListLocalDisksError>`](crate::error::ListLocalDisksError)
     pub fn list_local_disks(&self) -> fluent_builders::ListLocalDisks<C, M, R> {
         fluent_builders::ListLocalDisks::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
-    ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
+    ///
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource for which you want to list tags.</p>
+    ///   - [`marker(Option<String>)`](crate::input::ListTagsForResourceInput::marker): <p>An opaque string that indicates the position at which to begin returning the list of tags.</p>
+    ///   - [`limit(Option<i32>)`](crate::input::ListTagsForResourceInput::limit): <p>Specifies that the list of tags returned be limited to the specified number of items.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::output::ListTagsForResourceOutput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource for which you want to list tags.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListTagsForResourceOutput::marker): <p>An opaque string that indicates the position at which to stop returning the list of tags.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>An array that contains the tags for the specified resource.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTapePools` operation.
-    ///
-    /// See [`ListTapePools`](crate::client::fluent_builders::ListTapePools) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListTapePools`](crate::client::fluent_builders::ListTapePools) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTapePools::into_paginator).
+    ///
+    /// - Takes [`ListTapePoolsInput`](crate::input::ListTapePoolsInput) with field(s):
+    ///   - [`pool_ar_ns(Option<Vec<String>>)`](crate::input::ListTapePoolsInput::pool_ar_ns): <p>The Amazon Resource Name (ARN) of each of the custom tape pools you want to list. If you don't specify a custom tape pool ARN, the response lists all custom tape pools. </p>
+    ///   - [`marker(Option<String>)`](crate::input::ListTapePoolsInput::marker): <p>A string that indicates the position at which to begin the returned list of tape pools.</p>
+    ///   - [`limit(Option<i32>)`](crate::input::ListTapePoolsInput::limit): <p>An optional number limit for the tape pools in the list returned by this call.</p>
+    /// - On success, responds with [`ListTapePoolsOutput`](crate::output::ListTapePoolsOutput) with field(s):
+    ///   - [`pool_infos(Option<Vec<PoolInfo>>)`](crate::output::ListTapePoolsOutput::pool_infos): <p>An array of <code>PoolInfo</code> objects, where each object describes a single custom tape pool. If there are no custom tape pools, the <code>PoolInfos</code> is an empty array. </p>
+    ///   - [`marker(Option<String>)`](crate::output::ListTapePoolsOutput::marker): <p>A string that indicates the position at which to begin the returned list of tape pools. Use the marker in your next request to continue pagination of tape pools. If there are no more tape pools to list, this element does not appear in the response body. </p>
+    /// - On failure, responds with [`SdkError<ListTapePoolsError>`](crate::error::ListTapePoolsError)
     pub fn list_tape_pools(&self) -> fluent_builders::ListTapePools<C, M, R> {
         fluent_builders::ListTapePools::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTapes` operation.
-    ///
-    /// See [`ListTapes`](crate::client::fluent_builders::ListTapes) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListTapes`](crate::client::fluent_builders::ListTapes) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTapes::into_paginator).
+    ///
+    /// - Takes [`ListTapesInput`](crate::input::ListTapesInput) with field(s):
+    ///   - [`tape_ar_ns(Option<Vec<String>>)`](crate::input::ListTapesInput::tape_ar_ns): <p>The Amazon Resource Name (ARN) of each of the tapes you want to list. If you don't specify a tape ARN, the response lists all tapes in both your VTL and VTS.</p>
+    ///   - [`marker(Option<String>)`](crate::input::ListTapesInput::marker): <p>A string that indicates the position at which to begin the returned list of tapes.</p>
+    ///   - [`limit(Option<i32>)`](crate::input::ListTapesInput::limit): <p>An optional number limit for the tapes in the list returned by this call.</p>
+    /// - On success, responds with [`ListTapesOutput`](crate::output::ListTapesOutput) with field(s):
+    ///   - [`tape_infos(Option<Vec<TapeInfo>>)`](crate::output::ListTapesOutput::tape_infos): <p>An array of <code>TapeInfo</code> objects, where each object describes a single tape. If there are no tapes in the tape library or VTS, then the <code>TapeInfos</code> is an empty array.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListTapesOutput::marker): <p>A string that indicates the position at which to begin returning the next list of tapes. Use the marker in your next request to continue pagination of tapes. If there are no more tapes to list, this element does not appear in the response body.</p>
+    /// - On failure, responds with [`SdkError<ListTapesError>`](crate::error::ListTapesError)
     pub fn list_tapes(&self) -> fluent_builders::ListTapes<C, M, R> {
         fluent_builders::ListTapes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListVolumeInitiators` operation.
+    /// Constructs a fluent builder for the [`ListVolumeInitiators`](crate::client::fluent_builders::ListVolumeInitiators) operation.
     ///
-    /// See [`ListVolumeInitiators`](crate::client::fluent_builders::ListVolumeInitiators) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListVolumeInitiatorsInput`](crate::input::ListVolumeInitiatorsInput) with field(s):
+    ///   - [`volume_arn(Option<String>)`](crate::input::ListVolumeInitiatorsInput::volume_arn): <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes for the gateway.</p>
+    /// - On success, responds with [`ListVolumeInitiatorsOutput`](crate::output::ListVolumeInitiatorsOutput) with field(s):
+    ///   - [`initiators(Option<Vec<String>>)`](crate::output::ListVolumeInitiatorsOutput::initiators): <p>The host names and port numbers of all iSCSI initiators that are connected to the gateway.</p>
+    /// - On failure, responds with [`SdkError<ListVolumeInitiatorsError>`](crate::error::ListVolumeInitiatorsError)
     pub fn list_volume_initiators(&self) -> fluent_builders::ListVolumeInitiators<C, M, R> {
         fluent_builders::ListVolumeInitiators::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListVolumeRecoveryPoints` operation.
+    /// Constructs a fluent builder for the [`ListVolumeRecoveryPoints`](crate::client::fluent_builders::ListVolumeRecoveryPoints) operation.
     ///
-    /// See [`ListVolumeRecoveryPoints`](crate::client::fluent_builders::ListVolumeRecoveryPoints) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListVolumeRecoveryPointsInput`](crate::input::ListVolumeRecoveryPointsInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::ListVolumeRecoveryPointsInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On success, responds with [`ListVolumeRecoveryPointsOutput`](crate::output::ListVolumeRecoveryPointsOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::ListVolumeRecoveryPointsOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`volume_recovery_point_infos(Option<Vec<VolumeRecoveryPointInfo>>)`](crate::output::ListVolumeRecoveryPointsOutput::volume_recovery_point_infos): <p>An array of <code>VolumeRecoveryPointInfo</code> objects.</p>
+    /// - On failure, responds with [`SdkError<ListVolumeRecoveryPointsError>`](crate::error::ListVolumeRecoveryPointsError)
     pub fn list_volume_recovery_points(
         &self,
     ) -> fluent_builders::ListVolumeRecoveryPoints<C, M, R> {
         fluent_builders::ListVolumeRecoveryPoints::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListVolumes` operation.
-    ///
-    /// See [`ListVolumes`](crate::client::fluent_builders::ListVolumes) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListVolumes`](crate::client::fluent_builders::ListVolumes) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListVolumes::into_paginator).
+    ///
+    /// - Takes [`ListVolumesInput`](crate::input::ListVolumesInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::ListVolumesInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`marker(Option<String>)`](crate::input::ListVolumesInput::marker): <p>A string that indicates the position at which to begin the returned list of volumes. Obtain the marker from the response of a previous List iSCSI Volumes request.</p>
+    ///   - [`limit(Option<i32>)`](crate::input::ListVolumesInput::limit): <p>Specifies that the list of volumes returned be limited to the specified number of items.</p>
+    /// - On success, responds with [`ListVolumesOutput`](crate::output::ListVolumesOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::ListVolumesOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`marker(Option<String>)`](crate::output::ListVolumesOutput::marker): <p>Use the marker in your next request to continue pagination of iSCSI volumes. If there are no more volumes to list, this field does not appear in the response body.</p>
+    ///   - [`volume_infos(Option<Vec<VolumeInfo>>)`](crate::output::ListVolumesOutput::volume_infos): <p>An array of <code>VolumeInfo</code> objects, where each object describes an iSCSI volume. If no volumes are defined for the gateway, then <code>VolumeInfos</code> is an empty array "[]".</p>
+    /// - On failure, responds with [`SdkError<ListVolumesError>`](crate::error::ListVolumesError)
     pub fn list_volumes(&self) -> fluent_builders::ListVolumes<C, M, R> {
         fluent_builders::ListVolumes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `NotifyWhenUploaded` operation.
+    /// Constructs a fluent builder for the [`NotifyWhenUploaded`](crate::client::fluent_builders::NotifyWhenUploaded) operation.
     ///
-    /// See [`NotifyWhenUploaded`](crate::client::fluent_builders::NotifyWhenUploaded) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`NotifyWhenUploadedInput`](crate::input::NotifyWhenUploadedInput) with field(s):
+    ///   - [`file_share_arn(Option<String>)`](crate::input::NotifyWhenUploadedInput::file_share_arn): <p>The Amazon Resource Name (ARN) of the file share.</p>
+    /// - On success, responds with [`NotifyWhenUploadedOutput`](crate::output::NotifyWhenUploadedOutput) with field(s):
+    ///   - [`file_share_arn(Option<String>)`](crate::output::NotifyWhenUploadedOutput::file_share_arn): <p>The Amazon Resource Name (ARN) of the file share.</p>
+    ///   - [`notification_id(Option<String>)`](crate::output::NotifyWhenUploadedOutput::notification_id): <p>The randomly generated ID of the notification that was sent. This ID is in UUID format.</p>
+    /// - On failure, responds with [`SdkError<NotifyWhenUploadedError>`](crate::error::NotifyWhenUploadedError)
     pub fn notify_when_uploaded(&self) -> fluent_builders::NotifyWhenUploaded<C, M, R> {
         fluent_builders::NotifyWhenUploaded::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RefreshCache` operation.
+    /// Constructs a fluent builder for the [`RefreshCache`](crate::client::fluent_builders::RefreshCache) operation.
     ///
-    /// See [`RefreshCache`](crate::client::fluent_builders::RefreshCache) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RefreshCacheInput`](crate::input::RefreshCacheInput) with field(s):
+    ///   - [`file_share_arn(Option<String>)`](crate::input::RefreshCacheInput::file_share_arn): <p>The Amazon Resource Name (ARN) of the file share you want to refresh.</p>
+    ///   - [`folder_list(Option<Vec<String>>)`](crate::input::RefreshCacheInput::folder_list): <p>A comma-separated list of the paths of folders to refresh in the cache. The default is [<code>"/"</code>]. The default refreshes objects and folders at the root of the Amazon S3 bucket. If <code>Recursive</code> is set to <code>true</code>, the entire S3 bucket that the file share has access to is refreshed.</p>
+    ///   - [`recursive(Option<bool>)`](crate::input::RefreshCacheInput::recursive): <p>A value that specifies whether to recursively refresh folders in the cache. The refresh includes folders that were in the cache the last time the gateway listed the folder's contents. If this value set to <code>true</code>, each folder that is listed in <code>FolderList</code> is recursively updated. Otherwise, subfolders listed in <code>FolderList</code> are not refreshed. Only objects that are in folders listed directly under <code>FolderList</code> are found and used for the update. The default is <code>true</code>.</p>  <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    /// - On success, responds with [`RefreshCacheOutput`](crate::output::RefreshCacheOutput) with field(s):
+    ///   - [`file_share_arn(Option<String>)`](crate::output::RefreshCacheOutput::file_share_arn): <p>The Amazon Resource Name (ARN) of the file share.</p>
+    ///   - [`notification_id(Option<String>)`](crate::output::RefreshCacheOutput::notification_id): <p>The randomly generated ID of the notification that was sent. This ID is in UUID format.</p>
+    /// - On failure, responds with [`SdkError<RefreshCacheError>`](crate::error::RefreshCacheError)
     pub fn refresh_cache(&self) -> fluent_builders::RefreshCache<C, M, R> {
         fluent_builders::RefreshCache::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RemoveTagsFromResource` operation.
+    /// Constructs a fluent builder for the [`RemoveTagsFromResource`](crate::client::fluent_builders::RemoveTagsFromResource) operation.
     ///
-    /// See [`RemoveTagsFromResource`](crate::client::fluent_builders::RemoveTagsFromResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RemoveTagsFromResourceInput`](crate::input::RemoveTagsFromResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::RemoveTagsFromResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource you want to remove the tags from.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::RemoveTagsFromResourceInput::tag_keys): <p>The keys of the tags you want to remove from the specified resource. A tag is composed of a key-value pair.</p>
+    /// - On success, responds with [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::output::RemoveTagsFromResourceOutput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource that the tags were removed from.</p>
+    /// - On failure, responds with [`SdkError<RemoveTagsFromResourceError>`](crate::error::RemoveTagsFromResourceError)
     pub fn remove_tags_from_resource(&self) -> fluent_builders::RemoveTagsFromResource<C, M, R> {
         fluent_builders::RemoveTagsFromResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ResetCache` operation.
+    /// Constructs a fluent builder for the [`ResetCache`](crate::client::fluent_builders::ResetCache) operation.
     ///
-    /// See [`ResetCache`](crate::client::fluent_builders::ResetCache) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ResetCacheInput`](crate::input::ResetCacheInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::ResetCacheInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On success, responds with [`ResetCacheOutput`](crate::output::ResetCacheOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::ResetCacheOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On failure, responds with [`SdkError<ResetCacheError>`](crate::error::ResetCacheError)
     pub fn reset_cache(&self) -> fluent_builders::ResetCache<C, M, R> {
         fluent_builders::ResetCache::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RetrieveTapeArchive` operation.
+    /// Constructs a fluent builder for the [`RetrieveTapeArchive`](crate::client::fluent_builders::RetrieveTapeArchive) operation.
     ///
-    /// See [`RetrieveTapeArchive`](crate::client::fluent_builders::RetrieveTapeArchive) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RetrieveTapeArchiveInput`](crate::input::RetrieveTapeArchiveInput) with field(s):
+    ///   - [`tape_arn(Option<String>)`](crate::input::RetrieveTapeArchiveInput::tape_arn): <p>The Amazon Resource Name (ARN) of the virtual tape you want to retrieve from the virtual tape shelf (VTS).</p>
+    ///   - [`gateway_arn(Option<String>)`](crate::input::RetrieveTapeArchiveInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway you want to retrieve the virtual tape to. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>  <p>You retrieve archived virtual tapes to only one gateway and the gateway must be a tape gateway.</p>
+    /// - On success, responds with [`RetrieveTapeArchiveOutput`](crate::output::RetrieveTapeArchiveOutput) with field(s):
+    ///   - [`tape_arn(Option<String>)`](crate::output::RetrieveTapeArchiveOutput::tape_arn): <p>The Amazon Resource Name (ARN) of the retrieved virtual tape.</p>
+    /// - On failure, responds with [`SdkError<RetrieveTapeArchiveError>`](crate::error::RetrieveTapeArchiveError)
     pub fn retrieve_tape_archive(&self) -> fluent_builders::RetrieveTapeArchive<C, M, R> {
         fluent_builders::RetrieveTapeArchive::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RetrieveTapeRecoveryPoint` operation.
+    /// Constructs a fluent builder for the [`RetrieveTapeRecoveryPoint`](crate::client::fluent_builders::RetrieveTapeRecoveryPoint) operation.
     ///
-    /// See [`RetrieveTapeRecoveryPoint`](crate::client::fluent_builders::RetrieveTapeRecoveryPoint) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RetrieveTapeRecoveryPointInput`](crate::input::RetrieveTapeRecoveryPointInput) with field(s):
+    ///   - [`tape_arn(Option<String>)`](crate::input::RetrieveTapeRecoveryPointInput::tape_arn): <p>The Amazon Resource Name (ARN) of the virtual tape for which you want to retrieve the recovery point.</p>
+    ///   - [`gateway_arn(Option<String>)`](crate::input::RetrieveTapeRecoveryPointInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On success, responds with [`RetrieveTapeRecoveryPointOutput`](crate::output::RetrieveTapeRecoveryPointOutput) with field(s):
+    ///   - [`tape_arn(Option<String>)`](crate::output::RetrieveTapeRecoveryPointOutput::tape_arn): <p>The Amazon Resource Name (ARN) of the virtual tape for which the recovery point was retrieved.</p>
+    /// - On failure, responds with [`SdkError<RetrieveTapeRecoveryPointError>`](crate::error::RetrieveTapeRecoveryPointError)
     pub fn retrieve_tape_recovery_point(
         &self,
     ) -> fluent_builders::RetrieveTapeRecoveryPoint<C, M, R> {
         fluent_builders::RetrieveTapeRecoveryPoint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SetLocalConsolePassword` operation.
+    /// Constructs a fluent builder for the [`SetLocalConsolePassword`](crate::client::fluent_builders::SetLocalConsolePassword) operation.
     ///
-    /// See [`SetLocalConsolePassword`](crate::client::fluent_builders::SetLocalConsolePassword) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`SetLocalConsolePasswordInput`](crate::input::SetLocalConsolePasswordInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::SetLocalConsolePasswordInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`local_console_password(Option<String>)`](crate::input::SetLocalConsolePasswordInput::local_console_password): <p>The password you want to set for your VM local console.</p>
+    /// - On success, responds with [`SetLocalConsolePasswordOutput`](crate::output::SetLocalConsolePasswordOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::SetLocalConsolePasswordOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On failure, responds with [`SdkError<SetLocalConsolePasswordError>`](crate::error::SetLocalConsolePasswordError)
     pub fn set_local_console_password(&self) -> fluent_builders::SetLocalConsolePassword<C, M, R> {
         fluent_builders::SetLocalConsolePassword::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SetSMBGuestPassword` operation.
+    /// Constructs a fluent builder for the [`SetSMBGuestPassword`](crate::client::fluent_builders::SetSMBGuestPassword) operation.
     ///
-    /// See [`SetSMBGuestPassword`](crate::client::fluent_builders::SetSMBGuestPassword) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`SetSmbGuestPasswordInput`](crate::input::SetSmbGuestPasswordInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::SetSmbGuestPasswordInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the S3 File Gateway the SMB file share is associated with.</p>
+    ///   - [`password(Option<String>)`](crate::input::SetSmbGuestPasswordInput::password): <p>The password that you want to set for your SMB server.</p>
+    /// - On success, responds with [`SetSmbGuestPasswordOutput`](crate::output::SetSmbGuestPasswordOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::SetSmbGuestPasswordOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On failure, responds with [`SdkError<SetSMBGuestPasswordError>`](crate::error::SetSMBGuestPasswordError)
     pub fn set_smb_guest_password(&self) -> fluent_builders::SetSMBGuestPassword<C, M, R> {
         fluent_builders::SetSMBGuestPassword::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ShutdownGateway` operation.
+    /// Constructs a fluent builder for the [`ShutdownGateway`](crate::client::fluent_builders::ShutdownGateway) operation.
     ///
-    /// See [`ShutdownGateway`](crate::client::fluent_builders::ShutdownGateway) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ShutdownGatewayInput`](crate::input::ShutdownGatewayInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::ShutdownGatewayInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On success, responds with [`ShutdownGatewayOutput`](crate::output::ShutdownGatewayOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::ShutdownGatewayOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On failure, responds with [`SdkError<ShutdownGatewayError>`](crate::error::ShutdownGatewayError)
     pub fn shutdown_gateway(&self) -> fluent_builders::ShutdownGateway<C, M, R> {
         fluent_builders::ShutdownGateway::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartAvailabilityMonitorTest` operation.
+    /// Constructs a fluent builder for the [`StartAvailabilityMonitorTest`](crate::client::fluent_builders::StartAvailabilityMonitorTest) operation.
     ///
-    /// See [`StartAvailabilityMonitorTest`](crate::client::fluent_builders::StartAvailabilityMonitorTest) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartAvailabilityMonitorTestInput`](crate::input::StartAvailabilityMonitorTestInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::StartAvailabilityMonitorTestInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On success, responds with [`StartAvailabilityMonitorTestOutput`](crate::output::StartAvailabilityMonitorTestOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::StartAvailabilityMonitorTestOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On failure, responds with [`SdkError<StartAvailabilityMonitorTestError>`](crate::error::StartAvailabilityMonitorTestError)
     pub fn start_availability_monitor_test(
         &self,
     ) -> fluent_builders::StartAvailabilityMonitorTest<C, M, R> {
         fluent_builders::StartAvailabilityMonitorTest::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartGateway` operation.
+    /// Constructs a fluent builder for the [`StartGateway`](crate::client::fluent_builders::StartGateway) operation.
     ///
-    /// See [`StartGateway`](crate::client::fluent_builders::StartGateway) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartGatewayInput`](crate::input::StartGatewayInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::StartGatewayInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On success, responds with [`StartGatewayOutput`](crate::output::StartGatewayOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::StartGatewayOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On failure, responds with [`SdkError<StartGatewayError>`](crate::error::StartGatewayError)
     pub fn start_gateway(&self) -> fluent_builders::StartGateway<C, M, R> {
         fluent_builders::StartGateway::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateAutomaticTapeCreationPolicy` operation.
+    /// Constructs a fluent builder for the [`UpdateAutomaticTapeCreationPolicy`](crate::client::fluent_builders::UpdateAutomaticTapeCreationPolicy) operation.
     ///
-    /// See [`UpdateAutomaticTapeCreationPolicy`](crate::client::fluent_builders::UpdateAutomaticTapeCreationPolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateAutomaticTapeCreationPolicyInput`](crate::input::UpdateAutomaticTapeCreationPolicyInput) with field(s):
+    ///   - [`automatic_tape_creation_rules(Option<Vec<AutomaticTapeCreationRule>>)`](crate::input::UpdateAutomaticTapeCreationPolicyInput::automatic_tape_creation_rules): <p>An automatic tape creation policy consists of a list of automatic tape creation rules. The rules determine when and how to automatically create new tapes.</p>
+    ///   - [`gateway_arn(Option<String>)`](crate::input::UpdateAutomaticTapeCreationPolicyInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On success, responds with [`UpdateAutomaticTapeCreationPolicyOutput`](crate::output::UpdateAutomaticTapeCreationPolicyOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::UpdateAutomaticTapeCreationPolicyOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On failure, responds with [`SdkError<UpdateAutomaticTapeCreationPolicyError>`](crate::error::UpdateAutomaticTapeCreationPolicyError)
     pub fn update_automatic_tape_creation_policy(
         &self,
     ) -> fluent_builders::UpdateAutomaticTapeCreationPolicy<C, M, R> {
         fluent_builders::UpdateAutomaticTapeCreationPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateBandwidthRateLimit` operation.
+    /// Constructs a fluent builder for the [`UpdateBandwidthRateLimit`](crate::client::fluent_builders::UpdateBandwidthRateLimit) operation.
     ///
-    /// See [`UpdateBandwidthRateLimit`](crate::client::fluent_builders::UpdateBandwidthRateLimit) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateBandwidthRateLimitInput`](crate::input::UpdateBandwidthRateLimitInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::UpdateBandwidthRateLimitInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`average_upload_rate_limit_in_bits_per_sec(Option<i64>)`](crate::input::UpdateBandwidthRateLimitInput::average_upload_rate_limit_in_bits_per_sec): <p>The average upload bandwidth rate limit in bits per second.</p>
+    ///   - [`average_download_rate_limit_in_bits_per_sec(Option<i64>)`](crate::input::UpdateBandwidthRateLimitInput::average_download_rate_limit_in_bits_per_sec): <p>The average download bandwidth rate limit in bits per second.</p>
+    /// - On success, responds with [`UpdateBandwidthRateLimitOutput`](crate::output::UpdateBandwidthRateLimitOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::UpdateBandwidthRateLimitOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On failure, responds with [`SdkError<UpdateBandwidthRateLimitError>`](crate::error::UpdateBandwidthRateLimitError)
     pub fn update_bandwidth_rate_limit(
         &self,
     ) -> fluent_builders::UpdateBandwidthRateLimit<C, M, R> {
         fluent_builders::UpdateBandwidthRateLimit::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateBandwidthRateLimitSchedule` operation.
+    /// Constructs a fluent builder for the [`UpdateBandwidthRateLimitSchedule`](crate::client::fluent_builders::UpdateBandwidthRateLimitSchedule) operation.
     ///
-    /// See [`UpdateBandwidthRateLimitSchedule`](crate::client::fluent_builders::UpdateBandwidthRateLimitSchedule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateBandwidthRateLimitScheduleInput`](crate::input::UpdateBandwidthRateLimitScheduleInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::UpdateBandwidthRateLimitScheduleInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`bandwidth_rate_limit_intervals(Option<Vec<BandwidthRateLimitInterval>>)`](crate::input::UpdateBandwidthRateLimitScheduleInput::bandwidth_rate_limit_intervals): <p> An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty. </p>
+    /// - On success, responds with [`UpdateBandwidthRateLimitScheduleOutput`](crate::output::UpdateBandwidthRateLimitScheduleOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::UpdateBandwidthRateLimitScheduleOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On failure, responds with [`SdkError<UpdateBandwidthRateLimitScheduleError>`](crate::error::UpdateBandwidthRateLimitScheduleError)
     pub fn update_bandwidth_rate_limit_schedule(
         &self,
     ) -> fluent_builders::UpdateBandwidthRateLimitSchedule<C, M, R> {
         fluent_builders::UpdateBandwidthRateLimitSchedule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateChapCredentials` operation.
+    /// Constructs a fluent builder for the [`UpdateChapCredentials`](crate::client::fluent_builders::UpdateChapCredentials) operation.
     ///
-    /// See [`UpdateChapCredentials`](crate::client::fluent_builders::UpdateChapCredentials) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateChapCredentialsInput`](crate::input::UpdateChapCredentialsInput) with field(s):
+    ///   - [`target_arn(Option<String>)`](crate::input::UpdateChapCredentialsInput::target_arn): <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return the TargetARN for specified VolumeARN.</p>
+    ///   - [`secret_to_authenticate_initiator(Option<String>)`](crate::input::UpdateChapCredentialsInput::secret_to_authenticate_initiator): <p>The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p> <note>   <p>The secret key must be between 12 and 16 bytes when encoded in UTF-8.</p>  </note>
+    ///   - [`initiator_name(Option<String>)`](crate::input::UpdateChapCredentialsInput::initiator_name): <p>The iSCSI initiator that connects to the target.</p>
+    ///   - [`secret_to_authenticate_target(Option<String>)`](crate::input::UpdateChapCredentialsInput::secret_to_authenticate_target): <p>The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows client).</p>  <p>Byte constraints: Minimum bytes of 12. Maximum bytes of 16.</p> <note>   <p>The secret key must be between 12 and 16 bytes when encoded in UTF-8.</p>  </note>
+    /// - On success, responds with [`UpdateChapCredentialsOutput`](crate::output::UpdateChapCredentialsOutput) with field(s):
+    ///   - [`target_arn(Option<String>)`](crate::output::UpdateChapCredentialsOutput::target_arn): <p>The Amazon Resource Name (ARN) of the target. This is the same target specified in the request.</p>
+    ///   - [`initiator_name(Option<String>)`](crate::output::UpdateChapCredentialsOutput::initiator_name): <p>The iSCSI initiator that connects to the target. This is the same initiator name specified in the request.</p>
+    /// - On failure, responds with [`SdkError<UpdateChapCredentialsError>`](crate::error::UpdateChapCredentialsError)
     pub fn update_chap_credentials(&self) -> fluent_builders::UpdateChapCredentials<C, M, R> {
         fluent_builders::UpdateChapCredentials::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateFileSystemAssociation` operation.
+    /// Constructs a fluent builder for the [`UpdateFileSystemAssociation`](crate::client::fluent_builders::UpdateFileSystemAssociation) operation.
     ///
-    /// See [`UpdateFileSystemAssociation`](crate::client::fluent_builders::UpdateFileSystemAssociation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateFileSystemAssociationInput`](crate::input::UpdateFileSystemAssociationInput) with field(s):
+    ///   - [`file_system_association_arn(Option<String>)`](crate::input::UpdateFileSystemAssociationInput::file_system_association_arn): <p>The Amazon Resource Name (ARN) of the file system association that you want to update.</p>
+    ///   - [`user_name(Option<String>)`](crate::input::UpdateFileSystemAssociationInput::user_name): <p>The user name of the user credential that has permission to access the root share D$ of the Amazon FSx file system. The user account must belong to the Amazon FSx delegated admin user group.</p>
+    ///   - [`password(Option<String>)`](crate::input::UpdateFileSystemAssociationInput::password): <p>The password of the user credential.</p>
+    ///   - [`audit_destination_arn(Option<String>)`](crate::input::UpdateFileSystemAssociationInput::audit_destination_arn): <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
+    ///   - [`cache_attributes(Option<CacheAttributes>)`](crate::input::UpdateFileSystemAssociationInput::cache_attributes): <p>The refresh cache information for the file share or FSx file systems.</p>
+    /// - On success, responds with [`UpdateFileSystemAssociationOutput`](crate::output::UpdateFileSystemAssociationOutput) with field(s):
+    ///   - [`file_system_association_arn(Option<String>)`](crate::output::UpdateFileSystemAssociationOutput::file_system_association_arn): <p>The ARN of the updated file system association.</p>
+    /// - On failure, responds with [`SdkError<UpdateFileSystemAssociationError>`](crate::error::UpdateFileSystemAssociationError)
     pub fn update_file_system_association(
         &self,
     ) -> fluent_builders::UpdateFileSystemAssociation<C, M, R> {
         fluent_builders::UpdateFileSystemAssociation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateGatewayInformation` operation.
+    /// Constructs a fluent builder for the [`UpdateGatewayInformation`](crate::client::fluent_builders::UpdateGatewayInformation) operation.
     ///
-    /// See [`UpdateGatewayInformation`](crate::client::fluent_builders::UpdateGatewayInformation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateGatewayInformationInput`](crate::input::UpdateGatewayInformationInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::UpdateGatewayInformationInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`gateway_name(Option<String>)`](crate::input::UpdateGatewayInformationInput::gateway_name): <p>The name you configured for your gateway.</p>
+    ///   - [`gateway_timezone(Option<String>)`](crate::input::UpdateGatewayInformationInput::gateway_timezone): <p>A value that indicates the time zone of the gateway.</p>
+    ///   - [`cloud_watch_log_group_arn(Option<String>)`](crate::input::UpdateGatewayInformationInput::cloud_watch_log_group_arn): <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you want to use to monitor and log events in the gateway.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What is Amazon CloudWatch Logs?</a> </p>
+    ///   - [`gateway_capacity(Option<GatewayCapacity>)`](crate::input::UpdateGatewayInformationInput::gateway_capacity): <p>Specifies the size of the gateway's metadata cache.</p>
+    /// - On success, responds with [`UpdateGatewayInformationOutput`](crate::output::UpdateGatewayInformationOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::UpdateGatewayInformationOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`gateway_name(Option<String>)`](crate::output::UpdateGatewayInformationOutput::gateway_name): <p>The name you configured for your gateway.</p>
+    /// - On failure, responds with [`SdkError<UpdateGatewayInformationError>`](crate::error::UpdateGatewayInformationError)
     pub fn update_gateway_information(&self) -> fluent_builders::UpdateGatewayInformation<C, M, R> {
         fluent_builders::UpdateGatewayInformation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateGatewaySoftwareNow` operation.
+    /// Constructs a fluent builder for the [`UpdateGatewaySoftwareNow`](crate::client::fluent_builders::UpdateGatewaySoftwareNow) operation.
     ///
-    /// See [`UpdateGatewaySoftwareNow`](crate::client::fluent_builders::UpdateGatewaySoftwareNow) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateGatewaySoftwareNowInput`](crate::input::UpdateGatewaySoftwareNowInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::UpdateGatewaySoftwareNowInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On success, responds with [`UpdateGatewaySoftwareNowOutput`](crate::output::UpdateGatewaySoftwareNowOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::UpdateGatewaySoftwareNowOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On failure, responds with [`SdkError<UpdateGatewaySoftwareNowError>`](crate::error::UpdateGatewaySoftwareNowError)
     pub fn update_gateway_software_now(
         &self,
     ) -> fluent_builders::UpdateGatewaySoftwareNow<C, M, R> {
         fluent_builders::UpdateGatewaySoftwareNow::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateMaintenanceStartTime` operation.
+    /// Constructs a fluent builder for the [`UpdateMaintenanceStartTime`](crate::client::fluent_builders::UpdateMaintenanceStartTime) operation.
     ///
-    /// See [`UpdateMaintenanceStartTime`](crate::client::fluent_builders::UpdateMaintenanceStartTime) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateMaintenanceStartTimeInput`](crate::input::UpdateMaintenanceStartTimeInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::UpdateMaintenanceStartTimeInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`hour_of_day(Option<i32>)`](crate::input::UpdateMaintenanceStartTimeInput::hour_of_day): <p>The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (00 to 23). The hour of the day is in the time zone of the gateway.</p>
+    ///   - [`minute_of_hour(Option<i32>)`](crate::input::UpdateMaintenanceStartTimeInput::minute_of_hour): <p>The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (00 to 59). The minute of the hour is in the time zone of the gateway.</p>
+    ///   - [`day_of_week(Option<i32>)`](crate::input::UpdateMaintenanceStartTimeInput::day_of_week): <p>The day of the week component of the maintenance start time week represented as an ordinal number from 0 to 6, where 0 represents Sunday and 6 Saturday.</p>
+    ///   - [`day_of_month(Option<i32>)`](crate::input::UpdateMaintenanceStartTimeInput::day_of_month): <p>The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where 1 represents the first day of the month and 28 represents the last day of the month.</p>
+    /// - On success, responds with [`UpdateMaintenanceStartTimeOutput`](crate::output::UpdateMaintenanceStartTimeOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::UpdateMaintenanceStartTimeOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On failure, responds with [`SdkError<UpdateMaintenanceStartTimeError>`](crate::error::UpdateMaintenanceStartTimeError)
     pub fn update_maintenance_start_time(
         &self,
     ) -> fluent_builders::UpdateMaintenanceStartTime<C, M, R> {
         fluent_builders::UpdateMaintenanceStartTime::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateNFSFileShare` operation.
+    /// Constructs a fluent builder for the [`UpdateNFSFileShare`](crate::client::fluent_builders::UpdateNFSFileShare) operation.
     ///
-    /// See [`UpdateNFSFileShare`](crate::client::fluent_builders::UpdateNFSFileShare) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateNfsFileShareInput`](crate::input::UpdateNfsFileShareInput) with field(s):
+    ///   - [`file_share_arn(Option<String>)`](crate::input::UpdateNfsFileShareInput::file_share_arn): <p>The Amazon Resource Name (ARN) of the file share to be updated.</p>
+    ///   - [`kms_encrypted(Option<bool>)`](crate::input::UpdateNfsFileShareInput::kms_encrypted): <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>  <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    ///   - [`kms_key(Option<String>)`](crate::input::UpdateNfsFileShareInput::kms_key): <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
+    ///   - [`nfs_file_share_defaults(Option<NfsFileShareDefaults>)`](crate::input::UpdateNfsFileShareInput::nfs_file_share_defaults): <p>The default values for the file share. Optional.</p>
+    ///   - [`default_storage_class(Option<String>)`](crate::input::UpdateNfsFileShareInput::default_storage_class): <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>  <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
+    ///   - [`object_acl(Option<ObjectAcl>)`](crate::input::UpdateNfsFileShareInput::object_acl): <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
+    ///   - [`client_list(Option<Vec<String>>)`](crate::input::UpdateNfsFileShareInput::client_list): <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain either valid IP addresses or valid CIDR blocks.</p>
+    ///   - [`squash(Option<String>)`](crate::input::UpdateNfsFileShareInput::squash): <p>The user mapped to anonymous user.</p>  <p>Valid values are the following:</p>  <ul>   <li> <p> <code>RootSquash</code>: Only root is mapped to anonymous user.</p> </li>   <li> <p> <code>NoSquash</code>: No one is mapped to anonymous user.</p> </li>   <li> <p> <code>AllSquash</code>: Everyone is mapped to anonymous user.</p> </li>  </ul>
+    ///   - [`read_only(Option<bool>)`](crate::input::UpdateNfsFileShareInput::read_only): <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status to read-only, otherwise set to <code>false</code>.</p>  <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    ///   - [`guess_mime_type_enabled(Option<bool>)`](crate::input::UpdateNfsFileShareInput::guess_mime_type_enabled): <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p>  <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    ///   - [`requester_pays(Option<bool>)`](crate::input::UpdateNfsFileShareInput::requester_pays): <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>   <p> <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>  </note>  <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    ///   - [`file_share_name(Option<String>)`](crate::input::UpdateNfsFileShareInput::file_share_name): <p>The name of the file share. Optional.</p> <note>   <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>  </note>
+    ///   - [`cache_attributes(Option<CacheAttributes>)`](crate::input::UpdateNfsFileShareInput::cache_attributes): <p>Specifies refresh cache information for the file share.</p>
+    ///   - [`notification_policy(Option<String>)`](crate::input::UpdateNfsFileShareInput::notification_policy): <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>   <p> <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>  </note>  <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p>  <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p>  <p>The following example sets <code>NotificationPolicy</code> off.</p>  <p> <code>{}</code> </p>
+    ///   - [`audit_destination_arn(Option<String>)`](crate::input::UpdateNfsFileShareInput::audit_destination_arn): <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+    /// - On success, responds with [`UpdateNfsFileShareOutput`](crate::output::UpdateNfsFileShareOutput) with field(s):
+    ///   - [`file_share_arn(Option<String>)`](crate::output::UpdateNfsFileShareOutput::file_share_arn): <p>The Amazon Resource Name (ARN) of the updated file share.</p>
+    /// - On failure, responds with [`SdkError<UpdateNFSFileShareError>`](crate::error::UpdateNFSFileShareError)
     pub fn update_nfs_file_share(&self) -> fluent_builders::UpdateNFSFileShare<C, M, R> {
         fluent_builders::UpdateNFSFileShare::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateSMBFileShare` operation.
+    /// Constructs a fluent builder for the [`UpdateSMBFileShare`](crate::client::fluent_builders::UpdateSMBFileShare) operation.
     ///
-    /// See [`UpdateSMBFileShare`](crate::client::fluent_builders::UpdateSMBFileShare) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateSmbFileShareInput`](crate::input::UpdateSmbFileShareInput) with field(s):
+    ///   - [`file_share_arn(Option<String>)`](crate::input::UpdateSmbFileShareInput::file_share_arn): <p>The Amazon Resource Name (ARN) of the SMB file share that you want to update.</p>
+    ///   - [`kms_encrypted(Option<bool>)`](crate::input::UpdateSmbFileShareInput::kms_encrypted): <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>  <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    ///   - [`kms_key(Option<String>)`](crate::input::UpdateSmbFileShareInput::kms_key): <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
+    ///   - [`default_storage_class(Option<String>)`](crate::input::UpdateSmbFileShareInput::default_storage_class): <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>  <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
+    ///   - [`object_acl(Option<ObjectAcl>)`](crate::input::UpdateSmbFileShareInput::object_acl): <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
+    ///   - [`read_only(Option<bool>)`](crate::input::UpdateSmbFileShareInput::read_only): <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set write status to read-only, otherwise set to <code>false</code>.</p>  <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    ///   - [`guess_mime_type_enabled(Option<bool>)`](crate::input::UpdateSmbFileShareInput::guess_mime_type_enabled): <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p>  <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    ///   - [`requester_pays(Option<bool>)`](crate::input::UpdateSmbFileShareInput::requester_pays): <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>   <p> <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>  </note>  <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    ///   - [`smbacl_enabled(Option<bool>)`](crate::input::UpdateSmbFileShareInput::smbacl_enabled): <p>Set this value to <code>true</code> to enable access control list (ACL) on the SMB file share. Set it to <code>false</code> to map file and directory permissions to the POSIX permissions.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using Microsoft Windows ACLs to control access to an SMB file share</a> in the <i>Storage Gateway User Guide</i>.</p>  <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    ///   - [`access_based_enumeration(Option<bool>)`](crate::input::UpdateSmbFileShareInput::access_based_enumeration): <p>The files and folders on this share will only be visible to users with read access.</p>
+    ///   - [`admin_user_list(Option<Vec<String>>)`](crate::input::UpdateSmbFileShareInput::admin_user_list): <p>A list of users or groups in the Active Directory that have administrator rights to the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
+    ///   - [`valid_user_list(Option<Vec<String>>)`](crate::input::UpdateSmbFileShareInput::valid_user_list): <p>A list of users or groups in the Active Directory that are allowed to access the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
+    ///   - [`invalid_user_list(Option<Vec<String>>)`](crate::input::UpdateSmbFileShareInput::invalid_user_list): <p>A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
+    ///   - [`audit_destination_arn(Option<String>)`](crate::input::UpdateSmbFileShareInput::audit_destination_arn): <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+    ///   - [`case_sensitivity(Option<CaseSensitivity>)`](crate::input::UpdateSmbFileShareInput::case_sensitivity): <p>The case of an object name in an Amazon S3 bucket. For <code>ClientSpecified</code>, the client determines the case sensitivity. For <code>CaseSensitive</code>, the gateway determines the case sensitivity. The default value is <code>ClientSpecified</code>.</p>
+    ///   - [`file_share_name(Option<String>)`](crate::input::UpdateSmbFileShareInput::file_share_name): <p>The name of the file share. Optional.</p> <note>   <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>  </note>
+    ///   - [`cache_attributes(Option<CacheAttributes>)`](crate::input::UpdateSmbFileShareInput::cache_attributes): <p>Specifies refresh cache information for the file share.</p>
+    ///   - [`notification_policy(Option<String>)`](crate::input::UpdateSmbFileShareInput::notification_policy): <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>   <p> <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>  </note>  <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p>  <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p>  <p>The following example sets <code>NotificationPolicy</code> off.</p>  <p> <code>{}</code> </p>
+    ///   - [`oplocks_enabled(Option<bool>)`](crate::input::UpdateSmbFileShareInput::oplocks_enabled): <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p> <note>   <p>Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve access to files with the same name in different case.</p>  </note>  <p>Valid Values: <code>true</code> | <code>false</code> </p>
+    /// - On success, responds with [`UpdateSmbFileShareOutput`](crate::output::UpdateSmbFileShareOutput) with field(s):
+    ///   - [`file_share_arn(Option<String>)`](crate::output::UpdateSmbFileShareOutput::file_share_arn): <p>The Amazon Resource Name (ARN) of the updated SMB file share.</p>
+    /// - On failure, responds with [`SdkError<UpdateSMBFileShareError>`](crate::error::UpdateSMBFileShareError)
     pub fn update_smb_file_share(&self) -> fluent_builders::UpdateSMBFileShare<C, M, R> {
         fluent_builders::UpdateSMBFileShare::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateSMBFileShareVisibility` operation.
+    /// Constructs a fluent builder for the [`UpdateSMBFileShareVisibility`](crate::client::fluent_builders::UpdateSMBFileShareVisibility) operation.
     ///
-    /// See [`UpdateSMBFileShareVisibility`](crate::client::fluent_builders::UpdateSMBFileShareVisibility) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateSmbFileShareVisibilityInput`](crate::input::UpdateSmbFileShareVisibilityInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::UpdateSmbFileShareVisibilityInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`file_shares_visible(Option<bool>)`](crate::input::UpdateSmbFileShareVisibilityInput::file_shares_visible): <p>The shares on this gateway appear when listing shares.</p>
+    /// - On success, responds with [`UpdateSmbFileShareVisibilityOutput`](crate::output::UpdateSmbFileShareVisibilityOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::UpdateSmbFileShareVisibilityOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On failure, responds with [`SdkError<UpdateSMBFileShareVisibilityError>`](crate::error::UpdateSMBFileShareVisibilityError)
     pub fn update_smb_file_share_visibility(
         &self,
     ) -> fluent_builders::UpdateSMBFileShareVisibility<C, M, R> {
         fluent_builders::UpdateSMBFileShareVisibility::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateSMBLocalGroups` operation.
+    /// Constructs a fluent builder for the [`UpdateSMBLocalGroups`](crate::client::fluent_builders::UpdateSMBLocalGroups) operation.
     ///
-    /// See [`UpdateSMBLocalGroups`](crate::client::fluent_builders::UpdateSMBLocalGroups) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateSmbLocalGroupsInput`](crate::input::UpdateSmbLocalGroupsInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::UpdateSmbLocalGroupsInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`smb_local_groups(Option<SmbLocalGroups>)`](crate::input::UpdateSmbLocalGroupsInput::smb_local_groups): <p>A list of Active Directory users and groups that you want to grant special permissions for SMB file shares on the gateway.</p>
+    /// - On success, responds with [`UpdateSmbLocalGroupsOutput`](crate::output::UpdateSmbLocalGroupsOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::UpdateSmbLocalGroupsOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On failure, responds with [`SdkError<UpdateSMBLocalGroupsError>`](crate::error::UpdateSMBLocalGroupsError)
     pub fn update_smb_local_groups(&self) -> fluent_builders::UpdateSMBLocalGroups<C, M, R> {
         fluent_builders::UpdateSMBLocalGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateSMBSecurityStrategy` operation.
+    /// Constructs a fluent builder for the [`UpdateSMBSecurityStrategy`](crate::client::fluent_builders::UpdateSMBSecurityStrategy) operation.
     ///
-    /// See [`UpdateSMBSecurityStrategy`](crate::client::fluent_builders::UpdateSMBSecurityStrategy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateSmbSecurityStrategyInput`](crate::input::UpdateSmbSecurityStrategyInput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::input::UpdateSmbSecurityStrategyInput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`smb_security_strategy(Option<SmbSecurityStrategy>)`](crate::input::UpdateSmbSecurityStrategyInput::smb_security_strategy): <p>Specifies the type of security strategy.</p>  <p>ClientSpecified: if you use this option, requests are established based on what is negotiated by the client. This option is recommended when you want to maximize compatibility across different clients in your environment. Supported only in S3 File Gateway.</p>  <p>MandatorySigning: if you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or newer.</p>  <p>MandatoryEncryption: if you use this option, file gateway only allows connections from SMBv3 clients that have encryption enabled. This option is highly recommended for environments that handle sensitive data. This option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.</p>
+    /// - On success, responds with [`UpdateSmbSecurityStrategyOutput`](crate::output::UpdateSmbSecurityStrategyOutput) with field(s):
+    ///   - [`gateway_arn(Option<String>)`](crate::output::UpdateSmbSecurityStrategyOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    /// - On failure, responds with [`SdkError<UpdateSMBSecurityStrategyError>`](crate::error::UpdateSMBSecurityStrategyError)
     pub fn update_smb_security_strategy(
         &self,
     ) -> fluent_builders::UpdateSMBSecurityStrategy<C, M, R> {
         fluent_builders::UpdateSMBSecurityStrategy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateSnapshotSchedule` operation.
+    /// Constructs a fluent builder for the [`UpdateSnapshotSchedule`](crate::client::fluent_builders::UpdateSnapshotSchedule) operation.
     ///
-    /// See [`UpdateSnapshotSchedule`](crate::client::fluent_builders::UpdateSnapshotSchedule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateSnapshotScheduleInput`](crate::input::UpdateSnapshotScheduleInput) with field(s):
+    ///   - [`volume_arn(Option<String>)`](crate::input::UpdateSnapshotScheduleInput::volume_arn): <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
+    ///   - [`start_at(Option<i32>)`](crate::input::UpdateSnapshotScheduleInput::start_at): <p>The hour of the day at which the snapshot schedule begins represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone of the gateway.</p>
+    ///   - [`recurrence_in_hours(Option<i32>)`](crate::input::UpdateSnapshotScheduleInput::recurrence_in_hours): <p>Frequency of snapshots. Specify the number of hours between snapshots.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateSnapshotScheduleInput::description): <p>Optional description of the snapshot that overwrites the existing description.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::UpdateSnapshotScheduleInput::tags): <p>A list of up to 50 tags that can be assigned to a snapshot. Each tag is a key-value pair.</p> <note>   <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256.</p>  </note>
+    /// - On success, responds with [`UpdateSnapshotScheduleOutput`](crate::output::UpdateSnapshotScheduleOutput) with field(s):
+    ///   - [`volume_arn(Option<String>)`](crate::output::UpdateSnapshotScheduleOutput::volume_arn): <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
+    /// - On failure, responds with [`SdkError<UpdateSnapshotScheduleError>`](crate::error::UpdateSnapshotScheduleError)
     pub fn update_snapshot_schedule(&self) -> fluent_builders::UpdateSnapshotSchedule<C, M, R> {
         fluent_builders::UpdateSnapshotSchedule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateVTLDeviceType` operation.
+    /// Constructs a fluent builder for the [`UpdateVTLDeviceType`](crate::client::fluent_builders::UpdateVTLDeviceType) operation.
     ///
-    /// See [`UpdateVTLDeviceType`](crate::client::fluent_builders::UpdateVTLDeviceType) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateVtlDeviceTypeInput`](crate::input::UpdateVtlDeviceTypeInput) with field(s):
+    ///   - [`vtl_device_arn(Option<String>)`](crate::input::UpdateVtlDeviceTypeInput::vtl_device_arn): <p>The Amazon Resource Name (ARN) of the medium changer you want to select.</p>
+    ///   - [`device_type(Option<String>)`](crate::input::UpdateVtlDeviceTypeInput::device_type): <p>The type of medium changer you want to select.</p>  <p>Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code> </p>
+    /// - On success, responds with [`UpdateVtlDeviceTypeOutput`](crate::output::UpdateVtlDeviceTypeOutput) with field(s):
+    ///   - [`vtl_device_arn(Option<String>)`](crate::output::UpdateVtlDeviceTypeOutput::vtl_device_arn): <p>The Amazon Resource Name (ARN) of the medium changer you have selected.</p>
+    /// - On failure, responds with [`SdkError<UpdateVTLDeviceTypeError>`](crate::error::UpdateVTLDeviceTypeError)
     pub fn update_vtl_device_type(&self) -> fluent_builders::UpdateVTLDeviceType<C, M, R> {
         fluent_builders::UpdateVTLDeviceType::new(self.handle.clone())
     }

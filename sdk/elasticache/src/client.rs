@@ -83,531 +83,1051 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AddTagsToResource` operation.
+    /// Constructs a fluent builder for the [`AddTagsToResource`](crate::client::fluent_builders::AddTagsToResource) operation.
     ///
-    /// See [`AddTagsToResource`](crate::client::fluent_builders::AddTagsToResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AddTagsToResourceInput`](crate::input::AddTagsToResourceInput) with field(s):
+    ///   - [`resource_name(Option<String>)`](crate::input::AddTagsToResourceInput::resource_name): <p>The Amazon Resource Name (ARN) of the resource to which the tags are to be added, for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>. ElastiCache resources are <i>cluster</i> and <i>snapshot</i>.</p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Service Namespaces</a>.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::AddTagsToResourceInput::tags): <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    /// - On success, responds with [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput) with field(s):
+    ///   - [`tag_list(Option<Vec<Tag>>)`](crate::output::AddTagsToResourceOutput::tag_list): <p>A list of tags as key-value pairs.</p>
+    /// - On failure, responds with [`SdkError<AddTagsToResourceError>`](crate::error::AddTagsToResourceError)
     pub fn add_tags_to_resource(&self) -> fluent_builders::AddTagsToResource<C, M, R> {
         fluent_builders::AddTagsToResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AuthorizeCacheSecurityGroupIngress` operation.
+    /// Constructs a fluent builder for the [`AuthorizeCacheSecurityGroupIngress`](crate::client::fluent_builders::AuthorizeCacheSecurityGroupIngress) operation.
     ///
-    /// See [`AuthorizeCacheSecurityGroupIngress`](crate::client::fluent_builders::AuthorizeCacheSecurityGroupIngress) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AuthorizeCacheSecurityGroupIngressInput`](crate::input::AuthorizeCacheSecurityGroupIngressInput) with field(s):
+    ///   - [`cache_security_group_name(Option<String>)`](crate::input::AuthorizeCacheSecurityGroupIngressInput::cache_security_group_name): <p>The cache security group that allows network ingress.</p>
+    ///   - [`ec2_security_group_name(Option<String>)`](crate::input::AuthorizeCacheSecurityGroupIngressInput::ec2_security_group_name): <p>The Amazon EC2 security group to be authorized for ingress to the cache security group.</p>
+    ///   - [`ec2_security_group_owner_id(Option<String>)`](crate::input::AuthorizeCacheSecurityGroupIngressInput::ec2_security_group_owner_id): <p>The Amazon account number of the Amazon EC2 security group owner. Note that this is not the same thing as an Amazon access key ID - you must provide a valid Amazon account number for this parameter.</p>
+    /// - On success, responds with [`AuthorizeCacheSecurityGroupIngressOutput`](crate::output::AuthorizeCacheSecurityGroupIngressOutput) with field(s):
+    ///   - [`cache_security_group(Option<CacheSecurityGroup>)`](crate::output::AuthorizeCacheSecurityGroupIngressOutput::cache_security_group): <p>Represents the output of one of the following operations:</p>  <ul>   <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>   <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>   <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<AuthorizeCacheSecurityGroupIngressError>`](crate::error::AuthorizeCacheSecurityGroupIngressError)
     pub fn authorize_cache_security_group_ingress(
         &self,
     ) -> fluent_builders::AuthorizeCacheSecurityGroupIngress<C, M, R> {
         fluent_builders::AuthorizeCacheSecurityGroupIngress::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchApplyUpdateAction` operation.
+    /// Constructs a fluent builder for the [`BatchApplyUpdateAction`](crate::client::fluent_builders::BatchApplyUpdateAction) operation.
     ///
-    /// See [`BatchApplyUpdateAction`](crate::client::fluent_builders::BatchApplyUpdateAction) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchApplyUpdateActionInput`](crate::input::BatchApplyUpdateActionInput) with field(s):
+    ///   - [`replication_group_ids(Option<Vec<String>>)`](crate::input::BatchApplyUpdateActionInput::replication_group_ids): <p>The replication group IDs</p>
+    ///   - [`cache_cluster_ids(Option<Vec<String>>)`](crate::input::BatchApplyUpdateActionInput::cache_cluster_ids): <p>The cache cluster IDs</p>
+    ///   - [`service_update_name(Option<String>)`](crate::input::BatchApplyUpdateActionInput::service_update_name): <p>The unique ID of the service update</p>
+    /// - On success, responds with [`BatchApplyUpdateActionOutput`](crate::output::BatchApplyUpdateActionOutput) with field(s):
+    ///   - [`processed_update_actions(Option<Vec<ProcessedUpdateAction>>)`](crate::output::BatchApplyUpdateActionOutput::processed_update_actions): <p>Update actions that have been processed successfully</p>
+    ///   - [`unprocessed_update_actions(Option<Vec<UnprocessedUpdateAction>>)`](crate::output::BatchApplyUpdateActionOutput::unprocessed_update_actions): <p>Update actions that haven't been processed successfully</p>
+    /// - On failure, responds with [`SdkError<BatchApplyUpdateActionError>`](crate::error::BatchApplyUpdateActionError)
     pub fn batch_apply_update_action(&self) -> fluent_builders::BatchApplyUpdateAction<C, M, R> {
         fluent_builders::BatchApplyUpdateAction::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchStopUpdateAction` operation.
+    /// Constructs a fluent builder for the [`BatchStopUpdateAction`](crate::client::fluent_builders::BatchStopUpdateAction) operation.
     ///
-    /// See [`BatchStopUpdateAction`](crate::client::fluent_builders::BatchStopUpdateAction) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchStopUpdateActionInput`](crate::input::BatchStopUpdateActionInput) with field(s):
+    ///   - [`replication_group_ids(Option<Vec<String>>)`](crate::input::BatchStopUpdateActionInput::replication_group_ids): <p>The replication group IDs</p>
+    ///   - [`cache_cluster_ids(Option<Vec<String>>)`](crate::input::BatchStopUpdateActionInput::cache_cluster_ids): <p>The cache cluster IDs</p>
+    ///   - [`service_update_name(Option<String>)`](crate::input::BatchStopUpdateActionInput::service_update_name): <p>The unique ID of the service update</p>
+    /// - On success, responds with [`BatchStopUpdateActionOutput`](crate::output::BatchStopUpdateActionOutput) with field(s):
+    ///   - [`processed_update_actions(Option<Vec<ProcessedUpdateAction>>)`](crate::output::BatchStopUpdateActionOutput::processed_update_actions): <p>Update actions that have been processed successfully</p>
+    ///   - [`unprocessed_update_actions(Option<Vec<UnprocessedUpdateAction>>)`](crate::output::BatchStopUpdateActionOutput::unprocessed_update_actions): <p>Update actions that haven't been processed successfully</p>
+    /// - On failure, responds with [`SdkError<BatchStopUpdateActionError>`](crate::error::BatchStopUpdateActionError)
     pub fn batch_stop_update_action(&self) -> fluent_builders::BatchStopUpdateAction<C, M, R> {
         fluent_builders::BatchStopUpdateAction::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CompleteMigration` operation.
+    /// Constructs a fluent builder for the [`CompleteMigration`](crate::client::fluent_builders::CompleteMigration) operation.
     ///
-    /// See [`CompleteMigration`](crate::client::fluent_builders::CompleteMigration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CompleteMigrationInput`](crate::input::CompleteMigrationInput) with field(s):
+    ///   - [`replication_group_id(Option<String>)`](crate::input::CompleteMigrationInput::replication_group_id): <p>The ID of the replication group to which data is being migrated.</p>
+    ///   - [`force(bool)`](crate::input::CompleteMigrationInput::force): <p>Forces the migration to stop without ensuring that data is in sync. It is recommended to use this option only to abort the migration and not recommended when application wants to continue migration to ElastiCache.</p>
+    /// - On success, responds with [`CompleteMigrationOutput`](crate::output::CompleteMigrationOutput) with field(s):
+    ///   - [`replication_group(Option<ReplicationGroup>)`](crate::output::CompleteMigrationOutput::replication_group): <p>Contains all of the attributes of a specific Redis replication group.</p>
+    /// - On failure, responds with [`SdkError<CompleteMigrationError>`](crate::error::CompleteMigrationError)
     pub fn complete_migration(&self) -> fluent_builders::CompleteMigration<C, M, R> {
         fluent_builders::CompleteMigration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CopySnapshot` operation.
+    /// Constructs a fluent builder for the [`CopySnapshot`](crate::client::fluent_builders::CopySnapshot) operation.
     ///
-    /// See [`CopySnapshot`](crate::client::fluent_builders::CopySnapshot) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CopySnapshotInput`](crate::input::CopySnapshotInput) with field(s):
+    ///   - [`source_snapshot_name(Option<String>)`](crate::input::CopySnapshotInput::source_snapshot_name): <p>The name of an existing snapshot from which to make a copy.</p>
+    ///   - [`target_snapshot_name(Option<String>)`](crate::input::CopySnapshotInput::target_snapshot_name): <p>A name for the snapshot copy. ElastiCache does not permit overwriting a snapshot, therefore this name must be unique within its context - ElastiCache or an Amazon S3 bucket if exporting.</p>
+    ///   - [`target_bucket(Option<String>)`](crate::input::CopySnapshotInput::target_bucket): <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is used only when exporting a snapshot for external access.</p>  <p>When using this parameter to export a snapshot, be sure Amazon ElastiCache has the needed permissions to this S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon ElastiCache User Guide</i>.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html">Exporting a Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.</p>
+    ///   - [`kms_key_id(Option<String>)`](crate::input::CopySnapshotInput::kms_key_id): <p>The ID of the KMS key used to encrypt the target snapshot.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CopySnapshotInput::tags): <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    /// - On success, responds with [`CopySnapshotOutput`](crate::output::CopySnapshotOutput) with field(s):
+    ///   - [`snapshot(Option<Snapshot>)`](crate::output::CopySnapshotOutput::snapshot): <p>Represents a copy of an entire Redis cluster as of the time when the snapshot was taken.</p>
+    /// - On failure, responds with [`SdkError<CopySnapshotError>`](crate::error::CopySnapshotError)
     pub fn copy_snapshot(&self) -> fluent_builders::CopySnapshot<C, M, R> {
         fluent_builders::CopySnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateCacheCluster` operation.
+    /// Constructs a fluent builder for the [`CreateCacheCluster`](crate::client::fluent_builders::CreateCacheCluster) operation.
     ///
-    /// See [`CreateCacheCluster`](crate::client::fluent_builders::CreateCacheCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateCacheClusterInput`](crate::input::CreateCacheClusterInput) with field(s):
+    ///   - [`cache_cluster_id(Option<String>)`](crate::input::CreateCacheClusterInput::cache_cluster_id): <p>The node group (shard) identifier. This parameter is stored as a lowercase string.</p>  <p> <b>Constraints:</b> </p>  <ul>   <li> <p>A name must contain from 1 to 50 alphanumeric characters or hyphens.</p> </li>   <li> <p>The first character must be a letter.</p> </li>   <li> <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul>
+    ///   - [`replication_group_id(Option<String>)`](crate::input::CreateCacheClusterInput::replication_group_id): <p>The ID of the replication group to which this cluster should belong. If this parameter is specified, the cluster is added to the specified replication group as a read replica; otherwise, the cluster is a standalone primary that is not part of any replication group.</p>  <p>If the specified replication group is Multi-AZ enabled and the Availability Zone is not specified, the cluster is created in Availability Zones that provide the best spread of read replicas across Availability Zones.</p> <note>   <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>  </note>
+    ///   - [`az_mode(Option<AzMode>)`](crate::input::CreateCacheClusterInput::az_mode): <p>Specifies whether the nodes in this Memcached cluster are created in a single Availability Zone or created across multiple Availability Zones in the cluster's region.</p>  <p>This parameter is only supported for Memcached clusters.</p>  <p>If the <code>AZMode</code> and <code>PreferredAvailabilityZones</code> are not specified, ElastiCache assumes <code>single-az</code> mode.</p>
+    ///   - [`preferred_availability_zone(Option<String>)`](crate::input::CreateCacheClusterInput::preferred_availability_zone): <p>The EC2 Availability Zone in which the cluster is created.</p>  <p>All nodes belonging to this cluster are placed in the preferred Availability Zone. If you want to create your nodes across multiple Availability Zones, use <code>PreferredAvailabilityZones</code>.</p>  <p>Default: System chosen Availability Zone.</p>
+    ///   - [`preferred_availability_zones(Option<Vec<String>>)`](crate::input::CreateCacheClusterInput::preferred_availability_zones): <p>A list of the Availability Zones in which cache nodes are created. The order of the zones in the list is not important.</p>  <p>This option is only supported on Memcached.</p> <note>   <p>If you are creating your cluster in an Amazon VPC (recommended) you can only locate nodes in Availability Zones that are associated with the subnets in the selected subnet group.</p>   <p>The number of Availability Zones listed must equal the value of <code>NumCacheNodes</code>.</p>  </note>  <p>If you want all the nodes in the same Availability Zone, use <code>PreferredAvailabilityZone</code> instead, or repeat the Availability Zone multiple times in the list.</p>  <p>Default: System chosen Availability Zones.</p>
+    ///   - [`num_cache_nodes(Option<i32>)`](crate::input::CreateCacheClusterInput::num_cache_nodes): <p>The initial number of cache nodes that the cluster has.</p>  <p>For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p>  <p>If you need more than 40 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase Request form at <a href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</p>
+    ///   - [`cache_node_type(Option<String>)`](crate::input::CreateCacheClusterInput::cache_node_type): <p>The compute and memory capacity of the nodes in the node group (shard).</p>  <p>The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts.</p>  <ul>   <li> <p>General purpose:</p>    <ul>     <li> <p>Current generation: </p> <p> <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>, <code>cache.m6g.16xlarge</code> </p> <note>       <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a> </p>      </note> <p> <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>, <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16 onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>, <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b> <code>cache.t3.micro</code>, <code>cache.t3.small</code>, <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b> <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code> </p> </li>     <li> <p>Previous generation: (not recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p> <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code> </p> <p> <b>M3 node types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> </li>    </ul> </li>   <li> <p>Compute optimized:</p>    <ul>     <li> <p>Previous generation: (not recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p> </li>    </ul> </li>   <li> <p>Memory optimized with data tiering:</p>    <ul>     <li> <p>Current generation: </p> <p> <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).</p> <p> <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>, <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code> </p> </li>    </ul> </li>   <li> <p>Memory optimized:</p>    <ul>     <li> <p>Current generation: </p> <p> <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p> <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code> </p> <note>       <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a> </p>      </note> <p> <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4 node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>, <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li>     <li> <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code> </p> <p> <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> </li>    </ul> </li>  </ul>  <p> <b>Additional node type info</b> </p>  <ul>   <li> <p>All current generation instance types are created in Amazon VPC by default.</p> </li>   <li> <p>Redis append-only files (AOF) are not supported for T1 or T2 instances.</p> </li>   <li> <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p> </li>   <li> <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p> </li>  </ul>
+    ///   - [`engine(Option<String>)`](crate::input::CreateCacheClusterInput::engine): <p>The name of the cache engine to be used for this cluster.</p>  <p>Valid values for this parameter are: <code>memcached</code> | <code>redis</code> </p>
+    ///   - [`engine_version(Option<String>)`](crate::input::CreateCacheClusterInput::engine_version): <p>The version number of the cache engine to be used for this cluster. To view the supported cache engine versions, use the DescribeCacheEngineVersions operation.</p>  <p> <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster or replication group and create it anew with the earlier engine version. </p>
+    ///   - [`cache_parameter_group_name(Option<String>)`](crate::input::CreateCacheClusterInput::cache_parameter_group_name): <p>The name of the parameter group to associate with this cluster. If this argument is omitted, the default parameter group for the specified engine is used. You cannot use any parameter group which has <code>cluster-enabled='yes'</code> when creating a cluster.</p>
+    ///   - [`cache_subnet_group_name(Option<String>)`](crate::input::CreateCacheClusterInput::cache_subnet_group_name): <p>The name of the subnet group to be used for the cluster.</p>  <p>Use this parameter only when you are creating a cluster in an Amazon Virtual Private Cloud (Amazon VPC).</p> <important>   <p>If you're going to launch your cluster in an Amazon VPC, you need to create a subnet group before you start creating a cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets and Subnet Groups</a>.</p>  </important>
+    ///   - [`cache_security_group_names(Option<Vec<String>>)`](crate::input::CreateCacheClusterInput::cache_security_group_names): <p>A list of security group names to associate with this cluster.</p>  <p>Use this parameter only when you are creating a cluster outside of an Amazon Virtual Private Cloud (Amazon VPC).</p>
+    ///   - [`security_group_ids(Option<Vec<String>>)`](crate::input::CreateCacheClusterInput::security_group_ids): <p>One or more VPC security groups associated with the cluster.</p>  <p>Use this parameter only when you are creating a cluster in an Amazon Virtual Private Cloud (Amazon VPC).</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateCacheClusterInput::tags): <p>A list of tags to be added to this resource.</p>
+    ///   - [`snapshot_arns(Option<Vec<String>>)`](crate::input::CreateCacheClusterInput::snapshot_arns): <p>A single-element string list containing an Amazon Resource Name (ARN) that uniquely identifies a Redis RDB snapshot file stored in Amazon S3. The snapshot file is used to populate the node group (shard). The Amazon S3 object name in the ARN cannot contain any commas.</p> <note>   <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>  </note>  <p>Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
+    ///   - [`snapshot_name(Option<String>)`](crate::input::CreateCacheClusterInput::snapshot_name): <p>The name of a Redis snapshot from which to restore data into the new node group (shard). The snapshot status changes to <code>restoring</code> while the new node group (shard) is being created.</p> <note>   <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>  </note>
+    ///   - [`preferred_maintenance_window(Option<String>)`](crate::input::CreateCacheClusterInput::preferred_maintenance_window): <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code> are:</p>
+    ///   - [`port(Option<i32>)`](crate::input::CreateCacheClusterInput::port): <p>The port number on which each of the cache nodes accepts connections.</p>
+    ///   - [`notification_topic_arn(Option<String>)`](crate::input::CreateCacheClusterInput::notification_topic_arn): <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which notifications are sent.</p> <note>   <p>The Amazon SNS topic owner must be the same as the cluster owner.</p>  </note>
+    ///   - [`auto_minor_version_upgrade(Option<bool>)`](crate::input::CreateCacheClusterInput::auto_minor_version_upgrade): <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp; </p>
+    ///   - [`snapshot_retention_limit(Option<i32>)`](crate::input::CreateCacheClusterInput::snapshot_retention_limit): <p>The number of days for which ElastiCache retains automatic snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot taken today is retained for 5 days before being deleted.</p> <note>   <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>  </note>  <p>Default: 0 (i.e., automatic backups are disabled for this cache cluster).</p>
+    ///   - [`snapshot_window(Option<String>)`](crate::input::CreateCacheClusterInput::snapshot_window): <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group (shard).</p>  <p>Example: <code>05:00-09:00</code> </p>  <p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p> <note>   <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>  </note>
+    ///   - [`auth_token(Option<String>)`](crate::input::CreateCacheClusterInput::auth_token): <p> <b>Reserved parameter.</b> The password used to access a password protected server.</p>  <p>Password constraints:</p>  <ul>   <li> <p>Must be only printable ASCII characters.</p> </li>   <li> <p>Must be at least 16 characters and no more than 128 characters in length.</p> </li>   <li> <p>The only permitted printable special characters are !, &amp;, #, $, ^, &lt;, &gt;, and -. Other printable special characters cannot be used in the AUTH token.</p> </li>  </ul>  <p>For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at http://redis.io/commands/AUTH.</p>
+    ///   - [`outpost_mode(Option<OutpostMode>)`](crate::input::CreateCacheClusterInput::outpost_mode): <p>Specifies whether the nodes in the cluster are created in a single outpost or across multiple outposts.</p>
+    ///   - [`preferred_outpost_arn(Option<String>)`](crate::input::CreateCacheClusterInput::preferred_outpost_arn): <p>The outpost ARN in which the cache cluster is created.</p>
+    ///   - [`preferred_outpost_arns(Option<Vec<String>>)`](crate::input::CreateCacheClusterInput::preferred_outpost_arns): <p>The outpost ARNs in which the cache cluster is created.</p>
+    ///   - [`log_delivery_configurations(Option<Vec<LogDeliveryConfigurationRequest>>)`](crate::input::CreateCacheClusterInput::log_delivery_configurations): <p>Specifies the destination, format and type of the logs. </p>
+    /// - On success, responds with [`CreateCacheClusterOutput`](crate::output::CreateCacheClusterOutput) with field(s):
+    ///   - [`cache_cluster(Option<CacheCluster>)`](crate::output::CreateCacheClusterOutput::cache_cluster): <p>Contains all of the attributes of a specific cluster.</p>
+    /// - On failure, responds with [`SdkError<CreateCacheClusterError>`](crate::error::CreateCacheClusterError)
     pub fn create_cache_cluster(&self) -> fluent_builders::CreateCacheCluster<C, M, R> {
         fluent_builders::CreateCacheCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateCacheParameterGroup` operation.
+    /// Constructs a fluent builder for the [`CreateCacheParameterGroup`](crate::client::fluent_builders::CreateCacheParameterGroup) operation.
     ///
-    /// See [`CreateCacheParameterGroup`](crate::client::fluent_builders::CreateCacheParameterGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateCacheParameterGroupInput`](crate::input::CreateCacheParameterGroupInput) with field(s):
+    ///   - [`cache_parameter_group_name(Option<String>)`](crate::input::CreateCacheParameterGroupInput::cache_parameter_group_name): <p>A user-specified name for the cache parameter group.</p>
+    ///   - [`cache_parameter_group_family(Option<String>)`](crate::input::CreateCacheParameterGroupInput::cache_parameter_group_family): <p>The name of the cache parameter group family that the cache parameter group can be used with.</p>  <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.0</code> | <code>redis6.2</code> </p>
+    ///   - [`description(Option<String>)`](crate::input::CreateCacheParameterGroupInput::description): <p>A user-specified description for the cache parameter group.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateCacheParameterGroupInput::tags): <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    /// - On success, responds with [`CreateCacheParameterGroupOutput`](crate::output::CreateCacheParameterGroupOutput) with field(s):
+    ///   - [`cache_parameter_group(Option<CacheParameterGroup>)`](crate::output::CreateCacheParameterGroupOutput::cache_parameter_group): <p>Represents the output of a <code>CreateCacheParameterGroup</code> operation.</p>
+    /// - On failure, responds with [`SdkError<CreateCacheParameterGroupError>`](crate::error::CreateCacheParameterGroupError)
     pub fn create_cache_parameter_group(
         &self,
     ) -> fluent_builders::CreateCacheParameterGroup<C, M, R> {
         fluent_builders::CreateCacheParameterGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateCacheSecurityGroup` operation.
+    /// Constructs a fluent builder for the [`CreateCacheSecurityGroup`](crate::client::fluent_builders::CreateCacheSecurityGroup) operation.
     ///
-    /// See [`CreateCacheSecurityGroup`](crate::client::fluent_builders::CreateCacheSecurityGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateCacheSecurityGroupInput`](crate::input::CreateCacheSecurityGroupInput) with field(s):
+    ///   - [`cache_security_group_name(Option<String>)`](crate::input::CreateCacheSecurityGroupInput::cache_security_group_name): <p>A name for the cache security group. This value is stored as a lowercase string.</p>  <p>Constraints: Must contain no more than 255 alphanumeric characters. Cannot be the word "Default".</p>  <p>Example: <code>mysecuritygroup</code> </p>
+    ///   - [`description(Option<String>)`](crate::input::CreateCacheSecurityGroupInput::description): <p>A description for the cache security group.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateCacheSecurityGroupInput::tags): <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    /// - On success, responds with [`CreateCacheSecurityGroupOutput`](crate::output::CreateCacheSecurityGroupOutput) with field(s):
+    ///   - [`cache_security_group(Option<CacheSecurityGroup>)`](crate::output::CreateCacheSecurityGroupOutput::cache_security_group): <p>Represents the output of one of the following operations:</p>  <ul>   <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>   <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>   <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<CreateCacheSecurityGroupError>`](crate::error::CreateCacheSecurityGroupError)
     pub fn create_cache_security_group(
         &self,
     ) -> fluent_builders::CreateCacheSecurityGroup<C, M, R> {
         fluent_builders::CreateCacheSecurityGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateCacheSubnetGroup` operation.
+    /// Constructs a fluent builder for the [`CreateCacheSubnetGroup`](crate::client::fluent_builders::CreateCacheSubnetGroup) operation.
     ///
-    /// See [`CreateCacheSubnetGroup`](crate::client::fluent_builders::CreateCacheSubnetGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateCacheSubnetGroupInput`](crate::input::CreateCacheSubnetGroupInput) with field(s):
+    ///   - [`cache_subnet_group_name(Option<String>)`](crate::input::CreateCacheSubnetGroupInput::cache_subnet_group_name): <p>A name for the cache subnet group. This value is stored as a lowercase string.</p>  <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>  <p>Example: <code>mysubnetgroup</code> </p>
+    ///   - [`cache_subnet_group_description(Option<String>)`](crate::input::CreateCacheSubnetGroupInput::cache_subnet_group_description): <p>A description for the cache subnet group.</p>
+    ///   - [`subnet_ids(Option<Vec<String>>)`](crate::input::CreateCacheSubnetGroupInput::subnet_ids): <p>A list of VPC subnet IDs for the cache subnet group.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateCacheSubnetGroupInput::tags): <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    /// - On success, responds with [`CreateCacheSubnetGroupOutput`](crate::output::CreateCacheSubnetGroupOutput) with field(s):
+    ///   - [`cache_subnet_group(Option<CacheSubnetGroup>)`](crate::output::CreateCacheSubnetGroupOutput::cache_subnet_group): <p>Represents the output of one of the following operations:</p>  <ul>   <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li>   <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<CreateCacheSubnetGroupError>`](crate::error::CreateCacheSubnetGroupError)
     pub fn create_cache_subnet_group(&self) -> fluent_builders::CreateCacheSubnetGroup<C, M, R> {
         fluent_builders::CreateCacheSubnetGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateGlobalReplicationGroup` operation.
+    /// Constructs a fluent builder for the [`CreateGlobalReplicationGroup`](crate::client::fluent_builders::CreateGlobalReplicationGroup) operation.
     ///
-    /// See [`CreateGlobalReplicationGroup`](crate::client::fluent_builders::CreateGlobalReplicationGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateGlobalReplicationGroupInput`](crate::input::CreateGlobalReplicationGroupInput) with field(s):
+    ///   - [`global_replication_group_id_suffix(Option<String>)`](crate::input::CreateGlobalReplicationGroupInput::global_replication_group_id_suffix): <p>The suffix name of a Global datastore. Amazon ElastiCache automatically applies a prefix to the Global datastore ID when it is created. Each Amazon Region has its own prefix. For instance, a Global datastore ID created in the US-West-1 region will begin with "dsdfu" along with the suffix name you provide. The suffix, combined with the auto-generated prefix, guarantees uniqueness of the Global datastore name across multiple regions. </p>  <p>For a full list of Amazon Regions and their respective Global datastore iD prefixes, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using the Amazon CLI with Global datastores </a>.</p>
+    ///   - [`global_replication_group_description(Option<String>)`](crate::input::CreateGlobalReplicationGroupInput::global_replication_group_description): <p>Provides details of the Global datastore</p>
+    ///   - [`primary_replication_group_id(Option<String>)`](crate::input::CreateGlobalReplicationGroupInput::primary_replication_group_id): <p>The name of the primary cluster that accepts writes and will replicate updates to the secondary cluster.</p>
+    /// - On success, responds with [`CreateGlobalReplicationGroupOutput`](crate::output::CreateGlobalReplicationGroupOutput) with field(s):
+    ///   - [`global_replication_group(Option<GlobalReplicationGroup>)`](crate::output::CreateGlobalReplicationGroupOutput::global_replication_group): <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>  <ul>   <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<CreateGlobalReplicationGroupError>`](crate::error::CreateGlobalReplicationGroupError)
     pub fn create_global_replication_group(
         &self,
     ) -> fluent_builders::CreateGlobalReplicationGroup<C, M, R> {
         fluent_builders::CreateGlobalReplicationGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateReplicationGroup` operation.
+    /// Constructs a fluent builder for the [`CreateReplicationGroup`](crate::client::fluent_builders::CreateReplicationGroup) operation.
     ///
-    /// See [`CreateReplicationGroup`](crate::client::fluent_builders::CreateReplicationGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateReplicationGroupInput`](crate::input::CreateReplicationGroupInput) with field(s):
+    ///   - [`replication_group_id(Option<String>)`](crate::input::CreateReplicationGroupInput::replication_group_id): <p>The replication group identifier. This parameter is stored as a lowercase string.</p>  <p>Constraints:</p>  <ul>   <li> <p>A name must contain from 1 to 40 alphanumeric characters or hyphens.</p> </li>   <li> <p>The first character must be a letter.</p> </li>   <li> <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul>
+    ///   - [`replication_group_description(Option<String>)`](crate::input::CreateReplicationGroupInput::replication_group_description): <p>A user-created description for the replication group.</p>
+    ///   - [`global_replication_group_id(Option<String>)`](crate::input::CreateReplicationGroupInput::global_replication_group_id): <p>The name of the Global datastore</p>
+    ///   - [`primary_cluster_id(Option<String>)`](crate::input::CreateReplicationGroupInput::primary_cluster_id): <p>The identifier of the cluster that serves as the primary for this replication group. This cluster must already exist and have a status of <code>available</code>.</p>  <p>This parameter is not required if <code>NumCacheClusters</code>, <code>NumNodeGroups</code>, or <code>ReplicasPerNodeGroup</code> is specified.</p>
+    ///   - [`automatic_failover_enabled(Option<bool>)`](crate::input::CreateReplicationGroupInput::automatic_failover_enabled): <p>Specifies whether a read-only replica is automatically promoted to read/write primary if the existing primary fails.</p>  <p> <code>AutomaticFailoverEnabled</code> must be enabled for Redis (cluster mode enabled) replication groups.</p>  <p>Default: false</p>
+    ///   - [`multi_az_enabled(Option<bool>)`](crate::input::CreateReplicationGroupInput::multi_az_enabled): <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime: Multi-AZ</a>.</p>
+    ///   - [`num_cache_clusters(Option<i32>)`](crate::input::CreateReplicationGroupInput::num_cache_clusters): <p>The number of clusters this replication group initially has.</p>  <p>This parameter is not used if there is more than one node group (shard). You should use <code>ReplicasPerNodeGroup</code> instead.</p>  <p>If <code>AutomaticFailoverEnabled</code> is <code>true</code>, the value of this parameter must be at least 2. If <code>AutomaticFailoverEnabled</code> is <code>false</code> you can omit this parameter (it will default to 1), or you can explicitly set it to a value between 2 and 6.</p>  <p>The maximum permitted value for <code>NumCacheClusters</code> is 6 (1 primary plus 5 replicas).</p>
+    ///   - [`preferred_cache_cluster_a_zs(Option<Vec<String>>)`](crate::input::CreateReplicationGroupInput::preferred_cache_cluster_a_zs): <p>A list of EC2 Availability Zones in which the replication group's clusters are created. The order of the Availability Zones in the list is the order in which clusters are allocated. The primary cluster is created in the first AZ in the list.</p>  <p>This parameter is not used if there is more than one node group (shard). You should use <code>NodeGroupConfiguration</code> instead.</p> <note>   <p>If you are creating your replication group in an Amazon VPC (recommended), you can only locate clusters in Availability Zones associated with the subnets in the selected subnet group.</p>   <p>The number of Availability Zones listed must equal the value of <code>NumCacheClusters</code>.</p>  </note>  <p>Default: system chosen Availability Zones.</p>
+    ///   - [`num_node_groups(Option<i32>)`](crate::input::CreateReplicationGroupInput::num_node_groups): <p>An optional parameter that specifies the number of node groups (shards) for this Redis (cluster mode enabled) replication group. For Redis (cluster mode disabled) either omit this parameter or set it to 1.</p>  <p>Default: 1</p>
+    ///   - [`replicas_per_node_group(Option<i32>)`](crate::input::CreateReplicationGroupInput::replicas_per_node_group): <p>An optional parameter that specifies the number of replica nodes in each node group (shard). Valid values are 0 to 5.</p>
+    ///   - [`node_group_configuration(Option<Vec<NodeGroupConfiguration>>)`](crate::input::CreateReplicationGroupInput::node_group_configuration): <p>A list of node group (shard) configuration options. Each node group (shard) configuration has the following members: <code>PrimaryAvailabilityZone</code>, <code>ReplicaAvailabilityZones</code>, <code>ReplicaCount</code>, and <code>Slots</code>.</p>  <p>If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group, you can use this parameter to individually configure each node group (shard), or you can omit this parameter. However, it is required when seeding a Redis (cluster mode enabled) cluster from a S3 rdb file. You must configure each node group (shard) using this parameter because you must specify the slots for each node group.</p>
+    ///   - [`cache_node_type(Option<String>)`](crate::input::CreateReplicationGroupInput::cache_node_type): <p>The compute and memory capacity of the nodes in the node group (shard).</p>  <p>The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts.</p>  <ul>   <li> <p>General purpose:</p>    <ul>     <li> <p>Current generation: </p> <p> <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>, <code>cache.m6g.16xlarge</code> </p> <note>       <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a> </p>      </note> <p> <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>, <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and Memcached engine version 1.5.16 onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>, <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b> <code>cache.t3.micro</code>, <code>cache.t3.small</code>, <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b> <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code> </p> </li>     <li> <p>Previous generation: (not recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p> <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code> </p> <p> <b>M3 node types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> </li>    </ul> </li>   <li> <p>Compute optimized:</p>    <ul>     <li> <p>Previous generation: (not recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p> </li>    </ul> </li>   <li> <p>Memory optimized with data tiering:</p>    <ul>     <li> <p>Current generation: </p> <p> <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).</p> <p> <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>, <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code> </p> </li>    </ul> </li>   <li> <p>Memory optimized:</p>    <ul>     <li> <p>Current generation: </p> <p> <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p> <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code> </p> <note>       <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a> </p>      </note> <p> <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4 node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>, <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li>     <li> <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code> </p> <p> <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> </li>    </ul> </li>  </ul>  <p> <b>Additional node type info</b> </p>  <ul>   <li> <p>All current generation instance types are created in Amazon VPC by default.</p> </li>   <li> <p>Redis append-only files (AOF) are not supported for T1 or T2 instances.</p> </li>   <li> <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p> </li>   <li> <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p> </li>  </ul>
+    ///   - [`engine(Option<String>)`](crate::input::CreateReplicationGroupInput::engine): <p>The name of the cache engine to be used for the clusters in this replication group. Must be Redis.</p>
+    ///   - [`engine_version(Option<String>)`](crate::input::CreateReplicationGroupInput::engine_version): <p>The version number of the cache engine to be used for the clusters in this replication group. To view the supported cache engine versions, use the <code>DescribeCacheEngineVersions</code> operation.</p>  <p> <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>) in the <i>ElastiCache User Guide</i>, but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster or replication group and create it anew with the earlier engine version. </p>
+    ///   - [`cache_parameter_group_name(Option<String>)`](crate::input::CreateReplicationGroupInput::cache_parameter_group_name): <p>The name of the parameter group to associate with this replication group. If this argument is omitted, the default cache parameter group for the specified engine is used.</p>  <p>If you are running Redis version 3.2.4 or later, only one node group (shard), and want to use a default parameter group, we recommend that you specify the parameter group by name. </p>  <ul>   <li> <p>To create a Redis (cluster mode disabled) replication group, use <code>CacheParameterGroupName=default.redis3.2</code>.</p> </li>   <li> <p>To create a Redis (cluster mode enabled) replication group, use <code>CacheParameterGroupName=default.redis3.2.cluster.on</code>.</p> </li>  </ul>
+    ///   - [`cache_subnet_group_name(Option<String>)`](crate::input::CreateReplicationGroupInput::cache_subnet_group_name): <p>The name of the cache subnet group to be used for the replication group.</p> <important>   <p>If you're going to launch your cluster in an Amazon VPC, you need to create a subnet group before you start creating a cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets and Subnet Groups</a>.</p>  </important>
+    ///   - [`cache_security_group_names(Option<Vec<String>>)`](crate::input::CreateReplicationGroupInput::cache_security_group_names): <p>A list of cache security group names to associate with this replication group.</p>
+    ///   - [`security_group_ids(Option<Vec<String>>)`](crate::input::CreateReplicationGroupInput::security_group_ids): <p>One or more Amazon VPC security groups associated with this replication group.</p>  <p>Use this parameter only when you are creating a replication group in an Amazon Virtual Private Cloud (Amazon VPC).</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateReplicationGroupInput::tags): <p>A list of tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You can include multiple tags as shown following: Key=<code>myKey</code>, Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>, Value=<code>mySecondKeyValue</code>. Tags on replication groups will be replicated to all nodes.</p>
+    ///   - [`snapshot_arns(Option<Vec<String>>)`](crate::input::CreateReplicationGroupInput::snapshot_arns): <p>A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB snapshot files stored in Amazon S3. The snapshot files are used to populate the new replication group. The Amazon S3 object name in the ARN cannot contain any commas. The new replication group will have the number of node groups (console: shards) specified by the parameter <i>NumNodeGroups</i> or the number of node groups configured by <i>NodeGroupConfiguration</i> regardless of the number of ARNs specified here.</p>  <p>Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code> </p>
+    ///   - [`snapshot_name(Option<String>)`](crate::input::CreateReplicationGroupInput::snapshot_name): <p>The name of a snapshot from which to restore data into the new replication group. The snapshot status changes to <code>restoring</code> while the new replication group is being created.</p>
+    ///   - [`preferred_maintenance_window(Option<String>)`](crate::input::CreateReplicationGroupInput::preferred_maintenance_window): <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code> are:</p>  <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>  <p>Valid values for <code>ddd</code> are:</p>  <ul>   <li> <p> <code>sun</code> </p> </li>   <li> <p> <code>mon</code> </p> </li>   <li> <p> <code>tue</code> </p> </li>   <li> <p> <code>wed</code> </p> </li>   <li> <p> <code>thu</code> </p> </li>   <li> <p> <code>fri</code> </p> </li>   <li> <p> <code>sat</code> </p> </li>  </ul>  <p>Example: <code>sun:23:00-mon:01:30</code> </p>
+    ///   - [`port(Option<i32>)`](crate::input::CreateReplicationGroupInput::port): <p>The port number on which each member of the replication group accepts connections.</p>
+    ///   - [`notification_topic_arn(Option<String>)`](crate::input::CreateReplicationGroupInput::notification_topic_arn): <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which notifications are sent.</p> <note>   <p>The Amazon SNS topic owner must be the same as the cluster owner.</p>  </note>
+    ///   - [`auto_minor_version_upgrade(Option<bool>)`](crate::input::CreateReplicationGroupInput::auto_minor_version_upgrade): <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp; </p>
+    ///   - [`snapshot_retention_limit(Option<i32>)`](crate::input::CreateReplicationGroupInput::snapshot_retention_limit): <p>The number of days for which ElastiCache retains automatic snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>  <p>Default: 0 (i.e., automatic backups are disabled for this cluster).</p>
+    ///   - [`snapshot_window(Option<String>)`](crate::input::CreateReplicationGroupInput::snapshot_window): <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group (shard).</p>  <p>Example: <code>05:00-09:00</code> </p>  <p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p>
+    ///   - [`auth_token(Option<String>)`](crate::input::CreateReplicationGroupInput::auth_token): <p> <b>Reserved parameter.</b> The password used to access a password protected server.</p>  <p> <code>AuthToken</code> can be specified only on replication groups where <code>TransitEncryptionEnabled</code> is <code>true</code>.</p> <important>   <p>For HIPAA compliance, you must specify <code>TransitEncryptionEnabled</code> as <code>true</code>, an <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p>  </important>  <p>Password constraints:</p>  <ul>   <li> <p>Must be only printable ASCII characters.</p> </li>   <li> <p>Must be at least 16 characters and no more than 128 characters in length.</p> </li>   <li> <p>The only permitted printable special characters are !, &amp;, #, $, ^, &lt;, &gt;, and -. Other printable special characters cannot be used in the AUTH token.</p> </li>  </ul>  <p>For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at http://redis.io/commands/AUTH.</p>
+    ///   - [`transit_encryption_enabled(Option<bool>)`](crate::input::CreateReplicationGroupInput::transit_encryption_enabled): <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>  <p>You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to <code>true</code> when you create a cluster.</p>  <p>This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the <code>EngineVersion</code> parameter is <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is being created in an Amazon VPC.</p>  <p>If you enable in-transit encryption, you must also specify a value for <code>CacheSubnetGroup</code>.</p>  <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>  <p>Default: <code>false</code> </p> <important>   <p>For HIPAA compliance, you must specify <code>TransitEncryptionEnabled</code> as <code>true</code>, an <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p>  </important>
+    ///   - [`at_rest_encryption_enabled(Option<bool>)`](crate::input::CreateReplicationGroupInput::at_rest_encryption_enabled): <p>A flag that enables encryption at rest when set to <code>true</code>.</p>  <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication group. </p>  <p> <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>  <p>Default: <code>false</code> </p>
+    ///   - [`kms_key_id(Option<String>)`](crate::input::CreateReplicationGroupInput::kms_key_id): <p>The ID of the KMS key used to encrypt the disk in the cluster.</p>
+    ///   - [`user_group_ids(Option<Vec<String>>)`](crate::input::CreateReplicationGroupInput::user_group_ids): <p>The user group to associate with the replication group.</p>
+    ///   - [`log_delivery_configurations(Option<Vec<LogDeliveryConfigurationRequest>>)`](crate::input::CreateReplicationGroupInput::log_delivery_configurations): <p>Specifies the destination, format and type of the logs.</p>
+    ///   - [`data_tiering_enabled(Option<bool>)`](crate::input::CreateReplicationGroupInput::data_tiering_enabled): <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data tiering</a>.</p>
+    /// - On success, responds with [`CreateReplicationGroupOutput`](crate::output::CreateReplicationGroupOutput) with field(s):
+    ///   - [`replication_group(Option<ReplicationGroup>)`](crate::output::CreateReplicationGroupOutput::replication_group): <p>Contains all of the attributes of a specific Redis replication group.</p>
+    /// - On failure, responds with [`SdkError<CreateReplicationGroupError>`](crate::error::CreateReplicationGroupError)
     pub fn create_replication_group(&self) -> fluent_builders::CreateReplicationGroup<C, M, R> {
         fluent_builders::CreateReplicationGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateSnapshot` operation.
+    /// Constructs a fluent builder for the [`CreateSnapshot`](crate::client::fluent_builders::CreateSnapshot) operation.
     ///
-    /// See [`CreateSnapshot`](crate::client::fluent_builders::CreateSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateSnapshotInput`](crate::input::CreateSnapshotInput) with field(s):
+    ///   - [`replication_group_id(Option<String>)`](crate::input::CreateSnapshotInput::replication_group_id): <p>The identifier of an existing replication group. The snapshot is created from this replication group.</p>
+    ///   - [`cache_cluster_id(Option<String>)`](crate::input::CreateSnapshotInput::cache_cluster_id): <p>The identifier of an existing cluster. The snapshot is created from this cluster.</p>
+    ///   - [`snapshot_name(Option<String>)`](crate::input::CreateSnapshotInput::snapshot_name): <p>A name for the snapshot being created.</p>
+    ///   - [`kms_key_id(Option<String>)`](crate::input::CreateSnapshotInput::kms_key_id): <p>The ID of the KMS key used to encrypt the snapshot.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateSnapshotInput::tags): <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    /// - On success, responds with [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput) with field(s):
+    ///   - [`snapshot(Option<Snapshot>)`](crate::output::CreateSnapshotOutput::snapshot): <p>Represents a copy of an entire Redis cluster as of the time when the snapshot was taken.</p>
+    /// - On failure, responds with [`SdkError<CreateSnapshotError>`](crate::error::CreateSnapshotError)
     pub fn create_snapshot(&self) -> fluent_builders::CreateSnapshot<C, M, R> {
         fluent_builders::CreateSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateUser` operation.
+    /// Constructs a fluent builder for the [`CreateUser`](crate::client::fluent_builders::CreateUser) operation.
     ///
-    /// See [`CreateUser`](crate::client::fluent_builders::CreateUser) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateUserInput`](crate::input::CreateUserInput) with field(s):
+    ///   - [`user_id(Option<String>)`](crate::input::CreateUserInput::user_id): <p>The ID of the user.</p>
+    ///   - [`user_name(Option<String>)`](crate::input::CreateUserInput::user_name): <p>The username of the user.</p>
+    ///   - [`engine(Option<String>)`](crate::input::CreateUserInput::engine): <p>The current supported value is Redis. </p>
+    ///   - [`passwords(Option<Vec<String>>)`](crate::input::CreateUserInput::passwords): <p>Passwords used for this user. You can create up to two passwords for each user.</p>
+    ///   - [`access_string(Option<String>)`](crate::input::CreateUserInput::access_string): <p>Access permissions string used for this user.</p>
+    ///   - [`no_password_required(Option<bool>)`](crate::input::CreateUserInput::no_password_required): <p>Indicates a password is not required for this user.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateUserInput::tags): <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    /// - On success, responds with [`CreateUserOutput`](crate::output::CreateUserOutput) with field(s):
+    ///   - [`user_id(Option<String>)`](crate::output::CreateUserOutput::user_id): <p>The ID of the user.</p>
+    ///   - [`user_name(Option<String>)`](crate::output::CreateUserOutput::user_name): <p>The username of the user.</p>
+    ///   - [`status(Option<String>)`](crate::output::CreateUserOutput::status): <p>Indicates the user status. Can be "active", "modifying" or "deleting".</p>
+    ///   - [`engine(Option<String>)`](crate::output::CreateUserOutput::engine): <p>The current supported value is Redis.</p>
+    ///   - [`minimum_engine_version(Option<String>)`](crate::output::CreateUserOutput::minimum_engine_version): <p>The minimum engine version required, which is Redis 6.0</p>
+    ///   - [`access_string(Option<String>)`](crate::output::CreateUserOutput::access_string): <p>Access permissions string used for this user.</p>
+    ///   - [`user_group_ids(Option<Vec<String>>)`](crate::output::CreateUserOutput::user_group_ids): <p>Returns a list of the user group IDs the user belongs to.</p>
+    ///   - [`authentication(Option<Authentication>)`](crate::output::CreateUserOutput::authentication): <p>Denotes whether the user requires a password to authenticate.</p>
+    ///   - [`arn(Option<String>)`](crate::output::CreateUserOutput::arn): <p>The Amazon Resource Name (ARN) of the user.</p>
+    /// - On failure, responds with [`SdkError<CreateUserError>`](crate::error::CreateUserError)
     pub fn create_user(&self) -> fluent_builders::CreateUser<C, M, R> {
         fluent_builders::CreateUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateUserGroup` operation.
+    /// Constructs a fluent builder for the [`CreateUserGroup`](crate::client::fluent_builders::CreateUserGroup) operation.
     ///
-    /// See [`CreateUserGroup`](crate::client::fluent_builders::CreateUserGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateUserGroupInput`](crate::input::CreateUserGroupInput) with field(s):
+    ///   - [`user_group_id(Option<String>)`](crate::input::CreateUserGroupInput::user_group_id): <p>The ID of the user group.</p>
+    ///   - [`engine(Option<String>)`](crate::input::CreateUserGroupInput::engine): <p>The current supported value is Redis. </p>
+    ///   - [`user_ids(Option<Vec<String>>)`](crate::input::CreateUserGroupInput::user_ids): <p>The list of user IDs that belong to the user group.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateUserGroupInput::tags): <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    /// - On success, responds with [`CreateUserGroupOutput`](crate::output::CreateUserGroupOutput) with field(s):
+    ///   - [`user_group_id(Option<String>)`](crate::output::CreateUserGroupOutput::user_group_id): <p>The ID of the user group.</p>
+    ///   - [`status(Option<String>)`](crate::output::CreateUserGroupOutput::status): <p>Indicates user group status. Can be "creating", "active", "modifying", "deleting".</p>
+    ///   - [`engine(Option<String>)`](crate::output::CreateUserGroupOutput::engine): <p>The current supported value is Redis. </p>
+    ///   - [`user_ids(Option<Vec<String>>)`](crate::output::CreateUserGroupOutput::user_ids): <p>The list of user IDs that belong to the user group.</p>
+    ///   - [`minimum_engine_version(Option<String>)`](crate::output::CreateUserGroupOutput::minimum_engine_version): <p>The minimum engine version required, which is Redis 6.0</p>
+    ///   - [`pending_changes(Option<UserGroupPendingChanges>)`](crate::output::CreateUserGroupOutput::pending_changes): <p>A list of updates being applied to the user group.</p>
+    ///   - [`replication_groups(Option<Vec<String>>)`](crate::output::CreateUserGroupOutput::replication_groups): <p>A list of replication groups that the user group can access.</p>
+    ///   - [`arn(Option<String>)`](crate::output::CreateUserGroupOutput::arn): <p>The Amazon Resource Name (ARN) of the user group.</p>
+    /// - On failure, responds with [`SdkError<CreateUserGroupError>`](crate::error::CreateUserGroupError)
     pub fn create_user_group(&self) -> fluent_builders::CreateUserGroup<C, M, R> {
         fluent_builders::CreateUserGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DecreaseNodeGroupsInGlobalReplicationGroup` operation.
+    /// Constructs a fluent builder for the [`DecreaseNodeGroupsInGlobalReplicationGroup`](crate::client::fluent_builders::DecreaseNodeGroupsInGlobalReplicationGroup) operation.
     ///
-    /// See [`DecreaseNodeGroupsInGlobalReplicationGroup`](crate::client::fluent_builders::DecreaseNodeGroupsInGlobalReplicationGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DecreaseNodeGroupsInGlobalReplicationGroupInput`](crate::input::DecreaseNodeGroupsInGlobalReplicationGroupInput) with field(s):
+    ///   - [`global_replication_group_id(Option<String>)`](crate::input::DecreaseNodeGroupsInGlobalReplicationGroupInput::global_replication_group_id): <p>The name of the Global datastore</p>
+    ///   - [`node_group_count(i32)`](crate::input::DecreaseNodeGroupsInGlobalReplicationGroupInput::node_group_count): <p>The number of node groups (shards) that results from the modification of the shard configuration</p>
+    ///   - [`global_node_groups_to_remove(Option<Vec<String>>)`](crate::input::DecreaseNodeGroupsInGlobalReplicationGroupInput::global_node_groups_to_remove): <p>If the value of NodeGroupCount is less than the current number of node groups (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster. ElastiCache for Redis will attempt to remove all node groups listed by GlobalNodeGroupsToRemove from the cluster. </p>
+    ///   - [`global_node_groups_to_retain(Option<Vec<String>>)`](crate::input::DecreaseNodeGroupsInGlobalReplicationGroupInput::global_node_groups_to_retain): <p>If the value of NodeGroupCount is less than the current number of node groups (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRetain is a list of NodeGroupIds to retain from the cluster. ElastiCache for Redis will attempt to retain all node groups listed by GlobalNodeGroupsToRetain from the cluster. </p>
+    ///   - [`apply_immediately(bool)`](crate::input::DecreaseNodeGroupsInGlobalReplicationGroupInput::apply_immediately): <p>Indicates that the shard reconfiguration process begins immediately. At present, the only permitted value for this parameter is true. </p>
+    /// - On success, responds with [`DecreaseNodeGroupsInGlobalReplicationGroupOutput`](crate::output::DecreaseNodeGroupsInGlobalReplicationGroupOutput) with field(s):
+    ///   - [`global_replication_group(Option<GlobalReplicationGroup>)`](crate::output::DecreaseNodeGroupsInGlobalReplicationGroupOutput::global_replication_group): <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>  <ul>   <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<DecreaseNodeGroupsInGlobalReplicationGroupError>`](crate::error::DecreaseNodeGroupsInGlobalReplicationGroupError)
     pub fn decrease_node_groups_in_global_replication_group(
         &self,
     ) -> fluent_builders::DecreaseNodeGroupsInGlobalReplicationGroup<C, M, R> {
         fluent_builders::DecreaseNodeGroupsInGlobalReplicationGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DecreaseReplicaCount` operation.
+    /// Constructs a fluent builder for the [`DecreaseReplicaCount`](crate::client::fluent_builders::DecreaseReplicaCount) operation.
     ///
-    /// See [`DecreaseReplicaCount`](crate::client::fluent_builders::DecreaseReplicaCount) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DecreaseReplicaCountInput`](crate::input::DecreaseReplicaCountInput) with field(s):
+    ///   - [`replication_group_id(Option<String>)`](crate::input::DecreaseReplicaCountInput::replication_group_id): <p>The id of the replication group from which you want to remove replica nodes.</p>
+    ///   - [`new_replica_count(Option<i32>)`](crate::input::DecreaseReplicaCountInput::new_replica_count): <p>The number of read replica nodes you want at the completion of this operation. For Redis (cluster mode disabled) replication groups, this is the number of replica nodes in the replication group. For Redis (cluster mode enabled) replication groups, this is the number of replica nodes in each of the replication group's node groups.</p>  <p>The minimum number of replicas in a shard or replication group is:</p>  <ul>   <li> <p>Redis (cluster mode disabled)</p>    <ul>     <li> <p>If Multi-AZ is enabled: 1</p> </li>     <li> <p>If Multi-AZ is not enabled: 0</p> </li>    </ul> </li>   <li> <p>Redis (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p> </li>  </ul>
+    ///   - [`replica_configuration(Option<Vec<ConfigureShard>>)`](crate::input::DecreaseReplicaCountInput::replica_configuration): <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Redis (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
+    ///   - [`replicas_to_remove(Option<Vec<String>>)`](crate::input::DecreaseReplicaCountInput::replicas_to_remove): <p>A list of the node ids to remove from the replication group or node group (shard).</p>
+    ///   - [`apply_immediately(bool)`](crate::input::DecreaseReplicaCountInput::apply_immediately): <p>If <code>True</code>, the number of replica nodes is decreased immediately. <code>ApplyImmediately=False</code> is not currently supported.</p>
+    /// - On success, responds with [`DecreaseReplicaCountOutput`](crate::output::DecreaseReplicaCountOutput) with field(s):
+    ///   - [`replication_group(Option<ReplicationGroup>)`](crate::output::DecreaseReplicaCountOutput::replication_group): <p>Contains all of the attributes of a specific Redis replication group.</p>
+    /// - On failure, responds with [`SdkError<DecreaseReplicaCountError>`](crate::error::DecreaseReplicaCountError)
     pub fn decrease_replica_count(&self) -> fluent_builders::DecreaseReplicaCount<C, M, R> {
         fluent_builders::DecreaseReplicaCount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteCacheCluster` operation.
+    /// Constructs a fluent builder for the [`DeleteCacheCluster`](crate::client::fluent_builders::DeleteCacheCluster) operation.
     ///
-    /// See [`DeleteCacheCluster`](crate::client::fluent_builders::DeleteCacheCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteCacheClusterInput`](crate::input::DeleteCacheClusterInput) with field(s):
+    ///   - [`cache_cluster_id(Option<String>)`](crate::input::DeleteCacheClusterInput::cache_cluster_id): <p>The cluster identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
+    ///   - [`final_snapshot_identifier(Option<String>)`](crate::input::DeleteCacheClusterInput::final_snapshot_identifier): <p>The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot. ElastiCache creates the snapshot, and then deletes the cluster immediately afterward.</p>
+    /// - On success, responds with [`DeleteCacheClusterOutput`](crate::output::DeleteCacheClusterOutput) with field(s):
+    ///   - [`cache_cluster(Option<CacheCluster>)`](crate::output::DeleteCacheClusterOutput::cache_cluster): <p>Contains all of the attributes of a specific cluster.</p>
+    /// - On failure, responds with [`SdkError<DeleteCacheClusterError>`](crate::error::DeleteCacheClusterError)
     pub fn delete_cache_cluster(&self) -> fluent_builders::DeleteCacheCluster<C, M, R> {
         fluent_builders::DeleteCacheCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteCacheParameterGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteCacheParameterGroup`](crate::client::fluent_builders::DeleteCacheParameterGroup) operation.
     ///
-    /// See [`DeleteCacheParameterGroup`](crate::client::fluent_builders::DeleteCacheParameterGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteCacheParameterGroupInput`](crate::input::DeleteCacheParameterGroupInput) with field(s):
+    ///   - [`cache_parameter_group_name(Option<String>)`](crate::input::DeleteCacheParameterGroupInput::cache_parameter_group_name): <p>The name of the cache parameter group to delete.</p> <note>   <p>The specified cache security group must not be associated with any clusters.</p>  </note>
+    /// - On success, responds with [`DeleteCacheParameterGroupOutput`](crate::output::DeleteCacheParameterGroupOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteCacheParameterGroupError>`](crate::error::DeleteCacheParameterGroupError)
     pub fn delete_cache_parameter_group(
         &self,
     ) -> fluent_builders::DeleteCacheParameterGroup<C, M, R> {
         fluent_builders::DeleteCacheParameterGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteCacheSecurityGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteCacheSecurityGroup`](crate::client::fluent_builders::DeleteCacheSecurityGroup) operation.
     ///
-    /// See [`DeleteCacheSecurityGroup`](crate::client::fluent_builders::DeleteCacheSecurityGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteCacheSecurityGroupInput`](crate::input::DeleteCacheSecurityGroupInput) with field(s):
+    ///   - [`cache_security_group_name(Option<String>)`](crate::input::DeleteCacheSecurityGroupInput::cache_security_group_name): <p>The name of the cache security group to delete.</p> <note>   <p>You cannot delete the default security group.</p>  </note>
+    /// - On success, responds with [`DeleteCacheSecurityGroupOutput`](crate::output::DeleteCacheSecurityGroupOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteCacheSecurityGroupError>`](crate::error::DeleteCacheSecurityGroupError)
     pub fn delete_cache_security_group(
         &self,
     ) -> fluent_builders::DeleteCacheSecurityGroup<C, M, R> {
         fluent_builders::DeleteCacheSecurityGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteCacheSubnetGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteCacheSubnetGroup`](crate::client::fluent_builders::DeleteCacheSubnetGroup) operation.
     ///
-    /// See [`DeleteCacheSubnetGroup`](crate::client::fluent_builders::DeleteCacheSubnetGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteCacheSubnetGroupInput`](crate::input::DeleteCacheSubnetGroupInput) with field(s):
+    ///   - [`cache_subnet_group_name(Option<String>)`](crate::input::DeleteCacheSubnetGroupInput::cache_subnet_group_name): <p>The name of the cache subnet group to delete.</p>  <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
+    /// - On success, responds with [`DeleteCacheSubnetGroupOutput`](crate::output::DeleteCacheSubnetGroupOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteCacheSubnetGroupError>`](crate::error::DeleteCacheSubnetGroupError)
     pub fn delete_cache_subnet_group(&self) -> fluent_builders::DeleteCacheSubnetGroup<C, M, R> {
         fluent_builders::DeleteCacheSubnetGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteGlobalReplicationGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteGlobalReplicationGroup`](crate::client::fluent_builders::DeleteGlobalReplicationGroup) operation.
     ///
-    /// See [`DeleteGlobalReplicationGroup`](crate::client::fluent_builders::DeleteGlobalReplicationGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteGlobalReplicationGroupInput`](crate::input::DeleteGlobalReplicationGroupInput) with field(s):
+    ///   - [`global_replication_group_id(Option<String>)`](crate::input::DeleteGlobalReplicationGroupInput::global_replication_group_id): <p>The name of the Global datastore</p>
+    ///   - [`retain_primary_replication_group(bool)`](crate::input::DeleteGlobalReplicationGroupInput::retain_primary_replication_group): <p>The primary replication group is retained as a standalone replication group. </p>
+    /// - On success, responds with [`DeleteGlobalReplicationGroupOutput`](crate::output::DeleteGlobalReplicationGroupOutput) with field(s):
+    ///   - [`global_replication_group(Option<GlobalReplicationGroup>)`](crate::output::DeleteGlobalReplicationGroupOutput::global_replication_group): <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>  <ul>   <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<DeleteGlobalReplicationGroupError>`](crate::error::DeleteGlobalReplicationGroupError)
     pub fn delete_global_replication_group(
         &self,
     ) -> fluent_builders::DeleteGlobalReplicationGroup<C, M, R> {
         fluent_builders::DeleteGlobalReplicationGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteReplicationGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteReplicationGroup`](crate::client::fluent_builders::DeleteReplicationGroup) operation.
     ///
-    /// See [`DeleteReplicationGroup`](crate::client::fluent_builders::DeleteReplicationGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteReplicationGroupInput`](crate::input::DeleteReplicationGroupInput) with field(s):
+    ///   - [`replication_group_id(Option<String>)`](crate::input::DeleteReplicationGroupInput::replication_group_id): <p>The identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
+    ///   - [`retain_primary_cluster(Option<bool>)`](crate::input::DeleteReplicationGroupInput::retain_primary_cluster): <p>If set to <code>true</code>, all of the read replicas are deleted, but the primary node is retained.</p>
+    ///   - [`final_snapshot_identifier(Option<String>)`](crate::input::DeleteReplicationGroupInput::final_snapshot_identifier): <p>The name of a final node group (shard) snapshot. ElastiCache creates the snapshot from the primary node in the cluster, rather than one of the replicas; this is to ensure that it captures the freshest data. After the final snapshot is taken, the replication group is immediately deleted.</p>
+    /// - On success, responds with [`DeleteReplicationGroupOutput`](crate::output::DeleteReplicationGroupOutput) with field(s):
+    ///   - [`replication_group(Option<ReplicationGroup>)`](crate::output::DeleteReplicationGroupOutput::replication_group): <p>Contains all of the attributes of a specific Redis replication group.</p>
+    /// - On failure, responds with [`SdkError<DeleteReplicationGroupError>`](crate::error::DeleteReplicationGroupError)
     pub fn delete_replication_group(&self) -> fluent_builders::DeleteReplicationGroup<C, M, R> {
         fluent_builders::DeleteReplicationGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteSnapshot` operation.
+    /// Constructs a fluent builder for the [`DeleteSnapshot`](crate::client::fluent_builders::DeleteSnapshot) operation.
     ///
-    /// See [`DeleteSnapshot`](crate::client::fluent_builders::DeleteSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteSnapshotInput`](crate::input::DeleteSnapshotInput) with field(s):
+    ///   - [`snapshot_name(Option<String>)`](crate::input::DeleteSnapshotInput::snapshot_name): <p>The name of the snapshot to be deleted.</p>
+    /// - On success, responds with [`DeleteSnapshotOutput`](crate::output::DeleteSnapshotOutput) with field(s):
+    ///   - [`snapshot(Option<Snapshot>)`](crate::output::DeleteSnapshotOutput::snapshot): <p>Represents a copy of an entire Redis cluster as of the time when the snapshot was taken.</p>
+    /// - On failure, responds with [`SdkError<DeleteSnapshotError>`](crate::error::DeleteSnapshotError)
     pub fn delete_snapshot(&self) -> fluent_builders::DeleteSnapshot<C, M, R> {
         fluent_builders::DeleteSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteUser` operation.
+    /// Constructs a fluent builder for the [`DeleteUser`](crate::client::fluent_builders::DeleteUser) operation.
     ///
-    /// See [`DeleteUser`](crate::client::fluent_builders::DeleteUser) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteUserInput`](crate::input::DeleteUserInput) with field(s):
+    ///   - [`user_id(Option<String>)`](crate::input::DeleteUserInput::user_id): <p>The ID of the user.</p>
+    /// - On success, responds with [`DeleteUserOutput`](crate::output::DeleteUserOutput) with field(s):
+    ///   - [`user_id(Option<String>)`](crate::output::DeleteUserOutput::user_id): <p>The ID of the user.</p>
+    ///   - [`user_name(Option<String>)`](crate::output::DeleteUserOutput::user_name): <p>The username of the user.</p>
+    ///   - [`status(Option<String>)`](crate::output::DeleteUserOutput::status): <p>Indicates the user status. Can be "active", "modifying" or "deleting".</p>
+    ///   - [`engine(Option<String>)`](crate::output::DeleteUserOutput::engine): <p>The current supported value is Redis.</p>
+    ///   - [`minimum_engine_version(Option<String>)`](crate::output::DeleteUserOutput::minimum_engine_version): <p>The minimum engine version required, which is Redis 6.0</p>
+    ///   - [`access_string(Option<String>)`](crate::output::DeleteUserOutput::access_string): <p>Access permissions string used for this user.</p>
+    ///   - [`user_group_ids(Option<Vec<String>>)`](crate::output::DeleteUserOutput::user_group_ids): <p>Returns a list of the user group IDs the user belongs to.</p>
+    ///   - [`authentication(Option<Authentication>)`](crate::output::DeleteUserOutput::authentication): <p>Denotes whether the user requires a password to authenticate.</p>
+    ///   - [`arn(Option<String>)`](crate::output::DeleteUserOutput::arn): <p>The Amazon Resource Name (ARN) of the user.</p>
+    /// - On failure, responds with [`SdkError<DeleteUserError>`](crate::error::DeleteUserError)
     pub fn delete_user(&self) -> fluent_builders::DeleteUser<C, M, R> {
         fluent_builders::DeleteUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteUserGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteUserGroup`](crate::client::fluent_builders::DeleteUserGroup) operation.
     ///
-    /// See [`DeleteUserGroup`](crate::client::fluent_builders::DeleteUserGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteUserGroupInput`](crate::input::DeleteUserGroupInput) with field(s):
+    ///   - [`user_group_id(Option<String>)`](crate::input::DeleteUserGroupInput::user_group_id): <p>The ID of the user group.</p>
+    /// - On success, responds with [`DeleteUserGroupOutput`](crate::output::DeleteUserGroupOutput) with field(s):
+    ///   - [`user_group_id(Option<String>)`](crate::output::DeleteUserGroupOutput::user_group_id): <p>The ID of the user group.</p>
+    ///   - [`status(Option<String>)`](crate::output::DeleteUserGroupOutput::status): <p>Indicates user group status. Can be "creating", "active", "modifying", "deleting".</p>
+    ///   - [`engine(Option<String>)`](crate::output::DeleteUserGroupOutput::engine): <p>The current supported value is Redis. </p>
+    ///   - [`user_ids(Option<Vec<String>>)`](crate::output::DeleteUserGroupOutput::user_ids): <p>The list of user IDs that belong to the user group.</p>
+    ///   - [`minimum_engine_version(Option<String>)`](crate::output::DeleteUserGroupOutput::minimum_engine_version): <p>The minimum engine version required, which is Redis 6.0</p>
+    ///   - [`pending_changes(Option<UserGroupPendingChanges>)`](crate::output::DeleteUserGroupOutput::pending_changes): <p>A list of updates being applied to the user group.</p>
+    ///   - [`replication_groups(Option<Vec<String>>)`](crate::output::DeleteUserGroupOutput::replication_groups): <p>A list of replication groups that the user group can access.</p>
+    ///   - [`arn(Option<String>)`](crate::output::DeleteUserGroupOutput::arn): <p>The Amazon Resource Name (ARN) of the user group.</p>
+    /// - On failure, responds with [`SdkError<DeleteUserGroupError>`](crate::error::DeleteUserGroupError)
     pub fn delete_user_group(&self) -> fluent_builders::DeleteUserGroup<C, M, R> {
         fluent_builders::DeleteUserGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeCacheClusters` operation.
-    ///
-    /// See [`DescribeCacheClusters`](crate::client::fluent_builders::DescribeCacheClusters) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeCacheClusters`](crate::client::fluent_builders::DescribeCacheClusters) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeCacheClusters::into_paginator).
+    ///
+    /// - Takes [`DescribeCacheClustersInput`](crate::input::DescribeCacheClustersInput) with field(s):
+    ///   - [`cache_cluster_id(Option<String>)`](crate::input::DescribeCacheClustersInput::cache_cluster_id): <p>The user-supplied cluster identifier. If this parameter is specified, only information about that specific cluster is returned. This parameter isn't case sensitive.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeCacheClustersInput::max_records): <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: minimum 20; maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeCacheClustersInput::marker): <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    ///   - [`show_cache_node_info(Option<bool>)`](crate::input::DescribeCacheClustersInput::show_cache_node_info): <p>An optional flag that can be included in the <code>DescribeCacheCluster</code> request to retrieve information about the individual cache nodes.</p>
+    ///   - [`show_cache_clusters_not_in_replication_groups(Option<bool>)`](crate::input::DescribeCacheClustersInput::show_cache_clusters_not_in_replication_groups): <p>An optional flag that can be included in the <code>DescribeCacheCluster</code> request to show only nodes (API/CLI: clusters) that are not members of a replication group. In practice, this mean Memcached and single node Redis clusters.</p>
+    /// - On success, responds with [`DescribeCacheClustersOutput`](crate::output::DescribeCacheClustersOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeCacheClustersOutput::marker): <p>Provides an identifier to allow retrieval of paginated results.</p>
+    ///   - [`cache_clusters(Option<Vec<CacheCluster>>)`](crate::output::DescribeCacheClustersOutput::cache_clusters): <p>A list of clusters. Each item in the list contains detailed information about one cluster.</p>
+    /// - On failure, responds with [`SdkError<DescribeCacheClustersError>`](crate::error::DescribeCacheClustersError)
     pub fn describe_cache_clusters(&self) -> fluent_builders::DescribeCacheClusters<C, M, R> {
         fluent_builders::DescribeCacheClusters::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeCacheEngineVersions` operation.
-    ///
-    /// See [`DescribeCacheEngineVersions`](crate::client::fluent_builders::DescribeCacheEngineVersions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeCacheEngineVersions`](crate::client::fluent_builders::DescribeCacheEngineVersions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeCacheEngineVersions::into_paginator).
+    ///
+    /// - Takes [`DescribeCacheEngineVersionsInput`](crate::input::DescribeCacheEngineVersionsInput) with field(s):
+    ///   - [`engine(Option<String>)`](crate::input::DescribeCacheEngineVersionsInput::engine): <p>The cache engine to return. Valid values: <code>memcached</code> | <code>redis</code> </p>
+    ///   - [`engine_version(Option<String>)`](crate::input::DescribeCacheEngineVersionsInput::engine_version): <p>The cache engine version to return.</p>  <p>Example: <code>1.4.14</code> </p>
+    ///   - [`cache_parameter_group_family(Option<String>)`](crate::input::DescribeCacheEngineVersionsInput::cache_parameter_group_family): <p>The name of a specific cache parameter group family to return details for.</p>  <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis6.2</code> </p>  <p>Constraints:</p>  <ul>   <li> <p>Must be 1 to 255 alphanumeric characters</p> </li>   <li> <p>First character must be a letter</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>  </ul>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeCacheEngineVersionsInput::max_records): <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: minimum 20; maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeCacheEngineVersionsInput::marker): <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    ///   - [`default_only(bool)`](crate::input::DescribeCacheEngineVersionsInput::default_only): <p>If <code>true</code>, specifies that only the default version of the specified engine or engine and major version combination is to be returned.</p>
+    /// - On success, responds with [`DescribeCacheEngineVersionsOutput`](crate::output::DescribeCacheEngineVersionsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeCacheEngineVersionsOutput::marker): <p>Provides an identifier to allow retrieval of paginated results.</p>
+    ///   - [`cache_engine_versions(Option<Vec<CacheEngineVersion>>)`](crate::output::DescribeCacheEngineVersionsOutput::cache_engine_versions): <p>A list of cache engine version details. Each element in the list contains detailed information about one cache engine version.</p>
+    /// - On failure, responds with [`SdkError<DescribeCacheEngineVersionsError>`](crate::error::DescribeCacheEngineVersionsError)
     pub fn describe_cache_engine_versions(
         &self,
     ) -> fluent_builders::DescribeCacheEngineVersions<C, M, R> {
         fluent_builders::DescribeCacheEngineVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeCacheParameterGroups` operation.
-    ///
-    /// See [`DescribeCacheParameterGroups`](crate::client::fluent_builders::DescribeCacheParameterGroups) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeCacheParameterGroups`](crate::client::fluent_builders::DescribeCacheParameterGroups) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeCacheParameterGroups::into_paginator).
+    ///
+    /// - Takes [`DescribeCacheParameterGroupsInput`](crate::input::DescribeCacheParameterGroupsInput) with field(s):
+    ///   - [`cache_parameter_group_name(Option<String>)`](crate::input::DescribeCacheParameterGroupsInput::cache_parameter_group_name): <p>The name of a specific cache parameter group to return details for.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeCacheParameterGroupsInput::max_records): <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: minimum 20; maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeCacheParameterGroupsInput::marker): <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// - On success, responds with [`DescribeCacheParameterGroupsOutput`](crate::output::DescribeCacheParameterGroupsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeCacheParameterGroupsOutput::marker): <p>Provides an identifier to allow retrieval of paginated results.</p>
+    ///   - [`cache_parameter_groups(Option<Vec<CacheParameterGroup>>)`](crate::output::DescribeCacheParameterGroupsOutput::cache_parameter_groups): <p>A list of cache parameter groups. Each element in the list contains detailed information about one cache parameter group.</p>
+    /// - On failure, responds with [`SdkError<DescribeCacheParameterGroupsError>`](crate::error::DescribeCacheParameterGroupsError)
     pub fn describe_cache_parameter_groups(
         &self,
     ) -> fluent_builders::DescribeCacheParameterGroups<C, M, R> {
         fluent_builders::DescribeCacheParameterGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeCacheParameters` operation.
-    ///
-    /// See [`DescribeCacheParameters`](crate::client::fluent_builders::DescribeCacheParameters) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeCacheParameters`](crate::client::fluent_builders::DescribeCacheParameters) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeCacheParameters::into_paginator).
+    ///
+    /// - Takes [`DescribeCacheParametersInput`](crate::input::DescribeCacheParametersInput) with field(s):
+    ///   - [`cache_parameter_group_name(Option<String>)`](crate::input::DescribeCacheParametersInput::cache_parameter_group_name): <p>The name of a specific cache parameter group to return details for.</p>
+    ///   - [`source(Option<String>)`](crate::input::DescribeCacheParametersInput::source): <p>The parameter types to return.</p>  <p>Valid values: <code>user</code> | <code>system</code> | <code>engine-default</code> </p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeCacheParametersInput::max_records): <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: minimum 20; maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeCacheParametersInput::marker): <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// - On success, responds with [`DescribeCacheParametersOutput`](crate::output::DescribeCacheParametersOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeCacheParametersOutput::marker): <p>Provides an identifier to allow retrieval of paginated results.</p>
+    ///   - [`parameters(Option<Vec<Parameter>>)`](crate::output::DescribeCacheParametersOutput::parameters): <p>A list of <code>Parameter</code> instances.</p>
+    ///   - [`cache_node_type_specific_parameters(Option<Vec<CacheNodeTypeSpecificParameter>>)`](crate::output::DescribeCacheParametersOutput::cache_node_type_specific_parameters): <p>A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.</p>
+    /// - On failure, responds with [`SdkError<DescribeCacheParametersError>`](crate::error::DescribeCacheParametersError)
     pub fn describe_cache_parameters(&self) -> fluent_builders::DescribeCacheParameters<C, M, R> {
         fluent_builders::DescribeCacheParameters::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeCacheSecurityGroups` operation.
-    ///
-    /// See [`DescribeCacheSecurityGroups`](crate::client::fluent_builders::DescribeCacheSecurityGroups) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeCacheSecurityGroups`](crate::client::fluent_builders::DescribeCacheSecurityGroups) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeCacheSecurityGroups::into_paginator).
+    ///
+    /// - Takes [`DescribeCacheSecurityGroupsInput`](crate::input::DescribeCacheSecurityGroupsInput) with field(s):
+    ///   - [`cache_security_group_name(Option<String>)`](crate::input::DescribeCacheSecurityGroupsInput::cache_security_group_name): <p>The name of the cache security group to return details for.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeCacheSecurityGroupsInput::max_records): <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: minimum 20; maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeCacheSecurityGroupsInput::marker): <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// - On success, responds with [`DescribeCacheSecurityGroupsOutput`](crate::output::DescribeCacheSecurityGroupsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeCacheSecurityGroupsOutput::marker): <p>Provides an identifier to allow retrieval of paginated results.</p>
+    ///   - [`cache_security_groups(Option<Vec<CacheSecurityGroup>>)`](crate::output::DescribeCacheSecurityGroupsOutput::cache_security_groups): <p>A list of cache security groups. Each element in the list contains detailed information about one group.</p>
+    /// - On failure, responds with [`SdkError<DescribeCacheSecurityGroupsError>`](crate::error::DescribeCacheSecurityGroupsError)
     pub fn describe_cache_security_groups(
         &self,
     ) -> fluent_builders::DescribeCacheSecurityGroups<C, M, R> {
         fluent_builders::DescribeCacheSecurityGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeCacheSubnetGroups` operation.
-    ///
-    /// See [`DescribeCacheSubnetGroups`](crate::client::fluent_builders::DescribeCacheSubnetGroups) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeCacheSubnetGroups`](crate::client::fluent_builders::DescribeCacheSubnetGroups) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeCacheSubnetGroups::into_paginator).
+    ///
+    /// - Takes [`DescribeCacheSubnetGroupsInput`](crate::input::DescribeCacheSubnetGroupsInput) with field(s):
+    ///   - [`cache_subnet_group_name(Option<String>)`](crate::input::DescribeCacheSubnetGroupsInput::cache_subnet_group_name): <p>The name of the cache subnet group to return details for.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeCacheSubnetGroupsInput::max_records): <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: minimum 20; maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeCacheSubnetGroupsInput::marker): <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// - On success, responds with [`DescribeCacheSubnetGroupsOutput`](crate::output::DescribeCacheSubnetGroupsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeCacheSubnetGroupsOutput::marker): <p>Provides an identifier to allow retrieval of paginated results.</p>
+    ///   - [`cache_subnet_groups(Option<Vec<CacheSubnetGroup>>)`](crate::output::DescribeCacheSubnetGroupsOutput::cache_subnet_groups): <p>A list of cache subnet groups. Each element in the list contains detailed information about one group.</p>
+    /// - On failure, responds with [`SdkError<DescribeCacheSubnetGroupsError>`](crate::error::DescribeCacheSubnetGroupsError)
     pub fn describe_cache_subnet_groups(
         &self,
     ) -> fluent_builders::DescribeCacheSubnetGroups<C, M, R> {
         fluent_builders::DescribeCacheSubnetGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEngineDefaultParameters` operation.
-    ///
-    /// See [`DescribeEngineDefaultParameters`](crate::client::fluent_builders::DescribeEngineDefaultParameters) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeEngineDefaultParameters`](crate::client::fluent_builders::DescribeEngineDefaultParameters) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeEngineDefaultParameters::into_paginator).
+    ///
+    /// - Takes [`DescribeEngineDefaultParametersInput`](crate::input::DescribeEngineDefaultParametersInput) with field(s):
+    ///   - [`cache_parameter_group_family(Option<String>)`](crate::input::DescribeEngineDefaultParametersInput::cache_parameter_group_family): <p>The name of the cache parameter group family.</p>  <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis6.2</code> </p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeEngineDefaultParametersInput::max_records): <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: minimum 20; maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeEngineDefaultParametersInput::marker): <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// - On success, responds with [`DescribeEngineDefaultParametersOutput`](crate::output::DescribeEngineDefaultParametersOutput) with field(s):
+    ///   - [`engine_defaults(Option<EngineDefaults>)`](crate::output::DescribeEngineDefaultParametersOutput::engine_defaults): <p>Represents the output of a <code>DescribeEngineDefaultParameters</code> operation.</p>
+    /// - On failure, responds with [`SdkError<DescribeEngineDefaultParametersError>`](crate::error::DescribeEngineDefaultParametersError)
     pub fn describe_engine_default_parameters(
         &self,
     ) -> fluent_builders::DescribeEngineDefaultParameters<C, M, R> {
         fluent_builders::DescribeEngineDefaultParameters::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEvents` operation.
-    ///
-    /// See [`DescribeEvents`](crate::client::fluent_builders::DescribeEvents) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeEvents`](crate::client::fluent_builders::DescribeEvents) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeEvents::into_paginator).
+    ///
+    /// - Takes [`DescribeEventsInput`](crate::input::DescribeEventsInput) with field(s):
+    ///   - [`source_identifier(Option<String>)`](crate::input::DescribeEventsInput::source_identifier): <p>The identifier of the event source for which events are returned. If not specified, all sources are included in the response.</p>
+    ///   - [`source_type(Option<SourceType>)`](crate::input::DescribeEventsInput::source_type): <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
+    ///   - [`start_time(Option<DateTime>)`](crate::input::DescribeEventsInput::start_time): <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>  <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
+    ///   - [`end_time(Option<DateTime>)`](crate::input::DescribeEventsInput::end_time): <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>  <p> <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
+    ///   - [`duration(Option<i32>)`](crate::input::DescribeEventsInput::duration): <p>The number of minutes worth of events to retrieve.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeEventsInput::max_records): <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: minimum 20; maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeEventsInput::marker): <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// - On success, responds with [`DescribeEventsOutput`](crate::output::DescribeEventsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeEventsOutput::marker): <p>Provides an identifier to allow retrieval of paginated results.</p>
+    ///   - [`events(Option<Vec<Event>>)`](crate::output::DescribeEventsOutput::events): <p>A list of events. Each element in the list contains detailed information about one event.</p>
+    /// - On failure, responds with [`SdkError<DescribeEventsError>`](crate::error::DescribeEventsError)
     pub fn describe_events(&self) -> fluent_builders::DescribeEvents<C, M, R> {
         fluent_builders::DescribeEvents::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeGlobalReplicationGroups` operation.
-    ///
-    /// See [`DescribeGlobalReplicationGroups`](crate::client::fluent_builders::DescribeGlobalReplicationGroups) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeGlobalReplicationGroups`](crate::client::fluent_builders::DescribeGlobalReplicationGroups) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeGlobalReplicationGroups::into_paginator).
+    ///
+    /// - Takes [`DescribeGlobalReplicationGroupsInput`](crate::input::DescribeGlobalReplicationGroupsInput) with field(s):
+    ///   - [`global_replication_group_id(Option<String>)`](crate::input::DescribeGlobalReplicationGroupsInput::global_replication_group_id): <p>The name of the Global datastore</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeGlobalReplicationGroupsInput::max_records): <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a marker is included in the response so that the remaining results can be retrieved. </p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeGlobalReplicationGroupsInput::marker): <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
+    ///   - [`show_member_info(Option<bool>)`](crate::input::DescribeGlobalReplicationGroupsInput::show_member_info): <p>Returns the list of members that comprise the Global datastore.</p>
+    /// - On success, responds with [`DescribeGlobalReplicationGroupsOutput`](crate::output::DescribeGlobalReplicationGroupsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeGlobalReplicationGroupsOutput::marker): <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
+    ///   - [`global_replication_groups(Option<Vec<GlobalReplicationGroup>>)`](crate::output::DescribeGlobalReplicationGroupsOutput::global_replication_groups): <p>Indicates the slot configuration and global identifier for each slice group.</p>
+    /// - On failure, responds with [`SdkError<DescribeGlobalReplicationGroupsError>`](crate::error::DescribeGlobalReplicationGroupsError)
     pub fn describe_global_replication_groups(
         &self,
     ) -> fluent_builders::DescribeGlobalReplicationGroups<C, M, R> {
         fluent_builders::DescribeGlobalReplicationGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeReplicationGroups` operation.
-    ///
-    /// See [`DescribeReplicationGroups`](crate::client::fluent_builders::DescribeReplicationGroups) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeReplicationGroups`](crate::client::fluent_builders::DescribeReplicationGroups) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeReplicationGroups::into_paginator).
+    ///
+    /// - Takes [`DescribeReplicationGroupsInput`](crate::input::DescribeReplicationGroupsInput) with field(s):
+    ///   - [`replication_group_id(Option<String>)`](crate::input::DescribeReplicationGroupsInput::replication_group_id): <p>The identifier for the replication group to be described. This parameter is not case sensitive.</p>  <p>If you do not specify this parameter, information about all replication groups is returned.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeReplicationGroupsInput::max_records): <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: minimum 20; maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeReplicationGroupsInput::marker): <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// - On success, responds with [`DescribeReplicationGroupsOutput`](crate::output::DescribeReplicationGroupsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeReplicationGroupsOutput::marker): <p>Provides an identifier to allow retrieval of paginated results.</p>
+    ///   - [`replication_groups(Option<Vec<ReplicationGroup>>)`](crate::output::DescribeReplicationGroupsOutput::replication_groups): <p>A list of replication groups. Each item in the list contains detailed information about one replication group.</p>
+    /// - On failure, responds with [`SdkError<DescribeReplicationGroupsError>`](crate::error::DescribeReplicationGroupsError)
     pub fn describe_replication_groups(
         &self,
     ) -> fluent_builders::DescribeReplicationGroups<C, M, R> {
         fluent_builders::DescribeReplicationGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeReservedCacheNodes` operation.
-    ///
-    /// See [`DescribeReservedCacheNodes`](crate::client::fluent_builders::DescribeReservedCacheNodes) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeReservedCacheNodes`](crate::client::fluent_builders::DescribeReservedCacheNodes) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeReservedCacheNodes::into_paginator).
+    ///
+    /// - Takes [`DescribeReservedCacheNodesInput`](crate::input::DescribeReservedCacheNodesInput) with field(s):
+    ///   - [`reserved_cache_node_id(Option<String>)`](crate::input::DescribeReservedCacheNodesInput::reserved_cache_node_id): <p>The reserved cache node identifier filter value. Use this parameter to show only the reservation that matches the specified reservation ID.</p>
+    ///   - [`reserved_cache_nodes_offering_id(Option<String>)`](crate::input::DescribeReservedCacheNodesInput::reserved_cache_nodes_offering_id): <p>The offering identifier filter value. Use this parameter to show only purchased reservations matching the specified offering identifier.</p>
+    ///   - [`cache_node_type(Option<String>)`](crate::input::DescribeReservedCacheNodesInput::cache_node_type): <p>The cache node type filter value. Use this parameter to show only those reservations matching the specified cache node type.</p>  <p>The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts.</p>  <ul>   <li> <p>General purpose:</p>    <ul>     <li> <p>Current generation: </p> <p> <b>M6g node types:</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>, <code>cache.m6g.16xlarge</code> </p> <note>       <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a> </p>      </note> <p> <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>, <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>, <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b> <code>cache.t3.micro</code>, <code>cache.t3.small</code>, <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b> <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code> </p> </li>     <li> <p>Previous generation: (not recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p> <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code> </p> <p> <b>M3 node types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> </li>    </ul> </li>   <li> <p>Compute optimized:</p>    <ul>     <li> <p>Previous generation: (not recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p> </li>    </ul> </li>   <li> <p>Memory optimized with data tiering:</p>    <ul>     <li> <p>Current generation: </p> <p> <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).</p> <p> <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>, <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code> </p> </li>    </ul> </li>   <li> <p>Memory optimized:</p>    <ul>     <li> <p>Current generation: </p> <p> <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p> <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code> </p> <note>       <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a> </p>      </note> <p> <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4 node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>, <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li>     <li> <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code> </p> <p> <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> </li>    </ul> </li>  </ul>  <p> <b>Additional node type info</b> </p>  <ul>   <li> <p>All current generation instance types are created in Amazon VPC by default.</p> </li>   <li> <p>Redis append-only files (AOF) are not supported for T1 or T2 instances.</p> </li>   <li> <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p> </li>   <li> <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p> </li>  </ul>
+    ///   - [`duration(Option<String>)`](crate::input::DescribeReservedCacheNodesInput::duration): <p>The duration filter value, specified in years or seconds. Use this parameter to show only reservations for this duration.</p>  <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code> </p>
+    ///   - [`product_description(Option<String>)`](crate::input::DescribeReservedCacheNodesInput::product_description): <p>The product description filter value. Use this parameter to show only those reservations matching the specified product description.</p>
+    ///   - [`offering_type(Option<String>)`](crate::input::DescribeReservedCacheNodesInput::offering_type): <p>The offering type filter value. Use this parameter to show only the available offerings matching the specified offering type.</p>  <p>Valid values: <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"|"All Upfront"|"Partial Upfront"| "No Upfront"</code> </p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeReservedCacheNodesInput::max_records): <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: minimum 20; maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeReservedCacheNodesInput::marker): <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// - On success, responds with [`DescribeReservedCacheNodesOutput`](crate::output::DescribeReservedCacheNodesOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeReservedCacheNodesOutput::marker): <p>Provides an identifier to allow retrieval of paginated results.</p>
+    ///   - [`reserved_cache_nodes(Option<Vec<ReservedCacheNode>>)`](crate::output::DescribeReservedCacheNodesOutput::reserved_cache_nodes): <p>A list of reserved cache nodes. Each element in the list contains detailed information about one node.</p>
+    /// - On failure, responds with [`SdkError<DescribeReservedCacheNodesError>`](crate::error::DescribeReservedCacheNodesError)
     pub fn describe_reserved_cache_nodes(
         &self,
     ) -> fluent_builders::DescribeReservedCacheNodes<C, M, R> {
         fluent_builders::DescribeReservedCacheNodes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeReservedCacheNodesOfferings` operation.
-    ///
-    /// See [`DescribeReservedCacheNodesOfferings`](crate::client::fluent_builders::DescribeReservedCacheNodesOfferings) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeReservedCacheNodesOfferings`](crate::client::fluent_builders::DescribeReservedCacheNodesOfferings) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeReservedCacheNodesOfferings::into_paginator).
+    ///
+    /// - Takes [`DescribeReservedCacheNodesOfferingsInput`](crate::input::DescribeReservedCacheNodesOfferingsInput) with field(s):
+    ///   - [`reserved_cache_nodes_offering_id(Option<String>)`](crate::input::DescribeReservedCacheNodesOfferingsInput::reserved_cache_nodes_offering_id): <p>The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier.</p>  <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code> </p>
+    ///   - [`cache_node_type(Option<String>)`](crate::input::DescribeReservedCacheNodesOfferingsInput::cache_node_type): <p>The cache node type filter value. Use this parameter to show only the available offerings matching the specified cache node type.</p>  <p>The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts.</p>  <ul>   <li> <p>General purpose:</p>    <ul>     <li> <p>Current generation: </p> <p> <b>M6g node types:</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward) <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>, <code>cache.m6g.16xlarge</code> </p> <note>       <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a> </p>      </note> <p> <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>, <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code> </p> <p> <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>, <code>cache.t4g.medium</code> </p> <p> <b>T3 node types:</b> <code>cache.t3.micro</code>, <code>cache.t3.small</code>, <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b> <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code> </p> </li>     <li> <p>Previous generation: (not recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p> <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code> </p> <p> <b>M3 node types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> </li>    </ul> </li>   <li> <p>Compute optimized:</p>    <ul>     <li> <p>Previous generation: (not recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p> </li>    </ul> </li>   <li> <p>Memory optimized with data tiering:</p>    <ul>     <li> <p>Current generation: </p> <p> <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).</p> <p> <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>, <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code> </p> </li>    </ul> </li>   <li> <p>Memory optimized:</p>    <ul>     <li> <p>Current generation: </p> <p> <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p> <p> <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code> </p> <note>       <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a> </p>      </note> <p> <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code> </p> <p> <b>R4 node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>, <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li>     <li> <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code> </p> <p> <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> </li>    </ul> </li>  </ul>  <p> <b>Additional node type info</b> </p>  <ul>   <li> <p>All current generation instance types are created in Amazon VPC by default.</p> </li>   <li> <p>Redis append-only files (AOF) are not supported for T1 or T2 instances.</p> </li>   <li> <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p> </li>   <li> <p>Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p> </li>  </ul>
+    ///   - [`duration(Option<String>)`](crate::input::DescribeReservedCacheNodesOfferingsInput::duration): <p>Duration filter value, specified in years or seconds. Use this parameter to show only reservations for a given duration.</p>  <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code> </p>
+    ///   - [`product_description(Option<String>)`](crate::input::DescribeReservedCacheNodesOfferingsInput::product_description): <p>The product description filter value. Use this parameter to show only the available offerings matching the specified product description.</p>
+    ///   - [`offering_type(Option<String>)`](crate::input::DescribeReservedCacheNodesOfferingsInput::offering_type): <p>The offering type filter value. Use this parameter to show only the available offerings matching the specified offering type.</p>  <p>Valid Values: <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization" |"All Upfront"|"Partial Upfront"| "No Upfront"</code> </p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeReservedCacheNodesOfferingsInput::max_records): <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 100</p>  <p>Constraints: minimum 20; maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeReservedCacheNodesOfferingsInput::marker): <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// - On success, responds with [`DescribeReservedCacheNodesOfferingsOutput`](crate::output::DescribeReservedCacheNodesOfferingsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeReservedCacheNodesOfferingsOutput::marker): <p>Provides an identifier to allow retrieval of paginated results.</p>
+    ///   - [`reserved_cache_nodes_offerings(Option<Vec<ReservedCacheNodesOffering>>)`](crate::output::DescribeReservedCacheNodesOfferingsOutput::reserved_cache_nodes_offerings): <p>A list of reserved cache node offerings. Each element in the list contains detailed information about one offering.</p>
+    /// - On failure, responds with [`SdkError<DescribeReservedCacheNodesOfferingsError>`](crate::error::DescribeReservedCacheNodesOfferingsError)
     pub fn describe_reserved_cache_nodes_offerings(
         &self,
     ) -> fluent_builders::DescribeReservedCacheNodesOfferings<C, M, R> {
         fluent_builders::DescribeReservedCacheNodesOfferings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeServiceUpdates` operation.
-    ///
-    /// See [`DescribeServiceUpdates`](crate::client::fluent_builders::DescribeServiceUpdates) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeServiceUpdates`](crate::client::fluent_builders::DescribeServiceUpdates) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeServiceUpdates::into_paginator).
+    ///
+    /// - Takes [`DescribeServiceUpdatesInput`](crate::input::DescribeServiceUpdatesInput) with field(s):
+    ///   - [`service_update_name(Option<String>)`](crate::input::DescribeServiceUpdatesInput::service_update_name): <p>The unique ID of the service update</p>
+    ///   - [`service_update_status(Option<Vec<ServiceUpdateStatus>>)`](crate::input::DescribeServiceUpdatesInput::service_update_status): <p>The status of the service update</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeServiceUpdatesInput::max_records): <p>The maximum number of records to include in the response</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeServiceUpdatesInput::marker): <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// - On success, responds with [`DescribeServiceUpdatesOutput`](crate::output::DescribeServiceUpdatesOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeServiceUpdatesOutput::marker): <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    ///   - [`service_updates(Option<Vec<ServiceUpdate>>)`](crate::output::DescribeServiceUpdatesOutput::service_updates): <p>A list of service updates</p>
+    /// - On failure, responds with [`SdkError<DescribeServiceUpdatesError>`](crate::error::DescribeServiceUpdatesError)
     pub fn describe_service_updates(&self) -> fluent_builders::DescribeServiceUpdates<C, M, R> {
         fluent_builders::DescribeServiceUpdates::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeSnapshots` operation.
-    ///
-    /// See [`DescribeSnapshots`](crate::client::fluent_builders::DescribeSnapshots) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeSnapshots`](crate::client::fluent_builders::DescribeSnapshots) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeSnapshots::into_paginator).
+    ///
+    /// - Takes [`DescribeSnapshotsInput`](crate::input::DescribeSnapshotsInput) with field(s):
+    ///   - [`replication_group_id(Option<String>)`](crate::input::DescribeSnapshotsInput::replication_group_id): <p>A user-supplied replication group identifier. If this parameter is specified, only snapshots associated with that specific replication group are described.</p>
+    ///   - [`cache_cluster_id(Option<String>)`](crate::input::DescribeSnapshotsInput::cache_cluster_id): <p>A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific cluster are described.</p>
+    ///   - [`snapshot_name(Option<String>)`](crate::input::DescribeSnapshotsInput::snapshot_name): <p>A user-supplied name of the snapshot. If this parameter is specified, only this snapshot are described.</p>
+    ///   - [`snapshot_source(Option<String>)`](crate::input::DescribeSnapshotsInput::snapshot_source): <p>If set to <code>system</code>, the output shows snapshots that were automatically created by ElastiCache. If set to <code>user</code> the output shows snapshots that were manually created. If omitted, the output shows both automatically and manually created snapshots.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeSnapshotsInput::marker): <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeSnapshotsInput::max_records): <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>  <p>Default: 50</p>  <p>Constraints: minimum 20; maximum 50.</p>
+    ///   - [`show_node_group_config(Option<bool>)`](crate::input::DescribeSnapshotsInput::show_node_group_config): <p>A Boolean value which if true, the node group (shard) configuration is included in the snapshot description.</p>
+    /// - On success, responds with [`DescribeSnapshotsOutput`](crate::output::DescribeSnapshotsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeSnapshotsOutput::marker): <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    ///   - [`snapshots(Option<Vec<Snapshot>>)`](crate::output::DescribeSnapshotsOutput::snapshots): <p>A list of snapshots. Each item in the list contains detailed information about one snapshot.</p>
+    /// - On failure, responds with [`SdkError<DescribeSnapshotsError>`](crate::error::DescribeSnapshotsError)
     pub fn describe_snapshots(&self) -> fluent_builders::DescribeSnapshots<C, M, R> {
         fluent_builders::DescribeSnapshots::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeUpdateActions` operation.
-    ///
-    /// See [`DescribeUpdateActions`](crate::client::fluent_builders::DescribeUpdateActions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeUpdateActions`](crate::client::fluent_builders::DescribeUpdateActions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeUpdateActions::into_paginator).
+    ///
+    /// - Takes [`DescribeUpdateActionsInput`](crate::input::DescribeUpdateActionsInput) with field(s):
+    ///   - [`service_update_name(Option<String>)`](crate::input::DescribeUpdateActionsInput::service_update_name): <p>The unique ID of the service update</p>
+    ///   - [`replication_group_ids(Option<Vec<String>>)`](crate::input::DescribeUpdateActionsInput::replication_group_ids): <p>The replication group IDs</p>
+    ///   - [`cache_cluster_ids(Option<Vec<String>>)`](crate::input::DescribeUpdateActionsInput::cache_cluster_ids): <p>The cache cluster IDs</p>
+    ///   - [`engine(Option<String>)`](crate::input::DescribeUpdateActionsInput::engine): <p>The Elasticache engine to which the update applies. Either Redis or Memcached </p>
+    ///   - [`service_update_status(Option<Vec<ServiceUpdateStatus>>)`](crate::input::DescribeUpdateActionsInput::service_update_status): <p>The status of the service update</p>
+    ///   - [`service_update_time_range(Option<TimeRangeFilter>)`](crate::input::DescribeUpdateActionsInput::service_update_time_range): <p>The range of time specified to search for service updates that are in available status</p>
+    ///   - [`update_action_status(Option<Vec<UpdateActionStatus>>)`](crate::input::DescribeUpdateActionsInput::update_action_status): <p>The status of the update action.</p>
+    ///   - [`show_node_level_update_status(Option<bool>)`](crate::input::DescribeUpdateActionsInput::show_node_level_update_status): <p>Dictates whether to include node level update status in the response </p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeUpdateActionsInput::max_records): <p>The maximum number of records to include in the response</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeUpdateActionsInput::marker): <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// - On success, responds with [`DescribeUpdateActionsOutput`](crate::output::DescribeUpdateActionsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeUpdateActionsOutput::marker): <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    ///   - [`update_actions(Option<Vec<UpdateAction>>)`](crate::output::DescribeUpdateActionsOutput::update_actions): <p>Returns a list of update actions</p>
+    /// - On failure, responds with [`SdkError<DescribeUpdateActionsError>`](crate::error::DescribeUpdateActionsError)
     pub fn describe_update_actions(&self) -> fluent_builders::DescribeUpdateActions<C, M, R> {
         fluent_builders::DescribeUpdateActions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeUserGroups` operation.
-    ///
-    /// See [`DescribeUserGroups`](crate::client::fluent_builders::DescribeUserGroups) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeUserGroups`](crate::client::fluent_builders::DescribeUserGroups) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeUserGroups::into_paginator).
+    ///
+    /// - Takes [`DescribeUserGroupsInput`](crate::input::DescribeUserGroupsInput) with field(s):
+    ///   - [`user_group_id(Option<String>)`](crate::input::DescribeUserGroupsInput::user_group_id): <p>The ID of the user group.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeUserGroupsInput::max_records): <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a marker is included in the response so that the remaining results can be retrieved. </p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeUserGroupsInput::marker): <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
+    /// - On success, responds with [`DescribeUserGroupsOutput`](crate::output::DescribeUserGroupsOutput) with field(s):
+    ///   - [`user_groups(Option<Vec<UserGroup>>)`](crate::output::DescribeUserGroupsOutput::user_groups): <p>Returns a list of user groups.</p>
+    ///   - [`marker(Option<String>)`](crate::output::DescribeUserGroupsOutput::marker): <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
+    /// - On failure, responds with [`SdkError<DescribeUserGroupsError>`](crate::error::DescribeUserGroupsError)
     pub fn describe_user_groups(&self) -> fluent_builders::DescribeUserGroups<C, M, R> {
         fluent_builders::DescribeUserGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeUsers` operation.
-    ///
-    /// See [`DescribeUsers`](crate::client::fluent_builders::DescribeUsers) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeUsers`](crate::client::fluent_builders::DescribeUsers) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeUsers::into_paginator).
+    ///
+    /// - Takes [`DescribeUsersInput`](crate::input::DescribeUsersInput) with field(s):
+    ///   - [`engine(Option<String>)`](crate::input::DescribeUsersInput::engine): <p>The Redis engine. </p>
+    ///   - [`user_id(Option<String>)`](crate::input::DescribeUsersInput::user_id): <p>The ID of the user.</p>
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::DescribeUsersInput::filters): <p>Filter to determine the list of User IDs to return.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeUsersInput::max_records): <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a marker is included in the response so that the remaining results can be retrieved. </p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeUsersInput::marker): <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
+    /// - On success, responds with [`DescribeUsersOutput`](crate::output::DescribeUsersOutput) with field(s):
+    ///   - [`users(Option<Vec<User>>)`](crate::output::DescribeUsersOutput::users): <p>A list of users.</p>
+    ///   - [`marker(Option<String>)`](crate::output::DescribeUsersOutput::marker): <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. &gt;</p>
+    /// - On failure, responds with [`SdkError<DescribeUsersError>`](crate::error::DescribeUsersError)
     pub fn describe_users(&self) -> fluent_builders::DescribeUsers<C, M, R> {
         fluent_builders::DescribeUsers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateGlobalReplicationGroup` operation.
+    /// Constructs a fluent builder for the [`DisassociateGlobalReplicationGroup`](crate::client::fluent_builders::DisassociateGlobalReplicationGroup) operation.
     ///
-    /// See [`DisassociateGlobalReplicationGroup`](crate::client::fluent_builders::DisassociateGlobalReplicationGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateGlobalReplicationGroupInput`](crate::input::DisassociateGlobalReplicationGroupInput) with field(s):
+    ///   - [`global_replication_group_id(Option<String>)`](crate::input::DisassociateGlobalReplicationGroupInput::global_replication_group_id): <p>The name of the Global datastore</p>
+    ///   - [`replication_group_id(Option<String>)`](crate::input::DisassociateGlobalReplicationGroupInput::replication_group_id): <p>The name of the secondary cluster you wish to remove from the Global datastore</p>
+    ///   - [`replication_group_region(Option<String>)`](crate::input::DisassociateGlobalReplicationGroupInput::replication_group_region): <p>The Amazon region of secondary cluster you wish to remove from the Global datastore</p>
+    /// - On success, responds with [`DisassociateGlobalReplicationGroupOutput`](crate::output::DisassociateGlobalReplicationGroupOutput) with field(s):
+    ///   - [`global_replication_group(Option<GlobalReplicationGroup>)`](crate::output::DisassociateGlobalReplicationGroupOutput::global_replication_group): <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>  <ul>   <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<DisassociateGlobalReplicationGroupError>`](crate::error::DisassociateGlobalReplicationGroupError)
     pub fn disassociate_global_replication_group(
         &self,
     ) -> fluent_builders::DisassociateGlobalReplicationGroup<C, M, R> {
         fluent_builders::DisassociateGlobalReplicationGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `FailoverGlobalReplicationGroup` operation.
+    /// Constructs a fluent builder for the [`FailoverGlobalReplicationGroup`](crate::client::fluent_builders::FailoverGlobalReplicationGroup) operation.
     ///
-    /// See [`FailoverGlobalReplicationGroup`](crate::client::fluent_builders::FailoverGlobalReplicationGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`FailoverGlobalReplicationGroupInput`](crate::input::FailoverGlobalReplicationGroupInput) with field(s):
+    ///   - [`global_replication_group_id(Option<String>)`](crate::input::FailoverGlobalReplicationGroupInput::global_replication_group_id): <p>The name of the Global datastore</p>
+    ///   - [`primary_region(Option<String>)`](crate::input::FailoverGlobalReplicationGroupInput::primary_region): <p>The Amazon region of the primary cluster of the Global datastore</p>
+    ///   - [`primary_replication_group_id(Option<String>)`](crate::input::FailoverGlobalReplicationGroupInput::primary_replication_group_id): <p>The name of the primary replication group</p>
+    /// - On success, responds with [`FailoverGlobalReplicationGroupOutput`](crate::output::FailoverGlobalReplicationGroupOutput) with field(s):
+    ///   - [`global_replication_group(Option<GlobalReplicationGroup>)`](crate::output::FailoverGlobalReplicationGroupOutput::global_replication_group): <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>  <ul>   <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<FailoverGlobalReplicationGroupError>`](crate::error::FailoverGlobalReplicationGroupError)
     pub fn failover_global_replication_group(
         &self,
     ) -> fluent_builders::FailoverGlobalReplicationGroup<C, M, R> {
         fluent_builders::FailoverGlobalReplicationGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `IncreaseNodeGroupsInGlobalReplicationGroup` operation.
+    /// Constructs a fluent builder for the [`IncreaseNodeGroupsInGlobalReplicationGroup`](crate::client::fluent_builders::IncreaseNodeGroupsInGlobalReplicationGroup) operation.
     ///
-    /// See [`IncreaseNodeGroupsInGlobalReplicationGroup`](crate::client::fluent_builders::IncreaseNodeGroupsInGlobalReplicationGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`IncreaseNodeGroupsInGlobalReplicationGroupInput`](crate::input::IncreaseNodeGroupsInGlobalReplicationGroupInput) with field(s):
+    ///   - [`global_replication_group_id(Option<String>)`](crate::input::IncreaseNodeGroupsInGlobalReplicationGroupInput::global_replication_group_id): <p>The name of the Global datastore</p>
+    ///   - [`node_group_count(i32)`](crate::input::IncreaseNodeGroupsInGlobalReplicationGroupInput::node_group_count): <p>The number of node groups you wish to add</p>
+    ///   - [`regional_configurations(Option<Vec<RegionalConfiguration>>)`](crate::input::IncreaseNodeGroupsInGlobalReplicationGroupInput::regional_configurations): <p>Describes the replication group IDs, the Amazon regions where they are stored and the shard configuration for each that comprise the Global datastore</p>
+    ///   - [`apply_immediately(bool)`](crate::input::IncreaseNodeGroupsInGlobalReplicationGroupInput::apply_immediately): <p>Indicates that the process begins immediately. At present, the only permitted value for this parameter is true.</p>
+    /// - On success, responds with [`IncreaseNodeGroupsInGlobalReplicationGroupOutput`](crate::output::IncreaseNodeGroupsInGlobalReplicationGroupOutput) with field(s):
+    ///   - [`global_replication_group(Option<GlobalReplicationGroup>)`](crate::output::IncreaseNodeGroupsInGlobalReplicationGroupOutput::global_replication_group): <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>  <ul>   <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<IncreaseNodeGroupsInGlobalReplicationGroupError>`](crate::error::IncreaseNodeGroupsInGlobalReplicationGroupError)
     pub fn increase_node_groups_in_global_replication_group(
         &self,
     ) -> fluent_builders::IncreaseNodeGroupsInGlobalReplicationGroup<C, M, R> {
         fluent_builders::IncreaseNodeGroupsInGlobalReplicationGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `IncreaseReplicaCount` operation.
+    /// Constructs a fluent builder for the [`IncreaseReplicaCount`](crate::client::fluent_builders::IncreaseReplicaCount) operation.
     ///
-    /// See [`IncreaseReplicaCount`](crate::client::fluent_builders::IncreaseReplicaCount) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`IncreaseReplicaCountInput`](crate::input::IncreaseReplicaCountInput) with field(s):
+    ///   - [`replication_group_id(Option<String>)`](crate::input::IncreaseReplicaCountInput::replication_group_id): <p>The id of the replication group to which you want to add replica nodes.</p>
+    ///   - [`new_replica_count(Option<i32>)`](crate::input::IncreaseReplicaCountInput::new_replica_count): <p>The number of read replica nodes you want at the completion of this operation. For Redis (cluster mode disabled) replication groups, this is the number of replica nodes in the replication group. For Redis (cluster mode enabled) replication groups, this is the number of replica nodes in each of the replication group's node groups.</p>
+    ///   - [`replica_configuration(Option<Vec<ConfigureShard>>)`](crate::input::IncreaseReplicaCountInput::replica_configuration): <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Redis (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
+    ///   - [`apply_immediately(bool)`](crate::input::IncreaseReplicaCountInput::apply_immediately): <p>If <code>True</code>, the number of replica nodes is increased immediately. <code>ApplyImmediately=False</code> is not currently supported.</p>
+    /// - On success, responds with [`IncreaseReplicaCountOutput`](crate::output::IncreaseReplicaCountOutput) with field(s):
+    ///   - [`replication_group(Option<ReplicationGroup>)`](crate::output::IncreaseReplicaCountOutput::replication_group): <p>Contains all of the attributes of a specific Redis replication group.</p>
+    /// - On failure, responds with [`SdkError<IncreaseReplicaCountError>`](crate::error::IncreaseReplicaCountError)
     pub fn increase_replica_count(&self) -> fluent_builders::IncreaseReplicaCount<C, M, R> {
         fluent_builders::IncreaseReplicaCount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAllowedNodeTypeModifications` operation.
+    /// Constructs a fluent builder for the [`ListAllowedNodeTypeModifications`](crate::client::fluent_builders::ListAllowedNodeTypeModifications) operation.
     ///
-    /// See [`ListAllowedNodeTypeModifications`](crate::client::fluent_builders::ListAllowedNodeTypeModifications) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListAllowedNodeTypeModificationsInput`](crate::input::ListAllowedNodeTypeModificationsInput) with field(s):
+    ///   - [`cache_cluster_id(Option<String>)`](crate::input::ListAllowedNodeTypeModificationsInput::cache_cluster_id): <p>The name of the cluster you want to scale up to a larger node instanced type. ElastiCache uses the cluster id to identify the current node type of this cluster and from that to create a list of node types you can scale up to.</p> <important>   <p>You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.</p>  </important>
+    ///   - [`replication_group_id(Option<String>)`](crate::input::ListAllowedNodeTypeModificationsInput::replication_group_id): <p>The name of the replication group want to scale up to a larger node type. ElastiCache uses the replication group id to identify the current node type being used by this replication group, and from that to create a list of node types you can scale up to.</p> <important>   <p>You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.</p>  </important>
+    /// - On success, responds with [`ListAllowedNodeTypeModificationsOutput`](crate::output::ListAllowedNodeTypeModificationsOutput) with field(s):
+    ///   - [`scale_up_modifications(Option<Vec<String>>)`](crate::output::ListAllowedNodeTypeModificationsOutput::scale_up_modifications): <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group.</p>  <p>When scaling up a Redis cluster or replication group using <code>ModifyCacheCluster</code> or <code>ModifyReplicationGroup</code>, use a value from this list for the <code>CacheNodeType</code> parameter.</p>
+    ///   - [`scale_down_modifications(Option<Vec<String>>)`](crate::output::ListAllowedNodeTypeModificationsOutput::scale_down_modifications): <p>A string list, each element of which specifies a cache node type which you can use to scale your cluster or replication group. When scaling down a Redis cluster or replication group using ModifyCacheCluster or ModifyReplicationGroup, use a value from this list for the CacheNodeType parameter. </p>
+    /// - On failure, responds with [`SdkError<ListAllowedNodeTypeModificationsError>`](crate::error::ListAllowedNodeTypeModificationsError)
     pub fn list_allowed_node_type_modifications(
         &self,
     ) -> fluent_builders::ListAllowedNodeTypeModifications<C, M, R> {
         fluent_builders::ListAllowedNodeTypeModifications::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_name(Option<String>)`](crate::input::ListTagsForResourceInput::resource_name): <p>The Amazon Resource Name (ARN) of the resource for which you want the list of tags, for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tag_list(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tag_list): <p>A list of tags as key-value pairs.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyCacheCluster` operation.
+    /// Constructs a fluent builder for the [`ModifyCacheCluster`](crate::client::fluent_builders::ModifyCacheCluster) operation.
     ///
-    /// See [`ModifyCacheCluster`](crate::client::fluent_builders::ModifyCacheCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyCacheClusterInput`](crate::input::ModifyCacheClusterInput) with field(s):
+    ///   - [`cache_cluster_id(Option<String>)`](crate::input::ModifyCacheClusterInput::cache_cluster_id): <p>The cluster identifier. This value is stored as a lowercase string.</p>
+    ///   - [`num_cache_nodes(Option<i32>)`](crate::input::ModifyCacheClusterInput::num_cache_nodes): <p>The number of cache nodes that the cluster should have. If the value for <code>NumCacheNodes</code> is greater than the sum of the number of current cache nodes and the number of cache nodes pending creation (which may be zero), more nodes are added. If the value is less than the number of existing cache nodes, nodes are removed. If the value is equal to the number of current cache nodes, any pending add or remove requests are canceled.</p>  <p>If you are removing cache nodes, you must use the <code>CacheNodeIdsToRemove</code> parameter to provide the IDs of the specific cache nodes to remove.</p>  <p>For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 40.</p> <note>   <p>Adding or removing Memcached cache nodes can be applied immediately or as a pending operation (see <code>ApplyImmediately</code>).</p>   <p>A pending operation to modify the number of cache nodes in a cluster during its maintenance window, whether by adding or removing nodes in accordance with the scale out architecture, is not queued. The customer's latest request to add or remove nodes to the cluster overrides any previous pending operations to modify the number of cache nodes in the cluster. For example, a request to remove 2 nodes would override a previous pending operation to remove 3 nodes. Similarly, a request to add 2 nodes would override a previous pending operation to remove 3 nodes and vice versa. As Memcached cache nodes may now be provisioned in different Availability Zones with flexible cache node placement, a request to add nodes does not automatically override a previous pending operation to add nodes. The customer can modify the previous pending operation to add more nodes or explicitly cancel the pending request and retry the new request. To cancel pending operations to modify the number of cache nodes in a cluster, use the <code>ModifyCacheCluster</code> request and set <code>NumCacheNodes</code> equal to the number of cache nodes currently in the cluster.</p>  </note>
+    ///   - [`cache_node_ids_to_remove(Option<Vec<String>>)`](crate::input::ModifyCacheClusterInput::cache_node_ids_to_remove): <p>A list of cache node IDs to be removed. A node ID is a numeric identifier (0001, 0002, etc.). This parameter is only valid when <code>NumCacheNodes</code> is less than the existing number of cache nodes. The number of cache node IDs supplied in this parameter must match the difference between the existing number of cache nodes in the cluster or pending cache nodes, whichever is greater, and the value of <code>NumCacheNodes</code> in the request.</p>  <p>For example: If you have 3 active cache nodes, 7 pending cache nodes, and the number of cache nodes in this <code>ModifyCacheCluster</code> call is 5, you must list 2 (7 - 5) cache node IDs to remove.</p>
+    ///   - [`az_mode(Option<AzMode>)`](crate::input::ModifyCacheClusterInput::az_mode): <p>Specifies whether the new nodes in this Memcached cluster are all created in a single Availability Zone or created across multiple Availability Zones.</p>  <p>Valid values: <code>single-az</code> | <code>cross-az</code>.</p>  <p>This option is only supported for Memcached clusters.</p> <note>   <p>You cannot specify <code>single-az</code> if the Memcached cluster already has cache nodes in different Availability Zones. If <code>cross-az</code> is specified, existing Memcached nodes remain in their current Availability Zone.</p>   <p>Only newly created nodes are located in different Availability Zones. </p>  </note>
+    ///   - [`new_availability_zones(Option<Vec<String>>)`](crate::input::ModifyCacheClusterInput::new_availability_zones): <note>   <p>This option is only supported on Memcached clusters.</p>  </note>  <p>The list of Availability Zones where the new Memcached cache nodes are created.</p>  <p>This parameter is only valid when <code>NumCacheNodes</code> in the request is greater than the sum of the number of active cache nodes and the number of cache nodes pending creation (which may be zero). The number of Availability Zones supplied in this list must match the cache nodes being added in this request.</p>  <p>Scenarios:</p>  <ul>   <li> <p> <b>Scenario 1:</b> You have 3 active nodes and wish to add 2 nodes. Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally specify two Availability Zones for the two new nodes.</p> </li>   <li> <p> <b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending creation (from the scenario 1 call) and want to add 1 more node. Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1) and optionally specify an Availability Zone for the new node.</p> </li>   <li> <p> <b>Scenario 3:</b> You want to cancel all pending operations. Specify <code>NumCacheNodes=3</code> to cancel all pending operations.</p> </li>  </ul>  <p>The Availability Zone placement of nodes pending creation cannot be modified. If you wish to cancel any nodes pending creation, add 0 nodes by setting <code>NumCacheNodes</code> to the number of current nodes.</p>  <p>If <code>cross-az</code> is specified, existing Memcached nodes remain in their current Availability Zone. Only newly created nodes can be located in different Availability Zones. For guidance on how to move existing Memcached nodes to different Availability Zones, see the <b>Availability Zone Considerations</b> section of <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache Node Considerations for Memcached</a>.</p>  <p> <b>Impact of new add/remove requests upon pending requests</b> </p>  <ul>   <li> <p>Scenario-1</p>    <ul>     <li> <p>Pending Action: Delete</p> </li>     <li> <p>New Request: Delete</p> </li>     <li> <p>Result: The new delete, pending or immediate, replaces the pending delete.</p> </li>    </ul> </li>   <li> <p>Scenario-2</p>    <ul>     <li> <p>Pending Action: Delete</p> </li>     <li> <p>New Request: Create</p> </li>     <li> <p>Result: The new create, pending or immediate, replaces the pending delete.</p> </li>    </ul> </li>   <li> <p>Scenario-3</p>    <ul>     <li> <p>Pending Action: Create</p> </li>     <li> <p>New Request: Delete</p> </li>     <li> <p>Result: The new delete, pending or immediate, replaces the pending create.</p> </li>    </ul> </li>   <li> <p>Scenario-4</p>    <ul>     <li> <p>Pending Action: Create</p> </li>     <li> <p>New Request: Create</p> </li>     <li> <p>Result: The new create is added to the pending create.</p> <important>       <p> <b>Important:</b> If the new create request is <b>Apply Immediately - Yes</b>, all creates are performed immediately. If the new create request is <b>Apply Immediately - No</b>, all creates are pending.</p>      </important> </li>    </ul> </li>  </ul>
+    ///   - [`cache_security_group_names(Option<Vec<String>>)`](crate::input::ModifyCacheClusterInput::cache_security_group_names): <p>A list of cache security group names to authorize on this cluster. This change is asynchronously applied as soon as possible.</p>  <p>You can use this parameter only with clusters that are created outside of an Amazon Virtual Private Cloud (Amazon VPC).</p>  <p>Constraints: Must contain no more than 255 alphanumeric characters. Must not be "Default".</p>
+    ///   - [`security_group_ids(Option<Vec<String>>)`](crate::input::ModifyCacheClusterInput::security_group_ids): <p>Specifies the VPC Security Groups associated with the cluster.</p>  <p>This parameter can be used only with clusters that are created in an Amazon Virtual Private Cloud (Amazon VPC).</p>
+    ///   - [`preferred_maintenance_window(Option<String>)`](crate::input::ModifyCacheClusterInput::preferred_maintenance_window): <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>  <p>Valid values for <code>ddd</code> are:</p>  <ul>   <li> <p> <code>sun</code> </p> </li>   <li> <p> <code>mon</code> </p> </li>   <li> <p> <code>tue</code> </p> </li>   <li> <p> <code>wed</code> </p> </li>   <li> <p> <code>thu</code> </p> </li>   <li> <p> <code>fri</code> </p> </li>   <li> <p> <code>sat</code> </p> </li>  </ul>  <p>Example: <code>sun:23:00-mon:01:30</code> </p>
+    ///   - [`notification_topic_arn(Option<String>)`](crate::input::ModifyCacheClusterInput::notification_topic_arn): <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.</p> <note>   <p>The Amazon SNS topic owner must be same as the cluster owner.</p>  </note>
+    ///   - [`cache_parameter_group_name(Option<String>)`](crate::input::ModifyCacheClusterInput::cache_parameter_group_name): <p>The name of the cache parameter group to apply to this cluster. This change is asynchronously applied as soon as possible for parameters when the <code>ApplyImmediately</code> parameter is specified as <code>true</code> for this request.</p>
+    ///   - [`notification_topic_status(Option<String>)`](crate::input::ModifyCacheClusterInput::notification_topic_status): <p>The status of the Amazon SNS notification topic. Notifications are sent only if the status is <code>active</code>.</p>  <p>Valid values: <code>active</code> | <code>inactive</code> </p>
+    ///   - [`apply_immediately(bool)`](crate::input::ModifyCacheClusterInput::apply_immediately): <p>If <code>true</code>, this parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the cluster.</p>  <p>If <code>false</code>, changes to the cluster are applied on the next maintenance reboot, or the next failure reboot, whichever occurs first.</p> <important>   <p>If you perform a <code>ModifyCacheCluster</code> before a pending modification is applied, the pending modification is replaced by the newer modification.</p>  </important>  <p>Valid values: <code>true</code> | <code>false</code> </p>  <p>Default: <code>false</code> </p>
+    ///   - [`engine_version(Option<String>)`](crate::input::ModifyCacheClusterInput::engine_version): <p>The upgraded version of the cache engine to be run on the cache nodes.</p>  <p> <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version. </p>
+    ///   - [`auto_minor_version_upgrade(Option<bool>)`](crate::input::ModifyCacheClusterInput::auto_minor_version_upgrade): <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp; </p>
+    ///   - [`snapshot_retention_limit(Option<i32>)`](crate::input::ModifyCacheClusterInput::snapshot_retention_limit): <p>The number of days for which ElastiCache retains automatic cluster snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p> <note>   <p>If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.</p>  </note>
+    ///   - [`snapshot_window(Option<String>)`](crate::input::ModifyCacheClusterInput::snapshot_window): <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your cluster. </p>
+    ///   - [`cache_node_type(Option<String>)`](crate::input::ModifyCacheClusterInput::cache_node_type): <p>A valid cache node type that you want to scale this cluster up to.</p>
+    ///   - [`auth_token(Option<String>)`](crate::input::ModifyCacheClusterInput::auth_token): <p>Reserved parameter. The password used to access a password protected server. This parameter must be specified with the <code>auth-token-update</code> parameter. Password constraints:</p>  <ul>   <li> <p>Must be only printable ASCII characters</p> </li>   <li> <p>Must be at least 16 characters and no more than 128 characters in length</p> </li>   <li> <p>Cannot contain any of the following characters: '/', '"', or '@', '%'</p> </li>  </ul>  <p> For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
+    ///   - [`auth_token_update_strategy(Option<AuthTokenUpdateStrategyType>)`](crate::input::ModifyCacheClusterInput::auth_token_update_strategy): <p>Specifies the strategy to use to update the AUTH token. This parameter must be specified with the <code>auth-token</code> parameter. Possible values:</p>  <ul>   <li> <p>Rotate</p> </li>   <li> <p>Set</p> </li>  </ul>  <p> For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a> </p>
+    ///   - [`log_delivery_configurations(Option<Vec<LogDeliveryConfigurationRequest>>)`](crate::input::ModifyCacheClusterInput::log_delivery_configurations): <p>Specifies the destination, format and type of the logs.</p>
+    /// - On success, responds with [`ModifyCacheClusterOutput`](crate::output::ModifyCacheClusterOutput) with field(s):
+    ///   - [`cache_cluster(Option<CacheCluster>)`](crate::output::ModifyCacheClusterOutput::cache_cluster): <p>Contains all of the attributes of a specific cluster.</p>
+    /// - On failure, responds with [`SdkError<ModifyCacheClusterError>`](crate::error::ModifyCacheClusterError)
     pub fn modify_cache_cluster(&self) -> fluent_builders::ModifyCacheCluster<C, M, R> {
         fluent_builders::ModifyCacheCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyCacheParameterGroup` operation.
+    /// Constructs a fluent builder for the [`ModifyCacheParameterGroup`](crate::client::fluent_builders::ModifyCacheParameterGroup) operation.
     ///
-    /// See [`ModifyCacheParameterGroup`](crate::client::fluent_builders::ModifyCacheParameterGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyCacheParameterGroupInput`](crate::input::ModifyCacheParameterGroupInput) with field(s):
+    ///   - [`cache_parameter_group_name(Option<String>)`](crate::input::ModifyCacheParameterGroupInput::cache_parameter_group_name): <p>The name of the cache parameter group to modify.</p>
+    ///   - [`parameter_name_values(Option<Vec<ParameterNameValue>>)`](crate::input::ModifyCacheParameterGroupInput::parameter_name_values): <p>An array of parameter names and values for the parameter update. You must supply at least one parameter name and value; subsequent arguments are optional. A maximum of 20 parameters may be modified per request.</p>
+    /// - On success, responds with [`ModifyCacheParameterGroupOutput`](crate::output::ModifyCacheParameterGroupOutput) with field(s):
+    ///   - [`cache_parameter_group_name(Option<String>)`](crate::output::ModifyCacheParameterGroupOutput::cache_parameter_group_name): <p>The name of the cache parameter group.</p>
+    /// - On failure, responds with [`SdkError<ModifyCacheParameterGroupError>`](crate::error::ModifyCacheParameterGroupError)
     pub fn modify_cache_parameter_group(
         &self,
     ) -> fluent_builders::ModifyCacheParameterGroup<C, M, R> {
         fluent_builders::ModifyCacheParameterGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyCacheSubnetGroup` operation.
+    /// Constructs a fluent builder for the [`ModifyCacheSubnetGroup`](crate::client::fluent_builders::ModifyCacheSubnetGroup) operation.
     ///
-    /// See [`ModifyCacheSubnetGroup`](crate::client::fluent_builders::ModifyCacheSubnetGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyCacheSubnetGroupInput`](crate::input::ModifyCacheSubnetGroupInput) with field(s):
+    ///   - [`cache_subnet_group_name(Option<String>)`](crate::input::ModifyCacheSubnetGroupInput::cache_subnet_group_name): <p>The name for the cache subnet group. This value is stored as a lowercase string.</p>  <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>  <p>Example: <code>mysubnetgroup</code> </p>
+    ///   - [`cache_subnet_group_description(Option<String>)`](crate::input::ModifyCacheSubnetGroupInput::cache_subnet_group_description): <p>A description of the cache subnet group.</p>
+    ///   - [`subnet_ids(Option<Vec<String>>)`](crate::input::ModifyCacheSubnetGroupInput::subnet_ids): <p>The EC2 subnet IDs for the cache subnet group.</p>
+    /// - On success, responds with [`ModifyCacheSubnetGroupOutput`](crate::output::ModifyCacheSubnetGroupOutput) with field(s):
+    ///   - [`cache_subnet_group(Option<CacheSubnetGroup>)`](crate::output::ModifyCacheSubnetGroupOutput::cache_subnet_group): <p>Represents the output of one of the following operations:</p>  <ul>   <li> <p> <code>CreateCacheSubnetGroup</code> </p> </li>   <li> <p> <code>ModifyCacheSubnetGroup</code> </p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<ModifyCacheSubnetGroupError>`](crate::error::ModifyCacheSubnetGroupError)
     pub fn modify_cache_subnet_group(&self) -> fluent_builders::ModifyCacheSubnetGroup<C, M, R> {
         fluent_builders::ModifyCacheSubnetGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyGlobalReplicationGroup` operation.
+    /// Constructs a fluent builder for the [`ModifyGlobalReplicationGroup`](crate::client::fluent_builders::ModifyGlobalReplicationGroup) operation.
     ///
-    /// See [`ModifyGlobalReplicationGroup`](crate::client::fluent_builders::ModifyGlobalReplicationGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyGlobalReplicationGroupInput`](crate::input::ModifyGlobalReplicationGroupInput) with field(s):
+    ///   - [`global_replication_group_id(Option<String>)`](crate::input::ModifyGlobalReplicationGroupInput::global_replication_group_id): <p>The name of the Global datastore</p>
+    ///   - [`apply_immediately(bool)`](crate::input::ModifyGlobalReplicationGroupInput::apply_immediately): <p>This parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible. Modifications to Global Replication Groups cannot be requested to be applied in PreferredMaintenceWindow. </p>
+    ///   - [`cache_node_type(Option<String>)`](crate::input::ModifyGlobalReplicationGroupInput::cache_node_type): <p>A valid cache node type that you want to scale this Global datastore to.</p>
+    ///   - [`engine_version(Option<String>)`](crate::input::ModifyGlobalReplicationGroupInput::engine_version): <p>The upgraded version of the cache engine to be run on the clusters in the Global datastore. </p>
+    ///   - [`cache_parameter_group_name(Option<String>)`](crate::input::ModifyGlobalReplicationGroupInput::cache_parameter_group_name): <p>The name of the cache parameter group to use with the Global datastore. It must be compatible with the major engine version used by the Global datastore.</p>
+    ///   - [`global_replication_group_description(Option<String>)`](crate::input::ModifyGlobalReplicationGroupInput::global_replication_group_description): <p>A description of the Global datastore</p>
+    ///   - [`automatic_failover_enabled(Option<bool>)`](crate::input::ModifyGlobalReplicationGroupInput::automatic_failover_enabled): <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure. </p>
+    /// - On success, responds with [`ModifyGlobalReplicationGroupOutput`](crate::output::ModifyGlobalReplicationGroupOutput) with field(s):
+    ///   - [`global_replication_group(Option<GlobalReplicationGroup>)`](crate::output::ModifyGlobalReplicationGroupOutput::global_replication_group): <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>  <ul>   <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<ModifyGlobalReplicationGroupError>`](crate::error::ModifyGlobalReplicationGroupError)
     pub fn modify_global_replication_group(
         &self,
     ) -> fluent_builders::ModifyGlobalReplicationGroup<C, M, R> {
         fluent_builders::ModifyGlobalReplicationGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyReplicationGroup` operation.
+    /// Constructs a fluent builder for the [`ModifyReplicationGroup`](crate::client::fluent_builders::ModifyReplicationGroup) operation.
     ///
-    /// See [`ModifyReplicationGroup`](crate::client::fluent_builders::ModifyReplicationGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyReplicationGroupInput`](crate::input::ModifyReplicationGroupInput) with field(s):
+    ///   - [`replication_group_id(Option<String>)`](crate::input::ModifyReplicationGroupInput::replication_group_id): <p>The identifier of the replication group to modify.</p>
+    ///   - [`replication_group_description(Option<String>)`](crate::input::ModifyReplicationGroupInput::replication_group_description): <p>A description for the replication group. Maximum length is 255 characters.</p>
+    ///   - [`primary_cluster_id(Option<String>)`](crate::input::ModifyReplicationGroupInput::primary_cluster_id): <p>For replication groups with a single primary, if this parameter is specified, ElastiCache promotes the specified cluster in the specified replication group to the primary role. The nodes of all other clusters in the replication group are read replicas.</p>
+    ///   - [`snapshotting_cluster_id(Option<String>)`](crate::input::ModifyReplicationGroupInput::snapshotting_cluster_id): <p>The cluster ID that is used as the daily snapshot source for the replication group. This parameter cannot be set for Redis (cluster mode enabled) replication groups.</p>
+    ///   - [`automatic_failover_enabled(Option<bool>)`](crate::input::ModifyReplicationGroupInput::automatic_failover_enabled): <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure.</p>  <p>Valid values: <code>true</code> | <code>false</code> </p>
+    ///   - [`multi_az_enabled(Option<bool>)`](crate::input::ModifyReplicationGroupInput::multi_az_enabled): <p>A flag to indicate MultiAZ is enabled.</p>
+    ///   - [`node_group_id(Option<String>)`](crate::input::ModifyReplicationGroupInput::node_group_id): <p>Deprecated. This parameter is not used.</p>
+    ///   - [`cache_security_group_names(Option<Vec<String>>)`](crate::input::ModifyReplicationGroupInput::cache_security_group_names): <p>A list of cache security group names to authorize for the clusters in this replication group. This change is asynchronously applied as soon as possible.</p>  <p>This parameter can be used only with replication group containing clusters running outside of an Amazon Virtual Private Cloud (Amazon VPC).</p>  <p>Constraints: Must contain no more than 255 alphanumeric characters. Must not be <code>Default</code>.</p>
+    ///   - [`security_group_ids(Option<Vec<String>>)`](crate::input::ModifyReplicationGroupInput::security_group_ids): <p>Specifies the VPC Security Groups associated with the clusters in the replication group.</p>  <p>This parameter can be used only with replication group containing clusters running in an Amazon Virtual Private Cloud (Amazon VPC).</p>
+    ///   - [`preferred_maintenance_window(Option<String>)`](crate::input::ModifyReplicationGroupInput::preferred_maintenance_window): <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>  <p>Valid values for <code>ddd</code> are:</p>  <ul>   <li> <p> <code>sun</code> </p> </li>   <li> <p> <code>mon</code> </p> </li>   <li> <p> <code>tue</code> </p> </li>   <li> <p> <code>wed</code> </p> </li>   <li> <p> <code>thu</code> </p> </li>   <li> <p> <code>fri</code> </p> </li>   <li> <p> <code>sat</code> </p> </li>  </ul>  <p>Example: <code>sun:23:00-mon:01:30</code> </p>
+    ///   - [`notification_topic_arn(Option<String>)`](crate::input::ModifyReplicationGroupInput::notification_topic_arn): <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.</p> <note>   <p>The Amazon SNS topic owner must be same as the replication group owner. </p>  </note>
+    ///   - [`cache_parameter_group_name(Option<String>)`](crate::input::ModifyReplicationGroupInput::cache_parameter_group_name): <p>The name of the cache parameter group to apply to all of the clusters in this replication group. This change is asynchronously applied as soon as possible for parameters when the <code>ApplyImmediately</code> parameter is specified as <code>true</code> for this request.</p>
+    ///   - [`notification_topic_status(Option<String>)`](crate::input::ModifyReplicationGroupInput::notification_topic_status): <p>The status of the Amazon SNS notification topic for the replication group. Notifications are sent only if the status is <code>active</code>.</p>  <p>Valid values: <code>active</code> | <code>inactive</code> </p>
+    ///   - [`apply_immediately(bool)`](crate::input::ModifyReplicationGroupInput::apply_immediately): <p>If <code>true</code>, this parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the replication group.</p>  <p>If <code>false</code>, changes to the nodes in the replication group are applied on the next maintenance reboot, or the next failure reboot, whichever occurs first.</p>  <p>Valid values: <code>true</code> | <code>false</code> </p>  <p>Default: <code>false</code> </p>
+    ///   - [`engine_version(Option<String>)`](crate::input::ModifyReplicationGroupInput::engine_version): <p>The upgraded version of the cache engine to be run on the clusters in the replication group.</p>  <p> <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing replication group and create it anew with the earlier engine version. </p>
+    ///   - [`auto_minor_version_upgrade(Option<bool>)`](crate::input::ModifyReplicationGroupInput::auto_minor_version_upgrade): <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp; </p>
+    ///   - [`snapshot_retention_limit(Option<i32>)`](crate::input::ModifyReplicationGroupInput::snapshot_retention_limit): <p>The number of days for which ElastiCache retains automatic node group (shard) snapshots before deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>  <p> <b>Important</b> If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
+    ///   - [`snapshot_window(Option<String>)`](crate::input::ModifyReplicationGroupInput::snapshot_window): <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of the node group (shard) specified by <code>SnapshottingClusterId</code>.</p>  <p>Example: <code>05:00-09:00</code> </p>  <p>If you do not specify this parameter, ElastiCache automatically chooses an appropriate time range.</p>
+    ///   - [`cache_node_type(Option<String>)`](crate::input::ModifyReplicationGroupInput::cache_node_type): <p>A valid cache node type that you want to scale this replication group to.</p>
+    ///   - [`auth_token(Option<String>)`](crate::input::ModifyReplicationGroupInput::auth_token): <p>Reserved parameter. The password used to access a password protected server. This parameter must be specified with the <code>auth-token-update-strategy </code> parameter. Password constraints:</p>  <ul>   <li> <p>Must be only printable ASCII characters</p> </li>   <li> <p>Must be at least 16 characters and no more than 128 characters in length</p> </li>   <li> <p>Cannot contain any of the following characters: '/', '"', or '@', '%'</p> </li>  </ul>  <p> For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
+    ///   - [`auth_token_update_strategy(Option<AuthTokenUpdateStrategyType>)`](crate::input::ModifyReplicationGroupInput::auth_token_update_strategy): <p>Specifies the strategy to use to update the AUTH token. This parameter must be specified with the <code>auth-token</code> parameter. Possible values:</p>  <ul>   <li> <p>Rotate</p> </li>   <li> <p>Set</p> </li>  </ul>  <p> For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a> </p>
+    ///   - [`user_group_ids_to_add(Option<Vec<String>>)`](crate::input::ModifyReplicationGroupInput::user_group_ids_to_add): <p>The ID of the user group you are associating with the replication group.</p>
+    ///   - [`user_group_ids_to_remove(Option<Vec<String>>)`](crate::input::ModifyReplicationGroupInput::user_group_ids_to_remove): <p>The ID of the user group to disassociate from the replication group, meaning the users in the group no longer can access the replication group.</p>
+    ///   - [`remove_user_groups(Option<bool>)`](crate::input::ModifyReplicationGroupInput::remove_user_groups): <p>Removes the user group associated with this replication group.</p>
+    ///   - [`log_delivery_configurations(Option<Vec<LogDeliveryConfigurationRequest>>)`](crate::input::ModifyReplicationGroupInput::log_delivery_configurations): <p>Specifies the destination, format and type of the logs.</p>
+    /// - On success, responds with [`ModifyReplicationGroupOutput`](crate::output::ModifyReplicationGroupOutput) with field(s):
+    ///   - [`replication_group(Option<ReplicationGroup>)`](crate::output::ModifyReplicationGroupOutput::replication_group): <p>Contains all of the attributes of a specific Redis replication group.</p>
+    /// - On failure, responds with [`SdkError<ModifyReplicationGroupError>`](crate::error::ModifyReplicationGroupError)
     pub fn modify_replication_group(&self) -> fluent_builders::ModifyReplicationGroup<C, M, R> {
         fluent_builders::ModifyReplicationGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyReplicationGroupShardConfiguration` operation.
+    /// Constructs a fluent builder for the [`ModifyReplicationGroupShardConfiguration`](crate::client::fluent_builders::ModifyReplicationGroupShardConfiguration) operation.
     ///
-    /// See [`ModifyReplicationGroupShardConfiguration`](crate::client::fluent_builders::ModifyReplicationGroupShardConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyReplicationGroupShardConfigurationInput`](crate::input::ModifyReplicationGroupShardConfigurationInput) with field(s):
+    ///   - [`replication_group_id(Option<String>)`](crate::input::ModifyReplicationGroupShardConfigurationInput::replication_group_id): <p>The name of the Redis (cluster mode enabled) cluster (replication group) on which the shards are to be configured.</p>
+    ///   - [`node_group_count(i32)`](crate::input::ModifyReplicationGroupShardConfigurationInput::node_group_count): <p>The number of node groups (shards) that results from the modification of the shard configuration.</p>
+    ///   - [`apply_immediately(bool)`](crate::input::ModifyReplicationGroupShardConfigurationInput::apply_immediately): <p>Indicates that the shard reconfiguration process begins immediately. At present, the only permitted value for this parameter is <code>true</code>.</p>  <p>Value: true</p>
+    ///   - [`resharding_configuration(Option<Vec<ReshardingConfiguration>>)`](crate::input::ModifyReplicationGroupShardConfigurationInput::resharding_configuration): <p>Specifies the preferred availability zones for each node group in the cluster. If the value of <code>NodeGroupCount</code> is greater than the current number of node groups (shards), you can use this parameter to specify the preferred availability zones of the cluster's shards. If you omit this parameter ElastiCache selects availability zones for you.</p>  <p>You can specify this parameter only if the value of <code>NodeGroupCount</code> is greater than the current number of node groups (shards).</p>
+    ///   - [`node_groups_to_remove(Option<Vec<String>>)`](crate::input::ModifyReplicationGroupShardConfigurationInput::node_groups_to_remove): <p>If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), then either <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is required. <code>NodeGroupsToRemove</code> is a list of <code>NodeGroupId</code>s to remove from the cluster.</p>  <p>ElastiCache for Redis will attempt to remove all node groups listed by <code>NodeGroupsToRemove</code> from the cluster.</p>
+    ///   - [`node_groups_to_retain(Option<Vec<String>>)`](crate::input::ModifyReplicationGroupShardConfigurationInput::node_groups_to_retain): <p>If the value of <code>NodeGroupCount</code> is less than the current number of node groups (shards), then either <code>NodeGroupsToRemove</code> or <code>NodeGroupsToRetain</code> is required. <code>NodeGroupsToRetain</code> is a list of <code>NodeGroupId</code>s to retain in the cluster.</p>  <p>ElastiCache for Redis will attempt to remove all node groups except those listed by <code>NodeGroupsToRetain</code> from the cluster.</p>
+    /// - On success, responds with [`ModifyReplicationGroupShardConfigurationOutput`](crate::output::ModifyReplicationGroupShardConfigurationOutput) with field(s):
+    ///   - [`replication_group(Option<ReplicationGroup>)`](crate::output::ModifyReplicationGroupShardConfigurationOutput::replication_group): <p>Contains all of the attributes of a specific Redis replication group.</p>
+    /// - On failure, responds with [`SdkError<ModifyReplicationGroupShardConfigurationError>`](crate::error::ModifyReplicationGroupShardConfigurationError)
     pub fn modify_replication_group_shard_configuration(
         &self,
     ) -> fluent_builders::ModifyReplicationGroupShardConfiguration<C, M, R> {
         fluent_builders::ModifyReplicationGroupShardConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyUser` operation.
+    /// Constructs a fluent builder for the [`ModifyUser`](crate::client::fluent_builders::ModifyUser) operation.
     ///
-    /// See [`ModifyUser`](crate::client::fluent_builders::ModifyUser) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyUserInput`](crate::input::ModifyUserInput) with field(s):
+    ///   - [`user_id(Option<String>)`](crate::input::ModifyUserInput::user_id): <p>The ID of the user.</p>
+    ///   - [`access_string(Option<String>)`](crate::input::ModifyUserInput::access_string): <p>Access permissions string used for this user.</p>
+    ///   - [`append_access_string(Option<String>)`](crate::input::ModifyUserInput::append_access_string): <p>Adds additional user permissions to the access string.</p>
+    ///   - [`passwords(Option<Vec<String>>)`](crate::input::ModifyUserInput::passwords): <p>The passwords belonging to the user. You are allowed up to two.</p>
+    ///   - [`no_password_required(Option<bool>)`](crate::input::ModifyUserInput::no_password_required): <p>Indicates no password is required for the user.</p>
+    /// - On success, responds with [`ModifyUserOutput`](crate::output::ModifyUserOutput) with field(s):
+    ///   - [`user_id(Option<String>)`](crate::output::ModifyUserOutput::user_id): <p>The ID of the user.</p>
+    ///   - [`user_name(Option<String>)`](crate::output::ModifyUserOutput::user_name): <p>The username of the user.</p>
+    ///   - [`status(Option<String>)`](crate::output::ModifyUserOutput::status): <p>Indicates the user status. Can be "active", "modifying" or "deleting".</p>
+    ///   - [`engine(Option<String>)`](crate::output::ModifyUserOutput::engine): <p>The current supported value is Redis.</p>
+    ///   - [`minimum_engine_version(Option<String>)`](crate::output::ModifyUserOutput::minimum_engine_version): <p>The minimum engine version required, which is Redis 6.0</p>
+    ///   - [`access_string(Option<String>)`](crate::output::ModifyUserOutput::access_string): <p>Access permissions string used for this user.</p>
+    ///   - [`user_group_ids(Option<Vec<String>>)`](crate::output::ModifyUserOutput::user_group_ids): <p>Returns a list of the user group IDs the user belongs to.</p>
+    ///   - [`authentication(Option<Authentication>)`](crate::output::ModifyUserOutput::authentication): <p>Denotes whether the user requires a password to authenticate.</p>
+    ///   - [`arn(Option<String>)`](crate::output::ModifyUserOutput::arn): <p>The Amazon Resource Name (ARN) of the user.</p>
+    /// - On failure, responds with [`SdkError<ModifyUserError>`](crate::error::ModifyUserError)
     pub fn modify_user(&self) -> fluent_builders::ModifyUser<C, M, R> {
         fluent_builders::ModifyUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyUserGroup` operation.
+    /// Constructs a fluent builder for the [`ModifyUserGroup`](crate::client::fluent_builders::ModifyUserGroup) operation.
     ///
-    /// See [`ModifyUserGroup`](crate::client::fluent_builders::ModifyUserGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyUserGroupInput`](crate::input::ModifyUserGroupInput) with field(s):
+    ///   - [`user_group_id(Option<String>)`](crate::input::ModifyUserGroupInput::user_group_id): <p>The ID of the user group.</p>
+    ///   - [`user_ids_to_add(Option<Vec<String>>)`](crate::input::ModifyUserGroupInput::user_ids_to_add): <p>The list of user IDs to add to the user group.</p>
+    ///   - [`user_ids_to_remove(Option<Vec<String>>)`](crate::input::ModifyUserGroupInput::user_ids_to_remove): <p>The list of user IDs to remove from the user group.</p>
+    /// - On success, responds with [`ModifyUserGroupOutput`](crate::output::ModifyUserGroupOutput) with field(s):
+    ///   - [`user_group_id(Option<String>)`](crate::output::ModifyUserGroupOutput::user_group_id): <p>The ID of the user group.</p>
+    ///   - [`status(Option<String>)`](crate::output::ModifyUserGroupOutput::status): <p>Indicates user group status. Can be "creating", "active", "modifying", "deleting".</p>
+    ///   - [`engine(Option<String>)`](crate::output::ModifyUserGroupOutput::engine): <p>The current supported value is Redis. </p>
+    ///   - [`user_ids(Option<Vec<String>>)`](crate::output::ModifyUserGroupOutput::user_ids): <p>The list of user IDs that belong to the user group.</p>
+    ///   - [`minimum_engine_version(Option<String>)`](crate::output::ModifyUserGroupOutput::minimum_engine_version): <p>The minimum engine version required, which is Redis 6.0</p>
+    ///   - [`pending_changes(Option<UserGroupPendingChanges>)`](crate::output::ModifyUserGroupOutput::pending_changes): <p>A list of updates being applied to the user group.</p>
+    ///   - [`replication_groups(Option<Vec<String>>)`](crate::output::ModifyUserGroupOutput::replication_groups): <p>A list of replication groups that the user group can access.</p>
+    ///   - [`arn(Option<String>)`](crate::output::ModifyUserGroupOutput::arn): <p>The Amazon Resource Name (ARN) of the user group.</p>
+    /// - On failure, responds with [`SdkError<ModifyUserGroupError>`](crate::error::ModifyUserGroupError)
     pub fn modify_user_group(&self) -> fluent_builders::ModifyUserGroup<C, M, R> {
         fluent_builders::ModifyUserGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PurchaseReservedCacheNodesOffering` operation.
+    /// Constructs a fluent builder for the [`PurchaseReservedCacheNodesOffering`](crate::client::fluent_builders::PurchaseReservedCacheNodesOffering) operation.
     ///
-    /// See [`PurchaseReservedCacheNodesOffering`](crate::client::fluent_builders::PurchaseReservedCacheNodesOffering) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PurchaseReservedCacheNodesOfferingInput`](crate::input::PurchaseReservedCacheNodesOfferingInput) with field(s):
+    ///   - [`reserved_cache_nodes_offering_id(Option<String>)`](crate::input::PurchaseReservedCacheNodesOfferingInput::reserved_cache_nodes_offering_id): <p>The ID of the reserved cache node offering to purchase.</p>  <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code> </p>
+    ///   - [`reserved_cache_node_id(Option<String>)`](crate::input::PurchaseReservedCacheNodesOfferingInput::reserved_cache_node_id): <p>A customer-specified identifier to track this reservation.</p> <note>   <p>The Reserved Cache Node ID is an unique customer-specified identifier to track this reservation. If this parameter is not specified, ElastiCache automatically generates an identifier for the reservation.</p>  </note>  <p>Example: myreservationID</p>
+    ///   - [`cache_node_count(Option<i32>)`](crate::input::PurchaseReservedCacheNodesOfferingInput::cache_node_count): <p>The number of cache node instances to reserve.</p>  <p>Default: <code>1</code> </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::PurchaseReservedCacheNodesOfferingInput::tags): <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    /// - On success, responds with [`PurchaseReservedCacheNodesOfferingOutput`](crate::output::PurchaseReservedCacheNodesOfferingOutput) with field(s):
+    ///   - [`reserved_cache_node(Option<ReservedCacheNode>)`](crate::output::PurchaseReservedCacheNodesOfferingOutput::reserved_cache_node): <p>Represents the output of a <code>PurchaseReservedCacheNodesOffering</code> operation.</p>
+    /// - On failure, responds with [`SdkError<PurchaseReservedCacheNodesOfferingError>`](crate::error::PurchaseReservedCacheNodesOfferingError)
     pub fn purchase_reserved_cache_nodes_offering(
         &self,
     ) -> fluent_builders::PurchaseReservedCacheNodesOffering<C, M, R> {
         fluent_builders::PurchaseReservedCacheNodesOffering::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RebalanceSlotsInGlobalReplicationGroup` operation.
+    /// Constructs a fluent builder for the [`RebalanceSlotsInGlobalReplicationGroup`](crate::client::fluent_builders::RebalanceSlotsInGlobalReplicationGroup) operation.
     ///
-    /// See [`RebalanceSlotsInGlobalReplicationGroup`](crate::client::fluent_builders::RebalanceSlotsInGlobalReplicationGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RebalanceSlotsInGlobalReplicationGroupInput`](crate::input::RebalanceSlotsInGlobalReplicationGroupInput) with field(s):
+    ///   - [`global_replication_group_id(Option<String>)`](crate::input::RebalanceSlotsInGlobalReplicationGroupInput::global_replication_group_id): <p>The name of the Global datastore</p>
+    ///   - [`apply_immediately(bool)`](crate::input::RebalanceSlotsInGlobalReplicationGroupInput::apply_immediately): <p>If <code>True</code>, redistribution is applied immediately.</p>
+    /// - On success, responds with [`RebalanceSlotsInGlobalReplicationGroupOutput`](crate::output::RebalanceSlotsInGlobalReplicationGroupOutput) with field(s):
+    ///   - [`global_replication_group(Option<GlobalReplicationGroup>)`](crate::output::RebalanceSlotsInGlobalReplicationGroupOutput::global_replication_group): <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary cluster automatically replicates updates to the secondary cluster.</p>  <ul>   <li> <p>The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to associate a secondary cluster.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<RebalanceSlotsInGlobalReplicationGroupError>`](crate::error::RebalanceSlotsInGlobalReplicationGroupError)
     pub fn rebalance_slots_in_global_replication_group(
         &self,
     ) -> fluent_builders::RebalanceSlotsInGlobalReplicationGroup<C, M, R> {
         fluent_builders::RebalanceSlotsInGlobalReplicationGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RebootCacheCluster` operation.
+    /// Constructs a fluent builder for the [`RebootCacheCluster`](crate::client::fluent_builders::RebootCacheCluster) operation.
     ///
-    /// See [`RebootCacheCluster`](crate::client::fluent_builders::RebootCacheCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RebootCacheClusterInput`](crate::input::RebootCacheClusterInput) with field(s):
+    ///   - [`cache_cluster_id(Option<String>)`](crate::input::RebootCacheClusterInput::cache_cluster_id): <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
+    ///   - [`cache_node_ids_to_reboot(Option<Vec<String>>)`](crate::input::RebootCacheClusterInput::cache_node_ids_to_reboot): <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001, 0002, etc.). To reboot an entire cluster, specify all of the cache node IDs.</p>
+    /// - On success, responds with [`RebootCacheClusterOutput`](crate::output::RebootCacheClusterOutput) with field(s):
+    ///   - [`cache_cluster(Option<CacheCluster>)`](crate::output::RebootCacheClusterOutput::cache_cluster): <p>Contains all of the attributes of a specific cluster.</p>
+    /// - On failure, responds with [`SdkError<RebootCacheClusterError>`](crate::error::RebootCacheClusterError)
     pub fn reboot_cache_cluster(&self) -> fluent_builders::RebootCacheCluster<C, M, R> {
         fluent_builders::RebootCacheCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RemoveTagsFromResource` operation.
+    /// Constructs a fluent builder for the [`RemoveTagsFromResource`](crate::client::fluent_builders::RemoveTagsFromResource) operation.
     ///
-    /// See [`RemoveTagsFromResource`](crate::client::fluent_builders::RemoveTagsFromResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RemoveTagsFromResourceInput`](crate::input::RemoveTagsFromResourceInput) with field(s):
+    ///   - [`resource_name(Option<String>)`](crate::input::RemoveTagsFromResourceInput::resource_name): <p>The Amazon Resource Name (ARN) of the resource from which you want the tags removed, for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Service Namespaces</a>.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::RemoveTagsFromResourceInput::tag_keys): <p>A list of <code>TagKeys</code> identifying the tags you want removed from the named resource.</p>
+    /// - On success, responds with [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput) with field(s):
+    ///   - [`tag_list(Option<Vec<Tag>>)`](crate::output::RemoveTagsFromResourceOutput::tag_list): <p>A list of tags as key-value pairs.</p>
+    /// - On failure, responds with [`SdkError<RemoveTagsFromResourceError>`](crate::error::RemoveTagsFromResourceError)
     pub fn remove_tags_from_resource(&self) -> fluent_builders::RemoveTagsFromResource<C, M, R> {
         fluent_builders::RemoveTagsFromResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ResetCacheParameterGroup` operation.
+    /// Constructs a fluent builder for the [`ResetCacheParameterGroup`](crate::client::fluent_builders::ResetCacheParameterGroup) operation.
     ///
-    /// See [`ResetCacheParameterGroup`](crate::client::fluent_builders::ResetCacheParameterGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ResetCacheParameterGroupInput`](crate::input::ResetCacheParameterGroupInput) with field(s):
+    ///   - [`cache_parameter_group_name(Option<String>)`](crate::input::ResetCacheParameterGroupInput::cache_parameter_group_name): <p>The name of the cache parameter group to reset.</p>
+    ///   - [`reset_all_parameters(bool)`](crate::input::ResetCacheParameterGroupInput::reset_all_parameters): <p>If <code>true</code>, all parameters in the cache parameter group are reset to their default values. If <code>false</code>, only the parameters listed by <code>ParameterNameValues</code> are reset to their default values.</p>  <p>Valid values: <code>true</code> | <code>false</code> </p>
+    ///   - [`parameter_name_values(Option<Vec<ParameterNameValue>>)`](crate::input::ResetCacheParameterGroupInput::parameter_name_values): <p>An array of parameter names to reset to their default values. If <code>ResetAllParameters</code> is <code>true</code>, do not use <code>ParameterNameValues</code>. If <code>ResetAllParameters</code> is <code>false</code>, you must specify the name of at least one parameter to reset.</p>
+    /// - On success, responds with [`ResetCacheParameterGroupOutput`](crate::output::ResetCacheParameterGroupOutput) with field(s):
+    ///   - [`cache_parameter_group_name(Option<String>)`](crate::output::ResetCacheParameterGroupOutput::cache_parameter_group_name): <p>The name of the cache parameter group.</p>
+    /// - On failure, responds with [`SdkError<ResetCacheParameterGroupError>`](crate::error::ResetCacheParameterGroupError)
     pub fn reset_cache_parameter_group(
         &self,
     ) -> fluent_builders::ResetCacheParameterGroup<C, M, R> {
         fluent_builders::ResetCacheParameterGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RevokeCacheSecurityGroupIngress` operation.
+    /// Constructs a fluent builder for the [`RevokeCacheSecurityGroupIngress`](crate::client::fluent_builders::RevokeCacheSecurityGroupIngress) operation.
     ///
-    /// See [`RevokeCacheSecurityGroupIngress`](crate::client::fluent_builders::RevokeCacheSecurityGroupIngress) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RevokeCacheSecurityGroupIngressInput`](crate::input::RevokeCacheSecurityGroupIngressInput) with field(s):
+    ///   - [`cache_security_group_name(Option<String>)`](crate::input::RevokeCacheSecurityGroupIngressInput::cache_security_group_name): <p>The name of the cache security group to revoke ingress from.</p>
+    ///   - [`ec2_security_group_name(Option<String>)`](crate::input::RevokeCacheSecurityGroupIngressInput::ec2_security_group_name): <p>The name of the Amazon EC2 security group to revoke access from.</p>
+    ///   - [`ec2_security_group_owner_id(Option<String>)`](crate::input::RevokeCacheSecurityGroupIngressInput::ec2_security_group_owner_id): <p>The Amazon account number of the Amazon EC2 security group owner. Note that this is not the same thing as an Amazon access key ID - you must provide a valid Amazon account number for this parameter.</p>
+    /// - On success, responds with [`RevokeCacheSecurityGroupIngressOutput`](crate::output::RevokeCacheSecurityGroupIngressOutput) with field(s):
+    ///   - [`cache_security_group(Option<CacheSecurityGroup>)`](crate::output::RevokeCacheSecurityGroupIngressOutput::cache_security_group): <p>Represents the output of one of the following operations:</p>  <ul>   <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>   <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>   <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<RevokeCacheSecurityGroupIngressError>`](crate::error::RevokeCacheSecurityGroupIngressError)
     pub fn revoke_cache_security_group_ingress(
         &self,
     ) -> fluent_builders::RevokeCacheSecurityGroupIngress<C, M, R> {
         fluent_builders::RevokeCacheSecurityGroupIngress::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartMigration` operation.
+    /// Constructs a fluent builder for the [`StartMigration`](crate::client::fluent_builders::StartMigration) operation.
     ///
-    /// See [`StartMigration`](crate::client::fluent_builders::StartMigration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartMigrationInput`](crate::input::StartMigrationInput) with field(s):
+    ///   - [`replication_group_id(Option<String>)`](crate::input::StartMigrationInput::replication_group_id): <p>The ID of the replication group to which data should be migrated.</p>
+    ///   - [`customer_node_endpoint_list(Option<Vec<CustomerNodeEndpoint>>)`](crate::input::StartMigrationInput::customer_node_endpoint_list): <p>List of endpoints from which data should be migrated. For Redis (cluster mode disabled), list should have only one element.</p>
+    /// - On success, responds with [`StartMigrationOutput`](crate::output::StartMigrationOutput) with field(s):
+    ///   - [`replication_group(Option<ReplicationGroup>)`](crate::output::StartMigrationOutput::replication_group): <p>Contains all of the attributes of a specific Redis replication group.</p>
+    /// - On failure, responds with [`SdkError<StartMigrationError>`](crate::error::StartMigrationError)
     pub fn start_migration(&self) -> fluent_builders::StartMigration<C, M, R> {
         fluent_builders::StartMigration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TestFailover` operation.
+    /// Constructs a fluent builder for the [`TestFailover`](crate::client::fluent_builders::TestFailover) operation.
     ///
-    /// See [`TestFailover`](crate::client::fluent_builders::TestFailover) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TestFailoverInput`](crate::input::TestFailoverInput) with field(s):
+    ///   - [`replication_group_id(Option<String>)`](crate::input::TestFailoverInput::replication_group_id): <p>The name of the replication group (console: cluster) whose automatic failover is being tested by this operation.</p>
+    ///   - [`node_group_id(Option<String>)`](crate::input::TestFailoverInput::node_group_id): <p>The name of the node group (called shard in the console) in this replication group on which automatic failover is to be tested. You may test automatic failover on up to 5 node groups in any rolling 24-hour period.</p>
+    /// - On success, responds with [`TestFailoverOutput`](crate::output::TestFailoverOutput) with field(s):
+    ///   - [`replication_group(Option<ReplicationGroup>)`](crate::output::TestFailoverOutput::replication_group): <p>Contains all of the attributes of a specific Redis replication group.</p>
+    /// - On failure, responds with [`SdkError<TestFailoverError>`](crate::error::TestFailoverError)
     pub fn test_failover(&self) -> fluent_builders::TestFailover<C, M, R> {
         fluent_builders::TestFailover::new(self.handle.clone())
     }

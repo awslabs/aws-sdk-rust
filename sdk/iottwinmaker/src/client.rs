@@ -83,190 +83,397 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `BatchPutPropertyValues` operation.
+    /// Constructs a fluent builder for the [`BatchPutPropertyValues`](crate::client::fluent_builders::BatchPutPropertyValues) operation.
     ///
-    /// See [`BatchPutPropertyValues`](crate::client::fluent_builders::BatchPutPropertyValues) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchPutPropertyValuesInput`](crate::input::BatchPutPropertyValuesInput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::input::BatchPutPropertyValuesInput::workspace_id): <p>The ID of the workspace that contains the properties to set.</p>
+    ///   - [`entries(Option<Vec<PropertyValueEntry>>)`](crate::input::BatchPutPropertyValuesInput::entries): <p>An object that maps strings to the property value entries to set. Each string in the mapping must be unique to this object.</p>
+    /// - On success, responds with [`BatchPutPropertyValuesOutput`](crate::output::BatchPutPropertyValuesOutput) with field(s):
+    ///   - [`error_entries(Option<Vec<BatchPutPropertyErrorEntry>>)`](crate::output::BatchPutPropertyValuesOutput::error_entries): <p>Entries that caused errors in the batch put operation.</p>
+    /// - On failure, responds with [`SdkError<BatchPutPropertyValuesError>`](crate::error::BatchPutPropertyValuesError)
     pub fn batch_put_property_values(&self) -> fluent_builders::BatchPutPropertyValues<C, M, R> {
         fluent_builders::BatchPutPropertyValues::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateComponentType` operation.
+    /// Constructs a fluent builder for the [`CreateComponentType`](crate::client::fluent_builders::CreateComponentType) operation.
     ///
-    /// See [`CreateComponentType`](crate::client::fluent_builders::CreateComponentType) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateComponentTypeInput`](crate::input::CreateComponentTypeInput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::input::CreateComponentTypeInput::workspace_id): <p>The ID of the workspace that contains the component type.</p>
+    ///   - [`is_singleton(Option<bool>)`](crate::input::CreateComponentTypeInput::is_singleton): <p>A Boolean value that specifies whether an entity can have more than one component of this type.</p>
+    ///   - [`component_type_id(Option<String>)`](crate::input::CreateComponentTypeInput::component_type_id): <p>The ID of the component type.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateComponentTypeInput::description): <p>The description of the component type.</p>
+    ///   - [`property_definitions(Option<HashMap<String, PropertyDefinitionRequest>>)`](crate::input::CreateComponentTypeInput::property_definitions): <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
+    ///   - [`extends_from(Option<Vec<String>>)`](crate::input::CreateComponentTypeInput::extends_from): <p>Specifies the parent component type to extend.</p>
+    ///   - [`functions(Option<HashMap<String, FunctionRequest>>)`](crate::input::CreateComponentTypeInput::functions): <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateComponentTypeInput::tags): <p>Metadata that you can use to manage the component type.</p>
+    /// - On success, responds with [`CreateComponentTypeOutput`](crate::output::CreateComponentTypeOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateComponentTypeOutput::arn): <p>The ARN of the component type.</p>
+    ///   - [`creation_date_time(Option<DateTime>)`](crate::output::CreateComponentTypeOutput::creation_date_time): <p>The date and time when the entity was created.</p>
+    ///   - [`state(Option<State>)`](crate::output::CreateComponentTypeOutput::state): <p>The current state of the component type.</p>
+    /// - On failure, responds with [`SdkError<CreateComponentTypeError>`](crate::error::CreateComponentTypeError)
     pub fn create_component_type(&self) -> fluent_builders::CreateComponentType<C, M, R> {
         fluent_builders::CreateComponentType::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateEntity` operation.
+    /// Constructs a fluent builder for the [`CreateEntity`](crate::client::fluent_builders::CreateEntity) operation.
     ///
-    /// See [`CreateEntity`](crate::client::fluent_builders::CreateEntity) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateEntityInput`](crate::input::CreateEntityInput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::input::CreateEntityInput::workspace_id): <p>The ID of the workspace that contains the entity.</p>
+    ///   - [`entity_id(Option<String>)`](crate::input::CreateEntityInput::entity_id): <p>The ID of the entity.</p>
+    ///   - [`entity_name(Option<String>)`](crate::input::CreateEntityInput::entity_name): <p>The name of the entity.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateEntityInput::description): <p>The description of the entity.</p>
+    ///   - [`components(Option<HashMap<String, ComponentRequest>>)`](crate::input::CreateEntityInput::components): <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
+    ///   - [`parent_entity_id(Option<String>)`](crate::input::CreateEntityInput::parent_entity_id): <p>The ID of the entity's parent entity.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateEntityInput::tags): <p>Metadata that you can use to manage the entity.</p>
+    /// - On success, responds with [`CreateEntityOutput`](crate::output::CreateEntityOutput) with field(s):
+    ///   - [`entity_id(Option<String>)`](crate::output::CreateEntityOutput::entity_id): <p>The ID of the entity.</p>
+    ///   - [`arn(Option<String>)`](crate::output::CreateEntityOutput::arn): <p>The ARN of the entity.</p>
+    ///   - [`creation_date_time(Option<DateTime>)`](crate::output::CreateEntityOutput::creation_date_time): <p>The date and time when the entity was created.</p>
+    ///   - [`state(Option<State>)`](crate::output::CreateEntityOutput::state): <p>The current state of the entity.</p>
+    /// - On failure, responds with [`SdkError<CreateEntityError>`](crate::error::CreateEntityError)
     pub fn create_entity(&self) -> fluent_builders::CreateEntity<C, M, R> {
         fluent_builders::CreateEntity::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateScene` operation.
+    /// Constructs a fluent builder for the [`CreateScene`](crate::client::fluent_builders::CreateScene) operation.
     ///
-    /// See [`CreateScene`](crate::client::fluent_builders::CreateScene) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateSceneInput`](crate::input::CreateSceneInput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::input::CreateSceneInput::workspace_id): <p>The ID of the workspace that contains the scene.</p>
+    ///   - [`scene_id(Option<String>)`](crate::input::CreateSceneInput::scene_id): <p>The ID of the scene.</p>
+    ///   - [`content_location(Option<String>)`](crate::input::CreateSceneInput::content_location): <p>The relative path that specifies the location of the content definition file.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateSceneInput::description): <p>The description for this scene.</p>
+    ///   - [`capabilities(Option<Vec<String>>)`](crate::input::CreateSceneInput::capabilities): <p>A list of capabilities that the scene uses to render itself.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateSceneInput::tags): <p>Metadata that you can use to manage the scene.</p>
+    /// - On success, responds with [`CreateSceneOutput`](crate::output::CreateSceneOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateSceneOutput::arn): <p>The ARN of the scene.</p>
+    ///   - [`creation_date_time(Option<DateTime>)`](crate::output::CreateSceneOutput::creation_date_time): <p>The date and time when the scene was created.</p>
+    /// - On failure, responds with [`SdkError<CreateSceneError>`](crate::error::CreateSceneError)
     pub fn create_scene(&self) -> fluent_builders::CreateScene<C, M, R> {
         fluent_builders::CreateScene::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateWorkspace` operation.
+    /// Constructs a fluent builder for the [`CreateWorkspace`](crate::client::fluent_builders::CreateWorkspace) operation.
     ///
-    /// See [`CreateWorkspace`](crate::client::fluent_builders::CreateWorkspace) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateWorkspaceInput`](crate::input::CreateWorkspaceInput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::input::CreateWorkspaceInput::workspace_id): <p>The ID of the workspace.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateWorkspaceInput::description): <p>The description of the workspace.</p>
+    ///   - [`s3_location(Option<String>)`](crate::input::CreateWorkspaceInput::s3_location): <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
+    ///   - [`role(Option<String>)`](crate::input::CreateWorkspaceInput::role): <p>The ARN of the execution role associated with the workspace.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateWorkspaceInput::tags): <p>Metadata that you can use to manage the workspace</p>
+    /// - On success, responds with [`CreateWorkspaceOutput`](crate::output::CreateWorkspaceOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateWorkspaceOutput::arn): <p>The ARN of the workspace.</p>
+    ///   - [`creation_date_time(Option<DateTime>)`](crate::output::CreateWorkspaceOutput::creation_date_time): <p>The date and time when the workspace was created.</p>
+    /// - On failure, responds with [`SdkError<CreateWorkspaceError>`](crate::error::CreateWorkspaceError)
     pub fn create_workspace(&self) -> fluent_builders::CreateWorkspace<C, M, R> {
         fluent_builders::CreateWorkspace::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteComponentType` operation.
+    /// Constructs a fluent builder for the [`DeleteComponentType`](crate::client::fluent_builders::DeleteComponentType) operation.
     ///
-    /// See [`DeleteComponentType`](crate::client::fluent_builders::DeleteComponentType) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteComponentTypeInput`](crate::input::DeleteComponentTypeInput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::input::DeleteComponentTypeInput::workspace_id): <p>The ID of the workspace that contains the component type.</p>
+    ///   - [`component_type_id(Option<String>)`](crate::input::DeleteComponentTypeInput::component_type_id): <p>The ID of the component type to delete.</p>
+    /// - On success, responds with [`DeleteComponentTypeOutput`](crate::output::DeleteComponentTypeOutput) with field(s):
+    ///   - [`state(Option<State>)`](crate::output::DeleteComponentTypeOutput::state): <p>The current state of the component type to be deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteComponentTypeError>`](crate::error::DeleteComponentTypeError)
     pub fn delete_component_type(&self) -> fluent_builders::DeleteComponentType<C, M, R> {
         fluent_builders::DeleteComponentType::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteEntity` operation.
+    /// Constructs a fluent builder for the [`DeleteEntity`](crate::client::fluent_builders::DeleteEntity) operation.
     ///
-    /// See [`DeleteEntity`](crate::client::fluent_builders::DeleteEntity) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteEntityInput`](crate::input::DeleteEntityInput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::input::DeleteEntityInput::workspace_id): <p>The ID of the workspace that contains the entity to delete.</p>
+    ///   - [`entity_id(Option<String>)`](crate::input::DeleteEntityInput::entity_id): <p>The ID of the entity to delete.</p>
+    ///   - [`is_recursive(Option<bool>)`](crate::input::DeleteEntityInput::is_recursive): <p>A Boolean value that specifies whether the operation deletes child entities.</p>
+    /// - On success, responds with [`DeleteEntityOutput`](crate::output::DeleteEntityOutput) with field(s):
+    ///   - [`state(Option<State>)`](crate::output::DeleteEntityOutput::state): <p>The current state of the deleted entity.</p>
+    /// - On failure, responds with [`SdkError<DeleteEntityError>`](crate::error::DeleteEntityError)
     pub fn delete_entity(&self) -> fluent_builders::DeleteEntity<C, M, R> {
         fluent_builders::DeleteEntity::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteScene` operation.
+    /// Constructs a fluent builder for the [`DeleteScene`](crate::client::fluent_builders::DeleteScene) operation.
     ///
-    /// See [`DeleteScene`](crate::client::fluent_builders::DeleteScene) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteSceneInput`](crate::input::DeleteSceneInput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::input::DeleteSceneInput::workspace_id): <p>The ID of the workspace.</p>
+    ///   - [`scene_id(Option<String>)`](crate::input::DeleteSceneInput::scene_id): <p>The ID of the scene to delete.</p>
+    /// - On success, responds with [`DeleteSceneOutput`](crate::output::DeleteSceneOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteSceneError>`](crate::error::DeleteSceneError)
     pub fn delete_scene(&self) -> fluent_builders::DeleteScene<C, M, R> {
         fluent_builders::DeleteScene::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteWorkspace` operation.
+    /// Constructs a fluent builder for the [`DeleteWorkspace`](crate::client::fluent_builders::DeleteWorkspace) operation.
     ///
-    /// See [`DeleteWorkspace`](crate::client::fluent_builders::DeleteWorkspace) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteWorkspaceInput`](crate::input::DeleteWorkspaceInput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::input::DeleteWorkspaceInput::workspace_id): <p>The ID of the workspace to delete.</p>
+    /// - On success, responds with [`DeleteWorkspaceOutput`](crate::output::DeleteWorkspaceOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteWorkspaceError>`](crate::error::DeleteWorkspaceError)
     pub fn delete_workspace(&self) -> fluent_builders::DeleteWorkspace<C, M, R> {
         fluent_builders::DeleteWorkspace::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetComponentType` operation.
+    /// Constructs a fluent builder for the [`GetComponentType`](crate::client::fluent_builders::GetComponentType) operation.
     ///
-    /// See [`GetComponentType`](crate::client::fluent_builders::GetComponentType) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetComponentTypeInput`](crate::input::GetComponentTypeInput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::input::GetComponentTypeInput::workspace_id): <p>The ID of the workspace that contains the component type.</p>
+    ///   - [`component_type_id(Option<String>)`](crate::input::GetComponentTypeInput::component_type_id): <p>The ID of the component type.</p>
+    /// - On success, responds with [`GetComponentTypeOutput`](crate::output::GetComponentTypeOutput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::output::GetComponentTypeOutput::workspace_id): <p>The ID of the workspace that contains the component type.</p>
+    ///   - [`is_singleton(Option<bool>)`](crate::output::GetComponentTypeOutput::is_singleton): <p>A Boolean value that specifies whether an entity can have more than one component of this type.</p>
+    ///   - [`component_type_id(Option<String>)`](crate::output::GetComponentTypeOutput::component_type_id): <p>The ID of the component type.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetComponentTypeOutput::description): <p>The description of the component type.</p>
+    ///   - [`property_definitions(Option<HashMap<String, PropertyDefinitionResponse>>)`](crate::output::GetComponentTypeOutput::property_definitions): <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
+    ///   - [`extends_from(Option<Vec<String>>)`](crate::output::GetComponentTypeOutput::extends_from): <p>The name of the parent component type that this component type extends.</p>
+    ///   - [`functions(Option<HashMap<String, FunctionResponse>>)`](crate::output::GetComponentTypeOutput::functions): <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
+    ///   - [`creation_date_time(Option<DateTime>)`](crate::output::GetComponentTypeOutput::creation_date_time): <p>The date and time when the component type was created.</p>
+    ///   - [`update_date_time(Option<DateTime>)`](crate::output::GetComponentTypeOutput::update_date_time): <p>The date and time when the component was last updated.</p>
+    ///   - [`arn(Option<String>)`](crate::output::GetComponentTypeOutput::arn): <p>The ARN of the component type.</p>
+    ///   - [`is_abstract(Option<bool>)`](crate::output::GetComponentTypeOutput::is_abstract): <p>A Boolean value that specifies whether the component type is abstract.</p>
+    ///   - [`is_schema_initialized(Option<bool>)`](crate::output::GetComponentTypeOutput::is_schema_initialized): <p>A Boolean value that specifies whether the component type has a schema initializer and that the schema initializer has run.</p>
+    ///   - [`status(Option<Status>)`](crate::output::GetComponentTypeOutput::status): <p>The current status of the component type.</p>
+    /// - On failure, responds with [`SdkError<GetComponentTypeError>`](crate::error::GetComponentTypeError)
     pub fn get_component_type(&self) -> fluent_builders::GetComponentType<C, M, R> {
         fluent_builders::GetComponentType::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetEntity` operation.
+    /// Constructs a fluent builder for the [`GetEntity`](crate::client::fluent_builders::GetEntity) operation.
     ///
-    /// See [`GetEntity`](crate::client::fluent_builders::GetEntity) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetEntityInput`](crate::input::GetEntityInput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::input::GetEntityInput::workspace_id): <p>The ID of the workspace.</p>
+    ///   - [`entity_id(Option<String>)`](crate::input::GetEntityInput::entity_id): <p>The ID of the entity.</p>
+    /// - On success, responds with [`GetEntityOutput`](crate::output::GetEntityOutput) with field(s):
+    ///   - [`entity_id(Option<String>)`](crate::output::GetEntityOutput::entity_id): <p>The ID of the entity.</p>
+    ///   - [`entity_name(Option<String>)`](crate::output::GetEntityOutput::entity_name): <p>The name of the entity.</p>
+    ///   - [`arn(Option<String>)`](crate::output::GetEntityOutput::arn): <p>The ARN of the entity.</p>
+    ///   - [`status(Option<Status>)`](crate::output::GetEntityOutput::status): <p>The current status of the entity.</p>
+    ///   - [`workspace_id(Option<String>)`](crate::output::GetEntityOutput::workspace_id): <p>The ID of the workspace.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetEntityOutput::description): <p>The description of the entity.</p>
+    ///   - [`components(Option<HashMap<String, ComponentResponse>>)`](crate::output::GetEntityOutput::components): <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
+    ///   - [`parent_entity_id(Option<String>)`](crate::output::GetEntityOutput::parent_entity_id): <p>The ID of the parent entity for this entity.</p>
+    ///   - [`has_child_entities(Option<bool>)`](crate::output::GetEntityOutput::has_child_entities): <p>A Boolean value that specifies whether the entity has associated child entities.</p>
+    ///   - [`creation_date_time(Option<DateTime>)`](crate::output::GetEntityOutput::creation_date_time): <p>The date and time when the entity was created.</p>
+    ///   - [`update_date_time(Option<DateTime>)`](crate::output::GetEntityOutput::update_date_time): <p>The date and time when the entity was last updated.</p>
+    /// - On failure, responds with [`SdkError<GetEntityError>`](crate::error::GetEntityError)
     pub fn get_entity(&self) -> fluent_builders::GetEntity<C, M, R> {
         fluent_builders::GetEntity::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetPropertyValue` operation.
+    /// Constructs a fluent builder for the [`GetPropertyValue`](crate::client::fluent_builders::GetPropertyValue) operation.
     ///
-    /// See [`GetPropertyValue`](crate::client::fluent_builders::GetPropertyValue) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetPropertyValueInput`](crate::input::GetPropertyValueInput) with field(s):
+    ///   - [`component_name(Option<String>)`](crate::input::GetPropertyValueInput::component_name): <p>The name of the component whose property values the operation returns.</p>
+    ///   - [`component_type_id(Option<String>)`](crate::input::GetPropertyValueInput::component_type_id): <p>The ID of the component type whose property values the operation returns.</p>
+    ///   - [`entity_id(Option<String>)`](crate::input::GetPropertyValueInput::entity_id): <p>The ID of the entity whose property values the operation returns.</p>
+    ///   - [`selected_properties(Option<Vec<String>>)`](crate::input::GetPropertyValueInput::selected_properties): <p>The properties whose values the operation returns.</p>
+    ///   - [`workspace_id(Option<String>)`](crate::input::GetPropertyValueInput::workspace_id): <p>The ID of the workspace whose values the operation returns.</p>
+    /// - On success, responds with [`GetPropertyValueOutput`](crate::output::GetPropertyValueOutput) with field(s):
+    ///   - [`property_values(Option<HashMap<String, PropertyLatestValue>>)`](crate::output::GetPropertyValueOutput::property_values): <p>An object that maps strings to the properties and latest property values in the response. Each string in the mapping must be unique to this object.</p>
+    /// - On failure, responds with [`SdkError<GetPropertyValueError>`](crate::error::GetPropertyValueError)
     pub fn get_property_value(&self) -> fluent_builders::GetPropertyValue<C, M, R> {
         fluent_builders::GetPropertyValue::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetPropertyValueHistory` operation.
-    ///
-    /// See [`GetPropertyValueHistory`](crate::client::fluent_builders::GetPropertyValueHistory) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetPropertyValueHistory`](crate::client::fluent_builders::GetPropertyValueHistory) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetPropertyValueHistory::into_paginator).
+    ///
+    /// - Takes [`GetPropertyValueHistoryInput`](crate::input::GetPropertyValueHistoryInput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::input::GetPropertyValueHistoryInput::workspace_id): <p>The ID of the workspace.</p>
+    ///   - [`entity_id(Option<String>)`](crate::input::GetPropertyValueHistoryInput::entity_id): <p>The ID of the entity.</p>
+    ///   - [`component_name(Option<String>)`](crate::input::GetPropertyValueHistoryInput::component_name): <p>The name of the component.</p>
+    ///   - [`component_type_id(Option<String>)`](crate::input::GetPropertyValueHistoryInput::component_type_id): <p>The ID of the component type.</p>
+    ///   - [`selected_properties(Option<Vec<String>>)`](crate::input::GetPropertyValueHistoryInput::selected_properties): <p>A list of properties whose value histories the request retrieves.</p>
+    ///   - [`property_filters(Option<Vec<PropertyFilter>>)`](crate::input::GetPropertyValueHistoryInput::property_filters): <p>A list of objects that filter the property value history request.</p>
+    ///   - [`start_date_time(Option<DateTime>)`](crate::input::GetPropertyValueHistoryInput::start_date_time): <p>The date and time of the earliest property value to return.</p>
+    ///   - [`end_date_time(Option<DateTime>)`](crate::input::GetPropertyValueHistoryInput::end_date_time): <p>The date and time of the latest property value to return.</p>
+    ///   - [`interpolation(Option<InterpolationParameters>)`](crate::input::GetPropertyValueHistoryInput::interpolation): <p>An object that specifies the interpolation type and the interval over which to interpolate data.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetPropertyValueHistoryInput::next_token): <p>The string that specifies the next page of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetPropertyValueHistoryInput::max_results): <p>The maximum number of results to return.</p>
+    ///   - [`order_by_time(Option<OrderByTime>)`](crate::input::GetPropertyValueHistoryInput::order_by_time): <p>The time direction to use in the result order.</p>
+    /// - On success, responds with [`GetPropertyValueHistoryOutput`](crate::output::GetPropertyValueHistoryOutput) with field(s):
+    ///   - [`property_values(Option<Vec<PropertyValueHistory>>)`](crate::output::GetPropertyValueHistoryOutput::property_values): <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetPropertyValueHistoryOutput::next_token): <p>The string that specifies the next page of results.</p>
+    /// - On failure, responds with [`SdkError<GetPropertyValueHistoryError>`](crate::error::GetPropertyValueHistoryError)
     pub fn get_property_value_history(&self) -> fluent_builders::GetPropertyValueHistory<C, M, R> {
         fluent_builders::GetPropertyValueHistory::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetScene` operation.
+    /// Constructs a fluent builder for the [`GetScene`](crate::client::fluent_builders::GetScene) operation.
     ///
-    /// See [`GetScene`](crate::client::fluent_builders::GetScene) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetSceneInput`](crate::input::GetSceneInput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::input::GetSceneInput::workspace_id): <p>The ID of the workspace that contains the scene.</p>
+    ///   - [`scene_id(Option<String>)`](crate::input::GetSceneInput::scene_id): <p>The ID of the scene.</p>
+    /// - On success, responds with [`GetSceneOutput`](crate::output::GetSceneOutput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::output::GetSceneOutput::workspace_id): <p>The ID of the workspace that contains the scene.</p>
+    ///   - [`scene_id(Option<String>)`](crate::output::GetSceneOutput::scene_id): <p>The ID of the scene.</p>
+    ///   - [`content_location(Option<String>)`](crate::output::GetSceneOutput::content_location): <p>The relative path that specifies the location of the content definition file.</p>
+    ///   - [`arn(Option<String>)`](crate::output::GetSceneOutput::arn): <p>The ARN of the scene.</p>
+    ///   - [`creation_date_time(Option<DateTime>)`](crate::output::GetSceneOutput::creation_date_time): <p>The date and time when the scene was created.</p>
+    ///   - [`update_date_time(Option<DateTime>)`](crate::output::GetSceneOutput::update_date_time): <p>The date and time when the scene was last updated.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetSceneOutput::description): <p>The description of the scene.</p>
+    ///   - [`capabilities(Option<Vec<String>>)`](crate::output::GetSceneOutput::capabilities): <p>A list of capabilities that the scene uses to render.</p>
+    /// - On failure, responds with [`SdkError<GetSceneError>`](crate::error::GetSceneError)
     pub fn get_scene(&self) -> fluent_builders::GetScene<C, M, R> {
         fluent_builders::GetScene::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetWorkspace` operation.
+    /// Constructs a fluent builder for the [`GetWorkspace`](crate::client::fluent_builders::GetWorkspace) operation.
     ///
-    /// See [`GetWorkspace`](crate::client::fluent_builders::GetWorkspace) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetWorkspaceInput`](crate::input::GetWorkspaceInput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::input::GetWorkspaceInput::workspace_id): <p>The ID of the workspace.</p>
+    /// - On success, responds with [`GetWorkspaceOutput`](crate::output::GetWorkspaceOutput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::output::GetWorkspaceOutput::workspace_id): <p>The ID of the workspace.</p>
+    ///   - [`arn(Option<String>)`](crate::output::GetWorkspaceOutput::arn): <p>The ARN of the workspace.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetWorkspaceOutput::description): <p>The description of the workspace.</p>
+    ///   - [`s3_location(Option<String>)`](crate::output::GetWorkspaceOutput::s3_location): <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
+    ///   - [`role(Option<String>)`](crate::output::GetWorkspaceOutput::role): <p>The ARN of the execution role associated with the workspace.</p>
+    ///   - [`creation_date_time(Option<DateTime>)`](crate::output::GetWorkspaceOutput::creation_date_time): <p>The date and time when the workspace was created.</p>
+    ///   - [`update_date_time(Option<DateTime>)`](crate::output::GetWorkspaceOutput::update_date_time): <p>The date and time when the workspace was last updated.</p>
+    /// - On failure, responds with [`SdkError<GetWorkspaceError>`](crate::error::GetWorkspaceError)
     pub fn get_workspace(&self) -> fluent_builders::GetWorkspace<C, M, R> {
         fluent_builders::GetWorkspace::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListComponentTypes` operation.
-    ///
-    /// See [`ListComponentTypes`](crate::client::fluent_builders::ListComponentTypes) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListComponentTypes`](crate::client::fluent_builders::ListComponentTypes) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListComponentTypes::into_paginator).
+    ///
+    /// - Takes [`ListComponentTypesInput`](crate::input::ListComponentTypesInput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::input::ListComponentTypesInput::workspace_id): <p>The ID of the workspace.</p>
+    ///   - [`filters(Option<Vec<ListComponentTypesFilter>>)`](crate::input::ListComponentTypesInput::filters): <p>A list of objects that filter the request.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListComponentTypesInput::next_token): <p>The string that specifies the next page of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListComponentTypesInput::max_results): <p>The maximum number of results to display.</p>
+    /// - On success, responds with [`ListComponentTypesOutput`](crate::output::ListComponentTypesOutput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::output::ListComponentTypesOutput::workspace_id): <p>The ID of the workspace.</p>
+    ///   - [`component_type_summaries(Option<Vec<ComponentTypeSummary>>)`](crate::output::ListComponentTypesOutput::component_type_summaries): <p>A list of objects that contain information about the component types.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListComponentTypesOutput::next_token): <p>The string that specifies the next page of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::output::ListComponentTypesOutput::max_results): <p>Specifies the maximum number of results to display.</p>
+    /// - On failure, responds with [`SdkError<ListComponentTypesError>`](crate::error::ListComponentTypesError)
     pub fn list_component_types(&self) -> fluent_builders::ListComponentTypes<C, M, R> {
         fluent_builders::ListComponentTypes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListEntities` operation.
-    ///
-    /// See [`ListEntities`](crate::client::fluent_builders::ListEntities) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListEntities`](crate::client::fluent_builders::ListEntities) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEntities::into_paginator).
+    ///
+    /// - Takes [`ListEntitiesInput`](crate::input::ListEntitiesInput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::input::ListEntitiesInput::workspace_id): <p>The ID of the workspace.</p>
+    ///   - [`filters(Option<Vec<ListEntitiesFilter>>)`](crate::input::ListEntitiesInput::filters): <p>A list of objects that filter the request.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListEntitiesInput::max_results): <p>The maximum number of results to display.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListEntitiesInput::next_token): <p>The string that specifies the next page of results.</p>
+    /// - On success, responds with [`ListEntitiesOutput`](crate::output::ListEntitiesOutput) with field(s):
+    ///   - [`entity_summaries(Option<Vec<EntitySummary>>)`](crate::output::ListEntitiesOutput::entity_summaries): <p>A list of objects that contain information about the entities.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListEntitiesOutput::next_token): <p>The string that specifies the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ListEntitiesError>`](crate::error::ListEntitiesError)
     pub fn list_entities(&self) -> fluent_builders::ListEntities<C, M, R> {
         fluent_builders::ListEntities::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListScenes` operation.
-    ///
-    /// See [`ListScenes`](crate::client::fluent_builders::ListScenes) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListScenes`](crate::client::fluent_builders::ListScenes) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListScenes::into_paginator).
+    ///
+    /// - Takes [`ListScenesInput`](crate::input::ListScenesInput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::input::ListScenesInput::workspace_id): <p>The ID of the workspace that contains the scenes.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListScenesInput::max_results): <p>Specifies the maximum number of results to display.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListScenesInput::next_token): <p>The string that specifies the next page of results.</p>
+    /// - On success, responds with [`ListScenesOutput`](crate::output::ListScenesOutput) with field(s):
+    ///   - [`scene_summaries(Option<Vec<SceneSummary>>)`](crate::output::ListScenesOutput::scene_summaries): <p>A list of objects that contain information about the scenes.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListScenesOutput::next_token): <p>The string that specifies the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ListScenesError>`](crate::error::ListScenesError)
     pub fn list_scenes(&self) -> fluent_builders::ListScenes<C, M, R> {
         fluent_builders::ListScenes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The ARN of the resource.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListTagsForResourceInput::max_results): <p>The maximum number of results to display.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListTagsForResourceInput::next_token): <p>The string that specifies the next page of results.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>Metadata that you can use to manage a resource.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTagsForResourceOutput::next_token): <p>The string that specifies the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListWorkspaces` operation.
-    ///
-    /// See [`ListWorkspaces`](crate::client::fluent_builders::ListWorkspaces) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListWorkspaces`](crate::client::fluent_builders::ListWorkspaces) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWorkspaces::into_paginator).
+    ///
+    /// - Takes [`ListWorkspacesInput`](crate::input::ListWorkspacesInput) with field(s):
+    ///   - [`max_results(Option<i32>)`](crate::input::ListWorkspacesInput::max_results): <p>The maximum number of results to display.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListWorkspacesInput::next_token): <p>The string that specifies the next page of results.</p>
+    /// - On success, responds with [`ListWorkspacesOutput`](crate::output::ListWorkspacesOutput) with field(s):
+    ///   - [`workspace_summaries(Option<Vec<WorkspaceSummary>>)`](crate::output::ListWorkspacesOutput::workspace_summaries): <p>A list of objects that contain information about the workspaces.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListWorkspacesOutput::next_token): <p>The string that specifies the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ListWorkspacesError>`](crate::error::ListWorkspacesError)
     pub fn list_workspaces(&self) -> fluent_builders::ListWorkspaces<C, M, R> {
         fluent_builders::ListWorkspaces::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The ARN of the resource.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>Metadata to add to this resource.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The ARN of the resource.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>A list of tag key names to remove from the resource. You don't specify the value. Both the key and its associated value are removed.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateComponentType` operation.
+    /// Constructs a fluent builder for the [`UpdateComponentType`](crate::client::fluent_builders::UpdateComponentType) operation.
     ///
-    /// See [`UpdateComponentType`](crate::client::fluent_builders::UpdateComponentType) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateComponentTypeInput`](crate::input::UpdateComponentTypeInput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::input::UpdateComponentTypeInput::workspace_id): <p>The ID of the workspace that contains the component type.</p>
+    ///   - [`is_singleton(Option<bool>)`](crate::input::UpdateComponentTypeInput::is_singleton): <p>A Boolean value that specifies whether an entity can have more than one component of this type.</p>
+    ///   - [`component_type_id(Option<String>)`](crate::input::UpdateComponentTypeInput::component_type_id): <p>The ID of the component type.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateComponentTypeInput::description): <p>The description of the component type.</p>
+    ///   - [`property_definitions(Option<HashMap<String, PropertyDefinitionRequest>>)`](crate::input::UpdateComponentTypeInput::property_definitions): <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
+    ///   - [`extends_from(Option<Vec<String>>)`](crate::input::UpdateComponentTypeInput::extends_from): <p>Specifies the component type that this component type extends.</p>
+    ///   - [`functions(Option<HashMap<String, FunctionRequest>>)`](crate::input::UpdateComponentTypeInput::functions): <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
+    /// - On success, responds with [`UpdateComponentTypeOutput`](crate::output::UpdateComponentTypeOutput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::output::UpdateComponentTypeOutput::workspace_id): <p>The ID of the workspace that contains the component type.</p>
+    ///   - [`arn(Option<String>)`](crate::output::UpdateComponentTypeOutput::arn): <p>The ARN of the component type.</p>
+    ///   - [`component_type_id(Option<String>)`](crate::output::UpdateComponentTypeOutput::component_type_id): <p>The ID of the component type.</p>
+    ///   - [`state(Option<State>)`](crate::output::UpdateComponentTypeOutput::state): <p>The current state of the component type.</p>
+    /// - On failure, responds with [`SdkError<UpdateComponentTypeError>`](crate::error::UpdateComponentTypeError)
     pub fn update_component_type(&self) -> fluent_builders::UpdateComponentType<C, M, R> {
         fluent_builders::UpdateComponentType::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateEntity` operation.
+    /// Constructs a fluent builder for the [`UpdateEntity`](crate::client::fluent_builders::UpdateEntity) operation.
     ///
-    /// See [`UpdateEntity`](crate::client::fluent_builders::UpdateEntity) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateEntityInput`](crate::input::UpdateEntityInput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::input::UpdateEntityInput::workspace_id): <p>The ID of the workspace that contains the entity.</p>
+    ///   - [`entity_id(Option<String>)`](crate::input::UpdateEntityInput::entity_id): <p>The ID of the entity.</p>
+    ///   - [`entity_name(Option<String>)`](crate::input::UpdateEntityInput::entity_name): <p>The name of the entity.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateEntityInput::description): <p>The description of the entity.</p>
+    ///   - [`component_updates(Option<HashMap<String, ComponentUpdateRequest>>)`](crate::input::UpdateEntityInput::component_updates): <p>An object that maps strings to the component updates in the request. Each string in the mapping must be unique to this object.</p>
+    ///   - [`parent_entity_update(Option<ParentEntityUpdateRequest>)`](crate::input::UpdateEntityInput::parent_entity_update): <p>An object that describes the update request for a parent entity.</p>
+    /// - On success, responds with [`UpdateEntityOutput`](crate::output::UpdateEntityOutput) with field(s):
+    ///   - [`update_date_time(Option<DateTime>)`](crate::output::UpdateEntityOutput::update_date_time): <p>The date and time when the entity was last updated.</p>
+    ///   - [`state(Option<State>)`](crate::output::UpdateEntityOutput::state): <p>The current state of the entity update.</p>
+    /// - On failure, responds with [`SdkError<UpdateEntityError>`](crate::error::UpdateEntityError)
     pub fn update_entity(&self) -> fluent_builders::UpdateEntity<C, M, R> {
         fluent_builders::UpdateEntity::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateScene` operation.
+    /// Constructs a fluent builder for the [`UpdateScene`](crate::client::fluent_builders::UpdateScene) operation.
     ///
-    /// See [`UpdateScene`](crate::client::fluent_builders::UpdateScene) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateSceneInput`](crate::input::UpdateSceneInput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::input::UpdateSceneInput::workspace_id): <p>The ID of the workspace that contains the scene.</p>
+    ///   - [`scene_id(Option<String>)`](crate::input::UpdateSceneInput::scene_id): <p>The ID of the scene.</p>
+    ///   - [`content_location(Option<String>)`](crate::input::UpdateSceneInput::content_location): <p>The relative path that specifies the location of the content definition file.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateSceneInput::description): <p>The description of this scene.</p>
+    ///   - [`capabilities(Option<Vec<String>>)`](crate::input::UpdateSceneInput::capabilities): <p>A list of capabilities that the scene uses to render.</p>
+    /// - On success, responds with [`UpdateSceneOutput`](crate::output::UpdateSceneOutput) with field(s):
+    ///   - [`update_date_time(Option<DateTime>)`](crate::output::UpdateSceneOutput::update_date_time): <p>The date and time when the scene was last updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateSceneError>`](crate::error::UpdateSceneError)
     pub fn update_scene(&self) -> fluent_builders::UpdateScene<C, M, R> {
         fluent_builders::UpdateScene::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateWorkspace` operation.
+    /// Constructs a fluent builder for the [`UpdateWorkspace`](crate::client::fluent_builders::UpdateWorkspace) operation.
     ///
-    /// See [`UpdateWorkspace`](crate::client::fluent_builders::UpdateWorkspace) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateWorkspaceInput`](crate::input::UpdateWorkspaceInput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::input::UpdateWorkspaceInput::workspace_id): <p>The ID of the workspace.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateWorkspaceInput::description): <p>The description of the workspace.</p>
+    ///   - [`role(Option<String>)`](crate::input::UpdateWorkspaceInput::role): <p>The ARN of the execution role associated with the workspace.</p>
+    /// - On success, responds with [`UpdateWorkspaceOutput`](crate::output::UpdateWorkspaceOutput) with field(s):
+    ///   - [`update_date_time(Option<DateTime>)`](crate::output::UpdateWorkspaceOutput::update_date_time): <p>The date and time of the current update.</p>
+    /// - On failure, responds with [`SdkError<UpdateWorkspaceError>`](crate::error::UpdateWorkspaceError)
     pub fn update_workspace(&self) -> fluent_builders::UpdateWorkspace<C, M, R> {
         fluent_builders::UpdateWorkspace::new(self.handle.clone())
     }

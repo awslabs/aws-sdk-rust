@@ -83,133 +83,260 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `ConfigureLogs` operation.
+    /// Constructs a fluent builder for the [`ConfigureLogs`](crate::client::fluent_builders::ConfigureLogs) operation.
     ///
-    /// See [`ConfigureLogs`](crate::client::fluent_builders::ConfigureLogs) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ConfigureLogsInput`](crate::input::ConfigureLogsInput) with field(s):
+    ///   - [`egress_access_logs(Option<EgressAccessLogs>)`](crate::input::ConfigureLogsInput::egress_access_logs): Configure egress access logging.
+    ///   - [`id(Option<String>)`](crate::input::ConfigureLogsInput::id): The ID of a MediaPackage VOD PackagingGroup resource.
+    /// - On success, responds with [`ConfigureLogsOutput`](crate::output::ConfigureLogsOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::ConfigureLogsOutput::arn): The ARN of the PackagingGroup.
+    ///   - [`authorization(Option<Authorization>)`](crate::output::ConfigureLogsOutput::authorization): CDN Authorization credentials
+    ///   - [`domain_name(Option<String>)`](crate::output::ConfigureLogsOutput::domain_name): The fully qualified domain name for Assets in the PackagingGroup.
+    ///   - [`egress_access_logs(Option<EgressAccessLogs>)`](crate::output::ConfigureLogsOutput::egress_access_logs): Configure egress access logging.
+    ///   - [`id(Option<String>)`](crate::output::ConfigureLogsOutput::id): The ID of the PackagingGroup.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ConfigureLogsOutput::tags): A collection of tags associated with a resource
+    /// - On failure, responds with [`SdkError<ConfigureLogsError>`](crate::error::ConfigureLogsError)
     pub fn configure_logs(&self) -> fluent_builders::ConfigureLogs<C, M, R> {
         fluent_builders::ConfigureLogs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateAsset` operation.
+    /// Constructs a fluent builder for the [`CreateAsset`](crate::client::fluent_builders::CreateAsset) operation.
     ///
-    /// See [`CreateAsset`](crate::client::fluent_builders::CreateAsset) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateAssetInput`](crate::input::CreateAssetInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::CreateAssetInput::id): The unique identifier for the Asset.
+    ///   - [`packaging_group_id(Option<String>)`](crate::input::CreateAssetInput::packaging_group_id): The ID of the PackagingGroup for the Asset.
+    ///   - [`resource_id(Option<String>)`](crate::input::CreateAssetInput::resource_id): The resource ID to include in SPEKE key requests.
+    ///   - [`source_arn(Option<String>)`](crate::input::CreateAssetInput::source_arn): ARN of the source object in S3.
+    ///   - [`source_role_arn(Option<String>)`](crate::input::CreateAssetInput::source_role_arn): The IAM role ARN used to access the source S3 bucket.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateAssetInput::tags): A collection of tags associated with a resource
+    /// - On success, responds with [`CreateAssetOutput`](crate::output::CreateAssetOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateAssetOutput::arn): The ARN of the Asset.
+    ///   - [`created_at(Option<String>)`](crate::output::CreateAssetOutput::created_at): The time the Asset was initially submitted for Ingest.
+    ///   - [`egress_endpoints(Option<Vec<EgressEndpoint>>)`](crate::output::CreateAssetOutput::egress_endpoints): The list of egress endpoints available for the Asset.
+    ///   - [`id(Option<String>)`](crate::output::CreateAssetOutput::id): The unique identifier for the Asset.
+    ///   - [`packaging_group_id(Option<String>)`](crate::output::CreateAssetOutput::packaging_group_id): The ID of the PackagingGroup for the Asset.
+    ///   - [`resource_id(Option<String>)`](crate::output::CreateAssetOutput::resource_id): The resource ID to include in SPEKE key requests.
+    ///   - [`source_arn(Option<String>)`](crate::output::CreateAssetOutput::source_arn): ARN of the source object in S3.
+    ///   - [`source_role_arn(Option<String>)`](crate::output::CreateAssetOutput::source_role_arn): The IAM role_arn used to access the source S3 bucket.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateAssetOutput::tags): A collection of tags associated with a resource
+    /// - On failure, responds with [`SdkError<CreateAssetError>`](crate::error::CreateAssetError)
     pub fn create_asset(&self) -> fluent_builders::CreateAsset<C, M, R> {
         fluent_builders::CreateAsset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreatePackagingConfiguration` operation.
+    /// Constructs a fluent builder for the [`CreatePackagingConfiguration`](crate::client::fluent_builders::CreatePackagingConfiguration) operation.
     ///
-    /// See [`CreatePackagingConfiguration`](crate::client::fluent_builders::CreatePackagingConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreatePackagingConfigurationInput`](crate::input::CreatePackagingConfigurationInput) with field(s):
+    ///   - [`cmaf_package(Option<CmafPackage>)`](crate::input::CreatePackagingConfigurationInput::cmaf_package): A CMAF packaging configuration.
+    ///   - [`dash_package(Option<DashPackage>)`](crate::input::CreatePackagingConfigurationInput::dash_package): A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
+    ///   - [`hls_package(Option<HlsPackage>)`](crate::input::CreatePackagingConfigurationInput::hls_package): An HTTP Live Streaming (HLS) packaging configuration.
+    ///   - [`id(Option<String>)`](crate::input::CreatePackagingConfigurationInput::id): The ID of the PackagingConfiguration.
+    ///   - [`mss_package(Option<MssPackage>)`](crate::input::CreatePackagingConfigurationInput::mss_package): A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
+    ///   - [`packaging_group_id(Option<String>)`](crate::input::CreatePackagingConfigurationInput::packaging_group_id): The ID of a PackagingGroup.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreatePackagingConfigurationInput::tags): A collection of tags associated with a resource
+    /// - On success, responds with [`CreatePackagingConfigurationOutput`](crate::output::CreatePackagingConfigurationOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreatePackagingConfigurationOutput::arn): The ARN of the PackagingConfiguration.
+    ///   - [`cmaf_package(Option<CmafPackage>)`](crate::output::CreatePackagingConfigurationOutput::cmaf_package): A CMAF packaging configuration.
+    ///   - [`dash_package(Option<DashPackage>)`](crate::output::CreatePackagingConfigurationOutput::dash_package): A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
+    ///   - [`hls_package(Option<HlsPackage>)`](crate::output::CreatePackagingConfigurationOutput::hls_package): An HTTP Live Streaming (HLS) packaging configuration.
+    ///   - [`id(Option<String>)`](crate::output::CreatePackagingConfigurationOutput::id): The ID of the PackagingConfiguration.
+    ///   - [`mss_package(Option<MssPackage>)`](crate::output::CreatePackagingConfigurationOutput::mss_package): A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
+    ///   - [`packaging_group_id(Option<String>)`](crate::output::CreatePackagingConfigurationOutput::packaging_group_id): The ID of a PackagingGroup.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreatePackagingConfigurationOutput::tags): A collection of tags associated with a resource
+    /// - On failure, responds with [`SdkError<CreatePackagingConfigurationError>`](crate::error::CreatePackagingConfigurationError)
     pub fn create_packaging_configuration(
         &self,
     ) -> fluent_builders::CreatePackagingConfiguration<C, M, R> {
         fluent_builders::CreatePackagingConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreatePackagingGroup` operation.
+    /// Constructs a fluent builder for the [`CreatePackagingGroup`](crate::client::fluent_builders::CreatePackagingGroup) operation.
     ///
-    /// See [`CreatePackagingGroup`](crate::client::fluent_builders::CreatePackagingGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreatePackagingGroupInput`](crate::input::CreatePackagingGroupInput) with field(s):
+    ///   - [`authorization(Option<Authorization>)`](crate::input::CreatePackagingGroupInput::authorization): CDN Authorization credentials
+    ///   - [`egress_access_logs(Option<EgressAccessLogs>)`](crate::input::CreatePackagingGroupInput::egress_access_logs): Configure egress access logging.
+    ///   - [`id(Option<String>)`](crate::input::CreatePackagingGroupInput::id): The ID of the PackagingGroup.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreatePackagingGroupInput::tags): A collection of tags associated with a resource
+    /// - On success, responds with [`CreatePackagingGroupOutput`](crate::output::CreatePackagingGroupOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreatePackagingGroupOutput::arn): The ARN of the PackagingGroup.
+    ///   - [`authorization(Option<Authorization>)`](crate::output::CreatePackagingGroupOutput::authorization): CDN Authorization credentials
+    ///   - [`domain_name(Option<String>)`](crate::output::CreatePackagingGroupOutput::domain_name): The fully qualified domain name for Assets in the PackagingGroup.
+    ///   - [`egress_access_logs(Option<EgressAccessLogs>)`](crate::output::CreatePackagingGroupOutput::egress_access_logs): Configure egress access logging.
+    ///   - [`id(Option<String>)`](crate::output::CreatePackagingGroupOutput::id): The ID of the PackagingGroup.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreatePackagingGroupOutput::tags): A collection of tags associated with a resource
+    /// - On failure, responds with [`SdkError<CreatePackagingGroupError>`](crate::error::CreatePackagingGroupError)
     pub fn create_packaging_group(&self) -> fluent_builders::CreatePackagingGroup<C, M, R> {
         fluent_builders::CreatePackagingGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAsset` operation.
+    /// Constructs a fluent builder for the [`DeleteAsset`](crate::client::fluent_builders::DeleteAsset) operation.
     ///
-    /// See [`DeleteAsset`](crate::client::fluent_builders::DeleteAsset) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteAssetInput`](crate::input::DeleteAssetInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::DeleteAssetInput::id): The ID of the MediaPackage VOD Asset resource to delete.
+    /// - On success, responds with [`DeleteAssetOutput`](crate::output::DeleteAssetOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAssetError>`](crate::error::DeleteAssetError)
     pub fn delete_asset(&self) -> fluent_builders::DeleteAsset<C, M, R> {
         fluent_builders::DeleteAsset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeletePackagingConfiguration` operation.
+    /// Constructs a fluent builder for the [`DeletePackagingConfiguration`](crate::client::fluent_builders::DeletePackagingConfiguration) operation.
     ///
-    /// See [`DeletePackagingConfiguration`](crate::client::fluent_builders::DeletePackagingConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeletePackagingConfigurationInput`](crate::input::DeletePackagingConfigurationInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::DeletePackagingConfigurationInput::id): The ID of the MediaPackage VOD PackagingConfiguration resource to delete.
+    /// - On success, responds with [`DeletePackagingConfigurationOutput`](crate::output::DeletePackagingConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<DeletePackagingConfigurationError>`](crate::error::DeletePackagingConfigurationError)
     pub fn delete_packaging_configuration(
         &self,
     ) -> fluent_builders::DeletePackagingConfiguration<C, M, R> {
         fluent_builders::DeletePackagingConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeletePackagingGroup` operation.
+    /// Constructs a fluent builder for the [`DeletePackagingGroup`](crate::client::fluent_builders::DeletePackagingGroup) operation.
     ///
-    /// See [`DeletePackagingGroup`](crate::client::fluent_builders::DeletePackagingGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeletePackagingGroupInput`](crate::input::DeletePackagingGroupInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::DeletePackagingGroupInput::id): The ID of the MediaPackage VOD PackagingGroup resource to delete.
+    /// - On success, responds with [`DeletePackagingGroupOutput`](crate::output::DeletePackagingGroupOutput)
+
+    /// - On failure, responds with [`SdkError<DeletePackagingGroupError>`](crate::error::DeletePackagingGroupError)
     pub fn delete_packaging_group(&self) -> fluent_builders::DeletePackagingGroup<C, M, R> {
         fluent_builders::DeletePackagingGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAsset` operation.
+    /// Constructs a fluent builder for the [`DescribeAsset`](crate::client::fluent_builders::DescribeAsset) operation.
     ///
-    /// See [`DescribeAsset`](crate::client::fluent_builders::DescribeAsset) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeAssetInput`](crate::input::DescribeAssetInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::DescribeAssetInput::id): The ID of an MediaPackage VOD Asset resource.
+    /// - On success, responds with [`DescribeAssetOutput`](crate::output::DescribeAssetOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::DescribeAssetOutput::arn): The ARN of the Asset.
+    ///   - [`created_at(Option<String>)`](crate::output::DescribeAssetOutput::created_at): The time the Asset was initially submitted for Ingest.
+    ///   - [`egress_endpoints(Option<Vec<EgressEndpoint>>)`](crate::output::DescribeAssetOutput::egress_endpoints): The list of egress endpoints available for the Asset.
+    ///   - [`id(Option<String>)`](crate::output::DescribeAssetOutput::id): The unique identifier for the Asset.
+    ///   - [`packaging_group_id(Option<String>)`](crate::output::DescribeAssetOutput::packaging_group_id): The ID of the PackagingGroup for the Asset.
+    ///   - [`resource_id(Option<String>)`](crate::output::DescribeAssetOutput::resource_id): The resource ID to include in SPEKE key requests.
+    ///   - [`source_arn(Option<String>)`](crate::output::DescribeAssetOutput::source_arn): ARN of the source object in S3.
+    ///   - [`source_role_arn(Option<String>)`](crate::output::DescribeAssetOutput::source_role_arn): The IAM role_arn used to access the source S3 bucket.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeAssetOutput::tags): A collection of tags associated with a resource
+    /// - On failure, responds with [`SdkError<DescribeAssetError>`](crate::error::DescribeAssetError)
     pub fn describe_asset(&self) -> fluent_builders::DescribeAsset<C, M, R> {
         fluent_builders::DescribeAsset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribePackagingConfiguration` operation.
+    /// Constructs a fluent builder for the [`DescribePackagingConfiguration`](crate::client::fluent_builders::DescribePackagingConfiguration) operation.
     ///
-    /// See [`DescribePackagingConfiguration`](crate::client::fluent_builders::DescribePackagingConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribePackagingConfigurationInput`](crate::input::DescribePackagingConfigurationInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::DescribePackagingConfigurationInput::id): The ID of a MediaPackage VOD PackagingConfiguration resource.
+    /// - On success, responds with [`DescribePackagingConfigurationOutput`](crate::output::DescribePackagingConfigurationOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::DescribePackagingConfigurationOutput::arn): The ARN of the PackagingConfiguration.
+    ///   - [`cmaf_package(Option<CmafPackage>)`](crate::output::DescribePackagingConfigurationOutput::cmaf_package): A CMAF packaging configuration.
+    ///   - [`dash_package(Option<DashPackage>)`](crate::output::DescribePackagingConfigurationOutput::dash_package): A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
+    ///   - [`hls_package(Option<HlsPackage>)`](crate::output::DescribePackagingConfigurationOutput::hls_package): An HTTP Live Streaming (HLS) packaging configuration.
+    ///   - [`id(Option<String>)`](crate::output::DescribePackagingConfigurationOutput::id): The ID of the PackagingConfiguration.
+    ///   - [`mss_package(Option<MssPackage>)`](crate::output::DescribePackagingConfigurationOutput::mss_package): A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
+    ///   - [`packaging_group_id(Option<String>)`](crate::output::DescribePackagingConfigurationOutput::packaging_group_id): The ID of a PackagingGroup.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribePackagingConfigurationOutput::tags): A collection of tags associated with a resource
+    /// - On failure, responds with [`SdkError<DescribePackagingConfigurationError>`](crate::error::DescribePackagingConfigurationError)
     pub fn describe_packaging_configuration(
         &self,
     ) -> fluent_builders::DescribePackagingConfiguration<C, M, R> {
         fluent_builders::DescribePackagingConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribePackagingGroup` operation.
+    /// Constructs a fluent builder for the [`DescribePackagingGroup`](crate::client::fluent_builders::DescribePackagingGroup) operation.
     ///
-    /// See [`DescribePackagingGroup`](crate::client::fluent_builders::DescribePackagingGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribePackagingGroupInput`](crate::input::DescribePackagingGroupInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::DescribePackagingGroupInput::id): The ID of a MediaPackage VOD PackagingGroup resource.
+    /// - On success, responds with [`DescribePackagingGroupOutput`](crate::output::DescribePackagingGroupOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::DescribePackagingGroupOutput::arn): The ARN of the PackagingGroup.
+    ///   - [`authorization(Option<Authorization>)`](crate::output::DescribePackagingGroupOutput::authorization): CDN Authorization credentials
+    ///   - [`domain_name(Option<String>)`](crate::output::DescribePackagingGroupOutput::domain_name): The fully qualified domain name for Assets in the PackagingGroup.
+    ///   - [`egress_access_logs(Option<EgressAccessLogs>)`](crate::output::DescribePackagingGroupOutput::egress_access_logs): Configure egress access logging.
+    ///   - [`id(Option<String>)`](crate::output::DescribePackagingGroupOutput::id): The ID of the PackagingGroup.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribePackagingGroupOutput::tags): A collection of tags associated with a resource
+    /// - On failure, responds with [`SdkError<DescribePackagingGroupError>`](crate::error::DescribePackagingGroupError)
     pub fn describe_packaging_group(&self) -> fluent_builders::DescribePackagingGroup<C, M, R> {
         fluent_builders::DescribePackagingGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAssets` operation.
-    ///
-    /// See [`ListAssets`](crate::client::fluent_builders::ListAssets) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListAssets`](crate::client::fluent_builders::ListAssets) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAssets::into_paginator).
+    ///
+    /// - Takes [`ListAssetsInput`](crate::input::ListAssetsInput) with field(s):
+    ///   - [`max_results(i32)`](crate::input::ListAssetsInput::max_results): Upper bound on number of records to return.
+    ///   - [`next_token(Option<String>)`](crate::input::ListAssetsInput::next_token): A token used to resume pagination from the end of a previous request.
+    ///   - [`packaging_group_id(Option<String>)`](crate::input::ListAssetsInput::packaging_group_id): Returns Assets associated with the specified PackagingGroup.
+    /// - On success, responds with [`ListAssetsOutput`](crate::output::ListAssetsOutput) with field(s):
+    ///   - [`assets(Option<Vec<AssetShallow>>)`](crate::output::ListAssetsOutput::assets): A list of MediaPackage VOD Asset resources.
+    ///   - [`next_token(Option<String>)`](crate::output::ListAssetsOutput::next_token): A token that can be used to resume pagination from the end of the collection.
+    /// - On failure, responds with [`SdkError<ListAssetsError>`](crate::error::ListAssetsError)
     pub fn list_assets(&self) -> fluent_builders::ListAssets<C, M, R> {
         fluent_builders::ListAssets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPackagingConfigurations` operation.
-    ///
-    /// See [`ListPackagingConfigurations`](crate::client::fluent_builders::ListPackagingConfigurations) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListPackagingConfigurations`](crate::client::fluent_builders::ListPackagingConfigurations) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPackagingConfigurations::into_paginator).
+    ///
+    /// - Takes [`ListPackagingConfigurationsInput`](crate::input::ListPackagingConfigurationsInput) with field(s):
+    ///   - [`max_results(i32)`](crate::input::ListPackagingConfigurationsInput::max_results): Upper bound on number of records to return.
+    ///   - [`next_token(Option<String>)`](crate::input::ListPackagingConfigurationsInput::next_token): A token used to resume pagination from the end of a previous request.
+    ///   - [`packaging_group_id(Option<String>)`](crate::input::ListPackagingConfigurationsInput::packaging_group_id): Returns MediaPackage VOD PackagingConfigurations associated with the specified PackagingGroup.
+    /// - On success, responds with [`ListPackagingConfigurationsOutput`](crate::output::ListPackagingConfigurationsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListPackagingConfigurationsOutput::next_token): A token that can be used to resume pagination from the end of the collection.
+    ///   - [`packaging_configurations(Option<Vec<PackagingConfiguration>>)`](crate::output::ListPackagingConfigurationsOutput::packaging_configurations): A list of MediaPackage VOD PackagingConfiguration resources.
+    /// - On failure, responds with [`SdkError<ListPackagingConfigurationsError>`](crate::error::ListPackagingConfigurationsError)
     pub fn list_packaging_configurations(
         &self,
     ) -> fluent_builders::ListPackagingConfigurations<C, M, R> {
         fluent_builders::ListPackagingConfigurations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPackagingGroups` operation.
-    ///
-    /// See [`ListPackagingGroups`](crate::client::fluent_builders::ListPackagingGroups) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListPackagingGroups`](crate::client::fluent_builders::ListPackagingGroups) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPackagingGroups::into_paginator).
+    ///
+    /// - Takes [`ListPackagingGroupsInput`](crate::input::ListPackagingGroupsInput) with field(s):
+    ///   - [`max_results(i32)`](crate::input::ListPackagingGroupsInput::max_results): Upper bound on number of records to return.
+    ///   - [`next_token(Option<String>)`](crate::input::ListPackagingGroupsInput::next_token): A token used to resume pagination from the end of a previous request.
+    /// - On success, responds with [`ListPackagingGroupsOutput`](crate::output::ListPackagingGroupsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListPackagingGroupsOutput::next_token): A token that can be used to resume pagination from the end of the collection.
+    ///   - [`packaging_groups(Option<Vec<PackagingGroup>>)`](crate::output::ListPackagingGroupsOutput::packaging_groups): A list of MediaPackage VOD PackagingGroup resources.
+    /// - On failure, responds with [`SdkError<ListPackagingGroupsError>`](crate::error::ListPackagingGroupsError)
     pub fn list_packaging_groups(&self) -> fluent_builders::ListPackagingGroups<C, M, R> {
         fluent_builders::ListPackagingGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): A collection of tags associated with a resource
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): A collection of tags associated with a resource
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): A comma-separated list of the tag keys to remove from the resource.
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdatePackagingGroup` operation.
+    /// Constructs a fluent builder for the [`UpdatePackagingGroup`](crate::client::fluent_builders::UpdatePackagingGroup) operation.
     ///
-    /// See [`UpdatePackagingGroup`](crate::client::fluent_builders::UpdatePackagingGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdatePackagingGroupInput`](crate::input::UpdatePackagingGroupInput) with field(s):
+    ///   - [`authorization(Option<Authorization>)`](crate::input::UpdatePackagingGroupInput::authorization): CDN Authorization credentials
+    ///   - [`id(Option<String>)`](crate::input::UpdatePackagingGroupInput::id): The ID of a MediaPackage VOD PackagingGroup resource.
+    /// - On success, responds with [`UpdatePackagingGroupOutput`](crate::output::UpdatePackagingGroupOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::UpdatePackagingGroupOutput::arn): The ARN of the PackagingGroup.
+    ///   - [`authorization(Option<Authorization>)`](crate::output::UpdatePackagingGroupOutput::authorization): CDN Authorization credentials
+    ///   - [`domain_name(Option<String>)`](crate::output::UpdatePackagingGroupOutput::domain_name): The fully qualified domain name for Assets in the PackagingGroup.
+    ///   - [`egress_access_logs(Option<EgressAccessLogs>)`](crate::output::UpdatePackagingGroupOutput::egress_access_logs): Configure egress access logging.
+    ///   - [`id(Option<String>)`](crate::output::UpdatePackagingGroupOutput::id): The ID of the PackagingGroup.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdatePackagingGroupOutput::tags): A collection of tags associated with a resource
+    /// - On failure, responds with [`SdkError<UpdatePackagingGroupError>`](crate::error::UpdatePackagingGroupError)
     pub fn update_packaging_group(&self) -> fluent_builders::UpdatePackagingGroup<C, M, R> {
         fluent_builders::UpdatePackagingGroup::new(self.handle.clone())
     }

@@ -83,234 +83,437 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateAccess` operation.
+    /// Constructs a fluent builder for the [`CreateAccess`](crate::client::fluent_builders::CreateAccess) operation.
     ///
-    /// See [`CreateAccess`](crate::client::fluent_builders::CreateAccess) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateAccessInput`](crate::input::CreateAccessInput) with field(s):
+    ///   - [`home_directory(Option<String>)`](crate::input::CreateAccessInput::home_directory): <p>The landing directory (folder) for a user when they log in to the server using the client.</p>  <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
+    ///   - [`home_directory_type(Option<HomeDirectoryType>)`](crate::input::CreateAccessInput::home_directory_type): <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
+    ///   - [`home_directory_mappings(Option<Vec<HomeDirectoryMapEntry>>)`](crate::input::CreateAccessInput::home_directory_mappings): <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>  <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>  <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>  <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>  <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>  <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <note>   <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>  </note>
+    ///   - [`policy(Option<String>)`](crate::input::CreateAccessInput::policy): <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>   <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>   <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>   <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session policy</a>.</p>   <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>  </note>
+    ///   - [`posix_profile(Option<PosixProfile>)`](crate::input::CreateAccessInput::posix_profile): <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon EFS file systems. The POSIX permissions that are set on files and directories in your file system determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
+    ///   - [`role(Option<String>)`](crate::input::CreateAccessInput::role): <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
+    ///   - [`server_id(Option<String>)`](crate::input::CreateAccessInput::server_id): <p>A system-assigned unique identifier for a server instance. This is the specific server that you added your user to.</p>
+    ///   - [`external_id(Option<String>)`](crate::input::CreateAccessInput::external_id): <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>  <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>  <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>  <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
+    /// - On success, responds with [`CreateAccessOutput`](crate::output::CreateAccessOutput) with field(s):
+    ///   - [`server_id(Option<String>)`](crate::output::CreateAccessOutput::server_id): <p>The ID of the server that the user is attached to.</p>
+    ///   - [`external_id(Option<String>)`](crate::output::CreateAccessOutput::external_id): <p>The external ID of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family.</p>
+    /// - On failure, responds with [`SdkError<CreateAccessError>`](crate::error::CreateAccessError)
     pub fn create_access(&self) -> fluent_builders::CreateAccess<C, M, R> {
         fluent_builders::CreateAccess::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateServer` operation.
+    /// Constructs a fluent builder for the [`CreateServer`](crate::client::fluent_builders::CreateServer) operation.
     ///
-    /// See [`CreateServer`](crate::client::fluent_builders::CreateServer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateServerInput`](crate::input::CreateServerInput) with field(s):
+    ///   - [`certificate(Option<String>)`](crate::input::CreateServerInput::certificate): <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>  <p>To request a new public certificate, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public certificate</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>  <p>To import an existing certificate into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into ACM</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>  <p>To request a private certificate to use FTPS through private IP addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private certificate</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>  <p>Certificates with the following cryptographic algorithms and key sizes are supported:</p>  <ul>   <li> <p>2048-bit RSA (RSA_2048)</p> </li>   <li> <p>4096-bit RSA (RSA_4096)</p> </li>   <li> <p>Elliptic Prime Curve 256 bit (EC_prime256v1)</p> </li>   <li> <p>Elliptic Prime Curve 384 bit (EC_secp384r1)</p> </li>   <li> <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p> </li>  </ul> <note>   <p>The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP address specified and information about the issuer.</p>  </note>
+    ///   - [`domain(Option<Domain>)`](crate::input::CreateServerInput::domain): <p>The domain of the storage system that is used for file transfers. There are two domains available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.</p> <note>   <p>After the server is created, the domain cannot be changed.</p>  </note>
+    ///   - [`endpoint_details(Option<EndpointDetails>)`](crate::input::CreateServerInput::endpoint_details): <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
+    ///   - [`endpoint_type(Option<EndpointType>)`](crate::input::CreateServerInput::endpoint_type): <p>The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access to your server and resources only within your VPC or choose to make it internet facing by attaching Elastic IP addresses directly to it.</p> <note>   <p> After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account if your account hasn't already done so before May 19, 2021. If you have already created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account on or before May 19, 2021, you will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.</p>   <p>For more information, see https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>   <p>It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your server's endpoint and use VPC security groups to restrict traffic by the client's public IP address. This is not possible with <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p>  </note>
+    ///   - [`host_key(Option<String>)`](crate::input::CreateServerInput::host_key): <p>The RSA private key as generated by the <code>ssh-keygen -N "" -m PEM -f my-new-server-key</code> command.</p> <important>   <p>If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>  </important>  <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services Transfer Family User Guide</i>.</p>
+    ///   - [`identity_provider_details(Option<IdentityProviderDetails>)`](crate::input::CreateServerInput::identity_provider_details): <p>Required when <code>IdentityProviderType</code> is set to <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>. Accepts an array containing all of the information required to use a directory in <code>AWS_DIRECTORY_SERVICE</code> or invoke a customer-supplied authentication API, including the API Gateway URL. Not required when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.</p>
+    ///   - [`identity_provider_type(Option<IdentityProviderType>)`](crate::input::CreateServerInput::identity_provider_type): <p>Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Amazon Web Services Transfer Family service.</p>  <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Amazon Web Services Managed Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connectors. This option also requires you to provide a Directory ID using the <code>IdentityProviderDetails</code> parameter.</p>  <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication using the <code>IdentityProviderDetails</code> parameter.</p>  <p>Use the <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose this value, you must specify the ARN for the lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
+    ///   - [`logging_role(Option<String>)`](crate::input::CreateServerInput::logging_role): <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
+    ///   - [`protocols(Option<Vec<Protocol>>)`](crate::input::CreateServerInput::protocols): <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>  <ul>   <li> <p> <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH</p> </li>   <li> <p> <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>   <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p> </li>  </ul> <note>   <p>If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web Services Certificate Manager (ACM) which is used to identify your server when clients connect to it over FTPS.</p>   <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p>   <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p>   <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.</p>  </note>
+    ///   - [`protocol_details(Option<ProtocolDetails>)`](crate::input::CreateServerInput::protocol_details): <p>The protocol settings that are configured for your server.</p>  <p> Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS protocols). Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. </p>  <p>Use the <code>TlsSessionResumptionMode</code> parameter to determine whether or not your Transfer server resumes recent, negotiated sessions through a unique session ID.</p>
+    ///   - [`security_policy_name(Option<String>)`](crate::input::CreateServerInput::security_policy_name): <p>Specifies the name of the security policy that is attached to the server.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateServerInput::tags): <p>Key-value pairs that can be used to group and search for servers.</p>
+    ///   - [`workflow_details(Option<WorkflowDetails>)`](crate::input::CreateServerInput::workflow_details): <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
+    /// - On success, responds with [`CreateServerOutput`](crate::output::CreateServerOutput) with field(s):
+    ///   - [`server_id(Option<String>)`](crate::output::CreateServerOutput::server_id): <p>The service-assigned ID of the server that is created.</p>
+    /// - On failure, responds with [`SdkError<CreateServerError>`](crate::error::CreateServerError)
     pub fn create_server(&self) -> fluent_builders::CreateServer<C, M, R> {
         fluent_builders::CreateServer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateUser` operation.
+    /// Constructs a fluent builder for the [`CreateUser`](crate::client::fluent_builders::CreateUser) operation.
     ///
-    /// See [`CreateUser`](crate::client::fluent_builders::CreateUser) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateUserInput`](crate::input::CreateUserInput) with field(s):
+    ///   - [`home_directory(Option<String>)`](crate::input::CreateUserInput::home_directory): <p>The landing directory (folder) for a user when they log in to the server using the client.</p>  <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
+    ///   - [`home_directory_type(Option<HomeDirectoryType>)`](crate::input::CreateUserInput::home_directory_type): <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
+    ///   - [`home_directory_mappings(Option<Vec<HomeDirectoryMapEntry>>)`](crate::input::CreateUserInput::home_directory_mappings): <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>  <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>  <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>  <p>In most cases, you can use this value instead of the session policy to lock your user down to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the HomeDirectory parameter value.</p>  <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>  <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <note>   <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>  </note>
+    ///   - [`policy(Option<String>)`](crate::input::CreateUserInput::policy): <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>   <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>   <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>   <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session policy</a>.</p>   <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>  </note>
+    ///   - [`posix_profile(Option<PosixProfile>)`](crate::input::CreateUserInput::posix_profile): <p>Specifies the full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon EFS file systems. The POSIX permissions that are set on files and directories in Amazon EFS determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
+    ///   - [`role(Option<String>)`](crate::input::CreateUserInput::role): <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
+    ///   - [`server_id(Option<String>)`](crate::input::CreateUserInput::server_id): <p>A system-assigned unique identifier for a server instance. This is the specific server that you added your user to.</p>
+    ///   - [`ssh_public_key_body(Option<String>)`](crate::input::CreateUserInput::ssh_public_key_body): <p>The public portion of the Secure Shell (SSH) key used to authenticate the user to the server.</p> <note>   <p> Currently, Transfer Family does not accept elliptical curve keys (keys beginning with <code>ecdsa</code>). </p>  </note>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateUserInput::tags): <p>Key-value pairs that can be used to group and search for users. Tags are metadata attached to users for any purpose.</p>
+    ///   - [`user_name(Option<String>)`](crate::input::CreateUserInput::user_name): <p>A unique string that identifies a user and is associated with a <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'. The user name can't start with a hyphen, period, or at sign.</p>
+    /// - On success, responds with [`CreateUserOutput`](crate::output::CreateUserOutput) with field(s):
+    ///   - [`server_id(Option<String>)`](crate::output::CreateUserOutput::server_id): <p>The ID of the server that the user is attached to.</p>
+    ///   - [`user_name(Option<String>)`](crate::output::CreateUserOutput::user_name): <p>A unique string that identifies a user account associated with a server.</p>
+    /// - On failure, responds with [`SdkError<CreateUserError>`](crate::error::CreateUserError)
     pub fn create_user(&self) -> fluent_builders::CreateUser<C, M, R> {
         fluent_builders::CreateUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateWorkflow` operation.
+    /// Constructs a fluent builder for the [`CreateWorkflow`](crate::client::fluent_builders::CreateWorkflow) operation.
     ///
-    /// See [`CreateWorkflow`](crate::client::fluent_builders::CreateWorkflow) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateWorkflowInput`](crate::input::CreateWorkflowInput) with field(s):
+    ///   - [`description(Option<String>)`](crate::input::CreateWorkflowInput::description): <p>A textual description for the workflow.</p>
+    ///   - [`steps(Option<Vec<WorkflowStep>>)`](crate::input::CreateWorkflowInput::steps): <p>Specifies the details for the steps that are in the specified workflow.</p>  <p> The <code>TYPE</code> specifies which of the following actions is being taken for this step. </p>  <ul>   <li> <p> <i>Copy</i>: copy the file to another location</p> </li>   <li> <p> <i>Custom</i>: custom step with a lambda target</p> </li>   <li> <p> <i>Delete</i>: delete the file</p> </li>   <li> <p> <i>Tag</i>: add a tag to the file</p> </li>  </ul> <note>   <p> Currently, copying and tagging are supported only on S3. </p>  </note>  <p> For file location, you specify either the S3 bucket and key, or the EFS filesystem ID and path. </p>
+    ///   - [`on_exception_steps(Option<Vec<WorkflowStep>>)`](crate::input::CreateWorkflowInput::on_exception_steps): <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p> <note>   <p>For custom steps, the lambda function needs to send <code>FAILURE</code> to the call back API to kick off the exception steps. Additionally, if the lambda does not send <code>SUCCESS</code> before it times out, the exception steps are executed.</p>  </note>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateWorkflowInput::tags): <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached to workflows for any purpose.</p>
+    /// - On success, responds with [`CreateWorkflowOutput`](crate::output::CreateWorkflowOutput) with field(s):
+    ///   - [`workflow_id(Option<String>)`](crate::output::CreateWorkflowOutput::workflow_id): <p>A unique identifier for the workflow.</p>
+    /// - On failure, responds with [`SdkError<CreateWorkflowError>`](crate::error::CreateWorkflowError)
     pub fn create_workflow(&self) -> fluent_builders::CreateWorkflow<C, M, R> {
         fluent_builders::CreateWorkflow::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAccess` operation.
+    /// Constructs a fluent builder for the [`DeleteAccess`](crate::client::fluent_builders::DeleteAccess) operation.
     ///
-    /// See [`DeleteAccess`](crate::client::fluent_builders::DeleteAccess) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteAccessInput`](crate::input::DeleteAccessInput) with field(s):
+    ///   - [`server_id(Option<String>)`](crate::input::DeleteAccessInput::server_id): <p>A system-assigned unique identifier for a server that has this user assigned.</p>
+    ///   - [`external_id(Option<String>)`](crate::input::DeleteAccessInput::external_id): <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>  <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>  <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>  <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
+    /// - On success, responds with [`DeleteAccessOutput`](crate::output::DeleteAccessOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAccessError>`](crate::error::DeleteAccessError)
     pub fn delete_access(&self) -> fluent_builders::DeleteAccess<C, M, R> {
         fluent_builders::DeleteAccess::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteServer` operation.
+    /// Constructs a fluent builder for the [`DeleteServer`](crate::client::fluent_builders::DeleteServer) operation.
     ///
-    /// See [`DeleteServer`](crate::client::fluent_builders::DeleteServer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteServerInput`](crate::input::DeleteServerInput) with field(s):
+    ///   - [`server_id(Option<String>)`](crate::input::DeleteServerInput::server_id): <p>A unique system-assigned identifier for a server instance.</p>
+    /// - On success, responds with [`DeleteServerOutput`](crate::output::DeleteServerOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteServerError>`](crate::error::DeleteServerError)
     pub fn delete_server(&self) -> fluent_builders::DeleteServer<C, M, R> {
         fluent_builders::DeleteServer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteSshPublicKey` operation.
+    /// Constructs a fluent builder for the [`DeleteSshPublicKey`](crate::client::fluent_builders::DeleteSshPublicKey) operation.
     ///
-    /// See [`DeleteSshPublicKey`](crate::client::fluent_builders::DeleteSshPublicKey) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteSshPublicKeyInput`](crate::input::DeleteSshPublicKeyInput) with field(s):
+    ///   - [`server_id(Option<String>)`](crate::input::DeleteSshPublicKeyInput::server_id): <p>A system-assigned unique identifier for a file transfer protocol-enabled server instance that has the user assigned to it.</p>
+    ///   - [`ssh_public_key_id(Option<String>)`](crate::input::DeleteSshPublicKeyInput::ssh_public_key_id): <p>A unique identifier used to reference your user's specific SSH key.</p>
+    ///   - [`user_name(Option<String>)`](crate::input::DeleteSshPublicKeyInput::user_name): <p>A unique string that identifies a user whose public key is being deleted.</p>
+    /// - On success, responds with [`DeleteSshPublicKeyOutput`](crate::output::DeleteSshPublicKeyOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteSshPublicKeyError>`](crate::error::DeleteSshPublicKeyError)
     pub fn delete_ssh_public_key(&self) -> fluent_builders::DeleteSshPublicKey<C, M, R> {
         fluent_builders::DeleteSshPublicKey::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteUser` operation.
+    /// Constructs a fluent builder for the [`DeleteUser`](crate::client::fluent_builders::DeleteUser) operation.
     ///
-    /// See [`DeleteUser`](crate::client::fluent_builders::DeleteUser) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteUserInput`](crate::input::DeleteUserInput) with field(s):
+    ///   - [`server_id(Option<String>)`](crate::input::DeleteUserInput::server_id): <p>A system-assigned unique identifier for a server instance that has the user assigned to it.</p>
+    ///   - [`user_name(Option<String>)`](crate::input::DeleteUserInput::user_name): <p>A unique string that identifies a user that is being deleted from a server.</p>
+    /// - On success, responds with [`DeleteUserOutput`](crate::output::DeleteUserOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteUserError>`](crate::error::DeleteUserError)
     pub fn delete_user(&self) -> fluent_builders::DeleteUser<C, M, R> {
         fluent_builders::DeleteUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteWorkflow` operation.
+    /// Constructs a fluent builder for the [`DeleteWorkflow`](crate::client::fluent_builders::DeleteWorkflow) operation.
     ///
-    /// See [`DeleteWorkflow`](crate::client::fluent_builders::DeleteWorkflow) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteWorkflowInput`](crate::input::DeleteWorkflowInput) with field(s):
+    ///   - [`workflow_id(Option<String>)`](crate::input::DeleteWorkflowInput::workflow_id): <p>A unique identifier for the workflow.</p>
+    /// - On success, responds with [`DeleteWorkflowOutput`](crate::output::DeleteWorkflowOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteWorkflowError>`](crate::error::DeleteWorkflowError)
     pub fn delete_workflow(&self) -> fluent_builders::DeleteWorkflow<C, M, R> {
         fluent_builders::DeleteWorkflow::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAccess` operation.
+    /// Constructs a fluent builder for the [`DescribeAccess`](crate::client::fluent_builders::DescribeAccess) operation.
     ///
-    /// See [`DescribeAccess`](crate::client::fluent_builders::DescribeAccess) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeAccessInput`](crate::input::DescribeAccessInput) with field(s):
+    ///   - [`server_id(Option<String>)`](crate::input::DescribeAccessInput::server_id): <p>A system-assigned unique identifier for a server that has this access assigned.</p>
+    ///   - [`external_id(Option<String>)`](crate::input::DescribeAccessInput::external_id): <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>  <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>  <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>  <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
+    /// - On success, responds with [`DescribeAccessOutput`](crate::output::DescribeAccessOutput) with field(s):
+    ///   - [`server_id(Option<String>)`](crate::output::DescribeAccessOutput::server_id): <p>A system-assigned unique identifier for a server that has this access assigned.</p>
+    ///   - [`access(Option<DescribedAccess>)`](crate::output::DescribeAccessOutput::access): <p>The external ID of the server that the access is attached to.</p>
+    /// - On failure, responds with [`SdkError<DescribeAccessError>`](crate::error::DescribeAccessError)
     pub fn describe_access(&self) -> fluent_builders::DescribeAccess<C, M, R> {
         fluent_builders::DescribeAccess::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeExecution` operation.
+    /// Constructs a fluent builder for the [`DescribeExecution`](crate::client::fluent_builders::DescribeExecution) operation.
     ///
-    /// See [`DescribeExecution`](crate::client::fluent_builders::DescribeExecution) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeExecutionInput`](crate::input::DescribeExecutionInput) with field(s):
+    ///   - [`execution_id(Option<String>)`](crate::input::DescribeExecutionInput::execution_id): <p>A unique identifier for the execution of a workflow.</p>
+    ///   - [`workflow_id(Option<String>)`](crate::input::DescribeExecutionInput::workflow_id): <p>A unique identifier for the workflow.</p>
+    /// - On success, responds with [`DescribeExecutionOutput`](crate::output::DescribeExecutionOutput) with field(s):
+    ///   - [`workflow_id(Option<String>)`](crate::output::DescribeExecutionOutput::workflow_id): <p>A unique identifier for the workflow.</p>
+    ///   - [`execution(Option<DescribedExecution>)`](crate::output::DescribeExecutionOutput::execution): <p>The structure that contains the details of the workflow' execution.</p>
+    /// - On failure, responds with [`SdkError<DescribeExecutionError>`](crate::error::DescribeExecutionError)
     pub fn describe_execution(&self) -> fluent_builders::DescribeExecution<C, M, R> {
         fluent_builders::DescribeExecution::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeSecurityPolicy` operation.
+    /// Constructs a fluent builder for the [`DescribeSecurityPolicy`](crate::client::fluent_builders::DescribeSecurityPolicy) operation.
     ///
-    /// See [`DescribeSecurityPolicy`](crate::client::fluent_builders::DescribeSecurityPolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeSecurityPolicyInput`](crate::input::DescribeSecurityPolicyInput) with field(s):
+    ///   - [`security_policy_name(Option<String>)`](crate::input::DescribeSecurityPolicyInput::security_policy_name): <p>Specifies the name of the security policy that is attached to the server.</p>
+    /// - On success, responds with [`DescribeSecurityPolicyOutput`](crate::output::DescribeSecurityPolicyOutput) with field(s):
+    ///   - [`security_policy(Option<DescribedSecurityPolicy>)`](crate::output::DescribeSecurityPolicyOutput::security_policy): <p>An array containing the properties of the security policy.</p>
+    /// - On failure, responds with [`SdkError<DescribeSecurityPolicyError>`](crate::error::DescribeSecurityPolicyError)
     pub fn describe_security_policy(&self) -> fluent_builders::DescribeSecurityPolicy<C, M, R> {
         fluent_builders::DescribeSecurityPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeServer` operation.
+    /// Constructs a fluent builder for the [`DescribeServer`](crate::client::fluent_builders::DescribeServer) operation.
     ///
-    /// See [`DescribeServer`](crate::client::fluent_builders::DescribeServer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeServerInput`](crate::input::DescribeServerInput) with field(s):
+    ///   - [`server_id(Option<String>)`](crate::input::DescribeServerInput::server_id): <p>A system-assigned unique identifier for a server.</p>
+    /// - On success, responds with [`DescribeServerOutput`](crate::output::DescribeServerOutput) with field(s):
+    ///   - [`server(Option<DescribedServer>)`](crate::output::DescribeServerOutput::server): <p>An array containing the properties of a server with the <code>ServerID</code> you specified.</p>
+    /// - On failure, responds with [`SdkError<DescribeServerError>`](crate::error::DescribeServerError)
     pub fn describe_server(&self) -> fluent_builders::DescribeServer<C, M, R> {
         fluent_builders::DescribeServer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeUser` operation.
+    /// Constructs a fluent builder for the [`DescribeUser`](crate::client::fluent_builders::DescribeUser) operation.
     ///
-    /// See [`DescribeUser`](crate::client::fluent_builders::DescribeUser) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeUserInput`](crate::input::DescribeUserInput) with field(s):
+    ///   - [`server_id(Option<String>)`](crate::input::DescribeUserInput::server_id): <p>A system-assigned unique identifier for a server that has this user assigned.</p>
+    ///   - [`user_name(Option<String>)`](crate::input::DescribeUserInput::user_name): <p>The name of the user assigned to one or more servers. User names are part of the sign-in credentials to use the Amazon Web Services Transfer Family service and perform file transfer tasks.</p>
+    /// - On success, responds with [`DescribeUserOutput`](crate::output::DescribeUserOutput) with field(s):
+    ///   - [`server_id(Option<String>)`](crate::output::DescribeUserOutput::server_id): <p>A system-assigned unique identifier for a server that has this user assigned.</p>
+    ///   - [`user(Option<DescribedUser>)`](crate::output::DescribeUserOutput::user): <p>An array containing the properties of the user account for the <code>ServerID</code> value that you specified.</p>
+    /// - On failure, responds with [`SdkError<DescribeUserError>`](crate::error::DescribeUserError)
     pub fn describe_user(&self) -> fluent_builders::DescribeUser<C, M, R> {
         fluent_builders::DescribeUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeWorkflow` operation.
+    /// Constructs a fluent builder for the [`DescribeWorkflow`](crate::client::fluent_builders::DescribeWorkflow) operation.
     ///
-    /// See [`DescribeWorkflow`](crate::client::fluent_builders::DescribeWorkflow) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeWorkflowInput`](crate::input::DescribeWorkflowInput) with field(s):
+    ///   - [`workflow_id(Option<String>)`](crate::input::DescribeWorkflowInput::workflow_id): <p>A unique identifier for the workflow.</p>
+    /// - On success, responds with [`DescribeWorkflowOutput`](crate::output::DescribeWorkflowOutput) with field(s):
+    ///   - [`workflow(Option<DescribedWorkflow>)`](crate::output::DescribeWorkflowOutput::workflow): <p>The structure that contains the details of the workflow.</p>
+    /// - On failure, responds with [`SdkError<DescribeWorkflowError>`](crate::error::DescribeWorkflowError)
     pub fn describe_workflow(&self) -> fluent_builders::DescribeWorkflow<C, M, R> {
         fluent_builders::DescribeWorkflow::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ImportSshPublicKey` operation.
+    /// Constructs a fluent builder for the [`ImportSshPublicKey`](crate::client::fluent_builders::ImportSshPublicKey) operation.
     ///
-    /// See [`ImportSshPublicKey`](crate::client::fluent_builders::ImportSshPublicKey) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ImportSshPublicKeyInput`](crate::input::ImportSshPublicKeyInput) with field(s):
+    ///   - [`server_id(Option<String>)`](crate::input::ImportSshPublicKeyInput::server_id): <p>A system-assigned unique identifier for a server.</p>
+    ///   - [`ssh_public_key_body(Option<String>)`](crate::input::ImportSshPublicKeyInput::ssh_public_key_body): <p>The public key portion of an SSH key pair.</p>
+    ///   - [`user_name(Option<String>)`](crate::input::ImportSshPublicKeyInput::user_name): <p>The name of the user account that is assigned to one or more servers.</p>
+    /// - On success, responds with [`ImportSshPublicKeyOutput`](crate::output::ImportSshPublicKeyOutput) with field(s):
+    ///   - [`server_id(Option<String>)`](crate::output::ImportSshPublicKeyOutput::server_id): <p>A system-assigned unique identifier for a server.</p>
+    ///   - [`ssh_public_key_id(Option<String>)`](crate::output::ImportSshPublicKeyOutput::ssh_public_key_id): <p>The name given to a public key by the system that was imported.</p>
+    ///   - [`user_name(Option<String>)`](crate::output::ImportSshPublicKeyOutput::user_name): <p>A user name assigned to the <code>ServerID</code> value that you specified.</p>
+    /// - On failure, responds with [`SdkError<ImportSshPublicKeyError>`](crate::error::ImportSshPublicKeyError)
     pub fn import_ssh_public_key(&self) -> fluent_builders::ImportSshPublicKey<C, M, R> {
         fluent_builders::ImportSshPublicKey::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAccesses` operation.
-    ///
-    /// See [`ListAccesses`](crate::client::fluent_builders::ListAccesses) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListAccesses`](crate::client::fluent_builders::ListAccesses) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAccesses::into_paginator).
+    ///
+    /// - Takes [`ListAccessesInput`](crate::input::ListAccessesInput) with field(s):
+    ///   - [`max_results(Option<i32>)`](crate::input::ListAccessesInput::max_results): <p>Specifies the maximum number of access SIDs to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListAccessesInput::next_token): <p>When you can get additional results from the <code>ListAccesses</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional accesses.</p>
+    ///   - [`server_id(Option<String>)`](crate::input::ListAccessesInput::server_id): <p>A system-assigned unique identifier for a server that has users assigned to it.</p>
+    /// - On success, responds with [`ListAccessesOutput`](crate::output::ListAccessesOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListAccessesOutput::next_token): <p>When you can get additional results from the <code>ListAccesses</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional accesses.</p>
+    ///   - [`server_id(Option<String>)`](crate::output::ListAccessesOutput::server_id): <p>A system-assigned unique identifier for a server that has users assigned to it.</p>
+    ///   - [`accesses(Option<Vec<ListedAccess>>)`](crate::output::ListAccessesOutput::accesses): <p>Returns the accesses and their properties for the <code>ServerId</code> value that you specify.</p>
+    /// - On failure, responds with [`SdkError<ListAccessesError>`](crate::error::ListAccessesError)
     pub fn list_accesses(&self) -> fluent_builders::ListAccesses<C, M, R> {
         fluent_builders::ListAccesses::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListExecutions` operation.
-    ///
-    /// See [`ListExecutions`](crate::client::fluent_builders::ListExecutions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListExecutions`](crate::client::fluent_builders::ListExecutions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListExecutions::into_paginator).
+    ///
+    /// - Takes [`ListExecutionsInput`](crate::input::ListExecutionsInput) with field(s):
+    ///   - [`max_results(Option<i32>)`](crate::input::ListExecutionsInput::max_results): <p>Specifies the aximum number of executions to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListExecutionsInput::next_token): <p> <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional executions.</p>  <p> This is useful for pagination, for instance. If you have 100 executions for a workflow, you might only want to list first 10. If so, callthe API by specifing the <code>max-results</code>: </p>  <p> <code>aws transfer list-executions --max-results 10</code> </p>  <p> This returns details for the first 10 executions, as well as the pointer (<code>NextToken</code>) to the eleventh execution. You can now call the API again, suppling the <code>NextToken</code> value you received: </p>  <p> <code>aws transfer list-executions --max-results 10 --next-token $somePointerReturnedFromPreviousListResult</code> </p>  <p> This call returns the next 10 executions, the 11th through the 20th. You can then repeat the call until the details for all 100 executions have been returned. </p>
+    ///   - [`workflow_id(Option<String>)`](crate::input::ListExecutionsInput::workflow_id): <p>A unique identifier for the workflow.</p>
+    /// - On success, responds with [`ListExecutionsOutput`](crate::output::ListExecutionsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListExecutionsOutput::next_token): <p> <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional executions.</p>
+    ///   - [`workflow_id(Option<String>)`](crate::output::ListExecutionsOutput::workflow_id): <p>A unique identifier for the workflow.</p>
+    ///   - [`executions(Option<Vec<ListedExecution>>)`](crate::output::ListExecutionsOutput::executions): <p>Returns the details for each execution.</p>  <ul>   <li> <p> <b>NextToken</b>: returned from a call to several APIs, you can use pass it to a subsequent command to continue listing additional executions.</p> </li>   <li> <p> <b>StartTime</b>: timestamp indicating when the execution began.</p> </li>   <li> <p> <b>Executions</b>: details of the execution, including the execution ID, initial file location, and Service metadata.</p> </li>   <li> <p> <b>Status</b>: one of the following values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>, <code>EXCEPTION</code>, <code>HANDLING_EXEPTION</code>. </p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<ListExecutionsError>`](crate::error::ListExecutionsError)
     pub fn list_executions(&self) -> fluent_builders::ListExecutions<C, M, R> {
         fluent_builders::ListExecutions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSecurityPolicies` operation.
-    ///
-    /// See [`ListSecurityPolicies`](crate::client::fluent_builders::ListSecurityPolicies) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListSecurityPolicies`](crate::client::fluent_builders::ListSecurityPolicies) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSecurityPolicies::into_paginator).
+    ///
+    /// - Takes [`ListSecurityPoliciesInput`](crate::input::ListSecurityPoliciesInput) with field(s):
+    ///   - [`max_results(Option<i32>)`](crate::input::ListSecurityPoliciesInput::max_results): <p>Specifies the number of security policies to return as a response to the <code>ListSecurityPolicies</code> query.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListSecurityPoliciesInput::next_token): <p>When additional results are obtained from the <code>ListSecurityPolicies</code> command, a <code>NextToken</code> parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional security policies.</p>
+    /// - On success, responds with [`ListSecurityPoliciesOutput`](crate::output::ListSecurityPoliciesOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListSecurityPoliciesOutput::next_token): <p>When you can get additional results from the <code>ListSecurityPolicies</code> operation, a <code>NextToken</code> parameter is returned in the output. In a following command, you can pass in the <code>NextToken</code> parameter to continue listing security policies.</p>
+    ///   - [`security_policy_names(Option<Vec<String>>)`](crate::output::ListSecurityPoliciesOutput::security_policy_names): <p>An array of security policies that were listed.</p>
+    /// - On failure, responds with [`SdkError<ListSecurityPoliciesError>`](crate::error::ListSecurityPoliciesError)
     pub fn list_security_policies(&self) -> fluent_builders::ListSecurityPolicies<C, M, R> {
         fluent_builders::ListSecurityPolicies::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListServers` operation.
-    ///
-    /// See [`ListServers`](crate::client::fluent_builders::ListServers) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListServers`](crate::client::fluent_builders::ListServers) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListServers::into_paginator).
+    ///
+    /// - Takes [`ListServersInput`](crate::input::ListServersInput) with field(s):
+    ///   - [`max_results(Option<i32>)`](crate::input::ListServersInput::max_results): <p>Specifies the number of servers to return as a response to the <code>ListServers</code> query.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListServersInput::next_token): <p>When additional results are obtained from the <code>ListServers</code> command, a <code>NextToken</code> parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional servers.</p>
+    /// - On success, responds with [`ListServersOutput`](crate::output::ListServersOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListServersOutput::next_token): <p>When you can get additional results from the <code>ListServers</code> operation, a <code>NextToken</code> parameter is returned in the output. In a following command, you can pass in the <code>NextToken</code> parameter to continue listing additional servers.</p>
+    ///   - [`servers(Option<Vec<ListedServer>>)`](crate::output::ListServersOutput::servers): <p>An array of servers that were listed.</p>
+    /// - On failure, responds with [`SdkError<ListServersError>`](crate::error::ListServersError)
     pub fn list_servers(&self) -> fluent_builders::ListServers<C, M, R> {
         fluent_builders::ListServers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
-    ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
+    ///
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::input::ListTagsForResourceInput::arn): <p>Requests the tags associated with a particular Amazon Resource Name (ARN). An ARN is an identifier for a specific Amazon Web Services resource, such as a server, user, or role.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListTagsForResourceInput::max_results): <p>Specifies the number of tags to return as a response to the <code>ListTagsForResource</code> request.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListTagsForResourceInput::next_token): <p>When you request additional results from the <code>ListTagsForResource</code> operation, a <code>NextToken</code> parameter is returned in the input. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional tags.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::ListTagsForResourceOutput::arn): <p>The ARN you specified to list the tags of.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTagsForResourceOutput::next_token): <p>When you can get additional results from the <code>ListTagsForResource</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional tags.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>Key-value pairs that are assigned to a resource, usually for the purpose of grouping and searching for items. Tags are metadata that you define.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListUsers` operation.
-    ///
-    /// See [`ListUsers`](crate::client::fluent_builders::ListUsers) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListUsers`](crate::client::fluent_builders::ListUsers) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListUsers::into_paginator).
+    ///
+    /// - Takes [`ListUsersInput`](crate::input::ListUsersInput) with field(s):
+    ///   - [`max_results(Option<i32>)`](crate::input::ListUsersInput::max_results): <p>Specifies the number of users to return as a response to the <code>ListUsers</code> request.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListUsersInput::next_token): <p>When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional users.</p>
+    ///   - [`server_id(Option<String>)`](crate::input::ListUsersInput::server_id): <p>A system-assigned unique identifier for a server that has users assigned to it.</p>
+    /// - On success, responds with [`ListUsersOutput`](crate::output::ListUsersOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListUsersOutput::next_token): <p>When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional users.</p>
+    ///   - [`server_id(Option<String>)`](crate::output::ListUsersOutput::server_id): <p>A system-assigned unique identifier for a server that the users are assigned to.</p>
+    ///   - [`users(Option<Vec<ListedUser>>)`](crate::output::ListUsersOutput::users): <p>Returns the user accounts and their properties for the <code>ServerId</code> value that you specify.</p>
+    /// - On failure, responds with [`SdkError<ListUsersError>`](crate::error::ListUsersError)
     pub fn list_users(&self) -> fluent_builders::ListUsers<C, M, R> {
         fluent_builders::ListUsers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListWorkflows` operation.
-    ///
-    /// See [`ListWorkflows`](crate::client::fluent_builders::ListWorkflows) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListWorkflows`](crate::client::fluent_builders::ListWorkflows) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWorkflows::into_paginator).
+    ///
+    /// - Takes [`ListWorkflowsInput`](crate::input::ListWorkflowsInput) with field(s):
+    ///   - [`max_results(Option<i32>)`](crate::input::ListWorkflowsInput::max_results): <p>Specifies the maximum number of workflows to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListWorkflowsInput::next_token): <p> <code>ListWorkflows</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional workflows.</p>
+    /// - On success, responds with [`ListWorkflowsOutput`](crate::output::ListWorkflowsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListWorkflowsOutput::next_token): <p> <code>ListWorkflows</code> returns the <code>NextToken</code> parameter in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional workflows.</p>
+    ///   - [`workflows(Option<Vec<ListedWorkflow>>)`](crate::output::ListWorkflowsOutput::workflows): <p>Returns the <code>Arn</code>, <code>WorkflowId</code>, and <code>Description</code> for each workflow.</p>
+    /// - On failure, responds with [`SdkError<ListWorkflowsError>`](crate::error::ListWorkflowsError)
     pub fn list_workflows(&self) -> fluent_builders::ListWorkflows<C, M, R> {
         fluent_builders::ListWorkflows::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SendWorkflowStepState` operation.
+    /// Constructs a fluent builder for the [`SendWorkflowStepState`](crate::client::fluent_builders::SendWorkflowStepState) operation.
     ///
-    /// See [`SendWorkflowStepState`](crate::client::fluent_builders::SendWorkflowStepState) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`SendWorkflowStepStateInput`](crate::input::SendWorkflowStepStateInput) with field(s):
+    ///   - [`workflow_id(Option<String>)`](crate::input::SendWorkflowStepStateInput::workflow_id): <p>A unique identifier for the workflow.</p>
+    ///   - [`execution_id(Option<String>)`](crate::input::SendWorkflowStepStateInput::execution_id): <p>A unique identifier for the execution of a workflow.</p>
+    ///   - [`token(Option<String>)`](crate::input::SendWorkflowStepStateInput::token): <p>Used to distinguish between multiple callbacks for multiple Lambda steps within the same execution.</p>
+    ///   - [`status(Option<CustomStepStatus>)`](crate::input::SendWorkflowStepStateInput::status): <p>Indicates whether the specified step succeeded or failed.</p>
+    /// - On success, responds with [`SendWorkflowStepStateOutput`](crate::output::SendWorkflowStepStateOutput)
+
+    /// - On failure, responds with [`SdkError<SendWorkflowStepStateError>`](crate::error::SendWorkflowStepStateError)
     pub fn send_workflow_step_state(&self) -> fluent_builders::SendWorkflowStepState<C, M, R> {
         fluent_builders::SendWorkflowStepState::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartServer` operation.
+    /// Constructs a fluent builder for the [`StartServer`](crate::client::fluent_builders::StartServer) operation.
     ///
-    /// See [`StartServer`](crate::client::fluent_builders::StartServer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartServerInput`](crate::input::StartServerInput) with field(s):
+    ///   - [`server_id(Option<String>)`](crate::input::StartServerInput::server_id): <p>A system-assigned unique identifier for a server that you start.</p>
+    /// - On success, responds with [`StartServerOutput`](crate::output::StartServerOutput)
+
+    /// - On failure, responds with [`SdkError<StartServerError>`](crate::error::StartServerError)
     pub fn start_server(&self) -> fluent_builders::StartServer<C, M, R> {
         fluent_builders::StartServer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopServer` operation.
+    /// Constructs a fluent builder for the [`StopServer`](crate::client::fluent_builders::StopServer) operation.
     ///
-    /// See [`StopServer`](crate::client::fluent_builders::StopServer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StopServerInput`](crate::input::StopServerInput) with field(s):
+    ///   - [`server_id(Option<String>)`](crate::input::StopServerInput::server_id): <p>A system-assigned unique identifier for a server that you stopped.</p>
+    /// - On success, responds with [`StopServerOutput`](crate::output::StopServerOutput)
+
+    /// - On failure, responds with [`SdkError<StopServerError>`](crate::error::StopServerError)
     pub fn stop_server(&self) -> fluent_builders::StopServer<C, M, R> {
         fluent_builders::StopServer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::input::TagResourceInput::arn): <p>An Amazon Resource Name (ARN) for a specific Amazon Web Services resource, such as a server, user, or role.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>Key-value pairs assigned to ARNs that you can use to group and search for resources by type. You can attach this metadata to user accounts for any purpose.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TestIdentityProvider` operation.
+    /// Constructs a fluent builder for the [`TestIdentityProvider`](crate::client::fluent_builders::TestIdentityProvider) operation.
     ///
-    /// See [`TestIdentityProvider`](crate::client::fluent_builders::TestIdentityProvider) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TestIdentityProviderInput`](crate::input::TestIdentityProviderInput) with field(s):
+    ///   - [`server_id(Option<String>)`](crate::input::TestIdentityProviderInput::server_id): <p>A system-assigned identifier for a specific server. That server's user authentication method is tested with a user name and password.</p>
+    ///   - [`server_protocol(Option<Protocol>)`](crate::input::TestIdentityProviderInput::server_protocol): <p>The type of file transfer protocol to be tested.</p>  <p>The available protocols are:</p>  <ul>   <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p> </li>   <li> <p>File Transfer Protocol Secure (FTPS)</p> </li>   <li> <p>File Transfer Protocol (FTP)</p> </li>  </ul>
+    ///   - [`source_ip(Option<String>)`](crate::input::TestIdentityProviderInput::source_ip): <p>The source IP address of the user account to be tested.</p>
+    ///   - [`user_name(Option<String>)`](crate::input::TestIdentityProviderInput::user_name): <p>The name of the user account to be tested.</p>
+    ///   - [`user_password(Option<String>)`](crate::input::TestIdentityProviderInput::user_password): <p>The password of the user account to be tested.</p>
+    /// - On success, responds with [`TestIdentityProviderOutput`](crate::output::TestIdentityProviderOutput) with field(s):
+    ///   - [`response(Option<String>)`](crate::output::TestIdentityProviderOutput::response): <p>The response that is returned from your API Gateway.</p>
+    ///   - [`status_code(i32)`](crate::output::TestIdentityProviderOutput::status_code): <p>The HTTP status code that is the response from your API Gateway.</p>
+    ///   - [`message(Option<String>)`](crate::output::TestIdentityProviderOutput::message): <p>A message that indicates whether the test was successful or not.</p>
+    ///   - [`url(Option<String>)`](crate::output::TestIdentityProviderOutput::url): <p>The endpoint of the service used to authenticate a user.</p>
+    /// - On failure, responds with [`SdkError<TestIdentityProviderError>`](crate::error::TestIdentityProviderError)
     pub fn test_identity_provider(&self) -> fluent_builders::TestIdentityProvider<C, M, R> {
         fluent_builders::TestIdentityProvider::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::input::UntagResourceInput::arn): <p>The value of the resource that will have the tag removed. An Amazon Resource Name (ARN) is an identifier for a specific Amazon Web Services resource, such as a server, user, or role.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>TagKeys are key-value pairs assigned to ARNs that can be used to group and search for resources by type. This metadata can be attached to resources for any purpose.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateAccess` operation.
+    /// Constructs a fluent builder for the [`UpdateAccess`](crate::client::fluent_builders::UpdateAccess) operation.
     ///
-    /// See [`UpdateAccess`](crate::client::fluent_builders::UpdateAccess) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateAccessInput`](crate::input::UpdateAccessInput) with field(s):
+    ///   - [`home_directory(Option<String>)`](crate::input::UpdateAccessInput::home_directory): <p>The landing directory (folder) for a user when they log in to the server using the client.</p>  <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
+    ///   - [`home_directory_type(Option<HomeDirectoryType>)`](crate::input::UpdateAccessInput::home_directory_type): <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
+    ///   - [`home_directory_mappings(Option<Vec<HomeDirectoryMapEntry>>)`](crate::input::UpdateAccessInput::home_directory_mappings): <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>  <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>  <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>  <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the <code>HomeDirectory</code> parameter value.</p>  <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>  <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <note>   <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>  </note>
+    ///   - [`policy(Option<String>)`](crate::input::UpdateAccessInput::policy): <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>   <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>   <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>   <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session policy</a>.</p>   <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web ServicesSecurity Token Service API Reference</i>.</p>  </note>
+    ///   - [`posix_profile(Option<PosixProfile>)`](crate::input::UpdateAccessInput::posix_profile): <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon EFS file systems. The POSIX permissions that are set on files and directories in your file system determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
+    ///   - [`role(Option<String>)`](crate::input::UpdateAccessInput::role): <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
+    ///   - [`server_id(Option<String>)`](crate::input::UpdateAccessInput::server_id): <p>A system-assigned unique identifier for a server instance. This is the specific server that you added your user to.</p>
+    ///   - [`external_id(Option<String>)`](crate::input::UpdateAccessInput::external_id): <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>  <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>  <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>  <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
+    /// - On success, responds with [`UpdateAccessOutput`](crate::output::UpdateAccessOutput) with field(s):
+    ///   - [`server_id(Option<String>)`](crate::output::UpdateAccessOutput::server_id): <p>The ID of the server that the user is attached to.</p>
+    ///   - [`external_id(Option<String>)`](crate::output::UpdateAccessOutput::external_id): <p>The external ID of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web ServicesTransfer Family.</p>
+    /// - On failure, responds with [`SdkError<UpdateAccessError>`](crate::error::UpdateAccessError)
     pub fn update_access(&self) -> fluent_builders::UpdateAccess<C, M, R> {
         fluent_builders::UpdateAccess::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateServer` operation.
+    /// Constructs a fluent builder for the [`UpdateServer`](crate::client::fluent_builders::UpdateServer) operation.
     ///
-    /// See [`UpdateServer`](crate::client::fluent_builders::UpdateServer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateServerInput`](crate::input::UpdateServerInput) with field(s):
+    ///   - [`certificate(Option<String>)`](crate::input::UpdateServerInput::certificate): <p>The Amazon Resource Name (ARN) of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>  <p>To request a new public certificate, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public certificate</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.</p>  <p>To import an existing certificate into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into ACM</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.</p>  <p>To request a private certificate to use FTPS through private IP addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private certificate</a> in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.</p>  <p>Certificates with the following cryptographic algorithms and key sizes are supported:</p>  <ul>   <li> <p>2048-bit RSA (RSA_2048)</p> </li>   <li> <p>4096-bit RSA (RSA_4096)</p> </li>   <li> <p>Elliptic Prime Curve 256 bit (EC_prime256v1)</p> </li>   <li> <p>Elliptic Prime Curve 384 bit (EC_secp384r1)</p> </li>   <li> <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p> </li>  </ul> <note>   <p>The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP address specified and information about the issuer.</p>  </note>
+    ///   - [`protocol_details(Option<ProtocolDetails>)`](crate::input::UpdateServerInput::protocol_details): <p> The protocol settings that are configured for your server. </p>  <p> Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS protocols). Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer. </p>  <p>Use the <code>TlsSessionResumptionMode</code> parameter to determine whether or not your Transfer server resumes recent, negotiated sessions through a unique session ID.</p>
+    ///   - [`endpoint_details(Option<EndpointDetails>)`](crate::input::UpdateServerInput::endpoint_details): <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
+    ///   - [`endpoint_type(Option<EndpointType>)`](crate::input::UpdateServerInput::endpoint_type): <p>The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access to your server and resources only within your VPC or choose to make it internet facing by attaching Elastic IP addresses directly to it.</p> <note>   <p> After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount if your account hasn't already done so before May 19, 2021. If you have already created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount on or before May 19, 2021, you will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.</p>   <p>For more information, see https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>   <p>It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your server's endpoint and use VPC security groups to restrict traffic by the client's public IP address. This is not possible with <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p>  </note>
+    ///   - [`host_key(Option<String>)`](crate::input::UpdateServerInput::host_key): <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f my-new-server-key</code>.</p> <important>   <p>If you aren't planning to migrate existing users from an existing server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>  </important>  <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web ServicesTransfer Family User Guide</i>.</p>
+    ///   - [`identity_provider_details(Option<IdentityProviderDetails>)`](crate::input::UpdateServerInput::identity_provider_details): <p>An array containing all of the information required to call a customer's authentication API method.</p>
+    ///   - [`logging_role(Option<String>)`](crate::input::UpdateServerInput::logging_role): <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.</p>
+    ///   - [`protocols(Option<Vec<Protocol>>)`](crate::input::UpdateServerInput::protocols): <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>  <ul>   <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH</p> </li>   <li> <p>File Transfer Protocol Secure (FTPS): File transfer with TLS encryption</p> </li>   <li> <p>File Transfer Protocol (FTP): Unencrypted file transfer</p> </li>  </ul> <note>   <p>If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web ServicesCertificate Manager (ACM) which will be used to identify your server when clients connect to it over FTPS.</p>   <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p>   <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p>   <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.</p>  </note>
+    ///   - [`security_policy_name(Option<String>)`](crate::input::UpdateServerInput::security_policy_name): <p>Specifies the name of the security policy that is attached to the server.</p>
+    ///   - [`server_id(Option<String>)`](crate::input::UpdateServerInput::server_id): <p>A system-assigned unique identifier for a server instance that the user account is assigned to.</p>
+    ///   - [`workflow_details(Option<WorkflowDetails>)`](crate::input::UpdateServerInput::workflow_details): <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
+    /// - On success, responds with [`UpdateServerOutput`](crate::output::UpdateServerOutput) with field(s):
+    ///   - [`server_id(Option<String>)`](crate::output::UpdateServerOutput::server_id): <p>A system-assigned unique identifier for a server that the user account is assigned to.</p>
+    /// - On failure, responds with [`SdkError<UpdateServerError>`](crate::error::UpdateServerError)
     pub fn update_server(&self) -> fluent_builders::UpdateServer<C, M, R> {
         fluent_builders::UpdateServer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateUser` operation.
+    /// Constructs a fluent builder for the [`UpdateUser`](crate::client::fluent_builders::UpdateUser) operation.
     ///
-    /// See [`UpdateUser`](crate::client::fluent_builders::UpdateUser) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateUserInput`](crate::input::UpdateUserInput) with field(s):
+    ///   - [`home_directory(Option<String>)`](crate::input::UpdateUserInput::home_directory): <p>The landing directory (folder) for a user when they log in to the server using the client.</p>  <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
+    ///   - [`home_directory_type(Option<HomeDirectoryType>)`](crate::input::UpdateUserInput::home_directory_type): <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.</p>
+    ///   - [`home_directory_mappings(Option<Vec<HomeDirectoryMapEntry>>)`](crate::input::UpdateUserInput::home_directory_mappings): <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to your user and how you want to make them visible. You must specify the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity and Access Management (IAM) role provides access to paths in <code>Target</code>. This value can only be set when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.</p>  <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>  <p> <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code> </p>  <p>In most cases, you can use this value instead of the session policy to lock down your user to the designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory parameter value.</p>  <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>  <p> <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> </p> <note>   <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>  </note>
+    ///   - [`policy(Option<String>)`](crate::input::UpdateUserInput::policy): <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>   <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>   <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>   <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy">Creating a session policy</a>.</p>   <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API Reference</i>.</p>  </note>
+    ///   - [`posix_profile(Option<PosixProfile>)`](crate::input::UpdateUserInput::posix_profile): <p>Specifies the full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon Elastic File Systems (Amazon EFS). The POSIX permissions that are set on files and directories in your file system determines the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
+    ///   - [`role(Option<String>)`](crate::input::UpdateUserInput::role): <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
+    ///   - [`server_id(Option<String>)`](crate::input::UpdateUserInput::server_id): <p>A system-assigned unique identifier for a server instance that the user account is assigned to.</p>
+    ///   - [`user_name(Option<String>)`](crate::input::UpdateUserInput::user_name): <p>A unique string that identifies a user and is associated with a server as specified by the <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'. The user name can't start with a hyphen, period, or at sign.</p>
+    /// - On success, responds with [`UpdateUserOutput`](crate::output::UpdateUserOutput) with field(s):
+    ///   - [`server_id(Option<String>)`](crate::output::UpdateUserOutput::server_id): <p>A system-assigned unique identifier for a server instance that the user account is assigned to.</p>
+    ///   - [`user_name(Option<String>)`](crate::output::UpdateUserOutput::user_name): <p>The unique identifier for a user that is assigned to a server instance that was specified in the request.</p>
+    /// - On failure, responds with [`SdkError<UpdateUserError>`](crate::error::UpdateUserError)
     pub fn update_user(&self) -> fluent_builders::UpdateUser<C, M, R> {
         fluent_builders::UpdateUser::new(self.handle.clone())
     }

@@ -83,267 +83,437 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AssociateDomain` operation.
+    /// Constructs a fluent builder for the [`AssociateDomain`](crate::client::fluent_builders::AssociateDomain) operation.
     ///
-    /// See [`AssociateDomain`](crate::client::fluent_builders::AssociateDomain) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateDomainInput`](crate::input::AssociateDomainInput) with field(s):
+    ///   - [`fleet_arn(Option<String>)`](crate::input::AssociateDomainInput::fleet_arn): <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    ///   - [`domain_name(Option<String>)`](crate::input::AssociateDomainInput::domain_name): <p>The fully qualified domain name (FQDN).</p>
+    ///   - [`display_name(Option<String>)`](crate::input::AssociateDomainInput::display_name): <p>The name to display.</p>
+    ///   - [`acm_certificate_arn(Option<String>)`](crate::input::AssociateDomainInput::acm_certificate_arn): <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
+    /// - On success, responds with [`AssociateDomainOutput`](crate::output::AssociateDomainOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateDomainError>`](crate::error::AssociateDomainError)
     pub fn associate_domain(&self) -> fluent_builders::AssociateDomain<C, M, R> {
         fluent_builders::AssociateDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateWebsiteAuthorizationProvider` operation.
+    /// Constructs a fluent builder for the [`AssociateWebsiteAuthorizationProvider`](crate::client::fluent_builders::AssociateWebsiteAuthorizationProvider) operation.
     ///
-    /// See [`AssociateWebsiteAuthorizationProvider`](crate::client::fluent_builders::AssociateWebsiteAuthorizationProvider) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateWebsiteAuthorizationProviderInput`](crate::input::AssociateWebsiteAuthorizationProviderInput) with field(s):
+    ///   - [`fleet_arn(Option<String>)`](crate::input::AssociateWebsiteAuthorizationProviderInput::fleet_arn): <p>The ARN of the fleet.</p>
+    ///   - [`authorization_provider_type(Option<AuthorizationProviderType>)`](crate::input::AssociateWebsiteAuthorizationProviderInput::authorization_provider_type): <p>The authorization provider type.</p>
+    ///   - [`domain_name(Option<String>)`](crate::input::AssociateWebsiteAuthorizationProviderInput::domain_name): <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
+    /// - On success, responds with [`AssociateWebsiteAuthorizationProviderOutput`](crate::output::AssociateWebsiteAuthorizationProviderOutput) with field(s):
+    ///   - [`authorization_provider_id(Option<String>)`](crate::output::AssociateWebsiteAuthorizationProviderOutput::authorization_provider_id): <p>A unique identifier for the authorization provider.</p>
+    /// - On failure, responds with [`SdkError<AssociateWebsiteAuthorizationProviderError>`](crate::error::AssociateWebsiteAuthorizationProviderError)
     pub fn associate_website_authorization_provider(
         &self,
     ) -> fluent_builders::AssociateWebsiteAuthorizationProvider<C, M, R> {
         fluent_builders::AssociateWebsiteAuthorizationProvider::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateWebsiteCertificateAuthority` operation.
+    /// Constructs a fluent builder for the [`AssociateWebsiteCertificateAuthority`](crate::client::fluent_builders::AssociateWebsiteCertificateAuthority) operation.
     ///
-    /// See [`AssociateWebsiteCertificateAuthority`](crate::client::fluent_builders::AssociateWebsiteCertificateAuthority) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateWebsiteCertificateAuthorityInput`](crate::input::AssociateWebsiteCertificateAuthorityInput) with field(s):
+    ///   - [`fleet_arn(Option<String>)`](crate::input::AssociateWebsiteCertificateAuthorityInput::fleet_arn): <p>The ARN of the fleet.</p>
+    ///   - [`certificate(Option<String>)`](crate::input::AssociateWebsiteCertificateAuthorityInput::certificate): <p>The root certificate of the CA.</p>
+    ///   - [`display_name(Option<String>)`](crate::input::AssociateWebsiteCertificateAuthorityInput::display_name): <p>The certificate name to display.</p>
+    /// - On success, responds with [`AssociateWebsiteCertificateAuthorityOutput`](crate::output::AssociateWebsiteCertificateAuthorityOutput) with field(s):
+    ///   - [`website_ca_id(Option<String>)`](crate::output::AssociateWebsiteCertificateAuthorityOutput::website_ca_id): <p>A unique identifier for the CA.</p>
+    /// - On failure, responds with [`SdkError<AssociateWebsiteCertificateAuthorityError>`](crate::error::AssociateWebsiteCertificateAuthorityError)
     pub fn associate_website_certificate_authority(
         &self,
     ) -> fluent_builders::AssociateWebsiteCertificateAuthority<C, M, R> {
         fluent_builders::AssociateWebsiteCertificateAuthority::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateFleet` operation.
+    /// Constructs a fluent builder for the [`CreateFleet`](crate::client::fluent_builders::CreateFleet) operation.
     ///
-    /// See [`CreateFleet`](crate::client::fluent_builders::CreateFleet) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateFleetInput`](crate::input::CreateFleetInput) with field(s):
+    ///   - [`fleet_name(Option<String>)`](crate::input::CreateFleetInput::fleet_name): <p>A unique name for the fleet.</p>
+    ///   - [`display_name(Option<String>)`](crate::input::CreateFleetInput::display_name): <p>The fleet name to display.</p>
+    ///   - [`optimize_for_end_user_location(Option<bool>)`](crate::input::CreateFleetInput::optimize_for_end_user_location): <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateFleetInput::tags): <p> The tags to add to the resource. A tag is a key-value pair.</p>
+    /// - On success, responds with [`CreateFleetOutput`](crate::output::CreateFleetOutput) with field(s):
+    ///   - [`fleet_arn(Option<String>)`](crate::output::CreateFleetOutput::fleet_arn): <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    /// - On failure, responds with [`SdkError<CreateFleetError>`](crate::error::CreateFleetError)
     pub fn create_fleet(&self) -> fluent_builders::CreateFleet<C, M, R> {
         fluent_builders::CreateFleet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteFleet` operation.
+    /// Constructs a fluent builder for the [`DeleteFleet`](crate::client::fluent_builders::DeleteFleet) operation.
     ///
-    /// See [`DeleteFleet`](crate::client::fluent_builders::DeleteFleet) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteFleetInput`](crate::input::DeleteFleetInput) with field(s):
+    ///   - [`fleet_arn(Option<String>)`](crate::input::DeleteFleetInput::fleet_arn): <p>The ARN of the fleet.</p>
+    /// - On success, responds with [`DeleteFleetOutput`](crate::output::DeleteFleetOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteFleetError>`](crate::error::DeleteFleetError)
     pub fn delete_fleet(&self) -> fluent_builders::DeleteFleet<C, M, R> {
         fluent_builders::DeleteFleet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAuditStreamConfiguration` operation.
+    /// Constructs a fluent builder for the [`DescribeAuditStreamConfiguration`](crate::client::fluent_builders::DescribeAuditStreamConfiguration) operation.
     ///
-    /// See [`DescribeAuditStreamConfiguration`](crate::client::fluent_builders::DescribeAuditStreamConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeAuditStreamConfigurationInput`](crate::input::DescribeAuditStreamConfigurationInput) with field(s):
+    ///   - [`fleet_arn(Option<String>)`](crate::input::DescribeAuditStreamConfigurationInput::fleet_arn): <p>The ARN of the fleet.</p>
+    /// - On success, responds with [`DescribeAuditStreamConfigurationOutput`](crate::output::DescribeAuditStreamConfigurationOutput) with field(s):
+    ///   - [`audit_stream_arn(Option<String>)`](crate::output::DescribeAuditStreamConfigurationOutput::audit_stream_arn): <p>The ARN of the Amazon Kinesis data stream that will receive the audit events.</p>
+    /// - On failure, responds with [`SdkError<DescribeAuditStreamConfigurationError>`](crate::error::DescribeAuditStreamConfigurationError)
     pub fn describe_audit_stream_configuration(
         &self,
     ) -> fluent_builders::DescribeAuditStreamConfiguration<C, M, R> {
         fluent_builders::DescribeAuditStreamConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeCompanyNetworkConfiguration` operation.
+    /// Constructs a fluent builder for the [`DescribeCompanyNetworkConfiguration`](crate::client::fluent_builders::DescribeCompanyNetworkConfiguration) operation.
     ///
-    /// See [`DescribeCompanyNetworkConfiguration`](crate::client::fluent_builders::DescribeCompanyNetworkConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeCompanyNetworkConfigurationInput`](crate::input::DescribeCompanyNetworkConfigurationInput) with field(s):
+    ///   - [`fleet_arn(Option<String>)`](crate::input::DescribeCompanyNetworkConfigurationInput::fleet_arn): <p>The ARN of the fleet.</p>
+    /// - On success, responds with [`DescribeCompanyNetworkConfigurationOutput`](crate::output::DescribeCompanyNetworkConfigurationOutput) with field(s):
+    ///   - [`vpc_id(Option<String>)`](crate::output::DescribeCompanyNetworkConfigurationOutput::vpc_id): <p>The VPC with connectivity to associated websites.</p>
+    ///   - [`subnet_ids(Option<Vec<String>>)`](crate::output::DescribeCompanyNetworkConfigurationOutput::subnet_ids): <p>The subnets used for X-ENI connections from Amazon WorkLink rendering containers.</p>
+    ///   - [`security_group_ids(Option<Vec<String>>)`](crate::output::DescribeCompanyNetworkConfigurationOutput::security_group_ids): <p>The security groups associated with access to the provided subnets.</p>
+    /// - On failure, responds with [`SdkError<DescribeCompanyNetworkConfigurationError>`](crate::error::DescribeCompanyNetworkConfigurationError)
     pub fn describe_company_network_configuration(
         &self,
     ) -> fluent_builders::DescribeCompanyNetworkConfiguration<C, M, R> {
         fluent_builders::DescribeCompanyNetworkConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDevice` operation.
+    /// Constructs a fluent builder for the [`DescribeDevice`](crate::client::fluent_builders::DescribeDevice) operation.
     ///
-    /// See [`DescribeDevice`](crate::client::fluent_builders::DescribeDevice) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeDeviceInput`](crate::input::DescribeDeviceInput) with field(s):
+    ///   - [`fleet_arn(Option<String>)`](crate::input::DescribeDeviceInput::fleet_arn): <p>The ARN of the fleet.</p>
+    ///   - [`device_id(Option<String>)`](crate::input::DescribeDeviceInput::device_id): <p>A unique identifier for a registered user's device.</p>
+    /// - On success, responds with [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput) with field(s):
+    ///   - [`status(Option<DeviceStatus>)`](crate::output::DescribeDeviceOutput::status): <p>The current state of the device.</p>
+    ///   - [`model(Option<String>)`](crate::output::DescribeDeviceOutput::model): <p>The model of the device.</p>
+    ///   - [`manufacturer(Option<String>)`](crate::output::DescribeDeviceOutput::manufacturer): <p>The manufacturer of the device.</p>
+    ///   - [`operating_system(Option<String>)`](crate::output::DescribeDeviceOutput::operating_system): <p>The operating system of the device.</p>
+    ///   - [`operating_system_version(Option<String>)`](crate::output::DescribeDeviceOutput::operating_system_version): <p>The operating system version of the device.</p>
+    ///   - [`patch_level(Option<String>)`](crate::output::DescribeDeviceOutput::patch_level): <p>The operating system patch level of the device.</p>
+    ///   - [`first_accessed_time(Option<DateTime>)`](crate::output::DescribeDeviceOutput::first_accessed_time): <p>The date that the device first signed in to Amazon WorkLink.</p>
+    ///   - [`last_accessed_time(Option<DateTime>)`](crate::output::DescribeDeviceOutput::last_accessed_time): <p>The date that the device last accessed Amazon WorkLink.</p>
+    ///   - [`username(Option<String>)`](crate::output::DescribeDeviceOutput::username): <p>The user name associated with the device.</p>
+    /// - On failure, responds with [`SdkError<DescribeDeviceError>`](crate::error::DescribeDeviceError)
     pub fn describe_device(&self) -> fluent_builders::DescribeDevice<C, M, R> {
         fluent_builders::DescribeDevice::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDevicePolicyConfiguration` operation.
+    /// Constructs a fluent builder for the [`DescribeDevicePolicyConfiguration`](crate::client::fluent_builders::DescribeDevicePolicyConfiguration) operation.
     ///
-    /// See [`DescribeDevicePolicyConfiguration`](crate::client::fluent_builders::DescribeDevicePolicyConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeDevicePolicyConfigurationInput`](crate::input::DescribeDevicePolicyConfigurationInput) with field(s):
+    ///   - [`fleet_arn(Option<String>)`](crate::input::DescribeDevicePolicyConfigurationInput::fleet_arn): <p>The ARN of the fleet.</p>
+    /// - On success, responds with [`DescribeDevicePolicyConfigurationOutput`](crate::output::DescribeDevicePolicyConfigurationOutput) with field(s):
+    ///   - [`device_ca_certificate(Option<String>)`](crate::output::DescribeDevicePolicyConfigurationOutput::device_ca_certificate): <p>The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.</p>
+    /// - On failure, responds with [`SdkError<DescribeDevicePolicyConfigurationError>`](crate::error::DescribeDevicePolicyConfigurationError)
     pub fn describe_device_policy_configuration(
         &self,
     ) -> fluent_builders::DescribeDevicePolicyConfiguration<C, M, R> {
         fluent_builders::DescribeDevicePolicyConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDomain` operation.
+    /// Constructs a fluent builder for the [`DescribeDomain`](crate::client::fluent_builders::DescribeDomain) operation.
     ///
-    /// See [`DescribeDomain`](crate::client::fluent_builders::DescribeDomain) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeDomainInput`](crate::input::DescribeDomainInput) with field(s):
+    ///   - [`fleet_arn(Option<String>)`](crate::input::DescribeDomainInput::fleet_arn): <p>The ARN of the fleet.</p>
+    ///   - [`domain_name(Option<String>)`](crate::input::DescribeDomainInput::domain_name): <p>The name of the domain.</p>
+    /// - On success, responds with [`DescribeDomainOutput`](crate::output::DescribeDomainOutput) with field(s):
+    ///   - [`domain_name(Option<String>)`](crate::output::DescribeDomainOutput::domain_name): <p>The name of the domain.</p>
+    ///   - [`display_name(Option<String>)`](crate::output::DescribeDomainOutput::display_name): <p>The name to display.</p>
+    ///   - [`created_time(Option<DateTime>)`](crate::output::DescribeDomainOutput::created_time): <p>The time that the domain was added.</p>
+    ///   - [`domain_status(Option<DomainStatus>)`](crate::output::DescribeDomainOutput::domain_status): <p>The current state for the domain.</p>
+    ///   - [`acm_certificate_arn(Option<String>)`](crate::output::DescribeDomainOutput::acm_certificate_arn): <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
+    /// - On failure, responds with [`SdkError<DescribeDomainError>`](crate::error::DescribeDomainError)
     pub fn describe_domain(&self) -> fluent_builders::DescribeDomain<C, M, R> {
         fluent_builders::DescribeDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeFleetMetadata` operation.
+    /// Constructs a fluent builder for the [`DescribeFleetMetadata`](crate::client::fluent_builders::DescribeFleetMetadata) operation.
     ///
-    /// See [`DescribeFleetMetadata`](crate::client::fluent_builders::DescribeFleetMetadata) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeFleetMetadataInput`](crate::input::DescribeFleetMetadataInput) with field(s):
+    ///   - [`fleet_arn(Option<String>)`](crate::input::DescribeFleetMetadataInput::fleet_arn): <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    /// - On success, responds with [`DescribeFleetMetadataOutput`](crate::output::DescribeFleetMetadataOutput) with field(s):
+    ///   - [`created_time(Option<DateTime>)`](crate::output::DescribeFleetMetadataOutput::created_time): <p>The time that the fleet was created.</p>
+    ///   - [`last_updated_time(Option<DateTime>)`](crate::output::DescribeFleetMetadataOutput::last_updated_time): <p>The time that the fleet was last updated.</p>
+    ///   - [`fleet_name(Option<String>)`](crate::output::DescribeFleetMetadataOutput::fleet_name): <p>The name of the fleet.</p>
+    ///   - [`display_name(Option<String>)`](crate::output::DescribeFleetMetadataOutput::display_name): <p>The name to display.</p>
+    ///   - [`optimize_for_end_user_location(Option<bool>)`](crate::output::DescribeFleetMetadataOutput::optimize_for_end_user_location): <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
+    ///   - [`company_code(Option<String>)`](crate::output::DescribeFleetMetadataOutput::company_code): <p>The identifier used by users to sign in to the Amazon WorkLink app.</p>
+    ///   - [`fleet_status(Option<FleetStatus>)`](crate::output::DescribeFleetMetadataOutput::fleet_status): <p>The current state of the fleet.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeFleetMetadataOutput::tags): <p>The tags attached to the resource. A tag is a key-value pair.</p>
+    /// - On failure, responds with [`SdkError<DescribeFleetMetadataError>`](crate::error::DescribeFleetMetadataError)
     pub fn describe_fleet_metadata(&self) -> fluent_builders::DescribeFleetMetadata<C, M, R> {
         fluent_builders::DescribeFleetMetadata::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeIdentityProviderConfiguration` operation.
+    /// Constructs a fluent builder for the [`DescribeIdentityProviderConfiguration`](crate::client::fluent_builders::DescribeIdentityProviderConfiguration) operation.
     ///
-    /// See [`DescribeIdentityProviderConfiguration`](crate::client::fluent_builders::DescribeIdentityProviderConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeIdentityProviderConfigurationInput`](crate::input::DescribeIdentityProviderConfigurationInput) with field(s):
+    ///   - [`fleet_arn(Option<String>)`](crate::input::DescribeIdentityProviderConfigurationInput::fleet_arn): <p>The ARN of the fleet.</p>
+    /// - On success, responds with [`DescribeIdentityProviderConfigurationOutput`](crate::output::DescribeIdentityProviderConfigurationOutput) with field(s):
+    ///   - [`identity_provider_type(Option<IdentityProviderType>)`](crate::output::DescribeIdentityProviderConfigurationOutput::identity_provider_type): <p>The type of identity provider.</p>
+    ///   - [`service_provider_saml_metadata(Option<String>)`](crate::output::DescribeIdentityProviderConfigurationOutput::service_provider_saml_metadata): <p>The SAML metadata document uploaded to the user’s identity provider.</p>
+    ///   - [`identity_provider_saml_metadata(Option<String>)`](crate::output::DescribeIdentityProviderConfigurationOutput::identity_provider_saml_metadata): <p>The SAML metadata document provided by the user’s identity provider.</p>
+    /// - On failure, responds with [`SdkError<DescribeIdentityProviderConfigurationError>`](crate::error::DescribeIdentityProviderConfigurationError)
     pub fn describe_identity_provider_configuration(
         &self,
     ) -> fluent_builders::DescribeIdentityProviderConfiguration<C, M, R> {
         fluent_builders::DescribeIdentityProviderConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeWebsiteCertificateAuthority` operation.
+    /// Constructs a fluent builder for the [`DescribeWebsiteCertificateAuthority`](crate::client::fluent_builders::DescribeWebsiteCertificateAuthority) operation.
     ///
-    /// See [`DescribeWebsiteCertificateAuthority`](crate::client::fluent_builders::DescribeWebsiteCertificateAuthority) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeWebsiteCertificateAuthorityInput`](crate::input::DescribeWebsiteCertificateAuthorityInput) with field(s):
+    ///   - [`fleet_arn(Option<String>)`](crate::input::DescribeWebsiteCertificateAuthorityInput::fleet_arn): <p>The ARN of the fleet.</p>
+    ///   - [`website_ca_id(Option<String>)`](crate::input::DescribeWebsiteCertificateAuthorityInput::website_ca_id): <p>A unique identifier for the certificate authority.</p>
+    /// - On success, responds with [`DescribeWebsiteCertificateAuthorityOutput`](crate::output::DescribeWebsiteCertificateAuthorityOutput) with field(s):
+    ///   - [`certificate(Option<String>)`](crate::output::DescribeWebsiteCertificateAuthorityOutput::certificate): <p>The root certificate of the certificate authority.</p>
+    ///   - [`created_time(Option<DateTime>)`](crate::output::DescribeWebsiteCertificateAuthorityOutput::created_time): <p>The time that the certificate authority was added.</p>
+    ///   - [`display_name(Option<String>)`](crate::output::DescribeWebsiteCertificateAuthorityOutput::display_name): <p>The certificate name to display.</p>
+    /// - On failure, responds with [`SdkError<DescribeWebsiteCertificateAuthorityError>`](crate::error::DescribeWebsiteCertificateAuthorityError)
     pub fn describe_website_certificate_authority(
         &self,
     ) -> fluent_builders::DescribeWebsiteCertificateAuthority<C, M, R> {
         fluent_builders::DescribeWebsiteCertificateAuthority::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateDomain` operation.
+    /// Constructs a fluent builder for the [`DisassociateDomain`](crate::client::fluent_builders::DisassociateDomain) operation.
     ///
-    /// See [`DisassociateDomain`](crate::client::fluent_builders::DisassociateDomain) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateDomainInput`](crate::input::DisassociateDomainInput) with field(s):
+    ///   - [`fleet_arn(Option<String>)`](crate::input::DisassociateDomainInput::fleet_arn): <p>The ARN of the fleet.</p>
+    ///   - [`domain_name(Option<String>)`](crate::input::DisassociateDomainInput::domain_name): <p>The name of the domain.</p>
+    /// - On success, responds with [`DisassociateDomainOutput`](crate::output::DisassociateDomainOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateDomainError>`](crate::error::DisassociateDomainError)
     pub fn disassociate_domain(&self) -> fluent_builders::DisassociateDomain<C, M, R> {
         fluent_builders::DisassociateDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateWebsiteAuthorizationProvider` operation.
+    /// Constructs a fluent builder for the [`DisassociateWebsiteAuthorizationProvider`](crate::client::fluent_builders::DisassociateWebsiteAuthorizationProvider) operation.
     ///
-    /// See [`DisassociateWebsiteAuthorizationProvider`](crate::client::fluent_builders::DisassociateWebsiteAuthorizationProvider) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateWebsiteAuthorizationProviderInput`](crate::input::DisassociateWebsiteAuthorizationProviderInput) with field(s):
+    ///   - [`fleet_arn(Option<String>)`](crate::input::DisassociateWebsiteAuthorizationProviderInput::fleet_arn): <p>The ARN of the fleet.</p>
+    ///   - [`authorization_provider_id(Option<String>)`](crate::input::DisassociateWebsiteAuthorizationProviderInput::authorization_provider_id): <p>A unique identifier for the authorization provider.</p>
+    /// - On success, responds with [`DisassociateWebsiteAuthorizationProviderOutput`](crate::output::DisassociateWebsiteAuthorizationProviderOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateWebsiteAuthorizationProviderError>`](crate::error::DisassociateWebsiteAuthorizationProviderError)
     pub fn disassociate_website_authorization_provider(
         &self,
     ) -> fluent_builders::DisassociateWebsiteAuthorizationProvider<C, M, R> {
         fluent_builders::DisassociateWebsiteAuthorizationProvider::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateWebsiteCertificateAuthority` operation.
+    /// Constructs a fluent builder for the [`DisassociateWebsiteCertificateAuthority`](crate::client::fluent_builders::DisassociateWebsiteCertificateAuthority) operation.
     ///
-    /// See [`DisassociateWebsiteCertificateAuthority`](crate::client::fluent_builders::DisassociateWebsiteCertificateAuthority) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateWebsiteCertificateAuthorityInput`](crate::input::DisassociateWebsiteCertificateAuthorityInput) with field(s):
+    ///   - [`fleet_arn(Option<String>)`](crate::input::DisassociateWebsiteCertificateAuthorityInput::fleet_arn): <p>The ARN of the fleet.</p>
+    ///   - [`website_ca_id(Option<String>)`](crate::input::DisassociateWebsiteCertificateAuthorityInput::website_ca_id): <p>A unique identifier for the CA.</p>
+    /// - On success, responds with [`DisassociateWebsiteCertificateAuthorityOutput`](crate::output::DisassociateWebsiteCertificateAuthorityOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateWebsiteCertificateAuthorityError>`](crate::error::DisassociateWebsiteCertificateAuthorityError)
     pub fn disassociate_website_certificate_authority(
         &self,
     ) -> fluent_builders::DisassociateWebsiteCertificateAuthority<C, M, R> {
         fluent_builders::DisassociateWebsiteCertificateAuthority::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDevices` operation.
-    ///
-    /// See [`ListDevices`](crate::client::fluent_builders::ListDevices) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListDevices`](crate::client::fluent_builders::ListDevices) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDevices::into_paginator).
+    ///
+    /// - Takes [`ListDevicesInput`](crate::input::ListDevicesInput) with field(s):
+    ///   - [`fleet_arn(Option<String>)`](crate::input::ListDevicesInput::fleet_arn): <p>The ARN of the fleet.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListDevicesInput::next_token): <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListDevicesInput::max_results): <p>The maximum number of results to be included in the next page.</p>
+    /// - On success, responds with [`ListDevicesOutput`](crate::output::ListDevicesOutput) with field(s):
+    ///   - [`devices(Option<Vec<DeviceSummary>>)`](crate::output::ListDevicesOutput::devices): <p>Information about the devices.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDevicesOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    /// - On failure, responds with [`SdkError<ListDevicesError>`](crate::error::ListDevicesError)
     pub fn list_devices(&self) -> fluent_builders::ListDevices<C, M, R> {
         fluent_builders::ListDevices::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDomains` operation.
-    ///
-    /// See [`ListDomains`](crate::client::fluent_builders::ListDomains) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListDomains`](crate::client::fluent_builders::ListDomains) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDomains::into_paginator).
+    ///
+    /// - Takes [`ListDomainsInput`](crate::input::ListDomainsInput) with field(s):
+    ///   - [`fleet_arn(Option<String>)`](crate::input::ListDomainsInput::fleet_arn): <p>The ARN of the fleet.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListDomainsInput::next_token): <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListDomainsInput::max_results): <p>The maximum number of results to be included in the next page.</p>
+    /// - On success, responds with [`ListDomainsOutput`](crate::output::ListDomainsOutput) with field(s):
+    ///   - [`domains(Option<Vec<DomainSummary>>)`](crate::output::ListDomainsOutput::domains): <p>Information about the domains.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDomainsOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    /// - On failure, responds with [`SdkError<ListDomainsError>`](crate::error::ListDomainsError)
     pub fn list_domains(&self) -> fluent_builders::ListDomains<C, M, R> {
         fluent_builders::ListDomains::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListFleets` operation.
-    ///
-    /// See [`ListFleets`](crate::client::fluent_builders::ListFleets) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListFleets`](crate::client::fluent_builders::ListFleets) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFleets::into_paginator).
+    ///
+    /// - Takes [`ListFleetsInput`](crate::input::ListFleetsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListFleetsInput::next_token): <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListFleetsInput::max_results): <p>The maximum number of results to be included in the next page.</p>
+    /// - On success, responds with [`ListFleetsOutput`](crate::output::ListFleetsOutput) with field(s):
+    ///   - [`fleet_summary_list(Option<Vec<FleetSummary>>)`](crate::output::ListFleetsOutput::fleet_summary_list): <p>The summary list of the fleets.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListFleetsOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    /// - On failure, responds with [`SdkError<ListFleetsError>`](crate::error::ListFleetsError)
     pub fn list_fleets(&self) -> fluent_builders::ListFleets<C, M, R> {
         fluent_builders::ListFleets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags attached to the resource. A tag is a key-value pair.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListWebsiteAuthorizationProviders` operation.
-    ///
-    /// See [`ListWebsiteAuthorizationProviders`](crate::client::fluent_builders::ListWebsiteAuthorizationProviders) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListWebsiteAuthorizationProviders`](crate::client::fluent_builders::ListWebsiteAuthorizationProviders) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWebsiteAuthorizationProviders::into_paginator).
+    ///
+    /// - Takes [`ListWebsiteAuthorizationProvidersInput`](crate::input::ListWebsiteAuthorizationProvidersInput) with field(s):
+    ///   - [`fleet_arn(Option<String>)`](crate::input::ListWebsiteAuthorizationProvidersInput::fleet_arn): <p>The ARN of the fleet.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListWebsiteAuthorizationProvidersInput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListWebsiteAuthorizationProvidersInput::max_results): <p>The maximum number of results to be included in the next page.</p>
+    /// - On success, responds with [`ListWebsiteAuthorizationProvidersOutput`](crate::output::ListWebsiteAuthorizationProvidersOutput) with field(s):
+    ///   - [`website_authorization_providers(Option<Vec<WebsiteAuthorizationProviderSummary>>)`](crate::output::ListWebsiteAuthorizationProvidersOutput::website_authorization_providers): <p>The website authorization providers.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListWebsiteAuthorizationProvidersOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// - On failure, responds with [`SdkError<ListWebsiteAuthorizationProvidersError>`](crate::error::ListWebsiteAuthorizationProvidersError)
     pub fn list_website_authorization_providers(
         &self,
     ) -> fluent_builders::ListWebsiteAuthorizationProviders<C, M, R> {
         fluent_builders::ListWebsiteAuthorizationProviders::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListWebsiteCertificateAuthorities` operation.
-    ///
-    /// See [`ListWebsiteCertificateAuthorities`](crate::client::fluent_builders::ListWebsiteCertificateAuthorities) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListWebsiteCertificateAuthorities`](crate::client::fluent_builders::ListWebsiteCertificateAuthorities) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWebsiteCertificateAuthorities::into_paginator).
+    ///
+    /// - Takes [`ListWebsiteCertificateAuthoritiesInput`](crate::input::ListWebsiteCertificateAuthoritiesInput) with field(s):
+    ///   - [`fleet_arn(Option<String>)`](crate::input::ListWebsiteCertificateAuthoritiesInput::fleet_arn): <p>The ARN of the fleet.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListWebsiteCertificateAuthoritiesInput::max_results): <p>The maximum number of results to be included in the next page.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListWebsiteCertificateAuthoritiesInput::next_token): <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    /// - On success, responds with [`ListWebsiteCertificateAuthoritiesOutput`](crate::output::ListWebsiteCertificateAuthoritiesOutput) with field(s):
+    ///   - [`website_certificate_authorities(Option<Vec<WebsiteCaSummary>>)`](crate::output::ListWebsiteCertificateAuthoritiesOutput::website_certificate_authorities): <p>Information about the certificates.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListWebsiteCertificateAuthoritiesOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
+    /// - On failure, responds with [`SdkError<ListWebsiteCertificateAuthoritiesError>`](crate::error::ListWebsiteCertificateAuthoritiesError)
     pub fn list_website_certificate_authorities(
         &self,
     ) -> fluent_builders::ListWebsiteCertificateAuthorities<C, M, R> {
         fluent_builders::ListWebsiteCertificateAuthorities::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RestoreDomainAccess` operation.
+    /// Constructs a fluent builder for the [`RestoreDomainAccess`](crate::client::fluent_builders::RestoreDomainAccess) operation.
     ///
-    /// See [`RestoreDomainAccess`](crate::client::fluent_builders::RestoreDomainAccess) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RestoreDomainAccessInput`](crate::input::RestoreDomainAccessInput) with field(s):
+    ///   - [`fleet_arn(Option<String>)`](crate::input::RestoreDomainAccessInput::fleet_arn): <p>The ARN of the fleet.</p>
+    ///   - [`domain_name(Option<String>)`](crate::input::RestoreDomainAccessInput::domain_name): <p>The name of the domain.</p>
+    /// - On success, responds with [`RestoreDomainAccessOutput`](crate::output::RestoreDomainAccessOutput)
+
+    /// - On failure, responds with [`SdkError<RestoreDomainAccessError>`](crate::error::RestoreDomainAccessError)
     pub fn restore_domain_access(&self) -> fluent_builders::RestoreDomainAccess<C, M, R> {
         fluent_builders::RestoreDomainAccess::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RevokeDomainAccess` operation.
+    /// Constructs a fluent builder for the [`RevokeDomainAccess`](crate::client::fluent_builders::RevokeDomainAccess) operation.
     ///
-    /// See [`RevokeDomainAccess`](crate::client::fluent_builders::RevokeDomainAccess) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RevokeDomainAccessInput`](crate::input::RevokeDomainAccessInput) with field(s):
+    ///   - [`fleet_arn(Option<String>)`](crate::input::RevokeDomainAccessInput::fleet_arn): <p>The ARN of the fleet.</p>
+    ///   - [`domain_name(Option<String>)`](crate::input::RevokeDomainAccessInput::domain_name): <p>The name of the domain.</p>
+    /// - On success, responds with [`RevokeDomainAccessOutput`](crate::output::RevokeDomainAccessOutput)
+
+    /// - On failure, responds with [`SdkError<RevokeDomainAccessError>`](crate::error::RevokeDomainAccessError)
     pub fn revoke_domain_access(&self) -> fluent_builders::RevokeDomainAccess<C, M, R> {
         fluent_builders::RevokeDomainAccess::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SignOutUser` operation.
+    /// Constructs a fluent builder for the [`SignOutUser`](crate::client::fluent_builders::SignOutUser) operation.
     ///
-    /// See [`SignOutUser`](crate::client::fluent_builders::SignOutUser) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`SignOutUserInput`](crate::input::SignOutUserInput) with field(s):
+    ///   - [`fleet_arn(Option<String>)`](crate::input::SignOutUserInput::fleet_arn): <p>The ARN of the fleet.</p>
+    ///   - [`username(Option<String>)`](crate::input::SignOutUserInput::username): <p>The name of the user.</p>
+    /// - On success, responds with [`SignOutUserOutput`](crate::output::SignOutUserOutput)
+
+    /// - On failure, responds with [`SdkError<SignOutUserError>`](crate::error::SignOutUserError)
     pub fn sign_out_user(&self) -> fluent_builders::SignOutUser<C, M, R> {
         fluent_builders::SignOutUser::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>The tags to add to the resource. A tag is a key-value pair.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the fleet.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The list of tag keys to remove from the resource.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateAuditStreamConfiguration` operation.
+    /// Constructs a fluent builder for the [`UpdateAuditStreamConfiguration`](crate::client::fluent_builders::UpdateAuditStreamConfiguration) operation.
     ///
-    /// See [`UpdateAuditStreamConfiguration`](crate::client::fluent_builders::UpdateAuditStreamConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateAuditStreamConfigurationInput`](crate::input::UpdateAuditStreamConfigurationInput) with field(s):
+    ///   - [`fleet_arn(Option<String>)`](crate::input::UpdateAuditStreamConfigurationInput::fleet_arn): <p>The ARN of the fleet.</p>
+    ///   - [`audit_stream_arn(Option<String>)`](crate::input::UpdateAuditStreamConfigurationInput::audit_stream_arn): <p>The ARN of the Amazon Kinesis data stream that receives the audit events.</p>
+    /// - On success, responds with [`UpdateAuditStreamConfigurationOutput`](crate::output::UpdateAuditStreamConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateAuditStreamConfigurationError>`](crate::error::UpdateAuditStreamConfigurationError)
     pub fn update_audit_stream_configuration(
         &self,
     ) -> fluent_builders::UpdateAuditStreamConfiguration<C, M, R> {
         fluent_builders::UpdateAuditStreamConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateCompanyNetworkConfiguration` operation.
+    /// Constructs a fluent builder for the [`UpdateCompanyNetworkConfiguration`](crate::client::fluent_builders::UpdateCompanyNetworkConfiguration) operation.
     ///
-    /// See [`UpdateCompanyNetworkConfiguration`](crate::client::fluent_builders::UpdateCompanyNetworkConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateCompanyNetworkConfigurationInput`](crate::input::UpdateCompanyNetworkConfigurationInput) with field(s):
+    ///   - [`fleet_arn(Option<String>)`](crate::input::UpdateCompanyNetworkConfigurationInput::fleet_arn): <p>The ARN of the fleet.</p>
+    ///   - [`vpc_id(Option<String>)`](crate::input::UpdateCompanyNetworkConfigurationInput::vpc_id): <p>The VPC with connectivity to associated websites.</p>
+    ///   - [`subnet_ids(Option<Vec<String>>)`](crate::input::UpdateCompanyNetworkConfigurationInput::subnet_ids): <p>The subnets used for X-ENI connections from Amazon WorkLink rendering containers.</p>
+    ///   - [`security_group_ids(Option<Vec<String>>)`](crate::input::UpdateCompanyNetworkConfigurationInput::security_group_ids): <p>The security groups associated with access to the provided subnets.</p>
+    /// - On success, responds with [`UpdateCompanyNetworkConfigurationOutput`](crate::output::UpdateCompanyNetworkConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateCompanyNetworkConfigurationError>`](crate::error::UpdateCompanyNetworkConfigurationError)
     pub fn update_company_network_configuration(
         &self,
     ) -> fluent_builders::UpdateCompanyNetworkConfiguration<C, M, R> {
         fluent_builders::UpdateCompanyNetworkConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDevicePolicyConfiguration` operation.
+    /// Constructs a fluent builder for the [`UpdateDevicePolicyConfiguration`](crate::client::fluent_builders::UpdateDevicePolicyConfiguration) operation.
     ///
-    /// See [`UpdateDevicePolicyConfiguration`](crate::client::fluent_builders::UpdateDevicePolicyConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateDevicePolicyConfigurationInput`](crate::input::UpdateDevicePolicyConfigurationInput) with field(s):
+    ///   - [`fleet_arn(Option<String>)`](crate::input::UpdateDevicePolicyConfigurationInput::fleet_arn): <p>The ARN of the fleet.</p>
+    ///   - [`device_ca_certificate(Option<String>)`](crate::input::UpdateDevicePolicyConfigurationInput::device_ca_certificate): <p>The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.</p>
+    /// - On success, responds with [`UpdateDevicePolicyConfigurationOutput`](crate::output::UpdateDevicePolicyConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateDevicePolicyConfigurationError>`](crate::error::UpdateDevicePolicyConfigurationError)
     pub fn update_device_policy_configuration(
         &self,
     ) -> fluent_builders::UpdateDevicePolicyConfiguration<C, M, R> {
         fluent_builders::UpdateDevicePolicyConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDomainMetadata` operation.
+    /// Constructs a fluent builder for the [`UpdateDomainMetadata`](crate::client::fluent_builders::UpdateDomainMetadata) operation.
     ///
-    /// See [`UpdateDomainMetadata`](crate::client::fluent_builders::UpdateDomainMetadata) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateDomainMetadataInput`](crate::input::UpdateDomainMetadataInput) with field(s):
+    ///   - [`fleet_arn(Option<String>)`](crate::input::UpdateDomainMetadataInput::fleet_arn): <p>The ARN of the fleet.</p>
+    ///   - [`domain_name(Option<String>)`](crate::input::UpdateDomainMetadataInput::domain_name): <p>The name of the domain.</p>
+    ///   - [`display_name(Option<String>)`](crate::input::UpdateDomainMetadataInput::display_name): <p>The name to display.</p>
+    /// - On success, responds with [`UpdateDomainMetadataOutput`](crate::output::UpdateDomainMetadataOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateDomainMetadataError>`](crate::error::UpdateDomainMetadataError)
     pub fn update_domain_metadata(&self) -> fluent_builders::UpdateDomainMetadata<C, M, R> {
         fluent_builders::UpdateDomainMetadata::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateFleetMetadata` operation.
+    /// Constructs a fluent builder for the [`UpdateFleetMetadata`](crate::client::fluent_builders::UpdateFleetMetadata) operation.
     ///
-    /// See [`UpdateFleetMetadata`](crate::client::fluent_builders::UpdateFleetMetadata) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateFleetMetadataInput`](crate::input::UpdateFleetMetadataInput) with field(s):
+    ///   - [`fleet_arn(Option<String>)`](crate::input::UpdateFleetMetadataInput::fleet_arn): <p>The ARN of the fleet.</p>
+    ///   - [`display_name(Option<String>)`](crate::input::UpdateFleetMetadataInput::display_name): <p>The fleet name to display. The existing DisplayName is unset if null is passed.</p>
+    ///   - [`optimize_for_end_user_location(Option<bool>)`](crate::input::UpdateFleetMetadataInput::optimize_for_end_user_location): <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
+    /// - On success, responds with [`UpdateFleetMetadataOutput`](crate::output::UpdateFleetMetadataOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateFleetMetadataError>`](crate::error::UpdateFleetMetadataError)
     pub fn update_fleet_metadata(&self) -> fluent_builders::UpdateFleetMetadata<C, M, R> {
         fluent_builders::UpdateFleetMetadata::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateIdentityProviderConfiguration` operation.
+    /// Constructs a fluent builder for the [`UpdateIdentityProviderConfiguration`](crate::client::fluent_builders::UpdateIdentityProviderConfiguration) operation.
     ///
-    /// See [`UpdateIdentityProviderConfiguration`](crate::client::fluent_builders::UpdateIdentityProviderConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateIdentityProviderConfigurationInput`](crate::input::UpdateIdentityProviderConfigurationInput) with field(s):
+    ///   - [`fleet_arn(Option<String>)`](crate::input::UpdateIdentityProviderConfigurationInput::fleet_arn): <p>The ARN of the fleet.</p>
+    ///   - [`identity_provider_type(Option<IdentityProviderType>)`](crate::input::UpdateIdentityProviderConfigurationInput::identity_provider_type): <p>The type of identity provider.</p>
+    ///   - [`identity_provider_saml_metadata(Option<String>)`](crate::input::UpdateIdentityProviderConfigurationInput::identity_provider_saml_metadata): <p>The SAML metadata document provided by the customer’s identity provider. The existing IdentityProviderSamlMetadata is unset if null is passed.</p>
+    /// - On success, responds with [`UpdateIdentityProviderConfigurationOutput`](crate::output::UpdateIdentityProviderConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateIdentityProviderConfigurationError>`](crate::error::UpdateIdentityProviderConfigurationError)
     pub fn update_identity_provider_configuration(
         &self,
     ) -> fluent_builders::UpdateIdentityProviderConfiguration<C, M, R> {

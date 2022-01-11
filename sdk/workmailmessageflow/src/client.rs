@@ -83,17 +83,24 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `GetRawMessageContent` operation.
+    /// Constructs a fluent builder for the [`GetRawMessageContent`](crate::client::fluent_builders::GetRawMessageContent) operation.
     ///
-    /// See [`GetRawMessageContent`](crate::client::fluent_builders::GetRawMessageContent) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetRawMessageContentInput`](crate::input::GetRawMessageContentInput) with field(s):
+    ///   - [`message_id(Option<String>)`](crate::input::GetRawMessageContentInput::message_id): <p>The identifier of the email message to retrieve.</p>
+    /// - On success, responds with [`GetRawMessageContentOutput`](crate::output::GetRawMessageContentOutput) with field(s):
+    ///   - [`message_content(byte_stream::ByteStream)`](crate::output::GetRawMessageContentOutput::message_content): <p>The raw content of the email message, in MIME format.</p>
+    /// - On failure, responds with [`SdkError<GetRawMessageContentError>`](crate::error::GetRawMessageContentError)
     pub fn get_raw_message_content(&self) -> fluent_builders::GetRawMessageContent<C, M, R> {
         fluent_builders::GetRawMessageContent::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutRawMessageContent` operation.
+    /// Constructs a fluent builder for the [`PutRawMessageContent`](crate::client::fluent_builders::PutRawMessageContent) operation.
     ///
-    /// See [`PutRawMessageContent`](crate::client::fluent_builders::PutRawMessageContent) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutRawMessageContentInput`](crate::input::PutRawMessageContentInput) with field(s):
+    ///   - [`message_id(Option<String>)`](crate::input::PutRawMessageContentInput::message_id): <p>The identifier of the email message being updated.</p>
+    ///   - [`content(Option<RawMessageContent>)`](crate::input::PutRawMessageContentInput::content): <p>Describes the raw message content of the updated email message.</p>
+    /// - On success, responds with [`PutRawMessageContentOutput`](crate::output::PutRawMessageContentOutput)
+
+    /// - On failure, responds with [`SdkError<PutRawMessageContentError>`](crate::error::PutRawMessageContentError)
     pub fn put_raw_message_content(&self) -> fluent_builders::PutRawMessageContent<C, M, R> {
         fluent_builders::PutRawMessageContent::new(self.handle.clone())
     }

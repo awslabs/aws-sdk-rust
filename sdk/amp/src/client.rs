@@ -83,140 +83,229 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateAlertManagerDefinition` operation.
+    /// Constructs a fluent builder for the [`CreateAlertManagerDefinition`](crate::client::fluent_builders::CreateAlertManagerDefinition) operation.
     ///
-    /// See [`CreateAlertManagerDefinition`](crate::client::fluent_builders::CreateAlertManagerDefinition) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateAlertManagerDefinitionInput`](crate::input::CreateAlertManagerDefinitionInput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::input::CreateAlertManagerDefinitionInput::workspace_id): The ID of the workspace in which to create the alert manager definition.
+    ///   - [`data(Option<Blob>)`](crate::input::CreateAlertManagerDefinitionInput::data): The alert manager definition data.
+    ///   - [`client_token(Option<String>)`](crate::input::CreateAlertManagerDefinitionInput::client_token): Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    /// - On success, responds with [`CreateAlertManagerDefinitionOutput`](crate::output::CreateAlertManagerDefinitionOutput) with field(s):
+    ///   - [`status(Option<AlertManagerDefinitionStatus>)`](crate::output::CreateAlertManagerDefinitionOutput::status): The status of alert manager definition.
+    /// - On failure, responds with [`SdkError<CreateAlertManagerDefinitionError>`](crate::error::CreateAlertManagerDefinitionError)
     pub fn create_alert_manager_definition(
         &self,
     ) -> fluent_builders::CreateAlertManagerDefinition<C, M, R> {
         fluent_builders::CreateAlertManagerDefinition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateRuleGroupsNamespace` operation.
+    /// Constructs a fluent builder for the [`CreateRuleGroupsNamespace`](crate::client::fluent_builders::CreateRuleGroupsNamespace) operation.
     ///
-    /// See [`CreateRuleGroupsNamespace`](crate::client::fluent_builders::CreateRuleGroupsNamespace) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateRuleGroupsNamespaceInput`](crate::input::CreateRuleGroupsNamespaceInput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::input::CreateRuleGroupsNamespaceInput::workspace_id): The ID of the workspace in which to create the rule group namespace.
+    ///   - [`name(Option<String>)`](crate::input::CreateRuleGroupsNamespaceInput::name): The rule groups namespace name.
+    ///   - [`data(Option<Blob>)`](crate::input::CreateRuleGroupsNamespaceInput::data): The namespace data that define the rule groups.
+    ///   - [`client_token(Option<String>)`](crate::input::CreateRuleGroupsNamespaceInput::client_token): Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateRuleGroupsNamespaceInput::tags): Optional, user-provided tags for this rule groups namespace.
+    /// - On success, responds with [`CreateRuleGroupsNamespaceOutput`](crate::output::CreateRuleGroupsNamespaceOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::CreateRuleGroupsNamespaceOutput::name): The rule groups namespace name.
+    ///   - [`arn(Option<String>)`](crate::output::CreateRuleGroupsNamespaceOutput::arn): The Amazon Resource Name (ARN) of this rule groups namespace.
+    ///   - [`status(Option<RuleGroupsNamespaceStatus>)`](crate::output::CreateRuleGroupsNamespaceOutput::status): The status of rule groups namespace.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateRuleGroupsNamespaceOutput::tags): The tags of this rule groups namespace.
+    /// - On failure, responds with [`SdkError<CreateRuleGroupsNamespaceError>`](crate::error::CreateRuleGroupsNamespaceError)
     pub fn create_rule_groups_namespace(
         &self,
     ) -> fluent_builders::CreateRuleGroupsNamespace<C, M, R> {
         fluent_builders::CreateRuleGroupsNamespace::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateWorkspace` operation.
+    /// Constructs a fluent builder for the [`CreateWorkspace`](crate::client::fluent_builders::CreateWorkspace) operation.
     ///
-    /// See [`CreateWorkspace`](crate::client::fluent_builders::CreateWorkspace) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateWorkspaceInput`](crate::input::CreateWorkspaceInput) with field(s):
+    ///   - [`alias(Option<String>)`](crate::input::CreateWorkspaceInput::alias): An optional user-assigned alias for this workspace. This alias is for user reference and does not need to be unique.
+    ///   - [`client_token(Option<String>)`](crate::input::CreateWorkspaceInput::client_token): Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateWorkspaceInput::tags): Optional, user-provided tags for this workspace.
+    /// - On success, responds with [`CreateWorkspaceOutput`](crate::output::CreateWorkspaceOutput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::output::CreateWorkspaceOutput::workspace_id): The generated ID of the workspace that was just created.
+    ///   - [`arn(Option<String>)`](crate::output::CreateWorkspaceOutput::arn): The ARN of the workspace that was just created.
+    ///   - [`status(Option<WorkspaceStatus>)`](crate::output::CreateWorkspaceOutput::status): The status of the workspace that was just created (usually CREATING).
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateWorkspaceOutput::tags): The tags of this workspace.
+    /// - On failure, responds with [`SdkError<CreateWorkspaceError>`](crate::error::CreateWorkspaceError)
     pub fn create_workspace(&self) -> fluent_builders::CreateWorkspace<C, M, R> {
         fluent_builders::CreateWorkspace::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAlertManagerDefinition` operation.
+    /// Constructs a fluent builder for the [`DeleteAlertManagerDefinition`](crate::client::fluent_builders::DeleteAlertManagerDefinition) operation.
     ///
-    /// See [`DeleteAlertManagerDefinition`](crate::client::fluent_builders::DeleteAlertManagerDefinition) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteAlertManagerDefinitionInput`](crate::input::DeleteAlertManagerDefinitionInput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::input::DeleteAlertManagerDefinitionInput::workspace_id): The ID of the workspace in which to delete the alert manager definition.
+    ///   - [`client_token(Option<String>)`](crate::input::DeleteAlertManagerDefinitionInput::client_token): Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    /// - On success, responds with [`DeleteAlertManagerDefinitionOutput`](crate::output::DeleteAlertManagerDefinitionOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAlertManagerDefinitionError>`](crate::error::DeleteAlertManagerDefinitionError)
     pub fn delete_alert_manager_definition(
         &self,
     ) -> fluent_builders::DeleteAlertManagerDefinition<C, M, R> {
         fluent_builders::DeleteAlertManagerDefinition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteRuleGroupsNamespace` operation.
+    /// Constructs a fluent builder for the [`DeleteRuleGroupsNamespace`](crate::client::fluent_builders::DeleteRuleGroupsNamespace) operation.
     ///
-    /// See [`DeleteRuleGroupsNamespace`](crate::client::fluent_builders::DeleteRuleGroupsNamespace) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteRuleGroupsNamespaceInput`](crate::input::DeleteRuleGroupsNamespaceInput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::input::DeleteRuleGroupsNamespaceInput::workspace_id): The ID of the workspace to delete rule group definition.
+    ///   - [`name(Option<String>)`](crate::input::DeleteRuleGroupsNamespaceInput::name): The rule groups namespace name.
+    ///   - [`client_token(Option<String>)`](crate::input::DeleteRuleGroupsNamespaceInput::client_token): Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    /// - On success, responds with [`DeleteRuleGroupsNamespaceOutput`](crate::output::DeleteRuleGroupsNamespaceOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteRuleGroupsNamespaceError>`](crate::error::DeleteRuleGroupsNamespaceError)
     pub fn delete_rule_groups_namespace(
         &self,
     ) -> fluent_builders::DeleteRuleGroupsNamespace<C, M, R> {
         fluent_builders::DeleteRuleGroupsNamespace::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteWorkspace` operation.
+    /// Constructs a fluent builder for the [`DeleteWorkspace`](crate::client::fluent_builders::DeleteWorkspace) operation.
     ///
-    /// See [`DeleteWorkspace`](crate::client::fluent_builders::DeleteWorkspace) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteWorkspaceInput`](crate::input::DeleteWorkspaceInput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::input::DeleteWorkspaceInput::workspace_id): The ID of the workspace to delete.
+    ///   - [`client_token(Option<String>)`](crate::input::DeleteWorkspaceInput::client_token): Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    /// - On success, responds with [`DeleteWorkspaceOutput`](crate::output::DeleteWorkspaceOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteWorkspaceError>`](crate::error::DeleteWorkspaceError)
     pub fn delete_workspace(&self) -> fluent_builders::DeleteWorkspace<C, M, R> {
         fluent_builders::DeleteWorkspace::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAlertManagerDefinition` operation.
+    /// Constructs a fluent builder for the [`DescribeAlertManagerDefinition`](crate::client::fluent_builders::DescribeAlertManagerDefinition) operation.
     ///
-    /// See [`DescribeAlertManagerDefinition`](crate::client::fluent_builders::DescribeAlertManagerDefinition) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeAlertManagerDefinitionInput`](crate::input::DescribeAlertManagerDefinitionInput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::input::DescribeAlertManagerDefinitionInput::workspace_id): The ID of the workspace to describe.
+    /// - On success, responds with [`DescribeAlertManagerDefinitionOutput`](crate::output::DescribeAlertManagerDefinitionOutput) with field(s):
+    ///   - [`alert_manager_definition(Option<AlertManagerDefinitionDescription>)`](crate::output::DescribeAlertManagerDefinitionOutput::alert_manager_definition): The properties of the selected workspace's alert manager definition.
+    /// - On failure, responds with [`SdkError<DescribeAlertManagerDefinitionError>`](crate::error::DescribeAlertManagerDefinitionError)
     pub fn describe_alert_manager_definition(
         &self,
     ) -> fluent_builders::DescribeAlertManagerDefinition<C, M, R> {
         fluent_builders::DescribeAlertManagerDefinition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeRuleGroupsNamespace` operation.
+    /// Constructs a fluent builder for the [`DescribeRuleGroupsNamespace`](crate::client::fluent_builders::DescribeRuleGroupsNamespace) operation.
     ///
-    /// See [`DescribeRuleGroupsNamespace`](crate::client::fluent_builders::DescribeRuleGroupsNamespace) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeRuleGroupsNamespaceInput`](crate::input::DescribeRuleGroupsNamespaceInput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::input::DescribeRuleGroupsNamespaceInput::workspace_id): The ID of the workspace to describe.
+    ///   - [`name(Option<String>)`](crate::input::DescribeRuleGroupsNamespaceInput::name): The rule groups namespace.
+    /// - On success, responds with [`DescribeRuleGroupsNamespaceOutput`](crate::output::DescribeRuleGroupsNamespaceOutput) with field(s):
+    ///   - [`rule_groups_namespace(Option<RuleGroupsNamespaceDescription>)`](crate::output::DescribeRuleGroupsNamespaceOutput::rule_groups_namespace): The selected rule groups namespace.
+    /// - On failure, responds with [`SdkError<DescribeRuleGroupsNamespaceError>`](crate::error::DescribeRuleGroupsNamespaceError)
     pub fn describe_rule_groups_namespace(
         &self,
     ) -> fluent_builders::DescribeRuleGroupsNamespace<C, M, R> {
         fluent_builders::DescribeRuleGroupsNamespace::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeWorkspace` operation.
+    /// Constructs a fluent builder for the [`DescribeWorkspace`](crate::client::fluent_builders::DescribeWorkspace) operation.
     ///
-    /// See [`DescribeWorkspace`](crate::client::fluent_builders::DescribeWorkspace) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeWorkspaceInput`](crate::input::DescribeWorkspaceInput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::input::DescribeWorkspaceInput::workspace_id): The ID of the workspace to describe.
+    /// - On success, responds with [`DescribeWorkspaceOutput`](crate::output::DescribeWorkspaceOutput) with field(s):
+    ///   - [`workspace(Option<WorkspaceDescription>)`](crate::output::DescribeWorkspaceOutput::workspace): The properties of the selected workspace.
+    /// - On failure, responds with [`SdkError<DescribeWorkspaceError>`](crate::error::DescribeWorkspaceError)
     pub fn describe_workspace(&self) -> fluent_builders::DescribeWorkspace<C, M, R> {
         fluent_builders::DescribeWorkspace::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRuleGroupsNamespaces` operation.
-    ///
-    /// See [`ListRuleGroupsNamespaces`](crate::client::fluent_builders::ListRuleGroupsNamespaces) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListRuleGroupsNamespaces`](crate::client::fluent_builders::ListRuleGroupsNamespaces) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRuleGroupsNamespaces::into_paginator).
+    ///
+    /// - Takes [`ListRuleGroupsNamespacesInput`](crate::input::ListRuleGroupsNamespacesInput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::input::ListRuleGroupsNamespacesInput::workspace_id): The ID of the workspace.
+    ///   - [`name(Option<String>)`](crate::input::ListRuleGroupsNamespacesInput::name): Optional filter for rule groups namespace name. Only the rule groups namespace that begin with this value will be returned.
+    ///   - [`next_token(Option<String>)`](crate::input::ListRuleGroupsNamespacesInput::next_token): Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListRuleGroupsNamespaces request.
+    ///   - [`max_results(Option<i32>)`](crate::input::ListRuleGroupsNamespacesInput::max_results): Maximum results to return in response (default=100, maximum=1000).
+    /// - On success, responds with [`ListRuleGroupsNamespacesOutput`](crate::output::ListRuleGroupsNamespacesOutput) with field(s):
+    ///   - [`rule_groups_namespaces(Option<Vec<RuleGroupsNamespaceSummary>>)`](crate::output::ListRuleGroupsNamespacesOutput::rule_groups_namespaces): The list of the selected rule groups namespaces.
+    ///   - [`next_token(Option<String>)`](crate::output::ListRuleGroupsNamespacesOutput::next_token): Pagination token to use when requesting the next page in this list.
+    /// - On failure, responds with [`SdkError<ListRuleGroupsNamespacesError>`](crate::error::ListRuleGroupsNamespacesError)
     pub fn list_rule_groups_namespaces(
         &self,
     ) -> fluent_builders::ListRuleGroupsNamespaces<C, M, R> {
         fluent_builders::ListRuleGroupsNamespaces::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): The ARN of the resource.
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): The list of tags assigned to the resource.
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListWorkspaces` operation.
-    ///
-    /// See [`ListWorkspaces`](crate::client::fluent_builders::ListWorkspaces) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListWorkspaces`](crate::client::fluent_builders::ListWorkspaces) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWorkspaces::into_paginator).
+    ///
+    /// - Takes [`ListWorkspacesInput`](crate::input::ListWorkspacesInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListWorkspacesInput::next_token): Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListWorkspaces request.
+    ///   - [`alias(Option<String>)`](crate::input::ListWorkspacesInput::alias): Optional filter for workspace alias. Only the workspaces with aliases that begin with this value will be returned.
+    ///   - [`max_results(Option<i32>)`](crate::input::ListWorkspacesInput::max_results): Maximum results to return in response (default=100, maximum=1000).
+    /// - On success, responds with [`ListWorkspacesOutput`](crate::output::ListWorkspacesOutput) with field(s):
+    ///   - [`workspaces(Option<Vec<WorkspaceSummary>>)`](crate::output::ListWorkspacesOutput::workspaces): The list of existing workspaces, including those undergoing creation or deletion.
+    ///   - [`next_token(Option<String>)`](crate::output::ListWorkspacesOutput::next_token): Pagination token to use when requesting the next page in this list.
+    /// - On failure, responds with [`SdkError<ListWorkspacesError>`](crate::error::ListWorkspacesError)
     pub fn list_workspaces(&self) -> fluent_builders::ListWorkspaces<C, M, R> {
         fluent_builders::ListWorkspaces::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutAlertManagerDefinition` operation.
+    /// Constructs a fluent builder for the [`PutAlertManagerDefinition`](crate::client::fluent_builders::PutAlertManagerDefinition) operation.
     ///
-    /// See [`PutAlertManagerDefinition`](crate::client::fluent_builders::PutAlertManagerDefinition) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutAlertManagerDefinitionInput`](crate::input::PutAlertManagerDefinitionInput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::input::PutAlertManagerDefinitionInput::workspace_id): The ID of the workspace in which to update the alert manager definition.
+    ///   - [`data(Option<Blob>)`](crate::input::PutAlertManagerDefinitionInput::data): The alert manager definition data.
+    ///   - [`client_token(Option<String>)`](crate::input::PutAlertManagerDefinitionInput::client_token): Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    /// - On success, responds with [`PutAlertManagerDefinitionOutput`](crate::output::PutAlertManagerDefinitionOutput) with field(s):
+    ///   - [`status(Option<AlertManagerDefinitionStatus>)`](crate::output::PutAlertManagerDefinitionOutput::status): The status of alert manager definition.
+    /// - On failure, responds with [`SdkError<PutAlertManagerDefinitionError>`](crate::error::PutAlertManagerDefinitionError)
     pub fn put_alert_manager_definition(
         &self,
     ) -> fluent_builders::PutAlertManagerDefinition<C, M, R> {
         fluent_builders::PutAlertManagerDefinition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutRuleGroupsNamespace` operation.
+    /// Constructs a fluent builder for the [`PutRuleGroupsNamespace`](crate::client::fluent_builders::PutRuleGroupsNamespace) operation.
     ///
-    /// See [`PutRuleGroupsNamespace`](crate::client::fluent_builders::PutRuleGroupsNamespace) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutRuleGroupsNamespaceInput`](crate::input::PutRuleGroupsNamespaceInput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::input::PutRuleGroupsNamespaceInput::workspace_id): The ID of the workspace in which to update the rule group namespace.
+    ///   - [`name(Option<String>)`](crate::input::PutRuleGroupsNamespaceInput::name): The rule groups namespace name.
+    ///   - [`data(Option<Blob>)`](crate::input::PutRuleGroupsNamespaceInput::data): The namespace data that define the rule groups.
+    ///   - [`client_token(Option<String>)`](crate::input::PutRuleGroupsNamespaceInput::client_token): Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    /// - On success, responds with [`PutRuleGroupsNamespaceOutput`](crate::output::PutRuleGroupsNamespaceOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::PutRuleGroupsNamespaceOutput::name): The rule groups namespace name.
+    ///   - [`arn(Option<String>)`](crate::output::PutRuleGroupsNamespaceOutput::arn): The Amazon Resource Name (ARN) of this rule groups namespace.
+    ///   - [`status(Option<RuleGroupsNamespaceStatus>)`](crate::output::PutRuleGroupsNamespaceOutput::status): The status of rule groups namespace.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::PutRuleGroupsNamespaceOutput::tags): The tags of this rule groups namespace.
+    /// - On failure, responds with [`SdkError<PutRuleGroupsNamespaceError>`](crate::error::PutRuleGroupsNamespaceError)
     pub fn put_rule_groups_namespace(&self) -> fluent_builders::PutRuleGroupsNamespace<C, M, R> {
         fluent_builders::PutRuleGroupsNamespace::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): The ARN of the resource.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): The list of tags assigned to the resource.
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): The ARN of the resource.
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): One or more tag keys
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateWorkspaceAlias` operation.
+    /// Constructs a fluent builder for the [`UpdateWorkspaceAlias`](crate::client::fluent_builders::UpdateWorkspaceAlias) operation.
     ///
-    /// See [`UpdateWorkspaceAlias`](crate::client::fluent_builders::UpdateWorkspaceAlias) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateWorkspaceAliasInput`](crate::input::UpdateWorkspaceAliasInput) with field(s):
+    ///   - [`workspace_id(Option<String>)`](crate::input::UpdateWorkspaceAliasInput::workspace_id): The ID of the workspace being updated.
+    ///   - [`alias(Option<String>)`](crate::input::UpdateWorkspaceAliasInput::alias): The new alias of the workspace.
+    ///   - [`client_token(Option<String>)`](crate::input::UpdateWorkspaceAliasInput::client_token): Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    /// - On success, responds with [`UpdateWorkspaceAliasOutput`](crate::output::UpdateWorkspaceAliasOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateWorkspaceAliasError>`](crate::error::UpdateWorkspaceAliasError)
     pub fn update_workspace_alias(&self) -> fluent_builders::UpdateWorkspaceAlias<C, M, R> {
         fluent_builders::UpdateWorkspaceAlias::new(self.handle.clone())
     }

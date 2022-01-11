@@ -83,299 +83,548 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CountClosedWorkflowExecutions` operation.
+    /// Constructs a fluent builder for the [`CountClosedWorkflowExecutions`](crate::client::fluent_builders::CountClosedWorkflowExecutions) operation.
     ///
-    /// See [`CountClosedWorkflowExecutions`](crate::client::fluent_builders::CountClosedWorkflowExecutions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CountClosedWorkflowExecutionsInput`](crate::input::CountClosedWorkflowExecutionsInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::CountClosedWorkflowExecutionsInput::domain): <p>The name of the domain containing the workflow executions to count.</p>
+    ///   - [`start_time_filter(Option<ExecutionTimeFilter>)`](crate::input::CountClosedWorkflowExecutionsInput::start_time_filter): <p>If specified, only workflow executions that meet the start time criteria of the filter are counted.</p> <note>   <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>  </note>
+    ///   - [`close_time_filter(Option<ExecutionTimeFilter>)`](crate::input::CountClosedWorkflowExecutionsInput::close_time_filter): <p>If specified, only workflow executions that meet the close time criteria of the filter are counted.</p> <note>   <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>  </note>
+    ///   - [`execution_filter(Option<WorkflowExecutionFilter>)`](crate::input::CountClosedWorkflowExecutionsInput::execution_filter): <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>   <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>  </note>
+    ///   - [`type_filter(Option<WorkflowTypeFilter>)`](crate::input::CountClosedWorkflowExecutionsInput::type_filter): <p>If specified, indicates the type of the workflow executions to be counted.</p> <note>   <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>  </note>
+    ///   - [`tag_filter(Option<TagFilter>)`](crate::input::CountClosedWorkflowExecutionsInput::tag_filter): <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note>   <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>  </note>
+    ///   - [`close_status_filter(Option<CloseStatusFilter>)`](crate::input::CountClosedWorkflowExecutionsInput::close_status_filter): <p>If specified, only workflow executions that match this close status are counted. This filter has an affect only if <code>executionStatus</code> is specified as <code>CLOSED</code>.</p> <note>   <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>  </note>
+    /// - On success, responds with [`CountClosedWorkflowExecutionsOutput`](crate::output::CountClosedWorkflowExecutionsOutput) with field(s):
+    ///   - [`count(i32)`](crate::output::CountClosedWorkflowExecutionsOutput::count): <p>The number of workflow executions.</p>
+    ///   - [`truncated(bool)`](crate::output::CountClosedWorkflowExecutionsOutput::truncated): <p>If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value.</p>
+    /// - On failure, responds with [`SdkError<CountClosedWorkflowExecutionsError>`](crate::error::CountClosedWorkflowExecutionsError)
     pub fn count_closed_workflow_executions(
         &self,
     ) -> fluent_builders::CountClosedWorkflowExecutions<C, M, R> {
         fluent_builders::CountClosedWorkflowExecutions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CountOpenWorkflowExecutions` operation.
+    /// Constructs a fluent builder for the [`CountOpenWorkflowExecutions`](crate::client::fluent_builders::CountOpenWorkflowExecutions) operation.
     ///
-    /// See [`CountOpenWorkflowExecutions`](crate::client::fluent_builders::CountOpenWorkflowExecutions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CountOpenWorkflowExecutionsInput`](crate::input::CountOpenWorkflowExecutionsInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::CountOpenWorkflowExecutionsInput::domain): <p>The name of the domain containing the workflow executions to count.</p>
+    ///   - [`start_time_filter(Option<ExecutionTimeFilter>)`](crate::input::CountOpenWorkflowExecutionsInput::start_time_filter): <p>Specifies the start time criteria that workflow executions must meet in order to be counted.</p>
+    ///   - [`type_filter(Option<WorkflowTypeFilter>)`](crate::input::CountOpenWorkflowExecutionsInput::type_filter): <p>Specifies the type of the workflow executions to be counted.</p> <note>   <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>  </note>
+    ///   - [`tag_filter(Option<TagFilter>)`](crate::input::CountOpenWorkflowExecutionsInput::tag_filter): <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note>   <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>  </note>
+    ///   - [`execution_filter(Option<WorkflowExecutionFilter>)`](crate::input::CountOpenWorkflowExecutionsInput::execution_filter): <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>   <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>  </note>
+    /// - On success, responds with [`CountOpenWorkflowExecutionsOutput`](crate::output::CountOpenWorkflowExecutionsOutput) with field(s):
+    ///   - [`count(i32)`](crate::output::CountOpenWorkflowExecutionsOutput::count): <p>The number of workflow executions.</p>
+    ///   - [`truncated(bool)`](crate::output::CountOpenWorkflowExecutionsOutput::truncated): <p>If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value.</p>
+    /// - On failure, responds with [`SdkError<CountOpenWorkflowExecutionsError>`](crate::error::CountOpenWorkflowExecutionsError)
     pub fn count_open_workflow_executions(
         &self,
     ) -> fluent_builders::CountOpenWorkflowExecutions<C, M, R> {
         fluent_builders::CountOpenWorkflowExecutions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CountPendingActivityTasks` operation.
+    /// Constructs a fluent builder for the [`CountPendingActivityTasks`](crate::client::fluent_builders::CountPendingActivityTasks) operation.
     ///
-    /// See [`CountPendingActivityTasks`](crate::client::fluent_builders::CountPendingActivityTasks) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CountPendingActivityTasksInput`](crate::input::CountPendingActivityTasksInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::CountPendingActivityTasksInput::domain): <p>The name of the domain that contains the task list.</p>
+    ///   - [`task_list(Option<TaskList>)`](crate::input::CountPendingActivityTasksInput::task_list): <p>The name of the task list.</p>
+    /// - On success, responds with [`CountPendingActivityTasksOutput`](crate::output::CountPendingActivityTasksOutput) with field(s):
+    ///   - [`count(i32)`](crate::output::CountPendingActivityTasksOutput::count): <p>The number of tasks in the task list.</p>
+    ///   - [`truncated(bool)`](crate::output::CountPendingActivityTasksOutput::truncated): <p>If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value.</p>
+    /// - On failure, responds with [`SdkError<CountPendingActivityTasksError>`](crate::error::CountPendingActivityTasksError)
     pub fn count_pending_activity_tasks(
         &self,
     ) -> fluent_builders::CountPendingActivityTasks<C, M, R> {
         fluent_builders::CountPendingActivityTasks::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CountPendingDecisionTasks` operation.
+    /// Constructs a fluent builder for the [`CountPendingDecisionTasks`](crate::client::fluent_builders::CountPendingDecisionTasks) operation.
     ///
-    /// See [`CountPendingDecisionTasks`](crate::client::fluent_builders::CountPendingDecisionTasks) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CountPendingDecisionTasksInput`](crate::input::CountPendingDecisionTasksInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::CountPendingDecisionTasksInput::domain): <p>The name of the domain that contains the task list.</p>
+    ///   - [`task_list(Option<TaskList>)`](crate::input::CountPendingDecisionTasksInput::task_list): <p>The name of the task list.</p>
+    /// - On success, responds with [`CountPendingDecisionTasksOutput`](crate::output::CountPendingDecisionTasksOutput) with field(s):
+    ///   - [`count(i32)`](crate::output::CountPendingDecisionTasksOutput::count): <p>The number of tasks in the task list.</p>
+    ///   - [`truncated(bool)`](crate::output::CountPendingDecisionTasksOutput::truncated): <p>If set to true, indicates that the actual count was more than the maximum supported by this API and the count returned is the truncated value.</p>
+    /// - On failure, responds with [`SdkError<CountPendingDecisionTasksError>`](crate::error::CountPendingDecisionTasksError)
     pub fn count_pending_decision_tasks(
         &self,
     ) -> fluent_builders::CountPendingDecisionTasks<C, M, R> {
         fluent_builders::CountPendingDecisionTasks::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeprecateActivityType` operation.
+    /// Constructs a fluent builder for the [`DeprecateActivityType`](crate::client::fluent_builders::DeprecateActivityType) operation.
     ///
-    /// See [`DeprecateActivityType`](crate::client::fluent_builders::DeprecateActivityType) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeprecateActivityTypeInput`](crate::input::DeprecateActivityTypeInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::DeprecateActivityTypeInput::domain): <p>The name of the domain in which the activity type is registered.</p>
+    ///   - [`activity_type(Option<ActivityType>)`](crate::input::DeprecateActivityTypeInput::activity_type): <p>The activity type to deprecate.</p>
+    /// - On success, responds with [`DeprecateActivityTypeOutput`](crate::output::DeprecateActivityTypeOutput)
+
+    /// - On failure, responds with [`SdkError<DeprecateActivityTypeError>`](crate::error::DeprecateActivityTypeError)
     pub fn deprecate_activity_type(&self) -> fluent_builders::DeprecateActivityType<C, M, R> {
         fluent_builders::DeprecateActivityType::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeprecateDomain` operation.
+    /// Constructs a fluent builder for the [`DeprecateDomain`](crate::client::fluent_builders::DeprecateDomain) operation.
     ///
-    /// See [`DeprecateDomain`](crate::client::fluent_builders::DeprecateDomain) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeprecateDomainInput`](crate::input::DeprecateDomainInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeprecateDomainInput::name): <p>The name of the domain to deprecate.</p>
+    /// - On success, responds with [`DeprecateDomainOutput`](crate::output::DeprecateDomainOutput)
+
+    /// - On failure, responds with [`SdkError<DeprecateDomainError>`](crate::error::DeprecateDomainError)
     pub fn deprecate_domain(&self) -> fluent_builders::DeprecateDomain<C, M, R> {
         fluent_builders::DeprecateDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeprecateWorkflowType` operation.
+    /// Constructs a fluent builder for the [`DeprecateWorkflowType`](crate::client::fluent_builders::DeprecateWorkflowType) operation.
     ///
-    /// See [`DeprecateWorkflowType`](crate::client::fluent_builders::DeprecateWorkflowType) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeprecateWorkflowTypeInput`](crate::input::DeprecateWorkflowTypeInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::DeprecateWorkflowTypeInput::domain): <p>The name of the domain in which the workflow type is registered.</p>
+    ///   - [`workflow_type(Option<WorkflowType>)`](crate::input::DeprecateWorkflowTypeInput::workflow_type): <p>The workflow type to deprecate.</p>
+    /// - On success, responds with [`DeprecateWorkflowTypeOutput`](crate::output::DeprecateWorkflowTypeOutput)
+
+    /// - On failure, responds with [`SdkError<DeprecateWorkflowTypeError>`](crate::error::DeprecateWorkflowTypeError)
     pub fn deprecate_workflow_type(&self) -> fluent_builders::DeprecateWorkflowType<C, M, R> {
         fluent_builders::DeprecateWorkflowType::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeActivityType` operation.
+    /// Constructs a fluent builder for the [`DescribeActivityType`](crate::client::fluent_builders::DescribeActivityType) operation.
     ///
-    /// See [`DescribeActivityType`](crate::client::fluent_builders::DescribeActivityType) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeActivityTypeInput`](crate::input::DescribeActivityTypeInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::DescribeActivityTypeInput::domain): <p>The name of the domain in which the activity type is registered.</p>
+    ///   - [`activity_type(Option<ActivityType>)`](crate::input::DescribeActivityTypeInput::activity_type): <p>The activity type to get information about. Activity types are identified by the <code>name</code> and <code>version</code> that were supplied when the activity was registered.</p>
+    /// - On success, responds with [`DescribeActivityTypeOutput`](crate::output::DescribeActivityTypeOutput) with field(s):
+    ///   - [`type_info(Option<ActivityTypeInfo>)`](crate::output::DescribeActivityTypeOutput::type_info): <p>General information about the activity type.</p>  <p>The status of activity type (returned in the ActivityTypeInfo structure) can be one of the following.</p>  <ul>   <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running. </p> </li>   <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateActivityType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new tasks of this type. </p> </li>  </ul>
+    ///   - [`configuration(Option<ActivityTypeConfiguration>)`](crate::output::DescribeActivityTypeOutput::configuration): <p>The configuration settings registered with the activity type.</p>
+    /// - On failure, responds with [`SdkError<DescribeActivityTypeError>`](crate::error::DescribeActivityTypeError)
     pub fn describe_activity_type(&self) -> fluent_builders::DescribeActivityType<C, M, R> {
         fluent_builders::DescribeActivityType::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDomain` operation.
+    /// Constructs a fluent builder for the [`DescribeDomain`](crate::client::fluent_builders::DescribeDomain) operation.
     ///
-    /// See [`DescribeDomain`](crate::client::fluent_builders::DescribeDomain) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeDomainInput`](crate::input::DescribeDomainInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DescribeDomainInput::name): <p>The name of the domain to describe.</p>
+    /// - On success, responds with [`DescribeDomainOutput`](crate::output::DescribeDomainOutput) with field(s):
+    ///   - [`domain_info(Option<DomainInfo>)`](crate::output::DescribeDomainOutput::domain_info): <p>The basic information about a domain, such as its name, status, and description.</p>
+    ///   - [`configuration(Option<DomainConfiguration>)`](crate::output::DescribeDomainOutput::configuration): <p>The domain configuration. Currently, this includes only the domain's retention period.</p>
+    /// - On failure, responds with [`SdkError<DescribeDomainError>`](crate::error::DescribeDomainError)
     pub fn describe_domain(&self) -> fluent_builders::DescribeDomain<C, M, R> {
         fluent_builders::DescribeDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeWorkflowExecution` operation.
+    /// Constructs a fluent builder for the [`DescribeWorkflowExecution`](crate::client::fluent_builders::DescribeWorkflowExecution) operation.
     ///
-    /// See [`DescribeWorkflowExecution`](crate::client::fluent_builders::DescribeWorkflowExecution) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeWorkflowExecutionInput`](crate::input::DescribeWorkflowExecutionInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::DescribeWorkflowExecutionInput::domain): <p>The name of the domain containing the workflow execution.</p>
+    ///   - [`execution(Option<WorkflowExecution>)`](crate::input::DescribeWorkflowExecutionInput::execution): <p>The workflow execution to describe.</p>
+    /// - On success, responds with [`DescribeWorkflowExecutionOutput`](crate::output::DescribeWorkflowExecutionOutput) with field(s):
+    ///   - [`execution_info(Option<WorkflowExecutionInfo>)`](crate::output::DescribeWorkflowExecutionOutput::execution_info): <p>Information about the workflow execution.</p>
+    ///   - [`execution_configuration(Option<WorkflowExecutionConfiguration>)`](crate::output::DescribeWorkflowExecutionOutput::execution_configuration): <p>The configuration settings for this workflow execution including timeout values, tasklist etc.</p>
+    ///   - [`open_counts(Option<WorkflowExecutionOpenCounts>)`](crate::output::DescribeWorkflowExecutionOutput::open_counts): <p>The number of tasks for this workflow execution. This includes open and closed tasks of all types.</p>
+    ///   - [`latest_activity_task_timestamp(Option<DateTime>)`](crate::output::DescribeWorkflowExecutionOutput::latest_activity_task_timestamp): <p>The time when the last activity task was scheduled for this workflow execution. You can use this information to determine if the workflow has not made progress for an unusually long period of time and might require a corrective action.</p>
+    ///   - [`latest_execution_context(Option<String>)`](crate::output::DescribeWorkflowExecutionOutput::latest_execution_context): <p>The latest executionContext provided by the decider for this workflow execution. A decider can provide an executionContext (a free-form string) when closing a decision task using <code>RespondDecisionTaskCompleted</code>.</p>
+    /// - On failure, responds with [`SdkError<DescribeWorkflowExecutionError>`](crate::error::DescribeWorkflowExecutionError)
     pub fn describe_workflow_execution(
         &self,
     ) -> fluent_builders::DescribeWorkflowExecution<C, M, R> {
         fluent_builders::DescribeWorkflowExecution::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeWorkflowType` operation.
+    /// Constructs a fluent builder for the [`DescribeWorkflowType`](crate::client::fluent_builders::DescribeWorkflowType) operation.
     ///
-    /// See [`DescribeWorkflowType`](crate::client::fluent_builders::DescribeWorkflowType) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeWorkflowTypeInput`](crate::input::DescribeWorkflowTypeInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::DescribeWorkflowTypeInput::domain): <p>The name of the domain in which this workflow type is registered.</p>
+    ///   - [`workflow_type(Option<WorkflowType>)`](crate::input::DescribeWorkflowTypeInput::workflow_type): <p>The workflow type to describe.</p>
+    /// - On success, responds with [`DescribeWorkflowTypeOutput`](crate::output::DescribeWorkflowTypeOutput) with field(s):
+    ///   - [`type_info(Option<WorkflowTypeInfo>)`](crate::output::DescribeWorkflowTypeOutput::type_info): <p>General information about the workflow type.</p>  <p>The status of the workflow type (returned in the WorkflowTypeInfo structure) can be one of the following.</p>  <ul>   <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running.</p> </li>   <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateWorkflowType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new workflow executions of this type.</p> </li>  </ul>
+    ///   - [`configuration(Option<WorkflowTypeConfiguration>)`](crate::output::DescribeWorkflowTypeOutput::configuration): <p>Configuration settings of the workflow type registered through <code>RegisterWorkflowType</code> </p>
+    /// - On failure, responds with [`SdkError<DescribeWorkflowTypeError>`](crate::error::DescribeWorkflowTypeError)
     pub fn describe_workflow_type(&self) -> fluent_builders::DescribeWorkflowType<C, M, R> {
         fluent_builders::DescribeWorkflowType::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetWorkflowExecutionHistory` operation.
-    ///
-    /// See [`GetWorkflowExecutionHistory`](crate::client::fluent_builders::GetWorkflowExecutionHistory) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetWorkflowExecutionHistory`](crate::client::fluent_builders::GetWorkflowExecutionHistory) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetWorkflowExecutionHistory::into_paginator).
+    ///
+    /// - Takes [`GetWorkflowExecutionHistoryInput`](crate::input::GetWorkflowExecutionHistoryInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::GetWorkflowExecutionHistoryInput::domain): <p>The name of the domain containing the workflow execution.</p>
+    ///   - [`execution(Option<WorkflowExecution>)`](crate::input::GetWorkflowExecutionHistoryInput::execution): <p>Specifies the workflow execution for which to return the history.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::input::GetWorkflowExecutionHistoryInput::next_page_token): <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>  <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
+    ///   - [`maximum_page_size(i32)`](crate::input::GetWorkflowExecutionHistoryInput::maximum_page_size): <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    ///   - [`reverse_order(bool)`](crate::input::GetWorkflowExecutionHistoryInput::reverse_order): <p>When set to <code>true</code>, returns the events in reverse order. By default the results are returned in ascending order of the <code>eventTimeStamp</code> of the events.</p>
+    /// - On success, responds with [`GetWorkflowExecutionHistoryOutput`](crate::output::GetWorkflowExecutionHistoryOutput) with field(s):
+    ///   - [`events(Option<Vec<HistoryEvent>>)`](crate::output::GetWorkflowExecutionHistoryOutput::events): <p>The list of history events.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::output::GetWorkflowExecutionHistoryOutput::next_page_token): <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>  <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
+    /// - On failure, responds with [`SdkError<GetWorkflowExecutionHistoryError>`](crate::error::GetWorkflowExecutionHistoryError)
     pub fn get_workflow_execution_history(
         &self,
     ) -> fluent_builders::GetWorkflowExecutionHistory<C, M, R> {
         fluent_builders::GetWorkflowExecutionHistory::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListActivityTypes` operation.
-    ///
-    /// See [`ListActivityTypes`](crate::client::fluent_builders::ListActivityTypes) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListActivityTypes`](crate::client::fluent_builders::ListActivityTypes) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListActivityTypes::into_paginator).
+    ///
+    /// - Takes [`ListActivityTypesInput`](crate::input::ListActivityTypesInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::ListActivityTypesInput::domain): <p>The name of the domain in which the activity types have been registered.</p>
+    ///   - [`name(Option<String>)`](crate::input::ListActivityTypesInput::name): <p>If specified, only lists the activity types that have this name.</p>
+    ///   - [`registration_status(Option<RegistrationStatus>)`](crate::input::ListActivityTypesInput::registration_status): <p>Specifies the registration status of the activity types to list.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::input::ListActivityTypesInput::next_page_token): <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>  <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
+    ///   - [`maximum_page_size(i32)`](crate::input::ListActivityTypesInput::maximum_page_size): <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    ///   - [`reverse_order(bool)`](crate::input::ListActivityTypesInput::reverse_order): <p>When set to <code>true</code>, returns the results in reverse order. By default, the results are returned in ascending alphabetical order by <code>name</code> of the activity types.</p>
+    /// - On success, responds with [`ListActivityTypesOutput`](crate::output::ListActivityTypesOutput) with field(s):
+    ///   - [`type_infos(Option<Vec<ActivityTypeInfo>>)`](crate::output::ListActivityTypesOutput::type_infos): <p>List of activity type information.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::output::ListActivityTypesOutput::next_page_token): <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>  <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
+    /// - On failure, responds with [`SdkError<ListActivityTypesError>`](crate::error::ListActivityTypesError)
     pub fn list_activity_types(&self) -> fluent_builders::ListActivityTypes<C, M, R> {
         fluent_builders::ListActivityTypes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListClosedWorkflowExecutions` operation.
-    ///
-    /// See [`ListClosedWorkflowExecutions`](crate::client::fluent_builders::ListClosedWorkflowExecutions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListClosedWorkflowExecutions`](crate::client::fluent_builders::ListClosedWorkflowExecutions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListClosedWorkflowExecutions::into_paginator).
+    ///
+    /// - Takes [`ListClosedWorkflowExecutionsInput`](crate::input::ListClosedWorkflowExecutionsInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::ListClosedWorkflowExecutionsInput::domain): <p>The name of the domain that contains the workflow executions to list.</p>
+    ///   - [`start_time_filter(Option<ExecutionTimeFilter>)`](crate::input::ListClosedWorkflowExecutionsInput::start_time_filter): <p>If specified, the workflow executions are included in the returned results based on whether their start times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their start times.</p> <note>   <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>  </note>
+    ///   - [`close_time_filter(Option<ExecutionTimeFilter>)`](crate::input::ListClosedWorkflowExecutionsInput::close_time_filter): <p>If specified, the workflow executions are included in the returned results based on whether their close times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their close times.</p> <note>   <p> <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of these in a request but not both.</p>  </note>
+    ///   - [`execution_filter(Option<WorkflowExecutionFilter>)`](crate::input::ListClosedWorkflowExecutionsInput::execution_filter): <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>   <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>  </note>
+    ///   - [`close_status_filter(Option<CloseStatusFilter>)`](crate::input::ListClosedWorkflowExecutionsInput::close_status_filter): <p>If specified, only workflow executions that match this <i>close status</i> are listed. For example, if TERMINATED is specified, then only TERMINATED workflow executions are listed.</p> <note>   <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>  </note>
+    ///   - [`type_filter(Option<WorkflowTypeFilter>)`](crate::input::ListClosedWorkflowExecutionsInput::type_filter): <p>If specified, only executions of the type specified in the filter are returned.</p> <note>   <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>  </note>
+    ///   - [`tag_filter(Option<TagFilter>)`](crate::input::ListClosedWorkflowExecutionsInput::tag_filter): <p>If specified, only executions that have the matching tag are listed.</p> <note>   <p> <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>  </note>
+    ///   - [`next_page_token(Option<String>)`](crate::input::ListClosedWorkflowExecutionsInput::next_page_token): <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>  <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
+    ///   - [`maximum_page_size(i32)`](crate::input::ListClosedWorkflowExecutionsInput::maximum_page_size): <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    ///   - [`reverse_order(bool)`](crate::input::ListClosedWorkflowExecutionsInput::reverse_order): <p>When set to <code>true</code>, returns the results in reverse order. By default the results are returned in descending order of the start or the close time of the executions.</p>
+    /// - On success, responds with [`ListClosedWorkflowExecutionsOutput`](crate::output::ListClosedWorkflowExecutionsOutput) with field(s):
+    ///   - [`execution_infos(Option<Vec<WorkflowExecutionInfo>>)`](crate::output::ListClosedWorkflowExecutionsOutput::execution_infos): <p>The list of workflow information structures.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::output::ListClosedWorkflowExecutionsOutput::next_page_token): <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>  <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
+    /// - On failure, responds with [`SdkError<ListClosedWorkflowExecutionsError>`](crate::error::ListClosedWorkflowExecutionsError)
     pub fn list_closed_workflow_executions(
         &self,
     ) -> fluent_builders::ListClosedWorkflowExecutions<C, M, R> {
         fluent_builders::ListClosedWorkflowExecutions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDomains` operation.
-    ///
-    /// See [`ListDomains`](crate::client::fluent_builders::ListDomains) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListDomains`](crate::client::fluent_builders::ListDomains) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDomains::into_paginator).
+    ///
+    /// - Takes [`ListDomainsInput`](crate::input::ListDomainsInput) with field(s):
+    ///   - [`next_page_token(Option<String>)`](crate::input::ListDomainsInput::next_page_token): <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>  <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
+    ///   - [`registration_status(Option<RegistrationStatus>)`](crate::input::ListDomainsInput::registration_status): <p>Specifies the registration status of the domains to list.</p>
+    ///   - [`maximum_page_size(i32)`](crate::input::ListDomainsInput::maximum_page_size): <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    ///   - [`reverse_order(bool)`](crate::input::ListDomainsInput::reverse_order): <p>When set to <code>true</code>, returns the results in reverse order. By default, the results are returned in ascending alphabetical order by <code>name</code> of the domains.</p>
+    /// - On success, responds with [`ListDomainsOutput`](crate::output::ListDomainsOutput) with field(s):
+    ///   - [`domain_infos(Option<Vec<DomainInfo>>)`](crate::output::ListDomainsOutput::domain_infos): <p>A list of DomainInfo structures.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::output::ListDomainsOutput::next_page_token): <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>  <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
+    /// - On failure, responds with [`SdkError<ListDomainsError>`](crate::error::ListDomainsError)
     pub fn list_domains(&self) -> fluent_builders::ListDomains<C, M, R> {
         fluent_builders::ListDomains::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListOpenWorkflowExecutions` operation.
-    ///
-    /// See [`ListOpenWorkflowExecutions`](crate::client::fluent_builders::ListOpenWorkflowExecutions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListOpenWorkflowExecutions`](crate::client::fluent_builders::ListOpenWorkflowExecutions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListOpenWorkflowExecutions::into_paginator).
+    ///
+    /// - Takes [`ListOpenWorkflowExecutionsInput`](crate::input::ListOpenWorkflowExecutionsInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::ListOpenWorkflowExecutionsInput::domain): <p>The name of the domain that contains the workflow executions to list.</p>
+    ///   - [`start_time_filter(Option<ExecutionTimeFilter>)`](crate::input::ListOpenWorkflowExecutionsInput::start_time_filter): <p>Workflow executions are included in the returned results based on whether their start times are within the range specified by this filter.</p>
+    ///   - [`type_filter(Option<WorkflowTypeFilter>)`](crate::input::ListOpenWorkflowExecutionsInput::type_filter): <p>If specified, only executions of the type specified in the filter are returned.</p> <note>   <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>  </note>
+    ///   - [`tag_filter(Option<TagFilter>)`](crate::input::ListOpenWorkflowExecutionsInput::tag_filter): <p>If specified, only executions that have the matching tag are listed.</p> <note>   <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>  </note>
+    ///   - [`next_page_token(Option<String>)`](crate::input::ListOpenWorkflowExecutionsInput::next_page_token): <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>  <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
+    ///   - [`maximum_page_size(i32)`](crate::input::ListOpenWorkflowExecutionsInput::maximum_page_size): <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    ///   - [`reverse_order(bool)`](crate::input::ListOpenWorkflowExecutionsInput::reverse_order): <p>When set to <code>true</code>, returns the results in reverse order. By default the results are returned in descending order of the start time of the executions.</p>
+    ///   - [`execution_filter(Option<WorkflowExecutionFilter>)`](crate::input::ListOpenWorkflowExecutionsInput::execution_filter): <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>   <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>  </note>
+    /// - On success, responds with [`ListOpenWorkflowExecutionsOutput`](crate::output::ListOpenWorkflowExecutionsOutput) with field(s):
+    ///   - [`execution_infos(Option<Vec<WorkflowExecutionInfo>>)`](crate::output::ListOpenWorkflowExecutionsOutput::execution_infos): <p>The list of workflow information structures.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::output::ListOpenWorkflowExecutionsOutput::next_page_token): <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>  <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
+    /// - On failure, responds with [`SdkError<ListOpenWorkflowExecutionsError>`](crate::error::ListOpenWorkflowExecutionsError)
     pub fn list_open_workflow_executions(
         &self,
     ) -> fluent_builders::ListOpenWorkflowExecutions<C, M, R> {
         fluent_builders::ListOpenWorkflowExecutions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<ResourceTag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>An array of tags associated with the domain.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListWorkflowTypes` operation.
-    ///
-    /// See [`ListWorkflowTypes`](crate::client::fluent_builders::ListWorkflowTypes) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListWorkflowTypes`](crate::client::fluent_builders::ListWorkflowTypes) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWorkflowTypes::into_paginator).
+    ///
+    /// - Takes [`ListWorkflowTypesInput`](crate::input::ListWorkflowTypesInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::ListWorkflowTypesInput::domain): <p>The name of the domain in which the workflow types have been registered.</p>
+    ///   - [`name(Option<String>)`](crate::input::ListWorkflowTypesInput::name): <p>If specified, lists the workflow type with this name.</p>
+    ///   - [`registration_status(Option<RegistrationStatus>)`](crate::input::ListWorkflowTypesInput::registration_status): <p>Specifies the registration status of the workflow types to list.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::input::ListWorkflowTypesInput::next_page_token): <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>  <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
+    ///   - [`maximum_page_size(i32)`](crate::input::ListWorkflowTypesInput::maximum_page_size): <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
+    ///   - [`reverse_order(bool)`](crate::input::ListWorkflowTypesInput::reverse_order): <p>When set to <code>true</code>, returns the results in reverse order. By default the results are returned in ascending alphabetical order of the <code>name</code> of the workflow types.</p>
+    /// - On success, responds with [`ListWorkflowTypesOutput`](crate::output::ListWorkflowTypesOutput) with field(s):
+    ///   - [`type_infos(Option<Vec<WorkflowTypeInfo>>)`](crate::output::ListWorkflowTypesOutput::type_infos): <p>The list of workflow type information.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::output::ListWorkflowTypesOutput::next_page_token): <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>  <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
+    /// - On failure, responds with [`SdkError<ListWorkflowTypesError>`](crate::error::ListWorkflowTypesError)
     pub fn list_workflow_types(&self) -> fluent_builders::ListWorkflowTypes<C, M, R> {
         fluent_builders::ListWorkflowTypes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PollForActivityTask` operation.
+    /// Constructs a fluent builder for the [`PollForActivityTask`](crate::client::fluent_builders::PollForActivityTask) operation.
     ///
-    /// See [`PollForActivityTask`](crate::client::fluent_builders::PollForActivityTask) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PollForActivityTaskInput`](crate::input::PollForActivityTaskInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::PollForActivityTaskInput::domain): <p>The name of the domain that contains the task lists being polled.</p>
+    ///   - [`task_list(Option<TaskList>)`](crate::input::PollForActivityTaskInput::task_list): <p>Specifies the task list to poll for activity tasks.</p>  <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+    ///   - [`identity(Option<String>)`](crate::input::PollForActivityTaskInput::identity): <p>Identity of the worker making the request, recorded in the <code>ActivityTaskStarted</code> event in the workflow history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.</p>
+    /// - On success, responds with [`PollForActivityTaskOutput`](crate::output::PollForActivityTaskOutput) with field(s):
+    ///   - [`task_token(Option<String>)`](crate::output::PollForActivityTaskOutput::task_token): <p>The opaque string used as a handle on the task. This token is used by workers to communicate progress and response information back to the system about the task.</p>
+    ///   - [`activity_id(Option<String>)`](crate::output::PollForActivityTaskOutput::activity_id): <p>The unique ID of the task.</p>
+    ///   - [`started_event_id(i64)`](crate::output::PollForActivityTaskOutput::started_event_id): <p>The ID of the <code>ActivityTaskStarted</code> event recorded in the history.</p>
+    ///   - [`workflow_execution(Option<WorkflowExecution>)`](crate::output::PollForActivityTaskOutput::workflow_execution): <p>The workflow execution that started this activity task.</p>
+    ///   - [`activity_type(Option<ActivityType>)`](crate::output::PollForActivityTaskOutput::activity_type): <p>The type of this activity task.</p>
+    ///   - [`input(Option<String>)`](crate::output::PollForActivityTaskOutput::input): <p>The inputs provided when the activity task was scheduled. The form of the input is user defined and should be meaningful to the activity implementation.</p>
+    /// - On failure, responds with [`SdkError<PollForActivityTaskError>`](crate::error::PollForActivityTaskError)
     pub fn poll_for_activity_task(&self) -> fluent_builders::PollForActivityTask<C, M, R> {
         fluent_builders::PollForActivityTask::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PollForDecisionTask` operation.
-    ///
-    /// See [`PollForDecisionTask`](crate::client::fluent_builders::PollForDecisionTask) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`PollForDecisionTask`](crate::client::fluent_builders::PollForDecisionTask) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::PollForDecisionTask::into_paginator).
+    ///
+    /// - Takes [`PollForDecisionTaskInput`](crate::input::PollForDecisionTaskInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::PollForDecisionTaskInput::domain): <p>The name of the domain containing the task lists to poll.</p>
+    ///   - [`task_list(Option<TaskList>)`](crate::input::PollForDecisionTaskInput::task_list): <p>Specifies the task list to poll for decision tasks.</p>  <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+    ///   - [`identity(Option<String>)`](crate::input::PollForDecisionTaskInput::identity): <p>Identity of the decider making the request, which is recorded in the DecisionTaskStarted event in the workflow history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::input::PollForDecisionTaskInput::next_page_token): <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>  <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p> <note>   <p>The <code>nextPageToken</code> returned by this action cannot be used with <code>GetWorkflowExecutionHistory</code> to get the next page. You must call <code>PollForDecisionTask</code> again (with the <code>nextPageToken</code>) to retrieve the next page of history records. Calling <code>PollForDecisionTask</code> with a <code>nextPageToken</code> doesn't return a new decision task.</p>  </note>
+    ///   - [`maximum_page_size(i32)`](crate::input::PollForDecisionTaskInput::maximum_page_size): <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>  <p>This is an upper limit only; the actual number of results returned per call may be fewer than the specified maximum.</p>
+    ///   - [`reverse_order(bool)`](crate::input::PollForDecisionTaskInput::reverse_order): <p>When set to <code>true</code>, returns the events in reverse order. By default the results are returned in ascending order of the <code>eventTimestamp</code> of the events.</p>
+    /// - On success, responds with [`PollForDecisionTaskOutput`](crate::output::PollForDecisionTaskOutput) with field(s):
+    ///   - [`task_token(Option<String>)`](crate::output::PollForDecisionTaskOutput::task_token): <p>The opaque string used as a handle on the task. This token is used by workers to communicate progress and response information back to the system about the task.</p>
+    ///   - [`started_event_id(i64)`](crate::output::PollForDecisionTaskOutput::started_event_id): <p>The ID of the <code>DecisionTaskStarted</code> event recorded in the history.</p>
+    ///   - [`workflow_execution(Option<WorkflowExecution>)`](crate::output::PollForDecisionTaskOutput::workflow_execution): <p>The workflow execution for which this decision task was created.</p>
+    ///   - [`workflow_type(Option<WorkflowType>)`](crate::output::PollForDecisionTaskOutput::workflow_type): <p>The type of the workflow execution for which this decision task was created.</p>
+    ///   - [`events(Option<Vec<HistoryEvent>>)`](crate::output::PollForDecisionTaskOutput::events): <p>A paginated list of history events of the workflow execution. The decider uses this during the processing of the decision task.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::output::PollForDecisionTaskOutput::next_page_token): <p>If a <code>NextPageToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextPageToken</code>. Keep all other arguments unchanged.</p>  <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.</p>
+    ///   - [`previous_started_event_id(i64)`](crate::output::PollForDecisionTaskOutput::previous_started_event_id): <p>The ID of the DecisionTaskStarted event of the previous decision task of this workflow execution that was processed by the decider. This can be used to determine the events in the history new since the last decision task received by the decider.</p>
+    /// - On failure, responds with [`SdkError<PollForDecisionTaskError>`](crate::error::PollForDecisionTaskError)
     pub fn poll_for_decision_task(&self) -> fluent_builders::PollForDecisionTask<C, M, R> {
         fluent_builders::PollForDecisionTask::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RecordActivityTaskHeartbeat` operation.
+    /// Constructs a fluent builder for the [`RecordActivityTaskHeartbeat`](crate::client::fluent_builders::RecordActivityTaskHeartbeat) operation.
     ///
-    /// See [`RecordActivityTaskHeartbeat`](crate::client::fluent_builders::RecordActivityTaskHeartbeat) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RecordActivityTaskHeartbeatInput`](crate::input::RecordActivityTaskHeartbeatInput) with field(s):
+    ///   - [`task_token(Option<String>)`](crate::input::RecordActivityTaskHeartbeatInput::task_token): <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>   <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results. </p>  </important>
+    ///   - [`details(Option<String>)`](crate::input::RecordActivityTaskHeartbeatInput::details): <p>If specified, contains details about the progress of the task.</p>
+    /// - On success, responds with [`RecordActivityTaskHeartbeatOutput`](crate::output::RecordActivityTaskHeartbeatOutput) with field(s):
+    ///   - [`cancel_requested(bool)`](crate::output::RecordActivityTaskHeartbeatOutput::cancel_requested): <p>Set to <code>true</code> if cancellation of the task is requested.</p>
+    /// - On failure, responds with [`SdkError<RecordActivityTaskHeartbeatError>`](crate::error::RecordActivityTaskHeartbeatError)
     pub fn record_activity_task_heartbeat(
         &self,
     ) -> fluent_builders::RecordActivityTaskHeartbeat<C, M, R> {
         fluent_builders::RecordActivityTaskHeartbeat::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RegisterActivityType` operation.
+    /// Constructs a fluent builder for the [`RegisterActivityType`](crate::client::fluent_builders::RegisterActivityType) operation.
     ///
-    /// See [`RegisterActivityType`](crate::client::fluent_builders::RegisterActivityType) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RegisterActivityTypeInput`](crate::input::RegisterActivityTypeInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::RegisterActivityTypeInput::domain): <p>The name of the domain in which this activity is to be registered.</p>
+    ///   - [`name(Option<String>)`](crate::input::RegisterActivityTypeInput::name): <p>The name of the activity type within the domain.</p>  <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+    ///   - [`version(Option<String>)`](crate::input::RegisterActivityTypeInput::version): <p>The version of the activity type.</p> <note>   <p>The activity type consists of the name and version, the combination of which must be unique within the domain.</p>  </note>  <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+    ///   - [`description(Option<String>)`](crate::input::RegisterActivityTypeInput::description): <p>A textual description of the activity type.</p>
+    ///   - [`default_task_start_to_close_timeout(Option<String>)`](crate::input::RegisterActivityTypeInput::default_task_start_to_close_timeout): <p>If set, specifies the default maximum duration that a worker can take to process tasks of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>  <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    ///   - [`default_task_heartbeat_timeout(Option<String>)`](crate::input::RegisterActivityTypeInput::default_task_heartbeat_timeout): <p>If set, specifies the default maximum time before which a worker processing a task of this type must report progress by calling <code>RecordActivityTaskHeartbeat</code>. If the timeout is exceeded, the activity task is automatically timed out. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>. If the activity worker subsequently attempts to record a heartbeat or returns a result, the activity worker receives an <code>UnknownResource</code> fault. In this case, Amazon SWF no longer considers the activity task to be valid; the activity worker should clean up the activity task.</p>  <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    ///   - [`default_task_list(Option<TaskList>)`](crate::input::RegisterActivityTypeInput::default_task_list): <p>If set, specifies the default task list to use for scheduling tasks of this activity type. This default task list is used if a task list isn't provided when a task is scheduled through the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>
+    ///   - [`default_task_priority(Option<String>)`](crate::input::RegisterActivityTypeInput::default_task_priority): <p>The default task priority to assign to the activity type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>  <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>in the <i>Amazon SWF Developer Guide</i>.</i>.</p>
+    ///   - [`default_task_schedule_to_start_timeout(Option<String>)`](crate::input::RegisterActivityTypeInput::default_task_schedule_to_start_timeout): <p>If set, specifies the default maximum duration that a task of this activity type can wait before being assigned to a worker. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>  <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    ///   - [`default_task_schedule_to_close_timeout(Option<String>)`](crate::input::RegisterActivityTypeInput::default_task_schedule_to_close_timeout): <p>If set, specifies the default maximum duration for a task of this activity type. This default can be overridden when scheduling an activity task using the <code>ScheduleActivityTask</code> <code>Decision</code>.</p>  <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    /// - On success, responds with [`RegisterActivityTypeOutput`](crate::output::RegisterActivityTypeOutput)
+
+    /// - On failure, responds with [`SdkError<RegisterActivityTypeError>`](crate::error::RegisterActivityTypeError)
     pub fn register_activity_type(&self) -> fluent_builders::RegisterActivityType<C, M, R> {
         fluent_builders::RegisterActivityType::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RegisterDomain` operation.
+    /// Constructs a fluent builder for the [`RegisterDomain`](crate::client::fluent_builders::RegisterDomain) operation.
     ///
-    /// See [`RegisterDomain`](crate::client::fluent_builders::RegisterDomain) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RegisterDomainInput`](crate::input::RegisterDomainInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::RegisterDomainInput::name): <p>Name of the domain to register. The name must be unique in the region that the domain is registered in.</p>  <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+    ///   - [`description(Option<String>)`](crate::input::RegisterDomainInput::description): <p>A text description of the domain.</p>
+    ///   - [`workflow_execution_retention_period_in_days(Option<String>)`](crate::input::RegisterDomainInput::workflow_execution_retention_period_in_days): <p>The duration (in days) that records and histories of workflow executions on the domain should be kept by the service. After the retention period, the workflow execution isn't available in the results of visibility calls.</p>  <p>If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history isn't retained. As soon as the workflow execution completes, the execution record and its history are deleted.</p>  <p>The maximum workflow execution retention period is 90 days. For more information about Amazon SWF service limits, see: <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    ///   - [`tags(Option<Vec<ResourceTag>>)`](crate::input::RegisterDomainInput::tags): <p>Tags to be added when registering a domain.</p>  <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
+    /// - On success, responds with [`RegisterDomainOutput`](crate::output::RegisterDomainOutput)
+
+    /// - On failure, responds with [`SdkError<RegisterDomainError>`](crate::error::RegisterDomainError)
     pub fn register_domain(&self) -> fluent_builders::RegisterDomain<C, M, R> {
         fluent_builders::RegisterDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RegisterWorkflowType` operation.
+    /// Constructs a fluent builder for the [`RegisterWorkflowType`](crate::client::fluent_builders::RegisterWorkflowType) operation.
     ///
-    /// See [`RegisterWorkflowType`](crate::client::fluent_builders::RegisterWorkflowType) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RegisterWorkflowTypeInput`](crate::input::RegisterWorkflowTypeInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::RegisterWorkflowTypeInput::domain): <p>The name of the domain in which to register the workflow type.</p>
+    ///   - [`name(Option<String>)`](crate::input::RegisterWorkflowTypeInput::name): <p>The name of the workflow type.</p>  <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+    ///   - [`version(Option<String>)`](crate::input::RegisterWorkflowTypeInput::version): <p>The version of the workflow type.</p> <note>   <p>The workflow type consists of the name and version, the combination of which must be unique within the domain. To get a list of all currently registered workflow types, use the <code>ListWorkflowTypes</code> action.</p>  </note>  <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+    ///   - [`description(Option<String>)`](crate::input::RegisterWorkflowTypeInput::description): <p>Textual description of the workflow type.</p>
+    ///   - [`default_task_start_to_close_timeout(Option<String>)`](crate::input::RegisterWorkflowTypeInput::default_task_start_to_close_timeout): <p>If set, specifies the default maximum duration of decision tasks for this workflow type. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>  <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+    ///   - [`default_execution_start_to_close_timeout(Option<String>)`](crate::input::RegisterWorkflowTypeInput::default_execution_start_to_close_timeout): <p>If set, specifies the default maximum duration for executions of this workflow type. You can override this default when starting an execution through the <code>StartWorkflowExecution</code> Action or <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>  <p>The duration is specified in seconds; an integer greater than or equal to 0. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for <code>defaultExecutionStartToCloseTimeout</code>; there is a one-year max limit on the time that a workflow execution can run. Exceeding this limit always causes the workflow execution to time out.</p>
+    ///   - [`default_task_list(Option<TaskList>)`](crate::input::RegisterWorkflowTypeInput::default_task_list): <p>If set, specifies the default task list to use for scheduling decision tasks for executions of this workflow type. This default is used only if a task list isn't provided when starting the execution through the <code>StartWorkflowExecution</code> Action or <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
+    ///   - [`default_task_priority(Option<String>)`](crate::input::RegisterWorkflowTypeInput::default_task_priority): <p>The default task priority to assign to the workflow type. If not assigned, then <code>0</code> is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>  <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    ///   - [`default_child_policy(Option<ChildPolicy>)`](crate::input::RegisterWorkflowTypeInput::default_child_policy): <p>If set, specifies the default policy to use for the child workflow executions when a workflow execution of this type is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>  <p>The supported child policies are:</p>  <ul>   <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>   <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>   <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>  </ul>
+    ///   - [`default_lambda_role(Option<String>)`](crate::input::RegisterWorkflowTypeInput::default_lambda_role): <p>The default IAM role attached to this workflow type.</p> <note>   <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't specify an IAM role when you start this workflow type, the default Lambda role is attached to the execution. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p>  </note>
+    /// - On success, responds with [`RegisterWorkflowTypeOutput`](crate::output::RegisterWorkflowTypeOutput)
+
+    /// - On failure, responds with [`SdkError<RegisterWorkflowTypeError>`](crate::error::RegisterWorkflowTypeError)
     pub fn register_workflow_type(&self) -> fluent_builders::RegisterWorkflowType<C, M, R> {
         fluent_builders::RegisterWorkflowType::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RequestCancelWorkflowExecution` operation.
+    /// Constructs a fluent builder for the [`RequestCancelWorkflowExecution`](crate::client::fluent_builders::RequestCancelWorkflowExecution) operation.
     ///
-    /// See [`RequestCancelWorkflowExecution`](crate::client::fluent_builders::RequestCancelWorkflowExecution) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RequestCancelWorkflowExecutionInput`](crate::input::RequestCancelWorkflowExecutionInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::RequestCancelWorkflowExecutionInput::domain): <p>The name of the domain containing the workflow execution to cancel.</p>
+    ///   - [`workflow_id(Option<String>)`](crate::input::RequestCancelWorkflowExecutionInput::workflow_id): <p>The workflowId of the workflow execution to cancel.</p>
+    ///   - [`run_id(Option<String>)`](crate::input::RequestCancelWorkflowExecutionInput::run_id): <p>The runId of the workflow execution to cancel.</p>
+    /// - On success, responds with [`RequestCancelWorkflowExecutionOutput`](crate::output::RequestCancelWorkflowExecutionOutput)
+
+    /// - On failure, responds with [`SdkError<RequestCancelWorkflowExecutionError>`](crate::error::RequestCancelWorkflowExecutionError)
     pub fn request_cancel_workflow_execution(
         &self,
     ) -> fluent_builders::RequestCancelWorkflowExecution<C, M, R> {
         fluent_builders::RequestCancelWorkflowExecution::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RespondActivityTaskCanceled` operation.
+    /// Constructs a fluent builder for the [`RespondActivityTaskCanceled`](crate::client::fluent_builders::RespondActivityTaskCanceled) operation.
     ///
-    /// See [`RespondActivityTaskCanceled`](crate::client::fluent_builders::RespondActivityTaskCanceled) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RespondActivityTaskCanceledInput`](crate::input::RespondActivityTaskCanceledInput) with field(s):
+    ///   - [`task_token(Option<String>)`](crate::input::RespondActivityTaskCanceledInput::task_token): <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>   <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>  </important>
+    ///   - [`details(Option<String>)`](crate::input::RespondActivityTaskCanceledInput::details): <p> Information about the cancellation.</p>
+    /// - On success, responds with [`RespondActivityTaskCanceledOutput`](crate::output::RespondActivityTaskCanceledOutput)
+
+    /// - On failure, responds with [`SdkError<RespondActivityTaskCanceledError>`](crate::error::RespondActivityTaskCanceledError)
     pub fn respond_activity_task_canceled(
         &self,
     ) -> fluent_builders::RespondActivityTaskCanceled<C, M, R> {
         fluent_builders::RespondActivityTaskCanceled::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RespondActivityTaskCompleted` operation.
+    /// Constructs a fluent builder for the [`RespondActivityTaskCompleted`](crate::client::fluent_builders::RespondActivityTaskCompleted) operation.
     ///
-    /// See [`RespondActivityTaskCompleted`](crate::client::fluent_builders::RespondActivityTaskCompleted) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RespondActivityTaskCompletedInput`](crate::input::RespondActivityTaskCompletedInput) with field(s):
+    ///   - [`task_token(Option<String>)`](crate::input::RespondActivityTaskCompletedInput::task_token): <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>   <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>  </important>
+    ///   - [`result(Option<String>)`](crate::input::RespondActivityTaskCompletedInput::result): <p>The result of the activity task. It is a free form string that is implementation specific.</p>
+    /// - On success, responds with [`RespondActivityTaskCompletedOutput`](crate::output::RespondActivityTaskCompletedOutput)
+
+    /// - On failure, responds with [`SdkError<RespondActivityTaskCompletedError>`](crate::error::RespondActivityTaskCompletedError)
     pub fn respond_activity_task_completed(
         &self,
     ) -> fluent_builders::RespondActivityTaskCompleted<C, M, R> {
         fluent_builders::RespondActivityTaskCompleted::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RespondActivityTaskFailed` operation.
+    /// Constructs a fluent builder for the [`RespondActivityTaskFailed`](crate::client::fluent_builders::RespondActivityTaskFailed) operation.
     ///
-    /// See [`RespondActivityTaskFailed`](crate::client::fluent_builders::RespondActivityTaskFailed) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RespondActivityTaskFailedInput`](crate::input::RespondActivityTaskFailedInput) with field(s):
+    ///   - [`task_token(Option<String>)`](crate::input::RespondActivityTaskFailedInput::task_token): <p>The <code>taskToken</code> of the <code>ActivityTask</code>.</p> <important>   <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>  </important>
+    ///   - [`reason(Option<String>)`](crate::input::RespondActivityTaskFailedInput::reason): <p>Description of the error that may assist in diagnostics.</p>
+    ///   - [`details(Option<String>)`](crate::input::RespondActivityTaskFailedInput::details): <p> Detailed information about the failure.</p>
+    /// - On success, responds with [`RespondActivityTaskFailedOutput`](crate::output::RespondActivityTaskFailedOutput)
+
+    /// - On failure, responds with [`SdkError<RespondActivityTaskFailedError>`](crate::error::RespondActivityTaskFailedError)
     pub fn respond_activity_task_failed(
         &self,
     ) -> fluent_builders::RespondActivityTaskFailed<C, M, R> {
         fluent_builders::RespondActivityTaskFailed::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RespondDecisionTaskCompleted` operation.
+    /// Constructs a fluent builder for the [`RespondDecisionTaskCompleted`](crate::client::fluent_builders::RespondDecisionTaskCompleted) operation.
     ///
-    /// See [`RespondDecisionTaskCompleted`](crate::client::fluent_builders::RespondDecisionTaskCompleted) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RespondDecisionTaskCompletedInput`](crate::input::RespondDecisionTaskCompletedInput) with field(s):
+    ///   - [`task_token(Option<String>)`](crate::input::RespondDecisionTaskCompletedInput::task_token): <p>The <code>taskToken</code> from the <code>DecisionTask</code>.</p> <important>   <p> <code>taskToken</code> is generated by the service and should be treated as an opaque value. If the task is passed to another process, its <code>taskToken</code> must also be passed. This enables it to provide its progress and respond with results.</p>  </important>
+    ///   - [`decisions(Option<Vec<Decision>>)`](crate::input::RespondDecisionTaskCompletedInput::decisions): <p>The list of decisions (possibly empty) made by the decider while processing this decision task. See the docs for the <code>Decision</code> structure for details.</p>
+    ///   - [`execution_context(Option<String>)`](crate::input::RespondDecisionTaskCompletedInput::execution_context): <p>User defined context to add to workflow execution.</p>
+    /// - On success, responds with [`RespondDecisionTaskCompletedOutput`](crate::output::RespondDecisionTaskCompletedOutput)
+
+    /// - On failure, responds with [`SdkError<RespondDecisionTaskCompletedError>`](crate::error::RespondDecisionTaskCompletedError)
     pub fn respond_decision_task_completed(
         &self,
     ) -> fluent_builders::RespondDecisionTaskCompleted<C, M, R> {
         fluent_builders::RespondDecisionTaskCompleted::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SignalWorkflowExecution` operation.
+    /// Constructs a fluent builder for the [`SignalWorkflowExecution`](crate::client::fluent_builders::SignalWorkflowExecution) operation.
     ///
-    /// See [`SignalWorkflowExecution`](crate::client::fluent_builders::SignalWorkflowExecution) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`SignalWorkflowExecutionInput`](crate::input::SignalWorkflowExecutionInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::SignalWorkflowExecutionInput::domain): <p>The name of the domain containing the workflow execution to signal.</p>
+    ///   - [`workflow_id(Option<String>)`](crate::input::SignalWorkflowExecutionInput::workflow_id): <p>The workflowId of the workflow execution to signal.</p>
+    ///   - [`run_id(Option<String>)`](crate::input::SignalWorkflowExecutionInput::run_id): <p>The runId of the workflow execution to signal.</p>
+    ///   - [`signal_name(Option<String>)`](crate::input::SignalWorkflowExecutionInput::signal_name): <p>The name of the signal. This name must be meaningful to the target workflow.</p>
+    ///   - [`input(Option<String>)`](crate::input::SignalWorkflowExecutionInput::input): <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target workflow execution's history.</p>
+    /// - On success, responds with [`SignalWorkflowExecutionOutput`](crate::output::SignalWorkflowExecutionOutput)
+
+    /// - On failure, responds with [`SdkError<SignalWorkflowExecutionError>`](crate::error::SignalWorkflowExecutionError)
     pub fn signal_workflow_execution(&self) -> fluent_builders::SignalWorkflowExecution<C, M, R> {
         fluent_builders::SignalWorkflowExecution::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartWorkflowExecution` operation.
+    /// Constructs a fluent builder for the [`StartWorkflowExecution`](crate::client::fluent_builders::StartWorkflowExecution) operation.
     ///
-    /// See [`StartWorkflowExecution`](crate::client::fluent_builders::StartWorkflowExecution) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartWorkflowExecutionInput`](crate::input::StartWorkflowExecutionInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::StartWorkflowExecutionInput::domain): <p>The name of the domain in which the workflow execution is created.</p>
+    ///   - [`workflow_id(Option<String>)`](crate::input::StartWorkflowExecutionInput::workflow_id): <p>The user defined identifier associated with the workflow execution. You can use this to associate a custom identifier with the workflow execution. You may specify the same identifier if a workflow execution is logically a <i>restart</i> of a previous execution. You cannot have two open workflow executions with the same <code>workflowId</code> at the same time within the same domain.</p>  <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+    ///   - [`workflow_type(Option<WorkflowType>)`](crate::input::StartWorkflowExecutionInput::workflow_type): <p>The type of the workflow to start.</p>
+    ///   - [`task_list(Option<TaskList>)`](crate::input::StartWorkflowExecutionInput::task_list): <p>The task list to use for the decision tasks generated for this workflow execution. This overrides the <code>defaultTaskList</code> specified when registering the workflow type.</p> <note>   <p>A task list for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task list was specified at registration time then a fault is returned.</p>  </note>  <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+    ///   - [`task_priority(Option<String>)`](crate::input::StartWorkflowExecutionInput::task_priority): <p>The task priority to use for this workflow execution. This overrides any default priority that was assigned when the workflow type was registered. If not set, then the default task priority for the workflow type is used. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>  <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+    ///   - [`input(Option<String>)`](crate::input::StartWorkflowExecutionInput::input): <p>The input for the workflow execution. This is a free form string which should be meaningful to the workflow you are starting. This <code>input</code> is made available to the new workflow execution in the <code>WorkflowExecutionStarted</code> history event.</p>
+    ///   - [`execution_start_to_close_timeout(Option<String>)`](crate::input::StartWorkflowExecutionInput::execution_start_to_close_timeout): <p>The total duration for this workflow execution. This overrides the defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p>  <p>The duration is specified in seconds; an integer greater than or equal to <code>0</code>. Exceeding this limit causes the workflow execution to time out. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for this timeout; there is a one-year max limit on the time that a workflow execution can run.</p> <note>   <p>An execution start-to-close timeout must be specified either through this parameter or as a default when the workflow type is registered. If neither this parameter nor a default execution start-to-close timeout is specified, a fault is returned.</p>  </note>
+    ///   - [`tag_list(Option<Vec<String>>)`](crate::input::StartWorkflowExecutionInput::tag_list): <p>The list of tags to associate with the workflow execution. You can specify a maximum of 5 tags. You can list workflow executions with a specific tag by calling <code>ListOpenWorkflowExecutions</code> or <code>ListClosedWorkflowExecutions</code> and specifying a <code>TagFilter</code>.</p>
+    ///   - [`task_start_to_close_timeout(Option<String>)`](crate::input::StartWorkflowExecutionInput::task_start_to_close_timeout): <p>Specifies the maximum duration of decision tasks for this workflow execution. This parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>  <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p> <note>   <p>A task start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close timeout was specified at registration time then a fault is returned.</p>  </note>
+    ///   - [`child_policy(Option<ChildPolicy>)`](crate::input::StartWorkflowExecutionInput::child_policy): <p>If set, specifies the policy to use for the child workflow executions of this workflow execution if it is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This policy overrides the default child policy specified when registering the workflow type using <code>RegisterWorkflowType</code>.</p>  <p>The supported child policies are:</p>  <ul>   <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>   <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>   <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>  </ul> <note>   <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>  </note>
+    ///   - [`lambda_role(Option<String>)`](crate::input::StartWorkflowExecutionInput::lambda_role): <p>The IAM role to attach to this workflow execution.</p> <note>   <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't attach an IAM role, any attempt to schedule a Lambda task fails. This results in a <code>ScheduleLambdaFunctionFailed</code> history event. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p>  </note>
+    /// - On success, responds with [`StartWorkflowExecutionOutput`](crate::output::StartWorkflowExecutionOutput) with field(s):
+    ///   - [`run_id(Option<String>)`](crate::output::StartWorkflowExecutionOutput::run_id): <p>The <code>runId</code> of a workflow execution. This ID is generated by the service and can be used to uniquely identify the workflow execution within a domain.</p>
+    /// - On failure, responds with [`SdkError<StartWorkflowExecutionError>`](crate::error::StartWorkflowExecutionError)
     pub fn start_workflow_execution(&self) -> fluent_builders::StartWorkflowExecution<C, M, R> {
         fluent_builders::StartWorkflowExecution::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
+    ///   - [`tags(Option<Vec<ResourceTag>>)`](crate::input::TagResourceInput::tags): <p>The list of tags to add to a domain. </p>  <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TerminateWorkflowExecution` operation.
+    /// Constructs a fluent builder for the [`TerminateWorkflowExecution`](crate::client::fluent_builders::TerminateWorkflowExecution) operation.
     ///
-    /// See [`TerminateWorkflowExecution`](crate::client::fluent_builders::TerminateWorkflowExecution) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TerminateWorkflowExecutionInput`](crate::input::TerminateWorkflowExecutionInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::TerminateWorkflowExecutionInput::domain): <p>The domain of the workflow execution to terminate.</p>
+    ///   - [`workflow_id(Option<String>)`](crate::input::TerminateWorkflowExecutionInput::workflow_id): <p>The workflowId of the workflow execution to terminate.</p>
+    ///   - [`run_id(Option<String>)`](crate::input::TerminateWorkflowExecutionInput::run_id): <p>The runId of the workflow execution to terminate.</p>
+    ///   - [`reason(Option<String>)`](crate::input::TerminateWorkflowExecutionInput::reason): <p> A descriptive reason for terminating the workflow execution.</p>
+    ///   - [`details(Option<String>)`](crate::input::TerminateWorkflowExecutionInput::details): <p> Details for terminating the workflow execution.</p>
+    ///   - [`child_policy(Option<ChildPolicy>)`](crate::input::TerminateWorkflowExecutionInput::child_policy): <p>If set, specifies the policy to use for the child workflow executions of the workflow execution being terminated. This policy overrides the child policy specified for the workflow execution at registration time or when starting the execution.</p>  <p>The supported child policies are:</p>  <ul>   <li> <p> <code>TERMINATE</code> – The child executions are terminated.</p> </li>   <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>   <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>  </ul> <note>   <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>  </note>
+    /// - On success, responds with [`TerminateWorkflowExecutionOutput`](crate::output::TerminateWorkflowExecutionOutput)
+
+    /// - On failure, responds with [`SdkError<TerminateWorkflowExecutionError>`](crate::error::TerminateWorkflowExecutionError)
     pub fn terminate_workflow_execution(
         &self,
     ) -> fluent_builders::TerminateWorkflowExecution<C, M, R> {
         fluent_builders::TerminateWorkflowExecution::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UndeprecateActivityType` operation.
+    /// Constructs a fluent builder for the [`UndeprecateActivityType`](crate::client::fluent_builders::UndeprecateActivityType) operation.
     ///
-    /// See [`UndeprecateActivityType`](crate::client::fluent_builders::UndeprecateActivityType) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UndeprecateActivityTypeInput`](crate::input::UndeprecateActivityTypeInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::UndeprecateActivityTypeInput::domain): <p>The name of the domain of the deprecated activity type.</p>
+    ///   - [`activity_type(Option<ActivityType>)`](crate::input::UndeprecateActivityTypeInput::activity_type): <p>The activity type to undeprecate.</p>
+    /// - On success, responds with [`UndeprecateActivityTypeOutput`](crate::output::UndeprecateActivityTypeOutput)
+
+    /// - On failure, responds with [`SdkError<UndeprecateActivityTypeError>`](crate::error::UndeprecateActivityTypeError)
     pub fn undeprecate_activity_type(&self) -> fluent_builders::UndeprecateActivityType<C, M, R> {
         fluent_builders::UndeprecateActivityType::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UndeprecateDomain` operation.
+    /// Constructs a fluent builder for the [`UndeprecateDomain`](crate::client::fluent_builders::UndeprecateDomain) operation.
     ///
-    /// See [`UndeprecateDomain`](crate::client::fluent_builders::UndeprecateDomain) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UndeprecateDomainInput`](crate::input::UndeprecateDomainInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::UndeprecateDomainInput::name): <p>The name of the domain of the deprecated workflow type.</p>
+    /// - On success, responds with [`UndeprecateDomainOutput`](crate::output::UndeprecateDomainOutput)
+
+    /// - On failure, responds with [`SdkError<UndeprecateDomainError>`](crate::error::UndeprecateDomainError)
     pub fn undeprecate_domain(&self) -> fluent_builders::UndeprecateDomain<C, M, R> {
         fluent_builders::UndeprecateDomain::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UndeprecateWorkflowType` operation.
+    /// Constructs a fluent builder for the [`UndeprecateWorkflowType`](crate::client::fluent_builders::UndeprecateWorkflowType) operation.
     ///
-    /// See [`UndeprecateWorkflowType`](crate::client::fluent_builders::UndeprecateWorkflowType) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UndeprecateWorkflowTypeInput`](crate::input::UndeprecateWorkflowTypeInput) with field(s):
+    ///   - [`domain(Option<String>)`](crate::input::UndeprecateWorkflowTypeInput::domain): <p>The name of the domain of the deprecated workflow type.</p>
+    ///   - [`workflow_type(Option<WorkflowType>)`](crate::input::UndeprecateWorkflowTypeInput::workflow_type): <p>The name of the domain of the deprecated workflow type.</p>
+    /// - On success, responds with [`UndeprecateWorkflowTypeOutput`](crate::output::UndeprecateWorkflowTypeOutput)
+
+    /// - On failure, responds with [`SdkError<UndeprecateWorkflowTypeError>`](crate::error::UndeprecateWorkflowTypeError)
     pub fn undeprecate_workflow_type(&self) -> fluent_builders::UndeprecateWorkflowType<C, M, R> {
         fluent_builders::UndeprecateWorkflowType::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The list of tags to remove from the Amazon SWF domain.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }

@@ -83,111 +83,184 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CopyBackupToRegion` operation.
+    /// Constructs a fluent builder for the [`CopyBackupToRegion`](crate::client::fluent_builders::CopyBackupToRegion) operation.
     ///
-    /// See [`CopyBackupToRegion`](crate::client::fluent_builders::CopyBackupToRegion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CopyBackupToRegionInput`](crate::input::CopyBackupToRegionInput) with field(s):
+    ///   - [`destination_region(Option<String>)`](crate::input::CopyBackupToRegionInput::destination_region): <p>The AWS region that will contain your copied CloudHSM cluster backup.</p>
+    ///   - [`backup_id(Option<String>)`](crate::input::CopyBackupToRegionInput::backup_id): <p>The ID of the backup that will be copied to the destination region. </p>
+    ///   - [`tag_list(Option<Vec<Tag>>)`](crate::input::CopyBackupToRegionInput::tag_list): <p>Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.</p>
+    /// - On success, responds with [`CopyBackupToRegionOutput`](crate::output::CopyBackupToRegionOutput) with field(s):
+    ///   - [`destination_backup(Option<DestinationBackup>)`](crate::output::CopyBackupToRegionOutput::destination_backup): <p>Information on the backup that will be copied to the destination region, including CreateTimestamp, SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the destination backup will be the same as that of the source backup.</p>  <p>You will need to use the <code>sourceBackupID</code> returned in this operation to use the <code>DescribeBackups</code> operation on the backup that will be copied to the destination region.</p>
+    /// - On failure, responds with [`SdkError<CopyBackupToRegionError>`](crate::error::CopyBackupToRegionError)
     pub fn copy_backup_to_region(&self) -> fluent_builders::CopyBackupToRegion<C, M, R> {
         fluent_builders::CopyBackupToRegion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateCluster` operation.
+    /// Constructs a fluent builder for the [`CreateCluster`](crate::client::fluent_builders::CreateCluster) operation.
     ///
-    /// See [`CreateCluster`](crate::client::fluent_builders::CreateCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateClusterInput`](crate::input::CreateClusterInput) with field(s):
+    ///   - [`backup_retention_policy(Option<BackupRetentionPolicy>)`](crate::input::CreateClusterInput::backup_retention_policy): <p>A policy that defines how the service retains backups.</p>
+    ///   - [`hsm_type(Option<String>)`](crate::input::CreateClusterInput::hsm_type): <p>The type of HSM to use in the cluster. Currently the only allowed value is <code>hsm1.medium</code>.</p>
+    ///   - [`source_backup_id(Option<String>)`](crate::input::CreateClusterInput::source_backup_id): <p>The identifier (ID) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID, use <code>DescribeBackups</code>.</p>
+    ///   - [`subnet_ids(Option<Vec<String>>)`](crate::input::CreateClusterInput::subnet_ids): <p>The identifiers (IDs) of the subnets where you are creating the cluster. You must specify at least one subnet. If you specify multiple subnets, they must meet the following criteria:</p>  <ul>   <li> <p>All subnets must be in the same virtual private cloud (VPC).</p> </li>   <li> <p>You can specify only one subnet per Availability Zone.</p> </li>  </ul>
+    ///   - [`tag_list(Option<Vec<Tag>>)`](crate::input::CreateClusterInput::tag_list): <p>Tags to apply to the CloudHSM cluster during creation.</p>
+    /// - On success, responds with [`CreateClusterOutput`](crate::output::CreateClusterOutput) with field(s):
+    ///   - [`cluster(Option<Cluster>)`](crate::output::CreateClusterOutput::cluster): <p>Information about the cluster that was created.</p>
+    /// - On failure, responds with [`SdkError<CreateClusterError>`](crate::error::CreateClusterError)
     pub fn create_cluster(&self) -> fluent_builders::CreateCluster<C, M, R> {
         fluent_builders::CreateCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateHsm` operation.
+    /// Constructs a fluent builder for the [`CreateHsm`](crate::client::fluent_builders::CreateHsm) operation.
     ///
-    /// See [`CreateHsm`](crate::client::fluent_builders::CreateHsm) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateHsmInput`](crate::input::CreateHsmInput) with field(s):
+    ///   - [`cluster_id(Option<String>)`](crate::input::CreateHsmInput::cluster_id): <p>The identifier (ID) of the HSM's cluster. To find the cluster ID, use <code>DescribeClusters</code>.</p>
+    ///   - [`availability_zone(Option<String>)`](crate::input::CreateHsmInput::availability_zone): <p>The Availability Zone where you are creating the HSM. To find the cluster's Availability Zones, use <code>DescribeClusters</code>.</p>
+    ///   - [`ip_address(Option<String>)`](crate::input::CreateHsmInput::ip_address): <p>The HSM's IP address. If you specify an IP address, use an available address from the subnet that maps to the Availability Zone where you are creating the HSM. If you don't specify an IP address, one is chosen for you from that subnet.</p>
+    /// - On success, responds with [`CreateHsmOutput`](crate::output::CreateHsmOutput) with field(s):
+    ///   - [`hsm(Option<Hsm>)`](crate::output::CreateHsmOutput::hsm): <p>Information about the HSM that was created.</p>
+    /// - On failure, responds with [`SdkError<CreateHsmError>`](crate::error::CreateHsmError)
     pub fn create_hsm(&self) -> fluent_builders::CreateHsm<C, M, R> {
         fluent_builders::CreateHsm::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteBackup` operation.
+    /// Constructs a fluent builder for the [`DeleteBackup`](crate::client::fluent_builders::DeleteBackup) operation.
     ///
-    /// See [`DeleteBackup`](crate::client::fluent_builders::DeleteBackup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteBackupInput`](crate::input::DeleteBackupInput) with field(s):
+    ///   - [`backup_id(Option<String>)`](crate::input::DeleteBackupInput::backup_id): <p>The ID of the backup to be deleted. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
+    /// - On success, responds with [`DeleteBackupOutput`](crate::output::DeleteBackupOutput) with field(s):
+    ///   - [`backup(Option<Backup>)`](crate::output::DeleteBackupOutput::backup): <p>Information on the <code>Backup</code> object deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteBackupError>`](crate::error::DeleteBackupError)
     pub fn delete_backup(&self) -> fluent_builders::DeleteBackup<C, M, R> {
         fluent_builders::DeleteBackup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteCluster` operation.
+    /// Constructs a fluent builder for the [`DeleteCluster`](crate::client::fluent_builders::DeleteCluster) operation.
     ///
-    /// See [`DeleteCluster`](crate::client::fluent_builders::DeleteCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteClusterInput`](crate::input::DeleteClusterInput) with field(s):
+    ///   - [`cluster_id(Option<String>)`](crate::input::DeleteClusterInput::cluster_id): <p>The identifier (ID) of the cluster that you are deleting. To find the cluster ID, use <code>DescribeClusters</code>.</p>
+    /// - On success, responds with [`DeleteClusterOutput`](crate::output::DeleteClusterOutput) with field(s):
+    ///   - [`cluster(Option<Cluster>)`](crate::output::DeleteClusterOutput::cluster): <p>Information about the cluster that was deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteClusterError>`](crate::error::DeleteClusterError)
     pub fn delete_cluster(&self) -> fluent_builders::DeleteCluster<C, M, R> {
         fluent_builders::DeleteCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteHsm` operation.
+    /// Constructs a fluent builder for the [`DeleteHsm`](crate::client::fluent_builders::DeleteHsm) operation.
     ///
-    /// See [`DeleteHsm`](crate::client::fluent_builders::DeleteHsm) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteHsmInput`](crate::input::DeleteHsmInput) with field(s):
+    ///   - [`cluster_id(Option<String>)`](crate::input::DeleteHsmInput::cluster_id): <p>The identifier (ID) of the cluster that contains the HSM that you are deleting.</p>
+    ///   - [`hsm_id(Option<String>)`](crate::input::DeleteHsmInput::hsm_id): <p>The identifier (ID) of the HSM that you are deleting.</p>
+    ///   - [`eni_id(Option<String>)`](crate::input::DeleteHsmInput::eni_id): <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that you are deleting.</p>
+    ///   - [`eni_ip(Option<String>)`](crate::input::DeleteHsmInput::eni_ip): <p>The IP address of the elastic network interface (ENI) of the HSM that you are deleting.</p>
+    /// - On success, responds with [`DeleteHsmOutput`](crate::output::DeleteHsmOutput) with field(s):
+    ///   - [`hsm_id(Option<String>)`](crate::output::DeleteHsmOutput::hsm_id): <p>The identifier (ID) of the HSM that was deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteHsmError>`](crate::error::DeleteHsmError)
     pub fn delete_hsm(&self) -> fluent_builders::DeleteHsm<C, M, R> {
         fluent_builders::DeleteHsm::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeBackups` operation.
-    ///
-    /// See [`DescribeBackups`](crate::client::fluent_builders::DescribeBackups) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeBackups`](crate::client::fluent_builders::DescribeBackups) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeBackups::into_paginator).
+    ///
+    /// - Takes [`DescribeBackupsInput`](crate::input::DescribeBackupsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeBackupsInput::next_token): <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more backups.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeBackupsInput::max_results): <p>The maximum number of backups to return in the response. When there are more backups than the number you specify, the response contains a <code>NextToken</code> value.</p>
+    ///   - [`filters(Option<HashMap<String, Vec<String>>>)`](crate::input::DescribeBackupsInput::filters): <p>One or more filters to limit the items returned in the response.</p>  <p>Use the <code>backupIds</code> filter to return only the specified backups. Specify backups by their backup identifier (ID).</p>  <p>Use the <code>sourceBackupIds</code> filter to return only the backups created from a source backup. The <code>sourceBackupID</code> of a source backup is returned by the <code>CopyBackupToRegion</code> operation.</p>  <p>Use the <code>clusterIds</code> filter to return only the backups for the specified clusters. Specify clusters by their cluster identifier (ID).</p>  <p>Use the <code>states</code> filter to return only backups that match the specified state.</p>  <p>Use the <code>neverExpires</code> filter to return backups filtered by the value in the <code>neverExpires</code> parameter. <code>True</code> returns all backups exempt from the backup retention policy. <code>False</code> returns all backups with a backup retention policy defined at the cluster.</p>
+    ///   - [`sort_ascending(Option<bool>)`](crate::input::DescribeBackupsInput::sort_ascending): <p>Designates whether or not to sort the return backups by ascending chronological order of generation.</p>
+    /// - On success, responds with [`DescribeBackupsOutput`](crate::output::DescribeBackupsOutput) with field(s):
+    ///   - [`backups(Option<Vec<Backup>>)`](crate::output::DescribeBackupsOutput::backups): <p>A list of backups.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeBackupsOutput::next_token): <p>An opaque string that indicates that the response contains only a subset of backups. Use this value in a subsequent <code>DescribeBackups</code> request to get more backups.</p>
+    /// - On failure, responds with [`SdkError<DescribeBackupsError>`](crate::error::DescribeBackupsError)
     pub fn describe_backups(&self) -> fluent_builders::DescribeBackups<C, M, R> {
         fluent_builders::DescribeBackups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeClusters` operation.
-    ///
-    /// See [`DescribeClusters`](crate::client::fluent_builders::DescribeClusters) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeClusters`](crate::client::fluent_builders::DescribeClusters) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeClusters::into_paginator).
+    ///
+    /// - Takes [`DescribeClustersInput`](crate::input::DescribeClustersInput) with field(s):
+    ///   - [`filters(Option<HashMap<String, Vec<String>>>)`](crate::input::DescribeClustersInput::filters): <p>One or more filters to limit the items returned in the response.</p>  <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify clusters by their cluster identifier (ID).</p>  <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p>  <p>Use the <code>states</code> filter to return only clusters that match the specified state.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeClustersInput::next_token): <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more clusters.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeClustersInput::max_results): <p>The maximum number of clusters to return in the response. When there are more clusters than the number you specify, the response contains a <code>NextToken</code> value.</p>
+    /// - On success, responds with [`DescribeClustersOutput`](crate::output::DescribeClustersOutput) with field(s):
+    ///   - [`clusters(Option<Vec<Cluster>>)`](crate::output::DescribeClustersOutput::clusters): <p>A list of clusters.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeClustersOutput::next_token): <p>An opaque string that indicates that the response contains only a subset of clusters. Use this value in a subsequent <code>DescribeClusters</code> request to get more clusters.</p>
+    /// - On failure, responds with [`SdkError<DescribeClustersError>`](crate::error::DescribeClustersError)
     pub fn describe_clusters(&self) -> fluent_builders::DescribeClusters<C, M, R> {
         fluent_builders::DescribeClusters::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `InitializeCluster` operation.
+    /// Constructs a fluent builder for the [`InitializeCluster`](crate::client::fluent_builders::InitializeCluster) operation.
     ///
-    /// See [`InitializeCluster`](crate::client::fluent_builders::InitializeCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`InitializeClusterInput`](crate::input::InitializeClusterInput) with field(s):
+    ///   - [`cluster_id(Option<String>)`](crate::input::InitializeClusterInput::cluster_id): <p>The identifier (ID) of the cluster that you are claiming. To find the cluster ID, use <code>DescribeClusters</code>.</p>
+    ///   - [`signed_cert(Option<String>)`](crate::input::InitializeClusterInput::signed_cert): <p>The cluster certificate issued (signed) by your issuing certificate authority (CA). The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
+    ///   - [`trust_anchor(Option<String>)`](crate::input::InitializeClusterInput::trust_anchor): <p>The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.</p>
+    /// - On success, responds with [`InitializeClusterOutput`](crate::output::InitializeClusterOutput) with field(s):
+    ///   - [`state(Option<ClusterState>)`](crate::output::InitializeClusterOutput::state): <p>The cluster's state.</p>
+    ///   - [`state_message(Option<String>)`](crate::output::InitializeClusterOutput::state_message): <p>A description of the cluster's state.</p>
+    /// - On failure, responds with [`SdkError<InitializeClusterError>`](crate::error::InitializeClusterError)
     pub fn initialize_cluster(&self) -> fluent_builders::InitializeCluster<C, M, R> {
         fluent_builders::InitializeCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTags` operation.
-    ///
-    /// See [`ListTags`](crate::client::fluent_builders::ListTags) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListTags`](crate::client::fluent_builders::ListTags) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTags::into_paginator).
+    ///
+    /// - Takes [`ListTagsInput`](crate::input::ListTagsInput) with field(s):
+    ///   - [`resource_id(Option<String>)`](crate::input::ListTagsInput::resource_id): <p>The cluster identifier (ID) for the cluster whose tags you are getting. To find the cluster ID, use <code>DescribeClusters</code>.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListTagsInput::next_token): <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more tags.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListTagsInput::max_results): <p>The maximum number of tags to return in the response. When there are more tags than the number you specify, the response contains a <code>NextToken</code> value.</p>
+    /// - On success, responds with [`ListTagsOutput`](crate::output::ListTagsOutput) with field(s):
+    ///   - [`tag_list(Option<Vec<Tag>>)`](crate::output::ListTagsOutput::tag_list): <p>A list of tags.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTagsOutput::next_token): <p>An opaque string that indicates that the response contains only a subset of tags. Use this value in a subsequent <code>ListTags</code> request to get more tags.</p>
+    /// - On failure, responds with [`SdkError<ListTagsError>`](crate::error::ListTagsError)
     pub fn list_tags(&self) -> fluent_builders::ListTags<C, M, R> {
         fluent_builders::ListTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyBackupAttributes` operation.
+    /// Constructs a fluent builder for the [`ModifyBackupAttributes`](crate::client::fluent_builders::ModifyBackupAttributes) operation.
     ///
-    /// See [`ModifyBackupAttributes`](crate::client::fluent_builders::ModifyBackupAttributes) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyBackupAttributesInput`](crate::input::ModifyBackupAttributesInput) with field(s):
+    ///   - [`backup_id(Option<String>)`](crate::input::ModifyBackupAttributesInput::backup_id): <p>The identifier (ID) of the backup to modify. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
+    ///   - [`never_expires(Option<bool>)`](crate::input::ModifyBackupAttributesInput::never_expires): <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
+    /// - On success, responds with [`ModifyBackupAttributesOutput`](crate::output::ModifyBackupAttributesOutput) with field(s):
+    ///   - [`backup(Option<Backup>)`](crate::output::ModifyBackupAttributesOutput::backup): <p>Contains information about a backup of an AWS CloudHSM cluster. All backup objects contain the <code>BackupId</code>, <code>BackupState</code>, <code>ClusterId</code>, and <code>CreateTimestamp</code> parameters. Backups that were copied into a destination region additionally contain the <code>CopyTimestamp</code>, <code>SourceBackup</code>, <code>SourceCluster</code>, and <code>SourceRegion</code> parameters. A backup that is pending deletion will include the <code>DeleteTimestamp</code> parameter.</p>
+    /// - On failure, responds with [`SdkError<ModifyBackupAttributesError>`](crate::error::ModifyBackupAttributesError)
     pub fn modify_backup_attributes(&self) -> fluent_builders::ModifyBackupAttributes<C, M, R> {
         fluent_builders::ModifyBackupAttributes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyCluster` operation.
+    /// Constructs a fluent builder for the [`ModifyCluster`](crate::client::fluent_builders::ModifyCluster) operation.
     ///
-    /// See [`ModifyCluster`](crate::client::fluent_builders::ModifyCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyClusterInput`](crate::input::ModifyClusterInput) with field(s):
+    ///   - [`backup_retention_policy(Option<BackupRetentionPolicy>)`](crate::input::ModifyClusterInput::backup_retention_policy): <p>A policy that defines how the service retains backups.</p>
+    ///   - [`cluster_id(Option<String>)`](crate::input::ModifyClusterInput::cluster_id): <p>The identifier (ID) of the cluster that you want to modify. To find the cluster ID, use <code>DescribeClusters</code>.</p>
+    /// - On success, responds with [`ModifyClusterOutput`](crate::output::ModifyClusterOutput) with field(s):
+    ///   - [`cluster(Option<Cluster>)`](crate::output::ModifyClusterOutput::cluster): <p>Contains information about an AWS CloudHSM cluster.</p>
+    /// - On failure, responds with [`SdkError<ModifyClusterError>`](crate::error::ModifyClusterError)
     pub fn modify_cluster(&self) -> fluent_builders::ModifyCluster<C, M, R> {
         fluent_builders::ModifyCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RestoreBackup` operation.
+    /// Constructs a fluent builder for the [`RestoreBackup`](crate::client::fluent_builders::RestoreBackup) operation.
     ///
-    /// See [`RestoreBackup`](crate::client::fluent_builders::RestoreBackup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RestoreBackupInput`](crate::input::RestoreBackupInput) with field(s):
+    ///   - [`backup_id(Option<String>)`](crate::input::RestoreBackupInput::backup_id): <p>The ID of the backup to be restored. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
+    /// - On success, responds with [`RestoreBackupOutput`](crate::output::RestoreBackupOutput) with field(s):
+    ///   - [`backup(Option<Backup>)`](crate::output::RestoreBackupOutput::backup): <p>Information on the <code>Backup</code> object created.</p>
+    /// - On failure, responds with [`SdkError<RestoreBackupError>`](crate::error::RestoreBackupError)
     pub fn restore_backup(&self) -> fluent_builders::RestoreBackup<C, M, R> {
         fluent_builders::RestoreBackup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_id(Option<String>)`](crate::input::TagResourceInput::resource_id): <p>The cluster identifier (ID) for the cluster that you are tagging. To find the cluster ID, use <code>DescribeClusters</code>.</p>
+    ///   - [`tag_list(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tag_list): <p>A list of one or more tags.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_id(Option<String>)`](crate::input::UntagResourceInput::resource_id): <p>The cluster identifier (ID) for the cluster whose tags you are removing. To find the cluster ID, use <code>DescribeClusters</code>.</p>
+    ///   - [`tag_key_list(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_key_list): <p>A list of one or more tag keys for the tags that you are removing. Specify only the tag keys, not the tag values.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }

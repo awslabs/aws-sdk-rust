@@ -83,140 +83,239 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateSignalingChannel` operation.
+    /// Constructs a fluent builder for the [`CreateSignalingChannel`](crate::client::fluent_builders::CreateSignalingChannel) operation.
     ///
-    /// See [`CreateSignalingChannel`](crate::client::fluent_builders::CreateSignalingChannel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateSignalingChannelInput`](crate::input::CreateSignalingChannelInput) with field(s):
+    ///   - [`channel_name(Option<String>)`](crate::input::CreateSignalingChannelInput::channel_name): <p>A name for the signaling channel that you are creating. It must be unique for each AWS account and AWS Region.</p>
+    ///   - [`channel_type(Option<ChannelType>)`](crate::input::CreateSignalingChannelInput::channel_type): <p>A type of the signaling channel that you are creating. Currently, <code>SINGLE_MASTER</code> is the only supported channel type. </p>
+    ///   - [`single_master_configuration(Option<SingleMasterConfiguration>)`](crate::input::CreateSignalingChannelInput::single_master_configuration): <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type. </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateSignalingChannelInput::tags): <p>A set of tags (key-value pairs) that you want to associate with this channel.</p>
+    /// - On success, responds with [`CreateSignalingChannelOutput`](crate::output::CreateSignalingChannelOutput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::output::CreateSignalingChannelOutput::channel_arn): <p>The Amazon Resource Name (ARN) of the created channel.</p>
+    /// - On failure, responds with [`SdkError<CreateSignalingChannelError>`](crate::error::CreateSignalingChannelError)
     pub fn create_signaling_channel(&self) -> fluent_builders::CreateSignalingChannel<C, M, R> {
         fluent_builders::CreateSignalingChannel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateStream` operation.
+    /// Constructs a fluent builder for the [`CreateStream`](crate::client::fluent_builders::CreateStream) operation.
     ///
-    /// See [`CreateStream`](crate::client::fluent_builders::CreateStream) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateStreamInput`](crate::input::CreateStreamInput) with field(s):
+    ///   - [`device_name(Option<String>)`](crate::input::CreateStreamInput::device_name): <p>The name of the device that is writing to the stream. </p> <note>   <p>In the current implementation, Kinesis Video Streams does not use this name.</p>  </note>
+    ///   - [`stream_name(Option<String>)`](crate::input::CreateStreamInput::stream_name): <p>A name for the stream that you are creating.</p>  <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>
+    ///   - [`media_type(Option<String>)`](crate::input::CreateStreamInput::media_type): <p>The media type of the stream. Consumers of the stream can use this information when processing the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a> for guidelines.</p>  <p>Example valid values include "video/h264" and "video/h264,audio/aac".</p>  <p>This parameter is optional; the default value is <code>null</code> (or empty in JSON).</p>
+    ///   - [`kms_key_id(Option<String>)`](crate::input::CreateStreamInput::kms_key_id): <p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis Video Streams to use to encrypt stream data.</p>  <p>If no key ID is specified, the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>  <p> For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>. </p>
+    ///   - [`data_retention_in_hours(Option<i32>)`](crate::input::CreateStreamInput::data_retention_in_hours): <p>The number of hours that you want to retain the data in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p>  <p>The default value is 0, indicating that the stream does not persist data.</p>  <p>When the <code>DataRetentionInHours</code> value is 0, consumers can still consume the fragments that remain in the service host buffer, which has a retention time limit of 5 minutes and a retention memory limit of 200 MB. Fragments are removed from the buffer when either limit is reached.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateStreamInput::tags): <p>A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).</p>
+    /// - On success, responds with [`CreateStreamOutput`](crate::output::CreateStreamOutput) with field(s):
+    ///   - [`stream_arn(Option<String>)`](crate::output::CreateStreamOutput::stream_arn): <p>The Amazon Resource Name (ARN) of the stream.</p>
+    /// - On failure, responds with [`SdkError<CreateStreamError>`](crate::error::CreateStreamError)
     pub fn create_stream(&self) -> fluent_builders::CreateStream<C, M, R> {
         fluent_builders::CreateStream::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteSignalingChannel` operation.
+    /// Constructs a fluent builder for the [`DeleteSignalingChannel`](crate::client::fluent_builders::DeleteSignalingChannel) operation.
     ///
-    /// See [`DeleteSignalingChannel`](crate::client::fluent_builders::DeleteSignalingChannel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteSignalingChannelInput`](crate::input::DeleteSignalingChannelInput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::input::DeleteSignalingChannelInput::channel_arn): <p>The Amazon Resource Name (ARN) of the signaling channel that you want to delete.</p>
+    ///   - [`current_version(Option<String>)`](crate::input::DeleteSignalingChannelInput::current_version): <p>The current version of the signaling channel that you want to delete. You can obtain the current version by invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> API operations.</p>
+    /// - On success, responds with [`DeleteSignalingChannelOutput`](crate::output::DeleteSignalingChannelOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteSignalingChannelError>`](crate::error::DeleteSignalingChannelError)
     pub fn delete_signaling_channel(&self) -> fluent_builders::DeleteSignalingChannel<C, M, R> {
         fluent_builders::DeleteSignalingChannel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteStream` operation.
+    /// Constructs a fluent builder for the [`DeleteStream`](crate::client::fluent_builders::DeleteStream) operation.
     ///
-    /// See [`DeleteStream`](crate::client::fluent_builders::DeleteStream) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteStreamInput`](crate::input::DeleteStreamInput) with field(s):
+    ///   - [`stream_arn(Option<String>)`](crate::input::DeleteStreamInput::stream_arn): <p>The Amazon Resource Name (ARN) of the stream that you want to delete. </p>
+    ///   - [`current_version(Option<String>)`](crate::input::DeleteStreamInput::current_version): <p>Optional: The version of the stream that you want to delete. </p>  <p>Specify the version as a safeguard to ensure that your are deleting the correct stream. To get the stream version, use the <code>DescribeStream</code> API.</p>  <p>If not specified, only the <code>CreationTime</code> is checked before deleting the stream.</p>
+    /// - On success, responds with [`DeleteStreamOutput`](crate::output::DeleteStreamOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteStreamError>`](crate::error::DeleteStreamError)
     pub fn delete_stream(&self) -> fluent_builders::DeleteStream<C, M, R> {
         fluent_builders::DeleteStream::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeSignalingChannel` operation.
+    /// Constructs a fluent builder for the [`DescribeSignalingChannel`](crate::client::fluent_builders::DescribeSignalingChannel) operation.
     ///
-    /// See [`DescribeSignalingChannel`](crate::client::fluent_builders::DescribeSignalingChannel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeSignalingChannelInput`](crate::input::DescribeSignalingChannelInput) with field(s):
+    ///   - [`channel_name(Option<String>)`](crate::input::DescribeSignalingChannelInput::channel_name): <p>The name of the signaling channel that you want to describe.</p>
+    ///   - [`channel_arn(Option<String>)`](crate::input::DescribeSignalingChannelInput::channel_arn): <p>The ARN of the signaling channel that you want to describe.</p>
+    /// - On success, responds with [`DescribeSignalingChannelOutput`](crate::output::DescribeSignalingChannelOutput) with field(s):
+    ///   - [`channel_info(Option<ChannelInfo>)`](crate::output::DescribeSignalingChannelOutput::channel_info): <p>A structure that encapsulates the specified signaling channel's metadata and properties.</p>
+    /// - On failure, responds with [`SdkError<DescribeSignalingChannelError>`](crate::error::DescribeSignalingChannelError)
     pub fn describe_signaling_channel(&self) -> fluent_builders::DescribeSignalingChannel<C, M, R> {
         fluent_builders::DescribeSignalingChannel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeStream` operation.
+    /// Constructs a fluent builder for the [`DescribeStream`](crate::client::fluent_builders::DescribeStream) operation.
     ///
-    /// See [`DescribeStream`](crate::client::fluent_builders::DescribeStream) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeStreamInput`](crate::input::DescribeStreamInput) with field(s):
+    ///   - [`stream_name(Option<String>)`](crate::input::DescribeStreamInput::stream_name): <p>The name of the stream.</p>
+    ///   - [`stream_arn(Option<String>)`](crate::input::DescribeStreamInput::stream_arn): <p>The Amazon Resource Name (ARN) of the stream.</p>
+    /// - On success, responds with [`DescribeStreamOutput`](crate::output::DescribeStreamOutput) with field(s):
+    ///   - [`stream_info(Option<StreamInfo>)`](crate::output::DescribeStreamOutput::stream_info): <p>An object that describes the stream.</p>
+    /// - On failure, responds with [`SdkError<DescribeStreamError>`](crate::error::DescribeStreamError)
     pub fn describe_stream(&self) -> fluent_builders::DescribeStream<C, M, R> {
         fluent_builders::DescribeStream::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDataEndpoint` operation.
+    /// Constructs a fluent builder for the [`GetDataEndpoint`](crate::client::fluent_builders::GetDataEndpoint) operation.
     ///
-    /// See [`GetDataEndpoint`](crate::client::fluent_builders::GetDataEndpoint) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetDataEndpointInput`](crate::input::GetDataEndpointInput) with field(s):
+    ///   - [`stream_name(Option<String>)`](crate::input::GetDataEndpointInput::stream_name): <p>The name of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamARN</code> in the request.</p>
+    ///   - [`stream_arn(Option<String>)`](crate::input::GetDataEndpointInput::stream_arn): <p>The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamName</code> in the request. </p>
+    ///   - [`api_name(Option<ApiName>)`](crate::input::GetDataEndpointInput::api_name): <p>The name of the API action for which to get an endpoint.</p>
+    /// - On success, responds with [`GetDataEndpointOutput`](crate::output::GetDataEndpointOutput) with field(s):
+    ///   - [`data_endpoint(Option<String>)`](crate::output::GetDataEndpointOutput::data_endpoint): <p>The endpoint value. To read data from the stream or to write data to it, specify this endpoint in your application.</p>
+    /// - On failure, responds with [`SdkError<GetDataEndpointError>`](crate::error::GetDataEndpointError)
     pub fn get_data_endpoint(&self) -> fluent_builders::GetDataEndpoint<C, M, R> {
         fluent_builders::GetDataEndpoint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSignalingChannelEndpoint` operation.
+    /// Constructs a fluent builder for the [`GetSignalingChannelEndpoint`](crate::client::fluent_builders::GetSignalingChannelEndpoint) operation.
     ///
-    /// See [`GetSignalingChannelEndpoint`](crate::client::fluent_builders::GetSignalingChannelEndpoint) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetSignalingChannelEndpointInput`](crate::input::GetSignalingChannelEndpointInput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::input::GetSignalingChannelEndpointInput::channel_arn): <p>The Amazon Resource Name (ARN) of the signalling channel for which you want to get an endpoint.</p>
+    ///   - [`single_master_channel_endpoint_configuration(Option<SingleMasterChannelEndpointConfiguration>)`](crate::input::GetSignalingChannelEndpointInput::single_master_channel_endpoint_configuration): <p>A structure containing the endpoint configuration for the <code>SINGLE_MASTER</code> channel type.</p>
+    /// - On success, responds with [`GetSignalingChannelEndpointOutput`](crate::output::GetSignalingChannelEndpointOutput) with field(s):
+    ///   - [`resource_endpoint_list(Option<Vec<ResourceEndpointListItem>>)`](crate::output::GetSignalingChannelEndpointOutput::resource_endpoint_list): <p>A list of endpoints for the specified signaling channel.</p>
+    /// - On failure, responds with [`SdkError<GetSignalingChannelEndpointError>`](crate::error::GetSignalingChannelEndpointError)
     pub fn get_signaling_channel_endpoint(
         &self,
     ) -> fluent_builders::GetSignalingChannelEndpoint<C, M, R> {
         fluent_builders::GetSignalingChannelEndpoint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSignalingChannels` operation.
-    ///
-    /// See [`ListSignalingChannels`](crate::client::fluent_builders::ListSignalingChannels) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListSignalingChannels`](crate::client::fluent_builders::ListSignalingChannels) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSignalingChannels::into_paginator).
+    ///
+    /// - Takes [`ListSignalingChannelsInput`](crate::input::ListSignalingChannelsInput) with field(s):
+    ///   - [`max_results(Option<i32>)`](crate::input::ListSignalingChannelsInput::max_results): <p>The maximum number of channels to return in the response. The default is 500.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListSignalingChannelsInput::next_token): <p>If you specify this parameter, when the result of a <code>ListSignalingChannels</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of channels, provide this token in your next request.</p>
+    ///   - [`channel_name_condition(Option<ChannelNameCondition>)`](crate::input::ListSignalingChannelsInput::channel_name_condition): <p>Optional: Returns only the channels that satisfy a specific condition.</p>
+    /// - On success, responds with [`ListSignalingChannelsOutput`](crate::output::ListSignalingChannelsOutput) with field(s):
+    ///   - [`channel_info_list(Option<Vec<ChannelInfo>>)`](crate::output::ListSignalingChannelsOutput::channel_info_list): <p>An array of <code>ChannelInfo</code> objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSignalingChannelsOutput::next_token): <p>If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request.</p>
+    /// - On failure, responds with [`SdkError<ListSignalingChannelsError>`](crate::error::ListSignalingChannelsError)
     pub fn list_signaling_channels(&self) -> fluent_builders::ListSignalingChannels<C, M, R> {
         fluent_builders::ListSignalingChannels::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListStreams` operation.
-    ///
-    /// See [`ListStreams`](crate::client::fluent_builders::ListStreams) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListStreams`](crate::client::fluent_builders::ListStreams) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListStreams::into_paginator).
+    ///
+    /// - Takes [`ListStreamsInput`](crate::input::ListStreamsInput) with field(s):
+    ///   - [`max_results(Option<i32>)`](crate::input::ListStreamsInput::max_results): <p>The maximum number of streams to return in the response. The default is 10,000.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListStreamsInput::next_token): <p>If you specify this parameter, when the result of a <code>ListStreams</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of streams, provide this token in your next request.</p>
+    ///   - [`stream_name_condition(Option<StreamNameCondition>)`](crate::input::ListStreamsInput::stream_name_condition): <p>Optional: Returns only streams that satisfy a specific condition. Currently, you can specify only the prefix of a stream name as a condition. </p>
+    /// - On success, responds with [`ListStreamsOutput`](crate::output::ListStreamsOutput) with field(s):
+    ///   - [`stream_info_list(Option<Vec<StreamInfo>>)`](crate::output::ListStreamsOutput::stream_info_list): <p>An array of <code>StreamInfo</code> objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListStreamsOutput::next_token): <p>If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request. </p>
+    /// - On failure, responds with [`SdkError<ListStreamsError>`](crate::error::ListStreamsError)
     pub fn list_streams(&self) -> fluent_builders::ListStreams<C, M, R> {
         fluent_builders::ListStreams::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListTagsForResourceInput::next_token): <p>If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags. </p>
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the signaling channel for which you want to list tags.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListTagsForResourceOutput::next_token): <p>If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the response includes a token that you can use in the next request to fetch the next set of tags. </p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A map of tag keys and values associated with the specified signaling channel.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForStream` operation.
+    /// Constructs a fluent builder for the [`ListTagsForStream`](crate::client::fluent_builders::ListTagsForStream) operation.
     ///
-    /// See [`ListTagsForStream`](crate::client::fluent_builders::ListTagsForStream) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForStreamInput`](crate::input::ListTagsForStreamInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListTagsForStreamInput::next_token): <p>If you specify this parameter and the result of a <code>ListTagsForStream</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags.</p>
+    ///   - [`stream_arn(Option<String>)`](crate::input::ListTagsForStreamInput::stream_arn): <p>The Amazon Resource Name (ARN) of the stream that you want to list tags for.</p>
+    ///   - [`stream_name(Option<String>)`](crate::input::ListTagsForStreamInput::stream_name): <p>The name of the stream that you want to list tags for.</p>
+    /// - On success, responds with [`ListTagsForStreamOutput`](crate::output::ListTagsForStreamOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListTagsForStreamOutput::next_token): <p>If you specify this parameter and the result of a <code>ListTags</code> call is truncated, the response includes a token that you can use in the next request to fetch the next set of tags.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForStreamOutput::tags): <p>A map of tag keys and values associated with the specified stream.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForStreamError>`](crate::error::ListTagsForStreamError)
     pub fn list_tags_for_stream(&self) -> fluent_builders::ListTagsForStream<C, M, R> {
         fluent_builders::ListTagsForStream::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the signaling channel to which you want to add tags.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>A list of tags to associate with the specified signaling channel. Each tag is a key-value pair.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagStream` operation.
+    /// Constructs a fluent builder for the [`TagStream`](crate::client::fluent_builders::TagStream) operation.
     ///
-    /// See [`TagStream`](crate::client::fluent_builders::TagStream) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagStreamInput`](crate::input::TagStreamInput) with field(s):
+    ///   - [`stream_arn(Option<String>)`](crate::input::TagStreamInput::stream_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to add the tag or tags to.</p>
+    ///   - [`stream_name(Option<String>)`](crate::input::TagStreamInput::stream_name): <p>The name of the stream that you want to add the tag or tags to.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagStreamInput::tags): <p>A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).</p>
+    /// - On success, responds with [`TagStreamOutput`](crate::output::TagStreamOutput)
+
+    /// - On failure, responds with [`SdkError<TagStreamError>`](crate::error::TagStreamError)
     pub fn tag_stream(&self) -> fluent_builders::TagStream<C, M, R> {
         fluent_builders::TagStream::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the signaling channel from which you want to remove tags.</p>
+    ///   - [`tag_key_list(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_key_list): <p>A list of the keys of the tags that you want to remove.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagStream` operation.
+    /// Constructs a fluent builder for the [`UntagStream`](crate::client::fluent_builders::UntagStream) operation.
     ///
-    /// See [`UntagStream`](crate::client::fluent_builders::UntagStream) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagStreamInput`](crate::input::UntagStreamInput) with field(s):
+    ///   - [`stream_arn(Option<String>)`](crate::input::UntagStreamInput::stream_arn): <p>The Amazon Resource Name (ARN) of the stream that you want to remove tags from.</p>
+    ///   - [`stream_name(Option<String>)`](crate::input::UntagStreamInput::stream_name): <p>The name of the stream that you want to remove tags from.</p>
+    ///   - [`tag_key_list(Option<Vec<String>>)`](crate::input::UntagStreamInput::tag_key_list): <p>A list of the keys of the tags that you want to remove.</p>
+    /// - On success, responds with [`UntagStreamOutput`](crate::output::UntagStreamOutput)
+
+    /// - On failure, responds with [`SdkError<UntagStreamError>`](crate::error::UntagStreamError)
     pub fn untag_stream(&self) -> fluent_builders::UntagStream<C, M, R> {
         fluent_builders::UntagStream::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDataRetention` operation.
+    /// Constructs a fluent builder for the [`UpdateDataRetention`](crate::client::fluent_builders::UpdateDataRetention) operation.
     ///
-    /// See [`UpdateDataRetention`](crate::client::fluent_builders::UpdateDataRetention) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateDataRetentionInput`](crate::input::UpdateDataRetentionInput) with field(s):
+    ///   - [`stream_name(Option<String>)`](crate::input::UpdateDataRetentionInput::stream_name): <p>The name of the stream whose retention period you want to change.</p>
+    ///   - [`stream_arn(Option<String>)`](crate::input::UpdateDataRetentionInput::stream_arn): <p>The Amazon Resource Name (ARN) of the stream whose retention period you want to change.</p>
+    ///   - [`current_version(Option<String>)`](crate::input::UpdateDataRetentionInput::current_version): <p>The version of the stream whose retention period you want to change. To get the version, call either the <code>DescribeStream</code> or the <code>ListStreams</code> API.</p>
+    ///   - [`operation(Option<UpdateDataRetentionOperation>)`](crate::input::UpdateDataRetentionInput::operation): <p>Indicates whether you want to increase or decrease the retention period.</p>
+    ///   - [`data_retention_change_in_hours(Option<i32>)`](crate::input::UpdateDataRetentionInput::data_retention_change_in_hours): <p>The retention period, in hours. The value you specify replaces the current value. The maximum value for this parameter is 87600 (ten years).</p>
+    /// - On success, responds with [`UpdateDataRetentionOutput`](crate::output::UpdateDataRetentionOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateDataRetentionError>`](crate::error::UpdateDataRetentionError)
     pub fn update_data_retention(&self) -> fluent_builders::UpdateDataRetention<C, M, R> {
         fluent_builders::UpdateDataRetention::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateSignalingChannel` operation.
+    /// Constructs a fluent builder for the [`UpdateSignalingChannel`](crate::client::fluent_builders::UpdateSignalingChannel) operation.
     ///
-    /// See [`UpdateSignalingChannel`](crate::client::fluent_builders::UpdateSignalingChannel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateSignalingChannelInput`](crate::input::UpdateSignalingChannelInput) with field(s):
+    ///   - [`channel_arn(Option<String>)`](crate::input::UpdateSignalingChannelInput::channel_arn): <p>The Amazon Resource Name (ARN) of the signaling channel that you want to update.</p>
+    ///   - [`current_version(Option<String>)`](crate::input::UpdateSignalingChannelInput::current_version): <p>The current version of the signaling channel that you want to update.</p>
+    ///   - [`single_master_configuration(Option<SingleMasterConfiguration>)`](crate::input::UpdateSignalingChannelInput::single_master_configuration): <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update. </p>
+    /// - On success, responds with [`UpdateSignalingChannelOutput`](crate::output::UpdateSignalingChannelOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateSignalingChannelError>`](crate::error::UpdateSignalingChannelError)
     pub fn update_signaling_channel(&self) -> fluent_builders::UpdateSignalingChannel<C, M, R> {
         fluent_builders::UpdateSignalingChannel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateStream` operation.
+    /// Constructs a fluent builder for the [`UpdateStream`](crate::client::fluent_builders::UpdateStream) operation.
     ///
-    /// See [`UpdateStream`](crate::client::fluent_builders::UpdateStream) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateStreamInput`](crate::input::UpdateStreamInput) with field(s):
+    ///   - [`stream_name(Option<String>)`](crate::input::UpdateStreamInput::stream_name): <p>The name of the stream whose metadata you want to update.</p>  <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>
+    ///   - [`stream_arn(Option<String>)`](crate::input::UpdateStreamInput::stream_arn): <p>The ARN of the stream whose metadata you want to update.</p>
+    ///   - [`current_version(Option<String>)`](crate::input::UpdateStreamInput::current_version): <p>The version of the stream whose metadata you want to update.</p>
+    ///   - [`device_name(Option<String>)`](crate::input::UpdateStreamInput::device_name): <p>The name of the device that is writing to the stream. </p> <note>   <p> In the current implementation, Kinesis Video Streams does not use this name. </p>  </note>
+    ///   - [`media_type(Option<String>)`](crate::input::UpdateStreamInput::media_type): <p>The stream's media type. Use <code>MediaType</code> to specify the type of content that the stream contains to the consumers of the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>.</p>  <p>To play video on the console, you must specify the correct video type. For example, if the video in the stream is H.264, specify <code>video/h264</code> as the <code>MediaType</code>.</p>
+    /// - On success, responds with [`UpdateStreamOutput`](crate::output::UpdateStreamOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateStreamError>`](crate::error::UpdateStreamError)
     pub fn update_stream(&self) -> fluent_builders::UpdateStream<C, M, R> {
         fluent_builders::UpdateStream::new(self.handle.clone())
     }

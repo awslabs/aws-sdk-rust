@@ -83,249 +83,438 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateCell` operation.
+    /// Constructs a fluent builder for the [`CreateCell`](crate::client::fluent_builders::CreateCell) operation.
     ///
-    /// See [`CreateCell`](crate::client::fluent_builders::CreateCell) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateCellInput`](crate::input::CreateCellInput) with field(s):
+    ///   - [`cell_name(Option<String>)`](crate::input::CreateCellInput::cell_name): The name of the Cell to create
+    ///   - [`cells(Option<Vec<String>>)`](crate::input::CreateCellInput::cells): A list of Cell arns contained within this Cell (for use in nested Cells, e.g. regions within which AZs)
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateCellInput::tags): A collection of tags associated with a resource
+    /// - On success, responds with [`CreateCellOutput`](crate::output::CreateCellOutput) with field(s):
+    ///   - [`cell_arn(Option<String>)`](crate::output::CreateCellOutput::cell_arn): The arn for the Cell
+    ///   - [`cell_name(Option<String>)`](crate::output::CreateCellOutput::cell_name): The name of the Cell
+    ///   - [`cells(Option<Vec<String>>)`](crate::output::CreateCellOutput::cells): A list of Cell arns
+    ///   - [`parent_readiness_scopes(Option<Vec<String>>)`](crate::output::CreateCellOutput::parent_readiness_scopes): A list of Cell ARNs and/or RecoveryGroup ARNs
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateCellOutput::tags): A collection of tags associated with a resource
+    /// - On failure, responds with [`SdkError<CreateCellError>`](crate::error::CreateCellError)
     pub fn create_cell(&self) -> fluent_builders::CreateCell<C, M, R> {
         fluent_builders::CreateCell::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateCrossAccountAuthorization` operation.
+    /// Constructs a fluent builder for the [`CreateCrossAccountAuthorization`](crate::client::fluent_builders::CreateCrossAccountAuthorization) operation.
     ///
-    /// See [`CreateCrossAccountAuthorization`](crate::client::fluent_builders::CreateCrossAccountAuthorization) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateCrossAccountAuthorizationInput`](crate::input::CreateCrossAccountAuthorizationInput) with field(s):
+    ///   - [`cross_account_authorization(Option<String>)`](crate::input::CreateCrossAccountAuthorizationInput::cross_account_authorization): The cross account authorization
+    /// - On success, responds with [`CreateCrossAccountAuthorizationOutput`](crate::output::CreateCrossAccountAuthorizationOutput) with field(s):
+    ///   - [`cross_account_authorization(Option<String>)`](crate::output::CreateCrossAccountAuthorizationOutput::cross_account_authorization): The cross account authorization
+    /// - On failure, responds with [`SdkError<CreateCrossAccountAuthorizationError>`](crate::error::CreateCrossAccountAuthorizationError)
     pub fn create_cross_account_authorization(
         &self,
     ) -> fluent_builders::CreateCrossAccountAuthorization<C, M, R> {
         fluent_builders::CreateCrossAccountAuthorization::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateReadinessCheck` operation.
+    /// Constructs a fluent builder for the [`CreateReadinessCheck`](crate::client::fluent_builders::CreateReadinessCheck) operation.
     ///
-    /// See [`CreateReadinessCheck`](crate::client::fluent_builders::CreateReadinessCheck) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateReadinessCheckInput`](crate::input::CreateReadinessCheckInput) with field(s):
+    ///   - [`readiness_check_name(Option<String>)`](crate::input::CreateReadinessCheckInput::readiness_check_name): The name of the ReadinessCheck to create
+    ///   - [`resource_set_name(Option<String>)`](crate::input::CreateReadinessCheckInput::resource_set_name): The name of the ResourceSet to check
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateReadinessCheckInput::tags): A collection of tags associated with a resource
+    /// - On success, responds with [`CreateReadinessCheckOutput`](crate::output::CreateReadinessCheckOutput) with field(s):
+    ///   - [`readiness_check_arn(Option<String>)`](crate::output::CreateReadinessCheckOutput::readiness_check_arn): Arn associated with ReadinessCheck
+    ///   - [`readiness_check_name(Option<String>)`](crate::output::CreateReadinessCheckOutput::readiness_check_name): Name for a ReadinessCheck
+    ///   - [`resource_set(Option<String>)`](crate::output::CreateReadinessCheckOutput::resource_set): Name of the ResourceSet to be checked
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateReadinessCheckOutput::tags): A collection of tags associated with a resource
+    /// - On failure, responds with [`SdkError<CreateReadinessCheckError>`](crate::error::CreateReadinessCheckError)
     pub fn create_readiness_check(&self) -> fluent_builders::CreateReadinessCheck<C, M, R> {
         fluent_builders::CreateReadinessCheck::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateRecoveryGroup` operation.
+    /// Constructs a fluent builder for the [`CreateRecoveryGroup`](crate::client::fluent_builders::CreateRecoveryGroup) operation.
     ///
-    /// See [`CreateRecoveryGroup`](crate::client::fluent_builders::CreateRecoveryGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateRecoveryGroupInput`](crate::input::CreateRecoveryGroupInput) with field(s):
+    ///   - [`cells(Option<Vec<String>>)`](crate::input::CreateRecoveryGroupInput::cells): A list of Cell arns
+    ///   - [`recovery_group_name(Option<String>)`](crate::input::CreateRecoveryGroupInput::recovery_group_name): The name of the RecoveryGroup to create
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateRecoveryGroupInput::tags): A collection of tags associated with a resource
+    /// - On success, responds with [`CreateRecoveryGroupOutput`](crate::output::CreateRecoveryGroupOutput) with field(s):
+    ///   - [`cells(Option<Vec<String>>)`](crate::output::CreateRecoveryGroupOutput::cells): A list of Cell arns
+    ///   - [`recovery_group_arn(Option<String>)`](crate::output::CreateRecoveryGroupOutput::recovery_group_arn): The arn for the RecoveryGroup
+    ///   - [`recovery_group_name(Option<String>)`](crate::output::CreateRecoveryGroupOutput::recovery_group_name): The name of the RecoveryGroup
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateRecoveryGroupOutput::tags): A collection of tags associated with a resource
+    /// - On failure, responds with [`SdkError<CreateRecoveryGroupError>`](crate::error::CreateRecoveryGroupError)
     pub fn create_recovery_group(&self) -> fluent_builders::CreateRecoveryGroup<C, M, R> {
         fluent_builders::CreateRecoveryGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateResourceSet` operation.
+    /// Constructs a fluent builder for the [`CreateResourceSet`](crate::client::fluent_builders::CreateResourceSet) operation.
     ///
-    /// See [`CreateResourceSet`](crate::client::fluent_builders::CreateResourceSet) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateResourceSetInput`](crate::input::CreateResourceSetInput) with field(s):
+    ///   - [`resource_set_name(Option<String>)`](crate::input::CreateResourceSetInput::resource_set_name): The name of the ResourceSet to create
+    ///   - [`resource_set_type(Option<String>)`](crate::input::CreateResourceSetInput::resource_set_type): AWS Resource type of the resources in the ResourceSet
+    ///   - [`resources(Option<Vec<Resource>>)`](crate::input::CreateResourceSetInput::resources): A list of Resource objects
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateResourceSetInput::tags): A collection of tags associated with a resource
+    /// - On success, responds with [`CreateResourceSetOutput`](crate::output::CreateResourceSetOutput) with field(s):
+    ///   - [`resource_set_arn(Option<String>)`](crate::output::CreateResourceSetOutput::resource_set_arn): The arn for the ResourceSet
+    ///   - [`resource_set_name(Option<String>)`](crate::output::CreateResourceSetOutput::resource_set_name): The name of the ResourceSet
+    ///   - [`resource_set_type(Option<String>)`](crate::output::CreateResourceSetOutput::resource_set_type): AWS Resource Type of the resources in the ResourceSet
+    ///   - [`resources(Option<Vec<Resource>>)`](crate::output::CreateResourceSetOutput::resources): A list of Resource objects
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateResourceSetOutput::tags): A collection of tags associated with a resource
+    /// - On failure, responds with [`SdkError<CreateResourceSetError>`](crate::error::CreateResourceSetError)
     pub fn create_resource_set(&self) -> fluent_builders::CreateResourceSet<C, M, R> {
         fluent_builders::CreateResourceSet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteCell` operation.
+    /// Constructs a fluent builder for the [`DeleteCell`](crate::client::fluent_builders::DeleteCell) operation.
     ///
-    /// See [`DeleteCell`](crate::client::fluent_builders::DeleteCell) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteCellInput`](crate::input::DeleteCellInput) with field(s):
+    ///   - [`cell_name(Option<String>)`](crate::input::DeleteCellInput::cell_name): The Cell to delete
+    /// - On success, responds with [`DeleteCellOutput`](crate::output::DeleteCellOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteCellError>`](crate::error::DeleteCellError)
     pub fn delete_cell(&self) -> fluent_builders::DeleteCell<C, M, R> {
         fluent_builders::DeleteCell::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteCrossAccountAuthorization` operation.
+    /// Constructs a fluent builder for the [`DeleteCrossAccountAuthorization`](crate::client::fluent_builders::DeleteCrossAccountAuthorization) operation.
     ///
-    /// See [`DeleteCrossAccountAuthorization`](crate::client::fluent_builders::DeleteCrossAccountAuthorization) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteCrossAccountAuthorizationInput`](crate::input::DeleteCrossAccountAuthorizationInput) with field(s):
+    ///   - [`cross_account_authorization(Option<String>)`](crate::input::DeleteCrossAccountAuthorizationInput::cross_account_authorization): The cross account authorization
+    /// - On success, responds with [`DeleteCrossAccountAuthorizationOutput`](crate::output::DeleteCrossAccountAuthorizationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteCrossAccountAuthorizationError>`](crate::error::DeleteCrossAccountAuthorizationError)
     pub fn delete_cross_account_authorization(
         &self,
     ) -> fluent_builders::DeleteCrossAccountAuthorization<C, M, R> {
         fluent_builders::DeleteCrossAccountAuthorization::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteReadinessCheck` operation.
+    /// Constructs a fluent builder for the [`DeleteReadinessCheck`](crate::client::fluent_builders::DeleteReadinessCheck) operation.
     ///
-    /// See [`DeleteReadinessCheck`](crate::client::fluent_builders::DeleteReadinessCheck) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteReadinessCheckInput`](crate::input::DeleteReadinessCheckInput) with field(s):
+    ///   - [`readiness_check_name(Option<String>)`](crate::input::DeleteReadinessCheckInput::readiness_check_name): The ReadinessCheck to delete
+    /// - On success, responds with [`DeleteReadinessCheckOutput`](crate::output::DeleteReadinessCheckOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteReadinessCheckError>`](crate::error::DeleteReadinessCheckError)
     pub fn delete_readiness_check(&self) -> fluent_builders::DeleteReadinessCheck<C, M, R> {
         fluent_builders::DeleteReadinessCheck::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteRecoveryGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteRecoveryGroup`](crate::client::fluent_builders::DeleteRecoveryGroup) operation.
     ///
-    /// See [`DeleteRecoveryGroup`](crate::client::fluent_builders::DeleteRecoveryGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteRecoveryGroupInput`](crate::input::DeleteRecoveryGroupInput) with field(s):
+    ///   - [`recovery_group_name(Option<String>)`](crate::input::DeleteRecoveryGroupInput::recovery_group_name): The RecoveryGroup to delete
+    /// - On success, responds with [`DeleteRecoveryGroupOutput`](crate::output::DeleteRecoveryGroupOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteRecoveryGroupError>`](crate::error::DeleteRecoveryGroupError)
     pub fn delete_recovery_group(&self) -> fluent_builders::DeleteRecoveryGroup<C, M, R> {
         fluent_builders::DeleteRecoveryGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteResourceSet` operation.
+    /// Constructs a fluent builder for the [`DeleteResourceSet`](crate::client::fluent_builders::DeleteResourceSet) operation.
     ///
-    /// See [`DeleteResourceSet`](crate::client::fluent_builders::DeleteResourceSet) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteResourceSetInput`](crate::input::DeleteResourceSetInput) with field(s):
+    ///   - [`resource_set_name(Option<String>)`](crate::input::DeleteResourceSetInput::resource_set_name): The ResourceSet to delete
+    /// - On success, responds with [`DeleteResourceSetOutput`](crate::output::DeleteResourceSetOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteResourceSetError>`](crate::error::DeleteResourceSetError)
     pub fn delete_resource_set(&self) -> fluent_builders::DeleteResourceSet<C, M, R> {
         fluent_builders::DeleteResourceSet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetArchitectureRecommendations` operation.
+    /// Constructs a fluent builder for the [`GetArchitectureRecommendations`](crate::client::fluent_builders::GetArchitectureRecommendations) operation.
     ///
-    /// See [`GetArchitectureRecommendations`](crate::client::fluent_builders::GetArchitectureRecommendations) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetArchitectureRecommendationsInput`](crate::input::GetArchitectureRecommendationsInput) with field(s):
+    ///   - [`max_results(i32)`](crate::input::GetArchitectureRecommendationsInput::max_results): Upper bound on number of records to return.
+    ///   - [`next_token(Option<String>)`](crate::input::GetArchitectureRecommendationsInput::next_token): A token that can be used to resume pagination from the end of the collection.
+    ///   - [`recovery_group_name(Option<String>)`](crate::input::GetArchitectureRecommendationsInput::recovery_group_name): Name of RecoveryGroup (top level resource) to be analyzed.
+    /// - On success, responds with [`GetArchitectureRecommendationsOutput`](crate::output::GetArchitectureRecommendationsOutput) with field(s):
+    ///   - [`last_audit_timestamp(Option<DateTime>)`](crate::output::GetArchitectureRecommendationsOutput::last_audit_timestamp): The time a Recovery Group was last assessed for recommendations in UTC ISO-8601 format.
+    ///   - [`next_token(Option<String>)`](crate::output::GetArchitectureRecommendationsOutput::next_token): A token that can be used to resume pagination from the end of the collection
+    ///   - [`recommendations(Option<Vec<Recommendation>>)`](crate::output::GetArchitectureRecommendationsOutput::recommendations): A list of recommendations for the customer's application
+    /// - On failure, responds with [`SdkError<GetArchitectureRecommendationsError>`](crate::error::GetArchitectureRecommendationsError)
     pub fn get_architecture_recommendations(
         &self,
     ) -> fluent_builders::GetArchitectureRecommendations<C, M, R> {
         fluent_builders::GetArchitectureRecommendations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCell` operation.
+    /// Constructs a fluent builder for the [`GetCell`](crate::client::fluent_builders::GetCell) operation.
     ///
-    /// See [`GetCell`](crate::client::fluent_builders::GetCell) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetCellInput`](crate::input::GetCellInput) with field(s):
+    ///   - [`cell_name(Option<String>)`](crate::input::GetCellInput::cell_name): The Cell to get
+    /// - On success, responds with [`GetCellOutput`](crate::output::GetCellOutput) with field(s):
+    ///   - [`cell_arn(Option<String>)`](crate::output::GetCellOutput::cell_arn): The arn for the Cell
+    ///   - [`cell_name(Option<String>)`](crate::output::GetCellOutput::cell_name): The name of the Cell
+    ///   - [`cells(Option<Vec<String>>)`](crate::output::GetCellOutput::cells): A list of Cell arns
+    ///   - [`parent_readiness_scopes(Option<Vec<String>>)`](crate::output::GetCellOutput::parent_readiness_scopes): A list of Cell ARNs and/or RecoveryGroup ARNs
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetCellOutput::tags): A collection of tags associated with a resource
+    /// - On failure, responds with [`SdkError<GetCellError>`](crate::error::GetCellError)
     pub fn get_cell(&self) -> fluent_builders::GetCell<C, M, R> {
         fluent_builders::GetCell::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCellReadinessSummary` operation.
-    ///
-    /// See [`GetCellReadinessSummary`](crate::client::fluent_builders::GetCellReadinessSummary) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetCellReadinessSummary`](crate::client::fluent_builders::GetCellReadinessSummary) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetCellReadinessSummary::into_paginator).
+    ///
+    /// - Takes [`GetCellReadinessSummaryInput`](crate::input::GetCellReadinessSummaryInput) with field(s):
+    ///   - [`cell_name(Option<String>)`](crate::input::GetCellReadinessSummaryInput::cell_name): The name of the Cell
+    ///   - [`max_results(i32)`](crate::input::GetCellReadinessSummaryInput::max_results): Upper bound on number of records to return.
+    ///   - [`next_token(Option<String>)`](crate::input::GetCellReadinessSummaryInput::next_token): A token used to resume pagination from the end of a previous request.
+    /// - On success, responds with [`GetCellReadinessSummaryOutput`](crate::output::GetCellReadinessSummaryOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::GetCellReadinessSummaryOutput::next_token): A token that can be used to resume pagination from the end of the collection.
+    ///   - [`readiness(Option<Readiness>)`](crate::output::GetCellReadinessSummaryOutput::readiness): The readiness at Cell level.
+    ///   - [`readiness_checks(Option<Vec<ReadinessCheckSummary>>)`](crate::output::GetCellReadinessSummaryOutput::readiness_checks): Summaries for the ReadinessChecks making up the Cell
+    /// - On failure, responds with [`SdkError<GetCellReadinessSummaryError>`](crate::error::GetCellReadinessSummaryError)
     pub fn get_cell_readiness_summary(&self) -> fluent_builders::GetCellReadinessSummary<C, M, R> {
         fluent_builders::GetCellReadinessSummary::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetReadinessCheck` operation.
+    /// Constructs a fluent builder for the [`GetReadinessCheck`](crate::client::fluent_builders::GetReadinessCheck) operation.
     ///
-    /// See [`GetReadinessCheck`](crate::client::fluent_builders::GetReadinessCheck) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetReadinessCheckInput`](crate::input::GetReadinessCheckInput) with field(s):
+    ///   - [`readiness_check_name(Option<String>)`](crate::input::GetReadinessCheckInput::readiness_check_name): The ReadinessCheck to get
+    /// - On success, responds with [`GetReadinessCheckOutput`](crate::output::GetReadinessCheckOutput) with field(s):
+    ///   - [`readiness_check_arn(Option<String>)`](crate::output::GetReadinessCheckOutput::readiness_check_arn): Arn associated with ReadinessCheck
+    ///   - [`readiness_check_name(Option<String>)`](crate::output::GetReadinessCheckOutput::readiness_check_name): Name for a ReadinessCheck
+    ///   - [`resource_set(Option<String>)`](crate::output::GetReadinessCheckOutput::resource_set): Name of the ResourceSet to be checked
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetReadinessCheckOutput::tags): A collection of tags associated with a resource
+    /// - On failure, responds with [`SdkError<GetReadinessCheckError>`](crate::error::GetReadinessCheckError)
     pub fn get_readiness_check(&self) -> fluent_builders::GetReadinessCheck<C, M, R> {
         fluent_builders::GetReadinessCheck::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetReadinessCheckResourceStatus` operation.
-    ///
-    /// See [`GetReadinessCheckResourceStatus`](crate::client::fluent_builders::GetReadinessCheckResourceStatus) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetReadinessCheckResourceStatus`](crate::client::fluent_builders::GetReadinessCheckResourceStatus) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::into_paginator).
+    ///
+    /// - Takes [`GetReadinessCheckResourceStatusInput`](crate::input::GetReadinessCheckResourceStatusInput) with field(s):
+    ///   - [`max_results(i32)`](crate::input::GetReadinessCheckResourceStatusInput::max_results): Upper bound on number of records to return.
+    ///   - [`next_token(Option<String>)`](crate::input::GetReadinessCheckResourceStatusInput::next_token): A token used to resume pagination from the end of a previous request.
+    ///   - [`readiness_check_name(Option<String>)`](crate::input::GetReadinessCheckResourceStatusInput::readiness_check_name): The ReadinessCheck to get
+    ///   - [`resource_identifier(Option<String>)`](crate::input::GetReadinessCheckResourceStatusInput::resource_identifier): The resource ARN or component Id to get
+    /// - On success, responds with [`GetReadinessCheckResourceStatusOutput`](crate::output::GetReadinessCheckResourceStatusOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::GetReadinessCheckResourceStatusOutput::next_token): A token that can be used to resume pagination from the end of the collection.
+    ///   - [`readiness(Option<Readiness>)`](crate::output::GetReadinessCheckResourceStatusOutput::readiness): The readiness at rule level.
+    ///   - [`rules(Option<Vec<RuleResult>>)`](crate::output::GetReadinessCheckResourceStatusOutput::rules): Details of the rules's results
+    /// - On failure, responds with [`SdkError<GetReadinessCheckResourceStatusError>`](crate::error::GetReadinessCheckResourceStatusError)
     pub fn get_readiness_check_resource_status(
         &self,
     ) -> fluent_builders::GetReadinessCheckResourceStatus<C, M, R> {
         fluent_builders::GetReadinessCheckResourceStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetReadinessCheckStatus` operation.
-    ///
-    /// See [`GetReadinessCheckStatus`](crate::client::fluent_builders::GetReadinessCheckStatus) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetReadinessCheckStatus`](crate::client::fluent_builders::GetReadinessCheckStatus) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetReadinessCheckStatus::into_paginator).
+    ///
+    /// - Takes [`GetReadinessCheckStatusInput`](crate::input::GetReadinessCheckStatusInput) with field(s):
+    ///   - [`max_results(i32)`](crate::input::GetReadinessCheckStatusInput::max_results): Upper bound on number of records to return.
+    ///   - [`next_token(Option<String>)`](crate::input::GetReadinessCheckStatusInput::next_token): A token used to resume pagination from the end of a previous request.
+    ///   - [`readiness_check_name(Option<String>)`](crate::input::GetReadinessCheckStatusInput::readiness_check_name): The ReadinessCheck to get
+    /// - On success, responds with [`GetReadinessCheckStatusOutput`](crate::output::GetReadinessCheckStatusOutput) with field(s):
+    ///   - [`messages(Option<Vec<Message>>)`](crate::output::GetReadinessCheckStatusOutput::messages): Top level messages for readiness check status
+    ///   - [`next_token(Option<String>)`](crate::output::GetReadinessCheckStatusOutput::next_token): A token that can be used to resume pagination from the end of the collection.
+    ///   - [`readiness(Option<Readiness>)`](crate::output::GetReadinessCheckStatusOutput::readiness): The readiness at rule level.
+    ///   - [`resources(Option<Vec<ResourceResult>>)`](crate::output::GetReadinessCheckStatusOutput::resources): Summary of resources's readiness
+    /// - On failure, responds with [`SdkError<GetReadinessCheckStatusError>`](crate::error::GetReadinessCheckStatusError)
     pub fn get_readiness_check_status(&self) -> fluent_builders::GetReadinessCheckStatus<C, M, R> {
         fluent_builders::GetReadinessCheckStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRecoveryGroup` operation.
+    /// Constructs a fluent builder for the [`GetRecoveryGroup`](crate::client::fluent_builders::GetRecoveryGroup) operation.
     ///
-    /// See [`GetRecoveryGroup`](crate::client::fluent_builders::GetRecoveryGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetRecoveryGroupInput`](crate::input::GetRecoveryGroupInput) with field(s):
+    ///   - [`recovery_group_name(Option<String>)`](crate::input::GetRecoveryGroupInput::recovery_group_name): The RecoveryGroup to get
+    /// - On success, responds with [`GetRecoveryGroupOutput`](crate::output::GetRecoveryGroupOutput) with field(s):
+    ///   - [`cells(Option<Vec<String>>)`](crate::output::GetRecoveryGroupOutput::cells): A list of Cell arns
+    ///   - [`recovery_group_arn(Option<String>)`](crate::output::GetRecoveryGroupOutput::recovery_group_arn): The arn for the RecoveryGroup
+    ///   - [`recovery_group_name(Option<String>)`](crate::output::GetRecoveryGroupOutput::recovery_group_name): The name of the RecoveryGroup
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetRecoveryGroupOutput::tags): A collection of tags associated with a resource
+    /// - On failure, responds with [`SdkError<GetRecoveryGroupError>`](crate::error::GetRecoveryGroupError)
     pub fn get_recovery_group(&self) -> fluent_builders::GetRecoveryGroup<C, M, R> {
         fluent_builders::GetRecoveryGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRecoveryGroupReadinessSummary` operation.
-    ///
-    /// See [`GetRecoveryGroupReadinessSummary`](crate::client::fluent_builders::GetRecoveryGroupReadinessSummary) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetRecoveryGroupReadinessSummary`](crate::client::fluent_builders::GetRecoveryGroupReadinessSummary) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetRecoveryGroupReadinessSummary::into_paginator).
+    ///
+    /// - Takes [`GetRecoveryGroupReadinessSummaryInput`](crate::input::GetRecoveryGroupReadinessSummaryInput) with field(s):
+    ///   - [`max_results(i32)`](crate::input::GetRecoveryGroupReadinessSummaryInput::max_results): Upper bound on number of records to return.
+    ///   - [`next_token(Option<String>)`](crate::input::GetRecoveryGroupReadinessSummaryInput::next_token): A token used to resume pagination from the end of a previous request.
+    ///   - [`recovery_group_name(Option<String>)`](crate::input::GetRecoveryGroupReadinessSummaryInput::recovery_group_name): The name of the RecoveryGroup
+    /// - On success, responds with [`GetRecoveryGroupReadinessSummaryOutput`](crate::output::GetRecoveryGroupReadinessSummaryOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::GetRecoveryGroupReadinessSummaryOutput::next_token): A token that can be used to resume pagination from the end of the collection.
+    ///   - [`readiness(Option<Readiness>)`](crate::output::GetRecoveryGroupReadinessSummaryOutput::readiness): The readiness at RecoveryGroup level.
+    ///   - [`readiness_checks(Option<Vec<ReadinessCheckSummary>>)`](crate::output::GetRecoveryGroupReadinessSummaryOutput::readiness_checks): Summaries for the ReadinessChecks making up the RecoveryGroup
+    /// - On failure, responds with [`SdkError<GetRecoveryGroupReadinessSummaryError>`](crate::error::GetRecoveryGroupReadinessSummaryError)
     pub fn get_recovery_group_readiness_summary(
         &self,
     ) -> fluent_builders::GetRecoveryGroupReadinessSummary<C, M, R> {
         fluent_builders::GetRecoveryGroupReadinessSummary::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetResourceSet` operation.
+    /// Constructs a fluent builder for the [`GetResourceSet`](crate::client::fluent_builders::GetResourceSet) operation.
     ///
-    /// See [`GetResourceSet`](crate::client::fluent_builders::GetResourceSet) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetResourceSetInput`](crate::input::GetResourceSetInput) with field(s):
+    ///   - [`resource_set_name(Option<String>)`](crate::input::GetResourceSetInput::resource_set_name): The ResourceSet to get
+    /// - On success, responds with [`GetResourceSetOutput`](crate::output::GetResourceSetOutput) with field(s):
+    ///   - [`resource_set_arn(Option<String>)`](crate::output::GetResourceSetOutput::resource_set_arn): The arn for the ResourceSet
+    ///   - [`resource_set_name(Option<String>)`](crate::output::GetResourceSetOutput::resource_set_name): The name of the ResourceSet
+    ///   - [`resource_set_type(Option<String>)`](crate::output::GetResourceSetOutput::resource_set_type): AWS Resource Type of the resources in the ResourceSet
+    ///   - [`resources(Option<Vec<Resource>>)`](crate::output::GetResourceSetOutput::resources): A list of Resource objects
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetResourceSetOutput::tags): A collection of tags associated with a resource
+    /// - On failure, responds with [`SdkError<GetResourceSetError>`](crate::error::GetResourceSetError)
     pub fn get_resource_set(&self) -> fluent_builders::GetResourceSet<C, M, R> {
         fluent_builders::GetResourceSet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListCells` operation.
-    ///
-    /// See [`ListCells`](crate::client::fluent_builders::ListCells) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListCells`](crate::client::fluent_builders::ListCells) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCells::into_paginator).
+    ///
+    /// - Takes [`ListCellsInput`](crate::input::ListCellsInput) with field(s):
+    ///   - [`max_results(i32)`](crate::input::ListCellsInput::max_results): Upper bound on number of records to return.
+    ///   - [`next_token(Option<String>)`](crate::input::ListCellsInput::next_token): A token used to resume pagination from the end of a previous request.
+    /// - On success, responds with [`ListCellsOutput`](crate::output::ListCellsOutput) with field(s):
+    ///   - [`cells(Option<Vec<CellOutput>>)`](crate::output::ListCellsOutput::cells): A list of Cells
+    ///   - [`next_token(Option<String>)`](crate::output::ListCellsOutput::next_token): A token that can be used to resume pagination from the end of the collection.
+    /// - On failure, responds with [`SdkError<ListCellsError>`](crate::error::ListCellsError)
     pub fn list_cells(&self) -> fluent_builders::ListCells<C, M, R> {
         fluent_builders::ListCells::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListCrossAccountAuthorizations` operation.
-    ///
-    /// See [`ListCrossAccountAuthorizations`](crate::client::fluent_builders::ListCrossAccountAuthorizations) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListCrossAccountAuthorizations`](crate::client::fluent_builders::ListCrossAccountAuthorizations) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCrossAccountAuthorizations::into_paginator).
+    ///
+    /// - Takes [`ListCrossAccountAuthorizationsInput`](crate::input::ListCrossAccountAuthorizationsInput) with field(s):
+    ///   - [`max_results(i32)`](crate::input::ListCrossAccountAuthorizationsInput::max_results): Upper bound on number of records to return.
+    ///   - [`next_token(Option<String>)`](crate::input::ListCrossAccountAuthorizationsInput::next_token): A token used to resume pagination from the end of a previous request.
+    /// - On success, responds with [`ListCrossAccountAuthorizationsOutput`](crate::output::ListCrossAccountAuthorizationsOutput) with field(s):
+    ///   - [`cross_account_authorizations(Option<Vec<String>>)`](crate::output::ListCrossAccountAuthorizationsOutput::cross_account_authorizations): A list of CrossAccountAuthorizations
+    ///   - [`next_token(Option<String>)`](crate::output::ListCrossAccountAuthorizationsOutput::next_token): A token that can be used to resume pagination from the end of the collection.
+    /// - On failure, responds with [`SdkError<ListCrossAccountAuthorizationsError>`](crate::error::ListCrossAccountAuthorizationsError)
     pub fn list_cross_account_authorizations(
         &self,
     ) -> fluent_builders::ListCrossAccountAuthorizations<C, M, R> {
         fluent_builders::ListCrossAccountAuthorizations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListReadinessChecks` operation.
-    ///
-    /// See [`ListReadinessChecks`](crate::client::fluent_builders::ListReadinessChecks) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListReadinessChecks`](crate::client::fluent_builders::ListReadinessChecks) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListReadinessChecks::into_paginator).
+    ///
+    /// - Takes [`ListReadinessChecksInput`](crate::input::ListReadinessChecksInput) with field(s):
+    ///   - [`max_results(i32)`](crate::input::ListReadinessChecksInput::max_results): Upper bound on number of records to return.
+    ///   - [`next_token(Option<String>)`](crate::input::ListReadinessChecksInput::next_token): A token used to resume pagination from the end of a previous request.
+    /// - On success, responds with [`ListReadinessChecksOutput`](crate::output::ListReadinessChecksOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListReadinessChecksOutput::next_token): A token that can be used to resume pagination from the end of the collection.
+    ///   - [`readiness_checks(Option<Vec<ReadinessCheckOutput>>)`](crate::output::ListReadinessChecksOutput::readiness_checks): A list of ReadinessCheck associated with the account
+    /// - On failure, responds with [`SdkError<ListReadinessChecksError>`](crate::error::ListReadinessChecksError)
     pub fn list_readiness_checks(&self) -> fluent_builders::ListReadinessChecks<C, M, R> {
         fluent_builders::ListReadinessChecks::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRecoveryGroups` operation.
-    ///
-    /// See [`ListRecoveryGroups`](crate::client::fluent_builders::ListRecoveryGroups) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListRecoveryGroups`](crate::client::fluent_builders::ListRecoveryGroups) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRecoveryGroups::into_paginator).
+    ///
+    /// - Takes [`ListRecoveryGroupsInput`](crate::input::ListRecoveryGroupsInput) with field(s):
+    ///   - [`max_results(i32)`](crate::input::ListRecoveryGroupsInput::max_results): Upper bound on number of records to return.
+    ///   - [`next_token(Option<String>)`](crate::input::ListRecoveryGroupsInput::next_token): A token used to resume pagination from the end of a previous request.
+    /// - On success, responds with [`ListRecoveryGroupsOutput`](crate::output::ListRecoveryGroupsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListRecoveryGroupsOutput::next_token): A token that can be used to resume pagination from the end of the collection.
+    ///   - [`recovery_groups(Option<Vec<RecoveryGroupOutput>>)`](crate::output::ListRecoveryGroupsOutput::recovery_groups): A list of RecoveryGroups
+    /// - On failure, responds with [`SdkError<ListRecoveryGroupsError>`](crate::error::ListRecoveryGroupsError)
     pub fn list_recovery_groups(&self) -> fluent_builders::ListRecoveryGroups<C, M, R> {
         fluent_builders::ListRecoveryGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListResourceSets` operation.
-    ///
-    /// See [`ListResourceSets`](crate::client::fluent_builders::ListResourceSets) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListResourceSets`](crate::client::fluent_builders::ListResourceSets) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListResourceSets::into_paginator).
+    ///
+    /// - Takes [`ListResourceSetsInput`](crate::input::ListResourceSetsInput) with field(s):
+    ///   - [`max_results(i32)`](crate::input::ListResourceSetsInput::max_results): Upper bound on number of records to return.
+    ///   - [`next_token(Option<String>)`](crate::input::ListResourceSetsInput::next_token): A token used to resume pagination from the end of a previous request.
+    /// - On success, responds with [`ListResourceSetsOutput`](crate::output::ListResourceSetsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListResourceSetsOutput::next_token): A token that can be used to resume pagination from the end of the collection.
+    ///   - [`resource_sets(Option<Vec<ResourceSetOutput>>)`](crate::output::ListResourceSetsOutput::resource_sets): A list of ResourceSets associated with the account
+    /// - On failure, responds with [`SdkError<ListResourceSetsError>`](crate::error::ListResourceSetsError)
     pub fn list_resource_sets(&self) -> fluent_builders::ListResourceSets<C, M, R> {
         fluent_builders::ListResourceSets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRules` operation.
-    ///
-    /// See [`ListRules`](crate::client::fluent_builders::ListRules) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListRules`](crate::client::fluent_builders::ListRules) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRules::into_paginator).
+    ///
+    /// - Takes [`ListRulesInput`](crate::input::ListRulesInput) with field(s):
+    ///   - [`max_results(i32)`](crate::input::ListRulesInput::max_results): Upper bound on number of records to return.
+    ///   - [`next_token(Option<String>)`](crate::input::ListRulesInput::next_token): A token used to resume pagination from the end of a previous request.
+    ///   - [`resource_type(Option<String>)`](crate::input::ListRulesInput::resource_type): Filter parameter which specifies the rules to return given a resource type.
+    /// - On success, responds with [`ListRulesOutput`](crate::output::ListRulesOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListRulesOutput::next_token): A token that can be used to resume pagination from the end of the collection.
+    ///   - [`rules(Option<Vec<ListRulesOutput>>)`](crate::output::ListRulesOutput::rules): A list of rules
+    /// - On failure, responds with [`SdkError<ListRulesError>`](crate::error::ListRulesError)
     pub fn list_rules(&self) -> fluent_builders::ListRules<C, M, R> {
         fluent_builders::ListRules::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResources` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResources`](crate::client::fluent_builders::ListTagsForResources) operation.
     ///
-    /// See [`ListTagsForResources`](crate::client::fluent_builders::ListTagsForResources) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourcesInput`](crate::input::ListTagsForResourcesInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourcesInput::resource_arn): The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
+    /// - On success, responds with [`ListTagsForResourcesOutput`](crate::output::ListTagsForResourcesOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourcesOutput::tags): A collection of tags associated with a resource
+    /// - On failure, responds with [`SdkError<ListTagsForResourcesError>`](crate::error::ListTagsForResourcesError)
     pub fn list_tags_for_resources(&self) -> fluent_builders::ListTagsForResources<C, M, R> {
         fluent_builders::ListTagsForResources::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): A collection of tags associated with a resource
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): A comma-separated list of the tag keys to remove from the resource.
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateCell` operation.
+    /// Constructs a fluent builder for the [`UpdateCell`](crate::client::fluent_builders::UpdateCell) operation.
     ///
-    /// See [`UpdateCell`](crate::client::fluent_builders::UpdateCell) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateCellInput`](crate::input::UpdateCellInput) with field(s):
+    ///   - [`cell_name(Option<String>)`](crate::input::UpdateCellInput::cell_name): The Cell to update
+    ///   - [`cells(Option<Vec<String>>)`](crate::input::UpdateCellInput::cells): A list of Cell arns, completely replaces previous list
+    /// - On success, responds with [`UpdateCellOutput`](crate::output::UpdateCellOutput) with field(s):
+    ///   - [`cell_arn(Option<String>)`](crate::output::UpdateCellOutput::cell_arn): The arn for the Cell
+    ///   - [`cell_name(Option<String>)`](crate::output::UpdateCellOutput::cell_name): The name of the Cell
+    ///   - [`cells(Option<Vec<String>>)`](crate::output::UpdateCellOutput::cells): A list of Cell arns
+    ///   - [`parent_readiness_scopes(Option<Vec<String>>)`](crate::output::UpdateCellOutput::parent_readiness_scopes): A list of Cell ARNs and/or RecoveryGroup ARNs
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateCellOutput::tags): A collection of tags associated with a resource
+    /// - On failure, responds with [`SdkError<UpdateCellError>`](crate::error::UpdateCellError)
     pub fn update_cell(&self) -> fluent_builders::UpdateCell<C, M, R> {
         fluent_builders::UpdateCell::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateReadinessCheck` operation.
+    /// Constructs a fluent builder for the [`UpdateReadinessCheck`](crate::client::fluent_builders::UpdateReadinessCheck) operation.
     ///
-    /// See [`UpdateReadinessCheck`](crate::client::fluent_builders::UpdateReadinessCheck) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateReadinessCheckInput`](crate::input::UpdateReadinessCheckInput) with field(s):
+    ///   - [`readiness_check_name(Option<String>)`](crate::input::UpdateReadinessCheckInput::readiness_check_name): The ReadinessCheck to update
+    ///   - [`resource_set_name(Option<String>)`](crate::input::UpdateReadinessCheckInput::resource_set_name): The name of the ResourceSet to check
+    /// - On success, responds with [`UpdateReadinessCheckOutput`](crate::output::UpdateReadinessCheckOutput) with field(s):
+    ///   - [`readiness_check_arn(Option<String>)`](crate::output::UpdateReadinessCheckOutput::readiness_check_arn): Arn associated with ReadinessCheck
+    ///   - [`readiness_check_name(Option<String>)`](crate::output::UpdateReadinessCheckOutput::readiness_check_name): Name for a ReadinessCheck
+    ///   - [`resource_set(Option<String>)`](crate::output::UpdateReadinessCheckOutput::resource_set): Name of the ResourceSet to be checked
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateReadinessCheckOutput::tags): A collection of tags associated with a resource
+    /// - On failure, responds with [`SdkError<UpdateReadinessCheckError>`](crate::error::UpdateReadinessCheckError)
     pub fn update_readiness_check(&self) -> fluent_builders::UpdateReadinessCheck<C, M, R> {
         fluent_builders::UpdateReadinessCheck::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateRecoveryGroup` operation.
+    /// Constructs a fluent builder for the [`UpdateRecoveryGroup`](crate::client::fluent_builders::UpdateRecoveryGroup) operation.
     ///
-    /// See [`UpdateRecoveryGroup`](crate::client::fluent_builders::UpdateRecoveryGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateRecoveryGroupInput`](crate::input::UpdateRecoveryGroupInput) with field(s):
+    ///   - [`cells(Option<Vec<String>>)`](crate::input::UpdateRecoveryGroupInput::cells): A list of Cell arns, completely replaces previous list
+    ///   - [`recovery_group_name(Option<String>)`](crate::input::UpdateRecoveryGroupInput::recovery_group_name): The RecoveryGroup to update
+    /// - On success, responds with [`UpdateRecoveryGroupOutput`](crate::output::UpdateRecoveryGroupOutput) with field(s):
+    ///   - [`cells(Option<Vec<String>>)`](crate::output::UpdateRecoveryGroupOutput::cells): A list of Cell arns
+    ///   - [`recovery_group_arn(Option<String>)`](crate::output::UpdateRecoveryGroupOutput::recovery_group_arn): The arn for the RecoveryGroup
+    ///   - [`recovery_group_name(Option<String>)`](crate::output::UpdateRecoveryGroupOutput::recovery_group_name): The name of the RecoveryGroup
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateRecoveryGroupOutput::tags): A collection of tags associated with a resource
+    /// - On failure, responds with [`SdkError<UpdateRecoveryGroupError>`](crate::error::UpdateRecoveryGroupError)
     pub fn update_recovery_group(&self) -> fluent_builders::UpdateRecoveryGroup<C, M, R> {
         fluent_builders::UpdateRecoveryGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateResourceSet` operation.
+    /// Constructs a fluent builder for the [`UpdateResourceSet`](crate::client::fluent_builders::UpdateResourceSet) operation.
     ///
-    /// See [`UpdateResourceSet`](crate::client::fluent_builders::UpdateResourceSet) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateResourceSetInput`](crate::input::UpdateResourceSetInput) with field(s):
+    ///   - [`resource_set_name(Option<String>)`](crate::input::UpdateResourceSetInput::resource_set_name): The ResourceSet to update
+    ///   - [`resource_set_type(Option<String>)`](crate::input::UpdateResourceSetInput::resource_set_type): AWS Resource Type of the resources in the ResourceSet
+    ///   - [`resources(Option<Vec<Resource>>)`](crate::input::UpdateResourceSetInput::resources): A list of Resource objects
+    /// - On success, responds with [`UpdateResourceSetOutput`](crate::output::UpdateResourceSetOutput) with field(s):
+    ///   - [`resource_set_arn(Option<String>)`](crate::output::UpdateResourceSetOutput::resource_set_arn): The arn for the ResourceSet
+    ///   - [`resource_set_name(Option<String>)`](crate::output::UpdateResourceSetOutput::resource_set_name): The name of the ResourceSet
+    ///   - [`resource_set_type(Option<String>)`](crate::output::UpdateResourceSetOutput::resource_set_type): AWS Resource Type of the resources in the ResourceSet
+    ///   - [`resources(Option<Vec<Resource>>)`](crate::output::UpdateResourceSetOutput::resources): A list of Resource objects
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateResourceSetOutput::tags): A collection of tags associated with a resource
+    /// - On failure, responds with [`SdkError<UpdateResourceSetError>`](crate::error::UpdateResourceSetError)
     pub fn update_resource_set(&self) -> fluent_builders::UpdateResourceSet<C, M, R> {
         fluent_builders::UpdateResourceSet::new(self.handle.clone())
     }

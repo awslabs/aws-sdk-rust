@@ -83,245 +83,373 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AddTags` operation.
+    /// Constructs a fluent builder for the [`AddTags`](crate::client::fluent_builders::AddTags) operation.
     ///
-    /// See [`AddTags`](crate::client::fluent_builders::AddTags) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AddTagsInput`](crate::input::AddTagsInput) with field(s):
+    ///   - [`load_balancer_names(Option<Vec<String>>)`](crate::input::AddTagsInput::load_balancer_names): <p>The name of the load balancer. You can specify one load balancer only.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::AddTagsInput::tags): <p>The tags.</p>
+    /// - On success, responds with [`AddTagsOutput`](crate::output::AddTagsOutput)
+
+    /// - On failure, responds with [`SdkError<AddTagsError>`](crate::error::AddTagsError)
     pub fn add_tags(&self) -> fluent_builders::AddTags<C, M, R> {
         fluent_builders::AddTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ApplySecurityGroupsToLoadBalancer` operation.
+    /// Constructs a fluent builder for the [`ApplySecurityGroupsToLoadBalancer`](crate::client::fluent_builders::ApplySecurityGroupsToLoadBalancer) operation.
     ///
-    /// See [`ApplySecurityGroupsToLoadBalancer`](crate::client::fluent_builders::ApplySecurityGroupsToLoadBalancer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ApplySecurityGroupsToLoadBalancerInput`](crate::input::ApplySecurityGroupsToLoadBalancerInput) with field(s):
+    ///   - [`load_balancer_name(Option<String>)`](crate::input::ApplySecurityGroupsToLoadBalancerInput::load_balancer_name): <p>The name of the load balancer.</p>
+    ///   - [`security_groups(Option<Vec<String>>)`](crate::input::ApplySecurityGroupsToLoadBalancerInput::security_groups): <p>The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name of the security group.</p>
+    /// - On success, responds with [`ApplySecurityGroupsToLoadBalancerOutput`](crate::output::ApplySecurityGroupsToLoadBalancerOutput) with field(s):
+    ///   - [`security_groups(Option<Vec<String>>)`](crate::output::ApplySecurityGroupsToLoadBalancerOutput::security_groups): <p>The IDs of the security groups associated with the load balancer.</p>
+    /// - On failure, responds with [`SdkError<ApplySecurityGroupsToLoadBalancerError>`](crate::error::ApplySecurityGroupsToLoadBalancerError)
     pub fn apply_security_groups_to_load_balancer(
         &self,
     ) -> fluent_builders::ApplySecurityGroupsToLoadBalancer<C, M, R> {
         fluent_builders::ApplySecurityGroupsToLoadBalancer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AttachLoadBalancerToSubnets` operation.
+    /// Constructs a fluent builder for the [`AttachLoadBalancerToSubnets`](crate::client::fluent_builders::AttachLoadBalancerToSubnets) operation.
     ///
-    /// See [`AttachLoadBalancerToSubnets`](crate::client::fluent_builders::AttachLoadBalancerToSubnets) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AttachLoadBalancerToSubnetsInput`](crate::input::AttachLoadBalancerToSubnetsInput) with field(s):
+    ///   - [`load_balancer_name(Option<String>)`](crate::input::AttachLoadBalancerToSubnetsInput::load_balancer_name): <p>The name of the load balancer.</p>
+    ///   - [`subnets(Option<Vec<String>>)`](crate::input::AttachLoadBalancerToSubnetsInput::subnets): <p>The IDs of the subnets to add. You can add only one subnet per Availability Zone.</p>
+    /// - On success, responds with [`AttachLoadBalancerToSubnetsOutput`](crate::output::AttachLoadBalancerToSubnetsOutput) with field(s):
+    ///   - [`subnets(Option<Vec<String>>)`](crate::output::AttachLoadBalancerToSubnetsOutput::subnets): <p>The IDs of the subnets attached to the load balancer.</p>
+    /// - On failure, responds with [`SdkError<AttachLoadBalancerToSubnetsError>`](crate::error::AttachLoadBalancerToSubnetsError)
     pub fn attach_load_balancer_to_subnets(
         &self,
     ) -> fluent_builders::AttachLoadBalancerToSubnets<C, M, R> {
         fluent_builders::AttachLoadBalancerToSubnets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ConfigureHealthCheck` operation.
+    /// Constructs a fluent builder for the [`ConfigureHealthCheck`](crate::client::fluent_builders::ConfigureHealthCheck) operation.
     ///
-    /// See [`ConfigureHealthCheck`](crate::client::fluent_builders::ConfigureHealthCheck) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ConfigureHealthCheckInput`](crate::input::ConfigureHealthCheckInput) with field(s):
+    ///   - [`load_balancer_name(Option<String>)`](crate::input::ConfigureHealthCheckInput::load_balancer_name): <p>The name of the load balancer.</p>
+    ///   - [`health_check(Option<HealthCheck>)`](crate::input::ConfigureHealthCheckInput::health_check): <p>The configuration information.</p>
+    /// - On success, responds with [`ConfigureHealthCheckOutput`](crate::output::ConfigureHealthCheckOutput) with field(s):
+    ///   - [`health_check(Option<HealthCheck>)`](crate::output::ConfigureHealthCheckOutput::health_check): <p>The updated health check.</p>
+    /// - On failure, responds with [`SdkError<ConfigureHealthCheckError>`](crate::error::ConfigureHealthCheckError)
     pub fn configure_health_check(&self) -> fluent_builders::ConfigureHealthCheck<C, M, R> {
         fluent_builders::ConfigureHealthCheck::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateAppCookieStickinessPolicy` operation.
+    /// Constructs a fluent builder for the [`CreateAppCookieStickinessPolicy`](crate::client::fluent_builders::CreateAppCookieStickinessPolicy) operation.
     ///
-    /// See [`CreateAppCookieStickinessPolicy`](crate::client::fluent_builders::CreateAppCookieStickinessPolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateAppCookieStickinessPolicyInput`](crate::input::CreateAppCookieStickinessPolicyInput) with field(s):
+    ///   - [`load_balancer_name(Option<String>)`](crate::input::CreateAppCookieStickinessPolicyInput::load_balancer_name): <p>The name of the load balancer.</p>
+    ///   - [`policy_name(Option<String>)`](crate::input::CreateAppCookieStickinessPolicyInput::policy_name): <p>The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.</p>
+    ///   - [`cookie_name(Option<String>)`](crate::input::CreateAppCookieStickinessPolicyInput::cookie_name): <p>The name of the application cookie used for stickiness.</p>
+    /// - On success, responds with [`CreateAppCookieStickinessPolicyOutput`](crate::output::CreateAppCookieStickinessPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<CreateAppCookieStickinessPolicyError>`](crate::error::CreateAppCookieStickinessPolicyError)
     pub fn create_app_cookie_stickiness_policy(
         &self,
     ) -> fluent_builders::CreateAppCookieStickinessPolicy<C, M, R> {
         fluent_builders::CreateAppCookieStickinessPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateLBCookieStickinessPolicy` operation.
+    /// Constructs a fluent builder for the [`CreateLBCookieStickinessPolicy`](crate::client::fluent_builders::CreateLBCookieStickinessPolicy) operation.
     ///
-    /// See [`CreateLBCookieStickinessPolicy`](crate::client::fluent_builders::CreateLBCookieStickinessPolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateLbCookieStickinessPolicyInput`](crate::input::CreateLbCookieStickinessPolicyInput) with field(s):
+    ///   - [`load_balancer_name(Option<String>)`](crate::input::CreateLbCookieStickinessPolicyInput::load_balancer_name): <p>The name of the load balancer.</p>
+    ///   - [`policy_name(Option<String>)`](crate::input::CreateLbCookieStickinessPolicyInput::policy_name): <p>The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.</p>
+    ///   - [`cookie_expiration_period(Option<i64>)`](crate::input::CreateLbCookieStickinessPolicyInput::cookie_expiration_period): <p>The time period, in seconds, after which the cookie should be considered stale. If you do not specify this parameter, the default value is 0, which indicates that the sticky session should last for the duration of the browser session.</p>
+    /// - On success, responds with [`CreateLbCookieStickinessPolicyOutput`](crate::output::CreateLbCookieStickinessPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<CreateLBCookieStickinessPolicyError>`](crate::error::CreateLBCookieStickinessPolicyError)
     pub fn create_lb_cookie_stickiness_policy(
         &self,
     ) -> fluent_builders::CreateLBCookieStickinessPolicy<C, M, R> {
         fluent_builders::CreateLBCookieStickinessPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateLoadBalancer` operation.
+    /// Constructs a fluent builder for the [`CreateLoadBalancer`](crate::client::fluent_builders::CreateLoadBalancer) operation.
     ///
-    /// See [`CreateLoadBalancer`](crate::client::fluent_builders::CreateLoadBalancer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateLoadBalancerInput`](crate::input::CreateLoadBalancerInput) with field(s):
+    ///   - [`load_balancer_name(Option<String>)`](crate::input::CreateLoadBalancerInput::load_balancer_name): <p>The name of the load balancer.</p>  <p>This name must be unique within your set of load balancers for the region, must have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</p>
+    ///   - [`listeners(Option<Vec<Listener>>)`](crate::input::CreateLoadBalancerInput::listeners): <p>The listeners.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
+    ///   - [`availability_zones(Option<Vec<String>>)`](crate::input::CreateLoadBalancerInput::availability_zones): <p>One or more Availability Zones from the same region as the load balancer.</p>  <p>You must specify at least one Availability Zone.</p>  <p>You can add more Availability Zones after you create the load balancer using <code>EnableAvailabilityZonesForLoadBalancer</code>.</p>
+    ///   - [`subnets(Option<Vec<String>>)`](crate::input::CreateLoadBalancerInput::subnets): <p>The IDs of the subnets in your VPC to attach to the load balancer. Specify one subnet per Availability Zone specified in <code>AvailabilityZones</code>.</p>
+    ///   - [`security_groups(Option<Vec<String>>)`](crate::input::CreateLoadBalancerInput::security_groups): <p>The IDs of the security groups to assign to the load balancer.</p>
+    ///   - [`scheme(Option<String>)`](crate::input::CreateLoadBalancerInput::scheme): <p>The type of a load balancer. Valid only for load balancers in a VPC.</p>  <p>By default, Elastic Load Balancing creates an Internet-facing load balancer with a DNS name that resolves to public IP addresses. For more information about Internet-facing and Internal load balancers, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.</p>  <p>Specify <code>internal</code> to create a load balancer with a DNS name that resolves to private IP addresses.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateLoadBalancerInput::tags): <p>A list of tags to assign to the load balancer.</p>  <p>For more information about tagging your load balancer, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
+    /// - On success, responds with [`CreateLoadBalancerOutput`](crate::output::CreateLoadBalancerOutput) with field(s):
+    ///   - [`dns_name(Option<String>)`](crate::output::CreateLoadBalancerOutput::dns_name): <p>The DNS name of the load balancer.</p>
+    /// - On failure, responds with [`SdkError<CreateLoadBalancerError>`](crate::error::CreateLoadBalancerError)
     pub fn create_load_balancer(&self) -> fluent_builders::CreateLoadBalancer<C, M, R> {
         fluent_builders::CreateLoadBalancer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateLoadBalancerListeners` operation.
+    /// Constructs a fluent builder for the [`CreateLoadBalancerListeners`](crate::client::fluent_builders::CreateLoadBalancerListeners) operation.
     ///
-    /// See [`CreateLoadBalancerListeners`](crate::client::fluent_builders::CreateLoadBalancerListeners) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateLoadBalancerListenersInput`](crate::input::CreateLoadBalancerListenersInput) with field(s):
+    ///   - [`load_balancer_name(Option<String>)`](crate::input::CreateLoadBalancerListenersInput::load_balancer_name): <p>The name of the load balancer.</p>
+    ///   - [`listeners(Option<Vec<Listener>>)`](crate::input::CreateLoadBalancerListenersInput::listeners): <p>The listeners.</p>
+    /// - On success, responds with [`CreateLoadBalancerListenersOutput`](crate::output::CreateLoadBalancerListenersOutput)
+
+    /// - On failure, responds with [`SdkError<CreateLoadBalancerListenersError>`](crate::error::CreateLoadBalancerListenersError)
     pub fn create_load_balancer_listeners(
         &self,
     ) -> fluent_builders::CreateLoadBalancerListeners<C, M, R> {
         fluent_builders::CreateLoadBalancerListeners::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateLoadBalancerPolicy` operation.
+    /// Constructs a fluent builder for the [`CreateLoadBalancerPolicy`](crate::client::fluent_builders::CreateLoadBalancerPolicy) operation.
     ///
-    /// See [`CreateLoadBalancerPolicy`](crate::client::fluent_builders::CreateLoadBalancerPolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateLoadBalancerPolicyInput`](crate::input::CreateLoadBalancerPolicyInput) with field(s):
+    ///   - [`load_balancer_name(Option<String>)`](crate::input::CreateLoadBalancerPolicyInput::load_balancer_name): <p>The name of the load balancer.</p>
+    ///   - [`policy_name(Option<String>)`](crate::input::CreateLoadBalancerPolicyInput::policy_name): <p>The name of the load balancer policy to be created. This name must be unique within the set of policies for this load balancer.</p>
+    ///   - [`policy_type_name(Option<String>)`](crate::input::CreateLoadBalancerPolicyInput::policy_type_name): <p>The name of the base policy type. To get the list of policy types, use <code>DescribeLoadBalancerPolicyTypes</code>.</p>
+    ///   - [`policy_attributes(Option<Vec<PolicyAttribute>>)`](crate::input::CreateLoadBalancerPolicyInput::policy_attributes): <p>The policy attributes.</p>
+    /// - On success, responds with [`CreateLoadBalancerPolicyOutput`](crate::output::CreateLoadBalancerPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<CreateLoadBalancerPolicyError>`](crate::error::CreateLoadBalancerPolicyError)
     pub fn create_load_balancer_policy(
         &self,
     ) -> fluent_builders::CreateLoadBalancerPolicy<C, M, R> {
         fluent_builders::CreateLoadBalancerPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteLoadBalancer` operation.
+    /// Constructs a fluent builder for the [`DeleteLoadBalancer`](crate::client::fluent_builders::DeleteLoadBalancer) operation.
     ///
-    /// See [`DeleteLoadBalancer`](crate::client::fluent_builders::DeleteLoadBalancer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteLoadBalancerInput`](crate::input::DeleteLoadBalancerInput) with field(s):
+    ///   - [`load_balancer_name(Option<String>)`](crate::input::DeleteLoadBalancerInput::load_balancer_name): <p>The name of the load balancer.</p>
+    /// - On success, responds with [`DeleteLoadBalancerOutput`](crate::output::DeleteLoadBalancerOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteLoadBalancerError>`](crate::error::DeleteLoadBalancerError)
     pub fn delete_load_balancer(&self) -> fluent_builders::DeleteLoadBalancer<C, M, R> {
         fluent_builders::DeleteLoadBalancer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteLoadBalancerListeners` operation.
+    /// Constructs a fluent builder for the [`DeleteLoadBalancerListeners`](crate::client::fluent_builders::DeleteLoadBalancerListeners) operation.
     ///
-    /// See [`DeleteLoadBalancerListeners`](crate::client::fluent_builders::DeleteLoadBalancerListeners) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteLoadBalancerListenersInput`](crate::input::DeleteLoadBalancerListenersInput) with field(s):
+    ///   - [`load_balancer_name(Option<String>)`](crate::input::DeleteLoadBalancerListenersInput::load_balancer_name): <p>The name of the load balancer.</p>
+    ///   - [`load_balancer_ports(Option<Vec<i32>>)`](crate::input::DeleteLoadBalancerListenersInput::load_balancer_ports): <p>The client port numbers of the listeners.</p>
+    /// - On success, responds with [`DeleteLoadBalancerListenersOutput`](crate::output::DeleteLoadBalancerListenersOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteLoadBalancerListenersError>`](crate::error::DeleteLoadBalancerListenersError)
     pub fn delete_load_balancer_listeners(
         &self,
     ) -> fluent_builders::DeleteLoadBalancerListeners<C, M, R> {
         fluent_builders::DeleteLoadBalancerListeners::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteLoadBalancerPolicy` operation.
+    /// Constructs a fluent builder for the [`DeleteLoadBalancerPolicy`](crate::client::fluent_builders::DeleteLoadBalancerPolicy) operation.
     ///
-    /// See [`DeleteLoadBalancerPolicy`](crate::client::fluent_builders::DeleteLoadBalancerPolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteLoadBalancerPolicyInput`](crate::input::DeleteLoadBalancerPolicyInput) with field(s):
+    ///   - [`load_balancer_name(Option<String>)`](crate::input::DeleteLoadBalancerPolicyInput::load_balancer_name): <p>The name of the load balancer.</p>
+    ///   - [`policy_name(Option<String>)`](crate::input::DeleteLoadBalancerPolicyInput::policy_name): <p>The name of the policy.</p>
+    /// - On success, responds with [`DeleteLoadBalancerPolicyOutput`](crate::output::DeleteLoadBalancerPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteLoadBalancerPolicyError>`](crate::error::DeleteLoadBalancerPolicyError)
     pub fn delete_load_balancer_policy(
         &self,
     ) -> fluent_builders::DeleteLoadBalancerPolicy<C, M, R> {
         fluent_builders::DeleteLoadBalancerPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeregisterInstancesFromLoadBalancer` operation.
+    /// Constructs a fluent builder for the [`DeregisterInstancesFromLoadBalancer`](crate::client::fluent_builders::DeregisterInstancesFromLoadBalancer) operation.
     ///
-    /// See [`DeregisterInstancesFromLoadBalancer`](crate::client::fluent_builders::DeregisterInstancesFromLoadBalancer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeregisterInstancesFromLoadBalancerInput`](crate::input::DeregisterInstancesFromLoadBalancerInput) with field(s):
+    ///   - [`load_balancer_name(Option<String>)`](crate::input::DeregisterInstancesFromLoadBalancerInput::load_balancer_name): <p>The name of the load balancer.</p>
+    ///   - [`instances(Option<Vec<Instance>>)`](crate::input::DeregisterInstancesFromLoadBalancerInput::instances): <p>The IDs of the instances.</p>
+    /// - On success, responds with [`DeregisterInstancesFromLoadBalancerOutput`](crate::output::DeregisterInstancesFromLoadBalancerOutput) with field(s):
+    ///   - [`instances(Option<Vec<Instance>>)`](crate::output::DeregisterInstancesFromLoadBalancerOutput::instances): <p>The remaining instances registered with the load balancer.</p>
+    /// - On failure, responds with [`SdkError<DeregisterInstancesFromLoadBalancerError>`](crate::error::DeregisterInstancesFromLoadBalancerError)
     pub fn deregister_instances_from_load_balancer(
         &self,
     ) -> fluent_builders::DeregisterInstancesFromLoadBalancer<C, M, R> {
         fluent_builders::DeregisterInstancesFromLoadBalancer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAccountLimits` operation.
+    /// Constructs a fluent builder for the [`DescribeAccountLimits`](crate::client::fluent_builders::DescribeAccountLimits) operation.
     ///
-    /// See [`DescribeAccountLimits`](crate::client::fluent_builders::DescribeAccountLimits) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeAccountLimitsInput`](crate::input::DescribeAccountLimitsInput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::input::DescribeAccountLimitsInput::marker): <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    ///   - [`page_size(Option<i32>)`](crate::input::DescribeAccountLimitsInput::page_size): <p>The maximum number of results to return with this call.</p>
+    /// - On success, responds with [`DescribeAccountLimitsOutput`](crate::output::DescribeAccountLimitsOutput) with field(s):
+    ///   - [`limits(Option<Vec<Limit>>)`](crate::output::DescribeAccountLimitsOutput::limits): <p>Information about the limits.</p>
+    ///   - [`next_marker(Option<String>)`](crate::output::DescribeAccountLimitsOutput::next_marker): <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
+    /// - On failure, responds with [`SdkError<DescribeAccountLimitsError>`](crate::error::DescribeAccountLimitsError)
     pub fn describe_account_limits(&self) -> fluent_builders::DescribeAccountLimits<C, M, R> {
         fluent_builders::DescribeAccountLimits::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeInstanceHealth` operation.
+    /// Constructs a fluent builder for the [`DescribeInstanceHealth`](crate::client::fluent_builders::DescribeInstanceHealth) operation.
     ///
-    /// See [`DescribeInstanceHealth`](crate::client::fluent_builders::DescribeInstanceHealth) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeInstanceHealthInput`](crate::input::DescribeInstanceHealthInput) with field(s):
+    ///   - [`load_balancer_name(Option<String>)`](crate::input::DescribeInstanceHealthInput::load_balancer_name): <p>The name of the load balancer.</p>
+    ///   - [`instances(Option<Vec<Instance>>)`](crate::input::DescribeInstanceHealthInput::instances): <p>The IDs of the instances.</p>
+    /// - On success, responds with [`DescribeInstanceHealthOutput`](crate::output::DescribeInstanceHealthOutput) with field(s):
+    ///   - [`instance_states(Option<Vec<InstanceState>>)`](crate::output::DescribeInstanceHealthOutput::instance_states): <p>Information about the health of the instances.</p>
+    /// - On failure, responds with [`SdkError<DescribeInstanceHealthError>`](crate::error::DescribeInstanceHealthError)
     pub fn describe_instance_health(&self) -> fluent_builders::DescribeInstanceHealth<C, M, R> {
         fluent_builders::DescribeInstanceHealth::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeLoadBalancerAttributes` operation.
+    /// Constructs a fluent builder for the [`DescribeLoadBalancerAttributes`](crate::client::fluent_builders::DescribeLoadBalancerAttributes) operation.
     ///
-    /// See [`DescribeLoadBalancerAttributes`](crate::client::fluent_builders::DescribeLoadBalancerAttributes) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeLoadBalancerAttributesInput`](crate::input::DescribeLoadBalancerAttributesInput) with field(s):
+    ///   - [`load_balancer_name(Option<String>)`](crate::input::DescribeLoadBalancerAttributesInput::load_balancer_name): <p>The name of the load balancer.</p>
+    /// - On success, responds with [`DescribeLoadBalancerAttributesOutput`](crate::output::DescribeLoadBalancerAttributesOutput) with field(s):
+    ///   - [`load_balancer_attributes(Option<LoadBalancerAttributes>)`](crate::output::DescribeLoadBalancerAttributesOutput::load_balancer_attributes): <p>Information about the load balancer attributes.</p>
+    /// - On failure, responds with [`SdkError<DescribeLoadBalancerAttributesError>`](crate::error::DescribeLoadBalancerAttributesError)
     pub fn describe_load_balancer_attributes(
         &self,
     ) -> fluent_builders::DescribeLoadBalancerAttributes<C, M, R> {
         fluent_builders::DescribeLoadBalancerAttributes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeLoadBalancerPolicies` operation.
+    /// Constructs a fluent builder for the [`DescribeLoadBalancerPolicies`](crate::client::fluent_builders::DescribeLoadBalancerPolicies) operation.
     ///
-    /// See [`DescribeLoadBalancerPolicies`](crate::client::fluent_builders::DescribeLoadBalancerPolicies) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeLoadBalancerPoliciesInput`](crate::input::DescribeLoadBalancerPoliciesInput) with field(s):
+    ///   - [`load_balancer_name(Option<String>)`](crate::input::DescribeLoadBalancerPoliciesInput::load_balancer_name): <p>The name of the load balancer.</p>
+    ///   - [`policy_names(Option<Vec<String>>)`](crate::input::DescribeLoadBalancerPoliciesInput::policy_names): <p>The names of the policies.</p>
+    /// - On success, responds with [`DescribeLoadBalancerPoliciesOutput`](crate::output::DescribeLoadBalancerPoliciesOutput) with field(s):
+    ///   - [`policy_descriptions(Option<Vec<PolicyDescription>>)`](crate::output::DescribeLoadBalancerPoliciesOutput::policy_descriptions): <p>Information about the policies.</p>
+    /// - On failure, responds with [`SdkError<DescribeLoadBalancerPoliciesError>`](crate::error::DescribeLoadBalancerPoliciesError)
     pub fn describe_load_balancer_policies(
         &self,
     ) -> fluent_builders::DescribeLoadBalancerPolicies<C, M, R> {
         fluent_builders::DescribeLoadBalancerPolicies::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeLoadBalancerPolicyTypes` operation.
+    /// Constructs a fluent builder for the [`DescribeLoadBalancerPolicyTypes`](crate::client::fluent_builders::DescribeLoadBalancerPolicyTypes) operation.
     ///
-    /// See [`DescribeLoadBalancerPolicyTypes`](crate::client::fluent_builders::DescribeLoadBalancerPolicyTypes) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeLoadBalancerPolicyTypesInput`](crate::input::DescribeLoadBalancerPolicyTypesInput) with field(s):
+    ///   - [`policy_type_names(Option<Vec<String>>)`](crate::input::DescribeLoadBalancerPolicyTypesInput::policy_type_names): <p>The names of the policy types. If no names are specified, describes all policy types defined by Elastic Load Balancing.</p>
+    /// - On success, responds with [`DescribeLoadBalancerPolicyTypesOutput`](crate::output::DescribeLoadBalancerPolicyTypesOutput) with field(s):
+    ///   - [`policy_type_descriptions(Option<Vec<PolicyTypeDescription>>)`](crate::output::DescribeLoadBalancerPolicyTypesOutput::policy_type_descriptions): <p>Information about the policy types.</p>
+    /// - On failure, responds with [`SdkError<DescribeLoadBalancerPolicyTypesError>`](crate::error::DescribeLoadBalancerPolicyTypesError)
     pub fn describe_load_balancer_policy_types(
         &self,
     ) -> fluent_builders::DescribeLoadBalancerPolicyTypes<C, M, R> {
         fluent_builders::DescribeLoadBalancerPolicyTypes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeLoadBalancers` operation.
-    ///
-    /// See [`DescribeLoadBalancers`](crate::client::fluent_builders::DescribeLoadBalancers) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeLoadBalancers`](crate::client::fluent_builders::DescribeLoadBalancers) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeLoadBalancers::into_paginator).
+    ///
+    /// - Takes [`DescribeLoadBalancersInput`](crate::input::DescribeLoadBalancersInput) with field(s):
+    ///   - [`load_balancer_names(Option<Vec<String>>)`](crate::input::DescribeLoadBalancersInput::load_balancer_names): <p>The names of the load balancers.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeLoadBalancersInput::marker): <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    ///   - [`page_size(Option<i32>)`](crate::input::DescribeLoadBalancersInput::page_size): <p>The maximum number of results to return with this call (a number from 1 to 400). The default is 400.</p>
+    /// - On success, responds with [`DescribeLoadBalancersOutput`](crate::output::DescribeLoadBalancersOutput) with field(s):
+    ///   - [`load_balancer_descriptions(Option<Vec<LoadBalancerDescription>>)`](crate::output::DescribeLoadBalancersOutput::load_balancer_descriptions): <p>Information about the load balancers.</p>
+    ///   - [`next_marker(Option<String>)`](crate::output::DescribeLoadBalancersOutput::next_marker): <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
+    /// - On failure, responds with [`SdkError<DescribeLoadBalancersError>`](crate::error::DescribeLoadBalancersError)
     pub fn describe_load_balancers(&self) -> fluent_builders::DescribeLoadBalancers<C, M, R> {
         fluent_builders::DescribeLoadBalancers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeTags` operation.
+    /// Constructs a fluent builder for the [`DescribeTags`](crate::client::fluent_builders::DescribeTags) operation.
     ///
-    /// See [`DescribeTags`](crate::client::fluent_builders::DescribeTags) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeTagsInput`](crate::input::DescribeTagsInput) with field(s):
+    ///   - [`load_balancer_names(Option<Vec<String>>)`](crate::input::DescribeTagsInput::load_balancer_names): <p>The names of the load balancers.</p>
+    /// - On success, responds with [`DescribeTagsOutput`](crate::output::DescribeTagsOutput) with field(s):
+    ///   - [`tag_descriptions(Option<Vec<TagDescription>>)`](crate::output::DescribeTagsOutput::tag_descriptions): <p>Information about the tags.</p>
+    /// - On failure, responds with [`SdkError<DescribeTagsError>`](crate::error::DescribeTagsError)
     pub fn describe_tags(&self) -> fluent_builders::DescribeTags<C, M, R> {
         fluent_builders::DescribeTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DetachLoadBalancerFromSubnets` operation.
+    /// Constructs a fluent builder for the [`DetachLoadBalancerFromSubnets`](crate::client::fluent_builders::DetachLoadBalancerFromSubnets) operation.
     ///
-    /// See [`DetachLoadBalancerFromSubnets`](crate::client::fluent_builders::DetachLoadBalancerFromSubnets) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DetachLoadBalancerFromSubnetsInput`](crate::input::DetachLoadBalancerFromSubnetsInput) with field(s):
+    ///   - [`load_balancer_name(Option<String>)`](crate::input::DetachLoadBalancerFromSubnetsInput::load_balancer_name): <p>The name of the load balancer.</p>
+    ///   - [`subnets(Option<Vec<String>>)`](crate::input::DetachLoadBalancerFromSubnetsInput::subnets): <p>The IDs of the subnets.</p>
+    /// - On success, responds with [`DetachLoadBalancerFromSubnetsOutput`](crate::output::DetachLoadBalancerFromSubnetsOutput) with field(s):
+    ///   - [`subnets(Option<Vec<String>>)`](crate::output::DetachLoadBalancerFromSubnetsOutput::subnets): <p>The IDs of the remaining subnets for the load balancer.</p>
+    /// - On failure, responds with [`SdkError<DetachLoadBalancerFromSubnetsError>`](crate::error::DetachLoadBalancerFromSubnetsError)
     pub fn detach_load_balancer_from_subnets(
         &self,
     ) -> fluent_builders::DetachLoadBalancerFromSubnets<C, M, R> {
         fluent_builders::DetachLoadBalancerFromSubnets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisableAvailabilityZonesForLoadBalancer` operation.
+    /// Constructs a fluent builder for the [`DisableAvailabilityZonesForLoadBalancer`](crate::client::fluent_builders::DisableAvailabilityZonesForLoadBalancer) operation.
     ///
-    /// See [`DisableAvailabilityZonesForLoadBalancer`](crate::client::fluent_builders::DisableAvailabilityZonesForLoadBalancer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisableAvailabilityZonesForLoadBalancerInput`](crate::input::DisableAvailabilityZonesForLoadBalancerInput) with field(s):
+    ///   - [`load_balancer_name(Option<String>)`](crate::input::DisableAvailabilityZonesForLoadBalancerInput::load_balancer_name): <p>The name of the load balancer.</p>
+    ///   - [`availability_zones(Option<Vec<String>>)`](crate::input::DisableAvailabilityZonesForLoadBalancerInput::availability_zones): <p>The Availability Zones.</p>
+    /// - On success, responds with [`DisableAvailabilityZonesForLoadBalancerOutput`](crate::output::DisableAvailabilityZonesForLoadBalancerOutput) with field(s):
+    ///   - [`availability_zones(Option<Vec<String>>)`](crate::output::DisableAvailabilityZonesForLoadBalancerOutput::availability_zones): <p>The remaining Availability Zones for the load balancer.</p>
+    /// - On failure, responds with [`SdkError<DisableAvailabilityZonesForLoadBalancerError>`](crate::error::DisableAvailabilityZonesForLoadBalancerError)
     pub fn disable_availability_zones_for_load_balancer(
         &self,
     ) -> fluent_builders::DisableAvailabilityZonesForLoadBalancer<C, M, R> {
         fluent_builders::DisableAvailabilityZonesForLoadBalancer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `EnableAvailabilityZonesForLoadBalancer` operation.
+    /// Constructs a fluent builder for the [`EnableAvailabilityZonesForLoadBalancer`](crate::client::fluent_builders::EnableAvailabilityZonesForLoadBalancer) operation.
     ///
-    /// See [`EnableAvailabilityZonesForLoadBalancer`](crate::client::fluent_builders::EnableAvailabilityZonesForLoadBalancer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`EnableAvailabilityZonesForLoadBalancerInput`](crate::input::EnableAvailabilityZonesForLoadBalancerInput) with field(s):
+    ///   - [`load_balancer_name(Option<String>)`](crate::input::EnableAvailabilityZonesForLoadBalancerInput::load_balancer_name): <p>The name of the load balancer.</p>
+    ///   - [`availability_zones(Option<Vec<String>>)`](crate::input::EnableAvailabilityZonesForLoadBalancerInput::availability_zones): <p>The Availability Zones. These must be in the same region as the load balancer.</p>
+    /// - On success, responds with [`EnableAvailabilityZonesForLoadBalancerOutput`](crate::output::EnableAvailabilityZonesForLoadBalancerOutput) with field(s):
+    ///   - [`availability_zones(Option<Vec<String>>)`](crate::output::EnableAvailabilityZonesForLoadBalancerOutput::availability_zones): <p>The updated list of Availability Zones for the load balancer.</p>
+    /// - On failure, responds with [`SdkError<EnableAvailabilityZonesForLoadBalancerError>`](crate::error::EnableAvailabilityZonesForLoadBalancerError)
     pub fn enable_availability_zones_for_load_balancer(
         &self,
     ) -> fluent_builders::EnableAvailabilityZonesForLoadBalancer<C, M, R> {
         fluent_builders::EnableAvailabilityZonesForLoadBalancer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyLoadBalancerAttributes` operation.
+    /// Constructs a fluent builder for the [`ModifyLoadBalancerAttributes`](crate::client::fluent_builders::ModifyLoadBalancerAttributes) operation.
     ///
-    /// See [`ModifyLoadBalancerAttributes`](crate::client::fluent_builders::ModifyLoadBalancerAttributes) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyLoadBalancerAttributesInput`](crate::input::ModifyLoadBalancerAttributesInput) with field(s):
+    ///   - [`load_balancer_name(Option<String>)`](crate::input::ModifyLoadBalancerAttributesInput::load_balancer_name): <p>The name of the load balancer.</p>
+    ///   - [`load_balancer_attributes(Option<LoadBalancerAttributes>)`](crate::input::ModifyLoadBalancerAttributesInput::load_balancer_attributes): <p>The attributes for the load balancer.</p>
+    /// - On success, responds with [`ModifyLoadBalancerAttributesOutput`](crate::output::ModifyLoadBalancerAttributesOutput) with field(s):
+    ///   - [`load_balancer_name(Option<String>)`](crate::output::ModifyLoadBalancerAttributesOutput::load_balancer_name): <p>The name of the load balancer.</p>
+    ///   - [`load_balancer_attributes(Option<LoadBalancerAttributes>)`](crate::output::ModifyLoadBalancerAttributesOutput::load_balancer_attributes): <p>Information about the load balancer attributes.</p>
+    /// - On failure, responds with [`SdkError<ModifyLoadBalancerAttributesError>`](crate::error::ModifyLoadBalancerAttributesError)
     pub fn modify_load_balancer_attributes(
         &self,
     ) -> fluent_builders::ModifyLoadBalancerAttributes<C, M, R> {
         fluent_builders::ModifyLoadBalancerAttributes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RegisterInstancesWithLoadBalancer` operation.
+    /// Constructs a fluent builder for the [`RegisterInstancesWithLoadBalancer`](crate::client::fluent_builders::RegisterInstancesWithLoadBalancer) operation.
     ///
-    /// See [`RegisterInstancesWithLoadBalancer`](crate::client::fluent_builders::RegisterInstancesWithLoadBalancer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RegisterInstancesWithLoadBalancerInput`](crate::input::RegisterInstancesWithLoadBalancerInput) with field(s):
+    ///   - [`load_balancer_name(Option<String>)`](crate::input::RegisterInstancesWithLoadBalancerInput::load_balancer_name): <p>The name of the load balancer.</p>
+    ///   - [`instances(Option<Vec<Instance>>)`](crate::input::RegisterInstancesWithLoadBalancerInput::instances): <p>The IDs of the instances.</p>
+    /// - On success, responds with [`RegisterInstancesWithLoadBalancerOutput`](crate::output::RegisterInstancesWithLoadBalancerOutput) with field(s):
+    ///   - [`instances(Option<Vec<Instance>>)`](crate::output::RegisterInstancesWithLoadBalancerOutput::instances): <p>The updated list of instances for the load balancer.</p>
+    /// - On failure, responds with [`SdkError<RegisterInstancesWithLoadBalancerError>`](crate::error::RegisterInstancesWithLoadBalancerError)
     pub fn register_instances_with_load_balancer(
         &self,
     ) -> fluent_builders::RegisterInstancesWithLoadBalancer<C, M, R> {
         fluent_builders::RegisterInstancesWithLoadBalancer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RemoveTags` operation.
+    /// Constructs a fluent builder for the [`RemoveTags`](crate::client::fluent_builders::RemoveTags) operation.
     ///
-    /// See [`RemoveTags`](crate::client::fluent_builders::RemoveTags) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RemoveTagsInput`](crate::input::RemoveTagsInput) with field(s):
+    ///   - [`load_balancer_names(Option<Vec<String>>)`](crate::input::RemoveTagsInput::load_balancer_names): <p>The name of the load balancer. You can specify a maximum of one load balancer name.</p>
+    ///   - [`tags(Option<Vec<TagKeyOnly>>)`](crate::input::RemoveTagsInput::tags): <p>The list of tag keys to remove.</p>
+    /// - On success, responds with [`RemoveTagsOutput`](crate::output::RemoveTagsOutput)
+
+    /// - On failure, responds with [`SdkError<RemoveTagsError>`](crate::error::RemoveTagsError)
     pub fn remove_tags(&self) -> fluent_builders::RemoveTags<C, M, R> {
         fluent_builders::RemoveTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SetLoadBalancerListenerSSLCertificate` operation.
+    /// Constructs a fluent builder for the [`SetLoadBalancerListenerSSLCertificate`](crate::client::fluent_builders::SetLoadBalancerListenerSSLCertificate) operation.
     ///
-    /// See [`SetLoadBalancerListenerSSLCertificate`](crate::client::fluent_builders::SetLoadBalancerListenerSSLCertificate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`SetLoadBalancerListenerSslCertificateInput`](crate::input::SetLoadBalancerListenerSslCertificateInput) with field(s):
+    ///   - [`load_balancer_name(Option<String>)`](crate::input::SetLoadBalancerListenerSslCertificateInput::load_balancer_name): <p>The name of the load balancer.</p>
+    ///   - [`load_balancer_port(i32)`](crate::input::SetLoadBalancerListenerSslCertificateInput::load_balancer_port): <p>The port that uses the specified SSL certificate.</p>
+    ///   - [`ssl_certificate_id(Option<String>)`](crate::input::SetLoadBalancerListenerSslCertificateInput::ssl_certificate_id): <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
+    /// - On success, responds with [`SetLoadBalancerListenerSslCertificateOutput`](crate::output::SetLoadBalancerListenerSslCertificateOutput)
+
+    /// - On failure, responds with [`SdkError<SetLoadBalancerListenerSSLCertificateError>`](crate::error::SetLoadBalancerListenerSSLCertificateError)
     pub fn set_load_balancer_listener_ssl_certificate(
         &self,
     ) -> fluent_builders::SetLoadBalancerListenerSSLCertificate<C, M, R> {
         fluent_builders::SetLoadBalancerListenerSSLCertificate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SetLoadBalancerPoliciesForBackendServer` operation.
+    /// Constructs a fluent builder for the [`SetLoadBalancerPoliciesForBackendServer`](crate::client::fluent_builders::SetLoadBalancerPoliciesForBackendServer) operation.
     ///
-    /// See [`SetLoadBalancerPoliciesForBackendServer`](crate::client::fluent_builders::SetLoadBalancerPoliciesForBackendServer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`SetLoadBalancerPoliciesForBackendServerInput`](crate::input::SetLoadBalancerPoliciesForBackendServerInput) with field(s):
+    ///   - [`load_balancer_name(Option<String>)`](crate::input::SetLoadBalancerPoliciesForBackendServerInput::load_balancer_name): <p>The name of the load balancer.</p>
+    ///   - [`instance_port(Option<i32>)`](crate::input::SetLoadBalancerPoliciesForBackendServerInput::instance_port): <p>The port number associated with the EC2 instance.</p>
+    ///   - [`policy_names(Option<Vec<String>>)`](crate::input::SetLoadBalancerPoliciesForBackendServerInput::policy_names): <p>The names of the policies. If the list is empty, then all current polices are removed from the EC2 instance.</p>
+    /// - On success, responds with [`SetLoadBalancerPoliciesForBackendServerOutput`](crate::output::SetLoadBalancerPoliciesForBackendServerOutput)
+
+    /// - On failure, responds with [`SdkError<SetLoadBalancerPoliciesForBackendServerError>`](crate::error::SetLoadBalancerPoliciesForBackendServerError)
     pub fn set_load_balancer_policies_for_backend_server(
         &self,
     ) -> fluent_builders::SetLoadBalancerPoliciesForBackendServer<C, M, R> {
         fluent_builders::SetLoadBalancerPoliciesForBackendServer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SetLoadBalancerPoliciesOfListener` operation.
+    /// Constructs a fluent builder for the [`SetLoadBalancerPoliciesOfListener`](crate::client::fluent_builders::SetLoadBalancerPoliciesOfListener) operation.
     ///
-    /// See [`SetLoadBalancerPoliciesOfListener`](crate::client::fluent_builders::SetLoadBalancerPoliciesOfListener) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`SetLoadBalancerPoliciesOfListenerInput`](crate::input::SetLoadBalancerPoliciesOfListenerInput) with field(s):
+    ///   - [`load_balancer_name(Option<String>)`](crate::input::SetLoadBalancerPoliciesOfListenerInput::load_balancer_name): <p>The name of the load balancer.</p>
+    ///   - [`load_balancer_port(i32)`](crate::input::SetLoadBalancerPoliciesOfListenerInput::load_balancer_port): <p>The external port of the load balancer.</p>
+    ///   - [`policy_names(Option<Vec<String>>)`](crate::input::SetLoadBalancerPoliciesOfListenerInput::policy_names): <p>The names of the policies. This list must include all policies to be enabled. If you omit a policy that is currently enabled, it is disabled. If the list is empty, all current policies are disabled.</p>
+    /// - On success, responds with [`SetLoadBalancerPoliciesOfListenerOutput`](crate::output::SetLoadBalancerPoliciesOfListenerOutput)
+
+    /// - On failure, responds with [`SdkError<SetLoadBalancerPoliciesOfListenerError>`](crate::error::SetLoadBalancerPoliciesOfListenerError)
     pub fn set_load_balancer_policies_of_listener(
         &self,
     ) -> fluent_builders::SetLoadBalancerPoliciesOfListener<C, M, R> {

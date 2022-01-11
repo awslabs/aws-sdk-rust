@@ -83,586 +83,1038 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AcceptAttachment` operation.
+    /// Constructs a fluent builder for the [`AcceptAttachment`](crate::client::fluent_builders::AcceptAttachment) operation.
     ///
-    /// See [`AcceptAttachment`](crate::client::fluent_builders::AcceptAttachment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AcceptAttachmentInput`](crate::input::AcceptAttachmentInput) with field(s):
+    ///   - [`attachment_id(Option<String>)`](crate::input::AcceptAttachmentInput::attachment_id): <p>The ID of the attachment. </p>
+    /// - On success, responds with [`AcceptAttachmentOutput`](crate::output::AcceptAttachmentOutput) with field(s):
+    ///   - [`attachment(Option<Attachment>)`](crate::output::AcceptAttachmentOutput::attachment): <p>The response to the attachment request. </p>
+    /// - On failure, responds with [`SdkError<AcceptAttachmentError>`](crate::error::AcceptAttachmentError)
     pub fn accept_attachment(&self) -> fluent_builders::AcceptAttachment<C, M, R> {
         fluent_builders::AcceptAttachment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateConnectPeer` operation.
+    /// Constructs a fluent builder for the [`AssociateConnectPeer`](crate::client::fluent_builders::AssociateConnectPeer) operation.
     ///
-    /// See [`AssociateConnectPeer`](crate::client::fluent_builders::AssociateConnectPeer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateConnectPeerInput`](crate::input::AssociateConnectPeerInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::AssociateConnectPeerInput::global_network_id): <p>The ID of your global network.</p>
+    ///   - [`connect_peer_id(Option<String>)`](crate::input::AssociateConnectPeerInput::connect_peer_id): <p>The ID of the Connect peer.</p>
+    ///   - [`device_id(Option<String>)`](crate::input::AssociateConnectPeerInput::device_id): <p>The ID of the device.</p>
+    ///   - [`link_id(Option<String>)`](crate::input::AssociateConnectPeerInput::link_id): <p>The ID of the link.</p>
+    /// - On success, responds with [`AssociateConnectPeerOutput`](crate::output::AssociateConnectPeerOutput) with field(s):
+    ///   - [`connect_peer_association(Option<ConnectPeerAssociation>)`](crate::output::AssociateConnectPeerOutput::connect_peer_association): <p>The response to the Connect peer request.</p>
+    /// - On failure, responds with [`SdkError<AssociateConnectPeerError>`](crate::error::AssociateConnectPeerError)
     pub fn associate_connect_peer(&self) -> fluent_builders::AssociateConnectPeer<C, M, R> {
         fluent_builders::AssociateConnectPeer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateCustomerGateway` operation.
+    /// Constructs a fluent builder for the [`AssociateCustomerGateway`](crate::client::fluent_builders::AssociateCustomerGateway) operation.
     ///
-    /// See [`AssociateCustomerGateway`](crate::client::fluent_builders::AssociateCustomerGateway) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateCustomerGatewayInput`](crate::input::AssociateCustomerGatewayInput) with field(s):
+    ///   - [`customer_gateway_arn(Option<String>)`](crate::input::AssociateCustomerGatewayInput::customer_gateway_arn): <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
+    ///   - [`global_network_id(Option<String>)`](crate::input::AssociateCustomerGatewayInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`device_id(Option<String>)`](crate::input::AssociateCustomerGatewayInput::device_id): <p>The ID of the device.</p>
+    ///   - [`link_id(Option<String>)`](crate::input::AssociateCustomerGatewayInput::link_id): <p>The ID of the link.</p>
+    /// - On success, responds with [`AssociateCustomerGatewayOutput`](crate::output::AssociateCustomerGatewayOutput) with field(s):
+    ///   - [`customer_gateway_association(Option<CustomerGatewayAssociation>)`](crate::output::AssociateCustomerGatewayOutput::customer_gateway_association): <p>The customer gateway association.</p>
+    /// - On failure, responds with [`SdkError<AssociateCustomerGatewayError>`](crate::error::AssociateCustomerGatewayError)
     pub fn associate_customer_gateway(&self) -> fluent_builders::AssociateCustomerGateway<C, M, R> {
         fluent_builders::AssociateCustomerGateway::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateLink` operation.
+    /// Constructs a fluent builder for the [`AssociateLink`](crate::client::fluent_builders::AssociateLink) operation.
     ///
-    /// See [`AssociateLink`](crate::client::fluent_builders::AssociateLink) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateLinkInput`](crate::input::AssociateLinkInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::AssociateLinkInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`device_id(Option<String>)`](crate::input::AssociateLinkInput::device_id): <p>The ID of the device.</p>
+    ///   - [`link_id(Option<String>)`](crate::input::AssociateLinkInput::link_id): <p>The ID of the link.</p>
+    /// - On success, responds with [`AssociateLinkOutput`](crate::output::AssociateLinkOutput) with field(s):
+    ///   - [`link_association(Option<LinkAssociation>)`](crate::output::AssociateLinkOutput::link_association): <p>The link association.</p>
+    /// - On failure, responds with [`SdkError<AssociateLinkError>`](crate::error::AssociateLinkError)
     pub fn associate_link(&self) -> fluent_builders::AssociateLink<C, M, R> {
         fluent_builders::AssociateLink::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateTransitGatewayConnectPeer` operation.
+    /// Constructs a fluent builder for the [`AssociateTransitGatewayConnectPeer`](crate::client::fluent_builders::AssociateTransitGatewayConnectPeer) operation.
     ///
-    /// See [`AssociateTransitGatewayConnectPeer`](crate::client::fluent_builders::AssociateTransitGatewayConnectPeer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateTransitGatewayConnectPeerInput`](crate::input::AssociateTransitGatewayConnectPeerInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::AssociateTransitGatewayConnectPeerInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`transit_gateway_connect_peer_arn(Option<String>)`](crate::input::AssociateTransitGatewayConnectPeerInput::transit_gateway_connect_peer_arn): <p>The Amazon Resource Name (ARN) of the Connect peer.</p>
+    ///   - [`device_id(Option<String>)`](crate::input::AssociateTransitGatewayConnectPeerInput::device_id): <p>The ID of the device.</p>
+    ///   - [`link_id(Option<String>)`](crate::input::AssociateTransitGatewayConnectPeerInput::link_id): <p>The ID of the link.</p>
+    /// - On success, responds with [`AssociateTransitGatewayConnectPeerOutput`](crate::output::AssociateTransitGatewayConnectPeerOutput) with field(s):
+    ///   - [`transit_gateway_connect_peer_association(Option<TransitGatewayConnectPeerAssociation>)`](crate::output::AssociateTransitGatewayConnectPeerOutput::transit_gateway_connect_peer_association): <p>The transit gateway Connect peer association.</p>
+    /// - On failure, responds with [`SdkError<AssociateTransitGatewayConnectPeerError>`](crate::error::AssociateTransitGatewayConnectPeerError)
     pub fn associate_transit_gateway_connect_peer(
         &self,
     ) -> fluent_builders::AssociateTransitGatewayConnectPeer<C, M, R> {
         fluent_builders::AssociateTransitGatewayConnectPeer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateConnectAttachment` operation.
+    /// Constructs a fluent builder for the [`CreateConnectAttachment`](crate::client::fluent_builders::CreateConnectAttachment) operation.
     ///
-    /// See [`CreateConnectAttachment`](crate::client::fluent_builders::CreateConnectAttachment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateConnectAttachmentInput`](crate::input::CreateConnectAttachmentInput) with field(s):
+    ///   - [`core_network_id(Option<String>)`](crate::input::CreateConnectAttachmentInput::core_network_id): <p>The ID of a core network where you want to create the attachment. </p>
+    ///   - [`edge_location(Option<String>)`](crate::input::CreateConnectAttachmentInput::edge_location): <p>The Region where the edge is located.</p>
+    ///   - [`transport_attachment_id(Option<String>)`](crate::input::CreateConnectAttachmentInput::transport_attachment_id): <p>The ID of the attachment between the two connections.</p>
+    ///   - [`options(Option<ConnectAttachmentOptions>)`](crate::input::CreateConnectAttachmentInput::options): <p>Options for creating an attachment.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateConnectAttachmentInput::tags): <p>The list of key-value tags associated with the request.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateConnectAttachmentInput::client_token): <p>The client token associated with the request.</p>
+    /// - On success, responds with [`CreateConnectAttachmentOutput`](crate::output::CreateConnectAttachmentOutput) with field(s):
+    ///   - [`connect_attachment(Option<ConnectAttachment>)`](crate::output::CreateConnectAttachmentOutput::connect_attachment): <p>The response to a Connect attachment request.</p>
+    /// - On failure, responds with [`SdkError<CreateConnectAttachmentError>`](crate::error::CreateConnectAttachmentError)
     pub fn create_connect_attachment(&self) -> fluent_builders::CreateConnectAttachment<C, M, R> {
         fluent_builders::CreateConnectAttachment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateConnection` operation.
+    /// Constructs a fluent builder for the [`CreateConnection`](crate::client::fluent_builders::CreateConnection) operation.
     ///
-    /// See [`CreateConnection`](crate::client::fluent_builders::CreateConnection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateConnectionInput`](crate::input::CreateConnectionInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::CreateConnectionInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`device_id(Option<String>)`](crate::input::CreateConnectionInput::device_id): <p>The ID of the first device in the connection.</p>
+    ///   - [`connected_device_id(Option<String>)`](crate::input::CreateConnectionInput::connected_device_id): <p>The ID of the second device in the connection.</p>
+    ///   - [`link_id(Option<String>)`](crate::input::CreateConnectionInput::link_id): <p>The ID of the link for the first device.</p>
+    ///   - [`connected_link_id(Option<String>)`](crate::input::CreateConnectionInput::connected_link_id): <p>The ID of the link for the second device.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateConnectionInput::description): <p>A description of the connection.</p>  <p>Length Constraints: Maximum length of 256 characters.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateConnectionInput::tags): <p>The tags to apply to the resource during creation.</p>
+    /// - On success, responds with [`CreateConnectionOutput`](crate::output::CreateConnectionOutput) with field(s):
+    ///   - [`connection(Option<Connection>)`](crate::output::CreateConnectionOutput::connection): <p>Information about the connection.</p>
+    /// - On failure, responds with [`SdkError<CreateConnectionError>`](crate::error::CreateConnectionError)
     pub fn create_connection(&self) -> fluent_builders::CreateConnection<C, M, R> {
         fluent_builders::CreateConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateConnectPeer` operation.
+    /// Constructs a fluent builder for the [`CreateConnectPeer`](crate::client::fluent_builders::CreateConnectPeer) operation.
     ///
-    /// See [`CreateConnectPeer`](crate::client::fluent_builders::CreateConnectPeer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateConnectPeerInput`](crate::input::CreateConnectPeerInput) with field(s):
+    ///   - [`connect_attachment_id(Option<String>)`](crate::input::CreateConnectPeerInput::connect_attachment_id): <p>The ID of the connection attachment.</p>
+    ///   - [`core_network_address(Option<String>)`](crate::input::CreateConnectPeerInput::core_network_address): <p>A Connect peer core network address.</p>
+    ///   - [`peer_address(Option<String>)`](crate::input::CreateConnectPeerInput::peer_address): <p>The Connect peer address.</p>
+    ///   - [`bgp_options(Option<BgpOptions>)`](crate::input::CreateConnectPeerInput::bgp_options): <p>The Connect peer BGP options.</p>
+    ///   - [`inside_cidr_blocks(Option<Vec<String>>)`](crate::input::CreateConnectPeerInput::inside_cidr_blocks): <p>The inside IP addresses used for BGP peering.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateConnectPeerInput::tags): <p>The tags associated with the peer request.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateConnectPeerInput::client_token): <p>The client token associated with the request.</p>
+    /// - On success, responds with [`CreateConnectPeerOutput`](crate::output::CreateConnectPeerOutput) with field(s):
+    ///   - [`connect_peer(Option<ConnectPeer>)`](crate::output::CreateConnectPeerOutput::connect_peer): <p>The response to the request.</p>
+    /// - On failure, responds with [`SdkError<CreateConnectPeerError>`](crate::error::CreateConnectPeerError)
     pub fn create_connect_peer(&self) -> fluent_builders::CreateConnectPeer<C, M, R> {
         fluent_builders::CreateConnectPeer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateCoreNetwork` operation.
+    /// Constructs a fluent builder for the [`CreateCoreNetwork`](crate::client::fluent_builders::CreateCoreNetwork) operation.
     ///
-    /// See [`CreateCoreNetwork`](crate::client::fluent_builders::CreateCoreNetwork) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateCoreNetworkInput`](crate::input::CreateCoreNetworkInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::CreateCoreNetworkInput::global_network_id): <p>The ID of the global network that a core network will be a part of. </p>
+    ///   - [`description(Option<String>)`](crate::input::CreateCoreNetworkInput::description): <p>The description of a core network.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateCoreNetworkInput::tags): <p>Key-value tags associated with a core network request.</p>
+    ///   - [`policy_document(Option<String>)`](crate::input::CreateCoreNetworkInput::policy_document): <p>The policy document for creating a core network.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateCoreNetworkInput::client_token): <p>The client token associated with a core network request.</p>
+    /// - On success, responds with [`CreateCoreNetworkOutput`](crate::output::CreateCoreNetworkOutput) with field(s):
+    ///   - [`core_network(Option<CoreNetwork>)`](crate::output::CreateCoreNetworkOutput::core_network): <p>Returns details about a core network.</p>
+    /// - On failure, responds with [`SdkError<CreateCoreNetworkError>`](crate::error::CreateCoreNetworkError)
     pub fn create_core_network(&self) -> fluent_builders::CreateCoreNetwork<C, M, R> {
         fluent_builders::CreateCoreNetwork::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDevice` operation.
+    /// Constructs a fluent builder for the [`CreateDevice`](crate::client::fluent_builders::CreateDevice) operation.
     ///
-    /// See [`CreateDevice`](crate::client::fluent_builders::CreateDevice) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateDeviceInput`](crate::input::CreateDeviceInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::CreateDeviceInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`aws_location(Option<AwsLocation>)`](crate::input::CreateDeviceInput::aws_location): <p>The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateDeviceInput::description): <p>A description of the device.</p>  <p>Constraints: Maximum length of 256 characters.</p>
+    ///   - [`r#type(Option<String>)`](crate::input::CreateDeviceInput::r#type): <p>The type of the device.</p>
+    ///   - [`vendor(Option<String>)`](crate::input::CreateDeviceInput::vendor): <p>The vendor of the device.</p>  <p>Constraints: Maximum length of 128 characters.</p>
+    ///   - [`model(Option<String>)`](crate::input::CreateDeviceInput::model): <p>The model of the device.</p>  <p>Constraints: Maximum length of 128 characters.</p>
+    ///   - [`serial_number(Option<String>)`](crate::input::CreateDeviceInput::serial_number): <p>The serial number of the device.</p>  <p>Constraints: Maximum length of 128 characters.</p>
+    ///   - [`location(Option<Location>)`](crate::input::CreateDeviceInput::location): <p>The location of the device.</p>
+    ///   - [`site_id(Option<String>)`](crate::input::CreateDeviceInput::site_id): <p>The ID of the site.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateDeviceInput::tags): <p>The tags to apply to the resource during creation.</p>
+    /// - On success, responds with [`CreateDeviceOutput`](crate::output::CreateDeviceOutput) with field(s):
+    ///   - [`device(Option<Device>)`](crate::output::CreateDeviceOutput::device): <p>Information about the device.</p>
+    /// - On failure, responds with [`SdkError<CreateDeviceError>`](crate::error::CreateDeviceError)
     pub fn create_device(&self) -> fluent_builders::CreateDevice<C, M, R> {
         fluent_builders::CreateDevice::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateGlobalNetwork` operation.
+    /// Constructs a fluent builder for the [`CreateGlobalNetwork`](crate::client::fluent_builders::CreateGlobalNetwork) operation.
     ///
-    /// See [`CreateGlobalNetwork`](crate::client::fluent_builders::CreateGlobalNetwork) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateGlobalNetworkInput`](crate::input::CreateGlobalNetworkInput) with field(s):
+    ///   - [`description(Option<String>)`](crate::input::CreateGlobalNetworkInput::description): <p>A description of the global network.</p>  <p>Constraints: Maximum length of 256 characters.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateGlobalNetworkInput::tags): <p>The tags to apply to the resource during creation.</p>
+    /// - On success, responds with [`CreateGlobalNetworkOutput`](crate::output::CreateGlobalNetworkOutput) with field(s):
+    ///   - [`global_network(Option<GlobalNetwork>)`](crate::output::CreateGlobalNetworkOutput::global_network): <p>Information about the global network object.</p>
+    /// - On failure, responds with [`SdkError<CreateGlobalNetworkError>`](crate::error::CreateGlobalNetworkError)
     pub fn create_global_network(&self) -> fluent_builders::CreateGlobalNetwork<C, M, R> {
         fluent_builders::CreateGlobalNetwork::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateLink` operation.
+    /// Constructs a fluent builder for the [`CreateLink`](crate::client::fluent_builders::CreateLink) operation.
     ///
-    /// See [`CreateLink`](crate::client::fluent_builders::CreateLink) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateLinkInput`](crate::input::CreateLinkInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::CreateLinkInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateLinkInput::description): <p>A description of the link.</p>  <p>Constraints: Maximum length of 256 characters.</p>
+    ///   - [`r#type(Option<String>)`](crate::input::CreateLinkInput::r#type): <p>The type of the link.</p>  <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
+    ///   - [`bandwidth(Option<Bandwidth>)`](crate::input::CreateLinkInput::bandwidth): <p> The upload speed and download speed in Mbps. </p>
+    ///   - [`provider(Option<String>)`](crate::input::CreateLinkInput::provider): <p>The provider of the link.</p>  <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
+    ///   - [`site_id(Option<String>)`](crate::input::CreateLinkInput::site_id): <p>The ID of the site.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateLinkInput::tags): <p>The tags to apply to the resource during creation.</p>
+    /// - On success, responds with [`CreateLinkOutput`](crate::output::CreateLinkOutput) with field(s):
+    ///   - [`link(Option<Link>)`](crate::output::CreateLinkOutput::link): <p>Information about the link.</p>
+    /// - On failure, responds with [`SdkError<CreateLinkError>`](crate::error::CreateLinkError)
     pub fn create_link(&self) -> fluent_builders::CreateLink<C, M, R> {
         fluent_builders::CreateLink::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateSite` operation.
+    /// Constructs a fluent builder for the [`CreateSite`](crate::client::fluent_builders::CreateSite) operation.
     ///
-    /// See [`CreateSite`](crate::client::fluent_builders::CreateSite) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateSiteInput`](crate::input::CreateSiteInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::CreateSiteInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateSiteInput::description): <p>A description of your site.</p>  <p>Constraints: Maximum length of 256 characters.</p>
+    ///   - [`location(Option<Location>)`](crate::input::CreateSiteInput::location): <p>The site location. This information is used for visualization in the Network Manager console. If you specify the address, the latitude and longitude are automatically calculated.</p>  <ul>   <li> <p> <code>Address</code>: The physical address of the site.</p> </li>   <li> <p> <code>Latitude</code>: The latitude of the site. </p> </li>   <li> <p> <code>Longitude</code>: The longitude of the site.</p> </li>  </ul>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateSiteInput::tags): <p>The tags to apply to the resource during creation.</p>
+    /// - On success, responds with [`CreateSiteOutput`](crate::output::CreateSiteOutput) with field(s):
+    ///   - [`site(Option<Site>)`](crate::output::CreateSiteOutput::site): <p>Information about the site.</p>
+    /// - On failure, responds with [`SdkError<CreateSiteError>`](crate::error::CreateSiteError)
     pub fn create_site(&self) -> fluent_builders::CreateSite<C, M, R> {
         fluent_builders::CreateSite::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateSiteToSiteVpnAttachment` operation.
+    /// Constructs a fluent builder for the [`CreateSiteToSiteVpnAttachment`](crate::client::fluent_builders::CreateSiteToSiteVpnAttachment) operation.
     ///
-    /// See [`CreateSiteToSiteVpnAttachment`](crate::client::fluent_builders::CreateSiteToSiteVpnAttachment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateSiteToSiteVpnAttachmentInput`](crate::input::CreateSiteToSiteVpnAttachmentInput) with field(s):
+    ///   - [`core_network_id(Option<String>)`](crate::input::CreateSiteToSiteVpnAttachmentInput::core_network_id): <p>The ID of a core network where you're creating a site-to-site VPN attachment.</p>
+    ///   - [`vpn_connection_arn(Option<String>)`](crate::input::CreateSiteToSiteVpnAttachmentInput::vpn_connection_arn): <p>The ARN identifying the VPN attachment.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateSiteToSiteVpnAttachmentInput::tags): <p>The tags associated with the request.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateSiteToSiteVpnAttachmentInput::client_token): <p>The client token associated with the request.</p>
+    /// - On success, responds with [`CreateSiteToSiteVpnAttachmentOutput`](crate::output::CreateSiteToSiteVpnAttachmentOutput) with field(s):
+    ///   - [`site_to_site_vpn_attachment(Option<SiteToSiteVpnAttachment>)`](crate::output::CreateSiteToSiteVpnAttachmentOutput::site_to_site_vpn_attachment): <p>Details about a site-to-site VPN attachment.</p>
+    /// - On failure, responds with [`SdkError<CreateSiteToSiteVpnAttachmentError>`](crate::error::CreateSiteToSiteVpnAttachmentError)
     pub fn create_site_to_site_vpn_attachment(
         &self,
     ) -> fluent_builders::CreateSiteToSiteVpnAttachment<C, M, R> {
         fluent_builders::CreateSiteToSiteVpnAttachment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateVpcAttachment` operation.
+    /// Constructs a fluent builder for the [`CreateVpcAttachment`](crate::client::fluent_builders::CreateVpcAttachment) operation.
     ///
-    /// See [`CreateVpcAttachment`](crate::client::fluent_builders::CreateVpcAttachment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateVpcAttachmentInput`](crate::input::CreateVpcAttachmentInput) with field(s):
+    ///   - [`core_network_id(Option<String>)`](crate::input::CreateVpcAttachmentInput::core_network_id): <p>The ID of a core network for the VPC attachment.</p>
+    ///   - [`vpc_arn(Option<String>)`](crate::input::CreateVpcAttachmentInput::vpc_arn): <p>The ARN of the VPC.</p>
+    ///   - [`subnet_arns(Option<Vec<String>>)`](crate::input::CreateVpcAttachmentInput::subnet_arns): <p>The subnet ARN of the VPC attachment.</p>
+    ///   - [`options(Option<VpcOptions>)`](crate::input::CreateVpcAttachmentInput::options): <p>Options for the VPC attachment.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateVpcAttachmentInput::tags): <p>The key-value tags associated with the request.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateVpcAttachmentInput::client_token): <p>The client token associated with the request.</p>
+    /// - On success, responds with [`CreateVpcAttachmentOutput`](crate::output::CreateVpcAttachmentOutput) with field(s):
+    ///   - [`vpc_attachment(Option<VpcAttachment>)`](crate::output::CreateVpcAttachmentOutput::vpc_attachment): <p>Provides details about the VPC attachment.</p>
+    /// - On failure, responds with [`SdkError<CreateVpcAttachmentError>`](crate::error::CreateVpcAttachmentError)
     pub fn create_vpc_attachment(&self) -> fluent_builders::CreateVpcAttachment<C, M, R> {
         fluent_builders::CreateVpcAttachment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAttachment` operation.
+    /// Constructs a fluent builder for the [`DeleteAttachment`](crate::client::fluent_builders::DeleteAttachment) operation.
     ///
-    /// See [`DeleteAttachment`](crate::client::fluent_builders::DeleteAttachment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteAttachmentInput`](crate::input::DeleteAttachmentInput) with field(s):
+    ///   - [`attachment_id(Option<String>)`](crate::input::DeleteAttachmentInput::attachment_id): <p>The ID of the attachment to delete.</p>
+    /// - On success, responds with [`DeleteAttachmentOutput`](crate::output::DeleteAttachmentOutput) with field(s):
+    ///   - [`attachment(Option<Attachment>)`](crate::output::DeleteAttachmentOutput::attachment): <p>Information about the deleted attachment.</p>
+    /// - On failure, responds with [`SdkError<DeleteAttachmentError>`](crate::error::DeleteAttachmentError)
     pub fn delete_attachment(&self) -> fluent_builders::DeleteAttachment<C, M, R> {
         fluent_builders::DeleteAttachment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteConnection` operation.
+    /// Constructs a fluent builder for the [`DeleteConnection`](crate::client::fluent_builders::DeleteConnection) operation.
     ///
-    /// See [`DeleteConnection`](crate::client::fluent_builders::DeleteConnection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteConnectionInput`](crate::input::DeleteConnectionInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::DeleteConnectionInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`connection_id(Option<String>)`](crate::input::DeleteConnectionInput::connection_id): <p>The ID of the connection.</p>
+    /// - On success, responds with [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput) with field(s):
+    ///   - [`connection(Option<Connection>)`](crate::output::DeleteConnectionOutput::connection): <p>Information about the connection.</p>
+    /// - On failure, responds with [`SdkError<DeleteConnectionError>`](crate::error::DeleteConnectionError)
     pub fn delete_connection(&self) -> fluent_builders::DeleteConnection<C, M, R> {
         fluent_builders::DeleteConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteConnectPeer` operation.
+    /// Constructs a fluent builder for the [`DeleteConnectPeer`](crate::client::fluent_builders::DeleteConnectPeer) operation.
     ///
-    /// See [`DeleteConnectPeer`](crate::client::fluent_builders::DeleteConnectPeer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteConnectPeerInput`](crate::input::DeleteConnectPeerInput) with field(s):
+    ///   - [`connect_peer_id(Option<String>)`](crate::input::DeleteConnectPeerInput::connect_peer_id): <p>The ID of the deleted Connect peer.</p>
+    /// - On success, responds with [`DeleteConnectPeerOutput`](crate::output::DeleteConnectPeerOutput) with field(s):
+    ///   - [`connect_peer(Option<ConnectPeer>)`](crate::output::DeleteConnectPeerOutput::connect_peer): <p>Information about the deleted Connect peer.</p>
+    /// - On failure, responds with [`SdkError<DeleteConnectPeerError>`](crate::error::DeleteConnectPeerError)
     pub fn delete_connect_peer(&self) -> fluent_builders::DeleteConnectPeer<C, M, R> {
         fluent_builders::DeleteConnectPeer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteCoreNetwork` operation.
+    /// Constructs a fluent builder for the [`DeleteCoreNetwork`](crate::client::fluent_builders::DeleteCoreNetwork) operation.
     ///
-    /// See [`DeleteCoreNetwork`](crate::client::fluent_builders::DeleteCoreNetwork) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteCoreNetworkInput`](crate::input::DeleteCoreNetworkInput) with field(s):
+    ///   - [`core_network_id(Option<String>)`](crate::input::DeleteCoreNetworkInput::core_network_id): <p>The network ID of the deleted core network.</p>
+    /// - On success, responds with [`DeleteCoreNetworkOutput`](crate::output::DeleteCoreNetworkOutput) with field(s):
+    ///   - [`core_network(Option<CoreNetwork>)`](crate::output::DeleteCoreNetworkOutput::core_network): <p>Information about the deleted core network.</p>
+    /// - On failure, responds with [`SdkError<DeleteCoreNetworkError>`](crate::error::DeleteCoreNetworkError)
     pub fn delete_core_network(&self) -> fluent_builders::DeleteCoreNetwork<C, M, R> {
         fluent_builders::DeleteCoreNetwork::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteCoreNetworkPolicyVersion` operation.
+    /// Constructs a fluent builder for the [`DeleteCoreNetworkPolicyVersion`](crate::client::fluent_builders::DeleteCoreNetworkPolicyVersion) operation.
     ///
-    /// See [`DeleteCoreNetworkPolicyVersion`](crate::client::fluent_builders::DeleteCoreNetworkPolicyVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteCoreNetworkPolicyVersionInput`](crate::input::DeleteCoreNetworkPolicyVersionInput) with field(s):
+    ///   - [`core_network_id(Option<String>)`](crate::input::DeleteCoreNetworkPolicyVersionInput::core_network_id): <p>The ID of a core network for the deleted policy.</p>
+    ///   - [`policy_version_id(Option<i32>)`](crate::input::DeleteCoreNetworkPolicyVersionInput::policy_version_id): <p>The version ID of the deleted policy.</p>
+    /// - On success, responds with [`DeleteCoreNetworkPolicyVersionOutput`](crate::output::DeleteCoreNetworkPolicyVersionOutput) with field(s):
+    ///   - [`core_network_policy(Option<CoreNetworkPolicy>)`](crate::output::DeleteCoreNetworkPolicyVersionOutput::core_network_policy): <p>Returns information about the deleted policy version. </p>
+    /// - On failure, responds with [`SdkError<DeleteCoreNetworkPolicyVersionError>`](crate::error::DeleteCoreNetworkPolicyVersionError)
     pub fn delete_core_network_policy_version(
         &self,
     ) -> fluent_builders::DeleteCoreNetworkPolicyVersion<C, M, R> {
         fluent_builders::DeleteCoreNetworkPolicyVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDevice` operation.
+    /// Constructs a fluent builder for the [`DeleteDevice`](crate::client::fluent_builders::DeleteDevice) operation.
     ///
-    /// See [`DeleteDevice`](crate::client::fluent_builders::DeleteDevice) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteDeviceInput`](crate::input::DeleteDeviceInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::DeleteDeviceInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`device_id(Option<String>)`](crate::input::DeleteDeviceInput::device_id): <p>The ID of the device.</p>
+    /// - On success, responds with [`DeleteDeviceOutput`](crate::output::DeleteDeviceOutput) with field(s):
+    ///   - [`device(Option<Device>)`](crate::output::DeleteDeviceOutput::device): <p>Information about the device.</p>
+    /// - On failure, responds with [`SdkError<DeleteDeviceError>`](crate::error::DeleteDeviceError)
     pub fn delete_device(&self) -> fluent_builders::DeleteDevice<C, M, R> {
         fluent_builders::DeleteDevice::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteGlobalNetwork` operation.
+    /// Constructs a fluent builder for the [`DeleteGlobalNetwork`](crate::client::fluent_builders::DeleteGlobalNetwork) operation.
     ///
-    /// See [`DeleteGlobalNetwork`](crate::client::fluent_builders::DeleteGlobalNetwork) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteGlobalNetworkInput`](crate::input::DeleteGlobalNetworkInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::DeleteGlobalNetworkInput::global_network_id): <p>The ID of the global network.</p>
+    /// - On success, responds with [`DeleteGlobalNetworkOutput`](crate::output::DeleteGlobalNetworkOutput) with field(s):
+    ///   - [`global_network(Option<GlobalNetwork>)`](crate::output::DeleteGlobalNetworkOutput::global_network): <p>Information about the global network.</p>
+    /// - On failure, responds with [`SdkError<DeleteGlobalNetworkError>`](crate::error::DeleteGlobalNetworkError)
     pub fn delete_global_network(&self) -> fluent_builders::DeleteGlobalNetwork<C, M, R> {
         fluent_builders::DeleteGlobalNetwork::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteLink` operation.
+    /// Constructs a fluent builder for the [`DeleteLink`](crate::client::fluent_builders::DeleteLink) operation.
     ///
-    /// See [`DeleteLink`](crate::client::fluent_builders::DeleteLink) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteLinkInput`](crate::input::DeleteLinkInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::DeleteLinkInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`link_id(Option<String>)`](crate::input::DeleteLinkInput::link_id): <p>The ID of the link.</p>
+    /// - On success, responds with [`DeleteLinkOutput`](crate::output::DeleteLinkOutput) with field(s):
+    ///   - [`link(Option<Link>)`](crate::output::DeleteLinkOutput::link): <p>Information about the link.</p>
+    /// - On failure, responds with [`SdkError<DeleteLinkError>`](crate::error::DeleteLinkError)
     pub fn delete_link(&self) -> fluent_builders::DeleteLink<C, M, R> {
         fluent_builders::DeleteLink::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteResourcePolicy` operation.
+    /// Constructs a fluent builder for the [`DeleteResourcePolicy`](crate::client::fluent_builders::DeleteResourcePolicy) operation.
     ///
-    /// See [`DeleteResourcePolicy`](crate::client::fluent_builders::DeleteResourcePolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::DeleteResourcePolicyInput::resource_arn): <p>The ARN of the policy to delete.</p>
+    /// - On success, responds with [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteResourcePolicyError>`](crate::error::DeleteResourcePolicyError)
     pub fn delete_resource_policy(&self) -> fluent_builders::DeleteResourcePolicy<C, M, R> {
         fluent_builders::DeleteResourcePolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteSite` operation.
+    /// Constructs a fluent builder for the [`DeleteSite`](crate::client::fluent_builders::DeleteSite) operation.
     ///
-    /// See [`DeleteSite`](crate::client::fluent_builders::DeleteSite) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteSiteInput`](crate::input::DeleteSiteInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::DeleteSiteInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`site_id(Option<String>)`](crate::input::DeleteSiteInput::site_id): <p>The ID of the site.</p>
+    /// - On success, responds with [`DeleteSiteOutput`](crate::output::DeleteSiteOutput) with field(s):
+    ///   - [`site(Option<Site>)`](crate::output::DeleteSiteOutput::site): <p>Information about the site.</p>
+    /// - On failure, responds with [`SdkError<DeleteSiteError>`](crate::error::DeleteSiteError)
     pub fn delete_site(&self) -> fluent_builders::DeleteSite<C, M, R> {
         fluent_builders::DeleteSite::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeregisterTransitGateway` operation.
+    /// Constructs a fluent builder for the [`DeregisterTransitGateway`](crate::client::fluent_builders::DeregisterTransitGateway) operation.
     ///
-    /// See [`DeregisterTransitGateway`](crate::client::fluent_builders::DeregisterTransitGateway) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeregisterTransitGatewayInput`](crate::input::DeregisterTransitGatewayInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::DeregisterTransitGatewayInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`transit_gateway_arn(Option<String>)`](crate::input::DeregisterTransitGatewayInput::transit_gateway_arn): <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
+    /// - On success, responds with [`DeregisterTransitGatewayOutput`](crate::output::DeregisterTransitGatewayOutput) with field(s):
+    ///   - [`transit_gateway_registration(Option<TransitGatewayRegistration>)`](crate::output::DeregisterTransitGatewayOutput::transit_gateway_registration): <p>The transit gateway registration information.</p>
+    /// - On failure, responds with [`SdkError<DeregisterTransitGatewayError>`](crate::error::DeregisterTransitGatewayError)
     pub fn deregister_transit_gateway(&self) -> fluent_builders::DeregisterTransitGateway<C, M, R> {
         fluent_builders::DeregisterTransitGateway::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeGlobalNetworks` operation.
-    ///
-    /// See [`DescribeGlobalNetworks`](crate::client::fluent_builders::DescribeGlobalNetworks) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeGlobalNetworks`](crate::client::fluent_builders::DescribeGlobalNetworks) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeGlobalNetworks::into_paginator).
+    ///
+    /// - Takes [`DescribeGlobalNetworksInput`](crate::input::DescribeGlobalNetworksInput) with field(s):
+    ///   - [`global_network_ids(Option<Vec<String>>)`](crate::input::DescribeGlobalNetworksInput::global_network_ids): <p>The IDs of one or more global networks. The maximum is 10.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeGlobalNetworksInput::max_results): <p>The maximum number of results to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeGlobalNetworksInput::next_token): <p>The token for the next page of results.</p>
+    /// - On success, responds with [`DescribeGlobalNetworksOutput`](crate::output::DescribeGlobalNetworksOutput) with field(s):
+    ///   - [`global_networks(Option<Vec<GlobalNetwork>>)`](crate::output::DescribeGlobalNetworksOutput::global_networks): <p>Information about the global networks.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeGlobalNetworksOutput::next_token): <p>The token for the next page of results.</p>
+    /// - On failure, responds with [`SdkError<DescribeGlobalNetworksError>`](crate::error::DescribeGlobalNetworksError)
     pub fn describe_global_networks(&self) -> fluent_builders::DescribeGlobalNetworks<C, M, R> {
         fluent_builders::DescribeGlobalNetworks::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateConnectPeer` operation.
+    /// Constructs a fluent builder for the [`DisassociateConnectPeer`](crate::client::fluent_builders::DisassociateConnectPeer) operation.
     ///
-    /// See [`DisassociateConnectPeer`](crate::client::fluent_builders::DisassociateConnectPeer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateConnectPeerInput`](crate::input::DisassociateConnectPeerInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::DisassociateConnectPeerInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`connect_peer_id(Option<String>)`](crate::input::DisassociateConnectPeerInput::connect_peer_id): <p>The ID of the Connect peer to disassociate from a device.</p>
+    /// - On success, responds with [`DisassociateConnectPeerOutput`](crate::output::DisassociateConnectPeerOutput) with field(s):
+    ///   - [`connect_peer_association(Option<ConnectPeerAssociation>)`](crate::output::DisassociateConnectPeerOutput::connect_peer_association): <p>Describes the Connect peer association.</p>
+    /// - On failure, responds with [`SdkError<DisassociateConnectPeerError>`](crate::error::DisassociateConnectPeerError)
     pub fn disassociate_connect_peer(&self) -> fluent_builders::DisassociateConnectPeer<C, M, R> {
         fluent_builders::DisassociateConnectPeer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateCustomerGateway` operation.
+    /// Constructs a fluent builder for the [`DisassociateCustomerGateway`](crate::client::fluent_builders::DisassociateCustomerGateway) operation.
     ///
-    /// See [`DisassociateCustomerGateway`](crate::client::fluent_builders::DisassociateCustomerGateway) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateCustomerGatewayInput`](crate::input::DisassociateCustomerGatewayInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::DisassociateCustomerGatewayInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`customer_gateway_arn(Option<String>)`](crate::input::DisassociateCustomerGatewayInput::customer_gateway_arn): <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
+    /// - On success, responds with [`DisassociateCustomerGatewayOutput`](crate::output::DisassociateCustomerGatewayOutput) with field(s):
+    ///   - [`customer_gateway_association(Option<CustomerGatewayAssociation>)`](crate::output::DisassociateCustomerGatewayOutput::customer_gateway_association): <p>Information about the customer gateway association.</p>
+    /// - On failure, responds with [`SdkError<DisassociateCustomerGatewayError>`](crate::error::DisassociateCustomerGatewayError)
     pub fn disassociate_customer_gateway(
         &self,
     ) -> fluent_builders::DisassociateCustomerGateway<C, M, R> {
         fluent_builders::DisassociateCustomerGateway::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateLink` operation.
+    /// Constructs a fluent builder for the [`DisassociateLink`](crate::client::fluent_builders::DisassociateLink) operation.
     ///
-    /// See [`DisassociateLink`](crate::client::fluent_builders::DisassociateLink) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateLinkInput`](crate::input::DisassociateLinkInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::DisassociateLinkInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`device_id(Option<String>)`](crate::input::DisassociateLinkInput::device_id): <p>The ID of the device.</p>
+    ///   - [`link_id(Option<String>)`](crate::input::DisassociateLinkInput::link_id): <p>The ID of the link.</p>
+    /// - On success, responds with [`DisassociateLinkOutput`](crate::output::DisassociateLinkOutput) with field(s):
+    ///   - [`link_association(Option<LinkAssociation>)`](crate::output::DisassociateLinkOutput::link_association): <p>Information about the link association.</p>
+    /// - On failure, responds with [`SdkError<DisassociateLinkError>`](crate::error::DisassociateLinkError)
     pub fn disassociate_link(&self) -> fluent_builders::DisassociateLink<C, M, R> {
         fluent_builders::DisassociateLink::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateTransitGatewayConnectPeer` operation.
+    /// Constructs a fluent builder for the [`DisassociateTransitGatewayConnectPeer`](crate::client::fluent_builders::DisassociateTransitGatewayConnectPeer) operation.
     ///
-    /// See [`DisassociateTransitGatewayConnectPeer`](crate::client::fluent_builders::DisassociateTransitGatewayConnectPeer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateTransitGatewayConnectPeerInput`](crate::input::DisassociateTransitGatewayConnectPeerInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::DisassociateTransitGatewayConnectPeerInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`transit_gateway_connect_peer_arn(Option<String>)`](crate::input::DisassociateTransitGatewayConnectPeerInput::transit_gateway_connect_peer_arn): <p>The Amazon Resource Name (ARN) of the transit gateway Connect peer.</p>
+    /// - On success, responds with [`DisassociateTransitGatewayConnectPeerOutput`](crate::output::DisassociateTransitGatewayConnectPeerOutput) with field(s):
+    ///   - [`transit_gateway_connect_peer_association(Option<TransitGatewayConnectPeerAssociation>)`](crate::output::DisassociateTransitGatewayConnectPeerOutput::transit_gateway_connect_peer_association): <p>The transit gateway Connect peer association.</p>
+    /// - On failure, responds with [`SdkError<DisassociateTransitGatewayConnectPeerError>`](crate::error::DisassociateTransitGatewayConnectPeerError)
     pub fn disassociate_transit_gateway_connect_peer(
         &self,
     ) -> fluent_builders::DisassociateTransitGatewayConnectPeer<C, M, R> {
         fluent_builders::DisassociateTransitGatewayConnectPeer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ExecuteCoreNetworkChangeSet` operation.
+    /// Constructs a fluent builder for the [`ExecuteCoreNetworkChangeSet`](crate::client::fluent_builders::ExecuteCoreNetworkChangeSet) operation.
     ///
-    /// See [`ExecuteCoreNetworkChangeSet`](crate::client::fluent_builders::ExecuteCoreNetworkChangeSet) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ExecuteCoreNetworkChangeSetInput`](crate::input::ExecuteCoreNetworkChangeSetInput) with field(s):
+    ///   - [`core_network_id(Option<String>)`](crate::input::ExecuteCoreNetworkChangeSetInput::core_network_id): <p>The ID of a core network.</p>
+    ///   - [`policy_version_id(Option<i32>)`](crate::input::ExecuteCoreNetworkChangeSetInput::policy_version_id): <p>The ID of the policy version.</p>
+    /// - On success, responds with [`ExecuteCoreNetworkChangeSetOutput`](crate::output::ExecuteCoreNetworkChangeSetOutput)
+
+    /// - On failure, responds with [`SdkError<ExecuteCoreNetworkChangeSetError>`](crate::error::ExecuteCoreNetworkChangeSetError)
     pub fn execute_core_network_change_set(
         &self,
     ) -> fluent_builders::ExecuteCoreNetworkChangeSet<C, M, R> {
         fluent_builders::ExecuteCoreNetworkChangeSet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetConnectAttachment` operation.
+    /// Constructs a fluent builder for the [`GetConnectAttachment`](crate::client::fluent_builders::GetConnectAttachment) operation.
     ///
-    /// See [`GetConnectAttachment`](crate::client::fluent_builders::GetConnectAttachment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetConnectAttachmentInput`](crate::input::GetConnectAttachmentInput) with field(s):
+    ///   - [`attachment_id(Option<String>)`](crate::input::GetConnectAttachmentInput::attachment_id): <p>The ID of the attachment.</p>
+    /// - On success, responds with [`GetConnectAttachmentOutput`](crate::output::GetConnectAttachmentOutput) with field(s):
+    ///   - [`connect_attachment(Option<ConnectAttachment>)`](crate::output::GetConnectAttachmentOutput::connect_attachment): <p>Details about the Connect attachment.</p>
+    /// - On failure, responds with [`SdkError<GetConnectAttachmentError>`](crate::error::GetConnectAttachmentError)
     pub fn get_connect_attachment(&self) -> fluent_builders::GetConnectAttachment<C, M, R> {
         fluent_builders::GetConnectAttachment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetConnections` operation.
-    ///
-    /// See [`GetConnections`](crate::client::fluent_builders::GetConnections) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetConnections`](crate::client::fluent_builders::GetConnections) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetConnections::into_paginator).
+    ///
+    /// - Takes [`GetConnectionsInput`](crate::input::GetConnectionsInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::GetConnectionsInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`connection_ids(Option<Vec<String>>)`](crate::input::GetConnectionsInput::connection_ids): <p>One or more connection IDs.</p>
+    ///   - [`device_id(Option<String>)`](crate::input::GetConnectionsInput::device_id): <p>The ID of the device.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetConnectionsInput::max_results): <p>The maximum number of results to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetConnectionsInput::next_token): <p>The token for the next page of results.</p>
+    /// - On success, responds with [`GetConnectionsOutput`](crate::output::GetConnectionsOutput) with field(s):
+    ///   - [`connections(Option<Vec<Connection>>)`](crate::output::GetConnectionsOutput::connections): <p>Information about the connections.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetConnectionsOutput::next_token): <p>The token to use for the next page of results.</p>
+    /// - On failure, responds with [`SdkError<GetConnectionsError>`](crate::error::GetConnectionsError)
     pub fn get_connections(&self) -> fluent_builders::GetConnections<C, M, R> {
         fluent_builders::GetConnections::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetConnectPeer` operation.
+    /// Constructs a fluent builder for the [`GetConnectPeer`](crate::client::fluent_builders::GetConnectPeer) operation.
     ///
-    /// See [`GetConnectPeer`](crate::client::fluent_builders::GetConnectPeer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetConnectPeerInput`](crate::input::GetConnectPeerInput) with field(s):
+    ///   - [`connect_peer_id(Option<String>)`](crate::input::GetConnectPeerInput::connect_peer_id): <p>The ID of the Connect peer.</p>
+    /// - On success, responds with [`GetConnectPeerOutput`](crate::output::GetConnectPeerOutput) with field(s):
+    ///   - [`connect_peer(Option<ConnectPeer>)`](crate::output::GetConnectPeerOutput::connect_peer): <p>Returns information about a core network Connect peer.</p>
+    /// - On failure, responds with [`SdkError<GetConnectPeerError>`](crate::error::GetConnectPeerError)
     pub fn get_connect_peer(&self) -> fluent_builders::GetConnectPeer<C, M, R> {
         fluent_builders::GetConnectPeer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetConnectPeerAssociations` operation.
-    ///
-    /// See [`GetConnectPeerAssociations`](crate::client::fluent_builders::GetConnectPeerAssociations) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetConnectPeerAssociations`](crate::client::fluent_builders::GetConnectPeerAssociations) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetConnectPeerAssociations::into_paginator).
+    ///
+    /// - Takes [`GetConnectPeerAssociationsInput`](crate::input::GetConnectPeerAssociationsInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::GetConnectPeerAssociationsInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`connect_peer_ids(Option<Vec<String>>)`](crate::input::GetConnectPeerAssociationsInput::connect_peer_ids): <p>The IDs of the Connect peers.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetConnectPeerAssociationsInput::max_results): <p>The maximum number of results to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetConnectPeerAssociationsInput::next_token): <p>The token for the next page of results.</p>
+    /// - On success, responds with [`GetConnectPeerAssociationsOutput`](crate::output::GetConnectPeerAssociationsOutput) with field(s):
+    ///   - [`connect_peer_associations(Option<Vec<ConnectPeerAssociation>>)`](crate::output::GetConnectPeerAssociationsOutput::connect_peer_associations): <p>Displays a list of Connect peer associations.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetConnectPeerAssociationsOutput::next_token): <p>The token for the next page of results.</p>
+    /// - On failure, responds with [`SdkError<GetConnectPeerAssociationsError>`](crate::error::GetConnectPeerAssociationsError)
     pub fn get_connect_peer_associations(
         &self,
     ) -> fluent_builders::GetConnectPeerAssociations<C, M, R> {
         fluent_builders::GetConnectPeerAssociations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCoreNetwork` operation.
+    /// Constructs a fluent builder for the [`GetCoreNetwork`](crate::client::fluent_builders::GetCoreNetwork) operation.
     ///
-    /// See [`GetCoreNetwork`](crate::client::fluent_builders::GetCoreNetwork) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetCoreNetworkInput`](crate::input::GetCoreNetworkInput) with field(s):
+    ///   - [`core_network_id(Option<String>)`](crate::input::GetCoreNetworkInput::core_network_id): <p>The ID of a core network.</p>
+    /// - On success, responds with [`GetCoreNetworkOutput`](crate::output::GetCoreNetworkOutput) with field(s):
+    ///   - [`core_network(Option<CoreNetwork>)`](crate::output::GetCoreNetworkOutput::core_network): <p>Details about a core network.</p>
+    /// - On failure, responds with [`SdkError<GetCoreNetworkError>`](crate::error::GetCoreNetworkError)
     pub fn get_core_network(&self) -> fluent_builders::GetCoreNetwork<C, M, R> {
         fluent_builders::GetCoreNetwork::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCoreNetworkChangeSet` operation.
-    ///
-    /// See [`GetCoreNetworkChangeSet`](crate::client::fluent_builders::GetCoreNetworkChangeSet) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetCoreNetworkChangeSet`](crate::client::fluent_builders::GetCoreNetworkChangeSet) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetCoreNetworkChangeSet::into_paginator).
+    ///
+    /// - Takes [`GetCoreNetworkChangeSetInput`](crate::input::GetCoreNetworkChangeSetInput) with field(s):
+    ///   - [`core_network_id(Option<String>)`](crate::input::GetCoreNetworkChangeSetInput::core_network_id): <p>The ID of a core network.</p>
+    ///   - [`policy_version_id(Option<i32>)`](crate::input::GetCoreNetworkChangeSetInput::policy_version_id): <p>The ID of the policy version.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetCoreNetworkChangeSetInput::max_results): <p>The maximum number of results to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetCoreNetworkChangeSetInput::next_token): <p>The token for the next page of results.</p>
+    /// - On success, responds with [`GetCoreNetworkChangeSetOutput`](crate::output::GetCoreNetworkChangeSetOutput) with field(s):
+    ///   - [`core_network_changes(Option<Vec<CoreNetworkChange>>)`](crate::output::GetCoreNetworkChangeSetOutput::core_network_changes): <p>Describes a core network changes.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetCoreNetworkChangeSetOutput::next_token): <p>The token for the next page of results.</p>
+    /// - On failure, responds with [`SdkError<GetCoreNetworkChangeSetError>`](crate::error::GetCoreNetworkChangeSetError)
     pub fn get_core_network_change_set(&self) -> fluent_builders::GetCoreNetworkChangeSet<C, M, R> {
         fluent_builders::GetCoreNetworkChangeSet::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCoreNetworkPolicy` operation.
+    /// Constructs a fluent builder for the [`GetCoreNetworkPolicy`](crate::client::fluent_builders::GetCoreNetworkPolicy) operation.
     ///
-    /// See [`GetCoreNetworkPolicy`](crate::client::fluent_builders::GetCoreNetworkPolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetCoreNetworkPolicyInput`](crate::input::GetCoreNetworkPolicyInput) with field(s):
+    ///   - [`core_network_id(Option<String>)`](crate::input::GetCoreNetworkPolicyInput::core_network_id): <p>The ID of a core network.</p>
+    ///   - [`policy_version_id(Option<i32>)`](crate::input::GetCoreNetworkPolicyInput::policy_version_id): <p>The ID of a core network policy version.</p>
+    ///   - [`alias(Option<CoreNetworkPolicyAlias>)`](crate::input::GetCoreNetworkPolicyInput::alias): <p>The alias of a core network policy </p>
+    /// - On success, responds with [`GetCoreNetworkPolicyOutput`](crate::output::GetCoreNetworkPolicyOutput) with field(s):
+    ///   - [`core_network_policy(Option<CoreNetworkPolicy>)`](crate::output::GetCoreNetworkPolicyOutput::core_network_policy): <p>The details about a core network policy.</p>
+    /// - On failure, responds with [`SdkError<GetCoreNetworkPolicyError>`](crate::error::GetCoreNetworkPolicyError)
     pub fn get_core_network_policy(&self) -> fluent_builders::GetCoreNetworkPolicy<C, M, R> {
         fluent_builders::GetCoreNetworkPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCustomerGatewayAssociations` operation.
-    ///
-    /// See [`GetCustomerGatewayAssociations`](crate::client::fluent_builders::GetCustomerGatewayAssociations) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetCustomerGatewayAssociations`](crate::client::fluent_builders::GetCustomerGatewayAssociations) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetCustomerGatewayAssociations::into_paginator).
+    ///
+    /// - Takes [`GetCustomerGatewayAssociationsInput`](crate::input::GetCustomerGatewayAssociationsInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::GetCustomerGatewayAssociationsInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`customer_gateway_arns(Option<Vec<String>>)`](crate::input::GetCustomerGatewayAssociationsInput::customer_gateway_arns): <p>One or more customer gateway Amazon Resource Names (ARNs). The maximum is 10.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetCustomerGatewayAssociationsInput::max_results): <p>The maximum number of results to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetCustomerGatewayAssociationsInput::next_token): <p>The token for the next page of results.</p>
+    /// - On success, responds with [`GetCustomerGatewayAssociationsOutput`](crate::output::GetCustomerGatewayAssociationsOutput) with field(s):
+    ///   - [`customer_gateway_associations(Option<Vec<CustomerGatewayAssociation>>)`](crate::output::GetCustomerGatewayAssociationsOutput::customer_gateway_associations): <p>The customer gateway associations.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetCustomerGatewayAssociationsOutput::next_token): <p>The token for the next page of results.</p>
+    /// - On failure, responds with [`SdkError<GetCustomerGatewayAssociationsError>`](crate::error::GetCustomerGatewayAssociationsError)
     pub fn get_customer_gateway_associations(
         &self,
     ) -> fluent_builders::GetCustomerGatewayAssociations<C, M, R> {
         fluent_builders::GetCustomerGatewayAssociations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDevices` operation.
-    ///
-    /// See [`GetDevices`](crate::client::fluent_builders::GetDevices) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetDevices`](crate::client::fluent_builders::GetDevices) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetDevices::into_paginator).
+    ///
+    /// - Takes [`GetDevicesInput`](crate::input::GetDevicesInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::GetDevicesInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`device_ids(Option<Vec<String>>)`](crate::input::GetDevicesInput::device_ids): <p>One or more device IDs. The maximum is 10.</p>
+    ///   - [`site_id(Option<String>)`](crate::input::GetDevicesInput::site_id): <p>The ID of the site.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetDevicesInput::max_results): <p>The maximum number of results to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetDevicesInput::next_token): <p>The token for the next page of results.</p>
+    /// - On success, responds with [`GetDevicesOutput`](crate::output::GetDevicesOutput) with field(s):
+    ///   - [`devices(Option<Vec<Device>>)`](crate::output::GetDevicesOutput::devices): <p>The devices.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetDevicesOutput::next_token): <p>The token for the next page of results.</p>
+    /// - On failure, responds with [`SdkError<GetDevicesError>`](crate::error::GetDevicesError)
     pub fn get_devices(&self) -> fluent_builders::GetDevices<C, M, R> {
         fluent_builders::GetDevices::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetLinkAssociations` operation.
-    ///
-    /// See [`GetLinkAssociations`](crate::client::fluent_builders::GetLinkAssociations) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetLinkAssociations`](crate::client::fluent_builders::GetLinkAssociations) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetLinkAssociations::into_paginator).
+    ///
+    /// - Takes [`GetLinkAssociationsInput`](crate::input::GetLinkAssociationsInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::GetLinkAssociationsInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`device_id(Option<String>)`](crate::input::GetLinkAssociationsInput::device_id): <p>The ID of the device.</p>
+    ///   - [`link_id(Option<String>)`](crate::input::GetLinkAssociationsInput::link_id): <p>The ID of the link.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetLinkAssociationsInput::max_results): <p>The maximum number of results to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetLinkAssociationsInput::next_token): <p>The token for the next page of results.</p>
+    /// - On success, responds with [`GetLinkAssociationsOutput`](crate::output::GetLinkAssociationsOutput) with field(s):
+    ///   - [`link_associations(Option<Vec<LinkAssociation>>)`](crate::output::GetLinkAssociationsOutput::link_associations): <p>The link associations.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetLinkAssociationsOutput::next_token): <p>The token for the next page of results.</p>
+    /// - On failure, responds with [`SdkError<GetLinkAssociationsError>`](crate::error::GetLinkAssociationsError)
     pub fn get_link_associations(&self) -> fluent_builders::GetLinkAssociations<C, M, R> {
         fluent_builders::GetLinkAssociations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetLinks` operation.
-    ///
-    /// See [`GetLinks`](crate::client::fluent_builders::GetLinks) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetLinks`](crate::client::fluent_builders::GetLinks) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetLinks::into_paginator).
+    ///
+    /// - Takes [`GetLinksInput`](crate::input::GetLinksInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::GetLinksInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`link_ids(Option<Vec<String>>)`](crate::input::GetLinksInput::link_ids): <p>One or more link IDs. The maximum is 10.</p>
+    ///   - [`site_id(Option<String>)`](crate::input::GetLinksInput::site_id): <p>The ID of the site.</p>
+    ///   - [`r#type(Option<String>)`](crate::input::GetLinksInput::r#type): <p>The link type.</p>
+    ///   - [`provider(Option<String>)`](crate::input::GetLinksInput::provider): <p>The link provider.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetLinksInput::max_results): <p>The maximum number of results to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetLinksInput::next_token): <p>The token for the next page of results.</p>
+    /// - On success, responds with [`GetLinksOutput`](crate::output::GetLinksOutput) with field(s):
+    ///   - [`links(Option<Vec<Link>>)`](crate::output::GetLinksOutput::links): <p>The links.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetLinksOutput::next_token): <p>The token for the next page of results.</p>
+    /// - On failure, responds with [`SdkError<GetLinksError>`](crate::error::GetLinksError)
     pub fn get_links(&self) -> fluent_builders::GetLinks<C, M, R> {
         fluent_builders::GetLinks::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetNetworkResourceCounts` operation.
-    ///
-    /// See [`GetNetworkResourceCounts`](crate::client::fluent_builders::GetNetworkResourceCounts) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetNetworkResourceCounts`](crate::client::fluent_builders::GetNetworkResourceCounts) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetNetworkResourceCounts::into_paginator).
+    ///
+    /// - Takes [`GetNetworkResourceCountsInput`](crate::input::GetNetworkResourceCountsInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::GetNetworkResourceCountsInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`resource_type(Option<String>)`](crate::input::GetNetworkResourceCountsInput::resource_type): <p>The resource type.</p>  <p>The following are the supported resource types for Direct Connect:</p>  <ul>   <li> <p> <code>dxcon</code> </p> </li>   <li> <p> <code>dx-gateway</code> </p> </li>   <li> <p> <code>dx-vif</code> </p> </li>  </ul>  <p>The following are the supported resource types for Network Manager:</p>  <ul>   <li> <p> <code>connection</code> </p> </li>   <li> <p> <code>device</code> </p> </li>   <li> <p> <code>link</code> </p> </li>   <li> <p> <code>site</code> </p> </li>  </ul>  <p>The following are the supported resource types for Amazon VPC:</p>  <ul>   <li> <p> <code>customer-gateway</code> </p> </li>   <li> <p> <code>transit-gateway</code> </p> </li>   <li> <p> <code>transit-gateway-attachment</code> </p> </li>   <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>   <li> <p> <code>transit-gateway-route-table</code> </p> </li>   <li> <p> <code>vpn-connection</code> </p> </li>  </ul>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetNetworkResourceCountsInput::max_results): <p>The maximum number of results to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetNetworkResourceCountsInput::next_token): <p>The token for the next page of results.</p>
+    /// - On success, responds with [`GetNetworkResourceCountsOutput`](crate::output::GetNetworkResourceCountsOutput) with field(s):
+    ///   - [`network_resource_counts(Option<Vec<NetworkResourceCount>>)`](crate::output::GetNetworkResourceCountsOutput::network_resource_counts): <p>The count of resources.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetNetworkResourceCountsOutput::next_token): <p>The token for the next page of results.</p>
+    /// - On failure, responds with [`SdkError<GetNetworkResourceCountsError>`](crate::error::GetNetworkResourceCountsError)
     pub fn get_network_resource_counts(
         &self,
     ) -> fluent_builders::GetNetworkResourceCounts<C, M, R> {
         fluent_builders::GetNetworkResourceCounts::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetNetworkResourceRelationships` operation.
-    ///
-    /// See [`GetNetworkResourceRelationships`](crate::client::fluent_builders::GetNetworkResourceRelationships) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetNetworkResourceRelationships`](crate::client::fluent_builders::GetNetworkResourceRelationships) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetNetworkResourceRelationships::into_paginator).
+    ///
+    /// - Takes [`GetNetworkResourceRelationshipsInput`](crate::input::GetNetworkResourceRelationshipsInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::GetNetworkResourceRelationshipsInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`core_network_id(Option<String>)`](crate::input::GetNetworkResourceRelationshipsInput::core_network_id): <p>The ID of a core network.</p>
+    ///   - [`registered_gateway_arn(Option<String>)`](crate::input::GetNetworkResourceRelationshipsInput::registered_gateway_arn): <p>The ARN of the registered gateway.</p>
+    ///   - [`aws_region(Option<String>)`](crate::input::GetNetworkResourceRelationshipsInput::aws_region): <p>The Amazon Web Services Region.</p>
+    ///   - [`account_id(Option<String>)`](crate::input::GetNetworkResourceRelationshipsInput::account_id): <p>The Amazon Web Services account ID.</p>
+    ///   - [`resource_type(Option<String>)`](crate::input::GetNetworkResourceRelationshipsInput::resource_type): <p>The resource type.</p>  <p>The following are the supported resource types for Direct Connect:</p>  <ul>   <li> <p> <code>dxcon</code> </p> </li>   <li> <p> <code>dx-gateway</code> </p> </li>   <li> <p> <code>dx-vif</code> </p> </li>  </ul>  <p>The following are the supported resource types for Network Manager:</p>  <ul>   <li> <p> <code>connection</code> </p> </li>   <li> <p> <code>device</code> </p> </li>   <li> <p> <code>link</code> </p> </li>   <li> <p> <code>site</code> </p> </li>  </ul>  <p>The following are the supported resource types for Amazon VPC:</p>  <ul>   <li> <p> <code>customer-gateway</code> </p> </li>   <li> <p> <code>transit-gateway</code> </p> </li>   <li> <p> <code>transit-gateway-attachment</code> </p> </li>   <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>   <li> <p> <code>transit-gateway-route-table</code> </p> </li>   <li> <p> <code>vpn-connection</code> </p> </li>  </ul>
+    ///   - [`resource_arn(Option<String>)`](crate::input::GetNetworkResourceRelationshipsInput::resource_arn): <p>The ARN of the gateway.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetNetworkResourceRelationshipsInput::max_results): <p>The maximum number of results to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetNetworkResourceRelationshipsInput::next_token): <p>The token for the next page of results.</p>
+    /// - On success, responds with [`GetNetworkResourceRelationshipsOutput`](crate::output::GetNetworkResourceRelationshipsOutput) with field(s):
+    ///   - [`relationships(Option<Vec<Relationship>>)`](crate::output::GetNetworkResourceRelationshipsOutput::relationships): <p>The resource relationships.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetNetworkResourceRelationshipsOutput::next_token): <p>The token for the next page of results.</p>
+    /// - On failure, responds with [`SdkError<GetNetworkResourceRelationshipsError>`](crate::error::GetNetworkResourceRelationshipsError)
     pub fn get_network_resource_relationships(
         &self,
     ) -> fluent_builders::GetNetworkResourceRelationships<C, M, R> {
         fluent_builders::GetNetworkResourceRelationships::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetNetworkResources` operation.
-    ///
-    /// See [`GetNetworkResources`](crate::client::fluent_builders::GetNetworkResources) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetNetworkResources`](crate::client::fluent_builders::GetNetworkResources) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetNetworkResources::into_paginator).
+    ///
+    /// - Takes [`GetNetworkResourcesInput`](crate::input::GetNetworkResourcesInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::GetNetworkResourcesInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`core_network_id(Option<String>)`](crate::input::GetNetworkResourcesInput::core_network_id): <p>The ID of a core network.</p>
+    ///   - [`registered_gateway_arn(Option<String>)`](crate::input::GetNetworkResourcesInput::registered_gateway_arn): <p>The ARN of the gateway.</p>
+    ///   - [`aws_region(Option<String>)`](crate::input::GetNetworkResourcesInput::aws_region): <p>The Amazon Web Services Region.</p>
+    ///   - [`account_id(Option<String>)`](crate::input::GetNetworkResourcesInput::account_id): <p>The Amazon Web Services account ID.</p>
+    ///   - [`resource_type(Option<String>)`](crate::input::GetNetworkResourcesInput::resource_type): <p>The resource type.</p>  <p>The following are the supported resource types for Direct Connect:</p>  <ul>   <li> <p> <code>dxcon</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p> </li>   <li> <p> <code>dx-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p> </li>   <li> <p> <code>dx-vif</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p> </li>  </ul>  <p>The following are the supported resource types for Network Manager:</p>  <ul>   <li> <p> <code>connection</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p> </li>   <li> <p> <code>device</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p> </li>   <li> <p> <code>link</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p> </li>   <li> <p> <code>site</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p> </li>  </ul>  <p>The following are the supported resource types for Amazon VPC:</p>  <ul>   <li> <p> <code>customer-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p> </li>   <li> <p> <code>transit-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p> </li>   <li> <p> <code>transit-gateway-attachment</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p> </li>   <li> <p> <code>transit-gateway-connect-peer</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p> </li>   <li> <p> <code>transit-gateway-route-table</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p> </li>   <li> <p> <code>vpn-connection</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p> </li>  </ul>
+    ///   - [`resource_arn(Option<String>)`](crate::input::GetNetworkResourcesInput::resource_arn): <p>The ARN of the resource.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetNetworkResourcesInput::max_results): <p>The maximum number of results to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetNetworkResourcesInput::next_token): <p>The token for the next page of results.</p>
+    /// - On success, responds with [`GetNetworkResourcesOutput`](crate::output::GetNetworkResourcesOutput) with field(s):
+    ///   - [`network_resources(Option<Vec<NetworkResource>>)`](crate::output::GetNetworkResourcesOutput::network_resources): <p>The network resources.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetNetworkResourcesOutput::next_token): <p>The token for the next page of results.</p>
+    /// - On failure, responds with [`SdkError<GetNetworkResourcesError>`](crate::error::GetNetworkResourcesError)
     pub fn get_network_resources(&self) -> fluent_builders::GetNetworkResources<C, M, R> {
         fluent_builders::GetNetworkResources::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetNetworkRoutes` operation.
+    /// Constructs a fluent builder for the [`GetNetworkRoutes`](crate::client::fluent_builders::GetNetworkRoutes) operation.
     ///
-    /// See [`GetNetworkRoutes`](crate::client::fluent_builders::GetNetworkRoutes) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetNetworkRoutesInput`](crate::input::GetNetworkRoutesInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::GetNetworkRoutesInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`route_table_identifier(Option<RouteTableIdentifier>)`](crate::input::GetNetworkRoutesInput::route_table_identifier): <p>The ID of the route table.</p>
+    ///   - [`exact_cidr_matches(Option<Vec<String>>)`](crate::input::GetNetworkRoutesInput::exact_cidr_matches): <p>An exact CIDR block.</p>
+    ///   - [`longest_prefix_matches(Option<Vec<String>>)`](crate::input::GetNetworkRoutesInput::longest_prefix_matches): <p>The most specific route that matches the traffic (longest prefix match).</p>
+    ///   - [`subnet_of_matches(Option<Vec<String>>)`](crate::input::GetNetworkRoutesInput::subnet_of_matches): <p>The routes with a subnet that match the specified CIDR filter.</p>
+    ///   - [`supernet_of_matches(Option<Vec<String>>)`](crate::input::GetNetworkRoutesInput::supernet_of_matches): <p>The routes with a CIDR that encompasses the CIDR filter. Example: If you specify 10.0.1.0/30, then the result returns 10.0.1.0/29.</p>
+    ///   - [`prefix_list_ids(Option<Vec<String>>)`](crate::input::GetNetworkRoutesInput::prefix_list_ids): <p>The IDs of the prefix lists.</p>
+    ///   - [`states(Option<Vec<RouteState>>)`](crate::input::GetNetworkRoutesInput::states): <p>The route states.</p>
+    ///   - [`types(Option<Vec<RouteType>>)`](crate::input::GetNetworkRoutesInput::types): <p>The route types.</p>
+    ///   - [`destination_filters(Option<HashMap<String, Vec<String>>>)`](crate::input::GetNetworkRoutesInput::destination_filters): <p>Filter by route table destination. Possible Values: TRANSIT_GATEWAY_ATTACHMENT_ID, RESOURCE_ID, or RESOURCE_TYPE.</p>
+    /// - On success, responds with [`GetNetworkRoutesOutput`](crate::output::GetNetworkRoutesOutput) with field(s):
+    ///   - [`route_table_arn(Option<String>)`](crate::output::GetNetworkRoutesOutput::route_table_arn): <p>The ARN of the route table.</p>
+    ///   - [`core_network_segment_edge(Option<CoreNetworkSegmentEdgeIdentifier>)`](crate::output::GetNetworkRoutesOutput::core_network_segment_edge): <p>Describes a core network segment edge.</p>
+    ///   - [`route_table_type(Option<RouteTableType>)`](crate::output::GetNetworkRoutesOutput::route_table_type): <p>The route table type.</p>
+    ///   - [`route_table_timestamp(Option<DateTime>)`](crate::output::GetNetworkRoutesOutput::route_table_timestamp): <p>The route table creation time.</p>
+    ///   - [`network_routes(Option<Vec<NetworkRoute>>)`](crate::output::GetNetworkRoutesOutput::network_routes): <p>The network routes.</p>
+    /// - On failure, responds with [`SdkError<GetNetworkRoutesError>`](crate::error::GetNetworkRoutesError)
     pub fn get_network_routes(&self) -> fluent_builders::GetNetworkRoutes<C, M, R> {
         fluent_builders::GetNetworkRoutes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetNetworkTelemetry` operation.
-    ///
-    /// See [`GetNetworkTelemetry`](crate::client::fluent_builders::GetNetworkTelemetry) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetNetworkTelemetry`](crate::client::fluent_builders::GetNetworkTelemetry) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetNetworkTelemetry::into_paginator).
+    ///
+    /// - Takes [`GetNetworkTelemetryInput`](crate::input::GetNetworkTelemetryInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::GetNetworkTelemetryInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`core_network_id(Option<String>)`](crate::input::GetNetworkTelemetryInput::core_network_id): <p>The ID of a core network.</p>
+    ///   - [`registered_gateway_arn(Option<String>)`](crate::input::GetNetworkTelemetryInput::registered_gateway_arn): <p>The ARN of the gateway.</p>
+    ///   - [`aws_region(Option<String>)`](crate::input::GetNetworkTelemetryInput::aws_region): <p>The Amazon Web Services Region.</p>
+    ///   - [`account_id(Option<String>)`](crate::input::GetNetworkTelemetryInput::account_id): <p>The Amazon Web Services account ID.</p>
+    ///   - [`resource_type(Option<String>)`](crate::input::GetNetworkTelemetryInput::resource_type): <p>The resource type.</p>  <p>The following are the supported resource types for Direct Connect:</p>  <ul>   <li> <p> <code>dxcon</code> </p> </li>   <li> <p> <code>dx-gateway</code> </p> </li>   <li> <p> <code>dx-vif</code> </p> </li>  </ul>  <p>The following are the supported resource types for Network Manager:</p>  <ul>   <li> <p> <code>connection</code> </p> </li>   <li> <p> <code>device</code> </p> </li>   <li> <p> <code>link</code> </p> </li>   <li> <p> <code>site</code> </p> </li>  </ul>  <p>The following are the supported resource types for Amazon VPC:</p>  <ul>   <li> <p> <code>customer-gateway</code> </p> </li>   <li> <p> <code>transit-gateway</code> </p> </li>   <li> <p> <code>transit-gateway-attachment</code> </p> </li>   <li> <p> <code>transit-gateway-connect-peer</code> </p> </li>   <li> <p> <code>transit-gateway-route-table</code> </p> </li>   <li> <p> <code>vpn-connection</code> </p> </li>  </ul>
+    ///   - [`resource_arn(Option<String>)`](crate::input::GetNetworkTelemetryInput::resource_arn): <p>The ARN of the resource.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetNetworkTelemetryInput::max_results): <p>The maximum number of results to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetNetworkTelemetryInput::next_token): <p>The token for the next page of results.</p>
+    /// - On success, responds with [`GetNetworkTelemetryOutput`](crate::output::GetNetworkTelemetryOutput) with field(s):
+    ///   - [`network_telemetry(Option<Vec<NetworkTelemetry>>)`](crate::output::GetNetworkTelemetryOutput::network_telemetry): <p>The network telemetry.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetNetworkTelemetryOutput::next_token): <p>The token for the next page of results.</p>
+    /// - On failure, responds with [`SdkError<GetNetworkTelemetryError>`](crate::error::GetNetworkTelemetryError)
     pub fn get_network_telemetry(&self) -> fluent_builders::GetNetworkTelemetry<C, M, R> {
         fluent_builders::GetNetworkTelemetry::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetResourcePolicy` operation.
+    /// Constructs a fluent builder for the [`GetResourcePolicy`](crate::client::fluent_builders::GetResourcePolicy) operation.
     ///
-    /// See [`GetResourcePolicy`](crate::client::fluent_builders::GetResourcePolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetResourcePolicyInput`](crate::input::GetResourcePolicyInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::GetResourcePolicyInput::resource_arn): <p>The ARN of the resource.</p>
+    /// - On success, responds with [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput) with field(s):
+    ///   - [`policy_document(Option<String>)`](crate::output::GetResourcePolicyOutput::policy_document): <p>The resource policy document.</p>
+    /// - On failure, responds with [`SdkError<GetResourcePolicyError>`](crate::error::GetResourcePolicyError)
     pub fn get_resource_policy(&self) -> fluent_builders::GetResourcePolicy<C, M, R> {
         fluent_builders::GetResourcePolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetRouteAnalysis` operation.
+    /// Constructs a fluent builder for the [`GetRouteAnalysis`](crate::client::fluent_builders::GetRouteAnalysis) operation.
     ///
-    /// See [`GetRouteAnalysis`](crate::client::fluent_builders::GetRouteAnalysis) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetRouteAnalysisInput`](crate::input::GetRouteAnalysisInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::GetRouteAnalysisInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`route_analysis_id(Option<String>)`](crate::input::GetRouteAnalysisInput::route_analysis_id): <p>The ID of the route analysis.</p>
+    /// - On success, responds with [`GetRouteAnalysisOutput`](crate::output::GetRouteAnalysisOutput) with field(s):
+    ///   - [`route_analysis(Option<RouteAnalysis>)`](crate::output::GetRouteAnalysisOutput::route_analysis): <p>The route analysis.</p>
+    /// - On failure, responds with [`SdkError<GetRouteAnalysisError>`](crate::error::GetRouteAnalysisError)
     pub fn get_route_analysis(&self) -> fluent_builders::GetRouteAnalysis<C, M, R> {
         fluent_builders::GetRouteAnalysis::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSites` operation.
-    ///
-    /// See [`GetSites`](crate::client::fluent_builders::GetSites) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetSites`](crate::client::fluent_builders::GetSites) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetSites::into_paginator).
+    ///
+    /// - Takes [`GetSitesInput`](crate::input::GetSitesInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::GetSitesInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`site_ids(Option<Vec<String>>)`](crate::input::GetSitesInput::site_ids): <p>One or more site IDs. The maximum is 10.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetSitesInput::max_results): <p>The maximum number of results to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetSitesInput::next_token): <p>The token for the next page of results.</p>
+    /// - On success, responds with [`GetSitesOutput`](crate::output::GetSitesOutput) with field(s):
+    ///   - [`sites(Option<Vec<Site>>)`](crate::output::GetSitesOutput::sites): <p>The sites.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetSitesOutput::next_token): <p>The token for the next page of results.</p>
+    /// - On failure, responds with [`SdkError<GetSitesError>`](crate::error::GetSitesError)
     pub fn get_sites(&self) -> fluent_builders::GetSites<C, M, R> {
         fluent_builders::GetSites::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSiteToSiteVpnAttachment` operation.
+    /// Constructs a fluent builder for the [`GetSiteToSiteVpnAttachment`](crate::client::fluent_builders::GetSiteToSiteVpnAttachment) operation.
     ///
-    /// See [`GetSiteToSiteVpnAttachment`](crate::client::fluent_builders::GetSiteToSiteVpnAttachment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetSiteToSiteVpnAttachmentInput`](crate::input::GetSiteToSiteVpnAttachmentInput) with field(s):
+    ///   - [`attachment_id(Option<String>)`](crate::input::GetSiteToSiteVpnAttachmentInput::attachment_id): <p>The ID of the attachment.</p>
+    /// - On success, responds with [`GetSiteToSiteVpnAttachmentOutput`](crate::output::GetSiteToSiteVpnAttachmentOutput) with field(s):
+    ///   - [`site_to_site_vpn_attachment(Option<SiteToSiteVpnAttachment>)`](crate::output::GetSiteToSiteVpnAttachmentOutput::site_to_site_vpn_attachment): <p>Describes the site-to-site attachment.</p>
+    /// - On failure, responds with [`SdkError<GetSiteToSiteVpnAttachmentError>`](crate::error::GetSiteToSiteVpnAttachmentError)
     pub fn get_site_to_site_vpn_attachment(
         &self,
     ) -> fluent_builders::GetSiteToSiteVpnAttachment<C, M, R> {
         fluent_builders::GetSiteToSiteVpnAttachment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetTransitGatewayConnectPeerAssociations` operation.
-    ///
-    /// See [`GetTransitGatewayConnectPeerAssociations`](crate::client::fluent_builders::GetTransitGatewayConnectPeerAssociations) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetTransitGatewayConnectPeerAssociations`](crate::client::fluent_builders::GetTransitGatewayConnectPeerAssociations) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetTransitGatewayConnectPeerAssociations::into_paginator).
+    ///
+    /// - Takes [`GetTransitGatewayConnectPeerAssociationsInput`](crate::input::GetTransitGatewayConnectPeerAssociationsInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::GetTransitGatewayConnectPeerAssociationsInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`transit_gateway_connect_peer_arns(Option<Vec<String>>)`](crate::input::GetTransitGatewayConnectPeerAssociationsInput::transit_gateway_connect_peer_arns): <p>One or more transit gateway Connect peer Amazon Resource Names (ARNs).</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetTransitGatewayConnectPeerAssociationsInput::max_results): <p>The maximum number of results to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetTransitGatewayConnectPeerAssociationsInput::next_token): <p>The token for the next page of results.</p>
+    /// - On success, responds with [`GetTransitGatewayConnectPeerAssociationsOutput`](crate::output::GetTransitGatewayConnectPeerAssociationsOutput) with field(s):
+    ///   - [`transit_gateway_connect_peer_associations(Option<Vec<TransitGatewayConnectPeerAssociation>>)`](crate::output::GetTransitGatewayConnectPeerAssociationsOutput::transit_gateway_connect_peer_associations): <p>Information about the transit gateway Connect peer associations.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetTransitGatewayConnectPeerAssociationsOutput::next_token): <p>The token to use for the next page of results.</p>
+    /// - On failure, responds with [`SdkError<GetTransitGatewayConnectPeerAssociationsError>`](crate::error::GetTransitGatewayConnectPeerAssociationsError)
     pub fn get_transit_gateway_connect_peer_associations(
         &self,
     ) -> fluent_builders::GetTransitGatewayConnectPeerAssociations<C, M, R> {
         fluent_builders::GetTransitGatewayConnectPeerAssociations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetTransitGatewayRegistrations` operation.
-    ///
-    /// See [`GetTransitGatewayRegistrations`](crate::client::fluent_builders::GetTransitGatewayRegistrations) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetTransitGatewayRegistrations`](crate::client::fluent_builders::GetTransitGatewayRegistrations) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetTransitGatewayRegistrations::into_paginator).
+    ///
+    /// - Takes [`GetTransitGatewayRegistrationsInput`](crate::input::GetTransitGatewayRegistrationsInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::GetTransitGatewayRegistrationsInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`transit_gateway_arns(Option<Vec<String>>)`](crate::input::GetTransitGatewayRegistrationsInput::transit_gateway_arns): <p>The Amazon Resource Names (ARNs) of one or more transit gateways. The maximum is 10.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetTransitGatewayRegistrationsInput::max_results): <p>The maximum number of results to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetTransitGatewayRegistrationsInput::next_token): <p>The token for the next page of results.</p>
+    /// - On success, responds with [`GetTransitGatewayRegistrationsOutput`](crate::output::GetTransitGatewayRegistrationsOutput) with field(s):
+    ///   - [`transit_gateway_registrations(Option<Vec<TransitGatewayRegistration>>)`](crate::output::GetTransitGatewayRegistrationsOutput::transit_gateway_registrations): <p>The transit gateway registrations.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetTransitGatewayRegistrationsOutput::next_token): <p>The token for the next page of results.</p>
+    /// - On failure, responds with [`SdkError<GetTransitGatewayRegistrationsError>`](crate::error::GetTransitGatewayRegistrationsError)
     pub fn get_transit_gateway_registrations(
         &self,
     ) -> fluent_builders::GetTransitGatewayRegistrations<C, M, R> {
         fluent_builders::GetTransitGatewayRegistrations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetVpcAttachment` operation.
+    /// Constructs a fluent builder for the [`GetVpcAttachment`](crate::client::fluent_builders::GetVpcAttachment) operation.
     ///
-    /// See [`GetVpcAttachment`](crate::client::fluent_builders::GetVpcAttachment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetVpcAttachmentInput`](crate::input::GetVpcAttachmentInput) with field(s):
+    ///   - [`attachment_id(Option<String>)`](crate::input::GetVpcAttachmentInput::attachment_id): <p>The ID of the attachment.</p>
+    /// - On success, responds with [`GetVpcAttachmentOutput`](crate::output::GetVpcAttachmentOutput) with field(s):
+    ///   - [`vpc_attachment(Option<VpcAttachment>)`](crate::output::GetVpcAttachmentOutput::vpc_attachment): <p>Returns details about a VPC attachment.</p>
+    /// - On failure, responds with [`SdkError<GetVpcAttachmentError>`](crate::error::GetVpcAttachmentError)
     pub fn get_vpc_attachment(&self) -> fluent_builders::GetVpcAttachment<C, M, R> {
         fluent_builders::GetVpcAttachment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAttachments` operation.
-    ///
-    /// See [`ListAttachments`](crate::client::fluent_builders::ListAttachments) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListAttachments`](crate::client::fluent_builders::ListAttachments) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAttachments::into_paginator).
+    ///
+    /// - Takes [`ListAttachmentsInput`](crate::input::ListAttachmentsInput) with field(s):
+    ///   - [`core_network_id(Option<String>)`](crate::input::ListAttachmentsInput::core_network_id): <p>The ID of a core network.</p>
+    ///   - [`attachment_type(Option<AttachmentType>)`](crate::input::ListAttachmentsInput::attachment_type): <p>The type of attachment.</p>
+    ///   - [`edge_location(Option<String>)`](crate::input::ListAttachmentsInput::edge_location): <p>The Region where the edge is located.</p>
+    ///   - [`state(Option<AttachmentState>)`](crate::input::ListAttachmentsInput::state): <p>The state of the attachment.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListAttachmentsInput::max_results): <p>The maximum number of results to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListAttachmentsInput::next_token): <p>The token for the next page of results.</p>
+    /// - On success, responds with [`ListAttachmentsOutput`](crate::output::ListAttachmentsOutput) with field(s):
+    ///   - [`attachments(Option<Vec<Attachment>>)`](crate::output::ListAttachmentsOutput::attachments): <p>Describes the list of attachments.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAttachmentsOutput::next_token): <p>The token for the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ListAttachmentsError>`](crate::error::ListAttachmentsError)
     pub fn list_attachments(&self) -> fluent_builders::ListAttachments<C, M, R> {
         fluent_builders::ListAttachments::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListConnectPeers` operation.
-    ///
-    /// See [`ListConnectPeers`](crate::client::fluent_builders::ListConnectPeers) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListConnectPeers`](crate::client::fluent_builders::ListConnectPeers) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListConnectPeers::into_paginator).
+    ///
+    /// - Takes [`ListConnectPeersInput`](crate::input::ListConnectPeersInput) with field(s):
+    ///   - [`core_network_id(Option<String>)`](crate::input::ListConnectPeersInput::core_network_id): <p>The ID of a core network.</p>
+    ///   - [`connect_attachment_id(Option<String>)`](crate::input::ListConnectPeersInput::connect_attachment_id): <p>The ID of the attachment.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListConnectPeersInput::max_results): <p>The maximum number of results to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListConnectPeersInput::next_token): <p>The token for the next page of results.</p>
+    /// - On success, responds with [`ListConnectPeersOutput`](crate::output::ListConnectPeersOutput) with field(s):
+    ///   - [`connect_peers(Option<Vec<ConnectPeerSummary>>)`](crate::output::ListConnectPeersOutput::connect_peers): <p>Describes the Connect peers.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListConnectPeersOutput::next_token): <p>The token for the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ListConnectPeersError>`](crate::error::ListConnectPeersError)
     pub fn list_connect_peers(&self) -> fluent_builders::ListConnectPeers<C, M, R> {
         fluent_builders::ListConnectPeers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListCoreNetworkPolicyVersions` operation.
-    ///
-    /// See [`ListCoreNetworkPolicyVersions`](crate::client::fluent_builders::ListCoreNetworkPolicyVersions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListCoreNetworkPolicyVersions`](crate::client::fluent_builders::ListCoreNetworkPolicyVersions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCoreNetworkPolicyVersions::into_paginator).
+    ///
+    /// - Takes [`ListCoreNetworkPolicyVersionsInput`](crate::input::ListCoreNetworkPolicyVersionsInput) with field(s):
+    ///   - [`core_network_id(Option<String>)`](crate::input::ListCoreNetworkPolicyVersionsInput::core_network_id): <p>The ID of a core network.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListCoreNetworkPolicyVersionsInput::max_results): <p>The maximum number of results to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListCoreNetworkPolicyVersionsInput::next_token): <p>The token for the next page of results.</p>
+    /// - On success, responds with [`ListCoreNetworkPolicyVersionsOutput`](crate::output::ListCoreNetworkPolicyVersionsOutput) with field(s):
+    ///   - [`core_network_policy_versions(Option<Vec<CoreNetworkPolicyVersion>>)`](crate::output::ListCoreNetworkPolicyVersionsOutput::core_network_policy_versions): <p>Describes core network policy versions.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListCoreNetworkPolicyVersionsOutput::next_token): <p>The token for the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ListCoreNetworkPolicyVersionsError>`](crate::error::ListCoreNetworkPolicyVersionsError)
     pub fn list_core_network_policy_versions(
         &self,
     ) -> fluent_builders::ListCoreNetworkPolicyVersions<C, M, R> {
         fluent_builders::ListCoreNetworkPolicyVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListCoreNetworks` operation.
-    ///
-    /// See [`ListCoreNetworks`](crate::client::fluent_builders::ListCoreNetworks) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListCoreNetworks`](crate::client::fluent_builders::ListCoreNetworks) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCoreNetworks::into_paginator).
+    ///
+    /// - Takes [`ListCoreNetworksInput`](crate::input::ListCoreNetworksInput) with field(s):
+    ///   - [`max_results(Option<i32>)`](crate::input::ListCoreNetworksInput::max_results): <p>The maximum number of results to return.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListCoreNetworksInput::next_token): <p>The token for the next page of results.</p>
+    /// - On success, responds with [`ListCoreNetworksOutput`](crate::output::ListCoreNetworksOutput) with field(s):
+    ///   - [`core_networks(Option<Vec<CoreNetworkSummary>>)`](crate::output::ListCoreNetworksOutput::core_networks): <p>Describes the list of core networks.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListCoreNetworksOutput::next_token): <p>The token for the next page of results.</p>
+    /// - On failure, responds with [`SdkError<ListCoreNetworksError>`](crate::error::ListCoreNetworksError)
     pub fn list_core_networks(&self) -> fluent_builders::ListCoreNetworks<C, M, R> {
         fluent_builders::ListCoreNetworks::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tag_list(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tag_list): <p>The list of tags.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutCoreNetworkPolicy` operation.
+    /// Constructs a fluent builder for the [`PutCoreNetworkPolicy`](crate::client::fluent_builders::PutCoreNetworkPolicy) operation.
     ///
-    /// See [`PutCoreNetworkPolicy`](crate::client::fluent_builders::PutCoreNetworkPolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutCoreNetworkPolicyInput`](crate::input::PutCoreNetworkPolicyInput) with field(s):
+    ///   - [`core_network_id(Option<String>)`](crate::input::PutCoreNetworkPolicyInput::core_network_id): <p>The ID of a core network.</p>
+    ///   - [`policy_document(Option<String>)`](crate::input::PutCoreNetworkPolicyInput::policy_document): <p>The policy document.</p>
+    ///   - [`description(Option<String>)`](crate::input::PutCoreNetworkPolicyInput::description): <p>a core network policy description.</p>
+    ///   - [`latest_version_id(Option<i32>)`](crate::input::PutCoreNetworkPolicyInput::latest_version_id): <p>The ID of a core network policy. </p>
+    ///   - [`client_token(Option<String>)`](crate::input::PutCoreNetworkPolicyInput::client_token): <p>The client token associated with the request.</p>
+    /// - On success, responds with [`PutCoreNetworkPolicyOutput`](crate::output::PutCoreNetworkPolicyOutput) with field(s):
+    ///   - [`core_network_policy(Option<CoreNetworkPolicy>)`](crate::output::PutCoreNetworkPolicyOutput::core_network_policy): <p>Describes the changed core network policy.</p>
+    /// - On failure, responds with [`SdkError<PutCoreNetworkPolicyError>`](crate::error::PutCoreNetworkPolicyError)
     pub fn put_core_network_policy(&self) -> fluent_builders::PutCoreNetworkPolicy<C, M, R> {
         fluent_builders::PutCoreNetworkPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutResourcePolicy` operation.
+    /// Constructs a fluent builder for the [`PutResourcePolicy`](crate::client::fluent_builders::PutResourcePolicy) operation.
     ///
-    /// See [`PutResourcePolicy`](crate::client::fluent_builders::PutResourcePolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput) with field(s):
+    ///   - [`policy_document(Option<String>)`](crate::input::PutResourcePolicyInput::policy_document): <p>The JSON resource policy document.</p>
+    ///   - [`resource_arn(Option<String>)`](crate::input::PutResourcePolicyInput::resource_arn): <p>The ARN of the resource policy. </p>
+    /// - On success, responds with [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput)
+
+    /// - On failure, responds with [`SdkError<PutResourcePolicyError>`](crate::error::PutResourcePolicyError)
     pub fn put_resource_policy(&self) -> fluent_builders::PutResourcePolicy<C, M, R> {
         fluent_builders::PutResourcePolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RegisterTransitGateway` operation.
+    /// Constructs a fluent builder for the [`RegisterTransitGateway`](crate::client::fluent_builders::RegisterTransitGateway) operation.
     ///
-    /// See [`RegisterTransitGateway`](crate::client::fluent_builders::RegisterTransitGateway) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RegisterTransitGatewayInput`](crate::input::RegisterTransitGatewayInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::RegisterTransitGatewayInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`transit_gateway_arn(Option<String>)`](crate::input::RegisterTransitGatewayInput::transit_gateway_arn): <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
+    /// - On success, responds with [`RegisterTransitGatewayOutput`](crate::output::RegisterTransitGatewayOutput) with field(s):
+    ///   - [`transit_gateway_registration(Option<TransitGatewayRegistration>)`](crate::output::RegisterTransitGatewayOutput::transit_gateway_registration): <p>Information about the transit gateway registration.</p>
+    /// - On failure, responds with [`SdkError<RegisterTransitGatewayError>`](crate::error::RegisterTransitGatewayError)
     pub fn register_transit_gateway(&self) -> fluent_builders::RegisterTransitGateway<C, M, R> {
         fluent_builders::RegisterTransitGateway::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RejectAttachment` operation.
+    /// Constructs a fluent builder for the [`RejectAttachment`](crate::client::fluent_builders::RejectAttachment) operation.
     ///
-    /// See [`RejectAttachment`](crate::client::fluent_builders::RejectAttachment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RejectAttachmentInput`](crate::input::RejectAttachmentInput) with field(s):
+    ///   - [`attachment_id(Option<String>)`](crate::input::RejectAttachmentInput::attachment_id): <p>The ID of the attachment.</p>
+    /// - On success, responds with [`RejectAttachmentOutput`](crate::output::RejectAttachmentOutput) with field(s):
+    ///   - [`attachment(Option<Attachment>)`](crate::output::RejectAttachmentOutput::attachment): <p>Describes the rejected attachment request.</p>
+    /// - On failure, responds with [`SdkError<RejectAttachmentError>`](crate::error::RejectAttachmentError)
     pub fn reject_attachment(&self) -> fluent_builders::RejectAttachment<C, M, R> {
         fluent_builders::RejectAttachment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RestoreCoreNetworkPolicyVersion` operation.
+    /// Constructs a fluent builder for the [`RestoreCoreNetworkPolicyVersion`](crate::client::fluent_builders::RestoreCoreNetworkPolicyVersion) operation.
     ///
-    /// See [`RestoreCoreNetworkPolicyVersion`](crate::client::fluent_builders::RestoreCoreNetworkPolicyVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RestoreCoreNetworkPolicyVersionInput`](crate::input::RestoreCoreNetworkPolicyVersionInput) with field(s):
+    ///   - [`core_network_id(Option<String>)`](crate::input::RestoreCoreNetworkPolicyVersionInput::core_network_id): <p>The ID of a core network.</p>
+    ///   - [`policy_version_id(Option<i32>)`](crate::input::RestoreCoreNetworkPolicyVersionInput::policy_version_id): <p>The ID of the policy version to restore.</p>
+    /// - On success, responds with [`RestoreCoreNetworkPolicyVersionOutput`](crate::output::RestoreCoreNetworkPolicyVersionOutput) with field(s):
+    ///   - [`core_network_policy(Option<CoreNetworkPolicy>)`](crate::output::RestoreCoreNetworkPolicyVersionOutput::core_network_policy): <p>Describes the restored core network policy.</p>
+    /// - On failure, responds with [`SdkError<RestoreCoreNetworkPolicyVersionError>`](crate::error::RestoreCoreNetworkPolicyVersionError)
     pub fn restore_core_network_policy_version(
         &self,
     ) -> fluent_builders::RestoreCoreNetworkPolicyVersion<C, M, R> {
         fluent_builders::RestoreCoreNetworkPolicyVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartRouteAnalysis` operation.
+    /// Constructs a fluent builder for the [`StartRouteAnalysis`](crate::client::fluent_builders::StartRouteAnalysis) operation.
     ///
-    /// See [`StartRouteAnalysis`](crate::client::fluent_builders::StartRouteAnalysis) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartRouteAnalysisInput`](crate::input::StartRouteAnalysisInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::StartRouteAnalysisInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`source(Option<RouteAnalysisEndpointOptionsSpecification>)`](crate::input::StartRouteAnalysisInput::source): <p>The source from which traffic originates.</p>
+    ///   - [`destination(Option<RouteAnalysisEndpointOptionsSpecification>)`](crate::input::StartRouteAnalysisInput::destination): <p>The destination.</p>
+    ///   - [`include_return_path(bool)`](crate::input::StartRouteAnalysisInput::include_return_path): <p>Indicates whether to analyze the return path. The default is <code>false</code>.</p>
+    ///   - [`use_middleboxes(bool)`](crate::input::StartRouteAnalysisInput::use_middleboxes): <p>Indicates whether to include the location of middlebox appliances in the route analysis. The default is <code>false</code>.</p>
+    /// - On success, responds with [`StartRouteAnalysisOutput`](crate::output::StartRouteAnalysisOutput) with field(s):
+    ///   - [`route_analysis(Option<RouteAnalysis>)`](crate::output::StartRouteAnalysisOutput::route_analysis): <p>The route analysis.</p>
+    /// - On failure, responds with [`SdkError<StartRouteAnalysisError>`](crate::error::StartRouteAnalysisError)
     pub fn start_route_analysis(&self) -> fluent_builders::StartRouteAnalysis<C, M, R> {
         fluent_builders::StartRouteAnalysis::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>The tags to apply to the specified resource.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The tag keys to remove from the specified resource.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateConnection` operation.
+    /// Constructs a fluent builder for the [`UpdateConnection`](crate::client::fluent_builders::UpdateConnection) operation.
     ///
-    /// See [`UpdateConnection`](crate::client::fluent_builders::UpdateConnection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateConnectionInput`](crate::input::UpdateConnectionInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::UpdateConnectionInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`connection_id(Option<String>)`](crate::input::UpdateConnectionInput::connection_id): <p>The ID of the connection.</p>
+    ///   - [`link_id(Option<String>)`](crate::input::UpdateConnectionInput::link_id): <p>The ID of the link for the first device in the connection.</p>
+    ///   - [`connected_link_id(Option<String>)`](crate::input::UpdateConnectionInput::connected_link_id): <p>The ID of the link for the second device in the connection.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateConnectionInput::description): <p>A description of the connection.</p>  <p>Length Constraints: Maximum length of 256 characters.</p>
+    /// - On success, responds with [`UpdateConnectionOutput`](crate::output::UpdateConnectionOutput) with field(s):
+    ///   - [`connection(Option<Connection>)`](crate::output::UpdateConnectionOutput::connection): <p>Information about the connection.</p>
+    /// - On failure, responds with [`SdkError<UpdateConnectionError>`](crate::error::UpdateConnectionError)
     pub fn update_connection(&self) -> fluent_builders::UpdateConnection<C, M, R> {
         fluent_builders::UpdateConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateCoreNetwork` operation.
+    /// Constructs a fluent builder for the [`UpdateCoreNetwork`](crate::client::fluent_builders::UpdateCoreNetwork) operation.
     ///
-    /// See [`UpdateCoreNetwork`](crate::client::fluent_builders::UpdateCoreNetwork) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateCoreNetworkInput`](crate::input::UpdateCoreNetworkInput) with field(s):
+    ///   - [`core_network_id(Option<String>)`](crate::input::UpdateCoreNetworkInput::core_network_id): <p>The ID of a core network.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateCoreNetworkInput::description): <p>The description of the update.</p>
+    /// - On success, responds with [`UpdateCoreNetworkOutput`](crate::output::UpdateCoreNetworkOutput) with field(s):
+    ///   - [`core_network(Option<CoreNetwork>)`](crate::output::UpdateCoreNetworkOutput::core_network): <p>Returns information about a core network update.</p>
+    /// - On failure, responds with [`SdkError<UpdateCoreNetworkError>`](crate::error::UpdateCoreNetworkError)
     pub fn update_core_network(&self) -> fluent_builders::UpdateCoreNetwork<C, M, R> {
         fluent_builders::UpdateCoreNetwork::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDevice` operation.
+    /// Constructs a fluent builder for the [`UpdateDevice`](crate::client::fluent_builders::UpdateDevice) operation.
     ///
-    /// See [`UpdateDevice`](crate::client::fluent_builders::UpdateDevice) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateDeviceInput`](crate::input::UpdateDeviceInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::UpdateDeviceInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`device_id(Option<String>)`](crate::input::UpdateDeviceInput::device_id): <p>The ID of the device.</p>
+    ///   - [`aws_location(Option<AwsLocation>)`](crate::input::UpdateDeviceInput::aws_location): <p>The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateDeviceInput::description): <p>A description of the device.</p>  <p>Constraints: Maximum length of 256 characters.</p>
+    ///   - [`r#type(Option<String>)`](crate::input::UpdateDeviceInput::r#type): <p>The type of the device.</p>
+    ///   - [`vendor(Option<String>)`](crate::input::UpdateDeviceInput::vendor): <p>The vendor of the device.</p>  <p>Constraints: Maximum length of 128 characters.</p>
+    ///   - [`model(Option<String>)`](crate::input::UpdateDeviceInput::model): <p>The model of the device.</p>  <p>Constraints: Maximum length of 128 characters.</p>
+    ///   - [`serial_number(Option<String>)`](crate::input::UpdateDeviceInput::serial_number): <p>The serial number of the device.</p>  <p>Constraints: Maximum length of 128 characters.</p>
+    ///   - [`location(Option<Location>)`](crate::input::UpdateDeviceInput::location): <p>Describes a location.</p>
+    ///   - [`site_id(Option<String>)`](crate::input::UpdateDeviceInput::site_id): <p>The ID of the site.</p>
+    /// - On success, responds with [`UpdateDeviceOutput`](crate::output::UpdateDeviceOutput) with field(s):
+    ///   - [`device(Option<Device>)`](crate::output::UpdateDeviceOutput::device): <p>Information about the device.</p>
+    /// - On failure, responds with [`SdkError<UpdateDeviceError>`](crate::error::UpdateDeviceError)
     pub fn update_device(&self) -> fluent_builders::UpdateDevice<C, M, R> {
         fluent_builders::UpdateDevice::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateGlobalNetwork` operation.
+    /// Constructs a fluent builder for the [`UpdateGlobalNetwork`](crate::client::fluent_builders::UpdateGlobalNetwork) operation.
     ///
-    /// See [`UpdateGlobalNetwork`](crate::client::fluent_builders::UpdateGlobalNetwork) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateGlobalNetworkInput`](crate::input::UpdateGlobalNetworkInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::UpdateGlobalNetworkInput::global_network_id): <p>The ID of your global network.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateGlobalNetworkInput::description): <p>A description of the global network.</p>  <p>Constraints: Maximum length of 256 characters.</p>
+    /// - On success, responds with [`UpdateGlobalNetworkOutput`](crate::output::UpdateGlobalNetworkOutput) with field(s):
+    ///   - [`global_network(Option<GlobalNetwork>)`](crate::output::UpdateGlobalNetworkOutput::global_network): <p>Information about the global network object.</p>
+    /// - On failure, responds with [`SdkError<UpdateGlobalNetworkError>`](crate::error::UpdateGlobalNetworkError)
     pub fn update_global_network(&self) -> fluent_builders::UpdateGlobalNetwork<C, M, R> {
         fluent_builders::UpdateGlobalNetwork::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateLink` operation.
+    /// Constructs a fluent builder for the [`UpdateLink`](crate::client::fluent_builders::UpdateLink) operation.
     ///
-    /// See [`UpdateLink`](crate::client::fluent_builders::UpdateLink) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateLinkInput`](crate::input::UpdateLinkInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::UpdateLinkInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`link_id(Option<String>)`](crate::input::UpdateLinkInput::link_id): <p>The ID of the link.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateLinkInput::description): <p>A description of the link.</p>  <p>Constraints: Maximum length of 256 characters.</p>
+    ///   - [`r#type(Option<String>)`](crate::input::UpdateLinkInput::r#type): <p>The type of the link.</p>  <p>Constraints: Maximum length of 128 characters.</p>
+    ///   - [`bandwidth(Option<Bandwidth>)`](crate::input::UpdateLinkInput::bandwidth): <p>The upload and download speed in Mbps. </p>
+    ///   - [`provider(Option<String>)`](crate::input::UpdateLinkInput::provider): <p>The provider of the link.</p>  <p>Constraints: Maximum length of 128 characters.</p>
+    /// - On success, responds with [`UpdateLinkOutput`](crate::output::UpdateLinkOutput) with field(s):
+    ///   - [`link(Option<Link>)`](crate::output::UpdateLinkOutput::link): <p>Information about the link.</p>
+    /// - On failure, responds with [`SdkError<UpdateLinkError>`](crate::error::UpdateLinkError)
     pub fn update_link(&self) -> fluent_builders::UpdateLink<C, M, R> {
         fluent_builders::UpdateLink::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateNetworkResourceMetadata` operation.
+    /// Constructs a fluent builder for the [`UpdateNetworkResourceMetadata`](crate::client::fluent_builders::UpdateNetworkResourceMetadata) operation.
     ///
-    /// See [`UpdateNetworkResourceMetadata`](crate::client::fluent_builders::UpdateNetworkResourceMetadata) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateNetworkResourceMetadataInput`](crate::input::UpdateNetworkResourceMetadataInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::UpdateNetworkResourceMetadataInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`resource_arn(Option<String>)`](crate::input::UpdateNetworkResourceMetadataInput::resource_arn): <p>The ARN of the resource.</p>
+    ///   - [`metadata(Option<HashMap<String, String>>)`](crate::input::UpdateNetworkResourceMetadataInput::metadata): <p>The resource metadata.</p>
+    /// - On success, responds with [`UpdateNetworkResourceMetadataOutput`](crate::output::UpdateNetworkResourceMetadataOutput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::output::UpdateNetworkResourceMetadataOutput::resource_arn): <p>The ARN of the resource.</p>
+    ///   - [`metadata(Option<HashMap<String, String>>)`](crate::output::UpdateNetworkResourceMetadataOutput::metadata): <p>The updated resource metadata.</p>
+    /// - On failure, responds with [`SdkError<UpdateNetworkResourceMetadataError>`](crate::error::UpdateNetworkResourceMetadataError)
     pub fn update_network_resource_metadata(
         &self,
     ) -> fluent_builders::UpdateNetworkResourceMetadata<C, M, R> {
         fluent_builders::UpdateNetworkResourceMetadata::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateSite` operation.
+    /// Constructs a fluent builder for the [`UpdateSite`](crate::client::fluent_builders::UpdateSite) operation.
     ///
-    /// See [`UpdateSite`](crate::client::fluent_builders::UpdateSite) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateSiteInput`](crate::input::UpdateSiteInput) with field(s):
+    ///   - [`global_network_id(Option<String>)`](crate::input::UpdateSiteInput::global_network_id): <p>The ID of the global network.</p>
+    ///   - [`site_id(Option<String>)`](crate::input::UpdateSiteInput::site_id): <p>The ID of your site.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateSiteInput::description): <p>A description of your site.</p>  <p>Constraints: Maximum length of 256 characters.</p>
+    ///   - [`location(Option<Location>)`](crate::input::UpdateSiteInput::location): <p>The site location:</p>  <ul>   <li> <p> <code>Address</code>: The physical address of the site.</p> </li>   <li> <p> <code>Latitude</code>: The latitude of the site. </p> </li>   <li> <p> <code>Longitude</code>: The longitude of the site.</p> </li>  </ul>
+    /// - On success, responds with [`UpdateSiteOutput`](crate::output::UpdateSiteOutput) with field(s):
+    ///   - [`site(Option<Site>)`](crate::output::UpdateSiteOutput::site): <p>Information about the site.</p>
+    /// - On failure, responds with [`SdkError<UpdateSiteError>`](crate::error::UpdateSiteError)
     pub fn update_site(&self) -> fluent_builders::UpdateSite<C, M, R> {
         fluent_builders::UpdateSite::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateVpcAttachment` operation.
+    /// Constructs a fluent builder for the [`UpdateVpcAttachment`](crate::client::fluent_builders::UpdateVpcAttachment) operation.
     ///
-    /// See [`UpdateVpcAttachment`](crate::client::fluent_builders::UpdateVpcAttachment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateVpcAttachmentInput`](crate::input::UpdateVpcAttachmentInput) with field(s):
+    ///   - [`attachment_id(Option<String>)`](crate::input::UpdateVpcAttachmentInput::attachment_id): <p>The ID of the attachment.</p>
+    ///   - [`add_subnet_arns(Option<Vec<String>>)`](crate::input::UpdateVpcAttachmentInput::add_subnet_arns): <p>Adds a subnet ARN to the VPC attachment.</p>
+    ///   - [`remove_subnet_arns(Option<Vec<String>>)`](crate::input::UpdateVpcAttachmentInput::remove_subnet_arns): <p>Removes a subnet ARN from the attachment.</p>
+    ///   - [`options(Option<VpcOptions>)`](crate::input::UpdateVpcAttachmentInput::options): <p>Additional options for updating the VPC attachment. </p>
+    /// - On success, responds with [`UpdateVpcAttachmentOutput`](crate::output::UpdateVpcAttachmentOutput) with field(s):
+    ///   - [`vpc_attachment(Option<VpcAttachment>)`](crate::output::UpdateVpcAttachmentOutput::vpc_attachment): <p>Describes the updated VPC attachment.</p>
+    /// - On failure, responds with [`SdkError<UpdateVpcAttachmentError>`](crate::error::UpdateVpcAttachmentError)
     pub fn update_vpc_attachment(&self) -> fluent_builders::UpdateVpcAttachment<C, M, R> {
         fluent_builders::UpdateVpcAttachment::new(self.handle.clone())
     }

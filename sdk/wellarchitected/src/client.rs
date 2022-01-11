@@ -83,290 +83,566 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AssociateLenses` operation.
+    /// Constructs a fluent builder for the [`AssociateLenses`](crate::client::fluent_builders::AssociateLenses) operation.
     ///
-    /// See [`AssociateLenses`](crate::client::fluent_builders::AssociateLenses) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateLensesInput`](crate::input::AssociateLensesInput) with field(s):
+    ///   - [`workload_id(Option<String>)`](crate::input::AssociateLensesInput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`lens_aliases(Option<Vec<String>>)`](crate::input::AssociateLensesInput::lens_aliases): <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>  <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
+    /// - On success, responds with [`AssociateLensesOutput`](crate::output::AssociateLensesOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateLensesError>`](crate::error::AssociateLensesError)
     pub fn associate_lenses(&self) -> fluent_builders::AssociateLenses<C, M, R> {
         fluent_builders::AssociateLenses::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateLensShare` operation.
+    /// Constructs a fluent builder for the [`CreateLensShare`](crate::client::fluent_builders::CreateLensShare) operation.
     ///
-    /// See [`CreateLensShare`](crate::client::fluent_builders::CreateLensShare) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateLensShareInput`](crate::input::CreateLensShareInput) with field(s):
+    ///   - [`lens_alias(Option<String>)`](crate::input::CreateLensShareInput::lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`shared_with(Option<String>)`](crate::input::CreateLensShareInput::shared_with): <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::CreateLensShareInput::client_request_token): <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>  <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>   <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>  </important>
+    /// - On success, responds with [`CreateLensShareOutput`](crate::output::CreateLensShareOutput) with field(s):
+    ///   - [`share_id(Option<String>)`](crate::output::CreateLensShareOutput::share_id): <p>The ID associated with the workload share.</p>
+    /// - On failure, responds with [`SdkError<CreateLensShareError>`](crate::error::CreateLensShareError)
     pub fn create_lens_share(&self) -> fluent_builders::CreateLensShare<C, M, R> {
         fluent_builders::CreateLensShare::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateLensVersion` operation.
+    /// Constructs a fluent builder for the [`CreateLensVersion`](crate::client::fluent_builders::CreateLensVersion) operation.
     ///
-    /// See [`CreateLensVersion`](crate::client::fluent_builders::CreateLensVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateLensVersionInput`](crate::input::CreateLensVersionInput) with field(s):
+    ///   - [`lens_alias(Option<String>)`](crate::input::CreateLensVersionInput::lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`lens_version(Option<String>)`](crate::input::CreateLensVersionInput::lens_version): <p>The version of the lens being created.</p>
+    ///   - [`is_major_version(bool)`](crate::input::CreateLensVersionInput::is_major_version): <p>Set to true if this new major lens version.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::CreateLensVersionInput::client_request_token): <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>  <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>   <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>  </important>
+    /// - On success, responds with [`CreateLensVersionOutput`](crate::output::CreateLensVersionOutput) with field(s):
+    ///   - [`lens_arn(Option<String>)`](crate::output::CreateLensVersionOutput::lens_arn): <p>The ARN for the lens.</p>
+    ///   - [`lens_version(Option<String>)`](crate::output::CreateLensVersionOutput::lens_version): <p>The version of the lens.</p>
+    /// - On failure, responds with [`SdkError<CreateLensVersionError>`](crate::error::CreateLensVersionError)
     pub fn create_lens_version(&self) -> fluent_builders::CreateLensVersion<C, M, R> {
         fluent_builders::CreateLensVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateMilestone` operation.
+    /// Constructs a fluent builder for the [`CreateMilestone`](crate::client::fluent_builders::CreateMilestone) operation.
     ///
-    /// See [`CreateMilestone`](crate::client::fluent_builders::CreateMilestone) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateMilestoneInput`](crate::input::CreateMilestoneInput) with field(s):
+    ///   - [`workload_id(Option<String>)`](crate::input::CreateMilestoneInput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`milestone_name(Option<String>)`](crate::input::CreateMilestoneInput::milestone_name): <p>The name of the milestone in a workload.</p>  <p>Milestone names must be unique within a workload.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::CreateMilestoneInput::client_request_token): <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>  <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>   <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>  </important>
+    /// - On success, responds with [`CreateMilestoneOutput`](crate::output::CreateMilestoneOutput) with field(s):
+    ///   - [`workload_id(Option<String>)`](crate::output::CreateMilestoneOutput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`milestone_number(i32)`](crate::output::CreateMilestoneOutput::milestone_number): <p>The milestone number.</p>  <p>A workload can have a maximum of 100 milestones.</p>
+    /// - On failure, responds with [`SdkError<CreateMilestoneError>`](crate::error::CreateMilestoneError)
     pub fn create_milestone(&self) -> fluent_builders::CreateMilestone<C, M, R> {
         fluent_builders::CreateMilestone::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateWorkload` operation.
+    /// Constructs a fluent builder for the [`CreateWorkload`](crate::client::fluent_builders::CreateWorkload) operation.
     ///
-    /// See [`CreateWorkload`](crate::client::fluent_builders::CreateWorkload) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateWorkloadInput`](crate::input::CreateWorkloadInput) with field(s):
+    ///   - [`workload_name(Option<String>)`](crate::input::CreateWorkloadInput::workload_name): <p>The name of the workload.</p>  <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateWorkloadInput::description): <p>The description for the workload.</p>
+    ///   - [`environment(Option<WorkloadEnvironment>)`](crate::input::CreateWorkloadInput::environment): <p>The environment for the workload.</p>
+    ///   - [`account_ids(Option<Vec<String>>)`](crate::input::CreateWorkloadInput::account_ids): <p>The list of Amazon Web Services account IDs associated with the workload.</p>
+    ///   - [`aws_regions(Option<Vec<String>>)`](crate::input::CreateWorkloadInput::aws_regions): <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
+    ///   - [`non_aws_regions(Option<Vec<String>>)`](crate::input::CreateWorkloadInput::non_aws_regions): <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
+    ///   - [`pillar_priorities(Option<Vec<String>>)`](crate::input::CreateWorkloadInput::pillar_priorities): <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
+    ///   - [`architectural_design(Option<String>)`](crate::input::CreateWorkloadInput::architectural_design): <p>The URL of the architectural design for the workload.</p>
+    ///   - [`review_owner(Option<String>)`](crate::input::CreateWorkloadInput::review_owner): <p>The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.</p>
+    ///   - [`industry_type(Option<String>)`](crate::input::CreateWorkloadInput::industry_type): <p>The industry type for the workload.</p>  <p>If specified, must be one of the following:</p>  <ul>   <li> <p> <code>Agriculture</code> </p> </li>   <li> <p> <code>Automobile</code> </p> </li>   <li> <p> <code>Defense</code> </p> </li>   <li> <p> <code>Design and Engineering</code> </p> </li>   <li> <p> <code>Digital Advertising</code> </p> </li>   <li> <p> <code>Education</code> </p> </li>   <li> <p> <code>Environmental Protection</code> </p> </li>   <li> <p> <code>Financial Services</code> </p> </li>   <li> <p> <code>Gaming</code> </p> </li>   <li> <p> <code>General Public Services</code> </p> </li>   <li> <p> <code>Healthcare</code> </p> </li>   <li> <p> <code>Hospitality</code> </p> </li>   <li> <p> <code>InfoTech</code> </p> </li>   <li> <p> <code>Justice and Public Safety</code> </p> </li>   <li> <p> <code>Life Sciences</code> </p> </li>   <li> <p> <code>Manufacturing</code> </p> </li>   <li> <p> <code>Media &amp; Entertainment</code> </p> </li>   <li> <p> <code>Mining &amp; Resources</code> </p> </li>   <li> <p> <code>Oil &amp; Gas</code> </p> </li>   <li> <p> <code>Power &amp; Utilities</code> </p> </li>   <li> <p> <code>Professional Services</code> </p> </li>   <li> <p> <code>Real Estate &amp; Construction</code> </p> </li>   <li> <p> <code>Retail &amp; Wholesale</code> </p> </li>   <li> <p> <code>Social Protection</code> </p> </li>   <li> <p> <code>Telecommunications</code> </p> </li>   <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>   <li> <p> <code>Other</code> </p> </li>  </ul>
+    ///   - [`industry(Option<String>)`](crate::input::CreateWorkloadInput::industry): <p>The industry for the workload.</p>
+    ///   - [`lenses(Option<Vec<String>>)`](crate::input::CreateWorkloadInput::lenses): <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`notes(Option<String>)`](crate::input::CreateWorkloadInput::notes): <p>The notes associated with the workload.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::CreateWorkloadInput::client_request_token): <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>  <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>   <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>  </important>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateWorkloadInput::tags): <p>The tags to be associated with the workload.</p>
+    /// - On success, responds with [`CreateWorkloadOutput`](crate::output::CreateWorkloadOutput) with field(s):
+    ///   - [`workload_id(Option<String>)`](crate::output::CreateWorkloadOutput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`workload_arn(Option<String>)`](crate::output::CreateWorkloadOutput::workload_arn): <p>The ARN for the workload.</p>
+    /// - On failure, responds with [`SdkError<CreateWorkloadError>`](crate::error::CreateWorkloadError)
     pub fn create_workload(&self) -> fluent_builders::CreateWorkload<C, M, R> {
         fluent_builders::CreateWorkload::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateWorkloadShare` operation.
+    /// Constructs a fluent builder for the [`CreateWorkloadShare`](crate::client::fluent_builders::CreateWorkloadShare) operation.
     ///
-    /// See [`CreateWorkloadShare`](crate::client::fluent_builders::CreateWorkloadShare) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateWorkloadShareInput`](crate::input::CreateWorkloadShareInput) with field(s):
+    ///   - [`workload_id(Option<String>)`](crate::input::CreateWorkloadShareInput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`shared_with(Option<String>)`](crate::input::CreateWorkloadShareInput::shared_with): <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+    ///   - [`permission_type(Option<PermissionType>)`](crate::input::CreateWorkloadShareInput::permission_type): <p>Permission granted on a workload share.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::CreateWorkloadShareInput::client_request_token): <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>  <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>   <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>  </important>
+    /// - On success, responds with [`CreateWorkloadShareOutput`](crate::output::CreateWorkloadShareOutput) with field(s):
+    ///   - [`workload_id(Option<String>)`](crate::output::CreateWorkloadShareOutput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`share_id(Option<String>)`](crate::output::CreateWorkloadShareOutput::share_id): <p>The ID associated with the workload share.</p>
+    /// - On failure, responds with [`SdkError<CreateWorkloadShareError>`](crate::error::CreateWorkloadShareError)
     pub fn create_workload_share(&self) -> fluent_builders::CreateWorkloadShare<C, M, R> {
         fluent_builders::CreateWorkloadShare::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteLens` operation.
+    /// Constructs a fluent builder for the [`DeleteLens`](crate::client::fluent_builders::DeleteLens) operation.
     ///
-    /// See [`DeleteLens`](crate::client::fluent_builders::DeleteLens) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteLensInput`](crate::input::DeleteLensInput) with field(s):
+    ///   - [`lens_alias(Option<String>)`](crate::input::DeleteLensInput::lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::DeleteLensInput::client_request_token): <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>  <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>   <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>  </important>
+    ///   - [`lens_status(Option<LensStatusType>)`](crate::input::DeleteLensInput::lens_status): <p>The status of the lens to be deleted.</p>
+    /// - On success, responds with [`DeleteLensOutput`](crate::output::DeleteLensOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteLensError>`](crate::error::DeleteLensError)
     pub fn delete_lens(&self) -> fluent_builders::DeleteLens<C, M, R> {
         fluent_builders::DeleteLens::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteLensShare` operation.
+    /// Constructs a fluent builder for the [`DeleteLensShare`](crate::client::fluent_builders::DeleteLensShare) operation.
     ///
-    /// See [`DeleteLensShare`](crate::client::fluent_builders::DeleteLensShare) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteLensShareInput`](crate::input::DeleteLensShareInput) with field(s):
+    ///   - [`share_id(Option<String>)`](crate::input::DeleteLensShareInput::share_id): <p>The ID associated with the workload share.</p>
+    ///   - [`lens_alias(Option<String>)`](crate::input::DeleteLensShareInput::lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::DeleteLensShareInput::client_request_token): <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>  <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>   <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>  </important>
+    /// - On success, responds with [`DeleteLensShareOutput`](crate::output::DeleteLensShareOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteLensShareError>`](crate::error::DeleteLensShareError)
     pub fn delete_lens_share(&self) -> fluent_builders::DeleteLensShare<C, M, R> {
         fluent_builders::DeleteLensShare::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteWorkload` operation.
+    /// Constructs a fluent builder for the [`DeleteWorkload`](crate::client::fluent_builders::DeleteWorkload) operation.
     ///
-    /// See [`DeleteWorkload`](crate::client::fluent_builders::DeleteWorkload) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteWorkloadInput`](crate::input::DeleteWorkloadInput) with field(s):
+    ///   - [`workload_id(Option<String>)`](crate::input::DeleteWorkloadInput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::DeleteWorkloadInput::client_request_token): <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>  <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>   <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>  </important>
+    /// - On success, responds with [`DeleteWorkloadOutput`](crate::output::DeleteWorkloadOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteWorkloadError>`](crate::error::DeleteWorkloadError)
     pub fn delete_workload(&self) -> fluent_builders::DeleteWorkload<C, M, R> {
         fluent_builders::DeleteWorkload::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteWorkloadShare` operation.
+    /// Constructs a fluent builder for the [`DeleteWorkloadShare`](crate::client::fluent_builders::DeleteWorkloadShare) operation.
     ///
-    /// See [`DeleteWorkloadShare`](crate::client::fluent_builders::DeleteWorkloadShare) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteWorkloadShareInput`](crate::input::DeleteWorkloadShareInput) with field(s):
+    ///   - [`share_id(Option<String>)`](crate::input::DeleteWorkloadShareInput::share_id): <p>The ID associated with the workload share.</p>
+    ///   - [`workload_id(Option<String>)`](crate::input::DeleteWorkloadShareInput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::DeleteWorkloadShareInput::client_request_token): <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>  <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>   <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>  </important>
+    /// - On success, responds with [`DeleteWorkloadShareOutput`](crate::output::DeleteWorkloadShareOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteWorkloadShareError>`](crate::error::DeleteWorkloadShareError)
     pub fn delete_workload_share(&self) -> fluent_builders::DeleteWorkloadShare<C, M, R> {
         fluent_builders::DeleteWorkloadShare::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateLenses` operation.
+    /// Constructs a fluent builder for the [`DisassociateLenses`](crate::client::fluent_builders::DisassociateLenses) operation.
     ///
-    /// See [`DisassociateLenses`](crate::client::fluent_builders::DisassociateLenses) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateLensesInput`](crate::input::DisassociateLensesInput) with field(s):
+    ///   - [`workload_id(Option<String>)`](crate::input::DisassociateLensesInput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`lens_aliases(Option<Vec<String>>)`](crate::input::DisassociateLensesInput::lens_aliases): <p>List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.</p>  <p>Identify a lens using its <code>LensSummary$LensAlias</code>.</p>
+    /// - On success, responds with [`DisassociateLensesOutput`](crate::output::DisassociateLensesOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateLensesError>`](crate::error::DisassociateLensesError)
     pub fn disassociate_lenses(&self) -> fluent_builders::DisassociateLenses<C, M, R> {
         fluent_builders::DisassociateLenses::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ExportLens` operation.
+    /// Constructs a fluent builder for the [`ExportLens`](crate::client::fluent_builders::ExportLens) operation.
     ///
-    /// See [`ExportLens`](crate::client::fluent_builders::ExportLens) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ExportLensInput`](crate::input::ExportLensInput) with field(s):
+    ///   - [`lens_alias(Option<String>)`](crate::input::ExportLensInput::lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`lens_version(Option<String>)`](crate::input::ExportLensInput::lens_version): <p>The lens version to be exported.</p>
+    /// - On success, responds with [`ExportLensOutput`](crate::output::ExportLensOutput) with field(s):
+    ///   - [`lens_json(Option<String>)`](crate::output::ExportLensOutput::lens_json): <p>The JSON for the lens.</p>
+    /// - On failure, responds with [`SdkError<ExportLensError>`](crate::error::ExportLensError)
     pub fn export_lens(&self) -> fluent_builders::ExportLens<C, M, R> {
         fluent_builders::ExportLens::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAnswer` operation.
+    /// Constructs a fluent builder for the [`GetAnswer`](crate::client::fluent_builders::GetAnswer) operation.
     ///
-    /// See [`GetAnswer`](crate::client::fluent_builders::GetAnswer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetAnswerInput`](crate::input::GetAnswerInput) with field(s):
+    ///   - [`workload_id(Option<String>)`](crate::input::GetAnswerInput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`lens_alias(Option<String>)`](crate::input::GetAnswerInput::lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`question_id(Option<String>)`](crate::input::GetAnswerInput::question_id): <p>The ID of the question.</p>
+    ///   - [`milestone_number(i32)`](crate::input::GetAnswerInput::milestone_number): <p>The milestone number.</p>  <p>A workload can have a maximum of 100 milestones.</p>
+    /// - On success, responds with [`GetAnswerOutput`](crate::output::GetAnswerOutput) with field(s):
+    ///   - [`workload_id(Option<String>)`](crate::output::GetAnswerOutput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`milestone_number(i32)`](crate::output::GetAnswerOutput::milestone_number): <p>The milestone number.</p>  <p>A workload can have a maximum of 100 milestones.</p>
+    ///   - [`lens_alias(Option<String>)`](crate::output::GetAnswerOutput::lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`lens_arn(Option<String>)`](crate::output::GetAnswerOutput::lens_arn): <p>The ARN for the lens.</p>
+    ///   - [`answer(Option<Answer>)`](crate::output::GetAnswerOutput::answer): <p>An answer of the question.</p>
+    /// - On failure, responds with [`SdkError<GetAnswerError>`](crate::error::GetAnswerError)
     pub fn get_answer(&self) -> fluent_builders::GetAnswer<C, M, R> {
         fluent_builders::GetAnswer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetLens` operation.
+    /// Constructs a fluent builder for the [`GetLens`](crate::client::fluent_builders::GetLens) operation.
     ///
-    /// See [`GetLens`](crate::client::fluent_builders::GetLens) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetLensInput`](crate::input::GetLensInput) with field(s):
+    ///   - [`lens_alias(Option<String>)`](crate::input::GetLensInput::lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`lens_version(Option<String>)`](crate::input::GetLensInput::lens_version): <p>The lens version to be retrieved.</p>
+    /// - On success, responds with [`GetLensOutput`](crate::output::GetLensOutput) with field(s):
+    ///   - [`lens(Option<Lens>)`](crate::output::GetLensOutput::lens): <p>A lens return object.</p>
+    /// - On failure, responds with [`SdkError<GetLensError>`](crate::error::GetLensError)
     pub fn get_lens(&self) -> fluent_builders::GetLens<C, M, R> {
         fluent_builders::GetLens::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetLensReview` operation.
+    /// Constructs a fluent builder for the [`GetLensReview`](crate::client::fluent_builders::GetLensReview) operation.
     ///
-    /// See [`GetLensReview`](crate::client::fluent_builders::GetLensReview) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetLensReviewInput`](crate::input::GetLensReviewInput) with field(s):
+    ///   - [`workload_id(Option<String>)`](crate::input::GetLensReviewInput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`lens_alias(Option<String>)`](crate::input::GetLensReviewInput::lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`milestone_number(i32)`](crate::input::GetLensReviewInput::milestone_number): <p>The milestone number.</p>  <p>A workload can have a maximum of 100 milestones.</p>
+    /// - On success, responds with [`GetLensReviewOutput`](crate::output::GetLensReviewOutput) with field(s):
+    ///   - [`workload_id(Option<String>)`](crate::output::GetLensReviewOutput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`milestone_number(i32)`](crate::output::GetLensReviewOutput::milestone_number): <p>The milestone number.</p>  <p>A workload can have a maximum of 100 milestones.</p>
+    ///   - [`lens_review(Option<LensReview>)`](crate::output::GetLensReviewOutput::lens_review): <p>A lens review of a question.</p>
+    /// - On failure, responds with [`SdkError<GetLensReviewError>`](crate::error::GetLensReviewError)
     pub fn get_lens_review(&self) -> fluent_builders::GetLensReview<C, M, R> {
         fluent_builders::GetLensReview::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetLensReviewReport` operation.
+    /// Constructs a fluent builder for the [`GetLensReviewReport`](crate::client::fluent_builders::GetLensReviewReport) operation.
     ///
-    /// See [`GetLensReviewReport`](crate::client::fluent_builders::GetLensReviewReport) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetLensReviewReportInput`](crate::input::GetLensReviewReportInput) with field(s):
+    ///   - [`workload_id(Option<String>)`](crate::input::GetLensReviewReportInput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`lens_alias(Option<String>)`](crate::input::GetLensReviewReportInput::lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`milestone_number(i32)`](crate::input::GetLensReviewReportInput::milestone_number): <p>The milestone number.</p>  <p>A workload can have a maximum of 100 milestones.</p>
+    /// - On success, responds with [`GetLensReviewReportOutput`](crate::output::GetLensReviewReportOutput) with field(s):
+    ///   - [`workload_id(Option<String>)`](crate::output::GetLensReviewReportOutput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`milestone_number(i32)`](crate::output::GetLensReviewReportOutput::milestone_number): <p>The milestone number.</p>  <p>A workload can have a maximum of 100 milestones.</p>
+    ///   - [`lens_review_report(Option<LensReviewReport>)`](crate::output::GetLensReviewReportOutput::lens_review_report): <p>A report of a lens review.</p>
+    /// - On failure, responds with [`SdkError<GetLensReviewReportError>`](crate::error::GetLensReviewReportError)
     pub fn get_lens_review_report(&self) -> fluent_builders::GetLensReviewReport<C, M, R> {
         fluent_builders::GetLensReviewReport::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetLensVersionDifference` operation.
+    /// Constructs a fluent builder for the [`GetLensVersionDifference`](crate::client::fluent_builders::GetLensVersionDifference) operation.
     ///
-    /// See [`GetLensVersionDifference`](crate::client::fluent_builders::GetLensVersionDifference) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetLensVersionDifferenceInput`](crate::input::GetLensVersionDifferenceInput) with field(s):
+    ///   - [`lens_alias(Option<String>)`](crate::input::GetLensVersionDifferenceInput::lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`base_lens_version(Option<String>)`](crate::input::GetLensVersionDifferenceInput::base_lens_version): <p>The base version of the lens.</p>
+    ///   - [`target_lens_version(Option<String>)`](crate::input::GetLensVersionDifferenceInput::target_lens_version): <p>The lens version to target a difference for.</p>
+    /// - On success, responds with [`GetLensVersionDifferenceOutput`](crate::output::GetLensVersionDifferenceOutput) with field(s):
+    ///   - [`lens_alias(Option<String>)`](crate::output::GetLensVersionDifferenceOutput::lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`lens_arn(Option<String>)`](crate::output::GetLensVersionDifferenceOutput::lens_arn): <p>The ARN for the lens.</p>
+    ///   - [`base_lens_version(Option<String>)`](crate::output::GetLensVersionDifferenceOutput::base_lens_version): <p>The base version of the lens.</p>
+    ///   - [`target_lens_version(Option<String>)`](crate::output::GetLensVersionDifferenceOutput::target_lens_version): <p>The target lens version for the lens.</p>
+    ///   - [`latest_lens_version(Option<String>)`](crate::output::GetLensVersionDifferenceOutput::latest_lens_version): <p>The latest version of the lens.</p>
+    ///   - [`version_differences(Option<VersionDifferences>)`](crate::output::GetLensVersionDifferenceOutput::version_differences): <p>The differences between the base and latest versions of the lens.</p>
+    /// - On failure, responds with [`SdkError<GetLensVersionDifferenceError>`](crate::error::GetLensVersionDifferenceError)
     pub fn get_lens_version_difference(
         &self,
     ) -> fluent_builders::GetLensVersionDifference<C, M, R> {
         fluent_builders::GetLensVersionDifference::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMilestone` operation.
+    /// Constructs a fluent builder for the [`GetMilestone`](crate::client::fluent_builders::GetMilestone) operation.
     ///
-    /// See [`GetMilestone`](crate::client::fluent_builders::GetMilestone) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetMilestoneInput`](crate::input::GetMilestoneInput) with field(s):
+    ///   - [`workload_id(Option<String>)`](crate::input::GetMilestoneInput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`milestone_number(i32)`](crate::input::GetMilestoneInput::milestone_number): <p>The milestone number.</p>  <p>A workload can have a maximum of 100 milestones.</p>
+    /// - On success, responds with [`GetMilestoneOutput`](crate::output::GetMilestoneOutput) with field(s):
+    ///   - [`workload_id(Option<String>)`](crate::output::GetMilestoneOutput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`milestone(Option<Milestone>)`](crate::output::GetMilestoneOutput::milestone): <p>A milestone return object.</p>
+    /// - On failure, responds with [`SdkError<GetMilestoneError>`](crate::error::GetMilestoneError)
     pub fn get_milestone(&self) -> fluent_builders::GetMilestone<C, M, R> {
         fluent_builders::GetMilestone::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetWorkload` operation.
+    /// Constructs a fluent builder for the [`GetWorkload`](crate::client::fluent_builders::GetWorkload) operation.
     ///
-    /// See [`GetWorkload`](crate::client::fluent_builders::GetWorkload) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetWorkloadInput`](crate::input::GetWorkloadInput) with field(s):
+    ///   - [`workload_id(Option<String>)`](crate::input::GetWorkloadInput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    /// - On success, responds with [`GetWorkloadOutput`](crate::output::GetWorkloadOutput) with field(s):
+    ///   - [`workload(Option<Workload>)`](crate::output::GetWorkloadOutput::workload): <p>A workload return object.</p>
+    /// - On failure, responds with [`SdkError<GetWorkloadError>`](crate::error::GetWorkloadError)
     pub fn get_workload(&self) -> fluent_builders::GetWorkload<C, M, R> {
         fluent_builders::GetWorkload::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ImportLens` operation.
+    /// Constructs a fluent builder for the [`ImportLens`](crate::client::fluent_builders::ImportLens) operation.
     ///
-    /// See [`ImportLens`](crate::client::fluent_builders::ImportLens) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ImportLensInput`](crate::input::ImportLensInput) with field(s):
+    ///   - [`lens_alias(Option<String>)`](crate::input::ImportLensInput::lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`json_string(Option<String>)`](crate::input::ImportLensInput::json_string): <p>The JSON representation of a lens.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::ImportLensInput::client_request_token): <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>  <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>   <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>  </important>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::ImportLensInput::tags): <p>Tags to associate to a lens.</p>
+    /// - On success, responds with [`ImportLensOutput`](crate::output::ImportLensOutput) with field(s):
+    ///   - [`lens_arn(Option<String>)`](crate::output::ImportLensOutput::lens_arn): <p>The ARN for the lens.</p>
+    ///   - [`status(Option<ImportLensStatus>)`](crate::output::ImportLensOutput::status): <p>The status of the imported lens.</p>
+    /// - On failure, responds with [`SdkError<ImportLensError>`](crate::error::ImportLensError)
     pub fn import_lens(&self) -> fluent_builders::ImportLens<C, M, R> {
         fluent_builders::ImportLens::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListAnswers` operation.
-    ///
-    /// See [`ListAnswers`](crate::client::fluent_builders::ListAnswers) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListAnswers`](crate::client::fluent_builders::ListAnswers) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListAnswers::into_paginator).
+    ///
+    /// - Takes [`ListAnswersInput`](crate::input::ListAnswersInput) with field(s):
+    ///   - [`workload_id(Option<String>)`](crate::input::ListAnswersInput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`lens_alias(Option<String>)`](crate::input::ListAnswersInput::lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`pillar_id(Option<String>)`](crate::input::ListAnswersInput::pillar_id): <p>The ID used to identify a pillar, for example, <code>security</code>.</p>  <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+    ///   - [`milestone_number(i32)`](crate::input::ListAnswersInput::milestone_number): <p>The milestone number.</p>  <p>A workload can have a maximum of 100 milestones.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListAnswersInput::next_token): <p>The token to use to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::input::ListAnswersInput::max_results): <p>The maximum number of results to return for this request.</p>
+    /// - On success, responds with [`ListAnswersOutput`](crate::output::ListAnswersOutput) with field(s):
+    ///   - [`workload_id(Option<String>)`](crate::output::ListAnswersOutput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`milestone_number(i32)`](crate::output::ListAnswersOutput::milestone_number): <p>The milestone number.</p>  <p>A workload can have a maximum of 100 milestones.</p>
+    ///   - [`lens_alias(Option<String>)`](crate::output::ListAnswersOutput::lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`lens_arn(Option<String>)`](crate::output::ListAnswersOutput::lens_arn): <p>The ARN for the lens.</p>
+    ///   - [`answer_summaries(Option<Vec<AnswerSummary>>)`](crate::output::ListAnswersOutput::answer_summaries): <p>List of answer summaries of lens review in a workload.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListAnswersOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListAnswersError>`](crate::error::ListAnswersError)
     pub fn list_answers(&self) -> fluent_builders::ListAnswers<C, M, R> {
         fluent_builders::ListAnswers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListLenses` operation.
-    ///
-    /// See [`ListLenses`](crate::client::fluent_builders::ListLenses) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListLenses`](crate::client::fluent_builders::ListLenses) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListLenses::into_paginator).
+    ///
+    /// - Takes [`ListLensesInput`](crate::input::ListLensesInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListLensesInput::next_token): <p>The token to use to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::input::ListLensesInput::max_results): <p>The maximum number of results to return for this request.</p>
+    ///   - [`lens_type(Option<LensType>)`](crate::input::ListLensesInput::lens_type): <p>The type of lenses to be returned.</p>
+    ///   - [`lens_status(Option<LensStatusType>)`](crate::input::ListLensesInput::lens_status): <p>The status of lenses to be returned.</p>
+    ///   - [`lens_name(Option<String>)`](crate::input::ListLensesInput::lens_name): <p>The full name of the lens.</p>
+    /// - On success, responds with [`ListLensesOutput`](crate::output::ListLensesOutput) with field(s):
+    ///   - [`lens_summaries(Option<Vec<LensSummary>>)`](crate::output::ListLensesOutput::lens_summaries): <p>List of lens summaries of available lenses.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListLensesOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListLensesError>`](crate::error::ListLensesError)
     pub fn list_lenses(&self) -> fluent_builders::ListLenses<C, M, R> {
         fluent_builders::ListLenses::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListLensReviewImprovements` operation.
-    ///
-    /// See [`ListLensReviewImprovements`](crate::client::fluent_builders::ListLensReviewImprovements) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListLensReviewImprovements`](crate::client::fluent_builders::ListLensReviewImprovements) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListLensReviewImprovements::into_paginator).
+    ///
+    /// - Takes [`ListLensReviewImprovementsInput`](crate::input::ListLensReviewImprovementsInput) with field(s):
+    ///   - [`workload_id(Option<String>)`](crate::input::ListLensReviewImprovementsInput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`lens_alias(Option<String>)`](crate::input::ListLensReviewImprovementsInput::lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`pillar_id(Option<String>)`](crate::input::ListLensReviewImprovementsInput::pillar_id): <p>The ID used to identify a pillar, for example, <code>security</code>.</p>  <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
+    ///   - [`milestone_number(i32)`](crate::input::ListLensReviewImprovementsInput::milestone_number): <p>The milestone number.</p>  <p>A workload can have a maximum of 100 milestones.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListLensReviewImprovementsInput::next_token): <p>The token to use to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::input::ListLensReviewImprovementsInput::max_results): <p>The maximum number of results to return for this request.</p>
+    /// - On success, responds with [`ListLensReviewImprovementsOutput`](crate::output::ListLensReviewImprovementsOutput) with field(s):
+    ///   - [`workload_id(Option<String>)`](crate::output::ListLensReviewImprovementsOutput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`milestone_number(i32)`](crate::output::ListLensReviewImprovementsOutput::milestone_number): <p>The milestone number.</p>  <p>A workload can have a maximum of 100 milestones.</p>
+    ///   - [`lens_alias(Option<String>)`](crate::output::ListLensReviewImprovementsOutput::lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`lens_arn(Option<String>)`](crate::output::ListLensReviewImprovementsOutput::lens_arn): <p>The ARN for the lens.</p>
+    ///   - [`improvement_summaries(Option<Vec<ImprovementSummary>>)`](crate::output::ListLensReviewImprovementsOutput::improvement_summaries): <p>List of improvement summaries of lens review in a workload.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListLensReviewImprovementsOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListLensReviewImprovementsError>`](crate::error::ListLensReviewImprovementsError)
     pub fn list_lens_review_improvements(
         &self,
     ) -> fluent_builders::ListLensReviewImprovements<C, M, R> {
         fluent_builders::ListLensReviewImprovements::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListLensReviews` operation.
-    ///
-    /// See [`ListLensReviews`](crate::client::fluent_builders::ListLensReviews) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListLensReviews`](crate::client::fluent_builders::ListLensReviews) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListLensReviews::into_paginator).
+    ///
+    /// - Takes [`ListLensReviewsInput`](crate::input::ListLensReviewsInput) with field(s):
+    ///   - [`workload_id(Option<String>)`](crate::input::ListLensReviewsInput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`milestone_number(i32)`](crate::input::ListLensReviewsInput::milestone_number): <p>The milestone number.</p>  <p>A workload can have a maximum of 100 milestones.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListLensReviewsInput::next_token): <p>The token to use to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::input::ListLensReviewsInput::max_results): <p>The maximum number of results to return for this request.</p>
+    /// - On success, responds with [`ListLensReviewsOutput`](crate::output::ListLensReviewsOutput) with field(s):
+    ///   - [`workload_id(Option<String>)`](crate::output::ListLensReviewsOutput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`milestone_number(i32)`](crate::output::ListLensReviewsOutput::milestone_number): <p>The milestone number.</p>  <p>A workload can have a maximum of 100 milestones.</p>
+    ///   - [`lens_review_summaries(Option<Vec<LensReviewSummary>>)`](crate::output::ListLensReviewsOutput::lens_review_summaries): <p>List of lens summaries of lens reviews of a workload.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListLensReviewsOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListLensReviewsError>`](crate::error::ListLensReviewsError)
     pub fn list_lens_reviews(&self) -> fluent_builders::ListLensReviews<C, M, R> {
         fluent_builders::ListLensReviews::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListLensShares` operation.
-    ///
-    /// See [`ListLensShares`](crate::client::fluent_builders::ListLensShares) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListLensShares`](crate::client::fluent_builders::ListLensShares) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListLensShares::into_paginator).
+    ///
+    /// - Takes [`ListLensSharesInput`](crate::input::ListLensSharesInput) with field(s):
+    ///   - [`lens_alias(Option<String>)`](crate::input::ListLensSharesInput::lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`shared_with_prefix(Option<String>)`](crate::input::ListLensSharesInput::shared_with_prefix): <p>The Amazon Web Services account ID or IAM role with which the lens is shared.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListLensSharesInput::next_token): <p>The token to use to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::input::ListLensSharesInput::max_results): <p>The maximum number of results to return for this request.</p>
+    /// - On success, responds with [`ListLensSharesOutput`](crate::output::ListLensSharesOutput) with field(s):
+    ///   - [`lens_share_summaries(Option<Vec<LensShareSummary>>)`](crate::output::ListLensSharesOutput::lens_share_summaries): <p>A list of lens share summaries.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListLensSharesOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListLensSharesError>`](crate::error::ListLensSharesError)
     pub fn list_lens_shares(&self) -> fluent_builders::ListLensShares<C, M, R> {
         fluent_builders::ListLensShares::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListMilestones` operation.
-    ///
-    /// See [`ListMilestones`](crate::client::fluent_builders::ListMilestones) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListMilestones`](crate::client::fluent_builders::ListMilestones) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListMilestones::into_paginator).
+    ///
+    /// - Takes [`ListMilestonesInput`](crate::input::ListMilestonesInput) with field(s):
+    ///   - [`workload_id(Option<String>)`](crate::input::ListMilestonesInput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListMilestonesInput::next_token): <p>The token to use to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::input::ListMilestonesInput::max_results): <p>The maximum number of results to return for this request.</p>
+    /// - On success, responds with [`ListMilestonesOutput`](crate::output::ListMilestonesOutput) with field(s):
+    ///   - [`workload_id(Option<String>)`](crate::output::ListMilestonesOutput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`milestone_summaries(Option<Vec<MilestoneSummary>>)`](crate::output::ListMilestonesOutput::milestone_summaries): <p>A list of milestone summaries.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListMilestonesOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListMilestonesError>`](crate::error::ListMilestonesError)
     pub fn list_milestones(&self) -> fluent_builders::ListMilestones<C, M, R> {
         fluent_builders::ListMilestones::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListNotifications` operation.
-    ///
-    /// See [`ListNotifications`](crate::client::fluent_builders::ListNotifications) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListNotifications`](crate::client::fluent_builders::ListNotifications) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListNotifications::into_paginator).
+    ///
+    /// - Takes [`ListNotificationsInput`](crate::input::ListNotificationsInput) with field(s):
+    ///   - [`workload_id(Option<String>)`](crate::input::ListNotificationsInput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListNotificationsInput::next_token): <p>The token to use to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::input::ListNotificationsInput::max_results): <p>The maximum number of results to return for this request.</p>
+    /// - On success, responds with [`ListNotificationsOutput`](crate::output::ListNotificationsOutput) with field(s):
+    ///   - [`notification_summaries(Option<Vec<NotificationSummary>>)`](crate::output::ListNotificationsOutput::notification_summaries): <p>List of lens notification summaries in a workload.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListNotificationsOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListNotificationsError>`](crate::error::ListNotificationsError)
     pub fn list_notifications(&self) -> fluent_builders::ListNotifications<C, M, R> {
         fluent_builders::ListNotifications::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListShareInvitations` operation.
-    ///
-    /// See [`ListShareInvitations`](crate::client::fluent_builders::ListShareInvitations) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListShareInvitations`](crate::client::fluent_builders::ListShareInvitations) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListShareInvitations::into_paginator).
+    ///
+    /// - Takes [`ListShareInvitationsInput`](crate::input::ListShareInvitationsInput) with field(s):
+    ///   - [`workload_name_prefix(Option<String>)`](crate::input::ListShareInvitationsInput::workload_name_prefix): <p>An optional string added to the beginning of each workload name returned in the results.</p>
+    ///   - [`lens_name_prefix(Option<String>)`](crate::input::ListShareInvitationsInput::lens_name_prefix): <p>An optional string added to the beginning of each lens name returned in the results.</p>
+    ///   - [`share_resource_type(Option<ShareResourceType>)`](crate::input::ListShareInvitationsInput::share_resource_type): <p>The type of share invitations to be returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListShareInvitationsInput::next_token): <p>The token to use to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::input::ListShareInvitationsInput::max_results): <p>The maximum number of results to return for this request.</p>
+    /// - On success, responds with [`ListShareInvitationsOutput`](crate::output::ListShareInvitationsOutput) with field(s):
+    ///   - [`share_invitation_summaries(Option<Vec<ShareInvitationSummary>>)`](crate::output::ListShareInvitationsOutput::share_invitation_summaries): <p>List of share invitation summaries in a workload.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListShareInvitationsOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListShareInvitationsError>`](crate::error::ListShareInvitationsError)
     pub fn list_share_invitations(&self) -> fluent_builders::ListShareInvitations<C, M, R> {
         fluent_builders::ListShareInvitations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`workload_arn(Option<String>)`](crate::input::ListTagsForResourceInput::workload_arn): <p>The ARN for the workload.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags for the resource.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListWorkloads` operation.
-    ///
-    /// See [`ListWorkloads`](crate::client::fluent_builders::ListWorkloads) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListWorkloads`](crate::client::fluent_builders::ListWorkloads) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWorkloads::into_paginator).
+    ///
+    /// - Takes [`ListWorkloadsInput`](crate::input::ListWorkloadsInput) with field(s):
+    ///   - [`workload_name_prefix(Option<String>)`](crate::input::ListWorkloadsInput::workload_name_prefix): <p>An optional string added to the beginning of each workload name returned in the results.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListWorkloadsInput::next_token): <p>The token to use to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::input::ListWorkloadsInput::max_results): <p>The maximum number of results to return for this request.</p>
+    /// - On success, responds with [`ListWorkloadsOutput`](crate::output::ListWorkloadsOutput) with field(s):
+    ///   - [`workload_summaries(Option<Vec<WorkloadSummary>>)`](crate::output::ListWorkloadsOutput::workload_summaries): <p>A list of workload summaries.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListWorkloadsOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListWorkloadsError>`](crate::error::ListWorkloadsError)
     pub fn list_workloads(&self) -> fluent_builders::ListWorkloads<C, M, R> {
         fluent_builders::ListWorkloads::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListWorkloadShares` operation.
-    ///
-    /// See [`ListWorkloadShares`](crate::client::fluent_builders::ListWorkloadShares) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListWorkloadShares`](crate::client::fluent_builders::ListWorkloadShares) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListWorkloadShares::into_paginator).
+    ///
+    /// - Takes [`ListWorkloadSharesInput`](crate::input::ListWorkloadSharesInput) with field(s):
+    ///   - [`workload_id(Option<String>)`](crate::input::ListWorkloadSharesInput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`shared_with_prefix(Option<String>)`](crate::input::ListWorkloadSharesInput::shared_with_prefix): <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListWorkloadSharesInput::next_token): <p>The token to use to retrieve the next set of results.</p>
+    ///   - [`max_results(i32)`](crate::input::ListWorkloadSharesInput::max_results): <p>The maximum number of results to return for this request.</p>
+    /// - On success, responds with [`ListWorkloadSharesOutput`](crate::output::ListWorkloadSharesOutput) with field(s):
+    ///   - [`workload_id(Option<String>)`](crate::output::ListWorkloadSharesOutput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`workload_share_summaries(Option<Vec<WorkloadShareSummary>>)`](crate::output::ListWorkloadSharesOutput::workload_share_summaries): <p>A list of workload share summaries.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListWorkloadSharesOutput::next_token): <p>The token to use to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListWorkloadSharesError>`](crate::error::ListWorkloadSharesError)
     pub fn list_workload_shares(&self) -> fluent_builders::ListWorkloadShares<C, M, R> {
         fluent_builders::ListWorkloadShares::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`workload_arn(Option<String>)`](crate::input::TagResourceInput::workload_arn): <p>The ARN for the workload.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>The tags for the resource.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`workload_arn(Option<String>)`](crate::input::UntagResourceInput::workload_arn): <p>The ARN for the workload.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>A list of tag keys. Existing tags of the resource whose keys are members of this list are removed from the resource.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateAnswer` operation.
+    /// Constructs a fluent builder for the [`UpdateAnswer`](crate::client::fluent_builders::UpdateAnswer) operation.
     ///
-    /// See [`UpdateAnswer`](crate::client::fluent_builders::UpdateAnswer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateAnswerInput`](crate::input::UpdateAnswerInput) with field(s):
+    ///   - [`workload_id(Option<String>)`](crate::input::UpdateAnswerInput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`lens_alias(Option<String>)`](crate::input::UpdateAnswerInput::lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`question_id(Option<String>)`](crate::input::UpdateAnswerInput::question_id): <p>The ID of the question.</p>
+    ///   - [`selected_choices(Option<Vec<String>>)`](crate::input::UpdateAnswerInput::selected_choices): <p>List of selected choice IDs in a question answer.</p>  <p>The values entered replace the previously selected choices.</p>
+    ///   - [`choice_updates(Option<HashMap<String, ChoiceUpdate>>)`](crate::input::UpdateAnswerInput::choice_updates): <p>A list of choices to update on a question in your workload. The String key corresponds to the choice ID to be updated.</p>
+    ///   - [`notes(Option<String>)`](crate::input::UpdateAnswerInput::notes): <p>The notes associated with the workload.</p>
+    ///   - [`is_applicable(bool)`](crate::input::UpdateAnswerInput::is_applicable): <p>Defines whether this question is applicable to a lens review.</p>
+    ///   - [`reason(Option<AnswerReason>)`](crate::input::UpdateAnswerInput::reason): <p>The reason why a question is not applicable to your workload.</p>
+    /// - On success, responds with [`UpdateAnswerOutput`](crate::output::UpdateAnswerOutput) with field(s):
+    ///   - [`workload_id(Option<String>)`](crate::output::UpdateAnswerOutput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`lens_alias(Option<String>)`](crate::output::UpdateAnswerOutput::lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`lens_arn(Option<String>)`](crate::output::UpdateAnswerOutput::lens_arn): <p>The ARN for the lens.</p>
+    ///   - [`answer(Option<Answer>)`](crate::output::UpdateAnswerOutput::answer): <p>An answer of the question.</p>
+    /// - On failure, responds with [`SdkError<UpdateAnswerError>`](crate::error::UpdateAnswerError)
     pub fn update_answer(&self) -> fluent_builders::UpdateAnswer<C, M, R> {
         fluent_builders::UpdateAnswer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateLensReview` operation.
+    /// Constructs a fluent builder for the [`UpdateLensReview`](crate::client::fluent_builders::UpdateLensReview) operation.
     ///
-    /// See [`UpdateLensReview`](crate::client::fluent_builders::UpdateLensReview) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateLensReviewInput`](crate::input::UpdateLensReviewInput) with field(s):
+    ///   - [`workload_id(Option<String>)`](crate::input::UpdateLensReviewInput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`lens_alias(Option<String>)`](crate::input::UpdateLensReviewInput::lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`lens_notes(Option<String>)`](crate::input::UpdateLensReviewInput::lens_notes): <p>The notes associated with the workload.</p>
+    ///   - [`pillar_notes(Option<HashMap<String, String>>)`](crate::input::UpdateLensReviewInput::pillar_notes): <p>List of pillar notes of a lens review in a workload.</p>
+    /// - On success, responds with [`UpdateLensReviewOutput`](crate::output::UpdateLensReviewOutput) with field(s):
+    ///   - [`workload_id(Option<String>)`](crate::output::UpdateLensReviewOutput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`lens_review(Option<LensReview>)`](crate::output::UpdateLensReviewOutput::lens_review): <p>A lens review of a question.</p>
+    /// - On failure, responds with [`SdkError<UpdateLensReviewError>`](crate::error::UpdateLensReviewError)
     pub fn update_lens_review(&self) -> fluent_builders::UpdateLensReview<C, M, R> {
         fluent_builders::UpdateLensReview::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateShareInvitation` operation.
+    /// Constructs a fluent builder for the [`UpdateShareInvitation`](crate::client::fluent_builders::UpdateShareInvitation) operation.
     ///
-    /// See [`UpdateShareInvitation`](crate::client::fluent_builders::UpdateShareInvitation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateShareInvitationInput`](crate::input::UpdateShareInvitationInput) with field(s):
+    ///   - [`share_invitation_id(Option<String>)`](crate::input::UpdateShareInvitationInput::share_invitation_id): <p>The ID assigned to the share invitation.</p>
+    ///   - [`share_invitation_action(Option<ShareInvitationAction>)`](crate::input::UpdateShareInvitationInput::share_invitation_action): <p>Share invitation action taken by contributor.</p>
+    /// - On success, responds with [`UpdateShareInvitationOutput`](crate::output::UpdateShareInvitationOutput) with field(s):
+    ///   - [`share_invitation(Option<ShareInvitation>)`](crate::output::UpdateShareInvitationOutput::share_invitation): <p>The updated workload share invitation.</p>
+    /// - On failure, responds with [`SdkError<UpdateShareInvitationError>`](crate::error::UpdateShareInvitationError)
     pub fn update_share_invitation(&self) -> fluent_builders::UpdateShareInvitation<C, M, R> {
         fluent_builders::UpdateShareInvitation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateWorkload` operation.
+    /// Constructs a fluent builder for the [`UpdateWorkload`](crate::client::fluent_builders::UpdateWorkload) operation.
     ///
-    /// See [`UpdateWorkload`](crate::client::fluent_builders::UpdateWorkload) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateWorkloadInput`](crate::input::UpdateWorkloadInput) with field(s):
+    ///   - [`workload_id(Option<String>)`](crate::input::UpdateWorkloadInput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`workload_name(Option<String>)`](crate::input::UpdateWorkloadInput::workload_name): <p>The name of the workload.</p>  <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateWorkloadInput::description): <p>The description for the workload.</p>
+    ///   - [`environment(Option<WorkloadEnvironment>)`](crate::input::UpdateWorkloadInput::environment): <p>The environment for the workload.</p>
+    ///   - [`account_ids(Option<Vec<String>>)`](crate::input::UpdateWorkloadInput::account_ids): <p>The list of Amazon Web Services account IDs associated with the workload.</p>
+    ///   - [`aws_regions(Option<Vec<String>>)`](crate::input::UpdateWorkloadInput::aws_regions): <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
+    ///   - [`non_aws_regions(Option<Vec<String>>)`](crate::input::UpdateWorkloadInput::non_aws_regions): <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
+    ///   - [`pillar_priorities(Option<Vec<String>>)`](crate::input::UpdateWorkloadInput::pillar_priorities): <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
+    ///   - [`architectural_design(Option<String>)`](crate::input::UpdateWorkloadInput::architectural_design): <p>The URL of the architectural design for the workload.</p>
+    ///   - [`review_owner(Option<String>)`](crate::input::UpdateWorkloadInput::review_owner): <p>The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.</p>
+    ///   - [`is_review_owner_update_acknowledged(bool)`](crate::input::UpdateWorkloadInput::is_review_owner_update_acknowledged): <p>Flag indicating whether the workload owner has acknowledged that the <i>Review owner</i> field is required.</p>  <p>If a <b>Review owner</b> is not added to the workload within 60 days of acknowledgement, access to the workload is restricted until an owner is added.</p>
+    ///   - [`industry_type(Option<String>)`](crate::input::UpdateWorkloadInput::industry_type): <p>The industry type for the workload.</p>  <p>If specified, must be one of the following:</p>  <ul>   <li> <p> <code>Agriculture</code> </p> </li>   <li> <p> <code>Automobile</code> </p> </li>   <li> <p> <code>Defense</code> </p> </li>   <li> <p> <code>Design and Engineering</code> </p> </li>   <li> <p> <code>Digital Advertising</code> </p> </li>   <li> <p> <code>Education</code> </p> </li>   <li> <p> <code>Environmental Protection</code> </p> </li>   <li> <p> <code>Financial Services</code> </p> </li>   <li> <p> <code>Gaming</code> </p> </li>   <li> <p> <code>General Public Services</code> </p> </li>   <li> <p> <code>Healthcare</code> </p> </li>   <li> <p> <code>Hospitality</code> </p> </li>   <li> <p> <code>InfoTech</code> </p> </li>   <li> <p> <code>Justice and Public Safety</code> </p> </li>   <li> <p> <code>Life Sciences</code> </p> </li>   <li> <p> <code>Manufacturing</code> </p> </li>   <li> <p> <code>Media &amp; Entertainment</code> </p> </li>   <li> <p> <code>Mining &amp; Resources</code> </p> </li>   <li> <p> <code>Oil &amp; Gas</code> </p> </li>   <li> <p> <code>Power &amp; Utilities</code> </p> </li>   <li> <p> <code>Professional Services</code> </p> </li>   <li> <p> <code>Real Estate &amp; Construction</code> </p> </li>   <li> <p> <code>Retail &amp; Wholesale</code> </p> </li>   <li> <p> <code>Social Protection</code> </p> </li>   <li> <p> <code>Telecommunications</code> </p> </li>   <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>   <li> <p> <code>Other</code> </p> </li>  </ul>
+    ///   - [`industry(Option<String>)`](crate::input::UpdateWorkloadInput::industry): <p>The industry for the workload.</p>
+    ///   - [`notes(Option<String>)`](crate::input::UpdateWorkloadInput::notes): <p>The notes associated with the workload.</p>
+    ///   - [`improvement_status(Option<WorkloadImprovementStatus>)`](crate::input::UpdateWorkloadInput::improvement_status): <p>The improvement status for a workload.</p>
+    /// - On success, responds with [`UpdateWorkloadOutput`](crate::output::UpdateWorkloadOutput) with field(s):
+    ///   - [`workload(Option<Workload>)`](crate::output::UpdateWorkloadOutput::workload): <p>A workload return object.</p>
+    /// - On failure, responds with [`SdkError<UpdateWorkloadError>`](crate::error::UpdateWorkloadError)
     pub fn update_workload(&self) -> fluent_builders::UpdateWorkload<C, M, R> {
         fluent_builders::UpdateWorkload::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateWorkloadShare` operation.
+    /// Constructs a fluent builder for the [`UpdateWorkloadShare`](crate::client::fluent_builders::UpdateWorkloadShare) operation.
     ///
-    /// See [`UpdateWorkloadShare`](crate::client::fluent_builders::UpdateWorkloadShare) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateWorkloadShareInput`](crate::input::UpdateWorkloadShareInput) with field(s):
+    ///   - [`share_id(Option<String>)`](crate::input::UpdateWorkloadShareInput::share_id): <p>The ID associated with the workload share.</p>
+    ///   - [`workload_id(Option<String>)`](crate::input::UpdateWorkloadShareInput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`permission_type(Option<PermissionType>)`](crate::input::UpdateWorkloadShareInput::permission_type): <p>Permission granted on a workload share.</p>
+    /// - On success, responds with [`UpdateWorkloadShareOutput`](crate::output::UpdateWorkloadShareOutput) with field(s):
+    ///   - [`workload_id(Option<String>)`](crate::output::UpdateWorkloadShareOutput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`workload_share(Option<WorkloadShare>)`](crate::output::UpdateWorkloadShareOutput::workload_share): <p>A workload share return object.</p>
+    /// - On failure, responds with [`SdkError<UpdateWorkloadShareError>`](crate::error::UpdateWorkloadShareError)
     pub fn update_workload_share(&self) -> fluent_builders::UpdateWorkloadShare<C, M, R> {
         fluent_builders::UpdateWorkloadShare::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpgradeLensReview` operation.
+    /// Constructs a fluent builder for the [`UpgradeLensReview`](crate::client::fluent_builders::UpgradeLensReview) operation.
     ///
-    /// See [`UpgradeLensReview`](crate::client::fluent_builders::UpgradeLensReview) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpgradeLensReviewInput`](crate::input::UpgradeLensReviewInput) with field(s):
+    ///   - [`workload_id(Option<String>)`](crate::input::UpgradeLensReviewInput::workload_id): <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
+    ///   - [`lens_alias(Option<String>)`](crate::input::UpgradeLensReviewInput::lens_alias): <p>The alias of the lens, for example, <code>serverless</code>.</p>  <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
+    ///   - [`milestone_name(Option<String>)`](crate::input::UpgradeLensReviewInput::milestone_name): <p>The name of the milestone in a workload.</p>  <p>Milestone names must be unique within a workload.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::UpgradeLensReviewInput::client_request_token): <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>  <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after it has completed successfully, the result of the original request is returned. </p> <important>   <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>  </important>
+    /// - On success, responds with [`UpgradeLensReviewOutput`](crate::output::UpgradeLensReviewOutput)
+
+    /// - On failure, responds with [`SdkError<UpgradeLensReviewError>`](crate::error::UpgradeLensReviewError)
     pub fn upgrade_lens_review(&self) -> fluent_builders::UpgradeLensReview<C, M, R> {
         fluent_builders::UpgradeLensReview::new(self.handle.clone())
     }

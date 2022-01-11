@@ -83,428 +83,800 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CompareFaces` operation.
+    /// Constructs a fluent builder for the [`CompareFaces`](crate::client::fluent_builders::CompareFaces) operation.
     ///
-    /// See [`CompareFaces`](crate::client::fluent_builders::CompareFaces) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CompareFacesInput`](crate::input::CompareFacesInput) with field(s):
+    ///   - [`source_image(Option<Image>)`](crate::input::CompareFacesInput::source_image): <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>  <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
+    ///   - [`target_image(Option<Image>)`](crate::input::CompareFacesInput::target_image): <p>The target image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>  <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
+    ///   - [`similarity_threshold(Option<f32>)`](crate::input::CompareFacesInput::similarity_threshold): <p>The minimum level of confidence in the face matches that a match must meet to be included in the <code>FaceMatches</code> array.</p>
+    ///   - [`quality_filter(Option<QualityFilter>)`](crate::input::CompareFacesInput::quality_filter): <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't compared. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. The default value is <code>NONE</code>. </p>  <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
+    /// - On success, responds with [`CompareFacesOutput`](crate::output::CompareFacesOutput) with field(s):
+    ///   - [`source_image_face(Option<ComparedSourceImageFace>)`](crate::output::CompareFacesOutput::source_image_face): <p>The face in the source image that was used for comparison.</p>
+    ///   - [`face_matches(Option<Vec<CompareFacesMatch>>)`](crate::output::CompareFacesOutput::face_matches): <p>An array of faces in the target image that match the source image face. Each <code>CompareFacesMatch</code> object provides the bounding box, the confidence level that the bounding box contains a face, and the similarity score for the face in the bounding box and the face in the source image.</p>
+    ///   - [`unmatched_faces(Option<Vec<ComparedFace>>)`](crate::output::CompareFacesOutput::unmatched_faces): <p>An array of faces in the target image that did not match the source image face.</p>
+    ///   - [`source_image_orientation_correction(Option<OrientationCorrection>)`](crate::output::CompareFacesOutput::source_image_orientation_correction): <p>The value of <code>SourceImageOrientationCorrection</code> is always null.</p>  <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>  <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
+    ///   - [`target_image_orientation_correction(Option<OrientationCorrection>)`](crate::output::CompareFacesOutput::target_image_orientation_correction): <p>The value of <code>TargetImageOrientationCorrection</code> is always null.</p>  <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>  <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
+    /// - On failure, responds with [`SdkError<CompareFacesError>`](crate::error::CompareFacesError)
     pub fn compare_faces(&self) -> fluent_builders::CompareFaces<C, M, R> {
         fluent_builders::CompareFaces::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateCollection` operation.
+    /// Constructs a fluent builder for the [`CreateCollection`](crate::client::fluent_builders::CreateCollection) operation.
     ///
-    /// See [`CreateCollection`](crate::client::fluent_builders::CreateCollection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateCollectionInput`](crate::input::CreateCollectionInput) with field(s):
+    ///   - [`collection_id(Option<String>)`](crate::input::CreateCollectionInput::collection_id): <p>ID for the collection that you are creating.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateCollectionInput::tags): <p> A set of tags (key-value pairs) that you want to attach to the collection. </p>
+    /// - On success, responds with [`CreateCollectionOutput`](crate::output::CreateCollectionOutput) with field(s):
+    ///   - [`status_code(Option<i32>)`](crate::output::CreateCollectionOutput::status_code): <p>HTTP status code indicating the result of the operation.</p>
+    ///   - [`collection_arn(Option<String>)`](crate::output::CreateCollectionOutput::collection_arn): <p>Amazon Resource Name (ARN) of the collection. You can use this to manage permissions on your resources. </p>
+    ///   - [`face_model_version(Option<String>)`](crate::output::CreateCollectionOutput::face_model_version): <p>Latest face model being used with the collection. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>.</p>
+    /// - On failure, responds with [`SdkError<CreateCollectionError>`](crate::error::CreateCollectionError)
     pub fn create_collection(&self) -> fluent_builders::CreateCollection<C, M, R> {
         fluent_builders::CreateCollection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDataset` operation.
+    /// Constructs a fluent builder for the [`CreateDataset`](crate::client::fluent_builders::CreateDataset) operation.
     ///
-    /// See [`CreateDataset`](crate::client::fluent_builders::CreateDataset) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateDatasetInput`](crate::input::CreateDatasetInput) with field(s):
+    ///   - [`dataset_source(Option<DatasetSource>)`](crate::input::CreateDatasetInput::dataset_source): <p> The source files for the dataset. You can specify the ARN of an existing dataset or specify the Amazon S3 bucket location of an Amazon Sagemaker format manifest file. If you don't specify <code>datasetSource</code>, an empty dataset is created. To add labeled images to the dataset, You can use the console or call <code>UpdateDatasetEntries</code>. </p>
+    ///   - [`dataset_type(Option<DatasetType>)`](crate::input::CreateDatasetInput::dataset_type): <p> The type of the dataset. Specify <code>train</code> to create a training dataset. Specify <code>test</code> to create a test dataset. </p>
+    ///   - [`project_arn(Option<String>)`](crate::input::CreateDatasetInput::project_arn): <p> The ARN of the Amazon Rekognition Custom Labels project to which you want to asssign the dataset. </p>
+    /// - On success, responds with [`CreateDatasetOutput`](crate::output::CreateDatasetOutput) with field(s):
+    ///   - [`dataset_arn(Option<String>)`](crate::output::CreateDatasetOutput::dataset_arn): <p> The ARN of the created Amazon Rekognition Custom Labels dataset. </p>
+    /// - On failure, responds with [`SdkError<CreateDatasetError>`](crate::error::CreateDatasetError)
     pub fn create_dataset(&self) -> fluent_builders::CreateDataset<C, M, R> {
         fluent_builders::CreateDataset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateProject` operation.
+    /// Constructs a fluent builder for the [`CreateProject`](crate::client::fluent_builders::CreateProject) operation.
     ///
-    /// See [`CreateProject`](crate::client::fluent_builders::CreateProject) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateProjectInput`](crate::input::CreateProjectInput) with field(s):
+    ///   - [`project_name(Option<String>)`](crate::input::CreateProjectInput::project_name): <p>The name of the project to create.</p>
+    /// - On success, responds with [`CreateProjectOutput`](crate::output::CreateProjectOutput) with field(s):
+    ///   - [`project_arn(Option<String>)`](crate::output::CreateProjectOutput::project_arn): <p>The Amazon Resource Name (ARN) of the new project. You can use the ARN to configure IAM access to the project. </p>
+    /// - On failure, responds with [`SdkError<CreateProjectError>`](crate::error::CreateProjectError)
     pub fn create_project(&self) -> fluent_builders::CreateProject<C, M, R> {
         fluent_builders::CreateProject::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateProjectVersion` operation.
+    /// Constructs a fluent builder for the [`CreateProjectVersion`](crate::client::fluent_builders::CreateProjectVersion) operation.
     ///
-    /// See [`CreateProjectVersion`](crate::client::fluent_builders::CreateProjectVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateProjectVersionInput`](crate::input::CreateProjectVersionInput) with field(s):
+    ///   - [`project_arn(Option<String>)`](crate::input::CreateProjectVersionInput::project_arn): <p>The ARN of the Amazon Rekognition Custom Labels project that manages the model that you want to train.</p>
+    ///   - [`version_name(Option<String>)`](crate::input::CreateProjectVersionInput::version_name): <p>A name for the version of the model. This value must be unique.</p>
+    ///   - [`output_config(Option<OutputConfig>)`](crate::input::CreateProjectVersionInput::output_config): <p>The Amazon S3 bucket location to store the results of training. The S3 bucket can be in any AWS account as long as the caller has <code>s3:PutObject</code> permissions on the S3 bucket.</p>
+    ///   - [`training_data(Option<TrainingData>)`](crate::input::CreateProjectVersionInput::training_data): <p>Specifies an external manifest that the services uses to train the model. If you specify <code>TrainingData</code> you must also specify <code>TestingData</code>. The project must not have any associated datasets. </p>
+    ///   - [`testing_data(Option<TestingData>)`](crate::input::CreateProjectVersionInput::testing_data): <p>Specifies an external manifest that the service uses to test the model. If you specify <code>TestingData</code> you must also specify <code>TrainingData</code>. The project must not have any associated datasets.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateProjectVersionInput::tags): <p> A set of tags (key-value pairs) that you want to attach to the model. </p>
+    ///   - [`kms_key_id(Option<String>)`](crate::input::CreateProjectVersionInput::kms_key_id): <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training and test images copied into the service for model training. Your source images are unaffected. The key is also used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>  <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>  <ul>   <li> <p>kms:CreateGrant</p> </li>   <li> <p>kms:DescribeKey</p> </li>   <li> <p>kms:GenerateDataKey</p> </li>   <li> <p>kms:Decrypt</p> </li>  </ul>  <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
+    /// - On success, responds with [`CreateProjectVersionOutput`](crate::output::CreateProjectVersionOutput) with field(s):
+    ///   - [`project_version_arn(Option<String>)`](crate::output::CreateProjectVersionOutput::project_version_arn): <p>The ARN of the model version that was created. Use <code>DescribeProjectVersion</code> to get the current status of the training operation.</p>
+    /// - On failure, responds with [`SdkError<CreateProjectVersionError>`](crate::error::CreateProjectVersionError)
     pub fn create_project_version(&self) -> fluent_builders::CreateProjectVersion<C, M, R> {
         fluent_builders::CreateProjectVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateStreamProcessor` operation.
+    /// Constructs a fluent builder for the [`CreateStreamProcessor`](crate::client::fluent_builders::CreateStreamProcessor) operation.
     ///
-    /// See [`CreateStreamProcessor`](crate::client::fluent_builders::CreateStreamProcessor) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateStreamProcessorInput`](crate::input::CreateStreamProcessorInput) with field(s):
+    ///   - [`input(Option<StreamProcessorInput>)`](crate::input::CreateStreamProcessorInput::input): <p>Kinesis video stream stream that provides the source streaming video. If you are using the AWS CLI, the parameter name is <code>StreamProcessorInput</code>.</p>
+    ///   - [`output(Option<StreamProcessorOutput>)`](crate::input::CreateStreamProcessorInput::output): <p>Kinesis data stream stream to which Amazon Rekognition Video puts the analysis results. If you are using the AWS CLI, the parameter name is <code>StreamProcessorOutput</code>.</p>
+    ///   - [`name(Option<String>)`](crate::input::CreateStreamProcessorInput::name): <p>An identifier you assign to the stream processor. You can use <code>Name</code> to manage the stream processor. For example, you can get the current status of the stream processor by calling <code>DescribeStreamProcessor</code>. <code>Name</code> is idempotent. </p>
+    ///   - [`settings(Option<StreamProcessorSettings>)`](crate::input::CreateStreamProcessorInput::settings): <p>Face recognition input parameters to be used by the stream processor. Includes the collection to use for face recognition and the face attributes to detect.</p>
+    ///   - [`role_arn(Option<String>)`](crate::input::CreateStreamProcessorInput::role_arn): <p>ARN of the IAM role that allows access to the stream processor.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateStreamProcessorInput::tags): <p> A set of tags (key-value pairs) that you want to attach to the stream processor. </p>
+    /// - On success, responds with [`CreateStreamProcessorOutput`](crate::output::CreateStreamProcessorOutput) with field(s):
+    ///   - [`stream_processor_arn(Option<String>)`](crate::output::CreateStreamProcessorOutput::stream_processor_arn): <p>ARN for the newly create stream processor.</p>
+    /// - On failure, responds with [`SdkError<CreateStreamProcessorError>`](crate::error::CreateStreamProcessorError)
     pub fn create_stream_processor(&self) -> fluent_builders::CreateStreamProcessor<C, M, R> {
         fluent_builders::CreateStreamProcessor::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteCollection` operation.
+    /// Constructs a fluent builder for the [`DeleteCollection`](crate::client::fluent_builders::DeleteCollection) operation.
     ///
-    /// See [`DeleteCollection`](crate::client::fluent_builders::DeleteCollection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteCollectionInput`](crate::input::DeleteCollectionInput) with field(s):
+    ///   - [`collection_id(Option<String>)`](crate::input::DeleteCollectionInput::collection_id): <p>ID of the collection to delete.</p>
+    /// - On success, responds with [`DeleteCollectionOutput`](crate::output::DeleteCollectionOutput) with field(s):
+    ///   - [`status_code(Option<i32>)`](crate::output::DeleteCollectionOutput::status_code): <p>HTTP status code that indicates the result of the operation.</p>
+    /// - On failure, responds with [`SdkError<DeleteCollectionError>`](crate::error::DeleteCollectionError)
     pub fn delete_collection(&self) -> fluent_builders::DeleteCollection<C, M, R> {
         fluent_builders::DeleteCollection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDataset` operation.
+    /// Constructs a fluent builder for the [`DeleteDataset`](crate::client::fluent_builders::DeleteDataset) operation.
     ///
-    /// See [`DeleteDataset`](crate::client::fluent_builders::DeleteDataset) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteDatasetInput`](crate::input::DeleteDatasetInput) with field(s):
+    ///   - [`dataset_arn(Option<String>)`](crate::input::DeleteDatasetInput::dataset_arn): <p> The ARN of the Amazon Rekognition Custom Labels dataset that you want to delete. </p>
+    /// - On success, responds with [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteDatasetError>`](crate::error::DeleteDatasetError)
     pub fn delete_dataset(&self) -> fluent_builders::DeleteDataset<C, M, R> {
         fluent_builders::DeleteDataset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteFaces` operation.
+    /// Constructs a fluent builder for the [`DeleteFaces`](crate::client::fluent_builders::DeleteFaces) operation.
     ///
-    /// See [`DeleteFaces`](crate::client::fluent_builders::DeleteFaces) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteFacesInput`](crate::input::DeleteFacesInput) with field(s):
+    ///   - [`collection_id(Option<String>)`](crate::input::DeleteFacesInput::collection_id): <p>Collection from which to remove the specific faces.</p>
+    ///   - [`face_ids(Option<Vec<String>>)`](crate::input::DeleteFacesInput::face_ids): <p>An array of face IDs to delete.</p>
+    /// - On success, responds with [`DeleteFacesOutput`](crate::output::DeleteFacesOutput) with field(s):
+    ///   - [`deleted_faces(Option<Vec<String>>)`](crate::output::DeleteFacesOutput::deleted_faces): <p>An array of strings (face IDs) of the faces that were deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteFacesError>`](crate::error::DeleteFacesError)
     pub fn delete_faces(&self) -> fluent_builders::DeleteFaces<C, M, R> {
         fluent_builders::DeleteFaces::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteProject` operation.
+    /// Constructs a fluent builder for the [`DeleteProject`](crate::client::fluent_builders::DeleteProject) operation.
     ///
-    /// See [`DeleteProject`](crate::client::fluent_builders::DeleteProject) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteProjectInput`](crate::input::DeleteProjectInput) with field(s):
+    ///   - [`project_arn(Option<String>)`](crate::input::DeleteProjectInput::project_arn): <p>The Amazon Resource Name (ARN) of the project that you want to delete.</p>
+    /// - On success, responds with [`DeleteProjectOutput`](crate::output::DeleteProjectOutput) with field(s):
+    ///   - [`status(Option<ProjectStatus>)`](crate::output::DeleteProjectOutput::status): <p>The current status of the delete project operation.</p>
+    /// - On failure, responds with [`SdkError<DeleteProjectError>`](crate::error::DeleteProjectError)
     pub fn delete_project(&self) -> fluent_builders::DeleteProject<C, M, R> {
         fluent_builders::DeleteProject::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteProjectVersion` operation.
+    /// Constructs a fluent builder for the [`DeleteProjectVersion`](crate::client::fluent_builders::DeleteProjectVersion) operation.
     ///
-    /// See [`DeleteProjectVersion`](crate::client::fluent_builders::DeleteProjectVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteProjectVersionInput`](crate::input::DeleteProjectVersionInput) with field(s):
+    ///   - [`project_version_arn(Option<String>)`](crate::input::DeleteProjectVersionInput::project_version_arn): <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>
+    /// - On success, responds with [`DeleteProjectVersionOutput`](crate::output::DeleteProjectVersionOutput) with field(s):
+    ///   - [`status(Option<ProjectVersionStatus>)`](crate::output::DeleteProjectVersionOutput::status): <p>The status of the deletion operation.</p>
+    /// - On failure, responds with [`SdkError<DeleteProjectVersionError>`](crate::error::DeleteProjectVersionError)
     pub fn delete_project_version(&self) -> fluent_builders::DeleteProjectVersion<C, M, R> {
         fluent_builders::DeleteProjectVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteStreamProcessor` operation.
+    /// Constructs a fluent builder for the [`DeleteStreamProcessor`](crate::client::fluent_builders::DeleteStreamProcessor) operation.
     ///
-    /// See [`DeleteStreamProcessor`](crate::client::fluent_builders::DeleteStreamProcessor) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteStreamProcessorInput`](crate::input::DeleteStreamProcessorInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteStreamProcessorInput::name): <p>The name of the stream processor you want to delete.</p>
+    /// - On success, responds with [`DeleteStreamProcessorOutput`](crate::output::DeleteStreamProcessorOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteStreamProcessorError>`](crate::error::DeleteStreamProcessorError)
     pub fn delete_stream_processor(&self) -> fluent_builders::DeleteStreamProcessor<C, M, R> {
         fluent_builders::DeleteStreamProcessor::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeCollection` operation.
+    /// Constructs a fluent builder for the [`DescribeCollection`](crate::client::fluent_builders::DescribeCollection) operation.
     ///
-    /// See [`DescribeCollection`](crate::client::fluent_builders::DescribeCollection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeCollectionInput`](crate::input::DescribeCollectionInput) with field(s):
+    ///   - [`collection_id(Option<String>)`](crate::input::DescribeCollectionInput::collection_id): <p>The ID of the collection to describe.</p>
+    /// - On success, responds with [`DescribeCollectionOutput`](crate::output::DescribeCollectionOutput) with field(s):
+    ///   - [`face_count(Option<i64>)`](crate::output::DescribeCollectionOutput::face_count): <p>The number of faces that are indexed into the collection. To index faces into a collection, use <code>IndexFaces</code>.</p>
+    ///   - [`face_model_version(Option<String>)`](crate::output::DescribeCollectionOutput::face_model_version): <p>The version of the face model that's used by the collection for face detection.</p>  <p>For more information, see Model Versioning in the Amazon Rekognition Developer Guide.</p>
+    ///   - [`collection_arn(Option<String>)`](crate::output::DescribeCollectionOutput::collection_arn): <p>The Amazon Resource Name (ARN) of the collection.</p>
+    ///   - [`creation_timestamp(Option<DateTime>)`](crate::output::DescribeCollectionOutput::creation_timestamp): <p>The number of milliseconds since the Unix epoch time until the creation of the collection. The Unix epoch time is 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970.</p>
+    /// - On failure, responds with [`SdkError<DescribeCollectionError>`](crate::error::DescribeCollectionError)
     pub fn describe_collection(&self) -> fluent_builders::DescribeCollection<C, M, R> {
         fluent_builders::DescribeCollection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDataset` operation.
+    /// Constructs a fluent builder for the [`DescribeDataset`](crate::client::fluent_builders::DescribeDataset) operation.
     ///
-    /// See [`DescribeDataset`](crate::client::fluent_builders::DescribeDataset) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeDatasetInput`](crate::input::DescribeDatasetInput) with field(s):
+    ///   - [`dataset_arn(Option<String>)`](crate::input::DescribeDatasetInput::dataset_arn): <p> The Amazon Resource Name (ARN) of the dataset that you want to describe. </p>
+    /// - On success, responds with [`DescribeDatasetOutput`](crate::output::DescribeDatasetOutput) with field(s):
+    ///   - [`dataset_description(Option<DatasetDescription>)`](crate::output::DescribeDatasetOutput::dataset_description): <p> The description for the dataset. </p>
+    /// - On failure, responds with [`SdkError<DescribeDatasetError>`](crate::error::DescribeDatasetError)
     pub fn describe_dataset(&self) -> fluent_builders::DescribeDataset<C, M, R> {
         fluent_builders::DescribeDataset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeProjects` operation.
-    ///
-    /// See [`DescribeProjects`](crate::client::fluent_builders::DescribeProjects) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeProjects`](crate::client::fluent_builders::DescribeProjects) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeProjects::into_paginator).
+    ///
+    /// - Takes [`DescribeProjectsInput`](crate::input::DescribeProjectsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeProjectsInput::next_token): <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeProjectsInput::max_results): <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100. </p>
+    ///   - [`project_names(Option<Vec<String>>)`](crate::input::DescribeProjectsInput::project_names): <p>A list of the projects that you want Amazon Rekognition Custom Labels to describe. If you don't specify a value, the response includes descriptions for all the projects in your AWS account.</p>
+    /// - On success, responds with [`DescribeProjectsOutput`](crate::output::DescribeProjectsOutput) with field(s):
+    ///   - [`project_descriptions(Option<Vec<ProjectDescription>>)`](crate::output::DescribeProjectsOutput::project_descriptions): <p>A list of project descriptions. The list is sorted by the date and time the projects are created.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeProjectsOutput::next_token): <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    /// - On failure, responds with [`SdkError<DescribeProjectsError>`](crate::error::DescribeProjectsError)
     pub fn describe_projects(&self) -> fluent_builders::DescribeProjects<C, M, R> {
         fluent_builders::DescribeProjects::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeProjectVersions` operation.
-    ///
-    /// See [`DescribeProjectVersions`](crate::client::fluent_builders::DescribeProjectVersions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeProjectVersions`](crate::client::fluent_builders::DescribeProjectVersions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeProjectVersions::into_paginator).
+    ///
+    /// - Takes [`DescribeProjectVersionsInput`](crate::input::DescribeProjectVersionsInput) with field(s):
+    ///   - [`project_arn(Option<String>)`](crate::input::DescribeProjectVersionsInput::project_arn): <p>The Amazon Resource Name (ARN) of the project that contains the models you want to describe.</p>
+    ///   - [`version_names(Option<Vec<String>>)`](crate::input::DescribeProjectVersionsInput::version_names): <p>A list of model version names that you want to describe. You can add up to 10 model version names to the list. If you don't specify a value, all model descriptions are returned. A version name is part of a model (ProjectVersion) ARN. For example, <code>my-model.2020-01-21T09.10.15</code> is the version name in the following ARN. <code>arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/<i>my-model.2020-01-21T09.10.15</i>/1234567890123</code>.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeProjectVersionsInput::next_token): <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DescribeProjectVersionsInput::max_results): <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100. </p>
+    /// - On success, responds with [`DescribeProjectVersionsOutput`](crate::output::DescribeProjectVersionsOutput) with field(s):
+    ///   - [`project_version_descriptions(Option<Vec<ProjectVersionDescription>>)`](crate::output::DescribeProjectVersionsOutput::project_version_descriptions): <p>A list of model descriptions. The list is sorted by the creation date and time of the model versions, latest to earliest.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeProjectVersionsOutput::next_token): <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    /// - On failure, responds with [`SdkError<DescribeProjectVersionsError>`](crate::error::DescribeProjectVersionsError)
     pub fn describe_project_versions(&self) -> fluent_builders::DescribeProjectVersions<C, M, R> {
         fluent_builders::DescribeProjectVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeStreamProcessor` operation.
+    /// Constructs a fluent builder for the [`DescribeStreamProcessor`](crate::client::fluent_builders::DescribeStreamProcessor) operation.
     ///
-    /// See [`DescribeStreamProcessor`](crate::client::fluent_builders::DescribeStreamProcessor) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeStreamProcessorInput`](crate::input::DescribeStreamProcessorInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DescribeStreamProcessorInput::name): <p>Name of the stream processor for which you want information.</p>
+    /// - On success, responds with [`DescribeStreamProcessorOutput`](crate::output::DescribeStreamProcessorOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::DescribeStreamProcessorOutput::name): <p>Name of the stream processor. </p>
+    ///   - [`stream_processor_arn(Option<String>)`](crate::output::DescribeStreamProcessorOutput::stream_processor_arn): <p>ARN of the stream processor.</p>
+    ///   - [`status(Option<StreamProcessorStatus>)`](crate::output::DescribeStreamProcessorOutput::status): <p>Current status of the stream processor.</p>
+    ///   - [`status_message(Option<String>)`](crate::output::DescribeStreamProcessorOutput::status_message): <p>Detailed status message about the stream processor.</p>
+    ///   - [`creation_timestamp(Option<DateTime>)`](crate::output::DescribeStreamProcessorOutput::creation_timestamp): <p>Date and time the stream processor was created</p>
+    ///   - [`last_update_timestamp(Option<DateTime>)`](crate::output::DescribeStreamProcessorOutput::last_update_timestamp): <p>The time, in Unix format, the stream processor was last updated. For example, when the stream processor moves from a running state to a failed state, or when the user starts or stops the stream processor.</p>
+    ///   - [`input(Option<StreamProcessorInput>)`](crate::output::DescribeStreamProcessorOutput::input): <p>Kinesis video stream that provides the source streaming video.</p>
+    ///   - [`output(Option<StreamProcessorOutput>)`](crate::output::DescribeStreamProcessorOutput::output): <p>Kinesis data stream to which Amazon Rekognition Video puts the analysis results.</p>
+    ///   - [`role_arn(Option<String>)`](crate::output::DescribeStreamProcessorOutput::role_arn): <p>ARN of the IAM role that allows access to the stream processor.</p>
+    ///   - [`settings(Option<StreamProcessorSettings>)`](crate::output::DescribeStreamProcessorOutput::settings): <p>Face recognition input parameters that are being used by the stream processor. Includes the collection to use for face recognition and the face attributes to detect.</p>
+    /// - On failure, responds with [`SdkError<DescribeStreamProcessorError>`](crate::error::DescribeStreamProcessorError)
     pub fn describe_stream_processor(&self) -> fluent_builders::DescribeStreamProcessor<C, M, R> {
         fluent_builders::DescribeStreamProcessor::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DetectCustomLabels` operation.
+    /// Constructs a fluent builder for the [`DetectCustomLabels`](crate::client::fluent_builders::DetectCustomLabels) operation.
     ///
-    /// See [`DetectCustomLabels`](crate::client::fluent_builders::DetectCustomLabels) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DetectCustomLabelsInput`](crate::input::DetectCustomLabelsInput) with field(s):
+    ///   - [`project_version_arn(Option<String>)`](crate::input::DetectCustomLabelsInput::project_version_arn): <p>The ARN of the model version that you want to use.</p>
+    ///   - [`image(Option<Image>)`](crate::input::DetectCustomLabelsInput::image): <p>Provides the input image either as bytes or an S3 object.</p>  <p>You pass image bytes to an Amazon Rekognition API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass an image loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64-encoded. Your code may not need to encode image bytes if you are using an AWS SDK to call Amazon Rekognition API operations. </p>  <p>For more information, see Analyzing an Image Loaded from a Local File System in the Amazon Rekognition Developer Guide.</p>  <p> You pass images stored in an S3 bucket to an Amazon Rekognition API operation by using the <code>S3Object</code> property. Images stored in an S3 bucket do not need to be base64-encoded.</p>  <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p>  <p>If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes using the Bytes property is not supported. You must first upload the image to an Amazon S3 bucket and then call the operation using the S3Object property.</p>  <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see Resource Based Policies in the Amazon Rekognition Developer Guide. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::DetectCustomLabelsInput::max_results): <p>Maximum number of results you want the service to return in the response. The service returns the specified number of highest confidence labels ranked from highest confidence to lowest.</p>
+    ///   - [`min_confidence(Option<f32>)`](crate::input::DetectCustomLabelsInput::min_confidence): <p>Specifies the minimum confidence level for the labels to return. <code>DetectCustomLabels</code> doesn't return any labels with a confidence value that's lower than this specified value. If you specify a value of 0, <code>DetectCustomLabels</code> returns all labels, regardless of the assumed threshold applied to each label. If you don't specify a value for <code>MinConfidence</code>, <code>DetectCustomLabels</code> returns labels based on the assumed threshold of each label.</p>
+    /// - On success, responds with [`DetectCustomLabelsOutput`](crate::output::DetectCustomLabelsOutput) with field(s):
+    ///   - [`custom_labels(Option<Vec<CustomLabel>>)`](crate::output::DetectCustomLabelsOutput::custom_labels): <p>An array of custom labels detected in the input image.</p>
+    /// - On failure, responds with [`SdkError<DetectCustomLabelsError>`](crate::error::DetectCustomLabelsError)
     pub fn detect_custom_labels(&self) -> fluent_builders::DetectCustomLabels<C, M, R> {
         fluent_builders::DetectCustomLabels::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DetectFaces` operation.
+    /// Constructs a fluent builder for the [`DetectFaces`](crate::client::fluent_builders::DetectFaces) operation.
     ///
-    /// See [`DetectFaces`](crate::client::fluent_builders::DetectFaces) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DetectFacesInput`](crate::input::DetectFacesInput) with field(s):
+    ///   - [`image(Option<Image>)`](crate::input::DetectFacesInput::image): <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>  <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
+    ///   - [`attributes(Option<Vec<Attribute>>)`](crate::input::DetectFacesInput::attributes): <p>An array of facial attributes you want to be returned. This can be the default list of attributes or all attributes. If you don't specify a value for <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API returns the following subset of facial attributes: <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial attributes are returned, but the operation takes longer to complete.</p>  <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which attributes to return (in this case, all attributes). </p>
+    /// - On success, responds with [`DetectFacesOutput`](crate::output::DetectFacesOutput) with field(s):
+    ///   - [`face_details(Option<Vec<FaceDetail>>)`](crate::output::DetectFacesOutput::face_details): <p>Details of each face found in the image. </p>
+    ///   - [`orientation_correction(Option<OrientationCorrection>)`](crate::output::DetectFacesOutput::orientation_correction): <p>The value of <code>OrientationCorrection</code> is always null.</p>  <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>  <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
+    /// - On failure, responds with [`SdkError<DetectFacesError>`](crate::error::DetectFacesError)
     pub fn detect_faces(&self) -> fluent_builders::DetectFaces<C, M, R> {
         fluent_builders::DetectFaces::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DetectLabels` operation.
+    /// Constructs a fluent builder for the [`DetectLabels`](crate::client::fluent_builders::DetectLabels) operation.
     ///
-    /// See [`DetectLabels`](crate::client::fluent_builders::DetectLabels) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DetectLabelsInput`](crate::input::DetectLabelsInput) with field(s):
+    ///   - [`image(Option<Image>)`](crate::input::DetectLabelsInput::image): <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is not supported. Images stored in an S3 Bucket do not need to be base64-encoded.</p>  <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
+    ///   - [`max_labels(Option<i32>)`](crate::input::DetectLabelsInput::max_labels): <p>Maximum number of labels you want the service to return in the response. The service returns the specified number of highest confidence labels. </p>
+    ///   - [`min_confidence(Option<f32>)`](crate::input::DetectLabelsInput::min_confidence): <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't return any labels with confidence lower than this specified value.</p>  <p>If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater than or equal to 55 percent.</p>
+    /// - On success, responds with [`DetectLabelsOutput`](crate::output::DetectLabelsOutput) with field(s):
+    ///   - [`labels(Option<Vec<Label>>)`](crate::output::DetectLabelsOutput::labels): <p>An array of labels for the real-world objects detected. </p>
+    ///   - [`orientation_correction(Option<OrientationCorrection>)`](crate::output::DetectLabelsOutput::orientation_correction): <p>The value of <code>OrientationCorrection</code> is always null.</p>  <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction. The bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata.</p>  <p>Amazon Rekognition doesn’t perform image correction for images in .png format and .jpeg images without orientation information in the image Exif metadata. The bounding box coordinates aren't translated and represent the object locations before the image is rotated. </p>
+    ///   - [`label_model_version(Option<String>)`](crate::output::DetectLabelsOutput::label_model_version): <p>Version number of the label detection model that was used to detect labels.</p>
+    /// - On failure, responds with [`SdkError<DetectLabelsError>`](crate::error::DetectLabelsError)
     pub fn detect_labels(&self) -> fluent_builders::DetectLabels<C, M, R> {
         fluent_builders::DetectLabels::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DetectModerationLabels` operation.
+    /// Constructs a fluent builder for the [`DetectModerationLabels`](crate::client::fluent_builders::DetectModerationLabels) operation.
     ///
-    /// See [`DetectModerationLabels`](crate::client::fluent_builders::DetectModerationLabels) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DetectModerationLabelsInput`](crate::input::DetectModerationLabelsInput) with field(s):
+    ///   - [`image(Option<Image>)`](crate::input::DetectModerationLabelsInput::image): <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>  <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
+    ///   - [`min_confidence(Option<f32>)`](crate::input::DetectModerationLabelsInput::min_confidence): <p>Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't return any labels with a confidence level lower than this specified value.</p>  <p>If you don't specify <code>MinConfidence</code>, the operation returns labels with confidence values greater than or equal to 50 percent.</p>
+    ///   - [`human_loop_config(Option<HumanLoopConfig>)`](crate::input::DetectModerationLabelsInput::human_loop_config): <p>Sets up the configuration for human evaluation, including the FlowDefinition the image will be sent to.</p>
+    /// - On success, responds with [`DetectModerationLabelsOutput`](crate::output::DetectModerationLabelsOutput) with field(s):
+    ///   - [`moderation_labels(Option<Vec<ModerationLabel>>)`](crate::output::DetectModerationLabelsOutput::moderation_labels): <p>Array of detected Moderation labels and the time, in milliseconds from the start of the video, they were detected.</p>
+    ///   - [`moderation_model_version(Option<String>)`](crate::output::DetectModerationLabelsOutput::moderation_model_version): <p>Version number of the moderation detection model that was used to detect unsafe content.</p>
+    ///   - [`human_loop_activation_output(Option<HumanLoopActivationOutput>)`](crate::output::DetectModerationLabelsOutput::human_loop_activation_output): <p>Shows the results of the human in the loop evaluation.</p>
+    /// - On failure, responds with [`SdkError<DetectModerationLabelsError>`](crate::error::DetectModerationLabelsError)
     pub fn detect_moderation_labels(&self) -> fluent_builders::DetectModerationLabels<C, M, R> {
         fluent_builders::DetectModerationLabels::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DetectProtectiveEquipment` operation.
+    /// Constructs a fluent builder for the [`DetectProtectiveEquipment`](crate::client::fluent_builders::DetectProtectiveEquipment) operation.
     ///
-    /// See [`DetectProtectiveEquipment`](crate::client::fluent_builders::DetectProtectiveEquipment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DetectProtectiveEquipmentInput`](crate::input::DetectProtectiveEquipmentInput) with field(s):
+    ///   - [`image(Option<Image>)`](crate::input::DetectProtectiveEquipmentInput::image): <p>The image in which you want to detect PPE on detected persons. The image can be passed as image bytes or you can reference an image stored in an Amazon S3 bucket. </p>
+    ///   - [`summarization_attributes(Option<ProtectiveEquipmentSummarizationAttributes>)`](crate::input::DetectProtectiveEquipmentInput::summarization_attributes): <p>An array of PPE types that you want to summarize.</p>
+    /// - On success, responds with [`DetectProtectiveEquipmentOutput`](crate::output::DetectProtectiveEquipmentOutput) with field(s):
+    ///   - [`protective_equipment_model_version(Option<String>)`](crate::output::DetectProtectiveEquipmentOutput::protective_equipment_model_version): <p>The version number of the PPE detection model used to detect PPE in the image.</p>
+    ///   - [`persons(Option<Vec<ProtectiveEquipmentPerson>>)`](crate::output::DetectProtectiveEquipmentOutput::persons): <p>An array of persons detected in the image (including persons not wearing PPE).</p>
+    ///   - [`summary(Option<ProtectiveEquipmentSummary>)`](crate::output::DetectProtectiveEquipmentOutput::summary): <p>Summary information for the types of PPE specified in the <code>SummarizationAttributes</code> input parameter.</p>
+    /// - On failure, responds with [`SdkError<DetectProtectiveEquipmentError>`](crate::error::DetectProtectiveEquipmentError)
     pub fn detect_protective_equipment(
         &self,
     ) -> fluent_builders::DetectProtectiveEquipment<C, M, R> {
         fluent_builders::DetectProtectiveEquipment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DetectText` operation.
+    /// Constructs a fluent builder for the [`DetectText`](crate::client::fluent_builders::DetectText) operation.
     ///
-    /// See [`DetectText`](crate::client::fluent_builders::DetectText) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DetectTextInput`](crate::input::DetectTextInput) with field(s):
+    ///   - [`image(Option<Image>)`](crate::input::DetectTextInput::image): <p>The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Rekognition operations, you can't pass image bytes. </p>  <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
+    ///   - [`filters(Option<DetectTextFilters>)`](crate::input::DetectTextInput::filters): <p>Optional parameters that let you set the criteria that the text must meet to be included in your response.</p>
+    /// - On success, responds with [`DetectTextOutput`](crate::output::DetectTextOutput) with field(s):
+    ///   - [`text_detections(Option<Vec<TextDetection>>)`](crate::output::DetectTextOutput::text_detections): <p>An array of text that was detected in the input image.</p>
+    ///   - [`text_model_version(Option<String>)`](crate::output::DetectTextOutput::text_model_version): <p>The model version used to detect text.</p>
+    /// - On failure, responds with [`SdkError<DetectTextError>`](crate::error::DetectTextError)
     pub fn detect_text(&self) -> fluent_builders::DetectText<C, M, R> {
         fluent_builders::DetectText::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DistributeDatasetEntries` operation.
+    /// Constructs a fluent builder for the [`DistributeDatasetEntries`](crate::client::fluent_builders::DistributeDatasetEntries) operation.
     ///
-    /// See [`DistributeDatasetEntries`](crate::client::fluent_builders::DistributeDatasetEntries) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DistributeDatasetEntriesInput`](crate::input::DistributeDatasetEntriesInput) with field(s):
+    ///   - [`datasets(Option<Vec<DistributeDataset>>)`](crate::input::DistributeDatasetEntriesInput::datasets): <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty. </p>
+    /// - On success, responds with [`DistributeDatasetEntriesOutput`](crate::output::DistributeDatasetEntriesOutput)
+
+    /// - On failure, responds with [`SdkError<DistributeDatasetEntriesError>`](crate::error::DistributeDatasetEntriesError)
     pub fn distribute_dataset_entries(&self) -> fluent_builders::DistributeDatasetEntries<C, M, R> {
         fluent_builders::DistributeDatasetEntries::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCelebrityInfo` operation.
+    /// Constructs a fluent builder for the [`GetCelebrityInfo`](crate::client::fluent_builders::GetCelebrityInfo) operation.
     ///
-    /// See [`GetCelebrityInfo`](crate::client::fluent_builders::GetCelebrityInfo) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetCelebrityInfoInput`](crate::input::GetCelebrityInfoInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::GetCelebrityInfoInput::id): <p>The ID for the celebrity. You get the celebrity ID from a call to the <code>RecognizeCelebrities</code> operation, which recognizes celebrities in an image. </p>
+    /// - On success, responds with [`GetCelebrityInfoOutput`](crate::output::GetCelebrityInfoOutput) with field(s):
+    ///   - [`urls(Option<Vec<String>>)`](crate::output::GetCelebrityInfoOutput::urls): <p>An array of URLs pointing to additional celebrity information. </p>
+    ///   - [`name(Option<String>)`](crate::output::GetCelebrityInfoOutput::name): <p>The name of the celebrity.</p>
+    ///   - [`known_gender(Option<KnownGender>)`](crate::output::GetCelebrityInfoOutput::known_gender): <p>Retrieves the known gender for the celebrity.</p>
+    /// - On failure, responds with [`SdkError<GetCelebrityInfoError>`](crate::error::GetCelebrityInfoError)
     pub fn get_celebrity_info(&self) -> fluent_builders::GetCelebrityInfo<C, M, R> {
         fluent_builders::GetCelebrityInfo::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCelebrityRecognition` operation.
-    ///
-    /// See [`GetCelebrityRecognition`](crate::client::fluent_builders::GetCelebrityRecognition) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetCelebrityRecognition`](crate::client::fluent_builders::GetCelebrityRecognition) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetCelebrityRecognition::into_paginator).
+    ///
+    /// - Takes [`GetCelebrityRecognitionInput`](crate::input::GetCelebrityRecognitionInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::GetCelebrityRecognitionInput::job_id): <p>Job identifier for the required celebrity recognition analysis. You can get the job identifer from a call to <code>StartCelebrityRecognition</code>.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetCelebrityRecognitionInput::max_results): <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetCelebrityRecognitionInput::next_token): <p>If the previous response was incomplete (because there is more recognized celebrities to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of celebrities. </p>
+    ///   - [`sort_by(Option<CelebrityRecognitionSortBy>)`](crate::input::GetCelebrityRecognitionInput::sort_by): <p>Sort to use for celebrities returned in <code>Celebrities</code> field. Specify <code>ID</code> to sort by the celebrity identifier, specify <code>TIMESTAMP</code> to sort by the time the celebrity was recognized.</p>
+    /// - On success, responds with [`GetCelebrityRecognitionOutput`](crate::output::GetCelebrityRecognitionOutput) with field(s):
+    ///   - [`job_status(Option<VideoJobStatus>)`](crate::output::GetCelebrityRecognitionOutput::job_status): <p>The current status of the celebrity recognition job.</p>
+    ///   - [`status_message(Option<String>)`](crate::output::GetCelebrityRecognitionOutput::status_message): <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
+    ///   - [`video_metadata(Option<VideoMetadata>)`](crate::output::GetCelebrityRecognitionOutput::video_metadata): <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition Video operation.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetCelebrityRecognitionOutput::next_token): <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of celebrities.</p>
+    ///   - [`celebrities(Option<Vec<CelebrityRecognition>>)`](crate::output::GetCelebrityRecognitionOutput::celebrities): <p>Array of celebrities recognized in the video.</p>
+    /// - On failure, responds with [`SdkError<GetCelebrityRecognitionError>`](crate::error::GetCelebrityRecognitionError)
     pub fn get_celebrity_recognition(&self) -> fluent_builders::GetCelebrityRecognition<C, M, R> {
         fluent_builders::GetCelebrityRecognition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetContentModeration` operation.
-    ///
-    /// See [`GetContentModeration`](crate::client::fluent_builders::GetContentModeration) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetContentModeration`](crate::client::fluent_builders::GetContentModeration) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetContentModeration::into_paginator).
+    ///
+    /// - Takes [`GetContentModerationInput`](crate::input::GetContentModerationInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::GetContentModerationInput::job_id): <p>The identifier for the inappropriate, unwanted, or offensive content moderation job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetContentModeration</code>.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetContentModerationInput::max_results): <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetContentModerationInput::next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of content moderation labels.</p>
+    ///   - [`sort_by(Option<ContentModerationSortBy>)`](crate::input::GetContentModerationInput::sort_by): <p>Sort to use for elements in the <code>ModerationLabelDetections</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected. Use <code>NAME</code> to alphabetically group elements for a label together. Within each label group, the array element are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
+    /// - On success, responds with [`GetContentModerationOutput`](crate::output::GetContentModerationOutput) with field(s):
+    ///   - [`job_status(Option<VideoJobStatus>)`](crate::output::GetContentModerationOutput::job_status): <p>The current status of the content moderation analysis job.</p>
+    ///   - [`status_message(Option<String>)`](crate::output::GetContentModerationOutput::status_message): <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
+    ///   - [`video_metadata(Option<VideoMetadata>)`](crate::output::GetContentModerationOutput::video_metadata): <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from <code>GetContentModeration</code>. </p>
+    ///   - [`moderation_labels(Option<Vec<ContentModerationDetection>>)`](crate::output::GetContentModerationOutput::moderation_labels): <p>The detected inappropriate, unwanted, or offensive content moderation labels and the time(s) they were detected.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetContentModerationOutput::next_token): <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of content moderation labels. </p>
+    ///   - [`moderation_model_version(Option<String>)`](crate::output::GetContentModerationOutput::moderation_model_version): <p>Version number of the moderation detection model that was used to detect inappropriate, unwanted, or offensive content.</p>
+    /// - On failure, responds with [`SdkError<GetContentModerationError>`](crate::error::GetContentModerationError)
     pub fn get_content_moderation(&self) -> fluent_builders::GetContentModeration<C, M, R> {
         fluent_builders::GetContentModeration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetFaceDetection` operation.
-    ///
-    /// See [`GetFaceDetection`](crate::client::fluent_builders::GetFaceDetection) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetFaceDetection`](crate::client::fluent_builders::GetFaceDetection) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetFaceDetection::into_paginator).
+    ///
+    /// - Takes [`GetFaceDetectionInput`](crate::input::GetFaceDetectionInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::GetFaceDetectionInput::job_id): <p>Unique identifier for the face detection job. The <code>JobId</code> is returned from <code>StartFaceDetection</code>.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetFaceDetectionInput::max_results): <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetFaceDetectionInput::next_token): <p>If the previous response was incomplete (because there are more faces to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of faces.</p>
+    /// - On success, responds with [`GetFaceDetectionOutput`](crate::output::GetFaceDetectionOutput) with field(s):
+    ///   - [`job_status(Option<VideoJobStatus>)`](crate::output::GetFaceDetectionOutput::job_status): <p>The current status of the face detection job.</p>
+    ///   - [`status_message(Option<String>)`](crate::output::GetFaceDetectionOutput::status_message): <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
+    ///   - [`video_metadata(Option<VideoMetadata>)`](crate::output::GetFaceDetectionOutput::video_metadata): <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetFaceDetectionOutput::next_token): <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of faces. </p>
+    ///   - [`faces(Option<Vec<FaceDetection>>)`](crate::output::GetFaceDetectionOutput::faces): <p>An array of faces detected in the video. Each element contains a detected face's details and the time, in milliseconds from the start of the video, the face was detected. </p>
+    /// - On failure, responds with [`SdkError<GetFaceDetectionError>`](crate::error::GetFaceDetectionError)
     pub fn get_face_detection(&self) -> fluent_builders::GetFaceDetection<C, M, R> {
         fluent_builders::GetFaceDetection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetFaceSearch` operation.
-    ///
-    /// See [`GetFaceSearch`](crate::client::fluent_builders::GetFaceSearch) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetFaceSearch`](crate::client::fluent_builders::GetFaceSearch) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetFaceSearch::into_paginator).
+    ///
+    /// - Takes [`GetFaceSearchInput`](crate::input::GetFaceSearchInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::GetFaceSearchInput::job_id): <p>The job identifer for the search request. You get the job identifier from an initial call to <code>StartFaceSearch</code>.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetFaceSearchInput::max_results): <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetFaceSearchInput::next_token): <p>If the previous response was incomplete (because there is more search results to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of search results. </p>
+    ///   - [`sort_by(Option<FaceSearchSortBy>)`](crate::input::GetFaceSearchInput::sort_by): <p>Sort to use for grouping faces in the response. Use <code>TIMESTAMP</code> to group faces by the time that they are recognized. Use <code>INDEX</code> to sort by recognized faces. </p>
+    /// - On success, responds with [`GetFaceSearchOutput`](crate::output::GetFaceSearchOutput) with field(s):
+    ///   - [`job_status(Option<VideoJobStatus>)`](crate::output::GetFaceSearchOutput::job_status): <p>The current status of the face search job.</p>
+    ///   - [`status_message(Option<String>)`](crate::output::GetFaceSearchOutput::status_message): <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetFaceSearchOutput::next_token): <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of search results. </p>
+    ///   - [`video_metadata(Option<VideoMetadata>)`](crate::output::GetFaceSearchOutput::video_metadata): <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition Video operation. </p>
+    ///   - [`persons(Option<Vec<PersonMatch>>)`](crate::output::GetFaceSearchOutput::persons): <p>An array of persons, <code>PersonMatch</code>, in the video whose face(s) match the face(s) in an Amazon Rekognition collection. It also includes time information for when persons are matched in the video. You specify the input collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes a time the person was matched, face match details (<code>FaceMatches</code>) for matching faces in the collection, and person information (<code>Person</code>) for the matched person. </p>
+    /// - On failure, responds with [`SdkError<GetFaceSearchError>`](crate::error::GetFaceSearchError)
     pub fn get_face_search(&self) -> fluent_builders::GetFaceSearch<C, M, R> {
         fluent_builders::GetFaceSearch::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetLabelDetection` operation.
-    ///
-    /// See [`GetLabelDetection`](crate::client::fluent_builders::GetLabelDetection) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetLabelDetection`](crate::client::fluent_builders::GetLabelDetection) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetLabelDetection::into_paginator).
+    ///
+    /// - Takes [`GetLabelDetectionInput`](crate::input::GetLabelDetectionInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::GetLabelDetectionInput::job_id): <p>Job identifier for the label detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartlabelDetection</code>.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetLabelDetectionInput::max_results): <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetLabelDetectionInput::next_token): <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of labels. </p>
+    ///   - [`sort_by(Option<LabelDetectionSortBy>)`](crate::input::GetLabelDetectionInput::sort_by): <p>Sort to use for elements in the <code>Labels</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected. Use <code>NAME</code> to alphabetically group elements for a label together. Within each label group, the array element are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
+    /// - On success, responds with [`GetLabelDetectionOutput`](crate::output::GetLabelDetectionOutput) with field(s):
+    ///   - [`job_status(Option<VideoJobStatus>)`](crate::output::GetLabelDetectionOutput::job_status): <p>The current status of the label detection job.</p>
+    ///   - [`status_message(Option<String>)`](crate::output::GetLabelDetectionOutput::status_message): <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
+    ///   - [`video_metadata(Option<VideoMetadata>)`](crate::output::GetLabelDetectionOutput::video_metadata): <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetLabelDetectionOutput::next_token): <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of labels.</p>
+    ///   - [`labels(Option<Vec<LabelDetection>>)`](crate::output::GetLabelDetectionOutput::labels): <p>An array of labels detected in the video. Each element contains the detected label and the time, in milliseconds from the start of the video, that the label was detected. </p>
+    ///   - [`label_model_version(Option<String>)`](crate::output::GetLabelDetectionOutput::label_model_version): <p>Version number of the label detection model that was used to detect labels.</p>
+    /// - On failure, responds with [`SdkError<GetLabelDetectionError>`](crate::error::GetLabelDetectionError)
     pub fn get_label_detection(&self) -> fluent_builders::GetLabelDetection<C, M, R> {
         fluent_builders::GetLabelDetection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetPersonTracking` operation.
-    ///
-    /// See [`GetPersonTracking`](crate::client::fluent_builders::GetPersonTracking) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetPersonTracking`](crate::client::fluent_builders::GetPersonTracking) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetPersonTracking::into_paginator).
+    ///
+    /// - Takes [`GetPersonTrackingInput`](crate::input::GetPersonTrackingInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::GetPersonTrackingInput::job_id): <p>The identifier for a job that tracks persons in a video. You get the <code>JobId</code> from a call to <code>StartPersonTracking</code>. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetPersonTrackingInput::max_results): <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetPersonTrackingInput::next_token): <p>If the previous response was incomplete (because there are more persons to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of persons. </p>
+    ///   - [`sort_by(Option<PersonTrackingSortBy>)`](crate::input::GetPersonTrackingInput::sort_by): <p>Sort to use for elements in the <code>Persons</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time persons are detected. Use <code>INDEX</code> to sort by the tracked persons. If you sort by <code>INDEX</code>, the array elements for each person are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
+    /// - On success, responds with [`GetPersonTrackingOutput`](crate::output::GetPersonTrackingOutput) with field(s):
+    ///   - [`job_status(Option<VideoJobStatus>)`](crate::output::GetPersonTrackingOutput::job_status): <p>The current status of the person tracking job.</p>
+    ///   - [`status_message(Option<String>)`](crate::output::GetPersonTrackingOutput::status_message): <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
+    ///   - [`video_metadata(Option<VideoMetadata>)`](crate::output::GetPersonTrackingOutput::video_metadata): <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition Video operation.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetPersonTrackingOutput::next_token): <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of persons. </p>
+    ///   - [`persons(Option<Vec<PersonDetection>>)`](crate::output::GetPersonTrackingOutput::persons): <p>An array of the persons detected in the video and the time(s) their path was tracked throughout the video. An array element will exist for each time a person's path is tracked. </p>
+    /// - On failure, responds with [`SdkError<GetPersonTrackingError>`](crate::error::GetPersonTrackingError)
     pub fn get_person_tracking(&self) -> fluent_builders::GetPersonTracking<C, M, R> {
         fluent_builders::GetPersonTracking::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSegmentDetection` operation.
-    ///
-    /// See [`GetSegmentDetection`](crate::client::fluent_builders::GetSegmentDetection) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetSegmentDetection`](crate::client::fluent_builders::GetSegmentDetection) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetSegmentDetection::into_paginator).
+    ///
+    /// - Takes [`GetSegmentDetectionInput`](crate::input::GetSegmentDetectionInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::GetSegmentDetectionInput::job_id): <p>Job identifier for the text detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartSegmentDetection</code>.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetSegmentDetectionInput::max_results): <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetSegmentDetectionInput::next_token): <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of text.</p>
+    /// - On success, responds with [`GetSegmentDetectionOutput`](crate::output::GetSegmentDetectionOutput) with field(s):
+    ///   - [`job_status(Option<VideoJobStatus>)`](crate::output::GetSegmentDetectionOutput::job_status): <p>Current status of the segment detection job.</p>
+    ///   - [`status_message(Option<String>)`](crate::output::GetSegmentDetectionOutput::status_message): <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
+    ///   - [`video_metadata(Option<Vec<VideoMetadata>>)`](crate::output::GetSegmentDetectionOutput::video_metadata): <p>Currently, Amazon Rekognition Video returns a single object in the <code>VideoMetadata</code> array. The object contains information about the video stream in the input file that Amazon Rekognition Video chose to analyze. The <code>VideoMetadata</code> object includes the video codec, video format and other information. Video metadata is returned in each page of information returned by <code>GetSegmentDetection</code>.</p>
+    ///   - [`audio_metadata(Option<Vec<AudioMetadata>>)`](crate::output::GetSegmentDetectionOutput::audio_metadata): <p>An array of objects. There can be multiple audio streams. Each <code>AudioMetadata</code> object contains metadata for a single audio stream. Audio information in an <code>AudioMetadata</code> objects includes the audio codec, the number of audio channels, the duration of the audio stream, and the sample rate. Audio metadata is returned in each page of information returned by <code>GetSegmentDetection</code>.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetSegmentDetectionOutput::next_token): <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of text.</p>
+    ///   - [`segments(Option<Vec<SegmentDetection>>)`](crate::output::GetSegmentDetectionOutput::segments): <p>An array of segments detected in a video. The array is sorted by the segment types (TECHNICAL_CUE or SHOT) specified in the <code>SegmentTypes</code> input parameter of <code>StartSegmentDetection</code>. Within each segment type the array is sorted by timestamp values.</p>
+    ///   - [`selected_segment_types(Option<Vec<SegmentTypeInfo>>)`](crate::output::GetSegmentDetectionOutput::selected_segment_types): <p>An array containing the segment types requested in the call to <code>StartSegmentDetection</code>. </p>
+    /// - On failure, responds with [`SdkError<GetSegmentDetectionError>`](crate::error::GetSegmentDetectionError)
     pub fn get_segment_detection(&self) -> fluent_builders::GetSegmentDetection<C, M, R> {
         fluent_builders::GetSegmentDetection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetTextDetection` operation.
-    ///
-    /// See [`GetTextDetection`](crate::client::fluent_builders::GetTextDetection) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetTextDetection`](crate::client::fluent_builders::GetTextDetection) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetTextDetection::into_paginator).
+    ///
+    /// - Takes [`GetTextDetectionInput`](crate::input::GetTextDetectionInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::GetTextDetectionInput::job_id): <p>Job identifier for the text detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartTextDetection</code>.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetTextDetectionInput::max_results): <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetTextDetectionInput::next_token): <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of text.</p>
+    /// - On success, responds with [`GetTextDetectionOutput`](crate::output::GetTextDetectionOutput) with field(s):
+    ///   - [`job_status(Option<VideoJobStatus>)`](crate::output::GetTextDetectionOutput::job_status): <p>Current status of the text detection job.</p>
+    ///   - [`status_message(Option<String>)`](crate::output::GetTextDetectionOutput::status_message): <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
+    ///   - [`video_metadata(Option<VideoMetadata>)`](crate::output::GetTextDetectionOutput::video_metadata): <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.</p>
+    ///   - [`text_detections(Option<Vec<TextDetectionResult>>)`](crate::output::GetTextDetectionOutput::text_detections): <p>An array of text detected in the video. Each element contains the detected text, the time in milliseconds from the start of the video that the text was detected, and where it was detected on the screen.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetTextDetectionOutput::next_token): <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of text.</p>
+    ///   - [`text_model_version(Option<String>)`](crate::output::GetTextDetectionOutput::text_model_version): <p>Version number of the text detection model that was used to detect text.</p>
+    /// - On failure, responds with [`SdkError<GetTextDetectionError>`](crate::error::GetTextDetectionError)
     pub fn get_text_detection(&self) -> fluent_builders::GetTextDetection<C, M, R> {
         fluent_builders::GetTextDetection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `IndexFaces` operation.
+    /// Constructs a fluent builder for the [`IndexFaces`](crate::client::fluent_builders::IndexFaces) operation.
     ///
-    /// See [`IndexFaces`](crate::client::fluent_builders::IndexFaces) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`IndexFacesInput`](crate::input::IndexFacesInput) with field(s):
+    ///   - [`collection_id(Option<String>)`](crate::input::IndexFacesInput::collection_id): <p>The ID of an existing collection to which you want to add the faces that are detected in the input images.</p>
+    ///   - [`image(Option<Image>)`](crate::input::IndexFacesInput::image): <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes isn't supported. </p>  <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
+    ///   - [`external_image_id(Option<String>)`](crate::input::IndexFacesInput::external_image_id): <p>The ID you want to assign to all the faces detected in the image.</p>
+    ///   - [`detection_attributes(Option<Vec<Attribute>>)`](crate::input::IndexFacesInput::detection_attributes): <p>An array of facial attributes that you want to be returned. This can be the default list of attributes or all attributes. If you don't specify a value for <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API returns the following subset of facial attributes: <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial attributes are returned, but the operation takes longer to complete.</p>  <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which attributes to return (in this case, all attributes). </p>
+    ///   - [`max_faces(Option<i32>)`](crate::input::IndexFacesInput::max_faces): <p>The maximum number of faces to index. The value of <code>MaxFaces</code> must be greater than or equal to 1. <code>IndexFaces</code> returns no more than 100 detected faces in an image, even if you specify a larger value for <code>MaxFaces</code>.</p>  <p>If <code>IndexFaces</code> detects more faces than the value of <code>MaxFaces</code>, the faces with the lowest quality are filtered out first. If there are still more faces than the value of <code>MaxFaces</code>, the faces with the smallest bounding boxes are filtered out (up to the number that's needed to satisfy the value of <code>MaxFaces</code>). Information about the unindexed faces is available in the <code>UnindexedFaces</code> array. </p>  <p>The faces that are returned by <code>IndexFaces</code> are sorted by the largest face bounding box size to the smallest size, in descending order.</p>  <p> <code>MaxFaces</code> can be used with a collection associated with any version of the face model.</p>
+    ///   - [`quality_filter(Option<QualityFilter>)`](crate::input::IndexFacesInput::quality_filter): <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't indexed. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The default value is <code>AUTO</code>. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. </p>  <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
+    /// - On success, responds with [`IndexFacesOutput`](crate::output::IndexFacesOutput) with field(s):
+    ///   - [`face_records(Option<Vec<FaceRecord>>)`](crate::output::IndexFacesOutput::face_records): <p>An array of faces detected and added to the collection. For more information, see Searching Faces in a Collection in the Amazon Rekognition Developer Guide. </p>
+    ///   - [`orientation_correction(Option<OrientationCorrection>)`](crate::output::IndexFacesOutput::orientation_correction): <p>If your collection is associated with a face detection model that's later than version 3.0, the value of <code>OrientationCorrection</code> is always null and no orientation information is returned.</p>  <p>If your collection is associated with a face detection model that's version 3.0 or earlier, the following applies:</p>  <ul>   <li> <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata that includes the image's orientation. Amazon Rekognition uses this orientation information to perform image correction - the bounding box coordinates are translated to represent object locations after the orientation information in the Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata. The value of <code>OrientationCorrection</code> is null.</p> </li>   <li> <p>If the image doesn't contain orientation information in its Exif metadata, Amazon Rekognition returns an estimated orientation (ROTATE_0, ROTATE_90, ROTATE_180, ROTATE_270). Amazon Rekognition doesn’t perform image correction for images. The bounding box coordinates aren't translated and represent the object locations before the image is rotated.</p> </li>  </ul>  <p>Bounding box information is returned in the <code>FaceRecords</code> array. You can get the version of the face detection model by calling <code>DescribeCollection</code>. </p>
+    ///   - [`face_model_version(Option<String>)`](crate::output::IndexFacesOutput::face_model_version): <p>Latest face model being used with the collection. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>.</p>
+    ///   - [`unindexed_faces(Option<Vec<UnindexedFace>>)`](crate::output::IndexFacesOutput::unindexed_faces): <p>An array of faces that were detected in the image but weren't indexed. They weren't indexed because the quality filter identified them as low quality, or the <code>MaxFaces</code> request parameter filtered them out. To use the quality filter, you specify the <code>QualityFilter</code> request parameter.</p>
+    /// - On failure, responds with [`SdkError<IndexFacesError>`](crate::error::IndexFacesError)
     pub fn index_faces(&self) -> fluent_builders::IndexFaces<C, M, R> {
         fluent_builders::IndexFaces::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListCollections` operation.
-    ///
-    /// See [`ListCollections`](crate::client::fluent_builders::ListCollections) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListCollections`](crate::client::fluent_builders::ListCollections) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCollections::into_paginator).
+    ///
+    /// - Takes [`ListCollectionsInput`](crate::input::ListCollectionsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListCollectionsInput::next_token): <p>Pagination token from the previous response.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListCollectionsInput::max_results): <p>Maximum number of collection IDs to return. </p>
+    /// - On success, responds with [`ListCollectionsOutput`](crate::output::ListCollectionsOutput) with field(s):
+    ///   - [`collection_ids(Option<Vec<String>>)`](crate::output::ListCollectionsOutput::collection_ids): <p>An array of collection IDs.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListCollectionsOutput::next_token): <p>If the result is truncated, the response provides a <code>NextToken</code> that you can use in the subsequent request to fetch the next set of collection IDs.</p>
+    ///   - [`face_model_versions(Option<Vec<String>>)`](crate::output::ListCollectionsOutput::face_model_versions): <p>Latest face models being used with the corresponding collections in the array. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>. For example, the value of <code>FaceModelVersions[2]</code> is the version number for the face detection model used by the collection in <code>CollectionId[2]</code>.</p>
+    /// - On failure, responds with [`SdkError<ListCollectionsError>`](crate::error::ListCollectionsError)
     pub fn list_collections(&self) -> fluent_builders::ListCollections<C, M, R> {
         fluent_builders::ListCollections::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDatasetEntries` operation.
-    ///
-    /// See [`ListDatasetEntries`](crate::client::fluent_builders::ListDatasetEntries) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListDatasetEntries`](crate::client::fluent_builders::ListDatasetEntries) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDatasetEntries::into_paginator).
+    ///
+    /// - Takes [`ListDatasetEntriesInput`](crate::input::ListDatasetEntriesInput) with field(s):
+    ///   - [`dataset_arn(Option<String>)`](crate::input::ListDatasetEntriesInput::dataset_arn): <p> The Amazon Resource Name (ARN) for the dataset that you want to use. </p>
+    ///   - [`contains_labels(Option<Vec<String>>)`](crate::input::ListDatasetEntriesInput::contains_labels): <p>Specifies a label filter for the response. The response includes an entry only if one or more of the labels in <code>ContainsLabels</code> exist in the entry. </p>
+    ///   - [`labeled(Option<bool>)`](crate::input::ListDatasetEntriesInput::labeled): <p> Specify <code>true</code> to get only the JSON Lines where the image is labeled. Specify <code>false</code> to get only the JSON Lines where the image isn't labeled. If you don't specify <code>Labeled</code>, <code>ListDatasetEntries</code> returns JSON Lines for labeled and unlabeled images. </p>
+    ///   - [`source_ref_contains(Option<String>)`](crate::input::ListDatasetEntriesInput::source_ref_contains): <p>If specified, <code>ListDatasetEntries</code> only returns JSON Lines where the value of <code>SourceRefContains</code> is part of the <code>source-ref</code> field. The <code>source-ref</code> field contains the Amazon S3 location of the image. You can use <code>SouceRefContains</code> for tasks such as getting the JSON Line for a single image, or gettting JSON Lines for all images within a specific folder.</p>
+    ///   - [`has_errors(Option<bool>)`](crate::input::ListDatasetEntriesInput::has_errors): <p>Specifies an error filter for the response. Specify <code>True</code> to only include entries that have errors. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListDatasetEntriesInput::next_token): <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListDatasetEntriesInput::max_results): <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100. </p>
+    /// - On success, responds with [`ListDatasetEntriesOutput`](crate::output::ListDatasetEntriesOutput) with field(s):
+    ///   - [`dataset_entries(Option<Vec<String>>)`](crate::output::ListDatasetEntriesOutput::dataset_entries): <p> A list of entries (images) in the dataset. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDatasetEntriesOutput::next_token): <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    /// - On failure, responds with [`SdkError<ListDatasetEntriesError>`](crate::error::ListDatasetEntriesError)
     pub fn list_dataset_entries(&self) -> fluent_builders::ListDatasetEntries<C, M, R> {
         fluent_builders::ListDatasetEntries::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDatasetLabels` operation.
-    ///
-    /// See [`ListDatasetLabels`](crate::client::fluent_builders::ListDatasetLabels) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListDatasetLabels`](crate::client::fluent_builders::ListDatasetLabels) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDatasetLabels::into_paginator).
+    ///
+    /// - Takes [`ListDatasetLabelsInput`](crate::input::ListDatasetLabelsInput) with field(s):
+    ///   - [`dataset_arn(Option<String>)`](crate::input::ListDatasetLabelsInput::dataset_arn): <p> The Amazon Resource Name (ARN) of the dataset that you want to use. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListDatasetLabelsInput::next_token): <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListDatasetLabelsInput::max_results): <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100. </p>
+    /// - On success, responds with [`ListDatasetLabelsOutput`](crate::output::ListDatasetLabelsOutput) with field(s):
+    ///   - [`dataset_label_descriptions(Option<Vec<DatasetLabelDescription>>)`](crate::output::ListDatasetLabelsOutput::dataset_label_descriptions): <p> A list of the labels in the dataset. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDatasetLabelsOutput::next_token): <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
+    /// - On failure, responds with [`SdkError<ListDatasetLabelsError>`](crate::error::ListDatasetLabelsError)
     pub fn list_dataset_labels(&self) -> fluent_builders::ListDatasetLabels<C, M, R> {
         fluent_builders::ListDatasetLabels::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListFaces` operation.
-    ///
-    /// See [`ListFaces`](crate::client::fluent_builders::ListFaces) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListFaces`](crate::client::fluent_builders::ListFaces) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListFaces::into_paginator).
+    ///
+    /// - Takes [`ListFacesInput`](crate::input::ListFacesInput) with field(s):
+    ///   - [`collection_id(Option<String>)`](crate::input::ListFacesInput::collection_id): <p>ID of the collection from which to list the faces.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListFacesInput::next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of faces.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListFacesInput::max_results): <p>Maximum number of faces to return.</p>
+    /// - On success, responds with [`ListFacesOutput`](crate::output::ListFacesOutput) with field(s):
+    ///   - [`faces(Option<Vec<Face>>)`](crate::output::ListFacesOutput::faces): <p>An array of <code>Face</code> objects. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListFacesOutput::next_token): <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of faces.</p>
+    ///   - [`face_model_version(Option<String>)`](crate::output::ListFacesOutput::face_model_version): <p>Latest face model being used with the collection. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>.</p>
+    /// - On failure, responds with [`SdkError<ListFacesError>`](crate::error::ListFacesError)
     pub fn list_faces(&self) -> fluent_builders::ListFaces<C, M, R> {
         fluent_builders::ListFaces::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListStreamProcessors` operation.
-    ///
-    /// See [`ListStreamProcessors`](crate::client::fluent_builders::ListStreamProcessors) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListStreamProcessors`](crate::client::fluent_builders::ListStreamProcessors) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListStreamProcessors::into_paginator).
+    ///
+    /// - Takes [`ListStreamProcessorsInput`](crate::input::ListStreamProcessorsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListStreamProcessorsInput::next_token): <p>If the previous response was incomplete (because there are more stream processors to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of stream processors. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListStreamProcessorsInput::max_results): <p>Maximum number of stream processors you want Amazon Rekognition Video to return in the response. The default is 1000. </p>
+    /// - On success, responds with [`ListStreamProcessorsOutput`](crate::output::ListStreamProcessorsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListStreamProcessorsOutput::next_token): <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of stream processors. </p>
+    ///   - [`stream_processors(Option<Vec<StreamProcessor>>)`](crate::output::ListStreamProcessorsOutput::stream_processors): <p>List of stream processors that you have created.</p>
+    /// - On failure, responds with [`SdkError<ListStreamProcessorsError>`](crate::error::ListStreamProcessorsError)
     pub fn list_stream_processors(&self) -> fluent_builders::ListStreamProcessors<C, M, R> {
         fluent_builders::ListStreamProcessors::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p> Amazon Resource Name (ARN) of the model, collection, or stream processor that contains the tags that you want a list of. </p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p> A list of key-value tags assigned to the resource. </p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RecognizeCelebrities` operation.
+    /// Constructs a fluent builder for the [`RecognizeCelebrities`](crate::client::fluent_builders::RecognizeCelebrities) operation.
     ///
-    /// See [`RecognizeCelebrities`](crate::client::fluent_builders::RecognizeCelebrities) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RecognizeCelebritiesInput`](crate::input::RecognizeCelebritiesInput) with field(s):
+    ///   - [`image(Option<Image>)`](crate::input::RecognizeCelebritiesInput::image): <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>  <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
+    /// - On success, responds with [`RecognizeCelebritiesOutput`](crate::output::RecognizeCelebritiesOutput) with field(s):
+    ///   - [`celebrity_faces(Option<Vec<Celebrity>>)`](crate::output::RecognizeCelebritiesOutput::celebrity_faces): <p>Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 64 celebrities in an image. Each celebrity object includes the following attributes: <code>Face</code>, <code>Confidence</code>, <code>Emotions</code>, <code>Landmarks</code>, <code>Pose</code>, <code>Quality</code>, <code>Smile</code>, <code>Id</code>, <code>KnownGender</code>, <code>MatchConfidence</code>, <code>Name</code>, <code>Urls</code>.</p>
+    ///   - [`unrecognized_faces(Option<Vec<ComparedFace>>)`](crate::output::RecognizeCelebritiesOutput::unrecognized_faces): <p>Details about each unrecognized face in the image.</p>
+    ///   - [`orientation_correction(Option<OrientationCorrection>)`](crate::output::RecognizeCelebritiesOutput::orientation_correction): <note>   <p>Support for estimating image orientation using the the OrientationCorrection field has ceased as of August 2021. Any returned values for this field included in an API response will always be NULL.</p>  </note>  <p>The orientation of the input image (counterclockwise direction). If your application displays the image, you can use this value to correct the orientation. The bounding box coordinates returned in <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code> represent face locations before the image orientation is corrected. </p> <note>   <p>If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata that includes the image's orientation. If so, and the Exif metadata for the input image populates the orientation field, the value of <code>OrientationCorrection</code> is null. The <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code> bounding box coordinates represent face locations after Exif metadata is used to correct the image orientation. Images in .png format don't contain Exif metadata. </p>  </note>
+    /// - On failure, responds with [`SdkError<RecognizeCelebritiesError>`](crate::error::RecognizeCelebritiesError)
     pub fn recognize_celebrities(&self) -> fluent_builders::RecognizeCelebrities<C, M, R> {
         fluent_builders::RecognizeCelebrities::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SearchFaces` operation.
+    /// Constructs a fluent builder for the [`SearchFaces`](crate::client::fluent_builders::SearchFaces) operation.
     ///
-    /// See [`SearchFaces`](crate::client::fluent_builders::SearchFaces) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`SearchFacesInput`](crate::input::SearchFacesInput) with field(s):
+    ///   - [`collection_id(Option<String>)`](crate::input::SearchFacesInput::collection_id): <p>ID of the collection the face belongs to.</p>
+    ///   - [`face_id(Option<String>)`](crate::input::SearchFacesInput::face_id): <p>ID of a face to find matches for in the collection.</p>
+    ///   - [`max_faces(Option<i32>)`](crate::input::SearchFacesInput::max_faces): <p>Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.</p>
+    ///   - [`face_match_threshold(Option<f32>)`](crate::input::SearchFacesInput::face_match_threshold): <p>Optional value specifying the minimum confidence in the face match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%. </p>
+    /// - On success, responds with [`SearchFacesOutput`](crate::output::SearchFacesOutput) with field(s):
+    ///   - [`searched_face_id(Option<String>)`](crate::output::SearchFacesOutput::searched_face_id): <p>ID of the face that was searched for matches in a collection.</p>
+    ///   - [`face_matches(Option<Vec<FaceMatch>>)`](crate::output::SearchFacesOutput::face_matches): <p>An array of faces that matched the input face, along with the confidence in the match.</p>
+    ///   - [`face_model_version(Option<String>)`](crate::output::SearchFacesOutput::face_model_version): <p>Latest face model being used with the collection. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>.</p>
+    /// - On failure, responds with [`SdkError<SearchFacesError>`](crate::error::SearchFacesError)
     pub fn search_faces(&self) -> fluent_builders::SearchFaces<C, M, R> {
         fluent_builders::SearchFaces::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SearchFacesByImage` operation.
+    /// Constructs a fluent builder for the [`SearchFacesByImage`](crate::client::fluent_builders::SearchFacesByImage) operation.
     ///
-    /// See [`SearchFacesByImage`](crate::client::fluent_builders::SearchFacesByImage) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`SearchFacesByImageInput`](crate::input::SearchFacesByImageInput) with field(s):
+    ///   - [`collection_id(Option<String>)`](crate::input::SearchFacesByImageInput::collection_id): <p>ID of the collection to search.</p>
+    ///   - [`image(Option<Image>)`](crate::input::SearchFacesByImageInput::image): <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>  <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
+    ///   - [`max_faces(Option<i32>)`](crate::input::SearchFacesByImageInput::max_faces): <p>Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.</p>
+    ///   - [`face_match_threshold(Option<f32>)`](crate::input::SearchFacesByImageInput::face_match_threshold): <p>(Optional) Specifies the minimum confidence in the face match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%.</p>
+    ///   - [`quality_filter(Option<QualityFilter>)`](crate::input::SearchFacesByImageInput::quality_filter): <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't searched for in the collection. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. The default value is <code>NONE</code>. </p>  <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
+    /// - On success, responds with [`SearchFacesByImageOutput`](crate::output::SearchFacesByImageOutput) with field(s):
+    ///   - [`searched_face_bounding_box(Option<BoundingBox>)`](crate::output::SearchFacesByImageOutput::searched_face_bounding_box): <p>The bounding box around the face in the input image that Amazon Rekognition used for the search.</p>
+    ///   - [`searched_face_confidence(Option<f32>)`](crate::output::SearchFacesByImageOutput::searched_face_confidence): <p>The level of confidence that the <code>searchedFaceBoundingBox</code>, contains a face.</p>
+    ///   - [`face_matches(Option<Vec<FaceMatch>>)`](crate::output::SearchFacesByImageOutput::face_matches): <p>An array of faces that match the input face, along with the confidence in the match.</p>
+    ///   - [`face_model_version(Option<String>)`](crate::output::SearchFacesByImageOutput::face_model_version): <p>Latest face model being used with the collection. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-detection-model.html">Model versioning</a>.</p>
+    /// - On failure, responds with [`SdkError<SearchFacesByImageError>`](crate::error::SearchFacesByImageError)
     pub fn search_faces_by_image(&self) -> fluent_builders::SearchFacesByImage<C, M, R> {
         fluent_builders::SearchFacesByImage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartCelebrityRecognition` operation.
+    /// Constructs a fluent builder for the [`StartCelebrityRecognition`](crate::client::fluent_builders::StartCelebrityRecognition) operation.
     ///
-    /// See [`StartCelebrityRecognition`](crate::client::fluent_builders::StartCelebrityRecognition) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartCelebrityRecognitionInput`](crate::input::StartCelebrityRecognitionInput) with field(s):
+    ///   - [`video(Option<Video>)`](crate::input::StartCelebrityRecognitionInput::video): <p>The video in which you want to recognize celebrities. The video must be stored in an Amazon S3 bucket.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::StartCelebrityRecognitionInput::client_request_token): <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartCelebrityRecognition</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    ///   - [`notification_channel(Option<NotificationChannel>)`](crate::input::StartCelebrityRecognitionInput::notification_channel): <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the celebrity recognition analysis to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
+    ///   - [`job_tag(Option<String>)`](crate::input::StartCelebrityRecognitionInput::job_tag): <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    /// - On success, responds with [`StartCelebrityRecognitionOutput`](crate::output::StartCelebrityRecognitionOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::StartCelebrityRecognitionOutput::job_id): <p>The identifier for the celebrity recognition analysis job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetCelebrityRecognition</code>.</p>
+    /// - On failure, responds with [`SdkError<StartCelebrityRecognitionError>`](crate::error::StartCelebrityRecognitionError)
     pub fn start_celebrity_recognition(
         &self,
     ) -> fluent_builders::StartCelebrityRecognition<C, M, R> {
         fluent_builders::StartCelebrityRecognition::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartContentModeration` operation.
+    /// Constructs a fluent builder for the [`StartContentModeration`](crate::client::fluent_builders::StartContentModeration) operation.
     ///
-    /// See [`StartContentModeration`](crate::client::fluent_builders::StartContentModeration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartContentModerationInput`](crate::input::StartContentModerationInput) with field(s):
+    ///   - [`video(Option<Video>)`](crate::input::StartContentModerationInput::video): <p>The video in which you want to detect inappropriate, unwanted, or offensive content. The video must be stored in an Amazon S3 bucket.</p>
+    ///   - [`min_confidence(Option<f32>)`](crate::input::StartContentModerationInput::min_confidence): <p>Specifies the minimum confidence that Amazon Rekognition must have in order to return a moderated content label. Confidence represents how certain Amazon Rekognition is that the moderated content is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition doesn't return any moderated content labels with a confidence level lower than this specified value. If you don't specify <code>MinConfidence</code>, <code>GetContentModeration</code> returns labels with confidence values greater than or equal to 50 percent.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::StartContentModerationInput::client_request_token): <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartContentModeration</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    ///   - [`notification_channel(Option<NotificationChannel>)`](crate::input::StartContentModerationInput::notification_channel): <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the content analysis to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
+    ///   - [`job_tag(Option<String>)`](crate::input::StartContentModerationInput::job_tag): <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    /// - On success, responds with [`StartContentModerationOutput`](crate::output::StartContentModerationOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::StartContentModerationOutput::job_id): <p>The identifier for the content analysis job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetContentModeration</code>.</p>
+    /// - On failure, responds with [`SdkError<StartContentModerationError>`](crate::error::StartContentModerationError)
     pub fn start_content_moderation(&self) -> fluent_builders::StartContentModeration<C, M, R> {
         fluent_builders::StartContentModeration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartFaceDetection` operation.
+    /// Constructs a fluent builder for the [`StartFaceDetection`](crate::client::fluent_builders::StartFaceDetection) operation.
     ///
-    /// See [`StartFaceDetection`](crate::client::fluent_builders::StartFaceDetection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartFaceDetectionInput`](crate::input::StartFaceDetectionInput) with field(s):
+    ///   - [`video(Option<Video>)`](crate::input::StartFaceDetectionInput::video): <p>The video in which you want to detect faces. The video must be stored in an Amazon S3 bucket.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::StartFaceDetectionInput::client_request_token): <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartFaceDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    ///   - [`notification_channel(Option<NotificationChannel>)`](crate::input::StartFaceDetectionInput::notification_channel): <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the face detection operation. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
+    ///   - [`face_attributes(Option<FaceAttributes>)`](crate::input::StartFaceDetectionInput::face_attributes): <p>The face attributes you want returned.</p>  <p> <code>DEFAULT</code> - The following subset of facial attributes are returned: BoundingBox, Confidence, Pose, Quality and Landmarks. </p>  <p> <code>ALL</code> - All facial attributes are returned.</p>
+    ///   - [`job_tag(Option<String>)`](crate::input::StartFaceDetectionInput::job_tag): <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    /// - On success, responds with [`StartFaceDetectionOutput`](crate::output::StartFaceDetectionOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::StartFaceDetectionOutput::job_id): <p>The identifier for the face detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetFaceDetection</code>.</p>
+    /// - On failure, responds with [`SdkError<StartFaceDetectionError>`](crate::error::StartFaceDetectionError)
     pub fn start_face_detection(&self) -> fluent_builders::StartFaceDetection<C, M, R> {
         fluent_builders::StartFaceDetection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartFaceSearch` operation.
+    /// Constructs a fluent builder for the [`StartFaceSearch`](crate::client::fluent_builders::StartFaceSearch) operation.
     ///
-    /// See [`StartFaceSearch`](crate::client::fluent_builders::StartFaceSearch) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartFaceSearchInput`](crate::input::StartFaceSearchInput) with field(s):
+    ///   - [`video(Option<Video>)`](crate::input::StartFaceSearchInput::video): <p>The video you want to search. The video must be stored in an Amazon S3 bucket. </p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::StartFaceSearchInput::client_request_token): <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartFaceSearch</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    ///   - [`face_match_threshold(Option<f32>)`](crate::input::StartFaceSearchInput::face_match_threshold): <p>The minimum confidence in the person match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%.</p>
+    ///   - [`collection_id(Option<String>)`](crate::input::StartFaceSearchInput::collection_id): <p>ID of the collection that contains the faces you want to search for.</p>
+    ///   - [`notification_channel(Option<NotificationChannel>)`](crate::input::StartFaceSearchInput::notification_channel): <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the search. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
+    ///   - [`job_tag(Option<String>)`](crate::input::StartFaceSearchInput::job_tag): <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    /// - On success, responds with [`StartFaceSearchOutput`](crate::output::StartFaceSearchOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::StartFaceSearchOutput::job_id): <p>The identifier for the search job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetFaceSearch</code>. </p>
+    /// - On failure, responds with [`SdkError<StartFaceSearchError>`](crate::error::StartFaceSearchError)
     pub fn start_face_search(&self) -> fluent_builders::StartFaceSearch<C, M, R> {
         fluent_builders::StartFaceSearch::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartLabelDetection` operation.
+    /// Constructs a fluent builder for the [`StartLabelDetection`](crate::client::fluent_builders::StartLabelDetection) operation.
     ///
-    /// See [`StartLabelDetection`](crate::client::fluent_builders::StartLabelDetection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartLabelDetectionInput`](crate::input::StartLabelDetectionInput) with field(s):
+    ///   - [`video(Option<Video>)`](crate::input::StartLabelDetectionInput::video): <p>The video in which you want to detect labels. The video must be stored in an Amazon S3 bucket.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::StartLabelDetectionInput::client_request_token): <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartLabelDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    ///   - [`min_confidence(Option<f32>)`](crate::input::StartLabelDetectionInput::min_confidence): <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected label. Confidence represents how certain Amazon Rekognition is that a label is correctly identified.0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any labels with a confidence level lower than this specified value.</p>  <p>If you don't specify <code>MinConfidence</code>, the operation returns labels with confidence values greater than or equal to 50 percent.</p>
+    ///   - [`notification_channel(Option<NotificationChannel>)`](crate::input::StartLabelDetectionInput::notification_channel): <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the label detection operation to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
+    ///   - [`job_tag(Option<String>)`](crate::input::StartLabelDetectionInput::job_tag): <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    /// - On success, responds with [`StartLabelDetectionOutput`](crate::output::StartLabelDetectionOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::StartLabelDetectionOutput::job_id): <p>The identifier for the label detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetLabelDetection</code>. </p>
+    /// - On failure, responds with [`SdkError<StartLabelDetectionError>`](crate::error::StartLabelDetectionError)
     pub fn start_label_detection(&self) -> fluent_builders::StartLabelDetection<C, M, R> {
         fluent_builders::StartLabelDetection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartPersonTracking` operation.
+    /// Constructs a fluent builder for the [`StartPersonTracking`](crate::client::fluent_builders::StartPersonTracking) operation.
     ///
-    /// See [`StartPersonTracking`](crate::client::fluent_builders::StartPersonTracking) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartPersonTrackingInput`](crate::input::StartPersonTrackingInput) with field(s):
+    ///   - [`video(Option<Video>)`](crate::input::StartPersonTrackingInput::video): <p>The video in which you want to detect people. The video must be stored in an Amazon S3 bucket.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::StartPersonTrackingInput::client_request_token): <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartPersonTracking</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    ///   - [`notification_channel(Option<NotificationChannel>)`](crate::input::StartPersonTrackingInput::notification_channel): <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the people detection operation to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
+    ///   - [`job_tag(Option<String>)`](crate::input::StartPersonTrackingInput::job_tag): <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    /// - On success, responds with [`StartPersonTrackingOutput`](crate::output::StartPersonTrackingOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::StartPersonTrackingOutput::job_id): <p>The identifier for the person detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetPersonTracking</code>.</p>
+    /// - On failure, responds with [`SdkError<StartPersonTrackingError>`](crate::error::StartPersonTrackingError)
     pub fn start_person_tracking(&self) -> fluent_builders::StartPersonTracking<C, M, R> {
         fluent_builders::StartPersonTracking::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartProjectVersion` operation.
+    /// Constructs a fluent builder for the [`StartProjectVersion`](crate::client::fluent_builders::StartProjectVersion) operation.
     ///
-    /// See [`StartProjectVersion`](crate::client::fluent_builders::StartProjectVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartProjectVersionInput`](crate::input::StartProjectVersionInput) with field(s):
+    ///   - [`project_version_arn(Option<String>)`](crate::input::StartProjectVersionInput::project_version_arn): <p>The Amazon Resource Name(ARN) of the model version that you want to start.</p>
+    ///   - [`min_inference_units(Option<i32>)`](crate::input::StartProjectVersionInput::min_inference_units): <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing and can support up to 5 Transaction Pers Second (TPS). Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use. </p>
+    /// - On success, responds with [`StartProjectVersionOutput`](crate::output::StartProjectVersionOutput) with field(s):
+    ///   - [`status(Option<ProjectVersionStatus>)`](crate::output::StartProjectVersionOutput::status): <p>The current running status of the model. </p>
+    /// - On failure, responds with [`SdkError<StartProjectVersionError>`](crate::error::StartProjectVersionError)
     pub fn start_project_version(&self) -> fluent_builders::StartProjectVersion<C, M, R> {
         fluent_builders::StartProjectVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartSegmentDetection` operation.
+    /// Constructs a fluent builder for the [`StartSegmentDetection`](crate::client::fluent_builders::StartSegmentDetection) operation.
     ///
-    /// See [`StartSegmentDetection`](crate::client::fluent_builders::StartSegmentDetection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartSegmentDetectionInput`](crate::input::StartSegmentDetectionInput) with field(s):
+    ///   - [`video(Option<Video>)`](crate::input::StartSegmentDetectionInput::video): <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::StartSegmentDetectionInput::client_request_token): <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartSegmentDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
+    ///   - [`notification_channel(Option<NotificationChannel>)`](crate::input::StartSegmentDetectionInput::notification_channel): <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the segment detection operation. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
+    ///   - [`job_tag(Option<String>)`](crate::input::StartSegmentDetectionInput::job_tag): <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    ///   - [`filters(Option<StartSegmentDetectionFilters>)`](crate::input::StartSegmentDetectionInput::filters): <p>Filters for technical cue or shot detection.</p>
+    ///   - [`segment_types(Option<Vec<SegmentType>>)`](crate::input::StartSegmentDetectionInput::segment_types): <p>An array of segment types to detect in the video. Valid values are TECHNICAL_CUE and SHOT.</p>
+    /// - On success, responds with [`StartSegmentDetectionOutput`](crate::output::StartSegmentDetectionOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::StartSegmentDetectionOutput::job_id): <p>Unique identifier for the segment detection job. The <code>JobId</code> is returned from <code>StartSegmentDetection</code>. </p>
+    /// - On failure, responds with [`SdkError<StartSegmentDetectionError>`](crate::error::StartSegmentDetectionError)
     pub fn start_segment_detection(&self) -> fluent_builders::StartSegmentDetection<C, M, R> {
         fluent_builders::StartSegmentDetection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartStreamProcessor` operation.
+    /// Constructs a fluent builder for the [`StartStreamProcessor`](crate::client::fluent_builders::StartStreamProcessor) operation.
     ///
-    /// See [`StartStreamProcessor`](crate::client::fluent_builders::StartStreamProcessor) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartStreamProcessorInput`](crate::input::StartStreamProcessorInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::StartStreamProcessorInput::name): <p>The name of the stream processor to start processing.</p>
+    /// - On success, responds with [`StartStreamProcessorOutput`](crate::output::StartStreamProcessorOutput)
+
+    /// - On failure, responds with [`SdkError<StartStreamProcessorError>`](crate::error::StartStreamProcessorError)
     pub fn start_stream_processor(&self) -> fluent_builders::StartStreamProcessor<C, M, R> {
         fluent_builders::StartStreamProcessor::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartTextDetection` operation.
+    /// Constructs a fluent builder for the [`StartTextDetection`](crate::client::fluent_builders::StartTextDetection) operation.
     ///
-    /// See [`StartTextDetection`](crate::client::fluent_builders::StartTextDetection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartTextDetectionInput`](crate::input::StartTextDetectionInput) with field(s):
+    ///   - [`video(Option<Video>)`](crate::input::StartTextDetectionInput::video): <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::StartTextDetectionInput::client_request_token): <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentaly started more than once.</p>
+    ///   - [`notification_channel(Option<NotificationChannel>)`](crate::input::StartTextDetectionInput::notification_channel): <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <code>api-video</code>. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics">Giving access to multiple Amazon SNS topics</a>.</p>
+    ///   - [`job_tag(Option<String>)`](crate::input::StartTextDetectionInput::job_tag): <p>An identifier returned in the completion status published by your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
+    ///   - [`filters(Option<StartTextDetectionFilters>)`](crate::input::StartTextDetectionInput::filters): <p>Optional parameters that let you set criteria the text must meet to be included in your response.</p>
+    /// - On success, responds with [`StartTextDetectionOutput`](crate::output::StartTextDetectionOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::StartTextDetectionOutput::job_id): <p>Identifier for the text detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetTextDetection</code>.</p>
+    /// - On failure, responds with [`SdkError<StartTextDetectionError>`](crate::error::StartTextDetectionError)
     pub fn start_text_detection(&self) -> fluent_builders::StartTextDetection<C, M, R> {
         fluent_builders::StartTextDetection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopProjectVersion` operation.
+    /// Constructs a fluent builder for the [`StopProjectVersion`](crate::client::fluent_builders::StopProjectVersion) operation.
     ///
-    /// See [`StopProjectVersion`](crate::client::fluent_builders::StopProjectVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StopProjectVersionInput`](crate::input::StopProjectVersionInput) with field(s):
+    ///   - [`project_version_arn(Option<String>)`](crate::input::StopProjectVersionInput::project_version_arn): <p>The Amazon Resource Name (ARN) of the model version that you want to delete.</p>  <p>This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code> action.</p>
+    /// - On success, responds with [`StopProjectVersionOutput`](crate::output::StopProjectVersionOutput) with field(s):
+    ///   - [`status(Option<ProjectVersionStatus>)`](crate::output::StopProjectVersionOutput::status): <p>The current status of the stop operation. </p>
+    /// - On failure, responds with [`SdkError<StopProjectVersionError>`](crate::error::StopProjectVersionError)
     pub fn stop_project_version(&self) -> fluent_builders::StopProjectVersion<C, M, R> {
         fluent_builders::StopProjectVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopStreamProcessor` operation.
+    /// Constructs a fluent builder for the [`StopStreamProcessor`](crate::client::fluent_builders::StopStreamProcessor) operation.
     ///
-    /// See [`StopStreamProcessor`](crate::client::fluent_builders::StopStreamProcessor) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StopStreamProcessorInput`](crate::input::StopStreamProcessorInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::StopStreamProcessorInput::name): <p>The name of a stream processor created by <code>CreateStreamProcessor</code>.</p>
+    /// - On success, responds with [`StopStreamProcessorOutput`](crate::output::StopStreamProcessorOutput)
+
+    /// - On failure, responds with [`SdkError<StopStreamProcessorError>`](crate::error::StopStreamProcessorError)
     pub fn stop_stream_processor(&self) -> fluent_builders::StopStreamProcessor<C, M, R> {
         fluent_builders::StopStreamProcessor::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p> Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to assign the tags to. </p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p> The key-value tags to assign to the resource. </p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p> Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to remove the tags from. </p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p> A list of the tags that you want to remove. </p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDatasetEntries` operation.
+    /// Constructs a fluent builder for the [`UpdateDatasetEntries`](crate::client::fluent_builders::UpdateDatasetEntries) operation.
     ///
-    /// See [`UpdateDatasetEntries`](crate::client::fluent_builders::UpdateDatasetEntries) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateDatasetEntriesInput`](crate::input::UpdateDatasetEntriesInput) with field(s):
+    ///   - [`dataset_arn(Option<String>)`](crate::input::UpdateDatasetEntriesInput::dataset_arn): <p> The Amazon Resource Name (ARN) of the dataset that you want to update. </p>
+    ///   - [`changes(Option<DatasetChanges>)`](crate::input::UpdateDatasetEntriesInput::changes): <p> The changes that you want to make to the dataset. </p>
+    /// - On success, responds with [`UpdateDatasetEntriesOutput`](crate::output::UpdateDatasetEntriesOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateDatasetEntriesError>`](crate::error::UpdateDatasetEntriesError)
     pub fn update_dataset_entries(&self) -> fluent_builders::UpdateDatasetEntries<C, M, R> {
         fluent_builders::UpdateDatasetEntries::new(self.handle.clone())
     }

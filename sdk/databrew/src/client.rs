@@ -83,323 +83,672 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `BatchDeleteRecipeVersion` operation.
+    /// Constructs a fluent builder for the [`BatchDeleteRecipeVersion`](crate::client::fluent_builders::BatchDeleteRecipeVersion) operation.
     ///
-    /// See [`BatchDeleteRecipeVersion`](crate::client::fluent_builders::BatchDeleteRecipeVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchDeleteRecipeVersionInput`](crate::input::BatchDeleteRecipeVersionInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::BatchDeleteRecipeVersionInput::name): <p>The name of the recipe whose versions are to be deleted.</p>
+    ///   - [`recipe_versions(Option<Vec<String>>)`](crate::input::BatchDeleteRecipeVersionInput::recipe_versions): <p>An array of version identifiers, for the recipe versions to be deleted. You can specify numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
+    /// - On success, responds with [`BatchDeleteRecipeVersionOutput`](crate::output::BatchDeleteRecipeVersionOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::BatchDeleteRecipeVersionOutput::name): <p>The name of the recipe that was modified.</p>
+    ///   - [`errors(Option<Vec<RecipeVersionErrorDetail>>)`](crate::output::BatchDeleteRecipeVersionOutput::errors): <p>Errors, if any, that occurred while attempting to delete the recipe versions.</p>
+    /// - On failure, responds with [`SdkError<BatchDeleteRecipeVersionError>`](crate::error::BatchDeleteRecipeVersionError)
     pub fn batch_delete_recipe_version(
         &self,
     ) -> fluent_builders::BatchDeleteRecipeVersion<C, M, R> {
         fluent_builders::BatchDeleteRecipeVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDataset` operation.
+    /// Constructs a fluent builder for the [`CreateDataset`](crate::client::fluent_builders::CreateDataset) operation.
     ///
-    /// See [`CreateDataset`](crate::client::fluent_builders::CreateDataset) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateDatasetInput`](crate::input::CreateDatasetInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateDatasetInput::name): <p>The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+    ///   - [`format(Option<InputFormat>)`](crate::input::CreateDatasetInput::format): <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
+    ///   - [`format_options(Option<FormatOptions>)`](crate::input::CreateDatasetInput::format_options): <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
+    ///   - [`input(Option<Input>)`](crate::input::CreateDatasetInput::input): <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
+    ///   - [`path_options(Option<PathOptions>)`](crate::input::CreateDatasetInput::path_options): <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateDatasetInput::tags): <p>Metadata tags to apply to this dataset.</p>
+    /// - On success, responds with [`CreateDatasetOutput`](crate::output::CreateDatasetOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::CreateDatasetOutput::name): <p>The name of the dataset that you created.</p>
+    /// - On failure, responds with [`SdkError<CreateDatasetError>`](crate::error::CreateDatasetError)
     pub fn create_dataset(&self) -> fluent_builders::CreateDataset<C, M, R> {
         fluent_builders::CreateDataset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateProfileJob` operation.
+    /// Constructs a fluent builder for the [`CreateProfileJob`](crate::client::fluent_builders::CreateProfileJob) operation.
     ///
-    /// See [`CreateProfileJob`](crate::client::fluent_builders::CreateProfileJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateProfileJobInput`](crate::input::CreateProfileJobInput) with field(s):
+    ///   - [`dataset_name(Option<String>)`](crate::input::CreateProfileJobInput::dataset_name): <p>The name of the dataset that this job is to act upon.</p>
+    ///   - [`encryption_key_arn(Option<String>)`](crate::input::CreateProfileJobInput::encryption_key_arn): <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
+    ///   - [`encryption_mode(Option<EncryptionMode>)`](crate::input::CreateProfileJobInput::encryption_mode): <p>The encryption mode for the job, which can be one of the following:</p>  <ul>   <li> <p> <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with KMS-managed keys.</p> </li>   <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>  </ul>
+    ///   - [`name(Option<String>)`](crate::input::CreateProfileJobInput::name): <p>The name of the job to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+    ///   - [`log_subscription(Option<LogSubscription>)`](crate::input::CreateProfileJobInput::log_subscription): <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
+    ///   - [`max_capacity(i32)`](crate::input::CreateProfileJobInput::max_capacity): <p>The maximum number of nodes that DataBrew can use when the job processes data.</p>
+    ///   - [`max_retries(i32)`](crate::input::CreateProfileJobInput::max_retries): <p>The maximum number of times to retry the job after a job run fails.</p>
+    ///   - [`output_location(Option<S3Location>)`](crate::input::CreateProfileJobInput::output_location): <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.</p>
+    ///   - [`configuration(Option<ProfileConfiguration>)`](crate::input::CreateProfileJobInput::configuration): <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
+    ///   - [`validation_configurations(Option<Vec<ValidationConfiguration>>)`](crate::input::CreateProfileJobInput::validation_configurations): <p>List of validation configurations that are applied to the profile job.</p>
+    ///   - [`role_arn(Option<String>)`](crate::input::CreateProfileJobInput::role_arn): <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateProfileJobInput::tags): <p>Metadata tags to apply to this job.</p>
+    ///   - [`timeout(i32)`](crate::input::CreateProfileJobInput::timeout): <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
+    ///   - [`job_sample(Option<JobSample>)`](crate::input::CreateProfileJobInput::job_sample): <p>Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.</p>
+    /// - On success, responds with [`CreateProfileJobOutput`](crate::output::CreateProfileJobOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::CreateProfileJobOutput::name): <p>The name of the job that was created.</p>
+    /// - On failure, responds with [`SdkError<CreateProfileJobError>`](crate::error::CreateProfileJobError)
     pub fn create_profile_job(&self) -> fluent_builders::CreateProfileJob<C, M, R> {
         fluent_builders::CreateProfileJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateProject` operation.
+    /// Constructs a fluent builder for the [`CreateProject`](crate::client::fluent_builders::CreateProject) operation.
     ///
-    /// See [`CreateProject`](crate::client::fluent_builders::CreateProject) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateProjectInput`](crate::input::CreateProjectInput) with field(s):
+    ///   - [`dataset_name(Option<String>)`](crate::input::CreateProjectInput::dataset_name): <p>The name of an existing dataset to associate this project with.</p>
+    ///   - [`name(Option<String>)`](crate::input::CreateProjectInput::name): <p>A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+    ///   - [`recipe_name(Option<String>)`](crate::input::CreateProjectInput::recipe_name): <p>The name of an existing recipe to associate with the project.</p>
+    ///   - [`sample(Option<Sample>)`](crate::input::CreateProjectInput::sample): <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
+    ///   - [`role_arn(Option<String>)`](crate::input::CreateProjectInput::role_arn): <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed for this request.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateProjectInput::tags): <p>Metadata tags to apply to this project.</p>
+    /// - On success, responds with [`CreateProjectOutput`](crate::output::CreateProjectOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::CreateProjectOutput::name): <p>The name of the project that you created.</p>
+    /// - On failure, responds with [`SdkError<CreateProjectError>`](crate::error::CreateProjectError)
     pub fn create_project(&self) -> fluent_builders::CreateProject<C, M, R> {
         fluent_builders::CreateProject::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateRecipe` operation.
+    /// Constructs a fluent builder for the [`CreateRecipe`](crate::client::fluent_builders::CreateRecipe) operation.
     ///
-    /// See [`CreateRecipe`](crate::client::fluent_builders::CreateRecipe) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateRecipeInput`](crate::input::CreateRecipeInput) with field(s):
+    ///   - [`description(Option<String>)`](crate::input::CreateRecipeInput::description): <p>A description for the recipe.</p>
+    ///   - [`name(Option<String>)`](crate::input::CreateRecipeInput::name): <p>A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+    ///   - [`steps(Option<Vec<RecipeStep>>)`](crate::input::CreateRecipeInput::steps): <p>An array containing the steps to be performed by the recipe. Each recipe step consists of one recipe action and (optionally) an array of condition expressions.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateRecipeInput::tags): <p>Metadata tags to apply to this recipe.</p>
+    /// - On success, responds with [`CreateRecipeOutput`](crate::output::CreateRecipeOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::CreateRecipeOutput::name): <p>The name of the recipe that you created.</p>
+    /// - On failure, responds with [`SdkError<CreateRecipeError>`](crate::error::CreateRecipeError)
     pub fn create_recipe(&self) -> fluent_builders::CreateRecipe<C, M, R> {
         fluent_builders::CreateRecipe::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateRecipeJob` operation.
+    /// Constructs a fluent builder for the [`CreateRecipeJob`](crate::client::fluent_builders::CreateRecipeJob) operation.
     ///
-    /// See [`CreateRecipeJob`](crate::client::fluent_builders::CreateRecipeJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateRecipeJobInput`](crate::input::CreateRecipeJobInput) with field(s):
+    ///   - [`dataset_name(Option<String>)`](crate::input::CreateRecipeJobInput::dataset_name): <p>The name of the dataset that this job processes.</p>
+    ///   - [`encryption_key_arn(Option<String>)`](crate::input::CreateRecipeJobInput::encryption_key_arn): <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
+    ///   - [`encryption_mode(Option<EncryptionMode>)`](crate::input::CreateRecipeJobInput::encryption_mode): <p>The encryption mode for the job, which can be one of the following:</p>  <ul>   <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>   <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>  </ul>
+    ///   - [`name(Option<String>)`](crate::input::CreateRecipeJobInput::name): <p>A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+    ///   - [`log_subscription(Option<LogSubscription>)`](crate::input::CreateRecipeJobInput::log_subscription): <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
+    ///   - [`max_capacity(i32)`](crate::input::CreateRecipeJobInput::max_capacity): <p>The maximum number of nodes that DataBrew can consume when the job processes data.</p>
+    ///   - [`max_retries(i32)`](crate::input::CreateRecipeJobInput::max_retries): <p>The maximum number of times to retry the job after a job run fails.</p>
+    ///   - [`outputs(Option<Vec<Output>>)`](crate::input::CreateRecipeJobInput::outputs): <p>One or more artifacts that represent the output from running the job.</p>
+    ///   - [`data_catalog_outputs(Option<Vec<DataCatalogOutput>>)`](crate::input::CreateRecipeJobInput::data_catalog_outputs): <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
+    ///   - [`database_outputs(Option<Vec<DatabaseOutput>>)`](crate::input::CreateRecipeJobInput::database_outputs): <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write to. </p>
+    ///   - [`project_name(Option<String>)`](crate::input::CreateRecipeJobInput::project_name): <p>Either the name of an existing project, or a combination of a recipe and a dataset to associate with the recipe.</p>
+    ///   - [`recipe_reference(Option<RecipeReference>)`](crate::input::CreateRecipeJobInput::recipe_reference): <p>Represents the name and version of a DataBrew recipe.</p>
+    ///   - [`role_arn(Option<String>)`](crate::input::CreateRecipeJobInput::role_arn): <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateRecipeJobInput::tags): <p>Metadata tags to apply to this job.</p>
+    ///   - [`timeout(i32)`](crate::input::CreateRecipeJobInput::timeout): <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
+    /// - On success, responds with [`CreateRecipeJobOutput`](crate::output::CreateRecipeJobOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::CreateRecipeJobOutput::name): <p>The name of the job that you created.</p>
+    /// - On failure, responds with [`SdkError<CreateRecipeJobError>`](crate::error::CreateRecipeJobError)
     pub fn create_recipe_job(&self) -> fluent_builders::CreateRecipeJob<C, M, R> {
         fluent_builders::CreateRecipeJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateRuleset` operation.
+    /// Constructs a fluent builder for the [`CreateRuleset`](crate::client::fluent_builders::CreateRuleset) operation.
     ///
-    /// See [`CreateRuleset`](crate::client::fluent_builders::CreateRuleset) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateRulesetInput`](crate::input::CreateRulesetInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateRulesetInput::name): <p>The name of the ruleset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateRulesetInput::description): <p>The description of the ruleset.</p>
+    ///   - [`target_arn(Option<String>)`](crate::input::CreateRulesetInput::target_arn): <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
+    ///   - [`rules(Option<Vec<Rule>>)`](crate::input::CreateRulesetInput::rules): <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateRulesetInput::tags): <p>Metadata tags to apply to the ruleset.</p>
+    /// - On success, responds with [`CreateRulesetOutput`](crate::output::CreateRulesetOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::CreateRulesetOutput::name): <p>The unique name of the created ruleset.</p>
+    /// - On failure, responds with [`SdkError<CreateRulesetError>`](crate::error::CreateRulesetError)
     pub fn create_ruleset(&self) -> fluent_builders::CreateRuleset<C, M, R> {
         fluent_builders::CreateRuleset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateSchedule` operation.
+    /// Constructs a fluent builder for the [`CreateSchedule`](crate::client::fluent_builders::CreateSchedule) operation.
     ///
-    /// See [`CreateSchedule`](crate::client::fluent_builders::CreateSchedule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateScheduleInput`](crate::input::CreateScheduleInput) with field(s):
+    ///   - [`job_names(Option<Vec<String>>)`](crate::input::CreateScheduleInput::job_names): <p>The name or names of one or more jobs to be run.</p>
+    ///   - [`cron_expression(Option<String>)`](crate::input::CreateScheduleInput::cron_expression): <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateScheduleInput::tags): <p>Metadata tags to apply to this schedule.</p>
+    ///   - [`name(Option<String>)`](crate::input::CreateScheduleInput::name): <p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+    /// - On success, responds with [`CreateScheduleOutput`](crate::output::CreateScheduleOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::CreateScheduleOutput::name): <p>The name of the schedule that was created.</p>
+    /// - On failure, responds with [`SdkError<CreateScheduleError>`](crate::error::CreateScheduleError)
     pub fn create_schedule(&self) -> fluent_builders::CreateSchedule<C, M, R> {
         fluent_builders::CreateSchedule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDataset` operation.
+    /// Constructs a fluent builder for the [`DeleteDataset`](crate::client::fluent_builders::DeleteDataset) operation.
     ///
-    /// See [`DeleteDataset`](crate::client::fluent_builders::DeleteDataset) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteDatasetInput`](crate::input::DeleteDatasetInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteDatasetInput::name): <p>The name of the dataset to be deleted.</p>
+    /// - On success, responds with [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::DeleteDatasetOutput::name): <p>The name of the dataset that you deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteDatasetError>`](crate::error::DeleteDatasetError)
     pub fn delete_dataset(&self) -> fluent_builders::DeleteDataset<C, M, R> {
         fluent_builders::DeleteDataset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteJob` operation.
+    /// Constructs a fluent builder for the [`DeleteJob`](crate::client::fluent_builders::DeleteJob) operation.
     ///
-    /// See [`DeleteJob`](crate::client::fluent_builders::DeleteJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteJobInput`](crate::input::DeleteJobInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteJobInput::name): <p>The name of the job to be deleted.</p>
+    /// - On success, responds with [`DeleteJobOutput`](crate::output::DeleteJobOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::DeleteJobOutput::name): <p>The name of the job that you deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteJobError>`](crate::error::DeleteJobError)
     pub fn delete_job(&self) -> fluent_builders::DeleteJob<C, M, R> {
         fluent_builders::DeleteJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteProject` operation.
+    /// Constructs a fluent builder for the [`DeleteProject`](crate::client::fluent_builders::DeleteProject) operation.
     ///
-    /// See [`DeleteProject`](crate::client::fluent_builders::DeleteProject) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteProjectInput`](crate::input::DeleteProjectInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteProjectInput::name): <p>The name of the project to be deleted.</p>
+    /// - On success, responds with [`DeleteProjectOutput`](crate::output::DeleteProjectOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::DeleteProjectOutput::name): <p>The name of the project that you deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteProjectError>`](crate::error::DeleteProjectError)
     pub fn delete_project(&self) -> fluent_builders::DeleteProject<C, M, R> {
         fluent_builders::DeleteProject::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteRecipeVersion` operation.
+    /// Constructs a fluent builder for the [`DeleteRecipeVersion`](crate::client::fluent_builders::DeleteRecipeVersion) operation.
     ///
-    /// See [`DeleteRecipeVersion`](crate::client::fluent_builders::DeleteRecipeVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteRecipeVersionInput`](crate::input::DeleteRecipeVersionInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteRecipeVersionInput::name): <p>The name of the recipe.</p>
+    ///   - [`recipe_version(Option<String>)`](crate::input::DeleteRecipeVersionInput::recipe_version): <p>The version of the recipe to be deleted. You can specify a numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
+    /// - On success, responds with [`DeleteRecipeVersionOutput`](crate::output::DeleteRecipeVersionOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::DeleteRecipeVersionOutput::name): <p>The name of the recipe that was deleted.</p>
+    ///   - [`recipe_version(Option<String>)`](crate::output::DeleteRecipeVersionOutput::recipe_version): <p>The version of the recipe that was deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteRecipeVersionError>`](crate::error::DeleteRecipeVersionError)
     pub fn delete_recipe_version(&self) -> fluent_builders::DeleteRecipeVersion<C, M, R> {
         fluent_builders::DeleteRecipeVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteRuleset` operation.
+    /// Constructs a fluent builder for the [`DeleteRuleset`](crate::client::fluent_builders::DeleteRuleset) operation.
     ///
-    /// See [`DeleteRuleset`](crate::client::fluent_builders::DeleteRuleset) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteRulesetInput`](crate::input::DeleteRulesetInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteRulesetInput::name): <p>The name of the ruleset to be deleted.</p>
+    /// - On success, responds with [`DeleteRulesetOutput`](crate::output::DeleteRulesetOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::DeleteRulesetOutput::name): <p>The name of the deleted ruleset.</p>
+    /// - On failure, responds with [`SdkError<DeleteRulesetError>`](crate::error::DeleteRulesetError)
     pub fn delete_ruleset(&self) -> fluent_builders::DeleteRuleset<C, M, R> {
         fluent_builders::DeleteRuleset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteSchedule` operation.
+    /// Constructs a fluent builder for the [`DeleteSchedule`](crate::client::fluent_builders::DeleteSchedule) operation.
     ///
-    /// See [`DeleteSchedule`](crate::client::fluent_builders::DeleteSchedule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteScheduleInput`](crate::input::DeleteScheduleInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteScheduleInput::name): <p>The name of the schedule to be deleted.</p>
+    /// - On success, responds with [`DeleteScheduleOutput`](crate::output::DeleteScheduleOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::DeleteScheduleOutput::name): <p>The name of the schedule that was deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteScheduleError>`](crate::error::DeleteScheduleError)
     pub fn delete_schedule(&self) -> fluent_builders::DeleteSchedule<C, M, R> {
         fluent_builders::DeleteSchedule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDataset` operation.
+    /// Constructs a fluent builder for the [`DescribeDataset`](crate::client::fluent_builders::DescribeDataset) operation.
     ///
-    /// See [`DescribeDataset`](crate::client::fluent_builders::DescribeDataset) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeDatasetInput`](crate::input::DescribeDatasetInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DescribeDatasetInput::name): <p>The name of the dataset to be described.</p>
+    /// - On success, responds with [`DescribeDatasetOutput`](crate::output::DescribeDatasetOutput) with field(s):
+    ///   - [`created_by(Option<String>)`](crate::output::DescribeDatasetOutput::created_by): <p>The identifier (user name) of the user who created the dataset.</p>
+    ///   - [`create_date(Option<DateTime>)`](crate::output::DescribeDatasetOutput::create_date): <p>The date and time that the dataset was created.</p>
+    ///   - [`name(Option<String>)`](crate::output::DescribeDatasetOutput::name): <p>The name of the dataset.</p>
+    ///   - [`format(Option<InputFormat>)`](crate::output::DescribeDatasetOutput::format): <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
+    ///   - [`format_options(Option<FormatOptions>)`](crate::output::DescribeDatasetOutput::format_options): <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
+    ///   - [`input(Option<Input>)`](crate::output::DescribeDatasetOutput::input): <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
+    ///   - [`last_modified_date(Option<DateTime>)`](crate::output::DescribeDatasetOutput::last_modified_date): <p>The date and time that the dataset was last modified.</p>
+    ///   - [`last_modified_by(Option<String>)`](crate::output::DescribeDatasetOutput::last_modified_by): <p>The identifier (user name) of the user who last modified the dataset.</p>
+    ///   - [`source(Option<Source>)`](crate::output::DescribeDatasetOutput::source): <p>The location of the data for this dataset, Amazon S3 or the Glue Data Catalog.</p>
+    ///   - [`path_options(Option<PathOptions>)`](crate::output::DescribeDatasetOutput::path_options): <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeDatasetOutput::tags): <p>Metadata tags associated with this dataset.</p>
+    ///   - [`resource_arn(Option<String>)`](crate::output::DescribeDatasetOutput::resource_arn): <p>The Amazon Resource Name (ARN) of the dataset.</p>
+    /// - On failure, responds with [`SdkError<DescribeDatasetError>`](crate::error::DescribeDatasetError)
     pub fn describe_dataset(&self) -> fluent_builders::DescribeDataset<C, M, R> {
         fluent_builders::DescribeDataset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeJob` operation.
+    /// Constructs a fluent builder for the [`DescribeJob`](crate::client::fluent_builders::DescribeJob) operation.
     ///
-    /// See [`DescribeJob`](crate::client::fluent_builders::DescribeJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeJobInput`](crate::input::DescribeJobInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DescribeJobInput::name): <p>The name of the job to be described.</p>
+    /// - On success, responds with [`DescribeJobOutput`](crate::output::DescribeJobOutput) with field(s):
+    ///   - [`create_date(Option<DateTime>)`](crate::output::DescribeJobOutput::create_date): <p>The date and time that the job was created.</p>
+    ///   - [`created_by(Option<String>)`](crate::output::DescribeJobOutput::created_by): <p>The identifier (user name) of the user associated with the creation of the job.</p>
+    ///   - [`dataset_name(Option<String>)`](crate::output::DescribeJobOutput::dataset_name): <p>The dataset that the job acts upon.</p>
+    ///   - [`encryption_key_arn(Option<String>)`](crate::output::DescribeJobOutput::encryption_key_arn): <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
+    ///   - [`encryption_mode(Option<EncryptionMode>)`](crate::output::DescribeJobOutput::encryption_mode): <p>The encryption mode for the job, which can be one of the following:</p>  <ul>   <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>   <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>  </ul>
+    ///   - [`name(Option<String>)`](crate::output::DescribeJobOutput::name): <p>The name of the job.</p>
+    ///   - [`r#type(Option<JobType>)`](crate::output::DescribeJobOutput::r#type): <p>The job type, which must be one of the following:</p>  <ul>   <li> <p> <code>PROFILE</code> - The job analyzes the dataset to determine its size, data types, data distribution, and more.</p> </li>   <li> <p> <code>RECIPE</code> - The job applies one or more transformations to a dataset.</p> </li>  </ul>
+    ///   - [`last_modified_by(Option<String>)`](crate::output::DescribeJobOutput::last_modified_by): <p>The identifier (user name) of the user who last modified the job.</p>
+    ///   - [`last_modified_date(Option<DateTime>)`](crate::output::DescribeJobOutput::last_modified_date): <p>The date and time that the job was last modified.</p>
+    ///   - [`log_subscription(Option<LogSubscription>)`](crate::output::DescribeJobOutput::log_subscription): <p>Indicates whether Amazon CloudWatch logging is enabled for this job.</p>
+    ///   - [`max_capacity(i32)`](crate::output::DescribeJobOutput::max_capacity): <p>The maximum number of compute nodes that DataBrew can consume when the job processes data.</p>
+    ///   - [`max_retries(i32)`](crate::output::DescribeJobOutput::max_retries): <p>The maximum number of times to retry the job after a job run fails.</p>
+    ///   - [`outputs(Option<Vec<Output>>)`](crate::output::DescribeJobOutput::outputs): <p>One or more artifacts that represent the output from running the job.</p>
+    ///   - [`data_catalog_outputs(Option<Vec<DataCatalogOutput>>)`](crate::output::DescribeJobOutput::data_catalog_outputs): <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
+    ///   - [`database_outputs(Option<Vec<DatabaseOutput>>)`](crate::output::DescribeJobOutput::database_outputs): <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
+    ///   - [`project_name(Option<String>)`](crate::output::DescribeJobOutput::project_name): <p>The DataBrew project associated with this job.</p>
+    ///   - [`profile_configuration(Option<ProfileConfiguration>)`](crate::output::DescribeJobOutput::profile_configuration): <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
+    ///   - [`validation_configurations(Option<Vec<ValidationConfiguration>>)`](crate::output::DescribeJobOutput::validation_configurations): <p>List of validation configurations that are applied to the profile job.</p>
+    ///   - [`recipe_reference(Option<RecipeReference>)`](crate::output::DescribeJobOutput::recipe_reference): <p>Represents the name and version of a DataBrew recipe.</p>
+    ///   - [`resource_arn(Option<String>)`](crate::output::DescribeJobOutput::resource_arn): <p>The Amazon Resource Name (ARN) of the job.</p>
+    ///   - [`role_arn(Option<String>)`](crate::output::DescribeJobOutput::role_arn): <p>The ARN of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeJobOutput::tags): <p>Metadata tags associated with this job.</p>
+    ///   - [`timeout(i32)`](crate::output::DescribeJobOutput::timeout): <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
+    ///   - [`job_sample(Option<JobSample>)`](crate::output::DescribeJobOutput::job_sample): <p>Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be executed.</p>
+    /// - On failure, responds with [`SdkError<DescribeJobError>`](crate::error::DescribeJobError)
     pub fn describe_job(&self) -> fluent_builders::DescribeJob<C, M, R> {
         fluent_builders::DescribeJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeJobRun` operation.
+    /// Constructs a fluent builder for the [`DescribeJobRun`](crate::client::fluent_builders::DescribeJobRun) operation.
     ///
-    /// See [`DescribeJobRun`](crate::client::fluent_builders::DescribeJobRun) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeJobRunInput`](crate::input::DescribeJobRunInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DescribeJobRunInput::name): <p>The name of the job being processed during this run.</p>
+    ///   - [`run_id(Option<String>)`](crate::input::DescribeJobRunInput::run_id): <p>The unique identifier of the job run.</p>
+    /// - On success, responds with [`DescribeJobRunOutput`](crate::output::DescribeJobRunOutput) with field(s):
+    ///   - [`attempt(i32)`](crate::output::DescribeJobRunOutput::attempt): <p>The number of times that DataBrew has attempted to run the job.</p>
+    ///   - [`completed_on(Option<DateTime>)`](crate::output::DescribeJobRunOutput::completed_on): <p>The date and time when the job completed processing.</p>
+    ///   - [`dataset_name(Option<String>)`](crate::output::DescribeJobRunOutput::dataset_name): <p>The name of the dataset for the job to process.</p>
+    ///   - [`error_message(Option<String>)`](crate::output::DescribeJobRunOutput::error_message): <p>A message indicating an error (if any) that was encountered when the job ran.</p>
+    ///   - [`execution_time(i32)`](crate::output::DescribeJobRunOutput::execution_time): <p>The amount of time, in seconds, during which the job run consumed resources.</p>
+    ///   - [`job_name(Option<String>)`](crate::output::DescribeJobRunOutput::job_name): <p>The name of the job being processed during this run.</p>
+    ///   - [`profile_configuration(Option<ProfileConfiguration>)`](crate::output::DescribeJobRunOutput::profile_configuration): <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
+    ///   - [`validation_configurations(Option<Vec<ValidationConfiguration>>)`](crate::output::DescribeJobRunOutput::validation_configurations): <p>List of validation configurations that are applied to the profile job.</p>
+    ///   - [`run_id(Option<String>)`](crate::output::DescribeJobRunOutput::run_id): <p>The unique identifier of the job run.</p>
+    ///   - [`state(Option<JobRunState>)`](crate::output::DescribeJobRunOutput::state): <p>The current state of the job run entity itself.</p>
+    ///   - [`log_subscription(Option<LogSubscription>)`](crate::output::DescribeJobRunOutput::log_subscription): <p>The current status of Amazon CloudWatch logging for the job run.</p>
+    ///   - [`log_group_name(Option<String>)`](crate::output::DescribeJobRunOutput::log_group_name): <p>The name of an Amazon CloudWatch log group, where the job writes diagnostic messages when it runs.</p>
+    ///   - [`outputs(Option<Vec<Output>>)`](crate::output::DescribeJobRunOutput::outputs): <p>One or more output artifacts from a job run.</p>
+    ///   - [`data_catalog_outputs(Option<Vec<DataCatalogOutput>>)`](crate::output::DescribeJobRunOutput::data_catalog_outputs): <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
+    ///   - [`database_outputs(Option<Vec<DatabaseOutput>>)`](crate::output::DescribeJobRunOutput::database_outputs): <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
+    ///   - [`recipe_reference(Option<RecipeReference>)`](crate::output::DescribeJobRunOutput::recipe_reference): <p>Represents the name and version of a DataBrew recipe.</p>
+    ///   - [`started_by(Option<String>)`](crate::output::DescribeJobRunOutput::started_by): <p>The Amazon Resource Name (ARN) of the user who started the job run.</p>
+    ///   - [`started_on(Option<DateTime>)`](crate::output::DescribeJobRunOutput::started_on): <p>The date and time when the job run began.</p>
+    ///   - [`job_sample(Option<JobSample>)`](crate::output::DescribeJobRunOutput::job_sample): <p>Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.</p>
+    /// - On failure, responds with [`SdkError<DescribeJobRunError>`](crate::error::DescribeJobRunError)
     pub fn describe_job_run(&self) -> fluent_builders::DescribeJobRun<C, M, R> {
         fluent_builders::DescribeJobRun::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeProject` operation.
+    /// Constructs a fluent builder for the [`DescribeProject`](crate::client::fluent_builders::DescribeProject) operation.
     ///
-    /// See [`DescribeProject`](crate::client::fluent_builders::DescribeProject) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeProjectInput`](crate::input::DescribeProjectInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DescribeProjectInput::name): <p>The name of the project to be described.</p>
+    /// - On success, responds with [`DescribeProjectOutput`](crate::output::DescribeProjectOutput) with field(s):
+    ///   - [`create_date(Option<DateTime>)`](crate::output::DescribeProjectOutput::create_date): <p>The date and time that the project was created.</p>
+    ///   - [`created_by(Option<String>)`](crate::output::DescribeProjectOutput::created_by): <p>The identifier (user name) of the user who created the project.</p>
+    ///   - [`dataset_name(Option<String>)`](crate::output::DescribeProjectOutput::dataset_name): <p>The dataset associated with the project.</p>
+    ///   - [`last_modified_date(Option<DateTime>)`](crate::output::DescribeProjectOutput::last_modified_date): <p>The date and time that the project was last modified.</p>
+    ///   - [`last_modified_by(Option<String>)`](crate::output::DescribeProjectOutput::last_modified_by): <p>The identifier (user name) of the user who last modified the project.</p>
+    ///   - [`name(Option<String>)`](crate::output::DescribeProjectOutput::name): <p>The name of the project.</p>
+    ///   - [`recipe_name(Option<String>)`](crate::output::DescribeProjectOutput::recipe_name): <p>The recipe associated with this job.</p>
+    ///   - [`resource_arn(Option<String>)`](crate::output::DescribeProjectOutput::resource_arn): <p>The Amazon Resource Name (ARN) of the project.</p>
+    ///   - [`sample(Option<Sample>)`](crate::output::DescribeProjectOutput::sample): <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
+    ///   - [`role_arn(Option<String>)`](crate::output::DescribeProjectOutput::role_arn): <p>The ARN of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeProjectOutput::tags): <p>Metadata tags associated with this project.</p>
+    ///   - [`session_status(Option<SessionStatus>)`](crate::output::DescribeProjectOutput::session_status): <p>Describes the current state of the session:</p>  <ul>   <li> <p> <code>PROVISIONING</code> - allocating resources for the session.</p> </li>   <li> <p> <code>INITIALIZING</code> - getting the session ready for first use.</p> </li>   <li> <p> <code>ASSIGNED</code> - the session is ready for use.</p> </li>  </ul>
+    ///   - [`opened_by(Option<String>)`](crate::output::DescribeProjectOutput::opened_by): <p>The identifier (user name) of the user that opened the project for use. </p>
+    ///   - [`open_date(Option<DateTime>)`](crate::output::DescribeProjectOutput::open_date): <p>The date and time when the project was opened. </p>
+    /// - On failure, responds with [`SdkError<DescribeProjectError>`](crate::error::DescribeProjectError)
     pub fn describe_project(&self) -> fluent_builders::DescribeProject<C, M, R> {
         fluent_builders::DescribeProject::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeRecipe` operation.
+    /// Constructs a fluent builder for the [`DescribeRecipe`](crate::client::fluent_builders::DescribeRecipe) operation.
     ///
-    /// See [`DescribeRecipe`](crate::client::fluent_builders::DescribeRecipe) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeRecipeInput`](crate::input::DescribeRecipeInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DescribeRecipeInput::name): <p>The name of the recipe to be described.</p>
+    ///   - [`recipe_version(Option<String>)`](crate::input::DescribeRecipeInput::recipe_version): <p>The recipe version identifier. If this parameter isn't specified, then the latest published version is returned.</p>
+    /// - On success, responds with [`DescribeRecipeOutput`](crate::output::DescribeRecipeOutput) with field(s):
+    ///   - [`created_by(Option<String>)`](crate::output::DescribeRecipeOutput::created_by): <p>The identifier (user name) of the user who created the recipe.</p>
+    ///   - [`create_date(Option<DateTime>)`](crate::output::DescribeRecipeOutput::create_date): <p>The date and time that the recipe was created.</p>
+    ///   - [`last_modified_by(Option<String>)`](crate::output::DescribeRecipeOutput::last_modified_by): <p>The identifier (user name) of the user who last modified the recipe.</p>
+    ///   - [`last_modified_date(Option<DateTime>)`](crate::output::DescribeRecipeOutput::last_modified_date): <p>The date and time that the recipe was last modified.</p>
+    ///   - [`project_name(Option<String>)`](crate::output::DescribeRecipeOutput::project_name): <p>The name of the project associated with this recipe.</p>
+    ///   - [`published_by(Option<String>)`](crate::output::DescribeRecipeOutput::published_by): <p>The identifier (user name) of the user who last published the recipe.</p>
+    ///   - [`published_date(Option<DateTime>)`](crate::output::DescribeRecipeOutput::published_date): <p>The date and time when the recipe was last published.</p>
+    ///   - [`description(Option<String>)`](crate::output::DescribeRecipeOutput::description): <p>The description of the recipe.</p>
+    ///   - [`name(Option<String>)`](crate::output::DescribeRecipeOutput::name): <p>The name of the recipe.</p>
+    ///   - [`steps(Option<Vec<RecipeStep>>)`](crate::output::DescribeRecipeOutput::steps): <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeRecipeOutput::tags): <p>Metadata tags associated with this project.</p>
+    ///   - [`resource_arn(Option<String>)`](crate::output::DescribeRecipeOutput::resource_arn): <p>The ARN of the recipe.</p>
+    ///   - [`recipe_version(Option<String>)`](crate::output::DescribeRecipeOutput::recipe_version): <p>The recipe version identifier.</p>
+    /// - On failure, responds with [`SdkError<DescribeRecipeError>`](crate::error::DescribeRecipeError)
     pub fn describe_recipe(&self) -> fluent_builders::DescribeRecipe<C, M, R> {
         fluent_builders::DescribeRecipe::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeRuleset` operation.
+    /// Constructs a fluent builder for the [`DescribeRuleset`](crate::client::fluent_builders::DescribeRuleset) operation.
     ///
-    /// See [`DescribeRuleset`](crate::client::fluent_builders::DescribeRuleset) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeRulesetInput`](crate::input::DescribeRulesetInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DescribeRulesetInput::name): <p>The name of the ruleset to be described.</p>
+    /// - On success, responds with [`DescribeRulesetOutput`](crate::output::DescribeRulesetOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::DescribeRulesetOutput::name): <p>The name of the ruleset.</p>
+    ///   - [`description(Option<String>)`](crate::output::DescribeRulesetOutput::description): <p>The description of the ruleset.</p>
+    ///   - [`target_arn(Option<String>)`](crate::output::DescribeRulesetOutput::target_arn): <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
+    ///   - [`rules(Option<Vec<Rule>>)`](crate::output::DescribeRulesetOutput::rules): <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
+    ///   - [`create_date(Option<DateTime>)`](crate::output::DescribeRulesetOutput::create_date): <p>The date and time that the ruleset was created.</p>
+    ///   - [`created_by(Option<String>)`](crate::output::DescribeRulesetOutput::created_by): <p>The Amazon Resource Name (ARN) of the user who created the ruleset.</p>
+    ///   - [`last_modified_by(Option<String>)`](crate::output::DescribeRulesetOutput::last_modified_by): <p>The Amazon Resource Name (ARN) of the user who last modified the ruleset.</p>
+    ///   - [`last_modified_date(Option<DateTime>)`](crate::output::DescribeRulesetOutput::last_modified_date): <p>The modification date and time of the ruleset.</p>
+    ///   - [`resource_arn(Option<String>)`](crate::output::DescribeRulesetOutput::resource_arn): <p>The Amazon Resource Name (ARN) for the ruleset.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeRulesetOutput::tags): <p>Metadata tags that have been applied to the ruleset.</p>
+    /// - On failure, responds with [`SdkError<DescribeRulesetError>`](crate::error::DescribeRulesetError)
     pub fn describe_ruleset(&self) -> fluent_builders::DescribeRuleset<C, M, R> {
         fluent_builders::DescribeRuleset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeSchedule` operation.
+    /// Constructs a fluent builder for the [`DescribeSchedule`](crate::client::fluent_builders::DescribeSchedule) operation.
     ///
-    /// See [`DescribeSchedule`](crate::client::fluent_builders::DescribeSchedule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeScheduleInput`](crate::input::DescribeScheduleInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DescribeScheduleInput::name): <p>The name of the schedule to be described.</p>
+    /// - On success, responds with [`DescribeScheduleOutput`](crate::output::DescribeScheduleOutput) with field(s):
+    ///   - [`create_date(Option<DateTime>)`](crate::output::DescribeScheduleOutput::create_date): <p>The date and time that the schedule was created.</p>
+    ///   - [`created_by(Option<String>)`](crate::output::DescribeScheduleOutput::created_by): <p>The identifier (user name) of the user who created the schedule. </p>
+    ///   - [`job_names(Option<Vec<String>>)`](crate::output::DescribeScheduleOutput::job_names): <p>The name or names of one or more jobs to be run by using the schedule.</p>
+    ///   - [`last_modified_by(Option<String>)`](crate::output::DescribeScheduleOutput::last_modified_by): <p>The identifier (user name) of the user who last modified the schedule.</p>
+    ///   - [`last_modified_date(Option<DateTime>)`](crate::output::DescribeScheduleOutput::last_modified_date): <p>The date and time that the schedule was last modified.</p>
+    ///   - [`resource_arn(Option<String>)`](crate::output::DescribeScheduleOutput::resource_arn): <p>The Amazon Resource Name (ARN) of the schedule.</p>
+    ///   - [`cron_expression(Option<String>)`](crate::output::DescribeScheduleOutput::cron_expression): <p>The date or dates and time or times when the jobs are to be run for the schedule. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeScheduleOutput::tags): <p>Metadata tags associated with this schedule.</p>
+    ///   - [`name(Option<String>)`](crate::output::DescribeScheduleOutput::name): <p>The name of the schedule.</p>
+    /// - On failure, responds with [`SdkError<DescribeScheduleError>`](crate::error::DescribeScheduleError)
     pub fn describe_schedule(&self) -> fluent_builders::DescribeSchedule<C, M, R> {
         fluent_builders::DescribeSchedule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDatasets` operation.
-    ///
-    /// See [`ListDatasets`](crate::client::fluent_builders::ListDatasets) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListDatasets`](crate::client::fluent_builders::ListDatasets) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDatasets::into_paginator).
+    ///
+    /// - Takes [`ListDatasetsInput`](crate::input::ListDatasetsInput) with field(s):
+    ///   - [`max_results(Option<i32>)`](crate::input::ListDatasetsInput::max_results): <p>The maximum number of results to return in this request. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListDatasetsInput::next_token): <p>The token returned by a previous call to retrieve the next set of results.</p>
+    /// - On success, responds with [`ListDatasetsOutput`](crate::output::ListDatasetsOutput) with field(s):
+    ///   - [`datasets(Option<Vec<Dataset>>)`](crate::output::ListDatasetsOutput::datasets): <p>A list of datasets that are defined.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDatasetsOutput::next_token): <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListDatasetsError>`](crate::error::ListDatasetsError)
     pub fn list_datasets(&self) -> fluent_builders::ListDatasets<C, M, R> {
         fluent_builders::ListDatasets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListJobRuns` operation.
-    ///
-    /// See [`ListJobRuns`](crate::client::fluent_builders::ListJobRuns) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListJobRuns`](crate::client::fluent_builders::ListJobRuns) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListJobRuns::into_paginator).
+    ///
+    /// - Takes [`ListJobRunsInput`](crate::input::ListJobRunsInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::ListJobRunsInput::name): <p>The name of the job.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListJobRunsInput::max_results): <p>The maximum number of results to return in this request. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListJobRunsInput::next_token): <p>The token returned by a previous call to retrieve the next set of results.</p>
+    /// - On success, responds with [`ListJobRunsOutput`](crate::output::ListJobRunsOutput) with field(s):
+    ///   - [`job_runs(Option<Vec<JobRun>>)`](crate::output::ListJobRunsOutput::job_runs): <p>A list of job runs that have occurred for the specified job.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListJobRunsOutput::next_token): <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListJobRunsError>`](crate::error::ListJobRunsError)
     pub fn list_job_runs(&self) -> fluent_builders::ListJobRuns<C, M, R> {
         fluent_builders::ListJobRuns::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListJobs` operation.
-    ///
-    /// See [`ListJobs`](crate::client::fluent_builders::ListJobs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListJobs`](crate::client::fluent_builders::ListJobs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListJobs::into_paginator).
+    ///
+    /// - Takes [`ListJobsInput`](crate::input::ListJobsInput) with field(s):
+    ///   - [`dataset_name(Option<String>)`](crate::input::ListJobsInput::dataset_name): <p>The name of a dataset. Using this parameter indicates to return only those jobs that act on the specified dataset.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListJobsInput::max_results): <p>The maximum number of results to return in this request. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListJobsInput::next_token): <p>A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the NextToken value from the response object of the previous page call. </p>
+    ///   - [`project_name(Option<String>)`](crate::input::ListJobsInput::project_name): <p>The name of a project. Using this parameter indicates to return only those jobs that are associated with the specified project.</p>
+    /// - On success, responds with [`ListJobsOutput`](crate::output::ListJobsOutput) with field(s):
+    ///   - [`jobs(Option<Vec<Job>>)`](crate::output::ListJobsOutput::jobs): <p>A list of jobs that are defined.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListJobsOutput::next_token): <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListJobsError>`](crate::error::ListJobsError)
     pub fn list_jobs(&self) -> fluent_builders::ListJobs<C, M, R> {
         fluent_builders::ListJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListProjects` operation.
-    ///
-    /// See [`ListProjects`](crate::client::fluent_builders::ListProjects) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListProjects`](crate::client::fluent_builders::ListProjects) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListProjects::into_paginator).
+    ///
+    /// - Takes [`ListProjectsInput`](crate::input::ListProjectsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListProjectsInput::next_token): <p>The token returned by a previous call to retrieve the next set of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListProjectsInput::max_results): <p>The maximum number of results to return in this request. </p>
+    /// - On success, responds with [`ListProjectsOutput`](crate::output::ListProjectsOutput) with field(s):
+    ///   - [`projects(Option<Vec<Project>>)`](crate::output::ListProjectsOutput::projects): <p>A list of projects that are defined .</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListProjectsOutput::next_token): <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListProjectsError>`](crate::error::ListProjectsError)
     pub fn list_projects(&self) -> fluent_builders::ListProjects<C, M, R> {
         fluent_builders::ListProjects::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRecipes` operation.
-    ///
-    /// See [`ListRecipes`](crate::client::fluent_builders::ListRecipes) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListRecipes`](crate::client::fluent_builders::ListRecipes) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRecipes::into_paginator).
+    ///
+    /// - Takes [`ListRecipesInput`](crate::input::ListRecipesInput) with field(s):
+    ///   - [`max_results(Option<i32>)`](crate::input::ListRecipesInput::max_results): <p>The maximum number of results to return in this request. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListRecipesInput::next_token): <p>The token returned by a previous call to retrieve the next set of results.</p>
+    ///   - [`recipe_version(Option<String>)`](crate::input::ListRecipesInput::recipe_version): <p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe versions.</p>  <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p>
+    /// - On success, responds with [`ListRecipesOutput`](crate::output::ListRecipesOutput) with field(s):
+    ///   - [`recipes(Option<Vec<Recipe>>)`](crate::output::ListRecipesOutput::recipes): <p>A list of recipes that are defined.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListRecipesOutput::next_token): <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListRecipesError>`](crate::error::ListRecipesError)
     pub fn list_recipes(&self) -> fluent_builders::ListRecipes<C, M, R> {
         fluent_builders::ListRecipes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRecipeVersions` operation.
-    ///
-    /// See [`ListRecipeVersions`](crate::client::fluent_builders::ListRecipeVersions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListRecipeVersions`](crate::client::fluent_builders::ListRecipeVersions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRecipeVersions::into_paginator).
+    ///
+    /// - Takes [`ListRecipeVersionsInput`](crate::input::ListRecipeVersionsInput) with field(s):
+    ///   - [`max_results(Option<i32>)`](crate::input::ListRecipeVersionsInput::max_results): <p>The maximum number of results to return in this request. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListRecipeVersionsInput::next_token): <p>The token returned by a previous call to retrieve the next set of results.</p>
+    ///   - [`name(Option<String>)`](crate::input::ListRecipeVersionsInput::name): <p>The name of the recipe for which to return version information.</p>
+    /// - On success, responds with [`ListRecipeVersionsOutput`](crate::output::ListRecipeVersionsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListRecipeVersionsOutput::next_token): <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
+    ///   - [`recipes(Option<Vec<Recipe>>)`](crate::output::ListRecipeVersionsOutput::recipes): <p>A list of versions for the specified recipe.</p>
+    /// - On failure, responds with [`SdkError<ListRecipeVersionsError>`](crate::error::ListRecipeVersionsError)
     pub fn list_recipe_versions(&self) -> fluent_builders::ListRecipeVersions<C, M, R> {
         fluent_builders::ListRecipeVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRulesets` operation.
-    ///
-    /// See [`ListRulesets`](crate::client::fluent_builders::ListRulesets) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListRulesets`](crate::client::fluent_builders::ListRulesets) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRulesets::into_paginator).
+    ///
+    /// - Takes [`ListRulesetsInput`](crate::input::ListRulesetsInput) with field(s):
+    ///   - [`target_arn(Option<String>)`](crate::input::ListRulesetsInput::target_arn): <p>The Amazon Resource Name (ARN) of a resource (dataset). Using this parameter indicates to return only those rulesets that are associated with the specified resource.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListRulesetsInput::max_results): <p>The maximum number of results to return in this request.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListRulesetsInput::next_token): <p>A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the NextToken value from the response object of the previous page call.</p>
+    /// - On success, responds with [`ListRulesetsOutput`](crate::output::ListRulesetsOutput) with field(s):
+    ///   - [`rulesets(Option<Vec<RulesetItem>>)`](crate::output::ListRulesetsOutput::rulesets): <p>A list of RulesetItem. RulesetItem contains meta data of a ruleset.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListRulesetsOutput::next_token): <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListRulesetsError>`](crate::error::ListRulesetsError)
     pub fn list_rulesets(&self) -> fluent_builders::ListRulesets<C, M, R> {
         fluent_builders::ListRulesets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSchedules` operation.
-    ///
-    /// See [`ListSchedules`](crate::client::fluent_builders::ListSchedules) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListSchedules`](crate::client::fluent_builders::ListSchedules) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSchedules::into_paginator).
+    ///
+    /// - Takes [`ListSchedulesInput`](crate::input::ListSchedulesInput) with field(s):
+    ///   - [`job_name(Option<String>)`](crate::input::ListSchedulesInput::job_name): <p>The name of the job that these schedules apply to.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListSchedulesInput::max_results): <p>The maximum number of results to return in this request. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListSchedulesInput::next_token): <p>The token returned by a previous call to retrieve the next set of results.</p>
+    /// - On success, responds with [`ListSchedulesOutput`](crate::output::ListSchedulesOutput) with field(s):
+    ///   - [`schedules(Option<Vec<Schedule>>)`](crate::output::ListSchedulesOutput::schedules): <p>A list of schedules that are defined.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSchedulesOutput::next_token): <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListSchedulesError>`](crate::error::ListSchedulesError)
     pub fn list_schedules(&self) -> fluent_builders::ListSchedules<C, M, R> {
         fluent_builders::ListSchedules::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) string that uniquely identifies the DataBrew resource. </p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A list of tags associated with the DataBrew resource.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PublishRecipe` operation.
+    /// Constructs a fluent builder for the [`PublishRecipe`](crate::client::fluent_builders::PublishRecipe) operation.
     ///
-    /// See [`PublishRecipe`](crate::client::fluent_builders::PublishRecipe) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PublishRecipeInput`](crate::input::PublishRecipeInput) with field(s):
+    ///   - [`description(Option<String>)`](crate::input::PublishRecipeInput::description): <p>A description of the recipe to be published, for this version of the recipe.</p>
+    ///   - [`name(Option<String>)`](crate::input::PublishRecipeInput::name): <p>The name of the recipe to be published.</p>
+    /// - On success, responds with [`PublishRecipeOutput`](crate::output::PublishRecipeOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::PublishRecipeOutput::name): <p>The name of the recipe that you published.</p>
+    /// - On failure, responds with [`SdkError<PublishRecipeError>`](crate::error::PublishRecipeError)
     pub fn publish_recipe(&self) -> fluent_builders::PublishRecipe<C, M, R> {
         fluent_builders::PublishRecipe::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SendProjectSessionAction` operation.
+    /// Constructs a fluent builder for the [`SendProjectSessionAction`](crate::client::fluent_builders::SendProjectSessionAction) operation.
     ///
-    /// See [`SendProjectSessionAction`](crate::client::fluent_builders::SendProjectSessionAction) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`SendProjectSessionActionInput`](crate::input::SendProjectSessionActionInput) with field(s):
+    ///   - [`preview(bool)`](crate::input::SendProjectSessionActionInput::preview): <p>If true, the result of the recipe step will be returned, but not applied.</p>
+    ///   - [`name(Option<String>)`](crate::input::SendProjectSessionActionInput::name): <p>The name of the project to apply the action to.</p>
+    ///   - [`recipe_step(Option<RecipeStep>)`](crate::input::SendProjectSessionActionInput::recipe_step): <p>Represents a single step from a DataBrew recipe to be performed.</p>
+    ///   - [`step_index(Option<i32>)`](crate::input::SendProjectSessionActionInput::step_index): <p>The index from which to preview a step. This index is used to preview the result of steps that have already been applied, so that the resulting view frame is from earlier in the view frame stack.</p>
+    ///   - [`client_session_id(Option<String>)`](crate::input::SendProjectSessionActionInput::client_session_id): <p>A unique identifier for an interactive session that's currently open and ready for work. The action will be performed on this session.</p>
+    ///   - [`view_frame(Option<ViewFrame>)`](crate::input::SendProjectSessionActionInput::view_frame): <p>Represents the data being transformed during an action.</p>
+    /// - On success, responds with [`SendProjectSessionActionOutput`](crate::output::SendProjectSessionActionOutput) with field(s):
+    ///   - [`result(Option<String>)`](crate::output::SendProjectSessionActionOutput::result): <p>A message indicating the result of performing the action.</p>
+    ///   - [`name(Option<String>)`](crate::output::SendProjectSessionActionOutput::name): <p>The name of the project that was affected by the action.</p>
+    ///   - [`action_id(Option<i32>)`](crate::output::SendProjectSessionActionOutput::action_id): <p>A unique identifier for the action that was performed.</p>
+    /// - On failure, responds with [`SdkError<SendProjectSessionActionError>`](crate::error::SendProjectSessionActionError)
     pub fn send_project_session_action(
         &self,
     ) -> fluent_builders::SendProjectSessionAction<C, M, R> {
         fluent_builders::SendProjectSessionAction::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartJobRun` operation.
+    /// Constructs a fluent builder for the [`StartJobRun`](crate::client::fluent_builders::StartJobRun) operation.
     ///
-    /// See [`StartJobRun`](crate::client::fluent_builders::StartJobRun) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartJobRunInput`](crate::input::StartJobRunInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::StartJobRunInput::name): <p>The name of the job to be run.</p>
+    /// - On success, responds with [`StartJobRunOutput`](crate::output::StartJobRunOutput) with field(s):
+    ///   - [`run_id(Option<String>)`](crate::output::StartJobRunOutput::run_id): <p>A system-generated identifier for this particular job run.</p>
+    /// - On failure, responds with [`SdkError<StartJobRunError>`](crate::error::StartJobRunError)
     pub fn start_job_run(&self) -> fluent_builders::StartJobRun<C, M, R> {
         fluent_builders::StartJobRun::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartProjectSession` operation.
+    /// Constructs a fluent builder for the [`StartProjectSession`](crate::client::fluent_builders::StartProjectSession) operation.
     ///
-    /// See [`StartProjectSession`](crate::client::fluent_builders::StartProjectSession) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartProjectSessionInput`](crate::input::StartProjectSessionInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::StartProjectSessionInput::name): <p>The name of the project to act upon.</p>
+    ///   - [`assume_control(bool)`](crate::input::StartProjectSessionInput::assume_control): <p>A value that, if true, enables you to take control of a session, even if a different client is currently accessing the project.</p>
+    /// - On success, responds with [`StartProjectSessionOutput`](crate::output::StartProjectSessionOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::StartProjectSessionOutput::name): <p>The name of the project to be acted upon.</p>
+    ///   - [`client_session_id(Option<String>)`](crate::output::StartProjectSessionOutput::client_session_id): <p>A system-generated identifier for the session.</p>
+    /// - On failure, responds with [`SdkError<StartProjectSessionError>`](crate::error::StartProjectSessionError)
     pub fn start_project_session(&self) -> fluent_builders::StartProjectSession<C, M, R> {
         fluent_builders::StartProjectSession::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopJobRun` operation.
+    /// Constructs a fluent builder for the [`StopJobRun`](crate::client::fluent_builders::StopJobRun) operation.
     ///
-    /// See [`StopJobRun`](crate::client::fluent_builders::StopJobRun) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StopJobRunInput`](crate::input::StopJobRunInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::StopJobRunInput::name): <p>The name of the job to be stopped.</p>
+    ///   - [`run_id(Option<String>)`](crate::input::StopJobRunInput::run_id): <p>The ID of the job run to be stopped.</p>
+    /// - On success, responds with [`StopJobRunOutput`](crate::output::StopJobRunOutput) with field(s):
+    ///   - [`run_id(Option<String>)`](crate::output::StopJobRunOutput::run_id): <p>The ID of the job run that you stopped.</p>
+    /// - On failure, responds with [`SdkError<StopJobRunError>`](crate::error::StopJobRunError)
     pub fn stop_job_run(&self) -> fluent_builders::StopJobRun<C, M, R> {
         fluent_builders::StopJobRun::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The DataBrew resource to which tags should be added. The value for this parameter is an Amazon Resource Name (ARN). For DataBrew, you can tag a dataset, a job, a project, or a recipe.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>One or more tags to be assigned to the resource.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>A DataBrew resource from which you want to remove a tag or tags. The value for this parameter is an Amazon Resource Name (ARN). </p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The tag keys (names) of one or more tags to be removed.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDataset` operation.
+    /// Constructs a fluent builder for the [`UpdateDataset`](crate::client::fluent_builders::UpdateDataset) operation.
     ///
-    /// See [`UpdateDataset`](crate::client::fluent_builders::UpdateDataset) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateDatasetInput`](crate::input::UpdateDatasetInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::UpdateDatasetInput::name): <p>The name of the dataset to be updated.</p>
+    ///   - [`format(Option<InputFormat>)`](crate::input::UpdateDatasetInput::format): <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
+    ///   - [`format_options(Option<FormatOptions>)`](crate::input::UpdateDatasetInput::format_options): <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
+    ///   - [`input(Option<Input>)`](crate::input::UpdateDatasetInput::input): <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
+    ///   - [`path_options(Option<PathOptions>)`](crate::input::UpdateDatasetInput::path_options): <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
+    /// - On success, responds with [`UpdateDatasetOutput`](crate::output::UpdateDatasetOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::UpdateDatasetOutput::name): <p>The name of the dataset that you updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateDatasetError>`](crate::error::UpdateDatasetError)
     pub fn update_dataset(&self) -> fluent_builders::UpdateDataset<C, M, R> {
         fluent_builders::UpdateDataset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateProfileJob` operation.
+    /// Constructs a fluent builder for the [`UpdateProfileJob`](crate::client::fluent_builders::UpdateProfileJob) operation.
     ///
-    /// See [`UpdateProfileJob`](crate::client::fluent_builders::UpdateProfileJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateProfileJobInput`](crate::input::UpdateProfileJobInput) with field(s):
+    ///   - [`configuration(Option<ProfileConfiguration>)`](crate::input::UpdateProfileJobInput::configuration): <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
+    ///   - [`encryption_key_arn(Option<String>)`](crate::input::UpdateProfileJobInput::encryption_key_arn): <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
+    ///   - [`encryption_mode(Option<EncryptionMode>)`](crate::input::UpdateProfileJobInput::encryption_mode): <p>The encryption mode for the job, which can be one of the following:</p>  <ul>   <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>   <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>  </ul>
+    ///   - [`name(Option<String>)`](crate::input::UpdateProfileJobInput::name): <p>The name of the job to be updated.</p>
+    ///   - [`log_subscription(Option<LogSubscription>)`](crate::input::UpdateProfileJobInput::log_subscription): <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
+    ///   - [`max_capacity(i32)`](crate::input::UpdateProfileJobInput::max_capacity): <p>The maximum number of compute nodes that DataBrew can use when the job processes data.</p>
+    ///   - [`max_retries(i32)`](crate::input::UpdateProfileJobInput::max_retries): <p>The maximum number of times to retry the job after a job run fails.</p>
+    ///   - [`output_location(Option<S3Location>)`](crate::input::UpdateProfileJobInput::output_location): <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.</p>
+    ///   - [`validation_configurations(Option<Vec<ValidationConfiguration>>)`](crate::input::UpdateProfileJobInput::validation_configurations): <p>List of validation configurations that are applied to the profile job.</p>
+    ///   - [`role_arn(Option<String>)`](crate::input::UpdateProfileJobInput::role_arn): <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
+    ///   - [`timeout(i32)`](crate::input::UpdateProfileJobInput::timeout): <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
+    ///   - [`job_sample(Option<JobSample>)`](crate::input::UpdateProfileJobInput::job_sample): <p>Sample configuration for Profile Jobs only. Determines the number of rows on which the Profile job will be executed. If a JobSample value is not provided for profile jobs, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.</p>
+    /// - On success, responds with [`UpdateProfileJobOutput`](crate::output::UpdateProfileJobOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::UpdateProfileJobOutput::name): <p>The name of the job that was updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateProfileJobError>`](crate::error::UpdateProfileJobError)
     pub fn update_profile_job(&self) -> fluent_builders::UpdateProfileJob<C, M, R> {
         fluent_builders::UpdateProfileJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateProject` operation.
+    /// Constructs a fluent builder for the [`UpdateProject`](crate::client::fluent_builders::UpdateProject) operation.
     ///
-    /// See [`UpdateProject`](crate::client::fluent_builders::UpdateProject) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateProjectInput`](crate::input::UpdateProjectInput) with field(s):
+    ///   - [`sample(Option<Sample>)`](crate::input::UpdateProjectInput::sample): <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
+    ///   - [`role_arn(Option<String>)`](crate::input::UpdateProjectInput::role_arn): <p>The Amazon Resource Name (ARN) of the IAM role to be assumed for this request.</p>
+    ///   - [`name(Option<String>)`](crate::input::UpdateProjectInput::name): <p>The name of the project to be updated.</p>
+    /// - On success, responds with [`UpdateProjectOutput`](crate::output::UpdateProjectOutput) with field(s):
+    ///   - [`last_modified_date(Option<DateTime>)`](crate::output::UpdateProjectOutput::last_modified_date): <p>The date and time that the project was last modified.</p>
+    ///   - [`name(Option<String>)`](crate::output::UpdateProjectOutput::name): <p>The name of the project that you updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateProjectError>`](crate::error::UpdateProjectError)
     pub fn update_project(&self) -> fluent_builders::UpdateProject<C, M, R> {
         fluent_builders::UpdateProject::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateRecipe` operation.
+    /// Constructs a fluent builder for the [`UpdateRecipe`](crate::client::fluent_builders::UpdateRecipe) operation.
     ///
-    /// See [`UpdateRecipe`](crate::client::fluent_builders::UpdateRecipe) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateRecipeInput`](crate::input::UpdateRecipeInput) with field(s):
+    ///   - [`description(Option<String>)`](crate::input::UpdateRecipeInput::description): <p>A description of the recipe.</p>
+    ///   - [`name(Option<String>)`](crate::input::UpdateRecipeInput::name): <p>The name of the recipe to be updated.</p>
+    ///   - [`steps(Option<Vec<RecipeStep>>)`](crate::input::UpdateRecipeInput::steps): <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
+    /// - On success, responds with [`UpdateRecipeOutput`](crate::output::UpdateRecipeOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::UpdateRecipeOutput::name): <p>The name of the recipe that was updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateRecipeError>`](crate::error::UpdateRecipeError)
     pub fn update_recipe(&self) -> fluent_builders::UpdateRecipe<C, M, R> {
         fluent_builders::UpdateRecipe::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateRecipeJob` operation.
+    /// Constructs a fluent builder for the [`UpdateRecipeJob`](crate::client::fluent_builders::UpdateRecipeJob) operation.
     ///
-    /// See [`UpdateRecipeJob`](crate::client::fluent_builders::UpdateRecipeJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateRecipeJobInput`](crate::input::UpdateRecipeJobInput) with field(s):
+    ///   - [`encryption_key_arn(Option<String>)`](crate::input::UpdateRecipeJobInput::encryption_key_arn): <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
+    ///   - [`encryption_mode(Option<EncryptionMode>)`](crate::input::UpdateRecipeJobInput::encryption_mode): <p>The encryption mode for the job, which can be one of the following:</p>  <ul>   <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>   <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>  </ul>
+    ///   - [`name(Option<String>)`](crate::input::UpdateRecipeJobInput::name): <p>The name of the job to update.</p>
+    ///   - [`log_subscription(Option<LogSubscription>)`](crate::input::UpdateRecipeJobInput::log_subscription): <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
+    ///   - [`max_capacity(i32)`](crate::input::UpdateRecipeJobInput::max_capacity): <p>The maximum number of nodes that DataBrew can consume when the job processes data.</p>
+    ///   - [`max_retries(i32)`](crate::input::UpdateRecipeJobInput::max_retries): <p>The maximum number of times to retry the job after a job run fails.</p>
+    ///   - [`outputs(Option<Vec<Output>>)`](crate::input::UpdateRecipeJobInput::outputs): <p>One or more artifacts that represent the output from running the job. </p>
+    ///   - [`data_catalog_outputs(Option<Vec<DataCatalogOutput>>)`](crate::input::UpdateRecipeJobInput::data_catalog_outputs): <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
+    ///   - [`database_outputs(Option<Vec<DatabaseOutput>>)`](crate::input::UpdateRecipeJobInput::database_outputs): <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
+    ///   - [`role_arn(Option<String>)`](crate::input::UpdateRecipeJobInput::role_arn): <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
+    ///   - [`timeout(i32)`](crate::input::UpdateRecipeJobInput::timeout): <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
+    /// - On success, responds with [`UpdateRecipeJobOutput`](crate::output::UpdateRecipeJobOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::UpdateRecipeJobOutput::name): <p>The name of the job that you updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateRecipeJobError>`](crate::error::UpdateRecipeJobError)
     pub fn update_recipe_job(&self) -> fluent_builders::UpdateRecipeJob<C, M, R> {
         fluent_builders::UpdateRecipeJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateRuleset` operation.
+    /// Constructs a fluent builder for the [`UpdateRuleset`](crate::client::fluent_builders::UpdateRuleset) operation.
     ///
-    /// See [`UpdateRuleset`](crate::client::fluent_builders::UpdateRuleset) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateRulesetInput`](crate::input::UpdateRulesetInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::UpdateRulesetInput::name): <p>The name of the ruleset to be updated.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateRulesetInput::description): <p>The description of the ruleset.</p>
+    ///   - [`rules(Option<Vec<Rule>>)`](crate::input::UpdateRulesetInput::rules): <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
+    /// - On success, responds with [`UpdateRulesetOutput`](crate::output::UpdateRulesetOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::UpdateRulesetOutput::name): <p>The name of the updated ruleset.</p>
+    /// - On failure, responds with [`SdkError<UpdateRulesetError>`](crate::error::UpdateRulesetError)
     pub fn update_ruleset(&self) -> fluent_builders::UpdateRuleset<C, M, R> {
         fluent_builders::UpdateRuleset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateSchedule` operation.
+    /// Constructs a fluent builder for the [`UpdateSchedule`](crate::client::fluent_builders::UpdateSchedule) operation.
     ///
-    /// See [`UpdateSchedule`](crate::client::fluent_builders::UpdateSchedule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateScheduleInput`](crate::input::UpdateScheduleInput) with field(s):
+    ///   - [`job_names(Option<Vec<String>>)`](crate::input::UpdateScheduleInput::job_names): <p>The name or names of one or more jobs to be run for this schedule.</p>
+    ///   - [`cron_expression(Option<String>)`](crate::input::UpdateScheduleInput::cron_expression): <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
+    ///   - [`name(Option<String>)`](crate::input::UpdateScheduleInput::name): <p>The name of the schedule to update.</p>
+    /// - On success, responds with [`UpdateScheduleOutput`](crate::output::UpdateScheduleOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::UpdateScheduleOutput::name): <p>The name of the schedule that was updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateScheduleError>`](crate::error::UpdateScheduleError)
     pub fn update_schedule(&self) -> fluent_builders::UpdateSchedule<C, M, R> {
         fluent_builders::UpdateSchedule::new(self.handle.clone())
     }

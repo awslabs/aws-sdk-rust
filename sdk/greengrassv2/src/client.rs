@@ -83,222 +83,383 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AssociateServiceRoleToAccount` operation.
+    /// Constructs a fluent builder for the [`AssociateServiceRoleToAccount`](crate::client::fluent_builders::AssociateServiceRoleToAccount) operation.
     ///
-    /// See [`AssociateServiceRoleToAccount`](crate::client::fluent_builders::AssociateServiceRoleToAccount) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateServiceRoleToAccountInput`](crate::input::AssociateServiceRoleToAccountInput) with field(s):
+    ///   - [`role_arn(Option<String>)`](crate::input::AssociateServiceRoleToAccountInput::role_arn): <p>The Amazon Resource Name (ARN) of the service role to associate with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
+    /// - On success, responds with [`AssociateServiceRoleToAccountOutput`](crate::output::AssociateServiceRoleToAccountOutput) with field(s):
+    ///   - [`associated_at(Option<String>)`](crate::output::AssociateServiceRoleToAccountOutput::associated_at): <p>The time when the service role was associated with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
+    /// - On failure, responds with [`SdkError<AssociateServiceRoleToAccountError>`](crate::error::AssociateServiceRoleToAccountError)
     pub fn associate_service_role_to_account(
         &self,
     ) -> fluent_builders::AssociateServiceRoleToAccount<C, M, R> {
         fluent_builders::AssociateServiceRoleToAccount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchAssociateClientDeviceWithCoreDevice` operation.
+    /// Constructs a fluent builder for the [`BatchAssociateClientDeviceWithCoreDevice`](crate::client::fluent_builders::BatchAssociateClientDeviceWithCoreDevice) operation.
     ///
-    /// See [`BatchAssociateClientDeviceWithCoreDevice`](crate::client::fluent_builders::BatchAssociateClientDeviceWithCoreDevice) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchAssociateClientDeviceWithCoreDeviceInput`](crate::input::BatchAssociateClientDeviceWithCoreDeviceInput) with field(s):
+    ///   - [`entries(Option<Vec<AssociateClientDeviceWithCoreDeviceEntry>>)`](crate::input::BatchAssociateClientDeviceWithCoreDeviceInput::entries): <p>The list of client devices to associate.</p>
+    ///   - [`core_device_thing_name(Option<String>)`](crate::input::BatchAssociateClientDeviceWithCoreDeviceInput::core_device_thing_name): <p>The name of the core device. This is also the name of the IoT thing.</p>
+    /// - On success, responds with [`BatchAssociateClientDeviceWithCoreDeviceOutput`](crate::output::BatchAssociateClientDeviceWithCoreDeviceOutput) with field(s):
+    ///   - [`error_entries(Option<Vec<AssociateClientDeviceWithCoreDeviceErrorEntry>>)`](crate::output::BatchAssociateClientDeviceWithCoreDeviceOutput::error_entries): <p>The list of any errors for the entries in the request. Each error entry contains the name of the IoT thing that failed to associate.</p>
+    /// - On failure, responds with [`SdkError<BatchAssociateClientDeviceWithCoreDeviceError>`](crate::error::BatchAssociateClientDeviceWithCoreDeviceError)
     pub fn batch_associate_client_device_with_core_device(
         &self,
     ) -> fluent_builders::BatchAssociateClientDeviceWithCoreDevice<C, M, R> {
         fluent_builders::BatchAssociateClientDeviceWithCoreDevice::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchDisassociateClientDeviceFromCoreDevice` operation.
+    /// Constructs a fluent builder for the [`BatchDisassociateClientDeviceFromCoreDevice`](crate::client::fluent_builders::BatchDisassociateClientDeviceFromCoreDevice) operation.
     ///
-    /// See [`BatchDisassociateClientDeviceFromCoreDevice`](crate::client::fluent_builders::BatchDisassociateClientDeviceFromCoreDevice) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchDisassociateClientDeviceFromCoreDeviceInput`](crate::input::BatchDisassociateClientDeviceFromCoreDeviceInput) with field(s):
+    ///   - [`entries(Option<Vec<DisassociateClientDeviceFromCoreDeviceEntry>>)`](crate::input::BatchDisassociateClientDeviceFromCoreDeviceInput::entries): <p>The list of client devices to disassociate.</p>
+    ///   - [`core_device_thing_name(Option<String>)`](crate::input::BatchDisassociateClientDeviceFromCoreDeviceInput::core_device_thing_name): <p>The name of the core device. This is also the name of the IoT thing.</p>
+    /// - On success, responds with [`BatchDisassociateClientDeviceFromCoreDeviceOutput`](crate::output::BatchDisassociateClientDeviceFromCoreDeviceOutput) with field(s):
+    ///   - [`error_entries(Option<Vec<DisassociateClientDeviceFromCoreDeviceErrorEntry>>)`](crate::output::BatchDisassociateClientDeviceFromCoreDeviceOutput::error_entries): <p>The list of any errors for the entries in the request. Each error entry contains the name of the IoT thing that failed to disassociate.</p>
+    /// - On failure, responds with [`SdkError<BatchDisassociateClientDeviceFromCoreDeviceError>`](crate::error::BatchDisassociateClientDeviceFromCoreDeviceError)
     pub fn batch_disassociate_client_device_from_core_device(
         &self,
     ) -> fluent_builders::BatchDisassociateClientDeviceFromCoreDevice<C, M, R> {
         fluent_builders::BatchDisassociateClientDeviceFromCoreDevice::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CancelDeployment` operation.
+    /// Constructs a fluent builder for the [`CancelDeployment`](crate::client::fluent_builders::CancelDeployment) operation.
     ///
-    /// See [`CancelDeployment`](crate::client::fluent_builders::CancelDeployment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CancelDeploymentInput`](crate::input::CancelDeploymentInput) with field(s):
+    ///   - [`deployment_id(Option<String>)`](crate::input::CancelDeploymentInput::deployment_id): <p>The ID of the deployment.</p>
+    /// - On success, responds with [`CancelDeploymentOutput`](crate::output::CancelDeploymentOutput) with field(s):
+    ///   - [`message(Option<String>)`](crate::output::CancelDeploymentOutput::message): <p>A message that communicates if the cancel was successful.</p>
+    /// - On failure, responds with [`SdkError<CancelDeploymentError>`](crate::error::CancelDeploymentError)
     pub fn cancel_deployment(&self) -> fluent_builders::CancelDeployment<C, M, R> {
         fluent_builders::CancelDeployment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateComponentVersion` operation.
+    /// Constructs a fluent builder for the [`CreateComponentVersion`](crate::client::fluent_builders::CreateComponentVersion) operation.
     ///
-    /// See [`CreateComponentVersion`](crate::client::fluent_builders::CreateComponentVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateComponentVersionInput`](crate::input::CreateComponentVersionInput) with field(s):
+    ///   - [`inline_recipe(Option<Blob>)`](crate::input::CreateComponentVersionInput::inline_recipe): <p>The recipe to use to create the component. The recipe defines the component's metadata, parameters, dependencies, lifecycle, artifacts, and platform compatibility.</p>  <p>You must specify either <code>inlineRecipe</code> or <code>lambdaFunction</code>.</p>
+    ///   - [`lambda_function(Option<LambdaFunctionRecipeSource>)`](crate::input::CreateComponentVersionInput::lambda_function): <p>The parameters to create a component from a Lambda function.</p>  <p>You must specify either <code>inlineRecipe</code> or <code>lambdaFunction</code>.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateComponentVersionInput::tags): <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateComponentVersionInput::client_token): <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent. Idempotency means that the request is successfully processed only once, even if you send the request multiple times. When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for idempotent requests for up to 8 hours.</p>
+    /// - On success, responds with [`CreateComponentVersionOutput`](crate::output::CreateComponentVersionOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::CreateComponentVersionOutput::arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    ///   - [`component_name(Option<String>)`](crate::output::CreateComponentVersionOutput::component_name): <p>The name of the component.</p>
+    ///   - [`component_version(Option<String>)`](crate::output::CreateComponentVersionOutput::component_version): <p>The version of the component.</p>
+    ///   - [`creation_timestamp(Option<DateTime>)`](crate::output::CreateComponentVersionOutput::creation_timestamp): <p>The time at which the component was created, expressed in ISO 8601 format.</p>
+    ///   - [`status(Option<CloudComponentStatus>)`](crate::output::CreateComponentVersionOutput::status): <p>The status of the component version in IoT Greengrass V2. This status is different from the status of the component on a core device.</p>
+    /// - On failure, responds with [`SdkError<CreateComponentVersionError>`](crate::error::CreateComponentVersionError)
     pub fn create_component_version(&self) -> fluent_builders::CreateComponentVersion<C, M, R> {
         fluent_builders::CreateComponentVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDeployment` operation.
+    /// Constructs a fluent builder for the [`CreateDeployment`](crate::client::fluent_builders::CreateDeployment) operation.
     ///
-    /// See [`CreateDeployment`](crate::client::fluent_builders::CreateDeployment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateDeploymentInput`](crate::input::CreateDeploymentInput) with field(s):
+    ///   - [`target_arn(Option<String>)`](crate::input::CreateDeploymentInput::target_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
+    ///   - [`deployment_name(Option<String>)`](crate::input::CreateDeploymentInput::deployment_name): <p>The name of the deployment.</p>
+    ///   - [`components(Option<HashMap<String, ComponentDeploymentSpecification>>)`](crate::input::CreateDeploymentInput::components): <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
+    ///   - [`iot_job_configuration(Option<DeploymentIoTJobConfiguration>)`](crate::input::CreateDeploymentInput::iot_job_configuration): <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
+    ///   - [`deployment_policies(Option<DeploymentPolicies>)`](crate::input::CreateDeploymentInput::deployment_policies): <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateDeploymentInput::tags): <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    ///   - [`client_token(Option<String>)`](crate::input::CreateDeploymentInput::client_token): <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent. Idempotency means that the request is successfully processed only once, even if you send the request multiple times. When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for idempotent requests for up to 8 hours.</p>
+    /// - On success, responds with [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput) with field(s):
+    ///   - [`deployment_id(Option<String>)`](crate::output::CreateDeploymentOutput::deployment_id): <p>The ID of the deployment.</p>
+    ///   - [`iot_job_id(Option<String>)`](crate::output::CreateDeploymentOutput::iot_job_id): <p>The ID of the IoT job that applies the deployment to target devices.</p>
+    ///   - [`iot_job_arn(Option<String>)`](crate::output::CreateDeploymentOutput::iot_job_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT job that applies the deployment to target devices.</p>
+    /// - On failure, responds with [`SdkError<CreateDeploymentError>`](crate::error::CreateDeploymentError)
     pub fn create_deployment(&self) -> fluent_builders::CreateDeployment<C, M, R> {
         fluent_builders::CreateDeployment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteComponent` operation.
+    /// Constructs a fluent builder for the [`DeleteComponent`](crate::client::fluent_builders::DeleteComponent) operation.
     ///
-    /// See [`DeleteComponent`](crate::client::fluent_builders::DeleteComponent) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteComponentInput`](crate::input::DeleteComponentInput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::input::DeleteComponentInput::arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    /// - On success, responds with [`DeleteComponentOutput`](crate::output::DeleteComponentOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteComponentError>`](crate::error::DeleteComponentError)
     pub fn delete_component(&self) -> fluent_builders::DeleteComponent<C, M, R> {
         fluent_builders::DeleteComponent::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteCoreDevice` operation.
+    /// Constructs a fluent builder for the [`DeleteCoreDevice`](crate::client::fluent_builders::DeleteCoreDevice) operation.
     ///
-    /// See [`DeleteCoreDevice`](crate::client::fluent_builders::DeleteCoreDevice) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteCoreDeviceInput`](crate::input::DeleteCoreDeviceInput) with field(s):
+    ///   - [`core_device_thing_name(Option<String>)`](crate::input::DeleteCoreDeviceInput::core_device_thing_name): <p>The name of the core device. This is also the name of the IoT thing.</p>
+    /// - On success, responds with [`DeleteCoreDeviceOutput`](crate::output::DeleteCoreDeviceOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteCoreDeviceError>`](crate::error::DeleteCoreDeviceError)
     pub fn delete_core_device(&self) -> fluent_builders::DeleteCoreDevice<C, M, R> {
         fluent_builders::DeleteCoreDevice::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeComponent` operation.
+    /// Constructs a fluent builder for the [`DescribeComponent`](crate::client::fluent_builders::DescribeComponent) operation.
     ///
-    /// See [`DescribeComponent`](crate::client::fluent_builders::DescribeComponent) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeComponentInput`](crate::input::DescribeComponentInput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::input::DescribeComponentInput::arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    /// - On success, responds with [`DescribeComponentOutput`](crate::output::DescribeComponentOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::DescribeComponentOutput::arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    ///   - [`component_name(Option<String>)`](crate::output::DescribeComponentOutput::component_name): <p>The name of the component.</p>
+    ///   - [`component_version(Option<String>)`](crate::output::DescribeComponentOutput::component_version): <p>The version of the component.</p>
+    ///   - [`creation_timestamp(Option<DateTime>)`](crate::output::DescribeComponentOutput::creation_timestamp): <p>The time at which the component was created, expressed in ISO 8601 format.</p>
+    ///   - [`publisher(Option<String>)`](crate::output::DescribeComponentOutput::publisher): <p>The publisher of the component version.</p>
+    ///   - [`description(Option<String>)`](crate::output::DescribeComponentOutput::description): <p>The description of the component version.</p>
+    ///   - [`status(Option<CloudComponentStatus>)`](crate::output::DescribeComponentOutput::status): <p>The status of the component version in IoT Greengrass V2. This status is different from the status of the component on a core device.</p>
+    ///   - [`platforms(Option<Vec<ComponentPlatform>>)`](crate::output::DescribeComponentOutput::platforms): <p>The platforms that the component version supports.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeComponentOutput::tags): <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    /// - On failure, responds with [`SdkError<DescribeComponentError>`](crate::error::DescribeComponentError)
     pub fn describe_component(&self) -> fluent_builders::DescribeComponent<C, M, R> {
         fluent_builders::DescribeComponent::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateServiceRoleFromAccount` operation.
+    /// Constructs a fluent builder for the [`DisassociateServiceRoleFromAccount`](crate::client::fluent_builders::DisassociateServiceRoleFromAccount) operation.
     ///
-    /// See [`DisassociateServiceRoleFromAccount`](crate::client::fluent_builders::DisassociateServiceRoleFromAccount) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateServiceRoleFromAccountInput`](crate::input::DisassociateServiceRoleFromAccountInput)
+
+    /// - On success, responds with [`DisassociateServiceRoleFromAccountOutput`](crate::output::DisassociateServiceRoleFromAccountOutput) with field(s):
+    ///   - [`disassociated_at(Option<String>)`](crate::output::DisassociateServiceRoleFromAccountOutput::disassociated_at): <p>The time when the service role was disassociated from IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
+    /// - On failure, responds with [`SdkError<DisassociateServiceRoleFromAccountError>`](crate::error::DisassociateServiceRoleFromAccountError)
     pub fn disassociate_service_role_from_account(
         &self,
     ) -> fluent_builders::DisassociateServiceRoleFromAccount<C, M, R> {
         fluent_builders::DisassociateServiceRoleFromAccount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetComponent` operation.
+    /// Constructs a fluent builder for the [`GetComponent`](crate::client::fluent_builders::GetComponent) operation.
     ///
-    /// See [`GetComponent`](crate::client::fluent_builders::GetComponent) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetComponentInput`](crate::input::GetComponentInput) with field(s):
+    ///   - [`recipe_output_format(Option<RecipeOutputFormat>)`](crate::input::GetComponentInput::recipe_output_format): <p>The format of the recipe.</p>
+    ///   - [`arn(Option<String>)`](crate::input::GetComponentInput::arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    /// - On success, responds with [`GetComponentOutput`](crate::output::GetComponentOutput) with field(s):
+    ///   - [`recipe_output_format(Option<RecipeOutputFormat>)`](crate::output::GetComponentOutput::recipe_output_format): <p>The format of the recipe.</p>
+    ///   - [`recipe(Option<Blob>)`](crate::output::GetComponentOutput::recipe): <p>The recipe of the component version.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetComponentOutput::tags): <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    /// - On failure, responds with [`SdkError<GetComponentError>`](crate::error::GetComponentError)
     pub fn get_component(&self) -> fluent_builders::GetComponent<C, M, R> {
         fluent_builders::GetComponent::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetComponentVersionArtifact` operation.
+    /// Constructs a fluent builder for the [`GetComponentVersionArtifact`](crate::client::fluent_builders::GetComponentVersionArtifact) operation.
     ///
-    /// See [`GetComponentVersionArtifact`](crate::client::fluent_builders::GetComponentVersionArtifact) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetComponentVersionArtifactInput`](crate::input::GetComponentVersionArtifactInput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::input::GetComponentVersionArtifactInput::arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version. Specify the ARN of a public component version.</p>
+    ///   - [`artifact_name(Option<String>)`](crate::input::GetComponentVersionArtifactInput::artifact_name): <p>The name of the artifact.</p>  <p>You can use the <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html">GetComponent</a> operation to download the component recipe, which includes the URI of the artifact. The artifact name is the section of the URI after the scheme. For example, in the artifact URI <code>greengrass:SomeArtifact.zip</code>, the artifact name is <code>SomeArtifact.zip</code>.</p>
+    /// - On success, responds with [`GetComponentVersionArtifactOutput`](crate::output::GetComponentVersionArtifactOutput) with field(s):
+    ///   - [`pre_signed_url(Option<String>)`](crate::output::GetComponentVersionArtifactOutput::pre_signed_url): <p>The URL of the artifact.</p>
+    /// - On failure, responds with [`SdkError<GetComponentVersionArtifactError>`](crate::error::GetComponentVersionArtifactError)
     pub fn get_component_version_artifact(
         &self,
     ) -> fluent_builders::GetComponentVersionArtifact<C, M, R> {
         fluent_builders::GetComponentVersionArtifact::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetConnectivityInfo` operation.
+    /// Constructs a fluent builder for the [`GetConnectivityInfo`](crate::client::fluent_builders::GetConnectivityInfo) operation.
     ///
-    /// See [`GetConnectivityInfo`](crate::client::fluent_builders::GetConnectivityInfo) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetConnectivityInfoInput`](crate::input::GetConnectivityInfoInput) with field(s):
+    ///   - [`thing_name(Option<String>)`](crate::input::GetConnectivityInfoInput::thing_name): <p>The name of the core device. This is also the name of the IoT thing.</p>
+    /// - On success, responds with [`GetConnectivityInfoOutput`](crate::output::GetConnectivityInfoOutput) with field(s):
+    ///   - [`connectivity_info(Option<Vec<ConnectivityInfo>>)`](crate::output::GetConnectivityInfoOutput::connectivity_info): <p>The connectivity information for the core device.</p>
+    ///   - [`message(Option<String>)`](crate::output::GetConnectivityInfoOutput::message): <p>A message about the connectivity information request.</p>
+    /// - On failure, responds with [`SdkError<GetConnectivityInfoError>`](crate::error::GetConnectivityInfoError)
     pub fn get_connectivity_info(&self) -> fluent_builders::GetConnectivityInfo<C, M, R> {
         fluent_builders::GetConnectivityInfo::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCoreDevice` operation.
+    /// Constructs a fluent builder for the [`GetCoreDevice`](crate::client::fluent_builders::GetCoreDevice) operation.
     ///
-    /// See [`GetCoreDevice`](crate::client::fluent_builders::GetCoreDevice) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetCoreDeviceInput`](crate::input::GetCoreDeviceInput) with field(s):
+    ///   - [`core_device_thing_name(Option<String>)`](crate::input::GetCoreDeviceInput::core_device_thing_name): <p>The name of the core device. This is also the name of the IoT thing.</p>
+    /// - On success, responds with [`GetCoreDeviceOutput`](crate::output::GetCoreDeviceOutput) with field(s):
+    ///   - [`core_device_thing_name(Option<String>)`](crate::output::GetCoreDeviceOutput::core_device_thing_name): <p>The name of the core device. This is also the name of the IoT thing.</p>
+    ///   - [`core_version(Option<String>)`](crate::output::GetCoreDeviceOutput::core_version): <p>The version of the IoT Greengrass Core software that the core device runs. This version is equivalent to the version of the Greengrass nucleus component that runs on the core device. For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    ///   - [`platform(Option<String>)`](crate::output::GetCoreDeviceOutput::platform): <p>The operating system platform that the core device runs.</p>
+    ///   - [`architecture(Option<String>)`](crate::output::GetCoreDeviceOutput::architecture): <p>The computer architecture of the core device.</p>
+    ///   - [`status(Option<CoreDeviceStatus>)`](crate::output::GetCoreDeviceOutput::status): <p>The status of the core device. The core device status can be:</p>  <ul>   <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p> </li>   <li> <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p> </li>  </ul>
+    ///   - [`last_status_update_timestamp(Option<DateTime>)`](crate::output::GetCoreDeviceOutput::last_status_update_timestamp): <p>The time at which the core device's status last updated, expressed in ISO 8601 format.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetCoreDeviceOutput::tags): <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    /// - On failure, responds with [`SdkError<GetCoreDeviceError>`](crate::error::GetCoreDeviceError)
     pub fn get_core_device(&self) -> fluent_builders::GetCoreDevice<C, M, R> {
         fluent_builders::GetCoreDevice::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDeployment` operation.
+    /// Constructs a fluent builder for the [`GetDeployment`](crate::client::fluent_builders::GetDeployment) operation.
     ///
-    /// See [`GetDeployment`](crate::client::fluent_builders::GetDeployment) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetDeploymentInput`](crate::input::GetDeploymentInput) with field(s):
+    ///   - [`deployment_id(Option<String>)`](crate::input::GetDeploymentInput::deployment_id): <p>The ID of the deployment.</p>
+    /// - On success, responds with [`GetDeploymentOutput`](crate::output::GetDeploymentOutput) with field(s):
+    ///   - [`target_arn(Option<String>)`](crate::output::GetDeploymentOutput::target_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
+    ///   - [`revision_id(Option<String>)`](crate::output::GetDeploymentOutput::revision_id): <p>The revision number of the deployment.</p>
+    ///   - [`deployment_id(Option<String>)`](crate::output::GetDeploymentOutput::deployment_id): <p>The ID of the deployment.</p>
+    ///   - [`deployment_name(Option<String>)`](crate::output::GetDeploymentOutput::deployment_name): <p>The name of the deployment.</p>
+    ///   - [`deployment_status(Option<DeploymentStatus>)`](crate::output::GetDeploymentOutput::deployment_status): <p>The status of the deployment.</p>
+    ///   - [`iot_job_id(Option<String>)`](crate::output::GetDeploymentOutput::iot_job_id): <p>The ID of the IoT job that applies the deployment to target devices.</p>
+    ///   - [`iot_job_arn(Option<String>)`](crate::output::GetDeploymentOutput::iot_job_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT job that applies the deployment to target devices.</p>
+    ///   - [`components(Option<HashMap<String, ComponentDeploymentSpecification>>)`](crate::output::GetDeploymentOutput::components): <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
+    ///   - [`deployment_policies(Option<DeploymentPolicies>)`](crate::output::GetDeploymentOutput::deployment_policies): <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
+    ///   - [`iot_job_configuration(Option<DeploymentIoTJobConfiguration>)`](crate::output::GetDeploymentOutput::iot_job_configuration): <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
+    ///   - [`creation_timestamp(Option<DateTime>)`](crate::output::GetDeploymentOutput::creation_timestamp): <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
+    ///   - [`is_latest_for_target(bool)`](crate::output::GetDeploymentOutput::is_latest_for_target): <p>Whether or not the deployment is the latest revision for its target.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetDeploymentOutput::tags): <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    /// - On failure, responds with [`SdkError<GetDeploymentError>`](crate::error::GetDeploymentError)
     pub fn get_deployment(&self) -> fluent_builders::GetDeployment<C, M, R> {
         fluent_builders::GetDeployment::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetServiceRoleForAccount` operation.
+    /// Constructs a fluent builder for the [`GetServiceRoleForAccount`](crate::client::fluent_builders::GetServiceRoleForAccount) operation.
     ///
-    /// See [`GetServiceRoleForAccount`](crate::client::fluent_builders::GetServiceRoleForAccount) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetServiceRoleForAccountInput`](crate::input::GetServiceRoleForAccountInput)
+
+    /// - On success, responds with [`GetServiceRoleForAccountOutput`](crate::output::GetServiceRoleForAccountOutput) with field(s):
+    ///   - [`associated_at(Option<String>)`](crate::output::GetServiceRoleForAccountOutput::associated_at): <p>The time when the service role was associated with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
+    ///   - [`role_arn(Option<String>)`](crate::output::GetServiceRoleForAccountOutput::role_arn): <p>The ARN of the service role that is associated with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region.</p>
+    /// - On failure, responds with [`SdkError<GetServiceRoleForAccountError>`](crate::error::GetServiceRoleForAccountError)
     pub fn get_service_role_for_account(
         &self,
     ) -> fluent_builders::GetServiceRoleForAccount<C, M, R> {
         fluent_builders::GetServiceRoleForAccount::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListClientDevicesAssociatedWithCoreDevice` operation.
-    ///
-    /// See [`ListClientDevicesAssociatedWithCoreDevice`](crate::client::fluent_builders::ListClientDevicesAssociatedWithCoreDevice) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListClientDevicesAssociatedWithCoreDevice`](crate::client::fluent_builders::ListClientDevicesAssociatedWithCoreDevice) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListClientDevicesAssociatedWithCoreDevice::into_paginator).
+    ///
+    /// - Takes [`ListClientDevicesAssociatedWithCoreDeviceInput`](crate::input::ListClientDevicesAssociatedWithCoreDeviceInput) with field(s):
+    ///   - [`core_device_thing_name(Option<String>)`](crate::input::ListClientDevicesAssociatedWithCoreDeviceInput::core_device_thing_name): <p>The name of the core device. This is also the name of the IoT thing.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListClientDevicesAssociatedWithCoreDeviceInput::max_results): <p>The maximum number of results to be returned per paginated request.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListClientDevicesAssociatedWithCoreDeviceInput::next_token): <p>The token to be used for the next set of paginated results.</p>
+    /// - On success, responds with [`ListClientDevicesAssociatedWithCoreDeviceOutput`](crate::output::ListClientDevicesAssociatedWithCoreDeviceOutput) with field(s):
+    ///   - [`associated_client_devices(Option<Vec<AssociatedClientDevice>>)`](crate::output::ListClientDevicesAssociatedWithCoreDeviceOutput::associated_client_devices): <p>A list that describes the client devices that are associated with the core device.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListClientDevicesAssociatedWithCoreDeviceOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
+    /// - On failure, responds with [`SdkError<ListClientDevicesAssociatedWithCoreDeviceError>`](crate::error::ListClientDevicesAssociatedWithCoreDeviceError)
     pub fn list_client_devices_associated_with_core_device(
         &self,
     ) -> fluent_builders::ListClientDevicesAssociatedWithCoreDevice<C, M, R> {
         fluent_builders::ListClientDevicesAssociatedWithCoreDevice::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListComponents` operation.
-    ///
-    /// See [`ListComponents`](crate::client::fluent_builders::ListComponents) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListComponents`](crate::client::fluent_builders::ListComponents) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListComponents::into_paginator).
+    ///
+    /// - Takes [`ListComponentsInput`](crate::input::ListComponentsInput) with field(s):
+    ///   - [`scope(Option<ComponentVisibilityScope>)`](crate::input::ListComponentsInput::scope): <p>The scope of the components to list.</p>  <p>Default: <code>PRIVATE</code> </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListComponentsInput::max_results): <p>The maximum number of results to be returned per paginated request.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListComponentsInput::next_token): <p>The token to be used for the next set of paginated results.</p>
+    /// - On success, responds with [`ListComponentsOutput`](crate::output::ListComponentsOutput) with field(s):
+    ///   - [`components(Option<Vec<Component>>)`](crate::output::ListComponentsOutput::components): <p>A list that summarizes each component.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListComponentsOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
+    /// - On failure, responds with [`SdkError<ListComponentsError>`](crate::error::ListComponentsError)
     pub fn list_components(&self) -> fluent_builders::ListComponents<C, M, R> {
         fluent_builders::ListComponents::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListComponentVersions` operation.
-    ///
-    /// See [`ListComponentVersions`](crate::client::fluent_builders::ListComponentVersions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListComponentVersions`](crate::client::fluent_builders::ListComponentVersions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListComponentVersions::into_paginator).
+    ///
+    /// - Takes [`ListComponentVersionsInput`](crate::input::ListComponentVersionsInput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::input::ListComponentVersionsInput::arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListComponentVersionsInput::max_results): <p>The maximum number of results to be returned per paginated request.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListComponentVersionsInput::next_token): <p>The token to be used for the next set of paginated results.</p>
+    /// - On success, responds with [`ListComponentVersionsOutput`](crate::output::ListComponentVersionsOutput) with field(s):
+    ///   - [`component_versions(Option<Vec<ComponentVersionListItem>>)`](crate::output::ListComponentVersionsOutput::component_versions): <p>A list of versions that exist for the component.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListComponentVersionsOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
+    /// - On failure, responds with [`SdkError<ListComponentVersionsError>`](crate::error::ListComponentVersionsError)
     pub fn list_component_versions(&self) -> fluent_builders::ListComponentVersions<C, M, R> {
         fluent_builders::ListComponentVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListCoreDevices` operation.
-    ///
-    /// See [`ListCoreDevices`](crate::client::fluent_builders::ListCoreDevices) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListCoreDevices`](crate::client::fluent_builders::ListCoreDevices) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCoreDevices::into_paginator).
+    ///
+    /// - Takes [`ListCoreDevicesInput`](crate::input::ListCoreDevicesInput) with field(s):
+    ///   - [`thing_group_arn(Option<String>)`](crate::input::ListCoreDevicesInput::thing_group_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the list includes only core devices that are members of this thing group.</p>
+    ///   - [`status(Option<CoreDeviceStatus>)`](crate::input::ListCoreDevicesInput::status): <p>The core device status by which to filter. If you specify this parameter, the list includes only core devices that have this status. Choose one of the following options:</p>  <ul>   <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p> </li>   <li> <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p> </li>  </ul>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListCoreDevicesInput::max_results): <p>The maximum number of results to be returned per paginated request.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListCoreDevicesInput::next_token): <p>The token to be used for the next set of paginated results.</p>
+    /// - On success, responds with [`ListCoreDevicesOutput`](crate::output::ListCoreDevicesOutput) with field(s):
+    ///   - [`core_devices(Option<Vec<CoreDevice>>)`](crate::output::ListCoreDevicesOutput::core_devices): <p>A list that summarizes each core device.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListCoreDevicesOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
+    /// - On failure, responds with [`SdkError<ListCoreDevicesError>`](crate::error::ListCoreDevicesError)
     pub fn list_core_devices(&self) -> fluent_builders::ListCoreDevices<C, M, R> {
         fluent_builders::ListCoreDevices::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDeployments` operation.
-    ///
-    /// See [`ListDeployments`](crate::client::fluent_builders::ListDeployments) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListDeployments`](crate::client::fluent_builders::ListDeployments) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDeployments::into_paginator).
+    ///
+    /// - Takes [`ListDeploymentsInput`](crate::input::ListDeploymentsInput) with field(s):
+    ///   - [`target_arn(Option<String>)`](crate::input::ListDeploymentsInput::target_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
+    ///   - [`history_filter(Option<DeploymentHistoryFilter>)`](crate::input::ListDeploymentsInput::history_filter): <p>The filter for the list of deployments. Choose one of the following options:</p>  <ul>   <li> <p> <code>ALL</code> – The list includes all deployments.</p> </li>   <li> <p> <code>LATEST_ONLY</code> – The list includes only the latest revision of each deployment.</p> </li>  </ul>  <p>Default: <code>LATEST_ONLY</code> </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListDeploymentsInput::max_results): <p>The maximum number of results to be returned per paginated request.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListDeploymentsInput::next_token): <p>The token to be used for the next set of paginated results.</p>
+    /// - On success, responds with [`ListDeploymentsOutput`](crate::output::ListDeploymentsOutput) with field(s):
+    ///   - [`deployments(Option<Vec<Deployment>>)`](crate::output::ListDeploymentsOutput::deployments): <p>A list that summarizes each deployment.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDeploymentsOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
+    /// - On failure, responds with [`SdkError<ListDeploymentsError>`](crate::error::ListDeploymentsError)
     pub fn list_deployments(&self) -> fluent_builders::ListDeployments<C, M, R> {
         fluent_builders::ListDeployments::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListEffectiveDeployments` operation.
-    ///
-    /// See [`ListEffectiveDeployments`](crate::client::fluent_builders::ListEffectiveDeployments) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListEffectiveDeployments`](crate::client::fluent_builders::ListEffectiveDeployments) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListEffectiveDeployments::into_paginator).
+    ///
+    /// - Takes [`ListEffectiveDeploymentsInput`](crate::input::ListEffectiveDeploymentsInput) with field(s):
+    ///   - [`core_device_thing_name(Option<String>)`](crate::input::ListEffectiveDeploymentsInput::core_device_thing_name): <p>The name of the core device. This is also the name of the IoT thing.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListEffectiveDeploymentsInput::max_results): <p>The maximum number of results to be returned per paginated request.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListEffectiveDeploymentsInput::next_token): <p>The token to be used for the next set of paginated results.</p>
+    /// - On success, responds with [`ListEffectiveDeploymentsOutput`](crate::output::ListEffectiveDeploymentsOutput) with field(s):
+    ///   - [`effective_deployments(Option<Vec<EffectiveDeployment>>)`](crate::output::ListEffectiveDeploymentsOutput::effective_deployments): <p>A list that summarizes each deployment on the core device.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListEffectiveDeploymentsOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
+    /// - On failure, responds with [`SdkError<ListEffectiveDeploymentsError>`](crate::error::ListEffectiveDeploymentsError)
     pub fn list_effective_deployments(&self) -> fluent_builders::ListEffectiveDeployments<C, M, R> {
         fluent_builders::ListEffectiveDeployments::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListInstalledComponents` operation.
-    ///
-    /// See [`ListInstalledComponents`](crate::client::fluent_builders::ListInstalledComponents) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListInstalledComponents`](crate::client::fluent_builders::ListInstalledComponents) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListInstalledComponents::into_paginator).
+    ///
+    /// - Takes [`ListInstalledComponentsInput`](crate::input::ListInstalledComponentsInput) with field(s):
+    ///   - [`core_device_thing_name(Option<String>)`](crate::input::ListInstalledComponentsInput::core_device_thing_name): <p>The name of the core device. This is also the name of the IoT thing.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListInstalledComponentsInput::max_results): <p>The maximum number of results to be returned per paginated request.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListInstalledComponentsInput::next_token): <p>The token to be used for the next set of paginated results.</p>
+    /// - On success, responds with [`ListInstalledComponentsOutput`](crate::output::ListInstalledComponentsOutput) with field(s):
+    ///   - [`installed_components(Option<Vec<InstalledComponent>>)`](crate::output::ListInstalledComponentsOutput::installed_components): <p>A list that summarizes each component on the core device.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListInstalledComponentsOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
+    /// - On failure, responds with [`SdkError<ListInstalledComponentsError>`](crate::error::ListInstalledComponentsError)
     pub fn list_installed_components(&self) -> fluent_builders::ListInstalledComponents<C, M, R> {
         fluent_builders::ListInstalledComponents::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ResolveComponentCandidates` operation.
+    /// Constructs a fluent builder for the [`ResolveComponentCandidates`](crate::client::fluent_builders::ResolveComponentCandidates) operation.
     ///
-    /// See [`ResolveComponentCandidates`](crate::client::fluent_builders::ResolveComponentCandidates) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ResolveComponentCandidatesInput`](crate::input::ResolveComponentCandidatesInput) with field(s):
+    ///   - [`platform(Option<ComponentPlatform>)`](crate::input::ResolveComponentCandidatesInput::platform): <p>The platform to use to resolve compatible components.</p>
+    ///   - [`component_candidates(Option<Vec<ComponentCandidate>>)`](crate::input::ResolveComponentCandidatesInput::component_candidates): <p>The list of components to resolve.</p>
+    /// - On success, responds with [`ResolveComponentCandidatesOutput`](crate::output::ResolveComponentCandidatesOutput) with field(s):
+    ///   - [`resolved_component_versions(Option<Vec<ResolvedComponentVersion>>)`](crate::output::ResolveComponentCandidatesOutput::resolved_component_versions): <p>A list of components that meet the requirements that you specify in the request. This list includes each component's recipe that you can use to install the component.</p>
+    /// - On failure, responds with [`SdkError<ResolveComponentCandidatesError>`](crate::error::ResolveComponentCandidatesError)
     pub fn resolve_component_candidates(
         &self,
     ) -> fluent_builders::ResolveComponentCandidates<C, M, R> {
         fluent_builders::ResolveComponentCandidates::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to tag.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to untag.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>A list of keys for tags to remove from the resource.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateConnectivityInfo` operation.
+    /// Constructs a fluent builder for the [`UpdateConnectivityInfo`](crate::client::fluent_builders::UpdateConnectivityInfo) operation.
     ///
-    /// See [`UpdateConnectivityInfo`](crate::client::fluent_builders::UpdateConnectivityInfo) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateConnectivityInfoInput`](crate::input::UpdateConnectivityInfoInput) with field(s):
+    ///   - [`thing_name(Option<String>)`](crate::input::UpdateConnectivityInfoInput::thing_name): <p>The name of the core device. This is also the name of the IoT thing.</p>
+    ///   - [`connectivity_info(Option<Vec<ConnectivityInfo>>)`](crate::input::UpdateConnectivityInfoInput::connectivity_info): <p>The connectivity information for the core device.</p>
+    /// - On success, responds with [`UpdateConnectivityInfoOutput`](crate::output::UpdateConnectivityInfoOutput) with field(s):
+    ///   - [`version(Option<String>)`](crate::output::UpdateConnectivityInfoOutput::version): <p>The new version of the connectivity information for the core device.</p>
+    ///   - [`message(Option<String>)`](crate::output::UpdateConnectivityInfoOutput::message): <p>A message about the connectivity information update request.</p>
+    /// - On failure, responds with [`SdkError<UpdateConnectivityInfoError>`](crate::error::UpdateConnectivityInfoError)
     pub fn update_connectivity_info(&self) -> fluent_builders::UpdateConnectivityInfo<C, M, R> {
         fluent_builders::UpdateConnectivityInfo::new(self.handle.clone())
     }

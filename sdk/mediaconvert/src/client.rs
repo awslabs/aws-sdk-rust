@@ -83,204 +83,356 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AssociateCertificate` operation.
+    /// Constructs a fluent builder for the [`AssociateCertificate`](crate::client::fluent_builders::AssociateCertificate) operation.
     ///
-    /// See [`AssociateCertificate`](crate::client::fluent_builders::AssociateCertificate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateCertificateInput`](crate::input::AssociateCertificateInput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::input::AssociateCertificateInput::arn): The ARN of the ACM certificate that you want to associate with your MediaConvert resource.
+    /// - On success, responds with [`AssociateCertificateOutput`](crate::output::AssociateCertificateOutput)
+
+    /// - On failure, responds with [`SdkError<AssociateCertificateError>`](crate::error::AssociateCertificateError)
     pub fn associate_certificate(&self) -> fluent_builders::AssociateCertificate<C, M, R> {
         fluent_builders::AssociateCertificate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CancelJob` operation.
+    /// Constructs a fluent builder for the [`CancelJob`](crate::client::fluent_builders::CancelJob) operation.
     ///
-    /// See [`CancelJob`](crate::client::fluent_builders::CancelJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CancelJobInput`](crate::input::CancelJobInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::CancelJobInput::id): The Job ID of the job to be cancelled.
+    /// - On success, responds with [`CancelJobOutput`](crate::output::CancelJobOutput)
+
+    /// - On failure, responds with [`SdkError<CancelJobError>`](crate::error::CancelJobError)
     pub fn cancel_job(&self) -> fluent_builders::CancelJob<C, M, R> {
         fluent_builders::CancelJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateJob` operation.
+    /// Constructs a fluent builder for the [`CreateJob`](crate::client::fluent_builders::CreateJob) operation.
     ///
-    /// See [`CreateJob`](crate::client::fluent_builders::CreateJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateJobInput`](crate::input::CreateJobInput) with field(s):
+    ///   - [`acceleration_settings(Option<AccelerationSettings>)`](crate::input::CreateJobInput::acceleration_settings): Optional. Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
+    ///   - [`billing_tags_source(Option<BillingTagsSource>)`](crate::input::CreateJobInput::billing_tags_source): Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any billing report that you set up. Any transcoding outputs that don't have an associated tag will appear in your billing report unsorted. If you don't choose a valid value for this field, your job outputs will appear on the billing report unsorted.
+    ///   - [`client_request_token(Option<String>)`](crate::input::CreateJobInput::client_request_token): Optional. Idempotency token for CreateJob operation.
+    ///   - [`hop_destinations(Option<Vec<HopDestination>>)`](crate::input::CreateJobInput::hop_destinations): Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to. Specify an alternate queue and the maximum time that your job will wait in the initial queue before hopping. For more information about this feature, see the AWS Elemental MediaConvert User Guide.
+    ///   - [`job_template(Option<String>)`](crate::input::CreateJobInput::job_template): Optional. When you create a job, you can either specify a job template or specify the transcoding settings individually.
+    ///   - [`priority(i32)`](crate::input::CreateJobInput::priority): Optional. Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
+    ///   - [`queue(Option<String>)`](crate::input::CreateJobInput::queue): Optional. When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to the default queue. For more about queues, see the User Guide topic at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
+    ///   - [`role(Option<String>)`](crate::input::CreateJobInput::role): Required. The IAM role you use for creating this job. For details about permissions, see the User Guide topic at the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+    ///   - [`settings(Option<JobSettings>)`](crate::input::CreateJobInput::settings): JobSettings contains all the transcode settings for a job.
+    ///   - [`simulate_reserved_queue(Option<SimulateReservedQueue>)`](crate::input::CreateJobInput::simulate_reserved_queue): Optional. Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see with one RTS in a reserved queue. This setting is disabled by default.
+    ///   - [`status_update_interval(Option<StatusUpdateInterval>)`](crate::input::CreateJobInput::status_update_interval): Optional. Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateJobInput::tags): Optional. The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key. Use standard AWS tags on your job for automatic integration with AWS services and for custom integrations and workflows.
+    ///   - [`user_metadata(Option<HashMap<String, String>>)`](crate::input::CreateJobInput::user_metadata): Optional. User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in key/value pairs. Use only for existing integrations or workflows that rely on job metadata tags. Otherwise, we recommend that you use standard AWS tags.
+    /// - On success, responds with [`CreateJobOutput`](crate::output::CreateJobOutput) with field(s):
+    ///   - [`job(Option<Job>)`](crate::output::CreateJobOutput::job): Each job converts an input file into an output file or files. For more information, see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+    /// - On failure, responds with [`SdkError<CreateJobError>`](crate::error::CreateJobError)
     pub fn create_job(&self) -> fluent_builders::CreateJob<C, M, R> {
         fluent_builders::CreateJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateJobTemplate` operation.
+    /// Constructs a fluent builder for the [`CreateJobTemplate`](crate::client::fluent_builders::CreateJobTemplate) operation.
     ///
-    /// See [`CreateJobTemplate`](crate::client::fluent_builders::CreateJobTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateJobTemplateInput`](crate::input::CreateJobTemplateInput) with field(s):
+    ///   - [`acceleration_settings(Option<AccelerationSettings>)`](crate::input::CreateJobTemplateInput::acceleration_settings): Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
+    ///   - [`category(Option<String>)`](crate::input::CreateJobTemplateInput::category): Optional. A category for the job template you are creating
+    ///   - [`description(Option<String>)`](crate::input::CreateJobTemplateInput::description): Optional. A description of the job template you are creating.
+    ///   - [`hop_destinations(Option<Vec<HopDestination>>)`](crate::input::CreateJobTemplateInput::hop_destinations): Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to. Specify an alternate queue and the maximum time that your job will wait in the initial queue before hopping. For more information about this feature, see the AWS Elemental MediaConvert User Guide.
+    ///   - [`name(Option<String>)`](crate::input::CreateJobTemplateInput::name): The name of the job template you are creating.
+    ///   - [`priority(i32)`](crate::input::CreateJobTemplateInput::priority): Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
+    ///   - [`queue(Option<String>)`](crate::input::CreateJobTemplateInput::queue): Optional. The queue that jobs created from this template are assigned to. If you don't specify this, jobs will go to the default queue.
+    ///   - [`settings(Option<JobTemplateSettings>)`](crate::input::CreateJobTemplateInput::settings): JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it.
+    ///   - [`status_update_interval(Option<StatusUpdateInterval>)`](crate::input::CreateJobTemplateInput::status_update_interval): Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateJobTemplateInput::tags): The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
+    /// - On success, responds with [`CreateJobTemplateOutput`](crate::output::CreateJobTemplateOutput) with field(s):
+    ///   - [`job_template(Option<JobTemplate>)`](crate::output::CreateJobTemplateOutput::job_template): A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
+    /// - On failure, responds with [`SdkError<CreateJobTemplateError>`](crate::error::CreateJobTemplateError)
     pub fn create_job_template(&self) -> fluent_builders::CreateJobTemplate<C, M, R> {
         fluent_builders::CreateJobTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreatePreset` operation.
+    /// Constructs a fluent builder for the [`CreatePreset`](crate::client::fluent_builders::CreatePreset) operation.
     ///
-    /// See [`CreatePreset`](crate::client::fluent_builders::CreatePreset) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreatePresetInput`](crate::input::CreatePresetInput) with field(s):
+    ///   - [`category(Option<String>)`](crate::input::CreatePresetInput::category): Optional. A category for the preset you are creating.
+    ///   - [`description(Option<String>)`](crate::input::CreatePresetInput::description): Optional. A description of the preset you are creating.
+    ///   - [`name(Option<String>)`](crate::input::CreatePresetInput::name): The name of the preset you are creating.
+    ///   - [`settings(Option<PresetSettings>)`](crate::input::CreatePresetInput::settings): Settings for preset
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreatePresetInput::tags): The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
+    /// - On success, responds with [`CreatePresetOutput`](crate::output::CreatePresetOutput) with field(s):
+    ///   - [`preset(Option<Preset>)`](crate::output::CreatePresetOutput::preset): A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
+    /// - On failure, responds with [`SdkError<CreatePresetError>`](crate::error::CreatePresetError)
     pub fn create_preset(&self) -> fluent_builders::CreatePreset<C, M, R> {
         fluent_builders::CreatePreset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateQueue` operation.
+    /// Constructs a fluent builder for the [`CreateQueue`](crate::client::fluent_builders::CreateQueue) operation.
     ///
-    /// See [`CreateQueue`](crate::client::fluent_builders::CreateQueue) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateQueueInput`](crate::input::CreateQueueInput) with field(s):
+    ///   - [`description(Option<String>)`](crate::input::CreateQueueInput::description): Optional. A description of the queue that you are creating.
+    ///   - [`name(Option<String>)`](crate::input::CreateQueueInput::name): The name of the queue that you are creating.
+    ///   - [`pricing_plan(Option<PricingPlan>)`](crate::input::CreateQueueInput::pricing_plan): Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute, billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue, regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment. When you use the API to create a queue, the default is on-demand.
+    ///   - [`reservation_plan_settings(Option<ReservationPlanSettings>)`](crate::input::CreateQueueInput::reservation_plan_settings): Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues.
+    ///   - [`status(Option<QueueStatus>)`](crate::input::CreateQueueInput::status): Initial state of the queue. If you create a paused queue, then jobs in that queue won't begin.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateQueueInput::tags): The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
+    /// - On success, responds with [`CreateQueueOutput`](crate::output::CreateQueueOutput) with field(s):
+    ///   - [`queue(Option<Queue>)`](crate::output::CreateQueueOutput::queue): You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
+    /// - On failure, responds with [`SdkError<CreateQueueError>`](crate::error::CreateQueueError)
     pub fn create_queue(&self) -> fluent_builders::CreateQueue<C, M, R> {
         fluent_builders::CreateQueue::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteJobTemplate` operation.
+    /// Constructs a fluent builder for the [`DeleteJobTemplate`](crate::client::fluent_builders::DeleteJobTemplate) operation.
     ///
-    /// See [`DeleteJobTemplate`](crate::client::fluent_builders::DeleteJobTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteJobTemplateInput`](crate::input::DeleteJobTemplateInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteJobTemplateInput::name): The name of the job template to be deleted.
+    /// - On success, responds with [`DeleteJobTemplateOutput`](crate::output::DeleteJobTemplateOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteJobTemplateError>`](crate::error::DeleteJobTemplateError)
     pub fn delete_job_template(&self) -> fluent_builders::DeleteJobTemplate<C, M, R> {
         fluent_builders::DeleteJobTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeletePolicy` operation.
+    /// Constructs a fluent builder for the [`DeletePolicy`](crate::client::fluent_builders::DeletePolicy) operation.
     ///
-    /// See [`DeletePolicy`](crate::client::fluent_builders::DeletePolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeletePolicyInput`](crate::input::DeletePolicyInput)
+
+    /// - On success, responds with [`DeletePolicyOutput`](crate::output::DeletePolicyOutput)
+
+    /// - On failure, responds with [`SdkError<DeletePolicyError>`](crate::error::DeletePolicyError)
     pub fn delete_policy(&self) -> fluent_builders::DeletePolicy<C, M, R> {
         fluent_builders::DeletePolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeletePreset` operation.
+    /// Constructs a fluent builder for the [`DeletePreset`](crate::client::fluent_builders::DeletePreset) operation.
     ///
-    /// See [`DeletePreset`](crate::client::fluent_builders::DeletePreset) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeletePresetInput`](crate::input::DeletePresetInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeletePresetInput::name): The name of the preset to be deleted.
+    /// - On success, responds with [`DeletePresetOutput`](crate::output::DeletePresetOutput)
+
+    /// - On failure, responds with [`SdkError<DeletePresetError>`](crate::error::DeletePresetError)
     pub fn delete_preset(&self) -> fluent_builders::DeletePreset<C, M, R> {
         fluent_builders::DeletePreset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteQueue` operation.
+    /// Constructs a fluent builder for the [`DeleteQueue`](crate::client::fluent_builders::DeleteQueue) operation.
     ///
-    /// See [`DeleteQueue`](crate::client::fluent_builders::DeleteQueue) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteQueueInput`](crate::input::DeleteQueueInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteQueueInput::name): The name of the queue that you want to delete.
+    /// - On success, responds with [`DeleteQueueOutput`](crate::output::DeleteQueueOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteQueueError>`](crate::error::DeleteQueueError)
     pub fn delete_queue(&self) -> fluent_builders::DeleteQueue<C, M, R> {
         fluent_builders::DeleteQueue::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEndpoints` operation.
-    ///
-    /// See [`DescribeEndpoints`](crate::client::fluent_builders::DescribeEndpoints) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeEndpoints`](crate::client::fluent_builders::DescribeEndpoints) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeEndpoints::into_paginator).
+    ///
+    /// - Takes [`DescribeEndpointsInput`](crate::input::DescribeEndpointsInput) with field(s):
+    ///   - [`max_results(i32)`](crate::input::DescribeEndpointsInput::max_results): Optional. Max number of endpoints, up to twenty, that will be returned at one time.
+    ///   - [`mode(Option<DescribeEndpointsMode>)`](crate::input::DescribeEndpointsInput::mode): Optional field, defaults to DEFAULT. Specify DEFAULT for this operation to return your endpoints if any exist, or to create an endpoint for you and return it if one doesn't already exist. Specify GET_ONLY to return your endpoints if any exist, or an empty list if none exist.
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeEndpointsInput::next_token): Use this string, provided with the response to a previous request, to request the next batch of endpoints.
+    /// - On success, responds with [`DescribeEndpointsOutput`](crate::output::DescribeEndpointsOutput) with field(s):
+    ///   - [`endpoints(Option<Vec<Endpoint>>)`](crate::output::DescribeEndpointsOutput::endpoints): List of endpoints
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeEndpointsOutput::next_token): Use this string to request the next batch of endpoints.
+    /// - On failure, responds with [`SdkError<DescribeEndpointsError>`](crate::error::DescribeEndpointsError)
     pub fn describe_endpoints(&self) -> fluent_builders::DescribeEndpoints<C, M, R> {
         fluent_builders::DescribeEndpoints::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateCertificate` operation.
+    /// Constructs a fluent builder for the [`DisassociateCertificate`](crate::client::fluent_builders::DisassociateCertificate) operation.
     ///
-    /// See [`DisassociateCertificate`](crate::client::fluent_builders::DisassociateCertificate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateCertificateInput`](crate::input::DisassociateCertificateInput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::input::DisassociateCertificateInput::arn): The ARN of the ACM certificate that you want to disassociate from your MediaConvert resource.
+    /// - On success, responds with [`DisassociateCertificateOutput`](crate::output::DisassociateCertificateOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateCertificateError>`](crate::error::DisassociateCertificateError)
     pub fn disassociate_certificate(&self) -> fluent_builders::DisassociateCertificate<C, M, R> {
         fluent_builders::DisassociateCertificate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetJob` operation.
+    /// Constructs a fluent builder for the [`GetJob`](crate::client::fluent_builders::GetJob) operation.
     ///
-    /// See [`GetJob`](crate::client::fluent_builders::GetJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetJobInput`](crate::input::GetJobInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::GetJobInput::id): the job ID of the job.
+    /// - On success, responds with [`GetJobOutput`](crate::output::GetJobOutput) with field(s):
+    ///   - [`job(Option<Job>)`](crate::output::GetJobOutput::job): Each job converts an input file into an output file or files. For more information, see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+    /// - On failure, responds with [`SdkError<GetJobError>`](crate::error::GetJobError)
     pub fn get_job(&self) -> fluent_builders::GetJob<C, M, R> {
         fluent_builders::GetJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetJobTemplate` operation.
+    /// Constructs a fluent builder for the [`GetJobTemplate`](crate::client::fluent_builders::GetJobTemplate) operation.
     ///
-    /// See [`GetJobTemplate`](crate::client::fluent_builders::GetJobTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetJobTemplateInput`](crate::input::GetJobTemplateInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::GetJobTemplateInput::name): The name of the job template.
+    /// - On success, responds with [`GetJobTemplateOutput`](crate::output::GetJobTemplateOutput) with field(s):
+    ///   - [`job_template(Option<JobTemplate>)`](crate::output::GetJobTemplateOutput::job_template): A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
+    /// - On failure, responds with [`SdkError<GetJobTemplateError>`](crate::error::GetJobTemplateError)
     pub fn get_job_template(&self) -> fluent_builders::GetJobTemplate<C, M, R> {
         fluent_builders::GetJobTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetPolicy` operation.
+    /// Constructs a fluent builder for the [`GetPolicy`](crate::client::fluent_builders::GetPolicy) operation.
     ///
-    /// See [`GetPolicy`](crate::client::fluent_builders::GetPolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetPolicyInput`](crate::input::GetPolicyInput)
+
+    /// - On success, responds with [`GetPolicyOutput`](crate::output::GetPolicyOutput) with field(s):
+    ///   - [`policy(Option<Policy>)`](crate::output::GetPolicyOutput::policy): A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+    /// - On failure, responds with [`SdkError<GetPolicyError>`](crate::error::GetPolicyError)
     pub fn get_policy(&self) -> fluent_builders::GetPolicy<C, M, R> {
         fluent_builders::GetPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetPreset` operation.
+    /// Constructs a fluent builder for the [`GetPreset`](crate::client::fluent_builders::GetPreset) operation.
     ///
-    /// See [`GetPreset`](crate::client::fluent_builders::GetPreset) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetPresetInput`](crate::input::GetPresetInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::GetPresetInput::name): The name of the preset.
+    /// - On success, responds with [`GetPresetOutput`](crate::output::GetPresetOutput) with field(s):
+    ///   - [`preset(Option<Preset>)`](crate::output::GetPresetOutput::preset): A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
+    /// - On failure, responds with [`SdkError<GetPresetError>`](crate::error::GetPresetError)
     pub fn get_preset(&self) -> fluent_builders::GetPreset<C, M, R> {
         fluent_builders::GetPreset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetQueue` operation.
+    /// Constructs a fluent builder for the [`GetQueue`](crate::client::fluent_builders::GetQueue) operation.
     ///
-    /// See [`GetQueue`](crate::client::fluent_builders::GetQueue) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetQueueInput`](crate::input::GetQueueInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::GetQueueInput::name): The name of the queue that you want information about.
+    /// - On success, responds with [`GetQueueOutput`](crate::output::GetQueueOutput) with field(s):
+    ///   - [`queue(Option<Queue>)`](crate::output::GetQueueOutput::queue): You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
+    /// - On failure, responds with [`SdkError<GetQueueError>`](crate::error::GetQueueError)
     pub fn get_queue(&self) -> fluent_builders::GetQueue<C, M, R> {
         fluent_builders::GetQueue::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListJobs` operation.
-    ///
-    /// See [`ListJobs`](crate::client::fluent_builders::ListJobs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListJobs`](crate::client::fluent_builders::ListJobs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListJobs::into_paginator).
+    ///
+    /// - Takes [`ListJobsInput`](crate::input::ListJobsInput) with field(s):
+    ///   - [`max_results(i32)`](crate::input::ListJobsInput::max_results): Optional. Number of jobs, up to twenty, that will be returned at one time.
+    ///   - [`next_token(Option<String>)`](crate::input::ListJobsInput::next_token): Optional. Use this string, provided with the response to a previous request, to request the next batch of jobs.
+    ///   - [`order(Option<Order>)`](crate::input::ListJobsInput::order): Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
+    ///   - [`queue(Option<String>)`](crate::input::ListJobsInput::queue): Optional. Provide a queue name to get back only jobs from that queue.
+    ///   - [`status(Option<JobStatus>)`](crate::input::ListJobsInput::status): Optional. A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
+    /// - On success, responds with [`ListJobsOutput`](crate::output::ListJobsOutput) with field(s):
+    ///   - [`jobs(Option<Vec<Job>>)`](crate::output::ListJobsOutput::jobs): List of jobs
+    ///   - [`next_token(Option<String>)`](crate::output::ListJobsOutput::next_token): Use this string to request the next batch of jobs.
+    /// - On failure, responds with [`SdkError<ListJobsError>`](crate::error::ListJobsError)
     pub fn list_jobs(&self) -> fluent_builders::ListJobs<C, M, R> {
         fluent_builders::ListJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListJobTemplates` operation.
-    ///
-    /// See [`ListJobTemplates`](crate::client::fluent_builders::ListJobTemplates) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListJobTemplates`](crate::client::fluent_builders::ListJobTemplates) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListJobTemplates::into_paginator).
+    ///
+    /// - Takes [`ListJobTemplatesInput`](crate::input::ListJobTemplatesInput) with field(s):
+    ///   - [`category(Option<String>)`](crate::input::ListJobTemplatesInput::category): Optionally, specify a job template category to limit responses to only job templates from that category.
+    ///   - [`list_by(Option<JobTemplateListBy>)`](crate::input::ListJobTemplatesInput::list_by): Optional. When you request a list of job templates, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
+    ///   - [`max_results(i32)`](crate::input::ListJobTemplatesInput::max_results): Optional. Number of job templates, up to twenty, that will be returned at one time.
+    ///   - [`next_token(Option<String>)`](crate::input::ListJobTemplatesInput::next_token): Use this string, provided with the response to a previous request, to request the next batch of job templates.
+    ///   - [`order(Option<Order>)`](crate::input::ListJobTemplatesInput::order): Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
+    /// - On success, responds with [`ListJobTemplatesOutput`](crate::output::ListJobTemplatesOutput) with field(s):
+    ///   - [`job_templates(Option<Vec<JobTemplate>>)`](crate::output::ListJobTemplatesOutput::job_templates): List of Job templates.
+    ///   - [`next_token(Option<String>)`](crate::output::ListJobTemplatesOutput::next_token): Use this string to request the next batch of job templates.
+    /// - On failure, responds with [`SdkError<ListJobTemplatesError>`](crate::error::ListJobTemplatesError)
     pub fn list_job_templates(&self) -> fluent_builders::ListJobTemplates<C, M, R> {
         fluent_builders::ListJobTemplates::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPresets` operation.
-    ///
-    /// See [`ListPresets`](crate::client::fluent_builders::ListPresets) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListPresets`](crate::client::fluent_builders::ListPresets) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPresets::into_paginator).
+    ///
+    /// - Takes [`ListPresetsInput`](crate::input::ListPresetsInput) with field(s):
+    ///   - [`category(Option<String>)`](crate::input::ListPresetsInput::category): Optionally, specify a preset category to limit responses to only presets from that category.
+    ///   - [`list_by(Option<PresetListBy>)`](crate::input::ListPresetsInput::list_by): Optional. When you request a list of presets, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
+    ///   - [`max_results(i32)`](crate::input::ListPresetsInput::max_results): Optional. Number of presets, up to twenty, that will be returned at one time
+    ///   - [`next_token(Option<String>)`](crate::input::ListPresetsInput::next_token): Use this string, provided with the response to a previous request, to request the next batch of presets.
+    ///   - [`order(Option<Order>)`](crate::input::ListPresetsInput::order): Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
+    /// - On success, responds with [`ListPresetsOutput`](crate::output::ListPresetsOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListPresetsOutput::next_token): Use this string to request the next batch of presets.
+    ///   - [`presets(Option<Vec<Preset>>)`](crate::output::ListPresetsOutput::presets): List of presets
+    /// - On failure, responds with [`SdkError<ListPresetsError>`](crate::error::ListPresetsError)
     pub fn list_presets(&self) -> fluent_builders::ListPresets<C, M, R> {
         fluent_builders::ListPresets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListQueues` operation.
-    ///
-    /// See [`ListQueues`](crate::client::fluent_builders::ListQueues) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListQueues`](crate::client::fluent_builders::ListQueues) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListQueues::into_paginator).
+    ///
+    /// - Takes [`ListQueuesInput`](crate::input::ListQueuesInput) with field(s):
+    ///   - [`list_by(Option<QueueListBy>)`](crate::input::ListQueuesInput::list_by): Optional. When you request a list of queues, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by creation date.
+    ///   - [`max_results(i32)`](crate::input::ListQueuesInput::max_results): Optional. Number of queues, up to twenty, that will be returned at one time.
+    ///   - [`next_token(Option<String>)`](crate::input::ListQueuesInput::next_token): Use this string, provided with the response to a previous request, to request the next batch of queues.
+    ///   - [`order(Option<Order>)`](crate::input::ListQueuesInput::order): Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
+    /// - On success, responds with [`ListQueuesOutput`](crate::output::ListQueuesOutput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::output::ListQueuesOutput::next_token): Use this string to request the next batch of queues.
+    ///   - [`queues(Option<Vec<Queue>>)`](crate::output::ListQueuesOutput::queues): List of queues.
+    /// - On failure, responds with [`SdkError<ListQueuesError>`](crate::error::ListQueuesError)
     pub fn list_queues(&self) -> fluent_builders::ListQueues<C, M, R> {
         fluent_builders::ListQueues::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::input::ListTagsForResourceInput::arn): The Amazon Resource Name (ARN) of the resource that you want to list tags for. To get the ARN, send a GET request with the resource name.
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`resource_tags(Option<ResourceTags>)`](crate::output::ListTagsForResourceOutput::resource_tags): The Amazon Resource Name (ARN) and tags for an AWS Elemental MediaConvert resource.
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutPolicy` operation.
+    /// Constructs a fluent builder for the [`PutPolicy`](crate::client::fluent_builders::PutPolicy) operation.
     ///
-    /// See [`PutPolicy`](crate::client::fluent_builders::PutPolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutPolicyInput`](crate::input::PutPolicyInput) with field(s):
+    ///   - [`policy(Option<Policy>)`](crate::input::PutPolicyInput::policy): A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+    /// - On success, responds with [`PutPolicyOutput`](crate::output::PutPolicyOutput) with field(s):
+    ///   - [`policy(Option<Policy>)`](crate::output::PutPolicyOutput::policy): A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+    /// - On failure, responds with [`SdkError<PutPolicyError>`](crate::error::PutPolicyError)
     pub fn put_policy(&self) -> fluent_builders::PutPolicy<C, M, R> {
         fluent_builders::PutPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::input::TagResourceInput::arn): The Amazon Resource Name (ARN) of the resource that you want to tag. To get the ARN, send a GET request with the resource name.
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::input::UntagResourceInput::arn): The Amazon Resource Name (ARN) of the resource that you want to remove tags from. To get the ARN, send a GET request with the resource name.
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): The keys of the tags that you want to remove from the resource.
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateJobTemplate` operation.
+    /// Constructs a fluent builder for the [`UpdateJobTemplate`](crate::client::fluent_builders::UpdateJobTemplate) operation.
     ///
-    /// See [`UpdateJobTemplate`](crate::client::fluent_builders::UpdateJobTemplate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateJobTemplateInput`](crate::input::UpdateJobTemplateInput) with field(s):
+    ///   - [`acceleration_settings(Option<AccelerationSettings>)`](crate::input::UpdateJobTemplateInput::acceleration_settings): Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
+    ///   - [`category(Option<String>)`](crate::input::UpdateJobTemplateInput::category): The new category for the job template, if you are changing it.
+    ///   - [`description(Option<String>)`](crate::input::UpdateJobTemplateInput::description): The new description for the job template, if you are changing it.
+    ///   - [`hop_destinations(Option<Vec<HopDestination>>)`](crate::input::UpdateJobTemplateInput::hop_destinations): Optional list of hop destinations.
+    ///   - [`name(Option<String>)`](crate::input::UpdateJobTemplateInput::name): The name of the job template you are modifying
+    ///   - [`priority(i32)`](crate::input::UpdateJobTemplateInput::priority): Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
+    ///   - [`queue(Option<String>)`](crate::input::UpdateJobTemplateInput::queue): The new queue for the job template, if you are changing it.
+    ///   - [`settings(Option<JobTemplateSettings>)`](crate::input::UpdateJobTemplateInput::settings): JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it.
+    ///   - [`status_update_interval(Option<StatusUpdateInterval>)`](crate::input::UpdateJobTemplateInput::status_update_interval): Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
+    /// - On success, responds with [`UpdateJobTemplateOutput`](crate::output::UpdateJobTemplateOutput) with field(s):
+    ///   - [`job_template(Option<JobTemplate>)`](crate::output::UpdateJobTemplateOutput::job_template): A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
+    /// - On failure, responds with [`SdkError<UpdateJobTemplateError>`](crate::error::UpdateJobTemplateError)
     pub fn update_job_template(&self) -> fluent_builders::UpdateJobTemplate<C, M, R> {
         fluent_builders::UpdateJobTemplate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdatePreset` operation.
+    /// Constructs a fluent builder for the [`UpdatePreset`](crate::client::fluent_builders::UpdatePreset) operation.
     ///
-    /// See [`UpdatePreset`](crate::client::fluent_builders::UpdatePreset) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdatePresetInput`](crate::input::UpdatePresetInput) with field(s):
+    ///   - [`category(Option<String>)`](crate::input::UpdatePresetInput::category): The new category for the preset, if you are changing it.
+    ///   - [`description(Option<String>)`](crate::input::UpdatePresetInput::description): The new description for the preset, if you are changing it.
+    ///   - [`name(Option<String>)`](crate::input::UpdatePresetInput::name): The name of the preset you are modifying.
+    ///   - [`settings(Option<PresetSettings>)`](crate::input::UpdatePresetInput::settings): Settings for preset
+    /// - On success, responds with [`UpdatePresetOutput`](crate::output::UpdatePresetOutput) with field(s):
+    ///   - [`preset(Option<Preset>)`](crate::output::UpdatePresetOutput::preset): A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process.
+    /// - On failure, responds with [`SdkError<UpdatePresetError>`](crate::error::UpdatePresetError)
     pub fn update_preset(&self) -> fluent_builders::UpdatePreset<C, M, R> {
         fluent_builders::UpdatePreset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateQueue` operation.
+    /// Constructs a fluent builder for the [`UpdateQueue`](crate::client::fluent_builders::UpdateQueue) operation.
     ///
-    /// See [`UpdateQueue`](crate::client::fluent_builders::UpdateQueue) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateQueueInput`](crate::input::UpdateQueueInput) with field(s):
+    ///   - [`description(Option<String>)`](crate::input::UpdateQueueInput::description): The new description for the queue, if you are changing it.
+    ///   - [`name(Option<String>)`](crate::input::UpdateQueueInput::name): The name of the queue that you are modifying.
+    ///   - [`reservation_plan_settings(Option<ReservationPlanSettings>)`](crate::input::UpdateQueueInput::reservation_plan_settings): The new details of your pricing plan for your reserved queue. When you set up a new pricing plan to replace an expired one, you enter into another 12-month commitment. When you add capacity to your queue by increasing the number of RTS, you extend the term of your commitment to 12 months from when you add capacity. After you make these commitments, you can't cancel them.
+    ///   - [`status(Option<QueueStatus>)`](crate::input::UpdateQueueInput::status): Pause or activate a queue by changing its status between ACTIVE and PAUSED. If you pause a queue, jobs in that queue won't begin. Jobs that are running when you pause the queue continue to run until they finish or result in an error.
+    /// - On success, responds with [`UpdateQueueOutput`](crate::output::UpdateQueueOutput) with field(s):
+    ///   - [`queue(Option<Queue>)`](crate::output::UpdateQueueOutput::queue): You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
+    /// - On failure, responds with [`SdkError<UpdateQueueError>`](crate::error::UpdateQueueError)
     pub fn update_queue(&self) -> fluent_builders::UpdateQueue<C, M, R> {
         fluent_builders::UpdateQueue::new(self.handle.clone())
     }

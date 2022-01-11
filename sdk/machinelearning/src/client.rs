@@ -83,205 +83,446 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AddTags` operation.
+    /// Constructs a fluent builder for the [`AddTags`](crate::client::fluent_builders::AddTags) operation.
     ///
-    /// See [`AddTags`](crate::client::fluent_builders::AddTags) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AddTagsInput`](crate::input::AddTagsInput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::AddTagsInput::tags): <p>The key-value pairs to use to create tags. If you specify a key without specifying a value, Amazon ML creates a tag with the specified key and a value of null.</p>
+    ///   - [`resource_id(Option<String>)`](crate::input::AddTagsInput::resource_id): <p>The ID of the ML object to tag. For example, <code>exampleModelId</code>.</p>
+    ///   - [`resource_type(Option<TaggableResourceType>)`](crate::input::AddTagsInput::resource_type): <p>The type of the ML object to tag.</p>
+    /// - On success, responds with [`AddTagsOutput`](crate::output::AddTagsOutput) with field(s):
+    ///   - [`resource_id(Option<String>)`](crate::output::AddTagsOutput::resource_id): <p>The ID of the ML object that was tagged.</p>
+    ///   - [`resource_type(Option<TaggableResourceType>)`](crate::output::AddTagsOutput::resource_type): <p>The type of the ML object that was tagged.</p>
+    /// - On failure, responds with [`SdkError<AddTagsError>`](crate::error::AddTagsError)
     pub fn add_tags(&self) -> fluent_builders::AddTags<C, M, R> {
         fluent_builders::AddTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateBatchPrediction` operation.
+    /// Constructs a fluent builder for the [`CreateBatchPrediction`](crate::client::fluent_builders::CreateBatchPrediction) operation.
     ///
-    /// See [`CreateBatchPrediction`](crate::client::fluent_builders::CreateBatchPrediction) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateBatchPredictionInput`](crate::input::CreateBatchPredictionInput) with field(s):
+    ///   - [`batch_prediction_id(Option<String>)`](crate::input::CreateBatchPredictionInput::batch_prediction_id): <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
+    ///   - [`batch_prediction_name(Option<String>)`](crate::input::CreateBatchPredictionInput::batch_prediction_name): <p>A user-supplied name or description of the <code>BatchPrediction</code>. <code>BatchPredictionName</code> can only use the UTF-8 character set.</p>
+    ///   - [`ml_model_id(Option<String>)`](crate::input::CreateBatchPredictionInput::ml_model_id): <p>The ID of the <code>MLModel</code> that will generate predictions for the group of observations. </p>
+    ///   - [`batch_prediction_data_source_id(Option<String>)`](crate::input::CreateBatchPredictionInput::batch_prediction_data_source_id): <p>The ID of the <code>DataSource</code> that points to the group of observations to predict.</p>
+    ///   - [`output_uri(Option<String>)`](crate::input::CreateBatchPredictionInput::output_uri): <p>The location of an Amazon Simple Storage Service (Amazon S3) bucket or directory to store the batch prediction results. The following substrings are not allowed in the <code>s3 key</code> portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.</p>  <p>Amazon ML needs permissions to store and retrieve the logs on your behalf. For information about how to set permissions, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
+    /// - On success, responds with [`CreateBatchPredictionOutput`](crate::output::CreateBatchPredictionOutput) with field(s):
+    ///   - [`batch_prediction_id(Option<String>)`](crate::output::CreateBatchPredictionOutput::batch_prediction_id): <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>. This value is identical to the value of the <code>BatchPredictionId</code> in the request.</p>
+    /// - On failure, responds with [`SdkError<CreateBatchPredictionError>`](crate::error::CreateBatchPredictionError)
     pub fn create_batch_prediction(&self) -> fluent_builders::CreateBatchPrediction<C, M, R> {
         fluent_builders::CreateBatchPrediction::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDataSourceFromRDS` operation.
+    /// Constructs a fluent builder for the [`CreateDataSourceFromRDS`](crate::client::fluent_builders::CreateDataSourceFromRDS) operation.
     ///
-    /// See [`CreateDataSourceFromRDS`](crate::client::fluent_builders::CreateDataSourceFromRDS) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateDataSourceFromRdsInput`](crate::input::CreateDataSourceFromRdsInput) with field(s):
+    ///   - [`data_source_id(Option<String>)`](crate::input::CreateDataSourceFromRdsInput::data_source_id): <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. Typically, an Amazon Resource Number (ARN) becomes the ID for a <code>DataSource</code>.</p>
+    ///   - [`data_source_name(Option<String>)`](crate::input::CreateDataSourceFromRdsInput::data_source_name): <p>A user-supplied name or description of the <code>DataSource</code>.</p>
+    ///   - [`rds_data(Option<RdsDataSpec>)`](crate::input::CreateDataSourceFromRdsInput::rds_data): <p>The data specification of an Amazon RDS <code>DataSource</code>:</p>  <ul>   <li> <p>DatabaseInformation -</p>    <ul>     <li> <p> <code>DatabaseName</code> - The name of the Amazon RDS database.</p> </li>     <li> <p> <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.</p> </li>    </ul> </li>   <li> <p>DatabaseCredentials - AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon RDS database.</p> </li>   <li> <p>ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by an EC2 instance to carry out the copy task from Amazon RDS to Amazon Simple Storage Service (Amazon S3). For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p> </li>   <li> <p>ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the progress of the copy task from Amazon RDS to Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for data pipelines.</p> </li>   <li> <p>SecurityInfo - The security information to use to access an RDS DB instance. You need to set up appropriate ingress rules for the security entity IDs provided to allow access to the Amazon RDS instance. Specify a [<code>SubnetId</code>, <code>SecurityGroupIds</code>] pair for a VPC-based RDS DB instance.</p> </li>   <li> <p>SelectSqlQuery - A query that is used to retrieve the observation data for the <code>Datasource</code>.</p> </li>   <li> <p>S3StagingLocation - The Amazon S3 location for staging Amazon RDS data. The data retrieved from Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.</p> </li>   <li> <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p> </li>   <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>   <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>  </ul>
+    ///   - [`role_arn(Option<String>)`](crate::input::CreateDataSourceFromRdsInput::role_arn): <p>The role that Amazon ML assumes on behalf of the user to create and activate a data pipeline in the user's account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.</p>  <p></p>
+    ///   - [`compute_statistics(bool)`](crate::input::CreateDataSourceFromRdsInput::compute_statistics): <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training. </p>
+    /// - On success, responds with [`CreateDataSourceFromRdsOutput`](crate::output::CreateDataSourceFromRdsOutput) with field(s):
+    ///   - [`data_source_id(Option<String>)`](crate::output::CreateDataSourceFromRdsOutput::data_source_id): <p>A user-supplied ID that uniquely identifies the datasource. This value should be identical to the value of the <code>DataSourceID</code> in the request. </p>
+    /// - On failure, responds with [`SdkError<CreateDataSourceFromRDSError>`](crate::error::CreateDataSourceFromRDSError)
     pub fn create_data_source_from_rds(&self) -> fluent_builders::CreateDataSourceFromRDS<C, M, R> {
         fluent_builders::CreateDataSourceFromRDS::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDataSourceFromRedshift` operation.
+    /// Constructs a fluent builder for the [`CreateDataSourceFromRedshift`](crate::client::fluent_builders::CreateDataSourceFromRedshift) operation.
     ///
-    /// See [`CreateDataSourceFromRedshift`](crate::client::fluent_builders::CreateDataSourceFromRedshift) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateDataSourceFromRedshiftInput`](crate::input::CreateDataSourceFromRedshiftInput) with field(s):
+    ///   - [`data_source_id(Option<String>)`](crate::input::CreateDataSourceFromRedshiftInput::data_source_id): <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
+    ///   - [`data_source_name(Option<String>)`](crate::input::CreateDataSourceFromRedshiftInput::data_source_name): <p>A user-supplied name or description of the <code>DataSource</code>. </p>
+    ///   - [`data_spec(Option<RedshiftDataSpec>)`](crate::input::CreateDataSourceFromRedshiftInput::data_spec): <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p>  <ul>   <li> <p>DatabaseInformation -</p>    <ul>     <li> <p> <code>DatabaseName</code> - The name of the Amazon Redshift database.</p> </li>     <li> <p> <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</p> </li>    </ul> </li>   <li> <p>DatabaseCredentials - The AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon Redshift database.</p> </li>   <li> <p>SelectSqlQuery - The query that is used to retrieve the observation data for the <code>Datasource</code>.</p> </li>   <li> <p>S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location for staging Amazon Redshift data. The data retrieved from Amazon Redshift using the <code>SelectSqlQuery</code> query is stored in this location.</p> </li>   <li> <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p> </li>   <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>   <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>DataSource</code>.</p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>  </ul>
+    ///   - [`role_arn(Option<String>)`](crate::input::CreateDataSourceFromRedshiftInput::role_arn): <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role on behalf of the user to create the following:</p>  <ul>   <li> <p>A security group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon Redshift cluster</p> </li>   <li> <p>An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code> </p> </li>  </ul>
+    ///   - [`compute_statistics(bool)`](crate::input::CreateDataSourceFromRedshiftInput::compute_statistics): <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code>DataSource</code> needs to be used for <code>MLModel</code> training.</p>
+    /// - On success, responds with [`CreateDataSourceFromRedshiftOutput`](crate::output::CreateDataSourceFromRedshiftOutput) with field(s):
+    ///   - [`data_source_id(Option<String>)`](crate::output::CreateDataSourceFromRedshiftOutput::data_source_id): <p>A user-supplied ID that uniquely identifies the datasource. This value should be identical to the value of the <code>DataSourceID</code> in the request. </p>
+    /// - On failure, responds with [`SdkError<CreateDataSourceFromRedshiftError>`](crate::error::CreateDataSourceFromRedshiftError)
     pub fn create_data_source_from_redshift(
         &self,
     ) -> fluent_builders::CreateDataSourceFromRedshift<C, M, R> {
         fluent_builders::CreateDataSourceFromRedshift::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDataSourceFromS3` operation.
+    /// Constructs a fluent builder for the [`CreateDataSourceFromS3`](crate::client::fluent_builders::CreateDataSourceFromS3) operation.
     ///
-    /// See [`CreateDataSourceFromS3`](crate::client::fluent_builders::CreateDataSourceFromS3) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateDataSourceFromS3Input`](crate::input::CreateDataSourceFromS3Input) with field(s):
+    ///   - [`data_source_id(Option<String>)`](crate::input::CreateDataSourceFromS3Input::data_source_id): <p>A user-supplied identifier that uniquely identifies the <code>DataSource</code>. </p>
+    ///   - [`data_source_name(Option<String>)`](crate::input::CreateDataSourceFromS3Input::data_source_name): <p>A user-supplied name or description of the <code>DataSource</code>. </p>
+    ///   - [`data_spec(Option<S3DataSpec>)`](crate::input::CreateDataSourceFromS3Input::data_spec): <p>The data specification of a <code>DataSource</code>:</p>  <ul>   <li> <p>DataLocationS3 - The Amazon S3 location of the observation data.</p> </li>   <li> <p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p> </li>   <li> <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified. </p> </li>   <li> <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>. </p> <p> Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>  </ul>
+    ///   - [`compute_statistics(bool)`](crate::input::CreateDataSourceFromS3Input::compute_statistics): <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.</p>
+    /// - On success, responds with [`CreateDataSourceFromS3Output`](crate::output::CreateDataSourceFromS3Output) with field(s):
+    ///   - [`data_source_id(Option<String>)`](crate::output::CreateDataSourceFromS3Output::data_source_id): <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This value should be identical to the value of the <code>DataSourceID</code> in the request. </p>
+    /// - On failure, responds with [`SdkError<CreateDataSourceFromS3Error>`](crate::error::CreateDataSourceFromS3Error)
     pub fn create_data_source_from_s3(&self) -> fluent_builders::CreateDataSourceFromS3<C, M, R> {
         fluent_builders::CreateDataSourceFromS3::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateEvaluation` operation.
+    /// Constructs a fluent builder for the [`CreateEvaluation`](crate::client::fluent_builders::CreateEvaluation) operation.
     ///
-    /// See [`CreateEvaluation`](crate::client::fluent_builders::CreateEvaluation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateEvaluationInput`](crate::input::CreateEvaluationInput) with field(s):
+    ///   - [`evaluation_id(Option<String>)`](crate::input::CreateEvaluationInput::evaluation_id): <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>.</p>
+    ///   - [`evaluation_name(Option<String>)`](crate::input::CreateEvaluationInput::evaluation_name): <p>A user-supplied name or description of the <code>Evaluation</code>.</p>
+    ///   - [`ml_model_id(Option<String>)`](crate::input::CreateEvaluationInput::ml_model_id): <p>The ID of the <code>MLModel</code> to evaluate.</p>  <p>The schema used in creating the <code>MLModel</code> must match the schema of the <code>DataSource</code> used in the <code>Evaluation</code>.</p>
+    ///   - [`evaluation_data_source_id(Option<String>)`](crate::input::CreateEvaluationInput::evaluation_data_source_id): <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the <code>DataSource</code> must match the schema used to create the <code>MLModel</code>.</p>
+    /// - On success, responds with [`CreateEvaluationOutput`](crate::output::CreateEvaluationOutput) with field(s):
+    ///   - [`evaluation_id(Option<String>)`](crate::output::CreateEvaluationOutput::evaluation_id): <p>The user-supplied ID that uniquely identifies the <code>Evaluation</code>. This value should be identical to the value of the <code>EvaluationId</code> in the request.</p>
+    /// - On failure, responds with [`SdkError<CreateEvaluationError>`](crate::error::CreateEvaluationError)
     pub fn create_evaluation(&self) -> fluent_builders::CreateEvaluation<C, M, R> {
         fluent_builders::CreateEvaluation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateMLModel` operation.
+    /// Constructs a fluent builder for the [`CreateMLModel`](crate::client::fluent_builders::CreateMLModel) operation.
     ///
-    /// See [`CreateMLModel`](crate::client::fluent_builders::CreateMLModel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateMlModelInput`](crate::input::CreateMlModelInput) with field(s):
+    ///   - [`ml_model_id(Option<String>)`](crate::input::CreateMlModelInput::ml_model_id): <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
+    ///   - [`ml_model_name(Option<String>)`](crate::input::CreateMlModelInput::ml_model_name): <p>A user-supplied name or description of the <code>MLModel</code>.</p>
+    ///   - [`ml_model_type(Option<MlModelType>)`](crate::input::CreateMlModelInput::ml_model_type): <p>The category of supervised learning that this <code>MLModel</code> will address. Choose from the following types:</p>  <ul>   <li> <p>Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.</p> </li>   <li> <p>Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.</p> </li>   <li> <p>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.</p> </li>  </ul>  <p> For more information, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
+    ///   - [`parameters(Option<HashMap<String, String>>)`](crate::input::CreateMlModelInput::parameters): <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as a map of key-value pairs.</p>  <p>The following is the current set of training parameters:</p>  <ul>   <li> <p> <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending on the input data, the size of the model might affect its performance.</p> <p> The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>. The default value is <code>33554432</code>.</p> </li>   <li> <p> <code>sgd.maxPasses</code> - The number of times that the training process traverses the observations to build the <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p> </li>   <li> <p> <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling the data improves a model's ability to find the optimal solution for a variety of data types. The valid values are <code>auto</code> and <code>none</code>. The default value is <code>none</code>. We strongly recommend that you shuffle your data.</p> </li>   <li> <p> <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to zero, resulting in a sparse feature set. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1 normalization. This parameter can't be used when <code>L2</code> is specified. Use this parameter sparingly.</p> </li>   <li> <p> <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p> </li>  </ul>
+    ///   - [`training_data_source_id(Option<String>)`](crate::input::CreateMlModelInput::training_data_source_id): <p>The <code>DataSource</code> that points to the training data.</p>
+    ///   - [`recipe(Option<String>)`](crate::input::CreateMlModelInput::recipe): <p>The data recipe for creating the <code>MLModel</code>. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
+    ///   - [`recipe_uri(Option<String>)`](crate::input::CreateMlModelInput::recipe_uri): <p>The Amazon Simple Storage Service (Amazon S3) location and file name that contains the <code>MLModel</code> recipe. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
+    /// - On success, responds with [`CreateMlModelOutput`](crate::output::CreateMlModelOutput) with field(s):
+    ///   - [`ml_model_id(Option<String>)`](crate::output::CreateMlModelOutput::ml_model_id): <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelId</code> in the request. </p>
+    /// - On failure, responds with [`SdkError<CreateMLModelError>`](crate::error::CreateMLModelError)
     pub fn create_ml_model(&self) -> fluent_builders::CreateMLModel<C, M, R> {
         fluent_builders::CreateMLModel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateRealtimeEndpoint` operation.
+    /// Constructs a fluent builder for the [`CreateRealtimeEndpoint`](crate::client::fluent_builders::CreateRealtimeEndpoint) operation.
     ///
-    /// See [`CreateRealtimeEndpoint`](crate::client::fluent_builders::CreateRealtimeEndpoint) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateRealtimeEndpointInput`](crate::input::CreateRealtimeEndpointInput) with field(s):
+    ///   - [`ml_model_id(Option<String>)`](crate::input::CreateRealtimeEndpointInput::ml_model_id): <p>The ID assigned to the <code>MLModel</code> during creation.</p>
+    /// - On success, responds with [`CreateRealtimeEndpointOutput`](crate::output::CreateRealtimeEndpointOutput) with field(s):
+    ///   - [`ml_model_id(Option<String>)`](crate::output::CreateRealtimeEndpointOutput::ml_model_id): <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelId</code> in the request.</p>
+    ///   - [`realtime_endpoint_info(Option<RealtimeEndpointInfo>)`](crate::output::CreateRealtimeEndpointOutput::realtime_endpoint_info): <p>The endpoint information of the <code>MLModel</code> </p>
+    /// - On failure, responds with [`SdkError<CreateRealtimeEndpointError>`](crate::error::CreateRealtimeEndpointError)
     pub fn create_realtime_endpoint(&self) -> fluent_builders::CreateRealtimeEndpoint<C, M, R> {
         fluent_builders::CreateRealtimeEndpoint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteBatchPrediction` operation.
+    /// Constructs a fluent builder for the [`DeleteBatchPrediction`](crate::client::fluent_builders::DeleteBatchPrediction) operation.
     ///
-    /// See [`DeleteBatchPrediction`](crate::client::fluent_builders::DeleteBatchPrediction) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteBatchPredictionInput`](crate::input::DeleteBatchPredictionInput) with field(s):
+    ///   - [`batch_prediction_id(Option<String>)`](crate::input::DeleteBatchPredictionInput::batch_prediction_id): <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
+    /// - On success, responds with [`DeleteBatchPredictionOutput`](crate::output::DeleteBatchPredictionOutput) with field(s):
+    ///   - [`batch_prediction_id(Option<String>)`](crate::output::DeleteBatchPredictionOutput::batch_prediction_id): <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>. This value should be identical to the value of the <code>BatchPredictionID</code> in the request.</p>
+    /// - On failure, responds with [`SdkError<DeleteBatchPredictionError>`](crate::error::DeleteBatchPredictionError)
     pub fn delete_batch_prediction(&self) -> fluent_builders::DeleteBatchPrediction<C, M, R> {
         fluent_builders::DeleteBatchPrediction::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDataSource` operation.
+    /// Constructs a fluent builder for the [`DeleteDataSource`](crate::client::fluent_builders::DeleteDataSource) operation.
     ///
-    /// See [`DeleteDataSource`](crate::client::fluent_builders::DeleteDataSource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteDataSourceInput`](crate::input::DeleteDataSourceInput) with field(s):
+    ///   - [`data_source_id(Option<String>)`](crate::input::DeleteDataSourceInput::data_source_id): <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
+    /// - On success, responds with [`DeleteDataSourceOutput`](crate::output::DeleteDataSourceOutput) with field(s):
+    ///   - [`data_source_id(Option<String>)`](crate::output::DeleteDataSourceOutput::data_source_id): <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This value should be identical to the value of the <code>DataSourceID</code> in the request.</p>
+    /// - On failure, responds with [`SdkError<DeleteDataSourceError>`](crate::error::DeleteDataSourceError)
     pub fn delete_data_source(&self) -> fluent_builders::DeleteDataSource<C, M, R> {
         fluent_builders::DeleteDataSource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteEvaluation` operation.
+    /// Constructs a fluent builder for the [`DeleteEvaluation`](crate::client::fluent_builders::DeleteEvaluation) operation.
     ///
-    /// See [`DeleteEvaluation`](crate::client::fluent_builders::DeleteEvaluation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteEvaluationInput`](crate::input::DeleteEvaluationInput) with field(s):
+    ///   - [`evaluation_id(Option<String>)`](crate::input::DeleteEvaluationInput::evaluation_id): <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code> to delete.</p>
+    /// - On success, responds with [`DeleteEvaluationOutput`](crate::output::DeleteEvaluationOutput) with field(s):
+    ///   - [`evaluation_id(Option<String>)`](crate::output::DeleteEvaluationOutput::evaluation_id): <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>. This value should be identical to the value of the <code>EvaluationId</code> in the request.</p>
+    /// - On failure, responds with [`SdkError<DeleteEvaluationError>`](crate::error::DeleteEvaluationError)
     pub fn delete_evaluation(&self) -> fluent_builders::DeleteEvaluation<C, M, R> {
         fluent_builders::DeleteEvaluation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteMLModel` operation.
+    /// Constructs a fluent builder for the [`DeleteMLModel`](crate::client::fluent_builders::DeleteMLModel) operation.
     ///
-    /// See [`DeleteMLModel`](crate::client::fluent_builders::DeleteMLModel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteMlModelInput`](crate::input::DeleteMlModelInput) with field(s):
+    ///   - [`ml_model_id(Option<String>)`](crate::input::DeleteMlModelInput::ml_model_id): <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
+    /// - On success, responds with [`DeleteMlModelOutput`](crate::output::DeleteMlModelOutput) with field(s):
+    ///   - [`ml_model_id(Option<String>)`](crate::output::DeleteMlModelOutput::ml_model_id): <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelID</code> in the request.</p>
+    /// - On failure, responds with [`SdkError<DeleteMLModelError>`](crate::error::DeleteMLModelError)
     pub fn delete_ml_model(&self) -> fluent_builders::DeleteMLModel<C, M, R> {
         fluent_builders::DeleteMLModel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteRealtimeEndpoint` operation.
+    /// Constructs a fluent builder for the [`DeleteRealtimeEndpoint`](crate::client::fluent_builders::DeleteRealtimeEndpoint) operation.
     ///
-    /// See [`DeleteRealtimeEndpoint`](crate::client::fluent_builders::DeleteRealtimeEndpoint) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteRealtimeEndpointInput`](crate::input::DeleteRealtimeEndpointInput) with field(s):
+    ///   - [`ml_model_id(Option<String>)`](crate::input::DeleteRealtimeEndpointInput::ml_model_id): <p>The ID assigned to the <code>MLModel</code> during creation.</p>
+    /// - On success, responds with [`DeleteRealtimeEndpointOutput`](crate::output::DeleteRealtimeEndpointOutput) with field(s):
+    ///   - [`ml_model_id(Option<String>)`](crate::output::DeleteRealtimeEndpointOutput::ml_model_id): <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelId</code> in the request.</p>
+    ///   - [`realtime_endpoint_info(Option<RealtimeEndpointInfo>)`](crate::output::DeleteRealtimeEndpointOutput::realtime_endpoint_info): <p>The endpoint information of the <code>MLModel</code> </p>
+    /// - On failure, responds with [`SdkError<DeleteRealtimeEndpointError>`](crate::error::DeleteRealtimeEndpointError)
     pub fn delete_realtime_endpoint(&self) -> fluent_builders::DeleteRealtimeEndpoint<C, M, R> {
         fluent_builders::DeleteRealtimeEndpoint::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteTags` operation.
+    /// Constructs a fluent builder for the [`DeleteTags`](crate::client::fluent_builders::DeleteTags) operation.
     ///
-    /// See [`DeleteTags`](crate::client::fluent_builders::DeleteTags) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteTagsInput`](crate::input::DeleteTagsInput) with field(s):
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::DeleteTagsInput::tag_keys): <p>One or more tags to delete.</p>
+    ///   - [`resource_id(Option<String>)`](crate::input::DeleteTagsInput::resource_id): <p>The ID of the tagged ML object. For example, <code>exampleModelId</code>.</p>
+    ///   - [`resource_type(Option<TaggableResourceType>)`](crate::input::DeleteTagsInput::resource_type): <p>The type of the tagged ML object.</p>
+    /// - On success, responds with [`DeleteTagsOutput`](crate::output::DeleteTagsOutput) with field(s):
+    ///   - [`resource_id(Option<String>)`](crate::output::DeleteTagsOutput::resource_id): <p>The ID of the ML object from which tags were deleted.</p>
+    ///   - [`resource_type(Option<TaggableResourceType>)`](crate::output::DeleteTagsOutput::resource_type): <p>The type of the ML object from which tags were deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteTagsError>`](crate::error::DeleteTagsError)
     pub fn delete_tags(&self) -> fluent_builders::DeleteTags<C, M, R> {
         fluent_builders::DeleteTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeBatchPredictions` operation.
-    ///
-    /// See [`DescribeBatchPredictions`](crate::client::fluent_builders::DescribeBatchPredictions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeBatchPredictions`](crate::client::fluent_builders::DescribeBatchPredictions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeBatchPredictions::into_paginator).
+    ///
+    /// - Takes [`DescribeBatchPredictionsInput`](crate::input::DescribeBatchPredictionsInput) with field(s):
+    ///   - [`filter_variable(Option<BatchPredictionFilterVariable>)`](crate::input::DescribeBatchPredictionsInput::filter_variable): <p>Use one of the following variables to filter a list of <code>BatchPrediction</code>:</p>  <ul>   <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>BatchPrediction</code> creation date.</p> </li>   <li> <p> <code>Status</code> - Sets the search criteria to the <code>BatchPrediction</code> status.</p> </li>   <li> <p> <code>Name</code> - Sets the search criteria to the contents of the <code>BatchPrediction</code> <b> </b> <code>Name</code>.</p> </li>   <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>BatchPrediction</code> creation.</p> </li>   <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> used in the <code>BatchPrediction</code>.</p> </li>   <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.</p> </li>   <li> <p> <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>  </ul>
+    ///   - [`eq(Option<String>)`](crate::input::DescribeBatchPredictionsInput::eq): <p>The equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+    ///   - [`gt(Option<String>)`](crate::input::DescribeBatchPredictionsInput::gt): <p>The greater than operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+    ///   - [`lt(Option<String>)`](crate::input::DescribeBatchPredictionsInput::lt): <p>The less than operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+    ///   - [`ge(Option<String>)`](crate::input::DescribeBatchPredictionsInput::ge): <p>The greater than or equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
+    ///   - [`le(Option<String>)`](crate::input::DescribeBatchPredictionsInput::le): <p>The less than or equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
+    ///   - [`ne(Option<String>)`](crate::input::DescribeBatchPredictionsInput::ne): <p>The not equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
+    ///   - [`prefix(Option<String>)`](crate::input::DescribeBatchPredictionsInput::prefix): <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>  <p>For example, a <code>Batch Prediction</code> operation could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>BatchPrediction</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>  <ul>   <li> <p>2014-09</p> </li>   <li> <p>2014-09-09</p> </li>   <li> <p>2014-09-09-Holiday</p> </li>  </ul>
+    ///   - [`sort_order(Option<SortOrder>)`](crate::input::DescribeBatchPredictionsInput::sort_order): <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>s.</p>  <ul>   <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>   <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>  </ul>  <p>Results are sorted by <code>FilterVariable</code>.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeBatchPredictionsInput::next_token): <p>An ID of the page in the paginated results.</p>
+    ///   - [`limit(Option<i32>)`](crate::input::DescribeBatchPredictionsInput::limit): <p>The number of pages of information to include in the result. The range of acceptable values is <code>1</code> through <code>100</code>. The default value is <code>100</code>.</p>
+    /// - On success, responds with [`DescribeBatchPredictionsOutput`](crate::output::DescribeBatchPredictionsOutput) with field(s):
+    ///   - [`results(Option<Vec<BatchPrediction>>)`](crate::output::DescribeBatchPredictionsOutput::results): <p>A list of <code>BatchPrediction</code> objects that meet the search criteria. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeBatchPredictionsOutput::next_token): <p>The ID of the next page in the paginated results that indicates at least one more page follows.</p>
+    /// - On failure, responds with [`SdkError<DescribeBatchPredictionsError>`](crate::error::DescribeBatchPredictionsError)
     pub fn describe_batch_predictions(&self) -> fluent_builders::DescribeBatchPredictions<C, M, R> {
         fluent_builders::DescribeBatchPredictions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDataSources` operation.
-    ///
-    /// See [`DescribeDataSources`](crate::client::fluent_builders::DescribeDataSources) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeDataSources`](crate::client::fluent_builders::DescribeDataSources) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeDataSources::into_paginator).
+    ///
+    /// - Takes [`DescribeDataSourcesInput`](crate::input::DescribeDataSourcesInput) with field(s):
+    ///   - [`filter_variable(Option<DataSourceFilterVariable>)`](crate::input::DescribeDataSourcesInput::filter_variable): <p>Use one of the following variables to filter a list of <code>DataSource</code>:</p>  <ul>   <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p> </li>   <li> <p> <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</p> </li>   <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.</p> </li>   <li> <p> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>   <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p> </li>  </ul>
+    ///   - [`eq(Option<String>)`](crate::input::DescribeDataSourcesInput::eq): <p>The equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+    ///   - [`gt(Option<String>)`](crate::input::DescribeDataSourcesInput::gt): <p>The greater than operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+    ///   - [`lt(Option<String>)`](crate::input::DescribeDataSourcesInput::lt): <p>The less than operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+    ///   - [`ge(Option<String>)`](crate::input::DescribeDataSourcesInput::ge): <p>The greater than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
+    ///   - [`le(Option<String>)`](crate::input::DescribeDataSourcesInput::le): <p>The less than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
+    ///   - [`ne(Option<String>)`](crate::input::DescribeDataSourcesInput::ne): <p>The not equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
+    ///   - [`prefix(Option<String>)`](crate::input::DescribeDataSourcesInput::prefix): <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>  <p>For example, a <code>DataSource</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>DataSource</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>  <ul>   <li> <p>2014-09</p> </li>   <li> <p>2014-09-09</p> </li>   <li> <p>2014-09-09-Holiday</p> </li>  </ul>
+    ///   - [`sort_order(Option<SortOrder>)`](crate::input::DescribeDataSourcesInput::sort_order): <p>A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.</p>  <ul>   <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>   <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>  </ul>  <p>Results are sorted by <code>FilterVariable</code>.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeDataSourcesInput::next_token): <p>The ID of the page in the paginated results.</p>
+    ///   - [`limit(Option<i32>)`](crate::input::DescribeDataSourcesInput::limit): <p> The maximum number of <code>DataSource</code> to include in the result.</p>
+    /// - On success, responds with [`DescribeDataSourcesOutput`](crate::output::DescribeDataSourcesOutput) with field(s):
+    ///   - [`results(Option<Vec<DataSource>>)`](crate::output::DescribeDataSourcesOutput::results): <p>A list of <code>DataSource</code> that meet the search criteria. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeDataSourcesOutput::next_token): <p>An ID of the next page in the paginated results that indicates at least one more page follows.</p>
+    /// - On failure, responds with [`SdkError<DescribeDataSourcesError>`](crate::error::DescribeDataSourcesError)
     pub fn describe_data_sources(&self) -> fluent_builders::DescribeDataSources<C, M, R> {
         fluent_builders::DescribeDataSources::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEvaluations` operation.
-    ///
-    /// See [`DescribeEvaluations`](crate::client::fluent_builders::DescribeEvaluations) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeEvaluations`](crate::client::fluent_builders::DescribeEvaluations) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeEvaluations::into_paginator).
+    ///
+    /// - Takes [`DescribeEvaluationsInput`](crate::input::DescribeEvaluationsInput) with field(s):
+    ///   - [`filter_variable(Option<EvaluationFilterVariable>)`](crate::input::DescribeEvaluationsInput::filter_variable): <p>Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p>  <ul>   <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</p> </li>   <li> <p> <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</p> </li>   <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</p> </li>   <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</p> </li>   <li> <p> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</p> </li>   <li> <p> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in <code>Evaluation</code>.</p> </li>   <li> <p> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p> </li>  </ul>
+    ///   - [`eq(Option<String>)`](crate::input::DescribeEvaluationsInput::eq): <p>The equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+    ///   - [`gt(Option<String>)`](crate::input::DescribeEvaluationsInput::gt): <p>The greater than operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+    ///   - [`lt(Option<String>)`](crate::input::DescribeEvaluationsInput::lt): <p>The less than operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+    ///   - [`ge(Option<String>)`](crate::input::DescribeEvaluationsInput::ge): <p>The greater than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
+    ///   - [`le(Option<String>)`](crate::input::DescribeEvaluationsInput::le): <p>The less than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
+    ///   - [`ne(Option<String>)`](crate::input::DescribeEvaluationsInput::ne): <p>The not equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
+    ///   - [`prefix(Option<String>)`](crate::input::DescribeEvaluationsInput::prefix): <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>  <p>For example, an <code>Evaluation</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>Evaluation</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>  <ul>   <li> <p>2014-09</p> </li>   <li> <p>2014-09-09</p> </li>   <li> <p>2014-09-09-Holiday</p> </li>  </ul>
+    ///   - [`sort_order(Option<SortOrder>)`](crate::input::DescribeEvaluationsInput::sort_order): <p>A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.</p>  <ul>   <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>   <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>  </ul>  <p>Results are sorted by <code>FilterVariable</code>.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeEvaluationsInput::next_token): <p>The ID of the page in the paginated results.</p>
+    ///   - [`limit(Option<i32>)`](crate::input::DescribeEvaluationsInput::limit): <p> The maximum number of <code>Evaluation</code> to include in the result.</p>
+    /// - On success, responds with [`DescribeEvaluationsOutput`](crate::output::DescribeEvaluationsOutput) with field(s):
+    ///   - [`results(Option<Vec<Evaluation>>)`](crate::output::DescribeEvaluationsOutput::results): <p>A list of <code>Evaluation</code> that meet the search criteria. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeEvaluationsOutput::next_token): <p>The ID of the next page in the paginated results that indicates at least one more page follows.</p>
+    /// - On failure, responds with [`SdkError<DescribeEvaluationsError>`](crate::error::DescribeEvaluationsError)
     pub fn describe_evaluations(&self) -> fluent_builders::DescribeEvaluations<C, M, R> {
         fluent_builders::DescribeEvaluations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeMLModels` operation.
-    ///
-    /// See [`DescribeMLModels`](crate::client::fluent_builders::DescribeMLModels) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeMLModels`](crate::client::fluent_builders::DescribeMLModels) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeMLModels::into_paginator).
+    ///
+    /// - Takes [`DescribeMlModelsInput`](crate::input::DescribeMlModelsInput) with field(s):
+    ///   - [`filter_variable(Option<MlModelFilterVariable>)`](crate::input::DescribeMlModelsInput::filter_variable): <p>Use one of the following variables to filter a list of <code>MLModel</code>:</p>  <ul>   <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</p> </li>   <li> <p> <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</p> </li>   <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code> <b> </b> <code>Name</code>.</p> </li>   <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code> creation.</p> </li>   <li> <p> <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one or more <code>MLModel</code>.</p> </li>   <li> <p> <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint status.</p> </li>   <li> <p> <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or multi-class.</p> </li>   <li> <p> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</p> </li>   <li> <p> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>  </ul>
+    ///   - [`eq(Option<String>)`](crate::input::DescribeMlModelsInput::eq): <p>The equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
+    ///   - [`gt(Option<String>)`](crate::input::DescribeMlModelsInput::gt): <p>The greater than operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
+    ///   - [`lt(Option<String>)`](crate::input::DescribeMlModelsInput::lt): <p>The less than operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
+    ///   - [`ge(Option<String>)`](crate::input::DescribeMlModelsInput::ge): <p>The greater than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
+    ///   - [`le(Option<String>)`](crate::input::DescribeMlModelsInput::le): <p>The less than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
+    ///   - [`ne(Option<String>)`](crate::input::DescribeMlModelsInput::ne): <p>The not equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
+    ///   - [`prefix(Option<String>)`](crate::input::DescribeMlModelsInput::prefix): <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>  <p>For example, an <code>MLModel</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>MLModel</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>  <ul>   <li> <p>2014-09</p> </li>   <li> <p>2014-09-09</p> </li>   <li> <p>2014-09-09-Holiday</p> </li>  </ul>
+    ///   - [`sort_order(Option<SortOrder>)`](crate::input::DescribeMlModelsInput::sort_order): <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.</p>  <ul>   <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>   <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>  </ul>  <p>Results are sorted by <code>FilterVariable</code>.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::DescribeMlModelsInput::next_token): <p>The ID of the page in the paginated results.</p>
+    ///   - [`limit(Option<i32>)`](crate::input::DescribeMlModelsInput::limit): <p>The number of pages of information to include in the result. The range of acceptable values is <code>1</code> through <code>100</code>. The default value is <code>100</code>.</p>
+    /// - On success, responds with [`DescribeMlModelsOutput`](crate::output::DescribeMlModelsOutput) with field(s):
+    ///   - [`results(Option<Vec<MlModel>>)`](crate::output::DescribeMlModelsOutput::results): <p>A list of <code>MLModel</code> that meet the search criteria.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::DescribeMlModelsOutput::next_token): <p>The ID of the next page in the paginated results that indicates at least one more page follows.</p>
+    /// - On failure, responds with [`SdkError<DescribeMLModelsError>`](crate::error::DescribeMLModelsError)
     pub fn describe_ml_models(&self) -> fluent_builders::DescribeMLModels<C, M, R> {
         fluent_builders::DescribeMLModels::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeTags` operation.
+    /// Constructs a fluent builder for the [`DescribeTags`](crate::client::fluent_builders::DescribeTags) operation.
     ///
-    /// See [`DescribeTags`](crate::client::fluent_builders::DescribeTags) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeTagsInput`](crate::input::DescribeTagsInput) with field(s):
+    ///   - [`resource_id(Option<String>)`](crate::input::DescribeTagsInput::resource_id): <p>The ID of the ML object. For example, <code>exampleModelId</code>. </p>
+    ///   - [`resource_type(Option<TaggableResourceType>)`](crate::input::DescribeTagsInput::resource_type): <p>The type of the ML object.</p>
+    /// - On success, responds with [`DescribeTagsOutput`](crate::output::DescribeTagsOutput) with field(s):
+    ///   - [`resource_id(Option<String>)`](crate::output::DescribeTagsOutput::resource_id): <p>The ID of the tagged ML object.</p>
+    ///   - [`resource_type(Option<TaggableResourceType>)`](crate::output::DescribeTagsOutput::resource_type): <p>The type of the tagged ML object.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::DescribeTagsOutput::tags): <p>A list of tags associated with the ML object.</p>
+    /// - On failure, responds with [`SdkError<DescribeTagsError>`](crate::error::DescribeTagsError)
     pub fn describe_tags(&self) -> fluent_builders::DescribeTags<C, M, R> {
         fluent_builders::DescribeTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBatchPrediction` operation.
+    /// Constructs a fluent builder for the [`GetBatchPrediction`](crate::client::fluent_builders::GetBatchPrediction) operation.
     ///
-    /// See [`GetBatchPrediction`](crate::client::fluent_builders::GetBatchPrediction) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetBatchPredictionInput`](crate::input::GetBatchPredictionInput) with field(s):
+    ///   - [`batch_prediction_id(Option<String>)`](crate::input::GetBatchPredictionInput::batch_prediction_id): <p>An ID assigned to the <code>BatchPrediction</code> at creation.</p>
+    /// - On success, responds with [`GetBatchPredictionOutput`](crate::output::GetBatchPredictionOutput) with field(s):
+    ///   - [`batch_prediction_id(Option<String>)`](crate::output::GetBatchPredictionOutput::batch_prediction_id): <p>An ID assigned to the <code>BatchPrediction</code> at creation. This value should be identical to the value of the <code>BatchPredictionID</code> in the request.</p>
+    ///   - [`ml_model_id(Option<String>)`](crate::output::GetBatchPredictionOutput::ml_model_id): <p>The ID of the <code>MLModel</code> that generated predictions for the <code>BatchPrediction</code> request.</p>
+    ///   - [`batch_prediction_data_source_id(Option<String>)`](crate::output::GetBatchPredictionOutput::batch_prediction_data_source_id): <p>The ID of the <code>DataSource</code> that was used to create the <code>BatchPrediction</code>. </p>
+    ///   - [`input_data_location_s3(Option<String>)`](crate::output::GetBatchPredictionOutput::input_data_location_s3): <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
+    ///   - [`created_by_iam_user(Option<String>)`](crate::output::GetBatchPredictionOutput::created_by_iam_user): <p>The AWS user account that invoked the <code>BatchPrediction</code>. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::GetBatchPredictionOutput::created_at): <p>The time when the <code>BatchPrediction</code> was created. The time is expressed in epoch time.</p>
+    ///   - [`last_updated_at(Option<DateTime>)`](crate::output::GetBatchPredictionOutput::last_updated_at): <p>The time of the most recent edit to <code>BatchPrediction</code>. The time is expressed in epoch time.</p>
+    ///   - [`name(Option<String>)`](crate::output::GetBatchPredictionOutput::name): <p>A user-supplied name or description of the <code>BatchPrediction</code>.</p>
+    ///   - [`status(Option<EntityStatus>)`](crate::output::GetBatchPredictionOutput::status): <p>The status of the <code>BatchPrediction</code>, which can be one of the following values:</p>  <ul>   <li> <p> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to generate batch predictions.</p> </li>   <li> <p> <code>INPROGRESS</code> - The batch predictions are in progress.</p> </li>   <li> <p> <code>FAILED</code> - The request to perform a batch prediction did not run to completion. It is not usable.</p> </li>   <li> <p> <code>COMPLETED</code> - The batch prediction process completed successfully.</p> </li>   <li> <p> <code>DELETED</code> - The <code>BatchPrediction</code> is marked as deleted. It is not usable.</p> </li>  </ul>
+    ///   - [`output_uri(Option<String>)`](crate::output::GetBatchPredictionOutput::output_uri): <p>The location of an Amazon S3 bucket or directory to receive the operation results.</p>
+    ///   - [`log_uri(Option<String>)`](crate::output::GetBatchPredictionOutput::log_uri): <p>A link to the file that contains logs of the <code>CreateBatchPrediction</code> operation.</p>
+    ///   - [`message(Option<String>)`](crate::output::GetBatchPredictionOutput::message): <p>A description of the most recent details about processing the batch prediction request.</p>
+    ///   - [`compute_time(Option<i64>)`](crate::output::GetBatchPredictionOutput::compute_time): <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent processing the <code>BatchPrediction</code>, normalized and scaled on computation resources. <code>ComputeTime</code> is only available if the <code>BatchPrediction</code> is in the <code>COMPLETED</code> state.</p>
+    ///   - [`finished_at(Option<DateTime>)`](crate::output::GetBatchPredictionOutput::finished_at): <p>The epoch time when Amazon Machine Learning marked the <code>BatchPrediction</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>BatchPrediction</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
+    ///   - [`started_at(Option<DateTime>)`](crate::output::GetBatchPredictionOutput::started_at): <p>The epoch time when Amazon Machine Learning marked the <code>BatchPrediction</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>BatchPrediction</code> is in the <code>PENDING</code> state.</p>
+    ///   - [`total_record_count(Option<i64>)`](crate::output::GetBatchPredictionOutput::total_record_count): <p>The number of total records that Amazon Machine Learning saw while processing the <code>BatchPrediction</code>.</p>
+    ///   - [`invalid_record_count(Option<i64>)`](crate::output::GetBatchPredictionOutput::invalid_record_count): <p>The number of invalid records that Amazon Machine Learning saw while processing the <code>BatchPrediction</code>.</p>
+    /// - On failure, responds with [`SdkError<GetBatchPredictionError>`](crate::error::GetBatchPredictionError)
     pub fn get_batch_prediction(&self) -> fluent_builders::GetBatchPrediction<C, M, R> {
         fluent_builders::GetBatchPrediction::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDataSource` operation.
+    /// Constructs a fluent builder for the [`GetDataSource`](crate::client::fluent_builders::GetDataSource) operation.
     ///
-    /// See [`GetDataSource`](crate::client::fluent_builders::GetDataSource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetDataSourceInput`](crate::input::GetDataSourceInput) with field(s):
+    ///   - [`data_source_id(Option<String>)`](crate::input::GetDataSourceInput::data_source_id): <p>The ID assigned to the <code>DataSource</code> at creation.</p>
+    ///   - [`verbose(bool)`](crate::input::GetDataSourceInput::verbose): <p>Specifies whether the <code>GetDataSource</code> operation should return <code>DataSourceSchema</code>.</p>  <p>If true, <code>DataSourceSchema</code> is returned.</p>  <p>If false, <code>DataSourceSchema</code> is not returned.</p>
+    /// - On success, responds with [`GetDataSourceOutput`](crate::output::GetDataSourceOutput) with field(s):
+    ///   - [`data_source_id(Option<String>)`](crate::output::GetDataSourceOutput::data_source_id): <p>The ID assigned to the <code>DataSource</code> at creation. This value should be identical to the value of the <code>DataSourceId</code> in the request.</p>
+    ///   - [`data_location_s3(Option<String>)`](crate::output::GetDataSourceOutput::data_location_s3): <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
+    ///   - [`data_rearrangement(Option<String>)`](crate::output::GetDataSourceOutput::data_rearrangement): <p>A JSON string that represents the splitting and rearrangement requirement used when this <code>DataSource</code> was created.</p>
+    ///   - [`created_by_iam_user(Option<String>)`](crate::output::GetDataSourceOutput::created_by_iam_user): <p>The AWS user account from which the <code>DataSource</code> was created. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::GetDataSourceOutput::created_at): <p>The time that the <code>DataSource</code> was created. The time is expressed in epoch time.</p>
+    ///   - [`last_updated_at(Option<DateTime>)`](crate::output::GetDataSourceOutput::last_updated_at): <p>The time of the most recent edit to the <code>DataSource</code>. The time is expressed in epoch time.</p>
+    ///   - [`data_size_in_bytes(Option<i64>)`](crate::output::GetDataSourceOutput::data_size_in_bytes): <p>The total size of observations in the data files.</p>
+    ///   - [`number_of_files(Option<i64>)`](crate::output::GetDataSourceOutput::number_of_files): <p>The number of data files referenced by the <code>DataSource</code>.</p>
+    ///   - [`name(Option<String>)`](crate::output::GetDataSourceOutput::name): <p>A user-supplied name or description of the <code>DataSource</code>.</p>
+    ///   - [`status(Option<EntityStatus>)`](crate::output::GetDataSourceOutput::status): <p>The current status of the <code>DataSource</code>. This element can have one of the following values:</p>  <ul>   <li> <p> <code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.</p> </li>   <li> <p> <code>INPROGRESS</code> - The creation process is underway.</p> </li>   <li> <p> <code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not usable.</p> </li>   <li> <p> <code>COMPLETED</code> - The creation process completed successfully.</p> </li>   <li> <p> <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</p> </li>  </ul>
+    ///   - [`log_uri(Option<String>)`](crate::output::GetDataSourceOutput::log_uri): <p>A link to the file containing logs of <code>CreateDataSourceFrom*</code> operations.</p>
+    ///   - [`message(Option<String>)`](crate::output::GetDataSourceOutput::message): <p>The user-supplied description of the most recent details about creating the <code>DataSource</code>.</p>
+    ///   - [`redshift_metadata(Option<RedshiftMetadata>)`](crate::output::GetDataSourceOutput::redshift_metadata): <p>Describes the <code>DataSource</code> details specific to Amazon Redshift.</p>
+    ///   - [`rds_metadata(Option<RdsMetadata>)`](crate::output::GetDataSourceOutput::rds_metadata): <p>The datasource details that are specific to Amazon RDS.</p>
+    ///   - [`role_arn(Option<String>)`](crate::output::GetDataSourceOutput::role_arn): <p>The Amazon Resource Name (ARN) of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts">AWS IAM Role</a>, such as the following: arn:aws:iam::account:role/rolename. </p>
+    ///   - [`compute_statistics(bool)`](crate::output::GetDataSourceOutput::compute_statistics): <p> The parameter is <code>true</code> if statistics need to be generated from the observation data. </p>
+    ///   - [`compute_time(Option<i64>)`](crate::output::GetDataSourceOutput::compute_time): <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent processing the <code>DataSource</code>, normalized and scaled on computation resources. <code>ComputeTime</code> is only available if the <code>DataSource</code> is in the <code>COMPLETED</code> state and the <code>ComputeStatistics</code> is set to true.</p>
+    ///   - [`finished_at(Option<DateTime>)`](crate::output::GetDataSourceOutput::finished_at): <p>The epoch time when Amazon Machine Learning marked the <code>DataSource</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>DataSource</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
+    ///   - [`started_at(Option<DateTime>)`](crate::output::GetDataSourceOutput::started_at): <p>The epoch time when Amazon Machine Learning marked the <code>DataSource</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>DataSource</code> is in the <code>PENDING</code> state.</p>
+    ///   - [`data_source_schema(Option<String>)`](crate::output::GetDataSourceOutput::data_source_schema): <p>The schema used by all of the data files of this <code>DataSource</code>.</p>  <p> <b>Note:</b> This parameter is provided as part of the verbose format.</p>
+    /// - On failure, responds with [`SdkError<GetDataSourceError>`](crate::error::GetDataSourceError)
     pub fn get_data_source(&self) -> fluent_builders::GetDataSource<C, M, R> {
         fluent_builders::GetDataSource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetEvaluation` operation.
+    /// Constructs a fluent builder for the [`GetEvaluation`](crate::client::fluent_builders::GetEvaluation) operation.
     ///
-    /// See [`GetEvaluation`](crate::client::fluent_builders::GetEvaluation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetEvaluationInput`](crate::input::GetEvaluationInput) with field(s):
+    ///   - [`evaluation_id(Option<String>)`](crate::input::GetEvaluationInput::evaluation_id): <p>The ID of the <code>Evaluation</code> to retrieve. The evaluation of each <code>MLModel</code> is recorded and cataloged. The ID provides the means to access the information. </p>
+    /// - On success, responds with [`GetEvaluationOutput`](crate::output::GetEvaluationOutput) with field(s):
+    ///   - [`evaluation_id(Option<String>)`](crate::output::GetEvaluationOutput::evaluation_id): <p>The evaluation ID which is same as the <code>EvaluationId</code> in the request.</p>
+    ///   - [`ml_model_id(Option<String>)`](crate::output::GetEvaluationOutput::ml_model_id): <p>The ID of the <code>MLModel</code> that was the focus of the evaluation.</p>
+    ///   - [`evaluation_data_source_id(Option<String>)`](crate::output::GetEvaluationOutput::evaluation_data_source_id): <p>The <code>DataSource</code> used for this evaluation.</p>
+    ///   - [`input_data_location_s3(Option<String>)`](crate::output::GetEvaluationOutput::input_data_location_s3): <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
+    ///   - [`created_by_iam_user(Option<String>)`](crate::output::GetEvaluationOutput::created_by_iam_user): <p>The AWS user account that invoked the evaluation. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::GetEvaluationOutput::created_at): <p>The time that the <code>Evaluation</code> was created. The time is expressed in epoch time.</p>
+    ///   - [`last_updated_at(Option<DateTime>)`](crate::output::GetEvaluationOutput::last_updated_at): <p>The time of the most recent edit to the <code>Evaluation</code>. The time is expressed in epoch time.</p>
+    ///   - [`name(Option<String>)`](crate::output::GetEvaluationOutput::name): <p>A user-supplied name or description of the <code>Evaluation</code>. </p>
+    ///   - [`status(Option<EntityStatus>)`](crate::output::GetEvaluationOutput::status): <p>The status of the evaluation. This element can have one of the following values:</p>  <ul>   <li> <p> <code>PENDING</code> - Amazon Machine Language (Amazon ML) submitted a request to evaluate an <code>MLModel</code>.</p> </li>   <li> <p> <code>INPROGRESS</code> - The evaluation is underway.</p> </li>   <li> <p> <code>FAILED</code> - The request to evaluate an <code>MLModel</code> did not run to completion. It is not usable.</p> </li>   <li> <p> <code>COMPLETED</code> - The evaluation process completed successfully.</p> </li>   <li> <p> <code>DELETED</code> - The <code>Evaluation</code> is marked as deleted. It is not usable.</p> </li>  </ul>
+    ///   - [`performance_metrics(Option<PerformanceMetrics>)`](crate::output::GetEvaluationOutput::performance_metrics): <p>Measurements of how well the <code>MLModel</code> performed using observations referenced by the <code>DataSource</code>. One of the following metric is returned based on the type of the <code>MLModel</code>: </p>  <ul>   <li> <p>BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique to measure performance. </p> </li>   <li> <p>RegressionRMSE: A regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique to measure performance. RMSE measures the difference between predicted and actual values for a single variable.</p> </li>   <li> <p>MulticlassAvgFScore: A multiclass <code>MLModel</code> uses the F1 score technique to measure performance. </p> </li>  </ul>  <p> For more information about performance metrics, please see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>. </p>
+    ///   - [`log_uri(Option<String>)`](crate::output::GetEvaluationOutput::log_uri): <p>A link to the file that contains logs of the <code>CreateEvaluation</code> operation.</p>
+    ///   - [`message(Option<String>)`](crate::output::GetEvaluationOutput::message): <p>A description of the most recent details about evaluating the <code>MLModel</code>.</p>
+    ///   - [`compute_time(Option<i64>)`](crate::output::GetEvaluationOutput::compute_time): <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent processing the <code>Evaluation</code>, normalized and scaled on computation resources. <code>ComputeTime</code> is only available if the <code>Evaluation</code> is in the <code>COMPLETED</code> state.</p>
+    ///   - [`finished_at(Option<DateTime>)`](crate::output::GetEvaluationOutput::finished_at): <p>The epoch time when Amazon Machine Learning marked the <code>Evaluation</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>Evaluation</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
+    ///   - [`started_at(Option<DateTime>)`](crate::output::GetEvaluationOutput::started_at): <p>The epoch time when Amazon Machine Learning marked the <code>Evaluation</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>Evaluation</code> is in the <code>PENDING</code> state.</p>
+    /// - On failure, responds with [`SdkError<GetEvaluationError>`](crate::error::GetEvaluationError)
     pub fn get_evaluation(&self) -> fluent_builders::GetEvaluation<C, M, R> {
         fluent_builders::GetEvaluation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMLModel` operation.
+    /// Constructs a fluent builder for the [`GetMLModel`](crate::client::fluent_builders::GetMLModel) operation.
     ///
-    /// See [`GetMLModel`](crate::client::fluent_builders::GetMLModel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetMlModelInput`](crate::input::GetMlModelInput) with field(s):
+    ///   - [`ml_model_id(Option<String>)`](crate::input::GetMlModelInput::ml_model_id): <p>The ID assigned to the <code>MLModel</code> at creation.</p>
+    ///   - [`verbose(bool)`](crate::input::GetMlModelInput::verbose): <p>Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.</p>  <p>If true, <code>Recipe</code> is returned.</p>  <p>If false, <code>Recipe</code> is not returned.</p>
+    /// - On success, responds with [`GetMlModelOutput`](crate::output::GetMlModelOutput) with field(s):
+    ///   - [`ml_model_id(Option<String>)`](crate::output::GetMlModelOutput::ml_model_id): <p>The MLModel ID, which is same as the <code>MLModelId</code> in the request.</p>
+    ///   - [`training_data_source_id(Option<String>)`](crate::output::GetMlModelOutput::training_data_source_id): <p>The ID of the training <code>DataSource</code>.</p>
+    ///   - [`created_by_iam_user(Option<String>)`](crate::output::GetMlModelOutput::created_by_iam_user): <p>The AWS user account from which the <code>MLModel</code> was created. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::GetMlModelOutput::created_at): <p>The time that the <code>MLModel</code> was created. The time is expressed in epoch time.</p>
+    ///   - [`last_updated_at(Option<DateTime>)`](crate::output::GetMlModelOutput::last_updated_at): <p>The time of the most recent edit to the <code>MLModel</code>. The time is expressed in epoch time.</p>
+    ///   - [`name(Option<String>)`](crate::output::GetMlModelOutput::name): <p>A user-supplied name or description of the <code>MLModel</code>.</p>
+    ///   - [`status(Option<EntityStatus>)`](crate::output::GetMlModelOutput::status): <p>The current status of the <code>MLModel</code>. This element can have one of the following values:</p>  <ul>   <li> <p> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to describe a <code>MLModel</code>.</p> </li>   <li> <p> <code>INPROGRESS</code> - The request is processing.</p> </li>   <li> <p> <code>FAILED</code> - The request did not run to completion. The ML model isn't usable.</p> </li>   <li> <p> <code>COMPLETED</code> - The request completed successfully.</p> </li>   <li> <p> <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.</p> </li>  </ul>
+    ///   - [`size_in_bytes(Option<i64>)`](crate::output::GetMlModelOutput::size_in_bytes): <p>Long integer type that is a 64-bit signed number.</p>
+    ///   - [`endpoint_info(Option<RealtimeEndpointInfo>)`](crate::output::GetMlModelOutput::endpoint_info): <p>The current endpoint of the <code>MLModel</code> </p>
+    ///   - [`training_parameters(Option<HashMap<String, String>>)`](crate::output::GetMlModelOutput::training_parameters): <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as a map of key-value pairs.</p>  <p>The following is the current set of training parameters:</p>  <ul>   <li> <p> <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending on the input data, the size of the model might affect its performance.</p> <p> The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>. The default value is <code>33554432</code>.</p> </li>   <li> <p> <code>sgd.maxPasses</code> - The number of times that the training process traverses the observations to build the <code>MLModel</code>. The value is an integer that ranges from <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</p> </li>   <li> <p> <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling data improves a model's ability to find the optimal solution for a variety of data types. The valid values are <code>auto</code> and <code>none</code>. The default value is <code>none</code>. We strongly recommend that you shuffle your data.</p> </li>   <li> <p> <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to zero, resulting in a sparse feature set. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L1 normalization. This parameter can't be used when <code>L2</code> is specified. Use this parameter sparingly.</p> </li>   <li> <p> <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p> </li>  </ul>
+    ///   - [`input_data_location_s3(Option<String>)`](crate::output::GetMlModelOutput::input_data_location_s3): <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
+    ///   - [`ml_model_type(Option<MlModelType>)`](crate::output::GetMlModelOutput::ml_model_type): <p>Identifies the <code>MLModel</code> category. The following are the available types: </p>  <ul>   <li> <p>REGRESSION -- Produces a numeric result. For example, "What price should a house be listed at?"</p> </li>   <li> <p>BINARY -- Produces one of two possible results. For example, "Is this an e-commerce website?"</p> </li>   <li> <p>MULTICLASS -- Produces one of several possible results. For example, "Is this a HIGH, LOW or MEDIUM risk trade?"</p> </li>  </ul>
+    ///   - [`score_threshold(Option<f32>)`](crate::output::GetMlModelOutput::score_threshold): <p>The scoring threshold is used in binary classification <code>MLModel</code> models. It marks the boundary between a positive prediction and a negative prediction.</p>  <p>Output values greater than or equal to the threshold receive a positive result from the MLModel, such as <code>true</code>. Output values less than the threshold receive a negative response from the MLModel, such as <code>false</code>.</p>
+    ///   - [`score_threshold_last_updated_at(Option<DateTime>)`](crate::output::GetMlModelOutput::score_threshold_last_updated_at): <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time is expressed in epoch time.</p>
+    ///   - [`log_uri(Option<String>)`](crate::output::GetMlModelOutput::log_uri): <p>A link to the file that contains logs of the <code>CreateMLModel</code> operation.</p>
+    ///   - [`message(Option<String>)`](crate::output::GetMlModelOutput::message): <p>A description of the most recent details about accessing the <code>MLModel</code>.</p>
+    ///   - [`compute_time(Option<i64>)`](crate::output::GetMlModelOutput::compute_time): <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent processing the <code>MLModel</code>, normalized and scaled on computation resources. <code>ComputeTime</code> is only available if the <code>MLModel</code> is in the <code>COMPLETED</code> state.</p>
+    ///   - [`finished_at(Option<DateTime>)`](crate::output::GetMlModelOutput::finished_at): <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code> as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available when the <code>MLModel</code> is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
+    ///   - [`started_at(Option<DateTime>)`](crate::output::GetMlModelOutput::started_at): <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>MLModel</code> is in the <code>PENDING</code> state.</p>
+    ///   - [`recipe(Option<String>)`](crate::output::GetMlModelOutput::recipe): <p>The recipe to use when training the <code>MLModel</code>. The <code>Recipe</code> provides detailed information about the observation data to use during training, and manipulations to perform on the observation data during training.</p>  <p> <b>Note:</b> This parameter is provided as part of the verbose format.</p>
+    ///   - [`schema(Option<String>)`](crate::output::GetMlModelOutput::schema): <p>The schema used by all of the data files referenced by the <code>DataSource</code>.</p>  <p> <b>Note:</b> This parameter is provided as part of the verbose format.</p>
+    /// - On failure, responds with [`SdkError<GetMLModelError>`](crate::error::GetMLModelError)
     pub fn get_ml_model(&self) -> fluent_builders::GetMLModel<C, M, R> {
         fluent_builders::GetMLModel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `Predict` operation.
+    /// Constructs a fluent builder for the [`Predict`](crate::client::fluent_builders::Predict) operation.
     ///
-    /// See [`Predict`](crate::client::fluent_builders::Predict) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PredictInput`](crate::input::PredictInput) with field(s):
+    ///   - [`ml_model_id(Option<String>)`](crate::input::PredictInput::ml_model_id): <p>A unique identifier of the <code>MLModel</code>.</p>
+    ///   - [`record(Option<HashMap<String, String>>)`](crate::input::PredictInput::record): <p>A map of variable name-value pairs that represent an observation.</p>
+    ///   - [`predict_endpoint(Option<String>)`](crate::input::PredictInput::predict_endpoint): (undocumented)
+    /// - On success, responds with [`PredictOutput`](crate::output::PredictOutput) with field(s):
+    ///   - [`prediction(Option<Prediction>)`](crate::output::PredictOutput::prediction): <p>The output from a <code>Predict</code> operation: </p>  <ul>   <li> <p> <code>Details</code> - Contains the following attributes: <code>DetailsAttributes.PREDICTIVE_MODEL_TYPE - REGRESSION | BINARY | MULTICLASS</code> <code>DetailsAttributes.ALGORITHM - SGD</code> </p> </li>   <li> <p> <code>PredictedLabel</code> - Present for either a <code>BINARY</code> or <code>MULTICLASS</code> <code>MLModel</code> request. </p> </li>   <li> <p> <code>PredictedScores</code> - Contains the raw classification score corresponding to each label. </p> </li>   <li> <p> <code>PredictedValue</code> - Present for a <code>REGRESSION</code> <code>MLModel</code> request. </p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<PredictError>`](crate::error::PredictError)
     pub fn predict(&self) -> fluent_builders::Predict<C, M, R> {
         fluent_builders::Predict::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateBatchPrediction` operation.
+    /// Constructs a fluent builder for the [`UpdateBatchPrediction`](crate::client::fluent_builders::UpdateBatchPrediction) operation.
     ///
-    /// See [`UpdateBatchPrediction`](crate::client::fluent_builders::UpdateBatchPrediction) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateBatchPredictionInput`](crate::input::UpdateBatchPredictionInput) with field(s):
+    ///   - [`batch_prediction_id(Option<String>)`](crate::input::UpdateBatchPredictionInput::batch_prediction_id): <p>The ID assigned to the <code>BatchPrediction</code> during creation.</p>
+    ///   - [`batch_prediction_name(Option<String>)`](crate::input::UpdateBatchPredictionInput::batch_prediction_name): <p>A new user-supplied name or description of the <code>BatchPrediction</code>.</p>
+    /// - On success, responds with [`UpdateBatchPredictionOutput`](crate::output::UpdateBatchPredictionOutput) with field(s):
+    ///   - [`batch_prediction_id(Option<String>)`](crate::output::UpdateBatchPredictionOutput::batch_prediction_id): <p>The ID assigned to the <code>BatchPrediction</code> during creation. This value should be identical to the value of the <code>BatchPredictionId</code> in the request.</p>
+    /// - On failure, responds with [`SdkError<UpdateBatchPredictionError>`](crate::error::UpdateBatchPredictionError)
     pub fn update_batch_prediction(&self) -> fluent_builders::UpdateBatchPrediction<C, M, R> {
         fluent_builders::UpdateBatchPrediction::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDataSource` operation.
+    /// Constructs a fluent builder for the [`UpdateDataSource`](crate::client::fluent_builders::UpdateDataSource) operation.
     ///
-    /// See [`UpdateDataSource`](crate::client::fluent_builders::UpdateDataSource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateDataSourceInput`](crate::input::UpdateDataSourceInput) with field(s):
+    ///   - [`data_source_id(Option<String>)`](crate::input::UpdateDataSourceInput::data_source_id): <p>The ID assigned to the <code>DataSource</code> during creation.</p>
+    ///   - [`data_source_name(Option<String>)`](crate::input::UpdateDataSourceInput::data_source_name): <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description. </p>
+    /// - On success, responds with [`UpdateDataSourceOutput`](crate::output::UpdateDataSourceOutput) with field(s):
+    ///   - [`data_source_id(Option<String>)`](crate::output::UpdateDataSourceOutput::data_source_id): <p>The ID assigned to the <code>DataSource</code> during creation. This value should be identical to the value of the <code>DataSourceID</code> in the request.</p>
+    /// - On failure, responds with [`SdkError<UpdateDataSourceError>`](crate::error::UpdateDataSourceError)
     pub fn update_data_source(&self) -> fluent_builders::UpdateDataSource<C, M, R> {
         fluent_builders::UpdateDataSource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateEvaluation` operation.
+    /// Constructs a fluent builder for the [`UpdateEvaluation`](crate::client::fluent_builders::UpdateEvaluation) operation.
     ///
-    /// See [`UpdateEvaluation`](crate::client::fluent_builders::UpdateEvaluation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateEvaluationInput`](crate::input::UpdateEvaluationInput) with field(s):
+    ///   - [`evaluation_id(Option<String>)`](crate::input::UpdateEvaluationInput::evaluation_id): <p>The ID assigned to the <code>Evaluation</code> during creation.</p>
+    ///   - [`evaluation_name(Option<String>)`](crate::input::UpdateEvaluationInput::evaluation_name): <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content. </p>
+    /// - On success, responds with [`UpdateEvaluationOutput`](crate::output::UpdateEvaluationOutput) with field(s):
+    ///   - [`evaluation_id(Option<String>)`](crate::output::UpdateEvaluationOutput::evaluation_id): <p>The ID assigned to the <code>Evaluation</code> during creation. This value should be identical to the value of the <code>Evaluation</code> in the request.</p>
+    /// - On failure, responds with [`SdkError<UpdateEvaluationError>`](crate::error::UpdateEvaluationError)
     pub fn update_evaluation(&self) -> fluent_builders::UpdateEvaluation<C, M, R> {
         fluent_builders::UpdateEvaluation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateMLModel` operation.
+    /// Constructs a fluent builder for the [`UpdateMLModel`](crate::client::fluent_builders::UpdateMLModel) operation.
     ///
-    /// See [`UpdateMLModel`](crate::client::fluent_builders::UpdateMLModel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateMlModelInput`](crate::input::UpdateMlModelInput) with field(s):
+    ///   - [`ml_model_id(Option<String>)`](crate::input::UpdateMlModelInput::ml_model_id): <p>The ID assigned to the <code>MLModel</code> during creation.</p>
+    ///   - [`ml_model_name(Option<String>)`](crate::input::UpdateMlModelInput::ml_model_name): <p>A user-supplied name or description of the <code>MLModel</code>.</p>
+    ///   - [`score_threshold(Option<f32>)`](crate::input::UpdateMlModelInput::score_threshold): <p>The <code>ScoreThreshold</code> used in binary classification <code>MLModel</code> that marks the boundary between a positive prediction and a negative prediction.</p>  <p>Output values greater than or equal to the <code>ScoreThreshold</code> receive a positive result from the <code>MLModel</code>, such as <code>true</code>. Output values less than the <code>ScoreThreshold</code> receive a negative response from the <code>MLModel</code>, such as <code>false</code>.</p>
+    /// - On success, responds with [`UpdateMlModelOutput`](crate::output::UpdateMlModelOutput) with field(s):
+    ///   - [`ml_model_id(Option<String>)`](crate::output::UpdateMlModelOutput::ml_model_id): <p>The ID assigned to the <code>MLModel</code> during creation. This value should be identical to the value of the <code>MLModelID</code> in the request.</p>
+    /// - On failure, responds with [`SdkError<UpdateMLModelError>`](crate::error::UpdateMLModelError)
     pub fn update_ml_model(&self) -> fluent_builders::UpdateMLModel<C, M, R> {
         fluent_builders::UpdateMLModel::new(self.handle.clone())
     }

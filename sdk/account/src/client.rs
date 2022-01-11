@@ -83,24 +83,40 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `DeleteAlternateContact` operation.
+    /// Constructs a fluent builder for the [`DeleteAlternateContact`](crate::client::fluent_builders::DeleteAlternateContact) operation.
     ///
-    /// See [`DeleteAlternateContact`](crate::client::fluent_builders::DeleteAlternateContact) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteAlternateContactInput`](crate::input::DeleteAlternateContactInput) with field(s):
+    ///   - [`alternate_contact_type(Option<AlternateContactType>)`](crate::input::DeleteAlternateContactInput::alternate_contact_type): <p>Specifies which of the alternate contacts to delete. </p>
+    ///   - [`account_id(Option<String>)`](crate::input::DeleteAlternateContactInput::account_id): <p>Specifies the 12 digit account ID number of the Amazon Web Services account that you want to access or modify with this operation.</p>  <p>If you do not specify this parameter, it defaults to the Amazon Web Services account of the identity used to call the operation.</p>  <p>To use this parameter, the caller must be an identity in the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's management account</a> or a delegated administrator account, and the specified account ID must be a member account in the same organization. The organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all features enabled</a>, and the organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-trusted-access.html">trusted access</a> enabled for the Account Management service, and optionally a <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-delegated-admin.html">delegated admin</a> account assigned.</p> <note>   <p>The management account can't specify its own <code>AccountId</code>; it must call the operation in standalone context by not including the <code>AccountId</code> parameter.</p>  </note>  <p>To call this operation on an account that is not a member of an organization, then don't specify this parameter, and call the operation using an identity belonging to the account whose contacts you wish to retrieve or modify.</p>
+    /// - On success, responds with [`DeleteAlternateContactOutput`](crate::output::DeleteAlternateContactOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteAlternateContactError>`](crate::error::DeleteAlternateContactError)
     pub fn delete_alternate_contact(&self) -> fluent_builders::DeleteAlternateContact<C, M, R> {
         fluent_builders::DeleteAlternateContact::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAlternateContact` operation.
+    /// Constructs a fluent builder for the [`GetAlternateContact`](crate::client::fluent_builders::GetAlternateContact) operation.
     ///
-    /// See [`GetAlternateContact`](crate::client::fluent_builders::GetAlternateContact) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetAlternateContactInput`](crate::input::GetAlternateContactInput) with field(s):
+    ///   - [`alternate_contact_type(Option<AlternateContactType>)`](crate::input::GetAlternateContactInput::alternate_contact_type): <p>Specifies which alternate contact you want to retrieve.</p>
+    ///   - [`account_id(Option<String>)`](crate::input::GetAlternateContactInput::account_id): <p>Specifies the 12 digit account ID number of the Amazon Web Services account that you want to access or modify with this operation.</p>  <p>If you do not specify this parameter, it defaults to the Amazon Web Services account of the identity used to call the operation.</p>  <p>To use this parameter, the caller must be an identity in the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's management account</a> or a delegated administrator account, and the specified account ID must be a member account in the same organization. The organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all features enabled</a>, and the organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-trusted-access.html">trusted access</a> enabled for the Account Management service, and optionally a <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-delegated-admin.html">delegated admin</a> account assigned.</p> <note>   <p>The management account can't specify its own <code>AccountId</code>; it must call the operation in standalone context by not including the <code>AccountId</code> parameter.</p>  </note>  <p>To call this operation on an account that is not a member of an organization, then don't specify this parameter, and call the operation using an identity belonging to the account whose contacts you wish to retrieve or modify.</p>
+    /// - On success, responds with [`GetAlternateContactOutput`](crate::output::GetAlternateContactOutput) with field(s):
+    ///   - [`alternate_contact(Option<AlternateContact>)`](crate::output::GetAlternateContactOutput::alternate_contact): <p>A structure that contains the details for the specified alternate contact.</p>
+    /// - On failure, responds with [`SdkError<GetAlternateContactError>`](crate::error::GetAlternateContactError)
     pub fn get_alternate_contact(&self) -> fluent_builders::GetAlternateContact<C, M, R> {
         fluent_builders::GetAlternateContact::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutAlternateContact` operation.
+    /// Constructs a fluent builder for the [`PutAlternateContact`](crate::client::fluent_builders::PutAlternateContact) operation.
     ///
-    /// See [`PutAlternateContact`](crate::client::fluent_builders::PutAlternateContact) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutAlternateContactInput`](crate::input::PutAlternateContactInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::PutAlternateContactInput::name): <p>Specifies a name for the alternate contact.</p>
+    ///   - [`title(Option<String>)`](crate::input::PutAlternateContactInput::title): <p>Specifies a title for the alternate contact.</p>
+    ///   - [`email_address(Option<String>)`](crate::input::PutAlternateContactInput::email_address): <p>Specifies an email address for the alternate contact. </p>
+    ///   - [`phone_number(Option<String>)`](crate::input::PutAlternateContactInput::phone_number): <p>Specifies a phone number for the alternate contact.</p>
+    ///   - [`alternate_contact_type(Option<AlternateContactType>)`](crate::input::PutAlternateContactInput::alternate_contact_type): <p>Specifies which alternate contact you want to create or update.</p>
+    ///   - [`account_id(Option<String>)`](crate::input::PutAlternateContactInput::account_id): <p>Specifies the 12 digit account ID number of the Amazon Web Services account that you want to access or modify with this operation.</p>  <p>If you do not specify this parameter, it defaults to the Amazon Web Services account of the identity used to call the operation.</p>  <p>To use this parameter, the caller must be an identity in the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's management account</a> or a delegated administrator account, and the specified account ID must be a member account in the same organization. The organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all features enabled</a>, and the organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-trusted-access.html">trusted access</a> enabled for the Account Management service, and optionally a <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-delegated-admin.html">delegated admin</a> account assigned.</p> <note>   <p>The management account can't specify its own <code>AccountId</code>; it must call the operation in standalone context by not including the <code>AccountId</code> parameter.</p>  </note>  <p>To call this operation on an account that is not a member of an organization, then don't specify this parameter, and call the operation using an identity belonging to the account whose contacts you wish to retrieve or modify.</p>
+    /// - On success, responds with [`PutAlternateContactOutput`](crate::output::PutAlternateContactOutput)
+
+    /// - On failure, responds with [`SdkError<PutAlternateContactError>`](crate::error::PutAlternateContactError)
     pub fn put_alternate_contact(&self) -> fluent_builders::PutAlternateContact<C, M, R> {
         fluent_builders::PutAlternateContact::new(self.handle.clone())
     }

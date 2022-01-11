@@ -83,129 +83,251 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AssociateTeamMember` operation.
+    /// Constructs a fluent builder for the [`AssociateTeamMember`](crate::client::fluent_builders::AssociateTeamMember) operation.
     ///
-    /// See [`AssociateTeamMember`](crate::client::fluent_builders::AssociateTeamMember) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateTeamMemberInput`](crate::input::AssociateTeamMemberInput) with field(s):
+    ///   - [`project_id(Option<String>)`](crate::input::AssociateTeamMemberInput::project_id): <p>The ID of the project to which you will add the IAM user.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::AssociateTeamMemberInput::client_request_token): <p>A user- or system-generated token that identifies the entity that requested the team member association to the project. This token can be used to repeat the request.</p>
+    ///   - [`user_arn(Option<String>)`](crate::input::AssociateTeamMemberInput::user_arn): <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS CodeStar project.</p>
+    ///   - [`project_role(Option<String>)`](crate::input::AssociateTeamMemberInput::project_role): <p>The AWS CodeStar project role that will apply to this user. This role determines what actions a user can take in an AWS CodeStar project.</p>
+    ///   - [`remote_access_allowed(Option<bool>)`](crate::input::AssociateTeamMemberInput::remote_access_allowed): <p>Whether the team member is allowed to use an SSH public/private key pair to remotely access project resources, for example Amazon EC2 instances.</p>
+    /// - On success, responds with [`AssociateTeamMemberOutput`](crate::output::AssociateTeamMemberOutput) with field(s):
+    ///   - [`client_request_token(Option<String>)`](crate::output::AssociateTeamMemberOutput::client_request_token): <p>The user- or system-generated token from the initial request that can be used to repeat the request.</p>
+    /// - On failure, responds with [`SdkError<AssociateTeamMemberError>`](crate::error::AssociateTeamMemberError)
     pub fn associate_team_member(&self) -> fluent_builders::AssociateTeamMember<C, M, R> {
         fluent_builders::AssociateTeamMember::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateProject` operation.
+    /// Constructs a fluent builder for the [`CreateProject`](crate::client::fluent_builders::CreateProject) operation.
     ///
-    /// See [`CreateProject`](crate::client::fluent_builders::CreateProject) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateProjectInput`](crate::input::CreateProjectInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateProjectInput::name): <p>The display name for the project to be created in AWS CodeStar.</p>
+    ///   - [`id(Option<String>)`](crate::input::CreateProjectInput::id): <p>The ID of the project to be created in AWS CodeStar.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateProjectInput::description): <p>The description of the project, if any.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::CreateProjectInput::client_request_token): <p>A user- or system-generated token that identifies the entity that requested project creation. This token can be used to repeat the request.</p>
+    ///   - [`source_code(Option<Vec<Code>>)`](crate::input::CreateProjectInput::source_code): <p>A list of the Code objects submitted with the project request. If this parameter is specified, the request must also include the toolchain parameter.</p>
+    ///   - [`toolchain(Option<Toolchain>)`](crate::input::CreateProjectInput::toolchain): <p>The name of the toolchain template file submitted with the project request. If this parameter is specified, the request must also include the sourceCode parameter.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateProjectInput::tags): <p>The tags created for the project.</p>
+    /// - On success, responds with [`CreateProjectOutput`](crate::output::CreateProjectOutput) with field(s):
+    ///   - [`id(Option<String>)`](crate::output::CreateProjectOutput::id): <p>The ID of the project.</p>
+    ///   - [`arn(Option<String>)`](crate::output::CreateProjectOutput::arn): <p>The Amazon Resource Name (ARN) of the created project.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::output::CreateProjectOutput::client_request_token): <p>A user- or system-generated token that identifies the entity that requested project creation.</p>
+    ///   - [`project_template_id(Option<String>)`](crate::output::CreateProjectOutput::project_template_id): <p>Reserved for future use.</p>
+    /// - On failure, responds with [`SdkError<CreateProjectError>`](crate::error::CreateProjectError)
     pub fn create_project(&self) -> fluent_builders::CreateProject<C, M, R> {
         fluent_builders::CreateProject::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateUserProfile` operation.
+    /// Constructs a fluent builder for the [`CreateUserProfile`](crate::client::fluent_builders::CreateUserProfile) operation.
     ///
-    /// See [`CreateUserProfile`](crate::client::fluent_builders::CreateUserProfile) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateUserProfileInput`](crate::input::CreateUserProfileInput) with field(s):
+    ///   - [`user_arn(Option<String>)`](crate::input::CreateUserProfileInput::user_arn): <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
+    ///   - [`display_name(Option<String>)`](crate::input::CreateUserProfileInput::display_name): <p>The name that will be displayed as the friendly name for the user in AWS CodeStar. </p>
+    ///   - [`email_address(Option<String>)`](crate::input::CreateUserProfileInput::email_address): <p>The email address that will be displayed as part of the user's profile in AWS CodeStar.</p>
+    ///   - [`ssh_public_key(Option<String>)`](crate::input::CreateUserProfileInput::ssh_public_key): <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>
+    /// - On success, responds with [`CreateUserProfileOutput`](crate::output::CreateUserProfileOutput) with field(s):
+    ///   - [`user_arn(Option<String>)`](crate::output::CreateUserProfileOutput::user_arn): <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
+    ///   - [`display_name(Option<String>)`](crate::output::CreateUserProfileOutput::display_name): <p>The name that is displayed as the friendly name for the user in AWS CodeStar.</p>
+    ///   - [`email_address(Option<String>)`](crate::output::CreateUserProfileOutput::email_address): <p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>
+    ///   - [`ssh_public_key(Option<String>)`](crate::output::CreateUserProfileOutput::ssh_public_key): <p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the public/private keypair the user can use to access project resources if a project owner allows the user remote access to those resources.</p>
+    ///   - [`created_timestamp(Option<DateTime>)`](crate::output::CreateUserProfileOutput::created_timestamp): <p>The date the user profile was created, in timestamp format.</p>
+    ///   - [`last_modified_timestamp(Option<DateTime>)`](crate::output::CreateUserProfileOutput::last_modified_timestamp): <p>The date the user profile was last modified, in timestamp format.</p>
+    /// - On failure, responds with [`SdkError<CreateUserProfileError>`](crate::error::CreateUserProfileError)
     pub fn create_user_profile(&self) -> fluent_builders::CreateUserProfile<C, M, R> {
         fluent_builders::CreateUserProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteProject` operation.
+    /// Constructs a fluent builder for the [`DeleteProject`](crate::client::fluent_builders::DeleteProject) operation.
     ///
-    /// See [`DeleteProject`](crate::client::fluent_builders::DeleteProject) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteProjectInput`](crate::input::DeleteProjectInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::DeleteProjectInput::id): <p>The ID of the project to be deleted in AWS CodeStar.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::DeleteProjectInput::client_request_token): <p>A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request. </p>
+    ///   - [`delete_stack(bool)`](crate::input::DeleteProjectInput::delete_stack): <p>Whether to send a delete request for the primary stack in AWS CloudFormation originally used to generate the project and its resources. This option will delete all AWS resources for the project (except for any buckets in Amazon S3) as well as deleting the project itself. Recommended for most use cases.</p>
+    /// - On success, responds with [`DeleteProjectOutput`](crate::output::DeleteProjectOutput) with field(s):
+    ///   - [`stack_id(Option<String>)`](crate::output::DeleteProjectOutput::stack_id): <p>The ID of the primary stack in AWS CloudFormation that will be deleted as part of deleting the project and its resources.</p>
+    ///   - [`project_arn(Option<String>)`](crate::output::DeleteProjectOutput::project_arn): <p>The Amazon Resource Name (ARN) of the deleted project.</p>
+    /// - On failure, responds with [`SdkError<DeleteProjectError>`](crate::error::DeleteProjectError)
     pub fn delete_project(&self) -> fluent_builders::DeleteProject<C, M, R> {
         fluent_builders::DeleteProject::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteUserProfile` operation.
+    /// Constructs a fluent builder for the [`DeleteUserProfile`](crate::client::fluent_builders::DeleteUserProfile) operation.
     ///
-    /// See [`DeleteUserProfile`](crate::client::fluent_builders::DeleteUserProfile) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteUserProfileInput`](crate::input::DeleteUserProfileInput) with field(s):
+    ///   - [`user_arn(Option<String>)`](crate::input::DeleteUserProfileInput::user_arn): <p>The Amazon Resource Name (ARN) of the user to delete from AWS CodeStar.</p>
+    /// - On success, responds with [`DeleteUserProfileOutput`](crate::output::DeleteUserProfileOutput) with field(s):
+    ///   - [`user_arn(Option<String>)`](crate::output::DeleteUserProfileOutput::user_arn): <p>The Amazon Resource Name (ARN) of the user deleted from AWS CodeStar.</p>
+    /// - On failure, responds with [`SdkError<DeleteUserProfileError>`](crate::error::DeleteUserProfileError)
     pub fn delete_user_profile(&self) -> fluent_builders::DeleteUserProfile<C, M, R> {
         fluent_builders::DeleteUserProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeProject` operation.
+    /// Constructs a fluent builder for the [`DescribeProject`](crate::client::fluent_builders::DescribeProject) operation.
     ///
-    /// See [`DescribeProject`](crate::client::fluent_builders::DescribeProject) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeProjectInput`](crate::input::DescribeProjectInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::DescribeProjectInput::id): <p>The ID of the project.</p>
+    /// - On success, responds with [`DescribeProjectOutput`](crate::output::DescribeProjectOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::DescribeProjectOutput::name): <p>The display name for the project.</p>
+    ///   - [`id(Option<String>)`](crate::output::DescribeProjectOutput::id): <p>The ID of the project.</p>
+    ///   - [`arn(Option<String>)`](crate::output::DescribeProjectOutput::arn): <p>The Amazon Resource Name (ARN) for the project.</p>
+    ///   - [`description(Option<String>)`](crate::output::DescribeProjectOutput::description): <p>The description of the project, if any.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::output::DescribeProjectOutput::client_request_token): <p>A user- or system-generated token that identifies the entity that requested project creation. </p>
+    ///   - [`created_time_stamp(Option<DateTime>)`](crate::output::DescribeProjectOutput::created_time_stamp): <p>The date and time the project was created, in timestamp format.</p>
+    ///   - [`stack_id(Option<String>)`](crate::output::DescribeProjectOutput::stack_id): <p>The ID of the primary stack in AWS CloudFormation used to generate resources for the project.</p>
+    ///   - [`project_template_id(Option<String>)`](crate::output::DescribeProjectOutput::project_template_id): <p>The ID for the AWS CodeStar project template used to create the project.</p>
+    ///   - [`status(Option<ProjectStatus>)`](crate::output::DescribeProjectOutput::status): <p>The project creation or deletion status.</p>
+    /// - On failure, responds with [`SdkError<DescribeProjectError>`](crate::error::DescribeProjectError)
     pub fn describe_project(&self) -> fluent_builders::DescribeProject<C, M, R> {
         fluent_builders::DescribeProject::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeUserProfile` operation.
+    /// Constructs a fluent builder for the [`DescribeUserProfile`](crate::client::fluent_builders::DescribeUserProfile) operation.
     ///
-    /// See [`DescribeUserProfile`](crate::client::fluent_builders::DescribeUserProfile) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeUserProfileInput`](crate::input::DescribeUserProfileInput) with field(s):
+    ///   - [`user_arn(Option<String>)`](crate::input::DescribeUserProfileInput::user_arn): <p>The Amazon Resource Name (ARN) of the user.</p>
+    /// - On success, responds with [`DescribeUserProfileOutput`](crate::output::DescribeUserProfileOutput) with field(s):
+    ///   - [`user_arn(Option<String>)`](crate::output::DescribeUserProfileOutput::user_arn): <p>The Amazon Resource Name (ARN) of the user.</p>
+    ///   - [`display_name(Option<String>)`](crate::output::DescribeUserProfileOutput::display_name): <p>The display name shown for the user in AWS CodeStar projects. For example, this could be set to both first and last name ("Mary Major") or a single name ("Mary"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example "Mary Jane Major") would generate an initial icon using the first character and the first character after the space ("MJ", not "MM").</p>
+    ///   - [`email_address(Option<String>)`](crate::output::DescribeUserProfileOutput::email_address): <p>The email address for the user. Optional.</p>
+    ///   - [`ssh_public_key(Option<String>)`](crate::output::DescribeUserProfileOutput::ssh_public_key): <p>The SSH public key associated with the user. This SSH public key is associated with the user profile, and can be used in conjunction with the associated private key for access to project resources, such as Amazon EC2 instances, if a project owner grants remote access to those resources.</p>
+    ///   - [`created_timestamp(Option<DateTime>)`](crate::output::DescribeUserProfileOutput::created_timestamp): <p>The date and time when the user profile was created in AWS CodeStar, in timestamp format.</p>
+    ///   - [`last_modified_timestamp(Option<DateTime>)`](crate::output::DescribeUserProfileOutput::last_modified_timestamp): <p>The date and time when the user profile was last modified, in timestamp format.</p>
+    /// - On failure, responds with [`SdkError<DescribeUserProfileError>`](crate::error::DescribeUserProfileError)
     pub fn describe_user_profile(&self) -> fluent_builders::DescribeUserProfile<C, M, R> {
         fluent_builders::DescribeUserProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateTeamMember` operation.
+    /// Constructs a fluent builder for the [`DisassociateTeamMember`](crate::client::fluent_builders::DisassociateTeamMember) operation.
     ///
-    /// See [`DisassociateTeamMember`](crate::client::fluent_builders::DisassociateTeamMember) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateTeamMemberInput`](crate::input::DisassociateTeamMemberInput) with field(s):
+    ///   - [`project_id(Option<String>)`](crate::input::DisassociateTeamMemberInput::project_id): <p>The ID of the AWS CodeStar project from which you want to remove a team member.</p>
+    ///   - [`user_arn(Option<String>)`](crate::input::DisassociateTeamMemberInput::user_arn): <p>The Amazon Resource Name (ARN) of the IAM user or group whom you want to remove from the project.</p>
+    /// - On success, responds with [`DisassociateTeamMemberOutput`](crate::output::DisassociateTeamMemberOutput)
+
+    /// - On failure, responds with [`SdkError<DisassociateTeamMemberError>`](crate::error::DisassociateTeamMemberError)
     pub fn disassociate_team_member(&self) -> fluent_builders::DisassociateTeamMember<C, M, R> {
         fluent_builders::DisassociateTeamMember::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListProjects` operation.
+    /// Constructs a fluent builder for the [`ListProjects`](crate::client::fluent_builders::ListProjects) operation.
     ///
-    /// See [`ListProjects`](crate::client::fluent_builders::ListProjects) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListProjectsInput`](crate::input::ListProjectsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListProjectsInput::next_token): <p>The continuation token to be used to return the next set of results, if the results cannot be returned in one response.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListProjectsInput::max_results): <p>The maximum amount of data that can be contained in a single set of results.</p>
+    /// - On success, responds with [`ListProjectsOutput`](crate::output::ListProjectsOutput) with field(s):
+    ///   - [`projects(Option<Vec<ProjectSummary>>)`](crate::output::ListProjectsOutput::projects): <p>A list of projects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListProjectsOutput::next_token): <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
+    /// - On failure, responds with [`SdkError<ListProjectsError>`](crate::error::ListProjectsError)
     pub fn list_projects(&self) -> fluent_builders::ListProjects<C, M, R> {
         fluent_builders::ListProjects::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListResources` operation.
+    /// Constructs a fluent builder for the [`ListResources`](crate::client::fluent_builders::ListResources) operation.
     ///
-    /// See [`ListResources`](crate::client::fluent_builders::ListResources) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListResourcesInput`](crate::input::ListResourcesInput) with field(s):
+    ///   - [`project_id(Option<String>)`](crate::input::ListResourcesInput::project_id): <p>The ID of the project.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListResourcesInput::next_token): <p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListResourcesInput::max_results): <p>The maximum amount of data that can be contained in a single set of results.</p>
+    /// - On success, responds with [`ListResourcesOutput`](crate::output::ListResourcesOutput) with field(s):
+    ///   - [`resources(Option<Vec<Resource>>)`](crate::output::ListResourcesOutput::resources): <p>An array of resources associated with the project. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListResourcesOutput::next_token): <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
+    /// - On failure, responds with [`SdkError<ListResourcesError>`](crate::error::ListResourcesError)
     pub fn list_resources(&self) -> fluent_builders::ListResources<C, M, R> {
         fluent_builders::ListResources::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForProject` operation.
+    /// Constructs a fluent builder for the [`ListTagsForProject`](crate::client::fluent_builders::ListTagsForProject) operation.
     ///
-    /// See [`ListTagsForProject`](crate::client::fluent_builders::ListTagsForProject) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForProjectInput`](crate::input::ListTagsForProjectInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::ListTagsForProjectInput::id): <p>The ID of the project to get tags for.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListTagsForProjectInput::next_token): <p>Reserved for future use.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListTagsForProjectInput::max_results): <p>Reserved for future use.</p>
+    /// - On success, responds with [`ListTagsForProjectOutput`](crate::output::ListTagsForProjectOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForProjectOutput::tags): <p>The tags for the project.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTagsForProjectOutput::next_token): <p>Reserved for future use.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForProjectError>`](crate::error::ListTagsForProjectError)
     pub fn list_tags_for_project(&self) -> fluent_builders::ListTagsForProject<C, M, R> {
         fluent_builders::ListTagsForProject::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTeamMembers` operation.
+    /// Constructs a fluent builder for the [`ListTeamMembers`](crate::client::fluent_builders::ListTeamMembers) operation.
     ///
-    /// See [`ListTeamMembers`](crate::client::fluent_builders::ListTeamMembers) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTeamMembersInput`](crate::input::ListTeamMembersInput) with field(s):
+    ///   - [`project_id(Option<String>)`](crate::input::ListTeamMembersInput::project_id): <p>The ID of the project for which you want to list team members.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListTeamMembersInput::next_token): <p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListTeamMembersInput::max_results): <p>The maximum number of team members you want returned in a response.</p>
+    /// - On success, responds with [`ListTeamMembersOutput`](crate::output::ListTeamMembersOutput) with field(s):
+    ///   - [`team_members(Option<Vec<TeamMember>>)`](crate::output::ListTeamMembersOutput::team_members): <p>A list of team member objects for the project.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTeamMembersOutput::next_token): <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
+    /// - On failure, responds with [`SdkError<ListTeamMembersError>`](crate::error::ListTeamMembersError)
     pub fn list_team_members(&self) -> fluent_builders::ListTeamMembers<C, M, R> {
         fluent_builders::ListTeamMembers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListUserProfiles` operation.
+    /// Constructs a fluent builder for the [`ListUserProfiles`](crate::client::fluent_builders::ListUserProfiles) operation.
     ///
-    /// See [`ListUserProfiles`](crate::client::fluent_builders::ListUserProfiles) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListUserProfilesInput`](crate::input::ListUserProfilesInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListUserProfilesInput::next_token): <p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListUserProfilesInput::max_results): <p>The maximum number of results to return in a response.</p>
+    /// - On success, responds with [`ListUserProfilesOutput`](crate::output::ListUserProfilesOutput) with field(s):
+    ///   - [`user_profiles(Option<Vec<UserProfileSummary>>)`](crate::output::ListUserProfilesOutput::user_profiles): <p>All the user profiles configured in AWS CodeStar for an AWS account.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListUserProfilesOutput::next_token): <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
+    /// - On failure, responds with [`SdkError<ListUserProfilesError>`](crate::error::ListUserProfilesError)
     pub fn list_user_profiles(&self) -> fluent_builders::ListUserProfiles<C, M, R> {
         fluent_builders::ListUserProfiles::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagProject` operation.
+    /// Constructs a fluent builder for the [`TagProject`](crate::client::fluent_builders::TagProject) operation.
     ///
-    /// See [`TagProject`](crate::client::fluent_builders::TagProject) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagProjectInput`](crate::input::TagProjectInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::TagProjectInput::id): <p>The ID of the project you want to add a tag to.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagProjectInput::tags): <p>The tags you want to add to the project.</p>
+    /// - On success, responds with [`TagProjectOutput`](crate::output::TagProjectOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::TagProjectOutput::tags): <p>The tags for the project.</p>
+    /// - On failure, responds with [`SdkError<TagProjectError>`](crate::error::TagProjectError)
     pub fn tag_project(&self) -> fluent_builders::TagProject<C, M, R> {
         fluent_builders::TagProject::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagProject` operation.
+    /// Constructs a fluent builder for the [`UntagProject`](crate::client::fluent_builders::UntagProject) operation.
     ///
-    /// See [`UntagProject`](crate::client::fluent_builders::UntagProject) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagProjectInput`](crate::input::UntagProjectInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::UntagProjectInput::id): <p>The ID of the project to remove tags from.</p>
+    ///   - [`tags(Option<Vec<String>>)`](crate::input::UntagProjectInput::tags): <p>The tags to remove from the project.</p>
+    /// - On success, responds with [`UntagProjectOutput`](crate::output::UntagProjectOutput)
+
+    /// - On failure, responds with [`SdkError<UntagProjectError>`](crate::error::UntagProjectError)
     pub fn untag_project(&self) -> fluent_builders::UntagProject<C, M, R> {
         fluent_builders::UntagProject::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateProject` operation.
+    /// Constructs a fluent builder for the [`UpdateProject`](crate::client::fluent_builders::UpdateProject) operation.
     ///
-    /// See [`UpdateProject`](crate::client::fluent_builders::UpdateProject) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateProjectInput`](crate::input::UpdateProjectInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::UpdateProjectInput::id): <p>The ID of the project you want to update.</p>
+    ///   - [`name(Option<String>)`](crate::input::UpdateProjectInput::name): <p>The name of the project you want to update.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateProjectInput::description): <p>The description of the project, if any.</p>
+    /// - On success, responds with [`UpdateProjectOutput`](crate::output::UpdateProjectOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateProjectError>`](crate::error::UpdateProjectError)
     pub fn update_project(&self) -> fluent_builders::UpdateProject<C, M, R> {
         fluent_builders::UpdateProject::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateTeamMember` operation.
+    /// Constructs a fluent builder for the [`UpdateTeamMember`](crate::client::fluent_builders::UpdateTeamMember) operation.
     ///
-    /// See [`UpdateTeamMember`](crate::client::fluent_builders::UpdateTeamMember) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateTeamMemberInput`](crate::input::UpdateTeamMemberInput) with field(s):
+    ///   - [`project_id(Option<String>)`](crate::input::UpdateTeamMemberInput::project_id): <p>The ID of the project.</p>
+    ///   - [`user_arn(Option<String>)`](crate::input::UpdateTeamMemberInput::user_arn): <p>The Amazon Resource Name (ARN) of the user for whom you want to change team membership attributes.</p>
+    ///   - [`project_role(Option<String>)`](crate::input::UpdateTeamMemberInput::project_role): <p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>.</p>
+    ///   - [`remote_access_allowed(Option<bool>)`](crate::input::UpdateTeamMemberInput::remote_access_allowed): <p>Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile. Even if this is set to True, the user must associate a public key with their profile before the user can access resources.</p>
+    /// - On success, responds with [`UpdateTeamMemberOutput`](crate::output::UpdateTeamMemberOutput) with field(s):
+    ///   - [`user_arn(Option<String>)`](crate::output::UpdateTeamMemberOutput::user_arn): <p>The Amazon Resource Name (ARN) of the user whose team membership attributes were updated.</p>
+    ///   - [`project_role(Option<String>)`](crate::output::UpdateTeamMemberOutput::project_role): <p>The project role granted to the user.</p>
+    ///   - [`remote_access_allowed(Option<bool>)`](crate::output::UpdateTeamMemberOutput::remote_access_allowed): <p>Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile.</p>
+    /// - On failure, responds with [`SdkError<UpdateTeamMemberError>`](crate::error::UpdateTeamMemberError)
     pub fn update_team_member(&self) -> fluent_builders::UpdateTeamMember<C, M, R> {
         fluent_builders::UpdateTeamMember::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateUserProfile` operation.
+    /// Constructs a fluent builder for the [`UpdateUserProfile`](crate::client::fluent_builders::UpdateUserProfile) operation.
     ///
-    /// See [`UpdateUserProfile`](crate::client::fluent_builders::UpdateUserProfile) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateUserProfileInput`](crate::input::UpdateUserProfileInput) with field(s):
+    ///   - [`user_arn(Option<String>)`](crate::input::UpdateUserProfileInput::user_arn): <p>The name that will be displayed as the friendly name for the user in AWS CodeStar.</p>
+    ///   - [`display_name(Option<String>)`](crate::input::UpdateUserProfileInput::display_name): <p>The name that is displayed as the friendly name for the user in AWS CodeStar.</p>
+    ///   - [`email_address(Option<String>)`](crate::input::UpdateUserProfileInput::email_address): <p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>
+    ///   - [`ssh_public_key(Option<String>)`](crate::input::UpdateUserProfileInput::ssh_public_key): <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>
+    /// - On success, responds with [`UpdateUserProfileOutput`](crate::output::UpdateUserProfileOutput) with field(s):
+    ///   - [`user_arn(Option<String>)`](crate::output::UpdateUserProfileOutput::user_arn): <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
+    ///   - [`display_name(Option<String>)`](crate::output::UpdateUserProfileOutput::display_name): <p>The name that is displayed as the friendly name for the user in AWS CodeStar.</p>
+    ///   - [`email_address(Option<String>)`](crate::output::UpdateUserProfileOutput::email_address): <p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>
+    ///   - [`ssh_public_key(Option<String>)`](crate::output::UpdateUserProfileOutput::ssh_public_key): <p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the public/private keypair the user can use to access project resources if a project owner allows the user remote access to those resources.</p>
+    ///   - [`created_timestamp(Option<DateTime>)`](crate::output::UpdateUserProfileOutput::created_timestamp): <p>The date the user profile was created, in timestamp format.</p>
+    ///   - [`last_modified_timestamp(Option<DateTime>)`](crate::output::UpdateUserProfileOutput::last_modified_timestamp): <p>The date the user profile was last modified, in timestamp format.</p>
+    /// - On failure, responds with [`SdkError<UpdateUserProfileError>`](crate::error::UpdateUserProfileError)
     pub fn update_user_profile(&self) -> fluent_builders::UpdateUserProfile<C, M, R> {
         fluent_builders::UpdateUserProfile::new(self.handle.clone())
     }

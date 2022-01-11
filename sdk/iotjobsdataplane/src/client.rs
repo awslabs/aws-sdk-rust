@@ -83,33 +83,60 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `DescribeJobExecution` operation.
+    /// Constructs a fluent builder for the [`DescribeJobExecution`](crate::client::fluent_builders::DescribeJobExecution) operation.
     ///
-    /// See [`DescribeJobExecution`](crate::client::fluent_builders::DescribeJobExecution) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeJobExecutionInput`](crate::input::DescribeJobExecutionInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::DescribeJobExecutionInput::job_id): <p>The unique identifier assigned to this job when it was created.</p>
+    ///   - [`thing_name(Option<String>)`](crate::input::DescribeJobExecutionInput::thing_name): <p>The thing name associated with the device the job execution is running on.</p>
+    ///   - [`include_job_document(Option<bool>)`](crate::input::DescribeJobExecutionInput::include_job_document): <p>Optional. When set to true, the response contains the job document. The default is false.</p>
+    ///   - [`execution_number(Option<i64>)`](crate::input::DescribeJobExecutionInput::execution_number): <p>Optional. A number that identifies a particular job execution on a particular device. If not specified, the latest job execution is returned.</p>
+    /// - On success, responds with [`DescribeJobExecutionOutput`](crate::output::DescribeJobExecutionOutput) with field(s):
+    ///   - [`execution(Option<JobExecution>)`](crate::output::DescribeJobExecutionOutput::execution): <p>Contains data about a job execution.</p>
+    /// - On failure, responds with [`SdkError<DescribeJobExecutionError>`](crate::error::DescribeJobExecutionError)
     pub fn describe_job_execution(&self) -> fluent_builders::DescribeJobExecution<C, M, R> {
         fluent_builders::DescribeJobExecution::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetPendingJobExecutions` operation.
+    /// Constructs a fluent builder for the [`GetPendingJobExecutions`](crate::client::fluent_builders::GetPendingJobExecutions) operation.
     ///
-    /// See [`GetPendingJobExecutions`](crate::client::fluent_builders::GetPendingJobExecutions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetPendingJobExecutionsInput`](crate::input::GetPendingJobExecutionsInput) with field(s):
+    ///   - [`thing_name(Option<String>)`](crate::input::GetPendingJobExecutionsInput::thing_name): <p>The name of the thing that is executing the job.</p>
+    /// - On success, responds with [`GetPendingJobExecutionsOutput`](crate::output::GetPendingJobExecutionsOutput) with field(s):
+    ///   - [`in_progress_jobs(Option<Vec<JobExecutionSummary>>)`](crate::output::GetPendingJobExecutionsOutput::in_progress_jobs): <p>A list of JobExecutionSummary objects with status IN_PROGRESS.</p>
+    ///   - [`queued_jobs(Option<Vec<JobExecutionSummary>>)`](crate::output::GetPendingJobExecutionsOutput::queued_jobs): <p>A list of JobExecutionSummary objects with status QUEUED.</p>
+    /// - On failure, responds with [`SdkError<GetPendingJobExecutionsError>`](crate::error::GetPendingJobExecutionsError)
     pub fn get_pending_job_executions(&self) -> fluent_builders::GetPendingJobExecutions<C, M, R> {
         fluent_builders::GetPendingJobExecutions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartNextPendingJobExecution` operation.
+    /// Constructs a fluent builder for the [`StartNextPendingJobExecution`](crate::client::fluent_builders::StartNextPendingJobExecution) operation.
     ///
-    /// See [`StartNextPendingJobExecution`](crate::client::fluent_builders::StartNextPendingJobExecution) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartNextPendingJobExecutionInput`](crate::input::StartNextPendingJobExecutionInput) with field(s):
+    ///   - [`thing_name(Option<String>)`](crate::input::StartNextPendingJobExecutionInput::thing_name): <p>The name of the thing associated with the device.</p>
+    ///   - [`status_details(Option<HashMap<String, String>>)`](crate::input::StartNextPendingJobExecutionInput::status_details): <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
+    ///   - [`step_timeout_in_minutes(Option<i64>)`](crate::input::StartNextPendingJobExecutionInput::step_timeout_in_minutes): <p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
+    /// - On success, responds with [`StartNextPendingJobExecutionOutput`](crate::output::StartNextPendingJobExecutionOutput) with field(s):
+    ///   - [`execution(Option<JobExecution>)`](crate::output::StartNextPendingJobExecutionOutput::execution): <p>A JobExecution object.</p>
+    /// - On failure, responds with [`SdkError<StartNextPendingJobExecutionError>`](crate::error::StartNextPendingJobExecutionError)
     pub fn start_next_pending_job_execution(
         &self,
     ) -> fluent_builders::StartNextPendingJobExecution<C, M, R> {
         fluent_builders::StartNextPendingJobExecution::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateJobExecution` operation.
+    /// Constructs a fluent builder for the [`UpdateJobExecution`](crate::client::fluent_builders::UpdateJobExecution) operation.
     ///
-    /// See [`UpdateJobExecution`](crate::client::fluent_builders::UpdateJobExecution) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateJobExecutionInput`](crate::input::UpdateJobExecutionInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::UpdateJobExecutionInput::job_id): <p>The unique identifier assigned to this job when it was created.</p>
+    ///   - [`thing_name(Option<String>)`](crate::input::UpdateJobExecutionInput::thing_name): <p>The name of the thing associated with the device.</p>
+    ///   - [`status(Option<JobExecutionStatus>)`](crate::input::UpdateJobExecutionInput::status): <p>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified on every update.</p>
+    ///   - [`status_details(Option<HashMap<String, String>>)`](crate::input::UpdateJobExecutionInput::status_details): <p> Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
+    ///   - [`step_timeout_in_minutes(Option<i64>)`](crate::input::UpdateJobExecutionInput::step_timeout_in_minutes): <p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting or resetting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
+    ///   - [`expected_version(Option<i64>)`](crate::input::UpdateJobExecutionInput::expected_version): <p>Optional. The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)</p>
+    ///   - [`include_job_execution_state(Option<bool>)`](crate::input::UpdateJobExecutionInput::include_job_execution_state): <p>Optional. When included and set to true, the response contains the JobExecutionState data. The default is false.</p>
+    ///   - [`include_job_document(Option<bool>)`](crate::input::UpdateJobExecutionInput::include_job_document): <p>Optional. When set to true, the response contains the job document. The default is false.</p>
+    ///   - [`execution_number(Option<i64>)`](crate::input::UpdateJobExecutionInput::execution_number): <p>Optional. A number that identifies a particular job execution on a particular device.</p>
+    /// - On success, responds with [`UpdateJobExecutionOutput`](crate::output::UpdateJobExecutionOutput) with field(s):
+    ///   - [`execution_state(Option<JobExecutionState>)`](crate::output::UpdateJobExecutionOutput::execution_state): <p>A JobExecutionState object.</p>
+    ///   - [`job_document(Option<String>)`](crate::output::UpdateJobExecutionOutput::job_document): <p>The contents of the Job Documents.</p>
+    /// - On failure, responds with [`SdkError<UpdateJobExecutionError>`](crate::error::UpdateJobExecutionError)
     pub fn update_job_execution(&self) -> fluent_builders::UpdateJobExecution<C, M, R> {
         fluent_builders::UpdateJobExecution::new(self.handle.clone())
     }

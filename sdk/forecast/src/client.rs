@@ -83,345 +83,682 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateAutoPredictor` operation.
+    /// Constructs a fluent builder for the [`CreateAutoPredictor`](crate::client::fluent_builders::CreateAutoPredictor) operation.
     ///
-    /// See [`CreateAutoPredictor`](crate::client::fluent_builders::CreateAutoPredictor) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateAutoPredictorInput`](crate::input::CreateAutoPredictorInput) with field(s):
+    ///   - [`predictor_name(Option<String>)`](crate::input::CreateAutoPredictorInput::predictor_name): <p>A unique name for the predictor</p>
+    ///   - [`forecast_horizon(Option<i32>)`](crate::input::CreateAutoPredictorInput::forecast_horizon): <p>The number of time-steps that the model predicts. The forecast horizon is also called the prediction length.</p>
+    ///   - [`forecast_types(Option<Vec<String>>)`](crate::input::CreateAutoPredictorInput::forecast_types): <p>The forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>.</p>
+    ///   - [`forecast_dimensions(Option<Vec<String>>)`](crate::input::CreateAutoPredictorInput::forecast_dimensions): <p>An array of dimension (field) names that specify how to group the generated forecast.</p>  <p>For example, if you are generating forecasts for item sales across all your stores, and your dataset contains a <code>store_id</code> field, you would specify <code>store_id</code> as a dimension to group sales forecasts for each store.</p>
+    ///   - [`forecast_frequency(Option<String>)`](crate::input::CreateAutoPredictorInput::forecast_frequency): <p>The frequency of predictions in a forecast.</p>  <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every year and "5min" indicates every five minutes.</p>  <p>The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.</p>  <p>When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the RELATED_TIME_SERIES dataset frequency.</p>
+    ///   - [`data_config(Option<DataConfig>)`](crate::input::CreateAutoPredictorInput::data_config): <p>The data configuration for your dataset group and any additional datasets.</p>
+    ///   - [`encryption_config(Option<EncryptionConfig>)`](crate::input::CreateAutoPredictorInput::encryption_config): <p>An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <code>CreateDataset</code> and <code>CreatePredictor</code> requests.</p>
+    ///   - [`reference_predictor_arn(Option<String>)`](crate::input::CreateAutoPredictorInput::reference_predictor_arn): <p>The ARN of the predictor to retrain or upgrade. This parameter is only used when retraining or upgrading a predictor. When creating a new predictor, do not specify a value for this parameter.</p>  <p>When upgrading or retraining a predictor, only specify values for the <code>ReferencePredictorArn</code> and <code>PredictorName</code>. The value for <code>PredictorName</code> must be a unique predictor name.</p>
+    ///   - [`optimization_metric(Option<OptimizationMetric>)`](crate::input::CreateAutoPredictorInput::optimization_metric): <p>The accuracy metric used to optimize the predictor.</p>
+    ///   - [`explain_predictor(Option<bool>)`](crate::input::CreateAutoPredictorInput::explain_predictor): <p>Create an Explainability resource for the predictor.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateAutoPredictorInput::tags): <p>Optional metadata to help you categorize and organize your predictors. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>  <p>The following restrictions apply to tags:</p>  <ul>   <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>   <li> <p>Maximum number of tags per resource: 50.</p> </li>   <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>   <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>   <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>   <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>  </ul>
+    /// - On success, responds with [`CreateAutoPredictorOutput`](crate::output::CreateAutoPredictorOutput) with field(s):
+    ///   - [`predictor_arn(Option<String>)`](crate::output::CreateAutoPredictorOutput::predictor_arn): <p>The Amazon Resource Name (ARN) of the predictor.</p>
+    /// - On failure, responds with [`SdkError<CreateAutoPredictorError>`](crate::error::CreateAutoPredictorError)
     pub fn create_auto_predictor(&self) -> fluent_builders::CreateAutoPredictor<C, M, R> {
         fluent_builders::CreateAutoPredictor::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDataset` operation.
+    /// Constructs a fluent builder for the [`CreateDataset`](crate::client::fluent_builders::CreateDataset) operation.
     ///
-    /// See [`CreateDataset`](crate::client::fluent_builders::CreateDataset) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateDatasetInput`](crate::input::CreateDatasetInput) with field(s):
+    ///   - [`dataset_name(Option<String>)`](crate::input::CreateDatasetInput::dataset_name): <p>A name for the dataset.</p>
+    ///   - [`domain(Option<Domain>)`](crate::input::CreateDatasetInput::domain): <p>The domain associated with the dataset. When you add a dataset to a dataset group, this value and the value specified for the <code>Domain</code> parameter of the <code>CreateDatasetGroup</code> operation must match.</p>  <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in the training data that you import to the dataset. For example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields to be present in your data. For more information, see <code>howitworks-datasets-groups</code>.</p>
+    ///   - [`dataset_type(Option<DatasetType>)`](crate::input::CreateDatasetInput::dataset_type): <p>The dataset type. Valid values depend on the chosen <code>Domain</code>.</p>
+    ///   - [`data_frequency(Option<String>)`](crate::input::CreateDatasetInput::data_frequency): <p>The frequency of data collection. This parameter is required for RELATED_TIME_SERIES datasets.</p>  <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "D" indicates every day and "15min" indicates every 15 minutes.</p>
+    ///   - [`schema(Option<Schema>)`](crate::input::CreateDatasetInput::schema): <p>The schema for the dataset. The schema attributes and their order must match the fields in your data. The dataset <code>Domain</code> and <code>DatasetType</code> that you choose determine the minimum required fields in your training data. For information about the required fields for a specific dataset domain and type, see <code>howitworks-domains-ds-types</code>.</p>
+    ///   - [`encryption_config(Option<EncryptionConfig>)`](crate::input::CreateDatasetInput::encryption_config): <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateDatasetInput::tags): <p>The optional metadata that you apply to the dataset to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>  <p>The following basic restrictions apply to tags:</p>  <ul>   <li> <p>Maximum number of tags per resource - 50.</p> </li>   <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>   <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>   <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>   <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>   <li> <p>Tag keys and values are case sensitive.</p> </li>   <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>  </ul>
+    /// - On success, responds with [`CreateDatasetOutput`](crate::output::CreateDatasetOutput) with field(s):
+    ///   - [`dataset_arn(Option<String>)`](crate::output::CreateDatasetOutput::dataset_arn): <p>The Amazon Resource Name (ARN) of the dataset.</p>
+    /// - On failure, responds with [`SdkError<CreateDatasetError>`](crate::error::CreateDatasetError)
     pub fn create_dataset(&self) -> fluent_builders::CreateDataset<C, M, R> {
         fluent_builders::CreateDataset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDatasetGroup` operation.
+    /// Constructs a fluent builder for the [`CreateDatasetGroup`](crate::client::fluent_builders::CreateDatasetGroup) operation.
     ///
-    /// See [`CreateDatasetGroup`](crate::client::fluent_builders::CreateDatasetGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateDatasetGroupInput`](crate::input::CreateDatasetGroupInput) with field(s):
+    ///   - [`dataset_group_name(Option<String>)`](crate::input::CreateDatasetGroupInput::dataset_group_name): <p>A name for the dataset group.</p>
+    ///   - [`domain(Option<Domain>)`](crate::input::CreateDatasetGroupInput::domain): <p>The domain associated with the dataset group. When you add a dataset to a dataset group, this value and the value specified for the <code>Domain</code> parameter of the <code>CreateDataset</code> operation must match.</p>  <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields that must be present in training data that you import to a dataset. For example, if you choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast requires that <code>item_id</code>, <code>timestamp</code>, and <code>demand</code> fields are present in your data. For more information, see <code>howitworks-datasets-groups</code>.</p>
+    ///   - [`dataset_arns(Option<Vec<String>>)`](crate::input::CreateDatasetGroupInput::dataset_arns): <p>An array of Amazon Resource Names (ARNs) of the datasets that you want to include in the dataset group.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateDatasetGroupInput::tags): <p>The optional metadata that you apply to the dataset group to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>  <p>The following basic restrictions apply to tags:</p>  <ul>   <li> <p>Maximum number of tags per resource - 50.</p> </li>   <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>   <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>   <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>   <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>   <li> <p>Tag keys and values are case sensitive.</p> </li>   <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>  </ul>
+    /// - On success, responds with [`CreateDatasetGroupOutput`](crate::output::CreateDatasetGroupOutput) with field(s):
+    ///   - [`dataset_group_arn(Option<String>)`](crate::output::CreateDatasetGroupOutput::dataset_group_arn): <p>The Amazon Resource Name (ARN) of the dataset group.</p>
+    /// - On failure, responds with [`SdkError<CreateDatasetGroupError>`](crate::error::CreateDatasetGroupError)
     pub fn create_dataset_group(&self) -> fluent_builders::CreateDatasetGroup<C, M, R> {
         fluent_builders::CreateDatasetGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDatasetImportJob` operation.
+    /// Constructs a fluent builder for the [`CreateDatasetImportJob`](crate::client::fluent_builders::CreateDatasetImportJob) operation.
     ///
-    /// See [`CreateDatasetImportJob`](crate::client::fluent_builders::CreateDatasetImportJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateDatasetImportJobInput`](crate::input::CreateDatasetImportJobInput) with field(s):
+    ///   - [`dataset_import_job_name(Option<String>)`](crate::input::CreateDatasetImportJobInput::dataset_import_job_name): <p>The name for the dataset import job. We recommend including the current timestamp in the name, for example, <code>20190721DatasetImport</code>. This can help you avoid getting a <code>ResourceAlreadyExistsException</code> exception.</p>
+    ///   - [`dataset_arn(Option<String>)`](crate::input::CreateDatasetImportJobInput::dataset_arn): <p>The Amazon Resource Name (ARN) of the Amazon Forecast dataset that you want to import data to.</p>
+    ///   - [`data_source(Option<DataSource>)`](crate::input::CreateDatasetImportJobInput::data_source): <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>  <p>If encryption is used, <code>DataSource</code> must include an AWS Key Management Service (KMS) key and the IAM role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must match those specified in the <code>EncryptionConfig</code> parameter of the <code>CreateDataset</code> operation.</p>
+    ///   - [`timestamp_format(Option<String>)`](crate::input::CreateDatasetImportJobInput::timestamp_format): <p>The format of timestamps in the dataset. The format that you specify depends on the <code>DataFrequency</code> specified when the dataset was created. The following formats are supported</p>  <ul>   <li> <p>"yyyy-MM-dd"</p> <p>For the following data frequencies: Y, M, W, and D</p> </li>   <li> <p>"yyyy-MM-dd HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p> </li>  </ul>  <p>If the format isn't specified, Amazon Forecast expects the format to be "yyyy-MM-dd HH:mm:ss".</p>
+    ///   - [`time_zone(Option<String>)`](crate::input::CreateDatasetImportJobInput::time_zone): <p>A single time zone for every item in your dataset. This option is ideal for datasets with all timestamps within a single time zone, or if all timestamps are normalized to a single time zone. </p>  <p>Refer to the <a href="http://joda-time.sourceforge.net/timezones.html">Joda-Time API</a> for a complete list of valid time zone names.</p>
+    ///   - [`use_geolocation_for_time_zone(bool)`](crate::input::CreateDatasetImportJobInput::use_geolocation_for_time_zone): <p>Automatically derive time zone information from the geolocation attribute. This option is ideal for datasets that contain timestamps in multiple time zones and those timestamps are expressed in local time.</p>
+    ///   - [`geolocation_format(Option<String>)`](crate::input::CreateDatasetImportJobInput::geolocation_format): <p>The format of the geolocation attribute. The geolocation attribute can be formatted in one of two ways:</p>  <ul>   <li> <p> <code>LAT_LONG</code> - the latitude and longitude in decimal format (Example: 47.61_-122.33).</p> </li>   <li> <p> <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed by the 5-digit ZIP code (Example: US_98121).</p> </li>  </ul>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateDatasetImportJobInput::tags): <p>The optional metadata that you apply to the dataset import job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>  <p>The following basic restrictions apply to tags:</p>  <ul>   <li> <p>Maximum number of tags per resource - 50.</p> </li>   <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>   <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>   <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>   <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>   <li> <p>Tag keys and values are case sensitive.</p> </li>   <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>  </ul>
+    /// - On success, responds with [`CreateDatasetImportJobOutput`](crate::output::CreateDatasetImportJobOutput) with field(s):
+    ///   - [`dataset_import_job_arn(Option<String>)`](crate::output::CreateDatasetImportJobOutput::dataset_import_job_arn): <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
+    /// - On failure, responds with [`SdkError<CreateDatasetImportJobError>`](crate::error::CreateDatasetImportJobError)
     pub fn create_dataset_import_job(&self) -> fluent_builders::CreateDatasetImportJob<C, M, R> {
         fluent_builders::CreateDatasetImportJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateExplainability` operation.
+    /// Constructs a fluent builder for the [`CreateExplainability`](crate::client::fluent_builders::CreateExplainability) operation.
     ///
-    /// See [`CreateExplainability`](crate::client::fluent_builders::CreateExplainability) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateExplainabilityInput`](crate::input::CreateExplainabilityInput) with field(s):
+    ///   - [`explainability_name(Option<String>)`](crate::input::CreateExplainabilityInput::explainability_name): <p>A unique name for the Explainability.</p>
+    ///   - [`resource_arn(Option<String>)`](crate::input::CreateExplainabilityInput::resource_arn): <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the Explainability.</p>
+    ///   - [`explainability_config(Option<ExplainabilityConfig>)`](crate::input::CreateExplainabilityInput::explainability_config): <p>The configuration settings that define the granularity of time series and time points for the Explainability.</p>
+    ///   - [`data_source(Option<DataSource>)`](crate::input::CreateExplainabilityInput::data_source): <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
+    ///   - [`schema(Option<Schema>)`](crate::input::CreateExplainabilityInput::schema): <p>Defines the fields of a dataset.</p>
+    ///   - [`enable_visualization(Option<bool>)`](crate::input::CreateExplainabilityInput::enable_visualization): <p>Create an Expainability visualization that is viewable within the AWS console.</p>
+    ///   - [`start_date_time(Option<String>)`](crate::input::CreateExplainabilityInput::start_date_time): <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the first point for the Explainability.</p>  <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
+    ///   - [`end_date_time(Option<String>)`](crate::input::CreateExplainabilityInput::end_date_time): <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the last time point for the Explainability.</p>  <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateExplainabilityInput::tags): <p>Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>  <p>The following restrictions apply to tags:</p>  <ul>   <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>   <li> <p>Maximum number of tags per resource: 50.</p> </li>   <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>   <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>   <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>   <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>  </ul>
+    /// - On success, responds with [`CreateExplainabilityOutput`](crate::output::CreateExplainabilityOutput) with field(s):
+    ///   - [`explainability_arn(Option<String>)`](crate::output::CreateExplainabilityOutput::explainability_arn): <p>The Amazon Resource Name (ARN) of the Explainability.</p>
+    /// - On failure, responds with [`SdkError<CreateExplainabilityError>`](crate::error::CreateExplainabilityError)
     pub fn create_explainability(&self) -> fluent_builders::CreateExplainability<C, M, R> {
         fluent_builders::CreateExplainability::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateExplainabilityExport` operation.
+    /// Constructs a fluent builder for the [`CreateExplainabilityExport`](crate::client::fluent_builders::CreateExplainabilityExport) operation.
     ///
-    /// See [`CreateExplainabilityExport`](crate::client::fluent_builders::CreateExplainabilityExport) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateExplainabilityExportInput`](crate::input::CreateExplainabilityExportInput) with field(s):
+    ///   - [`explainability_export_name(Option<String>)`](crate::input::CreateExplainabilityExportInput::explainability_export_name): <p>A unique name for the Explainability export.</p>
+    ///   - [`explainability_arn(Option<String>)`](crate::input::CreateExplainabilityExportInput::explainability_arn): <p>The Amazon Resource Name (ARN) of the Explainability to export.</p>
+    ///   - [`destination(Option<DataDestination>)`](crate::input::CreateExplainabilityExportInput::destination): <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateExplainabilityExportInput::tags): <p>Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>  <p>The following restrictions apply to tags:</p>  <ul>   <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>   <li> <p>Maximum number of tags per resource: 50.</p> </li>   <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>   <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>   <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>   <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>  </ul>
+    /// - On success, responds with [`CreateExplainabilityExportOutput`](crate::output::CreateExplainabilityExportOutput) with field(s):
+    ///   - [`explainability_export_arn(Option<String>)`](crate::output::CreateExplainabilityExportOutput::explainability_export_arn): <p>The Amazon Resource Name (ARN) of the export.</p>
+    /// - On failure, responds with [`SdkError<CreateExplainabilityExportError>`](crate::error::CreateExplainabilityExportError)
     pub fn create_explainability_export(
         &self,
     ) -> fluent_builders::CreateExplainabilityExport<C, M, R> {
         fluent_builders::CreateExplainabilityExport::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateForecast` operation.
+    /// Constructs a fluent builder for the [`CreateForecast`](crate::client::fluent_builders::CreateForecast) operation.
     ///
-    /// See [`CreateForecast`](crate::client::fluent_builders::CreateForecast) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateForecastInput`](crate::input::CreateForecastInput) with field(s):
+    ///   - [`forecast_name(Option<String>)`](crate::input::CreateForecastInput::forecast_name): <p>A name for the forecast.</p>
+    ///   - [`predictor_arn(Option<String>)`](crate::input::CreateForecastInput::predictor_arn): <p>The Amazon Resource Name (ARN) of the predictor to use to generate the forecast.</p>
+    ///   - [`forecast_types(Option<Vec<String>>)`](crate::input::CreateForecastInput::forecast_types): <p>The quantiles at which probabilistic forecasts are generated. <b>You can currently specify up to 5 quantiles per forecast</b>. Accepted values include <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta and Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateForecastInput::tags): <p>The optional metadata that you apply to the forecast to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>  <p>The following basic restrictions apply to tags:</p>  <ul>   <li> <p>Maximum number of tags per resource - 50.</p> </li>   <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>   <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>   <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>   <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>   <li> <p>Tag keys and values are case sensitive.</p> </li>   <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>  </ul>
+    /// - On success, responds with [`CreateForecastOutput`](crate::output::CreateForecastOutput) with field(s):
+    ///   - [`forecast_arn(Option<String>)`](crate::output::CreateForecastOutput::forecast_arn): <p>The Amazon Resource Name (ARN) of the forecast.</p>
+    /// - On failure, responds with [`SdkError<CreateForecastError>`](crate::error::CreateForecastError)
     pub fn create_forecast(&self) -> fluent_builders::CreateForecast<C, M, R> {
         fluent_builders::CreateForecast::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateForecastExportJob` operation.
+    /// Constructs a fluent builder for the [`CreateForecastExportJob`](crate::client::fluent_builders::CreateForecastExportJob) operation.
     ///
-    /// See [`CreateForecastExportJob`](crate::client::fluent_builders::CreateForecastExportJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateForecastExportJobInput`](crate::input::CreateForecastExportJobInput) with field(s):
+    ///   - [`forecast_export_job_name(Option<String>)`](crate::input::CreateForecastExportJobInput::forecast_export_job_name): <p>The name for the forecast export job.</p>
+    ///   - [`forecast_arn(Option<String>)`](crate::input::CreateForecastExportJobInput::forecast_arn): <p>The Amazon Resource Name (ARN) of the forecast that you want to export.</p>
+    ///   - [`destination(Option<DataDestination>)`](crate::input::CreateForecastExportJobInput::destination): <p>The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>  <p>If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateForecastExportJobInput::tags): <p>The optional metadata that you apply to the forecast export job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>  <p>The following basic restrictions apply to tags:</p>  <ul>   <li> <p>Maximum number of tags per resource - 50.</p> </li>   <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>   <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>   <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>   <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>   <li> <p>Tag keys and values are case sensitive.</p> </li>   <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>  </ul>
+    /// - On success, responds with [`CreateForecastExportJobOutput`](crate::output::CreateForecastExportJobOutput) with field(s):
+    ///   - [`forecast_export_job_arn(Option<String>)`](crate::output::CreateForecastExportJobOutput::forecast_export_job_arn): <p>The Amazon Resource Name (ARN) of the export job.</p>
+    /// - On failure, responds with [`SdkError<CreateForecastExportJobError>`](crate::error::CreateForecastExportJobError)
     pub fn create_forecast_export_job(&self) -> fluent_builders::CreateForecastExportJob<C, M, R> {
         fluent_builders::CreateForecastExportJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreatePredictor` operation.
+    /// Constructs a fluent builder for the [`CreatePredictor`](crate::client::fluent_builders::CreatePredictor) operation.
     ///
-    /// See [`CreatePredictor`](crate::client::fluent_builders::CreatePredictor) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreatePredictorInput`](crate::input::CreatePredictorInput) with field(s):
+    ///   - [`predictor_name(Option<String>)`](crate::input::CreatePredictorInput::predictor_name): <p>A name for the predictor.</p>
+    ///   - [`algorithm_arn(Option<String>)`](crate::input::CreatePredictorInput::algorithm_arn): <p>The Amazon Resource Name (ARN) of the algorithm to use for model training. Required if <code>PerformAutoML</code> is not set to <code>true</code>.</p>  <p class="title"> <b>Supported algorithms:</b> </p>  <ul>   <li> <p> <code>arn:aws:forecast:::algorithm/ARIMA</code> </p> </li>   <li> <p> <code>arn:aws:forecast:::algorithm/CNN-QR</code> </p> </li>   <li> <p> <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> </li>   <li> <p> <code>arn:aws:forecast:::algorithm/ETS</code> </p> </li>   <li> <p> <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li>   <li> <p> <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li>  </ul>
+    ///   - [`forecast_horizon(Option<i32>)`](crate::input::CreatePredictorInput::forecast_horizon): <p>Specifies the number of time-steps that the model is trained to predict. The forecast horizon is also called the prediction length.</p>  <p>For example, if you configure a dataset for daily data collection (using the <code>DataFrequency</code> parameter of the <code>CreateDataset</code> operation) and set the forecast horizon to 10, the model returns predictions for 10 days.</p>  <p>The maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the TARGET_TIME_SERIES dataset length.</p>
+    ///   - [`forecast_types(Option<Vec<String>>)`](crate::input::CreatePredictorInput::forecast_types): <p>Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with <code>mean</code>. </p>  <p>The default value is <code>["0.10", "0.50", "0.9"]</code>.</p>
+    ///   - [`perform_auto_ml(Option<bool>)`](crate::input::CreatePredictorInput::perform_auto_ml): <p>Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates the algorithms it provides and chooses the best algorithm and configuration for your training dataset.</p>  <p>The default value is <code>false</code>. In this case, you are required to specify an algorithm.</p>  <p>Set <code>PerformAutoML</code> to <code>true</code> to have Amazon Forecast perform AutoML. This is a good option if you aren't sure which algorithm is suitable for your training data. In this case, <code>PerformHPO</code> must be false.</p>
+    ///   - [`auto_ml_override_strategy(Option<AutoMlOverrideStrategy>)`](crate::input::CreatePredictorInput::auto_ml_override_strategy): <note>   <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support or your account manager to learn more about access privileges. </p>  </note>  <p>Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML strategy that minimizes training time, use <code>LatencyOptimized</code>.</p>  <p>This parameter is only valid for predictors trained using AutoML.</p>
+    ///   - [`perform_hpo(Option<bool>)`](crate::input::CreatePredictorInput::perform_hpo): <p>Whether to perform hyperparameter optimization (HPO). HPO finds optimal hyperparameter values for your training data. The process of performing HPO is known as running a hyperparameter tuning job.</p>  <p>The default value is <code>false</code>. In this case, Amazon Forecast uses default hyperparameter values from the chosen algorithm.</p>  <p>To override the default values, set <code>PerformHPO</code> to <code>true</code> and, optionally, supply the <code>HyperParameterTuningJobConfig</code> object. The tuning job specifies a metric to optimize, which hyperparameters participate in tuning, and the valid range for each tunable hyperparameter. In this case, you are required to specify an algorithm and <code>PerformAutoML</code> must be false.</p>  <p>The following algorithms support HPO:</p>  <ul>   <li> <p>DeepAR+</p> </li>   <li> <p>CNN-QR</p> </li>  </ul>
+    ///   - [`training_parameters(Option<HashMap<String, String>>)`](crate::input::CreatePredictorInput::training_parameters): <p>The hyperparameters to override for model training. The hyperparameters that you can override are listed in the individual algorithms. For the list of supported algorithms, see <code>aws-forecast-choosing-recipes</code>.</p>
+    ///   - [`evaluation_parameters(Option<EvaluationParameters>)`](crate::input::CreatePredictorInput::evaluation_parameters): <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast evaluates a predictor by splitting a dataset into training data and testing data. The evaluation parameters define how to perform the split and the number of iterations.</p>
+    ///   - [`hpo_config(Option<HyperParameterTuningJobConfig>)`](crate::input::CreatePredictorInput::hpo_config): <p>Provides hyperparameter override values for the algorithm. If you don't provide this parameter, Amazon Forecast uses default values. The individual algorithms specify which hyperparameters support hyperparameter optimization (HPO). For more information, see <code>aws-forecast-choosing-recipes</code>.</p>  <p>If you included the <code>HPOConfig</code> object, you must set <code>PerformHPO</code> to true.</p>
+    ///   - [`input_data_config(Option<InputDataConfig>)`](crate::input::CreatePredictorInput::input_data_config): <p>Describes the dataset group that contains the data to use to train the predictor.</p>
+    ///   - [`featurization_config(Option<FeaturizationConfig>)`](crate::input::CreatePredictorInput::featurization_config): <p>The featurization configuration.</p>
+    ///   - [`encryption_config(Option<EncryptionConfig>)`](crate::input::CreatePredictorInput::encryption_config): <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreatePredictorInput::tags): <p>The optional metadata that you apply to the predictor to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>  <p>The following basic restrictions apply to tags:</p>  <ul>   <li> <p>Maximum number of tags per resource - 50.</p> </li>   <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>   <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>   <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>   <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>   <li> <p>Tag keys and values are case sensitive.</p> </li>   <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>  </ul>
+    ///   - [`optimization_metric(Option<OptimizationMetric>)`](crate::input::CreatePredictorInput::optimization_metric): <p>The accuracy metric used to optimize the predictor.</p>
+    /// - On success, responds with [`CreatePredictorOutput`](crate::output::CreatePredictorOutput) with field(s):
+    ///   - [`predictor_arn(Option<String>)`](crate::output::CreatePredictorOutput::predictor_arn): <p>The Amazon Resource Name (ARN) of the predictor.</p>
+    /// - On failure, responds with [`SdkError<CreatePredictorError>`](crate::error::CreatePredictorError)
     pub fn create_predictor(&self) -> fluent_builders::CreatePredictor<C, M, R> {
         fluent_builders::CreatePredictor::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreatePredictorBacktestExportJob` operation.
+    /// Constructs a fluent builder for the [`CreatePredictorBacktestExportJob`](crate::client::fluent_builders::CreatePredictorBacktestExportJob) operation.
     ///
-    /// See [`CreatePredictorBacktestExportJob`](crate::client::fluent_builders::CreatePredictorBacktestExportJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreatePredictorBacktestExportJobInput`](crate::input::CreatePredictorBacktestExportJobInput) with field(s):
+    ///   - [`predictor_backtest_export_job_name(Option<String>)`](crate::input::CreatePredictorBacktestExportJobInput::predictor_backtest_export_job_name): <p>The name for the backtest export job.</p>
+    ///   - [`predictor_arn(Option<String>)`](crate::input::CreatePredictorBacktestExportJobInput::predictor_arn): <p>The Amazon Resource Name (ARN) of the predictor that you want to export.</p>
+    ///   - [`destination(Option<DataDestination>)`](crate::input::CreatePredictorBacktestExportJobInput::destination): <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreatePredictorBacktestExportJobInput::tags): <p>Optional metadata to help you categorize and organize your backtests. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.</p>  <p>The following restrictions apply to tags:</p>  <ul>   <li> <p>For each resource, each tag key must be unique and each tag key must have one value.</p> </li>   <li> <p>Maximum number of tags per resource: 50.</p> </li>   <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>   <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>   <li> <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @. If your tagging schema is used across other services and resources, the character restrictions of those services also apply. </p> </li>   <li> <p>Key prefixes cannot include any upper or lowercase combination of <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.</p> </li>  </ul>
+    /// - On success, responds with [`CreatePredictorBacktestExportJobOutput`](crate::output::CreatePredictorBacktestExportJobOutput) with field(s):
+    ///   - [`predictor_backtest_export_job_arn(Option<String>)`](crate::output::CreatePredictorBacktestExportJobOutput::predictor_backtest_export_job_arn): <p>The Amazon Resource Name (ARN) of the predictor backtest export job that you want to export.</p>
+    /// - On failure, responds with [`SdkError<CreatePredictorBacktestExportJobError>`](crate::error::CreatePredictorBacktestExportJobError)
     pub fn create_predictor_backtest_export_job(
         &self,
     ) -> fluent_builders::CreatePredictorBacktestExportJob<C, M, R> {
         fluent_builders::CreatePredictorBacktestExportJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDataset` operation.
+    /// Constructs a fluent builder for the [`DeleteDataset`](crate::client::fluent_builders::DeleteDataset) operation.
     ///
-    /// See [`DeleteDataset`](crate::client::fluent_builders::DeleteDataset) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteDatasetInput`](crate::input::DeleteDatasetInput) with field(s):
+    ///   - [`dataset_arn(Option<String>)`](crate::input::DeleteDatasetInput::dataset_arn): <p>The Amazon Resource Name (ARN) of the dataset to delete.</p>
+    /// - On success, responds with [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteDatasetError>`](crate::error::DeleteDatasetError)
     pub fn delete_dataset(&self) -> fluent_builders::DeleteDataset<C, M, R> {
         fluent_builders::DeleteDataset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDatasetGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteDatasetGroup`](crate::client::fluent_builders::DeleteDatasetGroup) operation.
     ///
-    /// See [`DeleteDatasetGroup`](crate::client::fluent_builders::DeleteDatasetGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteDatasetGroupInput`](crate::input::DeleteDatasetGroupInput) with field(s):
+    ///   - [`dataset_group_arn(Option<String>)`](crate::input::DeleteDatasetGroupInput::dataset_group_arn): <p>The Amazon Resource Name (ARN) of the dataset group to delete.</p>
+    /// - On success, responds with [`DeleteDatasetGroupOutput`](crate::output::DeleteDatasetGroupOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteDatasetGroupError>`](crate::error::DeleteDatasetGroupError)
     pub fn delete_dataset_group(&self) -> fluent_builders::DeleteDatasetGroup<C, M, R> {
         fluent_builders::DeleteDatasetGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDatasetImportJob` operation.
+    /// Constructs a fluent builder for the [`DeleteDatasetImportJob`](crate::client::fluent_builders::DeleteDatasetImportJob) operation.
     ///
-    /// See [`DeleteDatasetImportJob`](crate::client::fluent_builders::DeleteDatasetImportJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteDatasetImportJobInput`](crate::input::DeleteDatasetImportJobInput) with field(s):
+    ///   - [`dataset_import_job_arn(Option<String>)`](crate::input::DeleteDatasetImportJobInput::dataset_import_job_arn): <p>The Amazon Resource Name (ARN) of the dataset import job to delete.</p>
+    /// - On success, responds with [`DeleteDatasetImportJobOutput`](crate::output::DeleteDatasetImportJobOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteDatasetImportJobError>`](crate::error::DeleteDatasetImportJobError)
     pub fn delete_dataset_import_job(&self) -> fluent_builders::DeleteDatasetImportJob<C, M, R> {
         fluent_builders::DeleteDatasetImportJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteExplainability` operation.
+    /// Constructs a fluent builder for the [`DeleteExplainability`](crate::client::fluent_builders::DeleteExplainability) operation.
     ///
-    /// See [`DeleteExplainability`](crate::client::fluent_builders::DeleteExplainability) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteExplainabilityInput`](crate::input::DeleteExplainabilityInput) with field(s):
+    ///   - [`explainability_arn(Option<String>)`](crate::input::DeleteExplainabilityInput::explainability_arn): <p>The Amazon Resource Name (ARN) of the Explainability resource to delete.</p>
+    /// - On success, responds with [`DeleteExplainabilityOutput`](crate::output::DeleteExplainabilityOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteExplainabilityError>`](crate::error::DeleteExplainabilityError)
     pub fn delete_explainability(&self) -> fluent_builders::DeleteExplainability<C, M, R> {
         fluent_builders::DeleteExplainability::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteExplainabilityExport` operation.
+    /// Constructs a fluent builder for the [`DeleteExplainabilityExport`](crate::client::fluent_builders::DeleteExplainabilityExport) operation.
     ///
-    /// See [`DeleteExplainabilityExport`](crate::client::fluent_builders::DeleteExplainabilityExport) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteExplainabilityExportInput`](crate::input::DeleteExplainabilityExportInput) with field(s):
+    ///   - [`explainability_export_arn(Option<String>)`](crate::input::DeleteExplainabilityExportInput::explainability_export_arn): <p>The Amazon Resource Name (ARN) of the Explainability export to delete. </p>
+    /// - On success, responds with [`DeleteExplainabilityExportOutput`](crate::output::DeleteExplainabilityExportOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteExplainabilityExportError>`](crate::error::DeleteExplainabilityExportError)
     pub fn delete_explainability_export(
         &self,
     ) -> fluent_builders::DeleteExplainabilityExport<C, M, R> {
         fluent_builders::DeleteExplainabilityExport::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteForecast` operation.
+    /// Constructs a fluent builder for the [`DeleteForecast`](crate::client::fluent_builders::DeleteForecast) operation.
     ///
-    /// See [`DeleteForecast`](crate::client::fluent_builders::DeleteForecast) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteForecastInput`](crate::input::DeleteForecastInput) with field(s):
+    ///   - [`forecast_arn(Option<String>)`](crate::input::DeleteForecastInput::forecast_arn): <p>The Amazon Resource Name (ARN) of the forecast to delete.</p>
+    /// - On success, responds with [`DeleteForecastOutput`](crate::output::DeleteForecastOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteForecastError>`](crate::error::DeleteForecastError)
     pub fn delete_forecast(&self) -> fluent_builders::DeleteForecast<C, M, R> {
         fluent_builders::DeleteForecast::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteForecastExportJob` operation.
+    /// Constructs a fluent builder for the [`DeleteForecastExportJob`](crate::client::fluent_builders::DeleteForecastExportJob) operation.
     ///
-    /// See [`DeleteForecastExportJob`](crate::client::fluent_builders::DeleteForecastExportJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteForecastExportJobInput`](crate::input::DeleteForecastExportJobInput) with field(s):
+    ///   - [`forecast_export_job_arn(Option<String>)`](crate::input::DeleteForecastExportJobInput::forecast_export_job_arn): <p>The Amazon Resource Name (ARN) of the forecast export job to delete.</p>
+    /// - On success, responds with [`DeleteForecastExportJobOutput`](crate::output::DeleteForecastExportJobOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteForecastExportJobError>`](crate::error::DeleteForecastExportJobError)
     pub fn delete_forecast_export_job(&self) -> fluent_builders::DeleteForecastExportJob<C, M, R> {
         fluent_builders::DeleteForecastExportJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeletePredictor` operation.
+    /// Constructs a fluent builder for the [`DeletePredictor`](crate::client::fluent_builders::DeletePredictor) operation.
     ///
-    /// See [`DeletePredictor`](crate::client::fluent_builders::DeletePredictor) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeletePredictorInput`](crate::input::DeletePredictorInput) with field(s):
+    ///   - [`predictor_arn(Option<String>)`](crate::input::DeletePredictorInput::predictor_arn): <p>The Amazon Resource Name (ARN) of the predictor to delete.</p>
+    /// - On success, responds with [`DeletePredictorOutput`](crate::output::DeletePredictorOutput)
+
+    /// - On failure, responds with [`SdkError<DeletePredictorError>`](crate::error::DeletePredictorError)
     pub fn delete_predictor(&self) -> fluent_builders::DeletePredictor<C, M, R> {
         fluent_builders::DeletePredictor::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeletePredictorBacktestExportJob` operation.
+    /// Constructs a fluent builder for the [`DeletePredictorBacktestExportJob`](crate::client::fluent_builders::DeletePredictorBacktestExportJob) operation.
     ///
-    /// See [`DeletePredictorBacktestExportJob`](crate::client::fluent_builders::DeletePredictorBacktestExportJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeletePredictorBacktestExportJobInput`](crate::input::DeletePredictorBacktestExportJobInput) with field(s):
+    ///   - [`predictor_backtest_export_job_arn(Option<String>)`](crate::input::DeletePredictorBacktestExportJobInput::predictor_backtest_export_job_arn): <p>The Amazon Resource Name (ARN) of the predictor backtest export job to delete.</p>
+    /// - On success, responds with [`DeletePredictorBacktestExportJobOutput`](crate::output::DeletePredictorBacktestExportJobOutput)
+
+    /// - On failure, responds with [`SdkError<DeletePredictorBacktestExportJobError>`](crate::error::DeletePredictorBacktestExportJobError)
     pub fn delete_predictor_backtest_export_job(
         &self,
     ) -> fluent_builders::DeletePredictorBacktestExportJob<C, M, R> {
         fluent_builders::DeletePredictorBacktestExportJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteResourceTree` operation.
+    /// Constructs a fluent builder for the [`DeleteResourceTree`](crate::client::fluent_builders::DeleteResourceTree) operation.
     ///
-    /// See [`DeleteResourceTree`](crate::client::fluent_builders::DeleteResourceTree) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteResourceTreeInput`](crate::input::DeleteResourceTreeInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::DeleteResourceTreeInput::resource_arn): <p>The Amazon Resource Name (ARN) of the parent resource to delete. All child resources of the parent resource will also be deleted.</p>
+    /// - On success, responds with [`DeleteResourceTreeOutput`](crate::output::DeleteResourceTreeOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteResourceTreeError>`](crate::error::DeleteResourceTreeError)
     pub fn delete_resource_tree(&self) -> fluent_builders::DeleteResourceTree<C, M, R> {
         fluent_builders::DeleteResourceTree::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAutoPredictor` operation.
+    /// Constructs a fluent builder for the [`DescribeAutoPredictor`](crate::client::fluent_builders::DescribeAutoPredictor) operation.
     ///
-    /// See [`DescribeAutoPredictor`](crate::client::fluent_builders::DescribeAutoPredictor) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeAutoPredictorInput`](crate::input::DescribeAutoPredictorInput) with field(s):
+    ///   - [`predictor_arn(Option<String>)`](crate::input::DescribeAutoPredictorInput::predictor_arn): <p>The Amazon Resource Name (ARN) of the predictor.</p>
+    /// - On success, responds with [`DescribeAutoPredictorOutput`](crate::output::DescribeAutoPredictorOutput) with field(s):
+    ///   - [`predictor_arn(Option<String>)`](crate::output::DescribeAutoPredictorOutput::predictor_arn): <p>The Amazon Resource Name (ARN) of the predictor</p>
+    ///   - [`predictor_name(Option<String>)`](crate::output::DescribeAutoPredictorOutput::predictor_name): <p>The name of the predictor.</p>
+    ///   - [`forecast_horizon(Option<i32>)`](crate::output::DescribeAutoPredictorOutput::forecast_horizon): <p>The number of time-steps that the model predicts. The forecast horizon is also called the prediction length.</p>
+    ///   - [`forecast_types(Option<Vec<String>>)`](crate::output::DescribeAutoPredictorOutput::forecast_types): <p>The forecast types used during predictor training. Default value is ["0.1","0.5","0.9"].</p>
+    ///   - [`forecast_frequency(Option<String>)`](crate::output::DescribeAutoPredictorOutput::forecast_frequency): <p>The frequency of predictions in a forecast.</p>  <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every year and "5min" indicates every five minutes.</p>
+    ///   - [`forecast_dimensions(Option<Vec<String>>)`](crate::output::DescribeAutoPredictorOutput::forecast_dimensions): <p>An array of dimension (field) names that specify the attributes used to group your time series.</p>
+    ///   - [`dataset_import_job_arns(Option<Vec<String>>)`](crate::output::DescribeAutoPredictorOutput::dataset_import_job_arns): <p>An array of the ARNs of the dataset import jobs used to import training data for the predictor.</p>
+    ///   - [`data_config(Option<DataConfig>)`](crate::output::DescribeAutoPredictorOutput::data_config): <p>The data configuration for your dataset group and any additional datasets.</p>
+    ///   - [`encryption_config(Option<EncryptionConfig>)`](crate::output::DescribeAutoPredictorOutput::encryption_config): <p>An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the <code>CreateDataset</code> and <code>CreatePredictor</code> requests.</p>
+    ///   - [`reference_predictor_summary(Option<ReferencePredictorSummary>)`](crate::output::DescribeAutoPredictorOutput::reference_predictor_summary): <p>The ARN and state of the reference predictor. This parameter is only valid for retrained or upgraded predictors.</p>
+    ///   - [`estimated_time_remaining_in_minutes(Option<i64>)`](crate::output::DescribeAutoPredictorOutput::estimated_time_remaining_in_minutes): <p>The estimated time remaining in minutes for the predictor training job to complete.</p>
+    ///   - [`status(Option<String>)`](crate::output::DescribeAutoPredictorOutput::status): <p>The status of the predictor. States include: </p>  <ul>   <li> <p> <code>ACTIVE</code> </p> </li>   <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>   <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>   <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>  </ul>
+    ///   - [`message(Option<String>)`](crate::output::DescribeAutoPredictorOutput::message): <p>In the event of an error, a message detailing the cause of the error.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeAutoPredictorOutput::creation_time): <p>The timestamp of the CreateAutoPredictor request.</p>
+    ///   - [`last_modification_time(Option<DateTime>)`](crate::output::DescribeAutoPredictorOutput::last_modification_time): <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>  <ul>   <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>   <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>   <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>  </ul>
+    ///   - [`optimization_metric(Option<OptimizationMetric>)`](crate::output::DescribeAutoPredictorOutput::optimization_metric): <p>The accuracy metric used to optimize the predictor.</p>
+    ///   - [`explainability_info(Option<ExplainabilityInfo>)`](crate::output::DescribeAutoPredictorOutput::explainability_info): <p>Provides the status and ARN of the Predictor Explainability.</p>
+    /// - On failure, responds with [`SdkError<DescribeAutoPredictorError>`](crate::error::DescribeAutoPredictorError)
     pub fn describe_auto_predictor(&self) -> fluent_builders::DescribeAutoPredictor<C, M, R> {
         fluent_builders::DescribeAutoPredictor::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDataset` operation.
+    /// Constructs a fluent builder for the [`DescribeDataset`](crate::client::fluent_builders::DescribeDataset) operation.
     ///
-    /// See [`DescribeDataset`](crate::client::fluent_builders::DescribeDataset) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeDatasetInput`](crate::input::DescribeDatasetInput) with field(s):
+    ///   - [`dataset_arn(Option<String>)`](crate::input::DescribeDatasetInput::dataset_arn): <p>The Amazon Resource Name (ARN) of the dataset.</p>
+    /// - On success, responds with [`DescribeDatasetOutput`](crate::output::DescribeDatasetOutput) with field(s):
+    ///   - [`dataset_arn(Option<String>)`](crate::output::DescribeDatasetOutput::dataset_arn): <p>The Amazon Resource Name (ARN) of the dataset.</p>
+    ///   - [`dataset_name(Option<String>)`](crate::output::DescribeDatasetOutput::dataset_name): <p>The name of the dataset.</p>
+    ///   - [`domain(Option<Domain>)`](crate::output::DescribeDatasetOutput::domain): <p>The domain associated with the dataset.</p>
+    ///   - [`dataset_type(Option<DatasetType>)`](crate::output::DescribeDatasetOutput::dataset_type): <p>The dataset type.</p>
+    ///   - [`data_frequency(Option<String>)`](crate::output::DescribeDatasetOutput::data_frequency): <p>The frequency of data collection.</p>  <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "M" indicates every month and "30min" indicates every 30 minutes.</p>
+    ///   - [`schema(Option<Schema>)`](crate::output::DescribeDatasetOutput::schema): <p>An array of <code>SchemaAttribute</code> objects that specify the dataset fields. Each <code>SchemaAttribute</code> specifies the name and data type of a field.</p>
+    ///   - [`encryption_config(Option<EncryptionConfig>)`](crate::output::DescribeDatasetOutput::encryption_config): <p>The AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
+    ///   - [`status(Option<String>)`](crate::output::DescribeDatasetOutput::status): <p>The status of the dataset. States include:</p>  <ul>   <li> <p> <code>ACTIVE</code> </p> </li>   <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>   <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>   <li> <p> <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li>  </ul>  <p>The <code>UPDATE</code> states apply while data is imported to the dataset from a call to the <code>CreateDatasetImportJob</code> operation and reflect the status of the dataset import job. For example, when the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is <code>UPDATE_IN_PROGRESS</code>.</p> <note>   <p>The <code>Status</code> of the dataset must be <code>ACTIVE</code> before you can import training data.</p>  </note>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeDatasetOutput::creation_time): <p>When the dataset was created.</p>
+    ///   - [`last_modification_time(Option<DateTime>)`](crate::output::DescribeDatasetOutput::last_modification_time): <p>When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>. While data is being imported to the dataset, <code>LastModificationTime</code> is the current time of the <code>DescribeDataset</code> call. After a <code>CreateDatasetImportJob</code> operation has finished, <code>LastModificationTime</code> is when the import job completed or failed.</p>
+    /// - On failure, responds with [`SdkError<DescribeDatasetError>`](crate::error::DescribeDatasetError)
     pub fn describe_dataset(&self) -> fluent_builders::DescribeDataset<C, M, R> {
         fluent_builders::DescribeDataset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDatasetGroup` operation.
+    /// Constructs a fluent builder for the [`DescribeDatasetGroup`](crate::client::fluent_builders::DescribeDatasetGroup) operation.
     ///
-    /// See [`DescribeDatasetGroup`](crate::client::fluent_builders::DescribeDatasetGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeDatasetGroupInput`](crate::input::DescribeDatasetGroupInput) with field(s):
+    ///   - [`dataset_group_arn(Option<String>)`](crate::input::DescribeDatasetGroupInput::dataset_group_arn): <p>The Amazon Resource Name (ARN) of the dataset group.</p>
+    /// - On success, responds with [`DescribeDatasetGroupOutput`](crate::output::DescribeDatasetGroupOutput) with field(s):
+    ///   - [`dataset_group_name(Option<String>)`](crate::output::DescribeDatasetGroupOutput::dataset_group_name): <p>The name of the dataset group.</p>
+    ///   - [`dataset_group_arn(Option<String>)`](crate::output::DescribeDatasetGroupOutput::dataset_group_arn): <p>The ARN of the dataset group.</p>
+    ///   - [`dataset_arns(Option<Vec<String>>)`](crate::output::DescribeDatasetGroupOutput::dataset_arns): <p>An array of Amazon Resource Names (ARNs) of the datasets contained in the dataset group.</p>
+    ///   - [`domain(Option<Domain>)`](crate::output::DescribeDatasetGroupOutput::domain): <p>The domain associated with the dataset group.</p>
+    ///   - [`status(Option<String>)`](crate::output::DescribeDatasetGroupOutput::status): <p>The status of the dataset group. States include:</p>  <ul>   <li> <p> <code>ACTIVE</code> </p> </li>   <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>   <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>   <li> <p> <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li>  </ul>  <p>The <code>UPDATE</code> states apply when you call the <code>UpdateDatasetGroup</code> operation.</p> <note>   <p>The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before you can use the dataset group to create a predictor.</p>  </note>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeDatasetGroupOutput::creation_time): <p>When the dataset group was created.</p>
+    ///   - [`last_modification_time(Option<DateTime>)`](crate::output::DescribeDatasetGroupOutput::last_modification_time): <p>When the dataset group was created or last updated from a call to the <code>UpdateDatasetGroup</code> operation. While the dataset group is being updated, <code>LastModificationTime</code> is the current time of the <code>DescribeDatasetGroup</code> call.</p>
+    /// - On failure, responds with [`SdkError<DescribeDatasetGroupError>`](crate::error::DescribeDatasetGroupError)
     pub fn describe_dataset_group(&self) -> fluent_builders::DescribeDatasetGroup<C, M, R> {
         fluent_builders::DescribeDatasetGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDatasetImportJob` operation.
+    /// Constructs a fluent builder for the [`DescribeDatasetImportJob`](crate::client::fluent_builders::DescribeDatasetImportJob) operation.
     ///
-    /// See [`DescribeDatasetImportJob`](crate::client::fluent_builders::DescribeDatasetImportJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeDatasetImportJobInput`](crate::input::DescribeDatasetImportJobInput) with field(s):
+    ///   - [`dataset_import_job_arn(Option<String>)`](crate::input::DescribeDatasetImportJobInput::dataset_import_job_arn): <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
+    /// - On success, responds with [`DescribeDatasetImportJobOutput`](crate::output::DescribeDatasetImportJobOutput) with field(s):
+    ///   - [`dataset_import_job_name(Option<String>)`](crate::output::DescribeDatasetImportJobOutput::dataset_import_job_name): <p>The name of the dataset import job.</p>
+    ///   - [`dataset_import_job_arn(Option<String>)`](crate::output::DescribeDatasetImportJobOutput::dataset_import_job_arn): <p>The ARN of the dataset import job.</p>
+    ///   - [`dataset_arn(Option<String>)`](crate::output::DescribeDatasetImportJobOutput::dataset_arn): <p>The Amazon Resource Name (ARN) of the dataset that the training data was imported to.</p>
+    ///   - [`timestamp_format(Option<String>)`](crate::output::DescribeDatasetImportJobOutput::timestamp_format): <p>The format of timestamps in the dataset. The format that you specify depends on the <code>DataFrequency</code> specified when the dataset was created. The following formats are supported</p>  <ul>   <li> <p>"yyyy-MM-dd"</p> <p>For the following data frequencies: Y, M, W, and D</p> </li>   <li> <p>"yyyy-MM-dd HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p> </li>  </ul>
+    ///   - [`time_zone(Option<String>)`](crate::output::DescribeDatasetImportJobOutput::time_zone): <p>The single time zone applied to every item in the dataset</p>
+    ///   - [`use_geolocation_for_time_zone(bool)`](crate::output::DescribeDatasetImportJobOutput::use_geolocation_for_time_zone): <p>Whether <code>TimeZone</code> is automatically derived from the geolocation attribute.</p>
+    ///   - [`geolocation_format(Option<String>)`](crate::output::DescribeDatasetImportJobOutput::geolocation_format): <p>The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code> and <code>"CC_POSTALCODE"</code>.</p>
+    ///   - [`data_source(Option<DataSource>)`](crate::output::DescribeDatasetImportJobOutput::data_source): <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data.</p>  <p>If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.</p>
+    ///   - [`estimated_time_remaining_in_minutes(Option<i64>)`](crate::output::DescribeDatasetImportJobOutput::estimated_time_remaining_in_minutes): <p>The estimated time remaining in minutes for the dataset import job to complete.</p>
+    ///   - [`field_statistics(Option<HashMap<String, Statistics>>)`](crate::output::DescribeDatasetImportJobOutput::field_statistics): <p>Statistical information about each field in the input data.</p>
+    ///   - [`data_size(Option<f64>)`](crate::output::DescribeDatasetImportJobOutput::data_size): <p>The size of the dataset in gigabytes (GB) after the import job has finished.</p>
+    ///   - [`status(Option<String>)`](crate::output::DescribeDatasetImportJobOutput::status): <p>The status of the dataset import job. States include:</p>  <ul>   <li> <p> <code>ACTIVE</code> </p> </li>   <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>   <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>   <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>  </ul>
+    ///   - [`message(Option<String>)`](crate::output::DescribeDatasetImportJobOutput::message): <p>If an error occurred, an informational message about the error.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeDatasetImportJobOutput::creation_time): <p>When the dataset import job was created.</p>
+    ///   - [`last_modification_time(Option<DateTime>)`](crate::output::DescribeDatasetImportJobOutput::last_modification_time): <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>  <ul>   <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>   <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>   <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<DescribeDatasetImportJobError>`](crate::error::DescribeDatasetImportJobError)
     pub fn describe_dataset_import_job(
         &self,
     ) -> fluent_builders::DescribeDatasetImportJob<C, M, R> {
         fluent_builders::DescribeDatasetImportJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeExplainability` operation.
+    /// Constructs a fluent builder for the [`DescribeExplainability`](crate::client::fluent_builders::DescribeExplainability) operation.
     ///
-    /// See [`DescribeExplainability`](crate::client::fluent_builders::DescribeExplainability) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeExplainabilityInput`](crate::input::DescribeExplainabilityInput) with field(s):
+    ///   - [`explainability_arn(Option<String>)`](crate::input::DescribeExplainabilityInput::explainability_arn): <p>The Amazon Resource Name (ARN) of the Explaianability to describe.</p>
+    /// - On success, responds with [`DescribeExplainabilityOutput`](crate::output::DescribeExplainabilityOutput) with field(s):
+    ///   - [`explainability_arn(Option<String>)`](crate::output::DescribeExplainabilityOutput::explainability_arn): <p>The Amazon Resource Name (ARN) of the Explainability.</p>
+    ///   - [`explainability_name(Option<String>)`](crate::output::DescribeExplainabilityOutput::explainability_name): <p>The name of the Explainability.</p>
+    ///   - [`resource_arn(Option<String>)`](crate::output::DescribeExplainabilityOutput::resource_arn): <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the Explainability resource.</p>
+    ///   - [`explainability_config(Option<ExplainabilityConfig>)`](crate::output::DescribeExplainabilityOutput::explainability_config): <p>The configuration settings that define the granularity of time series and time points for the Explainability.</p>
+    ///   - [`enable_visualization(Option<bool>)`](crate::output::DescribeExplainabilityOutput::enable_visualization): <p>Whether the visualization was enabled for the Explainability resource.</p>
+    ///   - [`data_source(Option<DataSource>)`](crate::output::DescribeExplainabilityOutput::data_source): <p>The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.</p>
+    ///   - [`schema(Option<Schema>)`](crate::output::DescribeExplainabilityOutput::schema): <p>Defines the fields of a dataset.</p>
+    ///   - [`start_date_time(Option<String>)`](crate::output::DescribeExplainabilityOutput::start_date_time): <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, the first time point in the Explainability.</p>
+    ///   - [`end_date_time(Option<String>)`](crate::output::DescribeExplainabilityOutput::end_date_time): <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, the last time point in the Explainability.</p>
+    ///   - [`estimated_time_remaining_in_minutes(Option<i64>)`](crate::output::DescribeExplainabilityOutput::estimated_time_remaining_in_minutes): <p>The estimated time remaining in minutes for the <code>CreateExplainability</code> job to complete.</p>
+    ///   - [`message(Option<String>)`](crate::output::DescribeExplainabilityOutput::message): <p>If an error occurred, a message about the error.</p>
+    ///   - [`status(Option<String>)`](crate::output::DescribeExplainabilityOutput::status): <p>The status of the Explainability resource. States include: </p>  <ul>   <li> <p> <code>ACTIVE</code> </p> </li>   <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>   <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>   <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>  </ul>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeExplainabilityOutput::creation_time): <p>When the Explainability resource was created.</p>
+    ///   - [`last_modification_time(Option<DateTime>)`](crate::output::DescribeExplainabilityOutput::last_modification_time): <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>  <ul>   <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>   <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>   <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<DescribeExplainabilityError>`](crate::error::DescribeExplainabilityError)
     pub fn describe_explainability(&self) -> fluent_builders::DescribeExplainability<C, M, R> {
         fluent_builders::DescribeExplainability::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeExplainabilityExport` operation.
+    /// Constructs a fluent builder for the [`DescribeExplainabilityExport`](crate::client::fluent_builders::DescribeExplainabilityExport) operation.
     ///
-    /// See [`DescribeExplainabilityExport`](crate::client::fluent_builders::DescribeExplainabilityExport) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeExplainabilityExportInput`](crate::input::DescribeExplainabilityExportInput) with field(s):
+    ///   - [`explainability_export_arn(Option<String>)`](crate::input::DescribeExplainabilityExportInput::explainability_export_arn): <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
+    /// - On success, responds with [`DescribeExplainabilityExportOutput`](crate::output::DescribeExplainabilityExportOutput) with field(s):
+    ///   - [`explainability_export_arn(Option<String>)`](crate::output::DescribeExplainabilityExportOutput::explainability_export_arn): <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
+    ///   - [`explainability_export_name(Option<String>)`](crate::output::DescribeExplainabilityExportOutput::explainability_export_name): <p>The name of the Explainability export.</p>
+    ///   - [`explainability_arn(Option<String>)`](crate::output::DescribeExplainabilityExportOutput::explainability_arn): <p>The Amazon Resource Name (ARN) of the Explainability.</p>
+    ///   - [`destination(Option<DataDestination>)`](crate::output::DescribeExplainabilityExportOutput::destination): <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+    ///   - [`message(Option<String>)`](crate::output::DescribeExplainabilityExportOutput::message): <p>Information about any errors that occurred during the export.</p>
+    ///   - [`status(Option<String>)`](crate::output::DescribeExplainabilityExportOutput::status): <p>The status of the Explainability export. States include: </p>  <ul>   <li> <p> <code>ACTIVE</code> </p> </li>   <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>   <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>   <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>  </ul>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeExplainabilityExportOutput::creation_time): <p>When the Explainability export was created.</p>
+    ///   - [`last_modification_time(Option<DateTime>)`](crate::output::DescribeExplainabilityExportOutput::last_modification_time): <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>  <ul>   <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>   <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>   <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<DescribeExplainabilityExportError>`](crate::error::DescribeExplainabilityExportError)
     pub fn describe_explainability_export(
         &self,
     ) -> fluent_builders::DescribeExplainabilityExport<C, M, R> {
         fluent_builders::DescribeExplainabilityExport::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeForecast` operation.
+    /// Constructs a fluent builder for the [`DescribeForecast`](crate::client::fluent_builders::DescribeForecast) operation.
     ///
-    /// See [`DescribeForecast`](crate::client::fluent_builders::DescribeForecast) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeForecastInput`](crate::input::DescribeForecastInput) with field(s):
+    ///   - [`forecast_arn(Option<String>)`](crate::input::DescribeForecastInput::forecast_arn): <p>The Amazon Resource Name (ARN) of the forecast.</p>
+    /// - On success, responds with [`DescribeForecastOutput`](crate::output::DescribeForecastOutput) with field(s):
+    ///   - [`forecast_arn(Option<String>)`](crate::output::DescribeForecastOutput::forecast_arn): <p>The forecast ARN as specified in the request.</p>
+    ///   - [`forecast_name(Option<String>)`](crate::output::DescribeForecastOutput::forecast_name): <p>The name of the forecast.</p>
+    ///   - [`forecast_types(Option<Vec<String>>)`](crate::output::DescribeForecastOutput::forecast_types): <p>The quantiles at which probabilistic forecasts were generated.</p>
+    ///   - [`predictor_arn(Option<String>)`](crate::output::DescribeForecastOutput::predictor_arn): <p>The ARN of the predictor used to generate the forecast.</p>
+    ///   - [`dataset_group_arn(Option<String>)`](crate::output::DescribeForecastOutput::dataset_group_arn): <p>The ARN of the dataset group that provided the data used to train the predictor.</p>
+    ///   - [`estimated_time_remaining_in_minutes(Option<i64>)`](crate::output::DescribeForecastOutput::estimated_time_remaining_in_minutes): <p>The estimated time remaining in minutes for the forecast job to complete.</p>
+    ///   - [`status(Option<String>)`](crate::output::DescribeForecastOutput::status): <p>The status of the forecast. States include:</p>  <ul>   <li> <p> <code>ACTIVE</code> </p> </li>   <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>   <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>   <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>  </ul> <note>   <p>The <code>Status</code> of the forecast must be <code>ACTIVE</code> before you can query or export the forecast.</p>  </note>
+    ///   - [`message(Option<String>)`](crate::output::DescribeForecastOutput::message): <p>If an error occurred, an informational message about the error.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeForecastOutput::creation_time): <p>When the forecast creation task was created.</p>
+    ///   - [`last_modification_time(Option<DateTime>)`](crate::output::DescribeForecastOutput::last_modification_time): <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>  <ul>   <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>   <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>   <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<DescribeForecastError>`](crate::error::DescribeForecastError)
     pub fn describe_forecast(&self) -> fluent_builders::DescribeForecast<C, M, R> {
         fluent_builders::DescribeForecast::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeForecastExportJob` operation.
+    /// Constructs a fluent builder for the [`DescribeForecastExportJob`](crate::client::fluent_builders::DescribeForecastExportJob) operation.
     ///
-    /// See [`DescribeForecastExportJob`](crate::client::fluent_builders::DescribeForecastExportJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeForecastExportJobInput`](crate::input::DescribeForecastExportJobInput) with field(s):
+    ///   - [`forecast_export_job_arn(Option<String>)`](crate::input::DescribeForecastExportJobInput::forecast_export_job_arn): <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
+    /// - On success, responds with [`DescribeForecastExportJobOutput`](crate::output::DescribeForecastExportJobOutput) with field(s):
+    ///   - [`forecast_export_job_arn(Option<String>)`](crate::output::DescribeForecastExportJobOutput::forecast_export_job_arn): <p>The ARN of the forecast export job.</p>
+    ///   - [`forecast_export_job_name(Option<String>)`](crate::output::DescribeForecastExportJobOutput::forecast_export_job_name): <p>The name of the forecast export job.</p>
+    ///   - [`forecast_arn(Option<String>)`](crate::output::DescribeForecastExportJobOutput::forecast_arn): <p>The Amazon Resource Name (ARN) of the exported forecast.</p>
+    ///   - [`destination(Option<DataDestination>)`](crate::output::DescribeForecastExportJobOutput::destination): <p>The path to the Amazon Simple Storage Service (Amazon S3) bucket where the forecast is exported.</p>
+    ///   - [`message(Option<String>)`](crate::output::DescribeForecastExportJobOutput::message): <p>If an error occurred, an informational message about the error.</p>
+    ///   - [`status(Option<String>)`](crate::output::DescribeForecastExportJobOutput::status): <p>The status of the forecast export job. States include:</p>  <ul>   <li> <p> <code>ACTIVE</code> </p> </li>   <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>   <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>   <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>  </ul> <note>   <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the forecast in your S3 bucket.</p>  </note>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeForecastExportJobOutput::creation_time): <p>When the forecast export job was created.</p>
+    ///   - [`last_modification_time(Option<DateTime>)`](crate::output::DescribeForecastExportJobOutput::last_modification_time): <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>  <ul>   <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>   <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>   <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<DescribeForecastExportJobError>`](crate::error::DescribeForecastExportJobError)
     pub fn describe_forecast_export_job(
         &self,
     ) -> fluent_builders::DescribeForecastExportJob<C, M, R> {
         fluent_builders::DescribeForecastExportJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribePredictor` operation.
+    /// Constructs a fluent builder for the [`DescribePredictor`](crate::client::fluent_builders::DescribePredictor) operation.
     ///
-    /// See [`DescribePredictor`](crate::client::fluent_builders::DescribePredictor) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribePredictorInput`](crate::input::DescribePredictorInput) with field(s):
+    ///   - [`predictor_arn(Option<String>)`](crate::input::DescribePredictorInput::predictor_arn): <p>The Amazon Resource Name (ARN) of the predictor that you want information about.</p>
+    /// - On success, responds with [`DescribePredictorOutput`](crate::output::DescribePredictorOutput) with field(s):
+    ///   - [`predictor_arn(Option<String>)`](crate::output::DescribePredictorOutput::predictor_arn): <p>The ARN of the predictor.</p>
+    ///   - [`predictor_name(Option<String>)`](crate::output::DescribePredictorOutput::predictor_name): <p>The name of the predictor.</p>
+    ///   - [`algorithm_arn(Option<String>)`](crate::output::DescribePredictorOutput::algorithm_arn): <p>The Amazon Resource Name (ARN) of the algorithm used for model training.</p>
+    ///   - [`auto_ml_algorithm_arns(Option<Vec<String>>)`](crate::output::DescribePredictorOutput::auto_ml_algorithm_arns): <p>When <code>PerformAutoML</code> is specified, the ARN of the chosen algorithm.</p>
+    ///   - [`forecast_horizon(Option<i32>)`](crate::output::DescribePredictorOutput::forecast_horizon): <p>The number of time-steps of the forecast. The forecast horizon is also called the prediction length.</p>
+    ///   - [`forecast_types(Option<Vec<String>>)`](crate::output::DescribePredictorOutput::forecast_types): <p>The forecast types used during predictor training. Default value is <code>["0.1","0.5","0.9"]</code> </p>
+    ///   - [`perform_auto_ml(Option<bool>)`](crate::output::DescribePredictorOutput::perform_auto_ml): <p>Whether the predictor is set to perform AutoML.</p>
+    ///   - [`auto_ml_override_strategy(Option<AutoMlOverrideStrategy>)`](crate::output::DescribePredictorOutput::auto_ml_override_strategy): <note>   <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support or your account manager to learn more about access privileges. </p>  </note>  <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes predictor accuracy.</p>  <p>This parameter is only valid for predictors trained using AutoML.</p>
+    ///   - [`perform_hpo(Option<bool>)`](crate::output::DescribePredictorOutput::perform_hpo): <p>Whether the predictor is set to perform hyperparameter optimization (HPO).</p>
+    ///   - [`training_parameters(Option<HashMap<String, String>>)`](crate::output::DescribePredictorOutput::training_parameters): <p>The default training parameters or overrides selected during model training. When running AutoML or choosing HPO with CNN-QR or DeepAR+, the optimized values for the chosen hyperparameters are returned. For more information, see <code>aws-forecast-choosing-recipes</code>.</p>
+    ///   - [`evaluation_parameters(Option<EvaluationParameters>)`](crate::output::DescribePredictorOutput::evaluation_parameters): <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast evaluates a predictor by splitting a dataset into training data and testing data. The evaluation parameters define how to perform the split and the number of iterations.</p>
+    ///   - [`hpo_config(Option<HyperParameterTuningJobConfig>)`](crate::output::DescribePredictorOutput::hpo_config): <p>The hyperparameter override values for the algorithm.</p>
+    ///   - [`input_data_config(Option<InputDataConfig>)`](crate::output::DescribePredictorOutput::input_data_config): <p>Describes the dataset group that contains the data to use to train the predictor.</p>
+    ///   - [`featurization_config(Option<FeaturizationConfig>)`](crate::output::DescribePredictorOutput::featurization_config): <p>The featurization configuration.</p>
+    ///   - [`encryption_config(Option<EncryptionConfig>)`](crate::output::DescribePredictorOutput::encryption_config): <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.</p>
+    ///   - [`predictor_execution_details(Option<PredictorExecutionDetails>)`](crate::output::DescribePredictorOutput::predictor_execution_details): <p>Details on the the status and results of the backtests performed to evaluate the accuracy of the predictor. You specify the number of backtests to perform when you call the operation.</p>
+    ///   - [`estimated_time_remaining_in_minutes(Option<i64>)`](crate::output::DescribePredictorOutput::estimated_time_remaining_in_minutes): <p>The estimated time remaining in minutes for the predictor training job to complete.</p>
+    ///   - [`is_auto_predictor(Option<bool>)`](crate::output::DescribePredictorOutput::is_auto_predictor): <p>Whether the predictor was created with <code>CreateAutoPredictor</code>.</p>
+    ///   - [`dataset_import_job_arns(Option<Vec<String>>)`](crate::output::DescribePredictorOutput::dataset_import_job_arns): <p>An array of the ARNs of the dataset import jobs used to import training data for the predictor.</p>
+    ///   - [`status(Option<String>)`](crate::output::DescribePredictorOutput::status): <p>The status of the predictor. States include:</p>  <ul>   <li> <p> <code>ACTIVE</code> </p> </li>   <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>   <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>   <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>  </ul> <note>   <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code> before you can use the predictor to create a forecast.</p>  </note>
+    ///   - [`message(Option<String>)`](crate::output::DescribePredictorOutput::message): <p>If an error occurred, an informational message about the error.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribePredictorOutput::creation_time): <p>When the model training task was created.</p>
+    ///   - [`last_modification_time(Option<DateTime>)`](crate::output::DescribePredictorOutput::last_modification_time): <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>  <ul>   <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>   <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>   <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>  </ul>
+    ///   - [`optimization_metric(Option<OptimizationMetric>)`](crate::output::DescribePredictorOutput::optimization_metric): <p>The accuracy metric used to optimize the predictor.</p>
+    /// - On failure, responds with [`SdkError<DescribePredictorError>`](crate::error::DescribePredictorError)
     pub fn describe_predictor(&self) -> fluent_builders::DescribePredictor<C, M, R> {
         fluent_builders::DescribePredictor::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribePredictorBacktestExportJob` operation.
+    /// Constructs a fluent builder for the [`DescribePredictorBacktestExportJob`](crate::client::fluent_builders::DescribePredictorBacktestExportJob) operation.
     ///
-    /// See [`DescribePredictorBacktestExportJob`](crate::client::fluent_builders::DescribePredictorBacktestExportJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribePredictorBacktestExportJobInput`](crate::input::DescribePredictorBacktestExportJobInput) with field(s):
+    ///   - [`predictor_backtest_export_job_arn(Option<String>)`](crate::input::DescribePredictorBacktestExportJobInput::predictor_backtest_export_job_arn): <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
+    /// - On success, responds with [`DescribePredictorBacktestExportJobOutput`](crate::output::DescribePredictorBacktestExportJobOutput) with field(s):
+    ///   - [`predictor_backtest_export_job_arn(Option<String>)`](crate::output::DescribePredictorBacktestExportJobOutput::predictor_backtest_export_job_arn): <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
+    ///   - [`predictor_backtest_export_job_name(Option<String>)`](crate::output::DescribePredictorBacktestExportJobOutput::predictor_backtest_export_job_name): <p>The name of the predictor backtest export job.</p>
+    ///   - [`predictor_arn(Option<String>)`](crate::output::DescribePredictorBacktestExportJobOutput::predictor_arn): <p>The Amazon Resource Name (ARN) of the predictor.</p>
+    ///   - [`destination(Option<DataDestination>)`](crate::output::DescribePredictorBacktestExportJobOutput::destination): <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
+    ///   - [`message(Option<String>)`](crate::output::DescribePredictorBacktestExportJobOutput::message): <p>Information about any errors that may have occurred during the backtest export.</p>
+    ///   - [`status(Option<String>)`](crate::output::DescribePredictorBacktestExportJobOutput::status): <p>The status of the predictor backtest export job. States include: </p>  <ul>   <li> <p> <code>ACTIVE</code> </p> </li>   <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>   <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>   <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>  </ul>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribePredictorBacktestExportJobOutput::creation_time): <p>When the predictor backtest export job was created.</p>
+    ///   - [`last_modification_time(Option<DateTime>)`](crate::output::DescribePredictorBacktestExportJobOutput::last_modification_time): <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>  <ul>   <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>   <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>   <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>   <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<DescribePredictorBacktestExportJobError>`](crate::error::DescribePredictorBacktestExportJobError)
     pub fn describe_predictor_backtest_export_job(
         &self,
     ) -> fluent_builders::DescribePredictorBacktestExportJob<C, M, R> {
         fluent_builders::DescribePredictorBacktestExportJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetAccuracyMetrics` operation.
+    /// Constructs a fluent builder for the [`GetAccuracyMetrics`](crate::client::fluent_builders::GetAccuracyMetrics) operation.
     ///
-    /// See [`GetAccuracyMetrics`](crate::client::fluent_builders::GetAccuracyMetrics) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetAccuracyMetricsInput`](crate::input::GetAccuracyMetricsInput) with field(s):
+    ///   - [`predictor_arn(Option<String>)`](crate::input::GetAccuracyMetricsInput::predictor_arn): <p>The Amazon Resource Name (ARN) of the predictor to get metrics for.</p>
+    /// - On success, responds with [`GetAccuracyMetricsOutput`](crate::output::GetAccuracyMetricsOutput) with field(s):
+    ///   - [`predictor_evaluation_results(Option<Vec<EvaluationResult>>)`](crate::output::GetAccuracyMetricsOutput::predictor_evaluation_results): <p>An array of results from evaluating the predictor.</p>
+    ///   - [`is_auto_predictor(Option<bool>)`](crate::output::GetAccuracyMetricsOutput::is_auto_predictor): <p>Whether the predictor was created with <code>CreateAutoPredictor</code>.</p>
+    ///   - [`auto_ml_override_strategy(Option<AutoMlOverrideStrategy>)`](crate::output::GetAccuracyMetricsOutput::auto_ml_override_strategy): <note>   <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support or your account manager to learn more about access privileges. </p>  </note>  <p>The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes predictor accuracy.</p>  <p>This parameter is only valid for predictors trained using AutoML.</p>
+    ///   - [`optimization_metric(Option<OptimizationMetric>)`](crate::output::GetAccuracyMetricsOutput::optimization_metric): <p>The accuracy metric used to optimize the predictor.</p>
+    /// - On failure, responds with [`SdkError<GetAccuracyMetricsError>`](crate::error::GetAccuracyMetricsError)
     pub fn get_accuracy_metrics(&self) -> fluent_builders::GetAccuracyMetrics<C, M, R> {
         fluent_builders::GetAccuracyMetrics::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDatasetGroups` operation.
-    ///
-    /// See [`ListDatasetGroups`](crate::client::fluent_builders::ListDatasetGroups) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListDatasetGroups`](crate::client::fluent_builders::ListDatasetGroups) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDatasetGroups::into_paginator).
+    ///
+    /// - Takes [`ListDatasetGroupsInput`](crate::input::ListDatasetGroupsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListDatasetGroupsInput::next_token): <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListDatasetGroupsInput::max_results): <p>The number of items to return in the response.</p>
+    /// - On success, responds with [`ListDatasetGroupsOutput`](crate::output::ListDatasetGroupsOutput) with field(s):
+    ///   - [`dataset_groups(Option<Vec<DatasetGroupSummary>>)`](crate::output::ListDatasetGroupsOutput::dataset_groups): <p>An array of objects that summarize each dataset group's properties.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDatasetGroupsOutput::next_token): <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
+    /// - On failure, responds with [`SdkError<ListDatasetGroupsError>`](crate::error::ListDatasetGroupsError)
     pub fn list_dataset_groups(&self) -> fluent_builders::ListDatasetGroups<C, M, R> {
         fluent_builders::ListDatasetGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDatasetImportJobs` operation.
-    ///
-    /// See [`ListDatasetImportJobs`](crate::client::fluent_builders::ListDatasetImportJobs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListDatasetImportJobs`](crate::client::fluent_builders::ListDatasetImportJobs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDatasetImportJobs::into_paginator).
+    ///
+    /// - Takes [`ListDatasetImportJobsInput`](crate::input::ListDatasetImportJobsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListDatasetImportJobsInput::next_token): <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListDatasetImportJobsInput::max_results): <p>The number of items to return in the response.</p>
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::ListDatasetImportJobsInput::filters): <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the datasets that match the statement from the list, respectively. The match statement consists of a key and a value.</p>  <p> <b>Filter properties</b> </p>  <ul>   <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the datasets that match the statement, specify <code>IS</code>. To exclude matching datasets, specify <code>IS_NOT</code>.</p> </li>   <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetArn</code> and <code>Status</code>.</p> </li>   <li> <p> <code>Value</code> - The value to match.</p> </li>  </ul>  <p>For example, to list all dataset import jobs whose status is ACTIVE, you specify the following filter:</p>  <p> <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
+    /// - On success, responds with [`ListDatasetImportJobsOutput`](crate::output::ListDatasetImportJobsOutput) with field(s):
+    ///   - [`dataset_import_jobs(Option<Vec<DatasetImportJobSummary>>)`](crate::output::ListDatasetImportJobsOutput::dataset_import_jobs): <p>An array of objects that summarize each dataset import job's properties.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDatasetImportJobsOutput::next_token): <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
+    /// - On failure, responds with [`SdkError<ListDatasetImportJobsError>`](crate::error::ListDatasetImportJobsError)
     pub fn list_dataset_import_jobs(&self) -> fluent_builders::ListDatasetImportJobs<C, M, R> {
         fluent_builders::ListDatasetImportJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDatasets` operation.
-    ///
-    /// See [`ListDatasets`](crate::client::fluent_builders::ListDatasets) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListDatasets`](crate::client::fluent_builders::ListDatasets) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDatasets::into_paginator).
+    ///
+    /// - Takes [`ListDatasetsInput`](crate::input::ListDatasetsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListDatasetsInput::next_token): <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListDatasetsInput::max_results): <p>The number of items to return in the response.</p>
+    /// - On success, responds with [`ListDatasetsOutput`](crate::output::ListDatasetsOutput) with field(s):
+    ///   - [`datasets(Option<Vec<DatasetSummary>>)`](crate::output::ListDatasetsOutput::datasets): <p>An array of objects that summarize each dataset's properties.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDatasetsOutput::next_token): <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
+    /// - On failure, responds with [`SdkError<ListDatasetsError>`](crate::error::ListDatasetsError)
     pub fn list_datasets(&self) -> fluent_builders::ListDatasets<C, M, R> {
         fluent_builders::ListDatasets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListExplainabilities` operation.
+    /// Constructs a fluent builder for the [`ListExplainabilities`](crate::client::fluent_builders::ListExplainabilities) operation.
     ///
-    /// See [`ListExplainabilities`](crate::client::fluent_builders::ListExplainabilities) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListExplainabilitiesInput`](crate::input::ListExplainabilitiesInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListExplainabilitiesInput::next_token): <p>If the result of the previous request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListExplainabilitiesInput::max_results): <p>The number of items returned in the response.</p>
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::ListExplainabilitiesInput::filters): <p>An array of filters. For each filter, provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the resources that match the statement from the list. The match statement consists of a key and a value.</p>  <p> <b>Filter properties</b> </p>  <ul>   <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>.</p> </li>   <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>ResourceArn</code> and <code>Status</code>.</p> </li>   <li> <p> <code>Value</code> - The value to match.</p> </li>  </ul>
+    /// - On success, responds with [`ListExplainabilitiesOutput`](crate::output::ListExplainabilitiesOutput) with field(s):
+    ///   - [`explainabilities(Option<Vec<ExplainabilitySummary>>)`](crate::output::ListExplainabilitiesOutput::explainabilities): <p>An array of objects that summarize the properties of each Explainability resource.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListExplainabilitiesOutput::next_token): <p>Returns this token if the response is truncated. To retrieve the next set of results, use the token in the next request.</p>
+    /// - On failure, responds with [`SdkError<ListExplainabilitiesError>`](crate::error::ListExplainabilitiesError)
     pub fn list_explainabilities(&self) -> fluent_builders::ListExplainabilities<C, M, R> {
         fluent_builders::ListExplainabilities::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListExplainabilityExports` operation.
+    /// Constructs a fluent builder for the [`ListExplainabilityExports`](crate::client::fluent_builders::ListExplainabilityExports) operation.
     ///
-    /// See [`ListExplainabilityExports`](crate::client::fluent_builders::ListExplainabilityExports) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListExplainabilityExportsInput`](crate::input::ListExplainabilityExportsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListExplainabilityExportsInput::next_token): <p>If the result of the previous request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListExplainabilityExportsInput::max_results): <p>The number of items to return in the response.</p>
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::ListExplainabilityExportsInput::filters): <p>An array of filters. For each filter, provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude resources that match the statement from the list. The match statement consists of a key and a value.</p>  <p> <b>Filter properties</b> </p>  <ul>   <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>.</p> </li>   <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>ResourceArn</code> and <code>Status</code>.</p> </li>   <li> <p> <code>Value</code> - The value to match.</p> </li>  </ul>
+    /// - On success, responds with [`ListExplainabilityExportsOutput`](crate::output::ListExplainabilityExportsOutput) with field(s):
+    ///   - [`explainability_exports(Option<Vec<ExplainabilityExportSummary>>)`](crate::output::ListExplainabilityExportsOutput::explainability_exports): <p>An array of objects that summarize the properties of each Explainability export.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListExplainabilityExportsOutput::next_token): <p>Returns this token if the response is truncated. To retrieve the next set of results, use the token in the next request.</p>
+    /// - On failure, responds with [`SdkError<ListExplainabilityExportsError>`](crate::error::ListExplainabilityExportsError)
     pub fn list_explainability_exports(
         &self,
     ) -> fluent_builders::ListExplainabilityExports<C, M, R> {
         fluent_builders::ListExplainabilityExports::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListForecastExportJobs` operation.
-    ///
-    /// See [`ListForecastExportJobs`](crate::client::fluent_builders::ListForecastExportJobs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListForecastExportJobs`](crate::client::fluent_builders::ListForecastExportJobs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListForecastExportJobs::into_paginator).
+    ///
+    /// - Takes [`ListForecastExportJobsInput`](crate::input::ListForecastExportJobsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListForecastExportJobsInput::next_token): <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListForecastExportJobsInput::max_results): <p>The number of items to return in the response.</p>
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::ListForecastExportJobsInput::filters): <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the forecast export jobs that match the statement from the list, respectively. The match statement consists of a key and a value.</p>  <p> <b>Filter properties</b> </p>  <ul>   <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecast export jobs that match the statement, specify <code>IS</code>. To exclude matching forecast export jobs, specify <code>IS_NOT</code>.</p> </li>   <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>ForecastArn</code> and <code>Status</code>.</p> </li>   <li> <p> <code>Value</code> - The value to match.</p> </li>  </ul>  <p>For example, to list all jobs that export a forecast named <i>electricityforecast</i>, specify the following filter:</p>  <p> <code>"Filters": [ { "Condition": "IS", "Key": "ForecastArn", "Value": "arn:aws:forecast:us-west-2:   <acct-id>    :forecast/electricityforecast" } ]   </acct-id></code> </p>
+    /// - On success, responds with [`ListForecastExportJobsOutput`](crate::output::ListForecastExportJobsOutput) with field(s):
+    ///   - [`forecast_export_jobs(Option<Vec<ForecastExportJobSummary>>)`](crate::output::ListForecastExportJobsOutput::forecast_export_jobs): <p>An array of objects that summarize each export job's properties.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListForecastExportJobsOutput::next_token): <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
+    /// - On failure, responds with [`SdkError<ListForecastExportJobsError>`](crate::error::ListForecastExportJobsError)
     pub fn list_forecast_export_jobs(&self) -> fluent_builders::ListForecastExportJobs<C, M, R> {
         fluent_builders::ListForecastExportJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListForecasts` operation.
-    ///
-    /// See [`ListForecasts`](crate::client::fluent_builders::ListForecasts) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListForecasts`](crate::client::fluent_builders::ListForecasts) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListForecasts::into_paginator).
+    ///
+    /// - Takes [`ListForecastsInput`](crate::input::ListForecastsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListForecastsInput::next_token): <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListForecastsInput::max_results): <p>The number of items to return in the response.</p>
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::ListForecastsInput::filters): <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the forecasts that match the statement from the list, respectively. The match statement consists of a key and a value.</p>  <p> <b>Filter properties</b> </p>  <ul>   <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecasts that match the statement, specify <code>IS</code>. To exclude matching forecasts, specify <code>IS_NOT</code>.</p> </li>   <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetGroupArn</code>, <code>PredictorArn</code>, and <code>Status</code>.</p> </li>   <li> <p> <code>Value</code> - The value to match.</p> </li>  </ul>  <p>For example, to list all forecasts whose status is not ACTIVE, you would specify:</p>  <p> <code>"Filters": [ { "Condition": "IS_NOT", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
+    /// - On success, responds with [`ListForecastsOutput`](crate::output::ListForecastsOutput) with field(s):
+    ///   - [`forecasts(Option<Vec<ForecastSummary>>)`](crate::output::ListForecastsOutput::forecasts): <p>An array of objects that summarize each forecast's properties.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListForecastsOutput::next_token): <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
+    /// - On failure, responds with [`SdkError<ListForecastsError>`](crate::error::ListForecastsError)
     pub fn list_forecasts(&self) -> fluent_builders::ListForecasts<C, M, R> {
         fluent_builders::ListForecasts::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPredictorBacktestExportJobs` operation.
-    ///
-    /// See [`ListPredictorBacktestExportJobs`](crate::client::fluent_builders::ListPredictorBacktestExportJobs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListPredictorBacktestExportJobs`](crate::client::fluent_builders::ListPredictorBacktestExportJobs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPredictorBacktestExportJobs::into_paginator).
+    ///
+    /// - Takes [`ListPredictorBacktestExportJobsInput`](crate::input::ListPredictorBacktestExportJobsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListPredictorBacktestExportJobsInput::next_token): <p>If the result of the previous request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListPredictorBacktestExportJobsInput::max_results): <p>The number of items to return in the response.</p>
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::ListPredictorBacktestExportJobsInput::filters): <p>An array of filters. For each filter, provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the predictor backtest export jobs that match the statement from the list. The match statement consists of a key and a value.</p>  <p> <b>Filter properties</b> </p>  <ul>   <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the predictor backtest export jobs that match the statement, specify <code>IS</code>. To exclude matching predictor backtest export jobs, specify <code>IS_NOT</code>.</p> </li>   <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>PredictorArn</code> and <code>Status</code>.</p> </li>   <li> <p> <code>Value</code> - The value to match.</p> </li>  </ul>
+    /// - On success, responds with [`ListPredictorBacktestExportJobsOutput`](crate::output::ListPredictorBacktestExportJobsOutput) with field(s):
+    ///   - [`predictor_backtest_export_jobs(Option<Vec<PredictorBacktestExportJobSummary>>)`](crate::output::ListPredictorBacktestExportJobsOutput::predictor_backtest_export_jobs): <p>An array of objects that summarize the properties of each predictor backtest export job.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPredictorBacktestExportJobsOutput::next_token): <p>Returns this token if the response is truncated. To retrieve the next set of results, use the token in the next request.</p>
+    /// - On failure, responds with [`SdkError<ListPredictorBacktestExportJobsError>`](crate::error::ListPredictorBacktestExportJobsError)
     pub fn list_predictor_backtest_export_jobs(
         &self,
     ) -> fluent_builders::ListPredictorBacktestExportJobs<C, M, R> {
         fluent_builders::ListPredictorBacktestExportJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPredictors` operation.
-    ///
-    /// See [`ListPredictors`](crate::client::fluent_builders::ListPredictors) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListPredictors`](crate::client::fluent_builders::ListPredictors) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPredictors::into_paginator).
+    ///
+    /// - Takes [`ListPredictorsInput`](crate::input::ListPredictorsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListPredictorsInput::next_token): <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListPredictorsInput::max_results): <p>The number of items to return in the response.</p>
+    ///   - [`filters(Option<Vec<Filter>>)`](crate::input::ListPredictorsInput::filters): <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the predictors that match the statement from the list, respectively. The match statement consists of a key and a value.</p>  <p> <b>Filter properties</b> </p>  <ul>   <li> <p> <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the predictors that match the statement, specify <code>IS</code>. To exclude matching predictors, specify <code>IS_NOT</code>.</p> </li>   <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetGroupArn</code> and <code>Status</code>.</p> </li>   <li> <p> <code>Value</code> - The value to match.</p> </li>  </ul>  <p>For example, to list all predictors whose status is ACTIVE, you would specify:</p>  <p> <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code> </p>
+    /// - On success, responds with [`ListPredictorsOutput`](crate::output::ListPredictorsOutput) with field(s):
+    ///   - [`predictors(Option<Vec<PredictorSummary>>)`](crate::output::ListPredictorsOutput::predictors): <p>An array of objects that summarize each predictor's properties.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPredictorsOutput::next_token): <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
+    /// - On failure, responds with [`SdkError<ListPredictorsError>`](crate::error::ListPredictorsError)
     pub fn list_predictors(&self) -> fluent_builders::ListPredictors<C, M, R> {
         fluent_builders::ListPredictors::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. </p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags for the resource.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StopResource` operation.
+    /// Constructs a fluent builder for the [`StopResource`](crate::client::fluent_builders::StopResource) operation.
     ///
-    /// See [`StopResource`](crate::client::fluent_builders::StopResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StopResourceInput`](crate::input::StopResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::StopResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) that identifies the resource to stop. The supported ARNs are <code>DatasetImportJobArn</code>, <code>PredictorArn</code>, <code>PredictorBacktestExportJobArn</code>, <code>ForecastArn</code>, <code>ForecastExportJobArn</code>, <code>ExplainabilityArn</code>, and <code>ExplainabilityExportArn</code>. </p>
+    /// - On success, responds with [`StopResourceOutput`](crate::output::StopResourceOutput)
+
+    /// - On failure, responds with [`SdkError<StopResourceError>`](crate::error::StopResourceError)
     pub fn stop_resource(&self) -> fluent_builders::StopResource<C, M, R> {
         fluent_builders::StopResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>The tags to add to the resource. A tag is an array of key-value pairs.</p>  <p>The following basic restrictions apply to tags:</p>  <ul>   <li> <p>Maximum number of tags per resource - 50.</p> </li>   <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>   <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>   <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>   <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>   <li> <p>Tag keys and values are case sensitive.</p> </li>   <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>  </ul>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. </p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The keys of the tags to be removed.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDatasetGroup` operation.
+    /// Constructs a fluent builder for the [`UpdateDatasetGroup`](crate::client::fluent_builders::UpdateDatasetGroup) operation.
     ///
-    /// See [`UpdateDatasetGroup`](crate::client::fluent_builders::UpdateDatasetGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateDatasetGroupInput`](crate::input::UpdateDatasetGroupInput) with field(s):
+    ///   - [`dataset_group_arn(Option<String>)`](crate::input::UpdateDatasetGroupInput::dataset_group_arn): <p>The ARN of the dataset group.</p>
+    ///   - [`dataset_arns(Option<Vec<String>>)`](crate::input::UpdateDatasetGroupInput::dataset_arns): <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the dataset group.</p>
+    /// - On success, responds with [`UpdateDatasetGroupOutput`](crate::output::UpdateDatasetGroupOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateDatasetGroupError>`](crate::error::UpdateDatasetGroupError)
     pub fn update_dataset_group(&self) -> fluent_builders::UpdateDatasetGroup<C, M, R> {
         fluent_builders::UpdateDatasetGroup::new(self.handle.clone())
     }

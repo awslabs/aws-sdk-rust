@@ -83,189 +83,304 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateCertificateAuthority` operation.
+    /// Constructs a fluent builder for the [`CreateCertificateAuthority`](crate::client::fluent_builders::CreateCertificateAuthority) operation.
     ///
-    /// See [`CreateCertificateAuthority`](crate::client::fluent_builders::CreateCertificateAuthority) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateCertificateAuthorityInput`](crate::input::CreateCertificateAuthorityInput) with field(s):
+    ///   - [`certificate_authority_configuration(Option<CertificateAuthorityConfiguration>)`](crate::input::CreateCertificateAuthorityInput::certificate_authority_configuration): <p>Name and bit size of the private key algorithm, the name of the signing algorithm, and X.500 certificate subject information.</p>
+    ///   - [`revocation_configuration(Option<RevocationConfiguration>)`](crate::input::CreateCertificateAuthorityInput::revocation_configuration): <p>Contains information to enable Online Certificate Status Protocol (OCSP) support, to enable a certificate revocation list (CRL), to enable both, or to enable neither. The default is for both certificate validation mechanisms to be disabled. For more information, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a> and <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a> types.</p>
+    ///   - [`certificate_authority_type(Option<CertificateAuthorityType>)`](crate::input::CreateCertificateAuthorityInput::certificate_authority_type): <p>The type of the certificate authority.</p>
+    ///   - [`idempotency_token(Option<String>)`](crate::input::CreateCertificateAuthorityInput::idempotency_token): <p>Custom string that can be used to distinguish between calls to the <b>CreateCertificateAuthority</b> action. Idempotency tokens for <b>CreateCertificateAuthority</b> time out after five minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple times with the same idempotency token within five minutes, ACM Private CA recognizes that you are requesting only certificate authority and will issue only one. If you change the idempotency token for each call, PCA recognizes that you are requesting multiple certificate authorities.</p>
+    ///   - [`key_storage_security_standard(Option<KeyStorageSecurityStandard>)`](crate::input::CreateCertificateAuthorityInput::key_storage_security_standard): <p>Specifies a cryptographic key management compliance standard used for handling CA keys.</p>  <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p>  <p>Note: <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region ap-northeast-3. When creating a CA in the ap-northeast-3, you must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for <code>KeyStorageSecurityStandard</code>. Failure to do this results in an <code>InvalidArgsException</code> with the message, "A certificate authority cannot be created in this region with the specified security standard."</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateCertificateAuthorityInput::tags): <p>Key-value pairs that will be attached to the new private CA. You can associate up to 50 tags with a private CA. For information using tags with IAM to manage permissions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
+    /// - On success, responds with [`CreateCertificateAuthorityOutput`](crate::output::CreateCertificateAuthorityOutput) with field(s):
+    ///   - [`certificate_authority_arn(Option<String>)`](crate::output::CreateCertificateAuthorityOutput::certificate_authority_arn): <p>If successful, the Amazon Resource Name (ARN) of the certificate authority (CA). This is of the form: </p>  <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
+    /// - On failure, responds with [`SdkError<CreateCertificateAuthorityError>`](crate::error::CreateCertificateAuthorityError)
     pub fn create_certificate_authority(
         &self,
     ) -> fluent_builders::CreateCertificateAuthority<C, M, R> {
         fluent_builders::CreateCertificateAuthority::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateCertificateAuthorityAuditReport` operation.
+    /// Constructs a fluent builder for the [`CreateCertificateAuthorityAuditReport`](crate::client::fluent_builders::CreateCertificateAuthorityAuditReport) operation.
     ///
-    /// See [`CreateCertificateAuthorityAuditReport`](crate::client::fluent_builders::CreateCertificateAuthorityAuditReport) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateCertificateAuthorityAuditReportInput`](crate::input::CreateCertificateAuthorityAuditReportInput) with field(s):
+    ///   - [`certificate_authority_arn(Option<String>)`](crate::input::CreateCertificateAuthorityAuditReportInput::certificate_authority_arn): <p>The Amazon Resource Name (ARN) of the CA to be audited. This is of the form:</p>  <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.</p>
+    ///   - [`s3_bucket_name(Option<String>)`](crate::input::CreateCertificateAuthorityAuditReportInput::s3_bucket_name): <p>The name of the S3 bucket that will contain the audit report.</p>
+    ///   - [`audit_report_response_format(Option<AuditReportResponseFormat>)`](crate::input::CreateCertificateAuthorityAuditReportInput::audit_report_response_format): <p>The format in which to create the report. This can be either <b>JSON</b> or <b>CSV</b>.</p>
+    /// - On success, responds with [`CreateCertificateAuthorityAuditReportOutput`](crate::output::CreateCertificateAuthorityAuditReportOutput) with field(s):
+    ///   - [`audit_report_id(Option<String>)`](crate::output::CreateCertificateAuthorityAuditReportOutput::audit_report_id): <p>An alphanumeric string that contains a report identifier.</p>
+    ///   - [`s3_key(Option<String>)`](crate::output::CreateCertificateAuthorityAuditReportOutput::s3_key): <p>The <b>key</b> that uniquely identifies the report file in your S3 bucket.</p>
+    /// - On failure, responds with [`SdkError<CreateCertificateAuthorityAuditReportError>`](crate::error::CreateCertificateAuthorityAuditReportError)
     pub fn create_certificate_authority_audit_report(
         &self,
     ) -> fluent_builders::CreateCertificateAuthorityAuditReport<C, M, R> {
         fluent_builders::CreateCertificateAuthorityAuditReport::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreatePermission` operation.
+    /// Constructs a fluent builder for the [`CreatePermission`](crate::client::fluent_builders::CreatePermission) operation.
     ///
-    /// See [`CreatePermission`](crate::client::fluent_builders::CreatePermission) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreatePermissionInput`](crate::input::CreatePermissionInput) with field(s):
+    ///   - [`certificate_authority_arn(Option<String>)`](crate::input::CreatePermissionInput::certificate_authority_arn): <p>The Amazon Resource Name (ARN) of the CA that grants the permissions. You can find the ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must have the following form: </p>  <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
+    ///   - [`principal(Option<String>)`](crate::input::CreatePermissionInput::principal): <p>The AWS service or identity that receives the permission. At this time, the only valid principal is <code>acm.amazonaws.com</code>.</p>
+    ///   - [`source_account(Option<String>)`](crate::input::CreatePermissionInput::source_account): <p>The ID of the calling account.</p>
+    ///   - [`actions(Option<Vec<ActionType>>)`](crate::input::CreatePermissionInput::actions): <p>The actions that the specified AWS service principal can use. These include <code>IssueCertificate</code>, <code>GetCertificate</code>, and <code>ListPermissions</code>.</p>
+    /// - On success, responds with [`CreatePermissionOutput`](crate::output::CreatePermissionOutput)
+
+    /// - On failure, responds with [`SdkError<CreatePermissionError>`](crate::error::CreatePermissionError)
     pub fn create_permission(&self) -> fluent_builders::CreatePermission<C, M, R> {
         fluent_builders::CreatePermission::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteCertificateAuthority` operation.
+    /// Constructs a fluent builder for the [`DeleteCertificateAuthority`](crate::client::fluent_builders::DeleteCertificateAuthority) operation.
     ///
-    /// See [`DeleteCertificateAuthority`](crate::client::fluent_builders::DeleteCertificateAuthority) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteCertificateAuthorityInput`](crate::input::DeleteCertificateAuthorityInput) with field(s):
+    ///   - [`certificate_authority_arn(Option<String>)`](crate::input::DeleteCertificateAuthorityInput::certificate_authority_arn): <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must have the following form: </p>  <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
+    ///   - [`permanent_deletion_time_in_days(Option<i32>)`](crate::input::DeleteCertificateAuthorityInput::permanent_deletion_time_in_days): <p>The number of days to make a CA restorable after it has been deleted. This can be anywhere from 7 to 30 days, with 30 being the default.</p>
+    /// - On success, responds with [`DeleteCertificateAuthorityOutput`](crate::output::DeleteCertificateAuthorityOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteCertificateAuthorityError>`](crate::error::DeleteCertificateAuthorityError)
     pub fn delete_certificate_authority(
         &self,
     ) -> fluent_builders::DeleteCertificateAuthority<C, M, R> {
         fluent_builders::DeleteCertificateAuthority::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeletePermission` operation.
+    /// Constructs a fluent builder for the [`DeletePermission`](crate::client::fluent_builders::DeletePermission) operation.
     ///
-    /// See [`DeletePermission`](crate::client::fluent_builders::DeletePermission) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeletePermissionInput`](crate::input::DeletePermissionInput) with field(s):
+    ///   - [`certificate_authority_arn(Option<String>)`](crate::input::DeletePermissionInput::certificate_authority_arn): <p>The Amazon Resource Number (ARN) of the private CA that issued the permissions. You can find the CA's ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must have the following form: </p>  <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
+    ///   - [`principal(Option<String>)`](crate::input::DeletePermissionInput::principal): <p>The AWS service or identity that will have its CA permissions revoked. At this time, the only valid service principal is <code>acm.amazonaws.com</code> </p>
+    ///   - [`source_account(Option<String>)`](crate::input::DeletePermissionInput::source_account): <p>The AWS account that calls this action.</p>
+    /// - On success, responds with [`DeletePermissionOutput`](crate::output::DeletePermissionOutput)
+
+    /// - On failure, responds with [`SdkError<DeletePermissionError>`](crate::error::DeletePermissionError)
     pub fn delete_permission(&self) -> fluent_builders::DeletePermission<C, M, R> {
         fluent_builders::DeletePermission::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeletePolicy` operation.
+    /// Constructs a fluent builder for the [`DeletePolicy`](crate::client::fluent_builders::DeletePolicy) operation.
     ///
-    /// See [`DeletePolicy`](crate::client::fluent_builders::DeletePolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeletePolicyInput`](crate::input::DeletePolicyInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::DeletePolicyInput::resource_arn): <p>The Amazon Resource Number (ARN) of the private CA that will have its policy deleted. You can find the CA's ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. The ARN value must have the form <code>arn:aws:acm-pca:region:account:certificate-authority/01234567-89ab-cdef-0123-0123456789ab</code>. </p>
+    /// - On success, responds with [`DeletePolicyOutput`](crate::output::DeletePolicyOutput)
+
+    /// - On failure, responds with [`SdkError<DeletePolicyError>`](crate::error::DeletePolicyError)
     pub fn delete_policy(&self) -> fluent_builders::DeletePolicy<C, M, R> {
         fluent_builders::DeletePolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeCertificateAuthority` operation.
+    /// Constructs a fluent builder for the [`DescribeCertificateAuthority`](crate::client::fluent_builders::DescribeCertificateAuthority) operation.
     ///
-    /// See [`DescribeCertificateAuthority`](crate::client::fluent_builders::DescribeCertificateAuthority) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeCertificateAuthorityInput`](crate::input::DescribeCertificateAuthorityInput) with field(s):
+    ///   - [`certificate_authority_arn(Option<String>)`](crate::input::DescribeCertificateAuthorityInput::certificate_authority_arn): <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form: </p>  <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
+    /// - On success, responds with [`DescribeCertificateAuthorityOutput`](crate::output::DescribeCertificateAuthorityOutput) with field(s):
+    ///   - [`certificate_authority(Option<CertificateAuthority>)`](crate::output::DescribeCertificateAuthorityOutput::certificate_authority): <p>A <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a> structure that contains information about your private CA.</p>
+    /// - On failure, responds with [`SdkError<DescribeCertificateAuthorityError>`](crate::error::DescribeCertificateAuthorityError)
     pub fn describe_certificate_authority(
         &self,
     ) -> fluent_builders::DescribeCertificateAuthority<C, M, R> {
         fluent_builders::DescribeCertificateAuthority::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeCertificateAuthorityAuditReport` operation.
+    /// Constructs a fluent builder for the [`DescribeCertificateAuthorityAuditReport`](crate::client::fluent_builders::DescribeCertificateAuthorityAuditReport) operation.
     ///
-    /// See [`DescribeCertificateAuthorityAuditReport`](crate::client::fluent_builders::DescribeCertificateAuthorityAuditReport) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeCertificateAuthorityAuditReportInput`](crate::input::DescribeCertificateAuthorityAuditReportInput) with field(s):
+    ///   - [`certificate_authority_arn(Option<String>)`](crate::input::DescribeCertificateAuthorityAuditReportInput::certificate_authority_arn): <p>The Amazon Resource Name (ARN) of the private CA. This must be of the form:</p>  <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
+    ///   - [`audit_report_id(Option<String>)`](crate::input::DescribeCertificateAuthorityAuditReportInput::audit_report_id): <p>The report ID returned by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html">CreateCertificateAuthorityAuditReport</a> action.</p>
+    /// - On success, responds with [`DescribeCertificateAuthorityAuditReportOutput`](crate::output::DescribeCertificateAuthorityAuditReportOutput) with field(s):
+    ///   - [`audit_report_status(Option<AuditReportStatus>)`](crate::output::DescribeCertificateAuthorityAuditReportOutput::audit_report_status): <p>Specifies whether report creation is in progress, has succeeded, or has failed.</p>
+    ///   - [`s3_bucket_name(Option<String>)`](crate::output::DescribeCertificateAuthorityAuditReportOutput::s3_bucket_name): <p>Name of the S3 bucket that contains the report.</p>
+    ///   - [`s3_key(Option<String>)`](crate::output::DescribeCertificateAuthorityAuditReportOutput::s3_key): <p>S3 <b>key</b> that uniquely identifies the report file in your S3 bucket.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeCertificateAuthorityAuditReportOutput::created_at): <p>The date and time at which the report was created.</p>
+    /// - On failure, responds with [`SdkError<DescribeCertificateAuthorityAuditReportError>`](crate::error::DescribeCertificateAuthorityAuditReportError)
     pub fn describe_certificate_authority_audit_report(
         &self,
     ) -> fluent_builders::DescribeCertificateAuthorityAuditReport<C, M, R> {
         fluent_builders::DescribeCertificateAuthorityAuditReport::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCertificate` operation.
+    /// Constructs a fluent builder for the [`GetCertificate`](crate::client::fluent_builders::GetCertificate) operation.
     ///
-    /// See [`GetCertificate`](crate::client::fluent_builders::GetCertificate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetCertificateInput`](crate::input::GetCertificateInput) with field(s):
+    ///   - [`certificate_authority_arn(Option<String>)`](crate::input::GetCertificateInput::certificate_authority_arn): <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form: </p>  <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
+    ///   - [`certificate_arn(Option<String>)`](crate::input::GetCertificateInput::certificate_arn): <p>The ARN of the issued certificate. The ARN contains the certificate serial number and must be in the following form: </p>  <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code> </p>
+    /// - On success, responds with [`GetCertificateOutput`](crate::output::GetCertificateOutput) with field(s):
+    ///   - [`certificate(Option<String>)`](crate::output::GetCertificateOutput::certificate): <p>The base64 PEM-encoded certificate specified by the <code>CertificateArn</code> parameter.</p>
+    ///   - [`certificate_chain(Option<String>)`](crate::output::GetCertificateOutput::certificate_chain): <p>The base64 PEM-encoded certificate chain that chains up to the root CA certificate that you used to sign your private CA certificate. </p>
+    /// - On failure, responds with [`SdkError<GetCertificateError>`](crate::error::GetCertificateError)
     pub fn get_certificate(&self) -> fluent_builders::GetCertificate<C, M, R> {
         fluent_builders::GetCertificate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCertificateAuthorityCertificate` operation.
+    /// Constructs a fluent builder for the [`GetCertificateAuthorityCertificate`](crate::client::fluent_builders::GetCertificateAuthorityCertificate) operation.
     ///
-    /// See [`GetCertificateAuthorityCertificate`](crate::client::fluent_builders::GetCertificateAuthorityCertificate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetCertificateAuthorityCertificateInput`](crate::input::GetCertificateAuthorityCertificateInput) with field(s):
+    ///   - [`certificate_authority_arn(Option<String>)`](crate::input::GetCertificateAuthorityCertificateInput::certificate_authority_arn): <p>The Amazon Resource Name (ARN) of your private CA. This is of the form:</p>  <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>. </p>
+    /// - On success, responds with [`GetCertificateAuthorityCertificateOutput`](crate::output::GetCertificateAuthorityCertificateOutput) with field(s):
+    ///   - [`certificate(Option<String>)`](crate::output::GetCertificateAuthorityCertificateOutput::certificate): <p>Base64-encoded certificate authority (CA) certificate.</p>
+    ///   - [`certificate_chain(Option<String>)`](crate::output::GetCertificateAuthorityCertificateOutput::certificate_chain): <p>Base64-encoded certificate chain that includes any intermediate certificates and chains up to root certificate that you used to sign your private CA certificate. The chain does not include your private CA certificate. If this is a root CA, the value will be null.</p>
+    /// - On failure, responds with [`SdkError<GetCertificateAuthorityCertificateError>`](crate::error::GetCertificateAuthorityCertificateError)
     pub fn get_certificate_authority_certificate(
         &self,
     ) -> fluent_builders::GetCertificateAuthorityCertificate<C, M, R> {
         fluent_builders::GetCertificateAuthorityCertificate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetCertificateAuthorityCsr` operation.
+    /// Constructs a fluent builder for the [`GetCertificateAuthorityCsr`](crate::client::fluent_builders::GetCertificateAuthorityCsr) operation.
     ///
-    /// See [`GetCertificateAuthorityCsr`](crate::client::fluent_builders::GetCertificateAuthorityCsr) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetCertificateAuthorityCsrInput`](crate::input::GetCertificateAuthorityCsrInput) with field(s):
+    ///   - [`certificate_authority_arn(Option<String>)`](crate::input::GetCertificateAuthorityCsrInput::certificate_authority_arn): <p>The Amazon Resource Name (ARN) that was returned when you called the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action. This must be of the form: </p>  <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
+    /// - On success, responds with [`GetCertificateAuthorityCsrOutput`](crate::output::GetCertificateAuthorityCsrOutput) with field(s):
+    ///   - [`csr(Option<String>)`](crate::output::GetCertificateAuthorityCsrOutput::csr): <p>The base64 PEM-encoded certificate signing request (CSR) for your private CA certificate.</p>
+    /// - On failure, responds with [`SdkError<GetCertificateAuthorityCsrError>`](crate::error::GetCertificateAuthorityCsrError)
     pub fn get_certificate_authority_csr(
         &self,
     ) -> fluent_builders::GetCertificateAuthorityCsr<C, M, R> {
         fluent_builders::GetCertificateAuthorityCsr::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetPolicy` operation.
+    /// Constructs a fluent builder for the [`GetPolicy`](crate::client::fluent_builders::GetPolicy) operation.
     ///
-    /// See [`GetPolicy`](crate::client::fluent_builders::GetPolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetPolicyInput`](crate::input::GetPolicyInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::GetPolicyInput::resource_arn): <p>The Amazon Resource Number (ARN) of the private CA that will have its policy retrieved. You can find the CA's ARN by calling the ListCertificateAuthorities action. </p>
+    /// - On success, responds with [`GetPolicyOutput`](crate::output::GetPolicyOutput) with field(s):
+    ///   - [`policy(Option<String>)`](crate::output::GetPolicyOutput::policy): <p>The policy attached to the private CA as a JSON document.</p>
+    /// - On failure, responds with [`SdkError<GetPolicyError>`](crate::error::GetPolicyError)
     pub fn get_policy(&self) -> fluent_builders::GetPolicy<C, M, R> {
         fluent_builders::GetPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ImportCertificateAuthorityCertificate` operation.
+    /// Constructs a fluent builder for the [`ImportCertificateAuthorityCertificate`](crate::client::fluent_builders::ImportCertificateAuthorityCertificate) operation.
     ///
-    /// See [`ImportCertificateAuthorityCertificate`](crate::client::fluent_builders::ImportCertificateAuthorityCertificate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ImportCertificateAuthorityCertificateInput`](crate::input::ImportCertificateAuthorityCertificateInput) with field(s):
+    ///   - [`certificate_authority_arn(Option<String>)`](crate::input::ImportCertificateAuthorityCertificateInput::certificate_authority_arn): <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form: </p>  <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
+    ///   - [`certificate(Option<Blob>)`](crate::input::ImportCertificateAuthorityCertificateInput::certificate): <p>The PEM-encoded certificate for a private CA. This may be a self-signed certificate in the case of a root CA, or it may be signed by another CA that you control.</p>
+    ///   - [`certificate_chain(Option<Blob>)`](crate::input::ImportCertificateAuthorityCertificateInput::certificate_chain): <p>A PEM-encoded file that contains all of your certificates, other than the certificate you're importing, chaining up to your root CA. Your ACM Private CA-hosted or on-premises root certificate is the last in the chain, and each certificate in the chain signs the one preceding. </p>  <p>This parameter must be supplied when you import a subordinate CA. When you import a root CA, there is no chain.</p>
+    /// - On success, responds with [`ImportCertificateAuthorityCertificateOutput`](crate::output::ImportCertificateAuthorityCertificateOutput)
+
+    /// - On failure, responds with [`SdkError<ImportCertificateAuthorityCertificateError>`](crate::error::ImportCertificateAuthorityCertificateError)
     pub fn import_certificate_authority_certificate(
         &self,
     ) -> fluent_builders::ImportCertificateAuthorityCertificate<C, M, R> {
         fluent_builders::ImportCertificateAuthorityCertificate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `IssueCertificate` operation.
+    /// Constructs a fluent builder for the [`IssueCertificate`](crate::client::fluent_builders::IssueCertificate) operation.
     ///
-    /// See [`IssueCertificate`](crate::client::fluent_builders::IssueCertificate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`IssueCertificateInput`](crate::input::IssueCertificateInput) with field(s):
+    ///   - [`api_passthrough(Option<ApiPassthrough>)`](crate::input::IssueCertificateInput::api_passthrough): <p>Specifies X.509 certificate information to be included in the issued certificate. An <code>APIPassthrough</code> or <code>APICSRPassthrough</code> template variant must be selected, or else this parameter is ignored. For more information about using these templates, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate Templates</a>.</p>  <p>If conflicting or duplicate certificate information is supplied during certificate issuance, ACM Private CA applies <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations">order of operation rules</a> to determine what information is used.</p>
+    ///   - [`certificate_authority_arn(Option<String>)`](crate::input::IssueCertificateInput::certificate_authority_arn): <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form:</p>  <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
+    ///   - [`csr(Option<Blob>)`](crate::input::IssueCertificateInput::csr): <p>The certificate signing request (CSR) for the certificate you want to issue. As an example, you can use the following OpenSSL command to create the CSR and a 2048 bit RSA private key. </p>  <p> <code>openssl req -new -newkey rsa:2048 -days 365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> </p>  <p>If you have a configuration file, you can then use the following OpenSSL command. The <code>usr_cert</code> block in the configuration file contains your X509 version 3 extensions. </p>  <p> <code>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days -365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> </p>  <p>Note: A CSR must provide either a <i>subject name</i> or a <i>subject alternative name</i> or the request will be rejected. </p>
+    ///   - [`signing_algorithm(Option<SigningAlgorithm>)`](crate::input::IssueCertificateInput::signing_algorithm): <p>The name of the algorithm that will be used to sign the certificate to be issued. </p>  <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR in the <code>CreateCertificateAuthority</code> action.</p>
+    ///   - [`template_arn(Option<String>)`](crate::input::IssueCertificateInput::template_arn): <p>Specifies a custom configuration template to use when issuing a certificate. If this parameter is not provided, ACM Private CA defaults to the <code>EndEntityCertificate/V1</code> template. For CA certificates, you should choose the shortest path length that meets your needs. The path length is indicated by the PathLen<i>N</i> portion of the ARN, where <i>N</i> is the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaTerms.html#terms-cadepth">CA depth</a>.</p>  <p>Note: The CA depth configured on a subordinate CA certificate must not exceed the limit set by its parents in the CA hierarchy.</p>  <p>For a list of <code>TemplateArn</code> values supported by ACM Private CA, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding Certificate Templates</a>.</p>
+    ///   - [`validity(Option<Validity>)`](crate::input::IssueCertificateInput::validity): <p>Information describing the end of the validity period of the certificate. This parameter sets the “Not After” date for the certificate.</p>  <p>Certificate validity is the period of time during which a certificate is valid. Validity can be expressed as an explicit date and time when the certificate expires, or as a span of time after issuance, stated in days, months, or years. For more information, see <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280. </p>  <p>This value is unaffected when <code>ValidityNotBefore</code> is also specified. For example, if <code>Validity</code> is set to 20 days in the future, the certificate will expire 20 days from issuance time regardless of the <code>ValidityNotBefore</code> value.</p>  <p>The end of the validity period configured on a certificate must not exceed the limit set on its parents in the CA hierarchy.</p>
+    ///   - [`validity_not_before(Option<Validity>)`](crate::input::IssueCertificateInput::validity_not_before): <p>Information describing the start of the validity period of the certificate. This parameter sets the “Not Before" date for the certificate.</p>  <p>By default, when issuing a certificate, ACM Private CA sets the "Not Before" date to the issuance time minus 60 minutes. This compensates for clock inconsistencies across computer systems. The <code>ValidityNotBefore</code> parameter can be used to customize the “Not Before” value. </p>  <p>Unlike the <code>Validity</code> parameter, the <code>ValidityNotBefore</code> parameter is optional.</p>  <p>The <code>ValidityNotBefore</code> value is expressed as an explicit date and time, using the <code>Validity</code> type value <code>ABSOLUTE</code>. For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a> in this API reference and <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280.</p>
+    ///   - [`idempotency_token(Option<String>)`](crate::input::IssueCertificateInput::idempotency_token): <p>Alphanumeric string that can be used to distinguish between calls to the <b>IssueCertificate</b> action. Idempotency tokens for <b>IssueCertificate</b> time out after one minute. Therefore, if you call <b>IssueCertificate</b> multiple times with the same idempotency token within one minute, ACM Private CA recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency token for each call, PCA recognizes that you are requesting multiple certificates.</p>
+    /// - On success, responds with [`IssueCertificateOutput`](crate::output::IssueCertificateOutput) with field(s):
+    ///   - [`certificate_arn(Option<String>)`](crate::output::IssueCertificateOutput::certificate_arn): <p>The Amazon Resource Name (ARN) of the issued certificate and the certificate serial number. This is of the form:</p>  <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code> </p>
+    /// - On failure, responds with [`SdkError<IssueCertificateError>`](crate::error::IssueCertificateError)
     pub fn issue_certificate(&self) -> fluent_builders::IssueCertificate<C, M, R> {
         fluent_builders::IssueCertificate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListCertificateAuthorities` operation.
-    ///
-    /// See [`ListCertificateAuthorities`](crate::client::fluent_builders::ListCertificateAuthorities) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListCertificateAuthorities`](crate::client::fluent_builders::ListCertificateAuthorities) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCertificateAuthorities::into_paginator).
+    ///
+    /// - Takes [`ListCertificateAuthoritiesInput`](crate::input::ListCertificateAuthoritiesInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListCertificateAuthoritiesInput::next_token): <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListCertificateAuthoritiesInput::max_results): <p>Use this parameter when paginating results to specify the maximum number of items to return in the response on each page. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>
+    ///   - [`resource_owner(Option<ResourceOwner>)`](crate::input::ListCertificateAuthoritiesInput::resource_owner): <p>Use this parameter to filter the returned set of certificate authorities based on their owner. The default is SELF.</p>
+    /// - On success, responds with [`ListCertificateAuthoritiesOutput`](crate::output::ListCertificateAuthoritiesOutput) with field(s):
+    ///   - [`certificate_authorities(Option<Vec<CertificateAuthority>>)`](crate::output::ListCertificateAuthoritiesOutput::certificate_authorities): <p>Summary information about each certificate authority you have created.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListCertificateAuthoritiesOutput::next_token): <p>When the list is truncated, this value is present and should be used for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
+    /// - On failure, responds with [`SdkError<ListCertificateAuthoritiesError>`](crate::error::ListCertificateAuthoritiesError)
     pub fn list_certificate_authorities(
         &self,
     ) -> fluent_builders::ListCertificateAuthorities<C, M, R> {
         fluent_builders::ListCertificateAuthorities::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPermissions` operation.
-    ///
-    /// See [`ListPermissions`](crate::client::fluent_builders::ListPermissions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListPermissions`](crate::client::fluent_builders::ListPermissions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPermissions::into_paginator).
+    ///
+    /// - Takes [`ListPermissionsInput`](crate::input::ListPermissionsInput) with field(s):
+    ///   - [`certificate_authority_arn(Option<String>)`](crate::input::ListPermissionsInput::certificate_authority_arn): <p>The Amazon Resource Number (ARN) of the private CA to inspect. You can find the ARN by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must be of the form: <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code> You can get a private CA's ARN by running the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListPermissionsInput::next_token): <p>When paginating results, use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of <b>NextToken</b> from the response you just received.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListPermissionsInput::max_results): <p>When paginating results, use this parameter to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <b>NextToken</b> element is sent in the response. Use this <b>NextToken</b> value in a subsequent request to retrieve additional items.</p>
+    /// - On success, responds with [`ListPermissionsOutput`](crate::output::ListPermissionsOutput) with field(s):
+    ///   - [`permissions(Option<Vec<Permission>>)`](crate::output::ListPermissionsOutput::permissions): <p>Summary information about each permission assigned by the specified private CA, including the action enabled, the policy provided, and the time of creation.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPermissionsOutput::next_token): <p>When the list is truncated, this value is present and should be used for the <b>NextToken</b> parameter in a subsequent pagination request. </p>
+    /// - On failure, responds with [`SdkError<ListPermissionsError>`](crate::error::ListPermissionsError)
     pub fn list_permissions(&self) -> fluent_builders::ListPermissions<C, M, R> {
         fluent_builders::ListPermissions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTags` operation.
-    ///
-    /// See [`ListTags`](crate::client::fluent_builders::ListTags) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListTags`](crate::client::fluent_builders::ListTags) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListTags::into_paginator).
+    ///
+    /// - Takes [`ListTagsInput`](crate::input::ListTagsInput) with field(s):
+    ///   - [`certificate_authority_arn(Option<String>)`](crate::input::ListTagsInput::certificate_authority_arn): <p>The Amazon Resource Name (ARN) that was returned when you called the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action. This must be of the form: </p>  <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListTagsInput::next_token): <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of <b>NextToken</b> from the response you just received.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListTagsInput::max_results): <p>Use this parameter when paginating results to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <b>NextToken</b> element is sent in the response. Use this <b>NextToken</b> value in a subsequent request to retrieve additional items.</p>
+    /// - On success, responds with [`ListTagsOutput`](crate::output::ListTagsOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsOutput::tags): <p>The tags associated with your private CA.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTagsOutput::next_token): <p>When the list is truncated, this value is present and should be used for the <b>NextToken</b> parameter in a subsequent pagination request. </p>
+    /// - On failure, responds with [`SdkError<ListTagsError>`](crate::error::ListTagsError)
     pub fn list_tags(&self) -> fluent_builders::ListTags<C, M, R> {
         fluent_builders::ListTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutPolicy` operation.
+    /// Constructs a fluent builder for the [`PutPolicy`](crate::client::fluent_builders::PutPolicy) operation.
     ///
-    /// See [`PutPolicy`](crate::client::fluent_builders::PutPolicy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutPolicyInput`](crate::input::PutPolicyInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::PutPolicyInput::resource_arn): <p>The Amazon Resource Number (ARN) of the private CA to associate with the policy. The ARN of the CA can be found by calling the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action.</p>  <p></p>
+    ///   - [`policy(Option<String>)`](crate::input::PutPolicyInput::policy): <p>The path and file name of a JSON-formatted IAM policy to attach to the specified private CA resource. If this policy does not contain all required statements or if it includes any statement that is not allowed, the <code>PutPolicy</code> action returns an <code>InvalidPolicyException</code>. For information about IAM policy and statement structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview of JSON Policies</a>.</p>
+    /// - On success, responds with [`PutPolicyOutput`](crate::output::PutPolicyOutput)
+
+    /// - On failure, responds with [`SdkError<PutPolicyError>`](crate::error::PutPolicyError)
     pub fn put_policy(&self) -> fluent_builders::PutPolicy<C, M, R> {
         fluent_builders::PutPolicy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RestoreCertificateAuthority` operation.
+    /// Constructs a fluent builder for the [`RestoreCertificateAuthority`](crate::client::fluent_builders::RestoreCertificateAuthority) operation.
     ///
-    /// See [`RestoreCertificateAuthority`](crate::client::fluent_builders::RestoreCertificateAuthority) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RestoreCertificateAuthorityInput`](crate::input::RestoreCertificateAuthorityInput) with field(s):
+    ///   - [`certificate_authority_arn(Option<String>)`](crate::input::RestoreCertificateAuthorityInput::certificate_authority_arn): <p>The Amazon Resource Name (ARN) that was returned when you called the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action. This must be of the form: </p>  <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
+    /// - On success, responds with [`RestoreCertificateAuthorityOutput`](crate::output::RestoreCertificateAuthorityOutput)
+
+    /// - On failure, responds with [`SdkError<RestoreCertificateAuthorityError>`](crate::error::RestoreCertificateAuthorityError)
     pub fn restore_certificate_authority(
         &self,
     ) -> fluent_builders::RestoreCertificateAuthority<C, M, R> {
         fluent_builders::RestoreCertificateAuthority::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RevokeCertificate` operation.
+    /// Constructs a fluent builder for the [`RevokeCertificate`](crate::client::fluent_builders::RevokeCertificate) operation.
     ///
-    /// See [`RevokeCertificate`](crate::client::fluent_builders::RevokeCertificate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RevokeCertificateInput`](crate::input::RevokeCertificateInput) with field(s):
+    ///   - [`certificate_authority_arn(Option<String>)`](crate::input::RevokeCertificateInput::certificate_authority_arn): <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be revoked. This must be of the form:</p>  <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
+    ///   - [`certificate_serial(Option<String>)`](crate::input::RevokeCertificateInput::certificate_serial): <p>Serial number of the certificate to be revoked. This must be in hexadecimal format. You can retrieve the serial number by calling <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html">GetCertificate</a> with the Amazon Resource Name (ARN) of the certificate you want and the ARN of your private CA. The <b>GetCertificate</b> action retrieves the certificate in the PEM format. You can use the following OpenSSL command to list the certificate in text format and copy the hexadecimal serial number. </p>  <p> <code>openssl x509 -in <i>file_path</i> -text -noout</code> </p>  <p>You can also copy the serial number from the console or use the <a href="https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html">DescribeCertificate</a> action in the <i>AWS Certificate Manager API Reference</i>. </p>
+    ///   - [`revocation_reason(Option<RevocationReason>)`](crate::input::RevokeCertificateInput::revocation_reason): <p>Specifies why you revoked the certificate.</p>
+    /// - On success, responds with [`RevokeCertificateOutput`](crate::output::RevokeCertificateOutput)
+
+    /// - On failure, responds with [`SdkError<RevokeCertificateError>`](crate::error::RevokeCertificateError)
     pub fn revoke_certificate(&self) -> fluent_builders::RevokeCertificate<C, M, R> {
         fluent_builders::RevokeCertificate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagCertificateAuthority` operation.
+    /// Constructs a fluent builder for the [`TagCertificateAuthority`](crate::client::fluent_builders::TagCertificateAuthority) operation.
     ///
-    /// See [`TagCertificateAuthority`](crate::client::fluent_builders::TagCertificateAuthority) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagCertificateAuthorityInput`](crate::input::TagCertificateAuthorityInput) with field(s):
+    ///   - [`certificate_authority_arn(Option<String>)`](crate::input::TagCertificateAuthorityInput::certificate_authority_arn): <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form: </p>  <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagCertificateAuthorityInput::tags): <p>List of tags to be associated with the CA.</p>
+    /// - On success, responds with [`TagCertificateAuthorityOutput`](crate::output::TagCertificateAuthorityOutput)
+
+    /// - On failure, responds with [`SdkError<TagCertificateAuthorityError>`](crate::error::TagCertificateAuthorityError)
     pub fn tag_certificate_authority(&self) -> fluent_builders::TagCertificateAuthority<C, M, R> {
         fluent_builders::TagCertificateAuthority::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagCertificateAuthority` operation.
+    /// Constructs a fluent builder for the [`UntagCertificateAuthority`](crate::client::fluent_builders::UntagCertificateAuthority) operation.
     ///
-    /// See [`UntagCertificateAuthority`](crate::client::fluent_builders::UntagCertificateAuthority) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagCertificateAuthorityInput`](crate::input::UntagCertificateAuthorityInput) with field(s):
+    ///   - [`certificate_authority_arn(Option<String>)`](crate::input::UntagCertificateAuthorityInput::certificate_authority_arn): <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form: </p>  <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::UntagCertificateAuthorityInput::tags): <p>List of tags to be removed from the CA.</p>
+    /// - On success, responds with [`UntagCertificateAuthorityOutput`](crate::output::UntagCertificateAuthorityOutput)
+
+    /// - On failure, responds with [`SdkError<UntagCertificateAuthorityError>`](crate::error::UntagCertificateAuthorityError)
     pub fn untag_certificate_authority(
         &self,
     ) -> fluent_builders::UntagCertificateAuthority<C, M, R> {
         fluent_builders::UntagCertificateAuthority::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateCertificateAuthority` operation.
+    /// Constructs a fluent builder for the [`UpdateCertificateAuthority`](crate::client::fluent_builders::UpdateCertificateAuthority) operation.
     ///
-    /// See [`UpdateCertificateAuthority`](crate::client::fluent_builders::UpdateCertificateAuthority) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateCertificateAuthorityInput`](crate::input::UpdateCertificateAuthorityInput) with field(s):
+    ///   - [`certificate_authority_arn(Option<String>)`](crate::input::UpdateCertificateAuthorityInput::certificate_authority_arn): <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to be revoked. This must be of the form:</p>  <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
+    ///   - [`revocation_configuration(Option<RevocationConfiguration>)`](crate::input::UpdateCertificateAuthorityInput::revocation_configuration): <p>Contains information to enable Online Certificate Status Protocol (OCSP) support, to enable a certificate revocation list (CRL), to enable both, or to enable neither. If this parameter is not supplied, existing capibilites remain unchanged. For more information, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a> and <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a> types.</p>
+    ///   - [`status(Option<CertificateAuthorityStatus>)`](crate::input::UpdateCertificateAuthorityInput::status): <p>Status of your private CA.</p>
+    /// - On success, responds with [`UpdateCertificateAuthorityOutput`](crate::output::UpdateCertificateAuthorityOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateCertificateAuthorityError>`](crate::error::UpdateCertificateAuthorityError)
     pub fn update_certificate_authority(
         &self,
     ) -> fluent_builders::UpdateCertificateAuthority<C, M, R> {

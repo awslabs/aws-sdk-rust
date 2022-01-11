@@ -83,125 +83,266 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AddProfilePermission` operation.
+    /// Constructs a fluent builder for the [`AddProfilePermission`](crate::client::fluent_builders::AddProfilePermission) operation.
     ///
-    /// See [`AddProfilePermission`](crate::client::fluent_builders::AddProfilePermission) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AddProfilePermissionInput`](crate::input::AddProfilePermissionInput) with field(s):
+    ///   - [`profile_name(Option<String>)`](crate::input::AddProfilePermissionInput::profile_name): <p>The human-readable name of the signing profile.</p>
+    ///   - [`profile_version(Option<String>)`](crate::input::AddProfilePermissionInput::profile_version): <p>The version of the signing profile.</p>
+    ///   - [`action(Option<String>)`](crate::input::AddProfilePermissionInput::action): <p>The AWS Signer action permitted as part of cross-account permissions.</p>
+    ///   - [`principal(Option<String>)`](crate::input::AddProfilePermissionInput::principal): <p>The AWS principal receiving cross-account permissions. This may be an IAM role or another AWS account ID.</p>
+    ///   - [`revision_id(Option<String>)`](crate::input::AddProfilePermissionInput::revision_id): <p>A unique identifier for the current profile revision.</p>
+    ///   - [`statement_id(Option<String>)`](crate::input::AddProfilePermissionInput::statement_id): <p>A unique identifier for the cross-account permission statement.</p>
+    /// - On success, responds with [`AddProfilePermissionOutput`](crate::output::AddProfilePermissionOutput) with field(s):
+    ///   - [`revision_id(Option<String>)`](crate::output::AddProfilePermissionOutput::revision_id): <p>A unique identifier for the current profile revision.</p>
+    /// - On failure, responds with [`SdkError<AddProfilePermissionError>`](crate::error::AddProfilePermissionError)
     pub fn add_profile_permission(&self) -> fluent_builders::AddProfilePermission<C, M, R> {
         fluent_builders::AddProfilePermission::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CancelSigningProfile` operation.
+    /// Constructs a fluent builder for the [`CancelSigningProfile`](crate::client::fluent_builders::CancelSigningProfile) operation.
     ///
-    /// See [`CancelSigningProfile`](crate::client::fluent_builders::CancelSigningProfile) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CancelSigningProfileInput`](crate::input::CancelSigningProfileInput) with field(s):
+    ///   - [`profile_name(Option<String>)`](crate::input::CancelSigningProfileInput::profile_name): <p>The name of the signing profile to be canceled.</p>
+    /// - On success, responds with [`CancelSigningProfileOutput`](crate::output::CancelSigningProfileOutput)
+
+    /// - On failure, responds with [`SdkError<CancelSigningProfileError>`](crate::error::CancelSigningProfileError)
     pub fn cancel_signing_profile(&self) -> fluent_builders::CancelSigningProfile<C, M, R> {
         fluent_builders::CancelSigningProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeSigningJob` operation.
+    /// Constructs a fluent builder for the [`DescribeSigningJob`](crate::client::fluent_builders::DescribeSigningJob) operation.
     ///
-    /// See [`DescribeSigningJob`](crate::client::fluent_builders::DescribeSigningJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeSigningJobInput`](crate::input::DescribeSigningJobInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::DescribeSigningJobInput::job_id): <p>The ID of the signing job on input.</p>
+    /// - On success, responds with [`DescribeSigningJobOutput`](crate::output::DescribeSigningJobOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::DescribeSigningJobOutput::job_id): <p>The ID of the signing job on output.</p>
+    ///   - [`source(Option<Source>)`](crate::output::DescribeSigningJobOutput::source): <p>The object that contains the name of your S3 bucket or your raw code.</p>
+    ///   - [`signing_material(Option<SigningMaterial>)`](crate::output::DescribeSigningJobOutput::signing_material): <p>The Amazon Resource Name (ARN) of your code signing certificate.</p>
+    ///   - [`platform_id(Option<String>)`](crate::output::DescribeSigningJobOutput::platform_id): <p>The microcontroller platform to which your signed code image will be distributed.</p>
+    ///   - [`platform_display_name(Option<String>)`](crate::output::DescribeSigningJobOutput::platform_display_name): <p>A human-readable name for the signing platform associated with the signing job.</p>
+    ///   - [`profile_name(Option<String>)`](crate::output::DescribeSigningJobOutput::profile_name): <p>The name of the profile that initiated the signing operation.</p>
+    ///   - [`profile_version(Option<String>)`](crate::output::DescribeSigningJobOutput::profile_version): <p>The version of the signing profile used to initiate the signing job.</p>
+    ///   - [`overrides(Option<SigningPlatformOverrides>)`](crate::output::DescribeSigningJobOutput::overrides): <p>A list of any overrides that were applied to the signing operation.</p>
+    ///   - [`signing_parameters(Option<HashMap<String, String>>)`](crate::output::DescribeSigningJobOutput::signing_parameters): <p>Map of user-assigned key-value pairs used during signing. These values contain any information that you specified for use in your signing job. </p>
+    ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeSigningJobOutput::created_at): <p>Date and time that the signing job was created.</p>
+    ///   - [`completed_at(Option<DateTime>)`](crate::output::DescribeSigningJobOutput::completed_at): <p>Date and time that the signing job was completed.</p>
+    ///   - [`signature_expires_at(Option<DateTime>)`](crate::output::DescribeSigningJobOutput::signature_expires_at): <p>Thr expiration timestamp for the signature generated by the signing job.</p>
+    ///   - [`requested_by(Option<String>)`](crate::output::DescribeSigningJobOutput::requested_by): <p>The IAM principal that requested the signing job.</p>
+    ///   - [`status(Option<SigningStatus>)`](crate::output::DescribeSigningJobOutput::status): <p>Status of the signing job.</p>
+    ///   - [`status_reason(Option<String>)`](crate::output::DescribeSigningJobOutput::status_reason): <p>String value that contains the status reason.</p>
+    ///   - [`revocation_record(Option<SigningJobRevocationRecord>)`](crate::output::DescribeSigningJobOutput::revocation_record): <p>A revocation record if the signature generated by the signing job has been revoked. Contains a timestamp and the ID of the IAM entity that revoked the signature.</p>
+    ///   - [`signed_object(Option<SignedObject>)`](crate::output::DescribeSigningJobOutput::signed_object): <p>Name of the S3 bucket where the signed code image is saved by code signing.</p>
+    ///   - [`job_owner(Option<String>)`](crate::output::DescribeSigningJobOutput::job_owner): <p>The AWS account ID of the job owner.</p>
+    ///   - [`job_invoker(Option<String>)`](crate::output::DescribeSigningJobOutput::job_invoker): <p>The IAM entity that initiated the signing job.</p>
+    /// - On failure, responds with [`SdkError<DescribeSigningJobError>`](crate::error::DescribeSigningJobError)
     pub fn describe_signing_job(&self) -> fluent_builders::DescribeSigningJob<C, M, R> {
         fluent_builders::DescribeSigningJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSigningPlatform` operation.
+    /// Constructs a fluent builder for the [`GetSigningPlatform`](crate::client::fluent_builders::GetSigningPlatform) operation.
     ///
-    /// See [`GetSigningPlatform`](crate::client::fluent_builders::GetSigningPlatform) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetSigningPlatformInput`](crate::input::GetSigningPlatformInput) with field(s):
+    ///   - [`platform_id(Option<String>)`](crate::input::GetSigningPlatformInput::platform_id): <p>The ID of the target signing platform.</p>
+    /// - On success, responds with [`GetSigningPlatformOutput`](crate::output::GetSigningPlatformOutput) with field(s):
+    ///   - [`platform_id(Option<String>)`](crate::output::GetSigningPlatformOutput::platform_id): <p>The ID of the target signing platform.</p>
+    ///   - [`display_name(Option<String>)`](crate::output::GetSigningPlatformOutput::display_name): <p>The display name of the target signing platform.</p>
+    ///   - [`partner(Option<String>)`](crate::output::GetSigningPlatformOutput::partner): <p>A list of partner entities that use the target signing platform.</p>
+    ///   - [`target(Option<String>)`](crate::output::GetSigningPlatformOutput::target): <p>The validation template that is used by the target signing platform.</p>
+    ///   - [`category(Option<Category>)`](crate::output::GetSigningPlatformOutput::category): <p>The category type of the target signing platform.</p>
+    ///   - [`signing_configuration(Option<SigningConfiguration>)`](crate::output::GetSigningPlatformOutput::signing_configuration): <p>A list of configurations applied to the target platform at signing.</p>
+    ///   - [`signing_image_format(Option<SigningImageFormat>)`](crate::output::GetSigningPlatformOutput::signing_image_format): <p>The format of the target platform's signing image.</p>
+    ///   - [`max_size_in_mb(i32)`](crate::output::GetSigningPlatformOutput::max_size_in_mb): <p>The maximum size (in MB) of the payload that can be signed by the target platform.</p>
+    ///   - [`revocation_supported(bool)`](crate::output::GetSigningPlatformOutput::revocation_supported): <p>A flag indicating whether signatures generated for the signing platform can be revoked.</p>
+    /// - On failure, responds with [`SdkError<GetSigningPlatformError>`](crate::error::GetSigningPlatformError)
     pub fn get_signing_platform(&self) -> fluent_builders::GetSigningPlatform<C, M, R> {
         fluent_builders::GetSigningPlatform::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSigningProfile` operation.
+    /// Constructs a fluent builder for the [`GetSigningProfile`](crate::client::fluent_builders::GetSigningProfile) operation.
     ///
-    /// See [`GetSigningProfile`](crate::client::fluent_builders::GetSigningProfile) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetSigningProfileInput`](crate::input::GetSigningProfileInput) with field(s):
+    ///   - [`profile_name(Option<String>)`](crate::input::GetSigningProfileInput::profile_name): <p>The name of the target signing profile.</p>
+    ///   - [`profile_owner(Option<String>)`](crate::input::GetSigningProfileInput::profile_owner): <p>The AWS account ID of the profile owner.</p>
+    /// - On success, responds with [`GetSigningProfileOutput`](crate::output::GetSigningProfileOutput) with field(s):
+    ///   - [`profile_name(Option<String>)`](crate::output::GetSigningProfileOutput::profile_name): <p>The name of the target signing profile.</p>
+    ///   - [`profile_version(Option<String>)`](crate::output::GetSigningProfileOutput::profile_version): <p>The current version of the signing profile.</p>
+    ///   - [`profile_version_arn(Option<String>)`](crate::output::GetSigningProfileOutput::profile_version_arn): <p>The signing profile ARN, including the profile version.</p>
+    ///   - [`revocation_record(Option<SigningProfileRevocationRecord>)`](crate::output::GetSigningProfileOutput::revocation_record): <p>Revocation information for a signing profile.</p>
+    ///   - [`signing_material(Option<SigningMaterial>)`](crate::output::GetSigningProfileOutput::signing_material): <p>The ARN of the certificate that the target profile uses for signing operations.</p>
+    ///   - [`platform_id(Option<String>)`](crate::output::GetSigningProfileOutput::platform_id): <p>The ID of the platform that is used by the target signing profile.</p>
+    ///   - [`platform_display_name(Option<String>)`](crate::output::GetSigningProfileOutput::platform_display_name): <p>A human-readable name for the signing platform associated with the signing profile.</p>
+    ///   - [`signature_validity_period(Option<SignatureValidityPeriod>)`](crate::output::GetSigningProfileOutput::signature_validity_period): <p>The validity period for a signing job.</p>
+    ///   - [`overrides(Option<SigningPlatformOverrides>)`](crate::output::GetSigningProfileOutput::overrides): <p>A list of overrides applied by the target signing profile for signing operations.</p>
+    ///   - [`signing_parameters(Option<HashMap<String, String>>)`](crate::output::GetSigningProfileOutput::signing_parameters): <p>A map of key-value pairs for signing operations that is attached to the target signing profile.</p>
+    ///   - [`status(Option<SigningProfileStatus>)`](crate::output::GetSigningProfileOutput::status): <p>The status of the target signing profile.</p>
+    ///   - [`status_reason(Option<String>)`](crate::output::GetSigningProfileOutput::status_reason): <p>Reason for the status of the target signing profile.</p>
+    ///   - [`arn(Option<String>)`](crate::output::GetSigningProfileOutput::arn): <p>The Amazon Resource Name (ARN) for the signing profile.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetSigningProfileOutput::tags): <p>A list of tags associated with the signing profile.</p>
+    /// - On failure, responds with [`SdkError<GetSigningProfileError>`](crate::error::GetSigningProfileError)
     pub fn get_signing_profile(&self) -> fluent_builders::GetSigningProfile<C, M, R> {
         fluent_builders::GetSigningProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListProfilePermissions` operation.
+    /// Constructs a fluent builder for the [`ListProfilePermissions`](crate::client::fluent_builders::ListProfilePermissions) operation.
     ///
-    /// See [`ListProfilePermissions`](crate::client::fluent_builders::ListProfilePermissions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListProfilePermissionsInput`](crate::input::ListProfilePermissionsInput) with field(s):
+    ///   - [`profile_name(Option<String>)`](crate::input::ListProfilePermissionsInput::profile_name): <p>Name of the signing profile containing the cross-account permissions.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListProfilePermissionsInput::next_token): <p>String for specifying the next set of paginated results.</p>
+    /// - On success, responds with [`ListProfilePermissionsOutput`](crate::output::ListProfilePermissionsOutput) with field(s):
+    ///   - [`revision_id(Option<String>)`](crate::output::ListProfilePermissionsOutput::revision_id): <p>The identifier for the current revision of profile permissions.</p>
+    ///   - [`policy_size_bytes(i32)`](crate::output::ListProfilePermissionsOutput::policy_size_bytes): <p>Total size of the policy associated with the Signing Profile in bytes.</p>
+    ///   - [`permissions(Option<Vec<Permission>>)`](crate::output::ListProfilePermissionsOutput::permissions): <p>List of permissions associated with the Signing Profile.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListProfilePermissionsOutput::next_token): <p>String for specifying the next set of paginated results.</p>
+    /// - On failure, responds with [`SdkError<ListProfilePermissionsError>`](crate::error::ListProfilePermissionsError)
     pub fn list_profile_permissions(&self) -> fluent_builders::ListProfilePermissions<C, M, R> {
         fluent_builders::ListProfilePermissions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSigningJobs` operation.
-    ///
-    /// See [`ListSigningJobs`](crate::client::fluent_builders::ListSigningJobs) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListSigningJobs`](crate::client::fluent_builders::ListSigningJobs) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSigningJobs::into_paginator).
+    ///
+    /// - Takes [`ListSigningJobsInput`](crate::input::ListSigningJobsInput) with field(s):
+    ///   - [`status(Option<SigningStatus>)`](crate::input::ListSigningJobsInput::status): <p>A status value with which to filter your results.</p>
+    ///   - [`platform_id(Option<String>)`](crate::input::ListSigningJobsInput::platform_id): <p>The ID of microcontroller platform that you specified for the distribution of your code image.</p>
+    ///   - [`requested_by(Option<String>)`](crate::input::ListSigningJobsInput::requested_by): <p>The IAM principal that requested the signing job.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListSigningJobsInput::max_results): <p>Specifies the maximum number of items to return in the response. Use this parameter when paginating results. If additional items exist beyond the number you specify, the <code>nextToken</code> element is set in the response. Use the <code>nextToken</code> value in a subsequent request to retrieve additional items. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListSigningJobsInput::next_token): <p>String for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
+    ///   - [`is_revoked(bool)`](crate::input::ListSigningJobsInput::is_revoked): <p>Filters results to return only signing jobs with revoked signatures.</p>
+    ///   - [`signature_expires_before(Option<DateTime>)`](crate::input::ListSigningJobsInput::signature_expires_before): <p>Filters results to return only signing jobs with signatures expiring before a specified timestamp.</p>
+    ///   - [`signature_expires_after(Option<DateTime>)`](crate::input::ListSigningJobsInput::signature_expires_after): <p>Filters results to return only signing jobs with signatures expiring after a specified timestamp.</p>
+    ///   - [`job_invoker(Option<String>)`](crate::input::ListSigningJobsInput::job_invoker): <p>Filters results to return only signing jobs initiated by a specified IAM entity.</p>
+    /// - On success, responds with [`ListSigningJobsOutput`](crate::output::ListSigningJobsOutput) with field(s):
+    ///   - [`jobs(Option<Vec<SigningJob>>)`](crate::output::ListSigningJobsOutput::jobs): <p>A list of your signing jobs.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSigningJobsOutput::next_token): <p>String for specifying the next set of paginated results.</p>
+    /// - On failure, responds with [`SdkError<ListSigningJobsError>`](crate::error::ListSigningJobsError)
     pub fn list_signing_jobs(&self) -> fluent_builders::ListSigningJobs<C, M, R> {
         fluent_builders::ListSigningJobs::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSigningPlatforms` operation.
-    ///
-    /// See [`ListSigningPlatforms`](crate::client::fluent_builders::ListSigningPlatforms) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListSigningPlatforms`](crate::client::fluent_builders::ListSigningPlatforms) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSigningPlatforms::into_paginator).
+    ///
+    /// - Takes [`ListSigningPlatformsInput`](crate::input::ListSigningPlatformsInput) with field(s):
+    ///   - [`category(Option<String>)`](crate::input::ListSigningPlatformsInput::category): <p>The category type of a signing platform.</p>
+    ///   - [`partner(Option<String>)`](crate::input::ListSigningPlatformsInput::partner): <p>Any partner entities connected to a signing platform.</p>
+    ///   - [`target(Option<String>)`](crate::input::ListSigningPlatformsInput::target): <p>The validation template that is used by the target signing platform.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListSigningPlatformsInput::max_results): <p>The maximum number of results to be returned by this operation.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListSigningPlatformsInput::next_token): <p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
+    /// - On success, responds with [`ListSigningPlatformsOutput`](crate::output::ListSigningPlatformsOutput) with field(s):
+    ///   - [`platforms(Option<Vec<SigningPlatform>>)`](crate::output::ListSigningPlatformsOutput::platforms): <p>A list of all platforms that match the request parameters.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSigningPlatformsOutput::next_token): <p>Value for specifying the next set of paginated results to return.</p>
+    /// - On failure, responds with [`SdkError<ListSigningPlatformsError>`](crate::error::ListSigningPlatformsError)
     pub fn list_signing_platforms(&self) -> fluent_builders::ListSigningPlatforms<C, M, R> {
         fluent_builders::ListSigningPlatforms::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListSigningProfiles` operation.
-    ///
-    /// See [`ListSigningProfiles`](crate::client::fluent_builders::ListSigningProfiles) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListSigningProfiles`](crate::client::fluent_builders::ListSigningProfiles) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListSigningProfiles::into_paginator).
+    ///
+    /// - Takes [`ListSigningProfilesInput`](crate::input::ListSigningProfilesInput) with field(s):
+    ///   - [`include_canceled(bool)`](crate::input::ListSigningProfilesInput::include_canceled): <p>Designates whether to include profiles with the status of <code>CANCELED</code>.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListSigningProfilesInput::max_results): <p>The maximum number of profiles to be returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListSigningProfilesInput::next_token): <p>Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of <code>nextToken</code> from the response that you just received.</p>
+    ///   - [`platform_id(Option<String>)`](crate::input::ListSigningProfilesInput::platform_id): <p>Filters results to return only signing jobs initiated for a specified signing platform.</p>
+    ///   - [`statuses(Option<Vec<SigningProfileStatus>>)`](crate::input::ListSigningProfilesInput::statuses): <p>Filters results to return only signing jobs with statuses in the specified list.</p>
+    /// - On success, responds with [`ListSigningProfilesOutput`](crate::output::ListSigningProfilesOutput) with field(s):
+    ///   - [`profiles(Option<Vec<SigningProfile>>)`](crate::output::ListSigningProfilesOutput::profiles): <p>A list of profiles that are available in the AWS account. This includes profiles with the status of <code>CANCELED</code> if the <code>includeCanceled</code> parameter is set to <code>true</code>.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListSigningProfilesOutput::next_token): <p>Value for specifying the next set of paginated results to return.</p>
+    /// - On failure, responds with [`SdkError<ListSigningProfilesError>`](crate::error::ListSigningProfilesError)
     pub fn list_signing_profiles(&self) -> fluent_builders::ListSigningProfiles<C, M, R> {
         fluent_builders::ListSigningProfiles::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) for the signing profile.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A list of tags associated with the signing profile.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutSigningProfile` operation.
+    /// Constructs a fluent builder for the [`PutSigningProfile`](crate::client::fluent_builders::PutSigningProfile) operation.
     ///
-    /// See [`PutSigningProfile`](crate::client::fluent_builders::PutSigningProfile) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutSigningProfileInput`](crate::input::PutSigningProfileInput) with field(s):
+    ///   - [`profile_name(Option<String>)`](crate::input::PutSigningProfileInput::profile_name): <p>The name of the signing profile to be created.</p>
+    ///   - [`signing_material(Option<SigningMaterial>)`](crate::input::PutSigningProfileInput::signing_material): <p>The AWS Certificate Manager certificate that will be used to sign code with the new signing profile.</p>
+    ///   - [`signature_validity_period(Option<SignatureValidityPeriod>)`](crate::input::PutSigningProfileInput::signature_validity_period): <p>The default validity period override for any signature generated using this signing profile. If unspecified, the default is 135 months.</p>
+    ///   - [`platform_id(Option<String>)`](crate::input::PutSigningProfileInput::platform_id): <p>The ID of the signing platform to be created.</p>
+    ///   - [`overrides(Option<SigningPlatformOverrides>)`](crate::input::PutSigningProfileInput::overrides): <p>A subfield of <code>platform</code>. This specifies any different configuration options that you want to apply to the chosen platform (such as a different <code>hash-algorithm</code> or <code>signing-algorithm</code>).</p>
+    ///   - [`signing_parameters(Option<HashMap<String, String>>)`](crate::input::PutSigningProfileInput::signing_parameters): <p>Map of key-value pairs for signing. These can include any information that you want to use during signing.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::PutSigningProfileInput::tags): <p>Tags to be associated with the signing profile that is being created.</p>
+    /// - On success, responds with [`PutSigningProfileOutput`](crate::output::PutSigningProfileOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::PutSigningProfileOutput::arn): <p>The Amazon Resource Name (ARN) of the signing profile created.</p>
+    ///   - [`profile_version(Option<String>)`](crate::output::PutSigningProfileOutput::profile_version): <p>The version of the signing profile being created.</p>
+    ///   - [`profile_version_arn(Option<String>)`](crate::output::PutSigningProfileOutput::profile_version_arn): <p>The signing profile ARN, including the profile version.</p>
+    /// - On failure, responds with [`SdkError<PutSigningProfileError>`](crate::error::PutSigningProfileError)
     pub fn put_signing_profile(&self) -> fluent_builders::PutSigningProfile<C, M, R> {
         fluent_builders::PutSigningProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RemoveProfilePermission` operation.
+    /// Constructs a fluent builder for the [`RemoveProfilePermission`](crate::client::fluent_builders::RemoveProfilePermission) operation.
     ///
-    /// See [`RemoveProfilePermission`](crate::client::fluent_builders::RemoveProfilePermission) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RemoveProfilePermissionInput`](crate::input::RemoveProfilePermissionInput) with field(s):
+    ///   - [`profile_name(Option<String>)`](crate::input::RemoveProfilePermissionInput::profile_name): <p>A human-readable name for the signing profile with permissions to be removed.</p>
+    ///   - [`revision_id(Option<String>)`](crate::input::RemoveProfilePermissionInput::revision_id): <p>An identifier for the current revision of the signing profile permissions.</p>
+    ///   - [`statement_id(Option<String>)`](crate::input::RemoveProfilePermissionInput::statement_id): <p>A unique identifier for the cross-account permissions statement.</p>
+    /// - On success, responds with [`RemoveProfilePermissionOutput`](crate::output::RemoveProfilePermissionOutput) with field(s):
+    ///   - [`revision_id(Option<String>)`](crate::output::RemoveProfilePermissionOutput::revision_id): <p>An identifier for the current revision of the profile permissions.</p>
+    /// - On failure, responds with [`SdkError<RemoveProfilePermissionError>`](crate::error::RemoveProfilePermissionError)
     pub fn remove_profile_permission(&self) -> fluent_builders::RemoveProfilePermission<C, M, R> {
         fluent_builders::RemoveProfilePermission::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RevokeSignature` operation.
+    /// Constructs a fluent builder for the [`RevokeSignature`](crate::client::fluent_builders::RevokeSignature) operation.
     ///
-    /// See [`RevokeSignature`](crate::client::fluent_builders::RevokeSignature) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RevokeSignatureInput`](crate::input::RevokeSignatureInput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::input::RevokeSignatureInput::job_id): <p>ID of the signing job to be revoked.</p>
+    ///   - [`job_owner(Option<String>)`](crate::input::RevokeSignatureInput::job_owner): <p>AWS account ID of the job owner.</p>
+    ///   - [`reason(Option<String>)`](crate::input::RevokeSignatureInput::reason): <p>The reason for revoking the signing job.</p>
+    /// - On success, responds with [`RevokeSignatureOutput`](crate::output::RevokeSignatureOutput)
+
+    /// - On failure, responds with [`SdkError<RevokeSignatureError>`](crate::error::RevokeSignatureError)
     pub fn revoke_signature(&self) -> fluent_builders::RevokeSignature<C, M, R> {
         fluent_builders::RevokeSignature::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RevokeSigningProfile` operation.
+    /// Constructs a fluent builder for the [`RevokeSigningProfile`](crate::client::fluent_builders::RevokeSigningProfile) operation.
     ///
-    /// See [`RevokeSigningProfile`](crate::client::fluent_builders::RevokeSigningProfile) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RevokeSigningProfileInput`](crate::input::RevokeSigningProfileInput) with field(s):
+    ///   - [`profile_name(Option<String>)`](crate::input::RevokeSigningProfileInput::profile_name): <p>The name of the signing profile to be revoked.</p>
+    ///   - [`profile_version(Option<String>)`](crate::input::RevokeSigningProfileInput::profile_version): <p>The version of the signing profile to be revoked.</p>
+    ///   - [`reason(Option<String>)`](crate::input::RevokeSigningProfileInput::reason): <p>The reason for revoking a signing profile.</p>
+    ///   - [`effective_time(Option<DateTime>)`](crate::input::RevokeSigningProfileInput::effective_time): <p>A timestamp for when revocation of a Signing Profile should become effective. Signatures generated using the signing profile after this timestamp are not trusted.</p>
+    /// - On success, responds with [`RevokeSigningProfileOutput`](crate::output::RevokeSigningProfileOutput)
+
+    /// - On failure, responds with [`SdkError<RevokeSigningProfileError>`](crate::error::RevokeSigningProfileError)
     pub fn revoke_signing_profile(&self) -> fluent_builders::RevokeSigningProfile<C, M, R> {
         fluent_builders::RevokeSigningProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartSigningJob` operation.
+    /// Constructs a fluent builder for the [`StartSigningJob`](crate::client::fluent_builders::StartSigningJob) operation.
     ///
-    /// See [`StartSigningJob`](crate::client::fluent_builders::StartSigningJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartSigningJobInput`](crate::input::StartSigningJobInput) with field(s):
+    ///   - [`source(Option<Source>)`](crate::input::StartSigningJobInput::source): <p>The S3 bucket that contains the object to sign or a BLOB that contains your raw code.</p>
+    ///   - [`destination(Option<Destination>)`](crate::input::StartSigningJobInput::destination): <p>The S3 bucket in which to save your signed object. The destination contains the name of your bucket and an optional prefix.</p>
+    ///   - [`profile_name(Option<String>)`](crate::input::StartSigningJobInput::profile_name): <p>The name of the signing profile.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::StartSigningJobInput::client_request_token): <p>String that identifies the signing request. All calls after the first that use this token return the same response as the first call.</p>
+    ///   - [`profile_owner(Option<String>)`](crate::input::StartSigningJobInput::profile_owner): <p>The AWS account ID of the signing profile owner.</p>
+    /// - On success, responds with [`StartSigningJobOutput`](crate::output::StartSigningJobOutput) with field(s):
+    ///   - [`job_id(Option<String>)`](crate::output::StartSigningJobOutput::job_id): <p>The ID of your signing job.</p>
+    ///   - [`job_owner(Option<String>)`](crate::output::StartSigningJobOutput::job_owner): <p>The AWS account ID of the signing job owner.</p>
+    /// - On failure, responds with [`SdkError<StartSigningJobError>`](crate::error::StartSigningJobError)
     pub fn start_signing_job(&self) -> fluent_builders::StartSigningJob<C, M, R> {
         fluent_builders::StartSigningJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) for the signing profile.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p>One or more tags to be associated with the signing profile.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) for the signing profile.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>A list of tag keys to be removed from the signing profile.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }

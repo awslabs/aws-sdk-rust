@@ -83,250 +83,422 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `BatchPutMessage` operation.
+    /// Constructs a fluent builder for the [`BatchPutMessage`](crate::client::fluent_builders::BatchPutMessage) operation.
     ///
-    /// See [`BatchPutMessage`](crate::client::fluent_builders::BatchPutMessage) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchPutMessageInput`](crate::input::BatchPutMessageInput) with field(s):
+    ///   - [`channel_name(Option<String>)`](crate::input::BatchPutMessageInput::channel_name): <p>The name of the channel where the messages are sent.</p>
+    ///   - [`messages(Option<Vec<Message>>)`](crate::input::BatchPutMessageInput::messages): <p>The list of messages to be sent. Each message has the format: { "messageId": "string", "payload": "string"}.</p>  <p>The field names of message payloads (data) that you send to IoT Analytics:</p>  <ul>   <li> <p>Must contain only alphanumeric characters and undescores (_). No other special characters are allowed.</p> </li>   <li> <p>Must begin with an alphabetic character or single underscore (_).</p> </li>   <li> <p>Cannot contain hyphens (-).</p> </li>   <li> <p>In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$". </p> </li>   <li> <p>Cannot be more than 255 characters.</p> </li>   <li> <p>Are case insensitive. (Fields named foo and FOO in the same payload are considered duplicates.)</p> </li>  </ul>  <p>For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29}, {"01_temp": 29} or {"__temp_01": 29} are invalid in message payloads. </p>
+    /// - On success, responds with [`BatchPutMessageOutput`](crate::output::BatchPutMessageOutput) with field(s):
+    ///   - [`batch_put_message_error_entries(Option<Vec<BatchPutMessageErrorEntry>>)`](crate::output::BatchPutMessageOutput::batch_put_message_error_entries): <p>A list of any errors encountered when sending the messages to the channel.</p>
+    /// - On failure, responds with [`SdkError<BatchPutMessageError>`](crate::error::BatchPutMessageError)
     pub fn batch_put_message(&self) -> fluent_builders::BatchPutMessage<C, M, R> {
         fluent_builders::BatchPutMessage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CancelPipelineReprocessing` operation.
+    /// Constructs a fluent builder for the [`CancelPipelineReprocessing`](crate::client::fluent_builders::CancelPipelineReprocessing) operation.
     ///
-    /// See [`CancelPipelineReprocessing`](crate::client::fluent_builders::CancelPipelineReprocessing) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CancelPipelineReprocessingInput`](crate::input::CancelPipelineReprocessingInput) with field(s):
+    ///   - [`pipeline_name(Option<String>)`](crate::input::CancelPipelineReprocessingInput::pipeline_name): <p>The name of pipeline for which data reprocessing is canceled.</p>
+    ///   - [`reprocessing_id(Option<String>)`](crate::input::CancelPipelineReprocessingInput::reprocessing_id): <p>The ID of the reprocessing task (returned by <code>StartPipelineReprocessing</code>).</p>
+    /// - On success, responds with [`CancelPipelineReprocessingOutput`](crate::output::CancelPipelineReprocessingOutput)
+
+    /// - On failure, responds with [`SdkError<CancelPipelineReprocessingError>`](crate::error::CancelPipelineReprocessingError)
     pub fn cancel_pipeline_reprocessing(
         &self,
     ) -> fluent_builders::CancelPipelineReprocessing<C, M, R> {
         fluent_builders::CancelPipelineReprocessing::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateChannel` operation.
+    /// Constructs a fluent builder for the [`CreateChannel`](crate::client::fluent_builders::CreateChannel) operation.
     ///
-    /// See [`CreateChannel`](crate::client::fluent_builders::CreateChannel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateChannelInput`](crate::input::CreateChannelInput) with field(s):
+    ///   - [`channel_name(Option<String>)`](crate::input::CreateChannelInput::channel_name): <p>The name of the channel.</p>
+    ///   - [`channel_storage(Option<ChannelStorage>)`](crate::input::CreateChannelInput::channel_storage): <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
+    ///   - [`retention_period(Option<RetentionPeriod>)`](crate::input::CreateChannelInput::retention_period): <p>How long, in days, message data is kept for the channel. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateChannelInput::tags): <p>Metadata which can be used to manage the channel.</p>
+    /// - On success, responds with [`CreateChannelOutput`](crate::output::CreateChannelOutput) with field(s):
+    ///   - [`channel_name(Option<String>)`](crate::output::CreateChannelOutput::channel_name): <p>The name of the channel.</p>
+    ///   - [`channel_arn(Option<String>)`](crate::output::CreateChannelOutput::channel_arn): <p>The ARN of the channel.</p>
+    ///   - [`retention_period(Option<RetentionPeriod>)`](crate::output::CreateChannelOutput::retention_period): <p>How long, in days, message data is kept for the channel.</p>
+    /// - On failure, responds with [`SdkError<CreateChannelError>`](crate::error::CreateChannelError)
     pub fn create_channel(&self) -> fluent_builders::CreateChannel<C, M, R> {
         fluent_builders::CreateChannel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDataset` operation.
+    /// Constructs a fluent builder for the [`CreateDataset`](crate::client::fluent_builders::CreateDataset) operation.
     ///
-    /// See [`CreateDataset`](crate::client::fluent_builders::CreateDataset) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateDatasetInput`](crate::input::CreateDatasetInput) with field(s):
+    ///   - [`dataset_name(Option<String>)`](crate::input::CreateDatasetInput::dataset_name): <p>The name of the dataset.</p>
+    ///   - [`actions(Option<Vec<DatasetAction>>)`](crate::input::CreateDatasetInput::actions): <p>A list of actions that create the dataset contents.</p>
+    ///   - [`triggers(Option<Vec<DatasetTrigger>>)`](crate::input::CreateDatasetInput::triggers): <p>A list of triggers. A trigger causes dataset contents to be populated at a specified time interval or when another dataset's contents are created. The list of triggers can be empty or contain up to five <code>DataSetTrigger</code> objects.</p>
+    ///   - [`content_delivery_rules(Option<Vec<DatasetContentDeliveryRule>>)`](crate::input::CreateDatasetInput::content_delivery_rules): <p>When dataset contents are created, they are delivered to destinations specified here.</p>
+    ///   - [`retention_period(Option<RetentionPeriod>)`](crate::input::CreateDatasetInput::retention_period): <p>Optional. How long, in days, versions of dataset contents are kept for the dataset. If not specified or set to <code>null</code>, versions of dataset contents are retained for at most 90 days. The number of versions of dataset contents retained is determined by the <code>versioningConfiguration</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"> Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
+    ///   - [`versioning_configuration(Option<VersioningConfiguration>)`](crate::input::CreateDatasetInput::versioning_configuration): <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateDatasetInput::tags): <p>Metadata which can be used to manage the dataset.</p>
+    ///   - [`late_data_rules(Option<Vec<LateDataRule>>)`](crate::input::CreateDatasetInput::late_data_rules): <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
+    /// - On success, responds with [`CreateDatasetOutput`](crate::output::CreateDatasetOutput) with field(s):
+    ///   - [`dataset_name(Option<String>)`](crate::output::CreateDatasetOutput::dataset_name): <p>The name of the dataset.</p>
+    ///   - [`dataset_arn(Option<String>)`](crate::output::CreateDatasetOutput::dataset_arn): <p>The ARN of the dataset.</p>
+    ///   - [`retention_period(Option<RetentionPeriod>)`](crate::output::CreateDatasetOutput::retention_period): <p>How long, in days, dataset contents are kept for the dataset.</p>
+    /// - On failure, responds with [`SdkError<CreateDatasetError>`](crate::error::CreateDatasetError)
     pub fn create_dataset(&self) -> fluent_builders::CreateDataset<C, M, R> {
         fluent_builders::CreateDataset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDatasetContent` operation.
+    /// Constructs a fluent builder for the [`CreateDatasetContent`](crate::client::fluent_builders::CreateDatasetContent) operation.
     ///
-    /// See [`CreateDatasetContent`](crate::client::fluent_builders::CreateDatasetContent) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateDatasetContentInput`](crate::input::CreateDatasetContentInput) with field(s):
+    ///   - [`dataset_name(Option<String>)`](crate::input::CreateDatasetContentInput::dataset_name): <p>The name of the dataset.</p>
+    ///   - [`version_id(Option<String>)`](crate::input::CreateDatasetContentInput::version_id): <p>The version ID of the dataset content. To specify <code>versionId</code> for a dataset content, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
+    /// - On success, responds with [`CreateDatasetContentOutput`](crate::output::CreateDatasetContentOutput) with field(s):
+    ///   - [`version_id(Option<String>)`](crate::output::CreateDatasetContentOutput::version_id): <p>The version ID of the dataset contents that are being created.</p>
+    /// - On failure, responds with [`SdkError<CreateDatasetContentError>`](crate::error::CreateDatasetContentError)
     pub fn create_dataset_content(&self) -> fluent_builders::CreateDatasetContent<C, M, R> {
         fluent_builders::CreateDatasetContent::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateDatastore` operation.
+    /// Constructs a fluent builder for the [`CreateDatastore`](crate::client::fluent_builders::CreateDatastore) operation.
     ///
-    /// See [`CreateDatastore`](crate::client::fluent_builders::CreateDatastore) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateDatastoreInput`](crate::input::CreateDatastoreInput) with field(s):
+    ///   - [`datastore_name(Option<String>)`](crate::input::CreateDatastoreInput::datastore_name): <p>The name of the data store.</p>
+    ///   - [`datastore_storage(Option<DatastoreStorage>)`](crate::input::CreateDatastoreInput::datastore_storage): <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
+    ///   - [`retention_period(Option<RetentionPeriod>)`](crate::input::CreateDatastoreInput::retention_period): <p>How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateDatastoreInput::tags): <p>Metadata which can be used to manage the data store.</p>
+    ///   - [`file_format_configuration(Option<FileFormatConfiguration>)`](crate::input::CreateDatastoreInput::file_format_configuration): <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>  <p>The default file format is JSON. You can specify only one format.</p>  <p>You can't change the file format after you create the data store.</p>
+    ///   - [`datastore_partitions(Option<DatastorePartitions>)`](crate::input::CreateDatastoreInput::datastore_partitions): <p> Contains information about the partition dimensions in a data store. </p>
+    /// - On success, responds with [`CreateDatastoreOutput`](crate::output::CreateDatastoreOutput) with field(s):
+    ///   - [`datastore_name(Option<String>)`](crate::output::CreateDatastoreOutput::datastore_name): <p>The name of the data store.</p>
+    ///   - [`datastore_arn(Option<String>)`](crate::output::CreateDatastoreOutput::datastore_arn): <p>The ARN of the data store.</p>
+    ///   - [`retention_period(Option<RetentionPeriod>)`](crate::output::CreateDatastoreOutput::retention_period): <p>How long, in days, message data is kept for the data store.</p>
+    /// - On failure, responds with [`SdkError<CreateDatastoreError>`](crate::error::CreateDatastoreError)
     pub fn create_datastore(&self) -> fluent_builders::CreateDatastore<C, M, R> {
         fluent_builders::CreateDatastore::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreatePipeline` operation.
+    /// Constructs a fluent builder for the [`CreatePipeline`](crate::client::fluent_builders::CreatePipeline) operation.
     ///
-    /// See [`CreatePipeline`](crate::client::fluent_builders::CreatePipeline) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreatePipelineInput`](crate::input::CreatePipelineInput) with field(s):
+    ///   - [`pipeline_name(Option<String>)`](crate::input::CreatePipelineInput::pipeline_name): <p>The name of the pipeline.</p>
+    ///   - [`pipeline_activities(Option<Vec<PipelineActivity>>)`](crate::input::CreatePipelineInput::pipeline_activities): <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your Lambda unctions on messages for advanced processing; or performing mathematical transformations to normalize device data.</p>  <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must contain only one activity. For example:</p>  <p> <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code> </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreatePipelineInput::tags): <p>Metadata which can be used to manage the pipeline.</p>
+    /// - On success, responds with [`CreatePipelineOutput`](crate::output::CreatePipelineOutput) with field(s):
+    ///   - [`pipeline_name(Option<String>)`](crate::output::CreatePipelineOutput::pipeline_name): <p>The name of the pipeline.</p>
+    ///   - [`pipeline_arn(Option<String>)`](crate::output::CreatePipelineOutput::pipeline_arn): <p>The ARN of the pipeline.</p>
+    /// - On failure, responds with [`SdkError<CreatePipelineError>`](crate::error::CreatePipelineError)
     pub fn create_pipeline(&self) -> fluent_builders::CreatePipeline<C, M, R> {
         fluent_builders::CreatePipeline::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteChannel` operation.
+    /// Constructs a fluent builder for the [`DeleteChannel`](crate::client::fluent_builders::DeleteChannel) operation.
     ///
-    /// See [`DeleteChannel`](crate::client::fluent_builders::DeleteChannel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteChannelInput`](crate::input::DeleteChannelInput) with field(s):
+    ///   - [`channel_name(Option<String>)`](crate::input::DeleteChannelInput::channel_name): <p>The name of the channel to delete.</p>
+    /// - On success, responds with [`DeleteChannelOutput`](crate::output::DeleteChannelOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteChannelError>`](crate::error::DeleteChannelError)
     pub fn delete_channel(&self) -> fluent_builders::DeleteChannel<C, M, R> {
         fluent_builders::DeleteChannel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDataset` operation.
+    /// Constructs a fluent builder for the [`DeleteDataset`](crate::client::fluent_builders::DeleteDataset) operation.
     ///
-    /// See [`DeleteDataset`](crate::client::fluent_builders::DeleteDataset) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteDatasetInput`](crate::input::DeleteDatasetInput) with field(s):
+    ///   - [`dataset_name(Option<String>)`](crate::input::DeleteDatasetInput::dataset_name): <p>The name of the dataset to delete.</p>
+    /// - On success, responds with [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteDatasetError>`](crate::error::DeleteDatasetError)
     pub fn delete_dataset(&self) -> fluent_builders::DeleteDataset<C, M, R> {
         fluent_builders::DeleteDataset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDatasetContent` operation.
+    /// Constructs a fluent builder for the [`DeleteDatasetContent`](crate::client::fluent_builders::DeleteDatasetContent) operation.
     ///
-    /// See [`DeleteDatasetContent`](crate::client::fluent_builders::DeleteDatasetContent) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteDatasetContentInput`](crate::input::DeleteDatasetContentInput) with field(s):
+    ///   - [`dataset_name(Option<String>)`](crate::input::DeleteDatasetContentInput::dataset_name): <p>The name of the dataset whose content is deleted.</p>
+    ///   - [`version_id(Option<String>)`](crate::input::DeleteDatasetContentInput::version_id): <p>The version of the dataset whose content is deleted. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest successfully completed data set. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
+    /// - On success, responds with [`DeleteDatasetContentOutput`](crate::output::DeleteDatasetContentOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteDatasetContentError>`](crate::error::DeleteDatasetContentError)
     pub fn delete_dataset_content(&self) -> fluent_builders::DeleteDatasetContent<C, M, R> {
         fluent_builders::DeleteDatasetContent::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteDatastore` operation.
+    /// Constructs a fluent builder for the [`DeleteDatastore`](crate::client::fluent_builders::DeleteDatastore) operation.
     ///
-    /// See [`DeleteDatastore`](crate::client::fluent_builders::DeleteDatastore) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteDatastoreInput`](crate::input::DeleteDatastoreInput) with field(s):
+    ///   - [`datastore_name(Option<String>)`](crate::input::DeleteDatastoreInput::datastore_name): <p>The name of the data store to delete.</p>
+    /// - On success, responds with [`DeleteDatastoreOutput`](crate::output::DeleteDatastoreOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteDatastoreError>`](crate::error::DeleteDatastoreError)
     pub fn delete_datastore(&self) -> fluent_builders::DeleteDatastore<C, M, R> {
         fluent_builders::DeleteDatastore::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeletePipeline` operation.
+    /// Constructs a fluent builder for the [`DeletePipeline`](crate::client::fluent_builders::DeletePipeline) operation.
     ///
-    /// See [`DeletePipeline`](crate::client::fluent_builders::DeletePipeline) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeletePipelineInput`](crate::input::DeletePipelineInput) with field(s):
+    ///   - [`pipeline_name(Option<String>)`](crate::input::DeletePipelineInput::pipeline_name): <p>The name of the pipeline to delete.</p>
+    /// - On success, responds with [`DeletePipelineOutput`](crate::output::DeletePipelineOutput)
+
+    /// - On failure, responds with [`SdkError<DeletePipelineError>`](crate::error::DeletePipelineError)
     pub fn delete_pipeline(&self) -> fluent_builders::DeletePipeline<C, M, R> {
         fluent_builders::DeletePipeline::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeChannel` operation.
+    /// Constructs a fluent builder for the [`DescribeChannel`](crate::client::fluent_builders::DescribeChannel) operation.
     ///
-    /// See [`DescribeChannel`](crate::client::fluent_builders::DescribeChannel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeChannelInput`](crate::input::DescribeChannelInput) with field(s):
+    ///   - [`channel_name(Option<String>)`](crate::input::DescribeChannelInput::channel_name): <p>The name of the channel whose information is retrieved.</p>
+    ///   - [`include_statistics(bool)`](crate::input::DescribeChannelInput::include_statistics): <p>If true, additional statistical information about the channel is included in the response. This feature can't be used with a channel whose S3 storage is customer-managed.</p>
+    /// - On success, responds with [`DescribeChannelOutput`](crate::output::DescribeChannelOutput) with field(s):
+    ///   - [`channel(Option<Channel>)`](crate::output::DescribeChannelOutput::channel): <p>An object that contains information about the channel.</p>
+    ///   - [`statistics(Option<ChannelStatistics>)`](crate::output::DescribeChannelOutput::statistics): <p>Statistics about the channel. Included if the <code>includeStatistics</code> parameter is set to <code>true</code> in the request.</p>
+    /// - On failure, responds with [`SdkError<DescribeChannelError>`](crate::error::DescribeChannelError)
     pub fn describe_channel(&self) -> fluent_builders::DescribeChannel<C, M, R> {
         fluent_builders::DescribeChannel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDataset` operation.
+    /// Constructs a fluent builder for the [`DescribeDataset`](crate::client::fluent_builders::DescribeDataset) operation.
     ///
-    /// See [`DescribeDataset`](crate::client::fluent_builders::DescribeDataset) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeDatasetInput`](crate::input::DescribeDatasetInput) with field(s):
+    ///   - [`dataset_name(Option<String>)`](crate::input::DescribeDatasetInput::dataset_name): <p>The name of the dataset whose information is retrieved.</p>
+    /// - On success, responds with [`DescribeDatasetOutput`](crate::output::DescribeDatasetOutput) with field(s):
+    ///   - [`dataset(Option<Dataset>)`](crate::output::DescribeDatasetOutput::dataset): <p>An object that contains information about the dataset.</p>
+    /// - On failure, responds with [`SdkError<DescribeDatasetError>`](crate::error::DescribeDatasetError)
     pub fn describe_dataset(&self) -> fluent_builders::DescribeDataset<C, M, R> {
         fluent_builders::DescribeDataset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDatastore` operation.
+    /// Constructs a fluent builder for the [`DescribeDatastore`](crate::client::fluent_builders::DescribeDatastore) operation.
     ///
-    /// See [`DescribeDatastore`](crate::client::fluent_builders::DescribeDatastore) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeDatastoreInput`](crate::input::DescribeDatastoreInput) with field(s):
+    ///   - [`datastore_name(Option<String>)`](crate::input::DescribeDatastoreInput::datastore_name): <p>The name of the data store</p>
+    ///   - [`include_statistics(bool)`](crate::input::DescribeDatastoreInput::include_statistics): <p>If true, additional statistical information about the data store is included in the response. This feature can't be used with a data store whose S3 storage is customer-managed.</p>
+    /// - On success, responds with [`DescribeDatastoreOutput`](crate::output::DescribeDatastoreOutput) with field(s):
+    ///   - [`datastore(Option<Datastore>)`](crate::output::DescribeDatastoreOutput::datastore): <p>Information about the data store.</p>
+    ///   - [`statistics(Option<DatastoreStatistics>)`](crate::output::DescribeDatastoreOutput::statistics): <p>Additional statistical information about the data store. Included if the <code>includeStatistics</code> parameter is set to <code>true</code> in the request.</p>
+    /// - On failure, responds with [`SdkError<DescribeDatastoreError>`](crate::error::DescribeDatastoreError)
     pub fn describe_datastore(&self) -> fluent_builders::DescribeDatastore<C, M, R> {
         fluent_builders::DescribeDatastore::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeLoggingOptions` operation.
+    /// Constructs a fluent builder for the [`DescribeLoggingOptions`](crate::client::fluent_builders::DescribeLoggingOptions) operation.
     ///
-    /// See [`DescribeLoggingOptions`](crate::client::fluent_builders::DescribeLoggingOptions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeLoggingOptionsInput`](crate::input::DescribeLoggingOptionsInput)
+
+    /// - On success, responds with [`DescribeLoggingOptionsOutput`](crate::output::DescribeLoggingOptionsOutput) with field(s):
+    ///   - [`logging_options(Option<LoggingOptions>)`](crate::output::DescribeLoggingOptionsOutput::logging_options): <p>The current settings of the IoT Analytics logging options.</p>
+    /// - On failure, responds with [`SdkError<DescribeLoggingOptionsError>`](crate::error::DescribeLoggingOptionsError)
     pub fn describe_logging_options(&self) -> fluent_builders::DescribeLoggingOptions<C, M, R> {
         fluent_builders::DescribeLoggingOptions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribePipeline` operation.
+    /// Constructs a fluent builder for the [`DescribePipeline`](crate::client::fluent_builders::DescribePipeline) operation.
     ///
-    /// See [`DescribePipeline`](crate::client::fluent_builders::DescribePipeline) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribePipelineInput`](crate::input::DescribePipelineInput) with field(s):
+    ///   - [`pipeline_name(Option<String>)`](crate::input::DescribePipelineInput::pipeline_name): <p>The name of the pipeline whose information is retrieved.</p>
+    /// - On success, responds with [`DescribePipelineOutput`](crate::output::DescribePipelineOutput) with field(s):
+    ///   - [`pipeline(Option<Pipeline>)`](crate::output::DescribePipelineOutput::pipeline): <p>A <code>Pipeline</code> object that contains information about the pipeline.</p>
+    /// - On failure, responds with [`SdkError<DescribePipelineError>`](crate::error::DescribePipelineError)
     pub fn describe_pipeline(&self) -> fluent_builders::DescribePipeline<C, M, R> {
         fluent_builders::DescribePipeline::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetDatasetContent` operation.
+    /// Constructs a fluent builder for the [`GetDatasetContent`](crate::client::fluent_builders::GetDatasetContent) operation.
     ///
-    /// See [`GetDatasetContent`](crate::client::fluent_builders::GetDatasetContent) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetDatasetContentInput`](crate::input::GetDatasetContentInput) with field(s):
+    ///   - [`dataset_name(Option<String>)`](crate::input::GetDatasetContentInput::dataset_name): <p>The name of the dataset whose contents are retrieved.</p>
+    ///   - [`version_id(Option<String>)`](crate::input::GetDatasetContentInput::version_id): <p>The version of the dataset whose contents are retrieved. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest or latest successfully completed dataset. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
+    /// - On success, responds with [`GetDatasetContentOutput`](crate::output::GetDatasetContentOutput) with field(s):
+    ///   - [`entries(Option<Vec<DatasetEntry>>)`](crate::output::GetDatasetContentOutput::entries): <p>A list of <code>DatasetEntry</code> objects.</p>
+    ///   - [`timestamp(Option<DateTime>)`](crate::output::GetDatasetContentOutput::timestamp): <p>The time when the request was made.</p>
+    ///   - [`status(Option<DatasetContentStatus>)`](crate::output::GetDatasetContentOutput::status): <p>The status of the dataset content.</p>
+    /// - On failure, responds with [`SdkError<GetDatasetContentError>`](crate::error::GetDatasetContentError)
     pub fn get_dataset_content(&self) -> fluent_builders::GetDatasetContent<C, M, R> {
         fluent_builders::GetDatasetContent::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListChannels` operation.
-    ///
-    /// See [`ListChannels`](crate::client::fluent_builders::ListChannels) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListChannels`](crate::client::fluent_builders::ListChannels) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListChannels::into_paginator).
+    ///
+    /// - Takes [`ListChannelsInput`](crate::input::ListChannelsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListChannelsInput::next_token): <p>The token for the next set of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListChannelsInput::max_results): <p>The maximum number of results to return in this request.</p>  <p>The default value is 100.</p>
+    /// - On success, responds with [`ListChannelsOutput`](crate::output::ListChannelsOutput) with field(s):
+    ///   - [`channel_summaries(Option<Vec<ChannelSummary>>)`](crate::output::ListChannelsOutput::channel_summaries): <p>A list of <code>ChannelSummary</code> objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListChannelsOutput::next_token): <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
+    /// - On failure, responds with [`SdkError<ListChannelsError>`](crate::error::ListChannelsError)
     pub fn list_channels(&self) -> fluent_builders::ListChannels<C, M, R> {
         fluent_builders::ListChannels::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDatasetContents` operation.
-    ///
-    /// See [`ListDatasetContents`](crate::client::fluent_builders::ListDatasetContents) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListDatasetContents`](crate::client::fluent_builders::ListDatasetContents) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDatasetContents::into_paginator).
+    ///
+    /// - Takes [`ListDatasetContentsInput`](crate::input::ListDatasetContentsInput) with field(s):
+    ///   - [`dataset_name(Option<String>)`](crate::input::ListDatasetContentsInput::dataset_name): <p>The name of the dataset whose contents information you want to list.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListDatasetContentsInput::next_token): <p>The token for the next set of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListDatasetContentsInput::max_results): <p>The maximum number of results to return in this request.</p>
+    ///   - [`scheduled_on_or_after(Option<DateTime>)`](crate::input::ListDatasetContentsInput::scheduled_on_or_after): <p>A filter to limit results to those dataset contents whose creation is scheduled on or after the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)</p>
+    ///   - [`scheduled_before(Option<DateTime>)`](crate::input::ListDatasetContentsInput::scheduled_before): <p>A filter to limit results to those dataset contents whose creation is scheduled before the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)</p>
+    /// - On success, responds with [`ListDatasetContentsOutput`](crate::output::ListDatasetContentsOutput) with field(s):
+    ///   - [`dataset_content_summaries(Option<Vec<DatasetContentSummary>>)`](crate::output::ListDatasetContentsOutput::dataset_content_summaries): <p>Summary information about dataset contents that have been created.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDatasetContentsOutput::next_token): <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
+    /// - On failure, responds with [`SdkError<ListDatasetContentsError>`](crate::error::ListDatasetContentsError)
     pub fn list_dataset_contents(&self) -> fluent_builders::ListDatasetContents<C, M, R> {
         fluent_builders::ListDatasetContents::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDatasets` operation.
-    ///
-    /// See [`ListDatasets`](crate::client::fluent_builders::ListDatasets) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListDatasets`](crate::client::fluent_builders::ListDatasets) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDatasets::into_paginator).
+    ///
+    /// - Takes [`ListDatasetsInput`](crate::input::ListDatasetsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListDatasetsInput::next_token): <p>The token for the next set of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListDatasetsInput::max_results): <p>The maximum number of results to return in this request.</p>  <p>The default value is 100.</p>
+    /// - On success, responds with [`ListDatasetsOutput`](crate::output::ListDatasetsOutput) with field(s):
+    ///   - [`dataset_summaries(Option<Vec<DatasetSummary>>)`](crate::output::ListDatasetsOutput::dataset_summaries): <p>A list of <code>DatasetSummary</code> objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDatasetsOutput::next_token): <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
+    /// - On failure, responds with [`SdkError<ListDatasetsError>`](crate::error::ListDatasetsError)
     pub fn list_datasets(&self) -> fluent_builders::ListDatasets<C, M, R> {
         fluent_builders::ListDatasets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListDatastores` operation.
-    ///
-    /// See [`ListDatastores`](crate::client::fluent_builders::ListDatastores) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListDatastores`](crate::client::fluent_builders::ListDatastores) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListDatastores::into_paginator).
+    ///
+    /// - Takes [`ListDatastoresInput`](crate::input::ListDatastoresInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListDatastoresInput::next_token): <p>The token for the next set of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListDatastoresInput::max_results): <p>The maximum number of results to return in this request.</p>  <p>The default value is 100.</p>
+    /// - On success, responds with [`ListDatastoresOutput`](crate::output::ListDatastoresOutput) with field(s):
+    ///   - [`datastore_summaries(Option<Vec<DatastoreSummary>>)`](crate::output::ListDatastoresOutput::datastore_summaries): <p>A list of <code>DatastoreSummary</code> objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListDatastoresOutput::next_token): <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
+    /// - On failure, responds with [`SdkError<ListDatastoresError>`](crate::error::ListDatastoresError)
     pub fn list_datastores(&self) -> fluent_builders::ListDatastores<C, M, R> {
         fluent_builders::ListDatastores::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPipelines` operation.
-    ///
-    /// See [`ListPipelines`](crate::client::fluent_builders::ListPipelines) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListPipelines`](crate::client::fluent_builders::ListPipelines) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPipelines::into_paginator).
+    ///
+    /// - Takes [`ListPipelinesInput`](crate::input::ListPipelinesInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListPipelinesInput::next_token): <p>The token for the next set of results.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListPipelinesInput::max_results): <p>The maximum number of results to return in this request.</p>  <p>The default value is 100.</p>
+    /// - On success, responds with [`ListPipelinesOutput`](crate::output::ListPipelinesOutput) with field(s):
+    ///   - [`pipeline_summaries(Option<Vec<PipelineSummary>>)`](crate::output::ListPipelinesOutput::pipeline_summaries): <p>A list of <code>PipelineSummary</code> objects.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPipelinesOutput::next_token): <p>The token to retrieve the next set of results, or <code>null</code> if there are no more results.</p>
+    /// - On failure, responds with [`SdkError<ListPipelinesError>`](crate::error::ListPipelinesError)
     pub fn list_pipelines(&self) -> fluent_builders::ListPipelines<C, M, R> {
         fluent_builders::ListPipelines::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The ARN of the resource whose tags you want to list.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags (metadata) that you have assigned to the resource.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutLoggingOptions` operation.
+    /// Constructs a fluent builder for the [`PutLoggingOptions`](crate::client::fluent_builders::PutLoggingOptions) operation.
     ///
-    /// See [`PutLoggingOptions`](crate::client::fluent_builders::PutLoggingOptions) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutLoggingOptionsInput`](crate::input::PutLoggingOptionsInput) with field(s):
+    ///   - [`logging_options(Option<LoggingOptions>)`](crate::input::PutLoggingOptionsInput::logging_options): <p>The new values of the IoT Analytics logging options.</p>
+    /// - On success, responds with [`PutLoggingOptionsOutput`](crate::output::PutLoggingOptionsOutput)
+
+    /// - On failure, responds with [`SdkError<PutLoggingOptionsError>`](crate::error::PutLoggingOptionsError)
     pub fn put_logging_options(&self) -> fluent_builders::PutLoggingOptions<C, M, R> {
         fluent_builders::PutLoggingOptions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RunPipelineActivity` operation.
+    /// Constructs a fluent builder for the [`RunPipelineActivity`](crate::client::fluent_builders::RunPipelineActivity) operation.
     ///
-    /// See [`RunPipelineActivity`](crate::client::fluent_builders::RunPipelineActivity) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RunPipelineActivityInput`](crate::input::RunPipelineActivityInput) with field(s):
+    ///   - [`pipeline_activity(Option<PipelineActivity>)`](crate::input::RunPipelineActivityInput::pipeline_activity): <p>The pipeline activity that is run. This must not be a channel activity or a data store activity because these activities are used in a pipeline only to load the original message and to store the (possibly) transformed message. If a Lambda activity is specified, only short-running Lambda functions (those with a timeout of less than 30 seconds or less) can be used.</p>
+    ///   - [`payloads(Option<Vec<Blob>>)`](crate::input::RunPipelineActivityInput::payloads): <p>The sample message payloads on which the pipeline activity is run.</p>
+    /// - On success, responds with [`RunPipelineActivityOutput`](crate::output::RunPipelineActivityOutput) with field(s):
+    ///   - [`payloads(Option<Vec<Blob>>)`](crate::output::RunPipelineActivityOutput::payloads): <p>The enriched or transformed sample message payloads as base64-encoded strings. (The results of running the pipeline activity on each input sample message payload, encoded in base64.)</p>
+    ///   - [`log_result(Option<String>)`](crate::output::RunPipelineActivityOutput::log_result): <p>In case the pipeline activity fails, the log message that is generated.</p>
+    /// - On failure, responds with [`SdkError<RunPipelineActivityError>`](crate::error::RunPipelineActivityError)
     pub fn run_pipeline_activity(&self) -> fluent_builders::RunPipelineActivity<C, M, R> {
         fluent_builders::RunPipelineActivity::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SampleChannelData` operation.
+    /// Constructs a fluent builder for the [`SampleChannelData`](crate::client::fluent_builders::SampleChannelData) operation.
     ///
-    /// See [`SampleChannelData`](crate::client::fluent_builders::SampleChannelData) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`SampleChannelDataInput`](crate::input::SampleChannelDataInput) with field(s):
+    ///   - [`channel_name(Option<String>)`](crate::input::SampleChannelDataInput::channel_name): <p>The name of the channel whose message samples are retrieved.</p>
+    ///   - [`max_messages(Option<i32>)`](crate::input::SampleChannelDataInput::max_messages): <p>The number of sample messages to be retrieved. The limit is 10. The default is also 10.</p>
+    ///   - [`start_time(Option<DateTime>)`](crate::input::SampleChannelDataInput::start_time): <p>The start of the time window from which sample messages are retrieved.</p>
+    ///   - [`end_time(Option<DateTime>)`](crate::input::SampleChannelDataInput::end_time): <p>The end of the time window from which sample messages are retrieved.</p>
+    /// - On success, responds with [`SampleChannelDataOutput`](crate::output::SampleChannelDataOutput) with field(s):
+    ///   - [`payloads(Option<Vec<Blob>>)`](crate::output::SampleChannelDataOutput::payloads): <p>The list of message samples. Each sample message is returned as a base64-encoded string.</p>
+    /// - On failure, responds with [`SdkError<SampleChannelDataError>`](crate::error::SampleChannelDataError)
     pub fn sample_channel_data(&self) -> fluent_builders::SampleChannelData<C, M, R> {
         fluent_builders::SampleChannelData::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartPipelineReprocessing` operation.
+    /// Constructs a fluent builder for the [`StartPipelineReprocessing`](crate::client::fluent_builders::StartPipelineReprocessing) operation.
     ///
-    /// See [`StartPipelineReprocessing`](crate::client::fluent_builders::StartPipelineReprocessing) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartPipelineReprocessingInput`](crate::input::StartPipelineReprocessingInput) with field(s):
+    ///   - [`pipeline_name(Option<String>)`](crate::input::StartPipelineReprocessingInput::pipeline_name): <p>The name of the pipeline on which to start reprocessing.</p>
+    ///   - [`start_time(Option<DateTime>)`](crate::input::StartPipelineReprocessingInput::start_time): <p>The start time (inclusive) of raw message data that is reprocessed.</p>  <p>If you specify a value for the <code>startTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
+    ///   - [`end_time(Option<DateTime>)`](crate::input::StartPipelineReprocessingInput::end_time): <p>The end time (exclusive) of raw message data that is reprocessed.</p>  <p>If you specify a value for the <code>endTime</code> parameter, you must not use the <code>channelMessages</code> object.</p>
+    ///   - [`channel_messages(Option<ChannelMessages>)`](crate::input::StartPipelineReprocessingInput::channel_messages): <p>Specifies one or more sets of channel messages that you want to reprocess.</p>  <p>If you use the <code>channelMessages</code> object, you must not specify a value for <code>startTime</code> and <code>endTime</code>.</p>
+    /// - On success, responds with [`StartPipelineReprocessingOutput`](crate::output::StartPipelineReprocessingOutput) with field(s):
+    ///   - [`reprocessing_id(Option<String>)`](crate::output::StartPipelineReprocessingOutput::reprocessing_id): <p>The ID of the pipeline reprocessing activity that was started.</p>
+    /// - On failure, responds with [`SdkError<StartPipelineReprocessingError>`](crate::error::StartPipelineReprocessingError)
     pub fn start_pipeline_reprocessing(
         &self,
     ) -> fluent_builders::StartPipelineReprocessing<C, M, R> {
         fluent_builders::StartPipelineReprocessing::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The ARN of the resource whose tags you want to modify.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>The new or modified tags for the resource.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The ARN of the resource whose tags you want to remove.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The keys of those tags which you want to remove.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateChannel` operation.
+    /// Constructs a fluent builder for the [`UpdateChannel`](crate::client::fluent_builders::UpdateChannel) operation.
     ///
-    /// See [`UpdateChannel`](crate::client::fluent_builders::UpdateChannel) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateChannelInput`](crate::input::UpdateChannelInput) with field(s):
+    ///   - [`channel_name(Option<String>)`](crate::input::UpdateChannelInput::channel_name): <p>The name of the channel to be updated.</p>
+    ///   - [`channel_storage(Option<ChannelStorage>)`](crate::input::UpdateChannelInput::channel_storage): <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
+    ///   - [`retention_period(Option<RetentionPeriod>)`](crate::input::UpdateChannelInput::retention_period): <p>How long, in days, message data is kept for the channel. The retention period can't be updated if the channel's Amazon S3 storage is customer-managed.</p>
+    /// - On success, responds with [`UpdateChannelOutput`](crate::output::UpdateChannelOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateChannelError>`](crate::error::UpdateChannelError)
     pub fn update_channel(&self) -> fluent_builders::UpdateChannel<C, M, R> {
         fluent_builders::UpdateChannel::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDataset` operation.
+    /// Constructs a fluent builder for the [`UpdateDataset`](crate::client::fluent_builders::UpdateDataset) operation.
     ///
-    /// See [`UpdateDataset`](crate::client::fluent_builders::UpdateDataset) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateDatasetInput`](crate::input::UpdateDatasetInput) with field(s):
+    ///   - [`dataset_name(Option<String>)`](crate::input::UpdateDatasetInput::dataset_name): <p>The name of the dataset to update.</p>
+    ///   - [`actions(Option<Vec<DatasetAction>>)`](crate::input::UpdateDatasetInput::actions): <p>A list of <code>DatasetAction</code> objects.</p>
+    ///   - [`triggers(Option<Vec<DatasetTrigger>>)`](crate::input::UpdateDatasetInput::triggers): <p>A list of <code>DatasetTrigger</code> objects. The list can be empty or can contain up to five <code>DatasetTrigger</code> objects.</p>
+    ///   - [`content_delivery_rules(Option<Vec<DatasetContentDeliveryRule>>)`](crate::input::UpdateDatasetInput::content_delivery_rules): <p>When dataset contents are created, they are delivered to destinations specified here.</p>
+    ///   - [`retention_period(Option<RetentionPeriod>)`](crate::input::UpdateDatasetInput::retention_period): <p>How long, in days, dataset contents are kept for the dataset.</p>
+    ///   - [`versioning_configuration(Option<VersioningConfiguration>)`](crate::input::UpdateDatasetInput::versioning_configuration): <p>Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest version plus the latest succeeded version (if they are different) are kept for the time period specified by the <code>retentionPeriod</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.</p>
+    ///   - [`late_data_rules(Option<Vec<LateDataRule>>)`](crate::input::UpdateDatasetInput::late_data_rules): <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
+    /// - On success, responds with [`UpdateDatasetOutput`](crate::output::UpdateDatasetOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateDatasetError>`](crate::error::UpdateDatasetError)
     pub fn update_dataset(&self) -> fluent_builders::UpdateDataset<C, M, R> {
         fluent_builders::UpdateDataset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateDatastore` operation.
+    /// Constructs a fluent builder for the [`UpdateDatastore`](crate::client::fluent_builders::UpdateDatastore) operation.
     ///
-    /// See [`UpdateDatastore`](crate::client::fluent_builders::UpdateDatastore) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateDatastoreInput`](crate::input::UpdateDatastoreInput) with field(s):
+    ///   - [`datastore_name(Option<String>)`](crate::input::UpdateDatastoreInput::datastore_name): <p>The name of the data store to be updated.</p>
+    ///   - [`retention_period(Option<RetentionPeriod>)`](crate::input::UpdateDatastoreInput::retention_period): <p>How long, in days, message data is kept for the data store. The retention period can't be updated if the data store's Amazon S3 storage is customer-managed.</p>
+    ///   - [`datastore_storage(Option<DatastoreStorage>)`](crate::input::UpdateDatastoreInput::datastore_storage): <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
+    ///   - [`file_format_configuration(Option<FileFormatConfiguration>)`](crate::input::UpdateDatastoreInput::file_format_configuration): <p>Contains the configuration information of file formats. IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>  <p>The default file format is JSON. You can specify only one format.</p>  <p>You can't change the file format after you create the data store.</p>
+    /// - On success, responds with [`UpdateDatastoreOutput`](crate::output::UpdateDatastoreOutput)
+
+    /// - On failure, responds with [`SdkError<UpdateDatastoreError>`](crate::error::UpdateDatastoreError)
     pub fn update_datastore(&self) -> fluent_builders::UpdateDatastore<C, M, R> {
         fluent_builders::UpdateDatastore::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdatePipeline` operation.
+    /// Constructs a fluent builder for the [`UpdatePipeline`](crate::client::fluent_builders::UpdatePipeline) operation.
     ///
-    /// See [`UpdatePipeline`](crate::client::fluent_builders::UpdatePipeline) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdatePipelineInput`](crate::input::UpdatePipelineInput) with field(s):
+    ///   - [`pipeline_name(Option<String>)`](crate::input::UpdatePipelineInput::pipeline_name): <p>The name of the pipeline to update.</p>
+    ///   - [`pipeline_activities(Option<Vec<PipelineActivity>>)`](crate::input::UpdatePipelineInput::pipeline_activities): <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on your messages, such as removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your Lambda functions on messages for advanced processing; or performing mathematical transformations to normalize device data.</p>  <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must contain only one activity. For example:</p>  <p> <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code> </p>
+    /// - On success, responds with [`UpdatePipelineOutput`](crate::output::UpdatePipelineOutput)
+
+    /// - On failure, responds with [`SdkError<UpdatePipelineError>`](crate::error::UpdatePipelineError)
     pub fn update_pipeline(&self) -> fluent_builders::UpdatePipeline<C, M, R> {
         fluent_builders::UpdatePipeline::new(self.handle.clone())
     }

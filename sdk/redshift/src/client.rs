@@ -83,959 +83,1880 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AcceptReservedNodeExchange` operation.
+    /// Constructs a fluent builder for the [`AcceptReservedNodeExchange`](crate::client::fluent_builders::AcceptReservedNodeExchange) operation.
     ///
-    /// See [`AcceptReservedNodeExchange`](crate::client::fluent_builders::AcceptReservedNodeExchange) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AcceptReservedNodeExchangeInput`](crate::input::AcceptReservedNodeExchangeInput) with field(s):
+    ///   - [`reserved_node_id(Option<String>)`](crate::input::AcceptReservedNodeExchangeInput::reserved_node_id): <p>A string representing the node identifier of the DC1 Reserved Node to be exchanged.</p>
+    ///   - [`target_reserved_node_offering_id(Option<String>)`](crate::input::AcceptReservedNodeExchangeInput::target_reserved_node_offering_id): <p>The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for the parameter by calling <code>GetReservedNodeExchangeOfferings</code> </p>
+    /// - On success, responds with [`AcceptReservedNodeExchangeOutput`](crate::output::AcceptReservedNodeExchangeOutput) with field(s):
+    ///   - [`exchanged_reserved_node(Option<ReservedNode>)`](crate::output::AcceptReservedNodeExchangeOutput::exchanged_reserved_node): <p></p>
+    /// - On failure, responds with [`SdkError<AcceptReservedNodeExchangeError>`](crate::error::AcceptReservedNodeExchangeError)
     pub fn accept_reserved_node_exchange(
         &self,
     ) -> fluent_builders::AcceptReservedNodeExchange<C, M, R> {
         fluent_builders::AcceptReservedNodeExchange::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AddPartner` operation.
+    /// Constructs a fluent builder for the [`AddPartner`](crate::client::fluent_builders::AddPartner) operation.
     ///
-    /// See [`AddPartner`](crate::client::fluent_builders::AddPartner) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AddPartnerInput`](crate::input::AddPartnerInput) with field(s):
+    ///   - [`account_id(Option<String>)`](crate::input::AddPartnerInput::account_id): <p>The Amazon Web Services account ID that owns the cluster.</p>
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::AddPartnerInput::cluster_identifier): <p>The cluster identifier of the cluster that receives data from the partner.</p>
+    ///   - [`database_name(Option<String>)`](crate::input::AddPartnerInput::database_name): <p>The name of the database that receives data from the partner.</p>
+    ///   - [`partner_name(Option<String>)`](crate::input::AddPartnerInput::partner_name): <p>The name of the partner that is authorized to send data.</p>
+    /// - On success, responds with [`AddPartnerOutput`](crate::output::AddPartnerOutput) with field(s):
+    ///   - [`database_name(Option<String>)`](crate::output::AddPartnerOutput::database_name): <p>The name of the database that receives data from the partner.</p>
+    ///   - [`partner_name(Option<String>)`](crate::output::AddPartnerOutput::partner_name): <p>The name of the partner that is authorized to send data.</p>
+    /// - On failure, responds with [`SdkError<AddPartnerError>`](crate::error::AddPartnerError)
     pub fn add_partner(&self) -> fluent_builders::AddPartner<C, M, R> {
         fluent_builders::AddPartner::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AssociateDataShareConsumer` operation.
+    /// Constructs a fluent builder for the [`AssociateDataShareConsumer`](crate::client::fluent_builders::AssociateDataShareConsumer) operation.
     ///
-    /// See [`AssociateDataShareConsumer`](crate::client::fluent_builders::AssociateDataShareConsumer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateDataShareConsumerInput`](crate::input::AssociateDataShareConsumerInput) with field(s):
+    ///   - [`data_share_arn(Option<String>)`](crate::input::AssociateDataShareConsumerInput::data_share_arn): <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use with the account or the namespace.</p>
+    ///   - [`associate_entire_account(Option<bool>)`](crate::input::AssociateDataShareConsumerInput::associate_entire_account): <p>A value that specifies whether the datashare is associated with the entire account.</p>
+    ///   - [`consumer_arn(Option<String>)`](crate::input::AssociateDataShareConsumerInput::consumer_arn): <p>The Amazon Resource Name (ARN) of the consumer that is associated with the datashare.</p>
+    /// - On success, responds with [`AssociateDataShareConsumerOutput`](crate::output::AssociateDataShareConsumerOutput) with field(s):
+    ///   - [`data_share_arn(Option<String>)`](crate::output::AssociateDataShareConsumerOutput::data_share_arn): <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
+    ///   - [`producer_arn(Option<String>)`](crate::output::AssociateDataShareConsumerOutput::producer_arn): <p>The Amazon Resource Name (ARN) of the producer.</p>
+    ///   - [`allow_publicly_accessible_consumers(bool)`](crate::output::AssociateDataShareConsumerOutput::allow_publicly_accessible_consumers): <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
+    ///   - [`data_share_associations(Option<Vec<DataShareAssociation>>)`](crate::output::AssociateDataShareConsumerOutput::data_share_associations): <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+    ///   - [`managed_by(Option<String>)`](crate::output::AssociateDataShareConsumerOutput::managed_by): <p>The identifier of a datashare to show its managing entity.</p>
+    /// - On failure, responds with [`SdkError<AssociateDataShareConsumerError>`](crate::error::AssociateDataShareConsumerError)
     pub fn associate_data_share_consumer(
         &self,
     ) -> fluent_builders::AssociateDataShareConsumer<C, M, R> {
         fluent_builders::AssociateDataShareConsumer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AuthorizeClusterSecurityGroupIngress` operation.
+    /// Constructs a fluent builder for the [`AuthorizeClusterSecurityGroupIngress`](crate::client::fluent_builders::AuthorizeClusterSecurityGroupIngress) operation.
     ///
-    /// See [`AuthorizeClusterSecurityGroupIngress`](crate::client::fluent_builders::AuthorizeClusterSecurityGroupIngress) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AuthorizeClusterSecurityGroupIngressInput`](crate::input::AuthorizeClusterSecurityGroupIngressInput) with field(s):
+    ///   - [`cluster_security_group_name(Option<String>)`](crate::input::AuthorizeClusterSecurityGroupIngressInput::cluster_security_group_name): <p>The name of the security group to which the ingress rule is added.</p>
+    ///   - [`cidrip(Option<String>)`](crate::input::AuthorizeClusterSecurityGroupIngressInput::cidrip): <p>The IP range to be added the Amazon Redshift security group.</p>
+    ///   - [`ec2_security_group_name(Option<String>)`](crate::input::AuthorizeClusterSecurityGroupIngressInput::ec2_security_group_name): <p>The EC2 security group to be added the Amazon Redshift security group.</p>
+    ///   - [`ec2_security_group_owner_id(Option<String>)`](crate::input::AuthorizeClusterSecurityGroupIngressInput::ec2_security_group_owner_id): <p>The Amazon Web Services account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services Access Key ID is not an acceptable value. </p>  <p>Example: <code>111122223333</code> </p>
+    /// - On success, responds with [`AuthorizeClusterSecurityGroupIngressOutput`](crate::output::AuthorizeClusterSecurityGroupIngressOutput) with field(s):
+    ///   - [`cluster_security_group(Option<ClusterSecurityGroup>)`](crate::output::AuthorizeClusterSecurityGroupIngressOutput::cluster_security_group): <p>Describes a security group.</p>
+    /// - On failure, responds with [`SdkError<AuthorizeClusterSecurityGroupIngressError>`](crate::error::AuthorizeClusterSecurityGroupIngressError)
     pub fn authorize_cluster_security_group_ingress(
         &self,
     ) -> fluent_builders::AuthorizeClusterSecurityGroupIngress<C, M, R> {
         fluent_builders::AuthorizeClusterSecurityGroupIngress::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AuthorizeDataShare` operation.
+    /// Constructs a fluent builder for the [`AuthorizeDataShare`](crate::client::fluent_builders::AuthorizeDataShare) operation.
     ///
-    /// See [`AuthorizeDataShare`](crate::client::fluent_builders::AuthorizeDataShare) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AuthorizeDataShareInput`](crate::input::AuthorizeDataShareInput) with field(s):
+    ///   - [`data_share_arn(Option<String>)`](crate::input::AuthorizeDataShareInput::data_share_arn): <p>The Amazon Resource Name (ARN) of the datashare that producers are to authorize sharing for.</p>
+    ///   - [`consumer_identifier(Option<String>)`](crate::input::AuthorizeDataShareInput::consumer_identifier): <p>The identifier of the data consumer that is authorized to access the datashare. This identifier is an Amazon Web Services account ID or a keyword, such as ADX.</p>
+    /// - On success, responds with [`AuthorizeDataShareOutput`](crate::output::AuthorizeDataShareOutput) with field(s):
+    ///   - [`data_share_arn(Option<String>)`](crate::output::AuthorizeDataShareOutput::data_share_arn): <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
+    ///   - [`producer_arn(Option<String>)`](crate::output::AuthorizeDataShareOutput::producer_arn): <p>The Amazon Resource Name (ARN) of the producer.</p>
+    ///   - [`allow_publicly_accessible_consumers(bool)`](crate::output::AuthorizeDataShareOutput::allow_publicly_accessible_consumers): <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
+    ///   - [`data_share_associations(Option<Vec<DataShareAssociation>>)`](crate::output::AuthorizeDataShareOutput::data_share_associations): <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+    ///   - [`managed_by(Option<String>)`](crate::output::AuthorizeDataShareOutput::managed_by): <p>The identifier of a datashare to show its managing entity.</p>
+    /// - On failure, responds with [`SdkError<AuthorizeDataShareError>`](crate::error::AuthorizeDataShareError)
     pub fn authorize_data_share(&self) -> fluent_builders::AuthorizeDataShare<C, M, R> {
         fluent_builders::AuthorizeDataShare::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AuthorizeEndpointAccess` operation.
+    /// Constructs a fluent builder for the [`AuthorizeEndpointAccess`](crate::client::fluent_builders::AuthorizeEndpointAccess) operation.
     ///
-    /// See [`AuthorizeEndpointAccess`](crate::client::fluent_builders::AuthorizeEndpointAccess) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AuthorizeEndpointAccessInput`](crate::input::AuthorizeEndpointAccessInput) with field(s):
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::AuthorizeEndpointAccessInput::cluster_identifier): <p>The cluster identifier of the cluster to grant access to.</p>
+    ///   - [`account(Option<String>)`](crate::input::AuthorizeEndpointAccessInput::account): <p>The Amazon Web Services account ID to grant access to.</p>
+    ///   - [`vpc_ids(Option<Vec<String>>)`](crate::input::AuthorizeEndpointAccessInput::vpc_ids): <p>The virtual private cloud (VPC) identifiers to grant access to.</p>
+    /// - On success, responds with [`AuthorizeEndpointAccessOutput`](crate::output::AuthorizeEndpointAccessOutput) with field(s):
+    ///   - [`grantor(Option<String>)`](crate::output::AuthorizeEndpointAccessOutput::grantor): <p>The Amazon Web Services account ID of the cluster owner.</p>
+    ///   - [`grantee(Option<String>)`](crate::output::AuthorizeEndpointAccessOutput::grantee): <p>The Amazon Web Services account ID of the grantee of the cluster.</p>
+    ///   - [`cluster_identifier(Option<String>)`](crate::output::AuthorizeEndpointAccessOutput::cluster_identifier): <p>The cluster identifier.</p>
+    ///   - [`authorize_time(Option<DateTime>)`](crate::output::AuthorizeEndpointAccessOutput::authorize_time): <p>The time (UTC) when the authorization was created.</p>
+    ///   - [`cluster_status(Option<String>)`](crate::output::AuthorizeEndpointAccessOutput::cluster_status): <p>The status of the cluster.</p>
+    ///   - [`status(Option<AuthorizationStatus>)`](crate::output::AuthorizeEndpointAccessOutput::status): <p>The status of the authorization action.</p>
+    ///   - [`allowed_all_vp_cs(bool)`](crate::output::AuthorizeEndpointAccessOutput::allowed_all_vp_cs): <p>Indicates whether all VPCs in the grantee account are allowed access to the cluster.</p>
+    ///   - [`allowed_vp_cs(Option<Vec<String>>)`](crate::output::AuthorizeEndpointAccessOutput::allowed_vp_cs): <p>The VPCs allowed access to the cluster.</p>
+    ///   - [`endpoint_count(i32)`](crate::output::AuthorizeEndpointAccessOutput::endpoint_count): <p>The number of Redshift-managed VPC endpoints created for the authorization.</p>
+    /// - On failure, responds with [`SdkError<AuthorizeEndpointAccessError>`](crate::error::AuthorizeEndpointAccessError)
     pub fn authorize_endpoint_access(&self) -> fluent_builders::AuthorizeEndpointAccess<C, M, R> {
         fluent_builders::AuthorizeEndpointAccess::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AuthorizeSnapshotAccess` operation.
+    /// Constructs a fluent builder for the [`AuthorizeSnapshotAccess`](crate::client::fluent_builders::AuthorizeSnapshotAccess) operation.
     ///
-    /// See [`AuthorizeSnapshotAccess`](crate::client::fluent_builders::AuthorizeSnapshotAccess) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AuthorizeSnapshotAccessInput`](crate::input::AuthorizeSnapshotAccessInput) with field(s):
+    ///   - [`snapshot_identifier(Option<String>)`](crate::input::AuthorizeSnapshotAccessInput::snapshot_identifier): <p>The identifier of the snapshot the account is authorized to restore.</p>
+    ///   - [`snapshot_cluster_identifier(Option<String>)`](crate::input::AuthorizeSnapshotAccessInput::snapshot_cluster_identifier): <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    ///   - [`account_with_restore_access(Option<String>)`](crate::input::AuthorizeSnapshotAccessInput::account_with_restore_access): <p>The identifier of the Amazon Web Services account authorized to restore the specified snapshot.</p>  <p>To share a snapshot with Amazon Web Services Support, specify amazon-redshift-support.</p>
+    /// - On success, responds with [`AuthorizeSnapshotAccessOutput`](crate::output::AuthorizeSnapshotAccessOutput) with field(s):
+    ///   - [`snapshot(Option<Snapshot>)`](crate::output::AuthorizeSnapshotAccessOutput::snapshot): <p>Describes a snapshot.</p>
+    /// - On failure, responds with [`SdkError<AuthorizeSnapshotAccessError>`](crate::error::AuthorizeSnapshotAccessError)
     pub fn authorize_snapshot_access(&self) -> fluent_builders::AuthorizeSnapshotAccess<C, M, R> {
         fluent_builders::AuthorizeSnapshotAccess::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchDeleteClusterSnapshots` operation.
+    /// Constructs a fluent builder for the [`BatchDeleteClusterSnapshots`](crate::client::fluent_builders::BatchDeleteClusterSnapshots) operation.
     ///
-    /// See [`BatchDeleteClusterSnapshots`](crate::client::fluent_builders::BatchDeleteClusterSnapshots) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchDeleteClusterSnapshotsInput`](crate::input::BatchDeleteClusterSnapshotsInput) with field(s):
+    ///   - [`identifiers(Option<Vec<DeleteClusterSnapshotMessage>>)`](crate::input::BatchDeleteClusterSnapshotsInput::identifiers): <p>A list of identifiers for the snapshots that you want to delete.</p>
+    /// - On success, responds with [`BatchDeleteClusterSnapshotsOutput`](crate::output::BatchDeleteClusterSnapshotsOutput) with field(s):
+    ///   - [`resources(Option<Vec<String>>)`](crate::output::BatchDeleteClusterSnapshotsOutput::resources): <p>A list of the snapshot identifiers that were deleted. </p>
+    ///   - [`errors(Option<Vec<SnapshotErrorMessage>>)`](crate::output::BatchDeleteClusterSnapshotsOutput::errors): <p>A list of any errors returned.</p>
+    /// - On failure, responds with [`SdkError<BatchDeleteClusterSnapshotsError>`](crate::error::BatchDeleteClusterSnapshotsError)
     pub fn batch_delete_cluster_snapshots(
         &self,
     ) -> fluent_builders::BatchDeleteClusterSnapshots<C, M, R> {
         fluent_builders::BatchDeleteClusterSnapshots::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `BatchModifyClusterSnapshots` operation.
+    /// Constructs a fluent builder for the [`BatchModifyClusterSnapshots`](crate::client::fluent_builders::BatchModifyClusterSnapshots) operation.
     ///
-    /// See [`BatchModifyClusterSnapshots`](crate::client::fluent_builders::BatchModifyClusterSnapshots) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`BatchModifyClusterSnapshotsInput`](crate::input::BatchModifyClusterSnapshotsInput) with field(s):
+    ///   - [`snapshot_identifier_list(Option<Vec<String>>)`](crate::input::BatchModifyClusterSnapshotsInput::snapshot_identifier_list): <p>A list of snapshot identifiers you want to modify.</p>
+    ///   - [`manual_snapshot_retention_period(Option<i32>)`](crate::input::BatchModifyClusterSnapshotsInput::manual_snapshot_retention_period): <p>The number of days that a manual snapshot is retained. If you specify the value -1, the manual snapshot is retained indefinitely.</p>  <p>The number must be either -1 or an integer between 1 and 3,653.</p>  <p>If you decrease the manual snapshot retention period from its current value, existing manual snapshots that fall outside of the new retention period will return an error. If you want to suppress the errors and delete the snapshots, use the force option. </p>
+    ///   - [`force(bool)`](crate::input::BatchModifyClusterSnapshotsInput::force): <p>A boolean value indicating whether to override an exception if the retention period has passed. </p>
+    /// - On success, responds with [`BatchModifyClusterSnapshotsOutput`](crate::output::BatchModifyClusterSnapshotsOutput) with field(s):
+    ///   - [`resources(Option<Vec<String>>)`](crate::output::BatchModifyClusterSnapshotsOutput::resources): <p>A list of the snapshots that were modified.</p>
+    ///   - [`errors(Option<Vec<SnapshotErrorMessage>>)`](crate::output::BatchModifyClusterSnapshotsOutput::errors): <p>A list of any errors returned.</p>
+    /// - On failure, responds with [`SdkError<BatchModifyClusterSnapshotsError>`](crate::error::BatchModifyClusterSnapshotsError)
     pub fn batch_modify_cluster_snapshots(
         &self,
     ) -> fluent_builders::BatchModifyClusterSnapshots<C, M, R> {
         fluent_builders::BatchModifyClusterSnapshots::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CancelResize` operation.
+    /// Constructs a fluent builder for the [`CancelResize`](crate::client::fluent_builders::CancelResize) operation.
     ///
-    /// See [`CancelResize`](crate::client::fluent_builders::CancelResize) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CancelResizeInput`](crate::input::CancelResizeInput) with field(s):
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::CancelResizeInput::cluster_identifier): <p>The unique identifier for the cluster that you want to cancel a resize operation for.</p>
+    /// - On success, responds with [`CancelResizeOutput`](crate::output::CancelResizeOutput) with field(s):
+    ///   - [`target_node_type(Option<String>)`](crate::output::CancelResizeOutput::target_node_type): <p>The node type that the cluster will have after the resize operation is complete.</p>
+    ///   - [`target_number_of_nodes(Option<i32>)`](crate::output::CancelResizeOutput::target_number_of_nodes): <p>The number of nodes that the cluster will have after the resize operation is complete.</p>
+    ///   - [`target_cluster_type(Option<String>)`](crate::output::CancelResizeOutput::target_cluster_type): <p>The cluster type after the resize operation is complete.</p>  <p>Valid Values: <code>multi-node</code> | <code>single-node</code> </p>
+    ///   - [`status(Option<String>)`](crate::output::CancelResizeOutput::status): <p>The status of the resize operation.</p>  <p>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> | <code>CANCELLING</code> </p>
+    ///   - [`import_tables_completed(Option<Vec<String>>)`](crate::output::CancelResizeOutput::import_tables_completed): <p>The names of tables that have been completely imported .</p>  <p>Valid Values: List of table names.</p>
+    ///   - [`import_tables_in_progress(Option<Vec<String>>)`](crate::output::CancelResizeOutput::import_tables_in_progress): <p>The names of tables that are being currently imported.</p>  <p>Valid Values: List of table names.</p>
+    ///   - [`import_tables_not_started(Option<Vec<String>>)`](crate::output::CancelResizeOutput::import_tables_not_started): <p>The names of tables that have not been yet imported.</p>  <p>Valid Values: List of table names</p>
+    ///   - [`avg_resize_rate_in_mega_bytes_per_second(Option<f64>)`](crate::output::CancelResizeOutput::avg_resize_rate_in_mega_bytes_per_second): <p>The average rate of the resize operation over the last few minutes, measured in megabytes per second. After the resize operation completes, this value shows the average rate of the entire resize operation.</p>
+    ///   - [`total_resize_data_in_mega_bytes(Option<i64>)`](crate::output::CancelResizeOutput::total_resize_data_in_mega_bytes): <p>The estimated total amount of data, in megabytes, on the cluster before the resize operation began.</p>
+    ///   - [`progress_in_mega_bytes(Option<i64>)`](crate::output::CancelResizeOutput::progress_in_mega_bytes): <p>While the resize operation is in progress, this value shows the current amount of data, in megabytes, that has been processed so far. When the resize operation is complete, this value shows the total amount of data, in megabytes, on the cluster, which may be more or less than TotalResizeDataInMegaBytes (the estimated total amount of data before resize).</p>
+    ///   - [`elapsed_time_in_seconds(Option<i64>)`](crate::output::CancelResizeOutput::elapsed_time_in_seconds): <p>The amount of seconds that have elapsed since the resize operation began. After the resize operation completes, this value shows the total actual time, in seconds, for the resize operation.</p>
+    ///   - [`estimated_time_to_completion_in_seconds(Option<i64>)`](crate::output::CancelResizeOutput::estimated_time_to_completion_in_seconds): <p>The estimated time remaining, in seconds, until the resize operation is complete. This value is calculated based on the average resize rate and the estimated amount of data remaining to be processed. Once the resize operation is complete, this value will be 0.</p>
+    ///   - [`resize_type(Option<String>)`](crate::output::CancelResizeOutput::resize_type): <p>An enum with possible values of <code>ClassicResize</code> and <code>ElasticResize</code>. These values describe the type of resize operation being performed. </p>
+    ///   - [`message(Option<String>)`](crate::output::CancelResizeOutput::message): <p>An optional string to provide additional details about the resize action.</p>
+    ///   - [`target_encryption_type(Option<String>)`](crate::output::CancelResizeOutput::target_encryption_type): <p>The type of encryption for the cluster after the resize is complete.</p>  <p>Possible values are <code>KMS</code> and <code>None</code>. </p>
+    ///   - [`data_transfer_progress_percent(Option<f64>)`](crate::output::CancelResizeOutput::data_transfer_progress_percent): <p>The percent of data transferred from source cluster to target cluster.</p>
+    /// - On failure, responds with [`SdkError<CancelResizeError>`](crate::error::CancelResizeError)
     pub fn cancel_resize(&self) -> fluent_builders::CancelResize<C, M, R> {
         fluent_builders::CancelResize::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CopyClusterSnapshot` operation.
+    /// Constructs a fluent builder for the [`CopyClusterSnapshot`](crate::client::fluent_builders::CopyClusterSnapshot) operation.
     ///
-    /// See [`CopyClusterSnapshot`](crate::client::fluent_builders::CopyClusterSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CopyClusterSnapshotInput`](crate::input::CopyClusterSnapshotInput) with field(s):
+    ///   - [`source_snapshot_identifier(Option<String>)`](crate::input::CopyClusterSnapshotInput::source_snapshot_identifier): <p>The identifier for the source snapshot.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</p> </li>  </ul>
+    ///   - [`source_snapshot_cluster_identifier(Option<String>)`](crate::input::CopyClusterSnapshotInput::source_snapshot_cluster_identifier): <p>The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be the identifier for a valid cluster.</p> </li>  </ul>
+    ///   - [`target_snapshot_identifier(Option<String>)`](crate::input::CopyClusterSnapshotInput::target_snapshot_identifier): <p>The identifier given to the new manual snapshot.</p>  <p>Constraints:</p>  <ul>   <li> <p>Cannot be null, empty, or blank.</p> </li>   <li> <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>   <li> <p>Must be unique for the Amazon Web Services account that is making the request.</p> </li>  </ul>
+    ///   - [`manual_snapshot_retention_period(Option<i32>)`](crate::input::CopyClusterSnapshotInput::manual_snapshot_retention_period): <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p>  <p>The value must be either -1 or an integer between 1 and 3,653.</p>  <p>The default value is -1.</p>
+    /// - On success, responds with [`CopyClusterSnapshotOutput`](crate::output::CopyClusterSnapshotOutput) with field(s):
+    ///   - [`snapshot(Option<Snapshot>)`](crate::output::CopyClusterSnapshotOutput::snapshot): <p>Describes a snapshot.</p>
+    /// - On failure, responds with [`SdkError<CopyClusterSnapshotError>`](crate::error::CopyClusterSnapshotError)
     pub fn copy_cluster_snapshot(&self) -> fluent_builders::CopyClusterSnapshot<C, M, R> {
         fluent_builders::CopyClusterSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateAuthenticationProfile` operation.
+    /// Constructs a fluent builder for the [`CreateAuthenticationProfile`](crate::client::fluent_builders::CreateAuthenticationProfile) operation.
     ///
-    /// See [`CreateAuthenticationProfile`](crate::client::fluent_builders::CreateAuthenticationProfile) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateAuthenticationProfileInput`](crate::input::CreateAuthenticationProfileInput) with field(s):
+    ///   - [`authentication_profile_name(Option<String>)`](crate::input::CreateAuthenticationProfileInput::authentication_profile_name): <p>The name of the authentication profile to be created.</p>
+    ///   - [`authentication_profile_content(Option<String>)`](crate::input::CreateAuthenticationProfileInput::authentication_profile_content): <p>The content of the authentication profile in JSON format. The maximum length of the JSON string is determined by a quota for your account.</p>
+    /// - On success, responds with [`CreateAuthenticationProfileOutput`](crate::output::CreateAuthenticationProfileOutput) with field(s):
+    ///   - [`authentication_profile_name(Option<String>)`](crate::output::CreateAuthenticationProfileOutput::authentication_profile_name): <p>The name of the authentication profile that was created.</p>
+    ///   - [`authentication_profile_content(Option<String>)`](crate::output::CreateAuthenticationProfileOutput::authentication_profile_content): <p>The content of the authentication profile in JSON format.</p>
+    /// - On failure, responds with [`SdkError<CreateAuthenticationProfileError>`](crate::error::CreateAuthenticationProfileError)
     pub fn create_authentication_profile(
         &self,
     ) -> fluent_builders::CreateAuthenticationProfile<C, M, R> {
         fluent_builders::CreateAuthenticationProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateCluster` operation.
+    /// Constructs a fluent builder for the [`CreateCluster`](crate::client::fluent_builders::CreateCluster) operation.
     ///
-    /// See [`CreateCluster`](crate::client::fluent_builders::CreateCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateClusterInput`](crate::input::CreateClusterInput) with field(s):
+    ///   - [`db_name(Option<String>)`](crate::input::CreateClusterInput::db_name): <p>The name of the first database to be created when the cluster is created.</p>  <p>To create additional databases after the cluster is created, connect to the cluster with a SQL client and use SQL commands to create a database. For more information, go to <a href="https://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create a Database</a> in the Amazon Redshift Database Developer Guide. </p>  <p>Default: <code>dev</code> </p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain 1 to 64 alphanumeric characters.</p> </li>   <li> <p>Must contain only lowercase letters.</p> </li>   <li> <p>Cannot be a word that is reserved by the service. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide. </p> </li>  </ul>
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::CreateClusterInput::cluster_identifier): <p>A unique identifier for the cluster. You use this identifier to refer to the cluster for any subsequent cluster operations such as deleting or modifying. The identifier also appears in the Amazon Redshift console.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li>   <li> <p>Alphabetic characters must be lowercase.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>   <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>  </ul>  <p>Example: <code>myexamplecluster</code> </p>
+    ///   - [`cluster_type(Option<String>)`](crate::input::CreateClusterInput::cluster_type): <p>The type of the cluster. When cluster type is specified as</p>  <ul>   <li> <p> <code>single-node</code>, the <b>NumberOfNodes</b> parameter is not required.</p> </li>   <li> <p> <code>multi-node</code>, the <b>NumberOfNodes</b> parameter is required.</p> </li>  </ul>  <p>Valid Values: <code>multi-node</code> | <code>single-node</code> </p>  <p>Default: <code>multi-node</code> </p>
+    ///   - [`node_type(Option<String>)`](crate::input::CreateClusterInput::node_type): <p>The node type to be provisioned for the cluster. For information about node types, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>  <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
+    ///   - [`master_username(Option<String>)`](crate::input::CreateClusterInput::master_username): <p>The user name associated with the admin user account for the cluster that is being created.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be 1 - 128 alphanumeric characters. The user name can't be <code>PUBLIC</code>.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide. </p> </li>  </ul>
+    ///   - [`master_user_password(Option<String>)`](crate::input::CreateClusterInput::master_user_password): <p>The password associated with the admin user account for the cluster that is being created.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be between 8 and 64 characters in length.</p> </li>   <li> <p>Must contain at least one uppercase letter.</p> </li>   <li> <p>Must contain at least one lowercase letter.</p> </li>   <li> <p>Must contain one number.</p> </li>   <li> <p>Can be any printable ASCII character (ASCII code 33 to 126) except ' (single quote), " (double quote), \, /, @, or space.</p> </li>  </ul>
+    ///   - [`cluster_security_groups(Option<Vec<String>>)`](crate::input::CreateClusterInput::cluster_security_groups): <p>A list of security groups to be associated with this cluster.</p>  <p>Default: The default cluster security group for Amazon Redshift.</p>
+    ///   - [`vpc_security_group_ids(Option<Vec<String>>)`](crate::input::CreateClusterInput::vpc_security_group_ids): <p>A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster.</p>  <p>Default: The default VPC security group is associated with the cluster.</p>
+    ///   - [`cluster_subnet_group_name(Option<String>)`](crate::input::CreateClusterInput::cluster_subnet_group_name): <p>The name of a cluster subnet group to be associated with this cluster.</p>  <p>If this parameter is not provided the resulting cluster will be deployed outside virtual private cloud (VPC).</p>
+    ///   - [`availability_zone(Option<String>)`](crate::input::CreateClusterInput::availability_zone): <p>The EC2 Availability Zone (AZ) in which you want Amazon Redshift to provision the cluster. For example, if you have several EC2 instances running in a specific Availability Zone, then you might want the cluster to be provisioned in the same zone in order to decrease network latency.</p>  <p>Default: A random, system-chosen Availability Zone in the region that is specified by the endpoint.</p>  <p>Example: <code>us-east-2d</code> </p>  <p>Constraint: The specified Availability Zone must be in the same region as the current endpoint.</p>
+    ///   - [`preferred_maintenance_window(Option<String>)`](crate::input::CreateClusterInput::preferred_maintenance_window): <p>The weekly time range (in UTC) during which automated cluster maintenance can occur.</p>  <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>  <p> Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day of the week. For more information about the time blocks for each region, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance Windows</a> in Amazon Redshift Cluster Management Guide.</p>  <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>  <p>Constraints: Minimum 30-minute window.</p>
+    ///   - [`cluster_parameter_group_name(Option<String>)`](crate::input::CreateClusterInput::cluster_parameter_group_name): <p>The name of the parameter group to be associated with this cluster.</p>  <p>Default: The default Amazon Redshift cluster parameter group. For information about the default parameter group, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working with Amazon Redshift Parameter Groups</a> </p>  <p>Constraints:</p>  <ul>   <li> <p>Must be 1 to 255 alphanumeric characters or hyphens.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul>
+    ///   - [`automated_snapshot_retention_period(Option<i32>)`](crate::input::CreateClusterInput::automated_snapshot_retention_period): <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>. </p>  <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p>  <p>Default: <code>1</code> </p>  <p>Constraints: Must be a value from 0 to 35.</p>
+    ///   - [`manual_snapshot_retention_period(Option<i32>)`](crate::input::CreateClusterInput::manual_snapshot_retention_period): <p>The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained indefinitely. This setting doesn't change the retention period of existing snapshots.</p>  <p>The value must be either -1 or an integer between 1 and 3,653.</p>
+    ///   - [`port(Option<i32>)`](crate::input::CreateClusterInput::port): <p>The port number on which the cluster accepts incoming connections.</p>  <p>The cluster is accessible only via the JDBC and ODBC connection strings. Part of the connection string requires the port on which the cluster will listen for incoming connections.</p>  <p>Default: <code>5439</code> </p>  <p>Valid Values: <code>1150-65535</code> </p>
+    ///   - [`cluster_version(Option<String>)`](crate::input::CreateClusterInput::cluster_version): <p>The version of the Amazon Redshift engine software that you want to deploy on the cluster.</p>  <p>The version selected runs on all the nodes in the cluster.</p>  <p>Constraints: Only version 1.0 is currently available.</p>  <p>Example: <code>1.0</code> </p>
+    ///   - [`allow_version_upgrade(Option<bool>)`](crate::input::CreateClusterInput::allow_version_upgrade): <p>If <code>true</code>, major version upgrades can be applied during the maintenance window to the Amazon Redshift engine that is running on the cluster.</p>  <p>When a new major version of the Amazon Redshift engine is released, you can request that the service automatically apply upgrades during the maintenance window to the Amazon Redshift engine that is running on your cluster.</p>  <p>Default: <code>true</code> </p>
+    ///   - [`number_of_nodes(Option<i32>)`](crate::input::CreateClusterInput::number_of_nodes): <p>The number of compute nodes in the cluster. This parameter is required when the <b>ClusterType</b> parameter is specified as <code>multi-node</code>. </p>  <p>For information about determining how many nodes you need, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>  <p>If you don't specify this parameter, you get a single-node cluster. When requesting a multi-node cluster, you must specify the number of nodes that you want in the cluster.</p>  <p>Default: <code>1</code> </p>  <p>Constraints: Value must be at least 1 and no more than 100.</p>
+    ///   - [`publicly_accessible(Option<bool>)`](crate::input::CreateClusterInput::publicly_accessible): <p>If <code>true</code>, the cluster can be accessed from a public network. </p>
+    ///   - [`encrypted(Option<bool>)`](crate::input::CreateClusterInput::encrypted): <p>If <code>true</code>, the data in the cluster is encrypted at rest. </p>  <p>Default: false</p>
+    ///   - [`hsm_client_certificate_identifier(Option<String>)`](crate::input::CreateClusterInput::hsm_client_certificate_identifier): <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
+    ///   - [`hsm_configuration_identifier(Option<String>)`](crate::input::CreateClusterInput::hsm_configuration_identifier): <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
+    ///   - [`elastic_ip(Option<String>)`](crate::input::CreateClusterInput::elastic_ip): <p>The Elastic IP (EIP) address for the cluster.</p>  <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateClusterInput::tags): <p>A list of tag instances.</p>
+    ///   - [`kms_key_id(Option<String>)`](crate::input::CreateClusterInput::kms_key_id): <p>The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster.</p>
+    ///   - [`enhanced_vpc_routing(Option<bool>)`](crate::input::CreateClusterInput::enhanced_vpc_routing): <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>  <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>  <p>Default: false</p>
+    ///   - [`additional_info(Option<String>)`](crate::input::CreateClusterInput::additional_info): <p>Reserved.</p>
+    ///   - [`iam_roles(Option<Vec<String>>)`](crate::input::CreateClusterInput::iam_roles): <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single request.</p>  <p>A cluster can have up to 10 IAM roles associated with it at any time.</p>
+    ///   - [`maintenance_track_name(Option<String>)`](crate::input::CreateClusterInput::maintenance_track_name): <p>An optional parameter for the name of the maintenance track for the cluster. If you don't provide a maintenance track name, the cluster is assigned to the <code>current</code> track.</p>
+    ///   - [`snapshot_schedule_identifier(Option<String>)`](crate::input::CreateClusterInput::snapshot_schedule_identifier): <p>A unique identifier for the snapshot schedule.</p>
+    ///   - [`availability_zone_relocation(Option<bool>)`](crate::input::CreateClusterInput::availability_zone_relocation): <p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is created.</p>
+    ///   - [`aqua_configuration_status(Option<AquaConfigurationStatus>)`](crate::input::CreateClusterInput::aqua_configuration_status): <p>The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is created. Possible values include the following.</p>  <ul>   <li> <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p> </li>   <li> <p>disabled - Don't use AQUA. </p> </li>   <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li>  </ul>
+    ///   - [`default_iam_role_arn(Option<String>)`](crate::input::CreateClusterInput::default_iam_role_arn): <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was created. </p>
+    /// - On success, responds with [`CreateClusterOutput`](crate::output::CreateClusterOutput) with field(s):
+    ///   - [`cluster(Option<Cluster>)`](crate::output::CreateClusterOutput::cluster): <p>Describes a cluster.</p>
+    /// - On failure, responds with [`SdkError<CreateClusterError>`](crate::error::CreateClusterError)
     pub fn create_cluster(&self) -> fluent_builders::CreateCluster<C, M, R> {
         fluent_builders::CreateCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateClusterParameterGroup` operation.
+    /// Constructs a fluent builder for the [`CreateClusterParameterGroup`](crate::client::fluent_builders::CreateClusterParameterGroup) operation.
     ///
-    /// See [`CreateClusterParameterGroup`](crate::client::fluent_builders::CreateClusterParameterGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateClusterParameterGroupInput`](crate::input::CreateClusterParameterGroupInput) with field(s):
+    ///   - [`parameter_group_name(Option<String>)`](crate::input::CreateClusterParameterGroupInput::parameter_group_name): <p>The name of the cluster parameter group.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>   <li> <p>Must be unique withing your Amazon Web Services account.</p> </li>  </ul> <note>   <p>This value is stored as a lower-case string.</p>  </note>
+    ///   - [`parameter_group_family(Option<String>)`](crate::input::CreateClusterParameterGroupInput::parameter_group_family): <p>The Amazon Redshift engine version to which the cluster parameter group applies. The cluster engine version determines the set of parameters.</p>  <p>To get a list of valid parameter group family names, you can call <code>DescribeClusterParameterGroups</code>. By default, Amazon Redshift returns a list of all the parameter groups that are owned by your Amazon Web Services account, including the default parameter groups for each Amazon Redshift engine version. The parameter group family names associated with the default parameter groups provide you the valid values. For example, a valid family name is "redshift-1.0". </p>
+    ///   - [`description(Option<String>)`](crate::input::CreateClusterParameterGroupInput::description): <p>A description of the parameter group.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateClusterParameterGroupInput::tags): <p>A list of tag instances.</p>
+    /// - On success, responds with [`CreateClusterParameterGroupOutput`](crate::output::CreateClusterParameterGroupOutput) with field(s):
+    ///   - [`cluster_parameter_group(Option<ClusterParameterGroup>)`](crate::output::CreateClusterParameterGroupOutput::cluster_parameter_group): <p>Describes a parameter group.</p>
+    /// - On failure, responds with [`SdkError<CreateClusterParameterGroupError>`](crate::error::CreateClusterParameterGroupError)
     pub fn create_cluster_parameter_group(
         &self,
     ) -> fluent_builders::CreateClusterParameterGroup<C, M, R> {
         fluent_builders::CreateClusterParameterGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateClusterSecurityGroup` operation.
+    /// Constructs a fluent builder for the [`CreateClusterSecurityGroup`](crate::client::fluent_builders::CreateClusterSecurityGroup) operation.
     ///
-    /// See [`CreateClusterSecurityGroup`](crate::client::fluent_builders::CreateClusterSecurityGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateClusterSecurityGroupInput`](crate::input::CreateClusterSecurityGroupInput) with field(s):
+    ///   - [`cluster_security_group_name(Option<String>)`](crate::input::CreateClusterSecurityGroupInput::cluster_security_group_name): <p>The name for the security group. Amazon Redshift stores the value as a lowercase string.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain no more than 255 alphanumeric characters or hyphens.</p> </li>   <li> <p>Must not be "Default".</p> </li>   <li> <p>Must be unique for all security groups that are created by your Amazon Web Services account.</p> </li>  </ul>  <p>Example: <code>examplesecuritygroup</code> </p>
+    ///   - [`description(Option<String>)`](crate::input::CreateClusterSecurityGroupInput::description): <p>A description for the security group.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateClusterSecurityGroupInput::tags): <p>A list of tag instances.</p>
+    /// - On success, responds with [`CreateClusterSecurityGroupOutput`](crate::output::CreateClusterSecurityGroupOutput) with field(s):
+    ///   - [`cluster_security_group(Option<ClusterSecurityGroup>)`](crate::output::CreateClusterSecurityGroupOutput::cluster_security_group): <p>Describes a security group.</p>
+    /// - On failure, responds with [`SdkError<CreateClusterSecurityGroupError>`](crate::error::CreateClusterSecurityGroupError)
     pub fn create_cluster_security_group(
         &self,
     ) -> fluent_builders::CreateClusterSecurityGroup<C, M, R> {
         fluent_builders::CreateClusterSecurityGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateClusterSnapshot` operation.
+    /// Constructs a fluent builder for the [`CreateClusterSnapshot`](crate::client::fluent_builders::CreateClusterSnapshot) operation.
     ///
-    /// See [`CreateClusterSnapshot`](crate::client::fluent_builders::CreateClusterSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateClusterSnapshotInput`](crate::input::CreateClusterSnapshotInput) with field(s):
+    ///   - [`snapshot_identifier(Option<String>)`](crate::input::CreateClusterSnapshotInput::snapshot_identifier): <p>A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the Amazon Web Services account.</p>  <p>Constraints:</p>  <ul>   <li> <p>Cannot be null, empty, or blank</p> </li>   <li> <p>Must contain from 1 to 255 alphanumeric characters or hyphens</p> </li>   <li> <p>First character must be a letter</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>  </ul>  <p>Example: <code>my-snapshot-id</code> </p>
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::CreateClusterSnapshotInput::cluster_identifier): <p>The cluster identifier for which you want a snapshot.</p>
+    ///   - [`manual_snapshot_retention_period(Option<i32>)`](crate::input::CreateClusterSnapshotInput::manual_snapshot_retention_period): <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p>  <p>The value must be either -1 or an integer between 1 and 3,653.</p>  <p>The default value is -1.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateClusterSnapshotInput::tags): <p>A list of tag instances.</p>
+    /// - On success, responds with [`CreateClusterSnapshotOutput`](crate::output::CreateClusterSnapshotOutput) with field(s):
+    ///   - [`snapshot(Option<Snapshot>)`](crate::output::CreateClusterSnapshotOutput::snapshot): <p>Describes a snapshot.</p>
+    /// - On failure, responds with [`SdkError<CreateClusterSnapshotError>`](crate::error::CreateClusterSnapshotError)
     pub fn create_cluster_snapshot(&self) -> fluent_builders::CreateClusterSnapshot<C, M, R> {
         fluent_builders::CreateClusterSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateClusterSubnetGroup` operation.
+    /// Constructs a fluent builder for the [`CreateClusterSubnetGroup`](crate::client::fluent_builders::CreateClusterSubnetGroup) operation.
     ///
-    /// See [`CreateClusterSubnetGroup`](crate::client::fluent_builders::CreateClusterSubnetGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateClusterSubnetGroupInput`](crate::input::CreateClusterSubnetGroupInput) with field(s):
+    ///   - [`cluster_subnet_group_name(Option<String>)`](crate::input::CreateClusterSubnetGroupInput::cluster_subnet_group_name): <p>The name for the subnet group. Amazon Redshift stores the value as a lowercase string.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain no more than 255 alphanumeric characters or hyphens.</p> </li>   <li> <p>Must not be "Default".</p> </li>   <li> <p>Must be unique for all subnet groups that are created by your Amazon Web Services account.</p> </li>  </ul>  <p>Example: <code>examplesubnetgroup</code> </p>
+    ///   - [`description(Option<String>)`](crate::input::CreateClusterSubnetGroupInput::description): <p>A description for the subnet group.</p>
+    ///   - [`subnet_ids(Option<Vec<String>>)`](crate::input::CreateClusterSubnetGroupInput::subnet_ids): <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateClusterSubnetGroupInput::tags): <p>A list of tag instances.</p>
+    /// - On success, responds with [`CreateClusterSubnetGroupOutput`](crate::output::CreateClusterSubnetGroupOutput) with field(s):
+    ///   - [`cluster_subnet_group(Option<ClusterSubnetGroup>)`](crate::output::CreateClusterSubnetGroupOutput::cluster_subnet_group): <p>Describes a subnet group.</p>
+    /// - On failure, responds with [`SdkError<CreateClusterSubnetGroupError>`](crate::error::CreateClusterSubnetGroupError)
     pub fn create_cluster_subnet_group(
         &self,
     ) -> fluent_builders::CreateClusterSubnetGroup<C, M, R> {
         fluent_builders::CreateClusterSubnetGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateEndpointAccess` operation.
+    /// Constructs a fluent builder for the [`CreateEndpointAccess`](crate::client::fluent_builders::CreateEndpointAccess) operation.
     ///
-    /// See [`CreateEndpointAccess`](crate::client::fluent_builders::CreateEndpointAccess) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateEndpointAccessInput`](crate::input::CreateEndpointAccessInput) with field(s):
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::CreateEndpointAccessInput::cluster_identifier): <p>The cluster identifier of the cluster to access.</p>
+    ///   - [`resource_owner(Option<String>)`](crate::input::CreateEndpointAccessInput::resource_owner): <p>The Amazon Web Services account ID of the owner of the cluster. This is only required if the cluster is in another Amazon Web Services account.</p>
+    ///   - [`endpoint_name(Option<String>)`](crate::input::CreateEndpointAccessInput::endpoint_name): <p>The Redshift-managed VPC endpoint name.</p>  <p>An endpoint name must contain 1-30 characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first character must be a letter. The name can't contain two consecutive hyphens or end with a hyphen.</p>
+    ///   - [`subnet_group_name(Option<String>)`](crate::input::CreateEndpointAccessInput::subnet_group_name): <p>The subnet group from which Amazon Redshift chooses the subnet to deploy the endpoint.</p>
+    ///   - [`vpc_security_group_ids(Option<Vec<String>>)`](crate::input::CreateEndpointAccessInput::vpc_security_group_ids): <p>The security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
+    /// - On success, responds with [`CreateEndpointAccessOutput`](crate::output::CreateEndpointAccessOutput) with field(s):
+    ///   - [`cluster_identifier(Option<String>)`](crate::output::CreateEndpointAccessOutput::cluster_identifier): <p>The cluster identifier of the cluster associated with the endpoint.</p>
+    ///   - [`resource_owner(Option<String>)`](crate::output::CreateEndpointAccessOutput::resource_owner): <p>The Amazon Web Services account ID of the owner of the cluster.</p>
+    ///   - [`subnet_group_name(Option<String>)`](crate::output::CreateEndpointAccessOutput::subnet_group_name): <p>The subnet group name where Amazon Redshift chooses to deploy the endpoint.</p>
+    ///   - [`endpoint_status(Option<String>)`](crate::output::CreateEndpointAccessOutput::endpoint_status): <p>The status of the endpoint.</p>
+    ///   - [`endpoint_name(Option<String>)`](crate::output::CreateEndpointAccessOutput::endpoint_name): <p>The name of the endpoint.</p>
+    ///   - [`endpoint_create_time(Option<DateTime>)`](crate::output::CreateEndpointAccessOutput::endpoint_create_time): <p>The time (UTC) that the endpoint was created.</p>
+    ///   - [`port(i32)`](crate::output::CreateEndpointAccessOutput::port): <p>The port number on which the cluster accepts incoming connections.</p>
+    ///   - [`address(Option<String>)`](crate::output::CreateEndpointAccessOutput::address): <p>The DNS address of the endpoint.</p>
+    ///   - [`vpc_security_groups(Option<Vec<VpcSecurityGroupMembership>>)`](crate::output::CreateEndpointAccessOutput::vpc_security_groups): <p>The security groups associated with the endpoint.</p>
+    ///   - [`vpc_endpoint(Option<VpcEndpoint>)`](crate::output::CreateEndpointAccessOutput::vpc_endpoint): <p>The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.</p>
+    /// - On failure, responds with [`SdkError<CreateEndpointAccessError>`](crate::error::CreateEndpointAccessError)
     pub fn create_endpoint_access(&self) -> fluent_builders::CreateEndpointAccess<C, M, R> {
         fluent_builders::CreateEndpointAccess::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateEventSubscription` operation.
+    /// Constructs a fluent builder for the [`CreateEventSubscription`](crate::client::fluent_builders::CreateEventSubscription) operation.
     ///
-    /// See [`CreateEventSubscription`](crate::client::fluent_builders::CreateEventSubscription) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateEventSubscriptionInput`](crate::input::CreateEventSubscriptionInput) with field(s):
+    ///   - [`subscription_name(Option<String>)`](crate::input::CreateEventSubscriptionInput::subscription_name): <p>The name of the event subscription to be created.</p>  <p>Constraints:</p>  <ul>   <li> <p>Cannot be null, empty, or blank.</p> </li>   <li> <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul>
+    ///   - [`sns_topic_arn(Option<String>)`](crate::input::CreateEventSubscriptionInput::sns_topic_arn): <p>The Amazon Resource Name (ARN) of the Amazon SNS topic used to transmit the event notifications. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
+    ///   - [`source_type(Option<String>)`](crate::input::CreateEventSubscriptionInput::source_type): <p>The type of source that will be generating the events. For example, if you want to be notified of events generated by a cluster, you would set this parameter to cluster. If this value is not specified, events are returned for all Amazon Redshift objects in your Amazon Web Services account. You must specify a source type in order to specify source IDs.</p>  <p>Valid values: cluster, cluster-parameter-group, cluster-security-group, cluster-snapshot, and scheduled-action.</p>
+    ///   - [`source_ids(Option<Vec<String>>)`](crate::input::CreateEventSubscriptionInput::source_ids): <p>A list of one or more identifiers of Amazon Redshift source objects. All of the objects must be of the same type as was specified in the source type parameter. The event subscription will return only events generated by the specified objects. If not specified, then events are returned for all objects within the source type specified.</p>  <p>Example: my-cluster-1, my-cluster-2</p>  <p>Example: my-snapshot-20131010</p>
+    ///   - [`event_categories(Option<Vec<String>>)`](crate::input::CreateEventSubscriptionInput::event_categories): <p>Specifies the Amazon Redshift event categories to be published by the event notification subscription.</p>  <p>Values: configuration, management, monitoring, security, pending</p>
+    ///   - [`severity(Option<String>)`](crate::input::CreateEventSubscriptionInput::severity): <p>Specifies the Amazon Redshift event severity to be published by the event notification subscription.</p>  <p>Values: ERROR, INFO</p>
+    ///   - [`enabled(Option<bool>)`](crate::input::CreateEventSubscriptionInput::enabled): <p>A boolean value; set to <code>true</code> to activate the subscription, and set to <code>false</code> to create the subscription but not activate it. </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateEventSubscriptionInput::tags): <p>A list of tag instances.</p>
+    /// - On success, responds with [`CreateEventSubscriptionOutput`](crate::output::CreateEventSubscriptionOutput) with field(s):
+    ///   - [`event_subscription(Option<EventSubscription>)`](crate::output::CreateEventSubscriptionOutput::event_subscription): <p>Describes event subscriptions.</p>
+    /// - On failure, responds with [`SdkError<CreateEventSubscriptionError>`](crate::error::CreateEventSubscriptionError)
     pub fn create_event_subscription(&self) -> fluent_builders::CreateEventSubscription<C, M, R> {
         fluent_builders::CreateEventSubscription::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateHsmClientCertificate` operation.
+    /// Constructs a fluent builder for the [`CreateHsmClientCertificate`](crate::client::fluent_builders::CreateHsmClientCertificate) operation.
     ///
-    /// See [`CreateHsmClientCertificate`](crate::client::fluent_builders::CreateHsmClientCertificate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateHsmClientCertificateInput`](crate::input::CreateHsmClientCertificateInput) with field(s):
+    ///   - [`hsm_client_certificate_identifier(Option<String>)`](crate::input::CreateHsmClientCertificateInput::hsm_client_certificate_identifier): <p>The identifier to be assigned to the new HSM client certificate that the cluster will use to connect to the HSM to use the database encryption keys.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateHsmClientCertificateInput::tags): <p>A list of tag instances.</p>
+    /// - On success, responds with [`CreateHsmClientCertificateOutput`](crate::output::CreateHsmClientCertificateOutput) with field(s):
+    ///   - [`hsm_client_certificate(Option<HsmClientCertificate>)`](crate::output::CreateHsmClientCertificateOutput::hsm_client_certificate): <p>Returns information about an HSM client certificate. The certificate is stored in a secure Hardware Storage Module (HSM), and used by the Amazon Redshift cluster to encrypt data files.</p>
+    /// - On failure, responds with [`SdkError<CreateHsmClientCertificateError>`](crate::error::CreateHsmClientCertificateError)
     pub fn create_hsm_client_certificate(
         &self,
     ) -> fluent_builders::CreateHsmClientCertificate<C, M, R> {
         fluent_builders::CreateHsmClientCertificate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateHsmConfiguration` operation.
+    /// Constructs a fluent builder for the [`CreateHsmConfiguration`](crate::client::fluent_builders::CreateHsmConfiguration) operation.
     ///
-    /// See [`CreateHsmConfiguration`](crate::client::fluent_builders::CreateHsmConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateHsmConfigurationInput`](crate::input::CreateHsmConfigurationInput) with field(s):
+    ///   - [`hsm_configuration_identifier(Option<String>)`](crate::input::CreateHsmConfigurationInput::hsm_configuration_identifier): <p>The identifier to be assigned to the new Amazon Redshift HSM configuration.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateHsmConfigurationInput::description): <p>A text description of the HSM configuration to be created.</p>
+    ///   - [`hsm_ip_address(Option<String>)`](crate::input::CreateHsmConfigurationInput::hsm_ip_address): <p>The IP address that the Amazon Redshift cluster must use to access the HSM.</p>
+    ///   - [`hsm_partition_name(Option<String>)`](crate::input::CreateHsmConfigurationInput::hsm_partition_name): <p>The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.</p>
+    ///   - [`hsm_partition_password(Option<String>)`](crate::input::CreateHsmConfigurationInput::hsm_partition_password): <p>The password required to access the HSM partition.</p>
+    ///   - [`hsm_server_public_certificate(Option<String>)`](crate::input::CreateHsmConfigurationInput::hsm_server_public_certificate): <p>The HSMs public certificate file. When using Cloud HSM, the file name is server.pem.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateHsmConfigurationInput::tags): <p>A list of tag instances.</p>
+    /// - On success, responds with [`CreateHsmConfigurationOutput`](crate::output::CreateHsmConfigurationOutput) with field(s):
+    ///   - [`hsm_configuration(Option<HsmConfiguration>)`](crate::output::CreateHsmConfigurationOutput::hsm_configuration): <p>Returns information about an HSM configuration, which is an object that describes to Amazon Redshift clusters the information they require to connect to an HSM where they can store database encryption keys.</p>
+    /// - On failure, responds with [`SdkError<CreateHsmConfigurationError>`](crate::error::CreateHsmConfigurationError)
     pub fn create_hsm_configuration(&self) -> fluent_builders::CreateHsmConfiguration<C, M, R> {
         fluent_builders::CreateHsmConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateScheduledAction` operation.
+    /// Constructs a fluent builder for the [`CreateScheduledAction`](crate::client::fluent_builders::CreateScheduledAction) operation.
     ///
-    /// See [`CreateScheduledAction`](crate::client::fluent_builders::CreateScheduledAction) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateScheduledActionInput`](crate::input::CreateScheduledActionInput) with field(s):
+    ///   - [`scheduled_action_name(Option<String>)`](crate::input::CreateScheduledActionInput::scheduled_action_name): <p>The name of the scheduled action. The name must be unique within an account. For more information about this parameter, see <code>ScheduledAction</code>. </p>
+    ///   - [`target_action(Option<ScheduledActionType>)`](crate::input::CreateScheduledActionInput::target_action): <p>A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <code>ScheduledAction</code>. </p>
+    ///   - [`schedule(Option<String>)`](crate::input::CreateScheduledActionInput::schedule): <p>The schedule in <code>at( )</code> or <code>cron( )</code> format. For more information about this parameter, see <code>ScheduledAction</code>.</p>
+    ///   - [`iam_role(Option<String>)`](crate::input::CreateScheduledActionInput::iam_role): <p>The IAM role to assume to run the target action. For more information about this parameter, see <code>ScheduledAction</code>. </p>
+    ///   - [`scheduled_action_description(Option<String>)`](crate::input::CreateScheduledActionInput::scheduled_action_description): <p>The description of the scheduled action. </p>
+    ///   - [`start_time(Option<DateTime>)`](crate::input::CreateScheduledActionInput::start_time): <p>The start time in UTC of the scheduled action. Before this time, the scheduled action does not trigger. For more information about this parameter, see <code>ScheduledAction</code>.</p>
+    ///   - [`end_time(Option<DateTime>)`](crate::input::CreateScheduledActionInput::end_time): <p>The end time in UTC of the scheduled action. After this time, the scheduled action does not trigger. For more information about this parameter, see <code>ScheduledAction</code>. </p>
+    ///   - [`enable(Option<bool>)`](crate::input::CreateScheduledActionInput::enable): <p>If true, the schedule is enabled. If false, the scheduled action does not trigger. For more information about <code>state</code> of the scheduled action, see <code>ScheduledAction</code>. </p>
+    /// - On success, responds with [`CreateScheduledActionOutput`](crate::output::CreateScheduledActionOutput) with field(s):
+    ///   - [`scheduled_action_name(Option<String>)`](crate::output::CreateScheduledActionOutput::scheduled_action_name): <p>The name of the scheduled action. </p>
+    ///   - [`target_action(Option<ScheduledActionType>)`](crate::output::CreateScheduledActionOutput::target_action): <p>A JSON format string of the Amazon Redshift API operation with input parameters. </p>  <p>"<code>{\"ResizeCluster\":{\"NodeType\":\"ds2.8xlarge\",\"ClusterIdentifier\":\"my-test-cluster\",\"NumberOfNodes\":3}}</code>". </p>
+    ///   - [`schedule(Option<String>)`](crate::output::CreateScheduledActionOutput::schedule): <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action. Schedule invocations must be separated by at least one hour.</p>  <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For example, "<code>at(2016-03-04T17:27:00)</code>".</p>  <p>Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+    ///   - [`iam_role(Option<String>)`](crate::output::CreateScheduledActionOutput::iam_role): <p>The IAM role to assume to run the scheduled action. This IAM role must have permission to run the Amazon Redshift API operation in the scheduled action. This IAM role must allow the Amazon Redshift scheduler (Principal scheduler.redshift.amazonaws.com) to assume permissions on your behalf. For more information about the IAM role to use with the Amazon Redshift scheduler, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using Identity-Based Policies for Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
+    ///   - [`scheduled_action_description(Option<String>)`](crate::output::CreateScheduledActionOutput::scheduled_action_description): <p>The description of the scheduled action. </p>
+    ///   - [`state(Option<ScheduledActionState>)`](crate::output::CreateScheduledActionOutput::state): <p>The state of the scheduled action. For example, <code>DISABLED</code>. </p>
+    ///   - [`next_invocations(Option<Vec<DateTime>>)`](crate::output::CreateScheduledActionOutput::next_invocations): <p>List of times when the scheduled action will run. </p>
+    ///   - [`start_time(Option<DateTime>)`](crate::output::CreateScheduledActionOutput::start_time): <p>The start time in UTC when the schedule is active. Before this time, the scheduled action does not trigger. </p>
+    ///   - [`end_time(Option<DateTime>)`](crate::output::CreateScheduledActionOutput::end_time): <p>The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger. </p>
+    /// - On failure, responds with [`SdkError<CreateScheduledActionError>`](crate::error::CreateScheduledActionError)
     pub fn create_scheduled_action(&self) -> fluent_builders::CreateScheduledAction<C, M, R> {
         fluent_builders::CreateScheduledAction::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateSnapshotCopyGrant` operation.
+    /// Constructs a fluent builder for the [`CreateSnapshotCopyGrant`](crate::client::fluent_builders::CreateSnapshotCopyGrant) operation.
     ///
-    /// See [`CreateSnapshotCopyGrant`](crate::client::fluent_builders::CreateSnapshotCopyGrant) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateSnapshotCopyGrantInput`](crate::input::CreateSnapshotCopyGrantInput) with field(s):
+    ///   - [`snapshot_copy_grant_name(Option<String>)`](crate::input::CreateSnapshotCopyGrantInput::snapshot_copy_grant_name): <p>The name of the snapshot copy grant. This name must be unique in the region for the Amazon Web Services account.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li>   <li> <p>Alphabetic characters must be lowercase.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>   <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>  </ul>
+    ///   - [`kms_key_id(Option<String>)`](crate::input::CreateSnapshotCopyGrantInput::kms_key_id): <p>The unique identifier of the customer master key (CMK) to which to grant Amazon Redshift permission. If no key is specified, the default key is used.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateSnapshotCopyGrantInput::tags): <p>A list of tag instances.</p>
+    /// - On success, responds with [`CreateSnapshotCopyGrantOutput`](crate::output::CreateSnapshotCopyGrantOutput) with field(s):
+    ///   - [`snapshot_copy_grant(Option<SnapshotCopyGrant>)`](crate::output::CreateSnapshotCopyGrantOutput::snapshot_copy_grant): <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified customer master key (CMK) from Amazon Web Services KMS in the destination region.</p>  <p> For more information about managing snapshot copy grants, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
+    /// - On failure, responds with [`SdkError<CreateSnapshotCopyGrantError>`](crate::error::CreateSnapshotCopyGrantError)
     pub fn create_snapshot_copy_grant(&self) -> fluent_builders::CreateSnapshotCopyGrant<C, M, R> {
         fluent_builders::CreateSnapshotCopyGrant::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateSnapshotSchedule` operation.
+    /// Constructs a fluent builder for the [`CreateSnapshotSchedule`](crate::client::fluent_builders::CreateSnapshotSchedule) operation.
     ///
-    /// See [`CreateSnapshotSchedule`](crate::client::fluent_builders::CreateSnapshotSchedule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateSnapshotScheduleInput`](crate::input::CreateSnapshotScheduleInput) with field(s):
+    ///   - [`schedule_definitions(Option<Vec<String>>)`](crate::input::CreateSnapshotScheduleInput::schedule_definitions): <p>The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)". </p>
+    ///   - [`schedule_identifier(Option<String>)`](crate::input::CreateSnapshotScheduleInput::schedule_identifier): <p>A unique identifier for a snapshot schedule. Only alphanumeric characters are allowed for the identifier.</p>
+    ///   - [`schedule_description(Option<String>)`](crate::input::CreateSnapshotScheduleInput::schedule_description): <p>The description of the snapshot schedule.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateSnapshotScheduleInput::tags): <p>An optional set of tags you can use to search for the schedule.</p>
+    ///   - [`dry_run(Option<bool>)`](crate::input::CreateSnapshotScheduleInput::dry_run): <p></p>
+    ///   - [`next_invocations(Option<i32>)`](crate::input::CreateSnapshotScheduleInput::next_invocations): <p></p>
+    /// - On success, responds with [`CreateSnapshotScheduleOutput`](crate::output::CreateSnapshotScheduleOutput) with field(s):
+    ///   - [`schedule_definitions(Option<Vec<String>>)`](crate::output::CreateSnapshotScheduleOutput::schedule_definitions): <p>A list of ScheduleDefinitions.</p>
+    ///   - [`schedule_identifier(Option<String>)`](crate::output::CreateSnapshotScheduleOutput::schedule_identifier): <p>A unique identifier for the schedule.</p>
+    ///   - [`schedule_description(Option<String>)`](crate::output::CreateSnapshotScheduleOutput::schedule_description): <p>The description of the schedule.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::CreateSnapshotScheduleOutput::tags): <p>An optional set of tags describing the schedule.</p>
+    ///   - [`next_invocations(Option<Vec<DateTime>>)`](crate::output::CreateSnapshotScheduleOutput::next_invocations): <p></p>
+    ///   - [`associated_cluster_count(Option<i32>)`](crate::output::CreateSnapshotScheduleOutput::associated_cluster_count): <p>The number of clusters associated with the schedule.</p>
+    ///   - [`associated_clusters(Option<Vec<ClusterAssociatedToSchedule>>)`](crate::output::CreateSnapshotScheduleOutput::associated_clusters): <p>A list of clusters associated with the schedule. A maximum of 100 clusters is returned.</p>
+    /// - On failure, responds with [`SdkError<CreateSnapshotScheduleError>`](crate::error::CreateSnapshotScheduleError)
     pub fn create_snapshot_schedule(&self) -> fluent_builders::CreateSnapshotSchedule<C, M, R> {
         fluent_builders::CreateSnapshotSchedule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateTags` operation.
+    /// Constructs a fluent builder for the [`CreateTags`](crate::client::fluent_builders::CreateTags) operation.
     ///
-    /// See [`CreateTags`](crate::client::fluent_builders::CreateTags) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateTagsInput`](crate::input::CreateTagsInput) with field(s):
+    ///   - [`resource_name(Option<String>)`](crate::input::CreateTagsInput::resource_name): <p>The Amazon Resource Name (ARN) to which you want to add the tag or tags. For example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. </p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateTagsInput::tags): <p>One or more name/value pairs to add as tags to the specified resource. Each tag name is passed in with the parameter <code>Key</code> and the corresponding value is passed in with the parameter <code>Value</code>. The <code>Key</code> and <code>Value</code> parameters are separated by a comma (,). Separate multiple tags with a space. For example, <code>--tags "Key"="owner","Value"="admin" "Key"="environment","Value"="test" "Key"="version","Value"="1.0"</code>. </p>
+    /// - On success, responds with [`CreateTagsOutput`](crate::output::CreateTagsOutput)
+
+    /// - On failure, responds with [`SdkError<CreateTagsError>`](crate::error::CreateTagsError)
     pub fn create_tags(&self) -> fluent_builders::CreateTags<C, M, R> {
         fluent_builders::CreateTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateUsageLimit` operation.
+    /// Constructs a fluent builder for the [`CreateUsageLimit`](crate::client::fluent_builders::CreateUsageLimit) operation.
     ///
-    /// See [`CreateUsageLimit`](crate::client::fluent_builders::CreateUsageLimit) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateUsageLimitInput`](crate::input::CreateUsageLimitInput) with field(s):
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::CreateUsageLimitInput::cluster_identifier): <p>The identifier of the cluster that you want to limit usage.</p>
+    ///   - [`feature_type(Option<UsageLimitFeatureType>)`](crate::input::CreateUsageLimitInput::feature_type): <p>The Amazon Redshift feature that you want to limit.</p>
+    ///   - [`limit_type(Option<UsageLimitLimitType>)`](crate::input::CreateUsageLimitInput::limit_type): <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size. If <code>FeatureType</code> is <code>spectrum</code>, then <code>LimitType</code> must be <code>data-scanned</code>. If <code>FeatureType</code> is <code>concurrency-scaling</code>, then <code>LimitType</code> must be <code>time</code>. </p>
+    ///   - [`amount(i64)`](crate::input::CreateUsageLimitInput::amount): <p>The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB). The value must be a positive number. </p>
+    ///   - [`period(Option<UsageLimitPeriod>)`](crate::input::CreateUsageLimitInput::period): <p>The time period that the amount applies to. A <code>weekly</code> period begins on Sunday. The default is <code>monthly</code>. </p>
+    ///   - [`breach_action(Option<UsageLimitBreachAction>)`](crate::input::CreateUsageLimitInput::breach_action): <p>The action that Amazon Redshift takes when the limit is reached. The default is log. For more information about this parameter, see <code>UsageLimit</code>.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateUsageLimitInput::tags): <p>A list of tag instances.</p>
+    /// - On success, responds with [`CreateUsageLimitOutput`](crate::output::CreateUsageLimitOutput) with field(s):
+    ///   - [`usage_limit_id(Option<String>)`](crate::output::CreateUsageLimitOutput::usage_limit_id): <p>The identifier of the usage limit.</p>
+    ///   - [`cluster_identifier(Option<String>)`](crate::output::CreateUsageLimitOutput::cluster_identifier): <p>The identifier of the cluster with a usage limit.</p>
+    ///   - [`feature_type(Option<UsageLimitFeatureType>)`](crate::output::CreateUsageLimitOutput::feature_type): <p>The Amazon Redshift feature to which the limit applies.</p>
+    ///   - [`limit_type(Option<UsageLimitLimitType>)`](crate::output::CreateUsageLimitOutput::limit_type): <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size.</p>
+    ///   - [`amount(i64)`](crate::output::CreateUsageLimitOutput::amount): <p>The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB).</p>
+    ///   - [`period(Option<UsageLimitPeriod>)`](crate::output::CreateUsageLimitOutput::period): <p>The time period that the amount applies to. A <code>weekly</code> period begins on Sunday. The default is <code>monthly</code>. </p>
+    ///   - [`breach_action(Option<UsageLimitBreachAction>)`](crate::output::CreateUsageLimitOutput::breach_action): <p>The action that Amazon Redshift takes when the limit is reached. Possible values are: </p>  <ul>   <li> <p> <b>log</b> - To log an event in a system table. The default is log.</p> </li>   <li> <p> <b>emit-metric</b> - To emit CloudWatch metrics.</p> </li>   <li> <p> <b>disable</b> - To disable the feature until the next usage period begins.</p> </li>  </ul>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::CreateUsageLimitOutput::tags): <p>A list of tag instances.</p>
+    /// - On failure, responds with [`SdkError<CreateUsageLimitError>`](crate::error::CreateUsageLimitError)
     pub fn create_usage_limit(&self) -> fluent_builders::CreateUsageLimit<C, M, R> {
         fluent_builders::CreateUsageLimit::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeauthorizeDataShare` operation.
+    /// Constructs a fluent builder for the [`DeauthorizeDataShare`](crate::client::fluent_builders::DeauthorizeDataShare) operation.
     ///
-    /// See [`DeauthorizeDataShare`](crate::client::fluent_builders::DeauthorizeDataShare) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeauthorizeDataShareInput`](crate::input::DeauthorizeDataShareInput) with field(s):
+    ///   - [`data_share_arn(Option<String>)`](crate::input::DeauthorizeDataShareInput::data_share_arn): <p>The Amazon Resource Name (ARN) of the datashare to remove authorization from.</p>
+    ///   - [`consumer_identifier(Option<String>)`](crate::input::DeauthorizeDataShareInput::consumer_identifier): <p>The identifier of the data consumer that is to have authorization removed from the datashare. This identifier is an Amazon Web Services account ID or a keyword, such as ADX.</p>
+    /// - On success, responds with [`DeauthorizeDataShareOutput`](crate::output::DeauthorizeDataShareOutput) with field(s):
+    ///   - [`data_share_arn(Option<String>)`](crate::output::DeauthorizeDataShareOutput::data_share_arn): <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
+    ///   - [`producer_arn(Option<String>)`](crate::output::DeauthorizeDataShareOutput::producer_arn): <p>The Amazon Resource Name (ARN) of the producer.</p>
+    ///   - [`allow_publicly_accessible_consumers(bool)`](crate::output::DeauthorizeDataShareOutput::allow_publicly_accessible_consumers): <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
+    ///   - [`data_share_associations(Option<Vec<DataShareAssociation>>)`](crate::output::DeauthorizeDataShareOutput::data_share_associations): <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+    ///   - [`managed_by(Option<String>)`](crate::output::DeauthorizeDataShareOutput::managed_by): <p>The identifier of a datashare to show its managing entity.</p>
+    /// - On failure, responds with [`SdkError<DeauthorizeDataShareError>`](crate::error::DeauthorizeDataShareError)
     pub fn deauthorize_data_share(&self) -> fluent_builders::DeauthorizeDataShare<C, M, R> {
         fluent_builders::DeauthorizeDataShare::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteAuthenticationProfile` operation.
+    /// Constructs a fluent builder for the [`DeleteAuthenticationProfile`](crate::client::fluent_builders::DeleteAuthenticationProfile) operation.
     ///
-    /// See [`DeleteAuthenticationProfile`](crate::client::fluent_builders::DeleteAuthenticationProfile) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteAuthenticationProfileInput`](crate::input::DeleteAuthenticationProfileInput) with field(s):
+    ///   - [`authentication_profile_name(Option<String>)`](crate::input::DeleteAuthenticationProfileInput::authentication_profile_name): <p>The name of the authentication profile to delete.</p>
+    /// - On success, responds with [`DeleteAuthenticationProfileOutput`](crate::output::DeleteAuthenticationProfileOutput) with field(s):
+    ///   - [`authentication_profile_name(Option<String>)`](crate::output::DeleteAuthenticationProfileOutput::authentication_profile_name): <p>The name of the authentication profile that was deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteAuthenticationProfileError>`](crate::error::DeleteAuthenticationProfileError)
     pub fn delete_authentication_profile(
         &self,
     ) -> fluent_builders::DeleteAuthenticationProfile<C, M, R> {
         fluent_builders::DeleteAuthenticationProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteCluster` operation.
+    /// Constructs a fluent builder for the [`DeleteCluster`](crate::client::fluent_builders::DeleteCluster) operation.
     ///
-    /// See [`DeleteCluster`](crate::client::fluent_builders::DeleteCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteClusterInput`](crate::input::DeleteClusterInput) with field(s):
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::DeleteClusterInput::cluster_identifier): <p>The identifier of the cluster to be deleted.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain lowercase characters.</p> </li>   <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul>
+    ///   - [`skip_final_cluster_snapshot(bool)`](crate::input::DeleteClusterInput::skip_final_cluster_snapshot): <p>Determines whether a final snapshot of the cluster is created before Amazon Redshift deletes the cluster. If <code>true</code>, a final cluster snapshot is not created. If <code>false</code>, a final cluster snapshot is created before the cluster is deleted. </p> <note>   <p>The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if <i>SkipFinalClusterSnapshot</i> is <code>false</code>.</p>  </note>  <p>Default: <code>false</code> </p>
+    ///   - [`final_cluster_snapshot_identifier(Option<String>)`](crate::input::DeleteClusterInput::final_cluster_snapshot_identifier): <p>The identifier of the final snapshot that is to be created immediately before deleting the cluster. If this parameter is provided, <i>SkipFinalClusterSnapshot</i> must be <code>false</code>. </p>  <p>Constraints:</p>  <ul>   <li> <p>Must be 1 to 255 alphanumeric characters.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul>
+    ///   - [`final_cluster_snapshot_retention_period(Option<i32>)`](crate::input::DeleteClusterInput::final_cluster_snapshot_retention_period): <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p>  <p>The value must be either -1 or an integer between 1 and 3,653.</p>  <p>The default value is -1.</p>
+    /// - On success, responds with [`DeleteClusterOutput`](crate::output::DeleteClusterOutput) with field(s):
+    ///   - [`cluster(Option<Cluster>)`](crate::output::DeleteClusterOutput::cluster): <p>Describes a cluster.</p>
+    /// - On failure, responds with [`SdkError<DeleteClusterError>`](crate::error::DeleteClusterError)
     pub fn delete_cluster(&self) -> fluent_builders::DeleteCluster<C, M, R> {
         fluent_builders::DeleteCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteClusterParameterGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteClusterParameterGroup`](crate::client::fluent_builders::DeleteClusterParameterGroup) operation.
     ///
-    /// See [`DeleteClusterParameterGroup`](crate::client::fluent_builders::DeleteClusterParameterGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteClusterParameterGroupInput`](crate::input::DeleteClusterParameterGroupInput) with field(s):
+    ///   - [`parameter_group_name(Option<String>)`](crate::input::DeleteClusterParameterGroupInput::parameter_group_name): <p>The name of the parameter group to be deleted.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be the name of an existing cluster parameter group.</p> </li>   <li> <p>Cannot delete a default cluster parameter group.</p> </li>  </ul>
+    /// - On success, responds with [`DeleteClusterParameterGroupOutput`](crate::output::DeleteClusterParameterGroupOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteClusterParameterGroupError>`](crate::error::DeleteClusterParameterGroupError)
     pub fn delete_cluster_parameter_group(
         &self,
     ) -> fluent_builders::DeleteClusterParameterGroup<C, M, R> {
         fluent_builders::DeleteClusterParameterGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteClusterSecurityGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteClusterSecurityGroup`](crate::client::fluent_builders::DeleteClusterSecurityGroup) operation.
     ///
-    /// See [`DeleteClusterSecurityGroup`](crate::client::fluent_builders::DeleteClusterSecurityGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteClusterSecurityGroupInput`](crate::input::DeleteClusterSecurityGroupInput) with field(s):
+    ///   - [`cluster_security_group_name(Option<String>)`](crate::input::DeleteClusterSecurityGroupInput::cluster_security_group_name): <p>The name of the cluster security group to be deleted.</p>
+    /// - On success, responds with [`DeleteClusterSecurityGroupOutput`](crate::output::DeleteClusterSecurityGroupOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteClusterSecurityGroupError>`](crate::error::DeleteClusterSecurityGroupError)
     pub fn delete_cluster_security_group(
         &self,
     ) -> fluent_builders::DeleteClusterSecurityGroup<C, M, R> {
         fluent_builders::DeleteClusterSecurityGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteClusterSnapshot` operation.
+    /// Constructs a fluent builder for the [`DeleteClusterSnapshot`](crate::client::fluent_builders::DeleteClusterSnapshot) operation.
     ///
-    /// See [`DeleteClusterSnapshot`](crate::client::fluent_builders::DeleteClusterSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteClusterSnapshotInput`](crate::input::DeleteClusterSnapshotInput) with field(s):
+    ///   - [`snapshot_identifier(Option<String>)`](crate::input::DeleteClusterSnapshotInput::snapshot_identifier): <p>The unique identifier of the manual snapshot to be deleted.</p>  <p>Constraints: Must be the name of an existing snapshot that is in the <code>available</code>, <code>failed</code>, or <code>cancelled</code> state.</p>
+    ///   - [`snapshot_cluster_identifier(Option<String>)`](crate::input::DeleteClusterSnapshotInput::snapshot_cluster_identifier): <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>  <p>Constraints: Must be the name of valid cluster.</p>
+    /// - On success, responds with [`DeleteClusterSnapshotOutput`](crate::output::DeleteClusterSnapshotOutput) with field(s):
+    ///   - [`snapshot(Option<Snapshot>)`](crate::output::DeleteClusterSnapshotOutput::snapshot): <p>Describes a snapshot.</p>
+    /// - On failure, responds with [`SdkError<DeleteClusterSnapshotError>`](crate::error::DeleteClusterSnapshotError)
     pub fn delete_cluster_snapshot(&self) -> fluent_builders::DeleteClusterSnapshot<C, M, R> {
         fluent_builders::DeleteClusterSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteClusterSubnetGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteClusterSubnetGroup`](crate::client::fluent_builders::DeleteClusterSubnetGroup) operation.
     ///
-    /// See [`DeleteClusterSubnetGroup`](crate::client::fluent_builders::DeleteClusterSubnetGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteClusterSubnetGroupInput`](crate::input::DeleteClusterSubnetGroupInput) with field(s):
+    ///   - [`cluster_subnet_group_name(Option<String>)`](crate::input::DeleteClusterSubnetGroupInput::cluster_subnet_group_name): <p>The name of the cluster subnet group name to be deleted.</p>
+    /// - On success, responds with [`DeleteClusterSubnetGroupOutput`](crate::output::DeleteClusterSubnetGroupOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteClusterSubnetGroupError>`](crate::error::DeleteClusterSubnetGroupError)
     pub fn delete_cluster_subnet_group(
         &self,
     ) -> fluent_builders::DeleteClusterSubnetGroup<C, M, R> {
         fluent_builders::DeleteClusterSubnetGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteEndpointAccess` operation.
+    /// Constructs a fluent builder for the [`DeleteEndpointAccess`](crate::client::fluent_builders::DeleteEndpointAccess) operation.
     ///
-    /// See [`DeleteEndpointAccess`](crate::client::fluent_builders::DeleteEndpointAccess) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteEndpointAccessInput`](crate::input::DeleteEndpointAccessInput) with field(s):
+    ///   - [`endpoint_name(Option<String>)`](crate::input::DeleteEndpointAccessInput::endpoint_name): <p>The Redshift-managed VPC endpoint to delete.</p>
+    /// - On success, responds with [`DeleteEndpointAccessOutput`](crate::output::DeleteEndpointAccessOutput) with field(s):
+    ///   - [`cluster_identifier(Option<String>)`](crate::output::DeleteEndpointAccessOutput::cluster_identifier): <p>The cluster identifier of the cluster associated with the endpoint.</p>
+    ///   - [`resource_owner(Option<String>)`](crate::output::DeleteEndpointAccessOutput::resource_owner): <p>The Amazon Web Services account ID of the owner of the cluster.</p>
+    ///   - [`subnet_group_name(Option<String>)`](crate::output::DeleteEndpointAccessOutput::subnet_group_name): <p>The subnet group name where Amazon Redshift chooses to deploy the endpoint.</p>
+    ///   - [`endpoint_status(Option<String>)`](crate::output::DeleteEndpointAccessOutput::endpoint_status): <p>The status of the endpoint.</p>
+    ///   - [`endpoint_name(Option<String>)`](crate::output::DeleteEndpointAccessOutput::endpoint_name): <p>The name of the endpoint.</p>
+    ///   - [`endpoint_create_time(Option<DateTime>)`](crate::output::DeleteEndpointAccessOutput::endpoint_create_time): <p>The time (UTC) that the endpoint was created.</p>
+    ///   - [`port(i32)`](crate::output::DeleteEndpointAccessOutput::port): <p>The port number on which the cluster accepts incoming connections.</p>
+    ///   - [`address(Option<String>)`](crate::output::DeleteEndpointAccessOutput::address): <p>The DNS address of the endpoint.</p>
+    ///   - [`vpc_security_groups(Option<Vec<VpcSecurityGroupMembership>>)`](crate::output::DeleteEndpointAccessOutput::vpc_security_groups): <p>The security groups associated with the endpoint.</p>
+    ///   - [`vpc_endpoint(Option<VpcEndpoint>)`](crate::output::DeleteEndpointAccessOutput::vpc_endpoint): <p>The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.</p>
+    /// - On failure, responds with [`SdkError<DeleteEndpointAccessError>`](crate::error::DeleteEndpointAccessError)
     pub fn delete_endpoint_access(&self) -> fluent_builders::DeleteEndpointAccess<C, M, R> {
         fluent_builders::DeleteEndpointAccess::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteEventSubscription` operation.
+    /// Constructs a fluent builder for the [`DeleteEventSubscription`](crate::client::fluent_builders::DeleteEventSubscription) operation.
     ///
-    /// See [`DeleteEventSubscription`](crate::client::fluent_builders::DeleteEventSubscription) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteEventSubscriptionInput`](crate::input::DeleteEventSubscriptionInput) with field(s):
+    ///   - [`subscription_name(Option<String>)`](crate::input::DeleteEventSubscriptionInput::subscription_name): <p>The name of the Amazon Redshift event notification subscription to be deleted.</p>
+    /// - On success, responds with [`DeleteEventSubscriptionOutput`](crate::output::DeleteEventSubscriptionOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteEventSubscriptionError>`](crate::error::DeleteEventSubscriptionError)
     pub fn delete_event_subscription(&self) -> fluent_builders::DeleteEventSubscription<C, M, R> {
         fluent_builders::DeleteEventSubscription::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteHsmClientCertificate` operation.
+    /// Constructs a fluent builder for the [`DeleteHsmClientCertificate`](crate::client::fluent_builders::DeleteHsmClientCertificate) operation.
     ///
-    /// See [`DeleteHsmClientCertificate`](crate::client::fluent_builders::DeleteHsmClientCertificate) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteHsmClientCertificateInput`](crate::input::DeleteHsmClientCertificateInput) with field(s):
+    ///   - [`hsm_client_certificate_identifier(Option<String>)`](crate::input::DeleteHsmClientCertificateInput::hsm_client_certificate_identifier): <p>The identifier of the HSM client certificate to be deleted.</p>
+    /// - On success, responds with [`DeleteHsmClientCertificateOutput`](crate::output::DeleteHsmClientCertificateOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteHsmClientCertificateError>`](crate::error::DeleteHsmClientCertificateError)
     pub fn delete_hsm_client_certificate(
         &self,
     ) -> fluent_builders::DeleteHsmClientCertificate<C, M, R> {
         fluent_builders::DeleteHsmClientCertificate::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteHsmConfiguration` operation.
+    /// Constructs a fluent builder for the [`DeleteHsmConfiguration`](crate::client::fluent_builders::DeleteHsmConfiguration) operation.
     ///
-    /// See [`DeleteHsmConfiguration`](crate::client::fluent_builders::DeleteHsmConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteHsmConfigurationInput`](crate::input::DeleteHsmConfigurationInput) with field(s):
+    ///   - [`hsm_configuration_identifier(Option<String>)`](crate::input::DeleteHsmConfigurationInput::hsm_configuration_identifier): <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
+    /// - On success, responds with [`DeleteHsmConfigurationOutput`](crate::output::DeleteHsmConfigurationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteHsmConfigurationError>`](crate::error::DeleteHsmConfigurationError)
     pub fn delete_hsm_configuration(&self) -> fluent_builders::DeleteHsmConfiguration<C, M, R> {
         fluent_builders::DeleteHsmConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeletePartner` operation.
+    /// Constructs a fluent builder for the [`DeletePartner`](crate::client::fluent_builders::DeletePartner) operation.
     ///
-    /// See [`DeletePartner`](crate::client::fluent_builders::DeletePartner) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeletePartnerInput`](crate::input::DeletePartnerInput) with field(s):
+    ///   - [`account_id(Option<String>)`](crate::input::DeletePartnerInput::account_id): <p>The Amazon Web Services account ID that owns the cluster.</p>
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::DeletePartnerInput::cluster_identifier): <p>The cluster identifier of the cluster that receives data from the partner.</p>
+    ///   - [`database_name(Option<String>)`](crate::input::DeletePartnerInput::database_name): <p>The name of the database that receives data from the partner.</p>
+    ///   - [`partner_name(Option<String>)`](crate::input::DeletePartnerInput::partner_name): <p>The name of the partner that is authorized to send data.</p>
+    /// - On success, responds with [`DeletePartnerOutput`](crate::output::DeletePartnerOutput) with field(s):
+    ///   - [`database_name(Option<String>)`](crate::output::DeletePartnerOutput::database_name): <p>The name of the database that receives data from the partner.</p>
+    ///   - [`partner_name(Option<String>)`](crate::output::DeletePartnerOutput::partner_name): <p>The name of the partner that is authorized to send data.</p>
+    /// - On failure, responds with [`SdkError<DeletePartnerError>`](crate::error::DeletePartnerError)
     pub fn delete_partner(&self) -> fluent_builders::DeletePartner<C, M, R> {
         fluent_builders::DeletePartner::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteScheduledAction` operation.
+    /// Constructs a fluent builder for the [`DeleteScheduledAction`](crate::client::fluent_builders::DeleteScheduledAction) operation.
     ///
-    /// See [`DeleteScheduledAction`](crate::client::fluent_builders::DeleteScheduledAction) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteScheduledActionInput`](crate::input::DeleteScheduledActionInput) with field(s):
+    ///   - [`scheduled_action_name(Option<String>)`](crate::input::DeleteScheduledActionInput::scheduled_action_name): <p>The name of the scheduled action to delete. </p>
+    /// - On success, responds with [`DeleteScheduledActionOutput`](crate::output::DeleteScheduledActionOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteScheduledActionError>`](crate::error::DeleteScheduledActionError)
     pub fn delete_scheduled_action(&self) -> fluent_builders::DeleteScheduledAction<C, M, R> {
         fluent_builders::DeleteScheduledAction::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteSnapshotCopyGrant` operation.
+    /// Constructs a fluent builder for the [`DeleteSnapshotCopyGrant`](crate::client::fluent_builders::DeleteSnapshotCopyGrant) operation.
     ///
-    /// See [`DeleteSnapshotCopyGrant`](crate::client::fluent_builders::DeleteSnapshotCopyGrant) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteSnapshotCopyGrantInput`](crate::input::DeleteSnapshotCopyGrantInput) with field(s):
+    ///   - [`snapshot_copy_grant_name(Option<String>)`](crate::input::DeleteSnapshotCopyGrantInput::snapshot_copy_grant_name): <p>The name of the snapshot copy grant to delete.</p>
+    /// - On success, responds with [`DeleteSnapshotCopyGrantOutput`](crate::output::DeleteSnapshotCopyGrantOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteSnapshotCopyGrantError>`](crate::error::DeleteSnapshotCopyGrantError)
     pub fn delete_snapshot_copy_grant(&self) -> fluent_builders::DeleteSnapshotCopyGrant<C, M, R> {
         fluent_builders::DeleteSnapshotCopyGrant::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteSnapshotSchedule` operation.
+    /// Constructs a fluent builder for the [`DeleteSnapshotSchedule`](crate::client::fluent_builders::DeleteSnapshotSchedule) operation.
     ///
-    /// See [`DeleteSnapshotSchedule`](crate::client::fluent_builders::DeleteSnapshotSchedule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteSnapshotScheduleInput`](crate::input::DeleteSnapshotScheduleInput) with field(s):
+    ///   - [`schedule_identifier(Option<String>)`](crate::input::DeleteSnapshotScheduleInput::schedule_identifier): <p>A unique identifier of the snapshot schedule to delete.</p>
+    /// - On success, responds with [`DeleteSnapshotScheduleOutput`](crate::output::DeleteSnapshotScheduleOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteSnapshotScheduleError>`](crate::error::DeleteSnapshotScheduleError)
     pub fn delete_snapshot_schedule(&self) -> fluent_builders::DeleteSnapshotSchedule<C, M, R> {
         fluent_builders::DeleteSnapshotSchedule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteTags` operation.
+    /// Constructs a fluent builder for the [`DeleteTags`](crate::client::fluent_builders::DeleteTags) operation.
     ///
-    /// See [`DeleteTags`](crate::client::fluent_builders::DeleteTags) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteTagsInput`](crate::input::DeleteTagsInput) with field(s):
+    ///   - [`resource_name(Option<String>)`](crate::input::DeleteTagsInput::resource_name): <p>The Amazon Resource Name (ARN) from which you want to remove the tag or tags. For example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. </p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::DeleteTagsInput::tag_keys): <p>The tag key that you want to delete.</p>
+    /// - On success, responds with [`DeleteTagsOutput`](crate::output::DeleteTagsOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteTagsError>`](crate::error::DeleteTagsError)
     pub fn delete_tags(&self) -> fluent_builders::DeleteTags<C, M, R> {
         fluent_builders::DeleteTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteUsageLimit` operation.
+    /// Constructs a fluent builder for the [`DeleteUsageLimit`](crate::client::fluent_builders::DeleteUsageLimit) operation.
     ///
-    /// See [`DeleteUsageLimit`](crate::client::fluent_builders::DeleteUsageLimit) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteUsageLimitInput`](crate::input::DeleteUsageLimitInput) with field(s):
+    ///   - [`usage_limit_id(Option<String>)`](crate::input::DeleteUsageLimitInput::usage_limit_id): <p>The identifier of the usage limit to delete.</p>
+    /// - On success, responds with [`DeleteUsageLimitOutput`](crate::output::DeleteUsageLimitOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteUsageLimitError>`](crate::error::DeleteUsageLimitError)
     pub fn delete_usage_limit(&self) -> fluent_builders::DeleteUsageLimit<C, M, R> {
         fluent_builders::DeleteUsageLimit::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAccountAttributes` operation.
+    /// Constructs a fluent builder for the [`DescribeAccountAttributes`](crate::client::fluent_builders::DescribeAccountAttributes) operation.
     ///
-    /// See [`DescribeAccountAttributes`](crate::client::fluent_builders::DescribeAccountAttributes) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeAccountAttributesInput`](crate::input::DescribeAccountAttributesInput) with field(s):
+    ///   - [`attribute_names(Option<Vec<String>>)`](crate::input::DescribeAccountAttributesInput::attribute_names): <p>A list of attribute names.</p>
+    /// - On success, responds with [`DescribeAccountAttributesOutput`](crate::output::DescribeAccountAttributesOutput) with field(s):
+    ///   - [`account_attributes(Option<Vec<AccountAttribute>>)`](crate::output::DescribeAccountAttributesOutput::account_attributes): <p>A list of attributes assigned to an account.</p>
+    /// - On failure, responds with [`SdkError<DescribeAccountAttributesError>`](crate::error::DescribeAccountAttributesError)
     pub fn describe_account_attributes(
         &self,
     ) -> fluent_builders::DescribeAccountAttributes<C, M, R> {
         fluent_builders::DescribeAccountAttributes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAuthenticationProfiles` operation.
+    /// Constructs a fluent builder for the [`DescribeAuthenticationProfiles`](crate::client::fluent_builders::DescribeAuthenticationProfiles) operation.
     ///
-    /// See [`DescribeAuthenticationProfiles`](crate::client::fluent_builders::DescribeAuthenticationProfiles) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeAuthenticationProfilesInput`](crate::input::DescribeAuthenticationProfilesInput) with field(s):
+    ///   - [`authentication_profile_name(Option<String>)`](crate::input::DescribeAuthenticationProfilesInput::authentication_profile_name): <p>The name of the authentication profile to describe. If not specified then all authentication profiles owned by the account are listed.</p>
+    /// - On success, responds with [`DescribeAuthenticationProfilesOutput`](crate::output::DescribeAuthenticationProfilesOutput) with field(s):
+    ///   - [`authentication_profiles(Option<Vec<AuthenticationProfile>>)`](crate::output::DescribeAuthenticationProfilesOutput::authentication_profiles): <p>The list of authentication profiles.</p>
+    /// - On failure, responds with [`SdkError<DescribeAuthenticationProfilesError>`](crate::error::DescribeAuthenticationProfilesError)
     pub fn describe_authentication_profiles(
         &self,
     ) -> fluent_builders::DescribeAuthenticationProfiles<C, M, R> {
         fluent_builders::DescribeAuthenticationProfiles::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeClusterDbRevisions` operation.
-    ///
-    /// See [`DescribeClusterDbRevisions`](crate::client::fluent_builders::DescribeClusterDbRevisions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeClusterDbRevisions`](crate::client::fluent_builders::DescribeClusterDbRevisions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeClusterDbRevisions::into_paginator).
+    ///
+    /// - Takes [`DescribeClusterDbRevisionsInput`](crate::input::DescribeClusterDbRevisionsInput) with field(s):
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::DescribeClusterDbRevisionsInput::cluster_identifier): <p>A unique identifier for a cluster whose <code>ClusterDbRevisions</code> you are requesting. This parameter is case sensitive. All clusters defined for an account are returned by default.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeClusterDbRevisionsInput::max_records): <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified MaxRecords value, a value is returned in the <code>marker</code> field of the response. You can retrieve the next set of response records by providing the returned <code>marker</code> value in the <code>marker</code> parameter and retrying the request. </p>  <p>Default: 100</p>  <p>Constraints: minimum 20, maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeClusterDbRevisionsInput::marker): <p>An optional parameter that specifies the starting point for returning a set of response records. When the results of a <code>DescribeClusterDbRevisions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Redshift returns a value in the <code>marker</code> field of the response. You can retrieve the next set of response records by providing the returned <code>marker</code> value in the <code>marker</code> parameter and retrying the request. </p>  <p>Constraints: You can specify either the <code>ClusterIdentifier</code> parameter, or the <code>marker</code> parameter, but not both.</p>
+    /// - On success, responds with [`DescribeClusterDbRevisionsOutput`](crate::output::DescribeClusterDbRevisionsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeClusterDbRevisionsOutput::marker): <p>A string representing the starting point for the next set of revisions. If a value is returned in a response, you can retrieve the next set of revisions by providing the value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all revisions have already been returned.</p>
+    ///   - [`cluster_db_revisions(Option<Vec<ClusterDbRevision>>)`](crate::output::DescribeClusterDbRevisionsOutput::cluster_db_revisions): <p>A list of revisions.</p>
+    /// - On failure, responds with [`SdkError<DescribeClusterDbRevisionsError>`](crate::error::DescribeClusterDbRevisionsError)
     pub fn describe_cluster_db_revisions(
         &self,
     ) -> fluent_builders::DescribeClusterDbRevisions<C, M, R> {
         fluent_builders::DescribeClusterDbRevisions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeClusterParameterGroups` operation.
-    ///
-    /// See [`DescribeClusterParameterGroups`](crate::client::fluent_builders::DescribeClusterParameterGroups) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeClusterParameterGroups`](crate::client::fluent_builders::DescribeClusterParameterGroups) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeClusterParameterGroups::into_paginator).
+    ///
+    /// - Takes [`DescribeClusterParameterGroupsInput`](crate::input::DescribeClusterParameterGroupsInput) with field(s):
+    ///   - [`parameter_group_name(Option<String>)`](crate::input::DescribeClusterParameterGroupsInput::parameter_group_name): <p>The name of a specific parameter group for which to return details. By default, details about all parameter groups and the default parameter group are returned.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeClusterParameterGroupsInput::max_records): <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>  <p>Default: <code>100</code> </p>  <p>Constraints: minimum 20, maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeClusterParameterGroupsInput::marker): <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterParameterGroups</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::DescribeClusterParameterGroupsInput::tag_keys): <p>A tag key or keys for which you want to return all matching cluster parameter groups that are associated with the specified key or keys. For example, suppose that you have parameter groups that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the parameter groups that have either or both of these tag keys associated with them.</p>
+    ///   - [`tag_values(Option<Vec<String>>)`](crate::input::DescribeClusterParameterGroupsInput::tag_values): <p>A tag value or values for which you want to return all matching cluster parameter groups that are associated with the specified tag value or values. For example, suppose that you have parameter groups that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the parameter groups that have either or both of these tag values associated with them.</p>
+    /// - On success, responds with [`DescribeClusterParameterGroupsOutput`](crate::output::DescribeClusterParameterGroupsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeClusterParameterGroupsOutput::marker): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    ///   - [`parameter_groups(Option<Vec<ClusterParameterGroup>>)`](crate::output::DescribeClusterParameterGroupsOutput::parameter_groups): <p>A list of <code>ClusterParameterGroup</code> instances. Each instance describes one cluster parameter group. </p>
+    /// - On failure, responds with [`SdkError<DescribeClusterParameterGroupsError>`](crate::error::DescribeClusterParameterGroupsError)
     pub fn describe_cluster_parameter_groups(
         &self,
     ) -> fluent_builders::DescribeClusterParameterGroups<C, M, R> {
         fluent_builders::DescribeClusterParameterGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeClusterParameters` operation.
-    ///
-    /// See [`DescribeClusterParameters`](crate::client::fluent_builders::DescribeClusterParameters) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeClusterParameters`](crate::client::fluent_builders::DescribeClusterParameters) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeClusterParameters::into_paginator).
+    ///
+    /// - Takes [`DescribeClusterParametersInput`](crate::input::DescribeClusterParametersInput) with field(s):
+    ///   - [`parameter_group_name(Option<String>)`](crate::input::DescribeClusterParametersInput::parameter_group_name): <p>The name of a cluster parameter group for which to return details.</p>
+    ///   - [`source(Option<String>)`](crate::input::DescribeClusterParametersInput::source): <p>The parameter types to return. Specify <code>user</code> to show parameters that are different form the default. Similarly, specify <code>engine-default</code> to show parameters that are the same as the default parameter group. </p>  <p>Default: All parameter types returned.</p>  <p>Valid Values: <code>user</code> | <code>engine-default</code> </p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeClusterParametersInput::max_records): <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>  <p>Default: <code>100</code> </p>  <p>Constraints: minimum 20, maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeClusterParametersInput::marker): <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterParameters</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    /// - On success, responds with [`DescribeClusterParametersOutput`](crate::output::DescribeClusterParametersOutput) with field(s):
+    ///   - [`parameters(Option<Vec<Parameter>>)`](crate::output::DescribeClusterParametersOutput::parameters): <p>A list of <code>Parameter</code> instances. Each instance lists the parameters of one cluster parameter group. </p>
+    ///   - [`marker(Option<String>)`](crate::output::DescribeClusterParametersOutput::marker): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    /// - On failure, responds with [`SdkError<DescribeClusterParametersError>`](crate::error::DescribeClusterParametersError)
     pub fn describe_cluster_parameters(
         &self,
     ) -> fluent_builders::DescribeClusterParameters<C, M, R> {
         fluent_builders::DescribeClusterParameters::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeClusters` operation.
-    ///
-    /// See [`DescribeClusters`](crate::client::fluent_builders::DescribeClusters) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeClusters`](crate::client::fluent_builders::DescribeClusters) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeClusters::into_paginator).
+    ///
+    /// - Takes [`DescribeClustersInput`](crate::input::DescribeClustersInput) with field(s):
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::DescribeClustersInput::cluster_identifier): <p>The unique identifier of a cluster whose properties you are requesting. This parameter is case sensitive.</p>  <p>The default is that all clusters defined for an account are returned.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeClustersInput::max_records): <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>  <p>Default: <code>100</code> </p>  <p>Constraints: minimum 20, maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeClustersInput::marker): <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusters</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>  <p>Constraints: You can specify either the <b>ClusterIdentifier</b> parameter or the <b>Marker</b> parameter, but not both. </p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::DescribeClustersInput::tag_keys): <p>A tag key or keys for which you want to return all matching clusters that are associated with the specified key or keys. For example, suppose that you have clusters that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the clusters that have either or both of these tag keys associated with them.</p>
+    ///   - [`tag_values(Option<Vec<String>>)`](crate::input::DescribeClustersInput::tag_values): <p>A tag value or values for which you want to return all matching clusters that are associated with the specified tag value or values. For example, suppose that you have clusters that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the clusters that have either or both of these tag values associated with them.</p>
+    /// - On success, responds with [`DescribeClustersOutput`](crate::output::DescribeClustersOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeClustersOutput::marker): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    ///   - [`clusters(Option<Vec<Cluster>>)`](crate::output::DescribeClustersOutput::clusters): <p>A list of <code>Cluster</code> objects, where each object describes one cluster. </p>
+    /// - On failure, responds with [`SdkError<DescribeClustersError>`](crate::error::DescribeClustersError)
     pub fn describe_clusters(&self) -> fluent_builders::DescribeClusters<C, M, R> {
         fluent_builders::DescribeClusters::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeClusterSecurityGroups` operation.
-    ///
-    /// See [`DescribeClusterSecurityGroups`](crate::client::fluent_builders::DescribeClusterSecurityGroups) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeClusterSecurityGroups`](crate::client::fluent_builders::DescribeClusterSecurityGroups) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeClusterSecurityGroups::into_paginator).
+    ///
+    /// - Takes [`DescribeClusterSecurityGroupsInput`](crate::input::DescribeClusterSecurityGroupsInput) with field(s):
+    ///   - [`cluster_security_group_name(Option<String>)`](crate::input::DescribeClusterSecurityGroupsInput::cluster_security_group_name): <p>The name of a cluster security group for which you are requesting details. You can specify either the <b>Marker</b> parameter or a <b>ClusterSecurityGroupName</b> parameter, but not both. </p>  <p> Example: <code>securitygroup1</code> </p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeClusterSecurityGroupsInput::max_records): <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>  <p>Default: <code>100</code> </p>  <p>Constraints: minimum 20, maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeClusterSecurityGroupsInput::marker): <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterSecurityGroups</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>  <p>Constraints: You can specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::DescribeClusterSecurityGroupsInput::tag_keys): <p>A tag key or keys for which you want to return all matching cluster security groups that are associated with the specified key or keys. For example, suppose that you have security groups that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the security groups that have either or both of these tag keys associated with them.</p>
+    ///   - [`tag_values(Option<Vec<String>>)`](crate::input::DescribeClusterSecurityGroupsInput::tag_values): <p>A tag value or values for which you want to return all matching cluster security groups that are associated with the specified tag value or values. For example, suppose that you have security groups that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the security groups that have either or both of these tag values associated with them.</p>
+    /// - On success, responds with [`DescribeClusterSecurityGroupsOutput`](crate::output::DescribeClusterSecurityGroupsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeClusterSecurityGroupsOutput::marker): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    ///   - [`cluster_security_groups(Option<Vec<ClusterSecurityGroup>>)`](crate::output::DescribeClusterSecurityGroupsOutput::cluster_security_groups): <p>A list of <code>ClusterSecurityGroup</code> instances. </p>
+    /// - On failure, responds with [`SdkError<DescribeClusterSecurityGroupsError>`](crate::error::DescribeClusterSecurityGroupsError)
     pub fn describe_cluster_security_groups(
         &self,
     ) -> fluent_builders::DescribeClusterSecurityGroups<C, M, R> {
         fluent_builders::DescribeClusterSecurityGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeClusterSnapshots` operation.
-    ///
-    /// See [`DescribeClusterSnapshots`](crate::client::fluent_builders::DescribeClusterSnapshots) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeClusterSnapshots`](crate::client::fluent_builders::DescribeClusterSnapshots) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeClusterSnapshots::into_paginator).
+    ///
+    /// - Takes [`DescribeClusterSnapshotsInput`](crate::input::DescribeClusterSnapshotsInput) with field(s):
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::DescribeClusterSnapshotsInput::cluster_identifier): <p>The identifier of the cluster which generated the requested snapshots.</p>
+    ///   - [`snapshot_identifier(Option<String>)`](crate::input::DescribeClusterSnapshotsInput::snapshot_identifier): <p>The snapshot identifier of the snapshot about which to return information.</p>
+    ///   - [`snapshot_type(Option<String>)`](crate::input::DescribeClusterSnapshotsInput::snapshot_type): <p>The type of snapshots for which you are requesting information. By default, snapshots of all types are returned.</p>  <p>Valid Values: <code>automated</code> | <code>manual</code> </p>
+    ///   - [`start_time(Option<DateTime>)`](crate::input::DescribeClusterSnapshotsInput::start_time): <p>A value that requests only snapshots created at or after the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>  <p>Example: <code>2012-07-16T18:00:00Z</code> </p>
+    ///   - [`end_time(Option<DateTime>)`](crate::input::DescribeClusterSnapshotsInput::end_time): <p>A time value that requests only snapshots created at or before the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>  <p>Example: <code>2012-07-16T18:00:00Z</code> </p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeClusterSnapshotsInput::max_records): <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>  <p>Default: <code>100</code> </p>  <p>Constraints: minimum 20, maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeClusterSnapshotsInput::marker): <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterSnapshots</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    ///   - [`owner_account(Option<String>)`](crate::input::DescribeClusterSnapshotsInput::owner_account): <p>The Amazon Web Services account used to create or copy the snapshot. Use this field to filter the results to snapshots owned by a particular account. To describe snapshots you own, either specify your Amazon Web Services account, or do not specify the parameter.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::DescribeClusterSnapshotsInput::tag_keys): <p>A tag key or keys for which you want to return all matching cluster snapshots that are associated with the specified key or keys. For example, suppose that you have snapshots that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag keys associated with them.</p>
+    ///   - [`tag_values(Option<Vec<String>>)`](crate::input::DescribeClusterSnapshotsInput::tag_values): <p>A tag value or values for which you want to return all matching cluster snapshots that are associated with the specified tag value or values. For example, suppose that you have snapshots that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag values associated with them.</p>
+    ///   - [`cluster_exists(Option<bool>)`](crate::input::DescribeClusterSnapshotsInput::cluster_exists): <p>A value that indicates whether to return snapshots only for an existing cluster. You can perform table-level restore only by using a snapshot of an existing cluster, that is, a cluster that has not been deleted. Values for this parameter work as follows: </p>  <ul>   <li> <p>If <code>ClusterExists</code> is set to <code>true</code>, <code>ClusterIdentifier</code> is required.</p> </li>   <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> isn't specified, all snapshots associated with deleted clusters (orphaned snapshots) are returned. </p> </li>   <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified for a deleted cluster, snapshots associated with that cluster are returned.</p> </li>   <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified for an existing cluster, no snapshots are returned. </p> </li>  </ul>
+    ///   - [`sorting_entities(Option<Vec<SnapshotSortingEntity>>)`](crate::input::DescribeClusterSnapshotsInput::sorting_entities): <p></p>
+    /// - On success, responds with [`DescribeClusterSnapshotsOutput`](crate::output::DescribeClusterSnapshotsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeClusterSnapshotsOutput::marker): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    ///   - [`snapshots(Option<Vec<Snapshot>>)`](crate::output::DescribeClusterSnapshotsOutput::snapshots): <p>A list of <code>Snapshot</code> instances. </p>
+    /// - On failure, responds with [`SdkError<DescribeClusterSnapshotsError>`](crate::error::DescribeClusterSnapshotsError)
     pub fn describe_cluster_snapshots(&self) -> fluent_builders::DescribeClusterSnapshots<C, M, R> {
         fluent_builders::DescribeClusterSnapshots::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeClusterSubnetGroups` operation.
-    ///
-    /// See [`DescribeClusterSubnetGroups`](crate::client::fluent_builders::DescribeClusterSubnetGroups) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeClusterSubnetGroups`](crate::client::fluent_builders::DescribeClusterSubnetGroups) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeClusterSubnetGroups::into_paginator).
+    ///
+    /// - Takes [`DescribeClusterSubnetGroupsInput`](crate::input::DescribeClusterSubnetGroupsInput) with field(s):
+    ///   - [`cluster_subnet_group_name(Option<String>)`](crate::input::DescribeClusterSubnetGroupsInput::cluster_subnet_group_name): <p>The name of the cluster subnet group for which information is requested.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeClusterSubnetGroupsInput::max_records): <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>  <p>Default: <code>100</code> </p>  <p>Constraints: minimum 20, maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeClusterSubnetGroupsInput::marker): <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterSubnetGroups</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::DescribeClusterSubnetGroupsInput::tag_keys): <p>A tag key or keys for which you want to return all matching cluster subnet groups that are associated with the specified key or keys. For example, suppose that you have subnet groups that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the subnet groups that have either or both of these tag keys associated with them.</p>
+    ///   - [`tag_values(Option<Vec<String>>)`](crate::input::DescribeClusterSubnetGroupsInput::tag_values): <p>A tag value or values for which you want to return all matching cluster subnet groups that are associated with the specified tag value or values. For example, suppose that you have subnet groups that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the subnet groups that have either or both of these tag values associated with them.</p>
+    /// - On success, responds with [`DescribeClusterSubnetGroupsOutput`](crate::output::DescribeClusterSubnetGroupsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeClusterSubnetGroupsOutput::marker): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    ///   - [`cluster_subnet_groups(Option<Vec<ClusterSubnetGroup>>)`](crate::output::DescribeClusterSubnetGroupsOutput::cluster_subnet_groups): <p>A list of <code>ClusterSubnetGroup</code> instances. </p>
+    /// - On failure, responds with [`SdkError<DescribeClusterSubnetGroupsError>`](crate::error::DescribeClusterSubnetGroupsError)
     pub fn describe_cluster_subnet_groups(
         &self,
     ) -> fluent_builders::DescribeClusterSubnetGroups<C, M, R> {
         fluent_builders::DescribeClusterSubnetGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeClusterTracks` operation.
-    ///
-    /// See [`DescribeClusterTracks`](crate::client::fluent_builders::DescribeClusterTracks) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeClusterTracks`](crate::client::fluent_builders::DescribeClusterTracks) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeClusterTracks::into_paginator).
+    ///
+    /// - Takes [`DescribeClusterTracksInput`](crate::input::DescribeClusterTracksInput) with field(s):
+    ///   - [`maintenance_track_name(Option<String>)`](crate::input::DescribeClusterTracksInput::maintenance_track_name): <p>The name of the maintenance track. </p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeClusterTracksInput::max_records): <p>An integer value for the maximum number of maintenance tracks to return.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeClusterTracksInput::marker): <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterTracks</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Redshift returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    /// - On success, responds with [`DescribeClusterTracksOutput`](crate::output::DescribeClusterTracksOutput) with field(s):
+    ///   - [`maintenance_tracks(Option<Vec<MaintenanceTrack>>)`](crate::output::DescribeClusterTracksOutput::maintenance_tracks): <p>A list of maintenance tracks output by the <code>DescribeClusterTracks</code> operation. </p>
+    ///   - [`marker(Option<String>)`](crate::output::DescribeClusterTracksOutput::marker): <p>The starting point to return a set of response tracklist records. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
+    /// - On failure, responds with [`SdkError<DescribeClusterTracksError>`](crate::error::DescribeClusterTracksError)
     pub fn describe_cluster_tracks(&self) -> fluent_builders::DescribeClusterTracks<C, M, R> {
         fluent_builders::DescribeClusterTracks::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeClusterVersions` operation.
-    ///
-    /// See [`DescribeClusterVersions`](crate::client::fluent_builders::DescribeClusterVersions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeClusterVersions`](crate::client::fluent_builders::DescribeClusterVersions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeClusterVersions::into_paginator).
+    ///
+    /// - Takes [`DescribeClusterVersionsInput`](crate::input::DescribeClusterVersionsInput) with field(s):
+    ///   - [`cluster_version(Option<String>)`](crate::input::DescribeClusterVersionsInput::cluster_version): <p>The specific cluster version to return.</p>  <p>Example: <code>1.0</code> </p>
+    ///   - [`cluster_parameter_group_family(Option<String>)`](crate::input::DescribeClusterVersionsInput::cluster_parameter_group_family): <p>The name of a specific cluster parameter group family to return details for.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be 1 to 255 alphanumeric characters</p> </li>   <li> <p>First character must be a letter</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>  </ul>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeClusterVersionsInput::max_records): <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>  <p>Default: <code>100</code> </p>  <p>Constraints: minimum 20, maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeClusterVersionsInput::marker): <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterVersions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    /// - On success, responds with [`DescribeClusterVersionsOutput`](crate::output::DescribeClusterVersionsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeClusterVersionsOutput::marker): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    ///   - [`cluster_versions(Option<Vec<ClusterVersion>>)`](crate::output::DescribeClusterVersionsOutput::cluster_versions): <p>A list of <code>Version</code> elements. </p>
+    /// - On failure, responds with [`SdkError<DescribeClusterVersionsError>`](crate::error::DescribeClusterVersionsError)
     pub fn describe_cluster_versions(&self) -> fluent_builders::DescribeClusterVersions<C, M, R> {
         fluent_builders::DescribeClusterVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDataShares` operation.
-    ///
-    /// See [`DescribeDataShares`](crate::client::fluent_builders::DescribeDataShares) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeDataShares`](crate::client::fluent_builders::DescribeDataShares) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeDataShares::into_paginator).
+    ///
+    /// - Takes [`DescribeDataSharesInput`](crate::input::DescribeDataSharesInput) with field(s):
+    ///   - [`data_share_arn(Option<String>)`](crate::input::DescribeDataSharesInput::data_share_arn): <p>The identifier of the datashare to describe details of.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeDataSharesInput::max_records): <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeDataSharesInput::marker): <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataShares</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    /// - On success, responds with [`DescribeDataSharesOutput`](crate::output::DescribeDataSharesOutput) with field(s):
+    ///   - [`data_shares(Option<Vec<DataShare>>)`](crate::output::DescribeDataSharesOutput::data_shares): <p>The results returned from describing datashares.</p>
+    ///   - [`marker(Option<String>)`](crate::output::DescribeDataSharesOutput::marker): <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataShares</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    /// - On failure, responds with [`SdkError<DescribeDataSharesError>`](crate::error::DescribeDataSharesError)
     pub fn describe_data_shares(&self) -> fluent_builders::DescribeDataShares<C, M, R> {
         fluent_builders::DescribeDataShares::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDataSharesForConsumer` operation.
-    ///
-    /// See [`DescribeDataSharesForConsumer`](crate::client::fluent_builders::DescribeDataSharesForConsumer) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeDataSharesForConsumer`](crate::client::fluent_builders::DescribeDataSharesForConsumer) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeDataSharesForConsumer::into_paginator).
+    ///
+    /// - Takes [`DescribeDataSharesForConsumerInput`](crate::input::DescribeDataSharesForConsumerInput) with field(s):
+    ///   - [`consumer_arn(Option<String>)`](crate::input::DescribeDataSharesForConsumerInput::consumer_arn): <p>The Amazon Resource Name (ARN) of the consumer that returns in the list of datashares.</p>
+    ///   - [`status(Option<DataShareStatusForConsumer>)`](crate::input::DescribeDataSharesForConsumerInput::status): <p>An identifier giving the status of a datashare in the consumer cluster. If this field is specified, Amazon Redshift returns the list of datashares that have the specified status.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeDataSharesForConsumerInput::max_records): <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeDataSharesForConsumerInput::marker): <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataSharesForConsumer</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    /// - On success, responds with [`DescribeDataSharesForConsumerOutput`](crate::output::DescribeDataSharesForConsumerOutput) with field(s):
+    ///   - [`data_shares(Option<Vec<DataShare>>)`](crate::output::DescribeDataSharesForConsumerOutput::data_shares): <p>Shows the results of datashares available for consumers.</p>
+    ///   - [`marker(Option<String>)`](crate::output::DescribeDataSharesForConsumerOutput::marker): <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataSharesForConsumer</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    /// - On failure, responds with [`SdkError<DescribeDataSharesForConsumerError>`](crate::error::DescribeDataSharesForConsumerError)
     pub fn describe_data_shares_for_consumer(
         &self,
     ) -> fluent_builders::DescribeDataSharesForConsumer<C, M, R> {
         fluent_builders::DescribeDataSharesForConsumer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDataSharesForProducer` operation.
-    ///
-    /// See [`DescribeDataSharesForProducer`](crate::client::fluent_builders::DescribeDataSharesForProducer) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeDataSharesForProducer`](crate::client::fluent_builders::DescribeDataSharesForProducer) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeDataSharesForProducer::into_paginator).
+    ///
+    /// - Takes [`DescribeDataSharesForProducerInput`](crate::input::DescribeDataSharesForProducerInput) with field(s):
+    ///   - [`producer_arn(Option<String>)`](crate::input::DescribeDataSharesForProducerInput::producer_arn): <p>The Amazon Resource Name (ARN) of the producer that returns in the list of datashares.</p>
+    ///   - [`status(Option<DataShareStatusForProducer>)`](crate::input::DescribeDataSharesForProducerInput::status): <p>An identifier giving the status of a datashare in the producer. If this field is specified, Amazon Redshift returns the list of datashares that have the specified status.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeDataSharesForProducerInput::max_records): <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeDataSharesForProducerInput::marker): <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataSharesForProducer</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    /// - On success, responds with [`DescribeDataSharesForProducerOutput`](crate::output::DescribeDataSharesForProducerOutput) with field(s):
+    ///   - [`data_shares(Option<Vec<DataShare>>)`](crate::output::DescribeDataSharesForProducerOutput::data_shares): <p>Shows the results of datashares available for producers.</p>
+    ///   - [`marker(Option<String>)`](crate::output::DescribeDataSharesForProducerOutput::marker): <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDataSharesForProducer</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    /// - On failure, responds with [`SdkError<DescribeDataSharesForProducerError>`](crate::error::DescribeDataSharesForProducerError)
     pub fn describe_data_shares_for_producer(
         &self,
     ) -> fluent_builders::DescribeDataSharesForProducer<C, M, R> {
         fluent_builders::DescribeDataSharesForProducer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeDefaultClusterParameters` operation.
-    ///
-    /// See [`DescribeDefaultClusterParameters`](crate::client::fluent_builders::DescribeDefaultClusterParameters) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeDefaultClusterParameters`](crate::client::fluent_builders::DescribeDefaultClusterParameters) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeDefaultClusterParameters::into_paginator).
+    ///
+    /// - Takes [`DescribeDefaultClusterParametersInput`](crate::input::DescribeDefaultClusterParametersInput) with field(s):
+    ///   - [`parameter_group_family(Option<String>)`](crate::input::DescribeDefaultClusterParametersInput::parameter_group_family): <p>The name of the cluster parameter group family.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeDefaultClusterParametersInput::max_records): <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>  <p>Default: <code>100</code> </p>  <p>Constraints: minimum 20, maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeDefaultClusterParametersInput::marker): <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDefaultClusterParameters</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    /// - On success, responds with [`DescribeDefaultClusterParametersOutput`](crate::output::DescribeDefaultClusterParametersOutput) with field(s):
+    ///   - [`default_cluster_parameters(Option<DefaultClusterParameters>)`](crate::output::DescribeDefaultClusterParametersOutput::default_cluster_parameters): <p>Describes the default cluster parameters for a parameter group family.</p>
+    /// - On failure, responds with [`SdkError<DescribeDefaultClusterParametersError>`](crate::error::DescribeDefaultClusterParametersError)
     pub fn describe_default_cluster_parameters(
         &self,
     ) -> fluent_builders::DescribeDefaultClusterParameters<C, M, R> {
         fluent_builders::DescribeDefaultClusterParameters::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEndpointAccess` operation.
-    ///
-    /// See [`DescribeEndpointAccess`](crate::client::fluent_builders::DescribeEndpointAccess) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeEndpointAccess`](crate::client::fluent_builders::DescribeEndpointAccess) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeEndpointAccess::into_paginator).
+    ///
+    /// - Takes [`DescribeEndpointAccessInput`](crate::input::DescribeEndpointAccessInput) with field(s):
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::DescribeEndpointAccessInput::cluster_identifier): <p>The cluster identifier associated with the described endpoint.</p>
+    ///   - [`resource_owner(Option<String>)`](crate::input::DescribeEndpointAccessInput::resource_owner): <p>The Amazon Web Services account ID of the owner of the cluster.</p>
+    ///   - [`endpoint_name(Option<String>)`](crate::input::DescribeEndpointAccessInput::endpoint_name): <p>The name of the endpoint to be described.</p>
+    ///   - [`vpc_id(Option<String>)`](crate::input::DescribeEndpointAccessInput::vpc_id): <p>The virtual private cloud (VPC) identifier with access to the cluster.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeEndpointAccessInput::max_records): <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a <code>Marker</code> is included in the response so that the remaining results can be retrieved.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeEndpointAccessInput::marker): <p>An optional pagination token provided by a previous <code>DescribeEndpointAccess</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
+    /// - On success, responds with [`DescribeEndpointAccessOutput`](crate::output::DescribeEndpointAccessOutput) with field(s):
+    ///   - [`endpoint_access_list(Option<Vec<EndpointAccess>>)`](crate::output::DescribeEndpointAccessOutput::endpoint_access_list): <p>The list of endpoints with access to the cluster.</p>
+    ///   - [`marker(Option<String>)`](crate::output::DescribeEndpointAccessOutput::marker): <p>An optional pagination token provided by a previous <code>DescribeEndpointAccess</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
+    /// - On failure, responds with [`SdkError<DescribeEndpointAccessError>`](crate::error::DescribeEndpointAccessError)
     pub fn describe_endpoint_access(&self) -> fluent_builders::DescribeEndpointAccess<C, M, R> {
         fluent_builders::DescribeEndpointAccess::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEndpointAuthorization` operation.
-    ///
-    /// See [`DescribeEndpointAuthorization`](crate::client::fluent_builders::DescribeEndpointAuthorization) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeEndpointAuthorization`](crate::client::fluent_builders::DescribeEndpointAuthorization) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeEndpointAuthorization::into_paginator).
+    ///
+    /// - Takes [`DescribeEndpointAuthorizationInput`](crate::input::DescribeEndpointAuthorizationInput) with field(s):
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::DescribeEndpointAuthorizationInput::cluster_identifier): <p>The cluster identifier of the cluster to access.</p>
+    ///   - [`account(Option<String>)`](crate::input::DescribeEndpointAuthorizationInput::account): <p>The AAmazon Web Services account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true, then the <code>Account</code> value is of the grantor.</p>
+    ///   - [`grantee(Option<bool>)`](crate::input::DescribeEndpointAuthorizationInput::grantee): <p>Indicates whether to check authorization from a grantor or grantee point of view. If true, Amazon Redshift returns endpoint authorizations that you've been granted. If false (default), checks authorization from a grantor point of view.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeEndpointAuthorizationInput::max_records): <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a <code>Marker</code> is included in the response so that the remaining results can be retrieved.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeEndpointAuthorizationInput::marker): <p>An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
+    /// - On success, responds with [`DescribeEndpointAuthorizationOutput`](crate::output::DescribeEndpointAuthorizationOutput) with field(s):
+    ///   - [`endpoint_authorization_list(Option<Vec<EndpointAuthorization>>)`](crate::output::DescribeEndpointAuthorizationOutput::endpoint_authorization_list): <p>The authorizations to an endpoint.</p>
+    ///   - [`marker(Option<String>)`](crate::output::DescribeEndpointAuthorizationOutput::marker): <p>An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
+    /// - On failure, responds with [`SdkError<DescribeEndpointAuthorizationError>`](crate::error::DescribeEndpointAuthorizationError)
     pub fn describe_endpoint_authorization(
         &self,
     ) -> fluent_builders::DescribeEndpointAuthorization<C, M, R> {
         fluent_builders::DescribeEndpointAuthorization::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEventCategories` operation.
+    /// Constructs a fluent builder for the [`DescribeEventCategories`](crate::client::fluent_builders::DescribeEventCategories) operation.
     ///
-    /// See [`DescribeEventCategories`](crate::client::fluent_builders::DescribeEventCategories) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeEventCategoriesInput`](crate::input::DescribeEventCategoriesInput) with field(s):
+    ///   - [`source_type(Option<String>)`](crate::input::DescribeEventCategoriesInput::source_type): <p>The source type, such as cluster or parameter group, to which the described event categories apply.</p>  <p>Valid values: cluster, cluster-snapshot, cluster-parameter-group, cluster-security-group, and scheduled-action.</p>
+    /// - On success, responds with [`DescribeEventCategoriesOutput`](crate::output::DescribeEventCategoriesOutput) with field(s):
+    ///   - [`event_categories_map_list(Option<Vec<EventCategoriesMap>>)`](crate::output::DescribeEventCategoriesOutput::event_categories_map_list): <p>A list of event categories descriptions.</p>
+    /// - On failure, responds with [`SdkError<DescribeEventCategoriesError>`](crate::error::DescribeEventCategoriesError)
     pub fn describe_event_categories(&self) -> fluent_builders::DescribeEventCategories<C, M, R> {
         fluent_builders::DescribeEventCategories::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEvents` operation.
-    ///
-    /// See [`DescribeEvents`](crate::client::fluent_builders::DescribeEvents) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeEvents`](crate::client::fluent_builders::DescribeEvents) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeEvents::into_paginator).
+    ///
+    /// - Takes [`DescribeEventsInput`](crate::input::DescribeEventsInput) with field(s):
+    ///   - [`source_identifier(Option<String>)`](crate::input::DescribeEventsInput::source_identifier): <p>The identifier of the event source for which events will be returned. If this parameter is not specified, then all sources are included in the response.</p>  <p>Constraints:</p>  <p>If <i>SourceIdentifier</i> is supplied, <i>SourceType</i> must also be provided.</p>  <ul>   <li> <p>Specify a cluster identifier when <i>SourceType</i> is <code>cluster</code>.</p> </li>   <li> <p>Specify a cluster security group name when <i>SourceType</i> is <code>cluster-security-group</code>.</p> </li>   <li> <p>Specify a cluster parameter group name when <i>SourceType</i> is <code>cluster-parameter-group</code>.</p> </li>   <li> <p>Specify a cluster snapshot identifier when <i>SourceType</i> is <code>cluster-snapshot</code>.</p> </li>  </ul>
+    ///   - [`source_type(Option<SourceType>)`](crate::input::DescribeEventsInput::source_type): <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>  <p>Constraints:</p>  <p>If <i>SourceType</i> is supplied, <i>SourceIdentifier</i> must also be provided.</p>  <ul>   <li> <p>Specify <code>cluster</code> when <i>SourceIdentifier</i> is a cluster identifier.</p> </li>   <li> <p>Specify <code>cluster-security-group</code> when <i>SourceIdentifier</i> is a cluster security group name.</p> </li>   <li> <p>Specify <code>cluster-parameter-group</code> when <i>SourceIdentifier</i> is a cluster parameter group name.</p> </li>   <li> <p>Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is a cluster snapshot identifier.</p> </li>  </ul>
+    ///   - [`start_time(Option<DateTime>)`](crate::input::DescribeEventsInput::start_time): <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>  <p>Example: <code>2009-07-08T18:00Z</code> </p>
+    ///   - [`end_time(Option<DateTime>)`](crate::input::DescribeEventsInput::end_time): <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>  <p>Example: <code>2009-07-08T18:00Z</code> </p>
+    ///   - [`duration(Option<i32>)`](crate::input::DescribeEventsInput::duration): <p>The number of minutes prior to the time of the request for which to retrieve events. For example, if the request is sent at 18:00 and you specify a duration of 60, then only events which have occurred after 17:00 will be returned.</p>  <p>Default: <code>60</code> </p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeEventsInput::max_records): <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>  <p>Default: <code>100</code> </p>  <p>Constraints: minimum 20, maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeEventsInput::marker): <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeEvents</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    /// - On success, responds with [`DescribeEventsOutput`](crate::output::DescribeEventsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeEventsOutput::marker): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    ///   - [`events(Option<Vec<Event>>)`](crate::output::DescribeEventsOutput::events): <p>A list of <code>Event</code> instances. </p>
+    /// - On failure, responds with [`SdkError<DescribeEventsError>`](crate::error::DescribeEventsError)
     pub fn describe_events(&self) -> fluent_builders::DescribeEvents<C, M, R> {
         fluent_builders::DescribeEvents::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEventSubscriptions` operation.
-    ///
-    /// See [`DescribeEventSubscriptions`](crate::client::fluent_builders::DescribeEventSubscriptions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeEventSubscriptions`](crate::client::fluent_builders::DescribeEventSubscriptions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeEventSubscriptions::into_paginator).
+    ///
+    /// - Takes [`DescribeEventSubscriptionsInput`](crate::input::DescribeEventSubscriptionsInput) with field(s):
+    ///   - [`subscription_name(Option<String>)`](crate::input::DescribeEventSubscriptionsInput::subscription_name): <p>The name of the Amazon Redshift event notification subscription to be described.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeEventSubscriptionsInput::max_records): <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>  <p>Default: <code>100</code> </p>  <p>Constraints: minimum 20, maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeEventSubscriptionsInput::marker): <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a DescribeEventSubscriptions request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::DescribeEventSubscriptionsInput::tag_keys): <p>A tag key or keys for which you want to return all matching event notification subscriptions that are associated with the specified key or keys. For example, suppose that you have subscriptions that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the subscriptions that have either or both of these tag keys associated with them.</p>
+    ///   - [`tag_values(Option<Vec<String>>)`](crate::input::DescribeEventSubscriptionsInput::tag_values): <p>A tag value or values for which you want to return all matching event notification subscriptions that are associated with the specified tag value or values. For example, suppose that you have subscriptions that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the subscriptions that have either or both of these tag values associated with them.</p>
+    /// - On success, responds with [`DescribeEventSubscriptionsOutput`](crate::output::DescribeEventSubscriptionsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeEventSubscriptionsOutput::marker): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    ///   - [`event_subscriptions_list(Option<Vec<EventSubscription>>)`](crate::output::DescribeEventSubscriptionsOutput::event_subscriptions_list): <p>A list of event subscriptions.</p>
+    /// - On failure, responds with [`SdkError<DescribeEventSubscriptionsError>`](crate::error::DescribeEventSubscriptionsError)
     pub fn describe_event_subscriptions(
         &self,
     ) -> fluent_builders::DescribeEventSubscriptions<C, M, R> {
         fluent_builders::DescribeEventSubscriptions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeHsmClientCertificates` operation.
-    ///
-    /// See [`DescribeHsmClientCertificates`](crate::client::fluent_builders::DescribeHsmClientCertificates) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeHsmClientCertificates`](crate::client::fluent_builders::DescribeHsmClientCertificates) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeHsmClientCertificates::into_paginator).
+    ///
+    /// - Takes [`DescribeHsmClientCertificatesInput`](crate::input::DescribeHsmClientCertificatesInput) with field(s):
+    ///   - [`hsm_client_certificate_identifier(Option<String>)`](crate::input::DescribeHsmClientCertificatesInput::hsm_client_certificate_identifier): <p>The identifier of a specific HSM client certificate for which you want information. If no identifier is specified, information is returned for all HSM client certificates owned by your Amazon Web Services account.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeHsmClientCertificatesInput::max_records): <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>  <p>Default: <code>100</code> </p>  <p>Constraints: minimum 20, maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeHsmClientCertificatesInput::marker): <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeHsmClientCertificates</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::DescribeHsmClientCertificatesInput::tag_keys): <p>A tag key or keys for which you want to return all matching HSM client certificates that are associated with the specified key or keys. For example, suppose that you have HSM client certificates that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the HSM client certificates that have either or both of these tag keys associated with them.</p>
+    ///   - [`tag_values(Option<Vec<String>>)`](crate::input::DescribeHsmClientCertificatesInput::tag_values): <p>A tag value or values for which you want to return all matching HSM client certificates that are associated with the specified tag value or values. For example, suppose that you have HSM client certificates that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the HSM client certificates that have either or both of these tag values associated with them.</p>
+    /// - On success, responds with [`DescribeHsmClientCertificatesOutput`](crate::output::DescribeHsmClientCertificatesOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeHsmClientCertificatesOutput::marker): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    ///   - [`hsm_client_certificates(Option<Vec<HsmClientCertificate>>)`](crate::output::DescribeHsmClientCertificatesOutput::hsm_client_certificates): <p>A list of the identifiers for one or more HSM client certificates used by Amazon Redshift clusters to store and retrieve database encryption keys in an HSM.</p>
+    /// - On failure, responds with [`SdkError<DescribeHsmClientCertificatesError>`](crate::error::DescribeHsmClientCertificatesError)
     pub fn describe_hsm_client_certificates(
         &self,
     ) -> fluent_builders::DescribeHsmClientCertificates<C, M, R> {
         fluent_builders::DescribeHsmClientCertificates::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeHsmConfigurations` operation.
-    ///
-    /// See [`DescribeHsmConfigurations`](crate::client::fluent_builders::DescribeHsmConfigurations) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeHsmConfigurations`](crate::client::fluent_builders::DescribeHsmConfigurations) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeHsmConfigurations::into_paginator).
+    ///
+    /// - Takes [`DescribeHsmConfigurationsInput`](crate::input::DescribeHsmConfigurationsInput) with field(s):
+    ///   - [`hsm_configuration_identifier(Option<String>)`](crate::input::DescribeHsmConfigurationsInput::hsm_configuration_identifier): <p>The identifier of a specific Amazon Redshift HSM configuration to be described. If no identifier is specified, information is returned for all HSM configurations owned by your Amazon Web Services account.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeHsmConfigurationsInput::max_records): <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>  <p>Default: <code>100</code> </p>  <p>Constraints: minimum 20, maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeHsmConfigurationsInput::marker): <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeHsmConfigurations</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::DescribeHsmConfigurationsInput::tag_keys): <p>A tag key or keys for which you want to return all matching HSM configurations that are associated with the specified key or keys. For example, suppose that you have HSM configurations that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the HSM configurations that have either or both of these tag keys associated with them.</p>
+    ///   - [`tag_values(Option<Vec<String>>)`](crate::input::DescribeHsmConfigurationsInput::tag_values): <p>A tag value or values for which you want to return all matching HSM configurations that are associated with the specified tag value or values. For example, suppose that you have HSM configurations that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the HSM configurations that have either or both of these tag values associated with them.</p>
+    /// - On success, responds with [`DescribeHsmConfigurationsOutput`](crate::output::DescribeHsmConfigurationsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeHsmConfigurationsOutput::marker): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    ///   - [`hsm_configurations(Option<Vec<HsmConfiguration>>)`](crate::output::DescribeHsmConfigurationsOutput::hsm_configurations): <p>A list of <code>HsmConfiguration</code> objects.</p>
+    /// - On failure, responds with [`SdkError<DescribeHsmConfigurationsError>`](crate::error::DescribeHsmConfigurationsError)
     pub fn describe_hsm_configurations(
         &self,
     ) -> fluent_builders::DescribeHsmConfigurations<C, M, R> {
         fluent_builders::DescribeHsmConfigurations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeLoggingStatus` operation.
+    /// Constructs a fluent builder for the [`DescribeLoggingStatus`](crate::client::fluent_builders::DescribeLoggingStatus) operation.
     ///
-    /// See [`DescribeLoggingStatus`](crate::client::fluent_builders::DescribeLoggingStatus) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeLoggingStatusInput`](crate::input::DescribeLoggingStatusInput) with field(s):
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::DescribeLoggingStatusInput::cluster_identifier): <p>The identifier of the cluster from which to get the logging status.</p>  <p>Example: <code>examplecluster</code> </p>
+    /// - On success, responds with [`DescribeLoggingStatusOutput`](crate::output::DescribeLoggingStatusOutput) with field(s):
+    ///   - [`logging_enabled(bool)`](crate::output::DescribeLoggingStatusOutput::logging_enabled): <p> <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
+    ///   - [`bucket_name(Option<String>)`](crate::output::DescribeLoggingStatusOutput::bucket_name): <p>The name of the S3 bucket where the log files are stored.</p>
+    ///   - [`s3_key_prefix(Option<String>)`](crate::output::DescribeLoggingStatusOutput::s3_key_prefix): <p>The prefix applied to the log file names.</p>
+    ///   - [`last_successful_delivery_time(Option<DateTime>)`](crate::output::DescribeLoggingStatusOutput::last_successful_delivery_time): <p>The last time that logs were delivered.</p>
+    ///   - [`last_failure_time(Option<DateTime>)`](crate::output::DescribeLoggingStatusOutput::last_failure_time): <p>The last time when logs failed to be delivered.</p>
+    ///   - [`last_failure_message(Option<String>)`](crate::output::DescribeLoggingStatusOutput::last_failure_message): <p>The message indicating that logs failed to be delivered.</p>
+    /// - On failure, responds with [`SdkError<DescribeLoggingStatusError>`](crate::error::DescribeLoggingStatusError)
     pub fn describe_logging_status(&self) -> fluent_builders::DescribeLoggingStatus<C, M, R> {
         fluent_builders::DescribeLoggingStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeNodeConfigurationOptions` operation.
-    ///
-    /// See [`DescribeNodeConfigurationOptions`](crate::client::fluent_builders::DescribeNodeConfigurationOptions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeNodeConfigurationOptions`](crate::client::fluent_builders::DescribeNodeConfigurationOptions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeNodeConfigurationOptions::into_paginator).
+    ///
+    /// - Takes [`DescribeNodeConfigurationOptionsInput`](crate::input::DescribeNodeConfigurationOptionsInput) with field(s):
+    ///   - [`action_type(Option<ActionType>)`](crate::input::DescribeNodeConfigurationOptionsInput::action_type): <p>The action type to evaluate for possible node configurations. Specify "restore-cluster" to get configuration combinations based on an existing snapshot. Specify "recommend-node-config" to get configuration recommendations based on an existing cluster or snapshot. Specify "resize-cluster" to get configuration combinations for elastic resize based on an existing cluster. </p>
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::DescribeNodeConfigurationOptionsInput::cluster_identifier): <p>The identifier of the cluster to evaluate for possible node configurations.</p>
+    ///   - [`snapshot_identifier(Option<String>)`](crate::input::DescribeNodeConfigurationOptionsInput::snapshot_identifier): <p>The identifier of the snapshot to evaluate for possible node configurations.</p>
+    ///   - [`owner_account(Option<String>)`](crate::input::DescribeNodeConfigurationOptionsInput::owner_account): <p>The Amazon Web Services account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot.</p>
+    ///   - [`filters(Option<Vec<NodeConfigurationOptionsFilter>>)`](crate::input::DescribeNodeConfigurationOptionsInput::filters): <p>A set of name, operator, and value items to filter the results.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeNodeConfigurationOptionsInput::marker): <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeNodeConfigurationOptions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeNodeConfigurationOptionsInput::max_records): <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>  <p>Default: <code>500</code> </p>  <p>Constraints: minimum 100, maximum 500.</p>
+    /// - On success, responds with [`DescribeNodeConfigurationOptionsOutput`](crate::output::DescribeNodeConfigurationOptionsOutput) with field(s):
+    ///   - [`node_configuration_option_list(Option<Vec<NodeConfigurationOption>>)`](crate::output::DescribeNodeConfigurationOptionsOutput::node_configuration_option_list): <p>A list of valid node configurations.</p>
+    ///   - [`marker(Option<String>)`](crate::output::DescribeNodeConfigurationOptionsOutput::marker): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    /// - On failure, responds with [`SdkError<DescribeNodeConfigurationOptionsError>`](crate::error::DescribeNodeConfigurationOptionsError)
     pub fn describe_node_configuration_options(
         &self,
     ) -> fluent_builders::DescribeNodeConfigurationOptions<C, M, R> {
         fluent_builders::DescribeNodeConfigurationOptions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeOrderableClusterOptions` operation.
-    ///
-    /// See [`DescribeOrderableClusterOptions`](crate::client::fluent_builders::DescribeOrderableClusterOptions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeOrderableClusterOptions`](crate::client::fluent_builders::DescribeOrderableClusterOptions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeOrderableClusterOptions::into_paginator).
+    ///
+    /// - Takes [`DescribeOrderableClusterOptionsInput`](crate::input::DescribeOrderableClusterOptionsInput) with field(s):
+    ///   - [`cluster_version(Option<String>)`](crate::input::DescribeOrderableClusterOptionsInput::cluster_version): <p>The version filter value. Specify this parameter to show only the available offerings matching the specified version.</p>  <p>Default: All versions.</p>  <p>Constraints: Must be one of the version returned from <code>DescribeClusterVersions</code>.</p>
+    ///   - [`node_type(Option<String>)`](crate::input::DescribeOrderableClusterOptionsInput::node_type): <p>The node type filter value. Specify this parameter to show only the available offerings matching the specified node type.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeOrderableClusterOptionsInput::max_records): <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>  <p>Default: <code>100</code> </p>  <p>Constraints: minimum 20, maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeOrderableClusterOptionsInput::marker): <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeOrderableClusterOptions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    /// - On success, responds with [`DescribeOrderableClusterOptionsOutput`](crate::output::DescribeOrderableClusterOptionsOutput) with field(s):
+    ///   - [`orderable_cluster_options(Option<Vec<OrderableClusterOption>>)`](crate::output::DescribeOrderableClusterOptionsOutput::orderable_cluster_options): <p>An <code>OrderableClusterOption</code> structure containing information about orderable options for the cluster.</p>
+    ///   - [`marker(Option<String>)`](crate::output::DescribeOrderableClusterOptionsOutput::marker): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    /// - On failure, responds with [`SdkError<DescribeOrderableClusterOptionsError>`](crate::error::DescribeOrderableClusterOptionsError)
     pub fn describe_orderable_cluster_options(
         &self,
     ) -> fluent_builders::DescribeOrderableClusterOptions<C, M, R> {
         fluent_builders::DescribeOrderableClusterOptions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribePartners` operation.
+    /// Constructs a fluent builder for the [`DescribePartners`](crate::client::fluent_builders::DescribePartners) operation.
     ///
-    /// See [`DescribePartners`](crate::client::fluent_builders::DescribePartners) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribePartnersInput`](crate::input::DescribePartnersInput) with field(s):
+    ///   - [`account_id(Option<String>)`](crate::input::DescribePartnersInput::account_id): <p>The Amazon Web Services account ID that owns the cluster.</p>
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::DescribePartnersInput::cluster_identifier): <p>The cluster identifier of the cluster whose partner integration is being described.</p>
+    ///   - [`database_name(Option<String>)`](crate::input::DescribePartnersInput::database_name): <p>The name of the database whose partner integration is being described. If database name is not specified, then all databases in the cluster are described.</p>
+    ///   - [`partner_name(Option<String>)`](crate::input::DescribePartnersInput::partner_name): <p>The name of the partner that is being described. If partner name is not specified, then all partner integrations are described.</p>
+    /// - On success, responds with [`DescribePartnersOutput`](crate::output::DescribePartnersOutput) with field(s):
+    ///   - [`partner_integration_info_list(Option<Vec<PartnerIntegrationInfo>>)`](crate::output::DescribePartnersOutput::partner_integration_info_list): <p>A list of partner integrations.</p>
+    /// - On failure, responds with [`SdkError<DescribePartnersError>`](crate::error::DescribePartnersError)
     pub fn describe_partners(&self) -> fluent_builders::DescribePartners<C, M, R> {
         fluent_builders::DescribePartners::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeReservedNodeExchangeStatus` operation.
-    ///
-    /// See [`DescribeReservedNodeExchangeStatus`](crate::client::fluent_builders::DescribeReservedNodeExchangeStatus) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeReservedNodeExchangeStatus`](crate::client::fluent_builders::DescribeReservedNodeExchangeStatus) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeReservedNodeExchangeStatus::into_paginator).
+    ///
+    /// - Takes [`DescribeReservedNodeExchangeStatusInput`](crate::input::DescribeReservedNodeExchangeStatusInput) with field(s):
+    ///   - [`reserved_node_id(Option<String>)`](crate::input::DescribeReservedNodeExchangeStatusInput::reserved_node_id): <p>The identifier of the source reserved node in a reserved-node exchange request.</p>
+    ///   - [`reserved_node_exchange_request_id(Option<String>)`](crate::input::DescribeReservedNodeExchangeStatusInput::reserved_node_exchange_request_id): <p>The identifier of the reserved-node exchange request.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeReservedNodeExchangeStatusInput::max_records): <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>Marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeReservedNodeExchangeStatusInput::marker): <p>An optional pagination token provided by a previous <code>DescribeReservedNodeExchangeStatus</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
+    /// - On success, responds with [`DescribeReservedNodeExchangeStatusOutput`](crate::output::DescribeReservedNodeExchangeStatusOutput) with field(s):
+    ///   - [`reserved_node_exchange_status_details(Option<Vec<ReservedNodeExchangeStatus>>)`](crate::output::DescribeReservedNodeExchangeStatusOutput::reserved_node_exchange_status_details): <p>The details of the reserved-node exchange request, including the status, request time, source reserved-node identifier, and additional details.</p>
+    ///   - [`marker(Option<String>)`](crate::output::DescribeReservedNodeExchangeStatusOutput::marker): <p>A pagination token provided by a previous <code>DescribeReservedNodeExchangeStatus</code> request.</p>
+    /// - On failure, responds with [`SdkError<DescribeReservedNodeExchangeStatusError>`](crate::error::DescribeReservedNodeExchangeStatusError)
     pub fn describe_reserved_node_exchange_status(
         &self,
     ) -> fluent_builders::DescribeReservedNodeExchangeStatus<C, M, R> {
         fluent_builders::DescribeReservedNodeExchangeStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeReservedNodeOfferings` operation.
-    ///
-    /// See [`DescribeReservedNodeOfferings`](crate::client::fluent_builders::DescribeReservedNodeOfferings) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeReservedNodeOfferings`](crate::client::fluent_builders::DescribeReservedNodeOfferings) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeReservedNodeOfferings::into_paginator).
+    ///
+    /// - Takes [`DescribeReservedNodeOfferingsInput`](crate::input::DescribeReservedNodeOfferingsInput) with field(s):
+    ///   - [`reserved_node_offering_id(Option<String>)`](crate::input::DescribeReservedNodeOfferingsInput::reserved_node_offering_id): <p>The unique identifier for the offering.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeReservedNodeOfferingsInput::max_records): <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>  <p>Default: <code>100</code> </p>  <p>Constraints: minimum 20, maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeReservedNodeOfferingsInput::marker): <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeReservedNodeOfferings</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    /// - On success, responds with [`DescribeReservedNodeOfferingsOutput`](crate::output::DescribeReservedNodeOfferingsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeReservedNodeOfferingsOutput::marker): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    ///   - [`reserved_node_offerings(Option<Vec<ReservedNodeOffering>>)`](crate::output::DescribeReservedNodeOfferingsOutput::reserved_node_offerings): <p>A list of <code>ReservedNodeOffering</code> objects.</p>
+    /// - On failure, responds with [`SdkError<DescribeReservedNodeOfferingsError>`](crate::error::DescribeReservedNodeOfferingsError)
     pub fn describe_reserved_node_offerings(
         &self,
     ) -> fluent_builders::DescribeReservedNodeOfferings<C, M, R> {
         fluent_builders::DescribeReservedNodeOfferings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeReservedNodes` operation.
-    ///
-    /// See [`DescribeReservedNodes`](crate::client::fluent_builders::DescribeReservedNodes) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeReservedNodes`](crate::client::fluent_builders::DescribeReservedNodes) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeReservedNodes::into_paginator).
+    ///
+    /// - Takes [`DescribeReservedNodesInput`](crate::input::DescribeReservedNodesInput) with field(s):
+    ///   - [`reserved_node_id(Option<String>)`](crate::input::DescribeReservedNodesInput::reserved_node_id): <p>Identifier for the node reservation.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeReservedNodesInput::max_records): <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>  <p>Default: <code>100</code> </p>  <p>Constraints: minimum 20, maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeReservedNodesInput::marker): <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeReservedNodes</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    /// - On success, responds with [`DescribeReservedNodesOutput`](crate::output::DescribeReservedNodesOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeReservedNodesOutput::marker): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    ///   - [`reserved_nodes(Option<Vec<ReservedNode>>)`](crate::output::DescribeReservedNodesOutput::reserved_nodes): <p>The list of <code>ReservedNode</code> objects.</p>
+    /// - On failure, responds with [`SdkError<DescribeReservedNodesError>`](crate::error::DescribeReservedNodesError)
     pub fn describe_reserved_nodes(&self) -> fluent_builders::DescribeReservedNodes<C, M, R> {
         fluent_builders::DescribeReservedNodes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeResize` operation.
+    /// Constructs a fluent builder for the [`DescribeResize`](crate::client::fluent_builders::DescribeResize) operation.
     ///
-    /// See [`DescribeResize`](crate::client::fluent_builders::DescribeResize) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeResizeInput`](crate::input::DescribeResizeInput) with field(s):
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::DescribeResizeInput::cluster_identifier): <p>The unique identifier of a cluster whose resize progress you are requesting. This parameter is case-sensitive.</p>  <p>By default, resize operations for all clusters defined for an Amazon Web Services account are returned.</p>
+    /// - On success, responds with [`DescribeResizeOutput`](crate::output::DescribeResizeOutput) with field(s):
+    ///   - [`target_node_type(Option<String>)`](crate::output::DescribeResizeOutput::target_node_type): <p>The node type that the cluster will have after the resize operation is complete.</p>
+    ///   - [`target_number_of_nodes(Option<i32>)`](crate::output::DescribeResizeOutput::target_number_of_nodes): <p>The number of nodes that the cluster will have after the resize operation is complete.</p>
+    ///   - [`target_cluster_type(Option<String>)`](crate::output::DescribeResizeOutput::target_cluster_type): <p>The cluster type after the resize operation is complete.</p>  <p>Valid Values: <code>multi-node</code> | <code>single-node</code> </p>
+    ///   - [`status(Option<String>)`](crate::output::DescribeResizeOutput::status): <p>The status of the resize operation.</p>  <p>Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> | <code>CANCELLING</code> </p>
+    ///   - [`import_tables_completed(Option<Vec<String>>)`](crate::output::DescribeResizeOutput::import_tables_completed): <p>The names of tables that have been completely imported .</p>  <p>Valid Values: List of table names.</p>
+    ///   - [`import_tables_in_progress(Option<Vec<String>>)`](crate::output::DescribeResizeOutput::import_tables_in_progress): <p>The names of tables that are being currently imported.</p>  <p>Valid Values: List of table names.</p>
+    ///   - [`import_tables_not_started(Option<Vec<String>>)`](crate::output::DescribeResizeOutput::import_tables_not_started): <p>The names of tables that have not been yet imported.</p>  <p>Valid Values: List of table names</p>
+    ///   - [`avg_resize_rate_in_mega_bytes_per_second(Option<f64>)`](crate::output::DescribeResizeOutput::avg_resize_rate_in_mega_bytes_per_second): <p>The average rate of the resize operation over the last few minutes, measured in megabytes per second. After the resize operation completes, this value shows the average rate of the entire resize operation.</p>
+    ///   - [`total_resize_data_in_mega_bytes(Option<i64>)`](crate::output::DescribeResizeOutput::total_resize_data_in_mega_bytes): <p>The estimated total amount of data, in megabytes, on the cluster before the resize operation began.</p>
+    ///   - [`progress_in_mega_bytes(Option<i64>)`](crate::output::DescribeResizeOutput::progress_in_mega_bytes): <p>While the resize operation is in progress, this value shows the current amount of data, in megabytes, that has been processed so far. When the resize operation is complete, this value shows the total amount of data, in megabytes, on the cluster, which may be more or less than TotalResizeDataInMegaBytes (the estimated total amount of data before resize).</p>
+    ///   - [`elapsed_time_in_seconds(Option<i64>)`](crate::output::DescribeResizeOutput::elapsed_time_in_seconds): <p>The amount of seconds that have elapsed since the resize operation began. After the resize operation completes, this value shows the total actual time, in seconds, for the resize operation.</p>
+    ///   - [`estimated_time_to_completion_in_seconds(Option<i64>)`](crate::output::DescribeResizeOutput::estimated_time_to_completion_in_seconds): <p>The estimated time remaining, in seconds, until the resize operation is complete. This value is calculated based on the average resize rate and the estimated amount of data remaining to be processed. Once the resize operation is complete, this value will be 0.</p>
+    ///   - [`resize_type(Option<String>)`](crate::output::DescribeResizeOutput::resize_type): <p>An enum with possible values of <code>ClassicResize</code> and <code>ElasticResize</code>. These values describe the type of resize operation being performed. </p>
+    ///   - [`message(Option<String>)`](crate::output::DescribeResizeOutput::message): <p>An optional string to provide additional details about the resize action.</p>
+    ///   - [`target_encryption_type(Option<String>)`](crate::output::DescribeResizeOutput::target_encryption_type): <p>The type of encryption for the cluster after the resize is complete.</p>  <p>Possible values are <code>KMS</code> and <code>None</code>. </p>
+    ///   - [`data_transfer_progress_percent(Option<f64>)`](crate::output::DescribeResizeOutput::data_transfer_progress_percent): <p>The percent of data transferred from source cluster to target cluster.</p>
+    /// - On failure, responds with [`SdkError<DescribeResizeError>`](crate::error::DescribeResizeError)
     pub fn describe_resize(&self) -> fluent_builders::DescribeResize<C, M, R> {
         fluent_builders::DescribeResize::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeScheduledActions` operation.
-    ///
-    /// See [`DescribeScheduledActions`](crate::client::fluent_builders::DescribeScheduledActions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeScheduledActions`](crate::client::fluent_builders::DescribeScheduledActions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeScheduledActions::into_paginator).
+    ///
+    /// - Takes [`DescribeScheduledActionsInput`](crate::input::DescribeScheduledActionsInput) with field(s):
+    ///   - [`scheduled_action_name(Option<String>)`](crate::input::DescribeScheduledActionsInput::scheduled_action_name): <p>The name of the scheduled action to retrieve. </p>
+    ///   - [`target_action_type(Option<ScheduledActionTypeValues>)`](crate::input::DescribeScheduledActionsInput::target_action_type): <p>The type of the scheduled actions to retrieve. </p>
+    ///   - [`start_time(Option<DateTime>)`](crate::input::DescribeScheduledActionsInput::start_time): <p>The start time in UTC of the scheduled actions to retrieve. Only active scheduled actions that have invocations after this time are retrieved.</p>
+    ///   - [`end_time(Option<DateTime>)`](crate::input::DescribeScheduledActionsInput::end_time): <p>The end time in UTC of the scheduled action to retrieve. Only active scheduled actions that have invocations before this time are retrieved.</p>
+    ///   - [`active(Option<bool>)`](crate::input::DescribeScheduledActionsInput::active): <p>If true, retrieve only active scheduled actions. If false, retrieve only disabled scheduled actions. </p>
+    ///   - [`filters(Option<Vec<ScheduledActionFilter>>)`](crate::input::DescribeScheduledActionsInput::filters): <p>List of scheduled action filters. </p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeScheduledActionsInput::marker): <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeScheduledActions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeScheduledActionsInput::max_records): <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>  <p>Default: <code>100</code> </p>  <p>Constraints: minimum 20, maximum 100.</p>
+    /// - On success, responds with [`DescribeScheduledActionsOutput`](crate::output::DescribeScheduledActionsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeScheduledActionsOutput::marker): <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeScheduledActions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    ///   - [`scheduled_actions(Option<Vec<ScheduledAction>>)`](crate::output::DescribeScheduledActionsOutput::scheduled_actions): <p>List of retrieved scheduled actions. </p>
+    /// - On failure, responds with [`SdkError<DescribeScheduledActionsError>`](crate::error::DescribeScheduledActionsError)
     pub fn describe_scheduled_actions(&self) -> fluent_builders::DescribeScheduledActions<C, M, R> {
         fluent_builders::DescribeScheduledActions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeSnapshotCopyGrants` operation.
-    ///
-    /// See [`DescribeSnapshotCopyGrants`](crate::client::fluent_builders::DescribeSnapshotCopyGrants) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeSnapshotCopyGrants`](crate::client::fluent_builders::DescribeSnapshotCopyGrants) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeSnapshotCopyGrants::into_paginator).
+    ///
+    /// - Takes [`DescribeSnapshotCopyGrantsInput`](crate::input::DescribeSnapshotCopyGrantsInput) with field(s):
+    ///   - [`snapshot_copy_grant_name(Option<String>)`](crate::input::DescribeSnapshotCopyGrantsInput::snapshot_copy_grant_name): <p>The name of the snapshot copy grant.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeSnapshotCopyGrantsInput::max_records): <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>  <p>Default: <code>100</code> </p>  <p>Constraints: minimum 20, maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeSnapshotCopyGrantsInput::marker): <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>  <p>Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::DescribeSnapshotCopyGrantsInput::tag_keys): <p>A tag key or keys for which you want to return all matching resources that are associated with the specified key or keys. For example, suppose that you have resources tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with all resources that have either or both of these tag keys associated with them.</p>
+    ///   - [`tag_values(Option<Vec<String>>)`](crate::input::DescribeSnapshotCopyGrantsInput::tag_values): <p>A tag value or values for which you want to return all matching resources that are associated with the specified value or values. For example, suppose that you have resources tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with all resources that have either or both of these tag values associated with them.</p>
+    /// - On success, responds with [`DescribeSnapshotCopyGrantsOutput`](crate::output::DescribeSnapshotCopyGrantsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::DescribeSnapshotCopyGrantsOutput::marker): <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>  <p>Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
+    ///   - [`snapshot_copy_grants(Option<Vec<SnapshotCopyGrant>>)`](crate::output::DescribeSnapshotCopyGrantsOutput::snapshot_copy_grants): <p>The list of <code>SnapshotCopyGrant</code> objects.</p>
+    /// - On failure, responds with [`SdkError<DescribeSnapshotCopyGrantsError>`](crate::error::DescribeSnapshotCopyGrantsError)
     pub fn describe_snapshot_copy_grants(
         &self,
     ) -> fluent_builders::DescribeSnapshotCopyGrants<C, M, R> {
         fluent_builders::DescribeSnapshotCopyGrants::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeSnapshotSchedules` operation.
-    ///
-    /// See [`DescribeSnapshotSchedules`](crate::client::fluent_builders::DescribeSnapshotSchedules) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeSnapshotSchedules`](crate::client::fluent_builders::DescribeSnapshotSchedules) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeSnapshotSchedules::into_paginator).
+    ///
+    /// - Takes [`DescribeSnapshotSchedulesInput`](crate::input::DescribeSnapshotSchedulesInput) with field(s):
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::DescribeSnapshotSchedulesInput::cluster_identifier): <p>The unique identifier for the cluster whose snapshot schedules you want to view.</p>
+    ///   - [`schedule_identifier(Option<String>)`](crate::input::DescribeSnapshotSchedulesInput::schedule_identifier): <p>A unique identifier for a snapshot schedule.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::DescribeSnapshotSchedulesInput::tag_keys): <p>The key value for a snapshot schedule tag.</p>
+    ///   - [`tag_values(Option<Vec<String>>)`](crate::input::DescribeSnapshotSchedulesInput::tag_values): <p>The value corresponding to the key of the snapshot schedule tag.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeSnapshotSchedulesInput::marker): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all response records have been retrieved for the request.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeSnapshotSchedulesInput::max_records): <p>The maximum number or response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned <code>marker</code> value.</p>
+    /// - On success, responds with [`DescribeSnapshotSchedulesOutput`](crate::output::DescribeSnapshotSchedulesOutput) with field(s):
+    ///   - [`snapshot_schedules(Option<Vec<SnapshotSchedule>>)`](crate::output::DescribeSnapshotSchedulesOutput::snapshot_schedules): <p>A list of SnapshotSchedules.</p>
+    ///   - [`marker(Option<String>)`](crate::output::DescribeSnapshotSchedulesOutput::marker): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all response records have been retrieved for the request.</p>
+    /// - On failure, responds with [`SdkError<DescribeSnapshotSchedulesError>`](crate::error::DescribeSnapshotSchedulesError)
     pub fn describe_snapshot_schedules(
         &self,
     ) -> fluent_builders::DescribeSnapshotSchedules<C, M, R> {
         fluent_builders::DescribeSnapshotSchedules::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeStorage` operation.
+    /// Constructs a fluent builder for the [`DescribeStorage`](crate::client::fluent_builders::DescribeStorage) operation.
     ///
-    /// See [`DescribeStorage`](crate::client::fluent_builders::DescribeStorage) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeStorageInput`](crate::input::DescribeStorageInput)
+
+    /// - On success, responds with [`DescribeStorageOutput`](crate::output::DescribeStorageOutput) with field(s):
+    ///   - [`total_backup_size_in_mega_bytes(f64)`](crate::output::DescribeStorageOutput::total_backup_size_in_mega_bytes): <p>The total amount of storage currently used for snapshots.</p>
+    ///   - [`total_provisioned_storage_in_mega_bytes(f64)`](crate::output::DescribeStorageOutput::total_provisioned_storage_in_mega_bytes): <p>The total amount of storage currently provisioned.</p>
+    /// - On failure, responds with [`SdkError<DescribeStorageError>`](crate::error::DescribeStorageError)
     pub fn describe_storage(&self) -> fluent_builders::DescribeStorage<C, M, R> {
         fluent_builders::DescribeStorage::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeTableRestoreStatus` operation.
-    ///
-    /// See [`DescribeTableRestoreStatus`](crate::client::fluent_builders::DescribeTableRestoreStatus) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeTableRestoreStatus`](crate::client::fluent_builders::DescribeTableRestoreStatus) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeTableRestoreStatus::into_paginator).
+    ///
+    /// - Takes [`DescribeTableRestoreStatusInput`](crate::input::DescribeTableRestoreStatusInput) with field(s):
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::DescribeTableRestoreStatusInput::cluster_identifier): <p>The Amazon Redshift cluster that the table is being restored to.</p>
+    ///   - [`table_restore_request_id(Option<String>)`](crate::input::DescribeTableRestoreStatusInput::table_restore_request_id): <p>The identifier of the table restore request to return status for. If you don't specify a <code>TableRestoreRequestId</code> value, then <code>DescribeTableRestoreStatus</code> returns the status of all in-progress table restore requests.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeTableRestoreStatusInput::max_records): <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeTableRestoreStatusInput::marker): <p>An optional pagination token provided by a previous <code>DescribeTableRestoreStatus</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
+    /// - On success, responds with [`DescribeTableRestoreStatusOutput`](crate::output::DescribeTableRestoreStatusOutput) with field(s):
+    ///   - [`table_restore_status_details(Option<Vec<TableRestoreStatus>>)`](crate::output::DescribeTableRestoreStatusOutput::table_restore_status_details): <p>A list of status details for one or more table restore requests.</p>
+    ///   - [`marker(Option<String>)`](crate::output::DescribeTableRestoreStatusOutput::marker): <p>A pagination token that can be used in a subsequent <code>DescribeTableRestoreStatus</code> request.</p>
+    /// - On failure, responds with [`SdkError<DescribeTableRestoreStatusError>`](crate::error::DescribeTableRestoreStatusError)
     pub fn describe_table_restore_status(
         &self,
     ) -> fluent_builders::DescribeTableRestoreStatus<C, M, R> {
         fluent_builders::DescribeTableRestoreStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeTags` operation.
-    ///
-    /// See [`DescribeTags`](crate::client::fluent_builders::DescribeTags) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeTags`](crate::client::fluent_builders::DescribeTags) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeTags::into_paginator).
+    ///
+    /// - Takes [`DescribeTagsInput`](crate::input::DescribeTagsInput) with field(s):
+    ///   - [`resource_name(Option<String>)`](crate::input::DescribeTagsInput::resource_name): <p>The Amazon Resource Name (ARN) for which you want to describe the tag or tags. For example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. </p>
+    ///   - [`resource_type(Option<String>)`](crate::input::DescribeTagsInput::resource_type): <p>The type of resource with which you want to view tags. Valid resource types are: </p>  <ul>   <li> <p>Cluster</p> </li>   <li> <p>CIDR/IP</p> </li>   <li> <p>EC2 security group</p> </li>   <li> <p>Snapshot</p> </li>   <li> <p>Cluster security group</p> </li>   <li> <p>Subnet group</p> </li>   <li> <p>HSM connection</p> </li>   <li> <p>HSM certificate</p> </li>   <li> <p>Parameter group</p> </li>   <li> <p>Snapshot copy grant</p> </li>  </ul>  <p>For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Specifying Policy Elements: Actions, Effects, Resources, and Principals</a> in the Amazon Redshift Cluster Management Guide. </p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeTagsInput::max_records): <p>The maximum number or response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned <code>marker</code> value. </p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeTagsInput::marker): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all response records have been retrieved for the request. </p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::DescribeTagsInput::tag_keys): <p>A tag key or keys for which you want to return all matching resources that are associated with the specified key or keys. For example, suppose that you have resources tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with all resources that have either or both of these tag keys associated with them.</p>
+    ///   - [`tag_values(Option<Vec<String>>)`](crate::input::DescribeTagsInput::tag_values): <p>A tag value or values for which you want to return all matching resources that are associated with the specified value or values. For example, suppose that you have resources tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with all resources that have either or both of these tag values associated with them.</p>
+    /// - On success, responds with [`DescribeTagsOutput`](crate::output::DescribeTagsOutput) with field(s):
+    ///   - [`tagged_resources(Option<Vec<TaggedResource>>)`](crate::output::DescribeTagsOutput::tagged_resources): <p>A list of tags with their associated resources.</p>
+    ///   - [`marker(Option<String>)`](crate::output::DescribeTagsOutput::marker): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    /// - On failure, responds with [`SdkError<DescribeTagsError>`](crate::error::DescribeTagsError)
     pub fn describe_tags(&self) -> fluent_builders::DescribeTags<C, M, R> {
         fluent_builders::DescribeTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeUsageLimits` operation.
-    ///
-    /// See [`DescribeUsageLimits`](crate::client::fluent_builders::DescribeUsageLimits) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeUsageLimits`](crate::client::fluent_builders::DescribeUsageLimits) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeUsageLimits::into_paginator).
+    ///
+    /// - Takes [`DescribeUsageLimitsInput`](crate::input::DescribeUsageLimitsInput) with field(s):
+    ///   - [`usage_limit_id(Option<String>)`](crate::input::DescribeUsageLimitsInput::usage_limit_id): <p>The identifier of the usage limit to describe.</p>
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::DescribeUsageLimitsInput::cluster_identifier): <p>The identifier of the cluster for which you want to describe usage limits.</p>
+    ///   - [`feature_type(Option<UsageLimitFeatureType>)`](crate::input::DescribeUsageLimitsInput::feature_type): <p>The feature type for which you want to describe usage limits.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::DescribeUsageLimitsInput::max_records): <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>  <p>Default: <code>100</code> </p>  <p>Constraints: minimum 20, maximum 100.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeUsageLimitsInput::marker): <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeUsageLimits</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::DescribeUsageLimitsInput::tag_keys): <p>A tag key or keys for which you want to return all matching usage limit objects that are associated with the specified key or keys. For example, suppose that you have parameter groups that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the usage limit objects have either or both of these tag keys associated with them.</p>
+    ///   - [`tag_values(Option<Vec<String>>)`](crate::input::DescribeUsageLimitsInput::tag_values): <p>A tag value or values for which you want to return all matching usage limit objects that are associated with the specified tag value or values. For example, suppose that you have parameter groups that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the usage limit objects that have either or both of these tag values associated with them.</p>
+    /// - On success, responds with [`DescribeUsageLimitsOutput`](crate::output::DescribeUsageLimitsOutput) with field(s):
+    ///   - [`usage_limits(Option<Vec<UsageLimit>>)`](crate::output::DescribeUsageLimitsOutput::usage_limits): <p>Contains the output from the <code>DescribeUsageLimits</code> action. </p>
+    ///   - [`marker(Option<String>)`](crate::output::DescribeUsageLimitsOutput::marker): <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
+    /// - On failure, responds with [`SdkError<DescribeUsageLimitsError>`](crate::error::DescribeUsageLimitsError)
     pub fn describe_usage_limits(&self) -> fluent_builders::DescribeUsageLimits<C, M, R> {
         fluent_builders::DescribeUsageLimits::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisableLogging` operation.
+    /// Constructs a fluent builder for the [`DisableLogging`](crate::client::fluent_builders::DisableLogging) operation.
     ///
-    /// See [`DisableLogging`](crate::client::fluent_builders::DisableLogging) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisableLoggingInput`](crate::input::DisableLoggingInput) with field(s):
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::DisableLoggingInput::cluster_identifier): <p>The identifier of the cluster on which logging is to be stopped.</p>  <p>Example: <code>examplecluster</code> </p>
+    /// - On success, responds with [`DisableLoggingOutput`](crate::output::DisableLoggingOutput) with field(s):
+    ///   - [`logging_enabled(bool)`](crate::output::DisableLoggingOutput::logging_enabled): <p> <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
+    ///   - [`bucket_name(Option<String>)`](crate::output::DisableLoggingOutput::bucket_name): <p>The name of the S3 bucket where the log files are stored.</p>
+    ///   - [`s3_key_prefix(Option<String>)`](crate::output::DisableLoggingOutput::s3_key_prefix): <p>The prefix applied to the log file names.</p>
+    ///   - [`last_successful_delivery_time(Option<DateTime>)`](crate::output::DisableLoggingOutput::last_successful_delivery_time): <p>The last time that logs were delivered.</p>
+    ///   - [`last_failure_time(Option<DateTime>)`](crate::output::DisableLoggingOutput::last_failure_time): <p>The last time when logs failed to be delivered.</p>
+    ///   - [`last_failure_message(Option<String>)`](crate::output::DisableLoggingOutput::last_failure_message): <p>The message indicating that logs failed to be delivered.</p>
+    /// - On failure, responds with [`SdkError<DisableLoggingError>`](crate::error::DisableLoggingError)
     pub fn disable_logging(&self) -> fluent_builders::DisableLogging<C, M, R> {
         fluent_builders::DisableLogging::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisableSnapshotCopy` operation.
+    /// Constructs a fluent builder for the [`DisableSnapshotCopy`](crate::client::fluent_builders::DisableSnapshotCopy) operation.
     ///
-    /// See [`DisableSnapshotCopy`](crate::client::fluent_builders::DisableSnapshotCopy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisableSnapshotCopyInput`](crate::input::DisableSnapshotCopyInput) with field(s):
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::DisableSnapshotCopyInput::cluster_identifier): <p>The unique identifier of the source cluster that you want to disable copying of snapshots to a destination region.</p>  <p>Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.</p>
+    /// - On success, responds with [`DisableSnapshotCopyOutput`](crate::output::DisableSnapshotCopyOutput) with field(s):
+    ///   - [`cluster(Option<Cluster>)`](crate::output::DisableSnapshotCopyOutput::cluster): <p>Describes a cluster.</p>
+    /// - On failure, responds with [`SdkError<DisableSnapshotCopyError>`](crate::error::DisableSnapshotCopyError)
     pub fn disable_snapshot_copy(&self) -> fluent_builders::DisableSnapshotCopy<C, M, R> {
         fluent_builders::DisableSnapshotCopy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateDataShareConsumer` operation.
+    /// Constructs a fluent builder for the [`DisassociateDataShareConsumer`](crate::client::fluent_builders::DisassociateDataShareConsumer) operation.
     ///
-    /// See [`DisassociateDataShareConsumer`](crate::client::fluent_builders::DisassociateDataShareConsumer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateDataShareConsumerInput`](crate::input::DisassociateDataShareConsumerInput) with field(s):
+    ///   - [`data_share_arn(Option<String>)`](crate::input::DisassociateDataShareConsumerInput::data_share_arn): <p>The Amazon Resource Name (ARN) of the datashare to remove association for. </p>
+    ///   - [`disassociate_entire_account(Option<bool>)`](crate::input::DisassociateDataShareConsumerInput::disassociate_entire_account): <p>A value that specifies whether association for the datashare is removed from the entire account.</p>
+    ///   - [`consumer_arn(Option<String>)`](crate::input::DisassociateDataShareConsumerInput::consumer_arn): <p>The Amazon Resource Name (ARN) of the consumer that association for the datashare is removed from.</p>
+    /// - On success, responds with [`DisassociateDataShareConsumerOutput`](crate::output::DisassociateDataShareConsumerOutput) with field(s):
+    ///   - [`data_share_arn(Option<String>)`](crate::output::DisassociateDataShareConsumerOutput::data_share_arn): <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
+    ///   - [`producer_arn(Option<String>)`](crate::output::DisassociateDataShareConsumerOutput::producer_arn): <p>The Amazon Resource Name (ARN) of the producer.</p>
+    ///   - [`allow_publicly_accessible_consumers(bool)`](crate::output::DisassociateDataShareConsumerOutput::allow_publicly_accessible_consumers): <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
+    ///   - [`data_share_associations(Option<Vec<DataShareAssociation>>)`](crate::output::DisassociateDataShareConsumerOutput::data_share_associations): <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+    ///   - [`managed_by(Option<String>)`](crate::output::DisassociateDataShareConsumerOutput::managed_by): <p>The identifier of a datashare to show its managing entity.</p>
+    /// - On failure, responds with [`SdkError<DisassociateDataShareConsumerError>`](crate::error::DisassociateDataShareConsumerError)
     pub fn disassociate_data_share_consumer(
         &self,
     ) -> fluent_builders::DisassociateDataShareConsumer<C, M, R> {
         fluent_builders::DisassociateDataShareConsumer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `EnableLogging` operation.
+    /// Constructs a fluent builder for the [`EnableLogging`](crate::client::fluent_builders::EnableLogging) operation.
     ///
-    /// See [`EnableLogging`](crate::client::fluent_builders::EnableLogging) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`EnableLoggingInput`](crate::input::EnableLoggingInput) with field(s):
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::EnableLoggingInput::cluster_identifier): <p>The identifier of the cluster on which logging is to be started.</p>  <p>Example: <code>examplecluster</code> </p>
+    ///   - [`bucket_name(Option<String>)`](crate::input::EnableLoggingInput::bucket_name): <p>The name of an existing S3 bucket where the log files are to be stored.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be in the same region as the cluster</p> </li>   <li> <p>The cluster must have read bucket and put object permissions</p> </li>  </ul>
+    ///   - [`s3_key_prefix(Option<String>)`](crate::input::EnableLoggingInput::s3_key_prefix): <p>The prefix applied to the log file names.</p>  <p>Constraints:</p>  <ul>   <li> <p>Cannot exceed 512 characters</p> </li>   <li> <p>Cannot contain spaces( ), double quotes ("), single quotes ('), a backslash (\), or control characters. The hexadecimal codes for invalid characters are: </p>    <ul>     <li> <p>x00 to x20</p> </li>     <li> <p>x22</p> </li>     <li> <p>x27</p> </li>     <li> <p>x5c</p> </li>     <li> <p>x7f or larger</p> </li>    </ul> </li>  </ul>
+    /// - On success, responds with [`EnableLoggingOutput`](crate::output::EnableLoggingOutput) with field(s):
+    ///   - [`logging_enabled(bool)`](crate::output::EnableLoggingOutput::logging_enabled): <p> <code>true</code> if logging is on, <code>false</code> if logging is off.</p>
+    ///   - [`bucket_name(Option<String>)`](crate::output::EnableLoggingOutput::bucket_name): <p>The name of the S3 bucket where the log files are stored.</p>
+    ///   - [`s3_key_prefix(Option<String>)`](crate::output::EnableLoggingOutput::s3_key_prefix): <p>The prefix applied to the log file names.</p>
+    ///   - [`last_successful_delivery_time(Option<DateTime>)`](crate::output::EnableLoggingOutput::last_successful_delivery_time): <p>The last time that logs were delivered.</p>
+    ///   - [`last_failure_time(Option<DateTime>)`](crate::output::EnableLoggingOutput::last_failure_time): <p>The last time when logs failed to be delivered.</p>
+    ///   - [`last_failure_message(Option<String>)`](crate::output::EnableLoggingOutput::last_failure_message): <p>The message indicating that logs failed to be delivered.</p>
+    /// - On failure, responds with [`SdkError<EnableLoggingError>`](crate::error::EnableLoggingError)
     pub fn enable_logging(&self) -> fluent_builders::EnableLogging<C, M, R> {
         fluent_builders::EnableLogging::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `EnableSnapshotCopy` operation.
+    /// Constructs a fluent builder for the [`EnableSnapshotCopy`](crate::client::fluent_builders::EnableSnapshotCopy) operation.
     ///
-    /// See [`EnableSnapshotCopy`](crate::client::fluent_builders::EnableSnapshotCopy) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`EnableSnapshotCopyInput`](crate::input::EnableSnapshotCopyInput) with field(s):
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::EnableSnapshotCopyInput::cluster_identifier): <p>The unique identifier of the source cluster to copy snapshots from.</p>  <p>Constraints: Must be the valid name of an existing cluster that does not already have cross-region snapshot copy enabled.</p>
+    ///   - [`destination_region(Option<String>)`](crate::input::EnableSnapshotCopyInput::destination_region): <p>The destination Amazon Web Services Region that you want to copy snapshots to.</p>  <p>Constraints: Must be the name of a valid Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a> in the Amazon Web Services General Reference. </p>
+    ///   - [`retention_period(Option<i32>)`](crate::input::EnableSnapshotCopyInput::retention_period): <p>The number of days to retain automated snapshots in the destination region after they are copied from the source region.</p>  <p>Default: 7.</p>  <p>Constraints: Must be at least 1 and no more than 35.</p>
+    ///   - [`snapshot_copy_grant_name(Option<String>)`](crate::input::EnableSnapshotCopyInput::snapshot_copy_grant_name): <p>The name of the snapshot copy grant to use when snapshots of an Amazon Web Services KMS-encrypted cluster are copied to the destination region.</p>
+    ///   - [`manual_snapshot_retention_period(Option<i32>)`](crate::input::EnableSnapshotCopyInput::manual_snapshot_retention_period): <p>The number of days to retain newly copied snapshots in the destination Amazon Web Services Region after they are copied from the source Amazon Web Services Region. If the value is -1, the manual snapshot is retained indefinitely. </p>  <p>The value must be either -1 or an integer between 1 and 3,653.</p>
+    /// - On success, responds with [`EnableSnapshotCopyOutput`](crate::output::EnableSnapshotCopyOutput) with field(s):
+    ///   - [`cluster(Option<Cluster>)`](crate::output::EnableSnapshotCopyOutput::cluster): <p>Describes a cluster.</p>
+    /// - On failure, responds with [`SdkError<EnableSnapshotCopyError>`](crate::error::EnableSnapshotCopyError)
     pub fn enable_snapshot_copy(&self) -> fluent_builders::EnableSnapshotCopy<C, M, R> {
         fluent_builders::EnableSnapshotCopy::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetClusterCredentials` operation.
+    /// Constructs a fluent builder for the [`GetClusterCredentials`](crate::client::fluent_builders::GetClusterCredentials) operation.
     ///
-    /// See [`GetClusterCredentials`](crate::client::fluent_builders::GetClusterCredentials) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetClusterCredentialsInput`](crate::input::GetClusterCredentialsInput) with field(s):
+    ///   - [`db_user(Option<String>)`](crate::input::GetClusterCredentialsInput::db_user): <p>The name of a database user. If a user name matching <code>DbUser</code> exists in the database, the temporary user credentials have the same permissions as the existing user. If <code>DbUser</code> doesn't exist in the database and <code>Autocreate</code> is <code>True</code>, a new user is created using the value for <code>DbUser</code> with PUBLIC permissions. If a database user matching the value for <code>DbUser</code> doesn't exist and <code>Autocreate</code> is <code>False</code>, then the command succeeds but the connection attempt will fail because the user doesn't exist in the database.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">CREATE USER</a> in the Amazon Redshift Database Developer Guide. </p>  <p>Constraints:</p>  <ul>   <li> <p>Must be 1 to 64 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li>   <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>   <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>  </ul>
+    ///   - [`db_name(Option<String>)`](crate::input::GetClusterCredentialsInput::db_name): <p>The name of a database that <code>DbUser</code> is authorized to log on to. If <code>DbName</code> is not specified, <code>DbUser</code> can log on to any existing database.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be 1 to 64 alphanumeric characters or hyphens</p> </li>   <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>   <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>  </ul>
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::GetClusterCredentialsInput::cluster_identifier): <p>The unique identifier of the cluster that contains the database for which your are requesting credentials. This parameter is case sensitive.</p>
+    ///   - [`duration_seconds(Option<i32>)`](crate::input::GetClusterCredentialsInput::duration_seconds): <p>The number of seconds until the returned temporary password expires.</p>  <p>Constraint: minimum 900, maximum 3600.</p>  <p>Default: 900</p>
+    ///   - [`auto_create(Option<bool>)`](crate::input::GetClusterCredentialsInput::auto_create): <p>Create a database user with the name specified for the user named in <code>DbUser</code> if one does not exist.</p>
+    ///   - [`db_groups(Option<Vec<String>>)`](crate::input::GetClusterCredentialsInput::db_groups): <p>A list of the names of existing database groups that the user named in <code>DbUser</code> will join for the current session, in addition to any group memberships for an existing user. If not specified, a new user is added only to PUBLIC.</p>  <p>Database group name constraints</p>  <ul>   <li> <p>Must be 1 to 64 alphanumeric characters or hyphens</p> </li>   <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li>   <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li>  </ul>
+    /// - On success, responds with [`GetClusterCredentialsOutput`](crate::output::GetClusterCredentialsOutput) with field(s):
+    ///   - [`db_user(Option<String>)`](crate::output::GetClusterCredentialsOutput::db_user): <p>A database user name that is authorized to log on to the database <code>DbName</code> using the password <code>DbPassword</code>. If the specified DbUser exists in the database, the new user name has the same database privileges as the the user named in DbUser. By default, the user is added to PUBLIC. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the listed groups for any sessions created using these credentials.</p>
+    ///   - [`db_password(Option<String>)`](crate::output::GetClusterCredentialsOutput::db_password): <p>A temporary password that authorizes the user name returned by <code>DbUser</code> to log on to the database <code>DbName</code>. </p>
+    ///   - [`expiration(Option<DateTime>)`](crate::output::GetClusterCredentialsOutput::expiration): <p>The date and time the password in <code>DbPassword</code> expires.</p>
+    /// - On failure, responds with [`SdkError<GetClusterCredentialsError>`](crate::error::GetClusterCredentialsError)
     pub fn get_cluster_credentials(&self) -> fluent_builders::GetClusterCredentials<C, M, R> {
         fluent_builders::GetClusterCredentials::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetReservedNodeExchangeConfigurationOptions` operation.
-    ///
-    /// See [`GetReservedNodeExchangeConfigurationOptions`](crate::client::fluent_builders::GetReservedNodeExchangeConfigurationOptions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetReservedNodeExchangeConfigurationOptions`](crate::client::fluent_builders::GetReservedNodeExchangeConfigurationOptions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetReservedNodeExchangeConfigurationOptions::into_paginator).
+    ///
+    /// - Takes [`GetReservedNodeExchangeConfigurationOptionsInput`](crate::input::GetReservedNodeExchangeConfigurationOptionsInput) with field(s):
+    ///   - [`action_type(Option<ReservedNodeExchangeActionType>)`](crate::input::GetReservedNodeExchangeConfigurationOptionsInput::action_type): <p>The action type of the reserved-node configuration. The action type can be an exchange initiated from either a snapshot or a resize.</p>
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::GetReservedNodeExchangeConfigurationOptionsInput::cluster_identifier): <p>The identifier for the cluster that is the source for a reserved-node exchange.</p>
+    ///   - [`snapshot_identifier(Option<String>)`](crate::input::GetReservedNodeExchangeConfigurationOptionsInput::snapshot_identifier): <p>The identifier for the snapshot that is the source for the reserved-node exchange.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::GetReservedNodeExchangeConfigurationOptionsInput::max_records): <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>Marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p>
+    ///   - [`marker(Option<String>)`](crate::input::GetReservedNodeExchangeConfigurationOptionsInput::marker): <p>An optional pagination token provided by a previous <code>GetReservedNodeExchangeConfigurationOptions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.</p>
+    /// - On success, responds with [`GetReservedNodeExchangeConfigurationOptionsOutput`](crate::output::GetReservedNodeExchangeConfigurationOptionsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::GetReservedNodeExchangeConfigurationOptionsOutput::marker): <p>A pagination token provided by a previous <code>GetReservedNodeExchangeConfigurationOptions</code> request.</p>
+    ///   - [`reserved_node_configuration_option_list(Option<Vec<ReservedNodeConfigurationOption>>)`](crate::output::GetReservedNodeExchangeConfigurationOptionsOutput::reserved_node_configuration_option_list): <p>the configuration options for the reserved-node exchange. These options include information about the source reserved node and target reserved node. Details include the node type, the price, the node count, and the offering type.</p>
+    /// - On failure, responds with [`SdkError<GetReservedNodeExchangeConfigurationOptionsError>`](crate::error::GetReservedNodeExchangeConfigurationOptionsError)
     pub fn get_reserved_node_exchange_configuration_options(
         &self,
     ) -> fluent_builders::GetReservedNodeExchangeConfigurationOptions<C, M, R> {
         fluent_builders::GetReservedNodeExchangeConfigurationOptions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetReservedNodeExchangeOfferings` operation.
-    ///
-    /// See [`GetReservedNodeExchangeOfferings`](crate::client::fluent_builders::GetReservedNodeExchangeOfferings) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetReservedNodeExchangeOfferings`](crate::client::fluent_builders::GetReservedNodeExchangeOfferings) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetReservedNodeExchangeOfferings::into_paginator).
+    ///
+    /// - Takes [`GetReservedNodeExchangeOfferingsInput`](crate::input::GetReservedNodeExchangeOfferingsInput) with field(s):
+    ///   - [`reserved_node_id(Option<String>)`](crate::input::GetReservedNodeExchangeOfferingsInput::reserved_node_id): <p>A string representing the node identifier for the DC1 Reserved Node to be exchanged.</p>
+    ///   - [`max_records(Option<i32>)`](crate::input::GetReservedNodeExchangeOfferingsInput::max_records): <p>An integer setting the maximum number of ReservedNodeOfferings to retrieve.</p>
+    ///   - [`marker(Option<String>)`](crate::input::GetReservedNodeExchangeOfferingsInput::marker): <p>A value that indicates the starting point for the next set of ReservedNodeOfferings.</p>
+    /// - On success, responds with [`GetReservedNodeExchangeOfferingsOutput`](crate::output::GetReservedNodeExchangeOfferingsOutput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::output::GetReservedNodeExchangeOfferingsOutput::marker): <p>An optional parameter that specifies the starting point for returning a set of response records. When the results of a <code>GetReservedNodeExchangeOfferings</code> request exceed the value specified in MaxRecords, Amazon Redshift returns a value in the marker field of the response. You can retrieve the next set of response records by providing the returned marker value in the marker parameter and retrying the request. </p>
+    ///   - [`reserved_node_offerings(Option<Vec<ReservedNodeOffering>>)`](crate::output::GetReservedNodeExchangeOfferingsOutput::reserved_node_offerings): <p>Returns an array of <code>ReservedNodeOffering</code> objects.</p>
+    /// - On failure, responds with [`SdkError<GetReservedNodeExchangeOfferingsError>`](crate::error::GetReservedNodeExchangeOfferingsError)
     pub fn get_reserved_node_exchange_offerings(
         &self,
     ) -> fluent_builders::GetReservedNodeExchangeOfferings<C, M, R> {
         fluent_builders::GetReservedNodeExchangeOfferings::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyAquaConfiguration` operation.
+    /// Constructs a fluent builder for the [`ModifyAquaConfiguration`](crate::client::fluent_builders::ModifyAquaConfiguration) operation.
     ///
-    /// See [`ModifyAquaConfiguration`](crate::client::fluent_builders::ModifyAquaConfiguration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyAquaConfigurationInput`](crate::input::ModifyAquaConfigurationInput) with field(s):
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::ModifyAquaConfigurationInput::cluster_identifier): <p>The identifier of the cluster to be modified.</p>
+    ///   - [`aqua_configuration_status(Option<AquaConfigurationStatus>)`](crate::input::ModifyAquaConfigurationInput::aqua_configuration_status): <p>The new value of AQUA configuration status. Possible values include the following.</p>  <ul>   <li> <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p> </li>   <li> <p>disabled - Don't use AQUA. </p> </li>   <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li>  </ul>
+    /// - On success, responds with [`ModifyAquaConfigurationOutput`](crate::output::ModifyAquaConfigurationOutput) with field(s):
+    ///   - [`aqua_configuration(Option<AquaConfiguration>)`](crate::output::ModifyAquaConfigurationOutput::aqua_configuration): <p>The updated AQUA configuration of the cluster. </p>
+    /// - On failure, responds with [`SdkError<ModifyAquaConfigurationError>`](crate::error::ModifyAquaConfigurationError)
     pub fn modify_aqua_configuration(&self) -> fluent_builders::ModifyAquaConfiguration<C, M, R> {
         fluent_builders::ModifyAquaConfiguration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyAuthenticationProfile` operation.
+    /// Constructs a fluent builder for the [`ModifyAuthenticationProfile`](crate::client::fluent_builders::ModifyAuthenticationProfile) operation.
     ///
-    /// See [`ModifyAuthenticationProfile`](crate::client::fluent_builders::ModifyAuthenticationProfile) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyAuthenticationProfileInput`](crate::input::ModifyAuthenticationProfileInput) with field(s):
+    ///   - [`authentication_profile_name(Option<String>)`](crate::input::ModifyAuthenticationProfileInput::authentication_profile_name): <p>The name of the authentication profile to replace.</p>
+    ///   - [`authentication_profile_content(Option<String>)`](crate::input::ModifyAuthenticationProfileInput::authentication_profile_content): <p>The new content of the authentication profile in JSON format. The maximum length of the JSON string is determined by a quota for your account.</p>
+    /// - On success, responds with [`ModifyAuthenticationProfileOutput`](crate::output::ModifyAuthenticationProfileOutput) with field(s):
+    ///   - [`authentication_profile_name(Option<String>)`](crate::output::ModifyAuthenticationProfileOutput::authentication_profile_name): <p>The name of the authentication profile that was replaced.</p>
+    ///   - [`authentication_profile_content(Option<String>)`](crate::output::ModifyAuthenticationProfileOutput::authentication_profile_content): <p>The updated content of the authentication profile in JSON format.</p>
+    /// - On failure, responds with [`SdkError<ModifyAuthenticationProfileError>`](crate::error::ModifyAuthenticationProfileError)
     pub fn modify_authentication_profile(
         &self,
     ) -> fluent_builders::ModifyAuthenticationProfile<C, M, R> {
         fluent_builders::ModifyAuthenticationProfile::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyCluster` operation.
+    /// Constructs a fluent builder for the [`ModifyCluster`](crate::client::fluent_builders::ModifyCluster) operation.
     ///
-    /// See [`ModifyCluster`](crate::client::fluent_builders::ModifyCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyClusterInput`](crate::input::ModifyClusterInput) with field(s):
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::ModifyClusterInput::cluster_identifier): <p>The unique identifier of the cluster to be modified.</p>  <p>Example: <code>examplecluster</code> </p>
+    ///   - [`cluster_type(Option<String>)`](crate::input::ModifyClusterInput::cluster_type): <p>The new cluster type.</p>  <p>When you submit your cluster resize request, your existing cluster goes into a read-only mode. After Amazon Redshift provisions a new cluster based on your resize requirements, there will be outage for a period while the old cluster is deleted and your connection is switched to the new cluster. You can use <code>DescribeResize</code> to track the progress of the resize request. </p>  <p>Valid Values: <code> multi-node | single-node </code> </p>
+    ///   - [`node_type(Option<String>)`](crate::input::ModifyClusterInput::node_type): <p>The new node type of the cluster. If you specify a new node type, you must also specify the number of nodes parameter.</p>  <p> For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>  <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>
+    ///   - [`number_of_nodes(Option<i32>)`](crate::input::ModifyClusterInput::number_of_nodes): <p>The new number of nodes of the cluster. If you specify a new number of nodes, you must also specify the node type parameter.</p>  <p> For more information about resizing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>  <p>Valid Values: Integer greater than <code>0</code>.</p>
+    ///   - [`cluster_security_groups(Option<Vec<String>>)`](crate::input::ModifyClusterInput::cluster_security_groups): <p>A list of cluster security groups to be authorized on this cluster. This change is asynchronously applied as soon as possible.</p>  <p>Security groups currently associated with the cluster, and not in the list of groups to apply, will be revoked from the cluster.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li>   <li> <p>First character must be a letter</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>  </ul>
+    ///   - [`vpc_security_group_ids(Option<Vec<String>>)`](crate::input::ModifyClusterInput::vpc_security_group_ids): <p>A list of virtual private cloud (VPC) security groups to be associated with the cluster. This change is asynchronously applied as soon as possible.</p>
+    ///   - [`master_user_password(Option<String>)`](crate::input::ModifyClusterInput::master_user_password): <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <note>   <p>Operations never return the password, so this operation provides a way to regain access to the admin user account for a cluster if the password is lost.</p>  </note>  <p>Default: Uses existing setting.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be between 8 and 64 characters in length.</p> </li>   <li> <p>Must contain at least one uppercase letter.</p> </li>   <li> <p>Must contain at least one lowercase letter.</p> </li>   <li> <p>Must contain one number.</p> </li>   <li> <p>Can be any printable ASCII character (ASCII code 33 to 126) except ' (single quote), " (double quote), \, /, @, or space.</p> </li>  </ul>
+    ///   - [`cluster_parameter_group_name(Option<String>)`](crate::input::ModifyClusterInput::cluster_parameter_group_name): <p>The name of the cluster parameter group to apply to this cluster. This change is applied only after the cluster is rebooted. To reboot a cluster use <code>RebootCluster</code>. </p>  <p>Default: Uses existing setting.</p>  <p>Constraints: The cluster parameter group must be in the same parameter group family that matches the cluster version.</p>
+    ///   - [`automated_snapshot_retention_period(Option<i32>)`](crate::input::ModifyClusterInput::automated_snapshot_retention_period): <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>. </p>  <p>If you decrease the automated snapshot retention period from its current value, existing automated snapshots that fall outside of the new retention period will be immediately deleted.</p>  <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p>  <p>Default: Uses existing setting.</p>  <p>Constraints: Must be a value from 0 to 35.</p>
+    ///   - [`manual_snapshot_retention_period(Option<i32>)`](crate::input::ModifyClusterInput::manual_snapshot_retention_period): <p>The default for number of days that a newly created manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. This value doesn't retroactively change the retention periods of existing manual snapshots.</p>  <p>The value must be either -1 or an integer between 1 and 3,653.</p>  <p>The default value is -1.</p>
+    ///   - [`preferred_maintenance_window(Option<String>)`](crate::input::ModifyClusterInput::preferred_maintenance_window): <p>The weekly time range (in UTC) during which system maintenance can occur, if necessary. If system maintenance is necessary during the window, it may result in an outage.</p>  <p>This maintenance window change is made immediately. If the new maintenance window indicates the current time, there must be at least 120 minutes between the current time and end of the window in order to ensure that pending changes are applied.</p>  <p>Default: Uses existing setting.</p>  <p>Format: ddd:hh24:mi-ddd:hh24:mi, for example <code>wed:07:30-wed:08:00</code>.</p>  <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>  <p>Constraints: Must be at least 30 minutes.</p>
+    ///   - [`cluster_version(Option<String>)`](crate::input::ModifyClusterInput::cluster_version): <p>The new version number of the Amazon Redshift engine to upgrade to.</p>  <p>For major version upgrades, if a non-default cluster parameter group is currently in use, a new cluster parameter group in the cluster parameter group family for the new version must be specified. The new cluster parameter group can be the default for that cluster parameter group family. For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>  <p>Example: <code>1.0</code> </p>
+    ///   - [`allow_version_upgrade(Option<bool>)`](crate::input::ModifyClusterInput::allow_version_upgrade): <p>If <code>true</code>, major version upgrades will be applied automatically to the cluster during the maintenance window. </p>  <p>Default: <code>false</code> </p>
+    ///   - [`hsm_client_certificate_identifier(Option<String>)`](crate::input::ModifyClusterInput::hsm_client_certificate_identifier): <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
+    ///   - [`hsm_configuration_identifier(Option<String>)`](crate::input::ModifyClusterInput::hsm_configuration_identifier): <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
+    ///   - [`new_cluster_identifier(Option<String>)`](crate::input::ModifyClusterInput::new_cluster_identifier): <p>The new identifier for the cluster.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li>   <li> <p>Alphabetic characters must be lowercase.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>   <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>  </ul>  <p>Example: <code>examplecluster</code> </p>
+    ///   - [`publicly_accessible(Option<bool>)`](crate::input::ModifyClusterInput::publicly_accessible): <p>If <code>true</code>, the cluster can be accessed from a public network. Only clusters in VPCs can be set to be publicly available.</p>
+    ///   - [`elastic_ip(Option<String>)`](crate::input::ModifyClusterInput::elastic_ip): <p>The Elastic IP (EIP) address for the cluster.</p>  <p>Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For more information about provisioning clusters in EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
+    ///   - [`enhanced_vpc_routing(Option<bool>)`](crate::input::ModifyClusterInput::enhanced_vpc_routing): <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>  <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>  <p>Default: false</p>
+    ///   - [`maintenance_track_name(Option<String>)`](crate::input::ModifyClusterInput::maintenance_track_name): <p>The name for the maintenance track that you want to assign for the cluster. This name change is asynchronous. The new track name stays in the <code>PendingModifiedValues</code> for the cluster until the next maintenance window. When the maintenance track changes, the cluster is switched to the latest cluster release available for the maintenance track. At this point, the maintenance track name is applied.</p>
+    ///   - [`encrypted(Option<bool>)`](crate::input::ModifyClusterInput::encrypted): <p>Indicates whether the cluster is encrypted. If the value is encrypted (true) and you provide a value for the <code>KmsKeyId</code> parameter, we encrypt the cluster with the provided <code>KmsKeyId</code>. If you don't provide a <code>KmsKeyId</code>, we encrypt with the default key. </p>  <p>If the value is not encrypted (false), then the cluster is decrypted. </p>
+    ///   - [`kms_key_id(Option<String>)`](crate::input::ModifyClusterInput::kms_key_id): <p>The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster.</p>
+    ///   - [`availability_zone_relocation(Option<bool>)`](crate::input::ModifyClusterInput::availability_zone_relocation): <p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster modification is complete.</p>
+    ///   - [`availability_zone(Option<String>)`](crate::input::ModifyClusterInput::availability_zone): <p>The option to initiate relocation for an Amazon Redshift cluster to the target Availability Zone.</p>
+    ///   - [`port(Option<i32>)`](crate::input::ModifyClusterInput::port): <p>The option to change the port of an Amazon Redshift cluster.</p>
+    /// - On success, responds with [`ModifyClusterOutput`](crate::output::ModifyClusterOutput) with field(s):
+    ///   - [`cluster(Option<Cluster>)`](crate::output::ModifyClusterOutput::cluster): <p>Describes a cluster.</p>
+    /// - On failure, responds with [`SdkError<ModifyClusterError>`](crate::error::ModifyClusterError)
     pub fn modify_cluster(&self) -> fluent_builders::ModifyCluster<C, M, R> {
         fluent_builders::ModifyCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyClusterDbRevision` operation.
+    /// Constructs a fluent builder for the [`ModifyClusterDbRevision`](crate::client::fluent_builders::ModifyClusterDbRevision) operation.
     ///
-    /// See [`ModifyClusterDbRevision`](crate::client::fluent_builders::ModifyClusterDbRevision) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyClusterDbRevisionInput`](crate::input::ModifyClusterDbRevisionInput) with field(s):
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::ModifyClusterDbRevisionInput::cluster_identifier): <p>The unique identifier of a cluster whose database revision you want to modify. </p>  <p>Example: <code>examplecluster</code> </p>
+    ///   - [`revision_target(Option<String>)`](crate::input::ModifyClusterDbRevisionInput::revision_target): <p>The identifier of the database revision. You can retrieve this value from the response to the <code>DescribeClusterDbRevisions</code> request.</p>
+    /// - On success, responds with [`ModifyClusterDbRevisionOutput`](crate::output::ModifyClusterDbRevisionOutput) with field(s):
+    ///   - [`cluster(Option<Cluster>)`](crate::output::ModifyClusterDbRevisionOutput::cluster): <p>Describes a cluster.</p>
+    /// - On failure, responds with [`SdkError<ModifyClusterDbRevisionError>`](crate::error::ModifyClusterDbRevisionError)
     pub fn modify_cluster_db_revision(&self) -> fluent_builders::ModifyClusterDbRevision<C, M, R> {
         fluent_builders::ModifyClusterDbRevision::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyClusterIamRoles` operation.
+    /// Constructs a fluent builder for the [`ModifyClusterIamRoles`](crate::client::fluent_builders::ModifyClusterIamRoles) operation.
     ///
-    /// See [`ModifyClusterIamRoles`](crate::client::fluent_builders::ModifyClusterIamRoles) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyClusterIamRolesInput`](crate::input::ModifyClusterIamRolesInput) with field(s):
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::ModifyClusterIamRolesInput::cluster_identifier): <p>The unique identifier of the cluster for which you want to associate or disassociate IAM roles.</p>
+    ///   - [`add_iam_roles(Option<Vec<String>>)`](crate::input::ModifyClusterIamRolesInput::add_iam_roles): <p>Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format. You can associate up to 10 IAM roles with a single cluster in a single request.</p>
+    ///   - [`remove_iam_roles(Option<Vec<String>>)`](crate::input::ModifyClusterIamRolesInput::remove_iam_roles): <p>Zero or more IAM roles in ARN format to disassociate from the cluster. You can disassociate up to 10 IAM roles from a single cluster in a single request.</p>
+    ///   - [`default_iam_role_arn(Option<String>)`](crate::input::ModifyClusterIamRolesInput::default_iam_role_arn): <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified.</p>
+    /// - On success, responds with [`ModifyClusterIamRolesOutput`](crate::output::ModifyClusterIamRolesOutput) with field(s):
+    ///   - [`cluster(Option<Cluster>)`](crate::output::ModifyClusterIamRolesOutput::cluster): <p>Describes a cluster.</p>
+    /// - On failure, responds with [`SdkError<ModifyClusterIamRolesError>`](crate::error::ModifyClusterIamRolesError)
     pub fn modify_cluster_iam_roles(&self) -> fluent_builders::ModifyClusterIamRoles<C, M, R> {
         fluent_builders::ModifyClusterIamRoles::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyClusterMaintenance` operation.
+    /// Constructs a fluent builder for the [`ModifyClusterMaintenance`](crate::client::fluent_builders::ModifyClusterMaintenance) operation.
     ///
-    /// See [`ModifyClusterMaintenance`](crate::client::fluent_builders::ModifyClusterMaintenance) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyClusterMaintenanceInput`](crate::input::ModifyClusterMaintenanceInput) with field(s):
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::ModifyClusterMaintenanceInput::cluster_identifier): <p>A unique identifier for the cluster.</p>
+    ///   - [`defer_maintenance(Option<bool>)`](crate::input::ModifyClusterMaintenanceInput::defer_maintenance): <p>A boolean indicating whether to enable the deferred maintenance window. </p>
+    ///   - [`defer_maintenance_identifier(Option<String>)`](crate::input::ModifyClusterMaintenanceInput::defer_maintenance_identifier): <p>A unique identifier for the deferred maintenance window.</p>
+    ///   - [`defer_maintenance_start_time(Option<DateTime>)`](crate::input::ModifyClusterMaintenanceInput::defer_maintenance_start_time): <p>A timestamp indicating the start time for the deferred maintenance window.</p>
+    ///   - [`defer_maintenance_end_time(Option<DateTime>)`](crate::input::ModifyClusterMaintenanceInput::defer_maintenance_end_time): <p>A timestamp indicating end time for the deferred maintenance window. If you specify an end time, you can't specify a duration.</p>
+    ///   - [`defer_maintenance_duration(Option<i32>)`](crate::input::ModifyClusterMaintenanceInput::defer_maintenance_duration): <p>An integer indicating the duration of the maintenance window in days. If you specify a duration, you can't specify an end time. The duration must be 45 days or less.</p>
+    /// - On success, responds with [`ModifyClusterMaintenanceOutput`](crate::output::ModifyClusterMaintenanceOutput) with field(s):
+    ///   - [`cluster(Option<Cluster>)`](crate::output::ModifyClusterMaintenanceOutput::cluster): <p>Describes a cluster.</p>
+    /// - On failure, responds with [`SdkError<ModifyClusterMaintenanceError>`](crate::error::ModifyClusterMaintenanceError)
     pub fn modify_cluster_maintenance(&self) -> fluent_builders::ModifyClusterMaintenance<C, M, R> {
         fluent_builders::ModifyClusterMaintenance::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyClusterParameterGroup` operation.
+    /// Constructs a fluent builder for the [`ModifyClusterParameterGroup`](crate::client::fluent_builders::ModifyClusterParameterGroup) operation.
     ///
-    /// See [`ModifyClusterParameterGroup`](crate::client::fluent_builders::ModifyClusterParameterGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyClusterParameterGroupInput`](crate::input::ModifyClusterParameterGroupInput) with field(s):
+    ///   - [`parameter_group_name(Option<String>)`](crate::input::ModifyClusterParameterGroupInput::parameter_group_name): <p>The name of the parameter group to be modified.</p>
+    ///   - [`parameters(Option<Vec<Parameter>>)`](crate::input::ModifyClusterParameterGroupInput::parameters): <p>An array of parameters to be modified. A maximum of 20 parameters can be modified in a single request.</p>  <p>For each parameter to be modified, you must supply at least the parameter name and parameter value; other name-value pairs of the parameter are optional.</p>  <p>For the workload management (WLM) configuration, you must supply all the name-value pairs in the wlm_json_configuration parameter.</p>
+    /// - On success, responds with [`ModifyClusterParameterGroupOutput`](crate::output::ModifyClusterParameterGroupOutput) with field(s):
+    ///   - [`parameter_group_name(Option<String>)`](crate::output::ModifyClusterParameterGroupOutput::parameter_group_name): <p>The name of the cluster parameter group.</p>
+    ///   - [`parameter_group_status(Option<String>)`](crate::output::ModifyClusterParameterGroupOutput::parameter_group_status): <p>The status of the parameter group. For example, if you made a change to a parameter group name-value pair, then the change could be pending a reboot of an associated cluster.</p>
+    /// - On failure, responds with [`SdkError<ModifyClusterParameterGroupError>`](crate::error::ModifyClusterParameterGroupError)
     pub fn modify_cluster_parameter_group(
         &self,
     ) -> fluent_builders::ModifyClusterParameterGroup<C, M, R> {
         fluent_builders::ModifyClusterParameterGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyClusterSnapshot` operation.
+    /// Constructs a fluent builder for the [`ModifyClusterSnapshot`](crate::client::fluent_builders::ModifyClusterSnapshot) operation.
     ///
-    /// See [`ModifyClusterSnapshot`](crate::client::fluent_builders::ModifyClusterSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyClusterSnapshotInput`](crate::input::ModifyClusterSnapshotInput) with field(s):
+    ///   - [`snapshot_identifier(Option<String>)`](crate::input::ModifyClusterSnapshotInput::snapshot_identifier): <p>The identifier of the snapshot whose setting you want to modify.</p>
+    ///   - [`manual_snapshot_retention_period(Option<i32>)`](crate::input::ModifyClusterSnapshotInput::manual_snapshot_retention_period): <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p>  <p>If the manual snapshot falls outside of the new retention period, you can specify the force option to immediately delete the snapshot.</p>  <p>The value must be either -1 or an integer between 1 and 3,653.</p>
+    ///   - [`force(bool)`](crate::input::ModifyClusterSnapshotInput::force): <p>A Boolean option to override an exception if the retention period has already passed.</p>
+    /// - On success, responds with [`ModifyClusterSnapshotOutput`](crate::output::ModifyClusterSnapshotOutput) with field(s):
+    ///   - [`snapshot(Option<Snapshot>)`](crate::output::ModifyClusterSnapshotOutput::snapshot): <p>Describes a snapshot.</p>
+    /// - On failure, responds with [`SdkError<ModifyClusterSnapshotError>`](crate::error::ModifyClusterSnapshotError)
     pub fn modify_cluster_snapshot(&self) -> fluent_builders::ModifyClusterSnapshot<C, M, R> {
         fluent_builders::ModifyClusterSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyClusterSnapshotSchedule` operation.
+    /// Constructs a fluent builder for the [`ModifyClusterSnapshotSchedule`](crate::client::fluent_builders::ModifyClusterSnapshotSchedule) operation.
     ///
-    /// See [`ModifyClusterSnapshotSchedule`](crate::client::fluent_builders::ModifyClusterSnapshotSchedule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyClusterSnapshotScheduleInput`](crate::input::ModifyClusterSnapshotScheduleInput) with field(s):
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::ModifyClusterSnapshotScheduleInput::cluster_identifier): <p>A unique identifier for the cluster whose snapshot schedule you want to modify. </p>
+    ///   - [`schedule_identifier(Option<String>)`](crate::input::ModifyClusterSnapshotScheduleInput::schedule_identifier): <p>A unique alphanumeric identifier for the schedule that you want to associate with the cluster.</p>
+    ///   - [`disassociate_schedule(Option<bool>)`](crate::input::ModifyClusterSnapshotScheduleInput::disassociate_schedule): <p>A boolean to indicate whether to remove the assoiciation between the cluster and the schedule.</p>
+    /// - On success, responds with [`ModifyClusterSnapshotScheduleOutput`](crate::output::ModifyClusterSnapshotScheduleOutput)
+
+    /// - On failure, responds with [`SdkError<ModifyClusterSnapshotScheduleError>`](crate::error::ModifyClusterSnapshotScheduleError)
     pub fn modify_cluster_snapshot_schedule(
         &self,
     ) -> fluent_builders::ModifyClusterSnapshotSchedule<C, M, R> {
         fluent_builders::ModifyClusterSnapshotSchedule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyClusterSubnetGroup` operation.
+    /// Constructs a fluent builder for the [`ModifyClusterSubnetGroup`](crate::client::fluent_builders::ModifyClusterSubnetGroup) operation.
     ///
-    /// See [`ModifyClusterSubnetGroup`](crate::client::fluent_builders::ModifyClusterSubnetGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyClusterSubnetGroupInput`](crate::input::ModifyClusterSubnetGroupInput) with field(s):
+    ///   - [`cluster_subnet_group_name(Option<String>)`](crate::input::ModifyClusterSubnetGroupInput::cluster_subnet_group_name): <p>The name of the subnet group to be modified.</p>
+    ///   - [`description(Option<String>)`](crate::input::ModifyClusterSubnetGroupInput::description): <p>A text description of the subnet group to be modified.</p>
+    ///   - [`subnet_ids(Option<Vec<String>>)`](crate::input::ModifyClusterSubnetGroupInput::subnet_ids): <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.</p>
+    /// - On success, responds with [`ModifyClusterSubnetGroupOutput`](crate::output::ModifyClusterSubnetGroupOutput) with field(s):
+    ///   - [`cluster_subnet_group(Option<ClusterSubnetGroup>)`](crate::output::ModifyClusterSubnetGroupOutput::cluster_subnet_group): <p>Describes a subnet group.</p>
+    /// - On failure, responds with [`SdkError<ModifyClusterSubnetGroupError>`](crate::error::ModifyClusterSubnetGroupError)
     pub fn modify_cluster_subnet_group(
         &self,
     ) -> fluent_builders::ModifyClusterSubnetGroup<C, M, R> {
         fluent_builders::ModifyClusterSubnetGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyEndpointAccess` operation.
+    /// Constructs a fluent builder for the [`ModifyEndpointAccess`](crate::client::fluent_builders::ModifyEndpointAccess) operation.
     ///
-    /// See [`ModifyEndpointAccess`](crate::client::fluent_builders::ModifyEndpointAccess) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyEndpointAccessInput`](crate::input::ModifyEndpointAccessInput) with field(s):
+    ///   - [`endpoint_name(Option<String>)`](crate::input::ModifyEndpointAccessInput::endpoint_name): <p>The endpoint to be modified.</p>
+    ///   - [`vpc_security_group_ids(Option<Vec<String>>)`](crate::input::ModifyEndpointAccessInput::vpc_security_group_ids): <p>The complete list of VPC security groups associated with the endpoint after the endpoint is modified.</p>
+    /// - On success, responds with [`ModifyEndpointAccessOutput`](crate::output::ModifyEndpointAccessOutput) with field(s):
+    ///   - [`cluster_identifier(Option<String>)`](crate::output::ModifyEndpointAccessOutput::cluster_identifier): <p>The cluster identifier of the cluster associated with the endpoint.</p>
+    ///   - [`resource_owner(Option<String>)`](crate::output::ModifyEndpointAccessOutput::resource_owner): <p>The Amazon Web Services account ID of the owner of the cluster.</p>
+    ///   - [`subnet_group_name(Option<String>)`](crate::output::ModifyEndpointAccessOutput::subnet_group_name): <p>The subnet group name where Amazon Redshift chooses to deploy the endpoint.</p>
+    ///   - [`endpoint_status(Option<String>)`](crate::output::ModifyEndpointAccessOutput::endpoint_status): <p>The status of the endpoint.</p>
+    ///   - [`endpoint_name(Option<String>)`](crate::output::ModifyEndpointAccessOutput::endpoint_name): <p>The name of the endpoint.</p>
+    ///   - [`endpoint_create_time(Option<DateTime>)`](crate::output::ModifyEndpointAccessOutput::endpoint_create_time): <p>The time (UTC) that the endpoint was created.</p>
+    ///   - [`port(i32)`](crate::output::ModifyEndpointAccessOutput::port): <p>The port number on which the cluster accepts incoming connections.</p>
+    ///   - [`address(Option<String>)`](crate::output::ModifyEndpointAccessOutput::address): <p>The DNS address of the endpoint.</p>
+    ///   - [`vpc_security_groups(Option<Vec<VpcSecurityGroupMembership>>)`](crate::output::ModifyEndpointAccessOutput::vpc_security_groups): <p>The security groups associated with the endpoint.</p>
+    ///   - [`vpc_endpoint(Option<VpcEndpoint>)`](crate::output::ModifyEndpointAccessOutput::vpc_endpoint): <p>The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.</p>
+    /// - On failure, responds with [`SdkError<ModifyEndpointAccessError>`](crate::error::ModifyEndpointAccessError)
     pub fn modify_endpoint_access(&self) -> fluent_builders::ModifyEndpointAccess<C, M, R> {
         fluent_builders::ModifyEndpointAccess::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyEventSubscription` operation.
+    /// Constructs a fluent builder for the [`ModifyEventSubscription`](crate::client::fluent_builders::ModifyEventSubscription) operation.
     ///
-    /// See [`ModifyEventSubscription`](crate::client::fluent_builders::ModifyEventSubscription) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyEventSubscriptionInput`](crate::input::ModifyEventSubscriptionInput) with field(s):
+    ///   - [`subscription_name(Option<String>)`](crate::input::ModifyEventSubscriptionInput::subscription_name): <p>The name of the modified Amazon Redshift event notification subscription.</p>
+    ///   - [`sns_topic_arn(Option<String>)`](crate::input::ModifyEventSubscriptionInput::sns_topic_arn): <p>The Amazon Resource Name (ARN) of the SNS topic to be used by the event notification subscription.</p>
+    ///   - [`source_type(Option<String>)`](crate::input::ModifyEventSubscriptionInput::source_type): <p>The type of source that will be generating the events. For example, if you want to be notified of events generated by a cluster, you would set this parameter to cluster. If this value is not specified, events are returned for all Amazon Redshift objects in your Amazon Web Services account. You must specify a source type in order to specify source IDs.</p>  <p>Valid values: cluster, cluster-parameter-group, cluster-security-group, cluster-snapshot, and scheduled-action.</p>
+    ///   - [`source_ids(Option<Vec<String>>)`](crate::input::ModifyEventSubscriptionInput::source_ids): <p>A list of one or more identifiers of Amazon Redshift source objects. All of the objects must be of the same type as was specified in the source type parameter. The event subscription will return only events generated by the specified objects. If not specified, then events are returned for all objects within the source type specified.</p>  <p>Example: my-cluster-1, my-cluster-2</p>  <p>Example: my-snapshot-20131010</p>
+    ///   - [`event_categories(Option<Vec<String>>)`](crate::input::ModifyEventSubscriptionInput::event_categories): <p>Specifies the Amazon Redshift event categories to be published by the event notification subscription.</p>  <p>Values: configuration, management, monitoring, security, pending</p>
+    ///   - [`severity(Option<String>)`](crate::input::ModifyEventSubscriptionInput::severity): <p>Specifies the Amazon Redshift event severity to be published by the event notification subscription.</p>  <p>Values: ERROR, INFO</p>
+    ///   - [`enabled(Option<bool>)`](crate::input::ModifyEventSubscriptionInput::enabled): <p>A Boolean value indicating if the subscription is enabled. <code>true</code> indicates the subscription is enabled </p>
+    /// - On success, responds with [`ModifyEventSubscriptionOutput`](crate::output::ModifyEventSubscriptionOutput) with field(s):
+    ///   - [`event_subscription(Option<EventSubscription>)`](crate::output::ModifyEventSubscriptionOutput::event_subscription): <p>Describes event subscriptions.</p>
+    /// - On failure, responds with [`SdkError<ModifyEventSubscriptionError>`](crate::error::ModifyEventSubscriptionError)
     pub fn modify_event_subscription(&self) -> fluent_builders::ModifyEventSubscription<C, M, R> {
         fluent_builders::ModifyEventSubscription::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyScheduledAction` operation.
+    /// Constructs a fluent builder for the [`ModifyScheduledAction`](crate::client::fluent_builders::ModifyScheduledAction) operation.
     ///
-    /// See [`ModifyScheduledAction`](crate::client::fluent_builders::ModifyScheduledAction) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyScheduledActionInput`](crate::input::ModifyScheduledActionInput) with field(s):
+    ///   - [`scheduled_action_name(Option<String>)`](crate::input::ModifyScheduledActionInput::scheduled_action_name): <p>The name of the scheduled action to modify. </p>
+    ///   - [`target_action(Option<ScheduledActionType>)`](crate::input::ModifyScheduledActionInput::target_action): <p>A modified JSON format of the scheduled action. For more information about this parameter, see <code>ScheduledAction</code>. </p>
+    ///   - [`schedule(Option<String>)`](crate::input::ModifyScheduledActionInput::schedule): <p>A modified schedule in either <code>at( )</code> or <code>cron( )</code> format. For more information about this parameter, see <code>ScheduledAction</code>.</p>
+    ///   - [`iam_role(Option<String>)`](crate::input::ModifyScheduledActionInput::iam_role): <p>A different IAM role to assume to run the target action. For more information about this parameter, see <code>ScheduledAction</code>.</p>
+    ///   - [`scheduled_action_description(Option<String>)`](crate::input::ModifyScheduledActionInput::scheduled_action_description): <p>A modified description of the scheduled action. </p>
+    ///   - [`start_time(Option<DateTime>)`](crate::input::ModifyScheduledActionInput::start_time): <p>A modified start time of the scheduled action. For more information about this parameter, see <code>ScheduledAction</code>. </p>
+    ///   - [`end_time(Option<DateTime>)`](crate::input::ModifyScheduledActionInput::end_time): <p>A modified end time of the scheduled action. For more information about this parameter, see <code>ScheduledAction</code>. </p>
+    ///   - [`enable(Option<bool>)`](crate::input::ModifyScheduledActionInput::enable): <p>A modified enable flag of the scheduled action. If true, the scheduled action is active. If false, the scheduled action is disabled. </p>
+    /// - On success, responds with [`ModifyScheduledActionOutput`](crate::output::ModifyScheduledActionOutput) with field(s):
+    ///   - [`scheduled_action_name(Option<String>)`](crate::output::ModifyScheduledActionOutput::scheduled_action_name): <p>The name of the scheduled action. </p>
+    ///   - [`target_action(Option<ScheduledActionType>)`](crate::output::ModifyScheduledActionOutput::target_action): <p>A JSON format string of the Amazon Redshift API operation with input parameters. </p>  <p>"<code>{\"ResizeCluster\":{\"NodeType\":\"ds2.8xlarge\",\"ClusterIdentifier\":\"my-test-cluster\",\"NumberOfNodes\":3}}</code>". </p>
+    ///   - [`schedule(Option<String>)`](crate::output::ModifyScheduledActionOutput::schedule): <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action. Schedule invocations must be separated by at least one hour.</p>  <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For example, "<code>at(2016-03-04T17:27:00)</code>".</p>  <p>Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+    ///   - [`iam_role(Option<String>)`](crate::output::ModifyScheduledActionOutput::iam_role): <p>The IAM role to assume to run the scheduled action. This IAM role must have permission to run the Amazon Redshift API operation in the scheduled action. This IAM role must allow the Amazon Redshift scheduler (Principal scheduler.redshift.amazonaws.com) to assume permissions on your behalf. For more information about the IAM role to use with the Amazon Redshift scheduler, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using Identity-Based Policies for Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
+    ///   - [`scheduled_action_description(Option<String>)`](crate::output::ModifyScheduledActionOutput::scheduled_action_description): <p>The description of the scheduled action. </p>
+    ///   - [`state(Option<ScheduledActionState>)`](crate::output::ModifyScheduledActionOutput::state): <p>The state of the scheduled action. For example, <code>DISABLED</code>. </p>
+    ///   - [`next_invocations(Option<Vec<DateTime>>)`](crate::output::ModifyScheduledActionOutput::next_invocations): <p>List of times when the scheduled action will run. </p>
+    ///   - [`start_time(Option<DateTime>)`](crate::output::ModifyScheduledActionOutput::start_time): <p>The start time in UTC when the schedule is active. Before this time, the scheduled action does not trigger. </p>
+    ///   - [`end_time(Option<DateTime>)`](crate::output::ModifyScheduledActionOutput::end_time): <p>The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger. </p>
+    /// - On failure, responds with [`SdkError<ModifyScheduledActionError>`](crate::error::ModifyScheduledActionError)
     pub fn modify_scheduled_action(&self) -> fluent_builders::ModifyScheduledAction<C, M, R> {
         fluent_builders::ModifyScheduledAction::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifySnapshotCopyRetentionPeriod` operation.
+    /// Constructs a fluent builder for the [`ModifySnapshotCopyRetentionPeriod`](crate::client::fluent_builders::ModifySnapshotCopyRetentionPeriod) operation.
     ///
-    /// See [`ModifySnapshotCopyRetentionPeriod`](crate::client::fluent_builders::ModifySnapshotCopyRetentionPeriod) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifySnapshotCopyRetentionPeriodInput`](crate::input::ModifySnapshotCopyRetentionPeriodInput) with field(s):
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::ModifySnapshotCopyRetentionPeriodInput::cluster_identifier): <p>The unique identifier of the cluster for which you want to change the retention period for either automated or manual snapshots that are copied to a destination Amazon Web Services Region.</p>  <p>Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.</p>
+    ///   - [`retention_period(i32)`](crate::input::ModifySnapshotCopyRetentionPeriodInput::retention_period): <p>The number of days to retain automated snapshots in the destination Amazon Web Services Region after they are copied from the source Amazon Web Services Region.</p>  <p>By default, this only changes the retention period of copied automated snapshots. </p>  <p>If you decrease the retention period for automated snapshots that are copied to a destination Amazon Web Services Region, Amazon Redshift deletes any existing automated snapshots that were copied to the destination Amazon Web Services Region and that fall outside of the new retention period.</p>  <p>Constraints: Must be at least 1 and no more than 35 for automated snapshots. </p>  <p>If you specify the <code>manual</code> option, only newly copied manual snapshots will have the new retention period. </p>  <p>If you specify the value of -1 newly copied manual snapshots are retained indefinitely.</p>  <p>Constraints: The number of days must be either -1 or an integer between 1 and 3,653 for manual snapshots.</p>
+    ///   - [`manual(bool)`](crate::input::ModifySnapshotCopyRetentionPeriodInput::manual): <p>Indicates whether to apply the snapshot retention period to newly copied manual snapshots instead of automated snapshots.</p>
+    /// - On success, responds with [`ModifySnapshotCopyRetentionPeriodOutput`](crate::output::ModifySnapshotCopyRetentionPeriodOutput) with field(s):
+    ///   - [`cluster(Option<Cluster>)`](crate::output::ModifySnapshotCopyRetentionPeriodOutput::cluster): <p>Describes a cluster.</p>
+    /// - On failure, responds with [`SdkError<ModifySnapshotCopyRetentionPeriodError>`](crate::error::ModifySnapshotCopyRetentionPeriodError)
     pub fn modify_snapshot_copy_retention_period(
         &self,
     ) -> fluent_builders::ModifySnapshotCopyRetentionPeriod<C, M, R> {
         fluent_builders::ModifySnapshotCopyRetentionPeriod::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifySnapshotSchedule` operation.
+    /// Constructs a fluent builder for the [`ModifySnapshotSchedule`](crate::client::fluent_builders::ModifySnapshotSchedule) operation.
     ///
-    /// See [`ModifySnapshotSchedule`](crate::client::fluent_builders::ModifySnapshotSchedule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifySnapshotScheduleInput`](crate::input::ModifySnapshotScheduleInput) with field(s):
+    ///   - [`schedule_identifier(Option<String>)`](crate::input::ModifySnapshotScheduleInput::schedule_identifier): <p>A unique alphanumeric identifier of the schedule to modify.</p>
+    ///   - [`schedule_definitions(Option<Vec<String>>)`](crate::input::ModifySnapshotScheduleInput::schedule_definitions): <p>An updated list of schedule definitions. A schedule definition is made up of schedule expressions, for example, "cron(30 12 *)" or "rate(12 hours)".</p>
+    /// - On success, responds with [`ModifySnapshotScheduleOutput`](crate::output::ModifySnapshotScheduleOutput) with field(s):
+    ///   - [`schedule_definitions(Option<Vec<String>>)`](crate::output::ModifySnapshotScheduleOutput::schedule_definitions): <p>A list of ScheduleDefinitions.</p>
+    ///   - [`schedule_identifier(Option<String>)`](crate::output::ModifySnapshotScheduleOutput::schedule_identifier): <p>A unique identifier for the schedule.</p>
+    ///   - [`schedule_description(Option<String>)`](crate::output::ModifySnapshotScheduleOutput::schedule_description): <p>The description of the schedule.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ModifySnapshotScheduleOutput::tags): <p>An optional set of tags describing the schedule.</p>
+    ///   - [`next_invocations(Option<Vec<DateTime>>)`](crate::output::ModifySnapshotScheduleOutput::next_invocations): <p></p>
+    ///   - [`associated_cluster_count(Option<i32>)`](crate::output::ModifySnapshotScheduleOutput::associated_cluster_count): <p>The number of clusters associated with the schedule.</p>
+    ///   - [`associated_clusters(Option<Vec<ClusterAssociatedToSchedule>>)`](crate::output::ModifySnapshotScheduleOutput::associated_clusters): <p>A list of clusters associated with the schedule. A maximum of 100 clusters is returned.</p>
+    /// - On failure, responds with [`SdkError<ModifySnapshotScheduleError>`](crate::error::ModifySnapshotScheduleError)
     pub fn modify_snapshot_schedule(&self) -> fluent_builders::ModifySnapshotSchedule<C, M, R> {
         fluent_builders::ModifySnapshotSchedule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyUsageLimit` operation.
+    /// Constructs a fluent builder for the [`ModifyUsageLimit`](crate::client::fluent_builders::ModifyUsageLimit) operation.
     ///
-    /// See [`ModifyUsageLimit`](crate::client::fluent_builders::ModifyUsageLimit) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyUsageLimitInput`](crate::input::ModifyUsageLimitInput) with field(s):
+    ///   - [`usage_limit_id(Option<String>)`](crate::input::ModifyUsageLimitInput::usage_limit_id): <p>The identifier of the usage limit to modify.</p>
+    ///   - [`amount(Option<i64>)`](crate::input::ModifyUsageLimitInput::amount): <p>The new limit amount. For more information about this parameter, see <code>UsageLimit</code>. </p>
+    ///   - [`breach_action(Option<UsageLimitBreachAction>)`](crate::input::ModifyUsageLimitInput::breach_action): <p>The new action that Amazon Redshift takes when the limit is reached. For more information about this parameter, see <code>UsageLimit</code>. </p>
+    /// - On success, responds with [`ModifyUsageLimitOutput`](crate::output::ModifyUsageLimitOutput) with field(s):
+    ///   - [`usage_limit_id(Option<String>)`](crate::output::ModifyUsageLimitOutput::usage_limit_id): <p>The identifier of the usage limit.</p>
+    ///   - [`cluster_identifier(Option<String>)`](crate::output::ModifyUsageLimitOutput::cluster_identifier): <p>The identifier of the cluster with a usage limit.</p>
+    ///   - [`feature_type(Option<UsageLimitFeatureType>)`](crate::output::ModifyUsageLimitOutput::feature_type): <p>The Amazon Redshift feature to which the limit applies.</p>
+    ///   - [`limit_type(Option<UsageLimitLimitType>)`](crate::output::ModifyUsageLimitOutput::limit_type): <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size.</p>
+    ///   - [`amount(i64)`](crate::output::ModifyUsageLimitOutput::amount): <p>The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB).</p>
+    ///   - [`period(Option<UsageLimitPeriod>)`](crate::output::ModifyUsageLimitOutput::period): <p>The time period that the amount applies to. A <code>weekly</code> period begins on Sunday. The default is <code>monthly</code>. </p>
+    ///   - [`breach_action(Option<UsageLimitBreachAction>)`](crate::output::ModifyUsageLimitOutput::breach_action): <p>The action that Amazon Redshift takes when the limit is reached. Possible values are: </p>  <ul>   <li> <p> <b>log</b> - To log an event in a system table. The default is log.</p> </li>   <li> <p> <b>emit-metric</b> - To emit CloudWatch metrics.</p> </li>   <li> <p> <b>disable</b> - To disable the feature until the next usage period begins.</p> </li>  </ul>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ModifyUsageLimitOutput::tags): <p>A list of tag instances.</p>
+    /// - On failure, responds with [`SdkError<ModifyUsageLimitError>`](crate::error::ModifyUsageLimitError)
     pub fn modify_usage_limit(&self) -> fluent_builders::ModifyUsageLimit<C, M, R> {
         fluent_builders::ModifyUsageLimit::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PauseCluster` operation.
+    /// Constructs a fluent builder for the [`PauseCluster`](crate::client::fluent_builders::PauseCluster) operation.
     ///
-    /// See [`PauseCluster`](crate::client::fluent_builders::PauseCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PauseClusterInput`](crate::input::PauseClusterInput) with field(s):
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::PauseClusterInput::cluster_identifier): <p>The identifier of the cluster to be paused.</p>
+    /// - On success, responds with [`PauseClusterOutput`](crate::output::PauseClusterOutput) with field(s):
+    ///   - [`cluster(Option<Cluster>)`](crate::output::PauseClusterOutput::cluster): <p>Describes a cluster.</p>
+    /// - On failure, responds with [`SdkError<PauseClusterError>`](crate::error::PauseClusterError)
     pub fn pause_cluster(&self) -> fluent_builders::PauseCluster<C, M, R> {
         fluent_builders::PauseCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PurchaseReservedNodeOffering` operation.
+    /// Constructs a fluent builder for the [`PurchaseReservedNodeOffering`](crate::client::fluent_builders::PurchaseReservedNodeOffering) operation.
     ///
-    /// See [`PurchaseReservedNodeOffering`](crate::client::fluent_builders::PurchaseReservedNodeOffering) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PurchaseReservedNodeOfferingInput`](crate::input::PurchaseReservedNodeOfferingInput) with field(s):
+    ///   - [`reserved_node_offering_id(Option<String>)`](crate::input::PurchaseReservedNodeOfferingInput::reserved_node_offering_id): <p>The unique identifier of the reserved node offering you want to purchase.</p>
+    ///   - [`node_count(Option<i32>)`](crate::input::PurchaseReservedNodeOfferingInput::node_count): <p>The number of reserved nodes that you want to purchase.</p>  <p>Default: <code>1</code> </p>
+    /// - On success, responds with [`PurchaseReservedNodeOfferingOutput`](crate::output::PurchaseReservedNodeOfferingOutput) with field(s):
+    ///   - [`reserved_node(Option<ReservedNode>)`](crate::output::PurchaseReservedNodeOfferingOutput::reserved_node): <p>Describes a reserved node. You can call the <code>DescribeReservedNodeOfferings</code> API to obtain the available reserved node offerings. </p>
+    /// - On failure, responds with [`SdkError<PurchaseReservedNodeOfferingError>`](crate::error::PurchaseReservedNodeOfferingError)
     pub fn purchase_reserved_node_offering(
         &self,
     ) -> fluent_builders::PurchaseReservedNodeOffering<C, M, R> {
         fluent_builders::PurchaseReservedNodeOffering::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RebootCluster` operation.
+    /// Constructs a fluent builder for the [`RebootCluster`](crate::client::fluent_builders::RebootCluster) operation.
     ///
-    /// See [`RebootCluster`](crate::client::fluent_builders::RebootCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RebootClusterInput`](crate::input::RebootClusterInput) with field(s):
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::RebootClusterInput::cluster_identifier): <p>The cluster identifier.</p>
+    /// - On success, responds with [`RebootClusterOutput`](crate::output::RebootClusterOutput) with field(s):
+    ///   - [`cluster(Option<Cluster>)`](crate::output::RebootClusterOutput::cluster): <p>Describes a cluster.</p>
+    /// - On failure, responds with [`SdkError<RebootClusterError>`](crate::error::RebootClusterError)
     pub fn reboot_cluster(&self) -> fluent_builders::RebootCluster<C, M, R> {
         fluent_builders::RebootCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RejectDataShare` operation.
+    /// Constructs a fluent builder for the [`RejectDataShare`](crate::client::fluent_builders::RejectDataShare) operation.
     ///
-    /// See [`RejectDataShare`](crate::client::fluent_builders::RejectDataShare) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RejectDataShareInput`](crate::input::RejectDataShareInput) with field(s):
+    ///   - [`data_share_arn(Option<String>)`](crate::input::RejectDataShareInput::data_share_arn): <p>The Amazon Resource Name (ARN) of the datashare to reject.</p>
+    /// - On success, responds with [`RejectDataShareOutput`](crate::output::RejectDataShareOutput) with field(s):
+    ///   - [`data_share_arn(Option<String>)`](crate::output::RejectDataShareOutput::data_share_arn): <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
+    ///   - [`producer_arn(Option<String>)`](crate::output::RejectDataShareOutput::producer_arn): <p>The Amazon Resource Name (ARN) of the producer.</p>
+    ///   - [`allow_publicly_accessible_consumers(bool)`](crate::output::RejectDataShareOutput::allow_publicly_accessible_consumers): <p>A value that specifies whether the datashare can be shared to a publicly accessible cluster.</p>
+    ///   - [`data_share_associations(Option<Vec<DataShareAssociation>>)`](crate::output::RejectDataShareOutput::data_share_associations): <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+    ///   - [`managed_by(Option<String>)`](crate::output::RejectDataShareOutput::managed_by): <p>The identifier of a datashare to show its managing entity.</p>
+    /// - On failure, responds with [`SdkError<RejectDataShareError>`](crate::error::RejectDataShareError)
     pub fn reject_data_share(&self) -> fluent_builders::RejectDataShare<C, M, R> {
         fluent_builders::RejectDataShare::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ResetClusterParameterGroup` operation.
+    /// Constructs a fluent builder for the [`ResetClusterParameterGroup`](crate::client::fluent_builders::ResetClusterParameterGroup) operation.
     ///
-    /// See [`ResetClusterParameterGroup`](crate::client::fluent_builders::ResetClusterParameterGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ResetClusterParameterGroupInput`](crate::input::ResetClusterParameterGroupInput) with field(s):
+    ///   - [`parameter_group_name(Option<String>)`](crate::input::ResetClusterParameterGroupInput::parameter_group_name): <p>The name of the cluster parameter group to be reset.</p>
+    ///   - [`reset_all_parameters(bool)`](crate::input::ResetClusterParameterGroupInput::reset_all_parameters): <p>If <code>true</code>, all parameters in the specified parameter group will be reset to their default values. </p>  <p>Default: <code>true</code> </p>
+    ///   - [`parameters(Option<Vec<Parameter>>)`](crate::input::ResetClusterParameterGroupInput::parameters): <p>An array of names of parameters to be reset. If <i>ResetAllParameters</i> option is not used, then at least one parameter name must be supplied. </p>  <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>
+    /// - On success, responds with [`ResetClusterParameterGroupOutput`](crate::output::ResetClusterParameterGroupOutput) with field(s):
+    ///   - [`parameter_group_name(Option<String>)`](crate::output::ResetClusterParameterGroupOutput::parameter_group_name): <p>The name of the cluster parameter group.</p>
+    ///   - [`parameter_group_status(Option<String>)`](crate::output::ResetClusterParameterGroupOutput::parameter_group_status): <p>The status of the parameter group. For example, if you made a change to a parameter group name-value pair, then the change could be pending a reboot of an associated cluster.</p>
+    /// - On failure, responds with [`SdkError<ResetClusterParameterGroupError>`](crate::error::ResetClusterParameterGroupError)
     pub fn reset_cluster_parameter_group(
         &self,
     ) -> fluent_builders::ResetClusterParameterGroup<C, M, R> {
         fluent_builders::ResetClusterParameterGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ResizeCluster` operation.
+    /// Constructs a fluent builder for the [`ResizeCluster`](crate::client::fluent_builders::ResizeCluster) operation.
     ///
-    /// See [`ResizeCluster`](crate::client::fluent_builders::ResizeCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ResizeClusterInput`](crate::input::ResizeClusterInput) with field(s):
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::ResizeClusterInput::cluster_identifier): <p>The unique identifier for the cluster to resize.</p>
+    ///   - [`cluster_type(Option<String>)`](crate::input::ResizeClusterInput::cluster_type): <p>The new cluster type for the specified cluster.</p>
+    ///   - [`node_type(Option<String>)`](crate::input::ResizeClusterInput::node_type): <p>The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.</p>
+    ///   - [`number_of_nodes(Option<i32>)`](crate::input::ResizeClusterInput::number_of_nodes): <p>The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.</p>
+    ///   - [`classic(Option<bool>)`](crate::input::ResizeClusterInput::classic): <p>A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code>, the resize type is elastic. </p>
+    ///   - [`reserved_node_id(Option<String>)`](crate::input::ResizeClusterInput::reserved_node_id): <p>The identifier of the reserved node.</p>
+    ///   - [`target_reserved_node_offering_id(Option<String>)`](crate::input::ResizeClusterInput::target_reserved_node_offering_id): <p>The identifier of the target reserved node offering.</p>
+    /// - On success, responds with [`ResizeClusterOutput`](crate::output::ResizeClusterOutput) with field(s):
+    ///   - [`cluster(Option<Cluster>)`](crate::output::ResizeClusterOutput::cluster): <p>Describes a cluster.</p>
+    /// - On failure, responds with [`SdkError<ResizeClusterError>`](crate::error::ResizeClusterError)
     pub fn resize_cluster(&self) -> fluent_builders::ResizeCluster<C, M, R> {
         fluent_builders::ResizeCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RestoreFromClusterSnapshot` operation.
+    /// Constructs a fluent builder for the [`RestoreFromClusterSnapshot`](crate::client::fluent_builders::RestoreFromClusterSnapshot) operation.
     ///
-    /// See [`RestoreFromClusterSnapshot`](crate::client::fluent_builders::RestoreFromClusterSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RestoreFromClusterSnapshotInput`](crate::input::RestoreFromClusterSnapshotInput) with field(s):
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::RestoreFromClusterSnapshotInput::cluster_identifier): <p>The identifier of the cluster that will be created from restoring the snapshot.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li>   <li> <p>Alphabetic characters must be lowercase.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>   <li> <p>Must be unique for all clusters within an Amazon Web Services account.</p> </li>  </ul>
+    ///   - [`snapshot_identifier(Option<String>)`](crate::input::RestoreFromClusterSnapshotInput::snapshot_identifier): <p>The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive.</p>  <p>Example: <code>my-snapshot-id</code> </p>
+    ///   - [`snapshot_cluster_identifier(Option<String>)`](crate::input::RestoreFromClusterSnapshotInput::snapshot_cluster_identifier): <p>The name of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    ///   - [`port(Option<i32>)`](crate::input::RestoreFromClusterSnapshotInput::port): <p>The port number on which the cluster accepts connections.</p>  <p>Default: The same port as the original cluster.</p>  <p>Constraints: Must be between <code>1115</code> and <code>65535</code>.</p>
+    ///   - [`availability_zone(Option<String>)`](crate::input::RestoreFromClusterSnapshotInput::availability_zone): <p>The Amazon EC2 Availability Zone in which to restore the cluster.</p>  <p>Default: A random, system-chosen Availability Zone.</p>  <p>Example: <code>us-east-2a</code> </p>
+    ///   - [`allow_version_upgrade(Option<bool>)`](crate::input::RestoreFromClusterSnapshotInput::allow_version_upgrade): <p>If <code>true</code>, major version upgrades can be applied during the maintenance window to the Amazon Redshift engine that is running on the cluster. </p>  <p>Default: <code>true</code> </p>
+    ///   - [`cluster_subnet_group_name(Option<String>)`](crate::input::RestoreFromClusterSnapshotInput::cluster_subnet_group_name): <p>The name of the subnet group where you want to cluster restored.</p>  <p>A snapshot of cluster in VPC can be restored only in VPC. Therefore, you must provide subnet group name where you want the cluster restored.</p>
+    ///   - [`publicly_accessible(Option<bool>)`](crate::input::RestoreFromClusterSnapshotInput::publicly_accessible): <p>If <code>true</code>, the cluster can be accessed from a public network. </p>
+    ///   - [`owner_account(Option<String>)`](crate::input::RestoreFromClusterSnapshotInput::owner_account): <p>The Amazon Web Services account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot.</p>
+    ///   - [`hsm_client_certificate_identifier(Option<String>)`](crate::input::RestoreFromClusterSnapshotInput::hsm_client_certificate_identifier): <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.</p>
+    ///   - [`hsm_configuration_identifier(Option<String>)`](crate::input::RestoreFromClusterSnapshotInput::hsm_configuration_identifier): <p>Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
+    ///   - [`elastic_ip(Option<String>)`](crate::input::RestoreFromClusterSnapshotInput::elastic_ip): <p>The elastic IP (EIP) address for the cluster.</p>
+    ///   - [`cluster_parameter_group_name(Option<String>)`](crate::input::RestoreFromClusterSnapshotInput::cluster_parameter_group_name): <p>The name of the parameter group to be associated with this cluster.</p>  <p>Default: The default Amazon Redshift cluster parameter group. For information about the default parameter group, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working with Amazon Redshift Parameter Groups</a>.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must be 1 to 255 alphanumeric characters or hyphens.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul>
+    ///   - [`cluster_security_groups(Option<Vec<String>>)`](crate::input::RestoreFromClusterSnapshotInput::cluster_security_groups): <p>A list of security groups to be associated with this cluster.</p>  <p>Default: The default cluster security group for Amazon Redshift.</p>  <p>Cluster security groups only apply to clusters outside of VPCs.</p>
+    ///   - [`vpc_security_group_ids(Option<Vec<String>>)`](crate::input::RestoreFromClusterSnapshotInput::vpc_security_group_ids): <p>A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster.</p>  <p>Default: The default VPC security group is associated with the cluster.</p>  <p>VPC security groups only apply to clusters in VPCs.</p>
+    ///   - [`preferred_maintenance_window(Option<String>)`](crate::input::RestoreFromClusterSnapshotInput::preferred_maintenance_window): <p>The weekly time range (in UTC) during which automated cluster maintenance can occur.</p>  <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>  <p> Default: The value selected for the cluster from which the snapshot was taken. For more information about the time blocks for each region, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-maintenance-windows">Maintenance Windows</a> in Amazon Redshift Cluster Management Guide. </p>  <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>  <p>Constraints: Minimum 30-minute window.</p>
+    ///   - [`automated_snapshot_retention_period(Option<i32>)`](crate::input::RestoreFromClusterSnapshotInput::automated_snapshot_retention_period): <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>. </p>  <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p>  <p>Default: The value selected for the cluster from which the snapshot was taken.</p>  <p>Constraints: Must be a value from 0 to 35.</p>
+    ///   - [`manual_snapshot_retention_period(Option<i32>)`](crate::input::RestoreFromClusterSnapshotInput::manual_snapshot_retention_period): <p>The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained indefinitely. This setting doesn't change the retention period of existing snapshots.</p>  <p>The value must be either -1 or an integer between 1 and 3,653.</p>
+    ///   - [`kms_key_id(Option<String>)`](crate::input::RestoreFromClusterSnapshotInput::kms_key_id): <p>The Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster that you restore from a shared snapshot.</p>
+    ///   - [`node_type(Option<String>)`](crate::input::RestoreFromClusterSnapshotInput::node_type): <p>The node type that the restored cluster will be provisioned with.</p>  <p>Default: The node type of the cluster from which the snapshot was taken. You can modify this if you are using any DS node type. In that case, you can choose to restore into another DS node type of the same size. For example, you can restore ds1.8xlarge into ds2.8xlarge, or ds1.xlarge into ds2.xlarge. If you have a DC instance type, you must restore into that same instance type and size. In other words, you can only restore a dc1.large instance type into another dc1.large instance type or dc2.large instance type. You can't restore dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlarge cluster, then resize to a dc2.8large cluster. For more information about node types, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes"> About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
+    ///   - [`enhanced_vpc_routing(Option<bool>)`](crate::input::RestoreFromClusterSnapshotInput::enhanced_vpc_routing): <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>  <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>  <p>Default: false</p>
+    ///   - [`additional_info(Option<String>)`](crate::input::RestoreFromClusterSnapshotInput::additional_info): <p>Reserved.</p>
+    ///   - [`iam_roles(Option<Vec<String>>)`](crate::input::RestoreFromClusterSnapshotInput::iam_roles): <p>A list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services. You must supply the IAM roles in their Amazon Resource Name (ARN) format. You can supply up to 10 IAM roles in a single request.</p>  <p>A cluster can have up to 10 IAM roles associated at any time.</p>
+    ///   - [`maintenance_track_name(Option<String>)`](crate::input::RestoreFromClusterSnapshotInput::maintenance_track_name): <p>The name of the maintenance track for the restored cluster. When you take a snapshot, the snapshot inherits the <code>MaintenanceTrack</code> value from the cluster. The snapshot might be on a different track than the cluster that was the source for the snapshot. For example, suppose that you take a snapshot of a cluster that is on the current track and then change the cluster to be on the trailing track. In this case, the snapshot and the source cluster are on different tracks.</p>
+    ///   - [`snapshot_schedule_identifier(Option<String>)`](crate::input::RestoreFromClusterSnapshotInput::snapshot_schedule_identifier): <p>A unique identifier for the snapshot schedule.</p>
+    ///   - [`number_of_nodes(Option<i32>)`](crate::input::RestoreFromClusterSnapshotInput::number_of_nodes): <p>The number of nodes specified when provisioning the restored cluster.</p>
+    ///   - [`availability_zone_relocation(Option<bool>)`](crate::input::RestoreFromClusterSnapshotInput::availability_zone_relocation): <p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is restored.</p>
+    ///   - [`aqua_configuration_status(Option<AquaConfigurationStatus>)`](crate::input::RestoreFromClusterSnapshotInput::aqua_configuration_status): <p>The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) after the cluster is restored. Possible values include the following.</p>  <ul>   <li> <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p> </li>   <li> <p>disabled - Don't use AQUA. </p> </li>   <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li>  </ul>
+    ///   - [`default_iam_role_arn(Option<String>)`](crate::input::RestoreFromClusterSnapshotInput::default_iam_role_arn): <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified while it was restored from a snapshot.</p>
+    ///   - [`reserved_node_id(Option<String>)`](crate::input::RestoreFromClusterSnapshotInput::reserved_node_id): <p>The identifier of the target reserved node offering.</p>
+    ///   - [`target_reserved_node_offering_id(Option<String>)`](crate::input::RestoreFromClusterSnapshotInput::target_reserved_node_offering_id): <p>The identifier of the target reserved node offering.</p>
+    /// - On success, responds with [`RestoreFromClusterSnapshotOutput`](crate::output::RestoreFromClusterSnapshotOutput) with field(s):
+    ///   - [`cluster(Option<Cluster>)`](crate::output::RestoreFromClusterSnapshotOutput::cluster): <p>Describes a cluster.</p>
+    /// - On failure, responds with [`SdkError<RestoreFromClusterSnapshotError>`](crate::error::RestoreFromClusterSnapshotError)
     pub fn restore_from_cluster_snapshot(
         &self,
     ) -> fluent_builders::RestoreFromClusterSnapshot<C, M, R> {
         fluent_builders::RestoreFromClusterSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RestoreTableFromClusterSnapshot` operation.
+    /// Constructs a fluent builder for the [`RestoreTableFromClusterSnapshot`](crate::client::fluent_builders::RestoreTableFromClusterSnapshot) operation.
     ///
-    /// See [`RestoreTableFromClusterSnapshot`](crate::client::fluent_builders::RestoreTableFromClusterSnapshot) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RestoreTableFromClusterSnapshotInput`](crate::input::RestoreTableFromClusterSnapshotInput) with field(s):
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::RestoreTableFromClusterSnapshotInput::cluster_identifier): <p>The identifier of the Amazon Redshift cluster to restore the table to.</p>
+    ///   - [`snapshot_identifier(Option<String>)`](crate::input::RestoreTableFromClusterSnapshotInput::snapshot_identifier): <p>The identifier of the snapshot to restore the table from. This snapshot must have been created from the Amazon Redshift cluster specified by the <code>ClusterIdentifier</code> parameter.</p>
+    ///   - [`source_database_name(Option<String>)`](crate::input::RestoreTableFromClusterSnapshotInput::source_database_name): <p>The name of the source database that contains the table to restore from.</p>
+    ///   - [`source_schema_name(Option<String>)`](crate::input::RestoreTableFromClusterSnapshotInput::source_schema_name): <p>The name of the source schema that contains the table to restore from. If you do not specify a <code>SourceSchemaName</code> value, the default is <code>public</code>.</p>
+    ///   - [`source_table_name(Option<String>)`](crate::input::RestoreTableFromClusterSnapshotInput::source_table_name): <p>The name of the source table to restore from.</p>
+    ///   - [`target_database_name(Option<String>)`](crate::input::RestoreTableFromClusterSnapshotInput::target_database_name): <p>The name of the database to restore the table to.</p>
+    ///   - [`target_schema_name(Option<String>)`](crate::input::RestoreTableFromClusterSnapshotInput::target_schema_name): <p>The name of the schema to restore the table to.</p>
+    ///   - [`new_table_name(Option<String>)`](crate::input::RestoreTableFromClusterSnapshotInput::new_table_name): <p>The name of the table to create as a result of the current request.</p>
+    ///   - [`enable_case_sensitive_identifier(Option<bool>)`](crate::input::RestoreTableFromClusterSnapshotInput::enable_case_sensitive_identifier): <p>Indicates whether name identifiers for database, schema, and table are case sensitive. If <code>true</code>, the names are case sensitive. If <code>false</code> (default), the names are not case sensitive.</p>
+    /// - On success, responds with [`RestoreTableFromClusterSnapshotOutput`](crate::output::RestoreTableFromClusterSnapshotOutput) with field(s):
+    ///   - [`table_restore_status(Option<TableRestoreStatus>)`](crate::output::RestoreTableFromClusterSnapshotOutput::table_restore_status): <p>Describes the status of a <code>RestoreTableFromClusterSnapshot</code> operation.</p>
+    /// - On failure, responds with [`SdkError<RestoreTableFromClusterSnapshotError>`](crate::error::RestoreTableFromClusterSnapshotError)
     pub fn restore_table_from_cluster_snapshot(
         &self,
     ) -> fluent_builders::RestoreTableFromClusterSnapshot<C, M, R> {
         fluent_builders::RestoreTableFromClusterSnapshot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ResumeCluster` operation.
+    /// Constructs a fluent builder for the [`ResumeCluster`](crate::client::fluent_builders::ResumeCluster) operation.
     ///
-    /// See [`ResumeCluster`](crate::client::fluent_builders::ResumeCluster) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ResumeClusterInput`](crate::input::ResumeClusterInput) with field(s):
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::ResumeClusterInput::cluster_identifier): <p>The identifier of the cluster to be resumed.</p>
+    /// - On success, responds with [`ResumeClusterOutput`](crate::output::ResumeClusterOutput) with field(s):
+    ///   - [`cluster(Option<Cluster>)`](crate::output::ResumeClusterOutput::cluster): <p>Describes a cluster.</p>
+    /// - On failure, responds with [`SdkError<ResumeClusterError>`](crate::error::ResumeClusterError)
     pub fn resume_cluster(&self) -> fluent_builders::ResumeCluster<C, M, R> {
         fluent_builders::ResumeCluster::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RevokeClusterSecurityGroupIngress` operation.
+    /// Constructs a fluent builder for the [`RevokeClusterSecurityGroupIngress`](crate::client::fluent_builders::RevokeClusterSecurityGroupIngress) operation.
     ///
-    /// See [`RevokeClusterSecurityGroupIngress`](crate::client::fluent_builders::RevokeClusterSecurityGroupIngress) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RevokeClusterSecurityGroupIngressInput`](crate::input::RevokeClusterSecurityGroupIngressInput) with field(s):
+    ///   - [`cluster_security_group_name(Option<String>)`](crate::input::RevokeClusterSecurityGroupIngressInput::cluster_security_group_name): <p>The name of the security Group from which to revoke the ingress rule.</p>
+    ///   - [`cidrip(Option<String>)`](crate::input::RevokeClusterSecurityGroupIngressInput::cidrip): <p>The IP range for which to revoke access. This range must be a valid Classless Inter-Domain Routing (CIDR) block of IP addresses. If <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code> and <code>EC2SecurityGroupOwnerId</code> cannot be provided. </p>
+    ///   - [`ec2_security_group_name(Option<String>)`](crate::input::RevokeClusterSecurityGroupIngressInput::ec2_security_group_name): <p>The name of the EC2 Security Group whose access is to be revoked. If <code>EC2SecurityGroupName</code> is specified, <code>EC2SecurityGroupOwnerId</code> must also be provided and <code>CIDRIP</code> cannot be provided. </p>
+    ///   - [`ec2_security_group_owner_id(Option<String>)`](crate::input::RevokeClusterSecurityGroupIngressInput::ec2_security_group_owner_id): <p>The Amazon Web Services account number of the owner of the security group specified in the <code>EC2SecurityGroupName</code> parameter. The Amazon Web Services access key ID is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is specified, <code>EC2SecurityGroupName</code> must also be provided. and <code>CIDRIP</code> cannot be provided. </p>  <p>Example: <code>111122223333</code> </p>
+    /// - On success, responds with [`RevokeClusterSecurityGroupIngressOutput`](crate::output::RevokeClusterSecurityGroupIngressOutput) with field(s):
+    ///   - [`cluster_security_group(Option<ClusterSecurityGroup>)`](crate::output::RevokeClusterSecurityGroupIngressOutput::cluster_security_group): <p>Describes a security group.</p>
+    /// - On failure, responds with [`SdkError<RevokeClusterSecurityGroupIngressError>`](crate::error::RevokeClusterSecurityGroupIngressError)
     pub fn revoke_cluster_security_group_ingress(
         &self,
     ) -> fluent_builders::RevokeClusterSecurityGroupIngress<C, M, R> {
         fluent_builders::RevokeClusterSecurityGroupIngress::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RevokeEndpointAccess` operation.
+    /// Constructs a fluent builder for the [`RevokeEndpointAccess`](crate::client::fluent_builders::RevokeEndpointAccess) operation.
     ///
-    /// See [`RevokeEndpointAccess`](crate::client::fluent_builders::RevokeEndpointAccess) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RevokeEndpointAccessInput`](crate::input::RevokeEndpointAccessInput) with field(s):
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::RevokeEndpointAccessInput::cluster_identifier): <p>The cluster to revoke access from.</p>
+    ///   - [`account(Option<String>)`](crate::input::RevokeEndpointAccessInput::account): <p>The Amazon Web Services account ID whose access is to be revoked.</p>
+    ///   - [`vpc_ids(Option<Vec<String>>)`](crate::input::RevokeEndpointAccessInput::vpc_ids): <p>The virtual private cloud (VPC) identifiers for which access is to be revoked.</p>
+    ///   - [`force(bool)`](crate::input::RevokeEndpointAccessInput::force): <p>Indicates whether to force the revoke action. If true, the Redshift-managed VPC endpoints associated with the endpoint authorization are also deleted.</p>
+    /// - On success, responds with [`RevokeEndpointAccessOutput`](crate::output::RevokeEndpointAccessOutput) with field(s):
+    ///   - [`grantor(Option<String>)`](crate::output::RevokeEndpointAccessOutput::grantor): <p>The Amazon Web Services account ID of the cluster owner.</p>
+    ///   - [`grantee(Option<String>)`](crate::output::RevokeEndpointAccessOutput::grantee): <p>The Amazon Web Services account ID of the grantee of the cluster.</p>
+    ///   - [`cluster_identifier(Option<String>)`](crate::output::RevokeEndpointAccessOutput::cluster_identifier): <p>The cluster identifier.</p>
+    ///   - [`authorize_time(Option<DateTime>)`](crate::output::RevokeEndpointAccessOutput::authorize_time): <p>The time (UTC) when the authorization was created.</p>
+    ///   - [`cluster_status(Option<String>)`](crate::output::RevokeEndpointAccessOutput::cluster_status): <p>The status of the cluster.</p>
+    ///   - [`status(Option<AuthorizationStatus>)`](crate::output::RevokeEndpointAccessOutput::status): <p>The status of the authorization action.</p>
+    ///   - [`allowed_all_vp_cs(bool)`](crate::output::RevokeEndpointAccessOutput::allowed_all_vp_cs): <p>Indicates whether all VPCs in the grantee account are allowed access to the cluster.</p>
+    ///   - [`allowed_vp_cs(Option<Vec<String>>)`](crate::output::RevokeEndpointAccessOutput::allowed_vp_cs): <p>The VPCs allowed access to the cluster.</p>
+    ///   - [`endpoint_count(i32)`](crate::output::RevokeEndpointAccessOutput::endpoint_count): <p>The number of Redshift-managed VPC endpoints created for the authorization.</p>
+    /// - On failure, responds with [`SdkError<RevokeEndpointAccessError>`](crate::error::RevokeEndpointAccessError)
     pub fn revoke_endpoint_access(&self) -> fluent_builders::RevokeEndpointAccess<C, M, R> {
         fluent_builders::RevokeEndpointAccess::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RevokeSnapshotAccess` operation.
+    /// Constructs a fluent builder for the [`RevokeSnapshotAccess`](crate::client::fluent_builders::RevokeSnapshotAccess) operation.
     ///
-    /// See [`RevokeSnapshotAccess`](crate::client::fluent_builders::RevokeSnapshotAccess) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RevokeSnapshotAccessInput`](crate::input::RevokeSnapshotAccessInput) with field(s):
+    ///   - [`snapshot_identifier(Option<String>)`](crate::input::RevokeSnapshotAccessInput::snapshot_identifier): <p>The identifier of the snapshot that the account can no longer access.</p>
+    ///   - [`snapshot_cluster_identifier(Option<String>)`](crate::input::RevokeSnapshotAccessInput::snapshot_cluster_identifier): <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    ///   - [`account_with_restore_access(Option<String>)`](crate::input::RevokeSnapshotAccessInput::account_with_restore_access): <p>The identifier of the Amazon Web Services account that can no longer restore the specified snapshot.</p>
+    /// - On success, responds with [`RevokeSnapshotAccessOutput`](crate::output::RevokeSnapshotAccessOutput) with field(s):
+    ///   - [`snapshot(Option<Snapshot>)`](crate::output::RevokeSnapshotAccessOutput::snapshot): <p>Describes a snapshot.</p>
+    /// - On failure, responds with [`SdkError<RevokeSnapshotAccessError>`](crate::error::RevokeSnapshotAccessError)
     pub fn revoke_snapshot_access(&self) -> fluent_builders::RevokeSnapshotAccess<C, M, R> {
         fluent_builders::RevokeSnapshotAccess::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RotateEncryptionKey` operation.
+    /// Constructs a fluent builder for the [`RotateEncryptionKey`](crate::client::fluent_builders::RotateEncryptionKey) operation.
     ///
-    /// See [`RotateEncryptionKey`](crate::client::fluent_builders::RotateEncryptionKey) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RotateEncryptionKeyInput`](crate::input::RotateEncryptionKeyInput) with field(s):
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::RotateEncryptionKeyInput::cluster_identifier): <p>The unique identifier of the cluster that you want to rotate the encryption keys for.</p>  <p>Constraints: Must be the name of valid cluster that has encryption enabled.</p>
+    /// - On success, responds with [`RotateEncryptionKeyOutput`](crate::output::RotateEncryptionKeyOutput) with field(s):
+    ///   - [`cluster(Option<Cluster>)`](crate::output::RotateEncryptionKeyOutput::cluster): <p>Describes a cluster.</p>
+    /// - On failure, responds with [`SdkError<RotateEncryptionKeyError>`](crate::error::RotateEncryptionKeyError)
     pub fn rotate_encryption_key(&self) -> fluent_builders::RotateEncryptionKey<C, M, R> {
         fluent_builders::RotateEncryptionKey::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdatePartnerStatus` operation.
+    /// Constructs a fluent builder for the [`UpdatePartnerStatus`](crate::client::fluent_builders::UpdatePartnerStatus) operation.
     ///
-    /// See [`UpdatePartnerStatus`](crate::client::fluent_builders::UpdatePartnerStatus) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdatePartnerStatusInput`](crate::input::UpdatePartnerStatusInput) with field(s):
+    ///   - [`account_id(Option<String>)`](crate::input::UpdatePartnerStatusInput::account_id): <p>The Amazon Web Services account ID that owns the cluster.</p>
+    ///   - [`cluster_identifier(Option<String>)`](crate::input::UpdatePartnerStatusInput::cluster_identifier): <p>The cluster identifier of the cluster whose partner integration status is being updated.</p>
+    ///   - [`database_name(Option<String>)`](crate::input::UpdatePartnerStatusInput::database_name): <p>The name of the database whose partner integration status is being updated.</p>
+    ///   - [`partner_name(Option<String>)`](crate::input::UpdatePartnerStatusInput::partner_name): <p>The name of the partner whose integration status is being updated.</p>
+    ///   - [`status(Option<PartnerIntegrationStatus>)`](crate::input::UpdatePartnerStatusInput::status): <p>The value of the updated status.</p>
+    ///   - [`status_message(Option<String>)`](crate::input::UpdatePartnerStatusInput::status_message): <p>The status message provided by the partner.</p>
+    /// - On success, responds with [`UpdatePartnerStatusOutput`](crate::output::UpdatePartnerStatusOutput) with field(s):
+    ///   - [`database_name(Option<String>)`](crate::output::UpdatePartnerStatusOutput::database_name): <p>The name of the database that receives data from the partner.</p>
+    ///   - [`partner_name(Option<String>)`](crate::output::UpdatePartnerStatusOutput::partner_name): <p>The name of the partner that is authorized to send data.</p>
+    /// - On failure, responds with [`SdkError<UpdatePartnerStatusError>`](crate::error::UpdatePartnerStatusError)
     pub fn update_partner_status(&self) -> fluent_builders::UpdatePartnerStatus<C, M, R> {
         fluent_builders::UpdatePartnerStatus::new(self.handle.clone())
     }

@@ -83,256 +83,451 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AddListenerCertificates` operation.
+    /// Constructs a fluent builder for the [`AddListenerCertificates`](crate::client::fluent_builders::AddListenerCertificates) operation.
     ///
-    /// See [`AddListenerCertificates`](crate::client::fluent_builders::AddListenerCertificates) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AddListenerCertificatesInput`](crate::input::AddListenerCertificatesInput) with field(s):
+    ///   - [`listener_arn(Option<String>)`](crate::input::AddListenerCertificatesInput::listener_arn): <p>The Amazon Resource Name (ARN) of the listener.</p>
+    ///   - [`certificates(Option<Vec<Certificate>>)`](crate::input::AddListenerCertificatesInput::certificates): <p>The certificate to add. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
+    /// - On success, responds with [`AddListenerCertificatesOutput`](crate::output::AddListenerCertificatesOutput) with field(s):
+    ///   - [`certificates(Option<Vec<Certificate>>)`](crate::output::AddListenerCertificatesOutput::certificates): <p>Information about the certificates in the certificate list.</p>
+    /// - On failure, responds with [`SdkError<AddListenerCertificatesError>`](crate::error::AddListenerCertificatesError)
     pub fn add_listener_certificates(&self) -> fluent_builders::AddListenerCertificates<C, M, R> {
         fluent_builders::AddListenerCertificates::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `AddTags` operation.
+    /// Constructs a fluent builder for the [`AddTags`](crate::client::fluent_builders::AddTags) operation.
     ///
-    /// See [`AddTags`](crate::client::fluent_builders::AddTags) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AddTagsInput`](crate::input::AddTagsInput) with field(s):
+    ///   - [`resource_arns(Option<Vec<String>>)`](crate::input::AddTagsInput::resource_arns): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::AddTagsInput::tags): <p>The tags.</p>
+    /// - On success, responds with [`AddTagsOutput`](crate::output::AddTagsOutput)
+
+    /// - On failure, responds with [`SdkError<AddTagsError>`](crate::error::AddTagsError)
     pub fn add_tags(&self) -> fluent_builders::AddTags<C, M, R> {
         fluent_builders::AddTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateListener` operation.
+    /// Constructs a fluent builder for the [`CreateListener`](crate::client::fluent_builders::CreateListener) operation.
     ///
-    /// See [`CreateListener`](crate::client::fluent_builders::CreateListener) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateListenerInput`](crate::input::CreateListenerInput) with field(s):
+    ///   - [`load_balancer_arn(Option<String>)`](crate::input::CreateListenerInput::load_balancer_arn): <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    ///   - [`protocol(Option<ProtocolEnum>)`](crate::input::CreateListenerInput::protocol): <p>The protocol for connections from clients to the load balancer. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, and TCP_UDP. You can’t specify the UDP or TCP_UDP protocol if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
+    ///   - [`port(Option<i32>)`](crate::input::CreateListenerInput::port): <p>The port on which the load balancer is listening. You cannot specify a port for a Gateway Load Balancer.</p>
+    ///   - [`ssl_policy(Option<String>)`](crate::input::CreateListenerInput::ssl_policy): <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+    ///   - [`certificates(Option<Vec<Certificate>>)`](crate::input::CreateListenerInput::certificates): <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
+    ///   - [`default_actions(Option<Vec<Action>>)`](crate::input::CreateListenerInput::default_actions): <p>The actions for the default rule.</p>
+    ///   - [`alpn_policy(Option<Vec<String>>)`](crate::input::CreateListenerInput::alpn_policy): <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>  <ul>   <li> <p> <code>HTTP1Only</code> </p> </li>   <li> <p> <code>HTTP2Only</code> </p> </li>   <li> <p> <code>HTTP2Optional</code> </p> </li>   <li> <p> <code>HTTP2Preferred</code> </p> </li>   <li> <p> <code>None</code> </p> </li>  </ul>  <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateListenerInput::tags): <p>The tags to assign to the listener.</p>
+    /// - On success, responds with [`CreateListenerOutput`](crate::output::CreateListenerOutput) with field(s):
+    ///   - [`listeners(Option<Vec<Listener>>)`](crate::output::CreateListenerOutput::listeners): <p>Information about the listener.</p>
+    /// - On failure, responds with [`SdkError<CreateListenerError>`](crate::error::CreateListenerError)
     pub fn create_listener(&self) -> fluent_builders::CreateListener<C, M, R> {
         fluent_builders::CreateListener::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateLoadBalancer` operation.
+    /// Constructs a fluent builder for the [`CreateLoadBalancer`](crate::client::fluent_builders::CreateLoadBalancer) operation.
     ///
-    /// See [`CreateLoadBalancer`](crate::client::fluent_builders::CreateLoadBalancer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateLoadBalancerInput`](crate::input::CreateLoadBalancerInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateLoadBalancerInput::name): <p>The name of the load balancer.</p>  <p>This name must be unique per region per account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, must not begin or end with a hyphen, and must not begin with "internal-".</p>
+    ///   - [`subnets(Option<Vec<String>>)`](crate::input::CreateLoadBalancerInput::subnets): <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>  <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p>  <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>  <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>  <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p>  <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones.</p>
+    ///   - [`subnet_mappings(Option<Vec<SubnetMapping>>)`](crate::input::CreateLoadBalancerInput::subnet_mappings): <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>  <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>  <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>  <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>  <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p>  <p>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>
+    ///   - [`security_groups(Option<Vec<String>>)`](crate::input::CreateLoadBalancerInput::security_groups): <p>[Application Load Balancers] The IDs of the security groups for the load balancer.</p>
+    ///   - [`scheme(Option<LoadBalancerSchemeEnum>)`](crate::input::CreateLoadBalancerInput::scheme): <p>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the internet.</p>  <p>The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route requests only from clients with access to the VPC for the load balancer.</p>  <p>The default is an Internet-facing load balancer.</p>  <p>You cannot specify a scheme for a Gateway Load Balancer.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateLoadBalancerInput::tags): <p>The tags to assign to the load balancer.</p>
+    ///   - [`r#type(Option<LoadBalancerTypeEnum>)`](crate::input::CreateLoadBalancerInput::r#type): <p>The type of load balancer. The default is <code>application</code>.</p>
+    ///   - [`ip_address_type(Option<IpAddressType>)`](crate::input::CreateLoadBalancerInput::ip_address_type): <p>The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). </p>
+    ///   - [`customer_owned_ipv4_pool(Option<String>)`](crate::input::CreateLoadBalancerInput::customer_owned_ipv4_pool): <p>[Application Load Balancers on Outposts] The ID of the customer-owned address pool (CoIP pool).</p>
+    /// - On success, responds with [`CreateLoadBalancerOutput`](crate::output::CreateLoadBalancerOutput) with field(s):
+    ///   - [`load_balancers(Option<Vec<LoadBalancer>>)`](crate::output::CreateLoadBalancerOutput::load_balancers): <p>Information about the load balancer.</p>
+    /// - On failure, responds with [`SdkError<CreateLoadBalancerError>`](crate::error::CreateLoadBalancerError)
     pub fn create_load_balancer(&self) -> fluent_builders::CreateLoadBalancer<C, M, R> {
         fluent_builders::CreateLoadBalancer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateRule` operation.
+    /// Constructs a fluent builder for the [`CreateRule`](crate::client::fluent_builders::CreateRule) operation.
     ///
-    /// See [`CreateRule`](crate::client::fluent_builders::CreateRule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateRuleInput`](crate::input::CreateRuleInput) with field(s):
+    ///   - [`listener_arn(Option<String>)`](crate::input::CreateRuleInput::listener_arn): <p>The Amazon Resource Name (ARN) of the listener.</p>
+    ///   - [`conditions(Option<Vec<RuleCondition>>)`](crate::input::CreateRuleInput::conditions): <p>The conditions.</p>
+    ///   - [`priority(Option<i32>)`](crate::input::CreateRuleInput::priority): <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
+    ///   - [`actions(Option<Vec<Action>>)`](crate::input::CreateRuleInput::actions): <p>The actions.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateRuleInput::tags): <p>The tags to assign to the rule.</p>
+    /// - On success, responds with [`CreateRuleOutput`](crate::output::CreateRuleOutput) with field(s):
+    ///   - [`rules(Option<Vec<Rule>>)`](crate::output::CreateRuleOutput::rules): <p>Information about the rule.</p>
+    /// - On failure, responds with [`SdkError<CreateRuleError>`](crate::error::CreateRuleError)
     pub fn create_rule(&self) -> fluent_builders::CreateRule<C, M, R> {
         fluent_builders::CreateRule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateTargetGroup` operation.
+    /// Constructs a fluent builder for the [`CreateTargetGroup`](crate::client::fluent_builders::CreateTargetGroup) operation.
     ///
-    /// See [`CreateTargetGroup`](crate::client::fluent_builders::CreateTargetGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateTargetGroupInput`](crate::input::CreateTargetGroupInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateTargetGroupInput::name): <p>The name of the target group.</p>  <p>This name must be unique per region per account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and must not begin or end with a hyphen.</p>
+    ///   - [`protocol(Option<ProtocolEnum>)`](crate::input::CreateTargetGroupInput::protocol): <p>The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, or TCP_UDP. For Gateway Load Balancers, the supported protocol is GENEVE. A TCP_UDP listener must be associated with a TCP_UDP target group. If the target is a Lambda function, this parameter does not apply.</p>
+    ///   - [`protocol_version(Option<String>)`](crate::input::CreateTargetGroupInput::protocol_version): <p>[HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send requests to targets using gRPC. Specify <code>HTTP2</code> to send requests to targets using HTTP/2. The default is <code>HTTP1</code>, which sends requests to targets using HTTP/1.1.</p>
+    ///   - [`port(Option<i32>)`](crate::input::CreateTargetGroupInput::port): <p>The port on which the targets receive traffic. This port is used unless you specify a port override when registering the target. If the target is a Lambda function, this parameter does not apply. If the protocol is GENEVE, the supported port is 6081.</p>
+    ///   - [`vpc_id(Option<String>)`](crate::input::CreateTargetGroupInput::vpc_id): <p>The identifier of the virtual private cloud (VPC). If the target is a Lambda function, this parameter does not apply. Otherwise, this parameter is required.</p>
+    ///   - [`health_check_protocol(Option<ProtocolEnum>)`](crate::input::CreateTargetGroupInput::health_check_protocol): <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
+    ///   - [`health_check_port(Option<String>)`](crate::input::CreateTargetGroupInput::health_check_port): <p>The port the load balancer uses when performing health checks on targets. If the protocol is HTTP, HTTPS, TCP, TLS, UDP, or TCP_UDP, the default is <code>traffic-port</code>, which is the port on which each target receives traffic from the load balancer. If the protocol is GENEVE, the default is port 80.</p>
+    ///   - [`health_check_enabled(Option<bool>)`](crate::input::CreateTargetGroupInput::health_check_enabled): <p>Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and cannot be disabled.</p>
+    ///   - [`health_check_path(Option<String>)`](crate::input::CreateTargetGroupInput::health_check_path): <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>  <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>  <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
+    ///   - [`health_check_interval_seconds(Option<i32>)`](crate::input::CreateTargetGroupInput::health_check_interval_seconds): <p>The approximate amount of time, in seconds, between health checks of an individual target. If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the supported values are 10 and 30 seconds. If the target group protocol is HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.</p>
+    ///   - [`health_check_timeout_seconds(Option<i32>)`](crate::input::CreateTargetGroupInput::health_check_timeout_seconds): <p>The amount of time, in seconds, during which no response from a target means a failed health check. For target groups with a protocol of HTTP, HTTPS, or GENEVE, the default is 5 seconds. For target groups with a protocol of TCP or TLS, this value must be 6 seconds for HTTP health checks and 10 seconds for TCP and HTTPS health checks. If the target type is <code>lambda</code>, the default is 30 seconds.</p>
+    ///   - [`healthy_threshold_count(Option<i32>)`](crate::input::CreateTargetGroupInput::healthy_threshold_count): <p>The number of consecutive health checks successes required before considering an unhealthy target healthy. For target groups with a protocol of HTTP or HTTPS, the default is 5. For target groups with a protocol of TCP, TLS, or GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 5.</p>
+    ///   - [`unhealthy_threshold_count(Option<i32>)`](crate::input::CreateTargetGroupInput::unhealthy_threshold_count): <p>The number of consecutive health check failures required before considering a target unhealthy. If the target group protocol is HTTP or HTTPS, the default is 2. If the target group protocol is TCP or TLS, this value must be the same as the healthy threshold count. If the target group protocol is GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 2.</p>
+    ///   - [`matcher(Option<Matcher>)`](crate::input::CreateTargetGroupInput::matcher): <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target.</p>
+    ///   - [`target_type(Option<TargetTypeEnum>)`](crate::input::CreateTargetGroupInput::target_type): <p>The type of target that you must specify when registering targets with this target group. You can't specify targets for a target group using more than one target type.</p>  <ul>   <li> <p> <code>instance</code> - Register targets by instance ID. This is the default value.</p> </li>   <li> <p> <code>ip</code> - Register targets by IP address. You can specify IP addresses from the subnets of the virtual private cloud (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li>   <li> <p> <code>lambda</code> - Register a single Lambda function as a target.</p> </li>   <li> <p> <code>alb</code> - Register a single Application Load Balancer as a target.</p> </li>  </ul>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateTargetGroupInput::tags): <p>The tags to assign to the target group.</p>
+    ///   - [`ip_address_type(Option<TargetGroupIpAddressTypeEnum>)`](crate::input::CreateTargetGroupInput::ip_address_type): <p>The type of IP address used for this target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
+    /// - On success, responds with [`CreateTargetGroupOutput`](crate::output::CreateTargetGroupOutput) with field(s):
+    ///   - [`target_groups(Option<Vec<TargetGroup>>)`](crate::output::CreateTargetGroupOutput::target_groups): <p>Information about the target group.</p>
+    /// - On failure, responds with [`SdkError<CreateTargetGroupError>`](crate::error::CreateTargetGroupError)
     pub fn create_target_group(&self) -> fluent_builders::CreateTargetGroup<C, M, R> {
         fluent_builders::CreateTargetGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteListener` operation.
+    /// Constructs a fluent builder for the [`DeleteListener`](crate::client::fluent_builders::DeleteListener) operation.
     ///
-    /// See [`DeleteListener`](crate::client::fluent_builders::DeleteListener) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteListenerInput`](crate::input::DeleteListenerInput) with field(s):
+    ///   - [`listener_arn(Option<String>)`](crate::input::DeleteListenerInput::listener_arn): <p>The Amazon Resource Name (ARN) of the listener.</p>
+    /// - On success, responds with [`DeleteListenerOutput`](crate::output::DeleteListenerOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteListenerError>`](crate::error::DeleteListenerError)
     pub fn delete_listener(&self) -> fluent_builders::DeleteListener<C, M, R> {
         fluent_builders::DeleteListener::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteLoadBalancer` operation.
+    /// Constructs a fluent builder for the [`DeleteLoadBalancer`](crate::client::fluent_builders::DeleteLoadBalancer) operation.
     ///
-    /// See [`DeleteLoadBalancer`](crate::client::fluent_builders::DeleteLoadBalancer) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteLoadBalancerInput`](crate::input::DeleteLoadBalancerInput) with field(s):
+    ///   - [`load_balancer_arn(Option<String>)`](crate::input::DeleteLoadBalancerInput::load_balancer_arn): <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    /// - On success, responds with [`DeleteLoadBalancerOutput`](crate::output::DeleteLoadBalancerOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteLoadBalancerError>`](crate::error::DeleteLoadBalancerError)
     pub fn delete_load_balancer(&self) -> fluent_builders::DeleteLoadBalancer<C, M, R> {
         fluent_builders::DeleteLoadBalancer::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteRule` operation.
+    /// Constructs a fluent builder for the [`DeleteRule`](crate::client::fluent_builders::DeleteRule) operation.
     ///
-    /// See [`DeleteRule`](crate::client::fluent_builders::DeleteRule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteRuleInput`](crate::input::DeleteRuleInput) with field(s):
+    ///   - [`rule_arn(Option<String>)`](crate::input::DeleteRuleInput::rule_arn): <p>The Amazon Resource Name (ARN) of the rule.</p>
+    /// - On success, responds with [`DeleteRuleOutput`](crate::output::DeleteRuleOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteRuleError>`](crate::error::DeleteRuleError)
     pub fn delete_rule(&self) -> fluent_builders::DeleteRule<C, M, R> {
         fluent_builders::DeleteRule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteTargetGroup` operation.
+    /// Constructs a fluent builder for the [`DeleteTargetGroup`](crate::client::fluent_builders::DeleteTargetGroup) operation.
     ///
-    /// See [`DeleteTargetGroup`](crate::client::fluent_builders::DeleteTargetGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteTargetGroupInput`](crate::input::DeleteTargetGroupInput) with field(s):
+    ///   - [`target_group_arn(Option<String>)`](crate::input::DeleteTargetGroupInput::target_group_arn): <p>The Amazon Resource Name (ARN) of the target group.</p>
+    /// - On success, responds with [`DeleteTargetGroupOutput`](crate::output::DeleteTargetGroupOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteTargetGroupError>`](crate::error::DeleteTargetGroupError)
     pub fn delete_target_group(&self) -> fluent_builders::DeleteTargetGroup<C, M, R> {
         fluent_builders::DeleteTargetGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeregisterTargets` operation.
+    /// Constructs a fluent builder for the [`DeregisterTargets`](crate::client::fluent_builders::DeregisterTargets) operation.
     ///
-    /// See [`DeregisterTargets`](crate::client::fluent_builders::DeregisterTargets) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeregisterTargetsInput`](crate::input::DeregisterTargetsInput) with field(s):
+    ///   - [`target_group_arn(Option<String>)`](crate::input::DeregisterTargetsInput::target_group_arn): <p>The Amazon Resource Name (ARN) of the target group.</p>
+    ///   - [`targets(Option<Vec<TargetDescription>>)`](crate::input::DeregisterTargetsInput::targets): <p>The targets. If you specified a port override when you registered a target, you must specify both the target ID and the port when you deregister it.</p>
+    /// - On success, responds with [`DeregisterTargetsOutput`](crate::output::DeregisterTargetsOutput)
+
+    /// - On failure, responds with [`SdkError<DeregisterTargetsError>`](crate::error::DeregisterTargetsError)
     pub fn deregister_targets(&self) -> fluent_builders::DeregisterTargets<C, M, R> {
         fluent_builders::DeregisterTargets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeAccountLimits` operation.
+    /// Constructs a fluent builder for the [`DescribeAccountLimits`](crate::client::fluent_builders::DescribeAccountLimits) operation.
     ///
-    /// See [`DescribeAccountLimits`](crate::client::fluent_builders::DescribeAccountLimits) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeAccountLimitsInput`](crate::input::DescribeAccountLimitsInput) with field(s):
+    ///   - [`marker(Option<String>)`](crate::input::DescribeAccountLimitsInput::marker): <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    ///   - [`page_size(Option<i32>)`](crate::input::DescribeAccountLimitsInput::page_size): <p>The maximum number of results to return with this call.</p>
+    /// - On success, responds with [`DescribeAccountLimitsOutput`](crate::output::DescribeAccountLimitsOutput) with field(s):
+    ///   - [`limits(Option<Vec<Limit>>)`](crate::output::DescribeAccountLimitsOutput::limits): <p>Information about the limits.</p>
+    ///   - [`next_marker(Option<String>)`](crate::output::DescribeAccountLimitsOutput::next_marker): <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
+    /// - On failure, responds with [`SdkError<DescribeAccountLimitsError>`](crate::error::DescribeAccountLimitsError)
     pub fn describe_account_limits(&self) -> fluent_builders::DescribeAccountLimits<C, M, R> {
         fluent_builders::DescribeAccountLimits::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeListenerCertificates` operation.
+    /// Constructs a fluent builder for the [`DescribeListenerCertificates`](crate::client::fluent_builders::DescribeListenerCertificates) operation.
     ///
-    /// See [`DescribeListenerCertificates`](crate::client::fluent_builders::DescribeListenerCertificates) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeListenerCertificatesInput`](crate::input::DescribeListenerCertificatesInput) with field(s):
+    ///   - [`listener_arn(Option<String>)`](crate::input::DescribeListenerCertificatesInput::listener_arn): <p>The Amazon Resource Names (ARN) of the listener.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeListenerCertificatesInput::marker): <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    ///   - [`page_size(Option<i32>)`](crate::input::DescribeListenerCertificatesInput::page_size): <p>The maximum number of results to return with this call.</p>
+    /// - On success, responds with [`DescribeListenerCertificatesOutput`](crate::output::DescribeListenerCertificatesOutput) with field(s):
+    ///   - [`certificates(Option<Vec<Certificate>>)`](crate::output::DescribeListenerCertificatesOutput::certificates): <p>Information about the certificates.</p>
+    ///   - [`next_marker(Option<String>)`](crate::output::DescribeListenerCertificatesOutput::next_marker): <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
+    /// - On failure, responds with [`SdkError<DescribeListenerCertificatesError>`](crate::error::DescribeListenerCertificatesError)
     pub fn describe_listener_certificates(
         &self,
     ) -> fluent_builders::DescribeListenerCertificates<C, M, R> {
         fluent_builders::DescribeListenerCertificates::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeListeners` operation.
-    ///
-    /// See [`DescribeListeners`](crate::client::fluent_builders::DescribeListeners) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeListeners`](crate::client::fluent_builders::DescribeListeners) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeListeners::into_paginator).
+    ///
+    /// - Takes [`DescribeListenersInput`](crate::input::DescribeListenersInput) with field(s):
+    ///   - [`load_balancer_arn(Option<String>)`](crate::input::DescribeListenersInput::load_balancer_arn): <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    ///   - [`listener_arns(Option<Vec<String>>)`](crate::input::DescribeListenersInput::listener_arns): <p>The Amazon Resource Names (ARN) of the listeners.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeListenersInput::marker): <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    ///   - [`page_size(Option<i32>)`](crate::input::DescribeListenersInput::page_size): <p>The maximum number of results to return with this call.</p>
+    /// - On success, responds with [`DescribeListenersOutput`](crate::output::DescribeListenersOutput) with field(s):
+    ///   - [`listeners(Option<Vec<Listener>>)`](crate::output::DescribeListenersOutput::listeners): <p>Information about the listeners.</p>
+    ///   - [`next_marker(Option<String>)`](crate::output::DescribeListenersOutput::next_marker): <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
+    /// - On failure, responds with [`SdkError<DescribeListenersError>`](crate::error::DescribeListenersError)
     pub fn describe_listeners(&self) -> fluent_builders::DescribeListeners<C, M, R> {
         fluent_builders::DescribeListeners::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeLoadBalancerAttributes` operation.
+    /// Constructs a fluent builder for the [`DescribeLoadBalancerAttributes`](crate::client::fluent_builders::DescribeLoadBalancerAttributes) operation.
     ///
-    /// See [`DescribeLoadBalancerAttributes`](crate::client::fluent_builders::DescribeLoadBalancerAttributes) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeLoadBalancerAttributesInput`](crate::input::DescribeLoadBalancerAttributesInput) with field(s):
+    ///   - [`load_balancer_arn(Option<String>)`](crate::input::DescribeLoadBalancerAttributesInput::load_balancer_arn): <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    /// - On success, responds with [`DescribeLoadBalancerAttributesOutput`](crate::output::DescribeLoadBalancerAttributesOutput) with field(s):
+    ///   - [`attributes(Option<Vec<LoadBalancerAttribute>>)`](crate::output::DescribeLoadBalancerAttributesOutput::attributes): <p>Information about the load balancer attributes.</p>
+    /// - On failure, responds with [`SdkError<DescribeLoadBalancerAttributesError>`](crate::error::DescribeLoadBalancerAttributesError)
     pub fn describe_load_balancer_attributes(
         &self,
     ) -> fluent_builders::DescribeLoadBalancerAttributes<C, M, R> {
         fluent_builders::DescribeLoadBalancerAttributes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeLoadBalancers` operation.
-    ///
-    /// See [`DescribeLoadBalancers`](crate::client::fluent_builders::DescribeLoadBalancers) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeLoadBalancers`](crate::client::fluent_builders::DescribeLoadBalancers) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeLoadBalancers::into_paginator).
+    ///
+    /// - Takes [`DescribeLoadBalancersInput`](crate::input::DescribeLoadBalancersInput) with field(s):
+    ///   - [`load_balancer_arns(Option<Vec<String>>)`](crate::input::DescribeLoadBalancersInput::load_balancer_arns): <p>The Amazon Resource Names (ARN) of the load balancers. You can specify up to 20 load balancers in a single call.</p>
+    ///   - [`names(Option<Vec<String>>)`](crate::input::DescribeLoadBalancersInput::names): <p>The names of the load balancers.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeLoadBalancersInput::marker): <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    ///   - [`page_size(Option<i32>)`](crate::input::DescribeLoadBalancersInput::page_size): <p>The maximum number of results to return with this call.</p>
+    /// - On success, responds with [`DescribeLoadBalancersOutput`](crate::output::DescribeLoadBalancersOutput) with field(s):
+    ///   - [`load_balancers(Option<Vec<LoadBalancer>>)`](crate::output::DescribeLoadBalancersOutput::load_balancers): <p>Information about the load balancers.</p>
+    ///   - [`next_marker(Option<String>)`](crate::output::DescribeLoadBalancersOutput::next_marker): <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
+    /// - On failure, responds with [`SdkError<DescribeLoadBalancersError>`](crate::error::DescribeLoadBalancersError)
     pub fn describe_load_balancers(&self) -> fluent_builders::DescribeLoadBalancers<C, M, R> {
         fluent_builders::DescribeLoadBalancers::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeRules` operation.
+    /// Constructs a fluent builder for the [`DescribeRules`](crate::client::fluent_builders::DescribeRules) operation.
     ///
-    /// See [`DescribeRules`](crate::client::fluent_builders::DescribeRules) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeRulesInput`](crate::input::DescribeRulesInput) with field(s):
+    ///   - [`listener_arn(Option<String>)`](crate::input::DescribeRulesInput::listener_arn): <p>The Amazon Resource Name (ARN) of the listener.</p>
+    ///   - [`rule_arns(Option<Vec<String>>)`](crate::input::DescribeRulesInput::rule_arns): <p>The Amazon Resource Names (ARN) of the rules.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeRulesInput::marker): <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    ///   - [`page_size(Option<i32>)`](crate::input::DescribeRulesInput::page_size): <p>The maximum number of results to return with this call.</p>
+    /// - On success, responds with [`DescribeRulesOutput`](crate::output::DescribeRulesOutput) with field(s):
+    ///   - [`rules(Option<Vec<Rule>>)`](crate::output::DescribeRulesOutput::rules): <p>Information about the rules.</p>
+    ///   - [`next_marker(Option<String>)`](crate::output::DescribeRulesOutput::next_marker): <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
+    /// - On failure, responds with [`SdkError<DescribeRulesError>`](crate::error::DescribeRulesError)
     pub fn describe_rules(&self) -> fluent_builders::DescribeRules<C, M, R> {
         fluent_builders::DescribeRules::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeSSLPolicies` operation.
+    /// Constructs a fluent builder for the [`DescribeSSLPolicies`](crate::client::fluent_builders::DescribeSSLPolicies) operation.
     ///
-    /// See [`DescribeSSLPolicies`](crate::client::fluent_builders::DescribeSSLPolicies) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeSslPoliciesInput`](crate::input::DescribeSslPoliciesInput) with field(s):
+    ///   - [`names(Option<Vec<String>>)`](crate::input::DescribeSslPoliciesInput::names): <p>The names of the policies.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeSslPoliciesInput::marker): <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    ///   - [`page_size(Option<i32>)`](crate::input::DescribeSslPoliciesInput::page_size): <p>The maximum number of results to return with this call.</p>
+    ///   - [`load_balancer_type(Option<LoadBalancerTypeEnum>)`](crate::input::DescribeSslPoliciesInput::load_balancer_type): <p> The type of load balancer. The default lists the SSL policies for all load balancers.</p>
+    /// - On success, responds with [`DescribeSslPoliciesOutput`](crate::output::DescribeSslPoliciesOutput) with field(s):
+    ///   - [`ssl_policies(Option<Vec<SslPolicy>>)`](crate::output::DescribeSslPoliciesOutput::ssl_policies): <p>Information about the security policies.</p>
+    ///   - [`next_marker(Option<String>)`](crate::output::DescribeSslPoliciesOutput::next_marker): <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
+    /// - On failure, responds with [`SdkError<DescribeSSLPoliciesError>`](crate::error::DescribeSSLPoliciesError)
     pub fn describe_ssl_policies(&self) -> fluent_builders::DescribeSSLPolicies<C, M, R> {
         fluent_builders::DescribeSSLPolicies::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeTags` operation.
+    /// Constructs a fluent builder for the [`DescribeTags`](crate::client::fluent_builders::DescribeTags) operation.
     ///
-    /// See [`DescribeTags`](crate::client::fluent_builders::DescribeTags) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeTagsInput`](crate::input::DescribeTagsInput) with field(s):
+    ///   - [`resource_arns(Option<Vec<String>>)`](crate::input::DescribeTagsInput::resource_arns): <p>The Amazon Resource Names (ARN) of the resources. You can specify up to 20 resources in a single call.</p>
+    /// - On success, responds with [`DescribeTagsOutput`](crate::output::DescribeTagsOutput) with field(s):
+    ///   - [`tag_descriptions(Option<Vec<TagDescription>>)`](crate::output::DescribeTagsOutput::tag_descriptions): <p>Information about the tags.</p>
+    /// - On failure, responds with [`SdkError<DescribeTagsError>`](crate::error::DescribeTagsError)
     pub fn describe_tags(&self) -> fluent_builders::DescribeTags<C, M, R> {
         fluent_builders::DescribeTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeTargetGroupAttributes` operation.
+    /// Constructs a fluent builder for the [`DescribeTargetGroupAttributes`](crate::client::fluent_builders::DescribeTargetGroupAttributes) operation.
     ///
-    /// See [`DescribeTargetGroupAttributes`](crate::client::fluent_builders::DescribeTargetGroupAttributes) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeTargetGroupAttributesInput`](crate::input::DescribeTargetGroupAttributesInput) with field(s):
+    ///   - [`target_group_arn(Option<String>)`](crate::input::DescribeTargetGroupAttributesInput::target_group_arn): <p>The Amazon Resource Name (ARN) of the target group.</p>
+    /// - On success, responds with [`DescribeTargetGroupAttributesOutput`](crate::output::DescribeTargetGroupAttributesOutput) with field(s):
+    ///   - [`attributes(Option<Vec<TargetGroupAttribute>>)`](crate::output::DescribeTargetGroupAttributesOutput::attributes): <p>Information about the target group attributes</p>
+    /// - On failure, responds with [`SdkError<DescribeTargetGroupAttributesError>`](crate::error::DescribeTargetGroupAttributesError)
     pub fn describe_target_group_attributes(
         &self,
     ) -> fluent_builders::DescribeTargetGroupAttributes<C, M, R> {
         fluent_builders::DescribeTargetGroupAttributes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeTargetGroups` operation.
-    ///
-    /// See [`DescribeTargetGroups`](crate::client::fluent_builders::DescribeTargetGroups) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`DescribeTargetGroups`](crate::client::fluent_builders::DescribeTargetGroups) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::DescribeTargetGroups::into_paginator).
+    ///
+    /// - Takes [`DescribeTargetGroupsInput`](crate::input::DescribeTargetGroupsInput) with field(s):
+    ///   - [`load_balancer_arn(Option<String>)`](crate::input::DescribeTargetGroupsInput::load_balancer_arn): <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    ///   - [`target_group_arns(Option<Vec<String>>)`](crate::input::DescribeTargetGroupsInput::target_group_arns): <p>The Amazon Resource Names (ARN) of the target groups.</p>
+    ///   - [`names(Option<Vec<String>>)`](crate::input::DescribeTargetGroupsInput::names): <p>The names of the target groups.</p>
+    ///   - [`marker(Option<String>)`](crate::input::DescribeTargetGroupsInput::marker): <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
+    ///   - [`page_size(Option<i32>)`](crate::input::DescribeTargetGroupsInput::page_size): <p>The maximum number of results to return with this call.</p>
+    /// - On success, responds with [`DescribeTargetGroupsOutput`](crate::output::DescribeTargetGroupsOutput) with field(s):
+    ///   - [`target_groups(Option<Vec<TargetGroup>>)`](crate::output::DescribeTargetGroupsOutput::target_groups): <p>Information about the target groups.</p>
+    ///   - [`next_marker(Option<String>)`](crate::output::DescribeTargetGroupsOutput::next_marker): <p>If there are additional results, this is the marker for the next set of results. Otherwise, this is null.</p>
+    /// - On failure, responds with [`SdkError<DescribeTargetGroupsError>`](crate::error::DescribeTargetGroupsError)
     pub fn describe_target_groups(&self) -> fluent_builders::DescribeTargetGroups<C, M, R> {
         fluent_builders::DescribeTargetGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeTargetHealth` operation.
+    /// Constructs a fluent builder for the [`DescribeTargetHealth`](crate::client::fluent_builders::DescribeTargetHealth) operation.
     ///
-    /// See [`DescribeTargetHealth`](crate::client::fluent_builders::DescribeTargetHealth) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeTargetHealthInput`](crate::input::DescribeTargetHealthInput) with field(s):
+    ///   - [`target_group_arn(Option<String>)`](crate::input::DescribeTargetHealthInput::target_group_arn): <p>The Amazon Resource Name (ARN) of the target group.</p>
+    ///   - [`targets(Option<Vec<TargetDescription>>)`](crate::input::DescribeTargetHealthInput::targets): <p>The targets.</p>
+    /// - On success, responds with [`DescribeTargetHealthOutput`](crate::output::DescribeTargetHealthOutput) with field(s):
+    ///   - [`target_health_descriptions(Option<Vec<TargetHealthDescription>>)`](crate::output::DescribeTargetHealthOutput::target_health_descriptions): <p>Information about the health of the targets.</p>
+    /// - On failure, responds with [`SdkError<DescribeTargetHealthError>`](crate::error::DescribeTargetHealthError)
     pub fn describe_target_health(&self) -> fluent_builders::DescribeTargetHealth<C, M, R> {
         fluent_builders::DescribeTargetHealth::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyListener` operation.
+    /// Constructs a fluent builder for the [`ModifyListener`](crate::client::fluent_builders::ModifyListener) operation.
     ///
-    /// See [`ModifyListener`](crate::client::fluent_builders::ModifyListener) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyListenerInput`](crate::input::ModifyListenerInput) with field(s):
+    ///   - [`listener_arn(Option<String>)`](crate::input::ModifyListenerInput::listener_arn): <p>The Amazon Resource Name (ARN) of the listener.</p>
+    ///   - [`port(Option<i32>)`](crate::input::ModifyListenerInput::port): <p>The port for connections from clients to the load balancer. You cannot specify a port for a Gateway Load Balancer.</p>
+    ///   - [`protocol(Option<ProtocolEnum>)`](crate::input::ModifyListenerInput::protocol): <p>The protocol for connections from clients to the load balancer. Application Load Balancers support the HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, and TCP_UDP protocols. You can’t change the protocol to UDP or TCP_UDP if dual-stack mode is enabled. You cannot specify a protocol for a Gateway Load Balancer.</p>
+    ///   - [`ssl_policy(Option<String>)`](crate::input::ModifyListenerInput::ssl_policy): <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+    ///   - [`certificates(Option<Vec<Certificate>>)`](crate::input::ModifyListenerInput::certificates): <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
+    ///   - [`default_actions(Option<Vec<Action>>)`](crate::input::ModifyListenerInput::default_actions): <p>The actions for the default rule.</p>
+    ///   - [`alpn_policy(Option<Vec<String>>)`](crate::input::ModifyListenerInput::alpn_policy): <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>  <ul>   <li> <p> <code>HTTP1Only</code> </p> </li>   <li> <p> <code>HTTP2Only</code> </p> </li>   <li> <p> <code>HTTP2Optional</code> </p> </li>   <li> <p> <code>HTTP2Preferred</code> </p> </li>   <li> <p> <code>None</code> </p> </li>  </ul>  <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+    /// - On success, responds with [`ModifyListenerOutput`](crate::output::ModifyListenerOutput) with field(s):
+    ///   - [`listeners(Option<Vec<Listener>>)`](crate::output::ModifyListenerOutput::listeners): <p>Information about the modified listener.</p>
+    /// - On failure, responds with [`SdkError<ModifyListenerError>`](crate::error::ModifyListenerError)
     pub fn modify_listener(&self) -> fluent_builders::ModifyListener<C, M, R> {
         fluent_builders::ModifyListener::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyLoadBalancerAttributes` operation.
+    /// Constructs a fluent builder for the [`ModifyLoadBalancerAttributes`](crate::client::fluent_builders::ModifyLoadBalancerAttributes) operation.
     ///
-    /// See [`ModifyLoadBalancerAttributes`](crate::client::fluent_builders::ModifyLoadBalancerAttributes) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyLoadBalancerAttributesInput`](crate::input::ModifyLoadBalancerAttributesInput) with field(s):
+    ///   - [`load_balancer_arn(Option<String>)`](crate::input::ModifyLoadBalancerAttributesInput::load_balancer_arn): <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    ///   - [`attributes(Option<Vec<LoadBalancerAttribute>>)`](crate::input::ModifyLoadBalancerAttributesInput::attributes): <p>The load balancer attributes.</p>
+    /// - On success, responds with [`ModifyLoadBalancerAttributesOutput`](crate::output::ModifyLoadBalancerAttributesOutput) with field(s):
+    ///   - [`attributes(Option<Vec<LoadBalancerAttribute>>)`](crate::output::ModifyLoadBalancerAttributesOutput::attributes): <p>Information about the load balancer attributes.</p>
+    /// - On failure, responds with [`SdkError<ModifyLoadBalancerAttributesError>`](crate::error::ModifyLoadBalancerAttributesError)
     pub fn modify_load_balancer_attributes(
         &self,
     ) -> fluent_builders::ModifyLoadBalancerAttributes<C, M, R> {
         fluent_builders::ModifyLoadBalancerAttributes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyRule` operation.
+    /// Constructs a fluent builder for the [`ModifyRule`](crate::client::fluent_builders::ModifyRule) operation.
     ///
-    /// See [`ModifyRule`](crate::client::fluent_builders::ModifyRule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyRuleInput`](crate::input::ModifyRuleInput) with field(s):
+    ///   - [`rule_arn(Option<String>)`](crate::input::ModifyRuleInput::rule_arn): <p>The Amazon Resource Name (ARN) of the rule.</p>
+    ///   - [`conditions(Option<Vec<RuleCondition>>)`](crate::input::ModifyRuleInput::conditions): <p>The conditions.</p>
+    ///   - [`actions(Option<Vec<Action>>)`](crate::input::ModifyRuleInput::actions): <p>The actions.</p>
+    /// - On success, responds with [`ModifyRuleOutput`](crate::output::ModifyRuleOutput) with field(s):
+    ///   - [`rules(Option<Vec<Rule>>)`](crate::output::ModifyRuleOutput::rules): <p>Information about the modified rule.</p>
+    /// - On failure, responds with [`SdkError<ModifyRuleError>`](crate::error::ModifyRuleError)
     pub fn modify_rule(&self) -> fluent_builders::ModifyRule<C, M, R> {
         fluent_builders::ModifyRule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyTargetGroup` operation.
+    /// Constructs a fluent builder for the [`ModifyTargetGroup`](crate::client::fluent_builders::ModifyTargetGroup) operation.
     ///
-    /// See [`ModifyTargetGroup`](crate::client::fluent_builders::ModifyTargetGroup) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyTargetGroupInput`](crate::input::ModifyTargetGroupInput) with field(s):
+    ///   - [`target_group_arn(Option<String>)`](crate::input::ModifyTargetGroupInput::target_group_arn): <p>The Amazon Resource Name (ARN) of the target group.</p>
+    ///   - [`health_check_protocol(Option<ProtocolEnum>)`](crate::input::ModifyTargetGroupInput::health_check_protocol): <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>  <p>With Network Load Balancers, you can't modify this setting.</p>
+    ///   - [`health_check_port(Option<String>)`](crate::input::ModifyTargetGroupInput::health_check_port): <p>The port the load balancer uses when performing health checks on targets.</p>
+    ///   - [`health_check_path(Option<String>)`](crate::input::ModifyTargetGroupInput::health_check_path): <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>  <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>  <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
+    ///   - [`health_check_enabled(Option<bool>)`](crate::input::ModifyTargetGroupInput::health_check_enabled): <p>Indicates whether health checks are enabled.</p>
+    ///   - [`health_check_interval_seconds(Option<i32>)`](crate::input::ModifyTargetGroupInput::health_check_interval_seconds): <p>The approximate amount of time, in seconds, between health checks of an individual target. For TCP health checks, the supported values are 10 or 30 seconds.</p>  <p>With Network Load Balancers, you can't modify this setting.</p>
+    ///   - [`health_check_timeout_seconds(Option<i32>)`](crate::input::ModifyTargetGroupInput::health_check_timeout_seconds): <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.</p>  <p>With Network Load Balancers, you can't modify this setting.</p>
+    ///   - [`healthy_threshold_count(Option<i32>)`](crate::input::ModifyTargetGroupInput::healthy_threshold_count): <p>The number of consecutive health checks successes required before considering an unhealthy target healthy.</p>
+    ///   - [`unhealthy_threshold_count(Option<i32>)`](crate::input::ModifyTargetGroupInput::unhealthy_threshold_count): <p>The number of consecutive health check failures required before considering the target unhealthy. For target groups with a protocol of TCP or TLS, this value must be the same as the healthy threshold count.</p>
+    ///   - [`matcher(Option<Matcher>)`](crate::input::ModifyTargetGroupInput::matcher): <p>[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target.</p>  <p>With Network Load Balancers, you can't modify this setting.</p>
+    /// - On success, responds with [`ModifyTargetGroupOutput`](crate::output::ModifyTargetGroupOutput) with field(s):
+    ///   - [`target_groups(Option<Vec<TargetGroup>>)`](crate::output::ModifyTargetGroupOutput::target_groups): <p>Information about the modified target group.</p>
+    /// - On failure, responds with [`SdkError<ModifyTargetGroupError>`](crate::error::ModifyTargetGroupError)
     pub fn modify_target_group(&self) -> fluent_builders::ModifyTargetGroup<C, M, R> {
         fluent_builders::ModifyTargetGroup::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ModifyTargetGroupAttributes` operation.
+    /// Constructs a fluent builder for the [`ModifyTargetGroupAttributes`](crate::client::fluent_builders::ModifyTargetGroupAttributes) operation.
     ///
-    /// See [`ModifyTargetGroupAttributes`](crate::client::fluent_builders::ModifyTargetGroupAttributes) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ModifyTargetGroupAttributesInput`](crate::input::ModifyTargetGroupAttributesInput) with field(s):
+    ///   - [`target_group_arn(Option<String>)`](crate::input::ModifyTargetGroupAttributesInput::target_group_arn): <p>The Amazon Resource Name (ARN) of the target group.</p>
+    ///   - [`attributes(Option<Vec<TargetGroupAttribute>>)`](crate::input::ModifyTargetGroupAttributesInput::attributes): <p>The attributes.</p>
+    /// - On success, responds with [`ModifyTargetGroupAttributesOutput`](crate::output::ModifyTargetGroupAttributesOutput) with field(s):
+    ///   - [`attributes(Option<Vec<TargetGroupAttribute>>)`](crate::output::ModifyTargetGroupAttributesOutput::attributes): <p>Information about the attributes.</p>
+    /// - On failure, responds with [`SdkError<ModifyTargetGroupAttributesError>`](crate::error::ModifyTargetGroupAttributesError)
     pub fn modify_target_group_attributes(
         &self,
     ) -> fluent_builders::ModifyTargetGroupAttributes<C, M, R> {
         fluent_builders::ModifyTargetGroupAttributes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RegisterTargets` operation.
+    /// Constructs a fluent builder for the [`RegisterTargets`](crate::client::fluent_builders::RegisterTargets) operation.
     ///
-    /// See [`RegisterTargets`](crate::client::fluent_builders::RegisterTargets) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RegisterTargetsInput`](crate::input::RegisterTargetsInput) with field(s):
+    ///   - [`target_group_arn(Option<String>)`](crate::input::RegisterTargetsInput::target_group_arn): <p>The Amazon Resource Name (ARN) of the target group.</p>
+    ///   - [`targets(Option<Vec<TargetDescription>>)`](crate::input::RegisterTargetsInput::targets): <p>The targets.</p>
+    /// - On success, responds with [`RegisterTargetsOutput`](crate::output::RegisterTargetsOutput)
+
+    /// - On failure, responds with [`SdkError<RegisterTargetsError>`](crate::error::RegisterTargetsError)
     pub fn register_targets(&self) -> fluent_builders::RegisterTargets<C, M, R> {
         fluent_builders::RegisterTargets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RemoveListenerCertificates` operation.
+    /// Constructs a fluent builder for the [`RemoveListenerCertificates`](crate::client::fluent_builders::RemoveListenerCertificates) operation.
     ///
-    /// See [`RemoveListenerCertificates`](crate::client::fluent_builders::RemoveListenerCertificates) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RemoveListenerCertificatesInput`](crate::input::RemoveListenerCertificatesInput) with field(s):
+    ///   - [`listener_arn(Option<String>)`](crate::input::RemoveListenerCertificatesInput::listener_arn): <p>The Amazon Resource Name (ARN) of the listener.</p>
+    ///   - [`certificates(Option<Vec<Certificate>>)`](crate::input::RemoveListenerCertificatesInput::certificates): <p>The certificate to remove. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
+    /// - On success, responds with [`RemoveListenerCertificatesOutput`](crate::output::RemoveListenerCertificatesOutput)
+
+    /// - On failure, responds with [`SdkError<RemoveListenerCertificatesError>`](crate::error::RemoveListenerCertificatesError)
     pub fn remove_listener_certificates(
         &self,
     ) -> fluent_builders::RemoveListenerCertificates<C, M, R> {
         fluent_builders::RemoveListenerCertificates::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RemoveTags` operation.
+    /// Constructs a fluent builder for the [`RemoveTags`](crate::client::fluent_builders::RemoveTags) operation.
     ///
-    /// See [`RemoveTags`](crate::client::fluent_builders::RemoveTags) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RemoveTagsInput`](crate::input::RemoveTagsInput) with field(s):
+    ///   - [`resource_arns(Option<Vec<String>>)`](crate::input::RemoveTagsInput::resource_arns): <p>The Amazon Resource Name (ARN) of the resource.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::RemoveTagsInput::tag_keys): <p>The tag keys for the tags to remove.</p>
+    /// - On success, responds with [`RemoveTagsOutput`](crate::output::RemoveTagsOutput)
+
+    /// - On failure, responds with [`SdkError<RemoveTagsError>`](crate::error::RemoveTagsError)
     pub fn remove_tags(&self) -> fluent_builders::RemoveTags<C, M, R> {
         fluent_builders::RemoveTags::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SetIpAddressType` operation.
+    /// Constructs a fluent builder for the [`SetIpAddressType`](crate::client::fluent_builders::SetIpAddressType) operation.
     ///
-    /// See [`SetIpAddressType`](crate::client::fluent_builders::SetIpAddressType) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`SetIpAddressTypeInput`](crate::input::SetIpAddressTypeInput) with field(s):
+    ///   - [`load_balancer_arn(Option<String>)`](crate::input::SetIpAddressTypeInput::load_balancer_arn): <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    ///   - [`ip_address_type(Option<IpAddressType>)`](crate::input::SetIpAddressTypeInput::ip_address_type): <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
+    /// - On success, responds with [`SetIpAddressTypeOutput`](crate::output::SetIpAddressTypeOutput) with field(s):
+    ///   - [`ip_address_type(Option<IpAddressType>)`](crate::output::SetIpAddressTypeOutput::ip_address_type): <p>The IP address type.</p>
+    /// - On failure, responds with [`SdkError<SetIpAddressTypeError>`](crate::error::SetIpAddressTypeError)
     pub fn set_ip_address_type(&self) -> fluent_builders::SetIpAddressType<C, M, R> {
         fluent_builders::SetIpAddressType::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SetRulePriorities` operation.
+    /// Constructs a fluent builder for the [`SetRulePriorities`](crate::client::fluent_builders::SetRulePriorities) operation.
     ///
-    /// See [`SetRulePriorities`](crate::client::fluent_builders::SetRulePriorities) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`SetRulePrioritiesInput`](crate::input::SetRulePrioritiesInput) with field(s):
+    ///   - [`rule_priorities(Option<Vec<RulePriorityPair>>)`](crate::input::SetRulePrioritiesInput::rule_priorities): <p>The rule priorities.</p>
+    /// - On success, responds with [`SetRulePrioritiesOutput`](crate::output::SetRulePrioritiesOutput) with field(s):
+    ///   - [`rules(Option<Vec<Rule>>)`](crate::output::SetRulePrioritiesOutput::rules): <p>Information about the rules.</p>
+    /// - On failure, responds with [`SdkError<SetRulePrioritiesError>`](crate::error::SetRulePrioritiesError)
     pub fn set_rule_priorities(&self) -> fluent_builders::SetRulePriorities<C, M, R> {
         fluent_builders::SetRulePriorities::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SetSecurityGroups` operation.
+    /// Constructs a fluent builder for the [`SetSecurityGroups`](crate::client::fluent_builders::SetSecurityGroups) operation.
     ///
-    /// See [`SetSecurityGroups`](crate::client::fluent_builders::SetSecurityGroups) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`SetSecurityGroupsInput`](crate::input::SetSecurityGroupsInput) with field(s):
+    ///   - [`load_balancer_arn(Option<String>)`](crate::input::SetSecurityGroupsInput::load_balancer_arn): <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    ///   - [`security_groups(Option<Vec<String>>)`](crate::input::SetSecurityGroupsInput::security_groups): <p>The IDs of the security groups.</p>
+    /// - On success, responds with [`SetSecurityGroupsOutput`](crate::output::SetSecurityGroupsOutput) with field(s):
+    ///   - [`security_group_ids(Option<Vec<String>>)`](crate::output::SetSecurityGroupsOutput::security_group_ids): <p>The IDs of the security groups associated with the load balancer.</p>
+    /// - On failure, responds with [`SdkError<SetSecurityGroupsError>`](crate::error::SetSecurityGroupsError)
     pub fn set_security_groups(&self) -> fluent_builders::SetSecurityGroups<C, M, R> {
         fluent_builders::SetSecurityGroups::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `SetSubnets` operation.
+    /// Constructs a fluent builder for the [`SetSubnets`](crate::client::fluent_builders::SetSubnets) operation.
     ///
-    /// See [`SetSubnets`](crate::client::fluent_builders::SetSubnets) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`SetSubnetsInput`](crate::input::SetSubnetsInput) with field(s):
+    ///   - [`load_balancer_arn(Option<String>)`](crate::input::SetSubnetsInput::load_balancer_arn): <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+    ///   - [`subnets(Option<Vec<String>>)`](crate::input::SetSubnetsInput::subnets): <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>  <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones.</p>  <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>  <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>  <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</p>
+    ///   - [`subnet_mappings(Option<Vec<SubnetMapping>>)`](crate::input::SetSubnetsInput::subnet_mappings): <p>The IDs of the public subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>  <p>[Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify Elastic IP addresses for your subnets.</p>  <p>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</p>  <p>[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.</p>  <p>[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.</p>
+    ///   - [`ip_address_type(Option<IpAddressType>)`](crate::input::SetSubnetsInput::ip_address_type): <p>[Network Load Balancers] The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener. .</p>
+    /// - On success, responds with [`SetSubnetsOutput`](crate::output::SetSubnetsOutput) with field(s):
+    ///   - [`availability_zones(Option<Vec<AvailabilityZone>>)`](crate::output::SetSubnetsOutput::availability_zones): <p>Information about the subnets.</p>
+    ///   - [`ip_address_type(Option<IpAddressType>)`](crate::output::SetSubnetsOutput::ip_address_type): <p>[Network Load Balancers] The IP address type.</p>
+    /// - On failure, responds with [`SdkError<SetSubnetsError>`](crate::error::SetSubnetsError)
     pub fn set_subnets(&self) -> fluent_builders::SetSubnets<C, M, R> {
         fluent_builders::SetSubnets::new(self.handle.clone())
     }

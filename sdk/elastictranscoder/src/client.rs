@@ -83,128 +83,225 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CancelJob` operation.
+    /// Constructs a fluent builder for the [`CancelJob`](crate::client::fluent_builders::CancelJob) operation.
     ///
-    /// See [`CancelJob`](crate::client::fluent_builders::CancelJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CancelJobInput`](crate::input::CancelJobInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::CancelJobInput::id): <p>The identifier of the job that you want to cancel.</p>  <p>To get a list of the jobs (including their <code>jobId</code>) that have a status of <code>Submitted</code>, use the <code>ListJobsByStatus</code> API action.</p>
+    /// - On success, responds with [`CancelJobOutput`](crate::output::CancelJobOutput)
+
+    /// - On failure, responds with [`SdkError<CancelJobError>`](crate::error::CancelJobError)
     pub fn cancel_job(&self) -> fluent_builders::CancelJob<C, M, R> {
         fluent_builders::CancelJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateJob` operation.
+    /// Constructs a fluent builder for the [`CreateJob`](crate::client::fluent_builders::CreateJob) operation.
     ///
-    /// See [`CreateJob`](crate::client::fluent_builders::CreateJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateJobInput`](crate::input::CreateJobInput) with field(s):
+    ///   - [`pipeline_id(Option<String>)`](crate::input::CreateJobInput::pipeline_id): <p>The <code>Id</code> of the pipeline that you want Elastic Transcoder to use for transcoding. The pipeline determines several settings, including the Amazon S3 bucket from which Elastic Transcoder gets the files to transcode and the bucket into which Elastic Transcoder puts the transcoded files.</p>
+    ///   - [`input(Option<JobInput>)`](crate::input::CreateJobInput::input): <p>A section of the request body that provides information about the file that is being transcoded.</p>
+    ///   - [`inputs(Option<Vec<JobInput>>)`](crate::input::CreateJobInput::inputs): <p>A section of the request body that provides information about the files that are being transcoded.</p>
+    ///   - [`output(Option<CreateJobOutput>)`](crate::input::CreateJobInput::output): <p> A section of the request body that provides information about the transcoded (target) file. We strongly recommend that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax. </p>
+    ///   - [`outputs(Option<Vec<CreateJobOutput>>)`](crate::input::CreateJobInput::outputs): <p> A section of the request body that provides information about the transcoded (target) files. We recommend that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax. </p>
+    ///   - [`output_key_prefix(Option<String>)`](crate::input::CreateJobInput::output_key_prefix): <p>The value, if any, that you want Elastic Transcoder to prepend to the names of all files that this job creates, including output files, thumbnails, and playlists.</p>
+    ///   - [`playlists(Option<Vec<CreateJobPlaylist>>)`](crate::input::CreateJobInput::playlists): <p>If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS), Playlists contains information about the master playlists that you want Elastic Transcoder to create.</p>  <p>The maximum number of master playlists in a job is 30.</p>
+    ///   - [`user_metadata(Option<HashMap<String, String>>)`](crate::input::CreateJobInput::user_metadata): <p>User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic Transcoder does not guarantee that <code>key/value</code> pairs are returned in the same order in which you specify them.</p>
+    /// - On success, responds with [`CreateJobOutput`](crate::output::CreateJobOutput) with field(s):
+    ///   - [`job(Option<Job>)`](crate::output::CreateJobOutput::job): <p>A section of the response body that provides information about the job that is created.</p>
+    /// - On failure, responds with [`SdkError<CreateJobError>`](crate::error::CreateJobError)
     pub fn create_job(&self) -> fluent_builders::CreateJob<C, M, R> {
         fluent_builders::CreateJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreatePipeline` operation.
+    /// Constructs a fluent builder for the [`CreatePipeline`](crate::client::fluent_builders::CreatePipeline) operation.
     ///
-    /// See [`CreatePipeline`](crate::client::fluent_builders::CreatePipeline) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreatePipelineInput`](crate::input::CreatePipelineInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreatePipelineInput::name): <p>The name of the pipeline. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p>  <p>Constraints: Maximum 40 characters.</p>
+    ///   - [`input_bucket(Option<String>)`](crate::input::CreatePipelineInput::input_bucket): <p>The Amazon S3 bucket in which you saved the media files that you want to transcode.</p>
+    ///   - [`output_bucket(Option<String>)`](crate::input::CreatePipelineInput::output_bucket): <p>The Amazon S3 bucket in which you want Elastic Transcoder to save the transcoded files. (Use this, or use ContentConfig:Bucket plus ThumbnailConfig:Bucket.)</p>  <p>Specify this value when all of the following are true:</p>  <ul>   <li> <p>You want to save transcoded files, thumbnails (if any), and playlists (if any) together in one bucket.</p> </li>   <li> <p>You do not want to specify the users or groups who have access to the transcoded files, thumbnails, and playlists.</p> </li>   <li> <p>You do not want to specify the permissions that Elastic Transcoder grants to the files. </p> <important>     <p>When Elastic Transcoder saves files in <code>OutputBucket</code>, it grants full control over the files only to the AWS account that owns the role that is specified by <code>Role</code>.</p>    </important> </li>   <li> <p>You want to associate the transcoded files and thumbnails with the Amazon S3 Standard storage class.</p> </li>  </ul>  <p>If you want to save transcoded files and playlists in one bucket and thumbnails in another bucket, specify which users can access the transcoded files or the permissions the users have, or change the Amazon S3 storage class, omit <code>OutputBucket</code> and specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead.</p>
+    ///   - [`role(Option<String>)`](crate::input::CreatePipelineInput::role): <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to use to create the pipeline.</p>
+    ///   - [`aws_kms_key_arn(Option<String>)`](crate::input::CreatePipelineInput::aws_kms_key_arn): <p>The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.</p>  <p>If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>, you don't need to provide a key with your job because a default key, known as an AWS-KMS key, is created for you automatically. You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key, or if you are using an <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.</p>
+    ///   - [`notifications(Option<Notifications>)`](crate::input::CreatePipelineInput::notifications): <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to notify to report job status.</p> <important>   <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p>  </important>  <ul>   <li> <p> <b>Progressing</b>: The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to notify when Elastic Transcoder has started to process a job in this pipeline. This is the ARN that Amazon SNS returned when you created the topic. For more information, see Create a Topic in the Amazon Simple Notification Service Developer Guide.</p> </li>   <li> <p> <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has finished processing a job in this pipeline. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>   <li> <p> <b>Warning</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters a warning condition while processing a job in this pipeline. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>   <li> <p> <b>Error</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition while processing a job in this pipeline. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>  </ul>
+    ///   - [`content_config(Option<PipelineOutputConfig>)`](crate::input::CreatePipelineInput::content_config): <p>The optional <code>ContentConfig</code> object specifies information about the Amazon S3 bucket in which you want Elastic Transcoder to save transcoded files and playlists: which bucket to use, which users you want to have access to the files, the type of access you want users to have, and the storage class that you want to assign to the files.</p>  <p>If you specify values for <code>ContentConfig</code>, you must also specify values for <code>ThumbnailConfig</code>.</p>  <p>If you specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code>, omit the <code>OutputBucket</code> object.</p>  <ul>   <li> <p> <b>Bucket</b>: The Amazon S3 bucket in which you want Elastic Transcoder to save transcoded files and playlists.</p> </li>   <li> <p> <b>Permissions</b> (Optional): The Permissions object specifies which users you want to have access to transcoded files and the type of access you want them to have. You can grant permissions to a maximum of 30 users and/or predefined Amazon S3 groups.</p> </li>   <li> <p> <b>Grantee Type</b>: Specify the type of value that appears in the <code>Grantee</code> object: </p>    <ul>     <li> <p> <b>Canonical</b>: The value in the <code>Grantee</code> object is either the canonical user ID for an AWS account or an origin access identity for an Amazon CloudFront distribution. For more information about canonical user IDs, see Access Control List (ACL) Overview in the Amazon Simple Storage Service Developer Guide. For more information about using CloudFront origin access identities to require that users use CloudFront URLs instead of Amazon S3 URLs, see Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content.</p> <important>       <p>A canonical user ID is not the same as an AWS account number.</p>      </important> </li>     <li> <p> <b>Email</b>: The value in the <code>Grantee</code> object is the registered email address of an AWS account.</p> </li>     <li> <p> <b>Group</b>: The value in the <code>Grantee</code> object is one of the following predefined Amazon S3 groups: <code>AllUsers</code>, <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.</p> </li>    </ul> </li>   <li> <p> <b>Grantee</b>: The AWS user or group that you want to have access to transcoded files and playlists. To identify the user or group, you can specify the canonical user ID for an AWS account, an origin access identity for a CloudFront distribution, the registered email address of an AWS account, or a predefined Amazon S3 group </p> </li>   <li> <p> <b>Access</b>: The permission that you want to give to the AWS user that you specified in <code>Grantee</code>. Permissions are granted on the files that Elastic Transcoder adds to the bucket, including playlists and video files. Valid values include: </p>    <ul>     <li> <p> <code>READ</code>: The grantee can read the objects and metadata for objects that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>     <li> <p> <code>READ_ACP</code>: The grantee can read the object ACL for objects that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>     <li> <p> <code>WRITE_ACP</code>: The grantee can write the ACL for the objects that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>     <li> <p> <code>FULL_CONTROL</code>: The grantee has <code>READ</code>, <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for the objects that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>    </ul> </li>   <li> <p> <b>StorageClass</b>: The Amazon S3 storage class, <code>Standard</code> or <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to the video files and playlists that it stores in your Amazon S3 bucket.</p> </li>  </ul>
+    ///   - [`thumbnail_config(Option<PipelineOutputConfig>)`](crate::input::CreatePipelineInput::thumbnail_config): <p>The <code>ThumbnailConfig</code> object specifies several values, including the Amazon S3 bucket in which you want Elastic Transcoder to save thumbnail files, which users you want to have access to the files, the type of access you want users to have, and the storage class that you want to assign to the files.</p>  <p>If you specify values for <code>ContentConfig</code>, you must also specify values for <code>ThumbnailConfig</code> even if you don't want to create thumbnails.</p>  <p>If you specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code>, omit the <code>OutputBucket</code> object.</p>  <ul>   <li> <p> <b>Bucket</b>: The Amazon S3 bucket in which you want Elastic Transcoder to save thumbnail files.</p> </li>   <li> <p> <b>Permissions</b> (Optional): The <code>Permissions</code> object specifies which users and/or predefined Amazon S3 groups you want to have access to thumbnail files, and the type of access you want them to have. You can grant permissions to a maximum of 30 users and/or predefined Amazon S3 groups.</p> </li>   <li> <p> <b>GranteeType</b>: Specify the type of value that appears in the Grantee object: </p>    <ul>     <li> <p> <b>Canonical</b>: The value in the <code>Grantee</code> object is either the canonical user ID for an AWS account or an origin access identity for an Amazon CloudFront distribution.</p> <important>       <p>A canonical user ID is not the same as an AWS account number.</p>      </important> </li>     <li> <p> <b>Email</b>: The value in the <code>Grantee</code> object is the registered email address of an AWS account. </p> </li>     <li> <p> <b>Group</b>: The value in the <code>Grantee</code> object is one of the following predefined Amazon S3 groups: <code>AllUsers</code>, <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.</p> </li>    </ul> </li>   <li> <p> <b>Grantee</b>: The AWS user or group that you want to have access to thumbnail files. To identify the user or group, you can specify the canonical user ID for an AWS account, an origin access identity for a CloudFront distribution, the registered email address of an AWS account, or a predefined Amazon S3 group. </p> </li>   <li> <p> <b>Access</b>: The permission that you want to give to the AWS user that you specified in <code>Grantee</code>. Permissions are granted on the thumbnail files that Elastic Transcoder adds to the bucket. Valid values include: </p>    <ul>     <li> <p> <code>READ</code>: The grantee can read the thumbnails and metadata for objects that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>     <li> <p> <code>READ_ACP</code>: The grantee can read the object ACL for thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>     <li> <p> <code>WRITE_ACP</code>: The grantee can write the ACL for the thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>     <li> <p> <code>FULL_CONTROL</code>: The grantee has <code>READ</code>, <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for the thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>    </ul> </li>   <li> <p> <b>StorageClass</b>: The Amazon S3 storage class, <code>Standard</code> or <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to the thumbnails that it stores in your Amazon S3 bucket.</p> </li>  </ul>
+    /// - On success, responds with [`CreatePipelineOutput`](crate::output::CreatePipelineOutput) with field(s):
+    ///   - [`pipeline(Option<Pipeline>)`](crate::output::CreatePipelineOutput::pipeline): <p>A section of the response body that provides information about the pipeline that is created.</p>
+    ///   - [`warnings(Option<Vec<Warning>>)`](crate::output::CreatePipelineOutput::warnings): <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p>  <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
+    /// - On failure, responds with [`SdkError<CreatePipelineError>`](crate::error::CreatePipelineError)
     pub fn create_pipeline(&self) -> fluent_builders::CreatePipeline<C, M, R> {
         fluent_builders::CreatePipeline::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreatePreset` operation.
+    /// Constructs a fluent builder for the [`CreatePreset`](crate::client::fluent_builders::CreatePreset) operation.
     ///
-    /// See [`CreatePreset`](crate::client::fluent_builders::CreatePreset) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreatePresetInput`](crate::input::CreatePresetInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreatePresetInput::name): <p>The name of the preset. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreatePresetInput::description): <p>A description of the preset.</p>
+    ///   - [`container(Option<String>)`](crate::input::CreatePresetInput::container): <p>The container type for the output file. Valid values include <code>flac</code>, <code>flv</code>, <code>fmp4</code>, <code>gif</code>, <code>mp3</code>, <code>mp4</code>, <code>mpg</code>, <code>mxf</code>, <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.</p>
+    ///   - [`video(Option<VideoParameters>)`](crate::input::CreatePresetInput::video): <p>A section of the request body that specifies the video parameters.</p>
+    ///   - [`audio(Option<AudioParameters>)`](crate::input::CreatePresetInput::audio): <p>A section of the request body that specifies the audio parameters.</p>
+    ///   - [`thumbnails(Option<Thumbnails>)`](crate::input::CreatePresetInput::thumbnails): <p>A section of the request body that specifies the thumbnail parameters, if any.</p>
+    /// - On success, responds with [`CreatePresetOutput`](crate::output::CreatePresetOutput) with field(s):
+    ///   - [`preset(Option<Preset>)`](crate::output::CreatePresetOutput::preset): <p>A section of the response body that provides information about the preset that is created.</p>
+    ///   - [`warning(Option<String>)`](crate::output::CreatePresetOutput::warning): <p>If the preset settings don't comply with the standards for the video codec but Elastic Transcoder created the preset, this message explains the reason the preset settings don't meet the standard. Elastic Transcoder created the preset because the settings might produce acceptable output.</p>
+    /// - On failure, responds with [`SdkError<CreatePresetError>`](crate::error::CreatePresetError)
     pub fn create_preset(&self) -> fluent_builders::CreatePreset<C, M, R> {
         fluent_builders::CreatePreset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeletePipeline` operation.
+    /// Constructs a fluent builder for the [`DeletePipeline`](crate::client::fluent_builders::DeletePipeline) operation.
     ///
-    /// See [`DeletePipeline`](crate::client::fluent_builders::DeletePipeline) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeletePipelineInput`](crate::input::DeletePipelineInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::DeletePipelineInput::id): <p>The identifier of the pipeline that you want to delete.</p>
+    /// - On success, responds with [`DeletePipelineOutput`](crate::output::DeletePipelineOutput)
+
+    /// - On failure, responds with [`SdkError<DeletePipelineError>`](crate::error::DeletePipelineError)
     pub fn delete_pipeline(&self) -> fluent_builders::DeletePipeline<C, M, R> {
         fluent_builders::DeletePipeline::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeletePreset` operation.
+    /// Constructs a fluent builder for the [`DeletePreset`](crate::client::fluent_builders::DeletePreset) operation.
     ///
-    /// See [`DeletePreset`](crate::client::fluent_builders::DeletePreset) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeletePresetInput`](crate::input::DeletePresetInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::DeletePresetInput::id): <p>The identifier of the preset for which you want to get detailed information.</p>
+    /// - On success, responds with [`DeletePresetOutput`](crate::output::DeletePresetOutput)
+
+    /// - On failure, responds with [`SdkError<DeletePresetError>`](crate::error::DeletePresetError)
     pub fn delete_preset(&self) -> fluent_builders::DeletePreset<C, M, R> {
         fluent_builders::DeletePreset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListJobsByPipeline` operation.
-    ///
-    /// See [`ListJobsByPipeline`](crate::client::fluent_builders::ListJobsByPipeline) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListJobsByPipeline`](crate::client::fluent_builders::ListJobsByPipeline) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListJobsByPipeline::into_paginator).
+    ///
+    /// - Takes [`ListJobsByPipelineInput`](crate::input::ListJobsByPipelineInput) with field(s):
+    ///   - [`pipeline_id(Option<String>)`](crate::input::ListJobsByPipelineInput::pipeline_id): <p>The ID of the pipeline for which you want to get job information.</p>
+    ///   - [`ascending(Option<String>)`](crate::input::ListJobsByPipelineInput::ascending): <p> To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>. </p>
+    ///   - [`page_token(Option<String>)`](crate::input::ListJobsByPipelineInput::page_token): <p> When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
+    /// - On success, responds with [`ListJobsByPipelineOutput`](crate::output::ListJobsByPipelineOutput) with field(s):
+    ///   - [`jobs(Option<Vec<Job>>)`](crate::output::ListJobsByPipelineOutput::jobs): <p>An array of <code>Job</code> objects that are in the specified pipeline.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::output::ListJobsByPipelineOutput::next_page_token): <p> A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>. </p>
+    /// - On failure, responds with [`SdkError<ListJobsByPipelineError>`](crate::error::ListJobsByPipelineError)
     pub fn list_jobs_by_pipeline(&self) -> fluent_builders::ListJobsByPipeline<C, M, R> {
         fluent_builders::ListJobsByPipeline::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListJobsByStatus` operation.
-    ///
-    /// See [`ListJobsByStatus`](crate::client::fluent_builders::ListJobsByStatus) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListJobsByStatus`](crate::client::fluent_builders::ListJobsByStatus) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListJobsByStatus::into_paginator).
+    ///
+    /// - Takes [`ListJobsByStatusInput`](crate::input::ListJobsByStatusInput) with field(s):
+    ///   - [`status(Option<String>)`](crate::input::ListJobsByStatusInput::status): <p>To get information about all of the jobs associated with the current AWS account that have a given status, specify the following status: <code>Submitted</code>, <code>Progressing</code>, <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.</p>
+    ///   - [`ascending(Option<String>)`](crate::input::ListJobsByStatusInput::ascending): <p> To list jobs in chronological order by the date and time that they were submitted, enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>. </p>
+    ///   - [`page_token(Option<String>)`](crate::input::ListJobsByStatusInput::page_token): <p> When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
+    /// - On success, responds with [`ListJobsByStatusOutput`](crate::output::ListJobsByStatusOutput) with field(s):
+    ///   - [`jobs(Option<Vec<Job>>)`](crate::output::ListJobsByStatusOutput::jobs): <p>An array of <code>Job</code> objects that have the specified status.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::output::ListJobsByStatusOutput::next_page_token): <p> A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>. </p>
+    /// - On failure, responds with [`SdkError<ListJobsByStatusError>`](crate::error::ListJobsByStatusError)
     pub fn list_jobs_by_status(&self) -> fluent_builders::ListJobsByStatus<C, M, R> {
         fluent_builders::ListJobsByStatus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPipelines` operation.
-    ///
-    /// See [`ListPipelines`](crate::client::fluent_builders::ListPipelines) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListPipelines`](crate::client::fluent_builders::ListPipelines) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPipelines::into_paginator).
+    ///
+    /// - Takes [`ListPipelinesInput`](crate::input::ListPipelinesInput) with field(s):
+    ///   - [`ascending(Option<String>)`](crate::input::ListPipelinesInput::ascending): <p>To list pipelines in chronological order by the date and time that they were created, enter <code>true</code>. To list pipelines in reverse chronological order, enter <code>false</code>.</p>
+    ///   - [`page_token(Option<String>)`](crate::input::ListPipelinesInput::page_token): <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
+    /// - On success, responds with [`ListPipelinesOutput`](crate::output::ListPipelinesOutput) with field(s):
+    ///   - [`pipelines(Option<Vec<Pipeline>>)`](crate::output::ListPipelinesOutput::pipelines): <p>An array of <code>Pipeline</code> objects.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::output::ListPipelinesOutput::next_page_token): <p>A value that you use to access the second and subsequent pages of results, if any. When the pipelines fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
+    /// - On failure, responds with [`SdkError<ListPipelinesError>`](crate::error::ListPipelinesError)
     pub fn list_pipelines(&self) -> fluent_builders::ListPipelines<C, M, R> {
         fluent_builders::ListPipelines::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPresets` operation.
-    ///
-    /// See [`ListPresets`](crate::client::fluent_builders::ListPresets) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListPresets`](crate::client::fluent_builders::ListPresets) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListPresets::into_paginator).
+    ///
+    /// - Takes [`ListPresetsInput`](crate::input::ListPresetsInput) with field(s):
+    ///   - [`ascending(Option<String>)`](crate::input::ListPresetsInput::ascending): <p>To list presets in chronological order by the date and time that they were created, enter <code>true</code>. To list presets in reverse chronological order, enter <code>false</code>.</p>
+    ///   - [`page_token(Option<String>)`](crate::input::ListPresetsInput::page_token): <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in subsequent <code>GET</code> requests to get each successive page of results. </p>
+    /// - On success, responds with [`ListPresetsOutput`](crate::output::ListPresetsOutput) with field(s):
+    ///   - [`presets(Option<Vec<Preset>>)`](crate::output::ListPresetsOutput::presets): <p>An array of <code>Preset</code> objects.</p>
+    ///   - [`next_page_token(Option<String>)`](crate::output::ListPresetsOutput::next_page_token): <p>A value that you use to access the second and subsequent pages of results, if any. When the presets fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
+    /// - On failure, responds with [`SdkError<ListPresetsError>`](crate::error::ListPresetsError)
     pub fn list_presets(&self) -> fluent_builders::ListPresets<C, M, R> {
         fluent_builders::ListPresets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ReadJob` operation.
+    /// Constructs a fluent builder for the [`ReadJob`](crate::client::fluent_builders::ReadJob) operation.
     ///
-    /// See [`ReadJob`](crate::client::fluent_builders::ReadJob) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ReadJobInput`](crate::input::ReadJobInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::ReadJobInput::id): <p>The identifier of the job for which you want to get detailed information.</p>
+    /// - On success, responds with [`ReadJobOutput`](crate::output::ReadJobOutput) with field(s):
+    ///   - [`job(Option<Job>)`](crate::output::ReadJobOutput::job): <p>A section of the response body that provides information about the job.</p>
+    /// - On failure, responds with [`SdkError<ReadJobError>`](crate::error::ReadJobError)
     pub fn read_job(&self) -> fluent_builders::ReadJob<C, M, R> {
         fluent_builders::ReadJob::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ReadPipeline` operation.
+    /// Constructs a fluent builder for the [`ReadPipeline`](crate::client::fluent_builders::ReadPipeline) operation.
     ///
-    /// See [`ReadPipeline`](crate::client::fluent_builders::ReadPipeline) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ReadPipelineInput`](crate::input::ReadPipelineInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::ReadPipelineInput::id): <p>The identifier of the pipeline to read.</p>
+    /// - On success, responds with [`ReadPipelineOutput`](crate::output::ReadPipelineOutput) with field(s):
+    ///   - [`pipeline(Option<Pipeline>)`](crate::output::ReadPipelineOutput::pipeline): <p>A section of the response body that provides information about the pipeline.</p>
+    ///   - [`warnings(Option<Vec<Warning>>)`](crate::output::ReadPipelineOutput::warnings): <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p>  <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
+    /// - On failure, responds with [`SdkError<ReadPipelineError>`](crate::error::ReadPipelineError)
     pub fn read_pipeline(&self) -> fluent_builders::ReadPipeline<C, M, R> {
         fluent_builders::ReadPipeline::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ReadPreset` operation.
+    /// Constructs a fluent builder for the [`ReadPreset`](crate::client::fluent_builders::ReadPreset) operation.
     ///
-    /// See [`ReadPreset`](crate::client::fluent_builders::ReadPreset) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ReadPresetInput`](crate::input::ReadPresetInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::ReadPresetInput::id): <p>The identifier of the preset for which you want to get detailed information.</p>
+    /// - On success, responds with [`ReadPresetOutput`](crate::output::ReadPresetOutput) with field(s):
+    ///   - [`preset(Option<Preset>)`](crate::output::ReadPresetOutput::preset): <p>A section of the response body that provides information about the preset.</p>
+    /// - On failure, responds with [`SdkError<ReadPresetError>`](crate::error::ReadPresetError)
     pub fn read_preset(&self) -> fluent_builders::ReadPreset<C, M, R> {
         fluent_builders::ReadPreset::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TestRole` operation.
+    /// Constructs a fluent builder for the [`TestRole`](crate::client::fluent_builders::TestRole) operation.
     ///
-    /// See [`TestRole`](crate::client::fluent_builders::TestRole) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TestRoleInput`](crate::input::TestRoleInput) with field(s):
+    ///   - [`role(Option<String>)`](crate::input::TestRoleInput::role): <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to test.</p>
+    ///   - [`input_bucket(Option<String>)`](crate::input::TestRoleInput::input_bucket): <p>The Amazon S3 bucket that contains media files to be transcoded. The action attempts to read from this bucket.</p>
+    ///   - [`output_bucket(Option<String>)`](crate::input::TestRoleInput::output_bucket): <p>The Amazon S3 bucket that Elastic Transcoder writes transcoded media files to. The action attempts to read from this bucket.</p>
+    ///   - [`topics(Option<Vec<String>>)`](crate::input::TestRoleInput::topics): <p>The ARNs of one or more Amazon Simple Notification Service (Amazon SNS) topics that you want the action to send a test notification to.</p>
+    /// - On success, responds with [`TestRoleOutput`](crate::output::TestRoleOutput) with field(s):
+    ///   - [`success(Option<String>)`](crate::output::TestRoleOutput::success): <p>If the operation is successful, this value is <code>true</code>; otherwise, the value is <code>false</code>.</p>
+    ///   - [`messages(Option<Vec<String>>)`](crate::output::TestRoleOutput::messages): <p>If the <code>Success</code> element contains <code>false</code>, this value is an array of one or more error messages that were generated during the test process.</p>
+    /// - On failure, responds with [`SdkError<TestRoleError>`](crate::error::TestRoleError)
     pub fn test_role(&self) -> fluent_builders::TestRole<C, M, R> {
         fluent_builders::TestRole::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdatePipeline` operation.
+    /// Constructs a fluent builder for the [`UpdatePipeline`](crate::client::fluent_builders::UpdatePipeline) operation.
     ///
-    /// See [`UpdatePipeline`](crate::client::fluent_builders::UpdatePipeline) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdatePipelineInput`](crate::input::UpdatePipelineInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::UpdatePipelineInput::id): <p>The ID of the pipeline that you want to update.</p>
+    ///   - [`name(Option<String>)`](crate::input::UpdatePipelineInput::name): <p>The name of the pipeline. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p>  <p>Constraints: Maximum 40 characters</p>
+    ///   - [`input_bucket(Option<String>)`](crate::input::UpdatePipelineInput::input_bucket): <p>The Amazon S3 bucket in which you saved the media files that you want to transcode and the graphics that you want to use as watermarks.</p>
+    ///   - [`role(Option<String>)`](crate::input::UpdatePipelineInput::role): <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to use to transcode jobs for this pipeline.</p>
+    ///   - [`aws_kms_key_arn(Option<String>)`](crate::input::UpdatePipelineInput::aws_kms_key_arn): <p>The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.</p>  <p>If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>, you don't need to provide a key with your job because a default key, known as an AWS-KMS key, is created for you automatically. You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key, or if you are using an <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.</p>
+    ///   - [`notifications(Option<Notifications>)`](crate::input::UpdatePipelineInput::notifications): <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to notify to report job status.</p> <important>   <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p>  </important>  <ul>   <li> <p> <b>Progressing</b>: The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to notify when Elastic Transcoder has started to process jobs that are added to this pipeline. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>   <li> <p> <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has finished processing a job. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>   <li> <p> <b>Warning</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters a warning condition. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>   <li> <p> <b>Error</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>  </ul>
+    ///   - [`content_config(Option<PipelineOutputConfig>)`](crate::input::UpdatePipelineInput::content_config): <p>The optional <code>ContentConfig</code> object specifies information about the Amazon S3 bucket in which you want Elastic Transcoder to save transcoded files and playlists: which bucket to use, which users you want to have access to the files, the type of access you want users to have, and the storage class that you want to assign to the files.</p>  <p>If you specify values for <code>ContentConfig</code>, you must also specify values for <code>ThumbnailConfig</code>.</p>  <p>If you specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code>, omit the <code>OutputBucket</code> object.</p>  <ul>   <li> <p> <b>Bucket</b>: The Amazon S3 bucket in which you want Elastic Transcoder to save transcoded files and playlists.</p> </li>   <li> <p> <b>Permissions</b> (Optional): The Permissions object specifies which users you want to have access to transcoded files and the type of access you want them to have. You can grant permissions to a maximum of 30 users and/or predefined Amazon S3 groups.</p> </li>   <li> <p> <b>Grantee Type</b>: Specify the type of value that appears in the <code>Grantee</code> object:</p>    <ul>     <li> <p> <b>Canonical</b>: The value in the <code>Grantee</code> object is either the canonical user ID for an AWS account or an origin access identity for an Amazon CloudFront distribution. For more information about canonical user IDs, see Access Control List (ACL) Overview in the Amazon Simple Storage Service Developer Guide. For more information about using CloudFront origin access identities to require that users use CloudFront URLs instead of Amazon S3 URLs, see Using an Origin Access Identity to Restrict Access to Your Amazon S3 Content.</p> <important>       <p>A canonical user ID is not the same as an AWS account number.</p>      </important> </li>     <li> <p> <b>Email</b>: The value in the <code>Grantee</code> object is the registered email address of an AWS account.</p> </li>     <li> <p> <b>Group</b>: The value in the <code>Grantee</code> object is one of the following predefined Amazon S3 groups: <code>AllUsers</code>, <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.</p> </li>    </ul> </li>   <li> <p> <b>Grantee</b>: The AWS user or group that you want to have access to transcoded files and playlists. To identify the user or group, you can specify the canonical user ID for an AWS account, an origin access identity for a CloudFront distribution, the registered email address of an AWS account, or a predefined Amazon S3 group </p> </li>   <li> <p> <b>Access</b>: The permission that you want to give to the AWS user that you specified in <code>Grantee</code>. Permissions are granted on the files that Elastic Transcoder adds to the bucket, including playlists and video files. Valid values include: </p>    <ul>     <li> <p> <code>READ</code>: The grantee can read the objects and metadata for objects that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>     <li> <p> <code>READ_ACP</code>: The grantee can read the object ACL for objects that Elastic Transcoder adds to the Amazon S3 bucket. </p> </li>     <li> <p> <code>WRITE_ACP</code>: The grantee can write the ACL for the objects that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>     <li> <p> <code>FULL_CONTROL</code>: The grantee has <code>READ</code>, <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for the objects that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>    </ul> </li>   <li> <p> <b>StorageClass</b>: The Amazon S3 storage class, <code>Standard</code> or <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to the video files and playlists that it stores in your Amazon S3 bucket.</p> </li>  </ul>
+    ///   - [`thumbnail_config(Option<PipelineOutputConfig>)`](crate::input::UpdatePipelineInput::thumbnail_config): <p>The <code>ThumbnailConfig</code> object specifies several values, including the Amazon S3 bucket in which you want Elastic Transcoder to save thumbnail files, which users you want to have access to the files, the type of access you want users to have, and the storage class that you want to assign to the files.</p>  <p>If you specify values for <code>ContentConfig</code>, you must also specify values for <code>ThumbnailConfig</code> even if you don't want to create thumbnails.</p>  <p>If you specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code>, omit the <code>OutputBucket</code> object.</p>  <ul>   <li> <p> <b>Bucket</b>: The Amazon S3 bucket in which you want Elastic Transcoder to save thumbnail files.</p> </li>   <li> <p> <b>Permissions</b> (Optional): The <code>Permissions</code> object specifies which users and/or predefined Amazon S3 groups you want to have access to thumbnail files, and the type of access you want them to have. You can grant permissions to a maximum of 30 users and/or predefined Amazon S3 groups.</p> </li>   <li> <p> <b>GranteeType</b>: Specify the type of value that appears in the Grantee object:</p>    <ul>     <li> <p> <b>Canonical</b>: The value in the <code>Grantee</code> object is either the canonical user ID for an AWS account or an origin access identity for an Amazon CloudFront distribution.</p> <important>       <p>A canonical user ID is not the same as an AWS account number.</p>      </important> </li>     <li> <p> <b>Email</b>: The value in the <code>Grantee</code> object is the registered email address of an AWS account.</p> </li>     <li> <p> <b>Group</b>: The value in the <code>Grantee</code> object is one of the following predefined Amazon S3 groups: <code>AllUsers</code>, <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.</p> </li>    </ul> </li>   <li> <p> <b>Grantee</b>: The AWS user or group that you want to have access to thumbnail files. To identify the user or group, you can specify the canonical user ID for an AWS account, an origin access identity for a CloudFront distribution, the registered email address of an AWS account, or a predefined Amazon S3 group. </p> </li>   <li> <p> <b>Access</b>: The permission that you want to give to the AWS user that you specified in <code>Grantee</code>. Permissions are granted on the thumbnail files that Elastic Transcoder adds to the bucket. Valid values include: </p>    <ul>     <li> <p> <code>READ</code>: The grantee can read the thumbnails and metadata for objects that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>     <li> <p> <code>READ_ACP</code>: The grantee can read the object ACL for thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>     <li> <p> <code>WRITE_ACP</code>: The grantee can write the ACL for the thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</p> </li>     <li> <p> <code>FULL_CONTROL</code>: The grantee has <code>READ</code>, <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for the thumbnails that Elastic Transcoder adds to the Amazon S3 bucket. </p> </li>    </ul> </li>   <li> <p> <b>StorageClass</b>: The Amazon S3 storage class, <code>Standard</code> or <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to the thumbnails that it stores in your Amazon S3 bucket.</p> </li>  </ul>
+    /// - On success, responds with [`UpdatePipelineOutput`](crate::output::UpdatePipelineOutput) with field(s):
+    ///   - [`pipeline(Option<Pipeline>)`](crate::output::UpdatePipelineOutput::pipeline): <p>The pipeline updated by this <code>UpdatePipelineResponse</code> call.</p>
+    ///   - [`warnings(Option<Vec<Warning>>)`](crate::output::UpdatePipelineOutput::warnings): <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p>  <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
+    /// - On failure, responds with [`SdkError<UpdatePipelineError>`](crate::error::UpdatePipelineError)
     pub fn update_pipeline(&self) -> fluent_builders::UpdatePipeline<C, M, R> {
         fluent_builders::UpdatePipeline::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdatePipelineNotifications` operation.
+    /// Constructs a fluent builder for the [`UpdatePipelineNotifications`](crate::client::fluent_builders::UpdatePipelineNotifications) operation.
     ///
-    /// See [`UpdatePipelineNotifications`](crate::client::fluent_builders::UpdatePipelineNotifications) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdatePipelineNotificationsInput`](crate::input::UpdatePipelineNotificationsInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::UpdatePipelineNotificationsInput::id): <p>The identifier of the pipeline for which you want to change notification settings.</p>
+    ///   - [`notifications(Option<Notifications>)`](crate::input::UpdatePipelineNotificationsInput::notifications): <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to notify to report job status.</p> <important>   <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p>  </important>  <ul>   <li> <p> <b>Progressing</b>: The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to notify when Elastic Transcoder has started to process jobs that are added to this pipeline. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>   <li> <p> <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has finished processing a job. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>   <li> <p> <b>Warning</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters a warning condition. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>   <li> <p> <b>Error</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition. This is the ARN that Amazon SNS returned when you created the topic.</p> </li>  </ul>
+    /// - On success, responds with [`UpdatePipelineNotificationsOutput`](crate::output::UpdatePipelineNotificationsOutput) with field(s):
+    ///   - [`pipeline(Option<Pipeline>)`](crate::output::UpdatePipelineNotificationsOutput::pipeline): <p>A section of the response body that provides information about the pipeline associated with this notification.</p>
+    /// - On failure, responds with [`SdkError<UpdatePipelineNotificationsError>`](crate::error::UpdatePipelineNotificationsError)
     pub fn update_pipeline_notifications(
         &self,
     ) -> fluent_builders::UpdatePipelineNotifications<C, M, R> {
         fluent_builders::UpdatePipelineNotifications::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdatePipelineStatus` operation.
+    /// Constructs a fluent builder for the [`UpdatePipelineStatus`](crate::client::fluent_builders::UpdatePipelineStatus) operation.
     ///
-    /// See [`UpdatePipelineStatus`](crate::client::fluent_builders::UpdatePipelineStatus) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdatePipelineStatusInput`](crate::input::UpdatePipelineStatusInput) with field(s):
+    ///   - [`id(Option<String>)`](crate::input::UpdatePipelineStatusInput::id): <p>The identifier of the pipeline to update.</p>
+    ///   - [`status(Option<String>)`](crate::input::UpdatePipelineStatusInput::status): <p>The desired status of the pipeline:</p>  <ul>   <li> <p> <code>Active</code>: The pipeline is processing jobs.</p> </li>   <li> <p> <code>Paused</code>: The pipeline is not currently processing jobs.</p> </li>  </ul>
+    /// - On success, responds with [`UpdatePipelineStatusOutput`](crate::output::UpdatePipelineStatusOutput) with field(s):
+    ///   - [`pipeline(Option<Pipeline>)`](crate::output::UpdatePipelineStatusOutput::pipeline): <p>A section of the response body that provides information about the pipeline.</p>
+    /// - On failure, responds with [`SdkError<UpdatePipelineStatusError>`](crate::error::UpdatePipelineStatusError)
     pub fn update_pipeline_status(&self) -> fluent_builders::UpdatePipelineStatus<C, M, R> {
         fluent_builders::UpdatePipelineStatus::new(self.handle.clone())
     }

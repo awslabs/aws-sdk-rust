@@ -83,314 +83,746 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `CreateBotVersion` operation.
+    /// Constructs a fluent builder for the [`CreateBotVersion`](crate::client::fluent_builders::CreateBotVersion) operation.
     ///
-    /// See [`CreateBotVersion`](crate::client::fluent_builders::CreateBotVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateBotVersionInput`](crate::input::CreateBotVersionInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateBotVersionInput::name): <p>The name of the bot that you want to create a new version of. The name is case sensitive. </p>
+    ///   - [`checksum(Option<String>)`](crate::input::CreateBotVersionInput::checksum): <p>Identifies a specific revision of the <code>$LATEST</code> version of the bot. If you specify a checksum and the <code>$LATEST</code> version of the bot has a different checksum, a <code>PreconditionFailedException</code> exception is returned and Amazon Lex doesn't publish a new version. If you don't specify a checksum, Amazon Lex publishes the <code>$LATEST</code> version.</p>
+    /// - On success, responds with [`CreateBotVersionOutput`](crate::output::CreateBotVersionOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::CreateBotVersionOutput::name): <p>The name of the bot.</p>
+    ///   - [`description(Option<String>)`](crate::output::CreateBotVersionOutput::description): <p>A description of the bot.</p>
+    ///   - [`intents(Option<Vec<Intent>>)`](crate::output::CreateBotVersionOutput::intents): <p>An array of <code>Intent</code> objects. For more information, see <code>PutBot</code>.</p>
+    ///   - [`clarification_prompt(Option<Prompt>)`](crate::output::CreateBotVersionOutput::clarification_prompt): <p>The message that Amazon Lex uses when it doesn't understand the user's request. For more information, see <code>PutBot</code>. </p>
+    ///   - [`abort_statement(Option<Statement>)`](crate::output::CreateBotVersionOutput::abort_statement): <p>The message that Amazon Lex uses to cancel a conversation. For more information, see <code>PutBot</code>.</p>
+    ///   - [`status(Option<Status>)`](crate::output::CreateBotVersionOutput::status): <p> When you send a request to create or update a bot, Amazon Lex sets the <code>status</code> response element to <code>BUILDING</code>. After Amazon Lex builds the bot, it sets <code>status</code> to <code>READY</code>. If Amazon Lex can't build the bot, it sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns the reason for the failure in the <code>failureReason</code> response element. </p>
+    ///   - [`failure_reason(Option<String>)`](crate::output::CreateBotVersionOutput::failure_reason): <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to build the bot.</p>
+    ///   - [`last_updated_date(Option<DateTime>)`](crate::output::CreateBotVersionOutput::last_updated_date): <p>The date when the <code>$LATEST</code> version of this bot was updated. </p>
+    ///   - [`created_date(Option<DateTime>)`](crate::output::CreateBotVersionOutput::created_date): <p>The date when the bot version was created.</p>
+    ///   - [`idle_session_ttl_in_seconds(Option<i32>)`](crate::output::CreateBotVersionOutput::idle_session_ttl_in_seconds): <p>The maximum time in seconds that Amazon Lex retains the data gathered in a conversation. For more information, see <code>PutBot</code>.</p>
+    ///   - [`voice_id(Option<String>)`](crate::output::CreateBotVersionOutput::voice_id): <p>The Amazon Polly voice ID that Amazon Lex uses for voice interactions with the user.</p>
+    ///   - [`checksum(Option<String>)`](crate::output::CreateBotVersionOutput::checksum): <p>Checksum identifying the version of the bot that was created.</p>
+    ///   - [`version(Option<String>)`](crate::output::CreateBotVersionOutput::version): <p>The version of the bot. </p>
+    ///   - [`locale(Option<Locale>)`](crate::output::CreateBotVersionOutput::locale): <p> Specifies the target locale for the bot. </p>
+    ///   - [`child_directed(Option<bool>)`](crate::output::CreateBotVersionOutput::child_directed): <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p>  <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a> </p>
+    ///   - [`enable_model_improvements(Option<bool>)`](crate::output::CreateBotVersionOutput::enable_model_improvements): <p>Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the improvements, otherwise, <code>false</code>.</p>
+    ///   - [`detect_sentiment(Option<bool>)`](crate::output::CreateBotVersionOutput::detect_sentiment): <p>Indicates whether utterances entered by the user should be sent to Amazon Comprehend for sentiment analysis.</p>
+    /// - On failure, responds with [`SdkError<CreateBotVersionError>`](crate::error::CreateBotVersionError)
     pub fn create_bot_version(&self) -> fluent_builders::CreateBotVersion<C, M, R> {
         fluent_builders::CreateBotVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateIntentVersion` operation.
+    /// Constructs a fluent builder for the [`CreateIntentVersion`](crate::client::fluent_builders::CreateIntentVersion) operation.
     ///
-    /// See [`CreateIntentVersion`](crate::client::fluent_builders::CreateIntentVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateIntentVersionInput`](crate::input::CreateIntentVersionInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateIntentVersionInput::name): <p>The name of the intent that you want to create a new version of. The name is case sensitive. </p>
+    ///   - [`checksum(Option<String>)`](crate::input::CreateIntentVersionInput::checksum): <p>Checksum of the <code>$LATEST</code> version of the intent that should be used to create the new version. If you specify a checksum and the <code>$LATEST</code> version of the intent has a different checksum, Amazon Lex returns a <code>PreconditionFailedException</code> exception and doesn't publish a new version. If you don't specify a checksum, Amazon Lex publishes the <code>$LATEST</code> version.</p>
+    /// - On success, responds with [`CreateIntentVersionOutput`](crate::output::CreateIntentVersionOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::CreateIntentVersionOutput::name): <p>The name of the intent.</p>
+    ///   - [`description(Option<String>)`](crate::output::CreateIntentVersionOutput::description): <p>A description of the intent.</p>
+    ///   - [`slots(Option<Vec<Slot>>)`](crate::output::CreateIntentVersionOutput::slots): <p>An array of slot types that defines the information required to fulfill the intent.</p>
+    ///   - [`sample_utterances(Option<Vec<String>>)`](crate::output::CreateIntentVersionOutput::sample_utterances): <p>An array of sample utterances configured for the intent. </p>
+    ///   - [`confirmation_prompt(Option<Prompt>)`](crate::output::CreateIntentVersionOutput::confirmation_prompt): <p>If defined, the prompt that Amazon Lex uses to confirm the user's intent before fulfilling it. </p>
+    ///   - [`rejection_statement(Option<Statement>)`](crate::output::CreateIntentVersionOutput::rejection_statement): <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p>
+    ///   - [`follow_up_prompt(Option<FollowUpPrompt>)`](crate::output::CreateIntentVersionOutput::follow_up_prompt): <p>If defined, Amazon Lex uses this prompt to solicit additional user activity after the intent is fulfilled. </p>
+    ///   - [`conclusion_statement(Option<Statement>)`](crate::output::CreateIntentVersionOutput::conclusion_statement): <p>After the Lambda function specified in the <code>fulfillmentActivity</code> field fulfills the intent, Amazon Lex conveys this statement to the user. </p>
+    ///   - [`dialog_code_hook(Option<CodeHook>)`](crate::output::CreateIntentVersionOutput::dialog_code_hook): <p>If defined, Amazon Lex invokes this Lambda function for each user input.</p>
+    ///   - [`fulfillment_activity(Option<FulfillmentActivity>)`](crate::output::CreateIntentVersionOutput::fulfillment_activity): <p> Describes how the intent is fulfilled. </p>
+    ///   - [`parent_intent_signature(Option<String>)`](crate::output::CreateIntentVersionOutput::parent_intent_signature): <p>A unique identifier for a built-in intent.</p>
+    ///   - [`last_updated_date(Option<DateTime>)`](crate::output::CreateIntentVersionOutput::last_updated_date): <p>The date that the intent was updated. </p>
+    ///   - [`created_date(Option<DateTime>)`](crate::output::CreateIntentVersionOutput::created_date): <p>The date that the intent was created.</p>
+    ///   - [`version(Option<String>)`](crate::output::CreateIntentVersionOutput::version): <p>The version number assigned to the new version of the intent.</p>
+    ///   - [`checksum(Option<String>)`](crate::output::CreateIntentVersionOutput::checksum): <p>Checksum of the intent version created.</p>
+    ///   - [`kendra_configuration(Option<KendraConfiguration>)`](crate::output::CreateIntentVersionOutput::kendra_configuration): <p>Configuration information, if any, for connecting an Amazon Kendra index with the <code>AMAZON.KendraSearchIntent</code> intent.</p>
+    ///   - [`input_contexts(Option<Vec<InputContext>>)`](crate::output::CreateIntentVersionOutput::input_contexts): <p>An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user.</p>
+    ///   - [`output_contexts(Option<Vec<OutputContext>>)`](crate::output::CreateIntentVersionOutput::output_contexts): <p>An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent is fulfilled.</p>
+    /// - On failure, responds with [`SdkError<CreateIntentVersionError>`](crate::error::CreateIntentVersionError)
     pub fn create_intent_version(&self) -> fluent_builders::CreateIntentVersion<C, M, R> {
         fluent_builders::CreateIntentVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateSlotTypeVersion` operation.
+    /// Constructs a fluent builder for the [`CreateSlotTypeVersion`](crate::client::fluent_builders::CreateSlotTypeVersion) operation.
     ///
-    /// See [`CreateSlotTypeVersion`](crate::client::fluent_builders::CreateSlotTypeVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateSlotTypeVersionInput`](crate::input::CreateSlotTypeVersionInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateSlotTypeVersionInput::name): <p>The name of the slot type that you want to create a new version for. The name is case sensitive. </p>
+    ///   - [`checksum(Option<String>)`](crate::input::CreateSlotTypeVersionInput::checksum): <p>Checksum for the <code>$LATEST</code> version of the slot type that you want to publish. If you specify a checksum and the <code>$LATEST</code> version of the slot type has a different checksum, Amazon Lex returns a <code>PreconditionFailedException</code> exception and doesn't publish the new version. If you don't specify a checksum, Amazon Lex publishes the <code>$LATEST</code> version.</p>
+    /// - On success, responds with [`CreateSlotTypeVersionOutput`](crate::output::CreateSlotTypeVersionOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::CreateSlotTypeVersionOutput::name): <p>The name of the slot type.</p>
+    ///   - [`description(Option<String>)`](crate::output::CreateSlotTypeVersionOutput::description): <p>A description of the slot type.</p>
+    ///   - [`enumeration_values(Option<Vec<EnumerationValue>>)`](crate::output::CreateSlotTypeVersionOutput::enumeration_values): <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take.</p>
+    ///   - [`last_updated_date(Option<DateTime>)`](crate::output::CreateSlotTypeVersionOutput::last_updated_date): <p>The date that the slot type was updated. When you create a resource, the creation date and last update date are the same.</p>
+    ///   - [`created_date(Option<DateTime>)`](crate::output::CreateSlotTypeVersionOutput::created_date): <p>The date that the slot type was created.</p>
+    ///   - [`version(Option<String>)`](crate::output::CreateSlotTypeVersionOutput::version): <p>The version assigned to the new slot type version. </p>
+    ///   - [`checksum(Option<String>)`](crate::output::CreateSlotTypeVersionOutput::checksum): <p>Checksum of the <code>$LATEST</code> version of the slot type.</p>
+    ///   - [`value_selection_strategy(Option<SlotValueSelectionStrategy>)`](crate::output::CreateSlotTypeVersionOutput::value_selection_strategy): <p>The strategy that Amazon Lex uses to determine the value of the slot. For more information, see <code>PutSlotType</code>.</p>
+    ///   - [`parent_slot_type_signature(Option<String>)`](crate::output::CreateSlotTypeVersionOutput::parent_slot_type_signature): <p>The built-in slot type used a the parent of the slot type.</p>
+    ///   - [`slot_type_configurations(Option<Vec<SlotTypeConfiguration>>)`](crate::output::CreateSlotTypeVersionOutput::slot_type_configurations): <p>Configuration information that extends the parent built-in slot type.</p>
+    /// - On failure, responds with [`SdkError<CreateSlotTypeVersionError>`](crate::error::CreateSlotTypeVersionError)
     pub fn create_slot_type_version(&self) -> fluent_builders::CreateSlotTypeVersion<C, M, R> {
         fluent_builders::CreateSlotTypeVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteBot` operation.
+    /// Constructs a fluent builder for the [`DeleteBot`](crate::client::fluent_builders::DeleteBot) operation.
     ///
-    /// See [`DeleteBot`](crate::client::fluent_builders::DeleteBot) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteBotInput`](crate::input::DeleteBotInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteBotInput::name): <p>The name of the bot. The name is case sensitive. </p>
+    /// - On success, responds with [`DeleteBotOutput`](crate::output::DeleteBotOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteBotError>`](crate::error::DeleteBotError)
     pub fn delete_bot(&self) -> fluent_builders::DeleteBot<C, M, R> {
         fluent_builders::DeleteBot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteBotAlias` operation.
+    /// Constructs a fluent builder for the [`DeleteBotAlias`](crate::client::fluent_builders::DeleteBotAlias) operation.
     ///
-    /// See [`DeleteBotAlias`](crate::client::fluent_builders::DeleteBotAlias) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteBotAliasInput`](crate::input::DeleteBotAliasInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteBotAliasInput::name): <p>The name of the alias to delete. The name is case sensitive. </p>
+    ///   - [`bot_name(Option<String>)`](crate::input::DeleteBotAliasInput::bot_name): <p>The name of the bot that the alias points to.</p>
+    /// - On success, responds with [`DeleteBotAliasOutput`](crate::output::DeleteBotAliasOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteBotAliasError>`](crate::error::DeleteBotAliasError)
     pub fn delete_bot_alias(&self) -> fluent_builders::DeleteBotAlias<C, M, R> {
         fluent_builders::DeleteBotAlias::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteBotChannelAssociation` operation.
+    /// Constructs a fluent builder for the [`DeleteBotChannelAssociation`](crate::client::fluent_builders::DeleteBotChannelAssociation) operation.
     ///
-    /// See [`DeleteBotChannelAssociation`](crate::client::fluent_builders::DeleteBotChannelAssociation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteBotChannelAssociationInput`](crate::input::DeleteBotChannelAssociationInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteBotChannelAssociationInput::name): <p>The name of the association. The name is case sensitive. </p>
+    ///   - [`bot_name(Option<String>)`](crate::input::DeleteBotChannelAssociationInput::bot_name): <p>The name of the Amazon Lex bot.</p>
+    ///   - [`bot_alias(Option<String>)`](crate::input::DeleteBotChannelAssociationInput::bot_alias): <p>An alias that points to the specific version of the Amazon Lex bot to which this association is being made.</p>
+    /// - On success, responds with [`DeleteBotChannelAssociationOutput`](crate::output::DeleteBotChannelAssociationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteBotChannelAssociationError>`](crate::error::DeleteBotChannelAssociationError)
     pub fn delete_bot_channel_association(
         &self,
     ) -> fluent_builders::DeleteBotChannelAssociation<C, M, R> {
         fluent_builders::DeleteBotChannelAssociation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteBotVersion` operation.
+    /// Constructs a fluent builder for the [`DeleteBotVersion`](crate::client::fluent_builders::DeleteBotVersion) operation.
     ///
-    /// See [`DeleteBotVersion`](crate::client::fluent_builders::DeleteBotVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteBotVersionInput`](crate::input::DeleteBotVersionInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteBotVersionInput::name): <p>The name of the bot.</p>
+    ///   - [`version(Option<String>)`](crate::input::DeleteBotVersionInput::version): <p>The version of the bot to delete. You cannot delete the <code>$LATEST</code> version of the bot. To delete the <code>$LATEST</code> version, use the <code>DeleteBot</code> operation.</p>
+    /// - On success, responds with [`DeleteBotVersionOutput`](crate::output::DeleteBotVersionOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteBotVersionError>`](crate::error::DeleteBotVersionError)
     pub fn delete_bot_version(&self) -> fluent_builders::DeleteBotVersion<C, M, R> {
         fluent_builders::DeleteBotVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteIntent` operation.
+    /// Constructs a fluent builder for the [`DeleteIntent`](crate::client::fluent_builders::DeleteIntent) operation.
     ///
-    /// See [`DeleteIntent`](crate::client::fluent_builders::DeleteIntent) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteIntentInput`](crate::input::DeleteIntentInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteIntentInput::name): <p>The name of the intent. The name is case sensitive. </p>
+    /// - On success, responds with [`DeleteIntentOutput`](crate::output::DeleteIntentOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteIntentError>`](crate::error::DeleteIntentError)
     pub fn delete_intent(&self) -> fluent_builders::DeleteIntent<C, M, R> {
         fluent_builders::DeleteIntent::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteIntentVersion` operation.
+    /// Constructs a fluent builder for the [`DeleteIntentVersion`](crate::client::fluent_builders::DeleteIntentVersion) operation.
     ///
-    /// See [`DeleteIntentVersion`](crate::client::fluent_builders::DeleteIntentVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteIntentVersionInput`](crate::input::DeleteIntentVersionInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteIntentVersionInput::name): <p>The name of the intent.</p>
+    ///   - [`version(Option<String>)`](crate::input::DeleteIntentVersionInput::version): <p>The version of the intent to delete. You cannot delete the <code>$LATEST</code> version of the intent. To delete the <code>$LATEST</code> version, use the <code>DeleteIntent</code> operation.</p>
+    /// - On success, responds with [`DeleteIntentVersionOutput`](crate::output::DeleteIntentVersionOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteIntentVersionError>`](crate::error::DeleteIntentVersionError)
     pub fn delete_intent_version(&self) -> fluent_builders::DeleteIntentVersion<C, M, R> {
         fluent_builders::DeleteIntentVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteSlotType` operation.
+    /// Constructs a fluent builder for the [`DeleteSlotType`](crate::client::fluent_builders::DeleteSlotType) operation.
     ///
-    /// See [`DeleteSlotType`](crate::client::fluent_builders::DeleteSlotType) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteSlotTypeInput`](crate::input::DeleteSlotTypeInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteSlotTypeInput::name): <p>The name of the slot type. The name is case sensitive. </p>
+    /// - On success, responds with [`DeleteSlotTypeOutput`](crate::output::DeleteSlotTypeOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteSlotTypeError>`](crate::error::DeleteSlotTypeError)
     pub fn delete_slot_type(&self) -> fluent_builders::DeleteSlotType<C, M, R> {
         fluent_builders::DeleteSlotType::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteSlotTypeVersion` operation.
+    /// Constructs a fluent builder for the [`DeleteSlotTypeVersion`](crate::client::fluent_builders::DeleteSlotTypeVersion) operation.
     ///
-    /// See [`DeleteSlotTypeVersion`](crate::client::fluent_builders::DeleteSlotTypeVersion) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteSlotTypeVersionInput`](crate::input::DeleteSlotTypeVersionInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteSlotTypeVersionInput::name): <p>The name of the slot type.</p>
+    ///   - [`version(Option<String>)`](crate::input::DeleteSlotTypeVersionInput::version): <p>The version of the slot type to delete. You cannot delete the <code>$LATEST</code> version of the slot type. To delete the <code>$LATEST</code> version, use the <code>DeleteSlotType</code> operation.</p>
+    /// - On success, responds with [`DeleteSlotTypeVersionOutput`](crate::output::DeleteSlotTypeVersionOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteSlotTypeVersionError>`](crate::error::DeleteSlotTypeVersionError)
     pub fn delete_slot_type_version(&self) -> fluent_builders::DeleteSlotTypeVersion<C, M, R> {
         fluent_builders::DeleteSlotTypeVersion::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteUtterances` operation.
+    /// Constructs a fluent builder for the [`DeleteUtterances`](crate::client::fluent_builders::DeleteUtterances) operation.
     ///
-    /// See [`DeleteUtterances`](crate::client::fluent_builders::DeleteUtterances) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteUtterancesInput`](crate::input::DeleteUtterancesInput) with field(s):
+    ///   - [`bot_name(Option<String>)`](crate::input::DeleteUtterancesInput::bot_name): <p>The name of the bot that stored the utterances.</p>
+    ///   - [`user_id(Option<String>)`](crate::input::DeleteUtterancesInput::user_id): <p> The unique identifier for the user that made the utterances. This is the user ID that was sent in the <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> operation request that contained the utterance.</p>
+    /// - On success, responds with [`DeleteUtterancesOutput`](crate::output::DeleteUtterancesOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteUtterancesError>`](crate::error::DeleteUtterancesError)
     pub fn delete_utterances(&self) -> fluent_builders::DeleteUtterances<C, M, R> {
         fluent_builders::DeleteUtterances::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBot` operation.
+    /// Constructs a fluent builder for the [`GetBot`](crate::client::fluent_builders::GetBot) operation.
     ///
-    /// See [`GetBot`](crate::client::fluent_builders::GetBot) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetBotInput`](crate::input::GetBotInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::GetBotInput::name): <p>The name of the bot. The name is case sensitive. </p>
+    ///   - [`version_or_alias(Option<String>)`](crate::input::GetBotInput::version_or_alias): <p>The version or alias of the bot.</p>
+    /// - On success, responds with [`GetBotOutput`](crate::output::GetBotOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::GetBotOutput::name): <p>The name of the bot.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetBotOutput::description): <p>A description of the bot.</p>
+    ///   - [`intents(Option<Vec<Intent>>)`](crate::output::GetBotOutput::intents): <p>An array of <code>intent</code> objects. For more information, see <code>PutBot</code>.</p>
+    ///   - [`enable_model_improvements(Option<bool>)`](crate::output::GetBotOutput::enable_model_improvements): <p>Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the improvements, otherwise, <code>false</code>.</p>
+    ///   - [`nlu_intent_confidence_threshold(Option<f64>)`](crate::output::GetBotOutput::nlu_intent_confidence_threshold): <p>The score that determines where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response. <code>AMAZON.FallbackIntent</code> is inserted if the confidence score for all intents is below this value. <code>AMAZON.KendraSearchIntent</code> is only inserted if it is configured for the bot.</p>
+    ///   - [`clarification_prompt(Option<Prompt>)`](crate::output::GetBotOutput::clarification_prompt): <p>The message Amazon Lex uses when it doesn't understand the user's request. For more information, see <code>PutBot</code>. </p>
+    ///   - [`abort_statement(Option<Statement>)`](crate::output::GetBotOutput::abort_statement): <p>The message that Amazon Lex returns when the user elects to end the conversation without completing it. For more information, see <code>PutBot</code>.</p>
+    ///   - [`status(Option<Status>)`](crate::output::GetBotOutput::status): <p>The status of the bot. </p>  <p>When the status is <code>BUILDING</code> Amazon Lex is building the bot for testing and use.</p>  <p>If the status of the bot is <code>READY_BASIC_TESTING</code>, you can test the bot using the exact utterances specified in the bot's intents. When the bot is ready for full testing or to run, the status is <code>READY</code>.</p>  <p>If there was a problem with building the bot, the status is <code>FAILED</code> and the <code>failureReason</code> field explains why the bot did not build.</p>  <p>If the bot was saved but not built, the status is <code>NOT_BUILT</code>.</p>
+    ///   - [`failure_reason(Option<String>)`](crate::output::GetBotOutput::failure_reason): <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex explains why it failed to build the bot.</p>
+    ///   - [`last_updated_date(Option<DateTime>)`](crate::output::GetBotOutput::last_updated_date): <p>The date that the bot was updated. When you create a resource, the creation date and last updated date are the same. </p>
+    ///   - [`created_date(Option<DateTime>)`](crate::output::GetBotOutput::created_date): <p>The date that the bot was created.</p>
+    ///   - [`idle_session_ttl_in_seconds(Option<i32>)`](crate::output::GetBotOutput::idle_session_ttl_in_seconds): <p>The maximum time in seconds that Amazon Lex retains the data gathered in a conversation. For more information, see <code>PutBot</code>.</p>
+    ///   - [`voice_id(Option<String>)`](crate::output::GetBotOutput::voice_id): <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see <code>PutBot</code>.</p>
+    ///   - [`checksum(Option<String>)`](crate::output::GetBotOutput::checksum): <p>Checksum of the bot used to identify a specific revision of the bot's <code>$LATEST</code> version.</p>
+    ///   - [`version(Option<String>)`](crate::output::GetBotOutput::version): <p>The version of the bot. For a new bot, the version is always <code>$LATEST</code>.</p>
+    ///   - [`locale(Option<Locale>)`](crate::output::GetBotOutput::locale): <p> The target locale for the bot. </p>
+    ///   - [`child_directed(Option<bool>)`](crate::output::GetBotOutput::child_directed): <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p>  <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a> </p>
+    ///   - [`detect_sentiment(Option<bool>)`](crate::output::GetBotOutput::detect_sentiment): <p>Indicates whether user utterances should be sent to Amazon Comprehend for sentiment analysis.</p>
+    /// - On failure, responds with [`SdkError<GetBotError>`](crate::error::GetBotError)
     pub fn get_bot(&self) -> fluent_builders::GetBot<C, M, R> {
         fluent_builders::GetBot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBotAlias` operation.
+    /// Constructs a fluent builder for the [`GetBotAlias`](crate::client::fluent_builders::GetBotAlias) operation.
     ///
-    /// See [`GetBotAlias`](crate::client::fluent_builders::GetBotAlias) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetBotAliasInput`](crate::input::GetBotAliasInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::GetBotAliasInput::name): <p>The name of the bot alias. The name is case sensitive.</p>
+    ///   - [`bot_name(Option<String>)`](crate::input::GetBotAliasInput::bot_name): <p>The name of the bot.</p>
+    /// - On success, responds with [`GetBotAliasOutput`](crate::output::GetBotAliasOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::GetBotAliasOutput::name): <p>The name of the bot alias.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetBotAliasOutput::description): <p>A description of the bot alias.</p>
+    ///   - [`bot_version(Option<String>)`](crate::output::GetBotAliasOutput::bot_version): <p>The version of the bot that the alias points to.</p>
+    ///   - [`bot_name(Option<String>)`](crate::output::GetBotAliasOutput::bot_name): <p>The name of the bot that the alias points to.</p>
+    ///   - [`last_updated_date(Option<DateTime>)`](crate::output::GetBotAliasOutput::last_updated_date): <p>The date that the bot alias was updated. When you create a resource, the creation date and the last updated date are the same.</p>
+    ///   - [`created_date(Option<DateTime>)`](crate::output::GetBotAliasOutput::created_date): <p>The date that the bot alias was created.</p>
+    ///   - [`checksum(Option<String>)`](crate::output::GetBotAliasOutput::checksum): <p>Checksum of the bot alias.</p>
+    ///   - [`conversation_logs(Option<ConversationLogsResponse>)`](crate::output::GetBotAliasOutput::conversation_logs): <p>The settings that determine how Amazon Lex uses conversation logs for the alias.</p>
+    /// - On failure, responds with [`SdkError<GetBotAliasError>`](crate::error::GetBotAliasError)
     pub fn get_bot_alias(&self) -> fluent_builders::GetBotAlias<C, M, R> {
         fluent_builders::GetBotAlias::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBotAliases` operation.
-    ///
-    /// See [`GetBotAliases`](crate::client::fluent_builders::GetBotAliases) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetBotAliases`](crate::client::fluent_builders::GetBotAliases) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetBotAliases::into_paginator).
+    ///
+    /// - Takes [`GetBotAliasesInput`](crate::input::GetBotAliasesInput) with field(s):
+    ///   - [`bot_name(Option<String>)`](crate::input::GetBotAliasesInput::bot_name): <p>The name of the bot.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetBotAliasesInput::next_token): <p>A pagination token for fetching the next page of aliases. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of aliases, specify the pagination token in the next request. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetBotAliasesInput::max_results): <p>The maximum number of aliases to return in the response. The default is 50. . </p>
+    ///   - [`name_contains(Option<String>)`](crate::input::GetBotAliasesInput::name_contains): <p>Substring to match in bot alias names. An alias will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
+    /// - On success, responds with [`GetBotAliasesOutput`](crate::output::GetBotAliasesOutput) with field(s):
+    ///   - [`bot_aliases(Option<Vec<BotAliasMetadata>>)`](crate::output::GetBotAliasesOutput::bot_aliases): <p>An array of <code>BotAliasMetadata</code> objects, each describing a bot alias.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetBotAliasesOutput::next_token): <p>A pagination token for fetching next page of aliases. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of aliases, specify the pagination token in the next request. </p>
+    /// - On failure, responds with [`SdkError<GetBotAliasesError>`](crate::error::GetBotAliasesError)
     pub fn get_bot_aliases(&self) -> fluent_builders::GetBotAliases<C, M, R> {
         fluent_builders::GetBotAliases::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBotChannelAssociation` operation.
+    /// Constructs a fluent builder for the [`GetBotChannelAssociation`](crate::client::fluent_builders::GetBotChannelAssociation) operation.
     ///
-    /// See [`GetBotChannelAssociation`](crate::client::fluent_builders::GetBotChannelAssociation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetBotChannelAssociationInput`](crate::input::GetBotChannelAssociationInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::GetBotChannelAssociationInput::name): <p>The name of the association between the bot and the channel. The name is case sensitive. </p>
+    ///   - [`bot_name(Option<String>)`](crate::input::GetBotChannelAssociationInput::bot_name): <p>The name of the Amazon Lex bot.</p>
+    ///   - [`bot_alias(Option<String>)`](crate::input::GetBotChannelAssociationInput::bot_alias): <p>An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.</p>
+    /// - On success, responds with [`GetBotChannelAssociationOutput`](crate::output::GetBotChannelAssociationOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::GetBotChannelAssociationOutput::name): <p>The name of the association between the bot and the channel.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetBotChannelAssociationOutput::description): <p>A description of the association between the bot and the channel.</p>
+    ///   - [`bot_alias(Option<String>)`](crate::output::GetBotChannelAssociationOutput::bot_alias): <p>An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.</p>
+    ///   - [`bot_name(Option<String>)`](crate::output::GetBotChannelAssociationOutput::bot_name): <p>The name of the Amazon Lex bot.</p>
+    ///   - [`created_date(Option<DateTime>)`](crate::output::GetBotChannelAssociationOutput::created_date): <p>The date that the association between the bot and the channel was created.</p>
+    ///   - [`r#type(Option<ChannelType>)`](crate::output::GetBotChannelAssociationOutput::r#type): <p>The type of the messaging platform.</p>
+    ///   - [`bot_configuration(Option<HashMap<String, String>>)`](crate::output::GetBotChannelAssociationOutput::bot_configuration): <p>Provides information that the messaging platform needs to communicate with the Amazon Lex bot.</p>
+    ///   - [`status(Option<ChannelStatus>)`](crate::output::GetBotChannelAssociationOutput::status): <p>The status of the bot channel. </p>  <ul>   <li> <p> <code>CREATED</code> - The channel has been created and is ready for use.</p> </li>   <li> <p> <code>IN_PROGRESS</code> - Channel creation is in progress.</p> </li>   <li> <p> <code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure, see the <code>failureReason</code> field.</p> </li>  </ul>
+    ///   - [`failure_reason(Option<String>)`](crate::output::GetBotChannelAssociationOutput::failure_reason): <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to create the association.</p>
+    /// - On failure, responds with [`SdkError<GetBotChannelAssociationError>`](crate::error::GetBotChannelAssociationError)
     pub fn get_bot_channel_association(
         &self,
     ) -> fluent_builders::GetBotChannelAssociation<C, M, R> {
         fluent_builders::GetBotChannelAssociation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBotChannelAssociations` operation.
-    ///
-    /// See [`GetBotChannelAssociations`](crate::client::fluent_builders::GetBotChannelAssociations) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetBotChannelAssociations`](crate::client::fluent_builders::GetBotChannelAssociations) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetBotChannelAssociations::into_paginator).
+    ///
+    /// - Takes [`GetBotChannelAssociationsInput`](crate::input::GetBotChannelAssociationsInput) with field(s):
+    ///   - [`bot_name(Option<String>)`](crate::input::GetBotChannelAssociationsInput::bot_name): <p>The name of the Amazon Lex bot in the association.</p>
+    ///   - [`bot_alias(Option<String>)`](crate::input::GetBotChannelAssociationsInput::bot_alias): <p>An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetBotChannelAssociationsInput::next_token): <p>A pagination token for fetching the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetBotChannelAssociationsInput::max_results): <p>The maximum number of associations to return in the response. The default is 50. </p>
+    ///   - [`name_contains(Option<String>)`](crate::input::GetBotChannelAssociationsInput::name_contains): <p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To return all bot channel associations, use a hyphen ("-") as the <code>nameContains</code> parameter.</p>
+    /// - On success, responds with [`GetBotChannelAssociationsOutput`](crate::output::GetBotChannelAssociationsOutput) with field(s):
+    ///   - [`bot_channel_associations(Option<Vec<BotChannelAssociation>>)`](crate::output::GetBotChannelAssociationsOutput::bot_channel_associations): <p>An array of objects, one for each association, that provides information about the Amazon Lex bot and its association with the channel. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetBotChannelAssociationsOutput::next_token): <p>A pagination token that fetches the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request. </p>
+    /// - On failure, responds with [`SdkError<GetBotChannelAssociationsError>`](crate::error::GetBotChannelAssociationsError)
     pub fn get_bot_channel_associations(
         &self,
     ) -> fluent_builders::GetBotChannelAssociations<C, M, R> {
         fluent_builders::GetBotChannelAssociations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBots` operation.
-    ///
-    /// See [`GetBots`](crate::client::fluent_builders::GetBots) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetBots`](crate::client::fluent_builders::GetBots) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetBots::into_paginator).
+    ///
+    /// - Takes [`GetBotsInput`](crate::input::GetBotsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::GetBotsInput::next_token): <p>A pagination token that fetches the next page of bots. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of bots, specify the pagination token in the next request. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetBotsInput::max_results): <p>The maximum number of bots to return in the response that the request will return. The default is 10.</p>
+    ///   - [`name_contains(Option<String>)`](crate::input::GetBotsInput::name_contains): <p>Substring to match in bot names. A bot will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
+    /// - On success, responds with [`GetBotsOutput`](crate::output::GetBotsOutput) with field(s):
+    ///   - [`bots(Option<Vec<BotMetadata>>)`](crate::output::GetBotsOutput::bots): <p>An array of <code>botMetadata</code> objects, with one entry for each bot. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetBotsOutput::next_token): <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of bots. </p>
+    /// - On failure, responds with [`SdkError<GetBotsError>`](crate::error::GetBotsError)
     pub fn get_bots(&self) -> fluent_builders::GetBots<C, M, R> {
         fluent_builders::GetBots::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBotVersions` operation.
-    ///
-    /// See [`GetBotVersions`](crate::client::fluent_builders::GetBotVersions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetBotVersions`](crate::client::fluent_builders::GetBotVersions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetBotVersions::into_paginator).
+    ///
+    /// - Takes [`GetBotVersionsInput`](crate::input::GetBotVersionsInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::GetBotVersionsInput::name): <p>The name of the bot for which versions should be returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetBotVersionsInput::next_token): <p>A pagination token for fetching the next page of bot versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetBotVersionsInput::max_results): <p>The maximum number of bot versions to return in the response. The default is 10.</p>
+    /// - On success, responds with [`GetBotVersionsOutput`](crate::output::GetBotVersionsOutput) with field(s):
+    ///   - [`bots(Option<Vec<BotMetadata>>)`](crate::output::GetBotVersionsOutput::bots): <p>An array of <code>BotMetadata</code> objects, one for each numbered version of the bot plus one for the <code>$LATEST</code> version.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetBotVersionsOutput::next_token): <p>A pagination token for fetching the next page of bot versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
+    /// - On failure, responds with [`SdkError<GetBotVersionsError>`](crate::error::GetBotVersionsError)
     pub fn get_bot_versions(&self) -> fluent_builders::GetBotVersions<C, M, R> {
         fluent_builders::GetBotVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBuiltinIntent` operation.
+    /// Constructs a fluent builder for the [`GetBuiltinIntent`](crate::client::fluent_builders::GetBuiltinIntent) operation.
     ///
-    /// See [`GetBuiltinIntent`](crate::client::fluent_builders::GetBuiltinIntent) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetBuiltinIntentInput`](crate::input::GetBuiltinIntentInput) with field(s):
+    ///   - [`signature(Option<String>)`](crate::input::GetBuiltinIntentInput::signature): <p>The unique identifier for a built-in intent. To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
+    /// - On success, responds with [`GetBuiltinIntentOutput`](crate::output::GetBuiltinIntentOutput) with field(s):
+    ///   - [`signature(Option<String>)`](crate::output::GetBuiltinIntentOutput::signature): <p>The unique identifier for a built-in intent.</p>
+    ///   - [`supported_locales(Option<Vec<Locale>>)`](crate::output::GetBuiltinIntentOutput::supported_locales): <p>A list of locales that the intent supports.</p>
+    ///   - [`slots(Option<Vec<BuiltinIntentSlot>>)`](crate::output::GetBuiltinIntentOutput::slots): <p>An array of <code>BuiltinIntentSlot</code> objects, one entry for each slot type in the intent.</p>
+    /// - On failure, responds with [`SdkError<GetBuiltinIntentError>`](crate::error::GetBuiltinIntentError)
     pub fn get_builtin_intent(&self) -> fluent_builders::GetBuiltinIntent<C, M, R> {
         fluent_builders::GetBuiltinIntent::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBuiltinIntents` operation.
-    ///
-    /// See [`GetBuiltinIntents`](crate::client::fluent_builders::GetBuiltinIntents) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetBuiltinIntents`](crate::client::fluent_builders::GetBuiltinIntents) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetBuiltinIntents::into_paginator).
+    ///
+    /// - Takes [`GetBuiltinIntentsInput`](crate::input::GetBuiltinIntentsInput) with field(s):
+    ///   - [`locale(Option<Locale>)`](crate::input::GetBuiltinIntentsInput::locale): <p>A list of locales that the intent supports.</p>
+    ///   - [`signature_contains(Option<String>)`](crate::input::GetBuiltinIntentsInput::signature_contains): <p>Substring to match in built-in intent signatures. An intent will be returned if any part of its signature matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetBuiltinIntentsInput::next_token): <p>A pagination token that fetches the next page of intents. If this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of intents, use the pagination token in the next request.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetBuiltinIntentsInput::max_results): <p>The maximum number of intents to return in the response. The default is 10.</p>
+    /// - On success, responds with [`GetBuiltinIntentsOutput`](crate::output::GetBuiltinIntentsOutput) with field(s):
+    ///   - [`intents(Option<Vec<BuiltinIntentMetadata>>)`](crate::output::GetBuiltinIntentsOutput::intents): <p>An array of <code>builtinIntentMetadata</code> objects, one for each intent in the response.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetBuiltinIntentsOutput::next_token): <p>A pagination token that fetches the next page of intents. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of intents, specify the pagination token in the next request.</p>
+    /// - On failure, responds with [`SdkError<GetBuiltinIntentsError>`](crate::error::GetBuiltinIntentsError)
     pub fn get_builtin_intents(&self) -> fluent_builders::GetBuiltinIntents<C, M, R> {
         fluent_builders::GetBuiltinIntents::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetBuiltinSlotTypes` operation.
-    ///
-    /// See [`GetBuiltinSlotTypes`](crate::client::fluent_builders::GetBuiltinSlotTypes) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetBuiltinSlotTypes`](crate::client::fluent_builders::GetBuiltinSlotTypes) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetBuiltinSlotTypes::into_paginator).
+    ///
+    /// - Takes [`GetBuiltinSlotTypesInput`](crate::input::GetBuiltinSlotTypesInput) with field(s):
+    ///   - [`locale(Option<Locale>)`](crate::input::GetBuiltinSlotTypesInput::locale): <p>A list of locales that the slot type supports.</p>
+    ///   - [`signature_contains(Option<String>)`](crate::input::GetBuiltinSlotTypesInput::signature_contains): <p>Substring to match in built-in slot type signatures. A slot type will be returned if any part of its signature matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetBuiltinSlotTypesInput::next_token): <p>A pagination token that fetches the next page of slot types. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of slot types, specify the pagination token in the next request.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetBuiltinSlotTypesInput::max_results): <p>The maximum number of slot types to return in the response. The default is 10.</p>
+    /// - On success, responds with [`GetBuiltinSlotTypesOutput`](crate::output::GetBuiltinSlotTypesOutput) with field(s):
+    ///   - [`slot_types(Option<Vec<BuiltinSlotTypeMetadata>>)`](crate::output::GetBuiltinSlotTypesOutput::slot_types): <p>An array of <code>BuiltInSlotTypeMetadata</code> objects, one entry for each slot type returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetBuiltinSlotTypesOutput::next_token): <p>If the response is truncated, the response includes a pagination token that you can use in your next request to fetch the next page of slot types.</p>
+    /// - On failure, responds with [`SdkError<GetBuiltinSlotTypesError>`](crate::error::GetBuiltinSlotTypesError)
     pub fn get_builtin_slot_types(&self) -> fluent_builders::GetBuiltinSlotTypes<C, M, R> {
         fluent_builders::GetBuiltinSlotTypes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetExport` operation.
+    /// Constructs a fluent builder for the [`GetExport`](crate::client::fluent_builders::GetExport) operation.
     ///
-    /// See [`GetExport`](crate::client::fluent_builders::GetExport) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetExportInput`](crate::input::GetExportInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::GetExportInput::name): <p>The name of the bot to export.</p>
+    ///   - [`version(Option<String>)`](crate::input::GetExportInput::version): <p>The version of the bot to export.</p>
+    ///   - [`resource_type(Option<ResourceType>)`](crate::input::GetExportInput::resource_type): <p>The type of resource to export. </p>
+    ///   - [`export_type(Option<ExportType>)`](crate::input::GetExportInput::export_type): <p>The format of the exported data.</p>
+    /// - On success, responds with [`GetExportOutput`](crate::output::GetExportOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::GetExportOutput::name): <p>The name of the bot being exported.</p>
+    ///   - [`version(Option<String>)`](crate::output::GetExportOutput::version): <p>The version of the bot being exported.</p>
+    ///   - [`resource_type(Option<ResourceType>)`](crate::output::GetExportOutput::resource_type): <p>The type of the exported resource.</p>
+    ///   - [`export_type(Option<ExportType>)`](crate::output::GetExportOutput::export_type): <p>The format of the exported data.</p>
+    ///   - [`export_status(Option<ExportStatus>)`](crate::output::GetExportOutput::export_status): <p>The status of the export. </p>  <ul>   <li> <p> <code>IN_PROGRESS</code> - The export is in progress.</p> </li>   <li> <p> <code>READY</code> - The export is complete.</p> </li>   <li> <p> <code>FAILED</code> - The export could not be completed.</p> </li>  </ul>
+    ///   - [`failure_reason(Option<String>)`](crate::output::GetExportOutput::failure_reason): <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to export the resource.</p>
+    ///   - [`url(Option<String>)`](crate::output::GetExportOutput::url): <p>An S3 pre-signed URL that provides the location of the exported resource. The exported resource is a ZIP archive that contains the exported resource in JSON format. The structure of the archive may change. Your code should not rely on the archive structure.</p>
+    /// - On failure, responds with [`SdkError<GetExportError>`](crate::error::GetExportError)
     pub fn get_export(&self) -> fluent_builders::GetExport<C, M, R> {
         fluent_builders::GetExport::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetImport` operation.
+    /// Constructs a fluent builder for the [`GetImport`](crate::client::fluent_builders::GetImport) operation.
     ///
-    /// See [`GetImport`](crate::client::fluent_builders::GetImport) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetImportInput`](crate::input::GetImportInput) with field(s):
+    ///   - [`import_id(Option<String>)`](crate::input::GetImportInput::import_id): <p>The identifier of the import job information to return.</p>
+    /// - On success, responds with [`GetImportOutput`](crate::output::GetImportOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::GetImportOutput::name): <p>The name given to the import job.</p>
+    ///   - [`resource_type(Option<ResourceType>)`](crate::output::GetImportOutput::resource_type): <p>The type of resource imported.</p>
+    ///   - [`merge_strategy(Option<MergeStrategy>)`](crate::output::GetImportOutput::merge_strategy): <p>The action taken when there was a conflict between an existing resource and a resource in the import file.</p>
+    ///   - [`import_id(Option<String>)`](crate::output::GetImportOutput::import_id): <p>The identifier for the specific import job.</p>
+    ///   - [`import_status(Option<ImportStatus>)`](crate::output::GetImportOutput::import_status): <p>The status of the import job. If the status is <code>FAILED</code>, you can get the reason for the failure from the <code>failureReason</code> field.</p>
+    ///   - [`failure_reason(Option<Vec<String>>)`](crate::output::GetImportOutput::failure_reason): <p>A string that describes why an import job failed to complete.</p>
+    ///   - [`created_date(Option<DateTime>)`](crate::output::GetImportOutput::created_date): <p>A timestamp for the date and time that the import job was created.</p>
+    /// - On failure, responds with [`SdkError<GetImportError>`](crate::error::GetImportError)
     pub fn get_import(&self) -> fluent_builders::GetImport<C, M, R> {
         fluent_builders::GetImport::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetIntent` operation.
+    /// Constructs a fluent builder for the [`GetIntent`](crate::client::fluent_builders::GetIntent) operation.
     ///
-    /// See [`GetIntent`](crate::client::fluent_builders::GetIntent) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetIntentInput`](crate::input::GetIntentInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::GetIntentInput::name): <p>The name of the intent. The name is case sensitive. </p>
+    ///   - [`version(Option<String>)`](crate::input::GetIntentInput::version): <p>The version of the intent.</p>
+    /// - On success, responds with [`GetIntentOutput`](crate::output::GetIntentOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::GetIntentOutput::name): <p>The name of the intent.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetIntentOutput::description): <p>A description of the intent.</p>
+    ///   - [`slots(Option<Vec<Slot>>)`](crate::output::GetIntentOutput::slots): <p>An array of intent slots configured for the intent.</p>
+    ///   - [`sample_utterances(Option<Vec<String>>)`](crate::output::GetIntentOutput::sample_utterances): <p>An array of sample utterances configured for the intent.</p>
+    ///   - [`confirmation_prompt(Option<Prompt>)`](crate::output::GetIntentOutput::confirmation_prompt): <p>If defined in the bot, Amazon Lex uses prompt to confirm the intent before fulfilling the user's request. For more information, see <code>PutIntent</code>. </p>
+    ///   - [`rejection_statement(Option<Statement>)`](crate::output::GetIntentOutput::rejection_statement): <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p>
+    ///   - [`follow_up_prompt(Option<FollowUpPrompt>)`](crate::output::GetIntentOutput::follow_up_prompt): <p>If defined in the bot, Amazon Lex uses this prompt to solicit additional user activity after the intent is fulfilled. For more information, see <code>PutIntent</code>.</p>
+    ///   - [`conclusion_statement(Option<Statement>)`](crate::output::GetIntentOutput::conclusion_statement): <p>After the Lambda function specified in the <code>fulfillmentActivity</code> element fulfills the intent, Amazon Lex conveys this statement to the user.</p>
+    ///   - [`dialog_code_hook(Option<CodeHook>)`](crate::output::GetIntentOutput::dialog_code_hook): <p>If defined in the bot, Amazon Amazon Lex invokes this Lambda function for each user input. For more information, see <code>PutIntent</code>. </p>
+    ///   - [`fulfillment_activity(Option<FulfillmentActivity>)`](crate::output::GetIntentOutput::fulfillment_activity): <p>Describes how the intent is fulfilled. For more information, see <code>PutIntent</code>. </p>
+    ///   - [`parent_intent_signature(Option<String>)`](crate::output::GetIntentOutput::parent_intent_signature): <p>A unique identifier for a built-in intent.</p>
+    ///   - [`last_updated_date(Option<DateTime>)`](crate::output::GetIntentOutput::last_updated_date): <p>The date that the intent was updated. When you create a resource, the creation date and the last updated date are the same. </p>
+    ///   - [`created_date(Option<DateTime>)`](crate::output::GetIntentOutput::created_date): <p>The date that the intent was created.</p>
+    ///   - [`version(Option<String>)`](crate::output::GetIntentOutput::version): <p>The version of the intent.</p>
+    ///   - [`checksum(Option<String>)`](crate::output::GetIntentOutput::checksum): <p>Checksum of the intent.</p>
+    ///   - [`kendra_configuration(Option<KendraConfiguration>)`](crate::output::GetIntentOutput::kendra_configuration): <p>Configuration information, if any, to connect to an Amazon Kendra index with the <code>AMAZON.KendraSearchIntent</code> intent.</p>
+    ///   - [`input_contexts(Option<Vec<InputContext>>)`](crate::output::GetIntentOutput::input_contexts): <p>An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user.</p>
+    ///   - [`output_contexts(Option<Vec<OutputContext>>)`](crate::output::GetIntentOutput::output_contexts): <p>An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent is fulfilled.</p>
+    /// - On failure, responds with [`SdkError<GetIntentError>`](crate::error::GetIntentError)
     pub fn get_intent(&self) -> fluent_builders::GetIntent<C, M, R> {
         fluent_builders::GetIntent::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetIntents` operation.
-    ///
-    /// See [`GetIntents`](crate::client::fluent_builders::GetIntents) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetIntents`](crate::client::fluent_builders::GetIntents) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetIntents::into_paginator).
+    ///
+    /// - Takes [`GetIntentsInput`](crate::input::GetIntentsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::GetIntentsInput::next_token): <p>A pagination token that fetches the next page of intents. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of intents, specify the pagination token in the next request. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetIntentsInput::max_results): <p>The maximum number of intents to return in the response. The default is 10.</p>
+    ///   - [`name_contains(Option<String>)`](crate::input::GetIntentsInput::name_contains): <p>Substring to match in intent names. An intent will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
+    /// - On success, responds with [`GetIntentsOutput`](crate::output::GetIntentsOutput) with field(s):
+    ///   - [`intents(Option<Vec<IntentMetadata>>)`](crate::output::GetIntentsOutput::intents): <p>An array of <code>Intent</code> objects. For more information, see <code>PutBot</code>.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetIntentsOutput::next_token): <p>If the response is truncated, the response includes a pagination token that you can specify in your next request to fetch the next page of intents. </p>
+    /// - On failure, responds with [`SdkError<GetIntentsError>`](crate::error::GetIntentsError)
     pub fn get_intents(&self) -> fluent_builders::GetIntents<C, M, R> {
         fluent_builders::GetIntents::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetIntentVersions` operation.
-    ///
-    /// See [`GetIntentVersions`](crate::client::fluent_builders::GetIntentVersions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetIntentVersions`](crate::client::fluent_builders::GetIntentVersions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetIntentVersions::into_paginator).
+    ///
+    /// - Takes [`GetIntentVersionsInput`](crate::input::GetIntentVersionsInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::GetIntentVersionsInput::name): <p>The name of the intent for which versions should be returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetIntentVersionsInput::next_token): <p>A pagination token for fetching the next page of intent versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetIntentVersionsInput::max_results): <p>The maximum number of intent versions to return in the response. The default is 10.</p>
+    /// - On success, responds with [`GetIntentVersionsOutput`](crate::output::GetIntentVersionsOutput) with field(s):
+    ///   - [`intents(Option<Vec<IntentMetadata>>)`](crate::output::GetIntentVersionsOutput::intents): <p>An array of <code>IntentMetadata</code> objects, one for each numbered version of the intent plus one for the <code>$LATEST</code> version.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetIntentVersionsOutput::next_token): <p>A pagination token for fetching the next page of intent versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
+    /// - On failure, responds with [`SdkError<GetIntentVersionsError>`](crate::error::GetIntentVersionsError)
     pub fn get_intent_versions(&self) -> fluent_builders::GetIntentVersions<C, M, R> {
         fluent_builders::GetIntentVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMigration` operation.
+    /// Constructs a fluent builder for the [`GetMigration`](crate::client::fluent_builders::GetMigration) operation.
     ///
-    /// See [`GetMigration`](crate::client::fluent_builders::GetMigration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetMigrationInput`](crate::input::GetMigrationInput) with field(s):
+    ///   - [`migration_id(Option<String>)`](crate::input::GetMigrationInput::migration_id): <p>The unique identifier of the migration to view. The <code>migrationID</code> is returned by the operation.</p>
+    /// - On success, responds with [`GetMigrationOutput`](crate::output::GetMigrationOutput) with field(s):
+    ///   - [`migration_id(Option<String>)`](crate::output::GetMigrationOutput::migration_id): <p>The unique identifier of the migration. This is the same as the identifier used when calling the <code>GetMigration</code> operation.</p>
+    ///   - [`v1_bot_name(Option<String>)`](crate::output::GetMigrationOutput::v1_bot_name): <p>The name of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
+    ///   - [`v1_bot_version(Option<String>)`](crate::output::GetMigrationOutput::v1_bot_version): <p>The version of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
+    ///   - [`v1_bot_locale(Option<Locale>)`](crate::output::GetMigrationOutput::v1_bot_locale): <p>The locale of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
+    ///   - [`v2_bot_id(Option<String>)`](crate::output::GetMigrationOutput::v2_bot_id): <p>The unique identifier of the Amazon Lex V2 bot that the Amazon Lex V1 is being migrated to.</p>
+    ///   - [`v2_bot_role(Option<String>)`](crate::output::GetMigrationOutput::v2_bot_role): <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
+    ///   - [`migration_status(Option<MigrationStatus>)`](crate::output::GetMigrationOutput::migration_status): <p>Indicates the status of the migration. When the status is <code>COMPLETE</code> the migration is finished and the bot is available in Amazon Lex V2. There may be alerts and warnings that need to be resolved to complete the migration.</p>
+    ///   - [`migration_strategy(Option<MigrationStrategy>)`](crate::output::GetMigrationOutput::migration_strategy): <p>The strategy used to conduct the migration.</p>  <ul>   <li> <p> <code>CREATE_NEW</code> - Creates a new Amazon Lex V2 bot and migrates the Amazon Lex V1 bot to the new bot.</p> </li>   <li> <p> <code>UPDATE_EXISTING</code> - Overwrites the existing Amazon Lex V2 bot metadata and the locale being migrated. It doesn't change any other locales in the Amazon Lex V2 bot. If the locale doesn't exist, a new locale is created in the Amazon Lex V2 bot.</p> </li>  </ul>
+    ///   - [`migration_timestamp(Option<DateTime>)`](crate::output::GetMigrationOutput::migration_timestamp): <p>The date and time that the migration started.</p>
+    ///   - [`alerts(Option<Vec<MigrationAlert>>)`](crate::output::GetMigrationOutput::alerts): <p>A list of alerts and warnings that indicate issues with the migration for the Amazon Lex V1 bot to Amazon Lex V2. You receive a warning when an Amazon Lex V1 feature has a different implementation if Amazon Lex V2.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/migrate.html">Migrating a bot</a> in the <i>Amazon Lex V2 developer guide</i>.</p>
+    /// - On failure, responds with [`SdkError<GetMigrationError>`](crate::error::GetMigrationError)
     pub fn get_migration(&self) -> fluent_builders::GetMigration<C, M, R> {
         fluent_builders::GetMigration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetMigrations` operation.
-    ///
-    /// See [`GetMigrations`](crate::client::fluent_builders::GetMigrations) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetMigrations`](crate::client::fluent_builders::GetMigrations) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetMigrations::into_paginator).
+    ///
+    /// - Takes [`GetMigrationsInput`](crate::input::GetMigrationsInput) with field(s):
+    ///   - [`sort_by_attribute(Option<MigrationSortAttribute>)`](crate::input::GetMigrationsInput::sort_by_attribute): <p>The field to sort the list of migrations by. You can sort by the Amazon Lex V1 bot name or the date and time that the migration was started.</p>
+    ///   - [`sort_by_order(Option<SortOrder>)`](crate::input::GetMigrationsInput::sort_by_order): <p>The order so sort the list.</p>
+    ///   - [`v1_bot_name_contains(Option<String>)`](crate::input::GetMigrationsInput::v1_bot_name_contains): <p>Filters the list to contain only bots whose name contains the specified string. The string is matched anywhere in bot name.</p>
+    ///   - [`migration_status_equals(Option<MigrationStatus>)`](crate::input::GetMigrationsInput::migration_status_equals): <p>Filters the list to contain only migrations in the specified state.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetMigrationsInput::max_results): <p>The maximum number of migrations to return in the response. The default is 10.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetMigrationsInput::next_token): <p>A pagination token that fetches the next page of migrations. If the response to this operation is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of migrations, specify the pagination token in the request.</p>
+    /// - On success, responds with [`GetMigrationsOutput`](crate::output::GetMigrationsOutput) with field(s):
+    ///   - [`migration_summaries(Option<Vec<MigrationSummary>>)`](crate::output::GetMigrationsOutput::migration_summaries): <p>An array of summaries for migrations from Amazon Lex V1 to Amazon Lex V2. To see details of the migration, use the <code>migrationId</code> from the summary in a call to the operation.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetMigrationsOutput::next_token): <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of migrations.</p>
+    /// - On failure, responds with [`SdkError<GetMigrationsError>`](crate::error::GetMigrationsError)
     pub fn get_migrations(&self) -> fluent_builders::GetMigrations<C, M, R> {
         fluent_builders::GetMigrations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSlotType` operation.
+    /// Constructs a fluent builder for the [`GetSlotType`](crate::client::fluent_builders::GetSlotType) operation.
     ///
-    /// See [`GetSlotType`](crate::client::fluent_builders::GetSlotType) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetSlotTypeInput`](crate::input::GetSlotTypeInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::GetSlotTypeInput::name): <p>The name of the slot type. The name is case sensitive. </p>
+    ///   - [`version(Option<String>)`](crate::input::GetSlotTypeInput::version): <p>The version of the slot type. </p>
+    /// - On success, responds with [`GetSlotTypeOutput`](crate::output::GetSlotTypeOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::GetSlotTypeOutput::name): <p>The name of the slot type.</p>
+    ///   - [`description(Option<String>)`](crate::output::GetSlotTypeOutput::description): <p>A description of the slot type.</p>
+    ///   - [`enumeration_values(Option<Vec<EnumerationValue>>)`](crate::output::GetSlotTypeOutput::enumeration_values): <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take.</p>
+    ///   - [`last_updated_date(Option<DateTime>)`](crate::output::GetSlotTypeOutput::last_updated_date): <p>The date that the slot type was updated. When you create a resource, the creation date and last update date are the same.</p>
+    ///   - [`created_date(Option<DateTime>)`](crate::output::GetSlotTypeOutput::created_date): <p>The date that the slot type was created.</p>
+    ///   - [`version(Option<String>)`](crate::output::GetSlotTypeOutput::version): <p>The version of the slot type.</p>
+    ///   - [`checksum(Option<String>)`](crate::output::GetSlotTypeOutput::checksum): <p>Checksum of the <code>$LATEST</code> version of the slot type.</p>
+    ///   - [`value_selection_strategy(Option<SlotValueSelectionStrategy>)`](crate::output::GetSlotTypeOutput::value_selection_strategy): <p>The strategy that Amazon Lex uses to determine the value of the slot. For more information, see <code>PutSlotType</code>.</p>
+    ///   - [`parent_slot_type_signature(Option<String>)`](crate::output::GetSlotTypeOutput::parent_slot_type_signature): <p>The built-in slot type used as a parent for the slot type.</p>
+    ///   - [`slot_type_configurations(Option<Vec<SlotTypeConfiguration>>)`](crate::output::GetSlotTypeOutput::slot_type_configurations): <p>Configuration information that extends the parent built-in slot type.</p>
+    /// - On failure, responds with [`SdkError<GetSlotTypeError>`](crate::error::GetSlotTypeError)
     pub fn get_slot_type(&self) -> fluent_builders::GetSlotType<C, M, R> {
         fluent_builders::GetSlotType::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSlotTypes` operation.
-    ///
-    /// See [`GetSlotTypes`](crate::client::fluent_builders::GetSlotTypes) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetSlotTypes`](crate::client::fluent_builders::GetSlotTypes) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetSlotTypes::into_paginator).
+    ///
+    /// - Takes [`GetSlotTypesInput`](crate::input::GetSlotTypesInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::GetSlotTypesInput::next_token): <p>A pagination token that fetches the next page of slot types. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch next page of slot types, specify the pagination token in the next request.</p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetSlotTypesInput::max_results): <p>The maximum number of slot types to return in the response. The default is 10.</p>
+    ///   - [`name_contains(Option<String>)`](crate::input::GetSlotTypesInput::name_contains): <p>Substring to match in slot type names. A slot type will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
+    /// - On success, responds with [`GetSlotTypesOutput`](crate::output::GetSlotTypesOutput) with field(s):
+    ///   - [`slot_types(Option<Vec<SlotTypeMetadata>>)`](crate::output::GetSlotTypesOutput::slot_types): <p>An array of objects, one for each slot type, that provides information such as the name of the slot type, the version, and a description.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetSlotTypesOutput::next_token): <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of slot types.</p>
+    /// - On failure, responds with [`SdkError<GetSlotTypesError>`](crate::error::GetSlotTypesError)
     pub fn get_slot_types(&self) -> fluent_builders::GetSlotTypes<C, M, R> {
         fluent_builders::GetSlotTypes::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetSlotTypeVersions` operation.
-    ///
-    /// See [`GetSlotTypeVersions`](crate::client::fluent_builders::GetSlotTypeVersions) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`GetSlotTypeVersions`](crate::client::fluent_builders::GetSlotTypeVersions) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::GetSlotTypeVersions::into_paginator).
+    ///
+    /// - Takes [`GetSlotTypeVersionsInput`](crate::input::GetSlotTypeVersionsInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::GetSlotTypeVersionsInput::name): <p>The name of the slot type for which versions should be returned.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::GetSlotTypeVersionsInput::next_token): <p>A pagination token for fetching the next page of slot type versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::GetSlotTypeVersionsInput::max_results): <p>The maximum number of slot type versions to return in the response. The default is 10.</p>
+    /// - On success, responds with [`GetSlotTypeVersionsOutput`](crate::output::GetSlotTypeVersionsOutput) with field(s):
+    ///   - [`slot_types(Option<Vec<SlotTypeMetadata>>)`](crate::output::GetSlotTypeVersionsOutput::slot_types): <p>An array of <code>SlotTypeMetadata</code> objects, one for each numbered version of the slot type plus one for the <code>$LATEST</code> version.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::GetSlotTypeVersionsOutput::next_token): <p>A pagination token for fetching the next page of slot type versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
+    /// - On failure, responds with [`SdkError<GetSlotTypeVersionsError>`](crate::error::GetSlotTypeVersionsError)
     pub fn get_slot_type_versions(&self) -> fluent_builders::GetSlotTypeVersions<C, M, R> {
         fluent_builders::GetSlotTypeVersions::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `GetUtterancesView` operation.
+    /// Constructs a fluent builder for the [`GetUtterancesView`](crate::client::fluent_builders::GetUtterancesView) operation.
     ///
-    /// See [`GetUtterancesView`](crate::client::fluent_builders::GetUtterancesView) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`GetUtterancesViewInput`](crate::input::GetUtterancesViewInput) with field(s):
+    ///   - [`bot_name(Option<String>)`](crate::input::GetUtterancesViewInput::bot_name): <p>The name of the bot for which utterance information should be returned.</p>
+    ///   - [`bot_versions(Option<Vec<String>>)`](crate::input::GetUtterancesViewInput::bot_versions): <p>An array of bot versions for which utterance information should be returned. The limit is 5 versions per request.</p>
+    ///   - [`status_type(Option<StatusType>)`](crate::input::GetUtterancesViewInput::status_type): <p>To return utterances that were recognized and handled, use <code>Detected</code>. To return utterances that were not recognized, use <code>Missed</code>.</p>
+    /// - On success, responds with [`GetUtterancesViewOutput`](crate::output::GetUtterancesViewOutput) with field(s):
+    ///   - [`bot_name(Option<String>)`](crate::output::GetUtterancesViewOutput::bot_name): <p>The name of the bot for which utterance information was returned.</p>
+    ///   - [`utterances(Option<Vec<UtteranceList>>)`](crate::output::GetUtterancesViewOutput::utterances): <p>An array of <code>UtteranceList</code> objects, each containing a list of <code>UtteranceData</code> objects describing the utterances that were processed by your bot. The response contains a maximum of 100 <code>UtteranceData</code> objects for each version. Amazon Lex returns the most frequent utterances received by the bot in the last 15 days.</p>
+    /// - On failure, responds with [`SdkError<GetUtterancesViewError>`](crate::error::GetUtterancesViewError)
     pub fn get_utterances_view(&self) -> fluent_builders::GetUtterancesView<C, M, R> {
         fluent_builders::GetUtterancesView::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource to get a list of tags for.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags associated with a resource.</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutBot` operation.
+    /// Constructs a fluent builder for the [`PutBot`](crate::client::fluent_builders::PutBot) operation.
     ///
-    /// See [`PutBot`](crate::client::fluent_builders::PutBot) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutBotInput`](crate::input::PutBotInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::PutBotInput::name): <p>The name of the bot. The name is <i>not</i> case sensitive. </p>
+    ///   - [`description(Option<String>)`](crate::input::PutBotInput::description): <p>A description of the bot.</p>
+    ///   - [`intents(Option<Vec<Intent>>)`](crate::input::PutBotInput::intents): <p>An array of <code>Intent</code> objects. Each intent represents a command that a user can express. For example, a pizza ordering bot might support an OrderPizza intent. For more information, see <code>how-it-works</code>.</p>
+    ///   - [`enable_model_improvements(Option<bool>)`](crate::input::PutBotInput::enable_model_improvements): <p>Set to <code>true</code> to enable access to natural language understanding improvements. </p>  <p>When you set the <code>enableModelImprovements</code> parameter to <code>true</code> you can use the <code>nluIntentConfidenceThreshold</code> parameter to configure confidence scores. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence Scores</a>.</p>  <p>You can only set the <code>enableModelImprovements</code> parameter in certain Regions. If you set the parameter to <code>true</code>, your bot has access to accuracy improvements.</p>  <p>The Regions where you can set the <code>enableModelImprovements</code> parameter to <code>true</code> are:</p>  <ul>   <li> <p>US East (N. Virginia) (us-east-1)</p> </li>   <li> <p>US West (Oregon) (us-west-2)</p> </li>   <li> <p>Asia Pacific (Sydney) (ap-southeast-2)</p> </li>   <li> <p>EU (Ireland) (eu-west-1)</p> </li>  </ul>  <p>In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by default. In these Regions setting the parameter to <code>false</code> throws a <code>ValidationException</code> exception.</p>
+    ///   - [`nlu_intent_confidence_threshold(Option<f64>)`](crate::input::PutBotInput::nlu_intent_confidence_threshold): <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot.</p>  <p>You must set the <code>enableModelImprovements</code> parameter to <code>true</code> to use confidence scores in the following regions.</p>  <ul>   <li> <p>US East (N. Virginia) (us-east-1)</p> </li>   <li> <p>US West (Oregon) (us-west-2)</p> </li>   <li> <p>Asia Pacific (Sydney) (ap-southeast-2)</p> </li>   <li> <p>EU (Ireland) (eu-west-1)</p> </li>  </ul>  <p>In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by default.</p>  <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>PostText</code> operation would be:</p>  <ul>   <li> <p>AMAZON.FallbackIntent</p> </li>   <li> <p>IntentA</p> </li>   <li> <p>IntentB</p> </li>   <li> <p>IntentC</p> </li>  </ul>
+    ///   - [`clarification_prompt(Option<Prompt>)`](crate::input::PutBotInput::clarification_prompt): <p>When Amazon Lex doesn't understand the user's intent, it uses this message to get clarification. To specify how many times Amazon Lex should repeat the clarification prompt, use the <code>maxAttempts</code> field. If Amazon Lex still doesn't understand, it sends the message in the <code>abortStatement</code> field. </p>  <p>When you create a clarification prompt, make sure that it suggests the correct response from the user. for example, for a bot that orders pizza and drinks, you might create this clarification prompt: "What would you like to do? You can say 'Order a pizza' or 'Order a drink.'"</p>  <p>If you have defined a fallback intent, it will be invoked if the clarification prompt is repeated the number of times defined in the <code>maxAttempts</code> field. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.</p>  <p>If you don't define a clarification prompt, at runtime Amazon Lex will return a 400 Bad Request exception in three cases: </p>  <ul>   <li> <p>Follow-up prompt - When the user responds to a follow-up prompt but does not provide an intent. For example, in response to a follow-up prompt that says "Would you like anything else today?" the user says "Yes." Amazon Lex will return a 400 Bad Request exception because it does not have a clarification prompt to send to the user to get an intent.</p> </li>   <li> <p>Lambda function - When using a Lambda function, you return an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p> </li>   <li> <p>PutSession operation - When using the <code>PutSession</code> operation, you send an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p> </li>  </ul>
+    ///   - [`abort_statement(Option<Statement>)`](crate::input::PutBotInput::abort_statement): <p>When Amazon Lex can't understand the user's input in context, it tries to elicit the information a few times. After that, Amazon Lex sends the message defined in <code>abortStatement</code> to the user, and then cancels the conversation. To set the number of retries, use the <code>valueElicitationPrompt</code> field for the slot type. </p>  <p>For example, in a pizza ordering bot, Amazon Lex might ask a user "What type of crust would you like?" If the user's response is not one of the expected responses (for example, "thin crust, "deep dish," etc.), Amazon Lex tries to elicit a correct response a few more times. </p>  <p>For example, in a pizza ordering application, <code>OrderPizza</code> might be one of the intents. This intent might require the <code>CrustType</code> slot. You specify the <code>valueElicitationPrompt</code> field when you create the <code>CrustType</code> slot.</p>  <p>If you have defined a fallback intent the cancel statement will not be sent to the user, the fallback intent is used instead. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.</p>
+    ///   - [`idle_session_ttl_in_seconds(Option<i32>)`](crate::input::PutBotInput::idle_session_ttl_in_seconds): <p>The maximum time in seconds that Amazon Lex retains the data gathered in a conversation.</p>  <p>A user interaction session remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>  <p>For example, suppose that a user chooses the OrderPizza intent, but gets sidetracked halfway through placing an order. If the user doesn't complete the order within the specified time, Amazon Lex discards the slot information that it gathered, and the user must start over.</p>  <p>If you don't include the <code>idleSessionTTLInSeconds</code> element in a <code>PutBot</code> operation request, Amazon Lex uses the default value. This is also true if the request replaces an existing bot.</p>  <p>The default is 300 seconds (5 minutes).</p>
+    ///   - [`voice_id(Option<String>)`](crate::input::PutBotInput::voice_id): <p>The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Voices in Amazon Polly</a> in the <i>Amazon Polly Developer Guide</i>.</p>
+    ///   - [`checksum(Option<String>)`](crate::input::PutBotInput::checksum): <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>  <p>When you create a new bot, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p>  <p>When you want to update a bot, set the <code>checksum</code> field to the checksum of the most recent revision of the <code>$LATEST</code> version. If you don't specify the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code> version, you get a <code>PreconditionFailedException</code> exception.</p>
+    ///   - [`process_behavior(Option<ProcessBehavior>)`](crate::input::PutBotInput::process_behavior): <p>If you set the <code>processBehavior</code> element to <code>BUILD</code>, Amazon Lex builds the bot so that it can be run. If you set the element to <code>SAVE</code> Amazon Lex saves the bot, but doesn't build it. </p>  <p>If you don't specify this value, the default value is <code>BUILD</code>.</p>
+    ///   - [`locale(Option<Locale>)`](crate::input::PutBotInput::locale): <p> Specifies the target locale for the bot. Any intent used in the bot must be compatible with the locale of the bot. </p>  <p>The default is <code>en-US</code>.</p>
+    ///   - [`child_directed(Option<bool>)`](crate::input::PutBotInput::child_directed): <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p>  <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a> </p>
+    ///   - [`detect_sentiment(Option<bool>)`](crate::input::PutBotInput::detect_sentiment): <p>When set to <code>true</code> user utterances are sent to Amazon Comprehend for sentiment analysis. If you don't specify <code>detectSentiment</code>, the default is <code>false</code>.</p>
+    ///   - [`create_version(Option<bool>)`](crate::input::PutBotInput::create_version): <p>When set to <code>true</code> a new numbered version of the bot is created. This is the same as calling the <code>CreateBotVersion</code> operation. If you don't specify <code>createVersion</code>, the default is <code>false</code>.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::PutBotInput::tags): <p>A list of tags to add to the bot. You can only add tags when you create a bot, you can't use the <code>PutBot</code> operation to update the tags on a bot. To update tags, use the <code>TagResource</code> operation.</p>
+    /// - On success, responds with [`PutBotOutput`](crate::output::PutBotOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::PutBotOutput::name): <p>The name of the bot.</p>
+    ///   - [`description(Option<String>)`](crate::output::PutBotOutput::description): <p>A description of the bot.</p>
+    ///   - [`intents(Option<Vec<Intent>>)`](crate::output::PutBotOutput::intents): <p>An array of <code>Intent</code> objects. For more information, see <code>PutBot</code>.</p>
+    ///   - [`enable_model_improvements(Option<bool>)`](crate::output::PutBotOutput::enable_model_improvements): <p>Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the improvements, otherwise, <code>false</code>.</p>
+    ///   - [`nlu_intent_confidence_threshold(Option<f64>)`](crate::output::PutBotOutput::nlu_intent_confidence_threshold): <p>The score that determines where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response. <code>AMAZON.FallbackIntent</code> is inserted if the confidence score for all intents is below this value. <code>AMAZON.KendraSearchIntent</code> is only inserted if it is configured for the bot.</p>
+    ///   - [`clarification_prompt(Option<Prompt>)`](crate::output::PutBotOutput::clarification_prompt): <p> The prompts that Amazon Lex uses when it doesn't understand the user's intent. For more information, see <code>PutBot</code>. </p>
+    ///   - [`abort_statement(Option<Statement>)`](crate::output::PutBotOutput::abort_statement): <p>The message that Amazon Lex uses to cancel a conversation. For more information, see <code>PutBot</code>.</p>
+    ///   - [`status(Option<Status>)`](crate::output::PutBotOutput::status): <p> When you send a request to create a bot with <code>processBehavior</code> set to <code>BUILD</code>, Amazon Lex sets the <code>status</code> response element to <code>BUILDING</code>.</p>  <p>In the <code>READY_BASIC_TESTING</code> state you can test the bot with user inputs that exactly match the utterances configured for the bot's intents and values in the slot types.</p>  <p>If Amazon Lex can't build the bot, Amazon Lex sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns the reason for the failure in the <code>failureReason</code> response element. </p>  <p>When you set <code>processBehavior</code> to <code>SAVE</code>, Amazon Lex sets the status code to <code>NOT BUILT</code>.</p>  <p>When the bot is in the <code>READY</code> state you can test and publish the bot.</p>
+    ///   - [`failure_reason(Option<String>)`](crate::output::PutBotOutput::failure_reason): <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to build the bot.</p>
+    ///   - [`last_updated_date(Option<DateTime>)`](crate::output::PutBotOutput::last_updated_date): <p>The date that the bot was updated. When you create a resource, the creation date and last updated date are the same.</p>
+    ///   - [`created_date(Option<DateTime>)`](crate::output::PutBotOutput::created_date): <p>The date that the bot was created.</p>
+    ///   - [`idle_session_ttl_in_seconds(Option<i32>)`](crate::output::PutBotOutput::idle_session_ttl_in_seconds): <p>The maximum length of time that Amazon Lex retains the data gathered in a conversation. For more information, see <code>PutBot</code>.</p>
+    ///   - [`voice_id(Option<String>)`](crate::output::PutBotOutput::voice_id): <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see <code>PutBot</code>.</p>
+    ///   - [`checksum(Option<String>)`](crate::output::PutBotOutput::checksum): <p>Checksum of the bot that you created.</p>
+    ///   - [`version(Option<String>)`](crate::output::PutBotOutput::version): <p>The version of the bot. For a new bot, the version is always <code>$LATEST</code>.</p>
+    ///   - [`locale(Option<Locale>)`](crate::output::PutBotOutput::locale): <p> The target locale for the bot. </p>
+    ///   - [`child_directed(Option<bool>)`](crate::output::PutBotOutput::child_directed): <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p>  <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a> </p>
+    ///   - [`create_version(Option<bool>)`](crate::output::PutBotOutput::create_version): <p> <code>True</code> if a new version of the bot was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
+    ///   - [`detect_sentiment(Option<bool>)`](crate::output::PutBotOutput::detect_sentiment): <p> <code>true</code> if the bot is configured to send user utterances to Amazon Comprehend for sentiment analysis. If the <code>detectSentiment</code> field was not specified in the request, the <code>detectSentiment</code> field is <code>false</code> in the response.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::PutBotOutput::tags): <p>A list of tags associated with the bot.</p>
+    /// - On failure, responds with [`SdkError<PutBotError>`](crate::error::PutBotError)
     pub fn put_bot(&self) -> fluent_builders::PutBot<C, M, R> {
         fluent_builders::PutBot::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutBotAlias` operation.
+    /// Constructs a fluent builder for the [`PutBotAlias`](crate::client::fluent_builders::PutBotAlias) operation.
     ///
-    /// See [`PutBotAlias`](crate::client::fluent_builders::PutBotAlias) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutBotAliasInput`](crate::input::PutBotAliasInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::PutBotAliasInput::name): <p>The name of the alias. The name is <i>not</i> case sensitive.</p>
+    ///   - [`description(Option<String>)`](crate::input::PutBotAliasInput::description): <p>A description of the alias.</p>
+    ///   - [`bot_version(Option<String>)`](crate::input::PutBotAliasInput::bot_version): <p>The version of the bot.</p>
+    ///   - [`bot_name(Option<String>)`](crate::input::PutBotAliasInput::bot_name): <p>The name of the bot.</p>
+    ///   - [`checksum(Option<String>)`](crate::input::PutBotAliasInput::checksum): <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>  <p>When you create a new bot alias, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p>  <p>When you want to update a bot alias, set the <code>checksum</code> field to the checksum of the most recent revision of the <code>$LATEST</code> version. If you don't specify the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code> version, you get a <code>PreconditionFailedException</code> exception.</p>
+    ///   - [`conversation_logs(Option<ConversationLogsRequest>)`](crate::input::PutBotAliasInput::conversation_logs): <p>Settings for conversation logs for the alias.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::PutBotAliasInput::tags): <p>A list of tags to add to the bot alias. You can only add tags when you create an alias, you can't use the <code>PutBotAlias</code> operation to update the tags on a bot alias. To update tags, use the <code>TagResource</code> operation.</p>
+    /// - On success, responds with [`PutBotAliasOutput`](crate::output::PutBotAliasOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::PutBotAliasOutput::name): <p>The name of the alias.</p>
+    ///   - [`description(Option<String>)`](crate::output::PutBotAliasOutput::description): <p>A description of the alias.</p>
+    ///   - [`bot_version(Option<String>)`](crate::output::PutBotAliasOutput::bot_version): <p>The version of the bot that the alias points to.</p>
+    ///   - [`bot_name(Option<String>)`](crate::output::PutBotAliasOutput::bot_name): <p>The name of the bot that the alias points to.</p>
+    ///   - [`last_updated_date(Option<DateTime>)`](crate::output::PutBotAliasOutput::last_updated_date): <p>The date that the bot alias was updated. When you create a resource, the creation date and the last updated date are the same.</p>
+    ///   - [`created_date(Option<DateTime>)`](crate::output::PutBotAliasOutput::created_date): <p>The date that the bot alias was created.</p>
+    ///   - [`checksum(Option<String>)`](crate::output::PutBotAliasOutput::checksum): <p>The checksum for the current version of the alias.</p>
+    ///   - [`conversation_logs(Option<ConversationLogsResponse>)`](crate::output::PutBotAliasOutput::conversation_logs): <p>The settings that determine how Amazon Lex uses conversation logs for the alias.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::PutBotAliasOutput::tags): <p>A list of tags associated with a bot.</p>
+    /// - On failure, responds with [`SdkError<PutBotAliasError>`](crate::error::PutBotAliasError)
     pub fn put_bot_alias(&self) -> fluent_builders::PutBotAlias<C, M, R> {
         fluent_builders::PutBotAlias::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutIntent` operation.
+    /// Constructs a fluent builder for the [`PutIntent`](crate::client::fluent_builders::PutIntent) operation.
     ///
-    /// See [`PutIntent`](crate::client::fluent_builders::PutIntent) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutIntentInput`](crate::input::PutIntentInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::PutIntentInput::name): <p>The name of the intent. The name is <i>not</i> case sensitive. </p>  <p>The name can't match a built-in intent name, or a built-in intent name with "AMAZON." removed. For example, because there is a built-in intent called <code>AMAZON.HelpIntent</code>, you can't create a custom intent called <code>HelpIntent</code>.</p>  <p>For a list of built-in intents, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
+    ///   - [`description(Option<String>)`](crate::input::PutIntentInput::description): <p>A description of the intent.</p>
+    ///   - [`slots(Option<Vec<Slot>>)`](crate::input::PutIntentInput::slots): <p>An array of intent slots. At runtime, Amazon Lex elicits required slot values from the user using prompts defined in the slots. For more information, see <code>how-it-works</code>. </p>
+    ///   - [`sample_utterances(Option<Vec<String>>)`](crate::input::PutIntentInput::sample_utterances): <p>An array of utterances (strings) that a user might say to signal the intent. For example, "I want {PizzaSize} pizza", "Order {Quantity} {PizzaSize} pizzas". </p>  <p>In each utterance, a slot name is enclosed in curly braces. </p>
+    ///   - [`confirmation_prompt(Option<Prompt>)`](crate::input::PutIntentInput::confirmation_prompt): <p>Prompts the user to confirm the intent. This question should have a yes or no answer.</p>  <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information. </p> <note>   <p>You you must provide both the <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or neither.</p>  </note>
+    ///   - [`rejection_statement(Option<Statement>)`](crate::input::PutIntentInput::rejection_statement): <p>When the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p> <note>   <p>You must provide both the <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or neither.</p>  </note>
+    ///   - [`follow_up_prompt(Option<FollowUpPrompt>)`](crate::input::PutIntentInput::follow_up_prompt): <p>Amazon Lex uses this prompt to solicit additional activity after fulfilling an intent. For example, after the <code>OrderPizza</code> intent is fulfilled, you might prompt the user to order a drink.</p>  <p>The action that Amazon Lex takes depends on the user's response, as follows:</p>  <ul>   <li> <p>If the user says "Yes" it responds with the clarification prompt that is configured for the bot.</p> </li>   <li> <p>if the user says "Yes" and continues with an utterance that triggers an intent it starts a conversation for the intent.</p> </li>   <li> <p>If the user says "No" it responds with the rejection statement configured for the the follow-up prompt.</p> </li>   <li> <p>If it doesn't recognize the utterance it repeats the follow-up prompt again.</p> </li>  </ul>  <p>The <code>followUpPrompt</code> field and the <code>conclusionStatement</code> field are mutually exclusive. You can specify only one. </p>
+    ///   - [`conclusion_statement(Option<Statement>)`](crate::input::PutIntentInput::conclusion_statement): <p> The statement that you want Amazon Lex to convey to the user after the intent is successfully fulfilled by the Lambda function. </p>  <p>This element is relevant only if you provide a Lambda function in the <code>fulfillmentActivity</code>. If you return the intent to the client application, you can't specify this element.</p> <note>   <p>The <code>followUpPrompt</code> and <code>conclusionStatement</code> are mutually exclusive. You can specify only one.</p>  </note>
+    ///   - [`dialog_code_hook(Option<CodeHook>)`](crate::input::PutIntentInput::dialog_code_hook): <p> Specifies a Lambda function to invoke for each user input. You can invoke this Lambda function to personalize user interaction. </p>  <p>For example, suppose your bot determines that the user is John. Your Lambda function might retrieve John's information from a backend database and prepopulate some of the values. For example, if you find that John is gluten intolerant, you might set the corresponding intent slot, <code>GlutenIntolerant</code>, to true. You might find John's phone number and set the corresponding session attribute. </p>
+    ///   - [`fulfillment_activity(Option<FulfillmentActivity>)`](crate::input::PutIntentInput::fulfillment_activity): <p>Required. Describes how the intent is fulfilled. For example, after a user provides all of the information for a pizza order, <code>fulfillmentActivity</code> defines how the bot places an order with a local pizza store. </p>  <p> You might configure Amazon Lex to return all of the intent information to the client application, or direct it to invoke a Lambda function that can process the intent (for example, place an order with a pizzeria). </p>
+    ///   - [`parent_intent_signature(Option<String>)`](crate::input::PutIntentInput::parent_intent_signature): <p>A unique identifier for the built-in intent to base this intent on. To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
+    ///   - [`checksum(Option<String>)`](crate::input::PutIntentInput::checksum): <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>  <p>When you create a new intent, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p>  <p>When you want to update a intent, set the <code>checksum</code> field to the checksum of the most recent revision of the <code>$LATEST</code> version. If you don't specify the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code> version, you get a <code>PreconditionFailedException</code> exception.</p>
+    ///   - [`create_version(Option<bool>)`](crate::input::PutIntentInput::create_version): <p>When set to <code>true</code> a new numbered version of the intent is created. This is the same as calling the <code>CreateIntentVersion</code> operation. If you do not specify <code>createVersion</code>, the default is <code>false</code>.</p>
+    ///   - [`kendra_configuration(Option<KendraConfiguration>)`](crate::input::PutIntentInput::kendra_configuration): <p>Configuration information required to use the <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra index. For more information, see <a href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html"> AMAZON.KendraSearchIntent</a>.</p>
+    ///   - [`input_contexts(Option<Vec<InputContext>>)`](crate::input::PutIntentInput::input_contexts): <p>An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user.</p>
+    ///   - [`output_contexts(Option<Vec<OutputContext>>)`](crate::input::PutIntentInput::output_contexts): <p>An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent is fulfilled.</p>
+    /// - On success, responds with [`PutIntentOutput`](crate::output::PutIntentOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::PutIntentOutput::name): <p>The name of the intent.</p>
+    ///   - [`description(Option<String>)`](crate::output::PutIntentOutput::description): <p>A description of the intent.</p>
+    ///   - [`slots(Option<Vec<Slot>>)`](crate::output::PutIntentOutput::slots): <p>An array of intent slots that are configured for the intent.</p>
+    ///   - [`sample_utterances(Option<Vec<String>>)`](crate::output::PutIntentOutput::sample_utterances): <p> An array of sample utterances that are configured for the intent. </p>
+    ///   - [`confirmation_prompt(Option<Prompt>)`](crate::output::PutIntentOutput::confirmation_prompt): <p>If defined in the intent, Amazon Lex prompts the user to confirm the intent before fulfilling it.</p>
+    ///   - [`rejection_statement(Option<Statement>)`](crate::output::PutIntentOutput::rejection_statement): <p>If the user answers "no" to the question defined in <code>confirmationPrompt</code> Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p>
+    ///   - [`follow_up_prompt(Option<FollowUpPrompt>)`](crate::output::PutIntentOutput::follow_up_prompt): <p>If defined in the intent, Amazon Lex uses this prompt to solicit additional user activity after the intent is fulfilled.</p>
+    ///   - [`conclusion_statement(Option<Statement>)`](crate::output::PutIntentOutput::conclusion_statement): <p>After the Lambda function specified in the<code>fulfillmentActivity</code>intent fulfills the intent, Amazon Lex conveys this statement to the user.</p>
+    ///   - [`dialog_code_hook(Option<CodeHook>)`](crate::output::PutIntentOutput::dialog_code_hook): <p>If defined in the intent, Amazon Lex invokes this Lambda function for each user input.</p>
+    ///   - [`fulfillment_activity(Option<FulfillmentActivity>)`](crate::output::PutIntentOutput::fulfillment_activity): <p>If defined in the intent, Amazon Lex invokes this Lambda function to fulfill the intent after the user provides all of the information required by the intent.</p>
+    ///   - [`parent_intent_signature(Option<String>)`](crate::output::PutIntentOutput::parent_intent_signature): <p>A unique identifier for the built-in intent that this intent is based on.</p>
+    ///   - [`last_updated_date(Option<DateTime>)`](crate::output::PutIntentOutput::last_updated_date): <p>The date that the intent was updated. When you create a resource, the creation date and last update dates are the same.</p>
+    ///   - [`created_date(Option<DateTime>)`](crate::output::PutIntentOutput::created_date): <p>The date that the intent was created.</p>
+    ///   - [`version(Option<String>)`](crate::output::PutIntentOutput::version): <p>The version of the intent. For a new intent, the version is always <code>$LATEST</code>.</p>
+    ///   - [`checksum(Option<String>)`](crate::output::PutIntentOutput::checksum): <p>Checksum of the <code>$LATEST</code>version of the intent created or updated.</p>
+    ///   - [`create_version(Option<bool>)`](crate::output::PutIntentOutput::create_version): <p> <code>True</code> if a new version of the intent was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
+    ///   - [`kendra_configuration(Option<KendraConfiguration>)`](crate::output::PutIntentOutput::kendra_configuration): <p>Configuration information, if any, required to connect to an Amazon Kendra index and use the <code>AMAZON.KendraSearchIntent</code> intent.</p>
+    ///   - [`input_contexts(Option<Vec<InputContext>>)`](crate::output::PutIntentOutput::input_contexts): <p>An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user.</p>
+    ///   - [`output_contexts(Option<Vec<OutputContext>>)`](crate::output::PutIntentOutput::output_contexts): <p>An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent is fulfilled.</p>
+    /// - On failure, responds with [`SdkError<PutIntentError>`](crate::error::PutIntentError)
     pub fn put_intent(&self) -> fluent_builders::PutIntent<C, M, R> {
         fluent_builders::PutIntent::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutSlotType` operation.
+    /// Constructs a fluent builder for the [`PutSlotType`](crate::client::fluent_builders::PutSlotType) operation.
     ///
-    /// See [`PutSlotType`](crate::client::fluent_builders::PutSlotType) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutSlotTypeInput`](crate::input::PutSlotTypeInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::PutSlotTypeInput::name): <p>The name of the slot type. The name is <i>not</i> case sensitive. </p>  <p>The name can't match a built-in slot type name, or a built-in slot type name with "AMAZON." removed. For example, because there is a built-in slot type called <code>AMAZON.DATE</code>, you can't create a custom slot type called <code>DATE</code>.</p>  <p>For a list of built-in slot types, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference">Slot Type Reference</a> in the <i>Alexa Skills Kit</i>.</p>
+    ///   - [`description(Option<String>)`](crate::input::PutSlotTypeInput::description): <p>A description of the slot type.</p>
+    ///   - [`enumeration_values(Option<Vec<EnumerationValue>>)`](crate::input::PutSlotTypeInput::enumeration_values): <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take. Each value can have a list of <code>synonyms</code>, which are additional values that help train the machine learning model about the values that it resolves for a slot. </p>  <p>A regular expression slot type doesn't require enumeration values. All other slot types require a list of enumeration values.</p>  <p>When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible values for the slot. If you are using a Lambda function, this resolution list is passed to the function. If you are not using a Lambda function you can choose to return the value that the user entered or the first value in the resolution list as the slot value. The <code>valueSelectionStrategy</code> field indicates the option to use. </p>
+    ///   - [`checksum(Option<String>)`](crate::input::PutSlotTypeInput::checksum): <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>  <p>When you create a new slot type, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p>  <p>When you want to update a slot type, set the <code>checksum</code> field to the checksum of the most recent revision of the <code>$LATEST</code> version. If you don't specify the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code> version, you get a <code>PreconditionFailedException</code> exception.</p>
+    ///   - [`value_selection_strategy(Option<SlotValueSelectionStrategy>)`](crate::input::PutSlotTypeInput::value_selection_strategy): <p>Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to one of the following values:</p>  <ul>   <li> <p> <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p> </li>   <li> <p> <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p> </li>  </ul>  <p>If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
+    ///   - [`create_version(Option<bool>)`](crate::input::PutSlotTypeInput::create_version): <p>When set to <code>true</code> a new numbered version of the slot type is created. This is the same as calling the <code>CreateSlotTypeVersion</code> operation. If you do not specify <code>createVersion</code>, the default is <code>false</code>.</p>
+    ///   - [`parent_slot_type_signature(Option<String>)`](crate::input::PutSlotTypeInput::parent_slot_type_signature): <p>The built-in slot type used as the parent of the slot type. When you define a parent slot type, the new slot type has all of the same configuration as the parent.</p>  <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
+    ///   - [`slot_type_configurations(Option<Vec<SlotTypeConfiguration>>)`](crate::input::PutSlotTypeInput::slot_type_configurations): <p>Configuration information that extends the parent built-in slot type. The configuration is added to the settings for the parent slot type.</p>
+    /// - On success, responds with [`PutSlotTypeOutput`](crate::output::PutSlotTypeOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::PutSlotTypeOutput::name): <p>The name of the slot type.</p>
+    ///   - [`description(Option<String>)`](crate::output::PutSlotTypeOutput::description): <p>A description of the slot type.</p>
+    ///   - [`enumeration_values(Option<Vec<EnumerationValue>>)`](crate::output::PutSlotTypeOutput::enumeration_values): <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take.</p>
+    ///   - [`last_updated_date(Option<DateTime>)`](crate::output::PutSlotTypeOutput::last_updated_date): <p>The date that the slot type was updated. When you create a slot type, the creation date and last update date are the same.</p>
+    ///   - [`created_date(Option<DateTime>)`](crate::output::PutSlotTypeOutput::created_date): <p>The date that the slot type was created.</p>
+    ///   - [`version(Option<String>)`](crate::output::PutSlotTypeOutput::version): <p>The version of the slot type. For a new slot type, the version is always <code>$LATEST</code>. </p>
+    ///   - [`checksum(Option<String>)`](crate::output::PutSlotTypeOutput::checksum): <p>Checksum of the <code>$LATEST</code> version of the slot type.</p>
+    ///   - [`value_selection_strategy(Option<SlotValueSelectionStrategy>)`](crate::output::PutSlotTypeOutput::value_selection_strategy): <p>The slot resolution strategy that Amazon Lex uses to determine the value of the slot. For more information, see <code>PutSlotType</code>.</p>
+    ///   - [`create_version(Option<bool>)`](crate::output::PutSlotTypeOutput::create_version): <p> <code>True</code> if a new version of the slot type was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>
+    ///   - [`parent_slot_type_signature(Option<String>)`](crate::output::PutSlotTypeOutput::parent_slot_type_signature): <p>The built-in slot type used as the parent of the slot type.</p>
+    ///   - [`slot_type_configurations(Option<Vec<SlotTypeConfiguration>>)`](crate::output::PutSlotTypeOutput::slot_type_configurations): <p>Configuration information that extends the parent built-in slot type.</p>
+    /// - On failure, responds with [`SdkError<PutSlotTypeError>`](crate::error::PutSlotTypeError)
     pub fn put_slot_type(&self) -> fluent_builders::PutSlotType<C, M, R> {
         fluent_builders::PutSlotType::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartImport` operation.
+    /// Constructs a fluent builder for the [`StartImport`](crate::client::fluent_builders::StartImport) operation.
     ///
-    /// See [`StartImport`](crate::client::fluent_builders::StartImport) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartImportInput`](crate::input::StartImportInput) with field(s):
+    ///   - [`payload(Option<Blob>)`](crate::input::StartImportInput::payload): <p>A zip archive in binary format. The archive should contain one file, a JSON file containing the resource to import. The resource should match the type specified in the <code>resourceType</code> field.</p>
+    ///   - [`resource_type(Option<ResourceType>)`](crate::input::StartImportInput::resource_type): <p>Specifies the type of resource to export. Each resource also exports any resources that it depends on. </p>  <ul>   <li> <p>A bot exports dependent intents.</p> </li>   <li> <p>An intent exports dependent slot types.</p> </li>  </ul>
+    ///   - [`merge_strategy(Option<MergeStrategy>)`](crate::input::StartImportInput::merge_strategy): <p>Specifies the action that the <code>StartImport</code> operation should take when there is an existing resource with the same name.</p>  <ul>   <li> <p>FAIL_ON_CONFLICT - The import operation is stopped on the first conflict between a resource in the import file and an existing resource. The name of the resource causing the conflict is in the <code>failureReason</code> field of the response to the <code>GetImport</code> operation.</p> <p>OVERWRITE_LATEST - The import operation proceeds even if there is a conflict with an existing resource. The $LASTEST version of the existing resource is overwritten with the data from the import file.</p> </li>  </ul>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::StartImportInput::tags): <p>A list of tags to add to the imported bot. You can only add tags when you import a bot, you can't add tags to an intent or slot type.</p>
+    /// - On success, responds with [`StartImportOutput`](crate::output::StartImportOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::StartImportOutput::name): <p>The name given to the import job.</p>
+    ///   - [`resource_type(Option<ResourceType>)`](crate::output::StartImportOutput::resource_type): <p>The type of resource to import.</p>
+    ///   - [`merge_strategy(Option<MergeStrategy>)`](crate::output::StartImportOutput::merge_strategy): <p>The action to take when there is a merge conflict.</p>
+    ///   - [`import_id(Option<String>)`](crate::output::StartImportOutput::import_id): <p>The identifier for the specific import job.</p>
+    ///   - [`import_status(Option<ImportStatus>)`](crate::output::StartImportOutput::import_status): <p>The status of the import job. If the status is <code>FAILED</code>, you can get the reason for the failure using the <code>GetImport</code> operation.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::StartImportOutput::tags): <p>A list of tags added to the imported bot.</p>
+    ///   - [`created_date(Option<DateTime>)`](crate::output::StartImportOutput::created_date): <p>A timestamp for the date and time that the import job was requested.</p>
+    /// - On failure, responds with [`SdkError<StartImportError>`](crate::error::StartImportError)
     pub fn start_import(&self) -> fluent_builders::StartImport<C, M, R> {
         fluent_builders::StartImport::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartMigration` operation.
+    /// Constructs a fluent builder for the [`StartMigration`](crate::client::fluent_builders::StartMigration) operation.
     ///
-    /// See [`StartMigration`](crate::client::fluent_builders::StartMigration) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartMigrationInput`](crate::input::StartMigrationInput) with field(s):
+    ///   - [`v1_bot_name(Option<String>)`](crate::input::StartMigrationInput::v1_bot_name): <p>The name of the Amazon Lex V1 bot that you are migrating to Amazon Lex V2.</p>
+    ///   - [`v1_bot_version(Option<String>)`](crate::input::StartMigrationInput::v1_bot_version): <p>The version of the bot to migrate to Amazon Lex V2. You can migrate the <code>$LATEST</code> version as well as any numbered version.</p>
+    ///   - [`v2_bot_name(Option<String>)`](crate::input::StartMigrationInput::v2_bot_name): <p>The name of the Amazon Lex V2 bot that you are migrating the Amazon Lex V1 bot to. </p>  <ul>   <li> <p>If the Amazon Lex V2 bot doesn't exist, you must use the <code>CREATE_NEW</code> migration strategy.</p> </li>   <li> <p>If the Amazon Lex V2 bot exists, you must use the <code>UPDATE_EXISTING</code> migration strategy to change the contents of the Amazon Lex V2 bot.</p> </li>  </ul>
+    ///   - [`v2_bot_role(Option<String>)`](crate::input::StartMigrationInput::v2_bot_role): <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
+    ///   - [`migration_strategy(Option<MigrationStrategy>)`](crate::input::StartMigrationInput::migration_strategy): <p>The strategy used to conduct the migration.</p>  <ul>   <li> <p> <code>CREATE_NEW</code> - Creates a new Amazon Lex V2 bot and migrates the Amazon Lex V1 bot to the new bot.</p> </li>   <li> <p> <code>UPDATE_EXISTING</code> - Overwrites the existing Amazon Lex V2 bot metadata and the locale being migrated. It doesn't change any other locales in the Amazon Lex V2 bot. If the locale doesn't exist, a new locale is created in the Amazon Lex V2 bot.</p> </li>  </ul>
+    /// - On success, responds with [`StartMigrationOutput`](crate::output::StartMigrationOutput) with field(s):
+    ///   - [`v1_bot_name(Option<String>)`](crate::output::StartMigrationOutput::v1_bot_name): <p>The name of the Amazon Lex V1 bot that you are migrating to Amazon Lex V2.</p>
+    ///   - [`v1_bot_version(Option<String>)`](crate::output::StartMigrationOutput::v1_bot_version): <p>The version of the bot to migrate to Amazon Lex V2. </p>
+    ///   - [`v1_bot_locale(Option<Locale>)`](crate::output::StartMigrationOutput::v1_bot_locale): <p>The locale used for the Amazon Lex V1 bot. </p>
+    ///   - [`v2_bot_id(Option<String>)`](crate::output::StartMigrationOutput::v2_bot_id): <p>The unique identifier for the Amazon Lex V2 bot. </p>
+    ///   - [`v2_bot_role(Option<String>)`](crate::output::StartMigrationOutput::v2_bot_role): <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
+    ///   - [`migration_id(Option<String>)`](crate::output::StartMigrationOutput::migration_id): <p>The unique identifier that Amazon Lex assigned to the migration.</p>
+    ///   - [`migration_strategy(Option<MigrationStrategy>)`](crate::output::StartMigrationOutput::migration_strategy): <p>The strategy used to conduct the migration.</p>
+    ///   - [`migration_timestamp(Option<DateTime>)`](crate::output::StartMigrationOutput::migration_timestamp): <p>The date and time that the migration started.</p>
+    /// - On failure, responds with [`SdkError<StartMigrationError>`](crate::error::StartMigrationError)
     pub fn start_migration(&self) -> fluent_builders::StartMigration<C, M, R> {
         fluent_builders::StartMigration::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the bot, bot alias, or bot channel to tag.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>A list of tag keys to add to the resource. If a tag key already exists, the existing value is replaced with the new value.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource to remove the tags from.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>A list of tag keys to remove from the resource. If a tag key does not exist on the resource, it is ignored.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }

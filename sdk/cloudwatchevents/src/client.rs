@@ -83,368 +83,715 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `ActivateEventSource` operation.
+    /// Constructs a fluent builder for the [`ActivateEventSource`](crate::client::fluent_builders::ActivateEventSource) operation.
     ///
-    /// See [`ActivateEventSource`](crate::client::fluent_builders::ActivateEventSource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ActivateEventSourceInput`](crate::input::ActivateEventSourceInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::ActivateEventSourceInput::name): <p>The name of the partner event source to activate.</p>
+    /// - On success, responds with [`ActivateEventSourceOutput`](crate::output::ActivateEventSourceOutput)
+
+    /// - On failure, responds with [`SdkError<ActivateEventSourceError>`](crate::error::ActivateEventSourceError)
     pub fn activate_event_source(&self) -> fluent_builders::ActivateEventSource<C, M, R> {
         fluent_builders::ActivateEventSource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CancelReplay` operation.
+    /// Constructs a fluent builder for the [`CancelReplay`](crate::client::fluent_builders::CancelReplay) operation.
     ///
-    /// See [`CancelReplay`](crate::client::fluent_builders::CancelReplay) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CancelReplayInput`](crate::input::CancelReplayInput) with field(s):
+    ///   - [`replay_name(Option<String>)`](crate::input::CancelReplayInput::replay_name): <p>The name of the replay to cancel.</p>
+    /// - On success, responds with [`CancelReplayOutput`](crate::output::CancelReplayOutput) with field(s):
+    ///   - [`replay_arn(Option<String>)`](crate::output::CancelReplayOutput::replay_arn): <p>The ARN of the replay to cancel.</p>
+    ///   - [`state(Option<ReplayState>)`](crate::output::CancelReplayOutput::state): <p>The current state of the replay.</p>
+    ///   - [`state_reason(Option<String>)`](crate::output::CancelReplayOutput::state_reason): <p>The reason that the replay is in the current state.</p>
+    /// - On failure, responds with [`SdkError<CancelReplayError>`](crate::error::CancelReplayError)
     pub fn cancel_replay(&self) -> fluent_builders::CancelReplay<C, M, R> {
         fluent_builders::CancelReplay::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateApiDestination` operation.
+    /// Constructs a fluent builder for the [`CreateApiDestination`](crate::client::fluent_builders::CreateApiDestination) operation.
     ///
-    /// See [`CreateApiDestination`](crate::client::fluent_builders::CreateApiDestination) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateApiDestinationInput`](crate::input::CreateApiDestinationInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateApiDestinationInput::name): <p>The name for the API destination to create.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateApiDestinationInput::description): <p>A description for the API destination to create.</p>
+    ///   - [`connection_arn(Option<String>)`](crate::input::CreateApiDestinationInput::connection_arn): <p>The ARN of the connection to use for the API destination. The destination endpoint must support the authorization type specified for the connection.</p>
+    ///   - [`invocation_endpoint(Option<String>)`](crate::input::CreateApiDestinationInput::invocation_endpoint): <p>The URL to the HTTP invocation endpoint for the API destination.</p>
+    ///   - [`http_method(Option<ApiDestinationHttpMethod>)`](crate::input::CreateApiDestinationInput::http_method): <p>The method to use for the request to the HTTP invocation endpoint.</p>
+    ///   - [`invocation_rate_limit_per_second(Option<i32>)`](crate::input::CreateApiDestinationInput::invocation_rate_limit_per_second): <p>The maximum number of requests per second to send to the HTTP invocation endpoint.</p>
+    /// - On success, responds with [`CreateApiDestinationOutput`](crate::output::CreateApiDestinationOutput) with field(s):
+    ///   - [`api_destination_arn(Option<String>)`](crate::output::CreateApiDestinationOutput::api_destination_arn): <p>The ARN of the API destination that was created by the request.</p>
+    ///   - [`api_destination_state(Option<ApiDestinationState>)`](crate::output::CreateApiDestinationOutput::api_destination_state): <p>The state of the API destination that was created by the request.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::CreateApiDestinationOutput::creation_time): <p>A time stamp indicating the time that the API destination was created.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::CreateApiDestinationOutput::last_modified_time): <p>A time stamp indicating the time that the API destination was last modified.</p>
+    /// - On failure, responds with [`SdkError<CreateApiDestinationError>`](crate::error::CreateApiDestinationError)
     pub fn create_api_destination(&self) -> fluent_builders::CreateApiDestination<C, M, R> {
         fluent_builders::CreateApiDestination::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateArchive` operation.
+    /// Constructs a fluent builder for the [`CreateArchive`](crate::client::fluent_builders::CreateArchive) operation.
     ///
-    /// See [`CreateArchive`](crate::client::fluent_builders::CreateArchive) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateArchiveInput`](crate::input::CreateArchiveInput) with field(s):
+    ///   - [`archive_name(Option<String>)`](crate::input::CreateArchiveInput::archive_name): <p>The name for the archive to create.</p>
+    ///   - [`event_source_arn(Option<String>)`](crate::input::CreateArchiveInput::event_source_arn): <p>The ARN of the event bus that sends events to the archive.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateArchiveInput::description): <p>A description for the archive.</p>
+    ///   - [`event_pattern(Option<String>)`](crate::input::CreateArchiveInput::event_pattern): <p>An event pattern to use to filter events sent to the archive.</p>
+    ///   - [`retention_days(Option<i32>)`](crate::input::CreateArchiveInput::retention_days): <p>The number of days to retain events for. Default value is 0. If set to 0, events are retained indefinitely</p>
+    /// - On success, responds with [`CreateArchiveOutput`](crate::output::CreateArchiveOutput) with field(s):
+    ///   - [`archive_arn(Option<String>)`](crate::output::CreateArchiveOutput::archive_arn): <p>The ARN of the archive that was created.</p>
+    ///   - [`state(Option<ArchiveState>)`](crate::output::CreateArchiveOutput::state): <p>The state of the archive that was created.</p>
+    ///   - [`state_reason(Option<String>)`](crate::output::CreateArchiveOutput::state_reason): <p>The reason that the archive is in the state.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::CreateArchiveOutput::creation_time): <p>The time at which the archive was created.</p>
+    /// - On failure, responds with [`SdkError<CreateArchiveError>`](crate::error::CreateArchiveError)
     pub fn create_archive(&self) -> fluent_builders::CreateArchive<C, M, R> {
         fluent_builders::CreateArchive::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateConnection` operation.
+    /// Constructs a fluent builder for the [`CreateConnection`](crate::client::fluent_builders::CreateConnection) operation.
     ///
-    /// See [`CreateConnection`](crate::client::fluent_builders::CreateConnection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateConnectionInput`](crate::input::CreateConnectionInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateConnectionInput::name): <p>The name for the connection to create.</p>
+    ///   - [`description(Option<String>)`](crate::input::CreateConnectionInput::description): <p>A description for the connection to create.</p>
+    ///   - [`authorization_type(Option<ConnectionAuthorizationType>)`](crate::input::CreateConnectionInput::authorization_type): <p>The type of authorization to use for the connection.</p>
+    ///   - [`auth_parameters(Option<CreateConnectionAuthRequestParameters>)`](crate::input::CreateConnectionInput::auth_parameters): <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the authorization parameters to use to authorize with the endpoint. </p>
+    /// - On success, responds with [`CreateConnectionOutput`](crate::output::CreateConnectionOutput) with field(s):
+    ///   - [`connection_arn(Option<String>)`](crate::output::CreateConnectionOutput::connection_arn): <p>The ARN of the connection that was created by the request.</p>
+    ///   - [`connection_state(Option<ConnectionState>)`](crate::output::CreateConnectionOutput::connection_state): <p>The state of the connection that was created by the request.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::CreateConnectionOutput::creation_time): <p>A time stamp for the time that the connection was created.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::CreateConnectionOutput::last_modified_time): <p>A time stamp for the time that the connection was last updated.</p>
+    /// - On failure, responds with [`SdkError<CreateConnectionError>`](crate::error::CreateConnectionError)
     pub fn create_connection(&self) -> fluent_builders::CreateConnection<C, M, R> {
         fluent_builders::CreateConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateEventBus` operation.
+    /// Constructs a fluent builder for the [`CreateEventBus`](crate::client::fluent_builders::CreateEventBus) operation.
     ///
-    /// See [`CreateEventBus`](crate::client::fluent_builders::CreateEventBus) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateEventBusInput`](crate::input::CreateEventBusInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateEventBusInput::name): <p>The name of the new event bus. </p>  <p>Event bus names cannot contain the / character. You can't use the name <code>default</code> for a custom event bus, as this name is already used for your account's default event bus.</p>  <p>If this is a partner event bus, the name must exactly match the name of the partner event source that this event bus is matched to.</p>
+    ///   - [`event_source_name(Option<String>)`](crate::input::CreateEventBusInput::event_source_name): <p>If you are creating a partner event bus, this specifies the partner event source that the new event bus will be matched with.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateEventBusInput::tags): <p>Tags to associate with the event bus.</p>
+    /// - On success, responds with [`CreateEventBusOutput`](crate::output::CreateEventBusOutput) with field(s):
+    ///   - [`event_bus_arn(Option<String>)`](crate::output::CreateEventBusOutput::event_bus_arn): <p>The ARN of the new event bus.</p>
+    /// - On failure, responds with [`SdkError<CreateEventBusError>`](crate::error::CreateEventBusError)
     pub fn create_event_bus(&self) -> fluent_builders::CreateEventBus<C, M, R> {
         fluent_builders::CreateEventBus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreatePartnerEventSource` operation.
+    /// Constructs a fluent builder for the [`CreatePartnerEventSource`](crate::client::fluent_builders::CreatePartnerEventSource) operation.
     ///
-    /// See [`CreatePartnerEventSource`](crate::client::fluent_builders::CreatePartnerEventSource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreatePartnerEventSourceInput`](crate::input::CreatePartnerEventSourceInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreatePartnerEventSourceInput::name): <p>The name of the partner event source. This name must be unique and must be in the format <code> <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i> </code>. The Amazon Web Services account that wants to use this partner event source must create a partner event bus with a name that matches the name of the partner event source.</p>
+    ///   - [`account(Option<String>)`](crate::input::CreatePartnerEventSourceInput::account): <p>The Amazon Web Services account ID that is permitted to create a matching partner event bus for this partner event source.</p>
+    /// - On success, responds with [`CreatePartnerEventSourceOutput`](crate::output::CreatePartnerEventSourceOutput) with field(s):
+    ///   - [`event_source_arn(Option<String>)`](crate::output::CreatePartnerEventSourceOutput::event_source_arn): <p>The ARN of the partner event source.</p>
+    /// - On failure, responds with [`SdkError<CreatePartnerEventSourceError>`](crate::error::CreatePartnerEventSourceError)
     pub fn create_partner_event_source(
         &self,
     ) -> fluent_builders::CreatePartnerEventSource<C, M, R> {
         fluent_builders::CreatePartnerEventSource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeactivateEventSource` operation.
+    /// Constructs a fluent builder for the [`DeactivateEventSource`](crate::client::fluent_builders::DeactivateEventSource) operation.
     ///
-    /// See [`DeactivateEventSource`](crate::client::fluent_builders::DeactivateEventSource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeactivateEventSourceInput`](crate::input::DeactivateEventSourceInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeactivateEventSourceInput::name): <p>The name of the partner event source to deactivate.</p>
+    /// - On success, responds with [`DeactivateEventSourceOutput`](crate::output::DeactivateEventSourceOutput)
+
+    /// - On failure, responds with [`SdkError<DeactivateEventSourceError>`](crate::error::DeactivateEventSourceError)
     pub fn deactivate_event_source(&self) -> fluent_builders::DeactivateEventSource<C, M, R> {
         fluent_builders::DeactivateEventSource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeauthorizeConnection` operation.
+    /// Constructs a fluent builder for the [`DeauthorizeConnection`](crate::client::fluent_builders::DeauthorizeConnection) operation.
     ///
-    /// See [`DeauthorizeConnection`](crate::client::fluent_builders::DeauthorizeConnection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeauthorizeConnectionInput`](crate::input::DeauthorizeConnectionInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeauthorizeConnectionInput::name): <p>The name of the connection to remove authorization from.</p>
+    /// - On success, responds with [`DeauthorizeConnectionOutput`](crate::output::DeauthorizeConnectionOutput) with field(s):
+    ///   - [`connection_arn(Option<String>)`](crate::output::DeauthorizeConnectionOutput::connection_arn): <p>The ARN of the connection that authorization was removed from.</p>
+    ///   - [`connection_state(Option<ConnectionState>)`](crate::output::DeauthorizeConnectionOutput::connection_state): <p>The state of the connection.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DeauthorizeConnectionOutput::creation_time): <p>A time stamp for the time that the connection was created.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DeauthorizeConnectionOutput::last_modified_time): <p>A time stamp for the time that the connection was last updated.</p>
+    ///   - [`last_authorized_time(Option<DateTime>)`](crate::output::DeauthorizeConnectionOutput::last_authorized_time): <p>A time stamp for the time that the connection was last authorized.</p>
+    /// - On failure, responds with [`SdkError<DeauthorizeConnectionError>`](crate::error::DeauthorizeConnectionError)
     pub fn deauthorize_connection(&self) -> fluent_builders::DeauthorizeConnection<C, M, R> {
         fluent_builders::DeauthorizeConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteApiDestination` operation.
+    /// Constructs a fluent builder for the [`DeleteApiDestination`](crate::client::fluent_builders::DeleteApiDestination) operation.
     ///
-    /// See [`DeleteApiDestination`](crate::client::fluent_builders::DeleteApiDestination) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteApiDestinationInput`](crate::input::DeleteApiDestinationInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteApiDestinationInput::name): <p>The name of the destination to delete.</p>
+    /// - On success, responds with [`DeleteApiDestinationOutput`](crate::output::DeleteApiDestinationOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteApiDestinationError>`](crate::error::DeleteApiDestinationError)
     pub fn delete_api_destination(&self) -> fluent_builders::DeleteApiDestination<C, M, R> {
         fluent_builders::DeleteApiDestination::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteArchive` operation.
+    /// Constructs a fluent builder for the [`DeleteArchive`](crate::client::fluent_builders::DeleteArchive) operation.
     ///
-    /// See [`DeleteArchive`](crate::client::fluent_builders::DeleteArchive) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteArchiveInput`](crate::input::DeleteArchiveInput) with field(s):
+    ///   - [`archive_name(Option<String>)`](crate::input::DeleteArchiveInput::archive_name): <p>The name of the archive to delete.</p>
+    /// - On success, responds with [`DeleteArchiveOutput`](crate::output::DeleteArchiveOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteArchiveError>`](crate::error::DeleteArchiveError)
     pub fn delete_archive(&self) -> fluent_builders::DeleteArchive<C, M, R> {
         fluent_builders::DeleteArchive::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteConnection` operation.
+    /// Constructs a fluent builder for the [`DeleteConnection`](crate::client::fluent_builders::DeleteConnection) operation.
     ///
-    /// See [`DeleteConnection`](crate::client::fluent_builders::DeleteConnection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteConnectionInput`](crate::input::DeleteConnectionInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteConnectionInput::name): <p>The name of the connection to delete.</p>
+    /// - On success, responds with [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput) with field(s):
+    ///   - [`connection_arn(Option<String>)`](crate::output::DeleteConnectionOutput::connection_arn): <p>The ARN of the connection that was deleted.</p>
+    ///   - [`connection_state(Option<ConnectionState>)`](crate::output::DeleteConnectionOutput::connection_state): <p>The state of the connection before it was deleted.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DeleteConnectionOutput::creation_time): <p>A time stamp for the time that the connection was created.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DeleteConnectionOutput::last_modified_time): <p>A time stamp for the time that the connection was last modified before it was deleted.</p>
+    ///   - [`last_authorized_time(Option<DateTime>)`](crate::output::DeleteConnectionOutput::last_authorized_time): <p>A time stamp for the time that the connection was last authorized before it wa deleted.</p>
+    /// - On failure, responds with [`SdkError<DeleteConnectionError>`](crate::error::DeleteConnectionError)
     pub fn delete_connection(&self) -> fluent_builders::DeleteConnection<C, M, R> {
         fluent_builders::DeleteConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteEventBus` operation.
+    /// Constructs a fluent builder for the [`DeleteEventBus`](crate::client::fluent_builders::DeleteEventBus) operation.
     ///
-    /// See [`DeleteEventBus`](crate::client::fluent_builders::DeleteEventBus) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteEventBusInput`](crate::input::DeleteEventBusInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteEventBusInput::name): <p>The name of the event bus to delete.</p>
+    /// - On success, responds with [`DeleteEventBusOutput`](crate::output::DeleteEventBusOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteEventBusError>`](crate::error::DeleteEventBusError)
     pub fn delete_event_bus(&self) -> fluent_builders::DeleteEventBus<C, M, R> {
         fluent_builders::DeleteEventBus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeletePartnerEventSource` operation.
+    /// Constructs a fluent builder for the [`DeletePartnerEventSource`](crate::client::fluent_builders::DeletePartnerEventSource) operation.
     ///
-    /// See [`DeletePartnerEventSource`](crate::client::fluent_builders::DeletePartnerEventSource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeletePartnerEventSourceInput`](crate::input::DeletePartnerEventSourceInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeletePartnerEventSourceInput::name): <p>The name of the event source to delete.</p>
+    ///   - [`account(Option<String>)`](crate::input::DeletePartnerEventSourceInput::account): <p>The Amazon Web Services account ID of the Amazon Web Services customer that the event source was created for.</p>
+    /// - On success, responds with [`DeletePartnerEventSourceOutput`](crate::output::DeletePartnerEventSourceOutput)
+
+    /// - On failure, responds with [`SdkError<DeletePartnerEventSourceError>`](crate::error::DeletePartnerEventSourceError)
     pub fn delete_partner_event_source(
         &self,
     ) -> fluent_builders::DeletePartnerEventSource<C, M, R> {
         fluent_builders::DeletePartnerEventSource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DeleteRule` operation.
+    /// Constructs a fluent builder for the [`DeleteRule`](crate::client::fluent_builders::DeleteRule) operation.
     ///
-    /// See [`DeleteRule`](crate::client::fluent_builders::DeleteRule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DeleteRuleInput`](crate::input::DeleteRuleInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DeleteRuleInput::name): <p>The name of the rule.</p>
+    ///   - [`event_bus_name(Option<String>)`](crate::input::DeleteRuleInput::event_bus_name): <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
+    ///   - [`force(bool)`](crate::input::DeleteRuleInput::force): <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify <code>Force</code> as <code>True</code> to delete the rule. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.</p>
+    /// - On success, responds with [`DeleteRuleOutput`](crate::output::DeleteRuleOutput)
+
+    /// - On failure, responds with [`SdkError<DeleteRuleError>`](crate::error::DeleteRuleError)
     pub fn delete_rule(&self) -> fluent_builders::DeleteRule<C, M, R> {
         fluent_builders::DeleteRule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeApiDestination` operation.
+    /// Constructs a fluent builder for the [`DescribeApiDestination`](crate::client::fluent_builders::DescribeApiDestination) operation.
     ///
-    /// See [`DescribeApiDestination`](crate::client::fluent_builders::DescribeApiDestination) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeApiDestinationInput`](crate::input::DescribeApiDestinationInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DescribeApiDestinationInput::name): <p>The name of the API destination to retrieve.</p>
+    /// - On success, responds with [`DescribeApiDestinationOutput`](crate::output::DescribeApiDestinationOutput) with field(s):
+    ///   - [`api_destination_arn(Option<String>)`](crate::output::DescribeApiDestinationOutput::api_destination_arn): <p>The ARN of the API destination retrieved.</p>
+    ///   - [`name(Option<String>)`](crate::output::DescribeApiDestinationOutput::name): <p>The name of the API destination retrieved.</p>
+    ///   - [`description(Option<String>)`](crate::output::DescribeApiDestinationOutput::description): <p>The description for the API destination retrieved.</p>
+    ///   - [`api_destination_state(Option<ApiDestinationState>)`](crate::output::DescribeApiDestinationOutput::api_destination_state): <p>The state of the API destination retrieved.</p>
+    ///   - [`connection_arn(Option<String>)`](crate::output::DescribeApiDestinationOutput::connection_arn): <p>The ARN of the connection specified for the API destination retrieved.</p>
+    ///   - [`invocation_endpoint(Option<String>)`](crate::output::DescribeApiDestinationOutput::invocation_endpoint): <p>The URL to use to connect to the HTTP endpoint.</p>
+    ///   - [`http_method(Option<ApiDestinationHttpMethod>)`](crate::output::DescribeApiDestinationOutput::http_method): <p>The method to use to connect to the HTTP endpoint.</p>
+    ///   - [`invocation_rate_limit_per_second(Option<i32>)`](crate::output::DescribeApiDestinationOutput::invocation_rate_limit_per_second): <p>The maximum number of invocations per second to specified for the API destination. Note that if you set the invocation rate maximum to a value lower the rate necessary to send all events received on to the destination HTTP endpoint, some events may not be delivered within the 24-hour retry window. If you plan to set the rate lower than the rate necessary to deliver all events, consider using a dead-letter queue to catch events that are not delivered within 24 hours.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeApiDestinationOutput::creation_time): <p>A time stamp for the time that the API destination was created.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribeApiDestinationOutput::last_modified_time): <p>A time stamp for the time that the API destination was last modified.</p>
+    /// - On failure, responds with [`SdkError<DescribeApiDestinationError>`](crate::error::DescribeApiDestinationError)
     pub fn describe_api_destination(&self) -> fluent_builders::DescribeApiDestination<C, M, R> {
         fluent_builders::DescribeApiDestination::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeArchive` operation.
+    /// Constructs a fluent builder for the [`DescribeArchive`](crate::client::fluent_builders::DescribeArchive) operation.
     ///
-    /// See [`DescribeArchive`](crate::client::fluent_builders::DescribeArchive) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeArchiveInput`](crate::input::DescribeArchiveInput) with field(s):
+    ///   - [`archive_name(Option<String>)`](crate::input::DescribeArchiveInput::archive_name): <p>The name of the archive to retrieve.</p>
+    /// - On success, responds with [`DescribeArchiveOutput`](crate::output::DescribeArchiveOutput) with field(s):
+    ///   - [`archive_arn(Option<String>)`](crate::output::DescribeArchiveOutput::archive_arn): <p>The ARN of the archive.</p>
+    ///   - [`archive_name(Option<String>)`](crate::output::DescribeArchiveOutput::archive_name): <p>The name of the archive.</p>
+    ///   - [`event_source_arn(Option<String>)`](crate::output::DescribeArchiveOutput::event_source_arn): <p>The ARN of the event source associated with the archive.</p>
+    ///   - [`description(Option<String>)`](crate::output::DescribeArchiveOutput::description): <p>The description of the archive.</p>
+    ///   - [`event_pattern(Option<String>)`](crate::output::DescribeArchiveOutput::event_pattern): <p>The event pattern used to filter events sent to the archive.</p>
+    ///   - [`state(Option<ArchiveState>)`](crate::output::DescribeArchiveOutput::state): <p>The state of the archive.</p>
+    ///   - [`state_reason(Option<String>)`](crate::output::DescribeArchiveOutput::state_reason): <p>The reason that the archive is in the state.</p>
+    ///   - [`retention_days(Option<i32>)`](crate::output::DescribeArchiveOutput::retention_days): <p>The number of days to retain events for in the archive.</p>
+    ///   - [`size_bytes(i64)`](crate::output::DescribeArchiveOutput::size_bytes): <p>The size of the archive in bytes.</p>
+    ///   - [`event_count(i64)`](crate::output::DescribeArchiveOutput::event_count): <p>The number of events in the archive.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeArchiveOutput::creation_time): <p>The time at which the archive was created.</p>
+    /// - On failure, responds with [`SdkError<DescribeArchiveError>`](crate::error::DescribeArchiveError)
     pub fn describe_archive(&self) -> fluent_builders::DescribeArchive<C, M, R> {
         fluent_builders::DescribeArchive::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeConnection` operation.
+    /// Constructs a fluent builder for the [`DescribeConnection`](crate::client::fluent_builders::DescribeConnection) operation.
     ///
-    /// See [`DescribeConnection`](crate::client::fluent_builders::DescribeConnection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeConnectionInput`](crate::input::DescribeConnectionInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DescribeConnectionInput::name): <p>The name of the connection to retrieve.</p>
+    /// - On success, responds with [`DescribeConnectionOutput`](crate::output::DescribeConnectionOutput) with field(s):
+    ///   - [`connection_arn(Option<String>)`](crate::output::DescribeConnectionOutput::connection_arn): <p>The ARN of the connection retrieved.</p>
+    ///   - [`name(Option<String>)`](crate::output::DescribeConnectionOutput::name): <p>The name of the connection retrieved.</p>
+    ///   - [`description(Option<String>)`](crate::output::DescribeConnectionOutput::description): <p>The description for the connection retrieved.</p>
+    ///   - [`connection_state(Option<ConnectionState>)`](crate::output::DescribeConnectionOutput::connection_state): <p>The state of the connection retrieved.</p>
+    ///   - [`state_reason(Option<String>)`](crate::output::DescribeConnectionOutput::state_reason): <p>The reason that the connection is in the current connection state.</p>
+    ///   - [`authorization_type(Option<ConnectionAuthorizationType>)`](crate::output::DescribeConnectionOutput::authorization_type): <p>The type of authorization specified for the connection.</p>
+    ///   - [`secret_arn(Option<String>)`](crate::output::DescribeConnectionOutput::secret_arn): <p>The ARN of the secret created from the authorization parameters specified for the connection.</p>
+    ///   - [`auth_parameters(Option<ConnectionAuthResponseParameters>)`](crate::output::DescribeConnectionOutput::auth_parameters): <p>The parameters to use for authorization for the connection.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeConnectionOutput::creation_time): <p>A time stamp for the time that the connection was created.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::DescribeConnectionOutput::last_modified_time): <p>A time stamp for the time that the connection was last modified.</p>
+    ///   - [`last_authorized_time(Option<DateTime>)`](crate::output::DescribeConnectionOutput::last_authorized_time): <p>A time stamp for the time that the connection was last authorized.</p>
+    /// - On failure, responds with [`SdkError<DescribeConnectionError>`](crate::error::DescribeConnectionError)
     pub fn describe_connection(&self) -> fluent_builders::DescribeConnection<C, M, R> {
         fluent_builders::DescribeConnection::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEventBus` operation.
+    /// Constructs a fluent builder for the [`DescribeEventBus`](crate::client::fluent_builders::DescribeEventBus) operation.
     ///
-    /// See [`DescribeEventBus`](crate::client::fluent_builders::DescribeEventBus) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeEventBusInput`](crate::input::DescribeEventBusInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DescribeEventBusInput::name): <p>The name or ARN of the event bus to show details for. If you omit this, the default event bus is displayed.</p>
+    /// - On success, responds with [`DescribeEventBusOutput`](crate::output::DescribeEventBusOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::DescribeEventBusOutput::name): <p>The name of the event bus. Currently, this is always <code>default</code>.</p>
+    ///   - [`arn(Option<String>)`](crate::output::DescribeEventBusOutput::arn): <p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>
+    ///   - [`policy(Option<String>)`](crate::output::DescribeEventBusOutput::policy): <p>The policy that enables the external account to send events to your account.</p>
+    /// - On failure, responds with [`SdkError<DescribeEventBusError>`](crate::error::DescribeEventBusError)
     pub fn describe_event_bus(&self) -> fluent_builders::DescribeEventBus<C, M, R> {
         fluent_builders::DescribeEventBus::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeEventSource` operation.
+    /// Constructs a fluent builder for the [`DescribeEventSource`](crate::client::fluent_builders::DescribeEventSource) operation.
     ///
-    /// See [`DescribeEventSource`](crate::client::fluent_builders::DescribeEventSource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeEventSourceInput`](crate::input::DescribeEventSourceInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DescribeEventSourceInput::name): <p>The name of the partner event source to display the details of.</p>
+    /// - On success, responds with [`DescribeEventSourceOutput`](crate::output::DescribeEventSourceOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::DescribeEventSourceOutput::arn): <p>The ARN of the partner event source.</p>
+    ///   - [`created_by(Option<String>)`](crate::output::DescribeEventSourceOutput::created_by): <p>The name of the SaaS partner that created the event source.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeEventSourceOutput::creation_time): <p>The date and time that the event source was created.</p>
+    ///   - [`expiration_time(Option<DateTime>)`](crate::output::DescribeEventSourceOutput::expiration_time): <p>The date and time that the event source will expire if you do not create a matching event bus.</p>
+    ///   - [`name(Option<String>)`](crate::output::DescribeEventSourceOutput::name): <p>The name of the partner event source.</p>
+    ///   - [`state(Option<EventSourceState>)`](crate::output::DescribeEventSourceOutput::state): <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
+    /// - On failure, responds with [`SdkError<DescribeEventSourceError>`](crate::error::DescribeEventSourceError)
     pub fn describe_event_source(&self) -> fluent_builders::DescribeEventSource<C, M, R> {
         fluent_builders::DescribeEventSource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribePartnerEventSource` operation.
+    /// Constructs a fluent builder for the [`DescribePartnerEventSource`](crate::client::fluent_builders::DescribePartnerEventSource) operation.
     ///
-    /// See [`DescribePartnerEventSource`](crate::client::fluent_builders::DescribePartnerEventSource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribePartnerEventSourceInput`](crate::input::DescribePartnerEventSourceInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DescribePartnerEventSourceInput::name): <p>The name of the event source to display.</p>
+    /// - On success, responds with [`DescribePartnerEventSourceOutput`](crate::output::DescribePartnerEventSourceOutput) with field(s):
+    ///   - [`arn(Option<String>)`](crate::output::DescribePartnerEventSourceOutput::arn): <p>The ARN of the event source.</p>
+    ///   - [`name(Option<String>)`](crate::output::DescribePartnerEventSourceOutput::name): <p>The name of the event source.</p>
+    /// - On failure, responds with [`SdkError<DescribePartnerEventSourceError>`](crate::error::DescribePartnerEventSourceError)
     pub fn describe_partner_event_source(
         &self,
     ) -> fluent_builders::DescribePartnerEventSource<C, M, R> {
         fluent_builders::DescribePartnerEventSource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeReplay` operation.
+    /// Constructs a fluent builder for the [`DescribeReplay`](crate::client::fluent_builders::DescribeReplay) operation.
     ///
-    /// See [`DescribeReplay`](crate::client::fluent_builders::DescribeReplay) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeReplayInput`](crate::input::DescribeReplayInput) with field(s):
+    ///   - [`replay_name(Option<String>)`](crate::input::DescribeReplayInput::replay_name): <p>The name of the replay to retrieve.</p>
+    /// - On success, responds with [`DescribeReplayOutput`](crate::output::DescribeReplayOutput) with field(s):
+    ///   - [`replay_name(Option<String>)`](crate::output::DescribeReplayOutput::replay_name): <p>The name of the replay.</p>
+    ///   - [`replay_arn(Option<String>)`](crate::output::DescribeReplayOutput::replay_arn): <p>The ARN of the replay.</p>
+    ///   - [`description(Option<String>)`](crate::output::DescribeReplayOutput::description): <p>The description of the replay.</p>
+    ///   - [`state(Option<ReplayState>)`](crate::output::DescribeReplayOutput::state): <p>The current state of the replay.</p>
+    ///   - [`state_reason(Option<String>)`](crate::output::DescribeReplayOutput::state_reason): <p>The reason that the replay is in the current state.</p>
+    ///   - [`event_source_arn(Option<String>)`](crate::output::DescribeReplayOutput::event_source_arn): <p>The ARN of the archive events were replayed from.</p>
+    ///   - [`destination(Option<ReplayDestination>)`](crate::output::DescribeReplayOutput::destination): <p>A <code>ReplayDestination</code> object that contains details about the replay.</p>
+    ///   - [`event_start_time(Option<DateTime>)`](crate::output::DescribeReplayOutput::event_start_time): <p>The time stamp of the first event that was last replayed from the archive.</p>
+    ///   - [`event_end_time(Option<DateTime>)`](crate::output::DescribeReplayOutput::event_end_time): <p>The time stamp for the last event that was replayed from the archive.</p>
+    ///   - [`event_last_replayed_time(Option<DateTime>)`](crate::output::DescribeReplayOutput::event_last_replayed_time): <p>The time that the event was last replayed.</p>
+    ///   - [`replay_start_time(Option<DateTime>)`](crate::output::DescribeReplayOutput::replay_start_time): <p>A time stamp for the time that the replay started.</p>
+    ///   - [`replay_end_time(Option<DateTime>)`](crate::output::DescribeReplayOutput::replay_end_time): <p>A time stamp for the time that the replay stopped.</p>
+    /// - On failure, responds with [`SdkError<DescribeReplayError>`](crate::error::DescribeReplayError)
     pub fn describe_replay(&self) -> fluent_builders::DescribeReplay<C, M, R> {
         fluent_builders::DescribeReplay::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeRule` operation.
+    /// Constructs a fluent builder for the [`DescribeRule`](crate::client::fluent_builders::DescribeRule) operation.
     ///
-    /// See [`DescribeRule`](crate::client::fluent_builders::DescribeRule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeRuleInput`](crate::input::DescribeRuleInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DescribeRuleInput::name): <p>The name of the rule.</p>
+    ///   - [`event_bus_name(Option<String>)`](crate::input::DescribeRuleInput::event_bus_name): <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
+    /// - On success, responds with [`DescribeRuleOutput`](crate::output::DescribeRuleOutput) with field(s):
+    ///   - [`name(Option<String>)`](crate::output::DescribeRuleOutput::name): <p>The name of the rule.</p>
+    ///   - [`arn(Option<String>)`](crate::output::DescribeRuleOutput::arn): <p>The Amazon Resource Name (ARN) of the rule.</p>
+    ///   - [`event_pattern(Option<String>)`](crate::output::DescribeRuleOutput::event_pattern): <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    ///   - [`schedule_expression(Option<String>)`](crate::output::DescribeRuleOutput::schedule_expression): <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)".</p>
+    ///   - [`state(Option<RuleState>)`](crate::output::DescribeRuleOutput::state): <p>Specifies whether the rule is enabled or disabled.</p>
+    ///   - [`description(Option<String>)`](crate::output::DescribeRuleOutput::description): <p>The description of the rule.</p>
+    ///   - [`role_arn(Option<String>)`](crate::output::DescribeRuleOutput::role_arn): <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
+    ///   - [`managed_by(Option<String>)`](crate::output::DescribeRuleOutput::managed_by): <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, this field displays the principal name of the Amazon Web Services service that created the rule.</p>
+    ///   - [`event_bus_name(Option<String>)`](crate::output::DescribeRuleOutput::event_bus_name): <p>The name of the event bus associated with the rule.</p>
+    ///   - [`created_by(Option<String>)`](crate::output::DescribeRuleOutput::created_by): <p>The account ID of the user that created the rule. If you use <code>PutRule</code> to put a rule on an event bus in another account, the other account is the owner of the rule, and the rule ARN includes the account ID for that account. However, the value for <code>CreatedBy</code> is the account ID as the account that created the rule in the other account.</p>
+    /// - On failure, responds with [`SdkError<DescribeRuleError>`](crate::error::DescribeRuleError)
     pub fn describe_rule(&self) -> fluent_builders::DescribeRule<C, M, R> {
         fluent_builders::DescribeRule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisableRule` operation.
+    /// Constructs a fluent builder for the [`DisableRule`](crate::client::fluent_builders::DisableRule) operation.
     ///
-    /// See [`DisableRule`](crate::client::fluent_builders::DisableRule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisableRuleInput`](crate::input::DisableRuleInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::DisableRuleInput::name): <p>The name of the rule.</p>
+    ///   - [`event_bus_name(Option<String>)`](crate::input::DisableRuleInput::event_bus_name): <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
+    /// - On success, responds with [`DisableRuleOutput`](crate::output::DisableRuleOutput)
+
+    /// - On failure, responds with [`SdkError<DisableRuleError>`](crate::error::DisableRuleError)
     pub fn disable_rule(&self) -> fluent_builders::DisableRule<C, M, R> {
         fluent_builders::DisableRule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `EnableRule` operation.
+    /// Constructs a fluent builder for the [`EnableRule`](crate::client::fluent_builders::EnableRule) operation.
     ///
-    /// See [`EnableRule`](crate::client::fluent_builders::EnableRule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`EnableRuleInput`](crate::input::EnableRuleInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::EnableRuleInput::name): <p>The name of the rule.</p>
+    ///   - [`event_bus_name(Option<String>)`](crate::input::EnableRuleInput::event_bus_name): <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
+    /// - On success, responds with [`EnableRuleOutput`](crate::output::EnableRuleOutput)
+
+    /// - On failure, responds with [`SdkError<EnableRuleError>`](crate::error::EnableRuleError)
     pub fn enable_rule(&self) -> fluent_builders::EnableRule<C, M, R> {
         fluent_builders::EnableRule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListApiDestinations` operation.
+    /// Constructs a fluent builder for the [`ListApiDestinations`](crate::client::fluent_builders::ListApiDestinations) operation.
     ///
-    /// See [`ListApiDestinations`](crate::client::fluent_builders::ListApiDestinations) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListApiDestinationsInput`](crate::input::ListApiDestinationsInput) with field(s):
+    ///   - [`name_prefix(Option<String>)`](crate::input::ListApiDestinationsInput::name_prefix): <p>A name prefix to filter results returned. Only API destinations with a name that starts with the prefix are returned.</p>
+    ///   - [`connection_arn(Option<String>)`](crate::input::ListApiDestinationsInput::connection_arn): <p>The ARN of the connection specified for the API destination.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListApiDestinationsInput::next_token): <p>The token returned by a previous call to retrieve the next set of results.</p>
+    ///   - [`limit(Option<i32>)`](crate::input::ListApiDestinationsInput::limit): <p>The maximum number of API destinations to include in the response.</p>
+    /// - On success, responds with [`ListApiDestinationsOutput`](crate::output::ListApiDestinationsOutput) with field(s):
+    ///   - [`api_destinations(Option<Vec<ApiDestination>>)`](crate::output::ListApiDestinationsOutput::api_destinations): <p>An array of <code>ApiDestination</code> objects that include information about an API destination.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListApiDestinationsOutput::next_token): <p>A token you can use in a subsequent request to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListApiDestinationsError>`](crate::error::ListApiDestinationsError)
     pub fn list_api_destinations(&self) -> fluent_builders::ListApiDestinations<C, M, R> {
         fluent_builders::ListApiDestinations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListArchives` operation.
+    /// Constructs a fluent builder for the [`ListArchives`](crate::client::fluent_builders::ListArchives) operation.
     ///
-    /// See [`ListArchives`](crate::client::fluent_builders::ListArchives) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListArchivesInput`](crate::input::ListArchivesInput) with field(s):
+    ///   - [`name_prefix(Option<String>)`](crate::input::ListArchivesInput::name_prefix): <p>A name prefix to filter the archives returned. Only archives with name that match the prefix are returned.</p>
+    ///   - [`event_source_arn(Option<String>)`](crate::input::ListArchivesInput::event_source_arn): <p>The ARN of the event source associated with the archive.</p>
+    ///   - [`state(Option<ArchiveState>)`](crate::input::ListArchivesInput::state): <p>The state of the archive.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListArchivesInput::next_token): <p>The token returned by a previous call to retrieve the next set of results.</p>
+    ///   - [`limit(Option<i32>)`](crate::input::ListArchivesInput::limit): <p>The maximum number of results to return.</p>
+    /// - On success, responds with [`ListArchivesOutput`](crate::output::ListArchivesOutput) with field(s):
+    ///   - [`archives(Option<Vec<Archive>>)`](crate::output::ListArchivesOutput::archives): <p>An array of <code>Archive</code> objects that include details about an archive.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListArchivesOutput::next_token): <p>The token returned by a previous call to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListArchivesError>`](crate::error::ListArchivesError)
     pub fn list_archives(&self) -> fluent_builders::ListArchives<C, M, R> {
         fluent_builders::ListArchives::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListConnections` operation.
+    /// Constructs a fluent builder for the [`ListConnections`](crate::client::fluent_builders::ListConnections) operation.
     ///
-    /// See [`ListConnections`](crate::client::fluent_builders::ListConnections) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListConnectionsInput`](crate::input::ListConnectionsInput) with field(s):
+    ///   - [`name_prefix(Option<String>)`](crate::input::ListConnectionsInput::name_prefix): <p>A name prefix to filter results returned. Only connections with a name that starts with the prefix are returned.</p>
+    ///   - [`connection_state(Option<ConnectionState>)`](crate::input::ListConnectionsInput::connection_state): <p>The state of the connection.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListConnectionsInput::next_token): <p>The token returned by a previous call to retrieve the next set of results.</p>
+    ///   - [`limit(Option<i32>)`](crate::input::ListConnectionsInput::limit): <p>The maximum number of connections to return.</p>
+    /// - On success, responds with [`ListConnectionsOutput`](crate::output::ListConnectionsOutput) with field(s):
+    ///   - [`connections(Option<Vec<Connection>>)`](crate::output::ListConnectionsOutput::connections): <p>An array of connections objects that include details about the connections.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListConnectionsOutput::next_token): <p>A token you can use in a subsequent request to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListConnectionsError>`](crate::error::ListConnectionsError)
     pub fn list_connections(&self) -> fluent_builders::ListConnections<C, M, R> {
         fluent_builders::ListConnections::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListEventBuses` operation.
+    /// Constructs a fluent builder for the [`ListEventBuses`](crate::client::fluent_builders::ListEventBuses) operation.
     ///
-    /// See [`ListEventBuses`](crate::client::fluent_builders::ListEventBuses) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListEventBusesInput`](crate::input::ListEventBusesInput) with field(s):
+    ///   - [`name_prefix(Option<String>)`](crate::input::ListEventBusesInput::name_prefix): <p>Specifying this limits the results to only those event buses with names that start with the specified prefix.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListEventBusesInput::next_token): <p>The token returned by a previous call to retrieve the next set of results.</p>
+    ///   - [`limit(Option<i32>)`](crate::input::ListEventBusesInput::limit): <p>Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
+    /// - On success, responds with [`ListEventBusesOutput`](crate::output::ListEventBusesOutput) with field(s):
+    ///   - [`event_buses(Option<Vec<EventBus>>)`](crate::output::ListEventBusesOutput::event_buses): <p>This list of event buses.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListEventBusesOutput::next_token): <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListEventBusesError>`](crate::error::ListEventBusesError)
     pub fn list_event_buses(&self) -> fluent_builders::ListEventBuses<C, M, R> {
         fluent_builders::ListEventBuses::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListEventSources` operation.
+    /// Constructs a fluent builder for the [`ListEventSources`](crate::client::fluent_builders::ListEventSources) operation.
     ///
-    /// See [`ListEventSources`](crate::client::fluent_builders::ListEventSources) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListEventSourcesInput`](crate::input::ListEventSourcesInput) with field(s):
+    ///   - [`name_prefix(Option<String>)`](crate::input::ListEventSourcesInput::name_prefix): <p>Specifying this limits the results to only those partner event sources with names that start with the specified prefix.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListEventSourcesInput::next_token): <p>The token returned by a previous call to retrieve the next set of results.</p>
+    ///   - [`limit(Option<i32>)`](crate::input::ListEventSourcesInput::limit): <p>Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
+    /// - On success, responds with [`ListEventSourcesOutput`](crate::output::ListEventSourcesOutput) with field(s):
+    ///   - [`event_sources(Option<Vec<EventSource>>)`](crate::output::ListEventSourcesOutput::event_sources): <p>The list of event sources.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListEventSourcesOutput::next_token): <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListEventSourcesError>`](crate::error::ListEventSourcesError)
     pub fn list_event_sources(&self) -> fluent_builders::ListEventSources<C, M, R> {
         fluent_builders::ListEventSources::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPartnerEventSourceAccounts` operation.
+    /// Constructs a fluent builder for the [`ListPartnerEventSourceAccounts`](crate::client::fluent_builders::ListPartnerEventSourceAccounts) operation.
     ///
-    /// See [`ListPartnerEventSourceAccounts`](crate::client::fluent_builders::ListPartnerEventSourceAccounts) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListPartnerEventSourceAccountsInput`](crate::input::ListPartnerEventSourceAccountsInput) with field(s):
+    ///   - [`event_source_name(Option<String>)`](crate::input::ListPartnerEventSourceAccountsInput::event_source_name): <p>The name of the partner event source to display account information about.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListPartnerEventSourceAccountsInput::next_token): <p>The token returned by a previous call to this operation. Specifying this retrieves the next set of results.</p>
+    ///   - [`limit(Option<i32>)`](crate::input::ListPartnerEventSourceAccountsInput::limit): <p>Specifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
+    /// - On success, responds with [`ListPartnerEventSourceAccountsOutput`](crate::output::ListPartnerEventSourceAccountsOutput) with field(s):
+    ///   - [`partner_event_source_accounts(Option<Vec<PartnerEventSourceAccount>>)`](crate::output::ListPartnerEventSourceAccountsOutput::partner_event_source_accounts): <p>The list of partner event sources returned by the operation.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPartnerEventSourceAccountsOutput::next_token): <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListPartnerEventSourceAccountsError>`](crate::error::ListPartnerEventSourceAccountsError)
     pub fn list_partner_event_source_accounts(
         &self,
     ) -> fluent_builders::ListPartnerEventSourceAccounts<C, M, R> {
         fluent_builders::ListPartnerEventSourceAccounts::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListPartnerEventSources` operation.
+    /// Constructs a fluent builder for the [`ListPartnerEventSources`](crate::client::fluent_builders::ListPartnerEventSources) operation.
     ///
-    /// See [`ListPartnerEventSources`](crate::client::fluent_builders::ListPartnerEventSources) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListPartnerEventSourcesInput`](crate::input::ListPartnerEventSourcesInput) with field(s):
+    ///   - [`name_prefix(Option<String>)`](crate::input::ListPartnerEventSourcesInput::name_prefix): <p>If you specify this, the results are limited to only those partner event sources that start with the string you specify.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListPartnerEventSourcesInput::next_token): <p>The token returned by a previous call to this operation. Specifying this retrieves the next set of results.</p>
+    ///   - [`limit(Option<i32>)`](crate::input::ListPartnerEventSourcesInput::limit): <p>pecifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
+    /// - On success, responds with [`ListPartnerEventSourcesOutput`](crate::output::ListPartnerEventSourcesOutput) with field(s):
+    ///   - [`partner_event_sources(Option<Vec<PartnerEventSource>>)`](crate::output::ListPartnerEventSourcesOutput::partner_event_sources): <p>The list of partner event sources returned by the operation.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListPartnerEventSourcesOutput::next_token): <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListPartnerEventSourcesError>`](crate::error::ListPartnerEventSourcesError)
     pub fn list_partner_event_sources(&self) -> fluent_builders::ListPartnerEventSources<C, M, R> {
         fluent_builders::ListPartnerEventSources::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListReplays` operation.
+    /// Constructs a fluent builder for the [`ListReplays`](crate::client::fluent_builders::ListReplays) operation.
     ///
-    /// See [`ListReplays`](crate::client::fluent_builders::ListReplays) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListReplaysInput`](crate::input::ListReplaysInput) with field(s):
+    ///   - [`name_prefix(Option<String>)`](crate::input::ListReplaysInput::name_prefix): <p>A name prefix to filter the replays returned. Only replays with name that match the prefix are returned.</p>
+    ///   - [`state(Option<ReplayState>)`](crate::input::ListReplaysInput::state): <p>The state of the replay.</p>
+    ///   - [`event_source_arn(Option<String>)`](crate::input::ListReplaysInput::event_source_arn): <p>The ARN of the archive from which the events are replayed.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListReplaysInput::next_token): <p>The token returned by a previous call to retrieve the next set of results.</p>
+    ///   - [`limit(Option<i32>)`](crate::input::ListReplaysInput::limit): <p>The maximum number of replays to retrieve.</p>
+    /// - On success, responds with [`ListReplaysOutput`](crate::output::ListReplaysOutput) with field(s):
+    ///   - [`replays(Option<Vec<Replay>>)`](crate::output::ListReplaysOutput::replays): <p>An array of <code>Replay</code> objects that contain information about the replay.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListReplaysOutput::next_token): <p>The token returned by a previous call to retrieve the next set of results.</p>
+    /// - On failure, responds with [`SdkError<ListReplaysError>`](crate::error::ListReplaysError)
     pub fn list_replays(&self) -> fluent_builders::ListReplays<C, M, R> {
         fluent_builders::ListReplays::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRuleNamesByTarget` operation.
+    /// Constructs a fluent builder for the [`ListRuleNamesByTarget`](crate::client::fluent_builders::ListRuleNamesByTarget) operation.
     ///
-    /// See [`ListRuleNamesByTarget`](crate::client::fluent_builders::ListRuleNamesByTarget) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListRuleNamesByTargetInput`](crate::input::ListRuleNamesByTargetInput) with field(s):
+    ///   - [`target_arn(Option<String>)`](crate::input::ListRuleNamesByTargetInput::target_arn): <p>The Amazon Resource Name (ARN) of the target resource.</p>
+    ///   - [`event_bus_name(Option<String>)`](crate::input::ListRuleNamesByTargetInput::event_bus_name): <p>The name or ARN of the event bus to list rules for. If you omit this, the default event bus is used.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListRuleNamesByTargetInput::next_token): <p>The token returned by a previous call to retrieve the next set of results.</p>
+    ///   - [`limit(Option<i32>)`](crate::input::ListRuleNamesByTargetInput::limit): <p>The maximum number of results to return.</p>
+    /// - On success, responds with [`ListRuleNamesByTargetOutput`](crate::output::ListRuleNamesByTargetOutput) with field(s):
+    ///   - [`rule_names(Option<Vec<String>>)`](crate::output::ListRuleNamesByTargetOutput::rule_names): <p>The names of the rules that can invoke the given target.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListRuleNamesByTargetOutput::next_token): <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
+    /// - On failure, responds with [`SdkError<ListRuleNamesByTargetError>`](crate::error::ListRuleNamesByTargetError)
     pub fn list_rule_names_by_target(&self) -> fluent_builders::ListRuleNamesByTarget<C, M, R> {
         fluent_builders::ListRuleNamesByTarget::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRules` operation.
+    /// Constructs a fluent builder for the [`ListRules`](crate::client::fluent_builders::ListRules) operation.
     ///
-    /// See [`ListRules`](crate::client::fluent_builders::ListRules) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListRulesInput`](crate::input::ListRulesInput) with field(s):
+    ///   - [`name_prefix(Option<String>)`](crate::input::ListRulesInput::name_prefix): <p>The prefix matching the rule name.</p>
+    ///   - [`event_bus_name(Option<String>)`](crate::input::ListRulesInput::event_bus_name): <p>The name or ARN of the event bus to list the rules for. If you omit this, the default event bus is used.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListRulesInput::next_token): <p>The token returned by a previous call to retrieve the next set of results.</p>
+    ///   - [`limit(Option<i32>)`](crate::input::ListRulesInput::limit): <p>The maximum number of results to return.</p>
+    /// - On success, responds with [`ListRulesOutput`](crate::output::ListRulesOutput) with field(s):
+    ///   - [`rules(Option<Vec<Rule>>)`](crate::output::ListRulesOutput::rules): <p>The rules that match the specified criteria.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListRulesOutput::next_token): <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
+    /// - On failure, responds with [`SdkError<ListRulesError>`](crate::error::ListRulesError)
     pub fn list_rules(&self) -> fluent_builders::ListRules<C, M, R> {
         fluent_builders::ListRules::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p>The ARN of the EventBridge resource for which you want to view tags.</p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The list of tag keys and values associated with the resource you specified</p>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTargetsByRule` operation.
+    /// Constructs a fluent builder for the [`ListTargetsByRule`](crate::client::fluent_builders::ListTargetsByRule) operation.
     ///
-    /// See [`ListTargetsByRule`](crate::client::fluent_builders::ListTargetsByRule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTargetsByRuleInput`](crate::input::ListTargetsByRuleInput) with field(s):
+    ///   - [`rule(Option<String>)`](crate::input::ListTargetsByRuleInput::rule): <p>The name of the rule.</p>
+    ///   - [`event_bus_name(Option<String>)`](crate::input::ListTargetsByRuleInput::event_bus_name): <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListTargetsByRuleInput::next_token): <p>The token returned by a previous call to retrieve the next set of results.</p>
+    ///   - [`limit(Option<i32>)`](crate::input::ListTargetsByRuleInput::limit): <p>The maximum number of results to return.</p>
+    /// - On success, responds with [`ListTargetsByRuleOutput`](crate::output::ListTargetsByRuleOutput) with field(s):
+    ///   - [`targets(Option<Vec<Target>>)`](crate::output::ListTargetsByRuleOutput::targets): <p>The targets assigned to the rule.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListTargetsByRuleOutput::next_token): <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
+    /// - On failure, responds with [`SdkError<ListTargetsByRuleError>`](crate::error::ListTargetsByRuleError)
     pub fn list_targets_by_rule(&self) -> fluent_builders::ListTargetsByRule<C, M, R> {
         fluent_builders::ListTargetsByRule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutEvents` operation.
+    /// Constructs a fluent builder for the [`PutEvents`](crate::client::fluent_builders::PutEvents) operation.
     ///
-    /// See [`PutEvents`](crate::client::fluent_builders::PutEvents) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutEventsInput`](crate::input::PutEventsInput) with field(s):
+    ///   - [`entries(Option<Vec<PutEventsRequestEntry>>)`](crate::input::PutEventsInput::entries): <p>The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.</p>
+    /// - On success, responds with [`PutEventsOutput`](crate::output::PutEventsOutput) with field(s):
+    ///   - [`failed_entry_count(i32)`](crate::output::PutEventsOutput::failed_entry_count): <p>The number of failed entries.</p>
+    ///   - [`entries(Option<Vec<PutEventsResultEntry>>)`](crate::output::PutEventsOutput::entries): <p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>
+    /// - On failure, responds with [`SdkError<PutEventsError>`](crate::error::PutEventsError)
     pub fn put_events(&self) -> fluent_builders::PutEvents<C, M, R> {
         fluent_builders::PutEvents::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutPartnerEvents` operation.
+    /// Constructs a fluent builder for the [`PutPartnerEvents`](crate::client::fluent_builders::PutPartnerEvents) operation.
     ///
-    /// See [`PutPartnerEvents`](crate::client::fluent_builders::PutPartnerEvents) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutPartnerEventsInput`](crate::input::PutPartnerEventsInput) with field(s):
+    ///   - [`entries(Option<Vec<PutPartnerEventsRequestEntry>>)`](crate::input::PutPartnerEventsInput::entries): <p>The list of events to write to the event bus.</p>
+    /// - On success, responds with [`PutPartnerEventsOutput`](crate::output::PutPartnerEventsOutput) with field(s):
+    ///   - [`failed_entry_count(i32)`](crate::output::PutPartnerEventsOutput::failed_entry_count): <p>The number of events from this operation that could not be written to the partner event bus.</p>
+    ///   - [`entries(Option<Vec<PutPartnerEventsResultEntry>>)`](crate::output::PutPartnerEventsOutput::entries): <p>The list of events from this operation that were successfully written to the partner event bus.</p>
+    /// - On failure, responds with [`SdkError<PutPartnerEventsError>`](crate::error::PutPartnerEventsError)
     pub fn put_partner_events(&self) -> fluent_builders::PutPartnerEvents<C, M, R> {
         fluent_builders::PutPartnerEvents::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutPermission` operation.
+    /// Constructs a fluent builder for the [`PutPermission`](crate::client::fluent_builders::PutPermission) operation.
     ///
-    /// See [`PutPermission`](crate::client::fluent_builders::PutPermission) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutPermissionInput`](crate::input::PutPermissionInput) with field(s):
+    ///   - [`event_bus_name(Option<String>)`](crate::input::PutPermissionInput::event_bus_name): <p>The name of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
+    ///   - [`action(Option<String>)`](crate::input::PutPermissionInput::action): <p>The action that you are enabling the other account to perform.</p>
+    ///   - [`principal(Option<String>)`](crate::input::PutPermissionInput::principal): <p>The 12-digit Amazon Web Services account ID that you are permitting to put events to your default event bus. Specify "*" to permit any account to put events to your default event bus.</p>  <p>If you specify "*" without specifying <code>Condition</code>, avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.</p>
+    ///   - [`statement_id(Option<String>)`](crate::input::PutPermissionInput::statement_id): <p>An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html">RemovePermission</a>.</p>
+    ///   - [`condition(Option<Condition>)`](crate::input::PutPermissionInput::condition): <p>This parameter enables you to limit the permission to accounts that fulfill a certain condition, such as being a member of a certain Amazon Web Services organization. For more information about Amazon Web Services Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What Is Amazon Web Services Organizations</a> in the <i>Amazon Web Services Organizations User Guide</i>.</p>  <p>If you specify <code>Condition</code> with an Amazon Web Services organization ID, and specify "*" as the value for <code>Principal</code>, you grant permission to all the accounts in the named organization.</p>  <p>The <code>Condition</code> is a JSON string which must contain <code>Type</code>, <code>Key</code>, and <code>Value</code> fields.</p>
+    ///   - [`policy(Option<String>)`](crate::input::PutPermissionInput::policy): <p>A JSON string that describes the permission policy statement. You can include a <code>Policy</code> parameter in the request instead of using the <code>StatementId</code>, <code>Action</code>, <code>Principal</code>, or <code>Condition</code> parameters.</p>
+    /// - On success, responds with [`PutPermissionOutput`](crate::output::PutPermissionOutput)
+
+    /// - On failure, responds with [`SdkError<PutPermissionError>`](crate::error::PutPermissionError)
     pub fn put_permission(&self) -> fluent_builders::PutPermission<C, M, R> {
         fluent_builders::PutPermission::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutRule` operation.
+    /// Constructs a fluent builder for the [`PutRule`](crate::client::fluent_builders::PutRule) operation.
     ///
-    /// See [`PutRule`](crate::client::fluent_builders::PutRule) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutRuleInput`](crate::input::PutRuleInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::PutRuleInput::name): <p>The name of the rule that you are creating or updating.</p>
+    ///   - [`schedule_expression(Option<String>)`](crate::input::PutRuleInput::schedule_expression): <p>The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5 minutes)".</p>
+    ///   - [`event_pattern(Option<String>)`](crate::input::PutRuleInput::event_pattern): <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    ///   - [`state(Option<RuleState>)`](crate::input::PutRuleInput::state): <p>Indicates whether the rule is enabled or disabled.</p>
+    ///   - [`description(Option<String>)`](crate::input::PutRuleInput::description): <p>A description of the rule.</p>
+    ///   - [`role_arn(Option<String>)`](crate::input::PutRuleInput::role_arn): <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>  <p>If you're setting an event bus in another account as the target and that account granted permission to your account through an organization instead of directly by the account ID, you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure, instead of here in this parameter.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::PutRuleInput::tags): <p>The list of key-value pairs to associate with the rule.</p>
+    ///   - [`event_bus_name(Option<String>)`](crate::input::PutRuleInput::event_bus_name): <p>The name or ARN of the event bus to associate with this rule. If you omit this, the default event bus is used.</p>
+    /// - On success, responds with [`PutRuleOutput`](crate::output::PutRuleOutput) with field(s):
+    ///   - [`rule_arn(Option<String>)`](crate::output::PutRuleOutput::rule_arn): <p>The Amazon Resource Name (ARN) of the rule.</p>
+    /// - On failure, responds with [`SdkError<PutRuleError>`](crate::error::PutRuleError)
     pub fn put_rule(&self) -> fluent_builders::PutRule<C, M, R> {
         fluent_builders::PutRule::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutTargets` operation.
+    /// Constructs a fluent builder for the [`PutTargets`](crate::client::fluent_builders::PutTargets) operation.
     ///
-    /// See [`PutTargets`](crate::client::fluent_builders::PutTargets) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutTargetsInput`](crate::input::PutTargetsInput) with field(s):
+    ///   - [`rule(Option<String>)`](crate::input::PutTargetsInput::rule): <p>The name of the rule.</p>
+    ///   - [`event_bus_name(Option<String>)`](crate::input::PutTargetsInput::event_bus_name): <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
+    ///   - [`targets(Option<Vec<Target>>)`](crate::input::PutTargetsInput::targets): <p>The targets to update or add to the rule.</p>
+    /// - On success, responds with [`PutTargetsOutput`](crate::output::PutTargetsOutput) with field(s):
+    ///   - [`failed_entry_count(i32)`](crate::output::PutTargetsOutput::failed_entry_count): <p>The number of failed entries.</p>
+    ///   - [`failed_entries(Option<Vec<PutTargetsResultEntry>>)`](crate::output::PutTargetsOutput::failed_entries): <p>The failed target entries.</p>
+    /// - On failure, responds with [`SdkError<PutTargetsError>`](crate::error::PutTargetsError)
     pub fn put_targets(&self) -> fluent_builders::PutTargets<C, M, R> {
         fluent_builders::PutTargets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RemovePermission` operation.
+    /// Constructs a fluent builder for the [`RemovePermission`](crate::client::fluent_builders::RemovePermission) operation.
     ///
-    /// See [`RemovePermission`](crate::client::fluent_builders::RemovePermission) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RemovePermissionInput`](crate::input::RemovePermissionInput) with field(s):
+    ///   - [`statement_id(Option<String>)`](crate::input::RemovePermissionInput::statement_id): <p>The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.</p>
+    ///   - [`remove_all_permissions(bool)`](crate::input::RemovePermissionInput::remove_all_permissions): <p>Specifies whether to remove all permissions.</p>
+    ///   - [`event_bus_name(Option<String>)`](crate::input::RemovePermissionInput::event_bus_name): <p>The name of the event bus to revoke permissions for. If you omit this, the default event bus is used.</p>
+    /// - On success, responds with [`RemovePermissionOutput`](crate::output::RemovePermissionOutput)
+
+    /// - On failure, responds with [`SdkError<RemovePermissionError>`](crate::error::RemovePermissionError)
     pub fn remove_permission(&self) -> fluent_builders::RemovePermission<C, M, R> {
         fluent_builders::RemovePermission::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `RemoveTargets` operation.
+    /// Constructs a fluent builder for the [`RemoveTargets`](crate::client::fluent_builders::RemoveTargets) operation.
     ///
-    /// See [`RemoveTargets`](crate::client::fluent_builders::RemoveTargets) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`RemoveTargetsInput`](crate::input::RemoveTargetsInput) with field(s):
+    ///   - [`rule(Option<String>)`](crate::input::RemoveTargetsInput::rule): <p>The name of the rule.</p>
+    ///   - [`event_bus_name(Option<String>)`](crate::input::RemoveTargetsInput::event_bus_name): <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
+    ///   - [`ids(Option<Vec<String>>)`](crate::input::RemoveTargetsInput::ids): <p>The IDs of the targets to remove from the rule.</p>
+    ///   - [`force(bool)`](crate::input::RemoveTargetsInput::force): <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify <code>Force</code> as <code>True</code> to remove targets. This parameter is ignored for rules that are not managed rules. You can check whether a rule is a managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code> field of the response.</p>
+    /// - On success, responds with [`RemoveTargetsOutput`](crate::output::RemoveTargetsOutput) with field(s):
+    ///   - [`failed_entry_count(i32)`](crate::output::RemoveTargetsOutput::failed_entry_count): <p>The number of failed entries.</p>
+    ///   - [`failed_entries(Option<Vec<RemoveTargetsResultEntry>>)`](crate::output::RemoveTargetsOutput::failed_entries): <p>The failed target entries.</p>
+    /// - On failure, responds with [`SdkError<RemoveTargetsError>`](crate::error::RemoveTargetsError)
     pub fn remove_targets(&self) -> fluent_builders::RemoveTargets<C, M, R> {
         fluent_builders::RemoveTargets::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `StartReplay` operation.
+    /// Constructs a fluent builder for the [`StartReplay`](crate::client::fluent_builders::StartReplay) operation.
     ///
-    /// See [`StartReplay`](crate::client::fluent_builders::StartReplay) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`StartReplayInput`](crate::input::StartReplayInput) with field(s):
+    ///   - [`replay_name(Option<String>)`](crate::input::StartReplayInput::replay_name): <p>The name of the replay to start.</p>
+    ///   - [`description(Option<String>)`](crate::input::StartReplayInput::description): <p>A description for the replay to start.</p>
+    ///   - [`event_source_arn(Option<String>)`](crate::input::StartReplayInput::event_source_arn): <p>The ARN of the archive to replay events from.</p>
+    ///   - [`event_start_time(Option<DateTime>)`](crate::input::StartReplayInput::event_start_time): <p>A time stamp for the time to start replaying events. Only events that occurred between the <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
+    ///   - [`event_end_time(Option<DateTime>)`](crate::input::StartReplayInput::event_end_time): <p>A time stamp for the time to stop replaying events. Only events that occurred between the <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
+    ///   - [`destination(Option<ReplayDestination>)`](crate::input::StartReplayInput::destination): <p>A <code>ReplayDestination</code> object that includes details about the destination for the replay.</p>
+    /// - On success, responds with [`StartReplayOutput`](crate::output::StartReplayOutput) with field(s):
+    ///   - [`replay_arn(Option<String>)`](crate::output::StartReplayOutput::replay_arn): <p>The ARN of the replay.</p>
+    ///   - [`state(Option<ReplayState>)`](crate::output::StartReplayOutput::state): <p>The state of the replay.</p>
+    ///   - [`state_reason(Option<String>)`](crate::output::StartReplayOutput::state_reason): <p>The reason that the replay is in the state.</p>
+    ///   - [`replay_start_time(Option<DateTime>)`](crate::output::StartReplayOutput::replay_start_time): <p>The time at which the replay started.</p>
+    /// - On failure, responds with [`SdkError<StartReplayError>`](crate::error::StartReplayError)
     pub fn start_replay(&self) -> fluent_builders::StartReplay<C, M, R> {
         fluent_builders::StartReplay::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p>The ARN of the EventBridge resource that you're adding tags to.</p>
+    ///   - [`tags(Option<Vec<Tag>>)`](crate::input::TagResourceInput::tags): <p>The list of key-value pairs to associate with the resource.</p>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TestEventPattern` operation.
+    /// Constructs a fluent builder for the [`TestEventPattern`](crate::client::fluent_builders::TestEventPattern) operation.
     ///
-    /// See [`TestEventPattern`](crate::client::fluent_builders::TestEventPattern) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TestEventPatternInput`](crate::input::TestEventPatternInput) with field(s):
+    ///   - [`event_pattern(Option<String>)`](crate::input::TestEventPatternInput::event_pattern): <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    ///   - [`event(Option<String>)`](crate::input::TestEventPatternInput::event): <p>The event, in JSON format, to test against the event pattern. The JSON must follow the format specified in <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/aws-events.html">Amazon Web Services Events</a>, and the following fields are mandatory:</p>  <ul>   <li> <p> <code>id</code> </p> </li>   <li> <p> <code>account</code> </p> </li>   <li> <p> <code>source</code> </p> </li>   <li> <p> <code>time</code> </p> </li>   <li> <p> <code>region</code> </p> </li>   <li> <p> <code>resources</code> </p> </li>   <li> <p> <code>detail-type</code> </p> </li>  </ul>
+    /// - On success, responds with [`TestEventPatternOutput`](crate::output::TestEventPatternOutput) with field(s):
+    ///   - [`result(bool)`](crate::output::TestEventPatternOutput::result): <p>Indicates whether the event matches the event pattern.</p>
+    /// - On failure, responds with [`SdkError<TestEventPatternError>`](crate::error::TestEventPatternError)
     pub fn test_event_pattern(&self) -> fluent_builders::TestEventPattern<C, M, R> {
         fluent_builders::TestEventPattern::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p>The ARN of the EventBridge resource from which you are removing tags.</p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>The list of tag keys to remove from the resource.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateApiDestination` operation.
+    /// Constructs a fluent builder for the [`UpdateApiDestination`](crate::client::fluent_builders::UpdateApiDestination) operation.
     ///
-    /// See [`UpdateApiDestination`](crate::client::fluent_builders::UpdateApiDestination) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateApiDestinationInput`](crate::input::UpdateApiDestinationInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::UpdateApiDestinationInput::name): <p>The name of the API destination to update.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateApiDestinationInput::description): <p>The name of the API destination to update.</p>
+    ///   - [`connection_arn(Option<String>)`](crate::input::UpdateApiDestinationInput::connection_arn): <p>The ARN of the connection to use for the API destination.</p>
+    ///   - [`invocation_endpoint(Option<String>)`](crate::input::UpdateApiDestinationInput::invocation_endpoint): <p>The URL to the endpoint to use for the API destination.</p>
+    ///   - [`http_method(Option<ApiDestinationHttpMethod>)`](crate::input::UpdateApiDestinationInput::http_method): <p>The method to use for the API destination.</p>
+    ///   - [`invocation_rate_limit_per_second(Option<i32>)`](crate::input::UpdateApiDestinationInput::invocation_rate_limit_per_second): <p>The maximum number of invocations per second to send to the API destination.</p>
+    /// - On success, responds with [`UpdateApiDestinationOutput`](crate::output::UpdateApiDestinationOutput) with field(s):
+    ///   - [`api_destination_arn(Option<String>)`](crate::output::UpdateApiDestinationOutput::api_destination_arn): <p>The ARN of the API destination that was updated.</p>
+    ///   - [`api_destination_state(Option<ApiDestinationState>)`](crate::output::UpdateApiDestinationOutput::api_destination_state): <p>The state of the API destination that was updated.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::UpdateApiDestinationOutput::creation_time): <p>A time stamp for the time that the API destination was created.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::UpdateApiDestinationOutput::last_modified_time): <p>A time stamp for the time that the API destination was last modified.</p>
+    /// - On failure, responds with [`SdkError<UpdateApiDestinationError>`](crate::error::UpdateApiDestinationError)
     pub fn update_api_destination(&self) -> fluent_builders::UpdateApiDestination<C, M, R> {
         fluent_builders::UpdateApiDestination::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateArchive` operation.
+    /// Constructs a fluent builder for the [`UpdateArchive`](crate::client::fluent_builders::UpdateArchive) operation.
     ///
-    /// See [`UpdateArchive`](crate::client::fluent_builders::UpdateArchive) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateArchiveInput`](crate::input::UpdateArchiveInput) with field(s):
+    ///   - [`archive_name(Option<String>)`](crate::input::UpdateArchiveInput::archive_name): <p>The name of the archive to update.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateArchiveInput::description): <p>The description for the archive.</p>
+    ///   - [`event_pattern(Option<String>)`](crate::input::UpdateArchiveInput::event_pattern): <p>The event pattern to use to filter events sent to the archive.</p>
+    ///   - [`retention_days(Option<i32>)`](crate::input::UpdateArchiveInput::retention_days): <p>The number of days to retain events in the archive.</p>
+    /// - On success, responds with [`UpdateArchiveOutput`](crate::output::UpdateArchiveOutput) with field(s):
+    ///   - [`archive_arn(Option<String>)`](crate::output::UpdateArchiveOutput::archive_arn): <p>The ARN of the archive.</p>
+    ///   - [`state(Option<ArchiveState>)`](crate::output::UpdateArchiveOutput::state): <p>The state of the archive.</p>
+    ///   - [`state_reason(Option<String>)`](crate::output::UpdateArchiveOutput::state_reason): <p>The reason that the archive is in the current state.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::UpdateArchiveOutput::creation_time): <p>The time at which the archive was updated.</p>
+    /// - On failure, responds with [`SdkError<UpdateArchiveError>`](crate::error::UpdateArchiveError)
     pub fn update_archive(&self) -> fluent_builders::UpdateArchive<C, M, R> {
         fluent_builders::UpdateArchive::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UpdateConnection` operation.
+    /// Constructs a fluent builder for the [`UpdateConnection`](crate::client::fluent_builders::UpdateConnection) operation.
     ///
-    /// See [`UpdateConnection`](crate::client::fluent_builders::UpdateConnection) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UpdateConnectionInput`](crate::input::UpdateConnectionInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::UpdateConnectionInput::name): <p>The name of the connection to update.</p>
+    ///   - [`description(Option<String>)`](crate::input::UpdateConnectionInput::description): <p>A description for the connection.</p>
+    ///   - [`authorization_type(Option<ConnectionAuthorizationType>)`](crate::input::UpdateConnectionInput::authorization_type): <p>The type of authorization to use for the connection.</p>
+    ///   - [`auth_parameters(Option<UpdateConnectionAuthRequestParameters>)`](crate::input::UpdateConnectionInput::auth_parameters): <p>The authorization parameters to use for the connection.</p>
+    /// - On success, responds with [`UpdateConnectionOutput`](crate::output::UpdateConnectionOutput) with field(s):
+    ///   - [`connection_arn(Option<String>)`](crate::output::UpdateConnectionOutput::connection_arn): <p>The ARN of the connection that was updated.</p>
+    ///   - [`connection_state(Option<ConnectionState>)`](crate::output::UpdateConnectionOutput::connection_state): <p>The state of the connection that was updated.</p>
+    ///   - [`creation_time(Option<DateTime>)`](crate::output::UpdateConnectionOutput::creation_time): <p>A time stamp for the time that the connection was created.</p>
+    ///   - [`last_modified_time(Option<DateTime>)`](crate::output::UpdateConnectionOutput::last_modified_time): <p>A time stamp for the time that the connection was last modified.</p>
+    ///   - [`last_authorized_time(Option<DateTime>)`](crate::output::UpdateConnectionOutput::last_authorized_time): <p>A time stamp for the time that the connection was last authorized.</p>
+    /// - On failure, responds with [`SdkError<UpdateConnectionError>`](crate::error::UpdateConnectionError)
     pub fn update_connection(&self) -> fluent_builders::UpdateConnection<C, M, R> {
         fluent_builders::UpdateConnection::new(self.handle.clone())
     }

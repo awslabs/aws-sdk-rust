@@ -83,115 +83,192 @@ where
     M: aws_smithy_client::bounds::SmithyMiddleware<C>,
     R: aws_smithy_client::retry::NewRequestPolicy,
 {
-    /// Constructs a fluent builder for the `AssociateRepository` operation.
+    /// Constructs a fluent builder for the [`AssociateRepository`](crate::client::fluent_builders::AssociateRepository) operation.
     ///
-    /// See [`AssociateRepository`](crate::client::fluent_builders::AssociateRepository) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`AssociateRepositoryInput`](crate::input::AssociateRepositoryInput) with field(s):
+    ///   - [`repository(Option<Repository>)`](crate::input::AssociateRepositoryInput::repository): <p>The repository to associate.</p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::AssociateRepositoryInput::client_request_token): <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate repository associations if there are failures and retries. </p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::AssociateRepositoryInput::tags): <p> An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts: </p>  <ul>   <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>   <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>  </ul>
+    ///   - [`kms_key_details(Option<KmsKeyDetails>)`](crate::input::AssociateRepositoryInput::kms_key_details): <p>A <code>KMSKeyDetails</code> object that contains:</p>  <ul>   <li> <p>The encryption option for this repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li>   <li> <p>The ID of the Amazon Web Services KMS key that is associated with this respository association.</p> </li>  </ul>
+    /// - On success, responds with [`AssociateRepositoryOutput`](crate::output::AssociateRepositoryOutput) with field(s):
+    ///   - [`repository_association(Option<RepositoryAssociation>)`](crate::output::AssociateRepositoryOutput::repository_association): <p>Information about the repository association.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::AssociateRepositoryOutput::tags): <p> An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts: </p>  <ul>   <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>   <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<AssociateRepositoryError>`](crate::error::AssociateRepositoryError)
     pub fn associate_repository(&self) -> fluent_builders::AssociateRepository<C, M, R> {
         fluent_builders::AssociateRepository::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `CreateCodeReview` operation.
+    /// Constructs a fluent builder for the [`CreateCodeReview`](crate::client::fluent_builders::CreateCodeReview) operation.
     ///
-    /// See [`CreateCodeReview`](crate::client::fluent_builders::CreateCodeReview) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`CreateCodeReviewInput`](crate::input::CreateCodeReviewInput) with field(s):
+    ///   - [`name(Option<String>)`](crate::input::CreateCodeReviewInput::name): <p> The name of the code review. The name of each code review in your Amazon Web Services account must be unique. </p>
+    ///   - [`repository_association_arn(Option<String>)`](crate::input::CreateCodeReviewInput::repository_association_arn): <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>  <p> A code review can only be created on an associated repository. This is the ARN of the associated repository. </p>
+    ///   - [`r#type(Option<CodeReviewType>)`](crate::input::CreateCodeReviewInput::r#type): <p> The type of code review to create. This is specified using a <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html"> <code>CodeReviewType</code> </a> object. You can create a code review only of type <code>RepositoryAnalysis</code>. </p>
+    ///   - [`client_request_token(Option<String>)`](crate::input::CreateCodeReviewInput::client_request_token): <p> Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate code reviews if there are failures and retries. </p>
+    /// - On success, responds with [`CreateCodeReviewOutput`](crate::output::CreateCodeReviewOutput) with field(s):
+    ///   - [`code_review(Option<CodeReview>)`](crate::output::CreateCodeReviewOutput::code_review): <p> Information about a code review. A code review belongs to the associated repository that contains the reviewed code. </p>
+    /// - On failure, responds with [`SdkError<CreateCodeReviewError>`](crate::error::CreateCodeReviewError)
     pub fn create_code_review(&self) -> fluent_builders::CreateCodeReview<C, M, R> {
         fluent_builders::CreateCodeReview::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeCodeReview` operation.
+    /// Constructs a fluent builder for the [`DescribeCodeReview`](crate::client::fluent_builders::DescribeCodeReview) operation.
     ///
-    /// See [`DescribeCodeReview`](crate::client::fluent_builders::DescribeCodeReview) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeCodeReviewInput`](crate::input::DescribeCodeReviewInput) with field(s):
+    ///   - [`code_review_arn(Option<String>)`](crate::input::DescribeCodeReviewInput::code_review_arn): <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a> object. </p>
+    /// - On success, responds with [`DescribeCodeReviewOutput`](crate::output::DescribeCodeReviewOutput) with field(s):
+    ///   - [`code_review(Option<CodeReview>)`](crate::output::DescribeCodeReviewOutput::code_review): <p> Information about the code review. </p>
+    /// - On failure, responds with [`SdkError<DescribeCodeReviewError>`](crate::error::DescribeCodeReviewError)
     pub fn describe_code_review(&self) -> fluent_builders::DescribeCodeReview<C, M, R> {
         fluent_builders::DescribeCodeReview::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeRecommendationFeedback` operation.
+    /// Constructs a fluent builder for the [`DescribeRecommendationFeedback`](crate::client::fluent_builders::DescribeRecommendationFeedback) operation.
     ///
-    /// See [`DescribeRecommendationFeedback`](crate::client::fluent_builders::DescribeRecommendationFeedback) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeRecommendationFeedbackInput`](crate::input::DescribeRecommendationFeedbackInput) with field(s):
+    ///   - [`code_review_arn(Option<String>)`](crate::input::DescribeRecommendationFeedbackInput::code_review_arn): <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a> object. </p>
+    ///   - [`recommendation_id(Option<String>)`](crate::input::DescribeRecommendationFeedbackInput::recommendation_id): <p> The recommendation ID that can be used to track the provided recommendations and then to collect the feedback. </p>
+    ///   - [`user_id(Option<String>)`](crate::input::DescribeRecommendationFeedbackInput::user_id): <p> Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the user making the request. </p>  <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>. </p>
+    /// - On success, responds with [`DescribeRecommendationFeedbackOutput`](crate::output::DescribeRecommendationFeedbackOutput) with field(s):
+    ///   - [`recommendation_feedback(Option<RecommendationFeedback>)`](crate::output::DescribeRecommendationFeedbackOutput::recommendation_feedback): <p> The recommendation feedback given by the user. </p>
+    /// - On failure, responds with [`SdkError<DescribeRecommendationFeedbackError>`](crate::error::DescribeRecommendationFeedbackError)
     pub fn describe_recommendation_feedback(
         &self,
     ) -> fluent_builders::DescribeRecommendationFeedback<C, M, R> {
         fluent_builders::DescribeRecommendationFeedback::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DescribeRepositoryAssociation` operation.
+    /// Constructs a fluent builder for the [`DescribeRepositoryAssociation`](crate::client::fluent_builders::DescribeRepositoryAssociation) operation.
     ///
-    /// See [`DescribeRepositoryAssociation`](crate::client::fluent_builders::DescribeRepositoryAssociation) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DescribeRepositoryAssociationInput`](crate::input::DescribeRepositoryAssociationInput) with field(s):
+    ///   - [`association_arn(Option<String>)`](crate::input::DescribeRepositoryAssociationInput::association_arn): <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>
+    /// - On success, responds with [`DescribeRepositoryAssociationOutput`](crate::output::DescribeRepositoryAssociationOutput) with field(s):
+    ///   - [`repository_association(Option<RepositoryAssociation>)`](crate::output::DescribeRepositoryAssociationOutput::repository_association): <p>Information about the repository association.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeRepositoryAssociationOutput::tags): <p> An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts: </p>  <ul>   <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>   <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<DescribeRepositoryAssociationError>`](crate::error::DescribeRepositoryAssociationError)
     pub fn describe_repository_association(
         &self,
     ) -> fluent_builders::DescribeRepositoryAssociation<C, M, R> {
         fluent_builders::DescribeRepositoryAssociation::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `DisassociateRepository` operation.
+    /// Constructs a fluent builder for the [`DisassociateRepository`](crate::client::fluent_builders::DisassociateRepository) operation.
     ///
-    /// See [`DisassociateRepository`](crate::client::fluent_builders::DisassociateRepository) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`DisassociateRepositoryInput`](crate::input::DisassociateRepositoryInput) with field(s):
+    ///   - [`association_arn(Option<String>)`](crate::input::DisassociateRepositoryInput::association_arn): <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>
+    /// - On success, responds with [`DisassociateRepositoryOutput`](crate::output::DisassociateRepositoryOutput) with field(s):
+    ///   - [`repository_association(Option<RepositoryAssociation>)`](crate::output::DisassociateRepositoryOutput::repository_association): <p>Information about the disassociated repository.</p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DisassociateRepositoryOutput::tags): <p> An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts: </p>  <ul>   <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>   <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<DisassociateRepositoryError>`](crate::error::DisassociateRepositoryError)
     pub fn disassociate_repository(&self) -> fluent_builders::DisassociateRepository<C, M, R> {
         fluent_builders::DisassociateRepository::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListCodeReviews` operation.
-    ///
-    /// See [`ListCodeReviews`](crate::client::fluent_builders::ListCodeReviews) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListCodeReviews`](crate::client::fluent_builders::ListCodeReviews) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListCodeReviews::into_paginator).
+    ///
+    /// - Takes [`ListCodeReviewsInput`](crate::input::ListCodeReviewsInput) with field(s):
+    ///   - [`provider_types(Option<Vec<ProviderType>>)`](crate::input::ListCodeReviewsInput::provider_types): <p> List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code> lists code reviews from GitHub. </p>
+    ///   - [`states(Option<Vec<JobState>>)`](crate::input::ListCodeReviewsInput::states): <p> List of states for filtering that needs to be applied before displaying the result. For example, <code>states=[Pending]</code> lists code reviews in the Pending state. </p>  <p>The valid code review states are:</p>  <ul>   <li> <p> <code>Completed</code>: The code review is complete. </p> </li>   <li> <p> <code>Pending</code>: The code review started and has not completed or failed. </p> </li>   <li> <p> <code>Failed</code>: The code review failed. </p> </li>   <li> <p> <code>Deleting</code>: The code review is being deleted. </p> </li>  </ul>
+    ///   - [`repository_names(Option<Vec<String>>)`](crate::input::ListCodeReviewsInput::repository_names): <p> List of repository names for filtering that needs to be applied before displaying the result. </p>
+    ///   - [`r#type(Option<Type>)`](crate::input::ListCodeReviewsInput::r#type): <p> The type of code reviews to list in the response. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListCodeReviewsInput::max_results): <p> The maximum number of results that are returned per call. The default is 100. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListCodeReviewsInput::next_token): <p> If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    /// - On success, responds with [`ListCodeReviewsOutput`](crate::output::ListCodeReviewsOutput) with field(s):
+    ///   - [`code_review_summaries(Option<Vec<CodeReviewSummary>>)`](crate::output::ListCodeReviewsOutput::code_review_summaries): <p> A list of code reviews that meet the criteria of the request. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListCodeReviewsOutput::next_token): <p> Pagination token. </p>
+    /// - On failure, responds with [`SdkError<ListCodeReviewsError>`](crate::error::ListCodeReviewsError)
     pub fn list_code_reviews(&self) -> fluent_builders::ListCodeReviews<C, M, R> {
         fluent_builders::ListCodeReviews::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRecommendationFeedback` operation.
-    ///
-    /// See [`ListRecommendationFeedback`](crate::client::fluent_builders::ListRecommendationFeedback) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListRecommendationFeedback`](crate::client::fluent_builders::ListRecommendationFeedback) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRecommendationFeedback::into_paginator).
+    ///
+    /// - Takes [`ListRecommendationFeedbackInput`](crate::input::ListRecommendationFeedbackInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListRecommendationFeedbackInput::next_token): <p> If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListRecommendationFeedbackInput::max_results): <p> The maximum number of results that are returned per call. The default is 100. </p>
+    ///   - [`code_review_arn(Option<String>)`](crate::input::ListRecommendationFeedbackInput::code_review_arn): <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a> object. </p>
+    ///   - [`user_ids(Option<Vec<String>>)`](crate::input::ListRecommendationFeedbackInput::user_ids): <p> An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback for a code review from that user. </p>  <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>. </p>
+    ///   - [`recommendation_ids(Option<Vec<String>>)`](crate::input::ListRecommendationFeedbackInput::recommendation_ids): <p> Used to query the recommendation feedback for a given recommendation. </p>
+    /// - On success, responds with [`ListRecommendationFeedbackOutput`](crate::output::ListRecommendationFeedbackOutput) with field(s):
+    ///   - [`recommendation_feedback_summaries(Option<Vec<RecommendationFeedbackSummary>>)`](crate::output::ListRecommendationFeedbackOutput::recommendation_feedback_summaries): <p> Recommendation feedback summaries corresponding to the code review ARN. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListRecommendationFeedbackOutput::next_token): <p> If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    /// - On failure, responds with [`SdkError<ListRecommendationFeedbackError>`](crate::error::ListRecommendationFeedbackError)
     pub fn list_recommendation_feedback(
         &self,
     ) -> fluent_builders::ListRecommendationFeedback<C, M, R> {
         fluent_builders::ListRecommendationFeedback::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRecommendations` operation.
-    ///
-    /// See [`ListRecommendations`](crate::client::fluent_builders::ListRecommendations) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListRecommendations`](crate::client::fluent_builders::ListRecommendations) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRecommendations::into_paginator).
+    ///
+    /// - Takes [`ListRecommendationsInput`](crate::input::ListRecommendationsInput) with field(s):
+    ///   - [`next_token(Option<String>)`](crate::input::ListRecommendationsInput::next_token): <p> Pagination token. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListRecommendationsInput::max_results): <p> The maximum number of results that are returned per call. The default is 100. </p>
+    ///   - [`code_review_arn(Option<String>)`](crate::input::ListRecommendationsInput::code_review_arn): <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a> object. </p>
+    /// - On success, responds with [`ListRecommendationsOutput`](crate::output::ListRecommendationsOutput) with field(s):
+    ///   - [`recommendation_summaries(Option<Vec<RecommendationSummary>>)`](crate::output::ListRecommendationsOutput::recommendation_summaries): <p> List of recommendations for the requested code review. </p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListRecommendationsOutput::next_token): <p> Pagination token. </p>
+    /// - On failure, responds with [`SdkError<ListRecommendationsError>`](crate::error::ListRecommendationsError)
     pub fn list_recommendations(&self) -> fluent_builders::ListRecommendations<C, M, R> {
         fluent_builders::ListRecommendations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListRepositoryAssociations` operation.
-    ///
-    /// See [`ListRepositoryAssociations`](crate::client::fluent_builders::ListRepositoryAssociations) for more information about the
-    /// operation and its arguments.
+    /// Constructs a fluent builder for the [`ListRepositoryAssociations`](crate::client::fluent_builders::ListRepositoryAssociations) operation.
     /// This operation supports pagination. See [`into_paginator()`](crate::client::fluent_builders::ListRepositoryAssociations::into_paginator).
+    ///
+    /// - Takes [`ListRepositoryAssociationsInput`](crate::input::ListRepositoryAssociationsInput) with field(s):
+    ///   - [`provider_types(Option<Vec<ProviderType>>)`](crate::input::ListRepositoryAssociationsInput::provider_types): <p>List of provider types to use as a filter.</p>
+    ///   - [`states(Option<Vec<RepositoryAssociationState>>)`](crate::input::ListRepositoryAssociationsInput::states): <p>List of repository association states to use as a filter.</p>  <p>The valid repository association states are:</p>  <ul>   <li> <p> <b>Associated</b>: The repository association is complete. </p> </li>   <li> <p> <b>Associating</b>: CodeGuru Reviewer is: </p>    <ul>     <li> <p> Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review. </p> <note>       <p> If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered. </p>      </note> </li>     <li> <p> Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository. </p> </li>    </ul> </li>   <li> <p> <b>Failed</b>: The repository failed to associate or disassociate. </p> </li>   <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access. </p> </li>   <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in an associated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>. </p> </li>  </ul>
+    ///   - [`names(Option<Vec<String>>)`](crate::input::ListRepositoryAssociationsInput::names): <p>List of repository names to use as a filter.</p>
+    ///   - [`owners(Option<Vec<String>>)`](crate::input::ListRepositoryAssociationsInput::owners): <p>List of owners to use as a filter. For Amazon Web Services CodeCommit, it is the name of the CodeCommit account that was used to associate the repository. For other repository source providers, such as Bitbucket and GitHub Enterprise Server, this is name of the account that was used to associate the repository. </p>
+    ///   - [`max_results(Option<i32>)`](crate::input::ListRepositoryAssociationsInput::max_results): <p>The maximum number of repository association results returned by <code>ListRepositoryAssociations</code> in paginated output. When this parameter is used, <code>ListRepositoryAssociations</code> only returns <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRepositoryAssociations</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, <code>ListRepositoryAssociations</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
+    ///   - [`next_token(Option<String>)`](crate::input::ListRepositoryAssociationsInput::next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>ListRepositoryAssociations</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>   <p>Treat this token as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>  </note>
+    /// - On success, responds with [`ListRepositoryAssociationsOutput`](crate::output::ListRepositoryAssociationsOutput) with field(s):
+    ///   - [`repository_association_summaries(Option<Vec<RepositoryAssociationSummary>>)`](crate::output::ListRepositoryAssociationsOutput::repository_association_summaries): <p>A list of repository associations that meet the criteria of the request.</p>
+    ///   - [`next_token(Option<String>)`](crate::output::ListRepositoryAssociationsOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListRecommendations</code> request. When the results of a <code>ListRecommendations</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
+    /// - On failure, responds with [`SdkError<ListRepositoryAssociationsError>`](crate::error::ListRepositoryAssociationsError)
     pub fn list_repository_associations(
         &self,
     ) -> fluent_builders::ListRepositoryAssociations<C, M, R> {
         fluent_builders::ListRepositoryAssociations::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `ListTagsForResource` operation.
+    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
     ///
-    /// See [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::ListTagsForResourceInput::resource_arn): <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>
+    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p> An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts: </p>  <ul>   <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>   <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>  </ul>
+    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
     pub fn list_tags_for_resource(&self) -> fluent_builders::ListTagsForResource<C, M, R> {
         fluent_builders::ListTagsForResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `PutRecommendationFeedback` operation.
+    /// Constructs a fluent builder for the [`PutRecommendationFeedback`](crate::client::fluent_builders::PutRecommendationFeedback) operation.
     ///
-    /// See [`PutRecommendationFeedback`](crate::client::fluent_builders::PutRecommendationFeedback) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`PutRecommendationFeedbackInput`](crate::input::PutRecommendationFeedbackInput) with field(s):
+    ///   - [`code_review_arn(Option<String>)`](crate::input::PutRecommendationFeedbackInput::code_review_arn): <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a> object. </p>
+    ///   - [`recommendation_id(Option<String>)`](crate::input::PutRecommendationFeedbackInput::recommendation_id): <p> The recommendation ID that can be used to track the provided recommendations and then to collect the feedback. </p>
+    ///   - [`reactions(Option<Vec<Reaction>>)`](crate::input::PutRecommendationFeedbackInput::reactions): <p> List for storing reactions. Reactions are utf-8 text code for emojis. If you send an empty list it clears all your feedback. </p>
+    /// - On success, responds with [`PutRecommendationFeedbackOutput`](crate::output::PutRecommendationFeedbackOutput)
+
+    /// - On failure, responds with [`SdkError<PutRecommendationFeedbackError>`](crate::error::PutRecommendationFeedbackError)
     pub fn put_recommendation_feedback(
         &self,
     ) -> fluent_builders::PutRecommendationFeedback<C, M, R> {
         fluent_builders::PutRecommendationFeedback::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `TagResource` operation.
+    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
     ///
-    /// See [`TagResource`](crate::client::fluent_builders::TagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`TagResourceInput`](crate::input::TagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::TagResourceInput::resource_arn): <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>
+    ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::TagResourceInput::tags): <p> An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts: </p>  <ul>   <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>   <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>  </ul>
+    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C, M, R> {
         fluent_builders::TagResource::new(self.handle.clone())
     }
-    /// Constructs a fluent builder for the `UntagResource` operation.
+    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
     ///
-    /// See [`UntagResource`](crate::client::fluent_builders::UntagResource) for more information about the
-    /// operation and its arguments.
+    /// - Takes [`UntagResourceInput`](crate::input::UntagResourceInput) with field(s):
+    ///   - [`resource_arn(Option<String>)`](crate::input::UntagResourceInput::resource_arn): <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>
+    ///   - [`tag_keys(Option<Vec<String>>)`](crate::input::UntagResourceInput::tag_keys): <p>A list of the keys for each tag you want to remove from an associated repository.</p>
+    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+
+    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C, M, R> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
