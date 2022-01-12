@@ -260,6 +260,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon Simple Queue Service | [aws-sdk-sqs](https://crates.io/crates/aws-sdk-sqs) ([docs](https://docs.rs/aws-sdk-sqs)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/sqs)) |
 | Amazon Simple Storage Service | [aws-sdk-s3](https://crates.io/crates/aws-sdk-s3) ([docs](https://docs.rs/aws-sdk-s3)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/s3)) |
 | Amazon Simple Systems Manager (SSM) | [aws-sdk-ssm](https://crates.io/crates/aws-sdk-ssm) ([docs](https://docs.rs/aws-sdk-ssm)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/ssm)) |
+| Amazon Step Functions | [aws-sdk-sfn](https://crates.io/crates/aws-sdk-sfn) ([docs](https://docs.rs/aws-sdk-sfn)) ([examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples/stepfunction)) |
 | Amazon Simple Workflow Service | [aws-sdk-swf](https://crates.io/crates/aws-sdk-swf) ([docs](https://docs.rs/aws-sdk-swf)) |
 | Amazon Textract | [aws-sdk-textract](https://crates.io/crates/aws-sdk-textract) ([docs](https://docs.rs/aws-sdk-textract)) |
 | Amazon Transcribe Service | [aws-sdk-transcribe](https://crates.io/crates/aws-sdk-transcribe) ([docs](https://docs.rs/aws-sdk-transcribe)) |
