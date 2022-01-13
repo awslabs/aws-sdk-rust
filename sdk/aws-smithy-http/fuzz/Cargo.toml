@@ -1,0 +1,26 @@
+[package]
+name = "aws-smithy-http-fuzz"
+version = "0.0.0"
+authors = ["Automatically generated"]
+publish = false
+edition = "2018"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+http = "0.2.3"
+
+[dependencies.aws-smithy-http]
+path = ".."
+
+# Prevent this from interfering with workspaces
+[workspace]
+members = ["."]
+
+[[bin]]
+name = "read_many_from_str"
+path = "fuzz_targets/read_many_from_str.rs"
+test = false
+doc = false
