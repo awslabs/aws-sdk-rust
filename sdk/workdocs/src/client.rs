@@ -378,7 +378,7 @@ where
     ///   - [`order(Option<OrderType>)`](crate::input::DescribeFolderContentsInput::order): <p>The order for the contents of the folder.</p>
     ///   - [`limit(Option<i32>)`](crate::input::DescribeFolderContentsInput::limit): <p>The maximum number of items to return with this call.</p>
     ///   - [`marker(Option<String>)`](crate::input::DescribeFolderContentsInput::marker): <p>The marker for the next set of results. This marker was received from a previous call.</p>
-    ///   - [`r#type(Option<FolderContentType>)`](crate::input::DescribeFolderContentsInput::r#type): <p>The type of items.</p>
+    ///   - [`r#type(Option<FolderContentType>)`](crate::input::DescribeFolderContentsInput::type): <p>The type of items.</p>
     ///   - [`include(Option<String>)`](crate::input::DescribeFolderContentsInput::include): <p>The contents to include. Specify "INITIALIZED" to include initialized documents.</p>
     /// - On success, responds with [`DescribeFolderContentsOutput`](crate::output::DescribeFolderContentsOutput) with field(s):
     ///   - [`folders(Option<Vec<FolderMetadata>>)`](crate::output::DescribeFolderContentsOutput::folders): <p>The subfolders in the specified folder.</p>
@@ -659,7 +659,7 @@ where
     ///   - [`user_id(Option<String>)`](crate::input::UpdateUserInput::user_id): <p>The ID of the user.</p>
     ///   - [`given_name(Option<String>)`](crate::input::UpdateUserInput::given_name): <p>The given name of the user.</p>
     ///   - [`surname(Option<String>)`](crate::input::UpdateUserInput::surname): <p>The surname of the user.</p>
-    ///   - [`r#type(Option<UserType>)`](crate::input::UpdateUserInput::r#type): <p>The type of the user.</p>
+    ///   - [`r#type(Option<UserType>)`](crate::input::UpdateUserInput::type): <p>The type of the user.</p>
     ///   - [`storage_rule(Option<StorageRuleType>)`](crate::input::UpdateUserInput::storage_rule): <p>The amount of storage for the user.</p>
     ///   - [`time_zone_id(Option<String>)`](crate::input::UpdateUserInput::time_zone_id): <p>The time zone ID of the user.</p>
     ///   - [`locale(Option<LocaleType>)`](crate::input::UpdateUserInput::locale): <p>The locale of the user.</p>

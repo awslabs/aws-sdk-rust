@@ -100,7 +100,7 @@ where
     /// - Takes [`CreateManagedEndpointInput`](crate::input::CreateManagedEndpointInput) with field(s):
     ///   - [`name(Option<String>)`](crate::input::CreateManagedEndpointInput::name): <p>The name of the managed endpoint.</p>
     ///   - [`virtual_cluster_id(Option<String>)`](crate::input::CreateManagedEndpointInput::virtual_cluster_id): <p>The ID of the virtual cluster for which a managed endpoint is created.</p>
-    ///   - [`r#type(Option<String>)`](crate::input::CreateManagedEndpointInput::r#type): <p>The type of the managed endpoint.</p>
+    ///   - [`r#type(Option<String>)`](crate::input::CreateManagedEndpointInput::type): <p>The type of the managed endpoint.</p>
     ///   - [`release_label(Option<String>)`](crate::input::CreateManagedEndpointInput::release_label): <p>The Amazon EMR release version.</p>
     ///   - [`execution_role_arn(Option<String>)`](crate::input::CreateManagedEndpointInput::execution_role_arn): <p>The ARN of the execution role.</p>
     ///   - [`certificate_arn(Option<String>)`](crate::input::CreateManagedEndpointInput::certificate_arn): <p>The certificate ARN provided by users for the managed endpoint. This fiedd is under deprecation and will be removed in future releases.</p>

@@ -360,7 +360,7 @@ where
     ///
     /// - Takes [`CreateDimensionInput`](crate::input::CreateDimensionInput) with field(s):
     ///   - [`name(Option<String>)`](crate::input::CreateDimensionInput::name): <p>A unique identifier for the dimension. Choose something that describes the type and value to make it easy to remember what it does.</p>
-    ///   - [`r#type(Option<DimensionType>)`](crate::input::CreateDimensionInput::r#type): <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code> </p>
+    ///   - [`r#type(Option<DimensionType>)`](crate::input::CreateDimensionInput::type): <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code> </p>
     ///   - [`string_values(Option<Vec<String>>)`](crate::input::CreateDimensionInput::string_values): <p>Specifies the value or list of values for the dimension. For <code>TOPIC_FILTER</code> dimensions, this is a pattern used to match the MQTT topic (for example, "admin/#").</p>
     ///   - [`tags(Option<Vec<Tag>>)`](crate::input::CreateDimensionInput::tags): <p>Metadata that can be used to manage the dimension.</p>
     ///   - [`client_request_token(Option<String>)`](crate::input::CreateDimensionInput::client_request_token): <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
@@ -1257,7 +1257,7 @@ where
     /// - On success, responds with [`DescribeDimensionOutput`](crate::output::DescribeDimensionOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::output::DescribeDimensionOutput::name): <p>The unique identifier for the dimension.</p>
     ///   - [`arn(Option<String>)`](crate::output::DescribeDimensionOutput::arn): <p>The Amazon Resource Name (ARN) for the dimension.</p>
-    ///   - [`r#type(Option<DimensionType>)`](crate::output::DescribeDimensionOutput::r#type): <p>The type of the dimension.</p>
+    ///   - [`r#type(Option<DimensionType>)`](crate::output::DescribeDimensionOutput::type): <p>The type of the dimension.</p>
     ///   - [`string_values(Option<Vec<String>>)`](crate::output::DescribeDimensionOutput::string_values): <p>The value or list of values used to scope the dimension. For example, for topic filters, this is the pattern used to match the MQTT topic name.</p>
     ///   - [`creation_date(Option<DateTime>)`](crate::output::DescribeDimensionOutput::creation_date): <p>The date the dimension was created.</p>
     ///   - [`last_modified_date(Option<DateTime>)`](crate::output::DescribeDimensionOutput::last_modified_date): <p>The date the dimension was last modified.</p>
@@ -3127,7 +3127,7 @@ where
     /// - On success, responds with [`UpdateDimensionOutput`](crate::output::UpdateDimensionOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::output::UpdateDimensionOutput::name): <p>A unique identifier for the dimension.</p>
     ///   - [`arn(Option<String>)`](crate::output::UpdateDimensionOutput::arn): <p>The Amazon Resource Name (ARN)of the created dimension.</p>
-    ///   - [`r#type(Option<DimensionType>)`](crate::output::UpdateDimensionOutput::r#type): <p>The type of the dimension.</p>
+    ///   - [`r#type(Option<DimensionType>)`](crate::output::UpdateDimensionOutput::type): <p>The type of the dimension.</p>
     ///   - [`string_values(Option<Vec<String>>)`](crate::output::UpdateDimensionOutput::string_values): <p>The value or list of values used to scope the dimension. For example, for topic filters, this is the pattern used to match the MQTT topic name.</p>
     ///   - [`creation_date(Option<DateTime>)`](crate::output::UpdateDimensionOutput::creation_date): <p>The date and time, in milliseconds since epoch, when the dimension was initially created.</p>
     ///   - [`last_modified_date(Option<DateTime>)`](crate::output::UpdateDimensionOutput::last_modified_date): <p>The date and time, in milliseconds since epoch, when the dimension was most recently updated.</p>

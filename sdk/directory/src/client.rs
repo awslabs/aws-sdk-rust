@@ -356,7 +356,7 @@ where
     ///
     /// - Takes [`DescribeClientAuthenticationSettingsInput`](crate::input::DescribeClientAuthenticationSettingsInput) with field(s):
     ///   - [`directory_id(Option<String>)`](crate::input::DescribeClientAuthenticationSettingsInput::directory_id): <p>The identifier of the directory for which to retrieve information.</p>
-    ///   - [`r#type(Option<ClientAuthenticationType>)`](crate::input::DescribeClientAuthenticationSettingsInput::r#type): <p>The type of client authentication for which to retrieve information. If no type is specified, a list of all client authentication types that are supported for the specified directory is retrieved.</p>
+    ///   - [`r#type(Option<ClientAuthenticationType>)`](crate::input::DescribeClientAuthenticationSettingsInput::type): <p>The type of client authentication for which to retrieve information. If no type is specified, a list of all client authentication types that are supported for the specified directory is retrieved.</p>
     ///   - [`next_token(Option<String>)`](crate::input::DescribeClientAuthenticationSettingsInput::next_token): <p>The <i>DescribeClientAuthenticationSettingsResult.NextToken</i> value from a previous call to <code>DescribeClientAuthenticationSettings</code>. Pass null if this is the first call.</p>
     ///   - [`limit(Option<i32>)`](crate::input::DescribeClientAuthenticationSettingsInput::limit): <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation. </p>
     /// - On success, responds with [`DescribeClientAuthenticationSettingsOutput`](crate::output::DescribeClientAuthenticationSettingsOutput) with field(s):
@@ -426,7 +426,7 @@ where
     ///
     /// - Takes [`DescribeLdapsSettingsInput`](crate::input::DescribeLdapsSettingsInput) with field(s):
     ///   - [`directory_id(Option<String>)`](crate::input::DescribeLdapsSettingsInput::directory_id): <p>The identifier of the directory.</p>
-    ///   - [`r#type(Option<LdapsType>)`](crate::input::DescribeLdapsSettingsInput::r#type): <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
+    ///   - [`r#type(Option<LdapsType>)`](crate::input::DescribeLdapsSettingsInput::type): <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
     ///   - [`next_token(Option<String>)`](crate::input::DescribeLdapsSettingsInput::next_token): <p>The type of next token used for pagination.</p>
     ///   - [`limit(Option<i32>)`](crate::input::DescribeLdapsSettingsInput::limit): <p>Specifies the number of items that should be displayed on one page.</p>
     /// - On success, responds with [`DescribeLdapsSettingsOutput`](crate::output::DescribeLdapsSettingsOutput) with field(s):
@@ -497,7 +497,7 @@ where
     ///
     /// - Takes [`DisableClientAuthenticationInput`](crate::input::DisableClientAuthenticationInput) with field(s):
     ///   - [`directory_id(Option<String>)`](crate::input::DisableClientAuthenticationInput::directory_id): <p>The identifier of the directory </p>
-    ///   - [`r#type(Option<ClientAuthenticationType>)`](crate::input::DisableClientAuthenticationInput::r#type): <p>The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is supported.</p>
+    ///   - [`r#type(Option<ClientAuthenticationType>)`](crate::input::DisableClientAuthenticationInput::type): <p>The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is supported.</p>
     /// - On success, responds with [`DisableClientAuthenticationOutput`](crate::output::DisableClientAuthenticationOutput)
 
     /// - On failure, responds with [`SdkError<DisableClientAuthenticationError>`](crate::error::DisableClientAuthenticationError)
@@ -510,7 +510,7 @@ where
     ///
     /// - Takes [`DisableLdapsInput`](crate::input::DisableLdapsInput) with field(s):
     ///   - [`directory_id(Option<String>)`](crate::input::DisableLdapsInput::directory_id): <p>The identifier of the directory.</p>
-    ///   - [`r#type(Option<LdapsType>)`](crate::input::DisableLdapsInput::r#type): <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
+    ///   - [`r#type(Option<LdapsType>)`](crate::input::DisableLdapsInput::type): <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
     /// - On success, responds with [`DisableLdapsOutput`](crate::output::DisableLdapsOutput)
 
     /// - On failure, responds with [`SdkError<DisableLDAPSError>`](crate::error::DisableLDAPSError)
@@ -543,7 +543,7 @@ where
     ///
     /// - Takes [`EnableClientAuthenticationInput`](crate::input::EnableClientAuthenticationInput) with field(s):
     ///   - [`directory_id(Option<String>)`](crate::input::EnableClientAuthenticationInput::directory_id): <p>The identifier of the specified directory. </p>
-    ///   - [`r#type(Option<ClientAuthenticationType>)`](crate::input::EnableClientAuthenticationInput::r#type): <p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported. Smart card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User to the LDAP service in your self-managed AD. </p>
+    ///   - [`r#type(Option<ClientAuthenticationType>)`](crate::input::EnableClientAuthenticationInput::type): <p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported. Smart card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User to the LDAP service in your self-managed AD. </p>
     /// - On success, responds with [`EnableClientAuthenticationOutput`](crate::output::EnableClientAuthenticationOutput)
 
     /// - On failure, responds with [`SdkError<EnableClientAuthenticationError>`](crate::error::EnableClientAuthenticationError)
@@ -556,7 +556,7 @@ where
     ///
     /// - Takes [`EnableLdapsInput`](crate::input::EnableLdapsInput) with field(s):
     ///   - [`directory_id(Option<String>)`](crate::input::EnableLdapsInput::directory_id): <p>The identifier of the directory.</p>
-    ///   - [`r#type(Option<LdapsType>)`](crate::input::EnableLdapsInput::r#type): <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
+    ///   - [`r#type(Option<LdapsType>)`](crate::input::EnableLdapsInput::type): <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
     /// - On success, responds with [`EnableLdapsOutput`](crate::output::EnableLdapsOutput)
 
     /// - On failure, responds with [`SdkError<EnableLDAPSError>`](crate::error::EnableLDAPSError)
@@ -676,7 +676,7 @@ where
     /// - Takes [`RegisterCertificateInput`](crate::input::RegisterCertificateInput) with field(s):
     ///   - [`directory_id(Option<String>)`](crate::input::RegisterCertificateInput::directory_id): <p>The identifier of the directory.</p>
     ///   - [`certificate_data(Option<String>)`](crate::input::RegisterCertificateInput::certificate_data): <p>The certificate PEM string that needs to be registered.</p>
-    ///   - [`r#type(Option<CertificateType>)`](crate::input::RegisterCertificateInput::r#type): <p>The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.</p>
+    ///   - [`r#type(Option<CertificateType>)`](crate::input::RegisterCertificateInput::type): <p>The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.</p>
     ///   - [`client_cert_auth_settings(Option<ClientCertAuthSettings>)`](crate::input::RegisterCertificateInput::client_cert_auth_settings): <p>A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.</p>
     /// - On success, responds with [`RegisterCertificateOutput`](crate::output::RegisterCertificateOutput) with field(s):
     ///   - [`certificate_id(Option<String>)`](crate::output::RegisterCertificateOutput::certificate_id): <p>The identifier of the certificate.</p>

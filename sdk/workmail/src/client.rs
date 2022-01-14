@@ -188,7 +188,7 @@ where
     /// - Takes [`CreateResourceInput`](crate::input::CreateResourceInput) with field(s):
     ///   - [`organization_id(Option<String>)`](crate::input::CreateResourceInput::organization_id): <p>The identifier associated with the organization for which the resource is created.</p>
     ///   - [`name(Option<String>)`](crate::input::CreateResourceInput::name): <p>The name of the new resource.</p>
-    ///   - [`r#type(Option<ResourceType>)`](crate::input::CreateResourceInput::r#type): <p>The type of the new resource. The available types are <code>equipment</code> and <code>room</code>.</p>
+    ///   - [`r#type(Option<ResourceType>)`](crate::input::CreateResourceInput::type): <p>The type of the new resource. The available types are <code>equipment</code> and <code>room</code>.</p>
     /// - On success, responds with [`CreateResourceOutput`](crate::output::CreateResourceOutput) with field(s):
     ///   - [`resource_id(Option<String>)`](crate::output::CreateResourceOutput::resource_id): <p>The identifier of the new resource.</p>
     /// - On failure, responds with [`SdkError<CreateResourceError>`](crate::error::CreateResourceError)
@@ -453,7 +453,7 @@ where
     ///   - [`resource_id(Option<String>)`](crate::output::DescribeResourceOutput::resource_id): <p>The identifier of the described resource.</p>
     ///   - [`email(Option<String>)`](crate::output::DescribeResourceOutput::email): <p>The email of the described resource.</p>
     ///   - [`name(Option<String>)`](crate::output::DescribeResourceOutput::name): <p>The name of the described resource.</p>
-    ///   - [`r#type(Option<ResourceType>)`](crate::output::DescribeResourceOutput::r#type): <p>The type of the described resource.</p>
+    ///   - [`r#type(Option<ResourceType>)`](crate::output::DescribeResourceOutput::type): <p>The type of the described resource.</p>
     ///   - [`booking_options(Option<BookingOptions>)`](crate::output::DescribeResourceOutput::booking_options): <p>The booking options for the described resource.</p>
     ///   - [`state(Option<EntityState>)`](crate::output::DescribeResourceOutput::state): <p>The state of the resource: enabled (registered to Amazon WorkMail), disabled (deregistered or never registered to WorkMail), or deleted.</p>
     ///   - [`enabled_date(Option<DateTime>)`](crate::output::DescribeResourceOutput::enabled_date): <p>The date and time when a resource was enabled for WorkMail, in UNIX epoch time format.</p>

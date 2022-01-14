@@ -592,7 +592,7 @@ where
     /// - Takes [`DescribeImagesInput`](crate::input::DescribeImagesInput) with field(s):
     ///   - [`names(Option<Vec<String>>)`](crate::input::DescribeImagesInput::names): <p>The names of the public or private images to describe.</p>
     ///   - [`arns(Option<Vec<String>>)`](crate::input::DescribeImagesInput::arns): <p>The ARNs of the public, private, and shared images to describe.</p>
-    ///   - [`r#type(Option<VisibilityType>)`](crate::input::DescribeImagesInput::r#type): <p>The type of image (public, private, or shared) to describe. </p>
+    ///   - [`r#type(Option<VisibilityType>)`](crate::input::DescribeImagesInput::type): <p>The type of image (public, private, or shared) to describe. </p>
     ///   - [`next_token(Option<String>)`](crate::input::DescribeImagesInput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     ///   - [`max_results(Option<i32>)`](crate::input::DescribeImagesInput::max_results): <p>The maximum size of each page of results.</p>
     /// - On success, responds with [`DescribeImagesOutput`](crate::output::DescribeImagesOutput) with field(s):

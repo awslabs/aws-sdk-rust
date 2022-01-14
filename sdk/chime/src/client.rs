@@ -154,7 +154,7 @@ where
     ///
     /// - Takes [`BatchCreateChannelMembershipInput`](crate::input::BatchCreateChannelMembershipInput) with field(s):
     ///   - [`channel_arn(Option<String>)`](crate::input::BatchCreateChannelMembershipInput::channel_arn): <p>The ARN of the channel to which you're adding users.</p>
-    ///   - [`r#type(Option<ChannelMembershipType>)`](crate::input::BatchCreateChannelMembershipInput::r#type): <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
+    ///   - [`r#type(Option<ChannelMembershipType>)`](crate::input::BatchCreateChannelMembershipInput::type): <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
     ///   - [`member_arns(Option<Vec<String>>)`](crate::input::BatchCreateChannelMembershipInput::member_arns): <p>The ARNs of the members you want to add to the channel.</p>
     ///   - [`chime_bearer(Option<String>)`](crate::input::BatchCreateChannelMembershipInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     /// - On success, responds with [`BatchCreateChannelMembershipOutput`](crate::output::BatchCreateChannelMembershipOutput) with field(s):
@@ -342,7 +342,7 @@ where
     /// - Takes [`CreateChannelMembershipInput`](crate::input::CreateChannelMembershipInput) with field(s):
     ///   - [`channel_arn(Option<String>)`](crate::input::CreateChannelMembershipInput::channel_arn): <p>The ARN of the channel to which you're adding users.</p>
     ///   - [`member_arn(Option<String>)`](crate::input::CreateChannelMembershipInput::member_arn): <p>The ARN of the member you want to add to the channel.</p>
-    ///   - [`r#type(Option<ChannelMembershipType>)`](crate::input::CreateChannelMembershipInput::r#type): <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
+    ///   - [`r#type(Option<ChannelMembershipType>)`](crate::input::CreateChannelMembershipInput::type): <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
     ///   - [`chime_bearer(Option<String>)`](crate::input::CreateChannelMembershipInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     /// - On success, responds with [`CreateChannelMembershipOutput`](crate::output::CreateChannelMembershipOutput) with field(s):
     ///   - [`channel_arn(Option<String>)`](crate::output::CreateChannelMembershipOutput::channel_arn): <p>The ARN of the channel.</p>
@@ -1527,7 +1527,7 @@ where
     ///
     /// - Takes [`ListChannelMembershipsInput`](crate::input::ListChannelMembershipsInput) with field(s):
     ///   - [`channel_arn(Option<String>)`](crate::input::ListChannelMembershipsInput::channel_arn): <p>The maximum number of channel memberships that you want returned.</p>
-    ///   - [`r#type(Option<ChannelMembershipType>)`](crate::input::ListChannelMembershipsInput::r#type): <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned.</p>
+    ///   - [`r#type(Option<ChannelMembershipType>)`](crate::input::ListChannelMembershipsInput::type): <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned.</p>
     ///   - [`max_results(Option<i32>)`](crate::input::ListChannelMembershipsInput::max_results): <p>The maximum number of channel memberships that you want returned.</p>
     ///   - [`next_token(Option<String>)`](crate::input::ListChannelMembershipsInput::next_token): <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
     ///   - [`chime_bearer(Option<String>)`](crate::input::ListChannelMembershipsInput::chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -2109,7 +2109,7 @@ where
     /// - Takes [`SendChannelMessageInput`](crate::input::SendChannelMessageInput) with field(s):
     ///   - [`channel_arn(Option<String>)`](crate::input::SendChannelMessageInput::channel_arn): <p>The ARN of the channel.</p>
     ///   - [`content(Option<String>)`](crate::input::SendChannelMessageInput::content): <p>The content of the message.</p>
-    ///   - [`r#type(Option<ChannelMessageType>)`](crate::input::SendChannelMessageInput::r#type): <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
+    ///   - [`r#type(Option<ChannelMessageType>)`](crate::input::SendChannelMessageInput::type): <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
     ///   - [`persistence(Option<ChannelMessagePersistenceType>)`](crate::input::SendChannelMessageInput::persistence): <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
     ///   - [`metadata(Option<String>)`](crate::input::SendChannelMessageInput::metadata): <p>The optional metadata for each message.</p>
     ///   - [`client_request_token(Option<String>)`](crate::input::SendChannelMessageInput::client_request_token): <p>The <code>Idempotency</code> token for each client request.</p>

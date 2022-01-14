@@ -563,7 +563,7 @@ where
     /// - Takes [`CreateTriggerInput`](crate::input::CreateTriggerInput) with field(s):
     ///   - [`name(Option<String>)`](crate::input::CreateTriggerInput::name): <p>The name of the trigger.</p>
     ///   - [`workflow_name(Option<String>)`](crate::input::CreateTriggerInput::workflow_name): <p>The name of the workflow associated with the trigger.</p>
-    ///   - [`r#type(Option<TriggerType>)`](crate::input::CreateTriggerInput::r#type): <p>The type of the new trigger.</p>
+    ///   - [`r#type(Option<TriggerType>)`](crate::input::CreateTriggerInput::type): <p>The type of the new trigger.</p>
     ///   - [`schedule(Option<String>)`](crate::input::CreateTriggerInput::schedule): <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>  <p>This field is required when the trigger type is SCHEDULED.</p>
     ///   - [`predicate(Option<Predicate>)`](crate::input::CreateTriggerInput::predicate): <p>A predicate to specify when the new trigger should fire.</p>  <p>This field is required when the trigger type is <code>CONDITIONAL</code>.</p>
     ///   - [`actions(Option<Vec<Action>>)`](crate::input::CreateTriggerInput::actions): <p>The actions initiated by this trigger when it fires.</p>

@@ -261,7 +261,7 @@ where
     ///   - [`status(Option<OperationStatus>)`](crate::output::GetOperationDetailOutput::status): <p>The current status of the requested operation in the system.</p>
     ///   - [`message(Option<String>)`](crate::output::GetOperationDetailOutput::message): <p>Detailed information on the status including possible errors.</p>
     ///   - [`domain_name(Option<String>)`](crate::output::GetOperationDetailOutput::domain_name): <p>The name of a domain.</p>
-    ///   - [`r#type(Option<OperationType>)`](crate::output::GetOperationDetailOutput::r#type): <p>The type of operation that was requested.</p>
+    ///   - [`r#type(Option<OperationType>)`](crate::output::GetOperationDetailOutput::type): <p>The type of operation that was requested.</p>
     ///   - [`submitted_date(Option<DateTime>)`](crate::output::GetOperationDetailOutput::submitted_date): <p>The date when the request was submitted.</p>
     /// - On failure, responds with [`SdkError<GetOperationDetailError>`](crate::error::GetOperationDetailError)
     pub fn get_operation_detail(&self) -> fluent_builders::GetOperationDetail<C, M, R> {

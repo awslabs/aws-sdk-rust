@@ -213,7 +213,7 @@ where
     ///   - [`global_network_id(Option<String>)`](crate::input::CreateDeviceInput::global_network_id): <p>The ID of the global network.</p>
     ///   - [`aws_location(Option<AwsLocation>)`](crate::input::CreateDeviceInput::aws_location): <p>The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.</p>
     ///   - [`description(Option<String>)`](crate::input::CreateDeviceInput::description): <p>A description of the device.</p>  <p>Constraints: Maximum length of 256 characters.</p>
-    ///   - [`r#type(Option<String>)`](crate::input::CreateDeviceInput::r#type): <p>The type of the device.</p>
+    ///   - [`r#type(Option<String>)`](crate::input::CreateDeviceInput::type): <p>The type of the device.</p>
     ///   - [`vendor(Option<String>)`](crate::input::CreateDeviceInput::vendor): <p>The vendor of the device.</p>  <p>Constraints: Maximum length of 128 characters.</p>
     ///   - [`model(Option<String>)`](crate::input::CreateDeviceInput::model): <p>The model of the device.</p>  <p>Constraints: Maximum length of 128 characters.</p>
     ///   - [`serial_number(Option<String>)`](crate::input::CreateDeviceInput::serial_number): <p>The serial number of the device.</p>  <p>Constraints: Maximum length of 128 characters.</p>
@@ -242,7 +242,7 @@ where
     /// - Takes [`CreateLinkInput`](crate::input::CreateLinkInput) with field(s):
     ///   - [`global_network_id(Option<String>)`](crate::input::CreateLinkInput::global_network_id): <p>The ID of the global network.</p>
     ///   - [`description(Option<String>)`](crate::input::CreateLinkInput::description): <p>A description of the link.</p>  <p>Constraints: Maximum length of 256 characters.</p>
-    ///   - [`r#type(Option<String>)`](crate::input::CreateLinkInput::r#type): <p>The type of the link.</p>  <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
+    ///   - [`r#type(Option<String>)`](crate::input::CreateLinkInput::type): <p>The type of the link.</p>  <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
     ///   - [`bandwidth(Option<Bandwidth>)`](crate::input::CreateLinkInput::bandwidth): <p> The upload speed and download speed in Mbps. </p>
     ///   - [`provider(Option<String>)`](crate::input::CreateLinkInput::provider): <p>The provider of the link.</p>  <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
     ///   - [`site_id(Option<String>)`](crate::input::CreateLinkInput::site_id): <p>The ID of the site.</p>
@@ -636,7 +636,7 @@ where
     ///   - [`global_network_id(Option<String>)`](crate::input::GetLinksInput::global_network_id): <p>The ID of the global network.</p>
     ///   - [`link_ids(Option<Vec<String>>)`](crate::input::GetLinksInput::link_ids): <p>One or more link IDs. The maximum is 10.</p>
     ///   - [`site_id(Option<String>)`](crate::input::GetLinksInput::site_id): <p>The ID of the site.</p>
-    ///   - [`r#type(Option<String>)`](crate::input::GetLinksInput::r#type): <p>The link type.</p>
+    ///   - [`r#type(Option<String>)`](crate::input::GetLinksInput::type): <p>The link type.</p>
     ///   - [`provider(Option<String>)`](crate::input::GetLinksInput::provider): <p>The link provider.</p>
     ///   - [`max_results(Option<i32>)`](crate::input::GetLinksInput::max_results): <p>The maximum number of results to return.</p>
     ///   - [`next_token(Option<String>)`](crate::input::GetLinksInput::next_token): <p>The token for the next page of results.</p>
@@ -1039,7 +1039,7 @@ where
     ///   - [`device_id(Option<String>)`](crate::input::UpdateDeviceInput::device_id): <p>The ID of the device.</p>
     ///   - [`aws_location(Option<AwsLocation>)`](crate::input::UpdateDeviceInput::aws_location): <p>The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.</p>
     ///   - [`description(Option<String>)`](crate::input::UpdateDeviceInput::description): <p>A description of the device.</p>  <p>Constraints: Maximum length of 256 characters.</p>
-    ///   - [`r#type(Option<String>)`](crate::input::UpdateDeviceInput::r#type): <p>The type of the device.</p>
+    ///   - [`r#type(Option<String>)`](crate::input::UpdateDeviceInput::type): <p>The type of the device.</p>
     ///   - [`vendor(Option<String>)`](crate::input::UpdateDeviceInput::vendor): <p>The vendor of the device.</p>  <p>Constraints: Maximum length of 128 characters.</p>
     ///   - [`model(Option<String>)`](crate::input::UpdateDeviceInput::model): <p>The model of the device.</p>  <p>Constraints: Maximum length of 128 characters.</p>
     ///   - [`serial_number(Option<String>)`](crate::input::UpdateDeviceInput::serial_number): <p>The serial number of the device.</p>  <p>Constraints: Maximum length of 128 characters.</p>
@@ -1068,7 +1068,7 @@ where
     ///   - [`global_network_id(Option<String>)`](crate::input::UpdateLinkInput::global_network_id): <p>The ID of the global network.</p>
     ///   - [`link_id(Option<String>)`](crate::input::UpdateLinkInput::link_id): <p>The ID of the link.</p>
     ///   - [`description(Option<String>)`](crate::input::UpdateLinkInput::description): <p>A description of the link.</p>  <p>Constraints: Maximum length of 256 characters.</p>
-    ///   - [`r#type(Option<String>)`](crate::input::UpdateLinkInput::r#type): <p>The type of the link.</p>  <p>Constraints: Maximum length of 128 characters.</p>
+    ///   - [`r#type(Option<String>)`](crate::input::UpdateLinkInput::type): <p>The type of the link.</p>  <p>Constraints: Maximum length of 128 characters.</p>
     ///   - [`bandwidth(Option<Bandwidth>)`](crate::input::UpdateLinkInput::bandwidth): <p>The upload and download speed in Mbps. </p>
     ///   - [`provider(Option<String>)`](crate::input::UpdateLinkInput::provider): <p>The provider of the link.</p>  <p>Constraints: Maximum length of 128 characters.</p>
     /// - On success, responds with [`UpdateLinkOutput`](crate::output::UpdateLinkOutput) with field(s):

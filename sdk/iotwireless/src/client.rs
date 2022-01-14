@@ -268,7 +268,7 @@ where
     /// Constructs a fluent builder for the [`CreateWirelessDevice`](crate::client::fluent_builders::CreateWirelessDevice) operation.
     ///
     /// - Takes [`CreateWirelessDeviceInput`](crate::input::CreateWirelessDeviceInput) with field(s):
-    ///   - [`r#type(Option<WirelessDeviceType>)`](crate::input::CreateWirelessDeviceInput::r#type): <p>The wireless device type.</p>
+    ///   - [`r#type(Option<WirelessDeviceType>)`](crate::input::CreateWirelessDeviceInput::type): <p>The wireless device type.</p>
     ///   - [`name(Option<String>)`](crate::input::CreateWirelessDeviceInput::name): <p>The name of the new resource.</p>
     ///   - [`description(Option<String>)`](crate::input::CreateWirelessDeviceInput::description): <p>The description of the new resource.</p>
     ///   - [`destination_name(Option<String>)`](crate::input::CreateWirelessDeviceInput::destination_name): <p>The name of the destination to assign to the new wireless device.</p>
@@ -681,7 +681,7 @@ where
     ///   - [`identifier(Option<String>)`](crate::input::GetWirelessDeviceInput::identifier): <p>The identifier of the wireless device to get.</p>
     ///   - [`identifier_type(Option<WirelessDeviceIdType>)`](crate::input::GetWirelessDeviceInput::identifier_type): <p>The type of identifier used in <code>identifier</code>.</p>
     /// - On success, responds with [`GetWirelessDeviceOutput`](crate::output::GetWirelessDeviceOutput) with field(s):
-    ///   - [`r#type(Option<WirelessDeviceType>)`](crate::output::GetWirelessDeviceOutput::r#type): <p>The wireless device type.</p>
+    ///   - [`r#type(Option<WirelessDeviceType>)`](crate::output::GetWirelessDeviceOutput::type): <p>The wireless device type.</p>
     ///   - [`name(Option<String>)`](crate::output::GetWirelessDeviceOutput::name): <p>The name of the resource.</p>
     ///   - [`description(Option<String>)`](crate::output::GetWirelessDeviceOutput::description): <p>The description of the resource.</p>
     ///   - [`destination_name(Option<String>)`](crate::output::GetWirelessDeviceOutput::destination_name): <p>The name of the destination to which the device is assigned.</p>

@@ -91,7 +91,7 @@ where
     ///   - [`media_encoding(Option<MediaEncoding>)`](crate::input::StartMedicalStreamTranscriptionInput::media_encoding): <p>The encoding used for the input audio.</p>
     ///   - [`vocabulary_name(Option<String>)`](crate::input::StartMedicalStreamTranscriptionInput::vocabulary_name): <p>The name of the medical custom vocabulary to use when processing the real-time stream.</p>
     ///   - [`specialty(Option<Specialty>)`](crate::input::StartMedicalStreamTranscriptionInput::specialty): <p>The medical specialty of the clinician or provider.</p>
-    ///   - [`r#type(Option<Type>)`](crate::input::StartMedicalStreamTranscriptionInput::r#type): <p>The type of input audio. Choose <code>DICTATION</code> for a provider dictating patient notes. Choose <code>CONVERSATION</code> for a dialogue between a patient and one or more medical professionanls.</p>
+    ///   - [`r#type(Option<Type>)`](crate::input::StartMedicalStreamTranscriptionInput::type): <p>The type of input audio. Choose <code>DICTATION</code> for a provider dictating patient notes. Choose <code>CONVERSATION</code> for a dialogue between a patient and one or more medical professionanls.</p>
     ///   - [`show_speaker_label(bool)`](crate::input::StartMedicalStreamTranscriptionInput::show_speaker_label): <p>When <code>true</code>, enables speaker identification in your real-time stream.</p>
     ///   - [`session_id(Option<String>)`](crate::input::StartMedicalStreamTranscriptionInput::session_id): <p> Optional. An identifier for the transcription session. If you don't provide a session ID, Amazon Transcribe generates one for you and returns it in the response. </p>
     ///   - [`audio_stream(EventStreamInput<crate::model::AudioStream>)`](crate::input::StartMedicalStreamTranscriptionInput::audio_stream): <p>Represents the audio stream from your application to Amazon Transcribe.</p>
@@ -105,7 +105,7 @@ where
     ///   - [`media_encoding(Option<MediaEncoding>)`](crate::output::StartMedicalStreamTranscriptionOutput::media_encoding): <p>The encoding used for the input audio stream.</p>
     ///   - [`vocabulary_name(Option<String>)`](crate::output::StartMedicalStreamTranscriptionOutput::vocabulary_name): <p>The name of the vocabulary used when processing the stream.</p>
     ///   - [`specialty(Option<Specialty>)`](crate::output::StartMedicalStreamTranscriptionOutput::specialty): <p>The specialty in the medical domain.</p>
-    ///   - [`r#type(Option<Type>)`](crate::output::StartMedicalStreamTranscriptionOutput::r#type): <p>The type of audio that was transcribed. </p>
+    ///   - [`r#type(Option<Type>)`](crate::output::StartMedicalStreamTranscriptionOutput::type): <p>The type of audio that was transcribed. </p>
     ///   - [`show_speaker_label(bool)`](crate::output::StartMedicalStreamTranscriptionOutput::show_speaker_label): <p>Shows whether speaker identification was enabled in the stream.</p>
     ///   - [`session_id(Option<String>)`](crate::output::StartMedicalStreamTranscriptionOutput::session_id): <p>Optional. An identifier for the transcription session. If you don't provide a session ID, Amazon Transcribe generates one for you and returns it in the response.</p>
     ///   - [`transcript_result_stream(Receiver<crate::model::MedicalTranscriptResultStream, crate::error::StartMedicalStreamTranscriptionError>)`](crate::output::StartMedicalStreamTranscriptionOutput::transcript_result_stream): <p>Represents the stream of transcription events from Amazon Transcribe Medical to your application. </p>

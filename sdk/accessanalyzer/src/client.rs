@@ -121,7 +121,7 @@ where
     ///
     /// - Takes [`CreateAnalyzerInput`](crate::input::CreateAnalyzerInput) with field(s):
     ///   - [`analyzer_name(Option<String>)`](crate::input::CreateAnalyzerInput::analyzer_name): <p>The name of the analyzer to create.</p>
-    ///   - [`r#type(Option<Type>)`](crate::input::CreateAnalyzerInput::r#type): <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
+    ///   - [`r#type(Option<Type>)`](crate::input::CreateAnalyzerInput::type): <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
     ///   - [`archive_rules(Option<Vec<InlineArchiveRule>>)`](crate::input::CreateAnalyzerInput::archive_rules): <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::input::CreateAnalyzerInput::tags): <p>The tags to apply to the analyzer.</p>
     ///   - [`client_token(Option<String>)`](crate::input::CreateAnalyzerInput::client_token): <p>A client token.</p>
@@ -287,7 +287,7 @@ where
     /// - Takes [`ListAnalyzersInput`](crate::input::ListAnalyzersInput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::input::ListAnalyzersInput::next_token): <p>A token used for pagination of results returned.</p>
     ///   - [`max_results(Option<i32>)`](crate::input::ListAnalyzersInput::max_results): <p>The maximum number of results to return in the response.</p>
-    ///   - [`r#type(Option<Type>)`](crate::input::ListAnalyzersInput::r#type): <p>The type of analyzer.</p>
+    ///   - [`r#type(Option<Type>)`](crate::input::ListAnalyzersInput::type): <p>The type of analyzer.</p>
     /// - On success, responds with [`ListAnalyzersOutput`](crate::output::ListAnalyzersOutput) with field(s):
     ///   - [`analyzers(Option<Vec<AnalyzerSummary>>)`](crate::output::ListAnalyzersOutput::analyzers): <p>The analyzers retrieved.</p>
     ///   - [`next_token(Option<String>)`](crate::output::ListAnalyzersOutput::next_token): <p>A token used for pagination of results returned.</p>
