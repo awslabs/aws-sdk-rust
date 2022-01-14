@@ -68,6 +68,8 @@ path = "../aws-smithy-protocol-test"
 version = "0.34.1"
 [dev-dependencies.futures-util]
 version = "0.3"
+[dev-dependencies.pretty_assertions]
+version = "1"
 [dev-dependencies.serde_json]
 version = "1"
 [dev-dependencies.temp-file]

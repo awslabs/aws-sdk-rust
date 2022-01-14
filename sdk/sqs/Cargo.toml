@@ -59,6 +59,8 @@ version = "0.4.1"
 [dev-dependencies.aws-smithy-protocol-test]
 path = "../aws-smithy-protocol-test"
 version = "0.34.1"
+[dev-dependencies.pretty_assertions]
+version = "1"
 [dev-dependencies.tokio]
 version = "1"
 features = ["macros", "test-util", "rt"]

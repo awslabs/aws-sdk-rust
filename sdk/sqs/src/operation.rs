@@ -82,8 +82,8 @@ mod change_message_visibility_request_test {
             .await
             .expect("operation failed to build");
         let (http_request, parts) = input.into_request_response().0.into_parts();
-        assert_eq!(http_request.method(), "POST");
-        assert_eq!(http_request.uri().path(), "/");
+        pretty_assertions::assert_eq!(http_request.method(), "POST");
+        pretty_assertions::assert_eq!(http_request.uri().path(), "/");
         let body = http_request.body().bytes().expect("body should be strict");
         aws_smithy_protocol_test::assert_ok(
         aws_smithy_protocol_test::validate_body(&body, "Action=ChangeMessageVisibility&Version=2012-11-05&QueueUrl=http%3A%2F%2Fsomequeue.amazon.com&ReceiptHandle=handlehandle&VisibilityTimeout=0", aws_smithy_protocol_test::MediaType::from("application/x-www-formurl-encoded"))

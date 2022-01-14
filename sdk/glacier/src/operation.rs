@@ -1080,8 +1080,8 @@ mod upload_archive_request_test {
             .await
             .expect("operation failed to build");
         let (http_request, parts) = input.into_request_response().0.into_parts();
-        assert_eq!(http_request.method(), "POST");
-        assert_eq!(http_request.uri().path(), "/foo/vaults/bar/archives");
+        pretty_assertions::assert_eq!(http_request.method(), "POST");
+        pretty_assertions::assert_eq!(http_request.uri().path(), "/foo/vaults/bar/archives");
         let expected_headers = [("X-Amz-Glacier-Version", "2012-06-01")];
         aws_smithy_protocol_test::assert_ok(aws_smithy_protocol_test::validate_headers(
             &http_request,
@@ -1089,7 +1089,7 @@ mod upload_archive_request_test {
         ));
         let body = http_request.body().bytes().expect("body should be strict");
         // No body
-        assert_eq!(std::str::from_utf8(body).unwrap(), "");
+        pretty_assertions::assert_eq!(std::str::from_utf8(body).unwrap(), "");
     }
     /// Glacier requires checksum headers that are cumbersome to provide.
     /// Test ID: GlacierChecksums
@@ -1108,8 +1108,8 @@ mod upload_archive_request_test {
             .await
             .expect("operation failed to build");
         let (http_request, parts) = input.into_request_response().0.into_parts();
-        assert_eq!(http_request.method(), "POST");
-        assert_eq!(http_request.uri().path(), "/foo/vaults/bar/archives");
+        pretty_assertions::assert_eq!(http_request.method(), "POST");
+        pretty_assertions::assert_eq!(http_request.uri().path(), "/foo/vaults/bar/archives");
         let expected_headers = [
             (
                 "X-Amz-Content-Sha256",
@@ -1148,8 +1148,8 @@ mod upload_archive_request_test {
             .await
             .expect("operation failed to build");
         let (http_request, parts) = input.into_request_response().0.into_parts();
-        assert_eq!(http_request.method(), "POST");
-        assert_eq!(http_request.uri().path(), "/-/vaults/bar/archives");
+        pretty_assertions::assert_eq!(http_request.method(), "POST");
+        pretty_assertions::assert_eq!(http_request.uri().path(), "/-/vaults/bar/archives");
         let expected_headers = [("X-Amz-Glacier-Version", "2012-06-01")];
         aws_smithy_protocol_test::assert_ok(aws_smithy_protocol_test::validate_headers(
             &http_request,
@@ -1157,7 +1157,7 @@ mod upload_archive_request_test {
         ));
         let body = http_request.body().bytes().expect("body should be strict");
         // No body
-        assert_eq!(std::str::from_utf8(body).unwrap(), "");
+        pretty_assertions::assert_eq!(std::str::from_utf8(body).unwrap(), "");
     }
     /// Glacier requires that the account id be set, but you can just use a
     /// hyphen (-) to indicate the current account. This should be default
@@ -1175,8 +1175,8 @@ mod upload_archive_request_test {
             .await
             .expect("operation failed to build");
         let (http_request, parts) = input.into_request_response().0.into_parts();
-        assert_eq!(http_request.method(), "POST");
-        assert_eq!(http_request.uri().path(), "/-/vaults/bar/archives");
+        pretty_assertions::assert_eq!(http_request.method(), "POST");
+        pretty_assertions::assert_eq!(http_request.uri().path(), "/-/vaults/bar/archives");
         let expected_headers = [("X-Amz-Glacier-Version", "2012-06-01")];
         aws_smithy_protocol_test::assert_ok(aws_smithy_protocol_test::validate_headers(
             &http_request,
@@ -1184,7 +1184,7 @@ mod upload_archive_request_test {
         ));
         let body = http_request.body().bytes().expect("body should be strict");
         // No body
-        assert_eq!(std::str::from_utf8(body).unwrap(), "");
+        pretty_assertions::assert_eq!(std::str::from_utf8(body).unwrap(), "");
     }
 }
 
@@ -1242,8 +1242,8 @@ mod upload_multipart_part_request_test {
             .await
             .expect("operation failed to build");
         let (http_request, parts) = input.into_request_response().0.into_parts();
-        assert_eq!(http_request.method(), "PUT");
-        assert_eq!(
+        pretty_assertions::assert_eq!(http_request.method(), "PUT");
+        pretty_assertions::assert_eq!(
             http_request.uri().path(),
             "/foo/vaults/bar/multipart-uploads/baz"
         );
